@@ -145,7 +145,7 @@
         }
     
         .logo img {
-            height: 60px;
+            height: 80px; /* Logo aumentado */
             width: auto;
         }
     
@@ -183,10 +183,16 @@
             color: var(--bege-claro);
         }
 
-       #identificacao h2 {
-    color: var(--branco-puro);
-    margin-bottom: 20px;
-}
+        #identificacao h2 {
+            color: var(--branco-puro);
+            margin-bottom: 20px;
+            font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+            line-height: 1.3;
+        }
+
+        #identificacao h2 .highlight {
+            color: var(--marrom-areia);
+        }
 
         #identificacao p {
             text-align: center;
@@ -547,7 +553,7 @@
             border: 1px solid var(--verde-medio);
             text-align: left;
             color: var(--bege-claro);
-            display: none; /* Começa escondido */
+            display: none;
         }
         
         #diagnosis-result h3 {
@@ -574,7 +580,7 @@
             box-sizing: border-box;
             animation: rotation 1s linear infinite;
             margin-top: 40px;
-            display: none; /* Começa escondido */
+            display: none;
         }
 
         @keyframes rotation {
@@ -613,14 +619,15 @@
             <div class="container">
                 <h1>IA descomplicada para pequenas e médias empresas</h1>
                 <p>Automatize seu atendimento, organize sua rotina e aumente suas vendas com inteligência, mesmo que você ainda não saiba por onde começar.</p>
-                <a href="#contato" class="cta-button">👉 Solicitar diagnóstico gratuito</a>
+                <a href="https://wa.me/5511999999999" target="_blank" class="cta-button">👉 Solicitar diagnóstico gratuito</a>
             </div>
         </section>
 
         <!-- 2. IDENTIFICAÇÃO (BLOCO DOR REAL) -->
         <section id="identificacao">
             <div class="container">
-                <h2>Você já ouviu que “IA é o futuro”...<br>mas ninguém te explicou como isso se aplica ao seu negócio?</h2>
+                <h2>Você já ouviu que “IA é o futuro”...<br>mas ninguém te explicou como isso se aplica ao <span class="highlight">seu negócio</span>?</h2>
+                
                 <p>Se você ainda não usa a IA como poderia - ou nem sabe por onde começar - a gente entende.<br>A Newscale nasceu pra ajudar quem quer <strong>mais tempo, mais vendas e menos complicação.</strong></p>
                 
                 <ul class="mini-lista">
@@ -733,7 +740,7 @@
                     </div>
                 </div>
             </div>
-            <a href="#contato" class="cta-flutuante">💬 Vamos conversar sobre o seu caso</a>
+            <a href="https://wa.me/5511999999999" target="_blank" class="cta-flutuante">💬 Vamos conversar sobre o seu caso</a>
         </section>
         
         <!-- 6. DEPOIMENTO SOCIAL (VALIDAÇÃO) -->
@@ -817,10 +824,9 @@
     <script>
         // Função para simular a digitação e renderizar Markdown simplificado
         function typeWriter(element, text) {
-            // Converte títulos e negritos do Markdown para HTML
             let htmlText = text
                 .replace(/### (.*?)\n/g, '<h3>$1</h3>')
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$2</strong>')
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
                 .replace(/\n/g, '<br>');
 
             element.innerHTML = htmlText;
@@ -842,22 +848,18 @@
                 return;
             }
 
-            // Mostra o loader e esconde o resultado anterior
             loader.style.display = 'block';
             diagnosisResult.style.display = 'none';
             generateBtn.disabled = true;
 
-            // Prepara o prompt para a API do Gemini
-            const prompt = `Você é um consultor especialista da Newscale. O usuário a seguir descreve o negócio dele. Analise a descrição, identifique a principal 'dor' ou desafio do negócio e, com base nos serviços da Newscale (Atendimento automático 24/7, Secretária virtual com agenda integrada, Mensagens inteligentes em massa, Renovação de pacotes com IA, Automação conectada ao CRM), sugira 1 ou 2 soluções específicas que trariam o maior impacto. Apresente o resultado em formato de um mini-diagnóstico, começando com '### Diagnóstico Preliminar Newscale' e usando uma linguagem clara e acessível para empreendedores, com negrito para destacar os pontos importantes. O negócio do usuário é: "${description}"`;
+            const prompt = `Você é um consultor especialista da Newscale. O usuário a seguir descreve o negócio dele. Analise a descrição, identifique a principal 'dor' ou desafio do negócio e, com base nos serviços da Newscale (Atendimento automático 24/7, Secretária virtual com agenda integrada, Mensagens inteligentes em massa, Renovação de pacotes com IA, Automação conectada ao CRM), sugira 1 ou 2 soluções específicas que trariam o maior impacto. Apresente o resultado em formato de um mini-diagnóstico, começando com '### Diagnóstico Preliminar Newscale' e usando uma linguagem clara e acessível para empreendedores, com negrito para destacar os pontos importantes usando asteriscos (**exemplo**). O negócio do usuário é: "${description}"`;
 
             try {
-                // Configuração da chamada para a API
                 let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
                 const payload = { contents: chatHistory };
-                const apiKey = ""; // A chave será fornecida pelo ambiente
+                const apiKey = "AIzaSyBf6TPYw2ZSwcm4kPAMYaYpLkEE1ysBx4o"; 
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
-                // Faz a chamada fetch
                 const response = await fetch(apiUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -870,7 +872,6 @@
 
                 const result = await response.json();
                 
-                // Processa e exibe a resposta
                 if (result.candidates && result.candidates.length > 0 &&
                     result.candidates[0].content && result.candidates[0].content.parts &&
                     result.candidates[0].content.parts.length > 0) {
@@ -887,7 +888,6 @@
                 diagnosisResult.innerHTML = '<h3>Ocorreu um erro ao gerar o diagnóstico.</h3><p>Por favor, tente novamente mais tarde. Nossa equipe já foi notificada.</p>';
                 diagnosisResult.style.display = 'block';
             } finally {
-                // Esconde o loader e reativa o botão
                 loader.style.display = 'none';
                 generateBtn.disabled = false;
             }
@@ -896,3 +896,4 @@
 
 </body>
 </html>
+
