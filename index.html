@@ -145,7 +145,7 @@
         }
     
         .logo img {
-            height: 80px; /* Logo aumentado */
+            height: 100px;
             width: auto;
         }
     
@@ -429,9 +429,35 @@
         #quem-somos {
              background-color: var(--cor-fundo);
         }
+        
         #quem-somos .container {
-            max-width: 800px;
-            text-align: center;
+            max-width: 900px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        #quem-somos .author-photo {
+            flex-shrink: 0;
+        }
+
+        #quem-somos .author-photo img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--branco-puro);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        #quem-somos .author-text {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        #quem-somos .author-text h2,
+        #quem-somos .author-text p {
+            text-align: left;
         }
         
         .diferencial {
@@ -440,13 +466,26 @@
             border-radius: 8px;
             margin-top: 40px;
             border-left: 4px solid var(--verde-medio);
-            text-align: left;
         }
         
-        #quem-somos .diferencial p {
+        .diferencial p {
             font-weight: var(--font-book);
             font-size: 1.1rem;
+            text-align: left;
         }
+
+        @media (max-width: 768px) {
+            #quem-somos .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            #quem-somos .author-text h2,
+            #quem-somos .author-text p,
+            .diferencial p {
+                text-align: center;
+            }
+        }
+
         
         /* ------------------- */
         /* --- SEÇÃO: FAQ --- */
@@ -762,11 +801,16 @@
         <!-- 7. QUEM SOMOS (CONEXÃO + AUTORIDADE HUMANA) -->
         <section id="quem-somos">
             <div class="container">
-                 <h2>Criamos a Newscale porque vivemos essa dor.</h2>
-                 <p><strong>Sou a Bruna, empreendedora há 10 anos.</strong> Já estive no caos de responder clientes na unha, esquecer agendamentos e perder vendas por falta de tempo. Hoje, usamos nossa experiência pra levar automações acessíveis, humanizadas e reais pra quem mais precisa: você, empreendedor de verdade.</p>
-                 <div class="diferencial">
-                     <p><strong>A Newscale não entrega um robô e te deixa sozinho.</strong> Fazemos juntos, treinamos sua equipe, ajustamos o que for necessário e acompanhamos — até tudo funcionar do jeito certo para você. A IA fala no seu tom, entende seus processos e age como um membro real do seu time.</p>
-                 </div>
+                <div class="author-photo">
+                    <img src="Bruna.JPG" alt="Foto da Bruna, fundadora da Newscale">
+                </div>
+                <div class="author-text">
+                    <h2>Criamos a Newscale porque vivemos essa dor.</h2>
+                    <p><strong>Sou a Bruna, empreendedora há 10 anos.</strong> Já estive no caos de responder clientes na unha, esquecer agendamentos e perder vendas por falta de tempo. Hoje, usamos nossa experiência pra levar automações acessíveis, humanizadas e reais pra quem mais precisa: você, empreendedor de verdade.</p>
+                    <div class="diferencial">
+                        <p><strong>A Newscale não entrega um robô e te deixa sozinho.</strong> Fazemos juntos, treinamos sua equipe, ajustamos o que for necessário e acompanhamos — até tudo funcionar do jeito certo para você. A IA fala no seu tom, entende seus processos e age como um membro real do seu time.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -896,4 +940,3 @@
 
 </body>
 </html>
-
