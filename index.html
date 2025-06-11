@@ -145,7 +145,7 @@
         }
     
         .logo img {
-            height: 200px; /* Logo aumentado */
+            height: 200px;
             width: auto;
         }
     
@@ -904,10 +904,20 @@
                     body: JSON.stringify({ description: description })
                 });
 
+                // Lógica de erro melhorada para mostrar detalhes
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    let errorMessage = `Erro no servidor (código: ${response.status}).`;
+                    try {
+                        const errorData = await response.json();
+                        if (errorData.error) {
+                            errorMessage = errorData.error;
+                        }
+                    } catch (e) {
+                        errorMessage = response.statusText;
+                    }
+                    throw new Error(errorMessage);
                 }
-
+                
                 const result = await response.json();
                 
                 if (result.candidates && result.candidates.length > 0 &&
@@ -918,7 +928,6 @@
                     typeWriter(diagnosisResult, generatedText);
 
                 } else {
-                    // Se a API da função retornar um erro, ele pode estar em result.error
                     if(result.error) {
                         throw new Error(result.error);
                     }
@@ -927,7 +936,8 @@
 
             } catch (error) {
                 console.error("Erro ao chamar a função de diagnóstico:", error);
-                diagnosisResult.innerHTML = '<h3>Ocorreu um erro ao gerar o diagnóstico.</h3><p>Por favor, tente novamente mais tarde.</p>';
+                // Mostra o erro específico na UI
+                diagnosisResult.innerHTML = `<h3>Ocorreu um erro ao gerar o diagnóstico.</h3><p>Detalhe: ${error.message}</p><p>Por favor, verifique a configuração e tente novamente.</p>`;
                 diagnosisResult.style.display = 'block';
             } finally {
                 loader.style.display = 'none';
