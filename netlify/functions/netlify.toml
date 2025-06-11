@@ -1,0 +1,4 @@
+# Este ficheiro diz à Netlify onde encontrar as suas funções de servidor.
+# Ele deve ser colocado na pasta principal do seu projeto.
+[functions]
+  directory = "netlify/functions"
