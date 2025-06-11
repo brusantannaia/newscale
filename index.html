@@ -145,7 +145,7 @@
         }
     
         .logo img {
-            height: 140px; /* Logo aumentado em 40% */
+            height: 200px; /* Logo aumentado */
             width: auto;
         }
     
@@ -896,18 +896,12 @@
             diagnosisResult.style.display = 'none';
             generateBtn.disabled = true;
 
-            const prompt = `Você é um consultor especialista da Newscale. O usuário a seguir descreve o negócio dele. Analise a descrição, identifique a principal 'dor' ou desafio do negócio e, com base nos serviços da Newscale (Atendimento automático 24/7, Secretária virtual com agenda integrada, Mensagens inteligentes em massa, Renovação de pacotes com IA, Automação conectada ao CRM), sugira 1 ou 2 soluções específicas que trariam o maior impacto. Apresente o resultado em formato de um mini-diagnóstico, começando com '### Diagnóstico Preliminar Newscale' e usando uma linguagem clara e acessível para empreendedores, com negrito para destacar os pontos importantes usando asteriscos (**exemplo**). O negócio do usuário é: "${description}"`;
-
             try {
-                let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
-                const payload = { contents: chatHistory };
-                const apiKey = "AIzaSyBf6TPYw2ZSwcm4kPAMYaYpLkEE1ysBx4o"; 
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-                const response = await fetch(apiUrl, {
+                // Chama a nossa função segura em vez da API do Google diretamente
+                const response = await fetch('/.netlify/functions/generate-diagnosis', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
+                    body: JSON.stringify({ description: description })
                 });
 
                 if (!response.ok) {
@@ -924,12 +918,16 @@
                     typeWriter(diagnosisResult, generatedText);
 
                 } else {
+                    // Se a API da função retornar um erro, ele pode estar em result.error
+                    if(result.error) {
+                        throw new Error(result.error);
+                    }
                     throw new Error("Resposta da API inválida ou sem conteúdo.");
                 }
 
             } catch (error) {
-                console.error("Erro ao chamar a API do Gemini:", error);
-                diagnosisResult.innerHTML = '<h3>Ocorreu um erro ao gerar o diagnóstico.</h3><p>Por favor, tente novamente mais tarde. Nossa equipe já foi notificada.</p>';
+                console.error("Erro ao chamar a função de diagnóstico:", error);
+                diagnosisResult.innerHTML = '<h3>Ocorreu um erro ao gerar o diagnóstico.</h3><p>Por favor, tente novamente mais tarde.</p>';
                 diagnosisResult.style.display = 'block';
             } finally {
                 loader.style.display = 'none';
