@@ -7,15 +7,13 @@
     <title>Newscale | IA Descomplicada para Pequenas e Médias Empresas</title>
     <meta name="description" content="Automatize seu atendimento, organize sua rotina e aumente suas vendas com inteligência artificial. Diagnóstico gratuito para PMEs.">
 
-    <!-- Google Fonts: Poppins (Alternativa moderna para Metrish) -->
+    <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* ------------------- */
-        /* --- RESET & VARS --- */
-        /* ------------------- */
+        /* Estilos Globais */
         :root {
             --verde-escuro: #14373C;
             --verde-medio: #435D51;
@@ -23,29 +21,11 @@
             --marrom-areia: #B06E4A;
             --branco-fundo: #FBFBF9;
             --branco-puro: #FFFFFF;
-            
-            --cor-texto-principal: var(--verde-escuro);
-            --cor-texto-secundario: var(--verde-medio);
-            --cor-fundo: var(--branco-fundo);
-            --cor-fundo-secao-alternativa: var(--bege-claro);
-    
             --font-family: 'Poppins', sans-serif;
-            --font-light: 300;
-            --font-book: 400;
-            --font-medium: 500;
-            --font-bold: 600;
         }
     
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-    
-        html {
-            scroll-behavior: smooth;
-        }
-    
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: var(--font-family);
             background-color: var(--cor-fundo);
@@ -54,9 +34,6 @@
             line-height: 1.6;
         }
     
-        /* ------------------- */
-        /* --- LAYOUT GERAL --- */
-        /* ------------------- */
         .container {
             width: 90%;
             max-width: 1100px;
@@ -64,40 +41,13 @@
             padding: 80px 0;
         }
     
-        section {
-            overflow: hidden;
-        }
+        section { overflow: hidden; }
+        h1, h2, h3 { font-weight: 600; line-height: 1.2; color: var(--verde-escuro); }
+        h2 { font-size: clamp(2rem, 5vw, 2.8rem); text-align: center; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        h3 { font-size: 1.5rem; margin-bottom: 10px; }
+        p { font-weight: 300; font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
     
-        h1, h2, h3 {
-            font-weight: var(--font-bold);
-            line-height: 1.2;
-            color: var(--verde-escuro);
-        }
-    
-        h2 {
-            font-size: clamp(2rem, 5vw, 2.8rem);
-            text-align: center;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    
-        h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-    
-        p {
-            font-weight: var(--font-light);
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-    
-        /* ------------------- */
-        /* --- BOTÕES (CTA) --- */
-        /* ------------------- */
+        /* Botões */
         .cta-button {
             display: inline-block;
             background-color: var(--marrom-areia);
@@ -105,541 +55,138 @@
             padding: 15px 35px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: var(--font-medium);
+            font-weight: 500;
             font-size: 1.1rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             border: none;
             cursor: pointer;
         }
-    
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(176, 110, 74, 0.4);
-        }
-        
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(176, 110, 74, 0.4); }
         .cta-secondary {
             background-color: transparent;
             color: var(--marrom-areia);
             border: 2px solid var(--marrom-areia);
             padding: 13px 35px;
         }
+        .cta-secondary:hover { background-color: var(--marrom-areia); color: white; }
     
-        .cta-secondary:hover {
-                background-color: var(--marrom-areia);
-                color: white;
-        }
-    
-        /* ------------------- */
-        /* --- HEADER & LOGO --- */
-        /* ------------------- */
+        /* Header & Navegação */
         header {
             padding: 20px 0;
             width: 90%;
             max-width: 1100px;
             margin: 0 auto;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            background-color: transparent;
+        }
+        .logo img { height: 80px; width: auto; }
+        nav { display: flex; gap: 30px; }
+        nav a {
+            text-decoration: none;
+            color: var(--verde-medio);
+            font-weight: 500;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+            transition: color 0.3s, border-color 0.3s;
+        }
+        nav a:hover, nav a.active {
+            color: var(--marrom-areia);
+            border-bottom-color: var(--marrom-areia);
         }
     
-        .logo img {
-            height: 200px;
-            width: auto;
-        }
-    
-        /* ------------------- */
-        /* --- SEÇÃO: HERO --- */
-        /* ------------------- */
+        /* Seção Hero */
         #hero {
             text-align: center;
             background: linear-gradient(180deg, var(--branco-puro) 0%, var(--cor-fundo) 100%);
         }
-        
-        #hero .container {
-            padding-top: 40px;
-            padding-bottom: 100px;
-        }
+        #hero .container { padding-top: 40px; padding-bottom: 100px; }
+        #hero h1 { font-size: clamp(2.5rem, 7vw, 4rem); margin-bottom: 20px; }
+        #hero p { font-size: 1.25rem; font-weight: 300; color: var(--verde-medio); max-width: 650px; margin: 0 auto 40px auto; }
     
-        #hero h1 {
-            font-size: clamp(2.5rem, 7vw, 4rem);
-            margin-bottom: 20px;
-        }
+        /* Seção Identificação (Dor) */
+        #identificacao { background-color: var(--verde-escuro); color: var(--bege-claro); }
+        #identificacao h2 { color: var(--branco-puro); margin-bottom: 20px; font-size: clamp(1.8rem, 4.5vw, 2.5rem); line-height: 1.3; }
+        #identificacao h2 .highlight { color: var(--marrom-areia); }
+        #identificacao p { text-align: center; line-height: 1.5; margin-bottom: 30px; }
+        #identificacao .mini-lista { list-style: none; max-width: 600px; margin: 30px auto; }
+        #identificacao .mini-lista li { font-weight: 400; color: var(--bege-claro); padding: 6px 0 6px 35px; position: relative; }
+        #identificacao .mini-lista li::before { content: '✓'; color: var(--marrom-areia); position: absolute; left: 0; top: 6px; font-weight: 600; font-size: 1.2rem; }
+        .cta-container { text-align: center; margin-top: 40px; }
+        
+        /* Outras Seções (estilos mantidos) */
+        #solucoes { background-color: var(--cor-fundo); }
+        .solutions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 60px; }
+        .solution-card { background-color: var(--branco-puro); padding: 30px; border-radius: 8px; border: 1px solid #eee; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .solution-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.07); }
+        .solution-card .icon { color: var(--marrom-areia); margin-bottom: 20px; }
+        .solution-card .icon svg { width: 40px; height: 40px; }
+        .solution-card h3 { color: var(--verde-escuro); font-size: 1.3rem; }
+        .solution-card p { font-size: 1rem; font-weight: 300; color: var(--verde-medio); }
+        
+        #casos-praticos { background-color: var(--cor-fundo-secao-alternativa); }
+        .cases-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 60px; }
+        .case-card { background-color: var(--branco-puro); padding: 30px; border-radius: 8px; border-left: 4px solid var(--marrom-areia); }
+        .case-card h3 { font-size: 1.3rem; color: var(--verde-escuro); }
+        .case-card p { font-size: 1rem; font-weight: 300; }
+        
+        #processo { background-color: var(--cor-fundo); }
+        .process-timeline { position: relative; max-width: 800px; margin: 60px auto 0 auto; }
+        .process-step { padding: 10px 40px; position: relative; margin-bottom: 40px; }
+        .process-step h3 span { display: block; font-size: 1rem; font-weight: 600; color: var(--marrom-areia); margin-bottom: 5px; }
+        .process-step h3 { font-size: 1.5rem; }
+        .process-step p { font-size: 1rem; color: var(--verde-medio); }
     
-        #hero p {
-            font-size: 1.25rem;
-            font-weight: var(--font-light);
-            color: var(--verde-medio);
-            max-width: 650px;
-            margin: 0 auto 40px auto;
-        }
+        .cta-flutuante { position: fixed; bottom: 20px; right: 20px; background-color: var(--verde-medio); color: white; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: 500; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1000; transition: transform 0.3s ease; }
+        .cta-flutuante:hover { transform: scale(1.05); }
+        
+        #depoimentos { background-color: var(--branco-puro); }
+        .testimonials-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-top: 60px; }
+        .testimonial-card { background: var(--bege-claro); padding: 30px; border-radius: 8px; position: relative; }
+        .testimonial-card::before { content: '“'; position: absolute; top: 0px; left: 20px; font-size: 5rem; color: rgba(20, 55, 60, 0.1); font-weight: bold; line-height: 1; }
+        .testimonial-card blockquote { border: none; font-style: italic; font-size: 1.1rem; font-weight: 400; color: var(--verde-escuro); position: relative; z-index: 2; }
+        .testimonial-card footer { margin-top: 20px; font-weight: 500; color: var(--verde-medio); font-style: normal; }
+        
+        #quem-somos { background-color: var(--cor-fundo); }
+        #quem-somos .container { max-width: 900px; display: flex; align-items: center; gap: 50px; }
+        #quem-somos .author-photo { flex-shrink: 0; }
+        #quem-somos .author-photo img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 5px solid var(--branco-puro); box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        #quem-somos .author-text { flex-grow: 1; text-align: left; }
+        #quem-somos .author-text h2, #quem-somos .author-text p { text-align: left; }
+        .diferencial { background-color: rgba(208, 208, 202, 0.4); padding: 30px; border-radius: 8px; margin-top: 40px; border-left: 4px solid var(--verde-medio); }
+        .diferencial p { font-weight: 400; font-size: 1.1rem; text-align: left; }
+
+        #faq { background-color: var(--cor-fundo-secao-alternativa); }
+        .faq-accordion { max-width: 800px; margin: 60px auto 0 auto; }
+        .faq-item { border-bottom: 1px solid rgba(20, 55, 60, 0.1); background-color: var(--branco-puro); margin-bottom: 10px; border-radius: 8px; overflow: hidden; }
+        .faq-item summary { font-size: 1.2rem; font-weight: 500; padding: 20px; cursor: pointer; position: relative; list-style: none; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: '+'; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 1.5rem; font-weight: 300; color: var(--marrom-areia); transition: transform 0.2s ease; }
+        .faq-item[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+        .faq-item div { padding: 0 20px 20px 20px; font-weight: 300; color: var(--verde-medio); background-color: var(--branco-puro); }
     
-        /* --------------------------------- */
-        /* --- SEÇÃO 2: IDENTIFICAÇÃO (DOR) --- */
-        /* --------------------------------- */
-        #identificacao {
-            background-color: var(--verde-escuro);
-            color: var(--bege-claro);
-        }
+        #chamada-final { background-color: var(--verde-escuro); color: white; text-align: center; }
+        #chamada-final .container { padding: 100px 0; max-width: 800px; }
+        #chamada-final h2 { color: white; }
+        #chamada-final p { color: var(--bege-claro); margin-bottom: 30px; }
+        #business-description { width: 100%; height: 100px; border-radius: 8px; border: 2px solid var(--verde-medio); background-color: var(--branco-fundo); padding: 15px; font-family: var(--font-family); font-size: 1rem; color: var(--verde-escuro); margin-bottom: 20px; }
+        #business-description:focus { outline: none; border-color: var(--marrom-areia); }
+        #diagnosis-result { margin-top: 40px; padding: 30px; background-color: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid var(--verde-medio); text-align: left; color: var(--bege-claro); display: none; }
+        #diagnosis-result h3 { color: var(--branco-puro); margin-bottom: 15px; }
+        #diagnosis-result p { margin-bottom: 10px; line-height: 1.7; }
+        #diagnosis-result strong { color: var(--marrom-areia); }
+        .loader { width: 50px; height: 50px; border: 5px solid var(--verde-medio); border-bottom-color: var(--marrom-areia); border-radius: 50%; display: inline-block; box-sizing: border-box; animation: rotation 1s linear infinite; margin-top: 40px; display: none; }
+        @keyframes rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        footer { text-align: center; padding: 20px; font-size: 0.9rem; color: var(--verde-medio); background-color: var(--cor-fundo); }
 
-        #identificacao h2 {
-            color: var(--branco-puro);
-            margin-bottom: 20px;
-            font-size: clamp(1.8rem, 4.5vw, 2.5rem);
-            line-height: 1.3;
-        }
-
-        #identificacao h2 .highlight {
-            color: var(--marrom-areia);
-        }
-
-        #identificacao p {
-            text-align: center;
-            line-height: 1.5;
-            margin-bottom: 30px;
-        }
-
-        #identificacao .mini-lista {
-            list-style: none;
-            max-width: 600px;
-            margin: 30px auto;
-        }
-
-        #identificacao .mini-lista li {
-            font-weight: var(--font-book);
-            color: var(--bege-claro);
-            padding: 6px 0 6px 35px;
-            position: relative;
-        }
-
-        #identificacao .mini-lista li::before {
-            content: '✓';
-            color: var(--marrom-areia);
-            position: absolute;
-            left: 0;
-            top: 6px;
-            font-weight: 600;
-            font-size: 1.2rem;
-        }
-        
-        .cta-container {
-            text-align: center;
-            margin-top: 40px;
-        }
-        
-        /* ------------------- */
-        /* --- SEÇÃO: SOLUÇÕES --- */
-        /* ------------------- */
-        #solucoes {
-            background-color: var(--cor-fundo);
-        }
-    
-        .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-    
-        .solution-card {
-            background-color: var(--branco-puro);
-            padding: 30px;
-            border-radius: 8px;
-            border: 1px solid #eee;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .solution-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.07);
-        }
-    
-        .solution-card .icon {
-            color: var(--marrom-areia);
-            margin-bottom: 20px;
-        }
-        
-        .solution-card .icon svg {
-            width: 40px;
-            height: 40px;
-        }
-    
-        .solution-card h3 {
-            color: var(--verde-escuro);
-            font-size: 1.3rem;
-        }
-        
-        .solution-card p {
-            font-size: 1rem;
-            font-weight: var(--font-light);
-            color: var(--verde-medio);
-        }
-        
-        /* ------------------- */
-        /* --- SEÇÃO: CASOS PRÁTICOS --- */
-        /* ------------------- */
-        #casos-praticos {
-            background-color: var(--cor-fundo-secao-alternativa);
-        }
-        
-        .cases-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            margin-top: 60px;
-        }
-        
-        .case-card {
-            background-color: var(--branco-puro);
-            padding: 30px;
-            border-radius: 8px;
-            border-left: 4px solid var(--marrom-areia);
-        }
-        
-        .case-card h3 {
-            font-size: 1.3rem;
-            color: var(--verde-escuro);
-        }
-        
-        .case-card p {
-            font-size: 1rem;
-            font-weight: var(--font-light);
-        }
-        
-        @media (min-width: 768px) {
-            .cases-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        /* ------------------- */
-        /* --- SEÇÃO: PROCESSO --- */
-        /* ------------------- */
-        #processo {
-             background-color: var(--cor-fundo);
-        }
-    
-        .process-timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 60px auto 0 auto;
-        }
-    
-        .process-step {
-            padding: 10px 40px;
-            position: relative;
-            margin-bottom: 40px;
-        }
-        
-        .process-step h3 span {
-            display: block;
-            font-size: 1rem;
-            font-weight: var(--font-bold);
-            color: var(--marrom-areia);
-            margin-bottom: 5px;
-        }
-        
-        .process-step h3 {
-            font-size: 1.5rem;
-        }
-        
-        .process-step p {
-                font-size: 1rem;
-                color: var(--verde-medio);
-        }
-    
-        .cta-flutuante {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--verde-medio);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            z-index: 1000;
-            transition: transform 0.3s ease;
-        }
-        
-        .cta-flutuante:hover {
-            transform: scale(1.05);
-        }
-        
-        /* ------------------- */
-        /* --- SEÇÃO: DEPOIMENTOS --- */
-        /* ------------------- */
-        #depoimentos {
-            background-color: var(--branco-puro);
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            margin-top: 60px;
-        }
-        
-        .testimonial-card {
-            background: var(--bege-claro);
-            padding: 30px;
-            border-radius: 8px;
-            position: relative;
-        }
-        
-        .testimonial-card::before {
-            content: '“';
-            position: absolute;
-            top: 0px;
-            left: 20px;
-            font-size: 5rem;
-            color: rgba(20, 55, 60, 0.1);
-            font-weight: bold;
-            line-height: 1;
-        }
-    
-        .testimonial-card blockquote {
-            border: none;
-            font-style: italic;
-            font-size: 1.1rem;
-            font-weight: var(--font-book);
-            color: var(--verde-escuro);
-            position: relative;
-            z-index: 2;
-        }
-        
-        .testimonial-card footer {
-            margin-top: 20px;
-            font-weight: var(--font-medium);
-            color: var(--verde-medio);
-            font-style: normal;
-        }
-        
-        @media (min-width: 768px) {
-            .testimonials-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        /* ------------------- */
-        /* --- SEÇÃO: QUEM SOMOS --- */
-        /* ------------------- */
-        #quem-somos {
-             background-color: var(--cor-fundo);
-        }
-        
-        #quem-somos .container {
-            max-width: 900px;
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        #quem-somos .author-photo {
-            flex-shrink: 0;
-        }
-
-        #quem-somos .author-photo img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--branco-puro);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        #quem-somos .author-text {
-            flex-grow: 1;
-            text-align: left;
-        }
-
-        #quem-somos .author-text h2,
-        #quem-somos .author-text p {
-            text-align: left;
-        }
-        
-        .diferencial {
-            background-color: rgba(208, 208, 202, 0.4);
-            padding: 30px;
-            border-radius: 8px;
-            margin-top: 40px;
-            border-left: 4px solid var(--verde-medio);
-        }
-        
-        .diferencial p {
-            font-weight: var(--font-book);
-            font-size: 1.1rem;
-            text-align: left;
-        }
-
+        /* Responsividade */
         @media (max-width: 768px) {
-            #quem-somos .container {
-                flex-direction: column;
-                text-align: center;
-            }
-            #quem-somos .author-text h2,
-            #quem-somos .author-text p,
-            .diferencial p {
-                text-align: center;
-            }
-        }
-
-        
-        /* ------------------- */
-        /* --- SEÇÃO: FAQ --- */
-        /* ------------------- */
-        #faq {
-            background-color: var(--cor-fundo-secao-alternativa);
-        }
-        
-        .faq-accordion {
-            max-width: 800px;
-            margin: 60px auto 0 auto;
-        }
-    
-        .faq-item {
-            border-bottom: 1px solid rgba(20, 55, 60, 0.1);
-            background-color: var(--branco-puro);
-            margin-bottom: 10px;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-    
-        .faq-item summary {
-            font-size: 1.2rem;
-            font-weight: var(--font-medium);
-            padding: 20px;
-            cursor: pointer;
-            position: relative;
-            list-style: none;
-        }
-        
-        .faq-item summary::-webkit-details-marker {
-            display: none;
-        }
-    
-        .faq-item summary::after {
-            content: '+';
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: var(--marrom-areia);
-            transition: transform 0.2s ease;
-        }
-        
-        .faq-item[open] summary::after {
-            transform: translateY(-50%) rotate(45deg);
-        }
-        
-        .faq-item div {
-            padding: 0 20px 20px 20px;
-            font-weight: var(--font-light);
-            color: var(--verde-medio);
-            background-color: var(--branco-puro);
-        }
-    
-        /* --------------------------------- */
-        /* --- SEÇÃO: DIAGNÓSTICO COM IA --- */
-        /* --------------------------------- */
-        #chamada-final {
-            background-color: var(--verde-escuro);
-            color: white;
-            text-align: center;
-        }
-        
-        #chamada-final .container {
-            padding: 100px 0;
-            max-width: 800px;
-        }
-    
-        #chamada-final h2 {
-            color: white;
-        }
-        
-        #chamada-final p {
-            color: var(--bege-claro);
-            margin-bottom: 30px;
-        }
-
-        #business-description {
-            width: 100%;
-            height: 100px;
-            border-radius: 8px;
-            border: 2px solid var(--verde-medio);
-            background-color: var(--branco-fundo);
-            padding: 15px;
-            font-family: var(--font-family);
-            font-size: 1rem;
-            color: var(--verde-escuro);
-            margin-bottom: 20px;
-        }
-        
-        #business-description:focus {
-            outline: none;
-            border-color: var(--marrom-areia);
-        }
-        
-        #diagnosis-result {
-            margin-top: 40px;
-            padding: 30px;
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            border: 1px solid var(--verde-medio);
-            text-align: left;
-            color: var(--bege-claro);
-            display: none;
-        }
-        
-        #diagnosis-result h3 {
-            color: var(--branco-puro);
-            margin-bottom: 15px;
-        }
-
-        #diagnosis-result p {
-            margin-bottom: 10px;
-            line-height: 1.7;
-        }
-
-        #diagnosis-result strong {
-            color: var(--marrom-areia);
-        }
-
-        .loader {
-            width: 50px;
-            height: 50px;
-            border: 5px solid var(--verde-medio);
-            border-bottom-color: var(--marrom-areia);
-            border-radius: 50%;
-            display: inline-block;
-            box-sizing: border-box;
-            animation: rotation 1s linear infinite;
-            margin-top: 40px;
-            display: none;
-        }
-
-        @keyframes rotation {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-        
-        /* ------------------- */
-        /* --- FOOTER --- */
-        /* ------------------- */
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-            color: var(--verde-medio);
-            background-color: var(--cor-fundo);
+            header { flex-direction: column; gap: 20px; }
+            #quem-somos .container { flex-direction: column; text-align: center; }
+            #quem-somos .author-text h2, #quem-somos .author-text p, .diferencial p { text-align: center; }
+            .cases-grid, .testimonials-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -647,13 +194,16 @@
 
     <header>
         <div class="logo">
-            <img src="LOGO 05@3x.png" alt="Logo da Newscale Consulting">
+            <a href="index.html"><img src="LOGO 05@3x.png" alt="Logo da Newscale Consulting"></a>
         </div>
+        <nav>
+            <a href="index.html" class="active">Início</a>
+            <a href="quem-somos.html">Quem Somos</a>
+            <a href="#contato">Contato</a>
+        </nav>
     </header>
 
     <main>
-
-        <!-- 1. HERO (TOPO DA PÁGINA) -->
         <section id="hero">
             <div class="container">
                 <h1>IA descomplicada para pequenas e médias empresas</h1>
@@ -662,70 +212,53 @@
             </div>
         </section>
 
-        <!-- 2. IDENTIFICAÇÃO (BLOCO DOR REAL) -->
         <section id="identificacao">
             <div class="container">
                 <h2>Você já ouviu que “IA é o futuro”...<br>mas ninguém te explicou como isso se aplica ao <span class="highlight">seu negócio</span>?</h2>
-                
                 <p>Se você ainda não usa a IA como poderia - ou nem sabe por onde começar - a gente entende.<br>A Newscale nasceu pra ajudar quem quer <strong>mais tempo, mais vendas e menos complicação.</strong></p>
-                
                 <ul class="mini-lista">
                     <li>Sente que perde vendas por não conseguir responder rápido.</li>
                     <li>Tem dificuldade para lembrar de enviar mensagens aos clientes.</li>
                     <li>Vive apagando incêndios e não tem tempo para o estratégico.</li>
                     <li>Já tentou ferramentas, mas se sentiu mais confuso do que antes.</li>
                 </ul>
-
                 <div class="cta-container">
                      <a href="#solucoes" class="cta-button cta-secondary">👉 Quero entender como a IA pode me ajudar</a>
                 </div>
             </div>
         </section>
 
-        <!-- 3. COMO PODEMOS TE AJUDAR (SOLUÇÕES CLARAS) -->
         <section id="solucoes">
             <div class="container">
                 <h2>Comece com o essencial. E evolua com automações que escalam com você.</h2>
                 <div class="solutions-grid">
                     <div class="solution-card">
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                        </div>
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
                         <h3>Atendimento automático 24/7</h3>
                         <p>Vendedores Digitais que respondem seus clientes no WhatsApp, tiram dúvidas e vendem enquanto você dorme.</p>
                     </div>
                      <div class="solution-card">
-                        <div class="icon">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                        </div>
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
                         <h3>Secretária virtual com agenda integrada</h3>
                         <p>A sua nova secretária digital agenda, confirma, envia lembretes e e-mails, tudo via WhatsApp e Google Calendar.</p>
                     </div>
                      <div class="solution-card">
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        </div>
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
                         <h3>Mensagens inteligentes em massa</h3>
                         <p>Envie campanhas e lembretes automatizados. Ex: “Seu plano vence amanhã”, “Aproveite a oferta da semana”.</p>
                     </div>
                      <div class="solution-card">
-                        <div class="icon">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>
-                        </div>
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg></div>
                         <h3>Renovação de pacotes com IA</h3>
                         <p>Ex: “Seu plano de academia está acabando. Deseja renovar?” — e a IA já encaminha o link de pagamento.</p>
                     </div>
                      <div class="solution-card">
-                        <div class="icon">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-                        </div>
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg></div>
                         <h3>Automação conectada ao seu CRM</h3>
                         <p>Leads, follow-ups, histórico e atendimento — tudo automatizado com as ferramentas que você já usa.</p>
                     </div>
                      <div class="solution-card">
-                        <div class="icon">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-                        </div>
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
                         <h3>Organização + Vendas = Liberdade</h3>
                         <p>Com a operação fluindo sozinha, sobra tempo pra você cuidar daquilo que importa: crescer, descansar ou inovar.</p>
                     </div>
@@ -736,7 +269,6 @@
             </div>
         </section>
         
-        <!-- 4. CASOS PRÁTICOS (TANGIBILIZAÇÃO) -->
         <section id="casos-praticos">
             <div class="container">
                 <h2>Exemplos reais que mostram o poder da IA</h2>
@@ -760,7 +292,6 @@
             </div>
         </section>
 
-        <!-- 5. PROCESSO SIMPLES (COMO FUNCIONA) -->
         <section id="processo">
             <div class="container">
                 <h2>Comece com leveza. A gente te guia.</h2>
@@ -782,7 +313,6 @@
             <a href="https://wa.me/5511999999999" target="_blank" class="cta-flutuante">💬 Vamos conversar sobre o seu caso</a>
         </section>
         
-        <!-- 6. DEPOIMENTO SOCIAL (VALIDAÇÃO) -->
         <section id="depoimentos">
             <div class="container">
                 <div class="testimonials-grid">
@@ -798,7 +328,6 @@
             </div>
         </section>
 
-        <!-- 7. QUEM SOMOS (CONEXÃO + AUTORIDADE HUMANA) -->
         <section id="quem-somos">
             <div class="container">
                 <div class="author-photo">
@@ -807,14 +336,13 @@
                 <div class="author-text">
                     <h2>Criamos a Newscale porque vivemos essa dor.</h2>
                     <p><strong>Sou a Bruna, empreendedora há 10 anos.</strong> Já estive no caos de responder clientes na unha, esquecer agendamentos e perder vendas por falta de tempo. Hoje, usamos nossa experiência pra levar automações acessíveis, humanizadas e reais pra quem mais precisa: você, empreendedor de verdade.</p>
-                    <div class="diferencial">
-                        <p><strong>A Newscale não entrega um robô e te deixa sozinho.</strong> Fazemos juntos, treinamos sua equipe, ajustamos o que for necessário e acompanhamos — até tudo funcionar do jeito certo para você. A IA fala no seu tom, entende seus processos e age como um membro real do seu time.</p>
+                    <div class="cta-container" style="text-align: left; margin-top: 20px;">
+                        <a href="quem-somos.html" class="cta-button">Conheça nossa história</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 8. FAQ – TIRA-DÚVIDAS -->
         <section id="faq">
             <div class="container">
                 <h2>Dúvidas comuns (e muito legítimas)</h2>
@@ -843,22 +371,16 @@
             </div>
         </section>
         
-        <!-- 9. CHAMADA FINAL + DIAGNÓSTICO IA -->
         <section id="chamada-final">
             <div class="container" id="contato">
                  <h2>Receba um diagnóstico gratuito com IA</h2>
                  <p>Descreva seu negócio, seus principais desafios ou tarefas repetitivas. Nossa IA analisará suas informações e sugerirá as melhores soluções para você, sem compromisso.</p>
-                 
                  <textarea id="business-description" placeholder="Ex: Tenho uma clínica estética e perco muito tempo agendando e confirmando consultas pelo WhatsApp..."></textarea>
-                 
                  <button id="generate-diagnosis-btn" class="cta-button">✨ Gerar Diagnóstico com IA</button>
-
                  <div class="loader" id="loader"></div>
-                 
                  <div id="diagnosis-result"></div>
             </div>
         </section>
-
     </main>
 
     <footer>
@@ -866,24 +388,17 @@
     </footer>
 
     <script>
-        // Função para simular a digitação e renderizar Markdown simplificado
         function typeWriter(element, text) {
-            let htmlText = text
-                .replace(/### (.*?)\n/g, '<h3>$1</h3>')
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                .replace(/\n/g, '<br>');
-
+            let htmlText = text.replace(/### (.*?)\n/g, '<h3>$1</h3>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
             element.innerHTML = htmlText;
             element.style.display = 'block';
         }
 
-        // Elementos do DOM
         const generateBtn = document.getElementById('generate-diagnosis-btn');
         const businessDescription = document.getElementById('business-description');
         const diagnosisResult = document.getElementById('diagnosis-result');
         const loader = document.getElementById('loader');
 
-        // Adiciona o listener de evento ao botão
         generateBtn.addEventListener('click', async () => {
             const description = businessDescription.value;
             if (!description.trim()) {
@@ -897,46 +412,33 @@
             generateBtn.disabled = true;
 
             try {
-                // Chama a nossa função segura em vez da API do Google diretamente
                 const response = await fetch('/.netlify/functions/generate-diagnosis', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ description: description })
                 });
 
-                // Lógica de erro melhorada para mostrar detalhes
                 if (!response.ok) {
                     let errorMessage = `Erro no servidor (código: ${response.status}).`;
                     try {
                         const errorData = await response.json();
-                        if (errorData.error) {
-                            errorMessage = errorData.error;
-                        }
-                    } catch (e) {
-                        errorMessage = response.statusText;
-                    }
+                        if (errorData.error) { errorMessage = errorData.error; }
+                    } catch (e) { errorMessage = response.statusText; }
                     throw new Error(errorMessage);
                 }
                 
                 const result = await response.json();
                 
-                if (result.candidates && result.candidates.length > 0 &&
-                    result.candidates[0].content && result.candidates[0].content.parts &&
-                    result.candidates[0].content.parts.length > 0) {
-                    
+                if (result.candidates && result.candidates[0]?.content?.parts[0]) {
                     const generatedText = result.candidates[0].content.parts[0].text;
                     typeWriter(diagnosisResult, generatedText);
-
                 } else {
-                    if(result.error) {
-                        throw new Error(result.error);
-                    }
+                    if(result.error) { throw new Error(result.error); }
                     throw new Error("Resposta da API inválida ou sem conteúdo.");
                 }
 
             } catch (error) {
                 console.error("Erro ao chamar a função de diagnóstico:", error);
-                // Mostra o erro específico na UI
                 diagnosisResult.innerHTML = `<h3>Ocorreu um erro ao gerar o diagnóstico.</h3><p>Detalhe: ${error.message}</p><p>Por favor, verifique a configuração e tente novamente.</p>`;
                 diagnosisResult.style.display = 'block';
             } finally {
