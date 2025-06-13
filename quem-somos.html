@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Quem Somos | Newscale Consulting</title>
+    <meta name="description" content="Conheça a história e a missão da Newscale: levar automações acessíveis e humanizadas para pequenas e médias empresas.">
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos Globais */
+        :root {
+            --verde-escuro: #14373C;
+            --verde-medio: #435D51;
+            --bege-claro: #D0D0CA;
+            --marrom-areia: #B06E4A;
+            --branco-fundo: #FBFBF9;
+            --branco-puro: #FFFFFF;
+            --font-family: 'Poppins', sans-serif;
+        }
+    
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-family);
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto-principal);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 100px 0;
+        }
+        h1, h2, h3 { font-weight: 600; line-height: 1.2; color: var(--verde-escuro); }
+        h2 { font-size: clamp(2.2rem, 5vw, 3rem); text-align: center; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto;}
+        p { font-weight: 300; font-size: 1.1rem; max-width: 750px; margin: 0 auto; }
+        strong { font-weight: 600; }
+    
+        /* Header & Navegação */
+        header {
+            padding: 20px 0;
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img { height: 80px; width: auto; }
+        nav { display: flex; gap: 30px; }
+        nav a {
+            text-decoration: none;
+            color: var(--verde-medio);
+            font-weight: 500;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+            transition: color 0.3s, border-color 0.3s;
+        }
+        nav a:hover, nav a.active {
+            color: var(--marrom-areia);
+            border-bottom-color: var(--marrom-areia);
+        }
+
+        /* Botão CTA */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--marrom-areia);
+            color: white !important;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: none;
+            cursor: pointer;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(176, 110, 74, 0.4);
+            border-bottom: none;
+        }
+        .cta-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* Hero da Página "Quem Somos" */
+        .about-hero {
+            background-color: var(--verde-escuro);
+            text-align: center;
+            padding: 120px 0;
+            color: var(--branco-puro);
+        }
+        .about-hero h1 {
+            color: var(--branco-puro);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 20px;
+        }
+        .about-hero p {
+            color: var(--bege-claro);
+            font-size: 1.25rem;
+            max-width: 700px;
+        }
+
+        /* Seção "Intro" */
+        #intro {
+            text-align: center;
+        }
+        #intro p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        /* Seção "Quem Sou Eu" */
+        #quem-sou-eu { background-color: var(--branco-puro); }
+        #quem-sou-eu .container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        #quem-sou-eu .author-photo img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--branco-fundo);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        #quem-sou-eu .author-text h2 { text-align: left; margin-bottom: 20px;}
+        #quem-sou-eu .author-text p { max-width: none; margin-bottom: 15px; font-size: 1.05rem }
+
+        /* Seção "Meu Propósito" */
+        #proposito { background-color: var(--cor-fundo-secao-alternativa); }
+        .purpose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        .purpose-card { 
+            padding: 40px 30px;
+            background-color: var(--branco-puro);
+            border-radius: 8px;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .purpose-card:hover {
+             transform: translateY(-10px);
+             box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        .purpose-card .icon { color: var(--marrom-areia); margin-bottom: 20px; }
+        .purpose-card .icon svg { width: 45px; height: 45px; }
+        .purpose-card h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--verde-escuro); }
+        .purpose-card p { font-size: 1rem; color: var(--verde-medio); }
+        
+        /* Seção "O que entregamos" */
+        .delivery-list {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .delivery-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            font-size: 1.15rem;
+            color: var(--verde-medio);
+            padding: 20px;
+            border-bottom: 1px solid var(--bege-claro);
+        }
+        .delivery-list li:last-child {
+            border-bottom: none;
+        }
+        .delivery-list .icon {
+            flex-shrink: 0;
+            margin-top: 4px;
+            color: var(--marrom-areia);
+        }
+        
+        /* Seção CTA Final */
+        #cta-final {
+            background-color: var(--verde-escuro);
+            text-align: center;
+            padding: 80px 0;
+        }
+        #cta-final p {
+            color: var(--branco-puro);
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 1.5;
+            max-width: 750px;
+        }
+
+        /* NOVO: CTA Flutuante */
+        .cta-flutuante {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--verde-medio);
+            color: white !important;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        .cta-flutuante:hover {
+            transform: scale(1.05);
+            border-bottom: none;
+        }
+        
+        /* Footer */
+        footer { text-align: center; padding: 40px 20px; font-size: 0.9rem; color: var(--verde-medio); }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 20px; }
+            #quem-sou-eu .container { flex-direction: column; }
+            #quem-sou-eu .author-text h2 { text-align: center; margin-top: 20px; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="LOGO 05@3x.png" alt="Logo da Newscale Consulting"></a>
+        </div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="quem-somos.html" class="active">Quem Somos</a>
+            <a href="index.html#contato">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <div class="container">
+                <h1>Humanizando a tecnologia para o seu negócio</h1>
+                <p>Acreditamos que a inovação só faz sentido quando serve para libertar o potencial humano. A nossa missão é dar aos empreendedores a liberdade para focarem no que realmente importa.</p>
+            </div>
+        </section>
+
+        <section id="intro">
+            <div class="container">
+                <h2>Criamos a Newscale porque vivemos essa dor.</h2>
+                <p>A inteligência artificial não é o futuro. Ela é o agora. E mais do que isso: é uma ferramenta acessível, poderosa e transformadora para empreendedores reais, que estão na linha de frente de seus negócios todos os dias.</p>
+                <p>Somos uma consultoria especializada em automação de processos com IA para pequenas e médias empresas, criada para um novo tempo: mais produtividade, mais vendas, mais estratégia. Automatizamos atendimentos, otimizamos processos internos, aumentamos a conversão em vendas e liberamos o tempo de quem precisa pensar estratégico.</p>
+            </div>
+        </section>
+
+        <section id="quem-sou-eu">
+            <div class="container">
+                <div class="author-photo">
+                    <img src="Bruna.JPG" alt="Foto da Bruna, fundadora da Newscale">
+                </div>
+                <div class="author-text">
+                    <h2>Quem sou eu</h2>
+                    <p>Eu sou <strong>Bruna Santanna</strong>, empresária com quase 10 anos de experiência no comando de uma marca premium de joias personalizadas, onde vivi os desafios de empreender, escalar e atender com qualidade sem ter uma equipe enorme por trás.</p>
+                    <p>Já passei por fases em que fazia absolutamente tudo sozinha — atendimento, vendas, criação, entrega — e por isso sei o quanto a automação pode transformar a vida de quem empreende. Foi essa dor que me trouxe até aqui.</p>
+                    <p>Sou formada em Comunicação e Marketing pela ESPM e atualmente curso MBA em Gestão de Negócios e Inteligência Artificial pela USP. Estudo e aplico ferramentas como N8N, CRMs, IA generativa (como ChatGPT e Gemini), automações com planilhas, formulários, ERPs e mais.</p>
+                    <p>Hoje, meu foco é criar agentes vendedores inteligentes e fluxos personalizados que vendem, atendem e organizam processos 24/7 por você, enquanto você foca no estratégico.</p>
+                    <!-- CTA 1 Centralizado -->
+                    <div class="cta-container" style="text-align: center; margin-top: 30px;">
+                        <a href="https://wa.me/5511999999999" target="_blank" class="cta-button">Vamos conversar sobre o seu negócio?</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proposito">
+            <div class="container">
+                <h2>Meu Propósito com a Newscale</h2>
+                <div class="purpose-grid">
+                    <div class="purpose-card">
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"></path><path d="M8 11.91l2.55 2.55L16 9"></path></svg></div>
+                        <h3>Empoderar PMEs</h3>
+                        <p>Com tecnologia simples, poderosa e que funciona na prática.</p>
+                    </div>
+                    <div class="purpose-card">
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg></div>
+                        <h3>Desmistificar a IA</h3>
+                        <p>Levar automação para quem nunca imaginou — ou nem sabe por onde começar.</p>
+                    </div>
+                    <div class="purpose-card">
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-4.44a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.38M18 19v-5l-4-4 4-4 4 4-4 4v5"></path></svg></div>
+                        <h3>Libertar o seu Tempo</h3>
+                        <p>Devolver horas preciosas para quem carrega um negócio inteiro nas costas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="entregamos">
+             <div class="container">
+                <h2>O que entregamos</h2>
+                <ul class="delivery-list">
+                    <li>
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg></div>
+                        <span><strong>Diagnóstico gratuito</strong> sobre gargalos de tempo e vendas.</span>
+                    </li>
+                     <li>
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
+                        <span><strong>Automação de atendimento</strong> via WhatsApp, Instagram e site.</span>
+                    </li>
+                    <li>
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></div>
+                        <span><strong>Fluxos de vendas</strong>, agendamento, cobranças e suporte.</span>
+                    </li>
+                     <li>
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10H8"></path><path d="M12 20l4-4"></path><path d="M12 20l-4-4"></path><path d="M4 12v-2a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v2"></path></svg></div>
+                        <span><strong>Integrações</strong> com planilhas, formulários, ERPs, CRMs e IA.</span>
+                    </li>
+                     <li>
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 10.5c.6.6.6 1.5 0 2.1l-4.5 4.5c-.6.6-1.5.6-2.1 0l-1.5-1.5c-.6-.6-.6-1.5 0-2.1l4.5-4.5c.6-.6 1.5-.6 2.1 0l1.5 1.5z"></path><path d="M12 5.2c.6.6.6 1.5 0 2.1L7.5 11.8c-.6.6-1.5.6-2.1 0L4 10.3c-.6-.6-.6-1.5 0-2.1L8.5 3.7c.6-.6 1.5-.6 2.1 0L12 5.2z"></path></svg></div>
+                        <span>Criação de um <strong>agente vendedor extremamente personalizado</strong>.</span>
+                    </li>
+                </ul>
+                <div class="cta-container">
+                    <a href="https://wa.me/5511999999999" target="_blank" class="cta-button">Quero um diagnóstico gratuito</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="cta-final">
+             <div class="container">
+                 <p>Se você está cansada de perder tempo com tarefas repetitivas e sente que seu negócio poderia crescer se tivesse uma estrutura mais leve e eficiente, a <strong>NEWscale</strong> foi criada para você.</p>
+                 <div class="cta-container" style="margin-top: 20px;">
+                    <a href="https://wa.me/5511999999999" target="_blank" class="cta-button">Fale com uma especialista agora</a>
+                 </div>
+            </div>
+        </section>
+
+        <!-- NOVO: CTA Flutuante adicionado -->
+        <a href="https://wa.me/5511999999999" target="_blank" class="cta-flutuante">💬 Vamos conversar sobre o seu caso</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Newscale. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
