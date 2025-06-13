@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Contato | Newscale Consulting</title>
+    <meta name="description" content="Fale com a Newscale. Envie a sua mensagem ou entre em contacto diretamente pelo WhatsApp.">
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos Globais */
+        :root {
+            --verde-escuro: #14373C;
+            --verde-medio: #435D51;
+            --bege-claro: #D0D0CA;
+            --marrom-areia: #B06E4A;
+            --branco-fundo: #FBFBF9;
+            --branco-puro: #FFFFFF;
+            --font-family: 'Poppins', sans-serif;
+        }
+    
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-family);
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto-principal);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 100px 0;
+        }
+        h1, h2, h3 { font-weight: 600; line-height: 1.2; color: var(--verde-escuro); }
+        h2 { font-size: clamp(2.2rem, 5vw, 3rem); text-align: center; margin-bottom: 20px; }
+        p { font-weight: 300; font-size: 1.1rem; max-width: 750px; margin: 0 auto; line-height: 1.7;}
+        strong { font-weight: 600; }
+    
+        /* Header & Navegação */
+        header {
+            padding: 20px 0;
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img { height: 80px; width: auto; }
+        nav { display: flex; gap: 30px; }
+        nav a {
+            text-decoration: none;
+            color: var(--verde-medio);
+            font-weight: 500;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+            transition: color 0.3s, border-color 0.3s;
+        }
+        nav a:hover, nav a.active {
+            color: var(--marrom-areia);
+            border-bottom-color: var(--marrom-areia);
+        }
+
+        /* Botão CTA */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--marrom-areia);
+            color: white !important;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: none;
+            cursor: pointer;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(176, 110, 74, 0.4);
+        }
+        
+        /* Layout da Página de Contato */
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: flex-start;
+            margin-top: 60px;
+        }
+        .contact-info, .contact-form {
+            background-color: var(--branco-puro);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+        .contact-info h3 {
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .info-item .icon { color: var(--marrom-areia); }
+        .info-item a {
+            text-decoration: none;
+            color: var(--verde-medio);
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+        .info-item a:hover { color: var(--marrom-areia); }
+
+        /* Formulário */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--verde-medio);
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid var(--bege-claro);
+            font-family: var(--font-family);
+            font-size: 1rem;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--marrom-areia);
+        }
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer { text-align: center; padding: 40px 20px; font-size: 0.9rem; color: var(--verde-medio); }
+        
+        /* Responsividade */
+        @media (max-width: 800px) {
+            .contact-layout { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 20px; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="LOGO 05@3x.png" alt="Logo da Newscale Consulting"></a>
+        </div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="quem-somos.html">Quem Somos</a>
+            <a href="contato.html" class="active">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- TEXTO ATUALIZADO AQUI -->
+            <h2 style="text-transform: uppercase;">Fale com a <span style="color: var(--marrom-areia);">NEW</span>scale</h2>
+            <div style="text-align: center;">
+                <p>Você não precisa mais fazer tudo sozinha.<br>Se está perdendo tempo com tarefas repetitivas, deixando vendas na mesa ou sentindo que seu negócio poderia escalar com mais leveza — vamos conversar.</p>
+                <p style="margin-top: 20px; font-size: 1.15rem; color: var(--verde-medio);"><strong>💬 Podemos automatizar seus atendimentos, organizar seus processos e colocar um agente vendedor 24/7 trabalhando por você.</strong></p>
+                <p style="margin-top: 20px;">Preencha o formulário abaixo ou fale com a gente direto no WhatsApp. A primeira conversa é gratuita e sem compromisso. Vamos analisar juntos os gargalos do seu negócio e te mostrar como a IA pode trabalhar a seu favor.</p>
+            </div>
+            <!-- FIM DO TEXTO ATUALIZADO -->
+
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <h3>Canais Diretos</h3>
+                    <div class="info-item">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                        <a href="https://wa.me/5511999999999" target="_blank">WhatsApp</a>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                        <a href="mailto:contato@newscale.tech" target="_blank">contato@newscale.tech</a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <!-- O formulário funcionará automaticamente na Netlify -->
+                    <form name="contato" method="POST" data-netlify="true">
+                        <input type="hidden" name="form-name" value="contato" />
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Newscale. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
