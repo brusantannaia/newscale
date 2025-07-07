@@ -166,6 +166,43 @@
         .faq-item[open] summary::after { transform: translateY(-50%) rotate(45deg); }
         .faq-item div { padding: 0 20px 20px 20px; font-weight: 300; color: var(--verde-medio); background-color: var(--branco-puro); }
     
+        /* NOVA SEÇÃO: Newsletter */
+        #newsletter {
+            background-color: var(--bege-claro);
+        }
+        #newsletter .container {
+            text-align: center;
+            max-width: 700px;
+        }
+        #newsletter h2 {
+            color: var(--verde-escuro);
+        }
+        #newsletter p {
+            color: var(--verde-medio);
+            margin-bottom: 30px;
+        }
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .newsletter-form input[type="email"] {
+            flex-grow: 1;
+            padding: 15px;
+            border: 1px solid var(--verde-medio);
+            border-radius: 50px;
+            font-size: 1rem;
+        }
+        .newsletter-form input[type="email"]:focus {
+            outline: none;
+            border-color: var(--marrom-areia);
+        }
+        .newsletter-form button {
+            padding: 15px 30px;
+            white-space: nowrap;
+        }
+
         #chamada-final { background-color: var(--verde-escuro); color: white; text-align: center; }
         #chamada-final .container { padding: 100px 0; max-width: 800px; }
         #chamada-final h2 { color: white; }
@@ -187,6 +224,7 @@
             #quem-somos .container { flex-direction: column; text-align: center; }
             #quem-somos .author-text h2, #quem-somos .author-text p, .diferencial p { text-align: center; }
             .cases-grid, .testimonials-grid { grid-template-columns: 1fr; }
+            .newsletter-form { flex-direction: column; }
         }
     </style>
 </head>
@@ -208,7 +246,7 @@
             <div class="container">
                 <h1>IA descomplicada para pequenas e médias empresas</h1>
                 <p>Automatize seu atendimento, organize sua rotina e aumente suas vendas com inteligência, mesmo que você ainda não saiba por onde começar.</p>
-                <a href="https://wa.me/5511999999999" target="_blank" class="cta-button">👉 Solicitar diagnóstico gratuito</a>
+                <a href="https://wa.me/5511963232908?text=Quero%20automatizar%20meu%20atendimento%20e%20vendas%20com%20IA.%20Como%20funciona%20o%20diagn%C3%B3stico%20gratuito%3F" target="_blank" class="cta-button">👉 Solicitar diagnóstico gratuito</a>
             </div>
         </section>
 
@@ -310,7 +348,7 @@
                     </div>
                 </div>
             </div>
-            <a href="https://wa.me/5511999999999" target="_blank" class="cta-flutuante">💬 Vamos conversar sobre o seu caso</a>
+            <a href="https://wa.me/5511963232908?text=Quero%20automatizar%20meu%20atendimento%20e%20vendas%20com%20IA.%20Como%20funciona%20o%20diagn%C3%B3stico%20gratuito%3F" target="_blank" class="cta-flutuante">💬 Vamos conversar sobre o seu caso</a>
         </section>
         
         <section id="depoimentos">
@@ -371,6 +409,19 @@
             </div>
         </section>
         
+        <!-- NOVA SEÇÃO: Newsletter -->
+        <section id="newsletter">
+            <div class="container">
+                <h2>Newsletter sobre IA para Negócios</h2>
+                <p>Receba dicas práticas, novidades sobre ferramentas e insights para aplicar inteligência artificial no seu negócio, sem complicação.</p>
+                <form name="newsletter" method="POST" data-netlify="true" action="/obrigado.html" class="newsletter-form">
+                    <input type="hidden" name="form-name" value="newsletter" />
+                    <input type="email" name="email" placeholder="Seu melhor e-mail" required>
+                    <button type="submit" class="cta-button">Inscrever-se</button>
+                </form>
+            </div>
+        </section>
+
         <section id="chamada-final">
             <div class="container" id="contato">
                  <h2>Receba um diagnóstico gratuito com IA</h2>
