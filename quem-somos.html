@@ -187,6 +187,43 @@
             color: var(--marrom-areia);
         }
         
+        /* Seção Newsletter */
+        #newsletter {
+            background-color: var(--bege-claro);
+        }
+        #newsletter .container {
+            text-align: center;
+            max-width: 700px;
+        }
+        #newsletter h2 {
+            color: var(--verde-escuro);
+        }
+        #newsletter p {
+            color: var(--verde-medio);
+            margin-bottom: 30px;
+        }
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .newsletter-form input[type="email"] {
+            flex-grow: 1;
+            padding: 15px;
+            border: 1px solid var(--verde-medio);
+            border-radius: 50px;
+            font-size: 1rem;
+        }
+        .newsletter-form input[type="email"]:focus {
+            outline: none;
+            border-color: var(--marrom-areia);
+        }
+        .newsletter-form button {
+            padding: 15px 30px;
+            white-space: nowrap;
+        }
+
         /* Seção CTA Final */
         #cta-final {
             background-color: var(--verde-escuro);
@@ -201,7 +238,7 @@
             max-width: 750px;
         }
 
-        /* NOVO: CTA Flutuante */
+        /* CTA Flutuante */
         .cta-flutuante {
             position: fixed;
             bottom: 20px;
@@ -229,6 +266,7 @@
             header { flex-direction: column; gap: 20px; }
             #quem-sou-eu .container { flex-direction: column; }
             #quem-sou-eu .author-text h2 { text-align: center; margin-top: 20px; }
+            .newsletter-form { flex-direction: column; }
         }
 
     </style>
@@ -242,7 +280,7 @@
         <nav>
             <a href="index.html">Início</a>
             <a href="quem-somos.html" class="active">Quem Somos</a>
-            <a href="index.html#contato">Contato</a>
+            <a href="contato.html">Contato</a>
         </nav>
     </header>
 
@@ -273,9 +311,8 @@
                     <p>Já passei por fases em que fazia absolutamente tudo sozinha — atendimento, vendas, criação, entrega — e por isso sei o quanto a automação pode transformar a vida de quem empreende. Foi essa dor que me trouxe até aqui.</p>
                     <p>Sou formada em Comunicação e Marketing pela ESPM e atualmente curso MBA em Gestão de Negócios e Inteligência Artificial pela USP. Estudo e aplico ferramentas como N8N, CRMs, IA generativa (como ChatGPT e Gemini), automações com planilhas, formulários, ERPs e mais.</p>
                     <p>Hoje, meu foco é criar agentes vendedores inteligentes e fluxos personalizados que vendem, atendem e organizam processos 24/7 por você, enquanto você foca no estratégico.</p>
-                    <!-- CTA 1 Centralizado -->
                     <div class="cta-container" style="text-align: center; margin-top: 30px;">
-                        <a href="https://wa.me/5511999999999" target="_blank" class="cta-button">Vamos conversar sobre o seu negócio?</a>
+                        <a href="https://wa.me/5511963232908?text=Quero%20automatizar%20meu%20atendimento%20e%20vendas%20com%20IA.%20Como%20funciona%20o%20diagn%C3%B3stico%20gratuito%3F" target="_blank" class="cta-button">Vamos conversar sobre o seu negócio?</a>
                     </div>
                 </div>
             </div>
@@ -330,22 +367,33 @@
                     </li>
                 </ul>
                 <div class="cta-container">
-                    <a href="https://wa.me/5511999999999" target="_blank" class="cta-button">Quero um diagnóstico gratuito</a>
+                    <a href="https://wa.me/5511963232908?text=Quero%20automatizar%20meu%20atendimento%20e%20vendas%20com%20IA.%20Como%20funciona%20o%20diagn%C3%B3stico%20gratuito%3F" target="_blank" class="cta-button">Quero um diagnóstico gratuito</a>
                 </div>
             </div>
         </section>
         
+        <section id="newsletter">
+            <div class="container">
+                <h2>Newsletter sobre IA para Negócios</h2>
+                <p>Receba dicas práticas, novidades sobre ferramentas e insights para aplicar inteligência artificial no seu negócio, sem complicação.</p>
+                <form name="newsletter" method="POST" data-netlify="true" action="/obrigado.html" class="newsletter-form">
+                    <input type="hidden" name="form-name" value="newsletter" />
+                    <input type="email" name="email" placeholder="Seu melhor e-mail" required>
+                    <button type="submit" class="cta-button">Inscrever-se</button>
+                </form>
+            </div>
+        </section>
+
         <section id="cta-final">
              <div class="container">
                  <p>Se você está cansada de perder tempo com tarefas repetitivas e sente que seu negócio poderia crescer se tivesse uma estrutura mais leve e eficiente, a <strong>NEWscale</strong> foi criada para você.</p>
                  <div class="cta-container" style="margin-top: 20px;">
-                    <a href="https://wa.me/5511999999999" target="_blank" class="cta-button">Fale com uma especialista agora</a>
+                    <a href="https://wa.me/5511963232908?text=Quero%20automatizar%20meu%20atendimento%20e%20vendas%20com%20IA.%20Como%20funciona%20o%20diagn%C3%B3stico%20gratuito%3F" target="_blank" class="cta-button">Fale com uma especialista agora</a>
                  </div>
             </div>
         </section>
 
-        <!-- NOVO: CTA Flutuante adicionado -->
-        <a href="https://wa.me/5511999999999" target="_blank" class="cta-flutuante">💬 Vamos conversar sobre o seu caso</a>
+        <a href="https://wa.me/5511963232908?text=Quero%20automatizar%20meu%20atendimento%20e%20vendas%20com%20IA.%20Como%20funciona%20o%20diagn%C3%B3stico%20gratuito%3F" target="_blank" class="cta-flutuante">💬 Vamos conversar sobre o seu caso</a>
     </main>
 
     <footer>
