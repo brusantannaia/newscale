@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título e Descrição Otimizados para SEO -->
+    <title>Joalheria 24/7: Vendedor com IA para WhatsApp | Newscale</title>
+    <meta name="description" content="Não perca mais vendas! Conheça o agente de IA especialista em joias que atende, qualifica e vende 24/7 no seu WhatsApp. Aumente sua conversão.">
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos Globais */
+        :root {
+            --verde-escuro: #14373C;
+            --verde-medio: #435D51;
+            --bege-claro: #D0D0CA;
+            --marrom-areia: #B06E4A;
+            --branco-fundo: #FBFBF9;
+            --branco-puro: #FFFFFF;
+            --font-family: 'Poppins', sans-serif;
+        }
+    
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-family);
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto-principal);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 100px 0;
+        }
+        h1, h2, h3 { font-weight: 600; line-height: 1.2; color: var(--verde-escuro); }
+        h2 { font-size: clamp(2.2rem, 5vw, 3rem); text-align: center; margin-bottom: 20px; max-width: 800px; margin-left: auto; margin-right: auto;}
+        p { font-weight: 300; font-size: 1.1rem; max-width: 750px; margin: 0 auto; }
+        strong { font-weight: 600; }
+    
+        /* Header & Navegação */
+        header {
+            padding: 20px 0;
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img { height: 80px; width: auto; }
+        nav { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;}
+        nav a {
+            text-decoration: none;
+            color: var(--verde-medio);
+            font-weight: 500;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+            transition: color 0.3s, border-color 0.3s;
+        }
+        nav a:hover, nav a.active {
+            color: var(--marrom-areia);
+            border-bottom-color: var(--marrom-areia);
+        }
+
+        /* Botão CTA */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--marrom-areia);
+            color: white !important;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: none;
+            cursor: pointer;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(176, 110, 74, 0.4);
+            border-bottom: none;
+        }
+        .cta-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* Hero */
+        .sales-hero {
+            background-color: var(--verde-escuro);
+            text-align: center;
+            padding: 120px 0;
+            color: var(--branco-puro);
+        }
+        .sales-hero h1 {
+            color: var(--branco-puro);
+            font-size: clamp(2.5rem, 6vw, 3.8rem);
+            margin-bottom: 15px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.1;
+        }
+        .sales-hero .hero-subtitle {
+            display: block;
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            font-weight: 400;
+            color: var(--marrom-areia);
+            margin-top: 20px;
+        }
+        .sales-hero p {
+            color: var(--bege-claro);
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin-bottom: 40px;
+            margin-top: 30px;
+        }
+
+        /* Seção de Dores */
+        #dores {
+            text-align: center;
+        }
+        #dores .container { padding-bottom: 60px; }
+        .pain-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+            text-align: left;
+        }
+        .pain-point-card {
+            background: var(--branco-puro);
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 4px solid var(--marrom-areia);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+        }
+        .pain-point-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .pain-point-card p {
+            font-size: 1rem;
+            color: var(--verde-medio);
+        }
+        .founder-quote {
+            margin-top: 60px;
+            padding: 30px;
+            background-color: rgba(208, 208, 202, 0.4);
+            border-radius: 8px;
+            border-left: 4px solid var(--verde-medio);
+        }
+        .founder-quote p {
+            font-style: italic;
+            color: var(--verde-medio);
+            font-size: 1.1rem;
+        }
+
+        /* Seção Solução */
+        #solucao { background-color: var(--cor-fundo-secao-alternativa); }
+        .solution-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .features-list { list-style: none; }
+        .features-list li {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+        .features-list .icon { color: var(--marrom-areia); margin-top: 5px; flex-shrink: 0; }
+        .features-list h3 { font-size: 1.25rem; margin-bottom: 5px; }
+        .features-list p { font-size: 1rem; color: var(--verde-medio); max-width: none; text-align: left; margin: 0;}
+        .solution-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Seção Dados de Mercado */
+        #dados { background-color: var(--verde-escuro); color: var(--bege-claro); }
+        #dados h2 { color: var(--branco-puro); }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .stat-card .number {
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--marrom-areia);
+            margin-bottom: 10px;
+        }
+        .stat-card .description {
+            font-size: 1rem;
+        }
+        .proof-card {
+            margin-top: 60px;
+            padding: 30px;
+            background: var(--marrom-areia);
+            color: var(--branco-puro);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .proof-card h3 {
+            color: var(--branco-puro);
+            margin-bottom: 10px;
+        }
+        
+        /* Seção CTA Final */
+        #cta-final .container { text-align: center; }
+        #cta-final h2 { font-size: clamp(2rem, 5vw, 2.5rem); }
+        #cta-final p {
+            font-size: 1.2rem;
+            color: var(--verde-medio);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+        
+        /* Footer */
+        footer { text-align: center; padding: 40px 20px; font-size: 0.9rem; color: var(--verde-medio); }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        .footer-links a {
+            color: var(--verde-medio);
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            color: var(--marrom-areia);
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 20px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .solution-image { order: -1; margin-bottom: 40px; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="LOGO 05@3x.png" alt="Logo da Newscale Consulting"></a>
+        </div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="quem-somos.html">Quem Somos</a>
+            <a href="agente-joias.html" class="active">Agente para Joalherias</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="sales-hero">
+            <div class="container">
+                <h1>
+                    Sua Joalheria com Atendimento Impecável
+                    <span class="hero-subtitle">A IA que Entende de Joias Chegou. 💎</span>
+                </h1>
+                <p>Não perca mais vendas. Deixe a IA vender por você, 24h por dia, com a inteligência que só quem entende de joias pode oferecer.</p>
+                <a href="https://wa.me/5511963232908?text=Quero%20automatizar%20meu%20atendimento%20e%20vendas%20com%20IA.%20Como%20funciona%20o%20diagn%C3%B3stico%20gratuito%3F" target="_blank" class="cta-button">Agendar Diagnóstico Gratuito</a>
+            </div>
+        </section>
+
+        <section id="dores">
+            <div class="container">
+                <h2>Sua Joalheria Merece Brilhar 24 Horas por Dia. Mas a Rotina te Prende?</h2>
+                <p style="text-align: center; margin-bottom: 60px;">Você, como joalheiro(a), sabe que cada peça é única e cada cliente busca uma experiência memorável. Mas a realidade é desafiadora:</p>
+                <div class="pain-points">
+                    <div class="pain-point-card">
+                        <h3>Vendas Perdidas por Demora</h3>
+                        <p>Clientes esperando horas por uma resposta no WhatsApp? Isso significa oportunidades de ouro que esfriam e vão para o concorrente.</p>
+                    </div>
+                    <div class="pain-point-card">
+                        <h3>Rotatividade e Falta de Conhecimento</h3>
+                        <p>Treinar uma equipe que domine detalhes das joias, pedras, lapidação e a complexidade de joias personalizadas é um desafio constante.</p>
+                    </div>
+                    <div class="pain-point-card">
+                        <h3>Sua Paixão Merece Escala</h3>
+                        <p>Você quer crescer, mas os processos manuais e a dependência do tempo humano limitam seu potencial e sua liberdade.</p>
+                    </div>
+                </div>
+                <div class="founder-quote">
+                    <p>"Eu, Bruna, fundadora da NewScale, vivi essa rotina por 8 anos na Casa Kahla, onde 90% das vendas vinham do WhatsApp. Por isso, entendo exatamente o que pode te ajudar!"</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solucao">
+            <div class="container">
+                <div class="solution-intro">
+                    <h2>Conheça o Agente de IA da Newscale: O Vendedor Expert que Sua Joalheria Precisa.</h2>
+                    <p>Chega de perder tempo e vendas. A NewScale desenvolveu um Agente de IA exclusivo para joalherias, que atua como seu melhor vendedor, disponível 24/7, diretamente no WhatsApp. Ele não é um chatbot genérico. É um especialista, 100% personalizável para a SUA joalheria.</p>
+                </div>
+                <div class="features-grid">
+                    <ul class="features-list">
+                        <li>
+                            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.64 16.36a9 9 0 1 1-12.73-12.73A9 9 0 0 1 21.64 16.36z"></path><path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"></path></svg></div>
+                            <div>
+                                <h3>Conhecimento Impecável sobre Joias</h3>
+                                <p>Sabe explicar tudo sobre joias: estilos, acabamentos, pedras, lapidação, quilatagem, materiais (ouro 18k, prata 925, etc) e conhece todos os detalhes sobre as suas coleções.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                            <div>
+                                <h3>Vendas de Joias Personalizadas</h3>
+                                <p>Pega o briefing completo, pergunta por pergunta, entendendo cada detalhe e gerando resumos precisos para sua equipe.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line></svg></div>
+                            <div>
+                                <h3>Compreende e Entende Áudios</h3>
+                                <p>Aceita e entende áudios enviados pelos clientes, agilizando ainda mais o atendimento e a coleta de informações.</p>
+                            </div>
+                        </li>
+                         <li>
+                            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></div>
+                            <div>
+                                <h3>Análise Inteligente de Imagens</h3>
+                                <p>Seu cliente envia uma foto de referência? Nosso Agente de IA analisa e compreende os detalhes visuais.</p>
+                            </div>
+                        </li>
+                         <li>
+                            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg></div>
+                            <div>
+                                <h3>Otimização para Sua Equipe</h3>
+                                <p>Ele classifica e resume os leads, entregando-os prontos para sua vendedora focar no fechamento e na personalização final.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="solution-image">
+                        <img src="https://placehold.co/600x500/14373C/FFFFFF?text=Newscale+AI" alt="Demonstração do agente de IA da Newscale em um celular.">
+                    </div>
+                </div>
+                <div class="cta-container">
+                    <a href="https://wa.me/5511963232908?text=Quero%20testar%20a%20IA%20especialista%20em%20joias" target="_blank" class="cta-button">✨ Teste a IA Agora ✨</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="dados">
+            <div class="container">
+                <h2>O Mercado de Joias está Brilhando, e a IA é a Chave para Você Ficar à Frente.</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="number">18%</div>
+                        <p class="description">Foi o crescimento do mercado de joias no Brasil nos últimos 5 anos.</p>
+                    </div>
+                     <div class="stat-card">
+                        <div class="number">23%</div>
+                        <p class="description">É o aumento médio na conversão de vendas para empresas que usam chatbots bem implementados.</p>
+                    </div>
+                     <div class="stat-card">
+                        <div class="number">85%</div>
+                        <p class="description">Das empresas brasileiras planejam adotar algum tipo de IA até o final de 2025.</p>
+                    </div>
+                </div>
+                <div class="proof-card">
+                    <h3>Resultados Comprovados</h3>
+                    <p>Na Casa Kahla, a implementação do nosso Agente de IA gerou um <strong>aumento de +30% na taxa de conversão</strong> pelo WhatsApp. Isso é prova de que funciona.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta-final">
+             <div class="container">
+                <h2>Pronto(a) para Sua Joalheria Brilhar na Era Digital?</h2>
+                <p>Não deixe sua joalheria para trás. Escalar com excelência, um atendimento impecável e sem perder vendas por demora é mais fácil do que você imagina. Invista 15 minutos do seu tempo e descubra o potencial da IA para o seu negócio.</p>
+                <a href="https://wa.me/5511963232908?text=Quero%20automatizar%20meu%20atendimento%20e%20vendas%20com%20IA.%20Como%20funciona%20o%20diagn%C3%B3stico%20gratuito%3F" target="_blank" class="cta-button">💎 Agende Seu Diagnóstico Gratuito! 💎</a>
+                 <p style="font-size: 0.9rem; margin-top: 20px;">Converse com quem realmente entende de joalheria e IA. Sem compromisso.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Newscale | Sua Parceira de Automação Inteligente para Joalherias</p>
+        <div class="footer-links">
+            <a href="https://wa.me/5511963232908?text=Quero%20automatizar%20meu%20atendimento%20e%20vendas%20com%20IA.%20Como%20funciona%20o%20diagn%C3%B3stico%20gratuito%3F" target="_blank">WhatsApp</a>
+            <span>|</span>
+            <a href="mailto:contato@newscale.tech">contato@newscale.tech</a>
+             <span>|</span>
+            <a href="#" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+
+</body>
+</html>
