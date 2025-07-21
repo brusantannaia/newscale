@@ -105,7 +105,7 @@ O seu site estará no ar e totalmente funcional!
 👤 Contato
 Bruna Santanna - Fundadora da Newscale Consulting
 
-LinkedIn: [[Seu Perfil no LinkedIn]](https://www.linkedin.com/in/bruna-araujo-santanna/)
+LinkedIn: https://www.linkedin.com/in/bruna-araujo-santanna/
 
 E-mail: brunasantanna.ia@gmail.com
 
