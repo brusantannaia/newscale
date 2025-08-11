@@ -1,0 +1,466 @@
+'<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Proposta de Solução Inteligente | NewScale Consulting</title>
+    <meta name="description" content="Proposta de solução personalizada para automação de processos de recrutamento com Inteligência Artificial.">
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos Globais */
+        :root {
+            --verde-escuro: #14373C;
+            --verde-medio: #435D51;
+            --bege-claro: #D0D0CA;
+            --marrom-areia: #B06E4A;
+            --branco-fundo: #FBFBF9;
+            --branco-puro: #FFFFFF;
+            --font-family: 'Poppins', sans-serif;
+        }
+    
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-family);
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto-principal);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 80px 0;
+        }
+        h1, h2, h3 { font-weight: 600; line-height: 1.2; color: var(--verde-escuro); }
+        h2 { font-size: clamp(2rem, 5vw, 2.8rem); text-align: center; margin-bottom: 20px; }
+        p { font-weight: 300; font-size: 1.1rem; max-width: 750px; margin: 0 auto; }
+        strong { font-weight: 600; }
+    
+        /* Header da Proposta */
+        .proposal-header {
+            background-color: var(--branco-puro);
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 60px;
+            border: 1px solid #eee;
+        }
+        .proposal-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--verde-escuro);
+        }
+        .proposal-header .client-info {
+            list-style: none;
+            color: var(--verde-medio);
+        }
+        .proposal-header .client-info li {
+            margin-bottom: 5px;
+        }
+
+        /* Seções */
+        section {
+            padding: 60px 0;
+        }
+        section:nth-of-type(even) {
+            background-color: var(--branco-puro);
+        }
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--verde-medio);
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Cenários (Antes e Depois) */
+        .scenarios {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .scenario-card {
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .scenario-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        .scenario-card--before {
+            background-color: #f1f1f1;
+            border-left: 4px solid #ccc;
+        }
+        .scenario-card--after {
+            background-color: rgba(176, 110, 74, 0.1);
+            border-left: 4px solid var(--marrom-areia);
+        }
+        .scenario-card ul {
+            list-style-position: inside;
+            padding-left: 10px;
+        }
+        .scenario-card li {
+            margin-bottom: 10px;
+            color: var(--verde-medio);
+        }
+
+        /* Lista de Entregáveis e Benefícios */
+        .checklist {
+            list-style: none;
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+        .checklist li {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        .checklist .icon {
+            color: var(--marrom-areia);
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+
+        /* Bastidores */
+        #bastidores {
+            background-color: var(--verde-escuro);
+            color: var(--bege-claro);
+        }
+        #bastidores h2, #bastidores h3 {
+            color: var(--branco-puro);
+        }
+        #bastidores p {
+            color: var(--bege-claro);
+        }
+        #bastidores .tech-stack {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        #bastidores .tech-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 500;
+        }
+
+        /* Investimento */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: stretch;
+        }
+        .pricing-card {
+            background-color: var(--branco-puro);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+        }
+        .pricing-card h3 {
+            color: var(--marrom-areia);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .pricing-card .price {
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin: 10px 0 20px 0;
+        }
+        .pricing-card .price span {
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--verde-medio);
+        }
+        .pricing-card ul {
+            list-style: none;
+            margin-top: 20px;
+            flex-grow: 1;
+        }
+        .pricing-card li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .pricing-card li::before {
+            content: '✓';
+            color: var(--marrom-areia);
+            position: absolute;
+            left: 0;
+        }
+        .pricing-card .note {
+            font-size: 0.9rem;
+            color: var(--verde-medio);
+            margin-top: 20px;
+        }
+
+        /* Contratação */
+        .hiring-process {
+            text-align: center;
+            max-width: 700px;
+            margin: 40px auto 0;
+            padding: 30px;
+            background-color: var(--branco-puro);
+            border-radius: 8px;
+        }
+        .hiring-process p {
+            margin-bottom: 15px;
+        }
+        
+        /* Cronograma */
+        .timeline-container {
+            max-width: 800px;
+            margin: 40px auto 0;
+            position: relative;
+        }
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            bottom: 10px;
+            width: 2px;
+            background-color: var(--bege-claro);
+        }
+        .timeline-item {
+            margin-bottom: 40px;
+            padding-left: 50px;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '📅';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            font-size: 1.8rem;
+        }
+        .timeline-item h3 {
+            font-size: 1.5rem;
+        }
+        .timeline-item .duration {
+            font-weight: 500;
+            color: var(--marrom-areia);
+            margin-bottom: 10px;
+        }
+        .timeline-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+         .timeline-item li {
+            color: var(--verde-medio);
+            margin-bottom: 5px;
+        }
+
+        /* Botão CTA Final */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--marrom-areia);
+            color: white !important;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: none;
+            cursor: pointer;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(176, 110, 74, 0.4);
+        }
+        #approval {
+            text-align: center;
+        }
+
+        /* Footer */
+        footer { text-align: center; padding: 40px 20px; font-size: 0.9rem; color: var(--verde-medio); }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .scenarios, .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="proposal-header">
+            <h1>Proposta de Solução Inteligente Personalizada para Recrutamento</h1>
+            <ul class="client-info">
+                <li><strong>Cliente:</strong> Álvaro Gazda</li>
+                <li><strong>Consultora:</strong> Bruna Santanna (NewScale Consulting)</li>
+                <li><strong>Data:</strong> 08/08/2025</li>
+            </ul>
+        </header>
+
+        <main>
+            <section id="cenario">
+                <h2>Você já conhece essa rotina...</h2>
+                <div class="scenarios">
+                    <div class="scenario-card scenario-card--before">
+                        <h3>O Processo Atual</h3>
+                        <p>Você encontra o candidato ideal, analisa o LinkedIn, recebe o currículo e conduz a entrevista. A parte estratégica você já domina. Mas depois vem a etapa repetitiva:</p>
+                        <ul>
+                            <li>Juntar todas as informações</li>
+                            <li>Estruturar o perfil</li>
+                            <li>Escrever os destaques</li>
+                            <li>Organizar os dados</li>
+                            <li>Revisar o texto</li>
+                        </ul>
+                    </div>
+                    <div class="scenario-card scenario-card--after">
+                        <h3>Uma Nova Possibilidade</h3>
+                        <p>Você envia apenas quatro informações e recebe um documento completo, organizado, bem escrito e pronto para ser apresentado.</p>
+                        <ul>
+                            <li>📌 O escopo da vaga</li>
+                            <li>📄 O currículo</li>
+                            <li>🔗 O link do LinkedIn</li>
+                            <li>📝 As anotações da entrevista</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="entregaveis">
+                <h2>O que será entregue</h2>
+                <p class="section-subtitle">Um documento profissional, estruturado e pronto para ser compartilhado ou adaptado, com precisão, objetividade e linguagem alinhada ao perfil da vaga.</p>
+                <ul class="checklist">
+                    <li><div class="icon">✓</div> <div><strong>Identidade profissional:</strong> nome completo e cargo atual.</div></li>
+                    <li><div class="icon">✓</div> <div><strong>Linha do tempo da carreira:</strong> empresas, cargos e datas organizadas cronologicamente.</div></li>
+                    <li><div class="icon">✓</div> <div><strong>Perfil resumido:</strong> texto estratégico com foco na vaga.</div></li>
+                    <li><div class="icon">✓</div> <div><strong>Destaques da entrevista:</strong> observações transformadas em insights relevantes.</div></li>
+                    <li><div class="icon">✓</div> <div><strong>Formação acadêmica:</strong> graduação, técnico, MBAs e certificações.</div></li>
+                    <li><div class="icon">✓</div> <div><strong>Remuneração:</strong> atual e pretendida.</div></li>
+                    <li><div class="icon">✓</div> <div><strong>Objetivos:</strong> disponibilidade para mudança, objetivo de carreira, aderência cultural ou de liderança.</div></li>
+                </ul>
+            </section>
+
+            <section id="beneficios">
+                <h2>Benefícios da Solução</h2>
+                <ul class="checklist">
+                    <li><div class="icon">💡</div> <div><strong>Economia real de tempo</strong> para você focar no que importa.</div></li>
+                    <li><div class="icon">💡</div> <div><strong>Perfis estratégicos,</strong> objetivos e perfeitamente alinhados à vaga.</div></li>
+                    <li><div class="icon">💡</div> <div><strong>Maior profissionalismo</strong> e consistência nas suas entregas.</div></li>
+                    <li><div class="icon">💡</div> <div><strong>Liberdade para focar</strong> em decisões e no relacionamento com os candidatos.</div></li>
+                </ul>
+            </section>
+
+            <section id="personalizacao">
+                <h2>Personalização total para o seu processo</h2>
+                <p class="section-subtitle">Essa solução foi criada para se adaptar à sua realidade. Tanto a forma de envio das informações quanto o formato da entrega podem ser ajustados conforme suas preferências. Durante a implementação, realizaremos testes com perfis reais, refinando cada etapa até que o resultado esteja exatamente como você precisa.</p>
+            </section>
+            
+            <section id="bastidores">
+                <div class="container">
+                    <h2>Bastidores da Solução</h2>
+                    <p class="section-subtitle">Por trás da simplicidade na sua experiência, existe um processo baseado em inteligência artificial e automações inteligentes, que garantem agilidade, precisão e personalização.</p>
+                    <div class="tech-stack">
+                        <span class="tech-item">Scraper com BrightData</span>
+                        <span class="tech-item">IA com Gemini / GPT-4</span>
+                        <span class="tech-item">Automação com N8N</span>
+                    </div>
+                    <p style="text-align: center; margin-top: 40px;">Você não precisa se envolver com nenhuma dessas etapas. Basta enviar os arquivos e deixar que a tecnologia trabalhe por você.</p>
+                </div>
+            </section>
+
+            <section id="investimento">
+                <h2>Investimento</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Implantação Única</h3>
+                        <div class="price">R$ 3.500</div>
+                        <p>Este valor cobre toda a estruturação da solução personalizada, incluindo:</p>
+                        <ul>
+                            <li>Alinhamento do escopo e processo</li>
+                            <li>Criação do fluxo de automação no N8N</li>
+                            <li>Integração com scraper de LinkedIn</li>
+                            <li>Desenvolvimento de dois agentes de IA</li>
+                            <li>Estruturação da entrada e saída de dados</li>
+                            <li>Testes com perfis reais e ajustes ilimitados</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>Mensalidade</h3>
+                        <div class="price">a partir de R$ 250 <span>/mês</span></div>
+                        <p>Este valor garante o uso contínuo da solução, com suporte e estabilidade, incluindo:</p>
+                        <ul>
+                            <li>Processamento dos perfis</li>
+                            <li>Suporte técnico e ajustes leves</li>
+                            <li>Atualizações e manutenção preventiva</li>
+                            <li>Garantia de funcionamento e consistência</li>
+                            <li>Uso das APIs já incluso</li>
+                        </ul>
+                        <p class="note"><strong>Importante:</strong> Mesmo com evoluções, o valor mensal não ultrapassará R$ 790/mês, garantindo previsibilidade total de custo.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contratacao">
+                <h2>Forma de Contratação</h2>
+                <div class="hiring-process">
+                    <p><strong>Implantação:</strong> Pagamento único no início do projeto ou 50% no início e 50% na entrega.</p>
+                    <p><strong>Mensalidade:</strong> Cobrada apenas após a entrega da primeira versão funcional e validada por você.</p>
+                    <p><strong>✅ Você só começa a pagar a mensalidade quando tudo estiver funcionando como deve.</strong></p>
+                </div>
+            </section>
+
+            <section id="cronograma">
+                <h2>Prazo e Cronograma de Entrega</h2>
+                <p class="section-subtitle">Prazo total: <strong>15 dias corridos</strong> a partir da confirmação do projeto e recebimento de todas as informações necessárias.</p>
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <h3>Fase 1 – Estruturação e Desenvolvimento</h3>
+                        <p class="duration">10 dias</p>
+                        <ul>
+                            <li>Configuração da automação no N8N</li>
+                            <li>Integração com o scraper do LinkedIn (BrightData)</li>
+                            <li>Criação e treinamento dos agentes de IA</li>
+                            <li>Estruturação dos formatos de entrada e saída</li>
+                            <li>Preparação do ambiente de testes</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Fase 2 – Testes e Ajustes</h3>
+                        <p class="duration">5 dias</p>
+                        <ul>
+                            <li>Envio de perfis reais pelo cliente para teste</li>
+                            <li>Ajustes finos de acordo com feedback</li>
+                            <li>Validação final e entrega oficial da primeira versão</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NOVA SEÇÃO: Aprovação Final -->
+            <section id="approval">
+                <a href="https://wa.me/5511963232908?text=Ol%C3%A1%2C%20Bruna!%20Gostaria%20de%20aprovar%20a%20proposta%20para%20a%20solu%C3%A7%C3%A3o%20de%20recrutamento." target="_blank" class="cta-button">✅ Aprovar Proposta</a>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Newscale Consulting. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
