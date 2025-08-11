@@ -1,4 +1,4 @@
-'<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -51,6 +51,14 @@
             border-radius: 8px;
             margin-bottom: 60px;
             border: 1px solid #eee;
+            text-align: center; /* Centraliza todo o conteúdo do header */
+        }
+        .proposal-header .logo-container {
+            margin-bottom: 30px;
+        }
+        .proposal-header .logo-container img {
+            height: 80px;
+            width: auto;
         }
         .proposal-header h1 {
             font-size: 2.5rem;
@@ -60,6 +68,8 @@
         .proposal-header .client-info {
             list-style: none;
             color: var(--verde-medio);
+            display: inline-block; /* Para centralizar corretamente */
+            text-align: left; /* Alinha o texto dentro da lista */
         }
         .proposal-header .client-info li {
             margin-bottom: 5px;
@@ -305,6 +315,9 @@
 
     <div class="container">
         <header class="proposal-header">
+            <div class="logo-container">
+                <img src="LOGO 05@3x.png" alt="Logo da Newscale Consulting">
+            </div>
             <h1>Proposta de Solução Inteligente Personalizada para Recrutamento</h1>
             <ul class="client-info">
                 <li><strong>Cliente:</strong> Álvaro Gazda</li>
