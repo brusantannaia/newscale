@@ -136,6 +136,7 @@
             width: 100%;
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            cursor: zoom-in; /* Indica que a imagem é clicável */
         }
         .checklist {
             list-style: none;
@@ -320,6 +321,49 @@
         #approval {
             text-align: center;
         }
+        
+        /* Modal (Lightbox) para Imagem */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            animation: fadeIn 0.3s;
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 1200px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .modal-close:hover,
+        .modal-close:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0}
+            to {opacity: 1}
+        }
 
         /* Footer */
         footer { text-align: center; padding: 40px 20px; font-size: 0.9rem; color: var(--verde-medio); }
@@ -380,7 +424,7 @@
                 <p class="section-subtitle">Um documento profissional, estruturado e pronto para ser compartilhado ou adaptado, personalizado de acordo com o que você precisa.</p>
                 <div class="deliverable-layout">
                     <div class="deliverable-image">
-                        <img src="exemplo-entrega-recrutamento.png" alt="Exemplo do documento final que será entregue, mostrando o perfil de um candidato.">
+                        <img id="deliverableImage" src="exemplo-entrega-recrutamento.png" alt="Exemplo do documento final que será entregue, mostrando o perfil de um candidato.">
                     </div>
                     <ul class="checklist">
                         <li><div class="icon">✓</div> <div><strong>Identidade profissional:</strong> nome completo e cargo atual.</div></li>
@@ -501,9 +545,38 @@
         </main>
     </div>
 
+    <!-- Modal (Lightbox) para a Imagem -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
     <footer>
         <p>&copy; 2025 Newscale Consulting. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        // Script para o Modal da Imagem
+        var modal = document.getElementById("imageModal");
+        var img = document.getElementById("deliverableImage");
+        var modalImg = document.getElementById("modalImage");
+        var span = document.getElementsByClassName("modal-close")[0];
+
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        }
+
+        span.onclick = function() { 
+            modal.style.display = "none";
+        }
+        
+        modal.onclick = function(event) {
+            if (event.target == modal) {
+                 modal.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
