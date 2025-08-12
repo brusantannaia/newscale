@@ -51,7 +51,7 @@
             border-radius: 8px;
             margin-bottom: 60px;
             border: 1px solid #eee;
-            text-align: center; /* Centraliza todo o conteúdo do header */
+            text-align: center;
         }
         .proposal-header .logo-container {
             margin-bottom: 30px;
@@ -68,8 +68,8 @@
         .proposal-header .client-info {
             list-style: none;
             color: var(--verde-medio);
-            display: inline-block; /* Para centralizar corretamente */
-            text-align: left; /* Alinha o texto dentro da lista */
+            display: inline-block;
+            text-align: left;
         }
         .proposal-header .client-info li {
             margin-bottom: 5px;
@@ -124,23 +124,44 @@
             color: var(--verde-medio);
         }
 
-        /* Lista de Entregáveis e Benefícios */
+        /* Entregáveis */
+        #entregaveis .deliverable-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 50px;
+            align-items: center;
+            margin-top: 40px;
+        }
+        #entregaveis .deliverable-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
         .checklist {
             list-style: none;
-            max-width: 800px;
-            margin: 40px auto 0;
+            margin: 0;
+            padding: 0;
         }
         .checklist li {
             display: flex;
             gap: 15px;
             align-items: flex-start;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
         }
         .checklist .icon {
             color: var(--marrom-areia);
             margin-top: 5px;
             flex-shrink: 0;
+        }
+        
+        /* Benefícios */
+        #beneficios .checklist {
+             max-width: 800px;
+             margin: 40px auto 0;
+        }
+        #beneficios .checklist li {
+            font-size: 1.1rem;
         }
 
         /* Bastidores */
@@ -305,7 +326,7 @@
         
         /* Responsividade */
         @media (max-width: 768px) {
-            .scenarios, .pricing-grid {
+            .scenarios, .pricing-grid, #entregaveis .deliverable-layout {
                 grid-template-columns: 1fr;
             }
         }
@@ -356,16 +377,21 @@
 
             <section id="entregaveis">
                 <h2>O que será entregue</h2>
-                <p class="section-subtitle">Um documento profissional, estruturado e pronto para ser compartilhado ou adaptado, com precisão, objetividade e linguagem alinhada ao perfil da vaga.</p>
-                <ul class="checklist">
-                    <li><div class="icon">✓</div> <div><strong>Identidade profissional:</strong> nome completo e cargo atual.</div></li>
-                    <li><div class="icon">✓</div> <div><strong>Linha do tempo da carreira:</strong> empresas, cargos e datas organizadas cronologicamente.</div></li>
-                    <li><div class="icon">✓</div> <div><strong>Perfil resumido:</strong> texto estratégico com foco na vaga.</div></li>
-                    <li><div class="icon">✓</div> <div><strong>Destaques da entrevista:</strong> observações transformadas em insights relevantes.</div></li>
-                    <li><div class="icon">✓</div> <div><strong>Formação acadêmica:</strong> graduação, técnico, MBAs e certificações.</div></li>
-                    <li><div class="icon">✓</div> <div><strong>Remuneração:</strong> atual e pretendida.</div></li>
-                    <li><div class="icon">✓</div> <div><strong>Objetivos:</strong> disponibilidade para mudança, objetivo de carreira, aderência cultural ou de liderança.</div></li>
-                </ul>
+                <p class="section-subtitle">Um documento profissional, estruturado e pronto para ser compartilhado ou adaptado, personalizado de acordo com o que você precisa.</p>
+                <div class="deliverable-layout">
+                    <div class="deliverable-image">
+                        <img src="exemplo-entrega-recrutamento.png" alt="Exemplo do documento final que será entregue, mostrando o perfil de um candidato.">
+                    </div>
+                    <ul class="checklist">
+                        <li><div class="icon">✓</div> <div><strong>Identidade profissional:</strong> nome completo e cargo atual.</div></li>
+                        <li><div class="icon">✓</div> <div><strong>Linha do tempo da carreira:</strong> empresas, cargos e datas organizadas cronologicamente.</div></li>
+                        <li><div class="icon">✓</div> <div><strong>Perfil resumido:</strong> texto estratégico com foco na vaga.</div></li>
+                        <li><div class="icon">✓</div> <div><strong>Destaques da entrevista:</strong> observações transformadas em insights relevantes.</div></li>
+                        <li><div class="icon">✓</div> <div><strong>Formação acadêmica:</strong> graduação, técnico, MBAs e certificações.</div></li>
+                        <li><div class="icon">✓</div> <div><strong>Remuneração:</strong> atual e pretendida.</div></li>
+                        <li><div class="icon">✓</div> <div><strong>Objetivos:</strong> como disponibilidade para mudança, objetivo de carreira, aderência cultural ou de liderança.</div></li>
+                    </ul>
+                </div>
             </section>
 
             <section id="beneficios">
@@ -393,6 +419,10 @@
                         <span class="tech-item">Automação com N8N</span>
                     </div>
                     <p style="text-align: center; margin-top: 40px;">Você não precisa se envolver com nenhuma dessas etapas. Basta enviar os arquivos e deixar que a tecnologia trabalhe por você.</p>
+                    <div style="text-align: center; margin-top: 40px;">
+                        <h3>Fase futura (opcional):</h3>
+                        <p>Caso deseje, é possível avançar para a criação automática da apresentação visual (PowerPoint, Canva ou PDF formatado), a partir dos mesmos dados processados — entregando a versão final com identidade visual e layout profissional.</p>
+                    </div>
                 </div>
             </section>
 
@@ -437,29 +467,30 @@
                 <div class="pricing-grid">
                     <div class="pricing-card">
                         <h3>Implantação Única</h3>
-                        <div class="price">R$ 3.500</div>
+                        <div class="price">R$ 3.600</div>
                         <p>Este valor cobre toda a estruturação da solução personalizada, incluindo:</p>
                         <ul>
-                            <li>Alinhamento do escopo e processo</li>
-                            <li>Criação do fluxo de automação no N8N</li>
-                            <li>Integração com scraper de LinkedIn</li>
+                            <li>Mapeamento dos Processos Atuais</li>
+                            <li>Reunião de alinhamento dos detalhes do escopo</li>
+                            <li>Criação do fluxo de automação exclusivo</li>
+                            <li>Integração com LinkedIn</li>
                             <li>Desenvolvimento de dois agentes de IA</li>
-                            <li>Estruturação da entrada e saída de dados</li>
-                            <li>Testes com perfis reais e ajustes ilimitados</li>
+                            <li>Estruturação da entrada de dados</li>
+                            <li>Criação do formato de saída</li>
+                            <li>Testes com perfis reais</li>
+                            <li>Ajustes até a entrega final</li>
                         </ul>
                     </div>
                     <div class="pricing-card">
                         <h3>Mensalidade</h3>
-                        <div class="price">a partir de R$ 250 <span>/mês</span></div>
+                        <div class="price">R$ 329 <span>/mês</span></div>
                         <p>Este valor garante o uso contínuo da solução, com suporte e estabilidade, incluindo:</p>
                         <ul>
-                            <li>Processamento dos perfis</li>
+                            <li>Processamento dos perfis com base na estrutura personalizada</li>
                             <li>Suporte técnico e ajustes leves</li>
-                            <li>Atualizações e manutenção preventiva</li>
-                            <li>Garantia de funcionamento e consistência</li>
+                            <li>Garantia de funcionamento da automação</li>
                             <li>Uso das APIs já incluso</li>
                         </ul>
-                        <p class="note"><strong>Importante:</strong> Mesmo com evoluções, o valor mensal não ultrapassará R$ 790/mês, garantindo previsibilidade total de custo.</p>
                     </div>
                 </div>
             </section>
