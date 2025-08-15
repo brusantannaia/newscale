@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Proposta Comercial – Automação de Protocolos com IA | NewScale AI</title>
+    <meta name="description" content="Proposta para desenvolver uma solução completa que automatiza a análise de exames e aplicação de protocolos com Inteligência Artificial.">
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos Globais */
+        :root {
+            --verde-escuro: #14373C;
+            --verde-medio: #435D51;
+            --bege-claro: #D0D0CA;
+            --marrom-areia: #B06E4A;
+            --branco-fundo: #FBFBF9;
+            --branco-puro: #FFFFFF;
+            --font-family: 'Poppins', sans-serif;
+        }
+    
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-family);
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto-principal);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 60px 0;
+        }
+        h1, h2, h3 { font-weight: 600; line-height: 1.2; color: var(--verde-escuro); }
+        h2 { font-size: clamp(2rem, 5vw, 2.8rem); text-align: center; margin-bottom: 20px; }
+        p { font-weight: 300; font-size: 1.1rem; max-width: 750px; margin: 0 auto; }
+        strong { font-weight: 600; }
+    
+        /* Seções */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+        section:last-of-type {
+            border-bottom: none;
+        }
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--verde-medio);
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Capa (Hero) */
+        #capa {
+            background-color: var(--verde-escuro);
+            color: var(--branco-puro);
+            text-align: center;
+        }
+        #capa h1 {
+            color: var(--branco-puro);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+        }
+        #capa .client-info {
+            list-style: none;
+            color: var(--bege-claro);
+            margin: 20px 0 40px 0;
+        }
+        #capa .cta-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--marrom-areia);
+            color: white !important;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: none;
+            cursor: pointer;
+        }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(176, 110, 74, 0.4); }
+        .sub-cta {
+            color: var(--bege-claro);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid var(--marrom-areia);
+            padding-bottom: 2px;
+        }
+
+        /* Escopo e Cronograma (Timeline) */
+        .timeline-container {
+            max-width: 800px;
+            margin: 40px auto 0;
+            position: relative;
+        }
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 18px;
+            top: 10px;
+            bottom: 10px;
+            width: 2px;
+            background-color: var(--bege-claro);
+        }
+        .timeline-item {
+            margin-bottom: 40px;
+            padding-left: 50px;
+            position: relative;
+        }
+        .timeline-item .icon {
+            position: absolute;
+            left: 0;
+            top: -5px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--marrom-areia);
+            color: var(--branco-puro);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        .timeline-item h3 { font-size: 1.5rem; }
+        .timeline-item .duration { font-weight: 500; color: var(--marrom-areia); margin-bottom: 10px; }
+        .timeline-item ul { list-style: none; padding-left: 0; }
+        .timeline-item li { color: var(--verde-medio); margin-bottom: 8px; padding-left: 15px; position: relative; }
+        .timeline-item li::before { content: '•'; color: var(--marrom-areia); position: absolute; left: 0; }
+
+        /* Lista com Ícones */
+        .checklist {
+            list-style: none;
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+        .checklist li {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        .checklist .icon { color: var(--marrom-areia); margin-top: 4px; flex-shrink: 0; }
+        .checklist .icon svg { width: 24px; height: 24px; }
+
+        /* Bastidores */
+        .bastidores-card {
+            background: var(--branco-puro);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            margin-top: 40px;
+        }
+        .bastidores-card ul { list-style: none; }
+        .bastidores-card li { margin-bottom: 15px; }
+        .bastidores-card .note {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            font-style: italic;
+            color: var(--verde-medio);
+        }
+
+        /* Investimento */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: stretch;
+            margin-top: 40px;
+        }
+        .pricing-card {
+            background-color: var(--branco-puro);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+        }
+        .pricing-card h3 {
+            color: var(--marrom-areia);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .pricing-card .price {
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin: 10px 0 20px 0;
+        }
+        .pricing-card .price span {
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--verde-medio);
+        }
+        .pricing-card ul {
+            list-style: none;
+            margin-top: 20px;
+            flex-grow: 1;
+        }
+        .pricing-card li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .pricing-card li::before {
+            content: '•';
+            color: var(--marrom-areia);
+            position: absolute;
+            left: 0;
+        }
+        .token-info {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        /* Próximos Passos e Contato */
+        #proximos-passos ol {
+            list-style: none;
+            counter-reset: steps-counter;
+            max-width: 600px;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #proximos-passos li {
+            counter-increment: steps-counter;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            width: fit-content;
+        }
+        #proximos-passos li::before {
+            content: counter(steps-counter);
+            background-color: var(--marrom-areia);
+            color: var(--branco-puro);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        #contato .contact-details {
+            text-align: center;
+            margin-top: 40px;
+        }
+        #contato a {
+            color: var(--verde-medio);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        #contato a:hover {
+            color: var(--marrom-areia);
+        }
+
+        /* Footer */
+        footer { text-align: center; padding: 40px 20px; font-size: 0.9rem; color: var(--verde-medio); }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Estilos de Impressão */
+        @media print {
+            body {
+                background-color: var(--branco-puro);
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            header, footer, #capa .cta-group {
+                display: none;
+            }
+            .proposal-header {
+                text-align: left;
+                border: none;
+                box-shadow: none;
+                padding: 0;
+                margin-bottom: 40px;
+            }
+            .proposal-header .logo-container {
+                margin-bottom: 20px;
+            }
+             .proposal-header .client-info {
+                display: block;
+            }
+            section {
+                padding: 30px 0;
+                page-break-inside: avoid;
+            }
+            .container {
+                padding: 0;
+                width: 100%;
+                max-width: 100%;
+            }
+            @page {
+                margin: 2cm;
+                size: A4;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        
+        <section id="capa">
+            <h1>Proposta Comercial – Automação de Protocolos com Inteligência Artificial</h1>
+            <ul class="client-info">
+                <li><strong>Cliente:</strong> Amir - Colo Saúde</li>
+                <li><strong>Data:</strong> 15/08/2025</li>
+                <li><strong>Responsável:</strong> Bruna Santanna – NewScale AI</li>
+            </ul>
+            <div class="cta-group">
+                <a href="mailto:bruna@newscale.tech?subject=Aprovação%20–%20Proposta%20Automação%20Protocolos%20(Amir%20-%20Colo%20Saúde)&body=Olá%20Bruna,%0D%0A%0D%0AGostaria%20de%20aprovar%20a%20proposta%20para%20a%20solução%20de%20automação%20de%20protocolos.%0D%0A%0D%0AMeu%20telefone%20é%20[Seu%20Telefone]%20e%20o%20melhor%20horário%20para%20contato%20é%20[Melhor%20Horário]." class="cta-button">Aprovar proposta</a>
+                <a href="https://wa.me/5511971901020" target="_blank" class="sub-cta">Falar com especialista</a>
+            </div>
+        </section>
+
+        <section id="objetivo">
+            <h2>1. Objetivo</h2>
+            <p class="section-subtitle">Desenvolver uma solução completa que automatiza a análise de exames e a aplicação do protocolo institucional, reduzindo o tempo da equipe de enfermagem, aumentando a precisão e garantindo atualização constante das orientações.</p>
+        </section>
+
+        <section id="escopo">
+            <h2>2. Escopo da Solução</h2>
+            <p class="section-subtitle">Fluxo de funcionamento:</p>
+            <div class="timeline-container">
+                <div class="timeline-item"><div class="icon">1</div><h3>Acionamento pela equipe</h3><ul><li>A enfermeira inicia o processo no Bubble, dentro do prontuário do paciente.</li></ul></div>
+                <div class="timeline-item"><div class="icon">2</div><h3>Busca de informações</h3><ul><li>Integração com o Bubble para coletar dados e histórico do paciente.</li></ul></div>
+                <div class="timeline-item"><div class="icon">3</div><h3>Coleta de exames</h3><ul><li>Acesso automático à pasta do Google Drive, download dos CSVs e organização das informações por paciente.</li></ul></div>
+                <div class="timeline-item"><div class="icon">4</div><h3>Análise inteligente</h3><ul><li>Agente 1 (rápido e econômico): identifica alterações e pontos críticos.</li><li>Agente 2 (especializado): consulta o protocolo institucional, define risco, frequência de acompanhamento, checklist e roteiro de orientação.</li><li>Regras personalizadas e inteligentes: o sistema aplica critérios de alerta definidos sob medida para sua realidade clínica.</li></ul></div>
+                <div class="timeline-item"><div class="icon">5</div><h3>Registro e entrega</h3><ul><li>O resultado é salvo automaticamente no Bubble, pronto para uso da equipe.</li></ul></div>
+                <div class="timeline-item"><div class="icon">6</div><h3>Manutenção do protocolo</h3><ul><li>Verificação periódica e atualização automática da base usada pela IA.</li></ul></div>
+            </div>
+        </section>
+
+        <section id="beneficios">
+            <h2>3. Benefícios</h2>
+            <ul class="checklist">
+                <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M12 6v6l4 2"></path></svg></div><div><strong>Velocidade:</strong> redução drástica do tempo de análise da enfermagem.</div></li>
+                <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="9" y1="15" x2="15" y2="15"></line><line x1="9" y1="9" x2="15" y2="9"></line></svg></div><div><strong>Padronização:</strong> aplicação fiel do protocolo em todos os casos.</div></li>
+                <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div><div><strong>Precisão:</strong> IA orientada por protocolo atualizado e regras claras.</div></li>
+                <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line></svg></div><div><strong>Escalabilidade:</strong> preparada para qualquer volume de pacientes.</div></li>
+                <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.72"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.72-1.72"></path></svg></div><div><strong>Integração fluida</strong> com sistemas existentes.</div></li>
+                <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M17.5 13.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"></path><path d="M12 19v-2.5"></path></svg></div><div><strong>Relatórios customizados</strong> para diferentes necessidades.</div></li>
+                <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-9 9c-4.97 0-9-4.03-9-9s4.03-9 9-9"></path><path d="M21 3v5h-5"></path><path d="M3 12a9 9 0 0 1 9-9c1.61 0 3.12.42 4.45 1.18L21 3"></path><path d="M3 21v-5h5"></path></svg></div><div><strong>Base de conhecimento viva:</strong> protocolo atualizado automaticamente.</div></li>
+                <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 17l4-4-4-4"></path><path d="M10 7l-4 4 4 4"></path><path d="M5 21v-4.23a2 2 0 0 1 .55-1.41l2.24-2.24a2 2 0 0 1 2.83 0L12 14.59"></path><path d="M19 3v4.23a2 2 0 0 1-.55 1.41l-2.24 2.24a2 2 0 0 1-2.83 0L12 9.41"></path></svg></div><div><strong>Experiência aprimorada do paciente:</strong> atendimento mais ágil e de qualidade.</div></li>
+                <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"></path><rect x="4" y="8" width="16" height="12" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg></div><div><strong>Qualidade e Confiabilidade da IA:</strong> engenharia de prompts avançada para respostas precisas.</div></li>
+            </ul>
+        </section>
+        
+        <section id="bastidores">
+            <div class="container">
+                <h2>4. Bastidores da Solução</h2>
+                <p class="section-subtitle">Você verá um processo simples e rápido. Por trás, existe uma estrutura inteligente trabalhando para você:</p>
+                <div class="bastidores-card">
+                    <ul>
+                        <li><div class="icon">🤖</div> <div><strong>Automação com N8N:</strong> é o “cérebro” que orquestra cada etapa do fluxo.</div></li>
+                        <li><div class="icon">📥</div> <div><strong>Google Drive:</strong> busca automaticamente os exames na pasta certa, sem downloads manuais.</div></li>
+                        <li><div class="icon">🔄</div> <div><strong>Integração com o Bubble:</strong> pega o histórico do paciente e salva o resultado direto no prontuário.</div></li>
+                        <li><div class="icon">🧠</div> <div><strong>Inteligência Artificial em dois agentes:</strong> um resume os dados/exames; outro aplica o protocolo e gera o plano completo.</div></li>
+                        <li><div class="icon">🔄</div> <div><strong>Atualização automática do protocolo:</strong> quando houver nova versão, o sistema passa a usar imediatamente.</div></li>
+                    </ul>
+                    <p class="note">💡 Você não precisa se preocupar com nenhuma dessas etapas: basta acionar pelo Bubble e a tecnologia faz o resto.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cronograma">
+            <h2>5. Cronograma do Projeto</h2>
+            <p class="section-subtitle">Prazo total estimado: <strong>30 dias corridos</strong> a partir da aprovação e envio de todas as credenciais/documentos necessários.</p>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="icon">1</div>
+                    <h3>Mapeamento de Processos e Preparação</h3>
+                    <p class="duration">5 dias úteis</p>
+                    <ul>
+                        <li>Reunião de Kickoff: alinhamento de objetivos, entendimento do fluxo atual e necessidades específicas.</li>
+                        <li>Mapeamento de processos atuais: análise de como a equipe hoje coleta, organiza e utiliza as informações.</li>
+                        <li>Identificação de pontos críticos: gargalos e riscos de erro.</li>
+                        <li>Coleta de dados e materiais essenciais: protocolo vigente, histórico de pacientes, exemplos de relatórios e regras de conduta.</li>
+                        <li>Verificação de integrações: APIs, acessos ao Bubble, Google Drive, Open AI e demais sistemas necessários.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="icon">2</div>
+                    <h3>Configuração e Desenvolvimento</h3>
+                    <p class="duration">15 dias corridos</p>
+                    <ul>
+                        <li>Construção da automação no N8N.</li>
+                        <li>Integração com Google Drive e Bubble.</li>
+                        <li>Implementação dos agentes de Inteligência Artificial com as regras personalizadas do protocolo.</li>
+                        <li>Preparação para atualização automática do protocolo.</li>
+                        <li>Configuração do agente bônus de transcrição.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="icon">3</div>
+                    <h3>Testes, Validação e Ajustes Finais</h3>
+                    <p class="duration">5 dias corridos</p>
+                    <ul>
+                        <li>Testes internos com Amir e sua equipe clínica: nesta etapa vamos testar vários possíveis cenários, para que possamos identificar qualquer inconsistência e corrigir.</li>
+                        <li>Ajustes finais de formato e funcionamento.</li>
+                        <li>Validação final.</li>
+                        <li>Treinamento da equipe para uso diário.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="icon">4</div>
+                    <h3>Otimização Pós-Entrega</h3>
+                    <p class="duration">30 dias após a entrega</p>
+                    <ul>
+                        <li>Melhoria contínua dos prompts para garantir respostas mais rápidas, claras e aderentes ao protocolo.</li>
+                        <li>Correção de bugs ou ajustes identificados no uso real.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-newscale">
+            <h2>6. Por que escolher a NewScale</h2>
+            <ul class="checklist">
+                <li><div class="icon">✓</div> <div><strong>Superpersonalização real:</strong> adaptamos cada etapa do fluxo para refletir exatamente a forma como sua equipe trabalha.</div></li>
+                <li><div class="icon">✓</div> <div><strong>Garantia de satisfação:</strong> só consideramos o projeto concluído quando tudo estiver funcionando com precisão e fluidez.</div></li>
+                <li><div class="icon">✓</div> <div><strong>IA otimizada para custo-benefício:</strong> aplicamos engenharia de prompts avançada para reduzir custos mensais sem comprometer a qualidade.</div></li>
+                <li><div class="icon">✓</div> <div><strong>Equipe experiente e proativa:</strong> unimos conhecimento técnico sólido e experiência prática para garantir que sua operação esteja sempre um passo à frente.</div></li>
+            </ul>
+        </section>
+
+        <section id="investimento">
+            <h2>7. Investimento</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Implantação única</h3>
+                    <div class="price">R$ 7.764,00</div>
+                    <p>Inclui: configuração, integrações (Bubble + Drive), agentes de IA (dois estágios), regras críticas, indexação do protocolo, testes, treinamento da equipe.</p>
+                </div>
+                <div class="pricing-card">
+                    <h3>Fee mensal</h3>
+                    <div class="price">R$ 882,00</div>
+                    <p>Compreende: hospedagem/monitoramento do n8n e integrações, atualizações contínuas, suporte e custos estimados de IA.</p>
+                    <div class="token-info">
+                        <p><strong>Estimativa de uso de tokens:</strong><br>Para aprox. 3000 usos por mês: <strong>aprox. R$300,00</strong></p>
+                        <p style="font-size: 0.9rem; color: var(--verde-medio);">(Custo por consulta: R$0,50)</p>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 0.9rem; color: var(--verde-medio); margin-top: 20px;">Observação: valores podem variar conforme o volume real e requisitos adicionais.</p>
+        </section>
+
+        <section id="expansao">
+            <h2>8. Planos Futuros e Expansão</h2>
+            <p class="section-subtitle">A solução poderá ser ampliada para:</p>
+            <ul class="checklist">
+                <li><div class="icon">➕</div> <div>Inclusão de novos protocolos clínicos sem refazer o fluxo.</div></li>
+                <li><div class="icon">➕</div> <div>Análise de exames em outros formatos (PDF, imagem com OCR).</div></li>
+                <li><div class="icon">➕</div> <div>Relatórios e dashboards com KPIs clínicos e operacionais.</div></li>
+                <li><div class="icon">➕</div> <div>Alertas automáticos por WhatsApp/e-mail para casos críticos.</div></li>
+            </ul>
+        </section>
+
+        <section id="approval">
+            <h2>9. Próximos Passos</h2>
+            <ol id="proximos-passos">
+                <li>Aprovação da proposta</li>
+                <li>Assinatura do Contrato</li>
+                <li>Envio de credenciais e arquivos</li>
+                <li>Kickoff técnico e início dos trabalhos</li>
+            </ol>
+            <div class="cta-container">
+                <a href="mailto:bruna@newscale.tech?subject=Aprovação%20–%20Proposta%20Automação%20Protocolos%20(Amir%20-%20Colo%20Saúde)&body=Olá%20Bruna,%0D%0A%0D%0AGostaria%20de%20aprovar%20a%20proposta%20para%20a%20solução%20de%20automação%20de%20protocolos.%0D%0A%0D%0AMeu%20telefone%20é%20[Seu%20Telefone]%20e%20o%20melhor%20horário%20para%20contato%20é%20[Melhor%20Horário]." class="cta-button">✅ Aprovar Proposta</a>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="contact-details">
+                <p><strong>Bruna Santanna – NewScale AI</strong></p>
+                <p><a href="tel:+5511971901020">(11) 97190-1020</a> | <a href="mailto:bruna@newscale.tech">bruna@newscale.tech</a></p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Valores estimados com base no escopo atual e poderão variar conforme volume e novos requisitos. Proposta válida por 15 dias.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">Bv Servicos de Marketing e Consultoria | 48.533.847/0001-68</p>
+    </footer>
+
+</body>
+</html>
