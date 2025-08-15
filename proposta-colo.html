@@ -44,6 +44,37 @@
         p { font-weight: 300; font-size: 1.1rem; max-width: 750px; margin: 0 auto; }
         strong { font-weight: 600; }
     
+        /* Header da Proposta */
+        .proposal-header {
+            background-color: var(--branco-puro);
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 60px;
+            border: 1px solid #eee;
+            text-align: center;
+        }
+        .proposal-header .logo-container {
+            margin-bottom: 30px;
+        }
+        .proposal-header .logo-container img {
+            height: 80px;
+            width: auto;
+        }
+        .proposal-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--verde-escuro);
+        }
+        .proposal-header .client-info {
+            list-style: none;
+            color: var(--verde-medio);
+            display: inline-block;
+            text-align: left;
+        }
+        .proposal-header .client-info li {
+            margin-bottom: 5px;
+        }
+
         /* Seções */
         section {
             padding: 60px 0;
@@ -60,60 +91,6 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-        }
-
-        /* Capa (Hero) */
-        #capa {
-            background-color: var(--verde-escuro);
-            color: var(--branco-puro);
-            text-align: center;
-            border-radius: 8px;
-        }
-        #capa .logo-container {
-            margin-bottom: 30px;
-        }
-        #capa .logo-container img {
-            height: 80px;
-            width: auto;
-            filter: brightness(0) invert(1); /* Deixa o logo branco */
-        }
-        #capa h1 {
-            color: var(--branco-puro);
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-        }
-        #capa .client-info {
-            list-style: none;
-            color: var(--bege-claro);
-            margin: 20px 0 40px 0;
-        }
-        #capa .cta-group {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: var(--marrom-areia);
-            color: white !important;
-            padding: 15px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border: none;
-            cursor: pointer;
-        }
-        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(176, 110, 74, 0.4); }
-        .sub-cta {
-            color: var(--bege-claro);
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 1px solid var(--marrom-areia);
-            padding-bottom: 2px;
         }
 
         /* Escopo e Cronograma (Timeline) */
@@ -342,7 +319,7 @@
 
     <main class="container">
         
-        <section id="capa">
+        <header class="proposal-header">
             <div class="logo-container">
                 <img src="LOGO 05@3x.png" alt="Logo da Newscale Consulting">
             </div>
@@ -352,11 +329,7 @@
                 <li><strong>Data:</strong> 15/08/2025</li>
                 <li><strong>Responsável:</strong> Bruna Santanna – NewScale AI</li>
             </ul>
-            <div class="cta-group">
-                <a href="mailto:bruna@newscale.tech?subject=Aprovação%20–%20Proposta%20Automação%20Protocolos%20(Amir%20-%20Colo%20Saúde)&body=Olá%20Bruna,%0D%0A%0D%0AGostaria%20de%20aprovar%20a%20proposta%20para%20a%20solução%20de%20automação%20de%20protocolos.%0D%0A%0D%0AMeu%20telefone%20é%20[Seu%20Telefone]%20e%20o%20melhor%20horário%20para%20contato%20é%20[Melhor%20Horário]." class="cta-button">Aprovar proposta</a>
-                <a href="https://wa.me/5511971901020" target="_blank" class="sub-cta">Falar com especialista</a>
-            </div>
-        </section>
+        </header>
 
         <section id="objetivo">
             <h2>1. Objetivo</h2>
@@ -370,7 +343,7 @@
                 <div class="timeline-item"><div class="icon">1</div><h3>Acionamento pela equipe</h3><ul><li>A enfermeira inicia o processo no Bubble, dentro do prontuário do paciente.</li></ul></div>
                 <div class="timeline-item"><div class="icon">2</div><h3>Busca de informações</h3><ul><li>Integração com o Bubble para coletar dados e histórico do paciente.</li></ul></div>
                 <div class="timeline-item"><div class="icon">3</div><h3>Coleta de exames</h3><ul><li>Acesso automático à pasta do Google Drive, download dos CSVs e organização das informações por paciente.</li></ul></div>
-                <div class="timeline-item"><div class="icon">4</div><h3>Análise inteligente</h3><ul><li>Agente 1 (rápido e econômico): identifica alterações e pontos críticos.</li><li>Agente 2 (especializado): consulta o protocolo institucional, define risco, frequência de acompanhamento, checklist e roteiro de orientação.</li><li>Regras personalizadas e inteligentes: o sistema aplica critérios de alerta definidos sob medida para sua realidade clínica.</li></ul></div>
+                <div class="timeline-item"><div class="icon">4</div><h3>Análise inteligente</h3><ul><li><strong>Agente 1 (rápido e econômico):</strong> Reúne e padroniza informações.</li><li><strong>Agente 2 (especializado):</strong> Com base no protocolo médico, dá o diagnóstico e define o plano de tratamento e roteiro de orientação.</li><li><strong>Regras personalizadas e inteligentes:</strong> O sistema aplica critérios de alerta definidos sob medida para sua realidade clínica. Assim, qualquer parâmetro que exija atenção especial será automaticamente identificado e destacado no relatório, garantindo decisões rápidas e seguras.</li></ul></div>
                 <div class="timeline-item"><div class="icon">5</div><h3>Registro e entrega</h3><ul><li>O resultado é salvo automaticamente no Bubble, pronto para uso da equipe.</li></ul></div>
                 <div class="timeline-item"><div class="icon">6</div><h3>Manutenção do protocolo</h3><ul><li>Verificação periódica e atualização automática da base usada pela IA.</li></ul></div>
             </div>
@@ -480,7 +453,7 @@
                 <div class="pricing-card">
                     <h3>Fee mensal</h3>
                     <div class="price">R$ 882,00</div>
-                    <p>Compreende: hospedagem/monitoramento do n8n e integrações, atualizações contínuas, suporte e custos estimados de IA.</p>
+                    <p>Compreende: hospedagem/monitoramento do n8n e integrações, atualizações contínuas, suporte.</p>
                     <div class="token-info">
                         <p><strong>Estimativa de uso de tokens:</strong><br>Para aprox. 3000 usos por mês: <strong>aprox. R$300,00</strong></p>
                         <p style="font-size: 0.9rem; color: var(--verde-medio);">(Custo por consulta: R$0,50)</p>
