@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investimentos - Projeto Atmosfera | NewScale Consulting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #14373C;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #14373C 0%, #435D51 100%);
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 Q50,5 80,20 Q95,50 80,80 Q50,95 20,80 Q5,50 20,20" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>') repeat;
+            opacity: 0.1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .highlight {
+            color: #B06E4A;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        .nav {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #14373C;
+            padding: 0.8rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover {
+            background: #14373C;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background: #B06E4A;
+            color: white;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 4rem 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #14373C;
+            text-align: center;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #D0D0CA 0%, #E5E5E0 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+        }
+
+        .intro h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #14373C;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Diagnóstico Section */
+        .diagnostico {
+            background: #14373C;
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+
+        .diagnostico h3 {
+            color: #D0D0CA;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .diagnostico p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        /* Projetos Grid */
+        .projetos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .projeto-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border: 2px solid #D0D0CA;
+            transition: all 0.3s ease;
+        }
+
+        .projeto-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-color: #B06E4A;
+        }
+
+        .projeto-card h4 {
+            color: #14373C;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .projeto-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #B06E4A;
+            margin-bottom: 1.5rem;
+        }
+
+        .projeto-card ul {
+            margin-left: 1.5rem;
+        }
+
+        .projeto-card li {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        /* Mensalidade Section */
+        .mensalidade {
+            background: linear-gradient(135deg, #B06E4A 0%, #8B5A3C 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+
+        .mensalidade h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .mensalidade-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .mensalidade-value {
+            text-align: center;
+        }
+
+        .mensalidade-value .price {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .mensalidade-value .period {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .mensalidade-features ul {
+            margin-left: 1.5rem;
+        }
+
+        .mensalidade-features li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        /* Infraestrutura Section */
+        .infraestrutura {
+            background: #435D51;
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+
+        .infraestrutura h3 {
+            color: #D0D0CA;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .infra-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .infra-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .infra-item h4 {
+            color: #B06E4A;
+            margin-bottom: 1rem;
+        }
+
+        /* Benefícios Grid */
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .beneficio-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .beneficio-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            border-color: #14373C;
+        }
+
+        .beneficio-card .icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #14373C;
+        }
+
+        .beneficio-card h4 {
+            color: #14373C;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .beneficio-card p {
+            color: #555;
+            line-height: 1.6;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #435D51;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .back-to-home {
+            display: inline-block;
+            background: #14373C;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 2rem 0;
+        }
+
+        .back-to-home:hover {
+            background: #B06E4A;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-container {
+                gap: 0.8rem;
+            }
+
+            .nav-link {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .mensalidade-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .projetos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="../LOGO 03@3x.png" alt="NewScale Consulting">
+            </div>
+            
+            <div class="hero-content">
+                <h1>💰 <span class="highlight">Investimentos</span></h1>
+                <p class="subtitle">Projeto Atmosfera</p>
+                <p>Valores transparentes para soluções sob medida que atendem 100% das necessidades mapeadas da Atmosfera.</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="nav-link">Visão Geral</a>
+                <a href="projeto1.html" class="nav-link">Projeto 1</a>
+                <a href="projeto2.html" class="nav-link">Projeto 2</a>
+                <a href="projeto3.html" class="nav-link">Projeto 3</a>
+                <a href="projeto4.html" class="nav-link">Projeto 4</a>
+                <a href="investimentos.html" class="nav-link active">Investimentos</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="section">
+                <div class="intro">
+                    <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">Todos os valores apresentados contemplam <strong>exatamente o que foi mapeado e discutido nas reuniões com a Atmosfera</strong>, garantindo que a solução atenda 100% das necessidades atuais da empresa.</p>
+                </div>
+            </section>
+
+            <section class="diagnostico">
+                <h3>🔍 Diagnóstico e Mapeamento de Processos</h3>
+                <p>Antes de qualquer implementação, realizamos um <strong>mapeamento profundo dos processos internos da Atmosfera</strong>.</p>
+                <p>Conversamos com a equipe, entendemos as rotinas e identificamos gargalos para que cada automação seja feita <strong>sob medida</strong>, respeitando o fluxo real de trabalho e potencializando o que já funciona bem.</p>
+                <p style="font-weight: 600; margin-top: 2rem;">Esse diagnóstico está incluso em todos os projetos.</p>
+            </section>
+
+            <section class="section">
+                <h2>🚀 Projetos</h2>
+                
+                <div class="projetos-grid">
+                    <div class="projeto-card">
+                        <h4>Projeto 1 – Atendimento Inteligente de Leads</h4>
+                        <div class="projeto-value">R$ 12.800,00</div>
+                        <p><strong>Inclui:</strong></p>
+                        <ul>
+                            <li>2 agentes (WhatsApp/chat e e-mail)</li>
+                            <li>Integração com CRM (Construtor de Vendas)</li>
+                            <li>Qualificação automática de leads</li>
+                            <li>Notificações no WhatsApp (individuais ou em grupos)</li>
+                            <li>Critérios de qualificação personalizáveis</li>
+                            <li><strong>Mapeamento detalhado do processo comercial, garantindo que a automação reflita o fluxo real da equipe</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="projeto-card">
+                        <h4>Projeto 2 – Emissão de Boletos via WhatsApp</h4>
+                        <div class="projeto-value">R$ 8.600,00</div>
+                        <p><strong>Inclui:</strong></p>
+                        <ul>
+                            <li>Automação completa da emissão de 2ª via</li>
+                            <li>Integração com ERP</li>
+                            <li>Bot simpático para atendimento via WhatsApp</li>
+                            <li>Relatórios e histórico de solicitações</li>
+                            <li><strong>Mapeamento detalhado do processo financeiro, assegurando que a automação reproduza fielmente a rotina da equipe</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="projeto-card">
+                        <h4>Projeto 3 – Gestão de Tickets de Lojistas</h4>
+                        <div class="projeto-value">R$ 8.600,00</div>
+                        <p><strong>Inclui:</strong></p>
+                        <ul>
+                            <li>Chatbot especializado no WhatsApp</li>
+                            <li>Classificação inteligente de tickets</li>
+                            <li>Integração ao sistema atual</li>
+                            <li>Notificações automáticas para equipes</li>
+                            <li>Gestão por exceção (o gerente só atua nos casos complexos)</li>
+                            <li>Relatórios automáticos</li>
+                            <li><strong>Mapeamento detalhado dos processos de atendimento aos lojistas, ajustando a automação à realidade da operação</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="projeto-card">
+                        <h4>Projeto 4 – Checklist de Limpeza Inteligente</h4>
+                        <div class="projeto-value">R$ 5.600,00</div>
+                        <p><strong>Inclui:</strong></p>
+                        <ul>
+                            <li>Assistente proativo no WhatsApp</li>
+                            <li>Checklists interativos (respostas por texto, <strong>áudio e fotos</strong>)</li>
+                            <li>Relatórios para auditoria e certificações</li>
+                            <li>Banco de dados completo com rastreabilidade total</li>
+                            <li><strong>Mapeamento detalhado dos processos operacionais, garantindo aderência às rotinas da equipe de limpeza</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mensalidade">
+                <h3>📦 Mensalidade de Suporte e Manutenção</h3>
+                <div class="mensalidade-content">
+                    <div class="mensalidade-value">
+                        <div class="price">R$ 2.500,00</div>
+                        <div class="period">por mês</div>
+                    </div>
+                    <div class="mensalidade-features">
+                        <p><strong>Inclui:</strong></p>
+                        <ul>
+                            <li>Monitoramento e ajustes contínuos</li>
+                            <li>Otimização de prompts e fluxos</li>
+                            <li>Atualizações de integrações (CRM, ERP, WhatsApp)</li>
+                            <li>Suporte técnico dedicado</li>
+                            <li>Relatórios de performance mensais</li>
+                            <li><strong>Hospedagem exclusiva da solução</strong>, em ambiente dedicado à Atmosfera, garantindo segurança, estabilidade e privacidade dos dados</li>
+                            <li><strong>Workshops de Treinamento</strong> para equipe de corretores, lojistas e operação – garantindo rápida adoção</li>
+                            <li><strong>30 dias de ajustes e testes dedicados</strong> após a entrega de cada projeto, sem custo adicional, até que tudo esteja rodando com fluidez</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="infraestrutura">
+                <h3>⚙️ Infraestrutura e Custos Extras</h3>
+                <div class="infra-grid">
+                    <div class="infra-item">
+                        <h4>🤖 Tokens de IA</h4>
+                        <p><strong>Tokens de Inteligência Artificial (OpenAI):</strong> não estão incluídos nos valores acima. O consumo dependerá do volume de uso real, sendo cobrado diretamente pela plataforma com total transparência.</p>
+                    </div>
+                    
+                    <div class="infra-item">
+                        <h4>🔒 Hospedagem</h4>
+                        <p>Toda a solução será hospedada em ambiente seguro, <strong>exclusivo para a Atmosfera</strong>, sem compartilhamento com outros clientes.</p>
+                    </div>
+                    
+                    <div class="infra-item">
+                        <h4>🔗 Tecnologias</h4>
+                        <p>Utilizaremos tecnologias consolidadas como <strong>WhatsApp Business API, Zapier / n8n, Construtor de Vendas (CRM), ERP da empresa e Vector Databases</strong> para armazenamento inteligente de informações.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>🎯 Benefícios para a Atmosfera</h2>
+                <div class="beneficios-grid">
+                    <div class="beneficio-card">
+                        <div class="icon">💰</div>
+                        <h4>Mais Vendas e Receita</h4>
+                        <p>Corretores recebem apenas leads qualificados, aumentando conversão e reduzindo esforço desperdiçado</p>
+                    </div>
+                    
+                    <div class="beneficio-card">
+                        <div class="icon">📉</div>
+                        <h4>Redução de Custos Operacionais</h4>
+                        <p>Automação elimina tarefas repetitivas de atendimento, emissão de boletos e checklists</p>
+                    </div>
+                    
+                    <div class="beneficio-card">
+                        <div class="icon">📊</div>
+                        <h4>Eficiência para a Gestão</h4>
+                        <p>Relatórios automáticos e históricos completos para auditorias e certificações</p>
+                    </div>
+                    
+                    <div class="beneficio-card">
+                        <div class="icon">😊</div>
+                        <h4>Satisfação dos Lojistas</h4>
+                        <p>Atendimento ágil via WhatsApp, sem burocracia</p>
+                    </div>
+                    
+                    <div class="beneficio-card">
+                        <div class="icon">🚀</div>
+                        <h4>Colaboradores Mais Produtivos</h4>
+                        <p>Menos carga manual, mais tempo para tarefas de maior valor</p>
+                    </div>
+                    
+                    <div class="beneficio-card">
+                        <div class="icon">⭐</div>
+                        <h4>Clientes Mais Bem Atendidos</h4>
+                        <p>Respostas rápidas, precisas e disponíveis 24/7</p>
+                    </div>
+                    
+                    <div class="beneficio-card">
+                        <div class="icon">🔒</div>
+                        <h4>Segurança e Confiabilidade</h4>
+                        <p>Hospedagem dedicada e integrações sólidas com os sistemas já utilizados</p>
+                    </div>
+                    
+                    <div class="beneficio-card">
+                        <div class="icon">✅</div>
+                        <h4>Adoção Garantida</h4>
+                        <p>Workshops práticos para equipe + 30 dias de ajustes dedicados até a estabilização total</p>
+                    </div>
+                    
+                    <div class="beneficio-card">
+                        <div class="icon">🎯</div>
+                        <h4>Automação Sob Medida</h4>
+                        <p>Todo projeto nasce de um diagnóstico profundo dos processos, garantindo uma solução personalizada</p>
+                    </div>
+                </div>
+            </section>
+
+            <div style="text-align: center;">
+                <a href="index.html" class="back-to-home">← Voltar à Visão Geral</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 NewScale Consulting - Bv Serviços de Marketing e Consultoria | CNPJ: 48.533.847/0001-68</p>
+        </div>
+    </footer>
+</body>
+</html>
