@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto 1 - Qualificação de Leads | NewScale Consulting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #14373C;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #14373C 0%, #435D51 100%);
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 Q50,5 80,20 Q95,50 80,80 Q50,95 20,80 Q5,50 20,20" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>') repeat;
+            opacity: 0.1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .logo svg {
+            width: 50px;
+            height: 50px;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .logo-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            letter-spacing: 1px;
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .highlight {
+            color: #B06E4A;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        .nav {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #14373C;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .nav-link:hover {
+            background: #14373C;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background: #B06E4A;
+            color: white;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 4rem 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #14373C;
+            text-align: center;
+        }
+
+        .section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #14373C;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #D0D0CA 0%, #E5E5E0 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+        }
+
+        .intro h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #14373C;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .process-flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .process-step {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border: 2px solid #D0D0CA;
+            position: relative;
+        }
+
+        .process-step::before {
+            content: attr(data-step);
+            position: absolute;
+            top: -15px;
+            left: 2rem;
+            background: #14373C;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .process-step h4 {
+            margin-bottom: 1rem;
+            color: #14373C;
+            font-size: 1.3rem;
+        }
+
+        .process-step p {
+            margin-bottom: 1rem;
+        }
+
+        .process-step ul {
+            margin-left: 1.5rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-card {
+            background: #14373C;
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .benefit-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #B06E4A;
+        }
+
+        .benefit-card h4 {
+            margin-bottom: 1rem;
+            color: #D0D0CA;
+        }
+
+        .requirements {
+            background: #435D51;
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+
+        .requirements h3 {
+            color: #D0D0CA;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .requirement-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .requirement-item h4 {
+            color: #B06E4A;
+            margin-bottom: 1rem;
+        }
+
+        .requirement-item ul {
+            margin-left: 1.5rem;
+        }
+
+        .next-steps {
+            background: linear-gradient(135deg, #B06E4A 0%, #D0949C 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+
+        .next-steps h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .steps-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .step-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .step-item .number {
+            background: white;
+            color: #B06E4A;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin: 0 auto 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #435D51;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .back-to-home {
+            display: inline-block;
+            background: #14373C;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 2rem 0;
+        }
+
+        .back-to-home:hover {
+            background: #B06E4A;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .process-flow {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="../LOGO 05@3x.png" alt="NewScale Consulting" style="height: 60px; width: auto;">
+            </div>
+            
+            <div class="hero-content">
+                <h1>🏢 <span class="highlight">Projeto 1</span></h1>
+                <p class="subtitle">Atendimento e Qualificação Inteligente de Leads</p>
+                <p>Sistema automático que recebe interessados, conversa, qualifica e encaminha apenas leads com potencial real de compra para seus corretores.</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="nav-link">Visão Geral</a>
+                <a href="projeto1.html" class="nav-link active">Projeto 1 - Leads</a>
+                <a href="projeto2.html" class="nav-link">Projeto 2 - Boletos</a>
+                <a href="projeto3.html" class="nav-link">Projeto 3 - Tickets</a>
+                <a href="projeto4.html" class="nav-link">Projeto 4 - Checklist</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="section">
+                <div class="intro">
+                    <h3>O Que Vamos Fazer</h3>
+                    <p>Criar um sistema automático que vai receber todos os interessados nos seus imóveis, conversar com eles, identificar quem tem real interesse de compra e encaminhar apenas os leads qualificados para seus corretores.</p>
+                    <p><strong>Resultado:</strong> Seus corretores vão receber apenas clientes com potencial real de compra, economizando tempo e aumentando as vendas.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Como Funciona</h2>
+                
+                <div class="process-flow">
+                    <div class="process-step" data-step="1">
+                        <h4>Captação Automática</h4>
+                        <p>Todos os contatos que chegarem pelos canais abaixo serão automaticamente atendidos pelo sistema:</p>
+                        <ul>
+                            <li>Chat do site</li>
+                            <li>WhatsApp</li>
+                            <li>E-mail (formato de agente diferenciado)</li>
+                        </ul>
+                    </div>
+
+                    <div class="process-step" data-step="2">
+                        <h4>Atendimento Inteligente</h4>
+                        <p>Nosso agente digital vai:</p>
+                        <ul>
+                            <li><strong>Conversar</strong> como um consultor de vendas experiente</li>
+                            <li><strong>Entender</strong> o que o cliente está procurando</li>
+                            <li><strong>Esclarecer</strong> dúvidas sobre os imóveis</li>
+                            <li><strong>Enviar</strong> materiais informativos (PDFs, plantas, etc.)</li>
+                            <li><strong>Explicar</strong> valores, formas de pagamento e condições</li>
+                            <li><strong>Fazer perguntas estratégicas</strong> para identificar o perfil</li>
+                        </ul>
+                        <p style="margin-top: 1rem; font-style: italic; color: #666;">Todo o script de atendimento, tom de conversa e abordagem serão personalizados 100% de acordo com o padrão e necessidades da Atmosfera</p>
+                    </div>
+
+                    <div class="process-step" data-step="3">
+                        <h4>Qualificação Inteligente</h4>
+                        <p>O sistema vai avaliar cada lead com base em critérios que vocês definirem, como:</p>
+                        <ul>
+                            <li>Orçamento compatível com os imóveis disponíveis</li>
+                            <li>Urgência de compra (imediato ou curto prazo)</li>
+                            <li>Situação financeira (sem impedimentos)</li>
+                            <li>Tipo de imóvel desejado</li>
+                        </ul>
+                        <p style="margin-top: 1rem; font-style: italic; color: #666;">Esses critérios podem ser ajustados conforme a necessidade da empresa e até mesmo características de cada um dos projetos</p>
+                    </div>
+
+                    <div class="process-step" data-step="4">
+                        <h4>Encaminhamento Automático</h4>
+                        <p><strong>Se o lead for qualificado:</strong></p>
+                        <ul>
+                            <li>Informações são registradas no CRM</li>
+                            <li>Resumo completo é enviado automaticamente para o grupo dos corretores no WhatsApp</li>
+                            <li>Corretor recebe cliente "pronto para venda"</li>
+                        </ul>
+                        <p style="margin-top: 1rem;"><strong>Se o lead não estiver pronto:</strong></p>
+                        <ul>
+                            <li>Fica registrado no CRM com status "nurture" para acompanhamento futuro</li>
+                            <li>Dados organizados e prontos para estratégias de relacionamento da equipe</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>O Que Você Vai Receber</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="icon">🤖</div>
+                        <h4>Chatbot Inteligente</h4>
+                        <p>Atendimento 24/7 como se fosse um vendedor experiente</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="icon">🔗</div>
+                        <h4>Integração Completa</h4>
+                        <p>Todos os canais conectados ao seu CRM</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="icon">🎯</div>
+                        <h4>Qualificação Automática</h4>
+                        <p>Apenas leads com potencial chegam aos corretores</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="icon">📱</div>
+                        <h4>Notificações no WhatsApp</h4>
+                        <p>Resumos automáticos dos leads qualificados</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="icon">⚙️</div>
+                        <h4>Sistema Personalizável</h4>
+                        <p>Critérios de qualificação ajustáveis conforme sua estratégia</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="requirements">
+                <h3>O Que Precisamos da Atmosfera</h3>
+                <p style="text-align: center; margin-bottom: 2rem;">Para implementar o projeto, vamos precisar que vocês forneçam:</p>
+                
+                <div class="requirements-grid">
+                    <div class="requirement-item">
+                        <h4>📋 Informações dos Produtos</h4>
+                        <ul>
+                            <li>Lista completa dos empreendimentos</li>
+                            <li>Detalhes dos lançamentos atuais</li>
+                            <li>Materiais informativos (PDFs, plantas, etc.)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="requirement-item">
+                        <h4>⚙️ Definições Estratégicas</h4>
+                        <ul>
+                            <li>Critérios específicos de qualificação</li>
+                            <li>Perfil do cliente ideal para cada empreendimento</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="requirement-item">
+                        <h4>🔗 Acessos Técnicos</h4>
+                        <ul>
+                            <li>Acesso ao CRM Construtor de Vendas</li>
+                            <li>Configurações do Zapier</li>
+                            <li>Inclusão no grupo de WhatsApp dos corretores</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="next-steps">
+                <h3>Próximos Passos</h3>
+                <div class="steps-list">
+                    <div class="step-item">
+                        <div class="number">1</div>
+                        <h4>Reunião de Alinhamento</h4>
+                        <p>Definir critérios e estratégia</p>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="number">2</div>
+                        <h4>Configuração Técnica</h4>
+                        <p>Integrar sistemas e criar o chatbot</p>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="number">3</div>
+                        <h4>Testes e Ajustes</h4>
+                        <p>Validar funcionamento</p>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="number">4</div>
+                        <h4>Treinamento</h4>
+                        <p>Capacitar equipe para usar o sistema</p>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="number">5</div>
+                        <h4>Go Live</h4>
+                        <p>Ativar automação completa</p>
+                    </div>
+                </div>
+            </section>
+
+            <div style="text-align: center;">
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; font-style: italic; color: #666;">Este sistema vai transformar a forma como vocês captam e qualificam leads, garantindo que seus corretores foquem apenas em clientes com real potencial de compra.</p>
+                <a href="index.html" class="back-to-home">← Voltar à Visão Geral</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 NewScale Consulting. Projeto Atmosfera - Soluções de Automação Inteligente.</p>
+        </div>
+    </footer>
