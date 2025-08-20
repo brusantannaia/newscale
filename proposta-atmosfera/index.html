@@ -289,8 +289,29 @@
             color: #D0D0CA;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
+        /* Media queries específicas para apresentações */
+        @media screen and (min-width: 900px) {
+            .project-card {
+                flex: 0 0 calc(45% - 1rem) !important;
+            }
+            .benefit-item {
+                flex: 0 0 calc(45% - 1rem) !important;
+            }
+        }
+
+        @media screen and (max-width: 899px) and (min-width: 600px) {
+            .project-card {
+                flex: 0 0 calc(45% - 1rem) !important;
+                min-width: 250px !important;
+            }
+            .benefit-item {
+                flex: 0 0 calc(45% - 1rem) !important;
+                min-width: 250px !important;
+            }
+        }
+
+        /* Responsive para mobile */
+        @media (max-width: 599px) {
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -309,16 +330,14 @@
                 padding: 0 1rem;
             }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto;
-                max-width: none;
+            .project-card {
+                flex: 0 0 100% !important;
+                min-width: unset !important;
             }
 
-            .benefits-grid {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto;
-                max-width: none;
+            .benefit-item {
+                flex: 0 0 100% !important;
+                min-width: unset !important;
             }
 
             .footer-content {
