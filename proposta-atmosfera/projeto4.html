@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto 4 - Checklist Inteligente | NewScale Consulting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #14373C;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #14373C;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #14373C 0%, #435D51 100%);
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 Q50,5 80,20 Q95,50 80,80 Q50,95 20,80 Q5,50 20,20" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>') repeat;
+            opacity: 0.1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .logo svg {
+            width: 50px;
+            height: 50px;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .logo-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            letter-spacing: 1px;
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .highlight {
+            color: #B06E4A;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        .nav {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #14373C;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .nav-link:hover {
+            background: #14373C;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background: #B06E4A;
+            color: white;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 4rem 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #14373C;
+            text-align: center;
+        }
+
+        .section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #14373C;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #D0D0CA 0%, #E5E5E0 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+        }
+
+        .intro h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #14373C;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .process-flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .process-step {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border: 2px solid #D0D0CA;
+            position: relative;
+        }
+
+        .process-step::before {
+            content: attr(data-step);
+            position: absolute;
+            top: -15px;
+            left: 2rem;
+            background: #14373C;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .process-step h4 {
+            margin-bottom: 1rem;
+            color: #14373C;
+            font-size: 1.3rem;
+        }
+
+        .process-step p {
+            margin-bottom: 1rem;
+        }
+
+        .process-step ul {
+            margin-left: 1.5rem;
+        }
+
+        .chat-example {
+            background: #435D51;
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+
+        .chat-example h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #D0D0CA;
+        }
+
+        .chat-conversation {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: monospace;
+            line-height: 1.8;
+        }
+
+        .bot-message {
+            color: #B06E4A;
+            margin-bottom: 0.5rem;
+        }
+
+        .user-message {
+            color: #D0D0CA;
+            margin-bottom: 1rem;
+            margin-left: 1rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-card {
+            background: #14373C;
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .benefit-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #B06E4A;
+        }
+
+        .benefit-card h4 {
+            margin-bottom: 1rem;
+            color: #D0D0CA;
+        }
+
+        .comparison {
+            background: linear-gradient(135deg, #B06E4A 0%, #8B5A3C 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+
+        .comparison h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .comparison-item {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .comparison-item h4 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .comparison-item.problem {
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .comparison-item.solution {
+            border-left: 4px solid #51cf66;
+        }
+
+        .comparison-item ul {
+            margin-left: 1.5rem;
+        }
+
+        .audit-section {
+            background: #14373C;
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+
+        .audit-section h3 {
+            color: #D0D0CA;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .audit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .audit-item {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .audit-item h4 {
+            color: #B06E4A;
+            margin-bottom: 1rem;
+        }
+
+        .audit-item ul {
+            margin-left: 1.5rem;
+        }
+
+        .requirements {
+            background: #435D51;
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+
+        .requirements h3 {
+            color: #D0D0CA;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .requirement-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .requirement-item h4 {
+            color: #B06E4A;
+            margin-bottom: 1rem;
+        }
+
+        .requirement-item ul {
+            margin-left: 1.5rem;
+        }
+
+        .next-steps {
+            background: linear-gradient(135deg, #B06E4A 0%, #D0949C 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+
+        .next-steps h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .steps-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .step-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .step-item .number {
+            background: white;
+            color: #B06E4A;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin: 0 auto 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #435D51;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .back-to-home {
+            display: inline-block;
+            background: #14373C;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 2rem 0;
+        }
+
+        .back-to-home:hover {
+            background: #B06E4A;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .process-flow {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="../LOGO 03@3x.png" alt="NewScale Consulting" style="height: 60px; width: auto;">
+            </div>
+            
+            <div class="hero-content">
+                <h1>✅ <span class="highlight">Projeto 4</span></h1>
+                <p class="subtitle">Checklist de Limpeza Inteligente via WhatsApp</p>
+                <p>Sistema que substitui o Forms não utilizado por um assistente inteligente que "cobra" ativamente a execução dos checklists, garantindo 100% de compliance.</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="nav-link">Visão Geral</a>
+                <a href="projeto1.html" class="nav-link">Projeto 1 - Leads</a>
+                <a href="projeto2.html" class="nav-link">Projeto 2 - Boletos</a>
+                <a href="projeto3.html" class="nav-link">Projeto 3 - Tickets</a>
+                <a href="projeto4.html" class="nav-link active">Projeto 4 - Checklist</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="section">
+                <div class="intro">
+                    <h3>O Que Vamos Fazer</h3>
+                    <p>Substituir o Forms que não é usado por um assistente inteligente no WhatsApp que vai "cobrar" ativamente a execução dos checklists de limpeza. Sistema garante conformidade com certificações e padrões de qualidade de forma simples e eficaz.</p>
+                    <p><strong>Resultado:</strong> 100% de compliance nos checklists + histórico completo para auditorias + equipe usando ferramenta que já conhece.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Como Funciona</h2>
+                
+                <div class="process-flow">
+                    <div class="process-step" data-step="1">
+                        <h4>Notificações Automáticas</h4>
+                        <ul>
+                            <li><strong>Lembretes pontuais</strong> nos horários programados</li>
+                            <li><strong>Notificação personalizada</strong> para cada responsável</li>
+                            <li><strong>Persistência inteligente</strong> - insiste até receber resposta</li>
+                        </ul>
+                    </div>
+
+                    <div class="process-step" data-step="2">
+                        <h4>Checklist Interativo</h4>
+                        <p>O sistema vai conduzir o colaborador através de cada item:</p>
+                        <ul>
+                            <li><strong>Perguntas uma por vez</strong> - não sobrecarrega o funcionário</li>
+                            <li><strong>Aceita respostas simples</strong> - "sim", "não", "ok"</li>
+                            <li><strong>Solicita comentários</strong> quando necessário</li>
+                            <li><strong>Confirma conclusão</strong> de todo o checklist</li>
+                        </ul>
+                    </div>
+
+                    <div class="process-step" data-step="3">
+                        <h4>Acompanhamento Inteligente</h4>
+                        <ul>
+                            <li><strong>Notificações no WhatsApp</strong> - funcionários recebem onde já estão acostumados</li>
+                            <li><strong>Aumenta drasticamente</strong> a chance de uso real</li>
+                            <li><strong>Evita abandono</strong> do processo</li>
+                        </ul>
+                    </div>
+
+                    <div class="process-step" data-step="4">
+                        <h4>Persistência Automática</h4>
+                        <ul>
+                            <li><strong>Lembra quem não respondeu</strong> após tempo determinado</li>
+                            <li><strong>Escalona</strong> para supervisores se necessário</li>
+                            <li><strong>Mantém histórico</strong> de todas as tentativas</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="chat-example">
+                <h3>💬 Exemplo de Conversa</h3>
+                <div class="chat-conversation">
+                    <div class="bot-message">🤖 "Olá João! Hora do checklist de limpeza da manhã"</div>
+                    
+                    <div class="bot-message">🤖 "O chão da praça de alimentação está limpo?"</div>
+                    <div class="user-message">👨 "Sim"</div>
+                    
+                    <div class="bot-message">🤖 "As lixeiras estão vazias?"</div>
+                    <div class="user-message">👨 "Não, a lixeira da entrada está cheia"</div>
+                    
+                    <div class="bot-message">🤖 "Ok, registrado! Por favor, esvazie a lixeira da entrada agora e me avise quando concluído"</div>
+                    <div class="user-message">👨 "Pronto, lixeira esvaziada"</div>
+                    
+                    <div class="bot-message">🤖 "Perfeito! Registrado como concluído. Os banheiros estão abastecidos?"</div>
+                    <div class="user-message">👨 "Sim"</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>O Que Você Vai Receber</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="icon">🤖</div>
+                        <h4>Agente Proativo</h4>
+                        <p>Cobra ativamente a execução via WhatsApp</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="icon">✅</div>
+                        <h4>Conformidade Garantida</h4>
+                        <p>Sistema não permite "escapar" do checklist</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="icon">📊</div>
+                        <h4>Histórico Completo</h4>
+                        <p>Banco de dados com todas as respostas para auditoria</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="icon">📈</div>
+                        <h4>Relatórios Automáticos</h4>
+                        <p>Dados organizados para certificações</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="icon">🔍</div>
+                        <h4>Rastreabilidade Total</h4>
+                        <p>Data, hora, responsável e resposta de cada item</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="icon">📱</div>
+                        <h4>Facilidade de Uso</h4>
+                        <p>Interface que a equipe já conhece e usa</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="comparison">
+                <h3>Vantagens Sobre o Forms Atual</h3>
+                <div class="comparison-grid">
+                    <div class="comparison-item problem">
+                        <h4>❌ Problema do Forms:</h4>
+                        <ul>
+                            <li>Funcionários esquecem de preencher</li>
+                            <li>Sem lembretes automáticos</li>
+                            <li>Interface "burocrática"</li>
+                            <li>Baixa taxa de uso</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="comparison-item solution">
+                        <h4>✅ Solução WhatsApp:</h4>
+                        <ul>
+                            <li>Sistema "cobra" ativamente</li>
+                            <li>Notificações automáticas persistentes</li>
+                            <li>Interface familiar e simples</li>
+                            <li>Alta taxa de adoção garantida</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="audit-section">
+                <h3>Controle e Auditoria</h3>
+                <div class="audit-grid">
+                    <div class="audit-item">
+                        <h4>📊 Banco de Dados Automático</h4>
+                        <p>Cada resposta gera registro com:</p>
+                        <ul>
+                            <li><strong>Data e hora</strong> exatas</li>
+                            <li><strong>Responsável</strong> que respondeu</li>
+                            <li><strong>Item específico</strong> do checklist</li>
+                            <li><strong>Resposta</strong> (Sim/Não + comentários)</li>
+                            <li><strong>Tempo de resposta</strong></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="audit-item">
+                        <h4>📋 Relatórios para Certificação</h4>
+                        <ul>
+                            <li><strong>Conformidade por período</strong> (diário/semanal/mensal)</li>
+                            <li><strong>Performance por responsável</strong></li>
+                            <li><strong>Histórico completo</strong> para auditorias</li>
+                            <li><strong>Exportação</strong> em formatos exigidos pelas certificadoras</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="requirements">
+                <h3>O Que Precisamos da Atmosfera</h3>
+                <p style="text-align: center; margin-bottom: 2rem;">Para implementar o projeto, vamos precisar que vocês forneçam:</p>
+                
+                <div class="requirements-grid">
+                    <div class="requirement-item">
+                        <h4>📋 Estrutura dos Checklists</h4>
+                        <ul>
+                            <li>Lista completa de todos os itens a serem verificados</li>
+                            <li>Agrupamento por área/setor (se houver)</li>
+                            <li>Critérios específicos para cada item</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="requirement-item">
+                        <h4>⏰ Cronograma Operacional</h4>
+                        <ul>
+                            <li>Horários exatos para cada checklist</li>
+                            <li>Frequência (diário, semanal, etc.)</li>
+                            <li>Diferentes rotinas por dia da semana (se houver)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="requirement-item">
+                        <h4>👥 Organização da Equipe</h4>
+                        <ul>
+                            <li>Lista dos responsáveis por cada checklist</li>
+                            <li>Contatos de WhatsApp de cada colaborador</li>
+                            <li>Hierarquia para escalonamento (supervisores)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="requirement-item">
+                        <h4>🎯 Regras de Negócio</h4>
+                        <ul>
+                            <li>Tempo limite para resposta antes de lembrete</li>
+                            <li>Quando e como escalonar para supervisores</li>
+                            <li>Formato desejado dos relatórios</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="next-steps">
+                <h3>Próximos Passos</h3>
+                <div class="steps-list">
+                    <div class="step-item">
+                        <div class="number">1</div>
+                        <h4>Mapeamento Detalhado</h4>
+                        <p>Entender todos os checklists atuais</p>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="number">2</div>
+                        <h4>Configuração Personalizada</h4>
+                        <p>Adaptar sistema às rotinas específicas</p>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="number">3</div>
+                        <h4>Testes com Equipe Piloto</h4>
+                        <p>Validar fluxo e ajustar linguagem</p>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="number">4</div>
+                        <h4>Treinamento Rápido</h4>
+                        <p>Apresentar sistema para toda equipe</p>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="number">5</div>
+                        <h4>Go Live Gradual</h4>
+                        <p>Ativar por setores progressivamente</p>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="number">6</div>
+                        <h4>Monitoramento e Ajustes</h4>
+                        <p>Otimizar baseado no uso real</p>
+                    </div>
+                </div>
+            </section>
+
+            <div style="text-align: center;">
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; font-style: italic; color: #666;">Este sistema vai garantir que os padrões de limpeza sejam mantidos consistentemente, gerando a documentação necessária para certificações enquanto simplifica drasticamente o processo para a equipe operacional.</p>
+                <a href="index.html" class="back-to-home">← Voltar à Visão Geral</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 NewScale Consulting. Projeto Atmosfera - Soluções de Automação Inteligente.</p>
+        </div>
+    </footer>
+</body>
+</html>
