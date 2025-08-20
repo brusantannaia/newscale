@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto 1 - Qualificação de Leads | NewScale Consulting</title>
+    <title>Projeto 2 - Segunda Via de Boletos | NewScale Consulting</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -245,6 +245,38 @@
             color: #D0D0CA;
         }
 
+        .shoppings {
+            background: #B06E4A;
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .shoppings h3 {
+            margin-bottom: 2rem;
+        }
+
+        .shopping-list {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .shopping-item {
+            background: rgba(255,255,255,0.2);
+            padding: 2rem;
+            border-radius: 15px;
+            min-width: 200px;
+        }
+
+        .shopping-item .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
         .requirements {
             background: #435D51;
             color: white;
@@ -366,6 +398,11 @@
             .benefits-grid {
                 grid-template-columns: 1fr;
             }
+
+            .shopping-list {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -377,9 +414,9 @@
             </div>
             
             <div class="hero-content">
-                <h1>🏢 <span class="highlight">Projeto 1</span></h1>
-                <p class="subtitle">Atendimento e Qualificação Inteligente de Leads</p>
-                <p>Sistema automático que recebe interessados, conversa, qualifica e encaminha apenas leads com potencial real de compra para seus corretores.</p>
+                <h1>📄 <span class="highlight">Projeto 2</span></h1>
+                <p class="subtitle">Segunda Via de Boletos Automática</p>
+                <p>Sistema que elimina o trabalho manual do setor financeiro com emissão de segundas vias. Lojistas recebem boletos instantaneamente, 24/7.</p>
             </div>
         </div>
     </header>
@@ -388,8 +425,8 @@
         <div class="container">
             <div class="nav-container">
                 <a href="index.html" class="nav-link">Visão Geral</a>
-                <a href="projeto1.html" class="nav-link active">Projeto 1 - Leads</a>
-                <a href="projeto2.html" class="nav-link">Projeto 2 - Boletos</a>
+                <a href="projeto1.html" class="nav-link">Projeto 1 - Leads</a>
+                <a href="projeto2.html" class="nav-link active">Projeto 2 - Boletos</a>
                 <a href="projeto3.html" class="nav-link">Projeto 3 - Tickets</a>
                 <a href="projeto4.html" class="nav-link">Projeto 4 - Checklist</a>
             </div>
@@ -401,8 +438,8 @@
             <section class="section">
                 <div class="intro">
                     <h3>O Que Vamos Fazer</h3>
-                    <p>Criar um sistema automático que vai receber todos os interessados nos seus imóveis, conversar com eles, identificar quem tem real interesse de compra e encaminhar apenas os leads qualificados para seus corretores.</p>
-                    <p><strong>Resultado:</strong> Seus corretores vão receber apenas clientes com potencial real de compra, economizando tempo e aumentando as vendas.</p>
+                    <p>Criar um sistema que vai eliminar o trabalho manual do setor financeiro com emissão de segundas vias de boletos. Os lojistas poderão solicitar e receber seus boletos instantaneamente, sem precisar esperar ou interromper o trabalho da equipe.</p>
+                    <p><strong>Resultado:</strong> Equipe financeira livre para atividades estratégicas + lojistas atendidos 24/7 com agilidade total.</p>
                 </div>
             </section>
 
@@ -411,53 +448,40 @@
                 
                 <div class="process-flow">
                     <div class="process-step" data-step="1">
-                        <h4>Captação Automática</h4>
-                        <p>Todos os contatos que chegarem pelos canais abaixo serão automaticamente atendidos pelo sistema:</p>
+                        <h4>Solicitação Simples</h4>
+                        <p>Os lojistas poderão solicitar segunda via através de:</p>
                         <ul>
-                            <li>Chat do site</li>
-                            <li>WhatsApp</li>
-                            <li>E-mail (formato de agente diferenciado)</li>
+                            <li>WhatsApp automatizado</li>
+                            <li>Outros sistemas que vocês preferirem</li>
                         </ul>
                     </div>
 
                     <div class="process-step" data-step="2">
-                        <h4>Atendimento Inteligente</h4>
-                        <p>Nosso agente digital vai:</p>
+                        <h4>Processamento Inteligente</h4>
+                        <p>Nosso sistema vai:</p>
                         <ul>
-                            <li><strong>Conversar</strong> como um consultor de vendas experiente</li>
-                            <li><strong>Entender</strong> o que o cliente está procurando</li>
-                            <li><strong>Esclarecer</strong> dúvidas sobre os imóveis</li>
-                            <li><strong>Enviar</strong> materiais informativos (PDFs, plantas, etc.)</li>
-                            <li><strong>Explicar</strong> valores, formas de pagamento e condições</li>
-                            <li><strong>Fazer perguntas estratégicas</strong> para identificar o perfil</li>
+                            <li><strong>Identificar</strong> automaticamente o lojista</li>
+                            <li><strong>Acessar</strong> o ERP ou seguir exatamente o processo atual da equipe</li>
+                            <li><strong>Localizar</strong> os dados do boleto necessário</li>
+                            <li><strong>Gerar</strong> a segunda via instantaneamente</li>
                         </ul>
-                        <p style="margin-top: 1rem; font-style: italic; color: #666;">Todo o script de atendimento, tom de conversa e abordagem serão personalizados 100% de acordo com o padrão e necessidades da Atmosfera</p>
                     </div>
 
                     <div class="process-step" data-step="3">
-                        <h4>Qualificação Inteligente</h4>
-                        <p>O sistema vai avaliar cada lead com base em critérios que vocês definirem, como:</p>
+                        <h4>Entrega Automática</h4>
                         <ul>
-                            <li>Orçamento compatível com os imóveis disponíveis</li>
-                            <li>Urgência de compra (imediato ou curto prazo)</li>
-                            <li>Situação financeira (sem impedimentos)</li>
-                            <li>Tipo de imóvel desejado</li>
+                            <li><strong>Envio imediato</strong> do boleto para o lojista</li>
+                            <li><strong>Confirmação</strong> de recebimento</li>
+                            <li><strong>Registro automático</strong> de toda a operação</li>
                         </ul>
-                        <p style="margin-top: 1rem; font-style: italic; color: #666;">Esses critérios podem ser ajustados conforme a necessidade da empresa e até mesmo características de cada um dos projetos</p>
                     </div>
 
                     <div class="process-step" data-step="4">
-                        <h4>Encaminhamento Automático</h4>
-                        <p><strong>Se o lead for qualificado:</strong></p>
+                        <h4>Controle Total</h4>
                         <ul>
-                            <li>Informações são registradas no CRM</li>
-                            <li>Resumo completo é enviado automaticamente para o grupo dos corretores no WhatsApp</li>
-                            <li>Corretor recebe cliente "pronto para venda"</li>
-                        </ul>
-                        <p style="margin-top: 1rem;"><strong>Se o lead não estiver pronto:</strong></p>
-                        <ul>
-                            <li>Fica registrado no CRM com status "nurture" para acompanhamento futuro</li>
-                            <li>Dados organizados e prontos para estratégias de relacionamento da equipe</li>
+                            <li><strong>Relatórios automáticos</strong> de todas as emissões</li>
+                            <li><strong>Histórico completo</strong> para auditoria</li>
+                            <li><strong>Dashboard</strong> para acompanhamento da equipe</li>
                         </ul>
                     </div>
                 </div>
@@ -467,33 +491,48 @@
                 <h2>O Que Você Vai Receber</h2>
                 <div class="benefits-grid">
                     <div class="benefit-card">
-                        <div class="icon">🤖</div>
-                        <h4>Chatbot Inteligente</h4>
-                        <p>Atendimento 24/7 como se fosse um vendedor experiente</p>
+                        <div class="icon">🕒</div>
+                        <h4>Atendimento 24/7</h4>
+                        <p>Lojistas recebem boletos a qualquer hora</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="icon">🚫</div>
+                        <h4>Zero Trabalho Manual</h4>
+                        <p>Processo 100% automatizado</p>
                     </div>
                     
                     <div class="benefit-card">
                         <div class="icon">🔗</div>
                         <h4>Integração Completa</h4>
-                        <p>Todos os canais conectados ao seu CRM</p>
+                        <p>Conectado ao seu ERP atual</p>
                     </div>
                     
                     <div class="benefit-card">
-                        <div class="icon">🎯</div>
-                        <h4>Qualificação Automática</h4>
-                        <p>Apenas leads com potencial chegam aos corretores</p>
+                        <div class="icon">📊</div>
+                        <h4>Controle e Relatórios</h4>
+                        <p>Histórico de todas as operações</p>
                     </div>
                     
                     <div class="benefit-card">
-                        <div class="icon">📱</div>
-                        <h4>Notificações no WhatsApp</h4>
-                        <p>Resumos automáticos dos leads qualificados</p>
+                        <div class="icon">😊</div>
+                        <h4>Satisfação dos Lojistas</h4>
+                        <p>Atendimento instantâneo e eficiente</p>
                     </div>
-                    
-                    <div class="benefit-card">
-                        <div class="icon">⚙️</div>
-                        <h4>Sistema Personalizável</h4>
-                        <p>Critérios de qualificação ajustáveis conforme sua estratégia</p>
+                </div>
+            </section>
+
+            <section class="shoppings">
+                <h3>Shoppings Contemplados</h3>
+                <p style="margin-bottom: 2rem;">O sistema será implementado para atender ambos os shoppings de forma integrada</p>
+                <div class="shopping-list">
+                    <div class="shopping-item">
+                        <div class="icon">🏢</div>
+                        <h4>Ubatuba Mall</h4>
+                    </div>
+                    <div class="shopping-item">
+                        <div class="icon">🏢</div>
+                        <h4>Ribeira Mall</h4>
                     </div>
                 </div>
             </section>
@@ -504,28 +543,28 @@
                 
                 <div class="requirements-grid">
                     <div class="requirement-item">
-                        <h4>📋 Informações dos Produtos</h4>
+                        <h4>🖥️ Informações Técnicas</h4>
                         <ul>
-                            <li>Lista completa dos empreendimentos</li>
-                            <li>Detalhes dos lançamentos atuais</li>
-                            <li>Materiais informativos (PDFs, plantas, etc.)</li>
+                            <li>Nome e versão do ERP/sistema financeiro utilizado</li>
+                            <li>Documentação do processo atual de emissão de 2ª via</li>
+                            <li>Passo a passo detalhado que a equipe segue hoje</li>
                         </ul>
                     </div>
                     
                     <div class="requirement-item">
-                        <h4>⚙️ Definições Estratégicas</h4>
+                        <h4>🔑 Acessos Necessários</h4>
                         <ul>
-                            <li>Critérios específicos de qualificação</li>
-                            <li>Perfil do cliente ideal para cada empreendimento</li>
+                            <li>Credenciais de acesso ao sistema (se necessário para integração)</li>
+                            <li>Permissões para automação das operações</li>
                         </ul>
                     </div>
                     
                     <div class="requirement-item">
-                        <h4>🔗 Acessos Técnicos</h4>
+                        <h4>📋 Definições Operacionais</h4>
                         <ul>
-                            <li>Acesso ao CRM Construtor de Vendas</li>
-                            <li>Configurações do Zapier</li>
-                            <li>Inclusão no grupo de WhatsApp dos corretores</li>
+                            <li>Lista dos lojistas e seus dados de contato</li>
+                            <li>Formato preferido de entrega dos boletos</li>
+                            <li>Critérios específicos para validação das solicitações</li>
                         </ul>
                     </div>
                 </div>
@@ -536,38 +575,38 @@
                 <div class="steps-list">
                     <div class="step-item">
                         <div class="number">1</div>
-                        <h4>Reunião de Alinhamento</h4>
-                        <p>Definir critérios e estratégia</p>
+                        <h4>Mapeamento do Processo</h4>
+                        <p>Entender o fluxo atual em detalhes</p>
                     </div>
                     
                     <div class="step-item">
                         <div class="number">2</div>
-                        <h4>Configuração Técnica</h4>
-                        <p>Integrar sistemas e criar o chatbot</p>
+                        <h4>Análise Técnica</h4>
+                        <p>Avaliar a melhor forma de integração</p>
                     </div>
                     
                     <div class="step-item">
                         <div class="number">3</div>
-                        <h4>Testes e Ajustes</h4>
-                        <p>Validar funcionamento</p>
+                        <h4>Desenvolvimento</h4>
+                        <p>Criar a automação personalizada</p>
                     </div>
                     
                     <div class="step-item">
                         <div class="number">4</div>
-                        <h4>Treinamento</h4>
-                        <p>Capacitar equipe para usar o sistema</p>
+                        <h4>Testes Piloto</h4>
+                        <p>Validar com alguns lojistas</p>
                     </div>
                     
                     <div class="step-item">
                         <div class="number">5</div>
-                        <h4>Go Live</h4>
-                        <p>Ativar automação completa</p>
+                        <h4>Implementação Completa</h4>
+                        <p>Ativar para todos os lojistas</p>
                     </div>
                 </div>
             </section>
 
             <div style="text-align: center;">
-                <p style="font-size: 1.2rem; margin-bottom: 2rem; font-style: italic; color: #666;">Este sistema vai transformar a forma como vocês captam e qualificam leads, garantindo que seus corretores foquem apenas em clientes com real potencial de compra.</p>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; font-style: italic; color: #666;">Esta automação vai transformar a rotina do financeiro, eliminando uma tarefa repetitiva e liberando a equipe para atividades mais estratégicas, enquanto oferece um atendimento muito superior aos lojistas.</p>
                 <a href="index.html" class="back-to-home">← Voltar à Visão Geral</a>
             </div>
         </div>
@@ -578,3 +617,5 @@
             <p>&copy; 2025 NewScale Consulting. Projeto Atmosfera - Soluções de Automação Inteligente.</p>
         </div>
     </footer>
+</body>
+</html>
