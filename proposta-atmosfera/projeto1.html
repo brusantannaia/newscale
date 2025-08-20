@@ -75,6 +75,15 @@
             text-align: center;
         }
 
+        .hero-content .project-number {
+            font-size: 1.1rem;
+            color: #B06E4A;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .hero-content h1 {
             font-size: 3rem;
             font-weight: 700;
@@ -220,10 +229,18 @@
         }
 
         .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin: 2rem 0;
+            display: flex !important;
+            flex-wrap: wrap !important;
+            gap: 2rem !important;
+            justify-content: center !important;
+            max-width: 1000px !important;
+            margin: 2rem auto !important;
+        }
+
+        .benefit-card {
+            flex: 0 0 calc(45% - 1rem) !important;
+            min-width: 280px !important;
+            max-width: 400px !important;
         }
 
         .benefit-card {
@@ -377,9 +394,9 @@
             </div>
             
             <div class="hero-content">
-                <h1>🏢 <span class="highlight">Projeto 1</span></h1>
-                <p class="subtitle">Atendimento e Qualificação Inteligente de Leads</p>
-                <p>Sistema automático que recebe interessados, conversa, qualifica e encaminha apenas leads com potencial real de compra para seus corretores.</p>
+                <p class="project-number">Projeto 1</p>
+                <h1>Atendimento e Qualificação Inteligente de Leads</h1>
+                <p class="subtitle">Sistema automático que recebe interessados, conversa, qualifica e encaminha apenas leads com potencial real de compra para seus corretores.</p>
             </div>
         </div>
     </header>
@@ -401,7 +418,7 @@
             <section class="section">
                 <div class="intro">
                     <h3>O Que Vamos Fazer</h3>
-                    <p>Criar um sistema automático que vai receber todos os interessados nos seus imóveis, conversar com eles, identificar quem tem real interesse de compra e encaminhar apenas os leads qualificados para seus corretores.</p>
+                    <p>Criar um vendedor digital que vai receber todos os interessados nos seus imóveis, conversar com eles, tirar dúvidas, enviar materiais e identificar quem tem real interesse de compra e encaminhar apenas os leads qualificados para seus corretores.</p>
                     <p><strong>Resultado:</strong> Seus corretores vão receber apenas clientes com potencial real de compra, economizando tempo e aumentando as vendas.</p>
                 </div>
             </section>
@@ -468,8 +485,8 @@
                 <div class="benefits-grid">
                     <div class="benefit-card">
                         <div class="icon">🤖</div>
-                        <h4>Chatbot Inteligente</h4>
-                        <p>Atendimento 24/7 como se fosse um vendedor experiente</p>
+                        <h4>Dois Agentes Inteligentes</h4>
+                        <p>Um especializado em <strong>atendimento instantâneo</strong> (WhatsApp, chat online) e outro focado em <strong>respostas por e-mail</strong>. Ambos funcionam 24/7, como se fossem vendedores experientes.</p>
                     </div>
                     
                     <div class="benefit-card">
