@@ -82,6 +82,15 @@
             text-align: center;
         }
 
+        .hero-content .project-number {
+            font-size: 1.1rem;
+            color: #B06E4A;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .hero-content h1 {
             font-size: 3rem;
             font-weight: 700;
@@ -241,24 +250,85 @@
         }
 
         .chat-conversation {
-            background: rgba(255,255,255,0.1);
+            background: #f0f0f0;
             padding: 2rem;
             border-radius: 15px;
             max-width: 600px;
             margin: 0 auto;
-            font-family: monospace;
-            line-height: 1.8;
+            min-height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chat-message {
+            opacity: 0;
+            animation: messageAppear 0.5s ease-in-out forwards;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes messageAppear {
+            0% {
+                opacity: 0;
+                transform: translateY(20px) scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .message-bubble {
+            padding: 0.8rem 1.2rem;
+            border-radius: 18px;
+            max-width: 80%;
+            word-wrap: break-word;
+            position: relative;
+            margin-bottom: 0.5rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.4;
         }
 
         .bot-message {
-            color: #B06E4A;
-            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .bot-message .message-bubble {
+            background: #e5e5ea;
+            color: #000;
+            border-bottom-left-radius: 4px;
         }
 
         .user-message {
-            color: #D0D0CA;
-            margin-bottom: 1rem;
-            margin-left: 1rem;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .user-message .message-bubble {
+            background: #007aff;
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        /* Efeito de digitando */
+        .chat-conversation::after {
+            content: '';
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            width: 50px;
+            height: 30px;
+            background: #e5e5ea;
+            border-radius: 18px;
+            opacity: 0;
+            animation: typingIndicator 2s infinite;
+            animation-delay: 10s;
+        }
+
+        @keyframes typingIndicator {
+            0%, 20% { opacity: 0; }
+            10% { opacity: 1; }
         }
 
         .benefits-grid {
@@ -496,9 +566,9 @@
             </div>
             
             <div class="hero-content">
-                <h1>✅ <span class="highlight">Projeto 4</span></h1>
-                <p class="subtitle">Checklist de Limpeza Inteligente via WhatsApp</p>
-                <p>Sistema que substitui o Forms não utilizado por um assistente inteligente que "cobra" ativamente a execução dos checklists, garantindo 100% de compliance.</p>
+                <p class="project-number">Projeto 4</p>
+                <h1>Checklist de Limpeza Inteligente via WhatsApp</h1>
+                <p class="subtitle">Sistema que substitui o Forms não utilizado por um assistente inteligente que "cobra" ativamente a execução dos checklists, garantindo 100% de compliance.</p>
             </div>
         </div>
     </header>
@@ -572,19 +642,37 @@
             <section class="chat-example">
                 <h3>💬 Exemplo de Conversa</h3>
                 <div class="chat-conversation">
-                    <div class="bot-message">🤖 "Olá João! Hora do checklist de limpeza da manhã"</div>
+                    <div class="chat-message bot-message" style="animation-delay: 0s;">
+                        <div class="message-bubble bot">🤖 "Olá João! Hora do checklist de limpeza da manhã"</div>
+                    </div>
                     
-                    <div class="bot-message">🤖 "O chão da praça de alimentação está limpo?"</div>
-                    <div class="user-message">👨 "Sim"</div>
+                    <div class="chat-message bot-message" style="animation-delay: 2s;">
+                        <div class="message-bubble bot">🤖 "O chão da praça de alimentação está limpo?"</div>
+                    </div>
+                    <div class="chat-message user-message" style="animation-delay: 3s;">
+                        <div class="message-bubble user">👨 "Sim"</div>
+                    </div>
                     
-                    <div class="bot-message">🤖 "As lixeiras estão vazias?"</div>
-                    <div class="user-message">👨 "Não, a lixeira da entrada está cheia"</div>
+                    <div class="chat-message bot-message" style="animation-delay: 4s;">
+                        <div class="message-bubble bot">🤖 "As lixeiras estão vazias?"</div>
+                    </div>
+                    <div class="chat-message user-message" style="animation-delay: 5s;">
+                        <div class="message-bubble user">👨 "Não, a lixeira da entrada está cheia"</div>
+                    </div>
                     
-                    <div class="bot-message">🤖 "Ok, registrado! Por favor, esvazie a lixeira da entrada agora e me avise quando concluído"</div>
-                    <div class="user-message">👨 "Pronto, lixeira esvaziada"</div>
+                    <div class="chat-message bot-message" style="animation-delay: 6s;">
+                        <div class="message-bubble bot">🤖 "Ok, registrado! Por favor, esvazie a lixeira da entrada agora e me avise quando concluído"</div>
+                    </div>
+                    <div class="chat-message user-message" style="animation-delay: 7.5s;">
+                        <div class="message-bubble user">👨 "Pronto, lixeira esvaziada"</div>
+                    </div>
                     
-                    <div class="bot-message">🤖 "Perfeito! Registrado como concluído. Os banheiros estão abastecidos?"</div>
-                    <div class="user-message">👨 "Sim"</div>
+                    <div class="chat-message bot-message" style="animation-delay: 8.5s;">
+                        <div class="message-bubble bot">🤖 "Perfeito! Registrado como concluído. Os banheiros estão abastecidos?"</div>
+                    </div>
+                    <div class="chat-message user-message" style="animation-delay: 9.5s;">
+                        <div class="message-bubble user">👨 "Sim"</div>
+                    </div>
                 </div>
             </section>
 
