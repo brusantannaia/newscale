@@ -289,24 +289,17 @@
             color: #D0D0CA;
         }
 
-        /* Media queries específicas para apresentações */
+        /* Media queries para benefits criativos */
         @media screen and (min-width: 900px) {
-            .project-card {
-                flex: 0 0 calc(45% - 1rem) !important;
-            }
-            .benefit-item {
+            .benefit-card-modern {
                 flex: 0 0 calc(45% - 1rem) !important;
             }
         }
 
         @media screen and (max-width: 899px) and (min-width: 600px) {
-            .project-card {
+            .benefit-card-modern {
                 flex: 0 0 calc(45% - 1rem) !important;
-                min-width: 250px !important;
-            }
-            .benefit-item {
-                flex: 0 0 calc(45% - 1rem) !important;
-                min-width: 250px !important;
+                min-width: 280px !important;
             }
         }
 
@@ -335,7 +328,7 @@
                 min-width: unset !important;
             }
 
-            .benefit-item {
+            .benefit-card-modern {
                 flex: 0 0 100% !important;
                 min-width: unset !important;
             }
@@ -434,30 +427,94 @@
             </section>
 
             <section class="benefits">
-                <h3>Benefícios Transversais</h3>
-                <div class="benefits-grid">
-                    <div class="benefit-item">
-                        <div class="icon">💰</div>
-                        <h4>Redução de Custos</h4>
-                        <p>Menos tempo gasto em tarefas manuais e equipe redirecionada para atividades de maior valor</p>
+                <h3>📌 Benefícios para Todos os Envolvidos</h3>
+                <div class="benefits-container">
+                    <!-- Benefit Card 1 -->
+                    <div class="benefit-card-modern economia">
+                        <div class="benefit-header">
+                            <div class="benefit-icon-large">💰</div>
+                            <div class="benefit-title">
+                                <h4>Mais Economia</h4>
+                                <div class="benefit-subtitle">Redução real de custos</div>
+                            </div>
+                        </div>
+                        <div class="benefit-content">
+                            <div class="benefit-point">
+                                <span class="point-icon">⏱️</span>
+                                <span>Funcionários gastam menos tempo com tarefas repetitivas</span>
+                            </div>
+                            <div class="benefit-point">
+                                <span class="point-icon">📉</span>
+                                <span>Custos operacionais reduzidos com automação</span>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="benefit-item">
-                        <div class="icon">📈</div>
-                        <h4>Aumento de Receita</h4>
-                        <p>Leads melhor qualificados e atendimento 24/7 que não perde oportunidades</p>
+
+                    <!-- Benefit Card 2 -->
+                    <div class="benefit-card-modern vendas">
+                        <div class="benefit-header">
+                            <div class="benefit-icon-large">📈</div>
+                            <div class="benefit-title">
+                                <h4>Mais Vendas e Oportunidades</h4>
+                                <div class="benefit-subtitle">Resultados que impactam o faturamento</div>
+                            </div>
+                        </div>
+                        <div class="benefit-content">
+                            <div class="benefit-point">
+                                <span class="point-icon">🎯</span>
+                                <span>Corretores recebem apenas leads realmente prontos para comprar</span>
+                            </div>
+                            <div class="benefit-point">
+                                <span class="point-icon">🌟</span>
+                                <span>Atendimento rápido e disponível 24/7 para não perder clientes</span>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="benefit-item">
-                        <div class="icon">⚙️</div>
-                        <h4>Eficiência Operacional</h4>
-                        <p>Processos padronizados, auditáveis e relatórios automáticos para gestão</p>
+
+                    <!-- Benefit Card 3 -->
+                    <div class="benefit-card-modern agilidade">
+                        <div class="benefit-header">
+                            <div class="benefit-icon-large">⚙️</div>
+                            <div class="benefit-title">
+                                <h4>Mais Agilidade no Dia a Dia</h4>
+                                <div class="benefit-subtitle">Operação fluida e eficiente</div>
+                            </div>
+                        </div>
+                        <div class="benefit-content">
+                            <div class="benefit-point">
+                                <span class="point-icon">⚡</span>
+                                <span>Lojistas têm boletos e tickets resolvidos em minutos</span>
+                            </div>
+                            <div class="benefit-point">
+                                <span class="point-icon">📊</span>
+                                <span>Equipe interna opera com processos padronizados e relatórios automáticos</span>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="benefit-item">
-                        <div class="icon">😊</div>
-                        <h4>Satisfação Geral</h4>
-                        <p>Clientes atendidos com excelência e equipe livre de tarefas repetitivas</p>
+
+                    <!-- Benefit Card 4 -->
+                    <div class="benefit-card-modern satisfacao">
+                        <div class="benefit-header">
+                            <div class="benefit-icon-large">😊</div>
+                            <div class="benefit-title">
+                                <h4>Mais Satisfação e Confiança</h4>
+                                <div class="benefit-subtitle">Experiência superior para todos</div>
+                            </div>
+                        </div>
+                        <div class="benefit-content">
+                            <div class="benefit-point">
+                                <span class="point-icon">✨</span>
+                                <span>Clientes são atendidos com excelência</span>
+                            </div>
+                            <div class="benefit-point">
+                                <span class="point-icon">🚀</span>
+                                <span>Corretores e equipe ficam livres de "trabalho chato"</span>
+                            </div>
+                            <div class="benefit-point">
+                                <span class="point-icon">🔒</span>
+                                <span>Lojistas e gestores têm transparência e segurança</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
