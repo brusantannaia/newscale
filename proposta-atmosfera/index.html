@@ -289,17 +289,17 @@
             color: #D0D0CA;
         }
 
-        /* Media queries para benefits criativos */
+        /* Media queries para benefits */
         @media screen and (min-width: 900px) {
-            .benefit-card-modern {
+            .benefit-card {
                 flex: 0 0 calc(45% - 1rem) !important;
             }
         }
 
         @media screen and (max-width: 899px) and (min-width: 600px) {
-            .benefit-card-modern {
+            .benefit-card {
                 flex: 0 0 calc(45% - 1rem) !important;
-                min-width: 280px !important;
+                min-width: 250px !important;
             }
         }
 
@@ -328,7 +328,7 @@
                 min-width: unset !important;
             }
 
-            .benefit-card-modern {
+            .newscale-card {
                 flex: 0 0 100% !important;
                 min-width: unset !important;
             }
@@ -428,93 +428,42 @@
 
             <section class="benefits">
                 <h3>📌 Benefícios para Todos os Envolvidos</h3>
-                <div class="benefits-container">
-                    <!-- Benefit Card 1 -->
-                    <div class="benefit-card-modern economia">
-                        <div class="benefit-header">
-                            <div class="benefit-icon-large">💰</div>
-                            <div class="benefit-title">
-                                <h4>Mais Economia</h4>
-                                <div class="benefit-subtitle">Redução real de custos</div>
-                            </div>
-                        </div>
-                        <div class="benefit-content">
-                            <div class="benefit-point">
-                                <span class="point-icon">⏱️</span>
-                                <span>Funcionários gastam menos tempo com tarefas repetitivas</span>
-                            </div>
-                            <div class="benefit-point">
-                                <span class="point-icon">📉</span>
-                                <span>Custos operacionais reduzidos com automação</span>
-                            </div>
-                        </div>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="icon">💰</div>
+                        <h4>Mais Economia</h4>
+                        <ul>
+                            <li>Funcionários gastam menos tempo com tarefas repetitivas</li>
+                            <li>Custos operacionais reduzidos com automação</li>
+                        </ul>
                     </div>
-
-                    <!-- Benefit Card 2 -->
-                    <div class="benefit-card-modern vendas">
-                        <div class="benefit-header">
-                            <div class="benefit-icon-large">📈</div>
-                            <div class="benefit-title">
-                                <h4>Mais Vendas e Oportunidades</h4>
-                                <div class="benefit-subtitle">Resultados que impactam o faturamento</div>
-                            </div>
-                        </div>
-                        <div class="benefit-content">
-                            <div class="benefit-point">
-                                <span class="point-icon">🎯</span>
-                                <span>Corretores recebem apenas leads realmente prontos para comprar</span>
-                            </div>
-                            <div class="benefit-point">
-                                <span class="point-icon">🌟</span>
-                                <span>Atendimento rápido e disponível 24/7 para não perder clientes</span>
-                            </div>
-                        </div>
+                    
+                    <div class="benefit-card">
+                        <div class="icon">📈</div>
+                        <h4>Mais Vendas e Oportunidades</h4>
+                        <ul>
+                            <li>Corretores recebem apenas leads realmente prontos para comprar</li>
+                            <li>Atendimento rápido e disponível 24/7 para não perder clientes</li>
+                        </ul>
                     </div>
-
-                    <!-- Benefit Card 3 -->
-                    <div class="benefit-card-modern agilidade">
-                        <div class="benefit-header">
-                            <div class="benefit-icon-large">⚙️</div>
-                            <div class="benefit-title">
-                                <h4>Mais Agilidade no Dia a Dia</h4>
-                                <div class="benefit-subtitle">Operação fluida e eficiente</div>
-                            </div>
-                        </div>
-                        <div class="benefit-content">
-                            <div class="benefit-point">
-                                <span class="point-icon">⚡</span>
-                                <span>Lojistas têm boletos e tickets resolvidos em minutos</span>
-                            </div>
-                            <div class="benefit-point">
-                                <span class="point-icon">📊</span>
-                                <span>Equipe interna opera com processos padronizados e relatórios automáticos</span>
-                            </div>
-                        </div>
+                    
+                    <div class="benefit-card">
+                        <div class="icon">⚙️</div>
+                        <h4>Mais Agilidade no Dia a Dia</h4>
+                        <ul>
+                            <li>Lojistas têm boletos e tickets resolvidos em minutos</li>
+                            <li>Equipe interna opera com processos padronizados e relatórios automáticos</li>
+                        </ul>
                     </div>
-
-                    <!-- Benefit Card 4 -->
-                    <div class="benefit-card-modern satisfacao">
-                        <div class="benefit-header">
-                            <div class="benefit-icon-large">😊</div>
-                            <div class="benefit-title">
-                                <h4>Mais Satisfação e Confiança</h4>
-                                <div class="benefit-subtitle">Experiência superior para todos</div>
-                            </div>
-                        </div>
-                        <div class="benefit-content">
-                            <div class="benefit-point">
-                                <span class="point-icon">✨</span>
-                                <span>Clientes são atendidos com excelência</span>
-                            </div>
-                            <div class="benefit-point">
-                                <span class="point-icon">🚀</span>
-                                <span>Corretores e equipe ficam livres de "trabalho chato"</span>
-                            </div>
-                            <div class="benefit-point">
-                                <span class="point-icon">🔒</span>
-                                <span>Lojistas e gestores têm transparência e segurança</span>
-                            </div>
-                        </div>
+                    
+                    <div class="benefit-card">
+                        <div class="icon">😊</div>
+                        <h4>Mais Satisfação e Confiança</h4>
+                        <ul>
+                            <li>Clientes são atendidos com excelência</li>
+                            <li>Corretores e equipe ficam livres de "trabalho chato" e podem focar no estratégico</li>
+                            <li>Lojistas e gestores têm transparência e segurança nas informações</li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -522,21 +471,34 @@
             <section class="section">
                 <div class="intro">
                     <h3>Por que Escolher a NewScale</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
-                        <div>
-                            <h4 style="color: #14373C; margin-bottom: 1rem;">✅ Superpersonalização Real</h4>
-                            <p>Integramos a IA diretamente nos ambientes e ferramentas que sua equipe já utiliza, evitando mudanças desnecessárias de hábitos.</p>
+                    <div class="newscale-benefits">
+                        <div class="newscale-card">
+                            <div class="check-icon">✅</div>
+                            <h4>Consultoria e Diagnóstico Personalizado</h4>
+                            <p>Antes de qualquer automação, fazemos um mergulho completo nos processos da sua empresa. O objetivo é entender cada fluxo, gargalo e oportunidade para aplicar a inteligência artificial de forma realmente útil e alinhada ao seu negócio.</p>
                         </div>
-                        <div>
-                            <h4 style="color: #14373C; margin-bottom: 1rem;">✅ Garantia de Satisfação</h4>
+                        
+                        <div class="newscale-card">
+                            <div class="check-icon">✅</div>
+                            <h4>Implementação Sem Fricção</h4>
+                            <p>Aplicamos a IA dentro dos ambientes e ferramentas que sua equipe já utiliza. Assim, não há necessidade de trocar sistemas ou mudar hábitos que já funcionam. A adoção acontece de forma rápida, natural e sem resistência da equipe.</p>
+                        </div>
+                        
+                        <div class="newscale-card">
+                            <div class="check-icon">✅</div>
+                            <h4>Garantia de Satisfação</h4>
                             <p>Só consideramos o projeto concluído quando tudo estiver funcionando com precisão e fluidez.</p>
                         </div>
-                        <div>
-                            <h4 style="color: #14373C; margin-bottom: 1rem;">✅ IA Otimizada</h4>
+                        
+                        <div class="newscale-card">
+                            <div class="check-icon">✅</div>
+                            <h4>IA Otimizada para Custo-Benefício</h4>
                             <p>Aplicamos engenharia de prompts avançada para reduzir custos mensais sem comprometer a qualidade.</p>
                         </div>
-                        <div>
-                            <h4 style="color: #14373C; margin-bottom: 1rem;">✅ Equipe Experiente</h4>
+                        
+                        <div class="newscale-card">
+                            <div class="check-icon">✅</div>
+                            <h4>Equipe Experiente e Proativa</h4>
                             <p>Unimos conhecimento técnico sólido e experiência prática para garantir que sua operação esteja sempre um passo à frente.</p>
                         </div>
                     </div>
@@ -557,7 +519,7 @@
                     <p>Soluções personalizadas para otimização de processos e aumento da eficiência operacional.</p>
                 </div>
             </div>
-            <p>&copy; 2025 NewScale Consulting. Todos os direitos reservados.</p>
+            <p>&copy; 2025 NewScale Consulting - Bv Serviços de Marketing e Consultoria | CNPJ: 48.533.847/0001-68</p>
         </div>
     </footer>
 </body>
