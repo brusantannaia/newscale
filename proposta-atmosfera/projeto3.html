@@ -75,6 +75,15 @@
             text-align: center;
         }
 
+        .hero-content .project-number {
+            font-size: 1.1rem;
+            color: #B06E4A;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .hero-content h1 {
             font-size: 3rem;
             font-weight: 700;
@@ -251,10 +260,18 @@
         }
 
         .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin: 2rem 0;
+            display: flex !important;
+            flex-wrap: wrap !important;
+            gap: 2rem !important;
+            justify-content: center !important;
+            max-width: 1000px !important;
+            margin: 2rem auto !important;
+        }
+
+        .benefit-card {
+            flex: 0 0 calc(45% - 1rem) !important;
+            min-width: 280px !important;
+            max-width: 400px !important;
         }
 
         .benefit-card {
@@ -451,9 +468,9 @@
             </div>
             
             <div class="hero-content">
-                <h1>🎫 <span class="highlight">Projeto 3</span></h1>
-                <p class="subtitle">Gestão Inteligente de Tickets de Lojistas</p>
-                <p>Sistema inteligente que recebe, analisa e direciona automaticamente as solicitações para as equipes certas. Gestão focada apenas no que realmente importa.</p>
+                <p class="project-number">Projeto 3</p>
+                <h1>Gestão Inteligente de Tickets de Lojistas</h1>
+                <p class="subtitle">Sistema inteligente que recebe, analisa e direciona automaticamente as solicitações para as equipes certas. Gestão focada apenas no que realmente importa.</p>
             </div>
         </div>
     </header>
@@ -551,37 +568,37 @@
                     <div class="benefit-card">
                         <div class="icon">🤖</div>
                         <h4>Chatbot Especializado</h4>
-                        <p>Atendimento como se fosse um funcionário experiente</p>
+                        <p>Atendimento direto pelo <strong>WhatsApp</strong>, com um bot simpático que conversa como se fosse um funcionário experiente e sempre disponível.</p>
                     </div>
                     
                     <div class="benefit-card">
                         <div class="icon">🧠</div>
                         <h4>Classificação Inteligente</h4>
-                        <p>IA que aprende e melhora com o tempo</p>
+                        <p>A IA analisa cada solicitação, identifica o tipo de problema e aprende continuamente para melhorar as respostas e encaminhamentos.</p>
                     </div>
                     
                     <div class="benefit-card">
                         <div class="icon">🔗</div>
                         <h4>Integração Total</h4>
-                        <p>Conectado ao sistema de tickets atual</p>
+                        <p>Conectado ao sistema de tickets já existente, garantindo que todas as ocorrências fiquem registradas e organizadas.</p>
                     </div>
                     
                     <div class="benefit-card">
                         <div class="icon">📱</div>
                         <h4>Notificações Automáticas</h4>
-                        <p>Equipes recebem demandas já organizadas</p>
+                        <p>As equipes responsáveis (limpeza, segurança, manutenção) recebem as demandas já organizadas em grupos de WhatsApp, prontas para agir.</p>
                     </div>
                     
                     <div class="benefit-card">
                         <div class="icon">🎯</div>
                         <h4>Gestão por Exceção</h4>
-                        <p>Gerente só vê o que realmente precisa decidir</p>
+                        <p>O gerente só precisa intervir nos casos mais complexos, economizando tempo e mantendo a visão geral da operação.</p>
                     </div>
                     
                     <div class="benefit-card">
                         <div class="icon">📊</div>
                         <h4>Relatórios Automáticos</h4>
-                        <p>Acompanhamento completo da operação</p>
+                        <p>Registro e acompanhamento completo de todos os chamados, trazendo transparência e eficiência para a gestão.</p>
                     </div>
                 </div>
             </section>
