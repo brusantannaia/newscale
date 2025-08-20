@@ -75,6 +75,15 @@
             text-align: center;
         }
 
+        .hero-content .project-number {
+            font-size: 1.1rem;
+            color: #B06E4A;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .hero-content h1 {
             font-size: 3rem;
             font-weight: 700;
@@ -220,10 +229,18 @@
         }
 
         .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin: 2rem 0;
+            display: flex !important;
+            flex-wrap: wrap !important;
+            gap: 2rem !important;
+            justify-content: center !important;
+            max-width: 1000px !important;
+            margin: 2rem auto !important;
+        }
+
+        .benefit-card {
+            flex: 0 0 calc(45% - 1rem) !important;
+            min-width: 280px !important;
+            max-width: 400px !important;
         }
 
         .benefit-card {
@@ -414,9 +431,9 @@
             </div>
             
             <div class="hero-content">
-                <h1>📄 <span class="highlight">Projeto 2</span></h1>
-                <p class="subtitle">Segunda Via de Boletos Automática</p>
-                <p>Sistema que elimina o trabalho manual do setor financeiro com emissão de segundas vias. Lojistas recebem boletos instantaneamente, 24/7.</p>
+                <p class="project-number">Projeto 2</p>
+                <h1>Segunda Via de Boletos Automática</h1>
+                <p class="subtitle">Sistema que elimina o trabalho manual do setor financeiro com emissão de segundas vias. Lojistas recebem boletos instantaneamente, 24/7.</p>
             </div>
         </div>
     </header>
@@ -493,31 +510,31 @@
                     <div class="benefit-card">
                         <div class="icon">🕒</div>
                         <h4>Atendimento 24/7</h4>
-                        <p>Lojistas recebem boletos a qualquer hora</p>
+                        <p>Lojistas podem solicitar a segunda via de boletos a qualquer hora, direto no <strong>WhatsApp</strong>, com um bot simpático e pronto para ajudar.</p>
                     </div>
                     
                     <div class="benefit-card">
                         <div class="icon">🚫</div>
                         <h4>Zero Trabalho Manual</h4>
-                        <p>Processo 100% automatizado</p>
+                        <p>Todo o processo de geração e envio é 100% automatizado, liberando a equipe de tarefas repetitivas.</p>
                     </div>
                     
                     <div class="benefit-card">
                         <div class="icon">🔗</div>
                         <h4>Integração Completa</h4>
-                        <p>Conectado ao seu ERP atual</p>
+                        <p>Conectado diretamente ao seu <strong>ERP atual</strong>, garantindo que os boletos sejam sempre emitidos com dados corretos e atualizados.</p>
                     </div>
                     
                     <div class="benefit-card">
                         <div class="icon">📊</div>
                         <h4>Controle e Relatórios</h4>
-                        <p>Histórico de todas as operações</p>
+                        <p>Histórico detalhado de todas as solicitações e emissões, com fácil acesso para auditoria e gestão.</p>
                     </div>
                     
                     <div class="benefit-card">
                         <div class="icon">😊</div>
                         <h4>Satisfação dos Lojistas</h4>
-                        <p>Atendimento instantâneo e eficiente</p>
+                        <p>Atendimento instantâneo e eficiente no WhatsApp, que reduz filas de solicitações e melhora a experiência com a administração do shopping.</p>
                     </div>
                 </div>
             </section>
