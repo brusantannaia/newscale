@@ -129,6 +129,24 @@
             gap: 2rem;
         }
 
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #14373C;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
         .nav-link {
             text-decoration: none;
             color: #14373C;
@@ -137,12 +155,66 @@
             font-weight: 500;
             transition: all 0.3s ease;
             border: 2px solid transparent;
+            display: block;
         }
 
         .nav-link:hover, .nav-link.active {
             background: #14373C;
             color: white;
             transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background: #B06E4A;
+        }
+
+        /* Mobile Navigation */
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+                margin: 0 auto;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                gap: 0;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 1000;
+                padding: 1rem 0;
+            }
+
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-link {
+                padding: 1rem 2rem;
+                border-radius: 0;
+                text-align: center;
+                border-bottom: 1px solid #f0f0f0;
+            }
+
+            .nav-link:hover {
+                transform: none;
+                background: #f8f9fa;
+                color: #14373C;
+            }
+
+            .nav-link.active {
+                background: #B06E4A;
+                color: white;
+            }
         }
 
         /* Main Content */
@@ -371,12 +443,15 @@
     <nav class="nav">
         <div class="container">
             <div class="nav-container">
-                <a href="#home" class="nav-link active">Visão Geral</a>
-                <a href="projeto1.html" class="nav-link">Projeto 1</a>
-                <a href="projeto2.html" class="nav-link">Projeto 2</a>
-                <a href="projeto3.html" class="nav-link">Projeto 3</a>
-                <a href="projeto4.html" class="nav-link">Projeto 4</a>
-                <a href="investimentos.html" class="nav-link">Investimentos</a>
+                <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link active">Visão Geral</a></li>
+                    <li><a href="projeto1.html" class="nav-link">Projeto 1</a></li>
+                    <li><a href="projeto2.html" class="nav-link">Projeto 2</a></li>
+                    <li><a href="projeto3.html" class="nav-link">Projeto 3</a></li>
+                    <li><a href="projeto4.html" class="nav-link">Projeto 4</a></li>
+                    <li><a href="investimentos.html" class="nav-link">Investimentos</a></li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -562,5 +637,30 @@
             <p>&copy; 2025 NewScale Consulting - Bv Serviços de Marketing e Consultoria | CNPJ: 48.533.847/0001-68</p>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const navMenu = document.getElementById('navMenu');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Fechar menu ao clicar fora
+        document.addEventListener('click', (e) => {
+            const navMenu = document.getElementById('navMenu');
+            const navToggle = document.querySelector('.nav-toggle');
+            
+            if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
