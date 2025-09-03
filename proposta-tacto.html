@@ -207,13 +207,6 @@
             margin-bottom: 15px;
         }
 
-        .phases {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
         .phase-card {
             background: white;
             border: 2px solid var(--light-color);
@@ -221,6 +214,8 @@
             padding: 35px;
             position: relative;
             transition: all 0.3s ease;
+            max-width: 500px;
+            margin: 40px auto;
         }
 
         .phase-card.recommended {
@@ -272,10 +267,12 @@
 
         .pricing-item:last-child {
             margin-bottom: 0;
-            font-weight: 600;
-            font-size: 1.1rem;
-            border-top: 1px solid rgba(255,255,255,0.2);
-            padding-top: 15px;
+        }
+
+        .payment-terms {
+            font-size: 0.85rem;
+            text-align: center;
+            color: var(--text-light);
             margin-top: 15px;
         }
 
@@ -330,23 +327,23 @@
             margin-bottom: 10px;
         }
 
-        /* Botão CTA Simples */
+        /* Botão CTA Vazado */
         .simple-cta-btn {
             display: inline-block;
-            background-color: var(--secondary-color); /* Verde */
+            background-color: transparent;
             color: white;
+            border: 2px solid white;
             padding: 15px 35px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.2rem;
-            border: none;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
         .simple-cta-btn:hover {
-            background-color: var(--primary-color); /* Tom mais escuro do verde */
+            background-color: white;
+            color: var(--accent-color);
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
@@ -363,10 +360,6 @@
             
             .header-subtitle {
                 font-size: 1.1rem;
-            }
-            
-            .phases {
-                grid-template-columns: 1fr;
             }
             
             .features-grid {
@@ -546,7 +539,7 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <img src="https://i.imgur.com/8Q5pD2C.png" alt="Logo da NewScale Consulting">
+                <img src="LOGO 05@3x.png" alt="Logo da NewScale Consulting">
             </div>
             <div class="header-content">
                 <h2>PROPOSTA COMERCIAL</h2>
@@ -718,52 +711,31 @@
             <!-- Implementação em Fases -->
             <section class="section">
                 <h2 class="section-title">IMPLEMENTAÇÃO EM FASES</h2>
-                <div class="phases">
-                    <div class="phase-card recommended">
-                        <h3 class="phase-title">FASE 1 - BÁSICO</h3>
-                        <p class="phase-subtitle">Prazo: 7-10 dias</p>
-                        
-                        <h4 style="color: var(--secondary-color); margin-bottom: 15px;">Entregáveis:</h4>
-                        <ul class="mb-20">
-                            <li>Agente configurado para atendimento passivo</li>
-                            <li>Qualificação e envio de PDF automatizado</li>
-                            <li>Pré-agendamento de visitas</li>
-                            <li>Integração básica com Kommo</li>
-                            <li>1 semana de testes intensivos antes do go-live</li>
-                            <li>Ajustes finos baseados nos testes</li>
-                        </ul>
+                <div class="phase-card recommended">
+                    <h3 class="phase-title">FASE 1 - ESSENCIAL</h3>
+                    <p class="phase-subtitle">Prazo: 7-10 dias</p>
+                    
+                    <h4 style="color: var(--secondary-color); margin-bottom: 15px;">Entregáveis:</h4>
+                    <ul class="mb-20">
+                        <li>Agente configurado para atendimento passivo</li>
+                        <li>Qualificação e envio de PDF automatizado</li>
+                        <li>Pré-agendamento de visitas</li>
+                        <li>Integração básica com Kommo</li>
+                        <li>1 semana de testes intensivos antes do go-live</li>
+                        <li>Ajustes finos baseados nos testes</li>
+                    </ul>
 
-                        <div class="pricing">
-                            <div class="pricing-item">
-                                <span>Setup:</span>
-                                <span>R$ 1.700</span>
-                            </div>
-                            <div class="pricing-item">
-                                <span>Mensalidade:</span>
-                                <span>R$ 300</span>
-                            </div>
+                    <div class="pricing">
+                        <div class="pricing-item">
+                            <span>Setup:</span>
+                            <span>R$ 1.700</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span>Mensalidade:</span>
+                            <span>R$ 300</span>
                         </div>
                     </div>
-
-                    <div class="phase-card">
-                        <h3 class="phase-title">FASE 2 - INTERMEDIÁRIO</h3>
-                        <p class="phase-subtitle">Quando aprovarem a Fase 1</p>
-                        
-                        <h4 style="color: var(--secondary-color); margin-bottom: 15px;">Funcionalidades adicionais:</h4>
-                        <ul class="mb-20">
-                            <li>Integração com Google Calendar</li>
-                            <li>Verificação automática de datas disponíveis</li>
-                            <li>Dashboard com métricas de conversão</li>
-                            <li>Follow-ups automatizados por email</li>
-                            <li>Relatórios semanais de performance</li>
-                        </ul>
-
-                        <div class="pricing">
-                            <div class="pricing-item" style="text-align: center; font-style: italic;">
-                                <span>Investimento sob consulta</span>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="payment-terms">Condição de pagamento: 50% na aprovação, 50% na entrega.</p>
                 </div>
             </section>
 
@@ -779,7 +751,7 @@
                         </div>
                         <div class="guarantee-item">
                             <div class="guarantee-icon">⚙️</div>
-                            <h3>15 dias de ajustes finos</h3>
+                            <h3>30 dias de ajustes finos</h3>
                             <p>sem custo adicional</p>
                         </div>
                         <div class="guarantee-item">
@@ -790,12 +762,37 @@
                     </div>
                 </div>
             </section>
+            
+            <!-- Evolução Futura -->
+            <section class="section">
+                <h2 class="section-title">EVOLUÇÃO FUTURA (OPCIONAL)</h2>
+                <div class="phase-card">
+                    <h3 class="phase-title">FASE 2 - INTERMEDIÁRIO</h3>
+                    <p class="phase-subtitle">Para quando você quiser ir além</p>
+                    
+                    <h4 style="color: var(--secondary-color); margin-bottom: 15px;">Funcionalidades adicionais:</h4>
+                    <ul class="mb-20">
+                        <li>Integração com Google Calendar</li>
+                        <li>Verificação automática de datas disponíveis</li>
+                        <li>Dashboard com métricas de conversão</li>
+                        <li>Follow-ups automatizados por email</li>
+                        <li>Relatórios semanais de performance</li>
+                    </ul>
+
+                    <div class="pricing">
+                        <div class="pricing-item" style="text-align: center; font-style: italic; display: block;">
+                            <span>Investimento sob consulta</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
             <!-- CTA -->
             <section class="section">
                 <div class="cta-section">
                     <h2 class="cta-title">Pronta para transformar seu atendimento?</h2>
-                    <p style="font-size: 1.2rem; margin-bottom: 30px;">Vamos dar o primeiro passo com a Fase 1 e colocar a inteligência artificial para trabalhar por você.</p>
+                    <p style="font-size: 1.2rem; margin-bottom: 30px;">Vamos dar o primeiro passo com a Fase Essencial e colocar a inteligência artificial para trabalhar por você.</p>
                     
                     <a href="https://wa.me/5511971901020?text=Olá! Tenho interesse na proposta do Atendente Virtual de WhatsApp para a Casa Tacto. Gostaria de aceitar a proposta e dar início ao projeto!" class="simple-cta-btn">
                         Aprovar Proposta
