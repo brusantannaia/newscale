@@ -3,49 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Título e Descrição Otimizados para SEO -->
-    <title>Joalheria 24/7: Vendedor com IA para WhatsApp | Newscale</title>
-    <meta name="description" content="Não perca mais vendas! Conheça o agente de IA especialista em joias que atende, qualifica e vende 24/7 no seu WhatsApp. Aumente sua conversão.">
-
-    <!-- Google Fonts: Poppins -->
+    <title>Agente de IA para Joalherias | Newscale Consulting</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Alex+Brush&display=swap" rel="stylesheet">
     <style>
-        /* Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
-            --verde-escuro: #14373C;
-            --verde-medio: #435D51;
-            --bege-claro: #D0D0CA;
-            --marrom-areia: #B06E4A;
-            --branco-fundo: #FBFBF9;
-            --branco-puro: #FFFFFF;
-            --font-family: 'Poppins', sans-serif;
+            --color-primary: #14373C;
+            --color-secondary: #B06E4A;
+            --color-accent: #435D51;
+            --color-light: #D0D0CA;
+            --color-white: #FFFFFF;
         }
-    
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+
         body {
-            font-family: var(--font-family);
-            background-color: var(--cor-fundo);
-            color: var(--cor-texto-principal);
-            -webkit-font-smoothing: antialiased;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
         }
+
         .container {
-            width: 90%;
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 100px 0;
+            padding: 0 20px;
         }
-        h1, h2, h3 { font-weight: 600; line-height: 1.2; color: var(--verde-escuro); }
-        h2 { font-size: clamp(2.2rem, 5vw, 3rem); text-align: center; margin-bottom: 20px; max-width: 800px; margin-left: auto; margin-right: auto;}
-        p { font-weight: 300; font-size: 1.1rem; max-width: 750px; margin: 0 auto; }
-        strong { font-weight: 600; }
-    
-        /* Header & Navegação */
+
+        /* Header */
         header {
             padding: 20px 0;
             width: 90%;
@@ -55,222 +45,647 @@
             justify-content: space-between;
             align-items: center;
         }
-        .logo img { height: 80px; width: auto; }
-        nav { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;}
+
+        .logo img {
+            height: 80px;
+            width: auto;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
         nav a {
             text-decoration: none;
-            color: var(--verde-medio);
+            color: var(--color-accent);
             font-weight: 500;
             padding-bottom: 5px;
             border-bottom: 2px solid transparent;
             transition: color 0.3s, border-color 0.3s;
         }
+
         nav a:hover, nav a.active {
-            color: var(--marrom-areia);
-            border-bottom-color: var(--marrom-areia);
+            color: var(--color-secondary);
+            border-bottom-color: var(--color-secondary);
         }
 
-        /* Botão CTA */
-        .cta-button {
-            display: inline-block;
-            background-color: var(--marrom-areia);
-            color: white !important;
-            padding: 18px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+            color: var(--color-white);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,300 Q300,100 600,300 T1200,300 L1200,600 L0,600 Z" fill="rgba(255,255,255,0.05)"/></svg>') no-repeat center bottom;
+            background-size: cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* Agent Examples Section */
+        .agent-examples {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+        }
+
+        .agent-examples h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--color-primary);
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .agent-examples > p {
             font-size: 1.2rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border: none;
-            cursor: pointer;
-        }
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(176, 110, 74, 0.4);
-            border-bottom: none;
-        }
-        .cta-container {
+            color: #666;
             text-align: center;
-            margin-top: 40px;
+            max-width: 800px;
+            margin: 0 auto 60px;
         }
 
-        /* Hero */
-        .sales-hero {
-            background-color: var(--verde-escuro);
-            text-align: center;
-            padding: 120px 0;
-            color: var(--branco-puro);
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        .sales-hero h1 {
-            color: var(--branco-puro);
-            font-size: clamp(2.5rem, 6vw, 3.8rem);
-            margin-bottom: 15px;
+
+        .examples-grid img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+
+        .examples-grid img:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.1;
-        }
-        .sales-hero .hero-subtitle {
-            display: block;
-            font-size: clamp(1.5rem, 4vw, 2.2rem);
-            font-weight: 400;
-            color: var(--marrom-areia);
-            margin-top: 20px;
-        }
-        .sales-hero p {
-            color: var(--bege-claro);
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin-bottom: 40px;
-            margin-top: 30px;
+            line-height: 1.8;
+            opacity: 0.95;
         }
 
-        /* Seção de Dores */
-        #dores {
-            text-align: center;
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
-        #dores .container { padding-bottom: 60px; }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+        }
+
+        .btn-primary:hover {
+            background-color: #95593b;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(176, 110, 74, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-white);
+            border: 2px solid var(--color-white);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-white);
+            color: var(--color-primary);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--color-primary);
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        /* Pain Points Section */
+        .pain-section {
+            background-color: #f9f9f9;
+        }
+
         .pain-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .pain-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .pain-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .pain-item .emoji {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .pain-item h3 {
+            color: var(--color-primary);
+            margin-bottom: 10px;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--color-white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            border-left: 4px solid var(--color-secondary);
+            background: #f9f9f9;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: var(--color-primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+            color: var(--color-white);
+        }
+
+        .benefits .section-title,
+        .benefits .section-subtitle {
+            color: var(--color-white);
+        }
+
+        .benefits-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            margin-top: 60px;
+            margin-top: 50px;
+        }
+
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .benefit-item .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Story Section */
+        .story {
+            background-color: var(--color-light);
+        }
+
+        .story-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .story-photo-wrapper {
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .story-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--color-secondary);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .story-title {
+            font-family: 'Alex Brush', cursive;
+            font-size: 3rem;
+            color: var(--color-secondary);
+            margin-bottom: 30px;
+        }
+
+        .story p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Results Section */
+        .results {
+            background-color: var(--color-white);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .result-item {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .result-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--color-secondary);
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .result-label {
+            font-size: 1.1rem;
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        /* How It Works - Timeline Vertical */
+        .how-it-works {
+            background-color: var(--cor-fundo);
+        }
+
+        .how-it-works .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .timeline-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .timeline-vertical {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .timeline-vertical::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--color-secondary), var(--color-accent));
+            opacity: 0.3;
+        }
+
+        .timeline-step {
+            position: relative;
+            margin-bottom: 80px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .timeline-step.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-step:nth-child(1) { transition-delay: 0.1s; }
+        .timeline-step:nth-child(2) { transition-delay: 0.2s; }
+        .timeline-step:nth-child(3) { transition-delay: 0.3s; }
+
+        .timeline-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-icon-wrapper {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            z-index: 2;
+            border: 3px solid var(--color-secondary);
+        }
+
+        .timeline-icon-wrapper img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .timeline-content {
+            width: 45%;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .timeline-step:nth-child(odd) .timeline-content {
+            margin-left: auto;
             text-align: left;
         }
-        .pain-point-card {
-            background: var(--branco-puro);
-            padding: 30px;
-            border-radius: 8px;
-            border-top: 4px solid var(--marrom-areia);
-            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+
+        .timeline-step:nth-child(even) .timeline-content {
+            margin-right: auto;
+            text-align: left;
         }
-        .pain-point-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-        .pain-point-card p {
-            font-size: 1rem;
-            color: var(--verde-medio);
-        }
-        .founder-quote {
-            margin-top: 60px;
-            padding: 30px;
-            background-color: rgba(208, 208, 202, 0.4);
-            border-radius: 8px;
-            border-left: 4px solid var(--verde-medio);
-        }
-        .founder-quote p {
-            font-style: italic;
-            color: var(--verde-medio);
+
+        .timeline-step-number {
+            display: inline-block;
+            background: var(--color-secondary);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: 700;
             font-size: 1.1rem;
+            margin-bottom: 15px;
         }
 
-        /* Seção Solução */
-        #solucao { background-color: var(--cor-fundo-secao-alternativa); }
-        .solution-intro {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        .features-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        .features-list { list-style: none; }
-        .features-list li {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
-            align-items: flex-start;
-        }
-        .features-list .icon { color: var(--marrom-areia); margin-top: 5px; flex-shrink: 0; }
-        .features-list h3 { font-size: 1.25rem; margin-bottom: 5px; }
-        .features-list p { font-size: 1rem; color: var(--verde-medio); max-width: none; text-align: left; margin: 0;}
-        .solution-image img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-
-        /* Seção Dados de Mercado */
-        #dados { background-color: var(--verde-escuro); color: var(--bege-claro); }
-        #dados h2 { color: var(--branco-puro); }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            text-align: center;
-            margin-top: 60px;
-        }
-        .stat-card {
-            background: rgba(255,255,255,0.05);
-            padding: 30px;
-            border-radius: 8px;
-        }
-        .stat-card .number {
-            font-size: 3rem;
+        .timeline-content h3 {
+            color: var(--color-primary);
+            font-size: 1.6rem;
+            margin-bottom: 15px;
             font-weight: 600;
-            color: var(--marrom-areia);
-            margin-bottom: 10px;
-        }
-        .stat-card .description {
-            font-size: 1rem;
-        }
-        .proof-card {
-            margin-top: 60px;
-            padding: 30px;
-            background: var(--marrom-areia);
-            color: var(--branco-puro);
-            border-radius: 8px;
-            text-align: center;
-        }
-        .proof-card h3 {
-            color: var(--branco-puro);
-            margin-bottom: 10px;
-        }
-        
-        /* Seção CTA Final */
-        #cta-final .container { text-align: center; }
-        #cta-final h2 { font-size: clamp(2rem, 5vw, 2.5rem); }
-        #cta-final p {
-            font-size: 1.2rem;
-            color: var(--verde-medio);
-            max-width: 600px;
-            margin-bottom: 40px;
-        }
-        
-        /* Footer */
-        footer { text-align: center; padding: 40px 20px; font-size: 0.9rem; color: var(--verde-medio); }
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 10px;
-        }
-        .footer-links a {
-            color: var(--verde-medio);
-            text-decoration: none;
-        }
-        .footer-links a:hover {
-            color: var(--marrom-areia);
-        }
-        
-        /* Responsividade */
-        @media (max-width: 768px) {
-            header { flex-direction: column; gap: 20px; }
-            .features-grid { grid-template-columns: 1fr; }
-            .solution-image { order: -1; margin-bottom: 40px; }
         }
 
+        .timeline-content p {
+            color: #666;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            font-weight: 300;
+            text-align: left;
+            max-width: 100%;
+        }
+
+        .timeline-note {
+            text-align: center;
+            max-width: 700px;
+            margin: 60px auto 40px;
+            padding: 25px;
+            background: rgba(176, 110, 74, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid var(--color-secondary);
+        }
+
+        .timeline-note p {
+            color: var(--color-primary);
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.7;
+            text-align: left;
+            max-width: 100%;
+        }
+
+        .timeline-note .icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        /* Responsividade Timeline */
+        @media (max-width: 768px) {
+            .timeline-vertical::before {
+                left: 30px;
+            }
+
+            .timeline-icon-wrapper {
+                left: 30px;
+                width: 60px;
+                height: 60px;
+            }
+
+            .timeline-icon-wrapper img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .timeline-content {
+                width: calc(100% - 100px);
+                margin-left: 100px !important;
+                text-align: left !important;
+            }
+
+            .timeline-step:nth-child(even) .timeline-content {
+                margin-left: 100px !important;
+            }
+
+            .timeline-intro {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* FAQ Section */
+        .faq {
+            background-color: var(--color-white);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 50px auto 0;
+        }
+
+        .faq-item {
+            background: #f9f9f9;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--color-secondary);
+        }
+
+        .faq-item summary {
+            font-size: 1.2rem;
+            font-weight: 500;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item div {
+            padding-top: 15px;
+            color: #666;
+        }
+
+        .faq-question {
+            color: var(--color-primary);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
+            color: var(--color-white);
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .final-cta h2 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+        }
+
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: var(--color-accent);
+            background-color: var(--cor-fundo);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .examples-grid img {
+                height: 300px;
+            }
+        }
     </style>
 </head>
 <body>
-
     <header>
         <div class="logo">
-            <a href="index.html"><img src="LOGO 05@3x.png" alt="Logo da Newscale Consulting"></a>
+            <a href="index.html"><img src="LOGO 05@3x.png" alt="Newscale - Consultoria em Automação com IA"></a>
         </div>
         <nav>
             <a href="index.html">Início</a>
@@ -280,140 +695,404 @@
         </nav>
     </header>
 
-    <main>
-        <section class="sales-hero">
-            <div class="container">
-                <h1>
-                    Sua Joalheria com Atendimento Impecável
-                    <span class="hero-subtitle">A IA que Entende de Joias Chegou. 💎</span>
-                </h1>
-                <p>Não perca mais vendas. Deixe a IA vender por você, 24h por dia, com a inteligência que só quem entende de joias pode oferecer.</p>
-                <a href="https://wa.me/5511963232908?text=Quero%20automatizar%20meu%20atendimento%20e%20vendas%20com%20IA.%20Como%20funciona%20o%20diagn%C3%B3stico%20gratuito%3F" target="_blank" class="cta-button">Agendar Diagnóstico Gratuito</a>
-            </div>
-        </section>
-
-        <section id="dores">
-            <div class="container">
-                <h2>Sua Joalheria Merece Brilhar 24 Horas por Dia. Mas a Rotina te Prende?</h2>
-                <p style="text-align: center; margin-bottom: 60px;">Você, como joalheiro(a), sabe que cada peça é única e cada cliente busca uma experiência memorável. Mas a realidade é desafiadora:</p>
-                <div class="pain-points">
-                    <div class="pain-point-card">
-                        <h3>Vendas Perdidas por Demora</h3>
-                        <p>Clientes esperando horas por uma resposta no WhatsApp? Isso significa oportunidades de ouro que esfriam e vão para o concorrente.</p>
-                    </div>
-                    <div class="pain-point-card">
-                        <h3>Rotatividade e Falta de Conhecimento</h3>
-                        <p>Treinar uma equipe que domine detalhes das joias, pedras, lapidação e a complexidade de joias personalizadas é um desafio constante.</p>
-                    </div>
-                    <div class="pain-point-card">
-                        <h3>Sua Paixão Merece Escala</h3>
-                        <p>Você quer crescer, mas os processos manuais e a dependência do tempo humano limitam seu potencial e sua liberdade.</p>
-                    </div>
-                </div>
-                <div class="founder-quote">
-                    <p>"Eu, Bruna, fundadora da NewScale, vivi essa rotina por 8 anos na Casa Kahla, onde 90% das vendas vinham do WhatsApp. Por isso, entendo exatamente o que pode te ajudar!"</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>A vendedora ideal da sua joalheria existe.<br>E nunca falta ao trabalho.</h1>
+                <p class="subtitle">
+                    Atenda clientes 24h por dia no WhatsApp com uma IA especialista em joias e personalizada para a sua marca — ela conhece seu catálogo, fala no seu tom de voz e vende com a mesma excelência que você.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/5511971901020?text=Olá!%20Quero%20agendar%20um%20diagnóstico%20gratuito%20para%20automação%20com%20IA%20na%20minha%20joalheria." target="_blank" class="btn btn-primary">📅 Agendar diagnóstico gratuito</a>
                 </div>
             </div>
-        </section>
-
-        <section id="solucao">
-            <div class="container">
-                <div class="solution-intro">
-                    <h2>Conheça o Agente de IA da Newscale: O Vendedor Expert que Sua Joalheria Precisa.</h2>
-                    <p>Chega de perder tempo e vendas. A NewScale desenvolveu um Agente de IA exclusivo para joalherias, que atua como seu melhor vendedor, disponível 24/7, diretamente no WhatsApp. Ele não é um chatbot genérico. É um especialista, 100% personalizável para a SUA joalheria.</p>
-                </div>
-                <div class="features-grid">
-                    <ul class="features-list">
-                        <li>
-                            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.64 16.36a9 9 0 1 1-12.73-12.73A9 9 0 0 1 21.64 16.36z"></path><path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"></path></svg></div>
-                            <div>
-                                <h3>Conhecimento Impecável sobre Joias</h3>
-                                <p>Sabe explicar tudo sobre joias: estilos, acabamentos, pedras, lapidação, quilatagem, materiais (ouro 18k, prata 925, etc) e conhece todos os detalhes sobre as suas coleções.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
-                            <div>
-                                <h3>Vendas de Joias Personalizadas</h3>
-                                <p>Pega o briefing completo, pergunta por pergunta, entendendo cada detalhe e gerando resumos precisos para sua equipe.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line></svg></div>
-                            <div>
-                                <h3>Compreende e Entende Áudios</h3>
-                                <p>Aceita e entende áudios enviados pelos clientes, agilizando ainda mais o atendimento e a coleta de informações.</p>
-                            </div>
-                        </li>
-                         <li>
-                            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></div>
-                            <div>
-                                <h3>Análise Inteligente de Imagens</h3>
-                                <p>Seu cliente envia uma foto de referência? Nosso Agente de IA analisa e compreende os detalhes visuais.</p>
-                            </div>
-                        </li>
-                         <li>
-                            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg></div>
-                            <div>
-                                <h3>Otimização para Sua Equipe</h3>
-                                <p>Ele classifica e resume os leads, entregando-os prontos para sua vendedora focar no fechamento e na personalização final.</p>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="solution-image">
-                        <img src="https://placehold.co/600x500/14373C/FFFFFF?text=Newscale+AI" alt="Demonstração do agente de IA da Newscale em um celular.">
-                    </div>
-                </div>
-                <div class="cta-container">
-                    <a href="https://wa.me/5511963232908?text=Quero%20testar%20a%20IA%20especialista%20em%20joias" target="_blank" class="cta-button">✨ Teste a IA Agora ✨</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="dados">
-            <div class="container">
-                <h2>O Mercado de Joias está Brilhando, e a IA é a Chave para Você Ficar à Frente.</h2>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="number">18%</div>
-                        <p class="description">Foi o crescimento do mercado de joias no Brasil nos últimos 5 anos.</p>
-                    </div>
-                     <div class="stat-card">
-                        <div class="number">23%</div>
-                        <p class="description">É o aumento médio na conversão de vendas para empresas que usam chatbots bem implementados.</p>
-                    </div>
-                     <div class="stat-card">
-                        <div class="number">85%</div>
-                        <p class="description">Das empresas brasileiras planejam adotar algum tipo de IA até o final de 2025.</p>
-                    </div>
-                </div>
-                <div class="proof-card">
-                    <h3>Resultados Comprovados</h3>
-                    <p>Na Casa Kahla, a implementação do nosso Agente de IA gerou um <strong>aumento de +30% na taxa de conversão</strong> pelo WhatsApp. Isso é prova de que funciona.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="cta-final">
-             <div class="container">
-                <h2>Pronto(a) para Sua Joalheria Brilhar na Era Digital?</h2>
-                <p>Não deixe sua joalheria para trás. Escalar com excelência, um atendimento impecável e sem perder vendas por demora é mais fácil do que você imagina. Invista 15 minutos do seu tempo e descubra o potencial da IA para o seu negócio.</p>
-                <a href="https://wa.me/5511963232908?text=Quero%20automatizar%20meu%20atendimento%20e%20vendas%20com%20IA.%20Como%20funciona%20o%20diagn%C3%B3stico%20gratuito%3F" target="_blank" class="cta-button">💎 Agende Seu Diagnóstico Gratuito! 💎</a>
-                 <p style="font-size: 0.9rem; margin-top: 20px;">Converse com quem realmente entende de joalheria e IA. Sem compromisso.</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Newscale | Sua Parceira de Automação Inteligente para Joalherias</p>
-        <div class="footer-links">
-            <a href="https://wa.me/5511963232908?text=Quero%20automatizar%20meu%20atendimento%20e%20vendas%20com%20IA.%20Como%20funciona%20o%20diagn%C3%B3stico%20gratuito%3F" target="_blank">WhatsApp</a>
-            <span>|</span>
-            <a href="mailto:contato@newscale.tech">contato@newscale.tech</a>
-             <span>|</span>
-            <a href="#" target="_blank">LinkedIn</a>
         </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="pain-section">
+        <div class="container">
+            <h2 class="section-title">Você não precisa mais procurar a vendedora perfeita</h2>
+            <p class="section-subtitle">Se você tem uma joalheria, provavelmente já viveu isso:</p>
+            
+            <div class="pain-points">
+                <div class="pain-item">
+                    <div class="emoji">📉</div>
+                    <h3>Vendas Perdidas</h3>
+                    <p>Perdeu vendas porque o cliente ficou sem resposta.</p>
+                </div>
+                <div class="pain-item">
+                    <div class="emoji">🧑‍🎓</div>
+                    <h3>Rotatividade</h3>
+                    <p>Treinou alguém por semanas e ele saiu no mês seguinte.</p>
+                </div>
+                <div class="pain-item">
+                    <div class="emoji">😣</div>
+                    <h3>Falta de Conhecimento</h3>
+                    <p>Ouviu perguntas técnicas que ninguém sabia responder.</p>
+                </div>
+                <div class="pain-item">
+                    <div class="emoji">🫠</div>
+                    <h3>Sobrecarga</h3>
+                    <p>Sentiu que só você sabe vender do jeito certo.</p>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 40px; font-size: 1.2rem; color: var(--color-primary);">
+                <strong>Você não está sozinho.</strong><br>
+                Essa é a realidade de 9 em cada 10 donos de joalheria.<br>
+                E foi exatamente daí que nasceu a solução que você está prestes a conhecer.
+            </p>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solucao" class="features">
+        <div class="container">
+            <h2 class="section-title">Ela não é só inteligente. Ela é parte da sua joalheria.</h2>
+            <p class="section-subtitle">
+                Conheça sua nova vendedora digital — feita sob medida para a sua marca.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Conhecimento impecável sobre joias</h3>
+                    <p>Explica estilos, acabamentos, pedras, lapidação, quilatagem e metais (como ouro 18k e prata 925) e conhece cada detalhe do seu catálogo.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🪄</div>
+                    <h3>Tom de voz e linguagem da sua marca</h3>
+                    <p>Fala exatamente como sua equipe falaria — mantendo estilo, tom e experiência de atendimento únicos da sua marca.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Vendas personalizadas do início ao fim</h3>
+                    <p>Faz perguntas detalhadas, coleta briefing completo e entrega resumos prontos para sua equipe finalizar a venda com agilidade.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎧</div>
+                    <h3>Entendimento de áudios</h3>
+                    <p>Compreende e responde mensagens de voz enviadas pelos clientes, agilizando ainda mais o atendimento.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📸</div>
+                    <h3>Análise inteligente de imagens</h3>
+                    <p>Analisa fotos enviadas pelos clientes e entende detalhes visuais para sugerir peças e personalizações sob medida.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔁</div>
+                    <h3>Follow-up automatizado</h3>
+                    <p>Acompanha seus leads e faz o seguimento automático na cadência certa, mantendo o relacionamento ativo até o fechamento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agent Examples Section -->
+    <section class="agent-examples">
+        <div class="container">
+            <h2>Veja como sua nova vendedora digital atua na prática</h2>
+            <p>Esses são exemplos reais de como a IA responde seus clientes, analisa imagens, faz follow-up e conduz a venda do início ao fim.</p>
+
+            <div class="examples-grid">
+                <!-- SUBSTITUIR AQUI: imagem 1 – Exemplo de conversa respondendo dúvidas técnicas -->
+                <img src="https://via.placeholder.com/400x400/14373C/FFFFFF?text=Exemplo+1" alt="IA respondendo dúvidas técnicas sobre joias">
+
+                <!-- SUBSTITUIR AQUI: imagem 2 – Exemplo analisando imagem enviada pelo cliente -->
+                <img src="https://via.placeholder.com/400x400/B06E4A/FFFFFF?text=Exemplo+2" alt="IA analisando imagem de joia enviada pelo cliente">
+
+                <!-- SUBSTITUIR AQUI: imagem 3 – Exemplo coletando briefing -->
+                <img src="https://via.placeholder.com/400x400/435D51/FFFFFF?text=Exemplo+3" alt="IA coletando briefing detalhado do cliente">
+
+                <!-- SUBSTITUIR AQUI: imagem 4 – Exemplo enviando catálogo e link -->
+                <img src="https://via.placeholder.com/400x400/14373C/FFFFFF?text=Exemplo+4" alt="IA enviando catálogo e direcionando ao site">
+
+                <!-- SUBSTITUIR AQUI: imagem 5 – Exemplo de follow-up automático -->
+                <img src="https://via.placeholder.com/400x400/B06E4A/FFFFFF?text=Exemplo+5" alt="IA fazendo follow-up automático com lead">
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="beneficios" class="benefits">
+        <div class="container">
+            <h2 class="section-title">Benefícios reais para sua joalheria</h2>
+
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <div class="icon">📱</div>
+                    <h3>Atendimento 24/7</h3>
+                    <p>Nunca mais perca uma venda por demora</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon">💬</div>
+                    <h3>Catálogos Automáticos</h3>
+                    <p>Envia links direto para seu site ou vitrine online</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon">🤝</div>
+                    <h3>Follow-up Inteligente</h3>
+                    <p>Acompanha cada oportunidade no tempo certo</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon">🧠</div>
+                    <h3>Escalabilidade</h3>
+                    <p>Cresça sem aumentar sua equipe</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon">🪄</div>
+                    <h3>Mais Tempo Estratégico</h3>
+                    <p>Foque em coleção, expansão e crescimento</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon">✨</div>
+                    <h3>Experiência Impecável</h3>
+                    <p>Atendimento técnico e coerente sempre</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="https://wa.me/5511939007694?text=Olá!%20Quero%20testar%20o%20agente%20de%20IA%20para%20joalherias%20em%20ação." target="_blank" class="btn btn-primary">📲 Quero ver a IA em ação</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story">
+        <div class="container">
+            <div class="story-content">
+                <h2 class="story-title">Minha história</h2>
+                <h3 class="section-title">Eu sou Bruna Santanna — e antes de criar tecnologia, eu criei joias.</h3>
+                
+                <!-- SUBSTITUIR AQUI: Foto da Bruna Santanna -->
+                <div class="story-photo-wrapper">
+                    <img class="story-photo" src="https://via.placeholder.com/250/14373C/FFFFFF?text=Bruna+Santanna" alt="Bruna Santanna - Fundadora Newscale Consulting">
+                </div>
+                
+                <p>Minha jornada começou há mais de 7 anos, quando fundei minha própria joalheria personalizada. Foram anos acompanhando cada atendimento de perto — e foi ali que eu aprendi que o verdadeiro desafio de crescer não é vender: é encontrar alguém que venda com o mesmo cuidado, conhecimento e paixão que o dono.</p>
+
+                <p>Essa busca virou uma missão. Mergulhei no mundo da tecnologia e criei a Newscale, com um propósito claro: transformar a inteligência artificial em aliada real de negócios como o seu.</p>
+
+                <p><strong>Hoje, o que criamos aqui não é um chatbot. É uma vendedora digital sob medida, treinada para conhecer sua marca, seu catálogo, seu cliente — e vender com a mesma excelência que você venderia.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="resultados" class="results">
+        <div class="container">
+            <h2 class="section-title">De joalheria para joalheria: veja o que essa IA já está fazendo</h2>
+            <p class="section-subtitle">Na Casa Kahla, por exemplo, o agente entregou resultados impressionantes:</p>
+
+            <div class="results-grid">
+                <div class="result-item">
+                    <div class="result-number" data-target="30">0</div>
+                    <div class="result-label">Taxa de Conversão</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-number" data-target="0" data-text="segundos">segundos</div>
+                    <div class="result-label">Tempo de Resposta</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-number" data-target="80">0</div>
+                    <div class="result-label">Atendimento Automatizado</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-number" data-target="100">0</div>
+                    <div class="result-label">Leads Recuperados</div>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 50px; font-size: 1.2rem; color: var(--color-primary);">
+                <strong>Tudo isso sem precisar contratar, treinar ou gerenciar ninguém.</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Como funciona</h2>
+            <p class="timeline-intro">Em 3 etapas, mergulhamos a fundo na sua joalheria e criamos uma vendedora digital sob medida:</p>
+
+            <div class="timeline-vertical">
+                <div class="timeline-step">
+                    <div class="timeline-icon-wrapper">
+                        <!-- SUBSTITUIR AQUI: Ícone/Ilustração para "Diagnóstico e imersão" -->
+                        <img src="https://via.placeholder.com/40/B06E4A/FFFFFF?text=1" alt="Diagnóstico">
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-step-number">1</span>
+                        <h3>Diagnóstico e imersão personalizada</h3>
+                        <p>Entramos no universo da sua marca: entendemos seu posicionamento, público, estilo, catálogo e processos internos. Essa é a fase em que mergulhamos a fundo em cada detalhe da sua operação — porque nenhuma joalheria é igual à outra.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="timeline-icon-wrapper">
+                        <!-- SUBSTITUIR AQUI: Ícone/Ilustração para "Criação e personalização da IA" -->
+                        <img src="https://via.placeholder.com/40/B06E4A/FFFFFF?text=2" alt="Criação">
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-step-number">2</span>
+                        <h3>Criação e personalização da IA</h3>
+                        <p>Com base nessa imersão, treinamos a inteligência artificial com tudo o que torna sua joalheria única: tom de voz, coleções, diferenciais, políticas de atendimento, linguagem e sistemas que você já utiliza. Seu agente nasce como uma vendedora digital exclusiva da sua marca — fiel, bem treinada e sempre de bom humor.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="timeline-icon-wrapper">
+                        <!-- SUBSTITUIR AQUI: Ícone/Ilustração para "Implementação e acompanhamento" -->
+                        <img src="https://via.placeholder.com/40/B06E4A/FFFFFF?text=3" alt="Implementação">
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-step-number">3</span>
+                        <h3>Implementação e acompanhamento</h3>
+                        <p>Configuramos o agente diretamente no seu WhatsApp e integramos aos sistemas da sua empresa. Acompanhamos a performance, ajustamos respostas e aperfeiçoamos continuamente para garantir o mesmo padrão de excelência que você teria em uma venda presencial.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-note">
+                <p><span class="icon">💡</span> <strong>Cada projeto é único e recebe atenção completa da nossa equipe</strong> — por isso, o tempo de implantação pode variar conforme a complexidade da sua joalheria.</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://wa.me/5511971901020?text=Olá!%20Quero%20agendar%20meu%20diagnóstico%20gratuito%20para%20automação%20com%20IA." target="_blank" class="btn btn-primary">🚀 Agendar meu diagnóstico gratuito</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Antes que você pergunte...</h2>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">🔐 É seguro compartilhar meus dados?</div>
+                    <p>Sim. A Newscale segue as melhores práticas de proteção e privacidade de dados.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">📱 Funciona no WhatsApp que já uso?</div>
+                    <p>Sim! A integração é feita diretamente no número atual da sua loja.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">🛠️ Preciso saber programar?</div>
+                    <p>Não. Nós cuidamos de tudo para você.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">📈 Em quanto tempo verei resultados?</div>
+                    <p>A maioria das joalherias vê diferença já nos primeiros 7 dias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="contato" class="final-cta">
+        <div class="container">
+            <h2>A vendedora perfeita que você sempre procurou agora pode estar no seu WhatsApp.</h2>
+            <p>Chega de procurar por funcionários que entendam de joias, vendam com paixão e representem sua marca. Com a Newscale, você tem tudo isso em uma única solução: uma inteligência artificial feita sob medida para a sua joalheria.</p>
+            
+            <div class="cta-buttons">
+                <a href="https://wa.me/5511971901020?text=Olá!%20Quero%20agendar%20um%20diagnóstico%20gratuito%20para%20minha%20joalheria." target="_blank" class="btn btn-primary">📅 Agendar diagnóstico gratuito</a>
+                <a href="https://wa.me/5511939007694?text=Olá!%20Quero%20testar%20o%20agente%20de%20IA%20agora." target="_blank" class="btn btn-secondary">🤖 Testar o agente agora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Newscale. Todos os direitos reservados.</p>
     </footer>
 
+    <script>
+        // Animação de contagem dos números
+        function animateNumbers() {
+            const numberElements = document.querySelectorAll('.result-number[data-target]');
+            
+            numberElements.forEach(element => {
+                const target = parseInt(element.getAttribute('data-target'));
+                const isText = element.getAttribute('data-text');
+                
+                if (isText) {
+                    element.textContent = isText;
+                    return;
+                }
+                
+                const duration = 2000; // 2 segundos
+                const increment = target / (duration / 16); // 60fps
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    
+                    // Formata o número baseado no label
+                    const label = element.parentElement.querySelector('.result-label').textContent;
+                    
+                    if (label.includes('Taxa') || label.includes('Atendimento') || label.includes('Leads')) {
+                        element.textContent = Math.floor(current) + '%';
+                        if (label.includes('Taxa')) {
+                            element.textContent = '+' + Math.floor(current) + '%';
+                        }
+                    } else {
+                        element.textContent = Math.floor(current);
+                    }
+                }, 16);
+            });
+        }
+        
+        // Intersection Observer para iniciar animação quando a seção aparecer
+        const resultsSection = document.querySelector('#resultados');
+        let hasAnimated = false;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasAnimated) {
+                    hasAnimated = true;
+                    animateNumbers();
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+        
+        if (resultsSection) {
+            observer.observe(resultsSection);
+        }
+
+        // Animação de scroll reveal para a timeline
+        const timelineSteps = document.querySelectorAll('.timeline-step');
+        
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.3,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        timelineSteps.forEach(step => {
+            timelineObserver.observe(step);
+        });
+    </script>
 </body>
 </html>
