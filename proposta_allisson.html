@@ -1,4 +1,777 @@
-<div class="price-table">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allisson Joias x NewScale AI - Proposta</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: #14373C;
+            background: #f8f8f6;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #14373C 0%, #1a4449 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="topography" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M10,50 Q30,30 50,50 T90,50" stroke="rgba(255,255,255,0.03)" fill="none"/></pattern></defs><rect width="100%" height="100%" fill="url(%23topography)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 1;
+            padding: 2rem;
+            max-width: 1200px;
+        }
+
+        .logo-container {
+            margin-bottom: 3rem;
+        }
+
+        .logo-mark {
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            letter-spacing: -1px;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 300;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: #B06E4A;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            border-color: #B06E4A;
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            color: #14373C;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: #B06E4A;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .pain-points {
+            background: white;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: #f8f8f6;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            border-left: 4px solid #B06E4A;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(20, 55, 60, 0.1);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #14373C;
+        }
+
+        .card p {
+            color: #435D51;
+            line-height: 1.6;
+        }
+
+        .solution {
+            background: linear-gradient(to bottom, #f8f8f6 0%, white 100%);
+        }
+
+        .solution-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .solution-text ul {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .solution-text li {
+            padding: 1rem 0 1rem 3rem;
+            position: relative;
+            line-height: 1.6;
+            color: #435D51;
+        }
+
+        .solution-text li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #B06E4A;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .mockup-container {
+            background: #14373C;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(20, 55, 60, 0.3);
+        }
+
+        .chat-bubble {
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 18px;
+            margin: 1rem 0;
+            max-width: 80%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .chat-bubble.client {
+            margin-left: auto;
+            background: #B06E4A;
+            color: white;
+        }
+
+        .specialization {
+            background: #14373C;
+            color: white;
+            padding: 6rem 2rem;
+        }
+
+        .specialization .section-title {
+            color: white;
+        }
+
+        .specialization-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+            align-items: center;
+        }
+
+        .specialization-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .benefits {
+            background: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f8f6;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            background: #14373C;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .benefit-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #B06E4A;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card:hover .benefit-number {
+            color: white;
+        }
+
+        .timeline {
+            background: #f8f8f6;
+        }
+
+        .timeline-container {
+            position: relative;
+            margin-top: 3rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            align-items: center;
+        }
+
+        .timeline-number {
+            width: 60px;
+            height: 60px;
+            background: #B06E4A;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .garantias {
+            background: white;
+            text-align: center;
+        }
+
+        .garantias-box {
+            background: linear-gradient(135deg, #435D51 0%, #14373C 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 16px;
+            margin-top: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .garantias-box h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .garantias-items {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .garantia-item {
+            font-size: 1.2rem;
+        }
+
+        .garantia-item::before {
+            content: '✓';
+            margin-right: 0.5rem;
+            color: #B06E4A;
+            font-size: 1.5rem;
+        }
+
+        .investimento {
+            background: #f8f8f6;
+        }
+
+        .price-table {
+            max-width: 800px;
+            margin: 3rem auto;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(20, 55, 60, 0.1);
+        }
+
+        .price-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            padding: 2rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .price-row:last-child {
+            border-bottom: none;
+            background: #14373C;
+            color: white;
+        }
+
+        .price-label {
+            font-size: 1.2rem;
+        }
+
+        .price-value {
+            text-align: right;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #B06E4A;
+        }
+
+        .price-row:last-child .price-value {
+            color: white;
+        }
+
+        .payment-terms {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            color: #435D51;
+        }
+
+        .proximos-passos {
+            background: white;
+            text-align: center;
+        }
+
+        .steps-checklist {
+            max-width: 600px;
+            margin: 3rem auto;
+            text-align: left;
+        }
+
+        .step-item {
+            padding: 1.5rem;
+            margin: 1rem 0;
+            background: #f8f8f6;
+            border-radius: 12px;
+            border-left: 4px solid #B06E4A;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .step-check {
+            width: 30px;
+            height: 30px;
+            background: #B06E4A;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        footer {
+            background: #14373C;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .footer-tagline {
+            font-size: 1.2rem;
+            color: #B06E4A;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .aspirational {
+            font-size: 1.8rem;
+            text-align: center;
+            color: #B06E4A;
+            margin: 4rem 0;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .solution-content,
+            .specialization-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .price-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .price-value {
+                text-align: left;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .benefit-card.animate {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Função para animar contagem de números
+        function animateNumber(element, target, duration, suffix = '') {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target + suffix;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start) + suffix;
+                }
+            }, 16);
+        }
+
+        // Intersection Observer para detectar quando os cards aparecem na tela
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animate', 'animated');
+                    
+                    const numberElement = entry.target.querySelector('.benefit-number');
+                    const text = numberElement.textContent;
+                    
+                    // Detectar o tipo de número e animar
+                    if (text.includes('-60%')) {
+                        numberElement.textContent = '0%';
+                        setTimeout(() => {
+                            animateNumber(numberElement, -60, 1500, '%');
+                        }, 200);
+                    } else if (text === '24h') {
+                        numberElement.textContent = '0h';
+                        setTimeout(() => {
+                            animateNumber(numberElement, 24, 1500, 'h');
+                        }, 200);
+                    } else if (text.includes('+30%')) {
+                        numberElement.textContent = '0%';
+                        setTimeout(() => {
+                            animateNumber(numberElement, 30, 1500, '%');
+                        }, 200);
+                    } else if (text === '100%') {
+                        numberElement.textContent = '0%';
+                        setTimeout(() => {
+                            animateNumber(numberElement, 100, 1500, '%');
+                        }, 200);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observar todos os cards de benefícios quando a página carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            const benefitCards = document.querySelectorAll('.benefit-card');
+            benefitCards.forEach(card => observer.observe(card));
+        });
+    </script>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="logo-container">
+                <img src="LOGO 03@3x.png" alt="NewScale Consulting" class="logo-mark">
+            </div>
+            <h1>A inteligência que vai transformar<br>as vendas da Allisson Joias</h1>
+            <p class="subtitle">Muito além de um chatbot — um especialista em joalheria 24h por dia</p>
+        </div>
+    </div>
+
+    <!-- Situação Atual -->
+    <section class="pain-points">
+        <h2 class="section-title">Os desafios que estão limitando seu crescimento</h2>
+        <p class="section-subtitle">Identificamos os pontos críticos</p>
+        
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">📉</div>
+                <h3>Leads sem resposta</h3>
+                <p>Alto volume de 50-60 leads diários com respostas manuais, deixando clientes sem atendimento imediato.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🕰️</div>
+                <h3>Tempo excessivo</h3>
+                <p>Equipe gasta horas em perguntas repetitivas e tarefas operacionais que poderiam ser automatizadas.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔁</div>
+                <h3>Follow-ups manuais</h3>
+                <p>Processo de acompanhamento depende totalmente de ação humana, gerando perda de oportunidades.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">❌</div>
+                <h3>Falta de automação</h3>
+                <p>Comercial e marketing operando de forma analógica, limitando a escalabilidade do negócio.</p>
+            </div>
+        </div>
+    </section>
+
+    <p class="aspirational">"Sua equipe foca em fechar vendas — a IA cuida de todo o resto"</p>
+
+    <!-- A Solução -->
+    <section class="solution">
+        <h2 class="section-title">A Solução</h2>
+        <p class="section-subtitle">Inteligência Artificial Especializada</p>
+        
+        <div class="solution-content">
+            <div class="solution-text">
+                <p style="font-size: 1.2rem; line-height: 1.8; color: #435D51;">
+                    Um Agente de Inteligência Artificial que atua como SDR digital especialista em joalheria, integrado ao seu WhatsApp e CRM.
+                </p>
+                <ul>
+                    <li>Atendimento automatizado 24 horas por dia</li>
+                    <li>Compreensão de áudios e imagens dos clientes</li>
+                    <li>Envio automático de catálogos personalizados</li>
+                    <li>Respostas precisas sobre produtos e técnicas</li>
+                    <li>Classificação automática no CRM Kommo</li>
+                    <li>Follow-ups inteligentes e personalizados</li>
+                    <li>Linguagem alinhada à marca Allisson Joias</li>
+                </ul>
+            </div>
+            <div class="mockup-container">
+                <div style="background: white; padding: 1rem; border-radius: 12px;">
+                    <div style="font-weight: bold; margin-bottom: 1rem; color: #14373C;">💬 Conversa com Cliente</div>
+                    <div class="chat-bubble">Olá! Procuro um anel de noivado em ouro branco</div>
+                    <div class="chat-bubble client">Perfeito! Temos peças maravilhosas em ouro branco 18k. Você já tem alguma preferência de pedra? Diamante, safira ou esmeralda?</div>
+                    <div class="chat-bubble">Diamante, por favor</div>
+                    <div class="chat-bubble client">Excelente escolha! Vou te mostrar nossa coleção premium com diamantes certificados. Qual faixa de investimento você considera?</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Especialização -->
+    <section class="specialization">
+        <h2 class="section-title">Especialização em Joalheria</h2>
+        <p class="section-subtitle">O único agente de IA que entende seu negócio com profundidade</p>
+        
+        <div class="specialization-grid">
+            <div class="specialization-text">
+                <p>O grande diferencial é que este agente não é genérico. Ele será treinado com todos os SKUs, coleções, fichas técnicas e diferenciais da Allisson Joias.</p>
+                <br>
+                <p>Capaz de sugerir peças ideais conforme perfil e orçamento, explicar detalhes técnicos (materiais, lapidação, quilatagem), conduzir a jornada de compra e gerar resumos para a equipe finalizar vendas com agilidade.</p>
+                <br>
+                <p><strong>Totalmente integrado com Kommo e e-commerce.</strong></p>
+            </div>
+            <div>
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 12px; border-left: 4px solid #B06E4A;">
+                    <h3 style="color: white; margin-bottom: 1rem; font-size: 1.3rem;">🎯 Conhecimento Profundo</h3>
+                    <ul style="list-style: none; color: rgba(255,255,255,0.9); line-height: 2;">
+                        <li>✓ Catálogo completo mapeado</li>
+                        <li>✓ Fichas técnicas de produtos</li>
+                        <li>✓ Tom de voz da marca</li>
+                        <li>✓ Estratégias de venda consultiva</li>
+                        <li>✓ Análise RFM de clientes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <p class="aspirational">"Cada lead bem atendido é uma venda a mais"</p>
+
+    <!-- Benefícios -->
+    <section class="benefits">
+        <h2 class="section-title">Benefícios Estratégicos</h2>
+        <p class="section-subtitle">Resultados mensuráveis</p>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-number">-60%</div>
+                <p><strong>Economia de tempo</strong><br>da equipe em atendimentos iniciais</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-number">24h</div>
+                <p><strong>Atendimento contínuo</strong><br>sem pausas ou limitações</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-number">+30%</div>
+                <p><strong>Aumento na conversão</strong><br>com leads qualificados</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-number">100%</div>
+                <p><strong>Taxa de resposta</strong><br>nenhum lead sem atendimento</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-number" style="font-size: 4rem;">∞</div>
+                <p><strong>Escalabilidade</strong><br>sem aumentar equipe</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-number" style="font-size: 4rem;">🎯</div>
+                <p><strong>Experiência premium</strong><br>atendimento consultivo sempre</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline">
+        <h2 class="section-title">Processo de Implementação</h2>
+        <p class="section-subtitle">30 dias até o resultado</p>
+        
+        <div class="timeline-container">
+            <div class="timeline-item">
+                <div class="timeline-number">1</div>
+                <div class="timeline-content">
+                    <h3>Diagnóstico Detalhado</h3>
+                    <p>Análise profunda da operação, produtos e necessidades específicas da Allisson Joias.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">2</div>
+                <div class="timeline-content">
+                    <h3>Arquitetura e Linguagem</h3>
+                    <p>Desenvolvimento da personalidade do agente, tom de voz e fluxos de conversação.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">3</div>
+                <div class="timeline-content">
+                    <h3>Implementação</h3>
+                    <p>Integração com WhatsApp, Kommo e e-commerce, configuração de todas as funcionalidades.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">4</div>
+                <div class="timeline-content">
+                    <h3>Testes e Ajustes</h3>
+                    <p>Validação em ambiente real com acompanhamento próximo e refinamentos necessários.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">5</div>
+                <div class="timeline-content">
+                    <h3>Otimização Contínua</h3>
+                    <p>Monitoramento de performance e melhorias constantes baseadas em dados reais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Garantias -->
+    <section class="garantias">
+        <h2 class="section-title">Garantias e Segurança</h2>
+        <p class="section-subtitle">Você só continua se estiver 100% satisfeito</p>
+        
+        <div class="garantias-box">
+            <h3>Nossa Promessa</h3>
+            <div class="garantias-items">
+                <div class="garantia-item">7 dias de testes inclusos</div>
+                <div class="garantia-item">30 dias de ajustes gratuitos</div>
+            </div>
+            <p style="margin-top: 2rem; font-size: 1.1rem; opacity: 0.9;">
+                Validação completa em ambiente real antes de qualquer compromisso definitivo.
+            </p>
+        </div>
+    </section>
+
+    <!-- Investimento -->
+    <section class="investimento" id="investimento">
+        <h2 class="section-title">Investimento</h2>
+        <p class="section-subtitle">Projetado para se pagar em semanas</p>
+        
+        <div class="price-table">
             <div class="price-row">
                 <div class="price-label">Setup Inicial<br><small style="opacity: 0.7;">Diagnóstico, arquitetura e implementação completa</small></div>
                 <div class="price-value">R$ 3.250,00</div>
@@ -17,3 +790,34 @@
             <p><strong>Inclui:</strong> Personalização total • Follow-ups automáticos • Integrações • Hospedagem • Suporte completo • Otimizações contínuas</p>
             <p style="margin-top: 1rem; font-size: 0.95rem; opacity: 0.8;"><em>*Custos adicionais com tokens de IA podem ser aplicados conforme o volume de uso</em></p>
         </div>
+    </section>
+
+    <!-- Próximos Passos -->
+    <section class="proximos-passos">
+        <h2 class="section-title">Próximos Passos</h2>
+        <p class="section-subtitle">Vamos transformar a Allisson Joias com IA</p>
+        
+        <div class="steps-checklist">
+            <div class="step-item">
+                <div class="step-check">1</div>
+                <div>Envio de materiais iniciais (catálogo, tom de voz, diferenciais)</div>
+            </div>
+            <div class="step-item">
+                <div class="step-check">2</div>
+                <div>Reunião de diagnóstico aprofundado com a equipe</div>
+            </div>
+            <div class="step-item">
+                <div class="step-check">3</div>
+                <div>Início do desenvolvimento do agente especializado</div>
+            </div>
+        </div>
+        
+        <a href="#" class="cta-button" style="margin-top: 2rem;">Aprovar e Começar Agora</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">NEWSCALE</div>
+        <div class="footer-tagline">Consulting & AI Solutions</div>
+        <p style="opacity: 0.8;">Tecnologia, inteligência e especialização em joalheria<br>para escalar a Allisson Joias</p>
+        <p style="margin-top: 2
