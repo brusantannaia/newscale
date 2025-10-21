@@ -78,7 +78,6 @@
             background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
             color: var(--color-white);
             padding: 100px 0;
-            text-align: center;
             position: relative;
             overflow: hidden;
         }
@@ -94,9 +93,37 @@
             background-size: cover;
         }
 
-        .hero-content {
+        .hero .container {
             position: relative;
             z-index: 1;
+        }
+
+        .hero-wrapper {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-content {
+            flex: 1 1 60%;
+            text-align: left;
+        }
+
+        .hero-visual {
+            flex: 1 1 35%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-visual img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            object-fit: cover;
         }
 
         .hero h1 {
@@ -691,6 +718,23 @@
                 font-size: 1.1rem;
             }
 
+            .hero-wrapper {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .hero-visual img {
+                max-width: 280px;
+            }
+
             .section-title {
                 font-size: 2rem;
             }
@@ -749,13 +793,18 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>A vendedora ideal da sua joalheria existe.<br>E nunca falta ao trabalho.</h1>
-                <p class="subtitle">
-                    Atenda clientes 24h por dia no WhatsApp com uma IA especialista em joias e personalizada para a sua marca — ela conhece seu catálogo, fala no seu tom de voz e vende com a mesma excelência que você.
-                </p>
-                <div class="cta-buttons">
-                    <a href="https://wa.me/5511971901020?text=Olá!%20Quero%20agendar%20um%20diagnóstico%20gratuito%20para%20automação%20com%20IA%20na%20minha%20joalheria." target="_blank" class="btn btn-primary">📅 Agendar diagnóstico gratuito</a>
+            <div class="hero-wrapper">
+                <div class="hero-content">
+                    <h1>A vendedora ideal da sua joalheria existe.<br>E nunca falta ao trabalho.</h1>
+                    <p class="subtitle">
+                        Atenda clientes 24h por dia no WhatsApp com uma IA especialista em joias e personalizada para a sua marca — ela conhece seu catálogo, fala no seu tom de voz e vende com a mesma excelência que você.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="https://wa.me/5511971901020?text=Olá!%20Quero%20agendar%20um%20diagnóstico%20gratuito%20para%20automação%20com%20IA%20na%20minha%20joalheria." target="_blank" class="btn btn-primary">📅 Agendar diagnóstico gratuito</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="agentejoias1.png" alt="Agente de IA para Joalherias">
                 </div>
             </div>
         </div>
