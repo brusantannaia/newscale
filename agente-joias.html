@@ -128,26 +128,58 @@
             margin: 0 auto 60px;
         }
 
-        .examples-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+        .examples-wrapper {
+            display: flex;
+            gap: 40px;
             max-width: 1200px;
             margin: 0 auto;
+            align-items: stretch;
+            flex-wrap: wrap;
         }
 
-        .examples-grid img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
+        .examples-list {
+            flex: 1 1 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .example-item {
+            background: var(--color-white);
+            padding: 24px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            transition: transform 0.3s;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--color-secondary);
         }
 
-        .examples-grid img:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        .example-item h3 {
+            color: var(--color-primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .example-item p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .examples-visual {
+            flex: 1 1 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .examples-visual img {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 20px;
+            box-shadow: 0 20px 45px rgba(20, 55, 60, 0.25);
+            object-fit: cover;
         }
 
         .hero .subtitle {
@@ -677,8 +709,26 @@
                 max-width: 300px;
             }
 
-            .examples-grid img {
-                height: 300px;
+            .examples-wrapper {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .examples-list {
+                width: 100%;
+            }
+
+            .examples-visual {
+                order: -1;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            .examples-visual img {
+                max-width: 320px;
+                width: 100%;
             }
         }
     </style>
@@ -716,7 +766,7 @@
         <div class="container">
             <h2 class="section-title">Você não precisa mais procurar a vendedora perfeita</h2>
             <p class="section-subtitle">Se você tem uma joalheria, provavelmente já viveu isso:</p>
-
+            
             <div class="pain-points">
                 <div class="pain-item">
                     <div class="emoji">📉</div>
@@ -802,21 +852,32 @@
             <h2>Veja como sua nova vendedora digital atua na prática</h2>
             <p>Esses são exemplos reais de como a IA responde seus clientes, analisa imagens, faz follow-up e conduz a venda do início ao fim.</p>
 
-            <div class="examples-grid">
-                <!-- SUBSTITUIR AQUI: imagem 1 – Exemplo de conversa respondendo dúvidas técnicas -->
-                <img src="https://via.placeholder.com/400x400/14373C/FFFFFF?text=Exemplo+1" alt="IA respondendo dúvidas técnicas sobre joias">
-
-                <!-- SUBSTITUIR AQUI: imagem 2 – Exemplo analisando imagem enviada pelo cliente -->
-                <img src="https://via.placeholder.com/400x400/B06E4A/FFFFFF?text=Exemplo+2" alt="IA analisando imagem de joia enviada pelo cliente">
-
-                <!-- SUBSTITUIR AQUI: imagem 3 – Exemplo coletando briefing -->
-                <img src="https://via.placeholder.com/400x400/435D51/FFFFFF?text=Exemplo+3" alt="IA coletando briefing detalhado do cliente">
-
-                <!-- SUBSTITUIR AQUI: imagem 4 – Exemplo enviando catálogo e link -->
-                <img src="https://via.placeholder.com/400x400/14373C/FFFFFF?text=Exemplo+4" alt="IA enviando catálogo e direcionando ao site">
-
-                <!-- SUBSTITUIR AQUI: imagem 5 – Exemplo de follow-up automático -->
-                <img src="https://via.placeholder.com/400x400/B06E4A/FFFFFF?text=Exemplo+5" alt="IA fazendo follow-up automático com lead">
+            <div class="examples-wrapper">
+                <ul class="examples-list">
+                    <li class="example-item">
+                        <h3>Respostas técnicas imediatas</h3>
+                        <p>A IA esclarece dúvidas sobre metais, lapidação, tamanhos e certificações com a mesma precisão de um especialista da sua equipe.</p>
+                    </li>
+                    <li class="example-item">
+                        <h3>Análise de imagens enviadas pelo cliente</h3>
+                        <p>Recebe fotos, identifica estilos e sugere peças similares ou complementares sem você precisar intervir.</p>
+                    </li>
+                    <li class="example-item">
+                        <h3>Briefing completo e organizado</h3>
+                        <p>Conduz perguntas estratégicas, registra preferências e envia o resumo pronto para o time humano finalizar a venda.</p>
+                    </li>
+                    <li class="example-item">
+                        <h3>Recomendações e catálogos inteligentes</h3>
+                        <p>Indica coleções, links e combinações de peças conforme o perfil de cada cliente, mantendo o atendimento personalizado.</p>
+                    </li>
+                    <li class="example-item">
+                        <h3>Follow-up que não deixa oportunidades esfriarem</h3>
+                        <p>Agenda lembretes, retoma conversas e acompanha cada lead até o fechamento, sempre no tom da sua marca.</p>
+                    </li>
+                </ul>
+                <div class="examples-visual">
+                    <img src="agentevendedora2.png" alt="Demonstração da vendedora digital atendendo clientes">
+                </div>
             </div>
         </div>
     </section>
@@ -871,11 +932,11 @@
             <div class="story-content">
                 <h2 class="story-title">Minha história</h2>
                 <h3 class="section-title">Eu sou Bruna Santanna — e antes de criar tecnologia, eu criei joias.</h3>
-
+                
                 <div class="story-photo-wrapper">
                     <img class="story-photo" src="bruna%20santanna%20-%20quadrada.png" alt="Bruna Santanna - Fundadora da Newscale Consulting">
                 </div>
-
+                
                 <p>Minha jornada começou há mais de 7 anos, quando fundei minha própria joalheria personalizada. Foram anos acompanhando cada atendimento de perto — e foi ali que eu aprendi que o verdadeiro desafio de crescer não é vender: é encontrar alguém que venda com o mesmo cuidado, conhecimento e paixão que o dono.</p>
 
                 <p>Essa busca virou uma missão. Mergulhei no mundo da tecnologia e criei a Newscale, com um propósito claro: transformar a inteligência artificial em aliada real de negócios como o seu.</p>
@@ -925,7 +986,6 @@
             <div class="timeline-vertical">
                 <div class="timeline-step">
                     <div class="timeline-icon-wrapper">
-                        <!-- SUBSTITUIR AQUI: Ícone/Ilustração para "Diagnóstico e imersão" -->
                         <img src="https://via.placeholder.com/40/B06E4A/FFFFFF?text=1" alt="Diagnóstico">
                     </div>
                     <div class="timeline-content">
@@ -937,7 +997,6 @@
 
                 <div class="timeline-step">
                     <div class="timeline-icon-wrapper">
-                        <!-- SUBSTITUIR AQUI: Ícone/Ilustração para "Criação e personalização da IA" -->
                         <img src="https://via.placeholder.com/40/B06E4A/FFFFFF?text=2" alt="Criação">
                     </div>
                     <div class="timeline-content">
@@ -949,7 +1008,6 @@
 
                 <div class="timeline-step">
                     <div class="timeline-icon-wrapper">
-                        <!-- SUBSTITUIR AQUI: Ícone/Ilustração para "Implementação e acompanhamento" -->
                         <img src="https://via.placeholder.com/40/B06E4A/FFFFFF?text=3" alt="Implementação">
                     </div>
                     <div class="timeline-content">
