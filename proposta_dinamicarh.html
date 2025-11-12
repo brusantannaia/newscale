@@ -286,6 +286,82 @@
             line-height: 1.8;
         }
 
+        /* Problem Comparison Diagram */
+        .problem-comparison {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            padding: 3rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .problem-comparison.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .problem-side {
+            flex: 1;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 15px;
+            background: #f8f8f8;
+            border: 3px solid #e74c3c;
+        }
+
+        .problem-side.solution {
+            border-color: var(--primary-green);
+            background: linear-gradient(135deg, rgba(67, 93, 81, 0.05), rgba(67, 93, 81, 0.1));
+        }
+
+        .problem-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .problem-side h4 {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .problem-side p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .problem-arrow {
+            font-size: 2.5rem;
+            color: #e74c3c;
+            animation: pulse-arrow 2s infinite;
+        }
+
+        @keyframes pulse-arrow {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.7;
+            }
+        }
+
+        .pricing-installments {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
         /* Solution Section */
         .solution-section {
             padding: 80px 2rem;
@@ -1115,26 +1191,6 @@
             transform: translateY(0);
         }
 
-        .pricing-card.recommended {
-            border: 3px solid var(--accent-brown);
-            transform: scale(1.05);
-        }
-
-        .pricing-card.recommended::before {
-            content: '✅ RECOMENDADO';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent-brown);
-            color: white;
-            padding: 0.5rem 2rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
         .pricing-header {
             text-align: center;
             margin-bottom: 2rem;
@@ -1449,6 +1505,16 @@
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             }
 
+            .problem-comparison {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 2rem;
+            }
+
+            .problem-arrow {
+                transform: rotate(90deg);
+            }
+
             .comparison-container {
                 grid-template-columns: 1fr;
             }
@@ -1541,7 +1607,7 @@
     <!-- Header -->
     <header class="header">
         <a href="https://brunasant.github.io/newscale/" class="logo-link">
-            <img src="https://raw.githubusercontent.com/brunasant/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting" class="logo">
+            <img src="https://raw.githubusercontent.com/brunasant/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting" class="logo" onerror="this.src='https://raw.githubusercontent.com/brunasant/newscale/refs/heads/main/LOGO%2003%403x.png'">
         </a>
     </header>
 
@@ -1621,13 +1687,20 @@
                 </div>
             </div>
 
-            <div class="insight-box reveal">
-                <h3>O Problema das Plataformas Genéricas</h3>
-                <p>
-                    Você já conhece plataformas de IA. Mas a maioria apenas oferece uma ferramenta genérica e deixa o trabalho pesado nas suas mãos. 
-                    É como comprar um carro desmontado e precisar montar sozinho, sem manual. Você precisa de mais do que tecnologia — 
-                    você precisa de uma solução que funcione desde o primeiro dia.
-                </p>
+            <div class="problem-comparison reveal">
+                <div class="problem-side">
+                    <div class="problem-icon">❌</div>
+                    <h4>Outras Plataformas</h4>
+                    <p>Ferramenta genérica<br>+ Você faz tudo sozinho</p>
+                </div>
+                <div class="problem-arrow">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="problem-side solution">
+                    <div class="problem-icon">✅</div>
+                    <h4>NewScale</h4>
+                    <p>Consultoria + Automação<br>Pronta desde o dia 1</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1765,7 +1838,7 @@
             <div class="section-header reveal" style="color: white;">
                 <div class="section-icon">📅</div>
                 <h2 style="color: white;">Cronograma de Implementação</h2>
-                <p style="color: rgba(255,255,255,0.9);">Processo completo em 6 semanas, do kickoff ao go-live</p>
+                <p style="color: rgba(255,255,255,0.9);">Processo completo em 5 semanas, do kickoff ao go-live</p>
             </div>
 
             <div class="timeline">
@@ -2088,12 +2161,13 @@
             </div>
 
             <div class="pricing-cards">
-                <div class="pricing-card recommended reveal">
+                <div class="pricing-card reveal">
                     <div class="pricing-header">
                         <div class="pricing-title">API Não-Oficial</div>
                         <div class="pricing-subtitle">Máxima flexibilidade e controle operacional</div>
-                        <div class="pricing-amount">R$ 7.900</div>
+                        <div class="pricing-amount">R$ 8.230</div>
                         <div class="pricing-period">Setup Inicial (em até 3x sem juros)</div>
+                        <div class="pricing-installments">3x de R$ 2.743 (inicial, meio do projeto, finalização)</div>
                     </div>
 
                     <ul class="pricing-features">
@@ -2119,13 +2193,15 @@
                         </li>
                         <li>
                             <i class="fas fa-check-circle"></i>
-                            <span>Implantação rápida (1 a 2 dias)</span>
+                            <span>Prazo: 5 semanas</span>
                         </li>
                     </ul>
 
                     <div class="pricing-monthly">
-                        <strong>Mensalidade: R$ 397/mês</strong>
-                        Consumo de IA (tokens): ~R$ 75/mês
+                        <strong>Mensalidade: R$ 670/mês</strong>
+                        <p style="margin-top: 0.75rem; font-size: 0.9rem;">
+                            *Não incluso: Consumo de tokens de IA (~R$ 75/mês)
+                        </p>
                     </div>
 
                     <a href="https://wa.me/5511971901020?text=Olá%20Bruna!%20Quero%20escolher%20o%20plano%20API%20Não-Oficial%20para%20a%20Dinâmica%20RH." class="pricing-cta">
@@ -2133,7 +2209,7 @@
                     </a>
 
                     <p style="margin-top: 1.5rem; color: #666; font-size: 0.95rem; text-align: center;">
-                        💡 Ideal para empresas que querem resultados rápidos, controle total e flexibilidade para evoluir a automação
+                        💡 Ideal para empresas que querem resultados rápidos e controle total
                     </p>
                 </div>
 
@@ -2141,8 +2217,9 @@
                     <div class="pricing-header">
                         <div class="pricing-title">API Oficial Meta</div>
                         <div class="pricing-subtitle">Máxima segurança, estabilidade e conformidade total</div>
-                        <div class="pricing-amount">R$ 8.500</div>
+                        <div class="pricing-amount">R$ 9.565</div>
                         <div class="pricing-period">Setup Inicial (em até 3x sem juros)</div>
+                        <div class="pricing-installments">3x de R$ 3.188 (inicial, meio do projeto, finalização)</div>
                     </div>
 
                     <ul class="pricing-features">
@@ -2173,9 +2250,10 @@
                     </ul>
 
                     <div class="pricing-monthly">
-                        <strong>Mensalidade: R$ 497/mês</strong>
-                        Consumo de IA (tokens): ~R$ 75/mês<br>
-                        Taxa Meta API: ~R$ 10–20/mês
+                        <strong>Mensalidade: R$ 980/mês</strong>
+                        <p style="margin-top: 0.75rem; font-size: 0.9rem;">
+                            *Não incluso: Consumo de tokens (~R$ 75/mês) + Taxa Meta API (~R$ 10-20/mês)
+                        </p>
                     </div>
 
                     <a href="https://wa.me/5511971901020?text=Olá%20Bruna!%20Quero%20escolher%20o%20plano%20API%20Oficial%20Meta%20para%20a%20Dinâmica%20RH." class="pricing-cta">
@@ -2183,7 +2261,7 @@
                     </a>
 
                     <p style="margin-top: 1.5rem; color: #666; font-size: 0.95rem; text-align: center;">
-                        💡 Ideal para operações de alto volume, campanhas com tráfego pago e empresas que valorizam segurança corporativa
+                        💡 Ideal para operações de alto volume e campanhas com tráfego pago
                     </p>
                 </div>
             </div>
@@ -2300,20 +2378,13 @@
                                 <p>Fortix, CRM personalizado ou outros sistemas</p>
                             </div>
                         </li>
-                        <li>
-                            <i class="fas fa-headset"></i>
-                            <div>
-                                <strong>Suporte Estendido Premium</strong>
-                                <p>Atendimento prioritário 24/7 após período inicial</p>
-                            </div>
-                        </li>
                     </ul>
                 </div>
             </div>
 
             <div class="scope-timeline reveal">
                 <h3>⏱️ Prazo Total de Implementação</h3>
-                <p><strong>6 semanas</strong> do kickoff ao go-live completo</p>
+                <p><strong>5 semanas</strong> do kickoff ao go-live completo</p>
             </div>
         </div>
     </section>
@@ -2394,7 +2465,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <img src="https://raw.githubusercontent.com/brunasant/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting" class="footer-logo">
+            <img src="https://raw.githubusercontent.com/brunasant/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting" class="footer-logo" onerror="this.src='https://raw.githubusercontent.com/brunasant/newscale/refs/heads/main/LOGO%2003%403x.png'">
             
             <div class="footer-info">
                 <p><strong>Bruna Santanna</strong> – CEO & Head de Automação Inteligente</p>
@@ -2435,7 +2506,7 @@
         }, observerOptions);
 
         // Observe all reveal elements
-        document.querySelectorAll('.reveal, .challenge-card, .feature-card, .differential-card-single, .comparison-container, .timeline-item, .testimonial-card, .ai-capabilities, .scope-category, .scope-timeline, .benefit-category, .pricing-card, .guarantee-card').forEach(el => {
+        document.querySelectorAll('.reveal, .challenge-card, .feature-card, .differential-card-single, .problem-comparison, .comparison-container, .timeline-item, .testimonial-card, .ai-capabilities, .scope-category, .scope-timeline, .benefit-category, .pricing-card, .guarantee-card').forEach(el => {
             observer.observe(el);
         });
 
