@@ -520,49 +520,6 @@
             opacity: 0.9;
         }
 
-        /* Integrations Section */
-        .integrations-section {
-            padding: 80px 2rem;
-            background: white;
-        }
-
-        .integrations-table {
-            max-width: 1000px;
-            margin: 3rem auto;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .integrations-table.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .integration-row {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr 2fr;
-            border-bottom: 1px solid #eee;
-        }
-
-        .integration-row:first-child {
-            background: var(--primary-dark);
-            color: white;
-            font-weight: 600;
-        }
-
-        .integration-cell {
-            padding: 1.5rem;
-        }
-
-        .integration-row:not(:first-child):hover {
-            background: var(--light-bg);
-        }
-
         /* AI Features Section */
         .ai-features-section {
             padding: 80px 2rem;
@@ -834,6 +791,237 @@
 
         .capability-item p {
             opacity: 0.95;
+        }
+
+        /* Testimonial Section */
+        .testimonial-section {
+            padding: 80px 2rem;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(176, 110, 74, 0.05) 0%, transparent 70%);
+        }
+
+        .testimonial-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-green));
+            padding: 4rem;
+            border-radius: 25px;
+            position: relative;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .testimonial-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .testimonial-icon {
+            font-size: 3rem;
+            color: var(--accent-brown);
+            margin-bottom: 2rem;
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: white;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .author-avatar {
+            width: 70px;
+            height: 70px;
+            background: var(--accent-brown);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-company {
+            font-size: 1.1rem;
+            color: var(--accent-brown);
+            font-weight: 500;
+        }
+
+        .testimonial-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(176, 110, 74, 0.2);
+            color: var(--accent-brown);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--accent-brown);
+        }
+
+        .testimonial-badge i {
+            font-size: 1rem;
+        }
+
+        /* Scope Section */
+        .scope-section {
+            padding: 80px 2rem;
+            background: var(--light-bg);
+        }
+
+        .scope-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .scope-category {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .scope-category.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scope-category.extras {
+            border: 3px solid var(--accent-brown);
+        }
+
+        .scope-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 3px solid var(--accent-brown);
+        }
+
+        .scope-header i {
+            font-size: 2rem;
+            color: var(--accent-brown);
+        }
+
+        .scope-header h3 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin: 0;
+        }
+
+        .scope-list {
+            list-style: none;
+        }
+
+        .scope-list li {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #eee;
+            align-items: flex-start;
+        }
+
+        .scope-list li:last-child {
+            border-bottom: none;
+        }
+
+        .scope-list li > i {
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        .scope-list li > div {
+            flex: 1;
+        }
+
+        .scope-list strong {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .scope-list p {
+            color: #666;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .scope-timeline {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-green));
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 3rem;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.6s ease;
+        }
+
+        .scope-timeline.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .scope-timeline h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .scope-timeline p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        .scope-timeline strong {
+            color: var(--accent-brown);
+            font-size: 1.5rem;
         }
 
         /* Benefits Section */
@@ -1331,12 +1519,8 @@
                 min-height: 250px;
             }
 
-            .integration-row {
+            .scope-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .integration-cell {
-                padding: 1rem;
             }
         }
 
@@ -1628,45 +1812,6 @@
         </div>
     </section>
 
-    <!-- Integrations Section -->
-    <section class="integrations-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-icon">🔗</div>
-                <h2>Integrações Reais, Não Gambiarras</h2>
-                <p>Conexões profissionais que funcionam de verdade</p>
-            </div>
-
-            <div class="integrations-table reveal">
-                <div class="integration-row">
-                    <div class="integration-cell">Sistema</div>
-                    <div class="integration-cell">Integração</div>
-                    <div class="integration-cell">Resultado</div>
-                </div>
-                <div class="integration-row">
-                    <div class="integration-cell"><strong>Selecty</strong></div>
-                    <div class="integration-cell">API / Data Warehouse</div>
-                    <div class="integration-cell">Vagas atualizadas e cadastro automático de candidatos</div>
-                </div>
-                <div class="integration-row">
-                    <div class="integration-cell"><strong>Google Sheets</strong></div>
-                    <div class="integration-cell">Planilha conectada</div>
-                    <div class="integration-cell">IA responde sobre mutirões e eventos em tempo real</div>
-                </div>
-                <div class="integration-row">
-                    <div class="integration-cell"><strong>WhatsApp Business API</strong></div>
-                    <div class="integration-cell">Canal oficial</div>
-                    <div class="integration-cell">Atendimento 24/7, com mensagens de texto, voz e envio de documentos</div>
-                </div>
-                <div class="integration-row">
-                    <div class="integration-cell"><strong>Banco de Dados</strong></div>
-                    <div class="integration-cell">Armazena interações</div>
-                    <div class="integration-cell">Histórico de conversas e leads qualificados sempre disponível</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- AI Features Section -->
     <section class="ai-features-section">
         <div class="container">
@@ -1813,6 +1958,35 @@
         </div>
     </section>
 
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="testimonial-card reveal">
+                <div class="testimonial-icon">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <p class="testimonial-text">
+                    "Ficamos impressionadas com a IA desenvolvida pela NewScale. Ela tirou uma das maiores pressões das nossas costas 
+                    que era prestar um atendimento excelente e sempre rápido para os clientes. Estamos muito satisfeitas e 
+                    sobrou tempo para outras atividades importantes da empresa."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="author-info">
+                        <div class="author-name">Juliana e Mariana</div>
+                        <div class="author-company">Casa Tacto</div>
+                    </div>
+                </div>
+                <div class="testimonial-badge">
+                    <i class="fas fa-check-circle"></i>
+                    Cliente NewScale
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Benefits Section -->
     <section class="benefits-section">
         <div class="container">
@@ -1941,10 +2115,6 @@
                         </li>
                         <li>
                             <i class="fas fa-check-circle"></i>
-                            <span>Treinamento da equipe</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
                             <span>30 dias de suporte intensivo</span>
                         </li>
                         <li>
@@ -2024,6 +2194,126 @@
                     recomendamos começar pela <strong>API Não-Oficial</strong>, com possibilidade de migração futura para a 
                     <strong>API Oficial Meta</strong> quando desejarem expandir o volume de mensagens ou campanhas de tráfego.
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Scope Summary -->
+    <section class="scope-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-icon">📦</div>
+                <h2>Resumo: O Que Está Incluso Nesta Proposta</h2>
+                <p>Tudo o que a Dinâmica RH recebe ao fechar com a NewScale</p>
+            </div>
+
+            <div class="scope-grid">
+                <div class="scope-category reveal">
+                    <div class="scope-header">
+                        <i class="fas fa-check-double"></i>
+                        <h3>Inclusos no Investimento</h3>
+                    </div>
+                    <ul class="scope-list">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Consultoria e Mapeamento Completo</strong>
+                                <p>Imersão nos processos da Dinâmica RH</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Criação do Agente IA Multimodal</strong>
+                                <p>Texto + voz + arquivos, 100% personalizado</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Integração via API com Selecty</strong>
+                                <p>Vagas atualizadas e cadastro automático</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Conexão com Google Sheets</strong>
+                                <p>Eventos e mutirões sempre atualizados</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Banco de Dados Inteligente</strong>
+                                <p>Histórico completo e triagem automatizada</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Implementação no WhatsApp</strong>
+                                <p>API oficial ou não-oficial, conforme escolha</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>30 Dias de Suporte Intensivo</strong>
+                                <p>Acompanhamento pós-go-live com ajustes inclusos</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Ajustes Ilimitados</strong>
+                                <p>Refinamentos até aprovação final</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="scope-category reveal extras">
+                    <div class="scope-header">
+                        <i class="fas fa-plus-circle"></i>
+                        <h3>Serviços Extras (Opcionais)</h3>
+                    </div>
+                    <ul class="scope-list">
+                        <li>
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <strong>Treinamento da Equipe</strong>
+                                <p>Workshop presencial ou online para as consultoras</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-robot"></i>
+                            <div>
+                                <strong>Segunda IA Especializada</strong>
+                                <p>Para Departamento Pessoal / Folha de Pagamento</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-plug"></i>
+                            <div>
+                                <strong>Integrações Adicionais</strong>
+                                <p>Fortix, CRM personalizado ou outros sistemas</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-headset"></i>
+                            <div>
+                                <strong>Suporte Estendido Premium</strong>
+                                <p>Atendimento prioritário 24/7 após período inicial</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="scope-timeline reveal">
+                <h3>⏱️ Prazo Total de Implementação</h3>
+                <p><strong>6 semanas</strong> do kickoff ao go-live completo</p>
             </div>
         </div>
     </section>
@@ -2145,7 +2435,7 @@
         }, observerOptions);
 
         // Observe all reveal elements
-        document.querySelectorAll('.reveal, .challenge-card, .feature-card, .differential-card-single, .comparison-container, .timeline-item, .integrations-table, .ai-capabilities, .benefit-category, .pricing-card, .guarantee-card').forEach(el => {
+        document.querySelectorAll('.reveal, .challenge-card, .feature-card, .differential-card-single, .comparison-container, .timeline-item, .testimonial-card, .ai-capabilities, .scope-category, .scope-timeline, .benefit-category, .pricing-card, .guarantee-card').forEach(el => {
             observer.observe(el);
         });
 
