@@ -1,2525 +1,2561 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposta Exclusiva - Dinâmica RH | NewScale Consulting</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-dark: #14373C;
-            --primary-green: #435D51;
-            --accent-brown: #B06E4A;
-            --light-bg: #D0D0CA;
-            --white: #FFFFFF;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(20, 55, 60, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .header.scrolled {
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-
-        .logo-link {
-            display: inline-block;
-            transition: transform 0.3s ease;
-        }
-
-        .logo-link:hover {
-            transform: scale(1.05);
-        }
-
-        .logo {
-            height: 50px;
-            width: auto;
-        }
-
-        .footer-logo {
-            height: 60px;
-            width: auto;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-green) 100%);
-            color: white;
-            padding: 140px 2rem 80px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M0 50 Q 25 25, 50 50 T 100 50" stroke="rgba(255,255,255,0.03)" fill="none" stroke-width="2"/></svg>');
-            opacity: 0.5;
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(176, 110, 74, 0.2);
-            color: var(--accent-brown);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-            border: 1px solid var(--accent-brown);
-            animation: fadeInDown 0.8s ease;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            animation: fadeInUp 0.8s ease 0.2s both;
-        }
-
-        .hero h1 .highlight {
-            color: var(--accent-brown);
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            font-weight: 300;
-            animation: fadeInUp 0.8s ease 0.4s both;
-        }
-
-        .hero-text {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            max-width: 800px;
-            animation: fadeInUp 0.8s ease 0.6s both;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: var(--accent-brown);
-            color: white;
-            padding: 1.2rem 3rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(176, 110, 74, 0.3);
-            animation: fadeInUp 0.8s ease 0.8s both;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 25px rgba(176, 110, 74, 0.4);
-            background: #9a5d3f;
-        }
-
-        .cta-button i {
-            font-size: 1.3rem;
-        }
-
-        /* Challenge Section */
-        .challenge-section {
-            padding: 80px 2rem;
-            background: var(--light-bg);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .section-header.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .section-icon {
-            font-size: 3rem;
-            color: var(--accent-brown);
-            margin-bottom: 1rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--primary-dark);
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .section-header p {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .challenges-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .challenge-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .challenge-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .challenge-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-        }
-
-        .challenge-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary-green));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        .challenge-card h3 {
-            color: var(--primary-dark);
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .challenge-card p {
-            color: #666;
-            line-height: 1.8;
-        }
-
-        .insight-box {
-            background: var(--primary-dark);
-            color: white;
-            padding: 3rem;
-            border-radius: 20px;
-            margin-top: 3rem;
-            position: relative;
-            overflow: hidden;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .insight-box.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .insight-box::before {
-            content: '"';
-            position: absolute;
-            top: -20px;
-            left: 20px;
-            font-size: 150px;
-            color: rgba(255,255,255,0.1);
-            font-family: Georgia, serif;
-        }
-
-        .insight-box h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--accent-brown);
-        }
-
-        .insight-box p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        /* Problem Comparison Diagram */
-        .problem-comparison {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-            padding: 3rem;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .problem-comparison.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .problem-side {
-            flex: 1;
-            text-align: center;
-            padding: 2rem;
-            border-radius: 15px;
-            background: #f8f8f8;
-            border: 3px solid #e74c3c;
-        }
-
-        .problem-side.solution {
-            border-color: var(--primary-green);
-            background: linear-gradient(135deg, rgba(67, 93, 81, 0.05), rgba(67, 93, 81, 0.1));
-        }
-
-        .problem-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .problem-side h4 {
-            font-size: 1.3rem;
-            color: var(--primary-dark);
-            margin-bottom: 0.75rem;
-            font-weight: 700;
-        }
-
-        .problem-side p {
-            color: #666;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .problem-arrow {
-            font-size: 2.5rem;
-            color: #e74c3c;
-            animation: pulse-arrow 2s infinite;
-        }
-
-        @keyframes pulse-arrow {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.2);
-                opacity: 0.7;
-            }
-        }
-
-        .pricing-installments {
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 0.5rem;
-        }
-
-        /* Solution Section */
-        .solution-section {
-            padding: 80px 2rem;
-            background: white;
-        }
-
-        .solution-intro {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto 4rem;
-        }
-
-        .solution-intro h2 {
-            font-size: 2.8rem;
-            color: var(--primary-dark);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .solution-intro .highlight-text {
-            font-size: 1.3rem;
-            color: var(--accent-brown);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .solution-intro p {
-            font-size: 1.1rem;
-            color: #666;
-            line-height: 1.8;
-        }
-
-        .differentials-intro {
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            text-align: center;
-        }
-
-        .differential-number {
-            display: inline-flex;
-            width: 60px;
-            height: 60px;
-            background: var(--accent-brown);
-            color: white;
-            border-radius: 50%;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-
-        .differentials-intro h3 {
-            font-size: 2rem;
-            color: var(--primary-dark);
-            margin-bottom: 1rem;
-        }
-
-        .differentials-intro p {
-            font-size: 1.1rem;
-            color: #666;
-        }
-
-        .features-showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(30px);
-            border: 2px solid transparent;
-        }
-
-        .feature-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-            border-color: var(--accent-brown);
-        }
-
-        .feature-icon-box {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--accent-brown), #9a5d3f);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2rem;
-            color: white;
-            box-shadow: 0 5px 15px rgba(176, 110, 74, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover .feature-icon-box {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 8px 20px rgba(176, 110, 74, 0.4);
-        }
-
-        .feature-card h4 {
-            font-size: 1.2rem;
-            color: var(--primary-dark);
-            margin-bottom: 0.75rem;
-            font-weight: 600;
-        }
-
-        .feature-card p {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .differential-card-single {
-            background: var(--light-bg);
-            padding: 3rem;
-            border-radius: 20px;
-            border-left: 5px solid var(--accent-brown);
-            text-align: center;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .differential-card-single.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .differential-card-single h3 {
-            font-size: 1.8rem;
-            color: var(--primary-dark);
-            margin-bottom: 1rem;
-        }
-
-        .differential-card-single p {
-            font-size: 1.1rem;
-            color: #666;
-            line-height: 1.8;
-        }
-
-        /* Timeline Section */
-        .timeline-section {
-            padding: 80px 2rem;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-green) 100%);
-            color: white;
-        }
-
-        .timeline {
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: rgba(255,255,255,0.3);
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            display: flex;
-            margin-bottom: 3rem;
-            position: relative;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .timeline-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .timeline-item:nth-child(odd) {
-            flex-direction: row-reverse;
-        }
-
-        .timeline-content {
-            width: 45%;
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-        }
-
-        .timeline-marker {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 40px;
-            background: var(--accent-brown);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 4px solid white;
-            font-weight: bold;
-        }
-
-        .timeline-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--accent-brown);
-        }
-
-        .timeline-content h4 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .timeline-content p {
-            opacity: 0.9;
-        }
-
-        /* AI Features Section */
-        .ai-features-section {
-            padding: 80px 2rem;
-            background: var(--light-bg);
-        }
-
-        .comparison-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 3rem auto;
-            opacity: 0;
-            transform: scale(0.95);
-            transition: all 0.8s ease;
-        }
-
-        .comparison-container.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .comparison-side {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-
-        .negative-side {
-            border: 3px solid #e74c3c;
-        }
-
-        .positive-side {
-            border: 3px solid var(--primary-green);
-            background: linear-gradient(135deg, rgba(67, 93, 81, 0.03), rgba(67, 93, 81, 0.08));
-        }
-
-        .comparison-side h3 {
-            font-size: 1.4rem;
-            margin: 1rem 0 2rem;
-            color: var(--primary-dark);
-        }
-
-        .comparison-note {
-            margin-top: 1.5rem;
-            padding: 1rem;
-            background: rgba(0,0,0,0.03);
-            border-radius: 10px;
-            text-align: center;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        /* WhatsApp Mockup */
-        .whatsapp-mockup {
-            background: #e5ddd5;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-        }
-
-        .whatsapp-header {
-            background: #075e54;
-            color: white;
-            padding: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .whatsapp-header.verified {
-            background: var(--primary-green);
-        }
-
-        .whatsapp-avatar {
-            width: 45px;
-            height: 45px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-        }
-
-        .whatsapp-info {
-            flex: 1;
-        }
-
-        .whatsapp-name {
-            font-weight: 600;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .verified-badge {
-            color: #25d366;
-            font-size: 0.9rem;
-        }
-
-        .whatsapp-status {
-            font-size: 0.8rem;
-            opacity: 0.9;
-        }
-
-        .whatsapp-chat {
-            padding: 1.5rem;
-            min-height: 300px;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            background-image: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="%23e5ddd5"/><path d="M20,20 L30,30 M30,20 L20,30" stroke="%23d1c7b7" stroke-width="0.5" opacity="0.3"/></svg>');
-        }
-
-        .chat-message {
-            display: flex;
-            flex-direction: column;
-            max-width: 80%;
-            opacity: 0;
-            animation: slideIn 0.5s ease forwards;
-        }
-
-        .bot-message {
-            align-self: flex-start;
-        }
-
-        .user-message {
-            align-self: flex-end;
-        }
-
-        .message-bubble {
-            background: white;
-            padding: 0.75rem 1rem;
-            border-radius: 8px;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-            font-size: 0.9rem;
-            line-height: 1.5;
-            position: relative;
-        }
-
-        .bot-message .message-bubble {
-            background: white;
-            border-bottom-left-radius: 2px;
-        }
-
-        .user-message .message-bubble {
-            background: #dcf8c6;
-            border-bottom-right-radius: 2px;
-        }
-
-        .message-time {
-            font-size: 0.7rem;
-            color: #667781;
-            margin-top: 0.25rem;
-            align-self: flex-end;
-        }
-
-        /* Typing Animation */
-        .typing-indicator {
-            display: flex;
-            gap: 4px;
-            padding: 1rem;
-            background: white;
-            border-radius: 8px;
-            width: fit-content;
-        }
-
-        .typing-indicator span {
-            width: 8px;
-            height: 8px;
-            background: #90949c;
-            border-radius: 50%;
-            animation: typing 1.4s infinite;
-        }
-
-        .typing-indicator span:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .typing-indicator span:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-
-        @keyframes typing {
-            0%, 60%, 100% {
-                transform: translateY(0);
-                opacity: 0.7;
-            }
-            30% {
-                transform: translateY(-10px);
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .slide-in {
-            animation: slideIn 0.5s ease forwards;
-        }
-
-        .typing-animation {
-            animation: slideIn 0.5s ease forwards, fadeOut 0.5s ease 1s forwards;
-        }
-
-        @keyframes fadeOut {
-            to {
-                opacity: 0;
-                display: none;
-            }
-        }
-
-        .ai-capabilities {
-            background: var(--primary-dark);
-            color: white;
-            padding: 3rem;
-            border-radius: 20px;
-            margin-top: 3rem;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .ai-capabilities.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .ai-capabilities h3 {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            color: var(--accent-brown);
-            text-align: center;
-        }
-
-        .capabilities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .capability-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .capability-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--accent-brown);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .capability-item p {
-            opacity: 0.95;
-        }
-
-        /* Testimonial Section */
-        .testimonial-section {
-            padding: 80px 2rem;
-            background: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .testimonial-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(176, 110, 74, 0.05) 0%, transparent 70%);
-        }
-
-        .testimonial-card {
-            max-width: 900px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary-green));
-            padding: 4rem;
-            border-radius: 25px;
-            position: relative;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .testimonial-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .testimonial-icon {
-            font-size: 3rem;
-            color: var(--accent-brown);
-            margin-bottom: 2rem;
-            opacity: 0.3;
-        }
-
-        .testimonial-text {
-            font-size: 1.3rem;
-            line-height: 1.9;
-            color: white;
-            margin-bottom: 2.5rem;
-            font-style: italic;
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .author-avatar {
-            width: 70px;
-            height: 70px;
-            background: var(--accent-brown);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .author-info {
-            flex: 1;
-        }
-
-        .author-name {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 0.25rem;
-        }
-
-        .author-company {
-            font-size: 1.1rem;
-            color: var(--accent-brown);
-            font-weight: 500;
-        }
-
-        .testimonial-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(176, 110, 74, 0.2);
-            color: var(--accent-brown);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border: 1px solid var(--accent-brown);
-        }
-
-        .testimonial-badge i {
-            font-size: 1rem;
-        }
-
-        /* Scope Section */
-        .scope-section {
-            padding: 80px 2rem;
-            background: var(--light-bg);
-        }
-
-        .scope-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .scope-category {
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .scope-category.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .scope-category.extras {
-            border: 3px solid var(--accent-brown);
-        }
-
-        .scope-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 3px solid var(--accent-brown);
-        }
-
-        .scope-header i {
-            font-size: 2rem;
-            color: var(--accent-brown);
-        }
-
-        .scope-header h3 {
-            font-size: 1.5rem;
-            color: var(--primary-dark);
-            margin: 0;
-        }
-
-        .scope-list {
-            list-style: none;
-        }
-
-        .scope-list li {
-            display: flex;
-            gap: 1.5rem;
-            padding: 1.5rem 0;
-            border-bottom: 1px solid #eee;
-            align-items: flex-start;
-        }
-
-        .scope-list li:last-child {
-            border-bottom: none;
-        }
-
-        .scope-list li > i {
-            font-size: 1.5rem;
-            color: var(--primary-green);
-            margin-top: 0.25rem;
-            flex-shrink: 0;
-        }
-
-        .scope-list li > div {
-            flex: 1;
-        }
-
-        .scope-list strong {
-            display: block;
-            font-size: 1.1rem;
-            color: var(--primary-dark);
-            margin-bottom: 0.25rem;
-        }
-
-        .scope-list p {
-            color: #666;
-            font-size: 0.95rem;
-            margin: 0;
-        }
-
-        .scope-timeline {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary-green));
-            color: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            text-align: center;
-            margin-top: 3rem;
-            opacity: 0;
-            transform: scale(0.95);
-            transition: all 0.6s ease;
-        }
-
-        .scope-timeline.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .scope-timeline h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .scope-timeline p {
-            font-size: 1.3rem;
-            opacity: 0.95;
-        }
-
-        .scope-timeline strong {
-            color: var(--accent-brown);
-            font-size: 1.5rem;
-        }
-
-        /* Benefits Section */
-        .benefits-section {
-            padding: 80px 2rem;
-            background: white;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .benefit-category {
-            background: var(--light-bg);
-            padding: 2.5rem;
-            border-radius: 20px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .benefit-category.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .benefit-category h3 {
-            font-size: 1.5rem;
-            color: var(--primary-dark);
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 3px solid var(--accent-brown);
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .benefit-icon {
-            width: 35px;
-            height: 35px;
-            background: var(--accent-brown);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            flex-shrink: 0;
-        }
-
-        .benefit-item p {
-            color: #555;
-            line-height: 1.6;
-        }
-
-        /* Pricing Section */
-        .pricing-section {
-            padding: 80px 2rem;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-green) 100%);
-            color: white;
-        }
-
-        .pricing-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 3rem auto;
-        }
-
-        .pricing-card {
-            background: white;
-            color: var(--primary-dark);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            position: relative;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .pricing-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .pricing-header {
-            text-align: center;
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 2px solid var(--light-bg);
-        }
-
-        .pricing-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--primary-dark);
-        }
-
-        .pricing-subtitle {
-            color: #666;
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .pricing-amount {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--accent-brown);
-            margin-bottom: 0.5rem;
-        }
-
-        .pricing-period {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .pricing-features {
-            list-style: none;
-            margin: 2rem 0;
-        }
-
-        .pricing-features li {
-            padding: 1rem 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .pricing-features li i {
-            color: var(--primary-green);
-            font-size: 1.2rem;
-            margin-top: 0.2rem;
-        }
-
-        .pricing-cta {
-            display: block;
-            text-align: center;
-            background: var(--accent-brown);
-            color: white;
-            padding: 1.2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .pricing-cta:hover {
-            background: #9a5d3f;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(176, 110, 74, 0.3);
-        }
-
-        .pricing-monthly {
-            background: var(--light-bg);
-            padding: 1rem;
-            border-radius: 10px;
-            margin-top: 1.5rem;
-            text-align: center;
-            font-size: 0.95rem;
-            color: #555;
-        }
-
-        .pricing-monthly strong {
-            color: var(--primary-dark);
-            display: block;
-            margin-top: 0.5rem;
-        }
-
-        /* Guarantees Section */
-        .guarantees-section {
-            padding: 80px 2rem;
-            background: var(--light-bg);
-        }
-
-        .guarantees-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .guarantee-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            opacity: 0;
-            transform: scale(0.9);
-            transition: all 0.6s ease;
-        }
-
-        .guarantee-card.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .guarantee-card i {
-            font-size: 3rem;
-            color: var(--accent-brown);
-            margin-bottom: 1.5rem;
-        }
-
-        .guarantee-card h3 {
-            font-size: 1.3rem;
-            color: var(--primary-dark);
-            margin-bottom: 1rem;
-        }
-
-        .guarantee-card p {
-            color: #666;
-        }
-
-        /* CTA Final Section */
-        .cta-final-section {
-            padding: 100px 2rem;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-green) 100%);
-            color: white;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-final-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(176, 110, 74, 0.1) 0%, transparent 70%);
-            animation: pulse 15s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.1) rotate(180deg); }
-        }
-
-        .cta-final-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .cta-final-content h2 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .cta-final-content p {
-            font-size: 1.3rem;
-            margin-bottom: 3rem;
-            opacity: 0.95;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .cta-btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: var(--accent-brown);
-            color: white;
-            padding: 1.5rem 3rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 25px rgba(176, 110, 74, 0.4);
-        }
-
-        .cta-btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(176, 110, 74, 0.5);
-        }
-
-        .cta-btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: white;
-            color: var(--primary-dark);
-            padding: 1.5rem 3rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-
-        .cta-btn-secondary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--primary-dark);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-logo {
-            height: 60px;
-            margin-bottom: 2rem;
-        }
-
-        .footer-info {
-            margin-bottom: 2rem;
-        }
-
-        .footer-info p {
-            margin: 0.5rem 0;
-            opacity: 0.9;
-        }
-
-        .footer-info a {
-            color: var(--accent-brown);
-            text-decoration: none;
-        }
-
-        .footer-info a:hover {
-            text-decoration: underline;
-        }
-
-        .footer-divider {
-            height: 1px;
-            background: rgba(255,255,255,0.2);
-            margin: 2rem 0;
-        }
-
-        .footer-bottom {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 968px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            .solution-intro h2 {
-                font-size: 2.2rem;
-            }
-
-            .features-showcase {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
-
-            .problem-comparison {
-                flex-direction: column;
-                gap: 1.5rem;
-                padding: 2rem;
-            }
-
-            .problem-arrow {
-                transform: rotate(90deg);
-            }
-
-            .comparison-container {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline::before {
-                left: 30px;
-            }
-
-            .timeline-item {
-                flex-direction: row !important;
-                padding-left: 60px;
-            }
-
-            .timeline-content {
-                width: 100%;
-            }
-
-            .timeline-marker {
-                left: 30px;
-            }
-
-            .pricing-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-card.recommended {
-                transform: scale(1);
-            }
-
-            .cta-final-content h2 {
-                font-size: 2rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .hero {
-                padding: 120px 1.5rem 60px;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .section-header h2 {
-                font-size: 1.8rem;
-            }
-
-            .challenges-grid,
-            .benefits-grid,
-            .guarantees-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .features-showcase {
-                grid-template-columns: 1fr;
-            }
-
-            .comparison-container {
-                grid-template-columns: 1fr;
-            }
-
-            .whatsapp-chat {
-                min-height: 250px;
-            }
-
-            .scope-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Scroll Reveal */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta Exclusiva - Dinâmica RH | NewScale Consulting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #14373C;
+            --primary-green: #435D51;
+            --accent-brown: #B06E4A;
+            --light-bg: #D0D0CA;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(20, 55, 60, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .logo-link {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-link:hover {
+            transform: scale(1.05);
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .footer-logo {
+            height: 60px;
+            width: auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-green) 100%);
+            color: white;
+            padding: 140px 2rem 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M0 50 Q 25 25, 50 50 T 100 50" stroke="rgba(255,255,255,0.03)" fill="none" stroke-width="2"/></svg>');
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(176, 110, 74, 0.2);
+            color: var(--accent-brown);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--accent-brown);
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero h1 .highlight {
+            color: var(--accent-brown);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .hero-text {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 800px;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--accent-brown);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(176, 110, 74, 0.3);
+            animation: fadeInUp 0.8s ease 0.8s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(176, 110, 74, 0.4);
+            background: #9a5d3f;
+        }
+
+        .cta-button i {
+            font-size: 1.3rem;
+        }
+
+        /* Challenge Section */
+        .challenge-section {
+            padding: 80px 2rem;
+            background: var(--light-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .section-header.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-icon {
+            font-size: 3rem;
+            color: var(--accent-brown);
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .challenges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .challenge-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .challenge-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .challenge-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .challenge-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .challenge-card h3 {
+            color: var(--primary-dark);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .challenge-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .insight-box {
+            background: var(--primary-dark);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .insight-box.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .insight-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 150px;
+            color: rgba(255,255,255,0.1);
+            font-family: Georgia, serif;
+        }
+
+        .insight-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--accent-brown);
+        }
+
+        .insight-box p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Problem Comparison Diagram */
+        .problem-comparison {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            padding: 3rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .problem-comparison.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .problem-side {
+            flex: 1;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 15px;
+            background: #f8f8f8;
+            border: 3px solid #e74c3c;
+        }
+
+        .problem-side.solution {
+            border-color: var(--primary-green);
+            background: linear-gradient(135deg, rgba(67, 93, 81, 0.05), rgba(67, 93, 81, 0.1));
+        }
+
+        .problem-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .problem-side h4 {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .problem-side p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .problem-arrow {
+            font-size: 2.5rem;
+            color: #e74c3c;
+            animation: pulse-arrow 2s infinite;
+        }
+
+        @keyframes pulse-arrow {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.7;
+            }
+        }
+
+        .pricing-installments {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 80px 2rem;
+            background: white;
+        }
+
+        .solution-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 4rem;
+        }
+
+        .solution-intro h2 {
+            font-size: 2.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .solution-intro .highlight-text {
+            font-size: 1.3rem;
+            color: var(--accent-brown);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .solution-intro p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .differentials-intro {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .differential-number {
+            display: inline-flex;
+            width: 60px;
+            height: 60px;
+            background: var(--accent-brown);
+            color: white;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .differentials-intro h3 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .differentials-intro p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .features-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            border: 2px solid transparent;
+        }
+
+        .feature-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            border-color: var(--accent-brown);
+        }
+
+        .feature-icon-box {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-brown), #9a5d3f);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 5px 15px rgba(176, 110, 74, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon-box {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 8px 20px rgba(176, 110, 74, 0.4);
+        }
+
+        .feature-card h4 {
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .differential-card-single {
+            background: var(--light-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            border-left: 5px solid var(--accent-brown);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .differential-card-single.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .differential-card-single h3 {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .differential-card-single p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            padding: 80px 2rem;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-green) 100%);
+            color: white;
+        }
+
+        .timeline {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: rgba(255,255,255,0.3);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 3rem;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--accent-brown);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid white;
+            font-weight: bold;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-brown);
+        }
+
+        .timeline-content h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p {
+            opacity: 0.9;
+        }
+
+        /* AI Features Section */
+        .ai-features-section {
+            padding: 80px 2rem;
+            background: var(--light-bg);
+        }
+
+        .comparison-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 3rem auto;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.8s ease;
+        }
+
+        .comparison-container.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .comparison-side {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .negative-side {
+            border: 3px solid #e74c3c;
+        }
+
+        .positive-side {
+            border: 3px solid var(--primary-green);
+            background: linear-gradient(135deg, rgba(67, 93, 81, 0.03), rgba(67, 93, 81, 0.08));
+        }
+
+        .comparison-side h3 {
+            font-size: 1.4rem;
+            margin: 1rem 0 2rem;
+            color: var(--primary-dark);
+        }
+
+        .comparison-note {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(0,0,0,0.03);
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .comparison-label {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .negative-side .comparison-label {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .positive-side .comparison-label {
+            background: var(--primary-green);
+            color: white;
+        }
+
+        /* WhatsApp Mockup */
+        .whatsapp-mockup {
+            background: #e5ddd5;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .whatsapp-header {
+            background: #075e54;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .whatsapp-header.verified {
+            background: var(--primary-green);
+        }
+
+        .whatsapp-avatar {
+            width: 45px;
+            height: 45px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .whatsapp-info {
+            flex: 1;
+        }
+
+        .whatsapp-name {
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .verified-badge {
+            color: #25d366;
+            font-size: 0.9rem;
+        }
+
+        .whatsapp-status {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .whatsapp-chat {
+            padding: 1.5rem;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            background-image: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="%23e5ddd5"/><path d="M20,20 L30,30 M30,20 L20,30" stroke="%23d1c7b7" stroke-width="0.5" opacity="0.3"/></svg>');
+        }
+
+        .chat-message {
+            display: flex;
+            flex-direction: column;
+            max-width: 80%;
+            opacity: 0;
+            animation: slideIn 0.5s ease forwards;
+        }
+
+        .bot-message {
+            align-self: flex-start;
+        }
+
+        .user-message {
+            align-self: flex-end;
+        }
+
+        .message-bubble {
+            background: white;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .bot-message .message-bubble {
+            background: white;
+            border-bottom-left-radius: 2px;
+        }
+
+        .user-message .message-bubble {
+            background: #dcf8c6;
+            border-bottom-right-radius: 2px;
+        }
+
+        .message-time {
+            font-size: 0.7rem;
+            color: #667781;
+            margin-top: 0.25rem;
+            align-self: flex-end;
+        }
+
+        /* Typing Animation */
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            width: fit-content;
+        }
+
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background: #90949c;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% {
+                transform: translateY(0);
+                opacity: 0.7;
+            }
+            30% {
+                transform: translateY(-10px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-in {
+            animation: slideIn 0.5s ease forwards;
+        }
+
+        .typing-animation {
+            animation: slideIn 0.5s ease forwards, fadeOut 0.5s ease 1s forwards;
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                display: none;
+            }
+        }
+
+        .ai-capabilities {
+            background: var(--primary-dark);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin-top: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .ai-capabilities.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .ai-capabilities h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--accent-brown);
+            text-align: center;
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .capability-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .capability-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-brown);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .capability-item p {
+            opacity: 0.95;
+        }
+
+        /* Testimonial Section */
+        .testimonial-section {
+            padding: 80px 2rem;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(176, 110, 74, 0.05) 0%, transparent 70%);
+        }
+
+        .testimonial-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-green));
+            padding: 4rem;
+            border-radius: 25px;
+            position: relative;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .testimonial-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .testimonial-icon {
+            font-size: 3rem;
+            color: var(--accent-brown);
+            margin-bottom: 2rem;
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: white;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .author-avatar {
+            width: 70px;
+            height: 70px;
+            background: var(--accent-brown);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-company {
+            font-size: 1.1rem;
+            color: var(--accent-brown);
+            font-weight: 500;
+        }
+
+        .testimonial-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(176, 110, 74, 0.2);
+            color: var(--accent-brown);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--accent-brown);
+        }
+
+        .testimonial-badge i {
+            font-size: 1rem;
+        }
+
+        /* Scope Section */
+        .scope-section {
+            padding: 80px 2rem;
+            background: var(--light-bg);
+        }
+
+        .scope-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .scope-category {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .scope-category.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scope-category.extras {
+            border: 3px solid var(--accent-brown);
+        }
+
+        .scope-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 3px solid var(--accent-brown);
+        }
+
+        .scope-header i {
+            font-size: 2rem;
+            color: var(--accent-brown);
+        }
+
+        .scope-header h3 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin: 0;
+        }
+
+        .scope-list {
+            list-style: none;
+        }
+
+        .scope-list li {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #eee;
+            align-items: flex-start;
+        }
+
+        .scope-list li:last-child {
+            border-bottom: none;
+        }
+
+        .scope-list li > i {
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        .scope-list li > div {
+            flex: 1;
+        }
+
+        .scope-list strong {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .scope-list p {
+            color: #666;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .scope-timeline {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-green));
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 3rem;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.6s ease;
+        }
+
+        .scope-timeline.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .scope-timeline h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .scope-timeline p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        .scope-timeline strong {
+            color: var(--accent-brown);
+            font-size: 1.5rem;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 80px 2rem;
+            background: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-category {
+            background: var(--light-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .benefit-category.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .benefit-category h3 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--accent-brown);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-icon {
+            width: 35px;
+            height: 35px;
+            background: var(--accent-brown);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .benefit-item p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 80px 2rem;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-green) 100%);
+            color: white;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 3rem auto;
+        }
+
+        .pricing-card {
+            background: white;
+            color: var(--primary-dark);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .pricing-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--light-bg);
+        }
+
+        .pricing-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary-dark);
+        }
+
+        .pricing-subtitle {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-amount {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-brown);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-period {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .pricing-features li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .pricing-features li i {
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+
+        .pricing-cta {
+            display: block;
+            text-align: center;
+            background: var(--accent-brown);
+            color: white;
+            padding: 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-cta:hover {
+            background: #9a5d3f;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(176, 110, 74, 0.3);
+        }
+
+        .pricing-monthly {
+            background: var(--light-bg);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .pricing-monthly strong {
+            color: var(--primary-dark);
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        /* Guarantees Section */
+        .guarantees-section {
+            padding: 80px 2rem;
+            background: var(--light-bg);
+        }
+
+        .guarantees-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .guarantee-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.6s ease;
+        }
+
+        .guarantee-card.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .guarantee-card i {
+            font-size: 3rem;
+            color: var(--accent-brown);
+            margin-bottom: 1.5rem;
+        }
+
+        .guarantee-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .guarantee-card p {
+            color: #666;
+        }
+
+        /* CTA Final Section */
+        .cta-final-section {
+            padding: 100px 2rem;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-green) 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-final-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(176, 110, 74, 0.1) 0%, transparent 70%);
+            animation: pulse 15s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(180deg); }
+        }
+
+        .cta-final-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-final-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .cta-final-content p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--accent-brown);
+            color: white;
+            padding: 1.5rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 25px rgba(176, 110, 74, 0.4);
+        }
+
+        .cta-btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(176, 110, 74, 0.5);
+        }
+
+        .cta-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: white;
+            color: var(--primary-dark);
+            padding: 1.5rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn-secondary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 2rem;
+        }
+
+        .footer-info {
+            margin-bottom: 2rem;
+        }
+
+        .footer-info p {
+            margin: 0.5rem 0;
+            opacity: 0.9;
+        }
+
+        .footer-info a {
+            color: var(--accent-brown);
+            text-decoration: none;
+        }
+
+        .footer-info a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.2);
+            margin: 2rem 0;
+        }
+
+        .footer-bottom {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .solution-intro h2 {
+                font-size: 2.2rem;
+            }
+
+            .features-showcase {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .problem-comparison {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 2rem;
+            }
+
+            .problem-arrow {
+                transform: rotate(90deg);
+            }
+
+            .comparison-container {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: row !important;
+                padding-left: 60px;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-marker {
+                left: 30px;
+            }
+
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.recommended {
+                transform: scale(1);
+            }
+
+            .cta-final-content h2 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 120px 1.5rem 60px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .challenges-grid,
+            .benefits-grid,
+            .guarantees-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-container {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-chat {
+                min-height: 250px;
+            }
+
+            .scope-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-        <header class="header">
-        <a href="https://brunasant.github.io/newscale/" class="logo-link">
-            <img src="https://raw.githubusercontent.com/brunasant/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting" class="logo">
-        </a>
-    </header>
-
-        <section class="hero">
-        <div class="hero-content">
-            <div class="hero-badge">📄 Proposta Comercial Exclusiva</div>
-            <h1>Olá, <span class="highlight">Jamil</span>!</h1>
-            <p class="hero-subtitle">Preparamos esta solução exclusiva para a Dinâmica RH</p>
-            <p class="hero-text">
-                Uma proposta completa de Agente de Inteligência Artificial para revolucionar o recrutamento da Dinâmica RH, 
-                com automação inteligente, integração total com Selecty e atendimento humanizado 24/7.
-            </p>
-            <a href="https://wa.me/5511971901020?text=Olá%20Bruna!%20Vi%20a%20proposta%20para%20a%20Dinâmica%20RH%20e%20gostaria%20de%20conversar." class="cta-button">
-                <i class="fab fa-whatsapp"></i>
-                Agendar Conversa com Bruna
-            </a>
-        </div>
-    </section>
-
-        <section class="challenge-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-icon">🎯</div>
-                <h2>O Desafio da Dinâmica RH</h2>
-                <p>Chegou aquele momento decisivo: crescer e escalar o volume de atendimentos sem perder o toque humano</p>
-            </div>
-
-            <div class="challenges-grid">
-                <div class="challenge-card reveal">
-                    <div class="challenge-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>Sobrecarga de Mensagens</h3>
-                    <p>Responder centenas de perguntas repetitivas sobre vagas, horários e requisitos, consumindo tempo precioso das consultoras.</p>
-                </div>
-
-                <div class="challenge-card reveal">
-                    <div class="challenge-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Triagem Manual</h3>
-                    <p>Tempo excessivo gasto triando candidatos sem perfil adequado, quando as consultoras poderiam focar em matches perfeitos.</p>
-                </div>
-
-                <div class="challenge-card reveal">
-                    <div class="challenge-icon">
-                        <i class="fas fa-keyboard"></i>
-                    </div>
-                    <h3>Cadastros Manuais</h3>
-                    <p>Cadastrar dados manualmente no Selecty, um processo repetitivo que poderia ser automatizado com inteligência.</p>
-                </div>
-
-                <div class="challenge-card reveal">
-                    <div class="challenge-icon">
-                        <i class="fas fa-calendar-check"></i>
-                    </div>
-                    <h3>Informações Dispersas</h3>
-                    <p>Enviar informações sobre mutirões e eventos manualmente, sem um sistema centralizado e automático.</p>
-                </div>
-
-                <div class="challenge-card reveal">
-                    <div class="challenge-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Medo de Escalar</h3>
-                    <p>Evitar anúncios e tráfego pago com receio do volume de mensagens, limitando o crescimento da operação.</p>
-                </div>
-
-                <div class="challenge-card reveal">
-                    <div class="challenge-icon">
-                        <i class="fas fa-user-times"></i>
-                    </div>
-                    <h3>Candidatos Perdidos</h3>
-                    <p>Excelentes candidatos acabam se perdendo no processo por falta de acompanhamento rápido e personalizado.</p>
-                </div>
-            </div>
-
-            <div class="problem-comparison reveal">
-                <div class="problem-side">
-                    <div class="problem-icon">❌</div>
-                    <h4>Outras Plataformas</h4>
-                    <p>Ferramenta genérica<br>+ Você faz tudo sozinho</p>
-                </div>
-                <div class="problem-arrow">
-                    <i class="fas fa-times"></i>
-                </div>
-                <div class="problem-side solution">
-                    <div class="problem-icon">✅</div>
-                    <h4>NewScale</h4>
-                    <p>Consultoria + Automação<br>Pronta desde o dia 1</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <section class="solution-section">
-        <div class="container">
-            <div class="solution-intro reveal">
-                <h2>💡 A Solução NewScale</h2>
-                <p class="highlight-text">Consultoria + Automação Personalizada</p>
-                <p>
-                    A NewScale não entrega um robô. Entregamos inteligência aplicada ao seu negócio. 
-                    Nosso diferencial é simples: não vendemos tecnologia pronta — construímos automação sob medida, 
-                    integrada ao seu sistema, à sua operação e à sua forma de atender.
-                </p>
-            </div>
-
-            <div class="differentials-intro reveal">
-                <div class="differential-number">1</div>
-                <h3>Fazemos o Trabalho Pesado por Você</h3>
-                <p>Enquanto outras plataformas exigem que o cliente crie prompts, fluxos e integrações sozinho, 
-                a NewScale entrega tudo pronto, testado e funcionando.</p>
-            </div>
-
-            <div class="features-showcase">
-                <div class="feature-card reveal">
-                    <div class="feature-icon-box">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h4>Tom de Voz Personalizado</h4>
-                    <p>Agente IA treinado no tom de voz da Dinâmica RH</p>
-                </div>
-
-                <div class="feature-card reveal">
-                    <div class="feature-icon-box">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h4>Integração Selecty</h4>
-                    <p>Integração total com Selecty - vagas sempre atualizadas</p>
-                </div>
-
-                <div class="feature-card reveal">
-                    <div class="feature-icon-box">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <h4>Eventos Automatizados</h4>
-                    <p>Conexão automática com planilhas de eventos/mutirões</p>
-                </div>
-
-                <div class="feature-card reveal">
-                    <div class="feature-icon-box">
-                        <i class="fas fa-user-friends"></i>
-                    </div>
-                    <h4>Conversas Humanizadas</h4>
-                    <p>Conversas naturais com tempo de digitação real</p>
-                </div>
-
-                <div class="feature-card reveal">
-                    <div class="feature-icon-box">
-                        <i class="fas fa-filter"></i>
-                    </div>
-                    <h4>Triagem Inteligente</h4>
-                    <p>Classificação automática: quente / morno / frio</p>
-                </div>
-
-                <div class="feature-card reveal">
-                    <div class="feature-icon-box">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h4>Cadastro Automático</h4>
-                    <p>Candidatos qualificados direto no Selecty</p>
-                </div>
-
-                <div class="feature-card reveal">
-                    <div class="feature-icon-box">
-                        <i class="fas fa-microphone"></i>
-                    </div>
-                    <h4>Mensagens de Voz</h4>
-                    <p>Compreensão e resposta a áudios dos candidatos</p>
-                </div>
-
-                <div class="feature-card reveal">
-                    <div class="feature-icon-box">
-                        <i class="fas fa-file-pdf"></i>
-                    </div>
-                    <h4>Envio de Arquivos</h4>
-                    <p>Documentos e PDFs enviados automaticamente</p>
-                </div>
-
-                <div class="feature-card reveal">
-                    <div class="feature-icon-box">
-                        <i class="fas fa-plug"></i>
-                    </div>
-                    <h4>Sistema Integrado</h4>
-                    <p>Conexão total com sistema interno em tempo real</p>
-                </div>
-
-                <div class="feature-card reveal">
-                    <div class="feature-icon-box">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h4>Aprendizado Contínuo</h4>
-                    <p>A IA evolui e melhora a cada interação</p>
-                </div>
-
-                <div class="feature-card reveal">
-                    <div class="feature-icon-box">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h4>Sempre Disponível</h4>
-                    <p>Atendimento 24/7 ilimitado sem parar</p>
-                </div>
-
-                <div class="feature-card reveal">
-                    <div class="feature-icon-box">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h4>100% Seguro</h4>
-                    <p>Não inventa informações nem divulga dados internos</p>
-                </div>
-
-                
-            </div>
-
-            <div class="differential-card-single reveal" style="margin-top: 4rem;">
-                <div class="differential-number">2</div>
-                <h3>Entendemos Seu Negócio Antes de Programar</h3>
-                <p>A NewScale é consultoria antes de código. Antes de desenvolver, mergulhamos no seu processo 
-                para garantir que a automação soe e funcione como uma verdadeira consultora da Dinâmica.</p>
-            </div>
-        </div>
-    </section>
-
-        <section class="timeline-section">
-        <div class="container">
-            <div class="section-header reveal" style="color: white;">
-                <div class="section-icon">📅</div>
-                <h2 style="color: white;">Cronograma de Implementação</h2>
-                <p style="color: rgba(255,255,255,0.9);">Processo completo em 5 semanas, do kickoff ao go-live</p>
-            </div>
-
-            <div class="timeline">
-                <div class="timeline-item reveal">
-                    <div class="timeline-content">
-                        <h3>Semanas 1-2</h3>
-                        <h4>Fase 1 – Imersão</h4>
-                        <p>Reunião de kickoff com o time Dinâmica. Mapeamento de perguntas frequentes e objeções. 
-                        Análise do tom de voz e expressões usadas pelas consultoras. Definição dos critérios de qualificação.</p>
-                    </div>
-                    <div class="timeline-marker">1</div>
-                </div>
-
-                <div class="timeline-item reveal">
-                    <div class="timeline-content">
-                        <h3>Semanas 3-4</h3>
-                        <h4>Fase 2 – Desenvolvimento Personalizado</h4>
-                        <p>Criação do prompt e fluxos da IA com base na realidade da Dinâmica. Integração via API com Selecty. 
-                        Conexão com planilha de eventos. Configuração dos recursos multimodais. Testes com cenários reais e ajustes finos.</p>
-                    </div>
-                    <div class="timeline-marker">2</div>
-                </div>
-
-                <div class="timeline-item reveal">
-                    <div class="timeline-content">
-                        <h3>Semana 5</h3>
-                        <h4>Fase 3 – Implementação & Treinamento</h4>
-                        <p>Ativação do agente no WhatsApp. Treinamento da equipe e acompanhamento ao vivo. 
-                        Ajustes em tempo real nos primeiros dias de uso.</p>
-                    </div>
-                    <div class="timeline-marker">3</div>
-                </div>
-
-                <div class="timeline-item reveal">
-                    <div class="timeline-content">
-                        <h3>Contínuo</h3>
-                        <h4>Fase 4 – Otimização Contínua</h4>
-                        <p>Suporte técnico dedicado. Atualizações de prompt e fluxos conforme sazonalidade ou novas campanhas. 
-                        Evolução constante do agente.</p>
-                    </div>
-                    <div class="timeline-marker">4</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <section class="ai-features-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-icon">🤖</div>
-                <h2>IA que Pensa, Não Só Responde</h2>
-                <p>A diferença entre um bot comum e inteligência artificial de verdade</p>
-            </div>
-
-            <div class="comparison-container reveal">
-                                <div class="comparison-side negative-side">
-                    <div class="comparison-label">❌ Bot Comum</div>
-                    <h3>Roteiro Fixo e Robotizado</h3>
-                    
-                    <div class="whatsapp-mockup">
-                        <div class="whatsapp-header">
-                            <div class="whatsapp-avatar">🤖</div>
-                            <div class="whatsapp-info">
-                                <div class="whatsapp-name">Bot Automático</div>
-                                <div class="whatsapp-status">online</div>
-                            </div>
-                        </div>
-                        <div class="whatsapp-chat">
-                            <div class="chat-message bot-message slide-in">
-                                <div class="message-bubble">
-                                    Olá! Bem-vindo ao sistema automático.
-                                </div>
-                                <div class="message-time">10:30</div>
-                            </div>
-                            <div class="chat-message bot-message slide-in" style="animation-delay: 1s;">
-                                <div class="message-bubble">
-                                    Digite 1 para vagas de produção<br>
-                                    Digite 2 para vagas administrativas<br>
-                                    Digite 3 para outras opções
-                                </div>
-                                <div class="message-time">10:30</div>
-                            </div>
-                            <div class="chat-message user-message slide-in" style="animation-delay: 2s;">
-                                <div class="message-bubble">
-                                    Quais vagas tem disponível?
-                                </div>
-                                <div class="message-time">10:31</div>
-                            </div>
-                            <div class="chat-message bot-message slide-in" style="animation-delay: 3s;">
-                                <div class="message-bubble">
-                                    ❌ Opção inválida.<br>
-                                    Digite 1, 2 ou 3.
-                                </div>
-                                <div class="message-time">10:31</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <p class="comparison-note">
-                        😓 Conversas robotizadas, sem contexto e frustrantes para o candidato
-                    </p>
-                </div>
-
-                                <div class="comparison-side positive-side">
-                    <div class="comparison-label">✅ Agente NewScale</div>
-                    <h3>Conversa Natural e Inteligente</h3>
-                    
-                    <div class="whatsapp-mockup">
-                        <div class="whatsapp-header verified">
-                            <div class="whatsapp-avatar">👩‍💼</div>
-                            <div class="whatsapp-info">
-                                <div class="whatsapp-name">
-                                    Dinâmica RH
-                                    <i class="fas fa-check-circle verified-badge"></i>
-                                </div>
-                                <div class="whatsapp-status">online • IA Inteligente</div>
-                            </div>
-                        </div>
-                        <div class="whatsapp-chat">
-                            <div class="chat-message bot-message slide-in typing-animation">
-                                <div class="typing-indicator">
-                                    <span></span><span></span><span></span>
-                                </div>
-                            </div>
-                            <div class="chat-message bot-message slide-in" style="animation-delay: 1.5s;">
-                                <div class="message-bubble">
-                                    Oi! Que bom te ver por aqui 😊
-                                </div>
-                                <div class="message-time">10:30</div>
-                            </div>
-                            <div class="chat-message bot-message slide-in" style="animation-delay: 2.5s;">
-                                <div class="message-bubble">
-                                    Me conta rapidinho: você já tem experiência ou busca uma vaga sem exigência? E qual região você mora?
-                                </div>
-                                <div class="message-time">10:30</div>
-                            </div>
-                            <div class="chat-message user-message slide-in" style="animation-delay: 3.5s;">
-                                <div class="message-bubble">
-                                    Tenho experiência em produção e moro na zona leste
-                                </div>
-                                <div class="message-time">10:31</div>
-                            </div>
-                            <div class="chat-message bot-message slide-in" style="animation-delay: 4.5s;">
-                                <div class="message-bubble">
-                                    Perfeito! Tenho algumas vagas ótimas pra você na zona leste. Deixa eu te passar as melhores opções... 🎯
-                                </div>
-                                <div class="message-time">10:31</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <p class="comparison-note">
-                        😊 Conversas fluidas, contextualizadas e acolhedoras
-                    </p>
-                </div>
-            </div>
-
-            <div class="ai-capabilities reveal">
-                <h3>Capacidades Avançadas</h3>
-                <div class="capabilities-grid">
-                    <div class="capability-item">
-                        <div class="capability-icon">
-                            <i class="fas fa-microphone"></i>
-                        </div>
-                        <p>Se o candidato mandar um <strong>áudio</strong>, a IA entende e responde naturalmente</p>
-                    </div>
-                    <div class="capability-item">
-                        <div class="capability-icon">
-                            <i class="fas fa-file-pdf"></i>
-                        </div>
-                        <p>Se precisar de <strong>documentos</strong>, ela envia instantaneamente</p>
-                    </div>
-                    <div class="capability-item">
-                        <div class="capability-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <p>Se o candidato fizer <strong>perguntas complexas</strong>, ela analisa o contexto e responde com precisão</p>
-                    </div>
-                    <div class="capability-item">
-                        <div class="capability-icon">
-                            <i class="fas fa-infinity"></i>
-                        </div>
-                        <p>Atendimento <strong>24/7 ilimitado</strong> — nunca fica cansada, sempre disponível</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <section class="testimonial-section">
-        <div class="container">
-            <div class="testimonial-card reveal">
-                <div class="testimonial-icon">
-                    <i class="fas fa-quote-left"></i>
-                </div>
-                <p class="testimonial-text">
-                    "Ficamos impressionadas com a IA desenvolvida pela NewScale. Ela tirou uma das maiores pressões das nossas costas 
-                    que era prestar um atendimento excelente e sempre rápido para os clientes. Estamos muito satisfeitas e 
-                    sobrou tempo para outras atividades importantes da empresa."
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="author-info">
-                        <div class="author-name">Juliana e Mariana</div>
-                        <div class="author-company">Casa Tacto</div>
-                    </div>
-                </div>
-                <div class="testimonial-badge">
-                    <i class="fas fa-check-circle"></i>
-                    Cliente NewScale
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <section class="benefits-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-icon">🎁</div>
-                <h2>O Que Você Ganha Com Isso</h2>
-                <p>Benefícios reais para todos os envolvidos</p>
-            </div>
-
-            <div class="benefits-grid">
-                <div class="benefit-category reveal">
-                    <h3>Para as Consultoras</h3>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <p><strong>80% menos tempo</strong> com perguntas repetitivas</p>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-                        <p>Foco total em <strong>leads realmente qualificados</strong></p>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <p>Redução de <strong>estresse e sobrecarga</strong></p>
-                    </div>
-                </div>
-
-                <div class="benefit-category reveal">
-                    <h3>Para a Empresa</h3>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <p>Liberdade para <strong>escalar tráfego</strong> e captar mais candidatos</p>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-infinity"></i>
-                        </div>
-                        <p>Atendimento <strong>ilimitado</strong> sem precisar contratar mais gente</p>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-chart-bar"></i>
-                        </div>
-                        <p><strong>Dados organizados</strong> e automatizados</p>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-medal"></i>
-                        </div>
-                        <p><strong>Qualidade e consistência</strong> no atendimento</p>
-                    </div>
-                </div>
-
-                <div class="benefit-category reveal">
-                    <h3>Para os Candidatos</h3>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <p>Atendimento <strong>rápido, claro e acolhedor</strong></p>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-microphone-alt"></i>
-                        </div>
-                        <p>Opção de falar por <strong>áudio ou texto</strong></p>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-file-alt"></i>
-                        </div>
-                        <p>Recebimento automático de <strong>documentos e orientações</strong></p>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p><strong>Experiência positiva</strong> com a marca Dinâmica RH</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <section class="pricing-section">
-        <div class="container">
-            <div class="section-header reveal" style="color: white;">
-                <div class="section-icon">💰</div>
-                <h2 style="color: white;">Investimento Transparente</h2>
-                <p style="color: rgba(255,255,255,0.9);">Escolha a infraestrutura ideal para a Dinâmica RH</p>
-            </div>
-
-            <div class="pricing-cards">
-                <div class="pricing-card reveal">
-                    <div class="pricing-header">
-                        <div class="pricing-title">API Não-Oficial</div>
-                        <div class="pricing-subtitle">Máxima flexibilidade e controle operacional</div>
-                        <div class="pricing-amount">R$ 8.230</div>
-                        <div class="pricing-period">Setup Inicial (em até 3x sem juros)</div>
-                        <div class="pricing-installments">3x de R$ 2.743 (inicial, meio do projeto, finalização)</div>
-                    </div>
-
-                    <ul class="pricing-features">
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Consultoria completa e imersão estratégica</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Criação de IA 100% personalizada para a Dinâmica RH</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Integração com sistema Selecty (via API)</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Conexão automática com planilha de eventos/mutirões</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>30 dias de suporte intensivo</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Prazo: 5 semanas</span>
-                        </li>
-                    </ul>
-
-                    <div class="pricing-monthly">
-                        <strong>Mensalidade: R$ 670/mês</strong>
-                        <p style="margin-top: 0.75rem; font-size: 0.9rem;">
-                            *Não incluso: Consumo de tokens de IA (~R$ 75/mês)
-                        </p>
-                    </div>
-
-                    <a href="https://wa.me/5511971901020?text=Olá%20Bruna!%20Quero%20escolher%20o%20plano%20API%20Não-Oficial%20para%20a%20Dinâmica%20RH." class="pricing-cta">
-                        <i class="fab fa-whatsapp"></i> Escolher Este Plano
-                    </a>
-
-                    <p style="margin-top: 1.5rem; color: #666; font-size: 0.95rem; text-align: center;">
-                        💡 Ideal para empresas que querem resultados rápidos e controle total
-                    </p>
-                </div>
-
-                <div class="pricing-card reveal">
-                    <div class="pricing-header">
-                        <div class="pricing-title">API Oficial Meta</div>
-                        <div class="pricing-subtitle">Máxima segurança, estabilidade e conformidade total</div>
-                        <div class="pricing-amount">R$ 9.565</div>
-                        <div class="pricing-period">Setup Inicial (em até 3x sem juros)</div>
-                        <div class="pricing-installments">3x de R$ 3.188 (inicial, meio do projeto, finalização)</div>
-                    </div>
-
-                    <ul class="pricing-features">
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Tudo do plano anterior, mais:</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Canal verificado pela Meta (selo verde oficial)</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Zero risco de bloqueio de número</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Escalabilidade total para grandes volumes</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Conformidade LGPD 100% garantida</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Suporte técnico direto da Meta</span>
-                        </li>
-                    </ul>
-
-                    <div class="pricing-monthly">
-                        <strong>Mensalidade: R$ 980/mês</strong>
-                        <p style="margin-top: 0.75rem; font-size: 0.9rem;">
-                            *Não incluso: Consumo de tokens (~R$ 75/mês) + Taxa Meta API (~R$ 10-20/mês)
-                        </p>
-                    </div>
-
-                    <a href="https://wa.me/5511971901020?text=Olá%20Bruna!%20Quero%20escolher%20o%20plano%20API%20Oficial%20Meta%20para%20a%20Dinâmica%20RH." class="pricing-cta">
-                        <i class="fab fa-whatsapp"></i> Escolher Este Plano
-                    </a>
-
-                    <p style="margin-top: 1.5rem; color: #666; font-size: 0.95rem; text-align: center;">
-                        💡 Ideal para operações de alto volume e campanhas com tráfego pago
-                    </p>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 15px; backdrop-filter: blur(10px);">
-                <p style="color: white; font-size: 1.1rem; line-height: 1.8;">
-                    💬 <strong>Recomendação:</strong> Caso a Dinâmica RH ainda esteja testando o modelo de atendimento automatizado, 
-                    recomendamos começar pela <strong>API Não-Oficial</strong>, com possibilidade de migração futura para a 
-                    <strong>API Oficial Meta</strong> quando desejarem expandir o volume de mensagens ou campanhas de tráfego.
-                </p>
-            </div>
-        </div>
-    </section>
-
-        <section class="scope-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-icon">📦</div>
-                <h2>Resumo: O Que Está Incluso Nesta Proposta</h2>
-                <p>Tudo o que a Dinâmica RH recebe ao fechar com a NewScale</p>
-            </div>
-
-            <div class="scope-grid">
-                <div class="scope-category reveal">
-                    <div class="scope-header">
-                        <i class="fas fa-check-double"></i>
-                        <h3>Inclusos no Investimento</h3>
-                    </div>
-                    <ul class="scope-list">
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <div>
-                                <strong>Consultoria e Mapeamento Completo</strong>
-                                <p>Imersão nos processos da Dinâmica RH</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <div>
-                                <strong>Criação do Agente IA Multimodal</strong>
-                                <p>Texto + voz + arquivos, 100% personalizado</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <div>
-                                <strong>Integração via API com Selecty</strong>
-                                <p>Vagas atualizadas e cadastro automático</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <div>
-                                <strong>Conexão com Google Sheets</strong>
-                                <p>Eventos e mutirões sempre atualizados</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <div>
-                                <strong>Banco de Dados Inteligente</strong>
-                                <p>Histórico completo e triagem automatizada</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <div>
-                                <strong>Implementação no WhatsApp</strong>
-                                <p>API oficial ou não-oficial, conforme escolha</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <div>
-                                <strong>30 Dias de Suporte Intensivo</strong>
-                                <p>Acompanhamento pós-go-live com ajustes inclusos</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <div>
-                                <strong>Ajustes Ilimitados</strong>
-                                <p>Refinamentos até aprovação final</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="scope-category reveal extras">
-                    <div class="scope-header">
-                        <i class="fas fa-plus-circle"></i>
-                        <h3>Serviços Extras (Opcionais)</h3>
-                    </div>
-                    <ul class="scope-list">
-                        <li>
-                            <i class="fas fa-graduation-cap"></i>
-                            <div>
-                                <strong>Treinamento da Equipe</strong>
-                                <p>Workshop presencial ou online para as consultoras</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-robot"></i>
-                            <div>
-                                <strong>Segunda IA Especializada</strong>
-                                <p>Para Departamento Pessoal / Folha de Pagamento</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-plug"></i>
-                            <div>
-                                <strong>Integrações Adicionais</strong>
-                                <p>Fortix, CRM personalizado ou outros sistemas</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="scope-timeline reveal">
-                <h3>⏱️ Prazo Total de Implementação</h3>
-                <p><strong>5 semanas</strong> do kickoff ao go-live completo</p>
-            </div>
-        </div>
-    </section>
-
-        <section class="guarantees-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-icon">🛡️</div>
-                <h2>Garantias e Segurança</h2>
-                <p>Seu investimento está protegido</p>
-            </div>
-
-            <div class="guarantees-grid">
-                <div class="guarantee-card reveal">
-                    <i class="fas fa-infinity"></i>
-                    <h3>Ajustes Ilimitados</h3>
-                    <p>Refinamos tudo até a aprovação final, sem custos adicionais</p>
-                </div>
-
-                <div class="guarantee-card reveal">
-                    <i class="fas fa-server"></i>
-                    <h3>Uptime 99%</h3>
-                    <p>Disponibilidade garantida, seu agente sempre online</p>
-                </div>
-
-                <div class="guarantee-card reveal">
-                    <i class="fas fa-headset"></i>
-                    <h3>Suporte Dedicado</h3>
-                    <p>Resposta em até 24h úteis com equipe técnica especializada</p>
-                </div>
-
-                <div class="guarantee-card reveal">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Proteção de Dados</h3>
-                    <p>Conformidade total com LGPD e segurança de informações</p>
-                </div>
-
-                <div class="guarantee-card reveal">
-                    <i class="fas fa-user-check"></i>
-                    <h3>Controle Total</h3>
-                    <p>Consultoras podem assumir atendimento a qualquer momento</p>
-                </div>
-
-                <div class="guarantee-card reveal">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Evolução Contínua</h3>
-                    <p>A IA aprende e melhora constantemente com cada interação</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <section class="cta-final-section">
-        <div class="cta-final-content">
-            <h2>Vamos Criar Juntos?</h2>
-            <p>
-                A primeira IA de recrutamento que realmente conversa como uma consultora está a um clique de distância. 
-                Liberte a Dinâmica RH do operacional e foque no que realmente importa: crescer com qualidade.
-            </p>
-            <div class="cta-buttons">
-                <a href="https://wa.me/5511971901020?text=Olá%20Bruna!%20Quero%20agendar%20uma%20conversa%20sobre%20a%20proposta%20para%20a%20Dinâmica%20RH." class="cta-btn-primary">
-                    <i class="fab fa-whatsapp"></i>
-                    Falar com Bruna Agora
-                </a>
-                <a href="https://brunasant.github.io/newscale/" class="cta-btn-secondary">
-                    <i class="fas fa-home"></i>
-                    Conhecer a NewScale
-                </a>
-            </div>
-            <p style="margin-top: 2rem; font-size: 0.95rem; opacity: 0.9;">
-                📅 Proposta válida por 15 dias
-            </p>
-        </div>
-    </section>
-
-        <footer class="footer">
-        <div class="footer-content">
-            <img src="https://raw.githubusercontent.com/brunasant/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting" class="footer-logo">
-            
-            <div class="footer-info">
-                <p><strong>Bruna Santanna</strong> – CEO & Head de Automação Inteligente</p>
-                <p>
-                    <i class="fab fa-whatsapp"></i> 
-                    <a href="https://wa.me/5511971901020">(11) 97190-1020</a>
-                </p>
-                <p>
-                    <i class="fas fa-globe"></i> 
-                    <a href="https://brunasant.github.io/newscale/">www.newscale.tech</a>
-                </p>
-            </div>
-
-            <div class="footer-divider"></div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2024 NewScale Consulting. Todos os direitos reservados.</p>
-                <p style="margin-top: 1rem; font-style: italic;">
-                    "A NewScale não vendeu uma IA. Entregou uma consultora virtual que entende voz, envia documentos e nunca erra."
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Scroll reveal animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all reveal elements
-        document.querySelectorAll('.reveal, .challenge-card, .feature-card, .differential-card-single, .problem-comparison, .comparison-container, .timeline-item, .testimonial-card, .ai-capabilities, .scope-category, .scope-timeline, .benefit-category, .pricing-card, .guarantee-card').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+    <!-- Header -->
+    <header class="header">
+        <a href="https://brunasant.github.io/newscale/" class="logo-link">
+            <img src="LOGO 03@3x.png" alt="NewScale Consulting" class="logo">
+        </a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">📄 Proposta Comercial Exclusiva</div>
+            <h1>Olá, <span class="highlight">Jamil</span>!</h1>
+            <p class="hero-subtitle">Preparamos esta solução exclusiva para a Dinâmica RH</p>
+            <p class="hero-text">
+                Uma proposta completa de Agente de Inteligência Artificial para revolucionar o recrutamento da Dinâmica RH, 
+                com automação inteligente, integração total com Selecty e atendimento humanizado 24/7.
+            </p>
+            <a href="https://wa.me/5511971901020?text=Olá%20Bruna!%20Vi%20a%20proposta%20para%20a%20Dinâmica%20RH%20e%20gostaria%20de%20conversar." class="cta-button">
+                <i class="fab fa-whatsapp"></i>
+                Agendar Conversa com Bruna
+            </a>
+        </div>
+    </section>
+
+    <!-- Challenge Section -->
+    <section class="challenge-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-icon">🎯</div>
+                <h2>O Desafio da Dinâmica RH</h2>
+                <p>Chegou aquele momento decisivo: crescer e escalar o volume de atendimentos sem perder o toque humano</p>
+            </div>
+
+            <div class="challenges-grid">
+                <div class="challenge-card reveal">
+                    <div class="challenge-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Sobrecarga de Mensagens</h3>
+                    <p>Responder centenas de perguntas repetitivas sobre vagas, horários e requisitos, consumindo tempo precioso das consultoras.</p>
+                </div>
+
+                <div class="challenge-card reveal">
+                    <div class="challenge-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Triagem Manual</h3>
+                    <p>Tempo excessivo gasto triando candidatos sem perfil adequado, quando as consultoras poderiam focar em matches perfeitos.</p>
+                </div>
+
+                <div class="challenge-card reveal">
+                    <div class="challenge-icon">
+                        <i class="fas fa-keyboard"></i>
+                    </div>
+                    <h3>Cadastros Manuais</h3>
+                    <p>Cadastrar dados manualmente no Selecty, um processo repetitivo que poderia ser automatizado com inteligência.</p>
+                </div>
+
+                <div class="challenge-card reveal">
+                    <div class="challenge-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Informações Dispersas</h3>
+                    <p>Enviar informações sobre mutirões e eventos manualmente, sem um sistema centralizado e automático.</p>
+                </div>
+
+                <div class="challenge-card reveal">
+                    <div class="challenge-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Medo de Escalar</h3>
+                    <p>Evitar anúncios e tráfego pago com receio do volume de mensagens, limitando o crescimento da operação.</p>
+                </div>
+
+                <div class="challenge-card reveal">
+                    <div class="challenge-icon">
+                        <i class="fas fa-user-times"></i>
+                    </div>
+                    <h3>Candidatos Perdidos</h3>
+                    <p>Excelentes candidatos acabam se perdendo no processo por falta de acompanhamento rápido e personalizado.</p>
+                </div>
+            </div>
+
+            <div class="problem-comparison reveal">
+                <div class="problem-side">
+                    <div class="problem-icon">❌</div>
+                    <h4>Outras Plataformas</h4>
+                    <p>Ferramenta genérica<br>+ Você faz tudo sozinho</p>
+                </div>
+                <div class="problem-arrow">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="problem-side solution">
+                    <div class="problem-icon">✅</div>
+                    <h4>NewScale</h4>
+                    <p>Consultoria + Automação<br>Pronta desde o dia 1</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="solution-intro reveal">
+                <h2>💡 A Solução NewScale</h2>
+                <p class="highlight-text">Consultoria + Automação Personalizada</p>
+                <p>
+                    A NewScale não entrega um robô. Entrega inteligência aplicada ao seu negócio. 
+                    Nosso diferencial é simples: não vendemos tecnologia pronta — construímos automação sob medida, 
+                    integrada ao seu sistema, à sua operação e à sua forma de atender.
+                </p>
+            </div>
+
+            <div class="differentials-intro reveal">
+                <div class="differential-number">1</div>
+                <h3>Fazemos o Trabalho Pesado por Você</h3>
+                <p>Enquanto outras plataformas exigem que o cliente crie prompts, fluxos e integrações sozinho, 
+                a NewScale entrega tudo pronto, testado e funcionando.</p>
+            </div>
+
+            <div class="features-showcase">
+                <div class="feature-card reveal">
+                    <div class="feature-icon-box">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h4>Tom de Voz Personalizado</h4>
+                    <p>Agente IA treinado no tom de voz da Dinâmica RH</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon-box">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h4>Integração Selecty</h4>
+                    <p>Integração total com Selecty - vagas sempre atualizadas</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon-box">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h4>Eventos Automatizados</h4>
+                    <p>Conexão automática com planilhas de eventos/mutirões</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon-box">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h4>Conversas Humanizadas</h4>
+                    <p>Conversas naturais com tempo de digitação real</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon-box">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <h4>Triagem Inteligente</h4>
+                    <p>Classificação automática: quente / morno / frio</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon-box">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h4>Cadastro Automático</h4>
+                    <p>Candidatos qualificados direto no Selecty</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon-box">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h4>Mensagens de Voz</h4>
+                    <p>Compreensão e resposta a áudios dos candidatos</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon-box">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h4>Envio de Arquivos</h4>
+                    <p>Documentos e PDFs enviados automaticamente</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon-box">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h4>Sistema Integrado</h4>
+                    <p>Conexão total com sistema interno em tempo real</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon-box">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h4>Aprendizado Contínuo</h4>
+                    <p>A IA evolui e melhora a cada interação</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon-box">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>Sempre Disponível</h4>
+                    <p>Atendimento 24/7 ilimitado sem parar</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon-box">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>100% Seguro</h4>
+                    <p>Não inventa informações nem divulga dados internos</p>
+                </div>
+            </div>
+
+            <div class="differential-card-single reveal" style="margin-top: 4rem;">
+                <div class="differential-number">2</div>
+                <h3>Entendemos Seu Negócio Antes de Programar</h3>
+                <p>A NewScale é consultoria antes de código. Antes de desenvolver, mergulhamos no seu processo 
+                para garantir que a automação soe e funcione como uma verdadeira consultora da Dinâmica.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-header reveal" style="color: white;">
+                <div class="section-icon">📅</div>
+                <h2 style="color: white;">Cronograma de Implementação</h2>
+                <p style="color: rgba(255,255,255,0.9);">Processo completo em 5 semanas, do kickoff ao go-live</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <h3>Semanas 1-2</h3>
+                        <h4>Fase 1 – Imersão</h4>
+                        <p>Reunião de kickoff com o time Dinâmica. Mapeamento de perguntas frequentes e objeções. 
+                        Análise do tom de voz e expressões usadas pelas consultoras. Definição dos critérios de qualificação.</p>
+                    </div>
+                    <div class="timeline-marker">1</div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <h3>Semanas 3-4</h3>
+                        <h4>Fase 2 – Desenvolvimento Personalizado</h4>
+                        <p>Criação do prompt e fluxos da IA com base na realidade da Dinâmica. Integração via API com Selecty. 
+                        Conexão com planilha de eventos. Configuração dos recursos multimodais. Testes com cenários reais e ajustes finos.</p>
+                    </div>
+                    <div class="timeline-marker">2</div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <h3>Semana 5</h3>
+                        <h4>Fase 3 – Implementação & Treinamento</h4>
+                        <p>Ativação do agente no WhatsApp. Treinamento da equipe e acompanhamento ao vivo. 
+                        Ajustes em tempo real nos primeiros dias de uso.</p>
+                    </div>
+                    <div class="timeline-marker">3</div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <h3>Contínuo</h3>
+                        <h4>Fase 4 – Otimização Contínua</h4>
+                        <p>Suporte técnico dedicado. Atualizações de prompt e fluxos conforme sazonalidade ou novas campanhas. 
+                        Evolução constante do agente.</p>
+                    </div>
+                    <div class="timeline-marker">4</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Features Section -->
+    <section class="ai-features-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-icon">🤖</div>
+                <h2>IA que Pensa, Não Só Responde</h2>
+                <p>A diferença entre um bot comum e inteligência artificial de verdade</p>
+            </div>
+
+            <div class="comparison-container reveal">
+                <!-- Bot Comum -->
+                <div class="comparison-side negative-side">
+                    <div class="comparison-label">❌ Bot Comum</div>
+                    <h3>Roteiro Fixo e Robotizado</h3>
+                    
+                    <div class="whatsapp-mockup">
+                        <div class="whatsapp-header">
+                            <div class="whatsapp-avatar">🤖</div>
+                            <div class="whatsapp-info">
+                                <div class="whatsapp-name">Bot Automático</div>
+                                <div class="whatsapp-status">online</div>
+                            </div>
+                        </div>
+                        <div class="whatsapp-chat">
+                            <div class="chat-message bot-message slide-in">
+                                <div class="message-bubble">
+                                    Olá! Bem-vindo ao sistema automático.
+                                </div>
+                                <div class="message-time">10:30</div>
+                            </div>
+                            <div class="chat-message bot-message slide-in" style="animation-delay: 1s;">
+                                <div class="message-bubble">
+                                    Digite 1 para vagas de produção<br>
+                                    Digite 2 para vagas administrativas<br>
+                                    Digite 3 para outras opções
+                                </div>
+                                <div class="message-time">10:30</div>
+                            </div>
+                            <div class="chat-message user-message slide-in" style="animation-delay: 2s;">
+                                <div class="message-bubble">
+                                    Quais vagas tem disponível?
+                                </div>
+                                <div class="message-time">10:31</div>
+                            </div>
+                            <div class="chat-message bot-message slide-in" style="animation-delay: 3s;">
+                                <div class="message-bubble">
+                                    ❌ Opção inválida.<br>
+                                    Digite 1, 2 ou 3.
+                                </div>
+                                <div class="message-time">10:31</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="comparison-note">
+                        😓 Conversas robotizadas, sem contexto e frustrantes para o candidato
+                    </p>
+                </div>
+
+                <!-- Agente NewScale -->
+                <div class="comparison-side positive-side">
+                    <div class="comparison-label">✅ Agente NewScale</div>
+                    <h3>Conversa Natural e Inteligente</h3>
+                    
+                    <div class="whatsapp-mockup">
+                        <div class="whatsapp-header verified">
+                            <div class="whatsapp-avatar">👩‍💼</div>
+                            <div class="whatsapp-info">
+                                <div class="whatsapp-name">
+                                    Dinâmica RH
+                                    <i class="fas fa-check-circle verified-badge"></i>
+                                </div>
+                                <div class="whatsapp-status">online • IA Inteligente</div>
+                            </div>
+                        </div>
+                        <div class="whatsapp-chat">
+                            <div class="chat-message bot-message slide-in typing-animation">
+                                <div class="typing-indicator">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                            <div class="chat-message bot-message slide-in" style="animation-delay: 1.5s;">
+                                <div class="message-bubble">
+                                    Oi! Que bom te ver por aqui 😊
+                                </div>
+                                <div class="message-time">10:30</div>
+                            </div>
+                            <div class="chat-message bot-message slide-in" style="animation-delay: 2.5s;">
+                                <div class="message-bubble">
+                                    Me conta rapidinho: você já tem experiência ou busca uma vaga sem exigência? E qual região você mora?
+                                </div>
+                                <div class="message-time">10:30</div>
+                            </div>
+                            <div class="chat-message user-message slide-in" style="animation-delay: 3.5s;">
+                                <div class="message-bubble">
+                                    Tenho experiência em produção e moro na zona leste
+                                </div>
+                                <div class="message-time">10:31</div>
+                            </div>
+                            <div class="chat-message bot-message slide-in" style="animation-delay: 4.5s;">
+                                <div class="message-bubble">
+                                    Perfeito! Tenho algumas vagas ótimas pra você na zona leste. Deixa eu te passar as melhores opções... 🎯
+                                </div>
+                                <div class="message-time">10:31</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="comparison-note">
+                        😊 Conversas fluidas, contextualizadas e acolhedoras
+                    </p>
+                </div>
+            </div>
+
+            <div class="ai-capabilities reveal">
+                <h3>Capacidades Avançadas</h3>
+                <div class="capabilities-grid">
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <p>Se o candidato mandar um <strong>áudio</strong>, a IA entende e responde naturalmente</p>
+                    </div>
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <p>Se precisar de <strong>documentos</strong>, ela envia instantaneamente</p>
+                    </div>
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <p>Se o candidato fizer <strong>perguntas complexas</strong>, ela analisa o contexto e responde com precisão</p>
+                    </div>
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <p>Atendimento <strong>24/7 ilimitado</strong> — nunca fica cansada, sempre disponível</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="testimonial-card reveal">
+                <div class="testimonial-icon">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <p class="testimonial-text">
+                    "Ficamos impressionadas com a IA desenvolvida pela NewScale. Ela tirou uma das maiores pressões das nossas costas 
+                    que era prestar um atendimento excelente e sempre rápido para os clientes. Estamos muito satisfeitas e 
+                    sobrou tempo para outras atividades importantes da empresa."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="author-info">
+                        <div class="author-name">Juliana e Mariana</div>
+                        <div class="author-company">Casa Tacto</div>
+                    </div>
+                </div>
+                <div class="testimonial-badge">
+                    <i class="fas fa-check-circle"></i>
+                    Cliente NewScale
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-icon">🎁</div>
+                <h2>O Que Você Ganha Com Isso</h2>
+                <p>Benefícios reais para todos os envolvidos</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-category reveal">
+                    <h3>Para as Consultoras</h3>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <p><strong>80% menos tempo</strong> com perguntas repetitivas</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <p>Foco total em <strong>leads realmente qualificados</strong></p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <p>Redução de <strong>estresse e sobrecarga</strong></p>
+                    </div>
+                </div>
+
+                <div class="benefit-category reveal">
+                    <h3>Para a Empresa</h3>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <p>Liberdade para <strong>escalar tráfego</strong> e captar mais candidatos</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <p>Atendimento <strong>ilimitado</strong> sem precisar contratar mais gente</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <p><strong>Dados organizados</strong> e automatizados</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <p><strong>Qualidade e consistência</strong> no atendimento</p>
+                    </div>
+                </div>
+
+                <div class="benefit-category reveal">
+                    <h3>Para os Candidatos</h3>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <p>Atendimento <strong>rápido, claro e acolhedor</strong></p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-microphone-alt"></i>
+                        </div>
+                        <p>Opção de falar por <strong>áudio ou texto</strong></p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <p>Recebimento automático de <strong>documentos e orientações</strong></p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p><strong>Experiência positiva</strong> com a marca Dinâmica RH</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-header reveal" style="color: white;">
+                <div class="section-icon">💰</div>
+                <h2 style="color: white;">Investimento Transparente</h2>
+                <p style="color: rgba(255,255,255,0.9);">Escolha a infraestrutura ideal para a Dinâmica RH</p>
+            </div>
+
+            <div class="pricing-cards">
+                <div class="pricing-card reveal">
+                    <div class="pricing-header">
+                        <div class="pricing-title">API Não-Oficial</div>
+                        <div class="pricing-subtitle">Máxima flexibilidade e controle operacional</div>
+                        <div class="pricing-amount">R$ 8.230</div>
+                        <div class="pricing-period">Setup Inicial (em até 3x sem juros)</div>
+                        <div class="pricing-installments">3x de R$ 2.743 (inicial, meio do projeto, finalização)</div>
+                    </div>
+
+                    <ul class="pricing-features">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Consultoria completa e imersão estratégica</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Criação de IA 100% personalizada para a Dinâmica RH</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Integração com sistema Selecty (via API)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Conexão automática com planilha de eventos/mutirões</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>30 dias de suporte intensivo</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Prazo: 5 semanas</span>
+                        </li>
+                    </ul>
+
+                    <div class="pricing-monthly">
+                        <strong>Mensalidade: R$ 670/mês</strong>
+                        <p style="margin-top: 0.75rem; font-size: 0.9rem;">
+                            *Não incluso: Consumo de tokens de IA (~R$ 75/mês)
+                        </p>
+                    </div>
+
+                    <a href="https://wa.me/5511971901020?text=Olá%20Bruna!%20Quero%20escolher%20o%20plano%20API%20Não-Oficial%20para%20a%20Dinâmica%20RH." class="pricing-cta">
+                        <i class="fab fa-whatsapp"></i> Escolher Este Plano
+                    </a>
+
+                    <p style="margin-top: 1.5rem; color: #666; font-size: 0.95rem; text-align: center;">
+                        💡 Ideal para empresas que querem resultados rápidos e controle total
+                    </p>
+                </div>
+
+                <div class="pricing-card reveal">
+                    <div class="pricing-header">
+                        <div class="pricing-title">API Oficial Meta</div>
+                        <div class="pricing-subtitle">Máxima segurança, estabilidade e conformidade total</div>
+                        <div class="pricing-amount">R$ 9.565</div>
+                        <div class="pricing-period">Setup Inicial (em até 3x sem juros)</div>
+                        <div class="pricing-installments">3x de R$ 3.188 (inicial, meio do projeto, finalização)</div>
+                    </div>
+
+                    <ul class="pricing-features">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Tudo do plano anterior, mais:</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Canal verificado pela Meta (selo verde oficial)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Zero risco de bloqueio de número</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Escalabilidade total para grandes volumes</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Conformidade LGPD 100% garantida</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Suporte técnico direto da Meta</span>
+                        </li>
+                    </ul>
+
+                    <div class="pricing-monthly">
+                        <strong>Mensalidade: R$ 980/mês</strong>
+                        <p style="margin-top: 0.75rem; font-size: 0.9rem;">
+                            *Não incluso: Consumo de tokens (~R$ 75/mês) + Taxa Meta API (~R$ 10-20/mês)
+                        </p>
+                    </div>
+
+                    <a href="https://wa.me/5511971901020?text=Olá%20Bruna!%20Quero%20escolher%20o%20plano%20API%20Oficial%20Meta%20para%20a%20Dinâmica%20RH." class="pricing-cta">
+                        <i class="fab fa-whatsapp"></i> Escolher Este Plano
+                    </a>
+
+                    <p style="margin-top: 1.5rem; color: #666; font-size: 0.95rem; text-align: center;">
+                        💡 Ideal para operações de alto volume e campanhas com tráfego pago
+                    </p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 15px; backdrop-filter: blur(10px);">
+                <p style="color: white; font-size: 1.1rem; line-height: 1.8;">
+                    💬 <strong>Recomendação:</strong> Caso a Dinâmica RH ainda esteja testando o modelo de atendimento automatizado, 
+                    recomendamos começar pela <strong>API Não-Oficial</strong>, com possibilidade de migração futura para a 
+                    <strong>API Oficial Meta</strong> quando desejarem expandir o volume de mensagens ou campanhas de tráfego.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Scope Summary -->
+    <section class="scope-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-icon">📦</div>
+                <h2>Resumo: O Que Está Incluso Nesta Proposta</h2>
+                <p>Tudo o que a Dinâmica RH recebe ao fechar com a NewScale</p>
+            </div>
+
+            <div class="scope-grid">
+                <div class="scope-category reveal">
+                    <div class="scope-header">
+                        <i class="fas fa-check-double"></i>
+                        <h3>Inclusos no Investimento</h3>
+                    </div>
+                    <ul class="scope-list">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Consultoria e Mapeamento Completo</strong>
+                                <p>Imersão nos processos da Dinâmica RH</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Criação do Agente IA Multimodal</strong>
+                                <p>Texto + voz + arquivos, 100% personalizado</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Integração via API com Selecty</strong>
+                                <p>Vagas atualizadas e cadastro automático</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Conexão com Google Sheets</strong>
+                                <p>Eventos e mutirões sempre atualizados</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Banco de Dados Inteligente</strong>
+                                <p>Histórico completo e triagem automatizada</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Implementação no WhatsApp</strong>
+                                <p>API oficial ou não-oficial, conforme escolha</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>30 Dias de Suporte Intensivo</strong>
+                                <p>Acompanhamento pós-go-live com ajustes inclusos</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Ajustes Ilimitados</strong>
+                                <p>Refinamentos até aprovação final</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="scope-category reveal extras">
+                    <div class="scope-header">
+                        <i class="fas fa-plus-circle"></i>
+                        <h3>Serviços Extras (Opcionais)</h3>
+                    </div>
+                    <ul class="scope-list">
+                        <li>
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <strong>Treinamento da Equipe</strong>
+                                <p>Workshop presencial ou online para as consultoras</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-robot"></i>
+                            <div>
+                                <strong>Segunda IA Especializada</strong>
+                                <p>Para Departamento Pessoal / Folha de Pagamento</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-plug"></i>
+                            <div>
+                                <strong>Integrações Adicionais</strong>
+                                <p>Fortix, CRM personalizado ou outros sistemas</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="scope-timeline reveal">
+                <h3>⏱️ Prazo Total de Implementação</h3>
+                <p><strong>5 semanas</strong> do kickoff ao go-live completo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantees Section -->
+    <section class="guarantees-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-icon">🛡️</div>
+                <h2>Garantias e Segurança</h2>
+                <p>Seu investimento está protegido</p>
+            </div>
+
+            <div class="guarantees-grid">
+                <div class="guarantee-card reveal">
+                    <i class="fas fa-infinity"></i>
+                    <h3>Ajustes Ilimitados</h3>
+                    <p>Refinamos tudo até a aprovação final, sem custos adicionais</p>
+                </div>
+
+                <div class="guarantee-card reveal">
+                    <i class="fas fa-server"></i>
+                    <h3>Uptime 99%</h3>
+                    <p>Disponibilidade garantida, seu agente sempre online</p>
+                </div>
+
+                <div class="guarantee-card reveal">
+                    <i class="fas fa-headset"></i>
+                    <h3>Suporte Dedicado</h3>
+                    <p>Resposta em até 24h úteis com equipe técnica especializada</p>
+                </div>
+
+                <div class="guarantee-card reveal">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Proteção de Dados</h3>
+                    <p>Conformidade total com LGPD e segurança de informações</p>
+                </div>
+
+                <div class="guarantee-card reveal">
+                    <i class="fas fa-user-check"></i>
+                    <h3>Controle Total</h3>
+                    <p>Consultoras podem assumir atendimento a qualquer momento</p>
+                </div>
+
+                <div class="guarantee-card reveal">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Evolução Contínua</h3>
+                    <p>A IA aprende e melhora constantemente com cada interação</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final-section">
+        <div class="cta-final-content">
+            <h2>Vamos Criar Juntos?</h2>
+            <p>
+                A primeira IA de recrutamento que realmente conversa como uma consultora está a um clique de distância. 
+                Liberte a Dinâmica RH do operacional e foque no que realmente importa: crescer com qualidade.
+            </p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/5511971901020?text=Olá%20Bruna!%20Quero%20agendar%20uma%20conversa%20sobre%20a%20proposta%20para%20a%20Dinâmica%20RH." class="cta-btn-primary">
+                    <i class="fab fa-whatsapp"></i>
+                    Falar com Bruna Agora
+                </a>
+                <a href="https://brunasant.github.io/newscale/" class="cta-btn-secondary">
+                    <i class="fas fa-home"></i>
+                    Conhecer a NewScale
+                </a>
+            </div>
+            <p style="margin-top: 2rem; font-size: 0.95rem; opacity: 0.9;">
+                📅 Proposta válida por 15 dias
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <img src="LOGO 03@3x.png" alt="NewScale Consulting" class="footer-logo">
+            
+            <div class="footer-info">
+                <p><strong>Bruna Santanna</strong> – CEO & Head de Automação Inteligente</p>
+                <p>
+                    <i class="fab fa-whatsapp"></i> 
+                    <a href="https://wa.me/5511971901020">(11) 97190-1020</a>
+                </p>
+                <p>
+                    <i class="fas fa-globe"></i> 
+                    <a href="https://brunasant.github.io/newscale/">www.newscale.tech</a>
+                </p>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 NewScale Consulting. Todos os direitos reservados.</p>
+                <p style="margin-top: 1rem; font-style: italic;">
+                    "A NewScale não vendeu uma IA. Entregou uma consultora virtual que entende voz, envia documentos e nunca erra."
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all reveal elements
+        document.querySelectorAll('.reveal, .challenge-card, .feature-card, .differential-card-single, .problem-comparison, .comparison-container, .timeline-item, .testimonial-card, .ai-capabilities, .scope-category, .scope-timeline, .benefit-category, .pricing-card, .guarantee-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
