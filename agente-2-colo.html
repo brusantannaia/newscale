@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agente de Apoio para Enfermeiras - NewScale Consulting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #14373C;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: #14373C;
+            padding: 1.5rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1500px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .header-info {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .header-info a {
+            color: #D0D0CA;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .header-info a:hover {
+            color: #B06E4A;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #14373C 0%, #435D51 100%);
+            color: white;
+            padding: 140px 5% 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M0,50 Q25,30 50,50 T100,50" stroke="rgba(208,208,202,0.1)" fill="none" stroke-width="2"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #D0D0CA;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #B06E4A;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(176, 110, 74, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #935a3d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(176, 110, 74, 0.4);
+        }
+
+        /* Container padrão */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 5%;
+            width: 100%;
+        }
+
+        /* Seções */
+        section {
+            scroll-margin-top: 100px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #14373C;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title i {
+            color: #B06E4A;
+            font-size: 2rem;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: #435D51;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        /* Objetivo */
+        .objetivo {
+            background: #D0D0CA;
+        }
+
+        /* Funcionalidades */
+        .funcionalidades {
+            background: white;
+        }
+
+        .funcionalidades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .funcionalidade-card {
+            background: #f8f8f8;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #B06E4A;
+            transition: all 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s forwards;
+        }
+
+        .funcionalidade-card:nth-child(1) { animation-delay: 0.1s; }
+        .funcionalidade-card:nth-child(2) { animation-delay: 0.2s; }
+        .funcionalidade-card:nth-child(3) { animation-delay: 0.3s; }
+        .funcionalidade-card:nth-child(4) { animation-delay: 0.4s; }
+        .funcionalidade-card:nth-child(5) { animation-delay: 0.5s; }
+
+        .funcionalidade-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(20, 55, 60, 0.1);
+        }
+
+        .funcionalidade-card i {
+            font-size: 2.5rem;
+            color: #B06E4A;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .funcionalidade-card h3 {
+            font-size: 1.3rem;
+            color: #14373C;
+            margin-bottom: 0.8rem;
+        }
+
+        .funcionalidade-card p {
+            color: #435D51;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Requisitos Técnicos */
+        .requisitos {
+            background: #14373C;
+            color: white;
+        }
+
+        .requisitos .section-title {
+            color: white;
+        }
+
+        .requisitos .section-title i {
+            color: #B06E4A;
+        }
+
+        .requisitos-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .requisitos-list li {
+            padding: 1.5rem;
+            background: rgba(208, 208, 202, 0.1);
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            transition: all 0.3s;
+        }
+
+        .requisitos-list li:hover {
+            background: rgba(208, 208, 202, 0.15);
+            transform: translateX(10px);
+        }
+
+        .requisitos-list i {
+            color: #B06E4A;
+            font-size: 1.5rem;
+            margin-top: 3px;
+        }
+
+        /* Entrega */
+        .entrega {
+            background: white;
+        }
+
+        .entrega-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .entrega-box {
+            background: #f8f8f8;
+            padding: 2.5rem;
+            border-radius: 15px;
+            border-top: 5px solid #B06E4A;
+        }
+
+        .entrega-box h3 {
+            font-size: 1.8rem;
+            color: #14373C;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .entrega-box i {
+            color: #B06E4A;
+        }
+
+        .entrega-box p {
+            font-size: 1.1rem;
+            color: #435D51;
+            margin-bottom: 1rem;
+        }
+
+        /* Entregáveis */
+        .entregaveis {
+            background: #D0D0CA;
+        }
+
+        .entregaveis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            max-width: 1300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .entregavel-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .entregavel-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(20, 55, 60, 0.15);
+        }
+
+        .entregavel-item i {
+            font-size: 3rem;
+            color: #B06E4A;
+            margin-bottom: 1rem;
+        }
+
+        .entregavel-item h4 {
+            font-size: 1.2rem;
+            color: #14373C;
+            margin-bottom: 0.5rem;
+        }
+
+        .entregavel-item p {
+            color: #435D51;
+            font-size: 0.95rem;
+        }
+
+        /* Responsabilidades */
+        .responsabilidades {
+            background: white;
+        }
+
+        .resp-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .resp-card {
+            background: linear-gradient(135deg, #14373C 0%, #435D51 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            color: white;
+        }
+
+        .resp-card h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .resp-card i {
+            color: #B06E4A;
+        }
+
+        .resp-card ul {
+            list-style: none;
+        }
+
+        .resp-card li {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .resp-card li i {
+            margin-top: 5px;
+            font-size: 0.8rem;
+        }
+
+        /* Investimento */
+        .investimento {
+            background: #B06E4A;
+            color: white;
+            text-align: center;
+            padding: 80px 5%;
+        }
+
+        .investimento .section-title {
+            color: white;
+            justify-content: center;
+        }
+
+        .investimento .section-title i {
+            color: #14373C;
+        }
+
+        .valor {
+            font-size: 4rem;
+            font-weight: 700;
+            margin: 2rem 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .investimento-obs {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        /* Próximos Passos */
+        .proximos-passos {
+            background: white;
+        }
+
+        .passos-timeline {
+            position: relative;
+            margin-top: 3rem;
+            padding-left: 50px;
+        }
+
+        .passos-timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #B06E4A, #435D51);
+        }
+
+        .passo-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: #f8f8f8;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .passo-item:hover {
+            background: #D0D0CA;
+            transform: translateX(10px);
+        }
+
+        .passo-item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background: #B06E4A;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 3px #B06E4A;
+        }
+
+        .passo-item h4 {
+            font-size: 1.4rem;
+            color: #14373C;
+            margin-bottom: 0.5rem;
+        }
+
+        .passo-item p {
+            color: #435D51;
+            font-size: 1.1rem;
+        }
+
+        /* CTA Final */
+        .cta-final {
+            background: linear-gradient(135deg, #14373C 0%, #435D51 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 5%;
+        }
+
+        .cta-final h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-final p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: #14373C;
+            color: #D0D0CA;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-logo {
+            height: 60px;
+            width: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-info a {
+            color: #D0D0CA;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-info a:hover {
+            color: #B06E4A;
+        }
+
+        .footer-info i {
+            margin-right: 8px;
+            color: #B06E4A;
+        }
+
+        /* Responsive */
+        @media (min-width: 1600px) {
+            .container {
+                max-width: 1500px;
+            }
+            
+            .funcionalidades-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .entregaveis-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .entrega-content,
+            .resp-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .valor {
+                font-size: 2.5rem;
+            }
+
+            .header-info {
+                flex-direction: column;
+                gap: 0.5rem;
+                font-size: 0.8rem;
+            }
+
+            .passos-timeline {
+                padding-left: 30px;
+            }
+
+            .passo-item::before {
+                left: -27px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <img src="https://cdn.jsdelivr.net/gh/brunasant/newscale@main/LOGO%2003%403x.png" 
+                 alt="NewScale Consulting" 
+                 class="logo">
+            <div class="header-info">
+                <a href="#objetivo">Objetivo</a>
+                <a href="#funcionalidades">Base de Conhecimento</a>
+                <a href="#investimento">Investimento</a>
+                <a href="#contato">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>AGENTE DE APOIO À ENFERMAGEM (BUBBLE)</h1>
+            <p class="hero-subtitle">NewScale + Colo Saúde</p>
+            <a href="https://wa.me/5511981484026?text=Olá%20Bruna!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Agente%20de%20Apoio%20à%20Consulta" class="cta-button" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                Falar com Bruna
+            </a>
+        </div>
+    </section>
+
+    <!-- Objetivo -->
+    <section class="objetivo" id="objetivo">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-bullseye"></i>
+                1. OBJETIVO DO PROJETO
+            </h2>
+            <p class="section-description">
+                Desenvolver um <strong>agente inteligente integrado ao Bubble</strong> para apoiar enfermeiras durante a <strong>consulta com o paciente</strong>, capaz de:
+            </p>
+            <ul class="requisitos-list" style="background: white; padding: 2rem; border-radius: 15px;">
+                <li style="background: transparent; color: #14373C;">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Analisar automaticamente todo o prontuário;</span>
+                </li>
+                <li style="background: transparent; color: #14373C;">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Utilizar como base <strong>todo o protocolo e materiais didáticos de cuidados paliativos da Colo</strong>;</span>
+                </li>
+                <li style="background: transparent; color: #14373C;">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Gerar <strong>direcionamento completo da consulta</strong>;</span>
+                </li>
+                <li style="background: transparent; color: #14373C;">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Permitir <strong>tirar dúvidas em tempo real via chat</strong>;</span>
+                </li>
+                <li style="background: transparent; color: #14373C;">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Sugerir condutas <strong>exclusivamente baseadas nos protocolos</strong>;</span>
+                </li>
+                <li style="background: transparent; color: #14373C;">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Registrar automaticamente toda a interação no sistema.</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Base de Conhecimento -->
+    <section class="funcionalidades" id="funcionalidades">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-brain"></i>
+                2. BASE DE CONHECIMENTO (TREINAMENTO DO AGENTE)
+            </h2>
+            <p class="section-description">O agente será treinado a partir de:</p>
+            <div class="funcionalidades-grid">
+                <div class="funcionalidade-card">
+                    <i class="fas fa-book-medical"></i>
+                    <h3>Protocolos Clínicos da Colo</h3>
+                    <p>Protocolos completos de cuidados paliativos da Colo.</p>
+                </div>
+                <div class="funcionalidade-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Materiais Didáticos</h3>
+                    <p>Materiais didáticos internos da Colo.</p>
+                </div>
+                <div class="funcionalidade-card">
+                    <i class="fas fa-route"></i>
+                    <h3>Guias de Conduta</h3>
+                    <p>Guias de conduta e fluxos operacionais.</p>
+                </div>
+            </div>
+            <div style="margin-top: 3rem; padding: 2rem; background: #f8f8f8; border-radius: 15px; border-left: 4px solid #B06E4A;">
+                <h3 style="color: #14373C; margin-bottom: 1rem; font-size: 1.3rem;">Essa base será utilizada para:</h3>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="padding: 0.5rem 0; color: #435D51;"><i class="fas fa-check" style="color: #B06E4A; margin-right: 10px;"></i> Responder dúvidas da enfermeira;</li>
+                    <li style="padding: 0.5rem 0; color: #435D51;"><i class="fas fa-check" style="color: #B06E4A; margin-right: 10px;"></i> Gerar direcionamento da consulta;</li>
+                    <li style="padding: 0.5rem 0; color: #435D51;"><i class="fas fa-check" style="color: #B06E4A; margin-right: 10px;"></i> Sugerir condutas padronizadas;</li>
+                    <li style="padding: 0.5rem 0; color: #435D51;"><i class="fas fa-check" style="color: #B06E4A; margin-right: 10px;"></i> Validar decisões operacionais.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Análise do Prontuário -->
+    <section class="analise" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-file-medical-alt"></i>
+                3. ANÁLISE AUTOMÁTICA DO PRONTUÁRIO
+            </h2>
+            <p class="section-description">O agente realizará leitura automática de:</p>
+            <div class="funcionalidades-grid">
+                <div class="funcionalidade-card">
+                    <i class="fas fa-history"></i>
+                    <h3>Histórico Clínico</h3>
+                    <p>Análise completa do histórico do paciente.</p>
+                </div>
+                <div class="funcionalidade-card">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Histórico de Consultas</h3>
+                    <p>Registro de todas as consultas anteriores.</p>
+                </div>
+                <div class="funcionalidade-card">
+                    <i class="fas fa-stethoscope"></i>
+                    <h3>Diagnósticos</h3>
+                    <p>Identificação de todos os diagnósticos.</p>
+                </div>
+                <div class="funcionalidade-card">
+                    <i class="fas fa-pills"></i>
+                    <h3>Medicações</h3>
+                    <p>Registro de medicações em uso.</p>
+                </div>
+                <div class="funcionalidade-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Evoluções</h3>
+                    <p>Acompanhamento das evoluções clínicas.</p>
+                </div>
+                <div class="funcionalidade-card">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <h3>Intercorrências</h3>
+                    <p>Monitoramento de intercorrências.</p>
+                </div>
+                <div class="funcionalidade-card">
+                    <i class="fas fa-clipboard"></i>
+                    <h3>Observações Gerais</h3>
+                    <p>Análise de todas as observações registradas.</p>
+                </div>
+            </div>
+            <div style="margin-top: 2rem; padding: 1.5rem; background: #D0D0CA; border-radius: 10px; text-align: center;">
+                <p style="font-size: 1.1rem; color: #14373C;">
+                    <i class="fas fa-info-circle" style="color: #B06E4A; margin-right: 10px;"></i>
+                    Esses dados servirão como contexto para personalização da consulta e cruzamento com os protocolos.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Direcionamento da Consulta -->
+    <section class="direcionamento" style="background: #D0D0CA;">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-compass"></i>
+                4. DIRECIONAMENTO DA CONSULTA
+            </h2>
+            <p class="section-description">Com base no prontuário + protocolos + materiais didáticos, o agente irá:</p>
+            <div class="funcionalidades-grid">
+                <div class="funcionalidade-card" style="background: white;">
+                    <i class="fas fa-map-signs"></i>
+                    <h3>Conduzir a Consulta</h3>
+                    <p>Sugerir como conduzir a consulta de forma eficiente.</p>
+                </div>
+                <div class="funcionalidade-card" style="background: white;">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>O que Perguntar</h3>
+                    <p>Orientar sobre as perguntas essenciais.</p>
+                </div>
+                <div class="funcionalidade-card" style="background: white;">
+                    <i class="fas fa-eye"></i>
+                    <h3>O que Observar</h3>
+                    <p>Indicar o que observar e monitorar no paciente.</p>
+                </div>
+                <div class="funcionalidade-card" style="background: white;">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>Adaptação Inteligente</h3>
+                    <p>Adaptar a consulta conforme o estágio do paciente e sintomas atuais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat em Tempo Real -->
+    <section class="chat" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-comments"></i>
+                5. CHAT PARA DÚVIDAS EM TEMPO REAL
+            </h2>
+            <p class="section-description">A enfermeira poderá utilizar um <strong>chat dentro do Bubble</strong> para, dentre outros:</p>
+            <div class="funcionalidades-grid">
+                <div class="funcionalidade-card">
+                    <i class="fas fa-question"></i>
+                    <h3>Tirar Dúvidas</h3>
+                    <p>Esclarecer dúvidas durante a consulta.</p>
+                </div>
+                <div class="funcionalidade-card">
+                    <i class="fas fa-check-double"></i>
+                    <h3>Confirmar Condutas</h3>
+                    <p>Validar condutas antes de aplicar.</p>
+                </div>
+                <div class="funcionalidade-card">
+                    <i class="fas fa-bell"></i>
+                    <h3>Validar Alertas</h3>
+                    <p>Confirmar sinais de alerta identificados.</p>
+                </div>
+                <div class="funcionalidade-card">
+                    <i class="fas fa-shoe-prints"></i>
+                    <h3>Próximos Passos</h3>
+                    <p>Perguntar sobre os próximos passos do atendimento.</p>
+                </div>
+            </div>
+            <div style="margin-top: 2rem; padding: 1.5rem; background: #f8f8f8; border-radius: 10px; text-align: center;">
+                <p style="font-size: 1.1rem; color: #14373C;">
+                    <i class="fas fa-shield-alt" style="color: #B06E4A; margin-right: 10px;"></i>
+                    O agente responde sempre com base nos protocolos e no contexto do paciente.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checklist Automático -->
+    <section class="checklist" style="background: #14373C;">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">
+                <i class="fas fa-tasks"></i>
+                6. OPÇÃO: CHECKLIST AUTOMÁTICO DA CONSULTA
+            </h2>
+            <p style="font-size: 1.2rem; color: #D0D0CA; margin-bottom: 3rem;">Durante o atendimento, o agente irá gerar automaticamente:</p>
+            <div class="funcionalidades-grid">
+                <div class="funcionalidade-card" style="background: rgba(208, 208, 202, 0.1); border-left-color: #B06E4A; color: white;">
+                    <i class="fas fa-list-ul" style="color: #B06E4A;"></i>
+                    <h3 style="color: white;">Checklist de Sintomas</h3>
+                    <p style="color: #D0D0CA;">Lista completa de sintomas a serem verificados.</p>
+                </div>
+                <div class="funcionalidade-card" style="background: rgba(208, 208, 202, 0.1); border-left-color: #B06E4A; color: white;">
+                    <i class="fas fa-tachometer-alt" style="color: #B06E4A;"></i>
+                    <h3 style="color: white;">Intensidade</h3>
+                    <p style="color: #D0D0CA;">Avaliação da intensidade dos sintomas.</p>
+                </div>
+                <div class="funcionalidade-card" style="background: rgba(208, 208, 202, 0.1); border-left-color: #B06E4A; color: white;">
+                    <i class="fas fa-hourglass-half" style="color: #B06E4A;"></i>
+                    <h3 style="color: white;">Duração</h3>
+                    <p style="color: #D0D0CA;">Registro da duração dos sintomas.</p>
+                </div>
+                <div class="funcionalidade-card" style="background: rgba(208, 208, 202, 0.1); border-left-color: #B06E4A; color: white;">
+                    <i class="fas fa-prescription-bottle-alt" style="color: #B06E4A;"></i>
+                    <h3 style="color: white;">Resposta a Medicações</h3>
+                    <p style="color: #D0D0CA;">Análise da resposta às medicações.</p>
+                </div>
+                <div class="funcionalidade-card" style="background: rgba(208, 208, 202, 0.1); border-left-color: #B06E4A; color: white;">
+                    <i class="fas fa-exclamation-triangle" style="color: #B06E4A;"></i>
+                    <h3 style="color: white;">Sinais de Alerta</h3>
+                    <p style="color: #D0D0CA;">Identificação de sinais de alerta.</p>
+                </div>
+            </div>
+            <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(176, 110, 74, 0.2); border-radius: 10px; text-align: center;">
+                <p style="font-size: 1.1rem; color: white; line-height: 1.8;">
+                    <i class="fas fa-magic" style="color: #B06E4A; margin-right: 10px;"></i>
+                    A enfermeira poderá responder passo a passo dentro do chat e o sistema indicará automaticamente o que ainda falta ser coletado e, ao final, pode resumir essas informações.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Identificação de Alertas -->
+    <section class="alertas" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-radiation"></i>
+                7. OPÇÃO: IDENTIFICAÇÃO AUTOMÁTICA DE ALERTAS
+            </h2>
+            <p class="section-description">A Enfermeira poderá solicitar ao agente que:</p>
+            <div class="funcionalidades-grid">
+                <div class="funcionalidade-card">
+                    <i class="fas fa-search"></i>
+                    <h3>Detectar Sinais de Alerta</h3>
+                    <p>Identificação automática de sinais críticos das informações da própria consulta.</p>
+                </div>
+                <div class="funcionalidade-card">
+                    <i class="fas fa-sort-amount-up"></i>
+                    <h3>Sinalizar Prioridade</h3>
+                    <p>Classificação por ordem de prioridade.</p>
+                </div>
+                <div class="funcionalidade-card">
+                    <i class="fas fa-flag"></i>
+                    <h3>Destacar Risco</h3>
+                    <p>Destaque visual de situações de risco.</p>
+                </div>
+                <div class="funcionalidade-card">
+                    <i class="fas fa-directions"></i>
+                    <h3>Sugerir Condutas</h3>
+                    <p>Condutas padrão conforme protocolo estabelecido.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registro Automático -->
+    <section class="registro" style="background: #D0D0CA;">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-save"></i>
+                8. OPÇÃO: REGISTRO AUTOMÁTICO NO HISTÓRICO
+            </h2>
+            <p class="section-description">Serão registrados automaticamente:</p>
+            <div class="funcionalidades-grid">
+                <div class="funcionalidade-card" style="background: white;">
+                    <i class="fas fa-comments"></i>
+                    <h3>Perguntas Realizadas</h3>
+                    <p>Todas as perguntas feitas durante a consulta.</p>
+                </div>
+                <div class="funcionalidade-card" style="background: white;">
+                    <i class="fas fa-reply"></i>
+                    <h3>Respostas do Paciente</h3>
+                    <p>Registro completo das respostas obtidas.</p>
+                </div>
+                <div class="funcionalidade-card" style="background: white;">
+                    <i class="fas fa-bell"></i>
+                    <h3>Alertas Detectados</h3>
+                    <p>Todos os alertas identificados pelo sistema.</p>
+                </div>
+                <div class="funcionalidade-card" style="background: white;">
+                    <i class="fas fa-compass"></i>
+                    <h3>Direcionamentos Sugeridos</h3>
+                    <p>Todas as sugestões fornecidas pelo agente.</p>
+                </div>
+                <div class="funcionalidade-card" style="background: white;">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>Dúvidas no Chat</h3>
+                    <p>Histórico completo das dúvidas tiradas.</p>
+                </div>
+                <div class="funcionalidade-card" style="background: white;">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Data e Hora</h3>
+                    <p>Registro completo de data e hora da consulta.</p>
+                </div>
+            </div>
+            <div style="margin-top: 2rem; padding: 1.5rem; background: white; border-radius: 10px; text-align: center; border-left: 4px solid #B06E4A;">
+                <p style="font-size: 1.1rem; color: #14373C;">
+                    <i class="fas fa-info-circle" style="color: #B06E4A; margin-right: 10px;"></i>
+                    <strong>A depender da integração com o Bubble</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entregáveis -->
+    <section class="entregaveis" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-check-double"></i>
+                9. ENTREGÁVEIS
+            </h2>
+            <div class="entregaveis-grid">
+                <div class="entregavel-item">
+                    <i class="fas fa-brain"></i>
+                    <h4>Agente Treinado</h4>
+                    <p>Agente treinado com protocolos e materiais didáticos</p>
+                </div>
+                <div class="entregavel-item">
+                    <i class="fas fa-file-medical-alt"></i>
+                    <h4>Leitura Automática</h4>
+                    <p>Leitura automática do prontuário</p>
+                </div>
+                <div class="entregavel-item">
+                    <i class="fas fa-compass"></i>
+                    <h4>Direcionamento Completo</h4>
+                    <p>Direcionamento completo da consulta</p>
+                </div>
+                <div class="entregavel-item">
+                    <i class="fas fa-comments"></i>
+                    <h4>Chat em Tempo Real</h4>
+                    <p>Chat de dúvidas em tempo real</p>
+                </div>
+                <div class="entregavel-item">
+                    <i class="fas fa-tasks"></i>
+                    <h4>Checklist Adaptativo</h4>
+                    <p>Checklist automático adaptativo</p>
+                </div>
+                <div class="entregavel-item">
+                    <i class="fas fa-edit"></i>
+                    <h4>Preenchimento da Consulta</h4>
+                    <p>Preenchimento da consulta realizada</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prazo -->
+    <section class="entrega" style="background: #D0D0CA;">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-clock"></i>
+                10. PRAZO ESTIMADO
+            </h2>
+            <div class="entrega-content">
+                <div class="entrega-box" style="background: white;">
+                    <h3><i class="fas fa-calendar-alt"></i> Prazo</h3>
+                    <p style="font-size: 2.5rem; font-weight: 700; color: #B06E4A; margin: 2rem 0; text-align: center;">3 a 5 semanas</p>
+                    <p style="text-align: center; font-size: 1.2rem;">A partir de:</p>
+                </div>
+                <div class="entrega-box" style="background: white;">
+                    <h3><i class="fas fa-list-check"></i> Requisitos</h3>
+                    <div style="margin-top: 1.5rem;">
+                        <p style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                            <i class="fas fa-check" style="color: #B06E4A;"></i>
+                            Liberação dos acessos
+                        </p>
+                        <p style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-check" style="color: #B06E4A;"></i>
+                            Envio completo dos protocolos e materiais
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investimento -->
+    <section class="investimento" id="investimento">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-dollar-sign"></i>
+                11. INVESTIMENTO
+            </h2>
+            <div class="valor">R$ 12.800,00</div>
+            <p class="investimento-obs">Setup - Investimento único</p>
+            <div style="margin-top: 3rem; max-width: 800px; margin-left: auto; margin-right: auto; background: rgba(255, 255, 255, 0.15); padding: 2.5rem; border-radius: 15px;">
+                <p style="font-size: 1.1rem; opacity: 0.95; line-height: 1.8;">
+                    <i class="fas fa-server" style="margin-right: 10px;"></i>
+                    Configuração em <strong>hospedagem e API próprias da Colo</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Responsabilidades -->
+    <section class="responsabilidades" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-handshake"></i>
+                12. RESPONSABILIDADES
+            </h2>
+            <div class="resp-grid">
+                <div class="resp-card">
+                    <h3><i class="fas fa-laptop-code"></i> NewScale</h3>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i> Arquitetura da solução;</li>
+                        <li><i class="fas fa-caret-right"></i> Treinamento do agente;</li>
+                        <li><i class="fas fa-caret-right"></i> Desenvolvimento e integração;</li>
+                        <li><i class="fas fa-caret-right"></i> Testes;</li>
+                        <li><i class="fas fa-caret-right"></i> Ajustes pós-validação.</li>
+                    </ul>
+                </div>
+                <div class="resp-card">
+                    <h3><i class="fas fa-hospital"></i> Colo Saúde</h3>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i> Programação de soluções internas ao Bubble;</li>
+                        <li><i class="fas fa-caret-right"></i> Envio dos protocolos e materiais didáticos;</li>
+                        <li><i class="fas fa-caret-right"></i> Validação com a equipe assistencial.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Próximos Passos -->
+    <section class="proximos-passos" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-play-circle"></i>
+                13. PRÓXIMOS PASSOS
+            </h2>
+            <div class="passos-timeline">
+                <div class="passo-item">
+                    <h4>1. Validação do Escopo Técnico</h4>
+                    <p>Validação deste escopo técnico pela Colo Saúde.</p>
+                </div>
+                <div class="passo-item">
+                    <h4>2. Envio de Materiais e Protocolos</h4>
+                    <p>Envio dos materiais didáticos e protocolos clínicos completos.</p>
+                </div>
+                <div class="passo-item">
+                    <h4>3. Liberação de Acessos</h4>
+                    <p>Liberação de acessos ao Bubble e bases de dados.</p>
+                </div>
+                <div class="passo-item">
+                    <h4>4. Início do Desenvolvimento</h4>
+                    <p>Início do desenvolvimento e treinamento do agente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final" id="contato">
+        <h2>Pronto para Revolucionar o Atendimento de Enfermagem?</h2>
+        <p>Entre em contato com Bruna e vamos começar seu projeto</p>
+        <a href="https://wa.me/5511981484026?text=Olá%20Bruna!%20Gostaria%20de%20validar%20o%20escopo%20do%20Agente%20de%20Apoio%20à%20Consulta" class="cta-button" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            Falar com Bruna Agora
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <img src="https://cdn.jsdelivr.net/gh/brunasant/newscale@main/LOGO%2003%403x.png" 
+                 alt="NewScale Consulting" 
+                 class="footer-logo">
+            <div class="footer-info">
+                <a href="mailto:bruna@newscale.com.br">
+                    <i class="fas fa-envelope"></i>
+                    bruna@newscale.com.br
+                </a>
+                <a href="https://wa.me/5511981484026" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    (11) 98148-4026
+                </a>
+                <a href="https://newscale.com.br" target="_blank">
+                    <i class="fas fa-globe"></i>
+                    www.newscale.com.br
+                </a>
+            </div>
+            <p style="margin-top: 2rem; opacity: 0.7; font-size: 0.9rem;">
+                © 2024 NewScale Consulting. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animação dos cards ao scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.funcionalidade-card, .entregavel-item, .passo-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
