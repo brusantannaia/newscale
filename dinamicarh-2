@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta Exclusiva v2 - Dinâmica RH | NewScale Consulting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary-dark: #14373C;
+            --primary-green: #435D51;
+            --accent-brown: #B06E4A;
+            --light-bg: #D0D0CA;
+            --white: #FFFFFF;
+        }
+
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333; overflow-x: hidden; }
+
+        /* ── HEADER ── */
+        .header {
+            position: fixed; top: 0; left: 0; right: 0;
+            background: rgba(20, 55, 60, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem; z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .header.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.1); }
+        .logo-link { display: inline-block; transition: transform 0.3s ease; }
+        .logo-link:hover { transform: scale(1.05); }
+        .logo { height: 50px; width: auto; }
+
+        /* ── HERO ── */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-green) 100%);
+            color: white; padding: 140px 2rem 80px;
+            position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M0 50 Q 25 25, 50 50 T 100 50" stroke="rgba(255,255,255,0.03)" fill="none" stroke-width="2"/></svg>');
+            opacity: 0.5;
+        }
+        .hero-content { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+        .hero-badge {
+            display: inline-block; background: rgba(176,110,74,0.2); color: var(--accent-brown);
+            padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.9rem; font-weight: 500;
+            margin-bottom: 1.5rem; border: 1px solid var(--accent-brown);
+            animation: fadeInDown 0.8s ease;
+        }
+        .hero h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.2; animation: fadeInUp 0.8s ease 0.2s both; }
+        .hero h1 .highlight { color: var(--accent-brown); }
+        .hero-subtitle { font-size: 1.5rem; margin-bottom: 1rem; font-weight: 300; animation: fadeInUp 0.8s ease 0.4s both; }
+        .hero-text { font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.95; max-width: 800px; animation: fadeInUp 0.8s ease 0.6s both; }
+        .cta-button {
+            display: inline-flex; align-items: center; gap: 0.75rem;
+            background: var(--accent-brown); color: white; padding: 1.2rem 3rem;
+            border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem;
+            transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(176,110,74,0.3);
+            animation: fadeInUp 0.8s ease 0.8s both;
+        }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 6px 25px rgba(176,110,74,0.4); background: #9a5d3f; }
+        .cta-button i { font-size: 1.3rem; }
+
+        /* ── SHARED ── */
+        .container { max-width: 1200px; margin: 0 auto; }
+        section { padding: 80px 2rem; }
+        .section-header { text-align: center; margin-bottom: 4rem; opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .section-header.visible { opacity: 1; transform: translateY(0); }
+        .section-icon { font-size: 3rem; color: var(--accent-brown); margin-bottom: 1rem; }
+        .section-header h2 { font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 1rem; font-weight: 700; }
+        .section-header p { font-size: 1.2rem; color: #666; max-width: 700px; margin: 0 auto; }
+
+        /* ── CHALLENGE ── */
+        .challenge-section { background: var(--light-bg); }
+        .challenges-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
+        .challenge-card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; opacity: 0; transform: translateY(30px); }
+        .challenge-card.visible { opacity: 1; transform: translateY(0); }
+        .challenge-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+        .challenge-icon { width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-dark), var(--primary-green)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: white; font-size: 1.5rem; }
+        .challenge-card h3 { color: var(--primary-dark); font-size: 1.3rem; margin-bottom: 1rem; }
+        .challenge-card p { color: #666; line-height: 1.8; }
+        .problem-comparison { display: flex; align-items: center; justify-content: center; gap: 2rem; margin-top: 3rem; padding: 3rem; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .problem-comparison.visible { opacity: 1; transform: translateY(0); }
+        .problem-side { flex: 1; text-align: center; padding: 2rem; border-radius: 15px; background: #f8f8f8; border: 3px solid #e74c3c; }
+        .problem-side.solution { border-color: var(--primary-green); background: linear-gradient(135deg, rgba(67,93,81,0.05), rgba(67,93,81,0.1)); }
+        .problem-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .problem-side h4 { font-size: 1.3rem; color: var(--primary-dark); margin-bottom: 0.75rem; font-weight: 700; }
+        .problem-side p { color: #666; font-size: 1rem; line-height: 1.6; }
+        .problem-arrow { font-size: 2.5rem; color: #e74c3c; animation: pulse-arrow 2s infinite; }
+        @keyframes pulse-arrow { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.2); opacity: 0.7; } }
+
+        /* ── SOLUTION ── */
+        .solution-section { background: white; }
+        .solution-intro { text-align: center; max-width: 900px; margin: 0 auto 4rem; }
+        .solution-intro h2 { font-size: 2.8rem; color: var(--primary-dark); margin-bottom: 1.5rem; font-weight: 700; }
+        .solution-intro .highlight-text { font-size: 1.3rem; color: var(--accent-brown); font-weight: 600; margin-bottom: 1rem; }
+        .solution-intro p { font-size: 1.1rem; color: #666; line-height: 1.8; }
+        .differentials-intro { max-width: 800px; margin: 0 auto 3rem; text-align: center; }
+        .differential-number { display: inline-flex; width: 60px; height: 60px; background: var(--accent-brown); color: white; border-radius: 50%; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 700; margin-bottom: 1.5rem; }
+        .differentials-intro h3 { font-size: 2rem; color: var(--primary-dark); margin-bottom: 1rem; }
+        .differentials-intro p { font-size: 1.1rem; color: #666; }
+        .features-showcase { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .feature-card { background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; opacity: 0; transform: translateY(30px); border: 2px solid transparent; }
+        .feature-card.visible { opacity: 1; transform: translateY(0); }
+        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); border-color: var(--accent-brown); }
+        .feature-icon-box { width: 80px; height: 80px; background: linear-gradient(135deg, var(--accent-brown), #9a5d3f); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem; color: white; box-shadow: 0 5px 15px rgba(176,110,74,0.3); transition: all 0.3s ease; }
+        .feature-card:hover .feature-icon-box { transform: scale(1.1) rotate(5deg); box-shadow: 0 8px 20px rgba(176,110,74,0.4); }
+        .feature-card h4 { font-size: 1.2rem; color: var(--primary-dark); margin-bottom: 0.75rem; font-weight: 600; }
+        .feature-card p { color: #666; font-size: 0.95rem; line-height: 1.6; }
+        .differential-card-single { background: var(--light-bg); padding: 3rem; border-radius: 20px; border-left: 5px solid var(--accent-brown); text-align: center; opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+        .differential-card-single.visible { opacity: 1; transform: translateY(0); }
+        .differential-card-single h3 { font-size: 1.8rem; color: var(--primary-dark); margin-bottom: 1rem; }
+        .differential-card-single p { font-size: 1.1rem; color: #666; line-height: 1.8; }
+
+        /* ── TIMELINE ── */
+        .timeline-section { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-green) 100%); color: white; }
+        .timeline { max-width: 1000px; margin: 0 auto; position: relative; }
+        .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 3px; background: rgba(255,255,255,0.3); transform: translateX(-50%); }
+        .timeline-item { display: flex; margin-bottom: 3rem; position: relative; opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+        .timeline-item.visible { opacity: 1; transform: translateY(0); }
+        .timeline-item:nth-child(odd) { flex-direction: row-reverse; }
+        .timeline-content { width: 45%; background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); }
+        .timeline-marker { position: absolute; left: 50%; transform: translateX(-50%); width: 40px; height: 40px; background: var(--accent-brown); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 4px solid white; font-weight: bold; }
+        .timeline-content h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--accent-brown); }
+        .timeline-content h4 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .timeline-content p { opacity: 0.9; }
+        .timeline-new-tag { display: inline-block; background: var(--accent-brown); color: white; font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 50px; margin-left: 8px; vertical-align: middle; letter-spacing: 0.5px; }
+
+        /* ── AI SECTION ── */
+        .ai-features-section { background: var(--light-bg); }
+        .comparison-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 3rem; max-width: 1200px; margin: 3rem auto; opacity: 0; transform: scale(0.95); transition: all 0.8s ease; }
+        .comparison-container.visible { opacity: 1; transform: scale(1); }
+        .comparison-side { background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .negative-side { border: 3px solid #e74c3c; }
+        .positive-side { border: 3px solid var(--primary-green); background: linear-gradient(135deg, rgba(67,93,81,0.03), rgba(67,93,81,0.08)); }
+        .comparison-side h3 { font-size: 1.4rem; margin: 1rem 0 2rem; color: var(--primary-dark); }
+        .comparison-note { margin-top: 1.5rem; padding: 1rem; background: rgba(0,0,0,0.03); border-radius: 10px; text-align: center; font-size: 1rem; line-height: 1.6; }
+        .whatsapp-mockup { background: #e5ddd5; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.15); }
+        .whatsapp-header { background: #075e54; color: white; padding: 1rem; display: flex; align-items: center; gap: 1rem; }
+        .whatsapp-header.verified { background: var(--primary-green); }
+        .whatsapp-avatar { width: 45px; height: 45px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+        .whatsapp-info { flex: 1; }
+        .whatsapp-name { font-weight: 600; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .verified-badge { color: #25d366; font-size: 0.9rem; }
+        .whatsapp-status { font-size: 0.8rem; opacity: 0.9; }
+        .whatsapp-chat { padding: 1.5rem; min-height: 300px; display: flex; flex-direction: column; gap: 0.75rem; }
+        .chat-message { display: flex; flex-direction: column; max-width: 80%; opacity: 0; animation: slideIn 0.5s ease forwards; }
+        .bot-message { align-self: flex-start; }
+        .user-message { align-self: flex-end; }
+        .message-bubble { background: white; padding: 0.75rem 1rem; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); font-size: 0.9rem; line-height: 1.5; }
+        .bot-message .message-bubble { border-bottom-left-radius: 2px; }
+        .user-message .message-bubble { background: #dcf8c6; border-bottom-right-radius: 2px; }
+        .message-time { font-size: 0.7rem; color: #667781; margin-top: 0.25rem; align-self: flex-end; }
+        .typing-indicator { display: flex; gap: 4px; padding: 1rem; background: white; border-radius: 8px; width: fit-content; }
+        .typing-indicator span { width: 8px; height: 8px; background: #90949c; border-radius: 50%; animation: typing 1.4s infinite; }
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typing { 0%,60%,100% { transform: translateY(0); opacity: 0.7; } 30% { transform: translateY(-10px); opacity: 1; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .slide-in { animation: slideIn 0.5s ease forwards; }
+        .ai-capabilities { background: var(--primary-dark); color: white; padding: 3rem; border-radius: 20px; margin-top: 3rem; opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .ai-capabilities.visible { opacity: 1; transform: translateY(0); }
+        .ai-capabilities h3 { font-size: 1.8rem; margin-bottom: 2rem; color: var(--accent-brown); text-align: center; }
+        .capabilities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .capability-item { display: flex; align-items: flex-start; gap: 1rem; }
+        .capability-icon { width: 40px; height: 40px; background: var(--accent-brown); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .capability-item p { opacity: 0.95; }
+
+        /* ── TESTIMONIAL ── */
+        .testimonial-section { background: white; position: relative; overflow: hidden; }
+        .testimonial-section::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 200%; background: radial-gradient(circle, rgba(176,110,74,0.05) 0%, transparent 70%); }
+        .testimonial-card { max-width: 900px; margin: 0 auto; background: linear-gradient(135deg, var(--primary-dark), var(--primary-green)); padding: 4rem; border-radius: 25px; box-shadow: 0 15px 50px rgba(0,0,0,0.15); opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .testimonial-card.visible { opacity: 1; transform: translateY(0); }
+        .testimonial-icon { font-size: 3rem; color: var(--accent-brown); margin-bottom: 2rem; opacity: 0.3; }
+        .testimonial-text { font-size: 1.3rem; line-height: 1.9; color: white; margin-bottom: 2.5rem; font-style: italic; position: relative; z-index: 1; }
+        .testimonial-author { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; }
+        .author-avatar { width: 70px; height: 70px; background: var(--accent-brown); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .author-name { font-size: 1.3rem; font-weight: 700; color: white; margin-bottom: 0.25rem; }
+        .author-company { font-size: 1.1rem; color: var(--accent-brown); font-weight: 500; }
+        .testimonial-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(176,110,74,0.2); color: var(--accent-brown); padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.9rem; font-weight: 600; border: 1px solid var(--accent-brown); }
+
+        /* ── BENEFITS ── */
+        .benefits-section { background: var(--light-bg); }
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .benefit-category { background: white; padding: 2.5rem; border-radius: 20px; opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+        .benefit-category.visible { opacity: 1; transform: translateY(0); }
+        .benefit-category h3 { font-size: 1.5rem; color: var(--primary-dark); margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 3px solid var(--accent-brown); }
+        .benefit-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+        .benefit-icon { width: 35px; height: 35px; background: var(--accent-brown); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0; }
+        .benefit-item p { color: #555; line-height: 1.6; }
+
+        /* ── MÓDULOS ADICIONAIS ── */
+        .modules-section { background: white; }
+        .modules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
+        .module-card { background: var(--light-bg); padding: 2.5rem; border-radius: 20px; border-left: 5px solid var(--accent-brown); opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+        .module-card.visible { opacity: 1; transform: translateY(0); }
+        .module-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .module-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+        .module-icon-wrap { width: 55px; height: 55px; background: linear-gradient(135deg, var(--primary-dark), var(--primary-green)); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white; box-shadow: 0 4px 12px rgba(20,55,60,0.25); }
+        .module-price-tag { background: var(--accent-brown); color: white; font-size: 1.3rem; font-weight: 700; padding: 6px 18px; border-radius: 50px; box-shadow: 0 3px 10px rgba(176,110,74,0.3); }
+        .module-card h3 { font-size: 1.3rem; color: var(--primary-dark); margin-bottom: 0.75rem; font-weight: 700; }
+        .module-card > p { color: #555; line-height: 1.8; margin-bottom: 1.5rem; font-size: 0.97rem; }
+        .module-deliverables { background: white; border-radius: 12px; padding: 1.5rem; }
+        .module-deliverables h4 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #888; margin-bottom: 1rem; }
+        .module-deliverables ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+        .module-deliverables li { font-size: 0.9rem; color: #555; display: flex; gap: 10px; line-height: 1.5; }
+        .module-deliverables li i { color: var(--primary-green); flex-shrink: 0; margin-top: 3px; }
+
+        /* Bundle card */
+        .bundle-card { background: linear-gradient(135deg, var(--primary-dark), var(--primary-green)); color: white; padding: 3.5rem; border-radius: 20px; text-align: center; margin-top: 3rem; opacity: 0; transform: translateY(30px); transition: all 0.8s ease; position: relative; overflow: hidden; }
+        .bundle-card.visible { opacity: 1; transform: translateY(0); }
+        .bundle-card::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 200%; background: radial-gradient(circle, rgba(176,110,74,0.15), transparent 60%); pointer-events: none; }
+        .bundle-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--accent-brown); color: white; font-size: 0.85rem; font-weight: 700; padding: 6px 20px; border-radius: 50px; margin-bottom: 1.5rem; }
+        .bundle-card h2 { font-size: 2rem; margin-bottom: 0.75rem; }
+        .bundle-card > p { font-size: 1rem; opacity: 0.9; max-width: 600px; margin: 0 auto 2rem; line-height: 1.8; }
+        .bundle-price-row { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 8px; }
+        .bundle-old { font-size: 1.1rem; opacity: 0.6; text-decoration: line-through; }
+        .bundle-new { font-size: 3rem; font-weight: 700; color: var(--accent-brown); }
+        .bundle-saving { background: rgba(176,110,74,0.2); border: 1px solid var(--accent-brown); color: var(--accent-brown); font-size: 0.9rem; font-weight: 600; padding: 5px 16px; border-radius: 50px; }
+        .bundle-installments { font-size: 0.9rem; opacity: 0.75; margin-bottom: 2rem; }
+        .bundle-monthly-row { display: inline-flex; gap: 40px; background: rgba(255,255,255,0.1); border-radius: 15px; padding: 1.5rem 3rem; margin-bottom: 2.5rem; flex-wrap: wrap; justify-content: center; }
+        .bundle-monthly-item { text-align: center; }
+        .bm-label { font-size: 0.78rem; opacity: 0.7; margin-bottom: 4px; }
+        .bm-value { font-size: 1.1rem; font-weight: 700; }
+        .bm-value.total { color: var(--accent-brown); font-size: 1.3rem; }
+        .bundle-tags { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 2.5rem; }
+        .bundle-tag { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 5px 14px; font-size: 0.82rem; color: rgba(255,255,255,0.9); }
+        .bundle-cta { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--accent-brown); color: white; padding: 1.2rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 5px 20px rgba(176,110,74,0.4); }
+        .bundle-cta:hover { transform: translateY(-3px); background: #9a5d3f; }
+
+        /* ── CHATWOOT ── */
+        .chatwoot-section { background: var(--light-bg); }
+        .chatwoot-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .chatwoot-card.visible { opacity: 1; transform: translateY(0); }
+        .chatwoot-top { background: linear-gradient(135deg, var(--primary-dark), var(--primary-green)); color: white; padding: 3.5rem; }
+        .chatwoot-top h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem; }
+        .chatwoot-top p { font-size: 1rem; opacity: 0.95; line-height: 1.8; max-width: 700px; margin-bottom: 2rem; }
+        .economy-box { background: rgba(255,255,255,0.1); border-radius: 15px; padding: 1.5rem 2.5rem; display: inline-flex; gap: 32px; align-items: center; flex-wrap: wrap; }
+        .economy-item { text-align: center; }
+        .economy-label { font-size: 0.75rem; opacity: 0.7; margin-bottom: 4px; }
+        .economy-value { font-size: 1.2rem; font-weight: 700; }
+        .economy-value.bad { text-decoration: line-through; opacity: 0.7; }
+        .economy-value.good { color: #6effcb; }
+        .economy-value.highlight { color: var(--accent-brown); font-size: 1.4rem; }
+        .economy-arrow { font-size: 1.5rem; opacity: 0.5; }
+        .chatwoot-features { display: grid; grid-template-columns: repeat(3, 1fr); }
+        .chatwoot-feat { padding: 2rem 2.5rem; border-right: 1px solid #eee; border-bottom: 1px solid #eee; }
+        .chatwoot-feat:nth-child(3n) { border-right: none; }
+        .chatwoot-feat:nth-last-child(-n+3) { border-bottom: none; }
+        .chatwoot-feat .icon { font-size: 1.8rem; margin-bottom: 10px; color: var(--accent-brown); }
+        .chatwoot-feat h4 { font-size: 0.95rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 6px; }
+        .chatwoot-feat p { font-size: 0.85rem; color: #666; line-height: 1.6; }
+
+        /* ── PRICING ── */
+        .pricing-section { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-green) 100%); color: white; }
+        .pricing-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem; max-width: 1200px; margin: 3rem auto; }
+        .pricing-card { background: white; color: var(--primary-dark); padding: 3rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); position: relative; opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+        .pricing-card.visible { opacity: 1; transform: translateY(0); }
+        .pricing-card.featured { border: 3px solid var(--accent-brown); }
+        .featured-badge { position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: var(--accent-brown); color: white; font-size: 0.82rem; font-weight: 700; padding: 5px 20px; border-radius: 50px; white-space: nowrap; }
+        .pricing-header { text-align: center; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 2px solid var(--light-bg); }
+        .pricing-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--primary-dark); }
+        .pricing-subtitle { color: #666; font-size: 1rem; margin-bottom: 1.5rem; }
+        .pricing-amount { font-size: 3rem; font-weight: 700; color: var(--accent-brown); margin-bottom: 0.5rem; }
+        .pricing-period { color: #666; font-size: 0.9rem; }
+        .pricing-installments { font-size: 0.9rem; color: #666; margin-top: 0.5rem; }
+        .pricing-features { list-style: none; margin: 2rem 0; }
+        .pricing-features li { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; align-items: flex-start; gap: 1rem; }
+        .pricing-features li i { color: var(--primary-green); font-size: 1.2rem; margin-top: 0.2rem; }
+        .new-badge { background: var(--accent-brown); color: white; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 50px; margin-left: 6px; vertical-align: middle; }
+        .pricing-monthly-box { background: var(--light-bg); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; }
+        .pricing-monthly-box h4 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #888; margin-bottom: 12px; }
+        .monthly-line { display: flex; justify-content: space-between; padding: 7px 0; font-size: 0.9rem; color: #555; border-bottom: 1px solid rgba(0,0,0,0.07); }
+        .monthly-line:last-child { border-bottom: none; }
+        .monthly-line.total { color: var(--primary-dark); font-weight: 700; }
+        .monthly-line .amount { font-weight: 600; }
+        .monthly-line.total .amount { color: var(--accent-brown); font-size: 1.05rem; }
+        .pricing-note { font-size: 0.82rem; color: #888; margin-bottom: 1.5rem; line-height: 1.6; }
+        .pricing-cta { display: block; text-align: center; background: var(--accent-brown); color: white; padding: 1.2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; }
+        .pricing-cta:hover { background: #9a5d3f; transform: translateY(-3px); box-shadow: 0 5px 20px rgba(176,110,74,0.3); }
+
+        /* ── GUARANTEES ── */
+        .guarantees-section { background: var(--light-bg); }
+        .guarantees-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .guarantee-card { background: white; padding: 2.5rem; border-radius: 20px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.08); opacity: 0; transform: scale(0.9); transition: all 0.6s ease; }
+        .guarantee-card.visible { opacity: 1; transform: scale(1); }
+        .guarantee-card i { font-size: 3rem; color: var(--accent-brown); margin-bottom: 1.5rem; }
+        .guarantee-card h3 { font-size: 1.3rem; color: var(--primary-dark); margin-bottom: 1rem; }
+        .guarantee-card p { color: #666; }
+        .out-of-scope { background: white; border: 2px solid #e0e0e0; border-radius: 15px; padding: 2rem; margin-top: 3rem; }
+        .out-of-scope h3 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #888; margin-bottom: 1rem; }
+        .out-items { display: flex; flex-wrap: wrap; gap: 10px; }
+        .out-item { background: #f5f5f5; border: 1px solid #ddd; border-radius: 50px; padding: 5px 16px; font-size: 0.85rem; color: #888; }
+
+        /* ── CTA FINAL ── */
+        .cta-final-section { padding: 100px 2rem; background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-green) 100%); color: white; text-align: center; position: relative; overflow: hidden; }
+        .cta-final-section::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(176,110,74,0.1) 0%, transparent 70%); animation: pulse 15s infinite; }
+        @keyframes pulse { 0%,100% { transform: scale(1) rotate(0deg); } 50% { transform: scale(1.1) rotate(180deg); } }
+        .cta-final-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+        .cta-final-content h2 { font-size: 3rem; margin-bottom: 1.5rem; font-weight: 700; }
+        .cta-final-content > p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; }
+        .cta-steps { display: flex; justify-content: center; gap: 12px; margin-bottom: 3rem; flex-wrap: wrap; }
+        .cta-step { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 10px 20px; font-size: 0.9rem; color: white; }
+        .step-num { width: 24px; height: 24px; background: var(--accent-brown); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; flex-shrink: 0; }
+        .cta-buttons { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+        .cta-btn-primary { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--accent-brown); color: white; padding: 1.5rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.2rem; transition: all 0.3s ease; box-shadow: 0 5px 25px rgba(176,110,74,0.4); }
+        .cta-btn-primary:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(176,110,74,0.5); }
+        .cta-btn-secondary { display: inline-flex; align-items: center; gap: 0.75rem; background: white; color: var(--primary-dark); padding: 1.5rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.2rem; transition: all 0.3s ease; }
+        .cta-btn-secondary:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(255,255,255,0.3); }
+        .cta-validity { margin-top: 2rem; font-size: 0.95rem; opacity: 0.85; }
+
+        /* ── FOOTER ── */
+        .footer { background: var(--primary-dark); color: white; padding: 3rem 2rem; text-align: center; }
+        .footer-content { max-width: 1200px; margin: 0 auto; }
+        .footer-logo { height: 60px; margin-bottom: 2rem; }
+        .footer-info { margin-bottom: 2rem; }
+        .footer-info p { margin: 0.5rem 0; opacity: 0.9; }
+        .footer-info a { color: var(--accent-brown); text-decoration: none; }
+        .footer-info a:hover { text-decoration: underline; }
+        .footer-divider { height: 1px; background: rgba(255,255,255,0.2); margin: 2rem 0; }
+        .footer-bottom { font-size: 0.9rem; opacity: 0.8; }
+
+        /* ── ANIMATIONS ── */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 968px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .section-header h2 { font-size: 2rem; }
+            .problem-comparison { flex-direction: column; gap: 1.5rem; padding: 2rem; }
+            .problem-arrow { transform: rotate(90deg); }
+            .comparison-container { grid-template-columns: 1fr; }
+            .timeline::before { left: 30px; }
+            .timeline-item { flex-direction: row !important; padding-left: 60px; }
+            .timeline-content { width: 100%; }
+            .timeline-marker { left: 30px; }
+            .pricing-cards { grid-template-columns: 1fr; }
+            .cta-final-content h2 { font-size: 2rem; }
+            .modules-grid { grid-template-columns: 1fr; }
+            .chatwoot-features { grid-template-columns: 1fr 1fr; }
+            .chatwoot-feat:nth-child(2n) { border-right: none; }
+            .chatwoot-feat:nth-child(3n) { border-right: 1px solid #eee; }
+        }
+        @media (max-width: 640px) {
+            .hero { padding: 120px 1.5rem 60px; }
+            .hero h1 { font-size: 2rem; }
+            .section-header h2 { font-size: 1.8rem; }
+            .challenges-grid, .benefits-grid, .guarantees-grid { grid-template-columns: 1fr; }
+            .features-showcase { grid-template-columns: 1fr; }
+            .chatwoot-features { grid-template-columns: 1fr; }
+            .chatwoot-feat { border-right: none !important; }
+            .bundle-monthly-row { gap: 20px; padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <a href="https://brunasant.github.io/newscale/" class="logo-link">
+            <img src="https://cdn.jsdelivr.net/gh/brunasant/newscale@main/LOGO%2003%403x.png" alt="NewScale Consulting" class="logo">
+        </a>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">📄 Proposta Comercial Exclusiva — Versão 2.0</div>
+            <h1>Olá, <span class="highlight">Jamil</span>!</h1>
+            <p class="hero-subtitle">Preparamos esta solução completa e exclusiva para a Dinâmica RH</p>
+            <p class="hero-text">Uma proposta expandida de Agente de Inteligência Artificial para revolucionar o recrutamento da Dinâmica RH — com automação inteligente, análise de currículos, agendamento de entrevistas, dashboard de métricas e atendimento humanizado 24/7.</p>
+            <a href="https://wa.me/5511971901020?text=Olá%20Bruna!%20Vi%20a%20proposta%20para%20a%20Dinâmica%20RH%20e%20gostaria%20de%20conversar." class="cta-button">
+                <i class="fab fa-whatsapp"></i>
+                Agendar Conversa com Bruna
+            </a>
+        </div>
+    </section>
+
+    <!-- DESAFIO -->
+    <section class="challenge-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-icon">🎯</div>
+                <h2>O Desafio da Dinâmica RH</h2>
+                <p>Chegou aquele momento decisivo: crescer e escalar o volume de atendimentos sem perder o toque humano que diferencia a Dinâmica.</p>
+            </div>
+            <div class="challenges-grid">
+                <div class="challenge-card reveal">
+                    <div class="challenge-icon"><i class="fas fa-comments"></i></div>
+                    <h3>Sobrecarga de Mensagens</h3>
+                    <p>Centenas de perguntas repetitivas sobre vagas, horários e requisitos consomem o tempo precioso das consultoras todos os dias — tempo que poderia estar gerando resultados.</p>
+                </div>
+                <div class="challenge-card reveal">
+                    <div class="challenge-icon"><i class="fas fa-users"></i></div>
+                    <h3>Triagem Manual e Ineficiente</h3>
+                    <p>Energia desperdiçada triando candidatos sem perfil, enquanto os melhores talentos ficam esperando resposta. A demora custa candidatos — e candidatos custam oportunidades.</p>
+                </div>
+                <div class="challenge-card reveal">
+                    <div class="challenge-icon"><i class="fas fa-keyboard"></i></div>
+                    <h3>Cadastros Manuais no Selecty</h3>
+                    <p>Um processo repetitivo, suscetível a erros, que poderia ser 100% automatizado sem abrir mão de nenhuma qualidade ou controle.</p>
+                </div>
+                <div class="challenge-card reveal">
+                    <div class="challenge-icon"><i class="fas fa-calendar-check"></i></div>
+                    <h3>Informações Dispersas</h3>
+                    <p>Envio manual de dados sobre mutirões e eventos, sem centralização, sem rastreamento e sem consistência entre atendimentos.</p>
+                </div>
+                <div class="challenge-card reveal">
+                    <div class="challenge-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Medo de Escalar</h3>
+                    <p>Evitar tráfego pago com receio do volume de mensagens está limitando diretamente o crescimento. A Dinâmica não deveria escolher entre crescer e atender bem.</p>
+                </div>
+                <div class="challenge-card reveal">
+                    <div class="challenge-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Gestão às Cegas</h3>
+                    <p>Sem dashboard, sem dados, sem visibilidade sobre o que funciona no funil. Decisões baseadas em intuição quando poderiam ser baseadas em números.</p>
+                </div>
+            </div>
+            <div class="problem-comparison reveal">
+                <div class="problem-side">
+                    <div class="problem-icon">❌</div>
+                    <h4>Outras Plataformas</h4>
+                    <p>Ferramenta genérica<br>+ Você faz tudo sozinho</p>
+                </div>
+                <div class="problem-arrow"><i class="fas fa-times"></i></div>
+                <div class="problem-side solution">
+                    <div class="problem-icon">✅</div>
+                    <h4>NewScale</h4>
+                    <p>Consultoria + Automação<br>Pronta desde o dia 1</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUÇÃO -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="solution-intro reveal">
+                <h2>💡 A Solução NewScale</h2>
+                <p class="highlight-text">Consultoria + Automação Personalizada</p>
+                <p>A NewScale não entrega um robô. Entrega inteligência aplicada ao negócio da Dinâmica RH. Não vendemos tecnologia pronta — construímos automação sob medida, integrada ao seu sistema, à sua operação e à sua forma de atender.</p>
+            </div>
+            <div class="differentials-intro reveal">
+                <div class="differential-number">1</div>
+                <h3>Fazemos o Trabalho Pesado por Você</h3>
+                <p>Enquanto outras plataformas exigem que o cliente crie prompts, fluxos e integrações sozinho, a NewScale entrega tudo pronto, testado e funcionando.</p>
+            </div>
+            <div class="features-showcase">
+                <div class="feature-card reveal"><div class="feature-icon-box"><i class="fas fa-comments"></i></div><h4>Tom de Voz Personalizado</h4><p>Agente IA treinado no tom de voz da Dinâmica RH</p></div>
+                <div class="feature-card reveal"><div class="feature-icon-box"><i class="fas fa-sync-alt"></i></div><h4>Integração Selecty</h4><p>Integração total com Selecty — vagas sempre atualizadas</p></div>
+                <div class="feature-card reveal"><div class="feature-icon-box"><i class="fas fa-calendar-alt"></i></div><h4>Eventos Automatizados</h4><p>Conexão automática com planilhas de eventos/mutirões</p></div>
+                <div class="feature-card reveal"><div class="feature-icon-box"><i class="fas fa-user-friends"></i></div><h4>Conversas Humanizadas</h4><p>Conversas naturais com tempo de digitação real</p></div>
+                <div class="feature-card reveal"><div class="feature-icon-box"><i class="fas fa-filter"></i></div><h4>Triagem Inteligente</h4><p>Classificação automática: quente / morno / frio</p></div>
+                <div class="feature-card reveal"><div class="feature-icon-box"><i class="fas fa-database"></i></div><h4>Cadastro Automático</h4><p>Candidatos qualificados direto no Selecty</p></div>
+                <div class="feature-card reveal"><div class="feature-icon-box"><i class="fas fa-microphone"></i></div><h4>Mensagens de Voz</h4><p>Compreensão e resposta a áudios dos candidatos</p></div>
+                <div class="feature-card reveal"><div class="feature-icon-box"><i class="fas fa-file-pdf"></i></div><h4>Envio de Arquivos</h4><p>Documentos e PDFs enviados automaticamente</p></div>
+                <div class="feature-card reveal"><div class="feature-icon-box"><i class="fas fa-plug"></i></div><h4>Sistema Integrado</h4><p>Conexão total com sistema interno em tempo real</p></div>
+                <div class="feature-card reveal"><div class="feature-icon-box"><i class="fas fa-brain"></i></div><h4>Aprendizado Contínuo</h4><p>A IA evolui e melhora a cada interação</p></div>
+                <div class="feature-card reveal"><div class="feature-icon-box"><i class="fas fa-clock"></i></div><h4>Sempre Disponível</h4><p>Atendimento 24/7, incansável e consistente</p></div>
+                <div class="feature-card reveal"><div class="feature-icon-box"><i class="fas fa-shield-alt"></i></div><h4>100% Seguro</h4><p>Não inventa informações nem divulga dados internos</p></div>
+            </div>
+            <div class="differential-card-single reveal" style="margin-top: 4rem;">
+                <div class="differential-number">2</div>
+                <h3>Entendemos Seu Negócio Antes de Programar</h3>
+                <p>A NewScale é consultoria antes de código. Antes de desenvolver, mergulhamos no seu processo para garantir que a automação soe e funcione como uma verdadeira consultora da Dinâmica.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CRONOGRAMA -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-header reveal" style="color: white;">
+                <div class="section-icon">📅</div>
+                <h2 style="color: white;">Cronograma de Implementação</h2>
+                <p style="color: rgba(255,255,255,0.9);">10 semanas do kickoff ao go-live, com validação em cada fase</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <h3>Semanas 1–2</h3>
+                        <h4>Fase 1 — Imersão e Diagnóstico</h4>
+                        <p>Reunião de kickoff com o time Dinâmica. Mapeamento completo do processo atual. Análise do tom de voz e expressões das consultoras. Definição dos critérios de qualificação por vaga. Configuração inicial do Chatwoot.</p>
+                    </div>
+                    <div class="timeline-marker">1</div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <h3>Semanas 3–4</h3>
+                        <h4>Fase 2 — Desenvolvimento Core</h4>
+                        <p>Criação da Dina com bot básico + integração Selecty + triagem inteligente + fluxo de vagas da campanha + Google Sheets de eventos. Primeiros testes com cenários reais — o cliente já vê a ferramenta funcionando.</p>
+                    </div>
+                    <div class="timeline-marker">2</div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <h3>Semanas 5–6 <span class="timeline-new-tag">PACOTE COMPLETO</span></h3>
+                        <h4>Fase 3 — Módulos Avançados</h4>
+                        <p>Análise de CV em PDF com critérios de qualificação por vaga + agendamento automático de entrevistas via Google Calendar ou Calendly + fluxo completo de todas as vagas ativas no Selecty.</p>
+                    </div>
+                    <div class="timeline-marker">3</div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <h3>Semanas 7–8 <span class="timeline-new-tag">PACOTE COMPLETO</span></h3>
+                        <h4>Fase 4 — Dashboard e Automações</h4>
+                        <p>Dashboard de métricas configurado no Chatwoot + lembretes automáticos de no-show + refinamento de prompts + ajustes finos com base nos primeiros testes reais.</p>
+                    </div>
+                    <div class="timeline-marker">4</div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <h3>Semanas 9–10</h3>
+                        <h4>Fase 5 — Go-live e Treinamento</h4>
+                        <p>Ativação em produção no WhatsApp. Treinamento da equipe (até 4 horas). Acompanhamento ao vivo nos primeiros dias. Ajustes em tempo real com base no uso real da operação.</p>
+                    </div>
+                    <div class="timeline-marker">5</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI COMPARISON -->
+    <section class="ai-features-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-icon">🤖</div>
+                <h2>IA que Pensa, Não Só Responde</h2>
+                <p>A diferença entre um bot comum e inteligência artificial de verdade</p>
+            </div>
+            <div class="comparison-container reveal">
+                <div class="comparison-side negative-side">
+                    <div>❌ Bot Comum</div>
+                    <h3>Roteiro Fixo e Robotizado</h3>
+                    <div class="whatsapp-mockup">
+                        <div class="whatsapp-header">
+                            <div class="whatsapp-avatar">🤖</div>
+                            <div class="whatsapp-info">
+                                <div class="whatsapp-name">Bot Automático</div>
+                                <div class="whatsapp-status">online</div>
+                            </div>
+                        </div>
+                        <div class="whatsapp-chat">
+                            <div class="chat-message bot-message slide-in"><div class="message-bubble">Olá! Bem-vindo ao sistema automático.</div><div class="message-time">10:30</div></div>
+                            <div class="chat-message bot-message slide-in" style="animation-delay:1s"><div class="message-bubble">Digite 1 para vagas de produção<br>Digite 2 para vagas administrativas<br>Digite 3 para outras opções</div><div class="message-time">10:30</div></div>
+                            <div class="chat-message user-message slide-in" style="animation-delay:2s"><div class="message-bubble">Quais vagas tem disponível?</div><div class="message-time">10:31</div></div>
+                            <div class="chat-message bot-message slide-in" style="animation-delay:3s"><div class="message-bubble">❌ Opção inválida.<br>Digite 1, 2 ou 3.</div><div class="message-time">10:31</div></div>
+                        </div>
+                    </div>
+                    <p class="comparison-note">😓 Conversas robotizadas, sem contexto e frustrantes para o candidato</p>
+                </div>
+                <div class="comparison-side positive-side">
+                    <div>✅ Agente NewScale — A Dina</div>
+                    <h3>Conversa Natural e Inteligente</h3>
+                    <div class="whatsapp-mockup">
+                        <div class="whatsapp-header verified">
+                            <div class="whatsapp-avatar">👩‍💼</div>
+                            <div class="whatsapp-info">
+                                <div class="whatsapp-name">Dinâmica RH <i class="fas fa-check-circle verified-badge"></i></div>
+                                <div class="whatsapp-status">online • IA Inteligente</div>
+                            </div>
+                        </div>
+                        <div class="whatsapp-chat">
+                            <div class="chat-message bot-message slide-in" style="animation-delay:1.5s"><div class="message-bubble">Oi! Que bom te ver por aqui 😊</div><div class="message-time">10:30</div></div>
+                            <div class="chat-message bot-message slide-in" style="animation-delay:2.5s"><div class="message-bubble">Me conta rapidinho: você já tem experiência ou busca uma vaga sem exigência? E qual região você mora?</div><div class="message-time">10:30</div></div>
+                            <div class="chat-message user-message slide-in" style="animation-delay:3.5s"><div class="message-bubble">Tenho experiência em produção e moro na zona leste</div><div class="message-time">10:31</div></div>
+                            <div class="chat-message bot-message slide-in" style="animation-delay:4.5s"><div class="message-bubble">Perfeito! Tenho algumas vagas ótimas pra você na zona leste. Deixa eu te passar as melhores opções... 🎯</div><div class="message-time">10:31</div></div>
+                        </div>
+                    </div>
+                    <p class="comparison-note">😊 Conversas fluidas, contextualizadas e acolhedoras</p>
+                </div>
+            </div>
+            <div class="ai-capabilities reveal">
+                <h3>Capacidades Avançadas</h3>
+                <div class="capabilities-grid">
+                    <div class="capability-item"><div class="capability-icon"><i class="fas fa-microphone"></i></div><p>Se o candidato mandar um <strong>áudio</strong>, a IA entende e responde naturalmente</p></div>
+                    <div class="capability-item"><div class="capability-icon"><i class="fas fa-file-pdf"></i></div><p>Se precisar de <strong>documentos</strong>, ela envia instantaneamente</p></div>
+                    <div class="capability-item"><div class="capability-icon"><i class="fas fa-brain"></i></div><p>Se o candidato fizer <strong>perguntas complexas</strong>, ela analisa o contexto e responde com precisão</p></div>
+                    <div class="capability-item"><div class="capability-icon"><i class="fas fa-infinity"></i></div><p>Atendimento <strong>24/7 ilimitado</strong> — incansável, consistente e sempre disponível</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="testimonial-card reveal">
+                <div class="testimonial-icon"><i class="fas fa-quote-left"></i></div>
+                <p class="testimonial-text">"Ficamos impressionadas com a IA desenvolvida pela NewScale. Ela tirou uma das maiores pressões das nossas costas que era prestar um atendimento excelente e sempre rápido para os clientes. Estamos muito satisfeitas e sobrou tempo para outras atividades importantes da empresa."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar"><i class="fas fa-users"></i></div>
+                    <div>
+                        <div class="author-name">Juliana e Mariana</div>
+                        <div class="author-company">Casa Tacto</div>
+                    </div>
+                </div>
+                <div class="testimonial-badge"><i class="fas fa-check-circle"></i> Cliente NewScale</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-icon">🎁</div>
+                <h2>O Que a Dinâmica RH Ganha</h2>
+                <p>Benefícios concretos para cada parte envolvida no processo</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-category reveal">
+                    <h3>👩‍💼 Para as Consultoras</h3>
+                    <div class="benefit-item"><div class="benefit-icon"><i class="fas fa-clock"></i></div><p><strong>80% menos tempo</strong> com perguntas repetitivas</p></div>
+                    <div class="benefit-item"><div class="benefit-icon"><i class="fas fa-calendar"></i></div><p>Agenda organizada <strong>sem negociação de horário</strong></p></div>
+                    <div class="benefit-item"><div class="benefit-icon"><i class="fas fa-bullseye"></i></div><p>Foco total em <strong>leads realmente qualificados</strong></p></div>
+                    <div class="benefit-item"><div class="benefit-icon"><i class="fas fa-heart"></i></div><p>Redução real de <strong>estresse e sobrecarga</strong> diária</p></div>
+                </div>
+                <div class="benefit-category reveal">
+                    <h3>🏢 Para a Empresa</h3>
+                    <div class="benefit-item"><div class="benefit-icon"><i class="fas fa-rocket"></i></div><p>Liberdade para <strong>escalar tráfego</strong> sem medo do volume</p></div>
+                    <div class="benefit-item"><div class="benefit-icon"><i class="fas fa-infinity"></i></div><p>Atendimento <strong>ilimitado</strong> sem precisar contratar mais gente</p></div>
+                    <div class="benefit-item"><div class="benefit-icon"><i class="fas fa-chart-bar"></i></div><p>Funil com <strong>dados e visibilidade real</strong> — não mais intuição</p></div>
+                    <div class="benefit-item"><div class="benefit-icon"><i class="fas fa-medal"></i></div><p><strong>Qualidade e consistência</strong> no atendimento 24/7</p></div>
+                </div>
+                <div class="benefit-category reveal">
+                    <h3>👤 Para os Candidatos</h3>
+                    <div class="benefit-item"><div class="benefit-icon"><i class="fas fa-bolt"></i></div><p>Atendimento <strong>imediato, claro e acolhedor</strong></p></div>
+                    <div class="benefit-item"><div class="benefit-icon"><i class="fas fa-microphone-alt"></i></div><p>Opção de falar por <strong>áudio ou texto</strong></p></div>
+                    <div class="benefit-item"><div class="benefit-icon"><i class="fas fa-file-alt"></i></div><p>Recebimento automático de <strong>documentos e orientações</strong></p></div>
+                    <div class="benefit-item"><div class="benefit-icon"><i class="fas fa-star"></i></div><p><strong>Experiência positiva</strong> com a marca Dinâmica RH</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ MÓDULOS ADICIONAIS — vem ANTES do investimento ══ -->
+    <section class="modules-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-icon">⚡</div>
+                <h2>Módulos Adicionais</h2>
+                <p>Funcionalidades avançadas que elevam a operação da Dinâmica RH a outro nível — contratadas individualmente ou em pacote completo com desconto</p>
+            </div>
+
+            <div class="modules-grid">
+                <div class="module-card reveal">
+                    <div class="module-header">
+                        <div class="module-icon-wrap"><i class="fas fa-file-pdf"></i></div>
+                        <div class="module-price-tag">R$ 2.500</div>
+                    </div>
+                    <h3>Módulo 1 — Análise de Currículo em PDF</h3>
+                    <p>O candidato envia o currículo em PDF pelo WhatsApp. A Dina lê, interpreta e compara automaticamente com os requisitos da vaga — classificando o perfil de forma consistente, objetiva e sem variação. Para cada vaga, tipo de vaga ou empresa, definimos juntos os critérios de aprovação.</p>
+                    <div class="module-deliverables">
+                        <h4>O que é entregue</h4>
+                        <ul>
+                            <li><i class="fas fa-arrow-right"></i> Fluxo de recebimento e leitura de CVs em PDF</li>
+                            <li><i class="fas fa-arrow-right"></i> Definição conjunta dos critérios por vaga</li>
+                            <li><i class="fas fa-arrow-right"></i> Classificação automática: Aprovado / Mediano / Reprovado</li>
+                            <li><i class="fas fa-arrow-right"></i> Registro do resultado no histórico do candidato</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card reveal">
+                    <div class="module-header">
+                        <div class="module-icon-wrap"><i class="fas fa-calendar-check"></i></div>
+                        <div class="module-price-tag">R$ 2.500</div>
+                    </div>
+                    <h3>Módulo 2 — Agendamento Automático de Entrevistas</h3>
+                    <p>Após a qualificação, a Dina agenda a entrevista diretamente na agenda da consultora — sem trocas de mensagens, sem negociação de horário, sem retrabalho. O candidato escolhe o horário disponível e o agendamento acontece automaticamente.</p>
+                    <div class="module-deliverables">
+                        <h4>O que é entregue</h4>
+                        <ul>
+                            <li><i class="fas fa-arrow-right"></i> Integração com Google Calendar ou Calendly</li>
+                            <li><i class="fas fa-arrow-right"></i> Fluxo de agendamento automático pós-qualificação</li>
+                            <li><i class="fas fa-arrow-right"></i> Confirmação automática ao candidato via WhatsApp</li>
+                            <li><i class="fas fa-arrow-right"></i> Sincronização com a agenda das consultoras em tempo real</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card reveal">
+                    <div class="module-header">
+                        <div class="module-icon-wrap"><i class="fas fa-chart-pie"></i></div>
+                        <div class="module-price-tag">R$ 2.000</div>
+                    </div>
+                    <h3>Módulo 3 — Dashboard de Métricas</h3>
+                    <p>A Dinâmica RH passa a ter visibilidade completa da operação — não por intuição, mas por dados. O dashboard é configurado dentro do Chatwoot e mostra em tempo real o que está acontecendo no funil de candidatos.</p>
+                    <div class="module-deliverables">
+                        <h4>O que é entregue</h4>
+                        <ul>
+                            <li><i class="fas fa-arrow-right"></i> Dashboard personalizado configurado no Chatwoot</li>
+                            <li><i class="fas fa-arrow-right"></i> Volume de atendimentos e taxa de qualificação</li>
+                            <li><i class="fas fa-arrow-right"></i> Candidatos por vaga, por status e por período</li>
+                            <li><i class="fas fa-arrow-right"></i> Tempo médio de resposta e candidatos agendados vs. comparecidos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card reveal">
+                    <div class="module-header">
+                        <div class="module-icon-wrap"><i class="fas fa-bell"></i></div>
+                        <div class="module-price-tag">R$ 1.500</div>
+                    </div>
+                    <h3>Módulo 4 — Lembretes Automáticos de No-show</h3>
+                    <p>Um dos maiores gargalos do recrutamento é o candidato que some na hora da entrevista. A Dina resolve com lembretes automáticos no momento certo — reduzindo drasticamente ausências e o retrabalho para o time.</p>
+                    <div class="module-deliverables">
+                        <h4>O que é entregue</h4>
+                        <ul>
+                            <li><i class="fas fa-arrow-right"></i> Fluxo de lembretes automáticos por etapa do processo</li>
+                            <li><i class="fas fa-arrow-right"></i> Mensagem no dia anterior à entrevista</li>
+                            <li><i class="fas fa-arrow-right"></i> Mensagem no dia da entrevista, horas antes</li>
+                            <li><i class="fas fa-arrow-right"></i> Confirmação de presença registrada automaticamente</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BUNDLE -->
+            <div class="bundle-card reveal">
+                <div class="bundle-badge">⭐ Melhor Custo-Benefício</div>
+                <h2>Pacote Completo — Todos os Módulos</h2>
+                <p>Leve o Plano Base com todos os 4 módulos adicionais em um único investimento — com economia garantida em relação à contratação individual.</p>
+                <div class="bundle-price-row">
+                    <span class="bundle-old">R$ 18.065 separados</span>
+                    <span class="bundle-new">R$ 17.500</span>
+                    <span class="bundle-saving">Economia de R$ 565</span>
+                </div>
+                <p class="bundle-installments">3x de R$ 5.833 — início, meio do projeto e entrega final</p>
+                <div class="bundle-monthly-row">
+                    <div class="bundle-monthly-item">
+                        <div class="bm-label">IA + manutenção + gestão de vagas</div>
+                        <div class="bm-value">R$ 1.597/mês</div>
+                    </div>
+                    <div class="bundle-monthly-item">
+                        <div class="bm-label">Chatwoot</div>
+                        <div class="bm-value">R$ 700/mês</div>
+                    </div>
+                    <div class="bundle-monthly-item">
+                        <div class="bm-label">Total mensal</div>
+                        <div class="bm-value total">R$ 2.297/mês</div>
+                    </div>
+                </div>
+                <div class="bundle-tags">
+                    <span class="bundle-tag">✓ Bot humanizado 24/7</span>
+                    <span class="bundle-tag">✓ Integração Selecty</span>
+                    <span class="bundle-tag">✓ Triagem inteligente</span>
+                    <span class="bundle-tag">✓ Google Sheets eventos</span>
+                    <span class="bundle-tag">✓ Chatwoot instalado</span>
+                    <span class="bundle-tag">✓ Análise de CV em PDF</span>
+                    <span class="bundle-tag">✓ Agendamento de entrevistas</span>
+                    <span class="bundle-tag">✓ Dashboard de métricas</span>
+                    <span class="bundle-tag">✓ Lembretes de no-show</span>
+                    <span class="bundle-tag">✓ API Oficial Meta</span>
+                    <span class="bundle-tag">✓ Treinamento 4h</span>
+                    <span class="bundle-tag">✓ 30 dias de suporte</span>
+                </div>
+                <a href="https://wa.me/5511971901020?text=Olá%20Bruna!%20Quero%20o%20Pacote%20Completo%20para%20a%20Dinâmica%20RH." class="bundle-cta">
+                    <i class="fab fa-whatsapp"></i> Quero o Pacote Completo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHATWOOT -->
+    <section class="chatwoot-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-icon">🏗️</div>
+                <h2>A Infraestrutura que a Dinâmica RH Merecia</h2>
+                <p>Instalada, configurada e integrada ao agente — inclusa no projeto</p>
+            </div>
+            <div class="chatwoot-card reveal">
+                <div class="chatwoot-top">
+                    <h2>Chatwoot incluído — e a conta que justifica</h2>
+                    <p>A maioria das empresas de recrutamento que cresce precisa de uma plataforma profissional para gerenciar conversas. A solução mais comum é o Kommo — e o custo para um time operacional gira entre <strong>R$ 1.500 e R$ 3.000 por mês</strong>. A NewScale instala e configura o Chatwoot como parte deste projeto, com a vantagem de já nascer integrado ao agente de IA desde o primeiro dia.</p>
+                    <div class="economy-box">
+                        <div class="economy-item"><div class="economy-label">Kommo (equivalente)</div><div class="economy-value bad">R$ 1.500–3.000/mês</div></div>
+                        <div class="economy-arrow">→</div>
+                        <div class="economy-item"><div class="economy-label">Chatwoot + IA integrada</div><div class="economy-value good">R$ 700/mês</div></div>
+                        <div class="economy-arrow">=</div>
+                        <div class="economy-item"><div class="economy-label">Economia no 1º ano</div><div class="economy-value highlight">+R$ 10.000</div></div>
+                    </div>
+                </div>
+                <div class="chatwoot-features">
+                    <div class="chatwoot-feat"><div class="icon"><i class="fas fa-inbox"></i></div><h4>Caixa de Entrada Unificada</h4><p>Todas as conversas do WhatsApp em um só lugar, organizadas e acessíveis por todo o time.</p></div>
+                    <div class="chatwoot-feat"><div class="icon"><i class="fas fa-user-clock"></i></div><h4>Histórico Completo</h4><p>Cada candidato com seu histórico completo de conversas acessível em um clique.</p></div>
+                    <div class="chatwoot-feat"><div class="icon"><i class="fas fa-exchange-alt"></i></div><h4>Transferência Sem Atrito</h4><p>Passagem entre consultoras sem perder contexto — o candidato nunca percebe a transição.</p></div>
+                    <div class="chatwoot-feat"><div class="icon"><i class="fas fa-chart-line"></i></div><h4>Relatórios de Operação</h4><p>Dados e métricas disponíveis para decisões estratégicas baseadas em números.</p></div>
+                    <div class="chatwoot-feat"><div class="icon"><i class="fas fa-robot"></i></div><h4>IA + Humano Integrados</h4><p>Controle total sobre quando a Dina age e quando a consultora assume — sem fricção.</p></div>
+                    <div class="chatwoot-feat"><div class="icon"><i class="fas fa-shield-alt"></i></div><h4>Conformidade LGPD</h4><p>Dados protegidos, armazenamento seguro e operação dentro da legislação brasileira.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ INVESTIMENTO — último bloco antes das garantias ══ -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-header reveal" style="color: white;">
+                <div class="section-icon">💰</div>
+                <h2 style="color: white;">Investimento Transparente</h2>
+                <p style="color: rgba(255,255,255,0.9);">Comece com o Plano Base ou vá direto para o Pacote Completo — com todos os módulos e desconto</p>
+            </div>
+
+            <div class="pricing-cards">
+                <!-- PLANO BASE -->
+                <div class="pricing-card reveal">
+                    <div class="pricing-header">
+                        <div class="pricing-title">Plano Base</div>
+                        <div class="pricing-subtitle">API Oficial Meta — fundação completa para automatizar o atendimento</div>
+                        <div class="pricing-amount">R$ 9.565</div>
+                        <div class="pricing-period">Setup Inicial (3x sem juros)</div>
+                        <div class="pricing-installments">3x de R$ 3.188 (início, meio do projeto, finalização)</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i><span>Consultoria completa e imersão estratégica</span></li>
+                        <li><i class="fas fa-check-circle"></i><span>Criação da Dina — IA 100% personalizada para a Dinâmica RH</span></li>
+                        <li><i class="fas fa-check-circle"></i><span>Integração via API com Selecty (vagas + cadastro automático)</span></li>
+                        <li><i class="fas fa-check-circle"></i><span>Triagem inteligente de candidatos (quente / morno / frio)</span></li>
+                        <li><i class="fas fa-check-circle"></i><span>Conexão com Google Sheets para eventos e mutirões</span></li>
+                        <li><i class="fas fa-check-circle"></i><span>Banco de dados com histórico completo de conversas</span></li>
+                        <li><i class="fas fa-check-circle"></i><span>Instalação e configuração completa do Chatwoot</span></li>
+                        <li><i class="fas fa-check-circle"></i><span>Canal verificado pela Meta (API Oficial — selo verde)</span></li>
+                        <li><i class="fas fa-check-circle"></i><span>Treinamento da equipe (até 4 horas)</span></li>
+                        <li><i class="fas fa-check-circle"></i><span>30 dias de suporte intensivo pós go-live</span></li>
+                        <li><i class="fas fa-check-circle"></i><span>Ajustes ilimitados até aprovação final</span></li>
+                    </ul>
+                    <div class="pricing-monthly-box">
+                        <h4>Mensalidade após go-live</h4>
+                        <div class="monthly-line"><span>IA + manutenção + suporte técnico</span><span class="amount">R$ 697</span></div>
+                        <div class="monthly-line"><span>Chatwoot (plataforma + infraestrutura)</span><span class="amount">R$ 700</span></div>
+                        <div class="monthly-line total"><span>Total mensal</span><span class="amount">R$ 1.397/mês</span></div>
+                    </div>
+                    <p class="pricing-note">* Fora da mensalidade: consumo de tokens de IA ~R$ 100–130/mês · Taxa Meta API ~R$ 10–20/mês</p>
+                    <a href="https://wa.me/5511971901020?text=Olá%20Bruna!%20Quero%20o%20Plano%20Base%20para%20a%20Dinâmica%20RH." class="pricing-cta">
+                        <i class="fab fa-whatsapp"></i> Escolher Plano Base
+                    </a>
+                </div>
+
+                <!-- PACOTE COMPLETO -->
+                <div class="pricing-card featured reveal">
+                    <div class="featured-badge">⭐ RECOMENDADO — Pacote Completo</div>
+                    <div class="pricing-header">
+                        <div class="pricing-title">Pacote Completo</div>
+                        <div class="pricing-subtitle">Plano Base + todos os 4 módulos adicionais com desconto</div>
+                        <div class="pricing-amount">R$ 17.500</div>
+                        <div class="pricing-period">Setup Inicial (3x sem juros)</div>
+                        <div class="pricing-installments">3x de R$ 5.833 (início, meio do projeto, finalização)</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i><span>Tudo do Plano Base, mais:</span></li>
+                        <li><i class="fas fa-check-circle"></i><span>Análise de currículo em PDF <span class="new-badge">NOVO</span></span></li>
+                        <li><i class="fas fa-check-circle"></i><span>Critérios de qualificação por vaga (Aprovado / Mediano / Reprovado) <span class="new-badge">NOVO</span></span></li>
+                        <li><i class="fas fa-check-circle"></i><span>Agendamento automático de entrevistas (Google Calendar / Calendly) <span class="new-badge">NOVO</span></span></li>
+                        <li><i class="fas fa-check-circle"></i><span>Dashboard de métricas no Chatwoot <span class="new-badge">NOVO</span></span></li>
+                        <li><i class="fas fa-check-circle"></i><span>Lembretes automáticos de no-show <span class="new-badge">NOVO</span></span></li>
+                        <li><i class="fas fa-check-circle"></i><span>Fluxo completo de todas as vagas ativas no Selecty <span class="new-badge">NOVO</span></span></li>
+                    </ul>
+                    <div class="pricing-monthly-box">
+                        <h4>Mensalidade após go-live</h4>
+                        <div class="monthly-line"><span>IA + manutenção + atualização contínua de vagas e requisitos por vaga</span><span class="amount">R$ 1.597</span></div>
+                        <div class="monthly-line"><span>Chatwoot (plataforma + infraestrutura)</span><span class="amount">R$ 700</span></div>
+                        <div class="monthly-line total"><span>Total mensal</span><span class="amount">R$ 2.297/mês</span></div>
+                    </div>
+                    <p class="pricing-note">* A mensalidade inclui a gestão e atualização contínua dos critérios de qualificação e requisitos de cada vaga ativa — nenhuma consultora precisa tocar nesse processo.<br>* Fora da mensalidade: tokens ~R$ 100–130/mês · Taxa Meta ~R$ 10–20/mês</p>
+                    <a href="https://wa.me/5511971901020?text=Olá%20Bruna!%20Quero%20o%20Pacote%20Completo%20para%20a%20Dinâmica%20RH." class="pricing-cta">
+                        <i class="fab fa-whatsapp"></i> Escolher Pacote Completo
+                    </a>
+                </div>
+            </div>
+
+            <div style="text-align:center; margin-top:3rem; padding:2rem; background:rgba(255,255,255,0.1); border-radius:15px; backdrop-filter:blur(10px);">
+                <p style="color:white; font-size:1.1rem; line-height:1.8;">
+                    💬 <strong>Recomendação:</strong> O Pacote Completo entrega a operação mais inteligente e eficiente — com todos os módulos integrados, gestão de vagas inclusa na mensalidade e economia de R$ 565 em relação à contratação individual.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GARANTIAS -->
+    <section class="guarantees-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-icon">🛡️</div>
+                <h2>Garantias e Segurança</h2>
+                <p>Seu investimento está protegido em cada etapa — do kickoff ao pós go-live</p>
+            </div>
+            <div class="guarantees-grid">
+                <div class="guarantee-card reveal"><i class="fas fa-infinity"></i><h3>Ajustes Ilimitados</h3><p>Refinamos tudo até a aprovação final de cada fase, sem custos adicionais</p></div>
+                <div class="guarantee-card reveal"><i class="fas fa-server"></i><h3>Uptime 99%</h3><p>A Dina sempre disponível, sem interrupções. Disponibilidade garantida 24/7</p></div>
+                <div class="guarantee-card reveal"><i class="fas fa-headset"></i><h3>Suporte Dedicado</h3><p>Resposta em até 24h úteis com equipe técnica especializada durante todo o projeto</p></div>
+                <div class="guarantee-card reveal"><i class="fas fa-user-check"></i><h3>Controle Total</h3><p>Consultoras assumem qualquer conversa a qualquer momento, sem o candidato perceber</p></div>
+                <div class="guarantee-card reveal"><i class="fas fa-shield-alt"></i><h3>Conformidade LGPD</h3><p>Dados protegidos e operação dentro da lei, com a segurança da API Oficial Meta</p></div>
+                <div class="guarantee-card reveal"><i class="fas fa-file-contract"></i><h3>Sem Surpresas</h3><p>Tudo nesta proposta é exatamente o que será entregue — documentado e validado fase a fase</p></div>
+            </div>
+            <div class="out-of-scope reveal">
+                <h3>Fora do Escopo (não incluso)</h3>
+                <div class="out-items">
+                    <span class="out-item">Automação de DP / Fortix</span>
+                    <span class="out-item">CRM externo não acordado</span>
+                    <span class="out-item">Campanhas de tráfego pago</span>
+                    <span class="out-item">Desenvolvimento de app próprio</span>
+                </div>
+                <p style="font-size:0.85rem; color:#888; margin-top:12px;">Estes itens podem ser contratados como expansão futura do projeto.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final-section">
+        <div class="cta-final-content">
+            <h2>Vamos Criar Juntos?</h2>
+            <p>A primeira IA de recrutamento da Dinâmica RH que conversa, qualifica, agenda e nunca para está a um passo de distância.</p>
+            <div class="cta-steps">
+                <div class="cta-step"><span class="step-num">1</span> Aprovação da proposta</div>
+                <div class="cta-step"><span class="step-num">2</span> Assinatura do contrato</div>
+                <div class="cta-step"><span class="step-num">3</span> Acesso à API do Selecty</div>
+                <div class="cta-step"><span class="step-num">4</span> Kickoff agendado</div>
+            </div>
+            <div class="cta-buttons">
+                <a href="https://wa.me/5511971901020?text=Olá%20Bruna!%20Quero%20fechar%20a%20proposta%20para%20a%20Dinâmica%20RH." class="cta-btn-primary">
+                    <i class="fab fa-whatsapp"></i> Falar com Bruna Agora
+                </a>
+                <a href="https://brunasant.github.io/newscale/" class="cta-btn-secondary">
+                    <i class="fas fa-home"></i> Conhecer a NewScale
+                </a>
+            </div>
+            <p class="cta-validity">📅 Proposta válida por 15 dias a partir do envio</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <img src="https://cdn.jsdelivr.net/gh/brunasant/newscale@main/LOGO%2003%403x.png" alt="NewScale Consulting" class="footer-logo">
+            <div class="footer-info">
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5511971901020">(11) 97190-1020</a></p>
+                <p><i class="fas fa-globe"></i> <a href="https://brunasant.github.io/newscale/">www.newscale.tech</a></p>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NewScale Consulting. Todos os direitos reservados.</p>
+                <p style="margin-top:1rem; font-style:italic; opacity:0.7;">"A NewScale não entregou uma ferramenta. Entregou inteligência aplicada ao negócio da Dinâmica RH — com alma, estratégia e resultado."</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal, .challenge-card, .feature-card, .differential-card-single, .problem-comparison, .comparison-container, .timeline-item, .testimonial-card, .ai-capabilities, .benefit-category, .pricing-card, .guarantee-card, .module-card, .bundle-card, .chatwoot-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        window.addEventListener('scroll', () => {
+            document.querySelector('.header').classList.toggle('scrolled', window.scrollY > 100);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>
