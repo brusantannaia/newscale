@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newscale — Inteligência Artificial para Negócios em Expansão</title>
+<meta name="description" content="Consultoria estratégica com implementação completa de IA. Integramos automações à sua operação — conectadas aos sistemas que você já usa. Newscale Consulting.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde-escuro:  #14373C;
+    --verde-medio:   #435D51;
+    --terracota:     #7E5138;
+    --dourado:       #A38362;
+    --creme:         #E0E0DA;
+    --branco:        #FFFFFF;
+    --texto-escuro:  #1A1A1A;
+    --borda:         rgba(20,55,60,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--creme);
+    color: var(--texto-escuro);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 64px;
+    background: rgba(224,224,218,0.94);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--borda);
+  }
+  .nav-logo img { height: 48px; width: auto; display: block; }
+  .nav-cta {
+    background: var(--verde-escuro); color: var(--creme);
+    padding: 11px 28px; border-radius: 4px;
+    text-decoration: none; font-size: 14px; font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--verde-medio); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 148px 64px 90px;
+    background: var(--verde-escuro);
+    position: relative; overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; top: 0; right: 0; bottom: 0;
+    width: 40%;
+    background: linear-gradient(135deg, transparent 0%, rgba(163,131,98,0.08) 100%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px; font-weight: 500; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--dourado);
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 6vw, 86px);
+    font-weight: 500;
+    line-height: 1.05; letter-spacing: -1px;
+    max-width: 820px; margin-bottom: 28px;
+    color: var(--creme);
+  }
+  .hero h1 em { font-style: italic; color: var(--dourado); }
+  .hero-sub {
+    font-size: 18px; color: rgba(224,224,218,0.62);
+    max-width: 560px; line-height: 1.75; margin-bottom: 52px;
+  }
+  .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--dourado); color: var(--verde-escuro);
+    padding: 16px 36px; border-radius: 4px;
+    text-decoration: none; font-size: 15px; font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .btn-primary:hover { background: var(--creme); }
+  .hero-divider {
+    margin-top: 80px;
+    display: flex; gap: 48px; align-items: center;
+    border-top: 1px solid rgba(224,224,218,0.12);
+    padding-top: 40px;
+  }
+  .hero-pill { display: flex; flex-direction: column; gap: 4px; }
+  .pill-top { font-size: 13px; font-weight: 500; color: var(--creme); }
+  .pill-bot { font-size: 12px; color: rgba(224,224,218,0.45); }
+  .pill-sep { width: 1px; height: 32px; background: rgba(224,224,218,0.15); }
+
+  /* ─── SEÇÕES ─── */
+  section { padding: 100px 64px; }
+  .section-tag {
+    font-size: 11px; font-weight: 600; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--dourado);
+    margin-bottom: 18px;
+  }
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(34px, 4.5vw, 58px);
+    font-weight: 500;
+    line-height: 1.08; letter-spacing: -0.5px;
+    margin-bottom: 20px;
+  }
+  h2 em { font-style: italic; color: var(--verde-medio); }
+  h2.light { color: var(--creme); }
+  h2.light em { color: var(--dourado); }
+
+  /* CONTEXTO */
+  .contexto { background: var(--verde-escuro); }
+  .contexto-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+  .contexto-left p {
+    font-size: 19px; color: rgba(224,224,218,0.65);
+    line-height: 1.85; margin-bottom: 28px;
+  }
+  .contexto-left p strong { color: rgba(224,224,218,0.9); font-weight: 500; }
+  .contexto-left p.destaque {
+    font-size: 17px; color: rgba(224,224,218,0.5);
+    border-left: 3px solid var(--dourado);
+    padding-left: 20px; margin-top: 32px;
+  }
+  .contexto-right { display: flex; flex-direction: column; gap: 2px; }
+  .stat-item {
+    padding: 28px 32px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(224,224,218,0.08);
+    border-left: 3px solid var(--dourado);
+  }
+  .stat-item p { font-size: 15px; color: rgba(224,224,218,0.55); line-height: 1.65; }
+  .stat-item strong { color: rgba(224,224,218,0.85); font-weight: 500; }
+
+  /* O QUE FAZEMOS */
+  .oque { background: var(--creme); }
+  .oque-intro {
+    max-width: 680px; font-size: 18px; color: rgba(26,26,26,0.58);
+    line-height: 1.8; margin-top: 18px; margin-bottom: 56px;
+  }
+  .oque-intro strong { color: var(--texto-escuro); }
+  .oque-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .oque-bloco { padding: 52px 48px; }
+  .oque-bloco.a { background: var(--verde-escuro); }
+  .oque-bloco.b { background: var(--verde-medio); }
+  .oque-bloco h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px; font-weight: 500; color: var(--creme);
+    margin-bottom: 16px; letter-spacing: -0.3px;
+  }
+  .oque-bloco p { font-size: 15px; color: rgba(224,224,218,0.62); line-height: 1.8; }
+  .oque-bloco p + p { margin-top: 12px; }
+  .oque-note {
+    margin-top: 48px; padding: 32px 40px;
+    background: var(--verde-escuro); color: rgba(224,224,218,0.65);
+    font-size: 17px; line-height: 1.7;
+  }
+  .oque-note strong { color: var(--creme); }
+
+  /* MÉTODO */
+  .metodo { background: var(--creme); }
+  .metodo-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 52px; }
+  .metodo-step {
+    padding: 48px 32px;
+    border: 1px solid var(--borda);
+    background: var(--branco);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .metodo-step:hover { border-color: var(--dourado); background: var(--creme); }
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px; font-weight: 400; color: var(--dourado);
+    display: block; margin-bottom: 20px; line-height: 1;
+  }
+  .metodo-step h3 { font-size: 17px; font-weight: 600; color: var(--verde-escuro); margin-bottom: 12px; }
+  .metodo-step p { font-size: 14px; color: rgba(26,26,26,0.55); line-height: 1.7; }
+
+  /* IMPACTO */
+  .impacto { background: var(--verde-medio); }
+  .impacto-intro {
+    max-width: 540px; font-size: 17px; color: rgba(224,224,218,0.58);
+    line-height: 1.75; margin-top: 16px; margin-bottom: 52px;
+  }
+  .impacto-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .impacto-item {
+    padding: 32px 30px;
+    background: rgba(20,55,60,0.3);
+    border: 1px solid rgba(224,224,218,0.08);
+    transition: background 0.2s;
+  }
+  .impacto-item:hover { background: rgba(20,55,60,0.5); }
+  .impacto-item h3 { font-size: 15px; font-weight: 600; color: var(--creme); margin-bottom: 10px; }
+  .impacto-item p { font-size: 13px; color: rgba(224,224,218,0.5); line-height: 1.65; }
+  .impacto-note {
+    margin-top: 40px; font-size: 14px; font-style: italic;
+    color: rgba(224,224,218,0.35);
+  }
+
+  /* EXEMPLOS */
+  .exemplos { background: var(--creme); }
+  .exemplos-intro {
+    font-size: 17px; color: rgba(26,26,26,0.55);
+    max-width: 560px; line-height: 1.75; margin-top: 14px; margin-bottom: 48px;
+  }
+  .exemplos-list {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    margin-bottom: 40px;
+  }
+  .exemplo-item {
+    padding: 28px 32px;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-left: 3px solid var(--dourado);
+    font-size: 15px; color: rgba(26,26,26,0.65); line-height: 1.6;
+    transition: border-color 0.2s;
+  }
+  .exemplo-item:hover { border-left-color: var(--verde-medio); }
+  .exemplos-note {
+    font-size: 14px; font-style: italic;
+    color: rgba(26,26,26,0.38);
+  }
+
+  /* CASES */
+  .cases { background: var(--verde-escuro); }
+  .cases-intro {
+    font-size: 17px; color: rgba(224,224,218,0.5);
+    max-width: 480px; line-height: 1.7; margin-top: 14px; margin-bottom: 52px;
+  }
+  .cases-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
+  .case-card {
+    padding: 48px 44px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(224,224,218,0.08);
+    transition: border-color 0.2s;
+  }
+  .case-card:hover { border-color: rgba(163,131,98,0.4); }
+  .case-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--dourado);
+    margin-bottom: 18px; display: block;
+  }
+  .case-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 500; color: var(--creme);
+    margin-bottom: 16px;
+  }
+  .case-card p { font-size: 15px; color: rgba(224,224,218,0.48); line-height: 1.8; margin-bottom: 28px; }
+  .case-placeholder {
+    font-size: 13px; color: rgba(224,224,218,0.2);
+    font-style: italic; padding: 16px 0;
+    border-top: 1px solid rgba(224,224,218,0.07);
+  }
+  .cases-evolucao {
+    margin-top: 40px; font-size: 13px; font-style: italic;
+    color: rgba(224,224,218,0.25);
+  }
+
+  /* SOBRE */
+  .sobre { background: var(--creme); }
+  .sobre-inner { display: grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: start; }
+  .sobre-img-wrap {
+    border-radius: 4px; overflow: hidden;
+    aspect-ratio: 4/5; background: var(--verde-medio);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .sobre-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+  .sobre-text .section-tag { margin-bottom: 20px; }
+  .sobre-text h2 { color: var(--verde-escuro); margin-bottom: 28px; }
+  .sobre-text h2 em { color: var(--dourado); }
+  .sobre-text p { font-size: 16px; color: rgba(26,26,26,0.58); line-height: 1.85; margin-bottom: 18px; }
+  .sobre-text p strong { color: var(--texto-escuro); font-weight: 500; }
+  .sobre-quote {
+    border-left: 3px solid var(--dourado); padding-left: 24px;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 21px; font-weight: 400;
+    color: rgba(26,26,26,0.6); margin-top: 36px; line-height: 1.5;
+  }
+
+  /* PARA QUEM */
+  .paraquem { background: var(--terracota); }
+  .paraquem-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .paraquem h2 { color: var(--creme); }
+  .paraquem h2 em { color: rgba(224,224,218,0.7); font-style: italic; }
+  .paraquem-list { margin-top: 0; }
+  .paraquem-item {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(224,224,218,0.1);
+    font-size: 16px; color: rgba(224,224,218,0.72);
+    display: flex; align-items: flex-start; gap: 18px;
+    line-height: 1.5;
+  }
+  .paraquem-item::before { content: '→'; color: var(--dourado); flex-shrink: 0; margin-top: 1px; }
+  .paraquem-note {
+    margin-top: 36px; font-size: 14px;
+    color: rgba(224,224,218,0.38); font-style: italic;
+  }
+
+  /* CTA FINAL */
+  .cta-final {
+    text-align: center; padding: 120px 64px;
+    background: var(--verde-escuro); position: relative; overflow: hidden;
+  }
+  .cta-final::before {
+    content: '';
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(163,131,98,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-final .section-tag { color: var(--dourado); margin-bottom: 20px; }
+  .cta-final h2 { max-width: 600px; margin: 0 auto 22px; color: var(--creme); }
+  .cta-final h2 em { color: var(--dourado); }
+  .cta-final p { font-size: 18px; color: rgba(224,224,218,0.5); max-width: 500px; margin: 0 auto 44px; line-height: 1.75; }
+  .cta-final .btn-primary { font-size: 15px; padding: 18px 44px; }
+  .cta-micro { margin-top: 16px; font-size: 12px; color: rgba(224,224,218,0.25); letter-spacing: 0.5px; }
+
+  /* CONTATO BAR */
+  .contato-bar {
+    background: var(--dourado);
+    padding: 28px 64px;
+    display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap;
+  }
+  .contato-bar a {
+    color: var(--verde-escuro); text-decoration: none;
+    font-size: 14px; font-weight: 500;
+    display: flex; align-items: center; gap: 8px;
+    transition: opacity 0.2s;
+  }
+  .contato-bar a:hover { opacity: 0.7; }
+
+  /* FOOTER */
+  footer {
+    background: var(--texto-escuro); color: var(--creme);
+    padding: 40px 64px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 20px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-logo img { height: 36px; width: auto; filter: brightness(0) invert(1) opacity(0.6); }
+  footer p { font-size: 13px; color: rgba(224,224,218,0.3); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-eyebrow { animation: fadeUp 0.6s ease both; }
+  .hero h1      { animation: fadeUp 0.7s 0.1s ease both; }
+  .hero-sub     { animation: fadeUp 0.7s 0.2s ease both; }
+  .hero-actions { animation: fadeUp 0.7s 0.3s ease both; }
+  .hero-divider { animation: fadeUp 0.7s 0.42s ease both; }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    nav { padding: 16px 24px; }
+    section { padding: 72px 24px; }
+    .hero { padding: 120px 24px 64px; }
+    .contexto-inner, .sobre-inner, .paraquem-inner { grid-template-columns: 1fr; gap: 40px; }
+    .oque-grid, .cases-grid, .exemplos-list { grid-template-columns: 1fr; }
+    .metodo-steps { grid-template-columns: 1fr 1fr; }
+    .impacto-grid { grid-template-columns: 1fr 1fr; }
+    .hero-divider { flex-wrap: wrap; gap: 20px; }
+    .pill-sep { display: none; }
+    footer, .contato-bar { flex-direction: column; text-align: center; padding: 32px 24px; }
+  }
+  @media (max-width: 600px) {
+    .metodo-steps, .impacto-grid { grid-template-columns: 1fr; }
+    .nav-logo img { height: 36px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png"
+         alt="Newscale Consulting"
+         onerror="this.outerHTML='<span style=&quot;font-family:serif;font-size:20px;color:#14373C;letter-spacing:-0.5px;&quot;>NEWSCALE</span>'">
+  </div>
+  <a href="https://wa.me/5511971901020?text=Quero+agendar+uma+conversa+estrat%C3%A9gica" class="nav-cta">Conversa estratégica →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Newscale Consulting</div>
+  <h1>Inteligência Artificial para<br><em>negócios em expansão.</em></h1>
+  <p class="hero-sub">
+    Operações manuais travam empresas em crescimento. Estruturamos automações com IA integradas à sua operação — conectadas aos sistemas que você já usa e ajustadas à realidade do seu time.
+  </p>
+  <div class="hero-actions">
+    <a href="https://wa.me/5511971901020?text=Quero+agendar+uma+conversa+estrat%C3%A9gica" class="btn-primary">Agendar conversa estratégica →</a>
+  </div>
+  <div class="hero-divider">
+    <div class="hero-pill">
+      <span class="pill-top">Integrado aos seus sistemas</span>
+      <span class="pill-bot">sem trocar o que já funciona</span>
+    </div>
+    <div class="pill-sep"></div>
+    <div class="hero-pill">
+      <span class="pill-top">Do diagnóstico à execução</span>
+      <span class="pill-bot">sem terceirizar a estratégia</span>
+    </div>
+    <div class="pill-sep"></div>
+    <div class="hero-pill">
+      <span class="pill-top">Poucas empresas por ciclo</span>
+      <span class="pill-bot">profundidade real em cada projeto</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTEXTO -->
+<section class="contexto">
+  <div class="contexto-inner">
+    <div class="contexto-left">
+      <div class="section-tag">Contexto</div>
+      <h2 class="light">A maioria das empresas já entende que precisa de IA.<br><em>O desafio está na implementação.</em></h2>
+      <p>Quando a IA é aplicada sem arquitetura, surgem retrabalho, ruído e dependência técnica.</p>
+      <p class="destaque"><strong>Resultado consistente vem de integração, clareza de processo e execução bem feita.</strong></p>
+    </div>
+    <div class="contexto-right">
+      <div class="stat-item">
+        <p><strong>Automações isoladas não conversam entre si.</strong> Cada ferramenta opera no seu próprio silo — e o time continua fazendo a ponte manualmente.</p>
+      </div>
+      <div class="stat-item">
+        <p><strong>Processos continuam manuais nos bastidores.</strong> A operação real não mudou. Só ganhou mais uma camada de tecnologia por cima.</p>
+      </div>
+      <div class="stat-item">
+        <p><strong>O time segue sobrecarregado.</strong> Sistemas não integrados. Dados fragmentados. A escala não vem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE FAZEMOS -->
+<section class="oque">
+  <div class="section-tag">O que fazemos</div>
+  <h2>Consultoria estratégica com<br><em>implementação completa.</em></h2>
+  <p class="oque-intro">
+    Entramos na empresa para entender como a operação realmente funciona. Mapeamos processos, identificamos gargalos e avaliamos as automações já existentes. A partir disso, desenhamos uma arquitetura de IA integrada aos seus sistemas atuais.
+  </p>
+  <div class="oque-grid">
+    <div class="oque-bloco a">
+      <h3>Diagnóstico e arquitetura</h3>
+      <p>CRM, ERP, WhatsApp, planilhas e fluxos internos — tudo mapeado antes de qualquer implementação. Nada genérico: cada arquitetura é construída para a realidade da empresa.</p>
+    </div>
+    <div class="oque-bloco b">
+      <h3>Implementação e integração</h3>
+      <p>Integrações via API, automações estruturadas, agentes personalizados e ajustes até que a operação funcione com fluidez.</p>
+      <p>Você não recebe apenas um diagnóstico. Recebe a operação reorganizada.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MÉTODO -->
+<section class="metodo" id="metodo">
+  <div class="section-tag">Como atuamos</div>
+  <h2>Método <em>Newscale.</em></h2>
+  <div class="metodo-steps">
+    <div class="metodo-step">
+      <span class="step-num">01</span>
+      <h3>Diagnóstico estratégico</h3>
+      <p>Análise profunda da operação, metas e pontos de atrito.</p>
+    </div>
+    <div class="metodo-step">
+      <span class="step-num">02</span>
+      <h3>Arquitetura</h3>
+      <p>Desenho da estrutura de automação integrada aos sistemas existentes.</p>
+    </div>
+    <div class="metodo-step">
+      <span class="step-num">03</span>
+      <h3>Implementação</h3>
+      <p>Desenvolvimento técnico, integrações e validação prática.</p>
+    </div>
+    <div class="metodo-step">
+      <span class="step-num">04</span>
+      <h3>Evolução</h3>
+      <p>Ajustes contínuos e expansão para novas áreas conforme a empresa cresce.</p>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACTO -->
+<section class="impacto">
+  <div class="section-tag">Onde a IA gera impacto</div>
+  <h2 class="light">Aplicações estratégicas<br><em>de IA na empresa.</em></h2>
+  <p class="impacto-intro">Cada projeto parte da realidade da empresa. A solução nunca é padrão.</p>
+  <div class="impacto-grid">
+    <div class="impacto-item">
+      <h3>Atendimento e qualificação de leads</h3>
+      <p>Automação do primeiro contato, triagem e qualificação integrada ao CRM.</p>
+    </div>
+    <div class="impacto-item">
+      <h3>Triagem e processos em RH</h3>
+      <p>Análise de perfil, geração de pareceres e fluxos de seleção automatizados.</p>
+    </div>
+    <div class="impacto-item">
+      <h3>Integração entre sistemas</h3>
+      <p>Conexão entre WhatsApp, CRM, ERP, planilhas e fluxos internos.</p>
+    </div>
+    <div class="impacto-item">
+      <h3>Automação de fluxos operacionais</h3>
+      <p>Aprovações, notificações, follow-ups e relatórios automáticos.</p>
+    </div>
+    <div class="impacto-item">
+      <h3>Estruturação de dados para decisão</h3>
+      <p>Organização e centralização de dados para suporte estratégico em tempo real.</p>
+    </div>
+    <div class="impacto-item">
+      <h3>Agentes personalizados</h3>
+      <p>Agentes treinados com a lógica, voz e critérios da empresa para operar com autonomia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXEMPLOS -->
+<section class="exemplos">
+  <div class="section-tag">Exemplos de automações na prática</div>
+  <h2>O que já <em>estruturamos.</em></h2>
+  <p class="exemplos-intro">Alguns exemplos de aplicações que já implementamos ou implementamos com frequência — para dar clareza sobre o que é possível na prática.</p>
+  <div class="exemplos-list">
+    <div class="exemplo-item">Automação completa de atendimento via WhatsApp com qualificação automática e integração ao CRM</div>
+    <div class="exemplo-item">Triagem inteligente de candidatos com análise de perfil e geração automática de parecer</div>
+    <div class="exemplo-item">Geração automática de relatórios operacionais e financeiros</div>
+    <div class="exemplo-item">Roteirização de atendimento para equipes técnicas ou de enfermagem</div>
+    <div class="exemplo-item">Integração entre formulários, planilhas e sistemas internos para eliminar retrabalho</div>
+    <div class="exemplo-item">Fluxos de aprovação automatizados entre áreas</div>
+    <div class="exemplo-item">Follow-ups automáticos para leads, clientes ou pacientes</div>
+    <div class="exemplo-item">Organização e padronização de dados para suporte à decisão estratégica</div>
+  </div>
+  <p class="exemplos-note">Esses são exemplos. O ponto de partida sempre é a realidade da operação.</p>
+</section>
+
+<!-- CASES -->
+<section class="cases">
+  <div class="section-tag">Resultados recentes</div>
+  <h2 class="light">Projetos estruturais<br><em>já implementados.</em></h2>
+  <div class="cases-grid">
+    <div class="case-card">
+      <span class="case-label">Saúde</span>
+      <h3>Estrutura completa de IA para atendimento e gestão de pacientes</h3>
+      <p>Contexto, gargalo operacional identificado e arquitetura de automação implementada — do primeiro contato ao pós-consulta, com integração ao sistema de gestão existente.</p>
+      <div class="case-placeholder">Métricas e detalhamento em breve.</div>
+    </div>
+    <div class="case-card">
+      <span class="case-label">RH & Gestão de Pessoas</span>
+      <h3>Automação de triagem e processos internos de ponta a ponta</h3>
+      <p>Problema inicial, complexidade da operação e como a IA foi integrada ao fluxo existente — da triagem de candidatos ao acionamento do time humano.</p>
+      <div class="case-placeholder">Métricas e detalhamento em breve.</div>
+    </div>
+  </div>
+  <p class="cases-evolucao">Os cases podem evoluir para páginas próprias, fortalecendo autoridade e SEO.</p>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre">
+  <div class="sobre-inner">
+    <div class="sobre-img-wrap">
+      <img src="" alt="Bruna Santanna" onerror="this.style.display='none'">
+    </div>
+    <div class="sobre-text">
+      <div class="section-tag">Liderança</div>
+      <h2>Estratégia conduzida por quem<br><em>já esteve na operação.</em></h2>
+      <p>Sou <strong>Bruna Santanna</strong>. Empresária há mais de 10 anos, com experiência prática em operação, crescimento e estruturação de negócios.</p>
+      <p>A execução técnica é apoiada por <strong>núcleo sênior especializado em arquitetura de sistemas e integrações complexas</strong>, garantindo robustez e profundidade em cada projeto.</p>
+      <p>Trabalhamos para que a Inteligência Artificial se torne parte da estrutura da empresa — não apenas uma ferramenta isolada.</p>
+      <div class="sobre-quote">"Eu implemento primeiro em mim. Só depois levo para o cliente."</div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section class="paraquem">
+  <div class="paraquem-inner">
+    <div>
+      <div class="section-tag">Para quem é</div>
+      <h2>Atuamos com empresas<br><em>que estão prontas.</em></h2>
+      <p style="font-size:16px;color:rgba(224,224,218,0.5);margin-top:16px;line-height:1.75;">Atendemos poucas empresas por ciclo para garantir profundidade estratégica e acompanhamento próximo.</p>
+    </div>
+    <div>
+      <div class="paraquem-list">
+        <div class="paraquem-item">Já reconhecem o potencial da IA e querem aplicar com estratégia</div>
+        <div class="paraquem-item">Estão crescendo e sentem a operação ficando mais complexa</div>
+        <div class="paraquem-item">Buscam integração real entre áreas, sistemas e fluxos internos</div>
+        <div class="paraquem-item">Querem clareza sobre onde automatizar antes de investir tempo e energia</div>
+        <div class="paraquem-item">Desejam crescer com organização, eficiência e estrutura</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="section-tag">Próximo passo</div>
+  <h2>Estruturar automações com IA é uma<br><em>decisão estratégica.</em></h2>
+  <p>Se sua empresa está pronta para integrar tecnologia à operação de forma madura, vale a conversa.</p>
+  <a href="https://wa.me/5511971901020?text=Quero+agendar+uma+conversa+estrat%C3%A9gica+com+a+Newscale" class="btn-primary">Agendar conversa estratégica →</a>
+  <p class="cta-micro">Agenda limitada para o próximo ciclo.</p>
+</section>
+
+<!-- CONTATO BAR -->
+<div class="contato-bar">
+  <a href="https://wa.me/5511971901020" target="_blank">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    (11) 97190-1020
+  </a>
+  <a href="mailto:bruna@newscale.tech">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    bruna@newscale.tech
+  </a>
+  <a href="https://instagram.com/brusantanna.ai" target="_blank">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    @brusantanna.ai
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png"
+         alt="Newscale Consulting"
+         onerror="this.outerHTML='<span style=&quot;color:rgba(224,224,218,0.4);font-size:14px;letter-spacing:2px;&quot;>NEWSCALE</span>'">
+  </div>
+  <p>© 2025 Newscale Consulting. Todos os direitos reservados.</p>
+  <a href="https://wa.me/5511971901020" class="nav-cta" style="font-size:13px;padding:9px 20px;">Falar no WhatsApp →</a>
+</footer>
+
+</body>
+</html>
