@@ -175,57 +175,41 @@ footer a:hover{color:var(--terra-light)}
 
 <!-- 1. HERO -->
 <section class="hero" id="inicio">
-<div class="container hero-grid">
-  <div>
+<div class="container" style="position:relative;z-index:2;text-align:center;max-width:780px">
     <div class="hero-eyebrow"><span class="dot"></span> Consultoria de IA para empresas</div>
-    <h1>Sua equipe perde 20+ horas por semana em tarefas que <em>IA resolve em minutos.</em></h1>
-    <p class="hero-sub">Automa&ccedil;&atilde;o com intelig&ecirc;ncia artificial integrada ao seu CRM, ERP e WhatsApp. Sem trocar sistema. Sem complica&ccedil;&atilde;o. Sem equipe de TI.</p>
+    <h1>Todo mundo quer usar IA, mas quase ningu&eacute;m sabe <em>por onde come&ccedil;ar.</em></h1>
+    <p class="hero-sub" style="margin-left:auto;margin-right:auto">N&oacute;s implementamos intelig&ecirc;ncia artificial na sua opera&ccedil;&atilde;o &mdash; integrada ao CRM, ERP e WhatsApp que voc&ecirc; j&aacute; usa. Sem trocar sistema. Sem complica&ccedil;&atilde;o. Sem equipe de TI.</p>
     <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="hero-cta">
       Agendar diagn&oacute;stico gratuito
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
-  </div>
-  <div class="hero-flow">
-    <div class="flow-box">
-      <div class="flow-step"><div class="flow-icon input">&#x1F4E5;</div><div><div class="flow-label">Input</div><div class="flow-text">Dados, mensagens, documentos</div></div></div>
-      <div class="flow-arrow">&darr;</div>
-      <div class="flow-step"><div class="flow-icon ai">&#x1F9E0;</div><div><div class="flow-label">Agente de IA</div><div class="flow-text">Analisa, decide e executa</div></div></div>
-      <div class="flow-arrow">&darr;</div>
-      <div class="flow-step"><div class="flow-icon output">&#x2705;</div><div><div class="flow-label">Resultado</div><div class="flow-text">Relat&oacute;rio, resposta, a&ccedil;&atilde;o completa</div></div></div>
-    </div>
-  </div>
 </div>
 </section>
 
-<!-- 2. PROBLEMA -->
-<section class="problema" id="problema">
+<!-- 2. O QUE FAZEMOS -->
+<section class="servicos" id="servicos" style="padding:100px 0;background:var(--white)">
 <div class="container">
-  <div class="reveal">
-    <div class="section-tag">O custo invis&iacute;vel</div>
-    <h2 class="section-title">O que custa N&Atilde;O automatizar</h2>
-    <p class="section-sub">Antes de mostrar a solu&ccedil;&atilde;o, veja o problema de verdade &mdash; em reais e horas.</p>
+  <div class="reveal" style="text-align:center">
+    <div class="section-tag">Nossos servi&ccedil;os</div>
+    <h2 class="section-title">O que fazemos na pr&aacute;tica</h2>
+    <p class="section-sub" style="margin-left:auto;margin-right:auto">Cada empresa tem um contexto diferente. Por isso, come&ccedil;amos sempre pela conversa &mdash; n&atilde;o pelo pacote.</p>
   </div>
-  <div class="cost-grid">
-    <div class="cost-card reveal">
-      <div class="cost-number">30 min</div>
-      <div class="cost-label">por relat&oacute;rio feito &agrave; m&atilde;o &mdash; quando IA faz por R$0,09</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px" class="reveal">
+    <div style="background:var(--cream-light);border-radius:16px;padding:40px;border:1px solid rgba(20,55,60,.05);transition:all .4s ease" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(20,55,60,.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+      <div style="width:48px;height:48px;border-radius:10px;background:rgba(176,110,74,.12);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:20px">&#x1F50D;</div>
+      <h3 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;margin-bottom:12px">Consultoria em Intelig&ecirc;ncia Artificial</h3>
+      <p style="font-size:.95rem;color:var(--sage);line-height:1.7">Analisamos sua opera&ccedil;&atilde;o, identificamos o que vale a pena automatizar e entregamos um plano claro para aplicar IA de forma pr&aacute;tica e estrat&eacute;gica.</p>
     </div>
-    <div class="cost-card reveal">
-      <div class="cost-number">5h/semana</div>
-      <div class="cost-label">respondendo as mesmas perguntas no WhatsApp &mdash; todo dia, o dia inteiro</div>
+    <div style="background:var(--cream-light);border-radius:16px;padding:40px;border:1px solid rgba(20,55,60,.05);transition:all .4s ease" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(20,55,60,.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+      <div style="width:48px;height:48px;border-radius:10px;background:rgba(176,110,74,.12);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:20px">&#x2699;&#xFE0F;</div>
+      <h3 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;margin-bottom:12px">Automa&ccedil;&atilde;o de Processos com IA</h3>
+      <p style="font-size:.95rem;color:var(--sage);line-height:1.7">Conectamos sistemas, eliminamos tarefas manuais e criamos fluxos inteligentes que economizam tempo e aumentam a efici&ecirc;ncia da sua equipe.</p>
     </div>
-    <div class="cost-card reveal">
-      <div class="cost-number">R$8-15k</div>
-      <div class="cost-label">por m&ecirc;s em sal&aacute;rio de quem faz trabalho repetitivo que IA automatiza</div>
+    <div style="background:var(--cream-light);border-radius:16px;padding:40px;border:1px solid rgba(20,55,60,.05);transition:all .4s ease" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(20,55,60,.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+      <div style="width:48px;height:48px;border-radius:10px;background:rgba(176,110,74,.12);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:20px">&#x1F4AC;</div>
+      <h3 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;margin-bottom:12px">Agentes IA para Atendimento</h3>
+      <p style="font-size:.95rem;color:var(--sage);line-height:1.7">Criamos agentes IA que respondem com naturalidade e intelig&ecirc;ncia nos seus canais, reduzindo a carga da equipe e melhorando a experi&ecirc;ncia do cliente.</p>
     </div>
-    <div class="cost-card reveal">
-      <div class="cost-number">Leads frios</div>
-      <div class="cost-label">que chegam fora do hor&aacute;rio e ficam sem resposta at&eacute; o dia seguinte</div>
-    </div>
-  </div>
-  <div class="cost-bottom reveal">
-    <div class="big">Quanto disso est&aacute; acontecendo no seu neg&oacute;cio agora?</div>
-    <p>A maioria dos empres&aacute;rios s&oacute; descobre quando faz as contas.</p>
   </div>
 </div>
 </section>
@@ -459,7 +443,40 @@ footer a:hover{color:var(--terra-light)}
 </div>
 </section>
 
-<!-- 7. CTA FINAL -->
+<!-- PROBLEMA (moved near end) -->
+<section class="problema" id="problema" style="padding:100px 0;background:var(--cream-light)">
+<div class="container">
+  <div class="reveal" style="text-align:center">
+    <div class="section-tag">O custo invis&iacute;vel</div>
+    <h2 class="section-title">O que custa N&Atilde;O automatizar</h2>
+    <p class="section-sub" style="margin-left:auto;margin-right:auto">Antes de falar em investimento, olha o que voc&ecirc; j&aacute; est&aacute; gastando sem perceber.</p>
+  </div>
+  <div class="cost-grid">
+    <div class="cost-card reveal">
+      <div class="cost-number">30 min</div>
+      <div class="cost-label">por relat&oacute;rio feito &agrave; m&atilde;o &mdash; quando IA faz por R$0,09</div>
+    </div>
+    <div class="cost-card reveal">
+      <div class="cost-number">5h/semana</div>
+      <div class="cost-label">respondendo as mesmas perguntas no WhatsApp &mdash; todo dia, o dia inteiro</div>
+    </div>
+    <div class="cost-card reveal">
+      <div class="cost-number">R$8-15k</div>
+      <div class="cost-label">por m&ecirc;s em sal&aacute;rio de quem faz trabalho repetitivo que IA automatiza</div>
+    </div>
+    <div class="cost-card reveal">
+      <div class="cost-number">Leads frios</div>
+      <div class="cost-label">que chegam fora do hor&aacute;rio e ficam sem resposta at&eacute; o dia seguinte</div>
+    </div>
+  </div>
+  <div class="cost-bottom reveal">
+    <div class="big">Quanto disso est&aacute; acontecendo no seu neg&oacute;cio agora?</div>
+    <p>A maioria dos empres&aacute;rios s&oacute; descobre quando faz as contas.</p>
+  </div>
+</div>
+</section>
+
+<!-- CTA FINAL -->
 <section class="cta-final" id="contato">
 <div class="container">
   <h2>Quer saber quanto sua opera&ccedil;&atilde;o est&aacute; perdendo?</h2>
