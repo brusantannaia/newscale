@@ -3,642 +3,500 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Newscale — Inteligência Artificial para Negócios em Expansão</title>
-<meta name="description" content="Consultoria estratégica com implementação completa de IA. Integramos automações à sua operação — conectadas aos sistemas que você já usa. Newscale Consulting.">
+<title>NewScale Consulting — Implementação de IA para Empresas</title>
+<meta name="description" content="Automação com Inteligência Artificial integrada ao seu CRM, ERP e WhatsApp. Diagnóstico gratuito em 30 minutos.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --verde-escuro:  #14373C;
-    --verde-medio:   #435D51;
-    --terracota:     #7E5138;
-    --dourado:       #A38362;
-    --creme:         #E0E0DA;
-    --branco:        #FFFFFF;
-    --texto-escuro:  #1A1A1A;
-    --borda:         rgba(20,55,60,0.12);
-  }
+:root{--ink:#14373C;--ink-light:#1e4a51;--sage:#435D51;--terra:#B06E4A;--terra-light:#c4835e;--sand:#A38362;--cream:#E8E6E0;--cream-light:#F4F3EF;--white:#FAFAF8;--accent:#D0C4B0;--font-display:'Cormorant Garamond',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.container{max-width:1140px;margin:0 auto;padding:0 24px}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--creme);
-    color: var(--texto-escuro);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 17px;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;transition:all .4s ease}
+.nav.scrolled{background:rgba(20,55,60,.97);backdrop-filter:blur(12px);padding:12px 0;box-shadow:0 2px 30px rgba(0,0,0,.15)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:#fff;letter-spacing:.02em}
+.nav-logo span{color:var(--accent)}
+.nav-cta{background:var(--terra);color:#fff;padding:10px 24px;border-radius:6px;font-size:.85rem;font-weight:600;transition:all .3s ease;border:none;cursor:pointer}
+.nav-cta:hover{background:var(--terra-light);transform:translateY(-1px)}
 
-  /* ─── NAV ─── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 18px 64px;
-    background: rgba(224,224,218,0.94);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--borda);
-  }
-  .nav-logo img { height: 48px; width: auto; display: block; }
-  .nav-cta {
-    background: var(--verde-escuro); color: var(--creme);
-    padding: 11px 28px; border-radius: 4px;
-    text-decoration: none; font-size: 14px; font-weight: 500;
-    letter-spacing: 0.3px;
-    transition: background 0.2s;
-  }
-  .nav-cta:hover { background: var(--verde-medio); }
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(165deg,var(--ink) 0%,#1a4950 40%,var(--sage) 100%);position:relative;overflow:hidden;padding:120px 0 80px}
+.hero::before{content:none}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;position:relative;z-index:2}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(176,110,74,.15);border:1px solid rgba(176,110,74,.3);border-radius:40px;padding:6px 18px;font-size:.8rem;color:var(--terra-light);font-weight:500;margin-bottom:28px;letter-spacing:.05em;text-transform:uppercase}
+.hero-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--terra);animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-family:var(--font-display);font-size:clamp(2.4rem,5vw,3.6rem);font-weight:700;color:#fff;line-height:1.15;margin-bottom:24px}
+.hero h1 em{font-style:normal;color:var(--terra-light)}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:40px;max-width:540px;font-weight:300}
+.hero-proof{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:24px 28px;margin-bottom:36px;max-width:540px}
+.hero-proof .stat{font-family:var(--font-display);font-size:2.4rem;font-weight:700;color:var(--terra-light);line-height:1}
+.hero-proof .stat-label{font-size:.9rem;color:rgba(255,255,255,.6);margin-top:4px}
+.hero-proof .stat-source{font-size:.75rem;color:rgba(255,255,255,.35);margin-top:8px}
+.hero-cta{display:inline-flex;align-items:center;gap:10px;background:var(--terra);color:#fff;padding:16px 36px;border-radius:8px;font-weight:600;font-size:1.05rem;transition:all .3s ease;box-shadow:0 4px 20px rgba(176,110,74,.35)}
+.hero-cta:hover{background:var(--terra-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(176,110,74,.45)}
+.hero-cta svg{transition:transform .3s}
+.hero-cta:hover svg{transform:translateX(3px)}
+.hero-flow{position:relative}
+.flow-box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:32px;backdrop-filter:blur(8px)}
+.flow-step{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.flow-step:last-child{border-bottom:none}
+.flow-icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.flow-icon.input{background:rgba(176,110,74,.15);color:var(--terra-light)}
+.flow-icon.ai{background:rgba(176,110,74,.2);color:var(--terra-light)}
+.flow-icon.output{background:rgba(255,255,255,.1);color:#fff}
+.flow-label{font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:2px;text-transform:uppercase;letter-spacing:.05em;font-weight:500}
+.flow-text{font-size:1rem;color:#fff;font-weight:500}
+.flow-arrow{text-align:center;color:rgba(255,255,255,.2);font-size:1.4rem;padding:4px 0}
 
-  /* ─── HERO ─── */
-  .hero {
-    min-height: 100vh;
-    display: flex; flex-direction: column; justify-content: center;
-    padding: 148px 64px 90px;
-    background: var(--verde-escuro);
-    position: relative; overflow: hidden;
-  }
-  .hero::after {
-    content: '';
-    position: absolute; top: 0; right: 0; bottom: 0;
-    width: 40%;
-    background: linear-gradient(135deg, transparent 0%, rgba(163,131,98,0.08) 100%);
-    pointer-events: none;
-  }
-  .hero-eyebrow {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12px; font-weight: 500; letter-spacing: 3px;
-    text-transform: uppercase; color: var(--dourado);
-    margin-bottom: 28px;
-  }
-  .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(48px, 6vw, 86px);
-    font-weight: 500;
-    line-height: 1.05; letter-spacing: -1px;
-    max-width: 820px; margin-bottom: 28px;
-    color: var(--creme);
-  }
-  .hero h1 em { font-style: italic; color: var(--dourado); }
-  .hero-sub {
-    font-size: 18px; color: rgba(224,224,218,0.62);
-    max-width: 560px; line-height: 1.75; margin-bottom: 52px;
-  }
-  .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
-  .btn-primary {
-    background: var(--dourado); color: var(--verde-escuro);
-    padding: 16px 36px; border-radius: 4px;
-    text-decoration: none; font-size: 15px; font-weight: 600;
-    letter-spacing: 0.3px;
-    transition: all 0.2s;
-    display: inline-flex; align-items: center; gap: 10px;
-  }
-  .btn-primary:hover { background: var(--creme); }
-  .hero-divider {
-    margin-top: 80px;
-    display: flex; gap: 48px; align-items: center;
-    border-top: 1px solid rgba(224,224,218,0.12);
-    padding-top: 40px;
-  }
-  .hero-pill { display: flex; flex-direction: column; gap: 4px; }
-  .pill-top { font-size: 13px; font-weight: 500; color: var(--creme); }
-  .pill-bot { font-size: 12px; color: rgba(224,224,218,0.45); }
-  .pill-sep { width: 1px; height: 32px; background: rgba(224,224,218,0.15); }
+/* PROBLEMA */
+.problema{padding:100px 0;background:var(--white)}
+.section-tag{display:inline-block;font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;font-weight:600;color:var(--terra);margin-bottom:16px}
+.section-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,2.8rem);font-weight:700;line-height:1.2;margin-bottom:16px}
+.section-sub{font-size:1.05rem;color:var(--sage);line-height:1.7;max-width:600px;margin-bottom:48px;font-weight:300}
+.cost-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
+.cost-card{background:var(--cream-light);border-radius:14px;padding:32px;border:1px solid rgba(20,55,60,.05);transition:all .4s ease;position:relative;overflow:hidden}
+.cost-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(20,55,60,.08)}
+.cost-card::after{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--terra);border-radius:0 4px 4px 0}
+.cost-number{font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--ink);margin-bottom:4px}
+.cost-label{font-size:.95rem;color:var(--sage);line-height:1.5}
+.cost-bottom{margin-top:48px;text-align:center;padding:28px;background:var(--ink);border-radius:14px;color:#fff}
+.cost-bottom .big{font-family:var(--font-display);font-size:1.8rem;font-weight:700;margin-bottom:4px}
+.cost-bottom p{font-size:.95rem;color:rgba(255,255,255,.6);font-weight:300}
 
-  /* ─── SEÇÕES ─── */
-  section { padding: 100px 64px; }
-  .section-tag {
-    font-size: 11px; font-weight: 600; letter-spacing: 3px;
-    text-transform: uppercase; color: var(--dourado);
-    margin-bottom: 18px;
-  }
-  h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(34px, 4.5vw, 58px);
-    font-weight: 500;
-    line-height: 1.08; letter-spacing: -0.5px;
-    margin-bottom: 20px;
-  }
-  h2 em { font-style: italic; color: var(--verde-medio); }
-  h2.light { color: var(--creme); }
-  h2.light em { color: var(--dourado); }
+/* SOLUCAO */
+.solucao{padding:100px 0;background:var(--cream-light)}
+.metodo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:48px}
+.metodo-step{text-align:center;position:relative;padding:32px 16px}
+.metodo-num{width:44px;height:44px;border-radius:50%;background:var(--terra);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;margin:0 auto 16px}
+.metodo-name{font-family:var(--font-display);font-size:1.3rem;font-weight:700;margin-bottom:8px}
+.metodo-desc{font-size:.85rem;color:var(--sage);line-height:1.6}
+.metodo-step:not(:last-child)::after{content:'\2192';position:absolute;right:-16px;top:44px;font-size:1.4rem;color:var(--sand);font-weight:300}
+.solucao-note{text-align:center;font-family:var(--font-display);font-size:1.3rem;font-style:italic;color:var(--sage);max-width:600px;margin:0 auto;line-height:1.6}
 
-  /* CONTEXTO */
-  .contexto { background: var(--verde-escuro); }
-  .contexto-inner {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
-  }
-  .contexto-left p {
-    font-size: 19px; color: rgba(224,224,218,0.65);
-    line-height: 1.85; margin-bottom: 28px;
-  }
-  .contexto-left p strong { color: rgba(224,224,218,0.9); font-weight: 500; }
-  .contexto-left p.destaque {
-    font-size: 17px; color: rgba(224,224,218,0.5);
-    border-left: 3px solid var(--dourado);
-    padding-left: 20px; margin-top: 32px;
-  }
-  .contexto-right { display: flex; flex-direction: column; gap: 2px; }
-  .stat-item {
-    padding: 28px 32px;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(224,224,218,0.08);
-    border-left: 3px solid var(--dourado);
-  }
-  .stat-item p { font-size: 15px; color: rgba(224,224,218,0.55); line-height: 1.65; }
-  .stat-item strong { color: rgba(224,224,218,0.85); font-weight: 500; }
+/* CASES */
+.cases{padding:100px 0;background:var(--white)}
+.cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.case-card{background:var(--ink);border-radius:16px;padding:36px;color:#fff;position:relative;overflow:hidden;transition:all .4s ease}
+.case-card:hover{transform:translateY(-4px);box-shadow:0 16px 50px rgba(20,55,60,.25)}
+.case-badge{display:inline-block;background:rgba(176,110,74,.15);color:var(--terra-light);font-size:.7rem;font-weight:600;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px}
+.case-badge.pending{background:rgba(255,255,255,.1);color:rgba(255,255,255,.5)}
+.case-title{font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:6px}
+.case-sector{font-size:.8rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px}
+.case-block{margin-bottom:16px}
+.case-block-label{font-size:.7rem;color:var(--terra-light);text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:6px}
+.case-block p{font-size:.9rem;color:rgba(255,255,255,.75);line-height:1.6}
+.case-result{background:rgba(176,110,74,.1);border:1px solid rgba(176,110,74,.2);border-radius:10px;padding:16px 20px;margin-top:20px}
+.case-result .big{font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--terra-light)}
+.case-result .small{font-size:.8rem;color:rgba(255,255,255,.5);margin-top:2px}
+.case-techs{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.case-tech{font-size:.7rem;background:rgba(255,255,255,.08);color:rgba(255,255,255,.5);padding:3px 10px;border-radius:20px}
 
-  /* O QUE FAZEMOS */
-  .oque { background: var(--creme); }
-  .oque-intro {
-    max-width: 680px; font-size: 18px; color: rgba(26,26,26,0.58);
-    line-height: 1.8; margin-top: 18px; margin-bottom: 56px;
-  }
-  .oque-intro strong { color: var(--texto-escuro); }
-  .oque-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-  .oque-bloco { padding: 52px 48px; }
-  .oque-bloco.a { background: var(--verde-escuro); }
-  .oque-bloco.b { background: var(--verde-medio); }
-  .oque-bloco h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px; font-weight: 500; color: var(--creme);
-    margin-bottom: 16px; letter-spacing: -0.3px;
-  }
-  .oque-bloco p { font-size: 15px; color: rgba(224,224,218,0.62); line-height: 1.8; }
-  .oque-bloco p + p { margin-top: 12px; }
-  .oque-note {
-    margin-top: 48px; padding: 32px 40px;
-    background: var(--verde-escuro); color: rgba(224,224,218,0.65);
-    font-size: 17px; line-height: 1.7;
-  }
-  .oque-note strong { color: var(--creme); }
+/* QUEM SOMOS */
+.quem{padding:100px 0;background:var(--cream-light)}
+.quem-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:40px}
+.quem-card{background:var(--white);border-radius:16px;padding:40px;border:1px solid rgba(20,55,60,.06)}
+.quem-photo{width:80px;height:80px;border-radius:50%;background:var(--cream);margin-bottom:20px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:var(--sage);overflow:hidden}
+.quem-photo img{width:100%;height:100%;object-fit:cover}
+.quem-name{font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:2px}
+.quem-role{font-size:.85rem;color:var(--terra);font-weight:600;margin-bottom:16px}
+.quem-bio{font-size:.9rem;color:var(--sage);line-height:1.7;margin-bottom:16px}
+.quem-tags{display:flex;flex-wrap:wrap;gap:6px}
+.quem-tag{font-size:.7rem;background:var(--cream);color:var(--sage);padding:4px 10px;border-radius:20px;font-weight:500}
+.quem-quote{font-family:var(--font-display);font-size:1.05rem;font-style:italic;color:var(--ink);border-left:3px solid var(--terra);padding-left:16px;margin-top:16px;line-height:1.5}
+.quem-team{text-align:center;font-size:1rem;color:var(--sage);padding:24px;background:var(--white);border-radius:12px;border:1px solid rgba(20,55,60,.06)}
 
-  /* MÉTODO */
-  .metodo { background: var(--creme); }
-  .metodo-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 52px; }
-  .metodo-step {
-    padding: 48px 32px;
-    border: 1px solid var(--borda);
-    background: var(--branco);
-    transition: border-color 0.2s, background 0.2s;
-  }
-  .metodo-step:hover { border-color: var(--dourado); background: var(--creme); }
-  .step-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 52px; font-weight: 400; color: var(--dourado);
-    display: block; margin-bottom: 20px; line-height: 1;
-  }
-  .metodo-step h3 { font-size: 17px; font-weight: 600; color: var(--verde-escuro); margin-bottom: 12px; }
-  .metodo-step p { font-size: 14px; color: rgba(26,26,26,0.55); line-height: 1.7; }
+/* COMO FUNCIONA */
+.como{padding:100px 0;background:var(--white)}
+.timeline{max-width:700px;margin:0 auto 48px;position:relative}
+.timeline::before{content:'';position:absolute;left:23px;top:20px;bottom:20px;width:2px;background:linear-gradient(to bottom,var(--terra),var(--sand))}
+.tl-item{display:flex;gap:24px;margin-bottom:40px;position:relative}
+.tl-dot{width:48px;height:48px;border-radius:50%;background:var(--terra);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;z-index:2;font-size:.95rem}
+.tl-content h3{font-family:var(--font-display);font-size:1.3rem;font-weight:700;margin-bottom:4px}
+.tl-content .tl-detail{font-size:.9rem;color:var(--sage);line-height:1.6}
+.tl-content .tl-meta{font-size:.8rem;color:var(--terra);font-weight:600;margin-bottom:4px}
+.invest-box{max-width:700px;margin:0 auto;background:var(--ink);border-radius:14px;padding:32px;color:#fff;text-align:center}
+.invest-box .invest-title{font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:8px}
+.invest-box p{font-size:.95rem;color:rgba(255,255,255,.6);line-height:1.6;font-weight:300}
 
-  /* IMPACTO */
-  .impacto { background: var(--verde-medio); }
-  .impacto-intro {
-    max-width: 540px; font-size: 17px; color: rgba(224,224,218,0.58);
-    line-height: 1.75; margin-top: 16px; margin-bottom: 52px;
-  }
-  .impacto-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-  .impacto-item {
-    padding: 32px 30px;
-    background: rgba(20,55,60,0.3);
-    border: 1px solid rgba(224,224,218,0.08);
-    transition: background 0.2s;
-  }
-  .impacto-item:hover { background: rgba(20,55,60,0.5); }
-  .impacto-item h3 { font-size: 15px; font-weight: 600; color: var(--creme); margin-bottom: 10px; }
-  .impacto-item p { font-size: 13px; color: rgba(224,224,218,0.5); line-height: 1.65; }
-  .impacto-note {
-    margin-top: 40px; font-size: 14px; font-style: italic;
-    color: rgba(224,224,218,0.35);
-  }
+/* CTA FINAL */
+.cta-final{padding:100px 0;background:linear-gradient(165deg,var(--ink) 0%,var(--sage) 100%);text-align:center;position:relative;overflow:hidden}
+.cta-final::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='1.5' fill='%23ffffff' fill-opacity='0.04'/%3E%3C/svg%3E")}
+.cta-final *{position:relative;z-index:2}
+.cta-final h2{font-family:var(--font-display);font-size:clamp(2rem,4vw,2.8rem);font-weight:700;color:#fff;margin-bottom:16px;line-height:1.2}
+.cta-final .sub{font-size:1.1rem;color:rgba(255,255,255,.65);max-width:550px;margin:0 auto 40px;line-height:1.7;font-weight:300}
+.cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--terra);color:#fff;padding:18px 44px;border-radius:8px;font-weight:600;font-size:1.1rem;transition:all .3s ease;box-shadow:0 6px 30px rgba(176,110,74,.4)}
+.cta-btn:hover{background:var(--terra-light);transform:translateY(-3px);box-shadow:0 10px 40px rgba(176,110,74,.5)}
+.cta-sectors{display:flex;justify-content:center;gap:24px;margin-top:40px;flex-wrap:wrap}
+.cta-sector{font-size:.8rem;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:6px}
+.cta-limit{margin-top:24px;font-size:.85rem;color:rgba(255,255,255,.35);font-style:italic}
 
-  /* EXEMPLOS */
-  .exemplos { background: var(--creme); }
-  .exemplos-intro {
-    font-size: 17px; color: rgba(26,26,26,0.55);
-    max-width: 560px; line-height: 1.75; margin-top: 14px; margin-bottom: 48px;
-  }
-  .exemplos-list {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
-    margin-bottom: 40px;
-  }
-  .exemplo-item {
-    padding: 28px 32px;
-    background: var(--branco);
-    border: 1px solid var(--borda);
-    border-left: 3px solid var(--dourado);
-    font-size: 15px; color: rgba(26,26,26,0.65); line-height: 1.6;
-    transition: border-color 0.2s;
-  }
-  .exemplo-item:hover { border-left-color: var(--verde-medio); }
-  .exemplos-note {
-    font-size: 14px; font-style: italic;
-    color: rgba(26,26,26,0.38);
-  }
+/* FOOTER */
+footer{background:var(--ink);padding:40px 0;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
+footer p{font-size:.8rem;color:rgba(255,255,255,.3)}
+footer a{color:rgba(255,255,255,.45);transition:color .3s}
+footer a:hover{color:var(--terra-light)}
 
-  /* CASES */
-  .cases { background: var(--verde-escuro); }
-  .cases-intro {
-    font-size: 17px; color: rgba(224,224,218,0.5);
-    max-width: 480px; line-height: 1.7; margin-top: 14px; margin-bottom: 52px;
-  }
-  .cases-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
-  .case-card {
-    padding: 48px 44px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(224,224,218,0.08);
-    transition: border-color 0.2s;
-  }
-  .case-card:hover { border-color: rgba(163,131,98,0.4); }
-  .case-label {
-    font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
-    text-transform: uppercase; color: var(--dourado);
-    margin-bottom: 18px; display: block;
-  }
-  .case-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px; font-weight: 500; color: var(--creme);
-    margin-bottom: 16px;
-  }
-  .case-card p { font-size: 15px; color: rgba(224,224,218,0.48); line-height: 1.8; margin-bottom: 28px; }
-  .case-placeholder {
-    font-size: 13px; color: rgba(224,224,218,0.2);
-    font-style: italic; padding: 16px 0;
-    border-top: 1px solid rgba(224,224,218,0.07);
-  }
-  .cases-evolucao {
-    margin-top: 40px; font-size: 13px; font-style: italic;
-    color: rgba(224,224,218,0.25);
-  }
-
-  /* SOBRE */
-  .sobre { background: var(--creme); }
-  .sobre-inner { display: grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: start; }
-  .sobre-img-wrap {
-    border-radius: 4px; overflow: hidden;
-    aspect-ratio: 4/5; background: var(--verde-medio);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .sobre-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-  .sobre-text .section-tag { margin-bottom: 20px; }
-  .sobre-text h2 { color: var(--verde-escuro); margin-bottom: 28px; }
-  .sobre-text h2 em { color: var(--dourado); }
-  .sobre-text p { font-size: 16px; color: rgba(26,26,26,0.58); line-height: 1.85; margin-bottom: 18px; }
-  .sobre-text p strong { color: var(--texto-escuro); font-weight: 500; }
-  .sobre-quote {
-    border-left: 3px solid var(--dourado); padding-left: 24px;
-    font-family: 'Cormorant Garamond', serif; font-style: italic;
-    font-size: 21px; font-weight: 400;
-    color: rgba(26,26,26,0.6); margin-top: 36px; line-height: 1.5;
-  }
-
-  /* PARA QUEM */
-  .paraquem { background: var(--terracota); }
-  .paraquem-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-  .paraquem h2 { color: var(--creme); }
-  .paraquem h2 em { color: rgba(224,224,218,0.7); font-style: italic; }
-  .paraquem-list { margin-top: 0; }
-  .paraquem-item {
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(224,224,218,0.1);
-    font-size: 16px; color: rgba(224,224,218,0.72);
-    display: flex; align-items: flex-start; gap: 18px;
-    line-height: 1.5;
-  }
-  .paraquem-item::before { content: '→'; color: var(--dourado); flex-shrink: 0; margin-top: 1px; }
-  .paraquem-note {
-    margin-top: 36px; font-size: 14px;
-    color: rgba(224,224,218,0.38); font-style: italic;
-  }
-
-  /* CTA FINAL */
-  .cta-final {
-    text-align: center; padding: 120px 64px;
-    background: var(--verde-escuro); position: relative; overflow: hidden;
-  }
-  .cta-final::before {
-    content: '';
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 600px; height: 600px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(163,131,98,0.12) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .cta-final .section-tag { color: var(--dourado); margin-bottom: 20px; }
-  .cta-final h2 { max-width: 600px; margin: 0 auto 22px; color: var(--creme); }
-  .cta-final h2 em { color: var(--dourado); }
-  .cta-final p { font-size: 18px; color: rgba(224,224,218,0.5); max-width: 500px; margin: 0 auto 44px; line-height: 1.75; }
-  .cta-final .btn-primary { font-size: 15px; padding: 18px 44px; }
-  .cta-micro { margin-top: 16px; font-size: 12px; color: rgba(224,224,218,0.25); letter-spacing: 0.5px; }
-
-  /* CONTATO BAR */
-  .contato-bar {
-    background: var(--dourado);
-    padding: 28px 64px;
-    display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap;
-  }
-  .contato-bar a {
-    color: var(--verde-escuro); text-decoration: none;
-    font-size: 14px; font-weight: 500;
-    display: flex; align-items: center; gap: 8px;
-    transition: opacity 0.2s;
-  }
-  .contato-bar a:hover { opacity: 0.7; }
-
-  /* FOOTER */
-  footer {
-    background: var(--texto-escuro); color: var(--creme);
-    padding: 40px 64px;
-    display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 20px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
-  .footer-logo img { height: 36px; width: auto; filter: brightness(0) invert(1) opacity(0.6); }
-  footer p { font-size: 13px; color: rgba(224,224,218,0.3); }
-
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .hero-eyebrow { animation: fadeUp 0.6s ease both; }
-  .hero h1      { animation: fadeUp 0.7s 0.1s ease both; }
-  .hero-sub     { animation: fadeUp 0.7s 0.2s ease both; }
-  .hero-actions { animation: fadeUp 0.7s 0.3s ease both; }
-  .hero-divider { animation: fadeUp 0.7s 0.42s ease both; }
-
-  /* RESPONSIVE */
-  @media (max-width: 960px) {
-    nav { padding: 16px 24px; }
-    section { padding: 72px 24px; }
-    .hero { padding: 120px 24px 64px; }
-    .contexto-inner, .sobre-inner, .paraquem-inner { grid-template-columns: 1fr; gap: 40px; }
-    .oque-grid, .cases-grid, .exemplos-list { grid-template-columns: 1fr; }
-    .metodo-steps { grid-template-columns: 1fr 1fr; }
-    .impacto-grid { grid-template-columns: 1fr 1fr; }
-    .hero-divider { flex-wrap: wrap; gap: 20px; }
-    .pill-sep { display: none; }
-    footer, .contato-bar { flex-direction: column; text-align: center; padding: 32px 24px; }
-  }
-  @media (max-width: 600px) {
-    .metodo-steps, .impacto-grid { grid-template-columns: 1fr; }
-    .nav-logo img { height: 36px; }
-  }
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;text-align:center}
+  .hero-sub,.hero-proof{margin-left:auto;margin-right:auto}
+  .hero-flow{display:none}
+  .metodo-grid{grid-template-columns:1fr 1fr;gap:16px}
+  .metodo-step:not(:last-child)::after{display:none}
+  .quem-grid{grid-template-columns:1fr}
+  .cases-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .metodo-grid{grid-template-columns:1fr}
+  .hero h1{font-size:2rem}
+  .section-title{font-size:1.8rem}
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
-  <div class="nav-logo">
-    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png"
-         alt="Newscale Consulting"
-         onerror="this.outerHTML='<span style=&quot;font-family:serif;font-size:20px;color:#14373C;letter-spacing:-0.5px;&quot;>NEWSCALE</span>'">
-  </div>
-  <a href="https://wa.me/5511971901020?text=Quero+agendar+uma+conversa+estrat%C3%A9gica" class="nav-cta">Conversa estratégica →</a>
+<nav class="nav" id="nav">
+<div class="container nav-inner">
+  <div class="nav-logo">New<span>Scale</span></div>
+  <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="nav-cta">Agendar diagn&oacute;stico</a>
+</div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-eyebrow">Newscale Consulting</div>
-  <h1>Inteligência Artificial para<br><em>negócios em expansão.</em></h1>
-  <p class="hero-sub">
-    Operações manuais travam empresas em crescimento. Estruturamos automações com IA integradas à sua operação — conectadas aos sistemas que você já usa e ajustadas à realidade do seu time.
-  </p>
-  <div class="hero-actions">
-    <a href="https://wa.me/5511971901020?text=Quero+agendar+uma+conversa+estrat%C3%A9gica" class="btn-primary">Agendar conversa estratégica →</a>
+<!-- 1. HERO -->
+<section class="hero" id="inicio">
+<div class="container hero-grid">
+  <div>
+    <div class="hero-eyebrow"><span class="dot"></span> Consultoria de IA para empresas</div>
+    <h1>Sua equipe perde 20+ horas por semana em tarefas que <em>IA resolve em minutos.</em></h1>
+    <p class="hero-sub">Automa&ccedil;&atilde;o com intelig&ecirc;ncia artificial integrada ao seu CRM, ERP e WhatsApp. Sem trocar sistema. Sem complica&ccedil;&atilde;o. Sem equipe de TI.</p>
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="hero-cta">
+      Agendar diagn&oacute;stico gratuito
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
   </div>
-  <div class="hero-divider">
-    <div class="hero-pill">
-      <span class="pill-top">Integrado aos seus sistemas</span>
-      <span class="pill-bot">sem trocar o que já funciona</span>
-    </div>
-    <div class="pill-sep"></div>
-    <div class="hero-pill">
-      <span class="pill-top">Do diagnóstico à execução</span>
-      <span class="pill-bot">sem terceirizar a estratégia</span>
-    </div>
-    <div class="pill-sep"></div>
-    <div class="hero-pill">
-      <span class="pill-top">Poucas empresas por ciclo</span>
-      <span class="pill-bot">profundidade real em cada projeto</span>
+  <div class="hero-flow">
+    <div class="flow-box">
+      <div class="flow-step"><div class="flow-icon input">&#x1F4E5;</div><div><div class="flow-label">Input</div><div class="flow-text">Dados, mensagens, documentos</div></div></div>
+      <div class="flow-arrow">&darr;</div>
+      <div class="flow-step"><div class="flow-icon ai">&#x1F9E0;</div><div><div class="flow-label">Agente de IA</div><div class="flow-text">Analisa, decide e executa</div></div></div>
+      <div class="flow-arrow">&darr;</div>
+      <div class="flow-step"><div class="flow-icon output">&#x2705;</div><div><div class="flow-label">Resultado</div><div class="flow-text">Relat&oacute;rio, resposta, a&ccedil;&atilde;o completa</div></div></div>
     </div>
   </div>
-</section>
-
-<!-- CONTEXTO -->
-<section class="contexto">
-  <div class="contexto-inner">
-    <div class="contexto-left">
-      <div class="section-tag">Contexto</div>
-      <h2 class="light">A maioria das empresas já entende que precisa de IA.<br><em>O desafio está na implementação.</em></h2>
-      <p>Quando a IA é aplicada sem arquitetura, surgem retrabalho, ruído e dependência técnica.</p>
-      <p class="destaque"><strong>Resultado consistente vem de integração, clareza de processo e execução bem feita.</strong></p>
-    </div>
-    <div class="contexto-right">
-      <div class="stat-item">
-        <p><strong>Automações isoladas não conversam entre si.</strong> Cada ferramenta opera no seu próprio silo — e o time continua fazendo a ponte manualmente.</p>
-      </div>
-      <div class="stat-item">
-        <p><strong>Processos continuam manuais nos bastidores.</strong> A operação real não mudou. Só ganhou mais uma camada de tecnologia por cima.</p>
-      </div>
-      <div class="stat-item">
-        <p><strong>O time segue sobrecarregado.</strong> Sistemas não integrados. Dados fragmentados. A escala não vem.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- O QUE FAZEMOS -->
-<section class="oque">
-  <div class="section-tag">O que fazemos</div>
-  <h2>Consultoria estratégica com<br><em>implementação completa.</em></h2>
-  <p class="oque-intro">
-    Entramos na empresa para entender como a operação realmente funciona. Mapeamos processos, identificamos gargalos e avaliamos as automações já existentes. A partir disso, desenhamos uma arquitetura de IA integrada aos seus sistemas atuais.
-  </p>
-  <div class="oque-grid">
-    <div class="oque-bloco a">
-      <h3>Diagnóstico e arquitetura</h3>
-      <p>CRM, ERP, WhatsApp, planilhas e fluxos internos — tudo mapeado antes de qualquer implementação. Nada genérico: cada arquitetura é construída para a realidade da empresa.</p>
-    </div>
-    <div class="oque-bloco b">
-      <h3>Implementação e integração</h3>
-      <p>Integrações via API, automações estruturadas, agentes personalizados e ajustes até que a operação funcione com fluidez.</p>
-      <p>Você não recebe apenas um diagnóstico. Recebe a operação reorganizada.</p>
-    </div>
-  </div>
-</section>
-
-<!-- MÉTODO -->
-<section class="metodo" id="metodo">
-  <div class="section-tag">Como atuamos</div>
-  <h2>Método <em>Newscale.</em></h2>
-  <div class="metodo-steps">
-    <div class="metodo-step">
-      <span class="step-num">01</span>
-      <h3>Diagnóstico estratégico</h3>
-      <p>Análise profunda da operação, metas e pontos de atrito.</p>
-    </div>
-    <div class="metodo-step">
-      <span class="step-num">02</span>
-      <h3>Arquitetura</h3>
-      <p>Desenho da estrutura de automação integrada aos sistemas existentes.</p>
-    </div>
-    <div class="metodo-step">
-      <span class="step-num">03</span>
-      <h3>Implementação</h3>
-      <p>Desenvolvimento técnico, integrações e validação prática.</p>
-    </div>
-    <div class="metodo-step">
-      <span class="step-num">04</span>
-      <h3>Evolução</h3>
-      <p>Ajustes contínuos e expansão para novas áreas conforme a empresa cresce.</p>
-    </div>
-  </div>
-</section>
-
-<!-- IMPACTO -->
-<section class="impacto">
-  <div class="section-tag">Onde a IA gera impacto</div>
-  <h2 class="light">Aplicações estratégicas<br><em>de IA na empresa.</em></h2>
-  <p class="impacto-intro">Cada projeto parte da realidade da empresa. A solução nunca é padrão.</p>
-  <div class="impacto-grid">
-    <div class="impacto-item">
-      <h3>Atendimento e qualificação de leads</h3>
-      <p>Automação do primeiro contato, triagem e qualificação integrada ao CRM.</p>
-    </div>
-    <div class="impacto-item">
-      <h3>Triagem e processos em RH</h3>
-      <p>Análise de perfil, geração de pareceres e fluxos de seleção automatizados.</p>
-    </div>
-    <div class="impacto-item">
-      <h3>Integração entre sistemas</h3>
-      <p>Conexão entre WhatsApp, CRM, ERP, planilhas e fluxos internos.</p>
-    </div>
-    <div class="impacto-item">
-      <h3>Automação de fluxos operacionais</h3>
-      <p>Aprovações, notificações, follow-ups e relatórios automáticos.</p>
-    </div>
-    <div class="impacto-item">
-      <h3>Estruturação de dados para decisão</h3>
-      <p>Organização e centralização de dados para suporte estratégico em tempo real.</p>
-    </div>
-    <div class="impacto-item">
-      <h3>Agentes personalizados</h3>
-      <p>Agentes treinados com a lógica, voz e critérios da empresa para operar com autonomia.</p>
-    </div>
-  </div>
-</section>
-
-<!-- EXEMPLOS -->
-<section class="exemplos">
-  <div class="section-tag">Exemplos de automações na prática</div>
-  <h2>O que já <em>estruturamos.</em></h2>
-  <p class="exemplos-intro">Alguns exemplos de aplicações que já implementamos ou implementamos com frequência — para dar clareza sobre o que é possível na prática.</p>
-  <div class="exemplos-list">
-    <div class="exemplo-item">Automação completa de atendimento via WhatsApp com qualificação automática e integração ao CRM</div>
-    <div class="exemplo-item">Triagem inteligente de candidatos com análise de perfil e geração automática de parecer</div>
-    <div class="exemplo-item">Geração automática de relatórios operacionais e financeiros</div>
-    <div class="exemplo-item">Roteirização de atendimento para equipes técnicas ou de enfermagem</div>
-    <div class="exemplo-item">Integração entre formulários, planilhas e sistemas internos para eliminar retrabalho</div>
-    <div class="exemplo-item">Fluxos de aprovação automatizados entre áreas</div>
-    <div class="exemplo-item">Follow-ups automáticos para leads, clientes ou pacientes</div>
-    <div class="exemplo-item">Organização e padronização de dados para suporte à decisão estratégica</div>
-  </div>
-  <p class="exemplos-note">Esses são exemplos. O ponto de partida sempre é a realidade da operação.</p>
-</section>
-
-<!-- CASES -->
-<section class="cases">
-  <div class="section-tag">Resultados recentes</div>
-  <h2 class="light">Projetos estruturais<br><em>já implementados.</em></h2>
-  <div class="cases-grid">
-    <div class="case-card">
-      <span class="case-label">Saúde</span>
-      <h3>Estrutura completa de IA para atendimento e gestão de pacientes</h3>
-      <p>Contexto, gargalo operacional identificado e arquitetura de automação implementada — do primeiro contato ao pós-consulta, com integração ao sistema de gestão existente.</p>
-      <div class="case-placeholder">Métricas e detalhamento em breve.</div>
-    </div>
-    <div class="case-card">
-      <span class="case-label">RH & Gestão de Pessoas</span>
-      <h3>Automação de triagem e processos internos de ponta a ponta</h3>
-      <p>Problema inicial, complexidade da operação e como a IA foi integrada ao fluxo existente — da triagem de candidatos ao acionamento do time humano.</p>
-      <div class="case-placeholder">Métricas e detalhamento em breve.</div>
-    </div>
-  </div>
-  <p class="cases-evolucao">Os cases podem evoluir para páginas próprias, fortalecendo autoridade e SEO.</p>
-</section>
-
-<!-- SOBRE -->
-<section class="sobre">
-  <div class="sobre-inner">
-    <div class="sobre-img-wrap">
-      <img src="" alt="Bruna Santanna" onerror="this.style.display='none'">
-    </div>
-    <div class="sobre-text">
-      <div class="section-tag">Liderança</div>
-      <h2>Estratégia conduzida por quem<br><em>já esteve na operação.</em></h2>
-      <p>Sou <strong>Bruna Santanna</strong>. Empresária há mais de 10 anos, com experiência prática em operação, crescimento e estruturação de negócios.</p>
-      <p>A execução técnica é apoiada por <strong>núcleo sênior especializado em arquitetura de sistemas e integrações complexas</strong>, garantindo robustez e profundidade em cada projeto.</p>
-      <p>Trabalhamos para que a Inteligência Artificial se torne parte da estrutura da empresa — não apenas uma ferramenta isolada.</p>
-      <div class="sobre-quote">"Eu implemento primeiro em mim. Só depois levo para o cliente."</div>
-    </div>
-  </div>
-</section>
-
-<!-- PARA QUEM -->
-<section class="paraquem">
-  <div class="paraquem-inner">
-    <div>
-      <div class="section-tag">Para quem é</div>
-      <h2>Atuamos com empresas<br><em>que estão prontas.</em></h2>
-      <p style="font-size:16px;color:rgba(224,224,218,0.5);margin-top:16px;line-height:1.75;">Atendemos poucas empresas por ciclo para garantir profundidade estratégica e acompanhamento próximo.</p>
-    </div>
-    <div>
-      <div class="paraquem-list">
-        <div class="paraquem-item">Já reconhecem o potencial da IA e querem aplicar com estratégia</div>
-        <div class="paraquem-item">Estão crescendo e sentem a operação ficando mais complexa</div>
-        <div class="paraquem-item">Buscam integração real entre áreas, sistemas e fluxos internos</div>
-        <div class="paraquem-item">Querem clareza sobre onde automatizar antes de investir tempo e energia</div>
-        <div class="paraquem-item">Desejam crescer com organização, eficiência e estrutura</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA FINAL -->
-<section class="cta-final">
-  <div class="section-tag">Próximo passo</div>
-  <h2>Estruturar automações com IA é uma<br><em>decisão estratégica.</em></h2>
-  <p>Se sua empresa está pronta para integrar tecnologia à operação de forma madura, vale a conversa.</p>
-  <a href="https://wa.me/5511971901020?text=Quero+agendar+uma+conversa+estrat%C3%A9gica+com+a+Newscale" class="btn-primary">Agendar conversa estratégica →</a>
-  <p class="cta-micro">Agenda limitada para o próximo ciclo.</p>
-</section>
-
-<!-- CONTATO BAR -->
-<div class="contato-bar">
-  <a href="https://wa.me/5511971901020" target="_blank">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    (11) 97190-1020
-  </a>
-  <a href="mailto:bruna@newscale.tech">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-    bruna@newscale.tech
-  </a>
-  <a href="https://instagram.com/brusantanna.ai" target="_blank">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-    @brusantanna.ai
-  </a>
 </div>
+</section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">
-    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png"
-         alt="Newscale Consulting"
-         onerror="this.outerHTML='<span style=&quot;color:rgba(224,224,218,0.4);font-size:14px;letter-spacing:2px;&quot;>NEWSCALE</span>'">
+<!-- 2. PROBLEMA -->
+<section class="problema" id="problema">
+<div class="container">
+  <div class="reveal">
+    <div class="section-tag">O custo invis&iacute;vel</div>
+    <h2 class="section-title">O que custa N&Atilde;O automatizar</h2>
+    <p class="section-sub">Antes de mostrar a solu&ccedil;&atilde;o, veja o problema de verdade &mdash; em reais e horas.</p>
   </div>
-  <p>© 2025 Newscale Consulting. Todos os direitos reservados.</p>
-  <a href="https://wa.me/5511971901020" class="nav-cta" style="font-size:13px;padding:9px 20px;">Falar no WhatsApp →</a>
+  <div class="cost-grid">
+    <div class="cost-card reveal">
+      <div class="cost-number">30 min</div>
+      <div class="cost-label">por relat&oacute;rio feito &agrave; m&atilde;o &mdash; quando IA faz por R$0,09</div>
+    </div>
+    <div class="cost-card reveal">
+      <div class="cost-number">5h/semana</div>
+      <div class="cost-label">respondendo as mesmas perguntas no WhatsApp &mdash; todo dia, o dia inteiro</div>
+    </div>
+    <div class="cost-card reveal">
+      <div class="cost-number">R$8-15k</div>
+      <div class="cost-label">por m&ecirc;s em sal&aacute;rio de quem faz trabalho repetitivo que IA automatiza</div>
+    </div>
+    <div class="cost-card reveal">
+      <div class="cost-number">Leads frios</div>
+      <div class="cost-label">que chegam fora do hor&aacute;rio e ficam sem resposta at&eacute; o dia seguinte</div>
+    </div>
+  </div>
+  <div class="cost-bottom reveal">
+    <div class="big">Quanto disso est&aacute; acontecendo no seu neg&oacute;cio agora?</div>
+    <p>A maioria dos empres&aacute;rios s&oacute; descobre quando faz as contas.</p>
+  </div>
+</div>
+</section>
+
+<!-- 3. SOLUCAO -->
+<section class="solucao" id="metodo">
+<div class="container">
+  <div class="reveal" style="text-align:center">
+    <div class="section-tag">M&eacute;todo NewScale</div>
+    <h2 class="section-title">N&oacute;s implementamos. Voc&ecirc; colhe o resultado.</h2>
+    <p class="section-sub" style="margin-left:auto;margin-right:auto">IA integrada aos sistemas que sua empresa j&aacute; usa &mdash; sem trocar nada, sem parar a opera&ccedil;&atilde;o.</p>
+  </div>
+  <div class="metodo-grid reveal">
+    <div class="metodo-step">
+      <div class="metodo-num">1</div>
+      <div class="metodo-name">Diagn&oacute;stico</div>
+      <div class="metodo-desc">30 min gratuito. Mapeamos onde sua opera&ccedil;&atilde;o sangra tempo e dinheiro.</div>
+    </div>
+    <div class="metodo-step">
+      <div class="metodo-num">2</div>
+      <div class="metodo-name">Arquitetura</div>
+      <div class="metodo-desc">Proposta sob medida para o seu contexto e desafio.</div>
+    </div>
+    <div class="metodo-step">
+      <div class="metodo-num">3</div>
+      <div class="metodo-name">Implementa&ccedil;&atilde;o</div>
+      <div class="metodo-desc">4-12 semanas. Mergulhamos na sua opera&ccedil;&atilde;o, conversamos com a equipe, entendemos cada processo &mdash; e constru&iacute;mos a automa&ccedil;&atilde;o de forma que a transi&ccedil;&atilde;o seja natural, sem mudan&ccedil;as bruscas.</div>
+    </div>
+    <div class="metodo-step">
+      <div class="metodo-num">4</div>
+      <div class="metodo-name">Autonomia</div>
+      <div class="metodo-desc">Tudo rodando sem depender de n&oacute;s. Treinamento e workshop para sua equipe. Suporte incluso.</div>
+    </div>
+  </div>
+  <p class="solucao-note reveal">&ldquo;N&atilde;o vendemos pacotes. Mergulhamos na sua empresa, entendemos como a equipe trabalha, e desenhamos a solu&ccedil;&atilde;o a partir da realidade &mdash; n&atilde;o de um template.&rdquo;</p>
+</div>
+</section>
+
+<!-- 4. CASES -->
+<section class="cases" id="cases">
+<div class="container">
+  <div class="reveal" style="text-align:center">
+    <div class="section-tag">Resultados reais</div>
+    <h2 class="section-title">Cases que falam por si</h2>
+    <p class="section-sub" style="margin-left:auto;margin-right:auto">Projetos implementados com resultados mensur&aacute;veis.</p>
+  </div>
+  <div class="cases-grid">
+
+    <!-- CASE 1 COLO -->
+    <div class="case-card reveal">
+      <div class="case-badge">Implementado</div>
+      <h3 class="case-title">COLO Sa&uacute;de</h3>
+      <div class="case-sector">Sa&uacute;de &middot; Atendimento cl&iacute;nico</div>
+      <div class="case-block">
+        <div class="case-block-label">Problema</div>
+        <p>Equipe de enfermagem gastava 30+ minutos por atendimento analisando exames, aplicando protocolo institucional e gerando relat&oacute;rios manualmente. Processo 100% humano, com risco de inconsist&ecirc;ncias e gargalo na escala.</p>
+      </div>
+      <div class="case-block">
+        <div class="case-block-label">Solu&ccedil;&atilde;o</div>
+        <p>Dois agentes de IA orquestrados: o primeiro coleta e padroniza dados e exames do paciente; o segundo aplica o protocolo m&eacute;dico, gera diagn&oacute;stico, plano de tratamento e roteiro de orienta&ccedil;&atilde;o &mdash; tudo salvo automaticamente no prontu&aacute;rio. Regras de alerta para par&acirc;metros cr&iacute;ticos. Protocolo atualizado automaticamente.</p>
+      </div>
+      <div class="case-result">
+        <div class="big">R$0,09 por relat&oacute;rio</div>
+        <div class="small">30+ min economizados por atendimento &middot; Equipe focada no paciente &middot; 30 dias at&eacute; go-live</div>
+      </div>
+      <div class="case-techs">
+        <span class="case-tech">N8N</span><span class="case-tech">Bubble</span><span class="case-tech">Google Drive</span><span class="case-tech">IA dois est&aacute;gios</span>
+      </div>
+    </div>
+
+    <!-- CASE 2 DINAMICA -->
+    <div class="case-card reveal">
+      <div class="case-badge">Implementado</div>
+      <h3 class="case-title">Din&acirc;mica RH</h3>
+      <div class="case-sector">Recursos Humanos &middot; Recrutamento</div>
+      <div class="case-block">
+        <div class="case-block-label">Problema</div>
+        <p>Alto volume de atendimento via WhatsApp com m&uacute;ltiplos n&uacute;meros distribu&iacute;dos entre consultoras. Atendimento descentralizado, cadastro manual, risco de perda de candidatos. Crescimento exigia mais equipe e mais custo fixo.</p>
+      </div>
+      <div class="case-block">
+        <div class="case-block-label">Solu&ccedil;&atilde;o</div>
+        <p>N&uacute;mero &uacute;nico oficial com Agente IA Orquestrador: identifica vagas automaticamente, consulta base via API, direciona para consultora correta, faz cadastro autom&aacute;tico e extrai dados de curr&iacute;culo (PDF/Word). Integra&ccedil;&atilde;o com campanhas sazonais.</p>
+      </div>
+      <div class="case-result">
+        <div class="big">Atendimento centralizado 24h</div>
+        <div class="small">Cadastro autom&aacute;tico &middot; Extra&ccedil;&atilde;o inteligente de curr&iacute;culo &middot; Zero perda de leads</div>
+      </div>
+      <div class="case-techs">
+        <span class="case-tech">WhatsApp API</span><span class="case-tech">Select (API)</span><span class="case-tech">Google Sheets</span><span class="case-tech">Agente IA</span>
+      </div>
+    </div>
+
+    <!-- CASE 3 CASA TACTO -->
+    <div class="case-card reveal">
+      <div class="case-badge">Implementado</div>
+      <h3 class="case-title">Casa Tacto</h3>
+      <div class="case-sector">Eventos &middot; Casa de festas</div>
+      <div class="case-block">
+        <div class="case-block-label">Problema</div>
+        <p>Horas perdidas respondendo as mesmas perguntas no WhatsApp. Leads chegavam fora do hor&aacute;rio e esfriavam. Qualifica&ccedil;&atilde;o, envio de material e preenchimento do CRM feitos manualmente.</p>
+      </div>
+      <div class="case-block">
+        <div class="case-block-label">Solu&ccedil;&atilde;o</div>
+        <p>Atendente virtual WhatsApp treinado com o tom e roteiro da marca. Qualifica&ccedil;&atilde;o autom&aacute;tica (data, tipo de evento, n&uacute;mero de pessoas), envio estrat&eacute;gico de material, agendamento de visitas e cadastro autom&aacute;tico no Kommo CRM. Dispon&iacute;vel 24h.</p>
+      </div>
+      <div class="case-result">
+        <div class="big">Atendimento 24h personalizado</div>
+        <div class="small">Qualifica&ccedil;&atilde;o autom&aacute;tica &middot; CRM integrado &middot; 7-10 dias de implementa&ccedil;&atilde;o</div>
+      </div>
+      <div class="case-techs">
+        <span class="case-tech">WhatsApp API</span><span class="case-tech">Kommo CRM</span><span class="case-tech">Agente IA conversacional</span>
+      </div>
+    </div>
+
+    <!-- CASE 4 CASA KAHLA -->
+    <div class="case-card reveal">
+      <div class="case-badge">Implementado</div>
+      <h3 class="case-title">Casa Kahla</h3>
+      <div class="case-sector">E-commerce &middot; Joalheria</div>
+      <div class="case-block">
+        <div class="case-block-label">Problema</div>
+        <p>Atendimento repetitivo via WhatsApp &mdash; perguntas sobre produtos, personaliza&ccedil;&atilde;o, rastreamento &mdash; consumindo tempo da opera&ccedil;&atilde;o e impedindo foco em vendas estrat&eacute;gicas.</p>
+      </div>
+      <div class="case-block">
+        <div class="case-block-label">Solu&ccedil;&atilde;o</div>
+        <p>Agente de IA para WhatsApp com conhecimento completo do cat&aacute;logo, pol&iacute;ticas da marca e hist&oacute;rico de atendimento. Respostas personalizadas no tom da marca.</p>
+      </div>
+      <div class="case-result">
+        <div class="big">Opera&ccedil;&atilde;o liberada</div>
+        <div class="small">Atendimento autom&aacute;tico &middot; Cat&aacute;logo integrado &middot; Tom da marca preservado</div>
+      </div>
+      <div class="case-techs">
+        <span class="case-tech">WhatsApp API</span><span class="case-tech">Agente IA</span><span class="case-tech">Cat&aacute;logo Shopify</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- 5. QUEM SOMOS -->
+<section class="quem" id="quem">
+<div class="container">
+  <div class="reveal" style="text-align:center">
+    <div class="section-tag">Quem est&aacute; por tr&aacute;s</div>
+    <h2 class="section-title">Quem implementa e ensina IA na pr&aacute;tica</h2>
+    <p class="section-sub" style="margin-left:auto;margin-right:auto">N&atilde;o somos te&oacute;ricos. Usamos IA nos nossos pr&oacute;prios neg&oacute;cios antes de implementar nos seus.</p>
+  </div>
+  <div class="quem-grid reveal">
+    <div class="quem-card">
+      <div class="quem-photo">
+        <img src="bruna-santanna.jpg" alt="Bruna Santanna" onerror="this.parentElement.innerHTML='BS'">
+      </div>
+      <div class="quem-name">Bruna Santanna</div>
+      <div class="quem-role">Co-fundadora &middot; Estrat&eacute;gia &amp; Educa&ccedil;&atilde;o</div>
+      <div class="quem-bio">ESPM. Empres&aacute;ria h&aacute; 10+ anos. Ex-SulAm&eacute;rica, Ex-Whirlpool, Ex-Blackbox AI (Growth). Fundou e operou a Casa Kahla por 8 anos (joalheria). Mentora de IA no programa Potenc.IA (parceria OLX, Magalu, B3, CI&amp;T). Professora de IA e automa&ccedil;&atilde;o para equipes corporativas.</div>
+      <div class="quem-tags">
+        <span class="quem-tag">Estrat&eacute;gia</span><span class="quem-tag">Diagn&oacute;stico</span><span class="quem-tag">Educa&ccedil;&atilde;o em IA</span><span class="quem-tag">Mentoria</span>
+      </div>
+      <div class="quem-quote">&ldquo;Implemento IA no meu pr&oacute;prio neg&oacute;cio todo dia. S&oacute; ensino e vendo o que eu mesma uso.&rdquo;</div>
+    </div>
+    <div class="quem-card">
+      <div class="quem-photo">BV</div>
+      <div class="quem-name">Bruno Varella</div>
+      <div class="quem-role">Co-fundador &middot; Marketing &amp; Escala</div>
+      <div class="quem-bio">ESPM. 15+ anos em marketing. Ex-Warner Bros Discovery, Natura &amp; Co, Piticas, Salus (Sorridents/GIO). Diretor de Marketing com equipes de 25+ pessoas. Pioneiro em Agentes de IA para atendimento em redes de franquias.</div>
+      <div class="quem-tags">
+        <span class="quem-tag">Marketing</span><span class="quem-tag">Escala</span><span class="quem-tag">Franquias</span><span class="quem-tag">Agentes IA</span>
+      </div>
+      <div class="quem-quote">&ldquo;J&aacute; implementei automa&ccedil;&atilde;o em redes com 600 franquias. Na NewScale, fazemos o mesmo &mdash; no seu tamanho.&rdquo;</div>
+    </div>
+  </div>
+  <div class="quem-team reveal" style="padding:36px;background:var(--ink);color:#fff;border-radius:14px;border:none;font-size:1.05rem">
+    <div style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;margin-bottom:8px;color:#fff">Equipe t&eacute;cnica dedicada</div>
+    Engenheiros e desenvolvedores de IA especializados em automa&ccedil;&atilde;o, integra&ccedil;&otilde;es e engenharia de prompts. Cada projeto tem um time t&eacute;cnico focado na sua implementa&ccedil;&atilde;o.
+  </div>
+</div>
+</section>
+
+<!-- 6. COMO FUNCIONA -->
+<section class="como" id="como">
+<div class="container">
+  <div class="reveal" style="text-align:center">
+    <div class="section-tag">Passo a passo</div>
+    <h2 class="section-title">Do primeiro contato ao resultado</h2>
+    <p class="section-sub" style="margin-left:auto;margin-right:auto">Sem surpresas, sem letras mi&uacute;das. Voc&ecirc; sabe o que vai acontecer em cada etapa.</p>
+  </div>
+  <div class="timeline reveal">
+    <div class="tl-item">
+      <div class="tl-dot">1</div>
+      <div class="tl-content">
+        <div class="tl-meta">Sem compromisso</div>
+        <h3>Diagn&oacute;stico gratuito (30 min)</h3>
+        <div class="tl-detail">Conversa por v&iacute;deo. Entendemos sua opera&ccedil;&atilde;o e identificamos onde IA gera mais impacto.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2</div>
+      <div class="tl-content">
+        <div class="tl-meta">Ap&oacute;s o diagn&oacute;stico</div>
+        <h3>Proposta personalizada</h3>
+        <div class="tl-detail">Plano claro: o que ser&aacute; feito, quanto tempo leva, quanto custa. Sem pacotes gen&eacute;ricos.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">3</div>
+      <div class="tl-content">
+        <div class="tl-meta">4-12 semanas</div>
+        <h3>Implementa&ccedil;&atilde;o</h3>
+        <div class="tl-detail">Mergulhamos na sua opera&ccedil;&atilde;o. Conversamos com a equipe, mapeamos processos, e constru&iacute;mos a automa&ccedil;&atilde;o de forma que a transi&ccedil;&atilde;o seja natural. Acompanhamento semanal &mdash; voc&ecirc; valida cada etapa.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">4</div>
+      <div class="tl-content">
+        <div class="tl-meta">Incluso</div>
+        <h3>Treinamento &amp; Workshop</h3>
+        <div class="tl-detail">Capacita&ccedil;&atilde;o da equipe para usar as novas ferramentas com confian&ccedil;a. Workshops pr&aacute;ticos, documenta&ccedil;&atilde;o completa e suporte p&oacute;s-entrega.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">5</div>
+      <div class="tl-content">
+        <div class="tl-meta">Resultado</div>
+        <h3>Opera&ccedil;&atilde;o aut&ocirc;noma</h3>
+        <div class="tl-detail">Tudo rodando sem depender de n&oacute;s. Sua equipe no controle.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- 7. CTA FINAL -->
+<section class="cta-final" id="contato">
+<div class="container">
+  <h2>Quer saber quanto sua opera&ccedil;&atilde;o est&aacute; perdendo?</h2>
+  <p class="sub">30 minutos. Sem compromisso. Mapeamos onde IA pode gerar impacto real no seu neg&oacute;cio.</p>
+  <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="cta-btn">
+    Agendar meu diagn&oacute;stico gratuito
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+  <div class="cta-sectors">
+    <div class="cta-sector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> Sa&uacute;de</div>
+    <div class="cta-sector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg> Varejo</div>
+    <div class="cta-sector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> RH</div>
+    <div class="cta-sector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Eventos</div>
+  </div>
+  <div class="cta-limit">Poucas vagas por m&ecirc;s &mdash; trabalhamos com volume limitado de clientes para garantir qualidade.</div>
+</div>
+</section>
+
+<footer>
+  <div class="container">
+    <div style="margin-bottom:20px;display:flex;justify-content:center;gap:32px;flex-wrap:wrap;font-size:.85rem;color:rgba(255,255,255,.5)">
+      <span>Implementa&ccedil;&atilde;o de IA</span>
+      <span>Agentes de Atendimento</span>
+      <span>Automa&ccedil;&atilde;o de Processos</span>
+      <span>Treinamento &amp; Workshop</span>
+      <span>Diagn&oacute;stico de IA</span>
+    </div>
+    <p style="margin-bottom:8px"><a href="mailto:bruna@newscale.tech">bruna@newscale.tech</a> &middot; <a href="https://wa.me/5511971901020" target="_blank">(11) 97190-1020</a></p>
+    <p>NewScale Consulting &middot; Bv Servicos de Marketing e Consultoria &middot; 48.533.847/0001-68</p>
+  </div>
 </footer>
 
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>50)});
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
