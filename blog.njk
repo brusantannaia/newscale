@@ -1,0 +1,340 @@
+---
+permalink: /blog/
+title: Blog | Newscale Consulting
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Newscale Consulting</title>
+  <meta name="description" content="Artigos sobre automação com IA, agentes inteligentes e como escalar pequenos negócios com tecnologia.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --verde-escuro: #14373C;
+      --verde-medio: #435D51;
+      --bege-claro: #D0D0CA;
+      --marrom-areia: #B06E4A;
+      --branco-fundo: #FBFBF9;
+      --branco-puro: #FFFFFF;
+      --font-family: 'Poppins', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-family);
+      background-color: var(--branco-fundo);
+      color: #333;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      padding: 20px 0;
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo img { height: 70px; width: auto; }
+    nav { display: flex; gap: 30px; align-items: center; }
+    nav a {
+      text-decoration: none;
+      color: var(--verde-medio);
+      font-weight: 500;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.3s, border-color 0.3s;
+    }
+    nav a:hover, nav a.active {
+      color: var(--marrom-areia);
+      border-bottom-color: var(--marrom-areia);
+    }
+    .cta-nav {
+      background-color: var(--marrom-areia);
+      color: white !important;
+      padding: 10px 24px;
+      border-radius: 50px;
+      border-bottom: none !important;
+      font-size: 0.95rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    }
+    .cta-nav:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(176,110,74,0.4);
+    }
+
+    /* Hero do blog */
+    .blog-hero {
+      background-color: var(--verde-escuro);
+      padding: 80px 0 70px;
+      text-align: center;
+    }
+    .blog-hero .container {
+      width: 90%;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .blog-hero .eyebrow {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--marrom-areia);
+      margin-bottom: 16px;
+    }
+    .blog-hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 600;
+      color: var(--branco-puro);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+    .blog-hero p {
+      font-size: 1.05rem;
+      color: var(--bege-claro);
+      font-weight: 300;
+      opacity: 0.9;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    /* Grid de posts */
+    .posts-section {
+      width: 90%;
+      max-width: 1100px;
+      margin: 70px auto 90px;
+    }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 36px;
+    }
+
+    /* Card de post */
+    .post-card {
+      background: var(--branco-puro);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e8e8e4;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+    }
+    .post-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    }
+    .post-card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .post-card-img-placeholder {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, var(--verde-escuro), var(--verde-medio));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .post-card-img-placeholder svg { opacity: 0.2; }
+    .post-card-body {
+      padding: 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .post-card-date {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--marrom-areia);
+      margin-bottom: 10px;
+    }
+    .post-card-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--verde-escuro);
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+    .post-card-desc {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: #555;
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 20px;
+    }
+    .post-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--marrom-areia);
+      font-weight: 500;
+      font-size: 0.9rem;
+      text-decoration: none;
+      margin-top: auto;
+    }
+    .post-card-link svg { transition: transform 0.2s; }
+    .post-card:hover .post-card-link svg { transform: translateX(4px); }
+
+    /* Estado vazio */
+    .empty-state {
+      text-align: center;
+      padding: 80px 20px;
+      grid-column: 1 / -1;
+    }
+    .empty-state .icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      opacity: 0.4;
+    }
+    .empty-state h3 {
+      font-size: 1.4rem;
+      color: var(--verde-escuro);
+      margin-bottom: 10px;
+    }
+    .empty-state p {
+      font-size: 1rem;
+      color: var(--verde-medio);
+      font-weight: 300;
+    }
+
+    /* Newsletter CTA */
+    .newsletter-cta {
+      background: linear-gradient(135deg, var(--verde-escuro), var(--verde-medio));
+      border-radius: 16px;
+      padding: 60px 40px;
+      text-align: center;
+      margin: 0 0 20px;
+    }
+    .newsletter-cta h2 {
+      color: var(--branco-puro);
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+    .newsletter-cta p {
+      color: var(--bege-claro);
+      font-weight: 300;
+      margin-bottom: 30px;
+      opacity: 0.9;
+      font-size: 1rem;
+    }
+    .newsletter-cta a {
+      display: inline-block;
+      background-color: var(--marrom-areia);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .newsletter-cta a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(176,110,74,0.4);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      color: var(--verde-medio);
+      border-top: 1px solid var(--bege-claro);
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      header { flex-direction: column; gap: 16px; }
+      nav { gap: 18px; flex-wrap: wrap; justify-content: center; }
+      .posts-grid { grid-template-columns: 1fr; }
+      .newsletter-cta { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="/"><img src="/LOGO 05@3x.png" alt="Newscale Consulting"></a>
+    </div>
+    <nav>
+      <a href="/">Início</a>
+      <a href="/quem-somos.html">Quem Somos</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/contato.html">Contato</a>
+      <a href="https://wa.me/5511963232908?text=Quero%20um%20diagn%C3%B3stico%20gratuito%20para%20meu%20neg%C3%B3cio" target="_blank" class="cta-nav">Diagnóstico Grátis</a>
+    </nav>
+  </header>
+
+  <section class="blog-hero">
+    <div class="container">
+      <p class="eyebrow">Conhecimento que transforma</p>
+      <h1>Blog <span style="color: var(--marrom-areia);">Newscale</span></h1>
+      <p>Artigos práticos sobre automação com IA, agentes inteligentes e como pequenos negócios podem escalar com mais leveza e resultado.</p>
+    </div>
+  </section>
+
+  <section class="posts-section">
+    <div class="posts-grid">
+      {% if collections.posts.length > 0 %}
+        {% for post in collections.posts %}
+        <a class="post-card" href="{{ post.url }}">
+          {% if post.data.cover %}
+            <img class="post-card-img" src="{{ post.data.cover }}" alt="{{ post.data.title }}">
+          {% else %}
+            <div class="post-card-img-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            </div>
+          {% endif %}
+          <div class="post-card-body">
+            <p class="post-card-date">{{ post.date | ptDate }}</p>
+            <h2 class="post-card-title">{{ post.data.title }}</h2>
+            {% if post.data.description %}
+              <p class="post-card-desc">{{ post.data.description }}</p>
+            {% endif %}
+            <span class="post-card-link">
+              Ler artigo
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </div>
+        </a>
+        {% endfor %}
+      {% else %}
+        <div class="empty-state">
+          <div class="icon">✍️</div>
+          <h3>Em breve, conteúdo por aqui</h3>
+          <p>Estamos preparando artigos para você. Volte em breve!</p>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="newsletter-cta" style="margin-top: 70px;">
+      <h2>Ficou com dúvidas?</h2>
+      <p>Converse com a nossa equipe e descubra como a IA pode transformar o seu negócio — diagnóstico gratuito e sem compromisso.</p>
+      <a href="https://wa.me/5511963232908?text=Quero%20um%20diagn%C3%B3stico%20gratuito%20para%20meu%20neg%C3%B3cio" target="_blank">Falar com a Newscale</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Newscale. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
