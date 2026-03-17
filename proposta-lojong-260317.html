@@ -6,284 +6,254 @@
 <title>NewScale × Lojong — Proposta Estratégica de IA</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --teal-deep: #14373C;
-    --teal-mid: #435D51;
-    --sand: #D0D0CA;
-    --copper: #B06E4A;
-    --copper-light: #C8845E;
-    --cream: #F5F3EE;
-    --white: #FFFFFF;
-    --text-dark: #0D2226;
-    --text-mid: #2C4A4E;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Josefin Sans', sans-serif; background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
+:root {
+  --teal-deep: #14373C;
+  --teal-mid: #435D51;
+  --sand: #D0D0CA;
+  --copper: #B06E4A;
+  --copper-light: #C8845E;
+  --cream: #F5F3EE;
+  --white: #FFFFFF;
+  --text-dark: #0D2226;
+  --text-mid: #2C4A4E;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Josefin Sans', sans-serif; background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
 
-  /* HERO */
-  .hero {
-    min-height: 100vh; background: var(--teal-deep);
-    position: relative; display: flex; flex-direction: column;
-    justify-content: center; align-items: center; text-align: center;
-    padding: 60px 40px; overflow: hidden;
-  }
-  .hero-pattern {
-    position: absolute; inset: 0; opacity: 0.06;
-    background-image:
-      radial-gradient(ellipse at 20% 50%, #B06E4A 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 20%, #435D51 0%, transparent 40%),
-      radial-gradient(ellipse at 60% 80%, #14373C 0%, transparent 50%);
-  }
-  .topo-lines { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-  .topo-lines svg { width: 100%; height: 100%; opacity: 0.08; }
-  .hero-badge {
-    font-size: 10px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase;
-    color: var(--copper); border: 1px solid rgba(176,110,74,0.4); padding: 8px 20px;
-    display: inline-block; margin-bottom: 32px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s;
-  }
-  .hero-brand {
-    font-size: 11px; font-weight: 300; letter-spacing: 8px; text-transform: uppercase;
-    color: rgba(255,255,255,0.5); margin-bottom: 20px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s;
-  }
-  .hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(44px, 7vw, 86px); font-weight: 300; color: var(--white);
-    line-height: 1.0; letter-spacing: -1px; margin-bottom: 8px;
-    opacity: 0; animation: fadeUp 0.8s ease forwards 0.6s;
-  }
-  .hero-title em { font-style: italic; color: var(--copper); }
-  .hero-title-x {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(30px, 5vw, 56px); font-weight: 300; color: rgba(255,255,255,0.3);
-    margin-bottom: 8px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.7s;
-  }
-  .hero-title-sub {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(32px, 5vw, 64px); font-weight: 300; font-style: italic;
-    color: var(--sand); margin-bottom: 40px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.8s;
-  }
-  .hero-desc {
-    font-size: 13px; font-weight: 300; letter-spacing: 2px; color: rgba(255,255,255,0.55);
-    max-width: 480px; line-height: 2; margin-bottom: 60px;
-    opacity: 0; animation: fadeUp 0.8s ease forwards 1s;
-  }
-  .hero-scroll {
-    opacity: 0; animation: fadeUp 0.8s ease forwards 1.3s;
-    display: flex; flex-direction: column; align-items: center; gap: 10px;
-    cursor: pointer; text-decoration: none;
-  }
-  .hero-scroll span { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.35); }
-  .scroll-line {
-    width: 1px; height: 50px;
-    background: linear-gradient(to bottom, rgba(176,110,74,0.8), transparent);
-    animation: scrollPulse 2s ease-in-out infinite;
-  }
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh; background: var(--teal-deep);
+  position: relative; display: flex; flex-direction: column;
+  justify-content: center; align-items: center; text-align: center;
+  padding: 60px 40px; overflow: hidden;
+}
+.hero-pattern { position: absolute; inset: 0; opacity: 0.06; background-image: radial-gradient(ellipse at 20% 50%, #B06E4A 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, #435D51 0%, transparent 40%), radial-gradient(ellipse at 60% 80%, #14373C 0%, transparent 50%); }
+.topo-lines { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.topo-lines svg { width: 100%; height: 100%; opacity: 0.08; }
+.hero-badge { font-size: 10px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--copper); border: 1px solid rgba(176,110,74,0.4); padding: 8px 20px; display: inline-block; margin-bottom: 32px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
+.hero-brand { font-size: 11px; font-weight: 300; letter-spacing: 8px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 20px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s; }
+.hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(44px, 7vw, 86px); font-weight: 300; color: var(--white); line-height: 1; letter-spacing: -1px; margin-bottom: 8px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.6s; }
+.hero-title em { font-style: italic; color: var(--copper); }
+.hero-title-x { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 50px); font-weight: 300; color: rgba(255,255,255,0.3); margin-bottom: 8px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.7s; }
+.hero-title-sub { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 4.5vw, 58px); font-weight: 300; font-style: italic; color: var(--sand); margin-bottom: 40px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.8s; }
+.hero-desc { font-size: 13px; font-weight: 300; letter-spacing: 2px; color: rgba(255,255,255,0.55); max-width: 480px; line-height: 2; margin-bottom: 60px; opacity: 0; animation: fadeUp 0.8s ease forwards 1s; }
+.hero-scroll { opacity: 0; animation: fadeUp 0.8s ease forwards 1.3s; display: flex; flex-direction: column; align-items: center; gap: 10px; cursor: pointer; text-decoration: none; }
+.hero-scroll span { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+.scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, rgba(176,110,74,0.8), transparent); animation: scrollPulse 2s ease-in-out infinite; }
 
-  /* LABELS & TITLES */
-  .section-label {
-    font-size: 9px; font-weight: 600; letter-spacing: 5px; text-transform: uppercase;
-    color: var(--copper); margin-bottom: 16px; display: flex; align-items: center; gap: 16px;
-  }
-  .section-label::before { content: ''; width: 32px; height: 1px; background: var(--copper); display: inline-block; }
-  .section-title {
-    font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 5vw, 60px);
-    font-weight: 300; color: var(--teal-deep); line-height: 1.1; margin-bottom: 16px;
-  }
-  .section-title em { font-style: italic; color: var(--copper); }
+/* ─── UTILS ─── */
+.section-label { font-size: 9px; font-weight: 600; letter-spacing: 5px; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; display: flex; align-items: center; gap: 16px; }
+.section-label::before { content: ''; width: 32px; height: 1px; background: var(--copper); display: inline-block; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 4.5vw, 56px); font-weight: 300; color: var(--teal-deep); line-height: 1.1; margin-bottom: 16px; }
+.section-title em { font-style: italic; color: var(--copper); }
+.section-title.light { color: var(--white); }
 
-  /* INTRO */
-  .intro-section {
-    padding: 100px 40px; max-width: 1200px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
-  }
-  .intro-text p { font-size: 15px; font-weight: 300; line-height: 2; color: var(--text-mid); margin-bottom: 20px; }
-  .intro-text p strong { color: var(--teal-deep); font-weight: 600; }
-  .intro-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-  .stat-card {
-    background: var(--teal-deep); padding: 36px 28px; position: relative;
-    overflow: hidden; transition: transform 0.3s ease;
-  }
-  .stat-card:hover { transform: translateY(-4px); }
-  .stat-card::after {
-    content: ''; position: absolute; bottom: 0; right: 0;
-    width: 60px; height: 60px; background: rgba(176,110,74,0.15);
-    border-radius: 50%; transform: translate(20px, 20px);
-  }
-  .stat-card:nth-child(2) { background: var(--copper); }
-  .stat-card:nth-child(3) { background: var(--teal-mid); }
-  .stat-card:nth-child(4) { background: var(--text-dark); }
-  .stat-number {
-    font-family: 'Cormorant Garamond', serif; font-size: 52px;
-    font-weight: 300; color: var(--white); line-height: 1; margin-bottom: 8px;
-  }
-  .stat-label { font-size: 10px; font-weight: 300; letter-spacing: 2px; color: rgba(255,255,255,0.65); text-transform: uppercase; }
+/* ─── INTRO ─── */
+.intro-section { padding: 100px 40px; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.intro-text p { font-size: 15px; font-weight: 300; line-height: 2; color: var(--text-mid); margin-bottom: 20px; }
+.intro-text p strong { color: var(--teal-deep); font-weight: 600; }
+.intro-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.stat-card { background: var(--teal-deep); padding: 36px 28px; position: relative; overflow: hidden; transition: transform 0.3s ease; }
+.stat-card:hover { transform: translateY(-4px); }
+.stat-card:nth-child(2) { background: var(--copper); }
+.stat-card:nth-child(3) { background: var(--teal-mid); }
+.stat-card:nth-child(4) { background: var(--text-dark); }
+.stat-number { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: var(--white); line-height: 1; margin-bottom: 8px; }
+.stat-label { font-size: 10px; font-weight: 300; letter-spacing: 2px; color: rgba(255,255,255,0.65); text-transform: uppercase; }
 
-  /* OPORTUNIDADES */
-  .dores-section { background: var(--teal-deep); padding: 100px 0; }
-  .dores-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-  .dores-section .section-title { color: var(--white); }
-  .dores-section .section-label { color: var(--copper); }
-  .dores-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 60px; }
-  .dor-card {
-    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);
-    padding: 40px 32px; position: relative; overflow: hidden; transition: all 0.4s ease;
-  }
-  .dor-card::before {
-    content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0;
-    background: var(--copper); transition: height 0.4s ease;
-  }
-  .dor-card:hover { background: rgba(255,255,255,0.07); transform: translateY(-4px); }
-  .dor-card:hover::before { height: 100%; }
-  .dor-num { font-family: 'Cormorant Garamond', serif; font-size: 64px; font-weight: 300; color: rgba(176,110,74,0.2); line-height: 1; margin-bottom: 20px; }
-  .dor-title { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
-  .dor-text { font-size: 13px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.6); }
+/* ─── OPORTUNIDADES ─── */
+.oport-section { background: var(--teal-deep); padding: 100px 0; }
+.oport-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.oport-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 60px; }
+.oport-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); padding: 40px 32px; position: relative; overflow: hidden; transition: all 0.4s ease; }
+.oport-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--copper); transition: height 0.4s ease; }
+.oport-card:hover { background: rgba(255,255,255,0.07); transform: translateY(-4px); }
+.oport-card:hover::before { height: 100%; }
+.oport-num { font-family: 'Cormorant Garamond', serif; font-size: 64px; font-weight: 300; color: rgba(176,110,74,0.2); line-height: 1; margin-bottom: 20px; }
+.oport-title { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+.oport-text { font-size: 13px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.6); }
 
-  /* FASES */
-  .fases-section { padding: 100px 0; background: var(--cream); }
-  .fases-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+/* ─── FASES ─── */
+.fases-section { padding: 100px 0; background: var(--cream); }
+.fases-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 
-  /* Sub-blocos dentro de uma fase */
-  .fase-wrapper { margin-top: 60px; }
-  .fase-wrapper + .fase-wrapper { margin-top: 48px; }
+/* Fase wrapper */
+.fase-wrapper { margin-top: 56px; }
+.fase-wrapper + .fase-wrapper { margin-top: 32px; }
 
-  .fase-header {
-    background: var(--teal-deep); padding: 36px 44px;
-    display: flex; justify-content: space-between; align-items: flex-end;
-    flex-wrap: wrap; gap: 16px;
-  }
-  .fase-wrapper:nth-child(2) .fase-header { background: var(--copper); }
-  .fase-wrapper:nth-child(3) .fase-header { background: var(--teal-mid); }
-  .fase-wrapper:nth-child(4) .fase-header { background: var(--text-dark); }
+/* Cabeçalho da fase — sem preço */
+.fase-header {
+  background: var(--teal-deep); padding: 36px 44px;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+}
+.fase-wrapper:nth-child(2) .fase-header { background: var(--copper); }
+.fase-wrapper:nth-child(3) .fase-header { background: var(--teal-mid); }
+.fase-wrapper:nth-child(4) .fase-header { background: var(--text-dark); }
+.fase-tag { font-size: 9px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
+.fase-name { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: var(--white); line-height: 1.15; }
+.fase-duration { font-size: 10px; letter-spacing: 2px; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-top: 8px; }
+.fase-num-badge {
+  font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 300;
+  color: rgba(255,255,255,0.12); line-height: 1; flex-shrink: 0;
+}
 
-  .fase-header-left {}
-  .fase-tag { font-size: 9px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
-  .fase-name { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: var(--white); line-height: 1.1; }
-  .fase-duration { font-size: 10px; letter-spacing: 2px; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-top: 8px; }
+/* Grid de módulos dentro da fase */
+.modulos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.modulo-card { background: var(--white); overflow: hidden; }
 
-  .fase-price-inline { text-align: right; }
-  .fase-price-inline .lbl { font-size: 9px; letter-spacing: 2px; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-bottom: 4px; }
-  .fase-price-inline .val { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 300; color: var(--white); }
-  .fase-price-inline .sub { font-size: 10px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+/* Cabeçalho do módulo — clicável */
+.modulo-head {
+  padding: 28px 32px; cursor: pointer; display: flex; align-items: center;
+  justify-content: space-between; gap: 16px; transition: background 0.3s ease; user-select: none;
+}
+.modulo-head:hover { background: rgba(20,55,60,0.03); }
+.modulo-head-left { display: flex; align-items: flex-start; gap: 16px; flex: 1; }
+.modulo-icon-wrap {
+  width: 40px; height: 40px; background: var(--cream);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0; border-radius: 2px;
+}
+.modulo-head-text {}
+.modulo-label { font-size: 8px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--copper); margin-bottom: 4px; }
+.modulo-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--teal-deep); line-height: 1.2; }
+.modulo-toggle {
+  width: 28px; height: 28px; border: 1px solid rgba(20,55,60,0.15); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+.modulo-toggle svg { transition: transform 0.3s ease; }
+.modulo-card.open .modulo-toggle { background: var(--copper); border-color: var(--copper); }
+.modulo-card.open .modulo-toggle svg { transform: rotate(180deg); }
+.modulo-card.open .modulo-toggle svg path { stroke: white; }
 
-  /* Sub-seções dentro de cada fase */
-  .sub-blocks { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-  .sub-blocks.single { grid-template-columns: 1fr; }
-  .sub-block { background: var(--white); padding: 40px 44px; }
-  .sub-block-title {
-    font-size: 9px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase;
-    color: var(--copper); margin-bottom: 16px; display: flex; align-items: center; gap: 12px;
-  }
-  .sub-block-title::before { content: ''; width: 20px; height: 1px; background: var(--copper); }
-  .sub-block-desc { font-size: 13px; font-weight: 300; line-height: 2; color: var(--text-mid); margin-bottom: 24px; }
-  .items-list { list-style: none; }
-  .items-list li {
-    display: flex; align-items: flex-start; gap: 12px;
-    padding: 10px 0; border-bottom: 1px solid rgba(20,55,60,0.06);
-    font-size: 12px; font-weight: 300; line-height: 1.6; color: var(--text-mid);
-  }
-  .items-list li:last-child { border-bottom: none; }
-  .items-list li::before { content: '→'; color: var(--copper); flex-shrink: 0; }
+/* Chips de resumo visíveis quando fechado */
+.modulo-chips { padding: 0 32px 20px 88px; display: flex; flex-wrap: wrap; gap: 6px; }
+.modulo-card.open .modulo-chips { display: none; }
+.chip {
+  font-size: 10px; font-weight: 300; letter-spacing: 0.5px;
+  color: var(--teal-mid); background: rgba(20,55,60,0.06);
+  padding: 4px 10px; border-radius: 2px; white-space: nowrap;
+}
 
-  /* Fases 3 e 4 — sem preço */
-  .fase-no-price .fase-header { background: var(--teal-mid); }
-  .fase-wrapper:nth-child(3) .fase-header { background: var(--teal-mid); }
-  .fase-wrapper:nth-child(4) .fase-header { background: var(--text-dark); }
+/* Conteúdo expandido */
+.modulo-body {
+  max-height: 0; overflow: hidden; transition: max-height 0.45s ease, padding 0.3s ease;
+}
+.modulo-card.open .modulo-body { max-height: 800px; }
+.modulo-body-inner { padding: 0 32px 32px 32px; border-top: 1px solid rgba(20,55,60,0.07); padding-top: 24px; }
+.modulo-desc { font-size: 13px; font-weight: 300; line-height: 2; color: var(--text-mid); margin-bottom: 20px; }
+.modulo-items { list-style: none; }
+.modulo-items li {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 9px 0; border-bottom: 1px solid rgba(20,55,60,0.05);
+  font-size: 12px; font-weight: 300; line-height: 1.6; color: var(--text-mid);
+}
+.modulo-items li:last-child { border-bottom: none; }
+.modulo-items li::before { content: '→'; color: var(--copper); flex-shrink: 0; font-size: 11px; margin-top: 2px; }
 
-  /* POR QUE */
-  .porque-section { padding: 100px 0; background: var(--cream); }
-  .porque-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-  .porque-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; margin-top: 60px; }
-  .porque-card {
-    background: var(--white); padding: 44px; position: relative;
-    overflow: hidden; transition: all 0.4s ease;
-  }
-  .porque-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px rgba(20,55,60,0.1); }
-  .porque-icon { font-size: 28px; margin-bottom: 20px; display: block; }
-  .porque-card-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--teal-deep); margin-bottom: 14px; line-height: 1.2; }
-  .porque-card-text { font-size: 13px; font-weight: 300; line-height: 2; color: var(--text-mid); }
-  .porque-card::after {
-    content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px;
-    background: var(--copper); transition: width 0.4s ease;
-  }
-  .porque-card:hover::after { width: 100%; }
+/* Módulo de largura total */
+.modulo-full { grid-column: 1 / -1; }
 
-  /* CTA */
-  .cta-section {
-    padding: 120px 40px; text-align: center;
-    background: var(--teal-deep); position: relative; overflow: hidden;
-  }
-  .cta-section::before {
-    content: ''; position: absolute; top: 50%; left: 50%;
-    transform: translate(-50%, -50%); width: 600px; height: 600px;
-    border: 1px solid rgba(255,255,255,0.04); border-radius: 50%;
-  }
-  .cta-section::after {
-    content: ''; position: absolute; top: 50%; left: 50%;
-    transform: translate(-50%, -50%); width: 400px; height: 400px;
-    border: 1px solid rgba(255,255,255,0.06); border-radius: 50%;
-  }
-  .cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
-  .cta-title {
-    font-family: 'Cormorant Garamond', serif; font-size: clamp(42px, 6vw, 72px);
-    font-weight: 300; color: var(--white); line-height: 1.05; margin-bottom: 20px;
-  }
-  .cta-title em { font-style: italic; color: var(--copper); }
-  .cta-text { font-size: 13px; font-weight: 300; letter-spacing: 1px; color: rgba(255,255,255,0.55); line-height: 2; margin-bottom: 56px; }
-  .cta-steps { display: flex; justify-content: center; gap: 0; margin-bottom: 0; }
-  .cta-step { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 0 32px; position: relative; }
-  .cta-step + .cta-step::before {
-    content: ''; position: absolute; left: 0; top: 20px; width: 1px; height: 30px;
-    background: rgba(255,255,255,0.1);
-  }
-  .step-num {
-    width: 40px; height: 40px; border: 1px solid var(--copper); border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; color: var(--copper);
-  }
-  .step-text { font-size: 11px; font-weight: 300; letter-spacing: 1px; color: rgba(255,255,255,0.5); text-align: center; max-width: 120px; line-height: 1.6; }
+/* ─── TABELA DE INVESTIMENTOS ─── */
+.invest-section { background: var(--teal-deep); padding: 100px 0; }
+.invest-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.invest-table-wrap { margin-top: 60px; overflow-x: auto; }
+.invest-table { width: 100%; border-collapse: collapse; }
+.invest-table thead tr { border-bottom: 1px solid rgba(176,110,74,0.3); }
+.invest-table th {
+  font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(255,255,255,0.35); padding: 0 28px 16px; text-align: left;
+}
+.invest-table th:not(:first-child) { text-align: right; }
+.invest-table td { padding: 22px 28px; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+.invest-table td:not(:first-child) { text-align: right; }
+.invest-table tbody tr { transition: background 0.3s ease; }
+.invest-table tbody tr:hover { background: rgba(255,255,255,0.03); }
+.invest-table tbody tr:last-child td { border-bottom: none; }
 
-  /* FOOTER */
-  .footer { background: var(--text-dark); padding: 48px 40px; display: flex; justify-content: space-between; align-items: center; }
-  .footer-brand { font-size: 18px; font-weight: 200; letter-spacing: 6px; color: var(--white); text-transform: uppercase; }
-  .footer-brand span { display: block; font-size: 8px; letter-spacing: 5px; color: rgba(255,255,255,0.3); margin-top: 4px; }
-  .footer-date { font-size: 10px; letter-spacing: 3px; color: rgba(255,255,255,0.3); text-align: right; }
+.it-phase-badge {
+  display: inline-block; background: rgba(176,110,74,0.18); border: 1px solid rgba(176,110,74,0.3);
+  color: var(--copper-light); font-size: 8px; font-weight: 600; letter-spacing: 3px;
+  padding: 3px 10px; text-transform: uppercase; margin-bottom: 6px;
+}
+.it-phase-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; color: var(--white); }
+.it-phase-sub { font-size: 10px; font-weight: 300; color: rgba(255,255,255,0.35); margin-top: 2px; }
+.it-price { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 300; color: var(--white); line-height: 1; }
+.it-price-sub { font-size: 10px; color: rgba(255,255,255,0.35); margin-top: 4px; }
+.it-duration { font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.5); letter-spacing: 1px; }
+.it-tbd { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.35); }
+.invest-note { font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.3); margin-top: 24px; line-height: 1.8; letter-spacing: 0.5px; }
 
-  /* ANIMATIONS */
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-  @keyframes scrollPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
+/* ─── POR QUE NEWSCALE ─── */
+.porque-section { padding: 100px 0; background: var(--cream); }
+.porque-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.porque-statement { background: var(--teal-deep); padding: 56px; margin-top: 60px; margin-bottom: 2px; position: relative; overflow: hidden; }
+.porque-statement::before { content: '"'; font-family: 'Cormorant Garamond', serif; font-size: 220px; color: rgba(255,255,255,0.04); position: absolute; top: -20px; left: 24px; line-height: 1; }
+.porque-statement p { font-family: 'Cormorant Garamond', serif; font-size: clamp(20px, 2.5vw, 26px); font-weight: 300; font-style: italic; color: rgba(255,255,255,0.88); line-height: 1.75; max-width: 900px; position: relative; z-index: 1; }
+.porque-statement p em { color: var(--copper-light); font-style: normal; }
+.porque-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 2px; }
+.porque-card { background: var(--white); padding: 40px; position: relative; overflow: hidden; transition: all 0.4s ease; }
+.porque-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px rgba(20,55,60,0.1); }
+.porque-icon { font-size: 26px; margin-bottom: 18px; display: block; }
+.porque-card-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--teal-deep); margin-bottom: 12px; line-height: 1.2; }
+.porque-card-text { font-size: 13px; font-weight: 300; line-height: 2; color: var(--text-mid); }
+.porque-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: var(--copper); transition: width 0.4s ease; }
+.porque-card:hover::after { width: 100%; }
 
-  /* RESPONSIVE */
-  @media (max-width: 900px) {
-    .intro-section { grid-template-columns: 1fr; gap: 48px; }
-    .dores-grid { grid-template-columns: 1fr; }
-    .sub-blocks { grid-template-columns: 1fr; }
-    .porque-grid { grid-template-columns: 1fr; }
-    .cta-steps { flex-direction: column; align-items: center; }
-    .cta-step + .cta-step::before { display: none; }
-    .footer { flex-direction: column; gap: 20px; text-align: center; }
-    .fase-header { flex-direction: column; align-items: flex-start; }
-    .fase-price-inline { text-align: left; }
-  }
+/* ─── CTA ─── */
+.cta-section { padding: 120px 40px; text-align: center; background: var(--teal-deep); position: relative; overflow: hidden; }
+.cta-section::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; border: 1px solid rgba(255,255,255,0.04); border-radius: 50%; }
+.cta-section::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 400px; height: 400px; border: 1px solid rgba(255,255,255,0.06); border-radius: 50%; }
+.cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+.cta-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(42px, 6vw, 72px); font-weight: 300; color: var(--white); line-height: 1.05; margin-bottom: 20px; }
+.cta-title em { font-style: italic; color: var(--copper); }
+.cta-text { font-size: 13px; font-weight: 300; letter-spacing: 1px; color: rgba(255,255,255,0.55); line-height: 2; margin-bottom: 56px; }
+.cta-steps { display: flex; justify-content: center; }
+.cta-step { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 0 32px; position: relative; }
+.cta-step + .cta-step::before { content: ''; position: absolute; left: 0; top: 20px; width: 1px; height: 30px; background: rgba(255,255,255,0.1); }
+.step-num { width: 40px; height: 40px; border: 1px solid var(--copper); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; color: var(--copper); }
+.step-text { font-size: 11px; font-weight: 300; letter-spacing: 1px; color: rgba(255,255,255,0.5); text-align: center; max-width: 120px; line-height: 1.6; }
+
+/* ─── FOOTER ─── */
+.footer { background: var(--text-dark); padding: 48px 40px; display: flex; justify-content: space-between; align-items: center; }
+.footer-brand { font-size: 18px; font-weight: 200; letter-spacing: 6px; color: var(--white); text-transform: uppercase; }
+.footer-brand span { display: block; font-size: 8px; letter-spacing: 5px; color: rgba(255,255,255,0.3); margin-top: 4px; }
+.footer-date { font-size: 10px; letter-spacing: 3px; color: rgba(255,255,255,0.3); text-align: right; }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes scrollPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .intro-section { grid-template-columns: 1fr; gap: 48px; }
+  .oport-grid, .modulos-grid, .porque-grid { grid-template-columns: 1fr; }
+  .modulo-full { grid-column: 1; }
+  .cta-steps { flex-direction: column; align-items: center; }
+  .cta-step + .cta-step::before { display: none; }
+  .footer { flex-direction: column; gap: 20px; text-align: center; }
+  .invest-table th, .invest-table td { padding: 16px; }
+}
 </style>
 </head>
 <body>
 
-<!-- HERO -->
+<!-- ══ HERO ══ -->
 <div class="hero">
   <div class="hero-pattern"></div>
   <div class="topo-lines">
     <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
       <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="0.5"/>
       <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width="0.5"/>
-      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.4"/>
       <path d="M0,300 Q300,220 500,290 T900,260 T1200,300" fill="none" stroke="white" stroke-width="0.4"/>
-      <path d="M0,500 Q300,440 500,490 T900,460 T1200,500" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,500 Q300,440 500,490 T900,460 T1200,500" fill="none" stroke="white" stroke-width="0.3"/>
       <path d="M100,600 Q400,530 600,590 T1000,560 T1300,600" fill="none" stroke="white" stroke-width="0.3"/>
       <path d="M100,200 Q400,130 600,190 T1000,160 T1300,200" fill="none" stroke="white" stroke-width="0.3"/>
     </svg>
@@ -293,386 +263,599 @@
   <div class="hero-title"><em>Aplicação</em> Estratégica</div>
   <div class="hero-title-x">de</div>
   <div class="hero-title-sub">Inteligência Artificial</div>
-  <div class="hero-desc">
-    Uma proposta construída a partir da sua realidade — não um cardápio genérico de serviços, mas um plano desenhado para o Lojong competir em outro nível.
-  </div>
-  <a href="#contexto" class="hero-scroll">
-    <span>Explorar</span>
-    <div class="scroll-line"></div>
-  </a>
+  <div class="hero-desc">Uma proposta construída a partir da sua realidade — não um cardápio genérico, mas um plano desenhado para o Lojong competir em outro nível.</div>
+  <a href="#contexto" class="hero-scroll"><span>Explorar</span><div class="scroll-line"></div></a>
 </div>
 
-<!-- INTRO -->
+<!-- ══ CONTEXTO ══ -->
 <div id="contexto">
   <div class="intro-section">
     <div class="intro-text reveal">
       <div class="section-label">O Contexto</div>
       <h2 class="section-title">Um app pioneiro num mercado que <em>não para</em></h2>
       <p>O Lojong foi o <strong>primeiro app de meditação 100% em português</strong> do Brasil. Cresceram com o hype da pandemia, consolidaram presença em 7 idiomas e hoje competem com consistência contra players com capitalização bilionária.</p>
-      <p>Com uma equipe enxuta e operação 100% remota, o Lojong já opera com muita eficiência. O que se abre agora é a oportunidade de usar a IA para <strong>amplificar o que já funciona bem</strong> — e desbloquear frentes que ainda consomem tempo e esforço manual desnecessário.</p>
-      <p>A proposta a seguir não parte do zero. Parte do que o Lojong já tem construído para levá-lo a um <strong>novo patamar de velocidade, escala e inteligência operacional.</strong></p>
+      <p>Com uma equipe enxuta e operação 100% remota, o Lojong já opera com eficiência. O que se abre agora é a oportunidade de usar a IA para <strong>amplificar o que já funciona bem</strong> — e desbloquear frentes que ainda consomem tempo e esforço manual desnecessário.</p>
+      <p>A proposta a seguir parte do que o Lojong já tem construído para levá-lo a um <strong>novo patamar de velocidade, escala e inteligência operacional.</strong></p>
     </div>
     <div class="intro-stats reveal reveal-delay-2">
-      <div class="stat-card">
-        <div class="stat-number">7</div>
-        <div class="stat-label">Idiomas no app</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">2017</div>
-        <div class="stat-label">Pioneiros em português</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">90%</div>
-        <div class="stat-label">Da produção pode ser automatizada</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">10x</div>
-        <div class="stat-label">Potencial de escala com IA bem aplicada</div>
-      </div>
+      <div class="stat-card"><div class="stat-number">7</div><div class="stat-label">Idiomas no app</div></div>
+      <div class="stat-card"><div class="stat-number">2017</div><div class="stat-label">Pioneiros em português</div></div>
+      <div class="stat-card"><div class="stat-number">90%</div><div class="stat-label">Da produção pode ser automatizada</div></div>
+      <div class="stat-card"><div class="stat-number">10x</div><div class="stat-label">Potencial de escala com IA bem aplicada</div></div>
     </div>
   </div>
 </div>
 
-<!-- OPORTUNIDADES -->
-<div class="dores-section">
-  <div class="dores-inner">
+<!-- ══ OPORTUNIDADES ══ -->
+<div class="oport-section">
+  <div class="oport-inner">
     <div class="section-label reveal">O que identificamos</div>
-    <h2 class="section-title reveal">6 frentes onde a IA pode<br><em>amplificar o que já funciona</em></h2>
-
-    <div class="dores-grid">
-      <div class="dor-card reveal reveal-delay-1">
-        <div class="dor-num">01</div>
-        <div class="dor-title">Atendimento com potencial de escala</div>
-        <div class="dor-text">O atendimento via WhatsApp e Instagram já existe e funciona. Com agentes de IA bem estruturados, ele pode escalar para responder instantaneamente, 24h por dia, resolvendo a maioria dos casos antes de chegar ao time humano.</div>
+    <h2 class="section-title light reveal">6 frentes onde a IA pode<br><em>amplificar o que já funciona</em></h2>
+    <div class="oport-grid">
+      <div class="oport-card reveal reveal-delay-1">
+        <div class="oport-num">01</div>
+        <div class="oport-title">Atendimento com potencial de escala</div>
+        <div class="oport-text">O atendimento via WhatsApp e Instagram já existe e funciona. Com agentes bem estruturados, ele pode escalar para responder instantaneamente, 24h por dia, resolvendo a maioria dos casos sem intervenção humana.</div>
       </div>
-      <div class="dor-card reveal reveal-delay-2">
-        <div class="dor-num">02</div>
-        <div class="dor-title">Time pronto para evoluir com IA</div>
-        <div class="dor-text">A equipe já usa IA no dia a dia. Com uma metodologia estruturada e um copiloto treinado com o DNA do Lojong, cada pessoa passa a usar IA de forma mais consistente, mais rápida e com resultados muito melhores.</div>
+      <div class="oport-card reveal reveal-delay-2">
+        <div class="oport-num">02</div>
+        <div class="oport-title">Time pronto para evoluir com IA</div>
+        <div class="oport-text">A equipe já tem curiosidade e iniciativa. O que falta é metodologia — prompts estruturados, fluxos documentados e um playbook que padronize o melhor do que cada pessoa já descobriu por conta própria.</div>
       </div>
-      <div class="dor-card reveal reveal-delay-3">
-        <div class="dor-num">03</div>
-        <div class="dor-title">Produção de conteúdo pronta para acelerar</div>
-        <div class="dor-text">Roteiros, traduções, geração de áudio — o processo já existe. Automatizar os passos repetitivos significa lançar mais programas em mais idiomas, com a mesma equipe, sem abrir mão da revisão humana que garante a qualidade.</div>
+      <div class="oport-card reveal reveal-delay-3">
+        <div class="oport-num">03</div>
+        <div class="oport-title">Produção de conteúdo que pode escalar muito</div>
+        <div class="oport-text">Vocês já produzem conteúdo em 7 idiomas e usam IA em partes do processo. Automatizando o pipeline de ponta a ponta — roteiro, tradução, áudio — é possível aumentar a cadência sem aumentar a equipe.</div>
       </div>
-      <div class="dor-card reveal reveal-delay-1">
-        <div class="dor-num">04</div>
-        <div class="dor-title">Marketing com engine de crescimento</div>
-        <div class="dor-text">Landing pages, quizzes de conversão, campanhas — o Lojong já sabe o que funciona. O próximo passo é automatizar a execução para testar mais rápido, criar variações sem esforço e fechar vendas fora das lojas com tarifas muito menores.</div>
+      <div class="oport-card reveal reveal-delay-1">
+        <div class="oport-num">04</div>
+        <div class="oport-title">Growth engine pronto para ser montado</div>
+        <div class="oport-text">Vocês já têm campanha, Hotmart e estrutura de venda fora das lojas. Com landing pages geradas automaticamente e quizzes integrados ao onboarding, a máquina de aquisição ganha velocidade e escala real.</div>
       </div>
-      <div class="dor-card reveal reveal-delay-2">
-        <div class="dor-num">05</div>
-        <div class="dor-title">Dados ricos esperando por inteligência</div>
-        <div class="dor-text">Adjust, Meta Ads, App Store — o Lojong já gera dados valiosos. Conectar essas fontes num analista automatizado transforma informação dispersa em decisões de campanha mais rápidas e mais precisas.</div>
+      <div class="oport-card reveal reveal-delay-2">
+        <div class="oport-num">05</div>
+        <div class="oport-title">Dados existem — falta inteligência sobre eles</div>
+        <div class="oport-text">Adjust, Meta Ads, App Store — vocês têm dados valiosos. Um sistema que leia, cruze e interprete automaticamente transforma análise semanal em decisões mais rápidas e mais certeiras.</div>
       </div>
-      <div class="dor-card reveal reveal-delay-3">
-        <div class="dor-num">06</div>
-        <div class="dor-title">Produto com espaço para personalização</div>
-        <div class="dor-text">O onboarding com perguntas já é um diferencial. Aprofundar a personalização — de forma invisível, sem que o usuário perceba que é IA — cria uma experiência que os grandes concorrentes ainda estão tentando replicar.</div>
+      <div class="oport-card reveal reveal-delay-3">
+        <div class="oport-num">06</div>
+        <div class="oport-title">Produto com espaço para IA invisível</div>
+        <div class="oport-text">O app já funciona bem. A oportunidade é aprofundar a experiência com personalização inteligente — recomendações que melhoram silenciosamente com o uso, exatamente como o público de meditação aceita.</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- FASES -->
+<!-- ══ FASES ══ -->
 <div class="fases-section">
   <div class="fases-inner">
     <div class="section-label reveal">A Proposta</div>
-    <h2 class="section-title reveal">Faseado, progressivo<br>e com <em>resultado desde a Fase 1.</em></h2>
+    <h2 class="section-title reveal">Estruturada em fases.<br><em>Cada uma com resultado próprio.</em></h2>
+    <p class="reveal" style="font-size:13px;font-weight:300;color:var(--text-mid);line-height:2;max-width:640px;margin-top:8px;">Clique em cada módulo para ver os detalhes das entregas.</p>
 
-    <!-- ======= FASE 1 ======= -->
+    <!-- ═══ FASE 1 ═══ -->
     <div class="fase-wrapper reveal">
       <div class="fase-header">
-        <div class="fase-header-left">
+        <div>
           <div class="fase-tag">Fase 1 · 6 semanas</div>
-          <div class="fase-name">Agentes de Atendimento Inteligente<br>+ Diagnóstico Estratégico</div>
+          <div class="fase-name">Agentes de Atendimento + Diagnóstico Estratégico</div>
           <div class="fase-duration">Início imediato · Resultado em 6 semanas</div>
         </div>
-        <div class="fase-price-inline">
-          <div class="lbl">Investimento</div>
-          <div class="val">R$ 14.000</div>
-          <div class="sub">+ R$ 3.000/mês manutenção</div>
-        </div>
+        <div class="fase-num-badge">1</div>
       </div>
+      <div class="modulos-grid">
 
-      <div class="sub-blocks">
-        <!-- Sub 1A -->
-        <div class="sub-block">
-          <div class="sub-block-title">Sistema de Atendimento com IA</div>
-          <p class="sub-block-desc">Um sistema de agentes inteligentes centralizado via N8N, conectado ao WhatsApp e ao Instagram — as duas interfaces onde os clientes do Lojong já chegam hoje. A inteligência identifica automaticamente o que cada pessoa precisa e direciona para o agente certo, sem intervenção humana até onde for possível resolver.</p>
-          <ul class="items-list">
-            <li>Arquitetura centralizada no N8N — independente da plataforma na ponta (ManyChat, API do WhatsApp)</li>
-            <li>Base de conhecimento vetorizada (RAG) — resolve definitivamente o problema de respostas inventadas. A IA responde apenas com base no que sabe</li>
-            <li>Agente roteador de intenções — identifica se a pessoa quer suporte, tem problema de pagamento, quer comprar ou precisa de ajuda com o app</li>
-            <li>Agente de suporte: dúvidas sobre o app, problemas técnicos — coleta informações e escala para humano com contexto completo</li>
-            <li>Agente de assinatura e pagamento: consulta status via API Hotmart, orienta sobre cancelamento e upgrade, reenvia links</li>
-            <li>Agente de vendas: qualifica o lead, apresenta planos, tira dúvidas sobre premium — funciona no Instagram como primeira linha do funil</li>
-            <li>Tratamento de mensagens fatiadas, áudio transcrito e imagens</li>
-            <li>Handoff inteligente para humano — com resumo completo, sem a pessoa repetir tudo</li>
-            <li>Integração com CRM (a definir) e sistemas internos via API</li>
-            <li>Dashboard de métricas: taxa de resolução, tempo de resposta, volume por categoria</li>
-          </ul>
+        <!-- Módulo 1A -->
+        <div class="modulo-card" onclick="toggleModulo(this)">
+          <div class="modulo-head">
+            <div class="modulo-head-left">
+              <div class="modulo-icon-wrap">🤖</div>
+              <div class="modulo-head-text">
+                <div class="modulo-label">Módulo 1A</div>
+                <div class="modulo-title">Sistema de Atendimento com IA</div>
+              </div>
+            </div>
+            <div class="modulo-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="#2C4A4E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="modulo-chips">
+            <span class="chip">WhatsApp + Instagram</span>
+            <span class="chip">Base vetorizada (RAG)</span>
+            <span class="chip">3 agentes especializados</span>
+            <span class="chip">Integração Hotmart + CRM</span>
+            <span class="chip">Dashboard de métricas</span>
+          </div>
+          <div class="modulo-body">
+            <div class="modulo-body-inner">
+              <p class="modulo-desc">Sistema centralizado no N8N conectado ao WhatsApp e Instagram. Base de conhecimento vetorizada elimina alucinações — a IA responde apenas com o que sabe. Um agente roteador identifica a intenção de cada pessoa e direciona para o agente certo.</p>
+              <ul class="modulo-items">
+                <li>Arquitetura unificada no N8N — independente da plataforma na ponta (ManyChat, API do WhatsApp)</li>
+                <li>Base de conhecimento vetorizada (RAG) — resolve definitivamente o problema de respostas inventadas</li>
+                <li>Agente roteador de intenções: suporte, pagamento, vendas ou dúvida sobre o app</li>
+                <li>Agente de suporte: dúvidas, problemas técnicos — escala para humano com contexto completo</li>
+                <li>Agente de pagamento: consulta via API Hotmart, cancelamento, upgrade, reenvio de links</li>
+                <li>Agente de vendas: qualificação, apresentação de planos, conversão via WhatsApp e Instagram</li>
+                <li>Tratamento de mensagens fatiadas, áudio transcrito e imagens</li>
+                <li>Handoff inteligente — humano recebe resumo completo, pessoa não precisa repetir nada</li>
+                <li>Integração com CRM (a definir) e sistemas internos via API</li>
+                <li>Dashboard de métricas: volume por canal, taxa de resolução, tempo de resposta, escalonamentos</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <!-- Sub 1B -->
-        <div class="sub-block">
-          <div class="sub-block-title">Diagnóstico Estratégico Completo</div>
-          <p class="sub-block-desc">Enquanto o sistema de atendimento é implementado, mergulhamos na operação do Lojong para mapear todas as outras oportunidades de IA — de forma rigorosa, ouvindo cada área e cruzando com o que os concorrentes já fazem. O resultado é um roadmap claro de onde agir a seguir.</p>
-          <ul class="items-list">
-            <li>Entrevistas com cada área da equipe: marketing, conteúdo, redação, áudio e dev</li>
-            <li>Mapeamento de todos os processos que tocam IA ou poderiam tocar</li>
-            <li>Análise de ferramentas atuais e identificação dos gargalos reais</li>
-            <li>Benchmark com concorrentes — Calm, Headspace, Meditopia, Insight Timer: o que estão fazendo com IA e onde o Lojong pode se diferenciar</li>
-            <li>Entrega: Roadmap de IA do Lojong — documento com todas as oportunidades priorizadas por impacto × esforço, com recomendação de sequência para os próximos 12 meses</li>
-          </ul>
+        <!-- Módulo 1B -->
+        <div class="modulo-card" onclick="toggleModulo(this)">
+          <div class="modulo-head">
+            <div class="modulo-head-left">
+              <div class="modulo-icon-wrap">🗺️</div>
+              <div class="modulo-head-text">
+                <div class="modulo-label">Módulo 1B</div>
+                <div class="modulo-title">Diagnóstico Estratégico Completo</div>
+              </div>
+            </div>
+            <div class="modulo-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="#2C4A4E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="modulo-chips">
+            <span class="chip">Entrevistas com cada área</span>
+            <span class="chip">Benchmark de concorrentes</span>
+            <span class="chip">Roadmap de IA 12 meses</span>
+            <span class="chip">Impacto × esforço priorizado</span>
+          </div>
+          <div class="modulo-body">
+            <div class="modulo-body-inner">
+              <p class="modulo-desc">Enquanto o sistema de atendimento é implementado, mergulhamos na operação do Lojong para mapear todas as oportunidades de IA — ouvindo cada área e cruzando com o que os concorrentes já fazem. O resultado é um roadmap claro de onde agir a seguir.</p>
+              <ul class="modulo-items">
+                <li>Entrevistas com cada área da equipe: marketing, conteúdo, redação, áudio e dev</li>
+                <li>Mapeamento de todos os processos que tocam IA ou poderiam tocar</li>
+                <li>Análise de ferramentas atuais e identificação dos gargalos reais</li>
+                <li>Benchmark: Calm, Headspace, Meditopia, Insight Timer — o que fazem com IA e onde o Lojong pode se diferenciar</li>
+                <li>Entrega: Roadmap de IA do Lojong — oportunidades priorizadas por impacto × esforço, com sequência recomendada para os próximos 12 meses</li>
+              </ul>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
 
-    <!-- ======= FASE 2 ======= -->
+    <!-- ═══ FASE 2 ═══ -->
     <div class="fase-wrapper reveal">
       <div class="fase-header">
-        <div class="fase-header-left">
+        <div>
           <div class="fase-tag">Fase 2 · 8 semanas</div>
-          <div class="fase-name">Pipeline de Conteúdo + Copiloto Interno<br>+ Capacitação da Equipe</div>
+          <div class="fase-name">Copilotos de Produto e Marketing + Capacitação das Equipes</div>
           <div class="fase-duration">Pode iniciar em paralelo ao fim da Fase 1</div>
         </div>
-        <div class="fase-price-inline">
-          <div class="lbl">Investimento</div>
-          <div class="val">R$ 22.000</div>
-          <div class="sub">+ R$ 3.500/mês manutenção</div>
-        </div>
+        <div class="fase-num-badge">2</div>
       </div>
+      <div class="modulos-grid">
 
-      <div class="sub-blocks">
-        <!-- Sub 2A: Pipeline de conteúdo -->
-        <div class="sub-block">
-          <div class="sub-block-title">Pipeline de Produção de Conteúdo</div>
-          <p class="sub-block-desc">Um fluxo automatizado de ponta a ponta para a criação de programas de meditação — do tema ao áudio final pronto para revisão. Foco inicial em alemão e japonês, os idiomas que hoje representam o maior gargalo operacional.</p>
-          <ul class="items-list">
-            <li>Input: tema, duração, público, idioma primário</li>
-            <li>IA gera outline → roteiro completo → variações de duração (3, 5 e 10 min) → metadata e tags</li>
-            <li>QA automatizado de linguagem, tom, princípios e consistência antes de ir para revisão</li>
-            <li>Aprovação humana do roteiro</li>
-            <li>Tradução automática com glossário budista/mindfulness preservado + notas culturais para revisor nativo</li>
-            <li>Geração de áudio via API ElevenLabs com vozes pré-configuradas por idioma, emoção e timing</li>
-            <li>Ajuste automático de silêncios e normalização de volume — substitui o trabalho manual no Audacity</li>
-            <li>Fila de revisão humana final com aprovação simplificada</li>
-          </ul>
+        <!-- Módulo 2A -->
+        <div class="modulo-card" onclick="toggleModulo(this)">
+          <div class="modulo-head">
+            <div class="modulo-head-left">
+              <div class="modulo-icon-wrap">🎧</div>
+              <div class="modulo-head-text">
+                <div class="modulo-label">Módulo 2A · Copiloto de Produto</div>
+                <div class="modulo-title">Pipeline de Novas Meditações</div>
+              </div>
+            </div>
+            <div class="modulo-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="#2C4A4E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="modulo-chips">
+            <span class="chip">Do roteiro ao áudio</span>
+            <span class="chip">ElevenLabs API</span>
+            <span class="chip">7 idiomas</span>
+            <span class="chip">Foco: alemão e japonês</span>
+            <span class="chip">QA automatizado</span>
+          </div>
+          <div class="modulo-body">
+            <div class="modulo-body-inner">
+              <p class="modulo-desc">Pipeline completo de criação de conteúdo de meditação — do input ao áudio final. Foco inicial em alemão e japonês, os idiomas com maior gargalo. Aprovação humana preservada nos pontos críticos.</p>
+              <ul class="modulo-items">
+                <li>Input: tema, duração, público-alvo, idioma → IA gera outline, roteiro, variações (3, 5 e 10 min), metadata e tags</li>
+                <li>QA automatizado de linguagem, tom e princípios do Lojong antes de ir para revisão</li>
+                <li>Aprovação humana do roteiro antes de avançar</li>
+                <li>Tradução automática com glossário budista/mindfulness preservado + notas culturais para revisor nativo</li>
+                <li>Geração de áudio via API ElevenLabs com vozes pré-configuradas por idioma, emoção e timing</li>
+                <li>Ajuste automático de silêncios e normalização de volume — elimina o trabalho manual no Audacity</li>
+                <li>Fila de revisão humana final com aprovação simplificada</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <!-- Sub 2B: Workflow Instagram -->
-        <div class="sub-block">
-          <div class="sub-block-title">Workflow de Conteúdo para Instagram</div>
-          <p class="sub-block-desc">Um processo estruturado que elimina a inconsistência da produção de conteúdo para redes sociais — do planejamento editorial ao agendamento, com qualidade de marca garantida em cada etapa.</p>
-          <ul class="items-list">
-            <li>Pilares de conteúdo definidos → calendário editorial assistido por IA</li>
-            <li>Geração de copies + prompts de imagem e vídeo otimizados por tipo de post</li>
-            <li>QA de marca antes de publicar — tom, linguagem e identidade visual consistentes</li>
-            <li>Biblioteca de prompts testados e versionados por formato (carrossel, reels, stories)</li>
-            <li>Processo estável e replicável — sem depender do "dia bom" de nenhuma ferramenta</li>
-          </ul>
+        <!-- Módulo 2B -->
+        <div class="modulo-card" onclick="toggleModulo(this)">
+          <div class="modulo-head">
+            <div class="modulo-head-left">
+              <div class="modulo-icon-wrap">📱</div>
+              <div class="modulo-head-text">
+                <div class="modulo-label">Módulo 2B · Copiloto de Social Media</div>
+                <div class="modulo-title">Workflow Instagram</div>
+              </div>
+            </div>
+            <div class="modulo-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="#2C4A4E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="modulo-chips">
+            <span class="chip">Calendário editorial</span>
+            <span class="chip">Copies + prompts visuais</span>
+            <span class="chip">Publicação via API</span>
+            <span class="chip">Biblioteca de prompts</span>
+            <span class="chip">QA de marca</span>
+          </div>
+          <div class="modulo-body">
+            <div class="modulo-body-inner">
+              <p class="modulo-desc">Pipeline estruturado de ponta a ponta para produção e publicação de conteúdo orgânico — do planejamento editorial à publicação, com qualidade de marca garantida e processo estável independente de ferramenta.</p>
+              <ul class="modulo-items">
+                <li>Sugestão de calendário editorial mensal com base nos pilares de conteúdo do Lojong</li>
+                <li>Geração de pautas, copies e prompts de imagem/vídeo por formato (carrossel, reels, stories)</li>
+                <li>QA de marca: tom, linguagem e consistência visual antes de publicar</li>
+                <li>Publicação direta no perfil via integração com a API do Instagram</li>
+                <li>Biblioteca de prompts testados e versionados por tipo de conteúdo</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <!-- Sub 2C: Copiloto -->
-        <div class="sub-block">
-          <div class="sub-block-title">Copiloto Interno Lojong</div>
-          <p class="sub-block-desc">Um assistente de IA customizado, treinado com o conteúdo, a estratégia e o tom de voz do Lojong. Disponível para toda a equipe, ele substitui o uso desordenado de contas genéricas por um assistente que já conhece a empresa de dentro.</p>
-          <ul class="items-list">
-            <li>Treinado com os programas, textos e posicionamento do Lojong</li>
-            <li>Base de conhecimento interna: estratégia de marketing, políticas, diretrizes de marca</li>
-            <li>Glossário multilíngue budista/mindfulness integrado para consistência nas traduções</li>
-            <li>Acessível para qualquer pessoa da equipe — resolve o problema de "cada um usando IA de um jeito"</li>
-            <li>Atualizado mensalmente com novos conteúdos e aprendizados da operação</li>
-          </ul>
+        <!-- Módulo 2C -->
+        <div class="modulo-card" onclick="toggleModulo(this)">
+          <div class="modulo-head">
+            <div class="modulo-head-left">
+              <div class="modulo-icon-wrap">🚀</div>
+              <div class="modulo-head-text">
+                <div class="modulo-label">Módulo 2C · Copiloto de Performance</div>
+                <div class="modulo-title">Fábrica de Landing Pages</div>
+              </div>
+            </div>
+            <div class="modulo-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="#2C4A4E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="modulo-chips">
+            <span class="chip">Brief → HTML → deploy</span>
+            <span class="chip">GitHub / Netlify</span>
+            <span class="chip">Checkout Hotmart</span>
+            <span class="chip">Variações para A/B</span>
+            <span class="chip">Integração WhatsApp</span>
+          </div>
+          <div class="modulo-body">
+            <div class="modulo-body-inner">
+              <p class="modulo-desc">Fábrica de páginas de venda conectadas ao Hotmart e ao WhatsApp — geradas automaticamente a partir de um brief, com brandbook do Lojong embutido e deploy em minutos via GitHub/Netlify.</p>
+              <ul class="modulo-items">
+                <li>Template-base com brandbook do Lojong embutido — identidade sempre preservada</li>
+                <li>Pipeline: brief → geração automática de HTML → deploy via GitHub/Netlify</li>
+                <li>Uma landing nova em minutos, não dias — múltiplas variações prontas para teste A/B</li>
+                <li>Integração com WhatsApp para captura e qualificação de leads</li>
+                <li>Integração com Hotmart para checkout direto (~10% de tarifa vs. ~60% das lojas)</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <!-- Sub 2D: Playbook -->
-        <div class="sub-block">
-          <div class="sub-block-title">Playbook de IA do Lojong</div>
-          <p class="sub-block-desc">Um documento vivo que padroniza o uso de IA em toda a empresa. Não é um manual genérico — é construído com os fluxos reais do Lojong e evolui conforme a operação amadurece.</p>
-          <ul class="items-list">
-            <li>Workflow recomendado para cada tipo de tarefa por área</li>
-            <li>Tom de voz e diretrizes de marca para uso com IA</li>
-            <li>Dos and don'ts — o que a IA do Lojong pode e não pode dizer</li>
-            <li>Exemplos reais do time, atualizados conforme o uso evolui</li>
-            <li>Atualizado mensalmente com novidades relevantes do mundo de IA</li>
-          </ul>
+        <!-- Módulo 2D: Capacitação — col span ou mesma linha -->
+        <div class="modulo-card" onclick="toggleModulo(this)">
+          <div class="modulo-head">
+            <div class="modulo-head-left">
+              <div class="modulo-icon-wrap">🎓</div>
+              <div class="modulo-head-text">
+                <div class="modulo-label">Módulo 2D · Capacitação</div>
+                <div class="modulo-title">Treinamento por Função + Playbook de IA</div>
+              </div>
+            </div>
+            <div class="modulo-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="#2C4A4E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="modulo-chips">
+            <span class="chip">4 áreas: marketing, conteúdo, áudio, gestão</span>
+            <span class="chip">4 sessões ao vivo</span>
+            <span class="chip">Playbook vivo do Lojong</span>
+            <span class="chip">1 automação por pessoa</span>
+          </div>
+          <div class="modulo-body">
+            <div class="modulo-body-inner">
+              <p class="modulo-desc">Treinamento prático por função com os fluxos reais do Lojong — não é curso genérico de "como usar ChatGPT". Cada pessoa sai com pelo menos uma automação pessoal funcionando. Junto com a capacitação, a equipe recebe o Playbook de IA do Lojong — documento vivo que resolve de forma permanente o problema de "cada pessoa usa IA de um jeito diferente".</p>
+              <ul class="modulo-items">
+                <li>Marketing: briefar IA para copy e criativos, gerar variações de anúncio, criar e publicar landings</li>
+                <li>Conteúdo e redação: IA como co-autora mantendo a voz do Lojong, tradução com preservação de nuances</li>
+                <li>Áudio: otimizar uso do ElevenLabs, automatizar edição, gerenciar vozes por idioma</li>
+                <li>Gestão (Leonardo e Anderson): avaliar oportunidades de IA, priorizar implementações, medir ROI</li>
+                <li>4 sessões ao vivo (remoto), 1h30 cada, com exercícios práticos entre sessões</li>
+                <li>Cada pessoa sai com pelo menos uma automação pessoal funcionando no seu dia a dia</li>
+                <li>Playbook: workflows por tipo de tarefa, tom de voz, diretrizes de marca, glossário multilíngue, exemplos reais atualizados mensalmente</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <!-- Sub 2E: Capacitação — largura total -->
-      <div class="sub-blocks single" style="margin-top:2px;">
-        <div class="sub-block">
-          <div class="sub-block-title">Capacitação da Equipe por Função</div>
-          <p class="sub-block-desc">Não é um curso genérico de "como usar ChatGPT". É treinamento prático, com os fluxos reais do Lojong, adaptado para cada área. Ao final, cada pessoa sai com pelo menos uma automação pessoal funcionando no seu dia a dia.</p>
-          <ul class="items-list" style="columns:2;column-gap:40px;">
-            <li>Marketing: briefar IA para copy e criativos, gerar variações de anúncio, analisar resultados</li>
-            <li>Conteúdo e redação: IA como co-autora mantendo a voz do Lojong, revisão assistida, tradução com nuances</li>
-            <li>Áudio: otimizar uso do ElevenLabs, automatizar edição, gerenciar vozes por idioma</li>
-            <li>Gestão: avaliar oportunidades de IA, priorizar implementações, medir ROI</li>
-            <li>4 sessões ao vivo (remoto), 1h30 cada, com exercícios práticos entre sessões</li>
-            <li>Cada pessoa sai com pelo menos uma automação pessoal funcionando</li>
-          </ul>
-        </div>
       </div>
     </div>
 
-    <!-- ======= FASE 3 ======= -->
+    <!-- ═══ FASE 3 ═══ -->
     <div class="fase-wrapper reveal">
-      <div class="fase-header">
-        <div class="fase-header-left">
-          <div class="fase-tag">Fase 3 · A apresentar</div>
-          <div class="fase-name">Growth Engine + Inteligência de Dados</div>
-          <div class="fase-duration">Após conclusão da Fase 2 · Valores a definir</div>
+      <div class="fase-header" style="background:var(--teal-mid)">
+        <div>
+          <div class="fase-tag">Fase 3 · A definir</div>
+          <div class="fase-name">Growth Engine + Inteligência de Dados + Quizzes</div>
+          <div class="fase-duration">Após conclusão da Fase 2 · Escopo definido com o Roadmap da Fase 1</div>
         </div>
+        <div class="fase-num-badge">3</div>
       </div>
+      <div class="modulos-grid">
 
-      <div class="sub-blocks">
-        <div class="sub-block">
-          <div class="sub-block-title">Fábrica de Landing Pages + Engine de Quizzes</div>
-          <p class="sub-block-desc">Landing pages criadas em minutos via pipeline automatizado, com deploy direto. Quizzes de conversão que capturam leads fora das lojas — economizando em tarifas e criando continuidade entre a campanha e a experiência no app.</p>
-          <ul class="items-list">
-            <li>Template-base em HTML com brandbook do Lojong embutido</li>
-            <li>Pipeline: brief → geração automática → deploy via GitHub/Netlify</li>
-            <li>Múltiplas variações para teste A/B sem esforço adicional</li>
-            <li>Integração com Hotmart para checkout direto fora das lojas</li>
-            <li>Engine de quiz com lógica de branching personalizada por campanha</li>
-            <li>Integração quiz → onboarding do app: respostas viram preferências iniciais do usuário</li>
-            <li>Estrutura reutilizável — construída uma vez, adaptada infinitamente</li>
-          </ul>
+        <div class="modulo-card" onclick="toggleModulo(this)">
+          <div class="modulo-head">
+            <div class="modulo-head-left">
+              <div class="modulo-icon-wrap">🧩</div>
+              <div class="modulo-head-text">
+                <div class="modulo-label">Módulo 3A</div>
+                <div class="modulo-title">Engine de Quizzes de Conversão</div>
+              </div>
+            </div>
+            <div class="modulo-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="#2C4A4E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="modulo-chips">
+            <span class="chip">Lógica de branching</span>
+            <span class="chip">Integração com onboarding</span>
+            <span class="chip">CTA para Hotmart</span>
+            <span class="chip">Adaptável por idioma</span>
+          </div>
+          <div class="modulo-body">
+            <div class="modulo-body-inner">
+              <p class="modulo-desc">Estrutura reutilizável de quiz com lógica personalizada — as respostas alimentam o onboarding do app, criando continuidade entre a campanha e a experiência dentro do produto.</p>
+              <ul class="modulo-items">
+                <li>Perguntas → resultado personalizado → oferta + CTA para Hotmart ou download do app</li>
+                <li>Integração com onboarding: respostas do quiz viram as preferências iniciais do usuário no app</li>
+                <li>Adaptável por idioma e campanha — uma vez construído, escala infinitamente</li>
+                <li>Baseado no modelo da Meditopia, com diferenciação pela integração direta ao app</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <div class="sub-block">
-          <div class="sub-block-title">Marketing AI Analyst + ASO Intelligence</div>
-          <p class="sub-block-desc">Um agente que conecta os dados de Meta Ads, Adjust e métricas do app — gerando relatórios automáticos, alertas inteligentes e análise de ASO para manter o Lojong bem ranqueado nos idiomas prioritários.</p>
-          <ul class="items-list">
-            <li>Conexão de Meta Ads + Adjust + métricas do app em um só lugar</li>
-            <li>Relatório semanal automatizado: o que funciona, o que cai, onde investir mais</li>
-            <li>Análise de ASO por idioma: ranking, keywords, reviews dos concorrentes</li>
-            <li>Alertas quando KPIs saem do esperado: CPI subiu, churn acelerou, review negativa em volume</li>
-            <li>Tracking unificado com UTMs e atribuição limpa — base confiável para decisões de marketing</li>
-          </ul>
+        <div class="modulo-card" onclick="toggleModulo(this)">
+          <div class="modulo-head">
+            <div class="modulo-head-left">
+              <div class="modulo-icon-wrap">📊</div>
+              <div class="modulo-head-text">
+                <div class="modulo-label">Módulo 3B</div>
+                <div class="modulo-title">Marketing AI Analyst</div>
+              </div>
+            </div>
+            <div class="modulo-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="#2C4A4E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="modulo-chips">
+            <span class="chip">Meta Ads + Adjust</span>
+            <span class="chip">Relatório semanal automático</span>
+            <span class="chip">ASO por idioma</span>
+            <span class="chip">Alertas inteligentes</span>
+          </div>
+          <div class="modulo-body">
+            <div class="modulo-body-inner">
+              <p class="modulo-desc">Sistema que conecta os dados de Meta Ads, Adjust e métricas do app em um só lugar e entrega análise automática com recomendações de ação — sem precisar abrir planilha por planilha.</p>
+              <ul class="modulo-items">
+                <li>Conexão de Meta Ads + Adjust + métricas do app em um só lugar</li>
+                <li>Relatório semanal automatizado: o que funciona, o que cai, onde investir mais ou cortar</li>
+                <li>Análise de ASO por idioma: ranking, keywords, reviews de concorrentes</li>
+                <li>Alertas quando KPIs saem do esperado: CPI subiu, churn acelerou, review negativa em volume</li>
+                <li>Tracking unificado com UTMs e atribuição limpa — base confiável para todas as decisões</li>
+              </ul>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
 
-    <!-- ======= FASE 4 ======= -->
+    <!-- ═══ FASE 4 ═══ -->
     <div class="fase-wrapper reveal">
       <div class="fase-header" style="background:var(--text-dark)">
-        <div class="fase-header-left">
+        <div>
           <div class="fase-tag">Fase 4 · Visão de Futuro</div>
           <div class="fase-name">IA no Produto — Experiência do Usuário</div>
           <div class="fase-duration">Após maturidade das fases anteriores · Módulos independentes</div>
         </div>
+        <div class="fase-num-badge">4</div>
       </div>
+      <div class="modulos-grid">
 
-      <div class="sub-blocks">
-        <div class="sub-block">
-          <div class="sub-block-title">IA Invisível na Experiência</div>
-          <p class="sub-block-desc">O público de meditação é sensível à presença de IA. Todas as implementações desta fase seguem o princípio da <strong>IA invisível</strong> — melhorar a experiência sem que o usuário sinta que está interagindo com uma máquina. O app simplesmente fica melhor.</p>
-          <ul class="items-list">
-            <li>Recomendação inteligente: check-in diário → prática ideal do catálogo com base em estado emocional e histórico</li>
-            <li>Personalização progressiva: o app aprende padrões silenciosamente — a pessoa sente que o app "entende" ela</li>
-          </ul>
+        <div class="modulo-card" onclick="toggleModulo(this)">
+          <div class="modulo-head">
+            <div class="modulo-head-left">
+              <div class="modulo-icon-wrap">✨</div>
+              <div class="modulo-head-text">
+                <div class="modulo-label">Módulo 4A · IA Invisível</div>
+                <div class="modulo-title">Personalização e Recomendação</div>
+              </div>
+            </div>
+            <div class="modulo-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="#2C4A4E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="modulo-chips">
+            <span class="chip">Check-in diário</span>
+            <span class="chip">Recomendação do catálogo</span>
+            <span class="chip">Aprendizado silencioso</span>
+            <span class="chip">Sem chatbot aparente</span>
+          </div>
+          <div class="modulo-body">
+            <div class="modulo-body-inner">
+              <p class="modulo-desc">O público de meditação é sensível à presença de IA. Todas as implementações seguem o princípio da IA invisível — o app simplesmente fica melhor com o uso, sem que o usuário sinta que é uma máquina.</p>
+              <ul class="modulo-items">
+                <li>Check-in diário simples → IA recomenda a prática ideal do catálogo existente</li>
+                <li>Sem gerar conteúdo novo — apenas curadoria inteligente do que já existe</li>
+                <li>Personalização progressiva: o app aprende padrões de uso e se adapta silenciosamente</li>
+                <li>A pessoa sente que o app "entende" ela — sem saber que é IA</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="sub-block">
-          <div class="sub-block-title">Engajamento e Diferenciação</div>
-          <p class="sub-block-desc">Funcionalidades que criam vínculo com o usuário e diferenciam o Lojong de concorrentes que ainda estão tentando replicar o que ele pode ter primeiro.</p>
-          <ul class="items-list">
-            <li>Chatbot de bem-estar com guardrails rigorosos — baseado na filosofia e conteúdo do Lojong</li>
-            <li>Segmentação avançada por estado emocional e padrão de uso para recomendações cada vez mais precisas</li>
-          </ul>
+
+        <div class="modulo-card" onclick="toggleModulo(this)">
+          <div class="modulo-head">
+            <div class="modulo-head-left">
+              <div class="modulo-icon-wrap">💬</div>
+              <div class="modulo-head-text">
+                <div class="modulo-label">Módulo 4B · Engajamento</div>
+                <div class="modulo-title">Chatbot de Bem-Estar</div>
+              </div>
+            </div>
+            <div class="modulo-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="#2C4A4E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="modulo-chips">
+            <span class="chip">Filosofia do Lojong</span>
+            <span class="chip">Guardrails rigorosos</span>
+            <span class="chip">Diferenciação de produto</span>
+          </div>
+          <div class="modulo-body">
+            <div class="modulo-body-inner">
+              <p class="modulo-desc">Assistente conversacional construído com base nos conteúdos e filosofia do Lojong — com guardrails que garantem que a experiência é de suporte emocional, nunca substituto de terapia.</p>
+              <ul class="modulo-items">
+                <li>Baseado nos conteúdos e filosofia do Lojong — coerente com a voz da marca</li>
+                <li>Guardrails rigorosos: não substitui terapia, detecção de crise, limites claros</li>
+                <li>Diferencial competitivo frente à Meditopia e ao Headspace</li>
+                <li>Segmentação avançada por estado emocional e padrão de uso</li>
+              </ul>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
 
   </div>
 </div>
 
-<!-- POR QUE NEWSCALE -->
+<!-- ══ TABELA DE INVESTIMENTOS ══ -->
+<div class="invest-section">
+  <div class="invest-inner">
+    <div class="section-label reveal">Investimento</div>
+    <h2 class="section-title light reveal">Resumo das <em>condições por fase</em></h2>
+
+    <div class="invest-table-wrap reveal">
+      <table class="invest-table">
+        <thead>
+          <tr>
+            <th>Fase</th>
+            <th>Prazo</th>
+            <th>Implementação</th>
+            <th>Manutenção mensal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="it-phase-badge">Fase 1</div>
+              <div class="it-phase-name">Agentes de Atendimento + Diagnóstico</div>
+              <div class="it-phase-sub">Início imediato</div>
+            </td>
+            <td><div class="it-duration">6 semanas</div></td>
+            <td><div class="it-price">R$ 14.000</div></td>
+            <td><div class="it-price">R$ 3.000</div><div class="it-price-sub">por mês</div></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="it-phase-badge">Fase 2</div>
+              <div class="it-phase-name">Copilotos + Capacitação</div>
+              <div class="it-phase-sub">Pode iniciar em paralelo à Fase 1</div>
+            </td>
+            <td><div class="it-duration">8 semanas</div></td>
+            <td><div class="it-price">R$ 22.000</div></td>
+            <td><div class="it-price">R$ 3.500</div><div class="it-price-sub">por mês</div></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="it-phase-badge">Fase 3</div>
+              <div class="it-phase-name">Growth Engine + Analytics + Quizzes</div>
+              <div class="it-phase-sub">Escopo detalhado após Roadmap da Fase 1</div>
+            </td>
+            <td><div class="it-duration">A definir</div></td>
+            <td><div class="it-tbd">A orçar</div></td>
+            <td><div class="it-tbd">A orçar</div></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="it-phase-badge">Fase 4</div>
+              <div class="it-phase-name">IA no Produto — Experiência do Usuário</div>
+              <div class="it-phase-sub">Módulos independentes, após maturidade</div>
+            </td>
+            <td><div class="it-duration">A definir</div></td>
+            <td><div class="it-tbd">A orçar</div></td>
+            <td><div class="it-tbd">A orçar</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="invest-note reveal">* A manutenção cobre: monitoramento, ajustes de prompts e fluxos, atualização da base de conhecimento, relatório mensal de performance e suporte técnico.<br>* Custos de APIs (LLM, N8N hosting) são por conta do Lojong — estimativa de R$ 300–700/mês dependendo do volume de uso.</p>
+  </div>
+</div>
+
+<!-- ══ POR QUE NEWSCALE ══ -->
 <div class="porque-section">
   <div class="porque-inner">
     <div class="section-label reveal">Por que a NewScale</div>
     <h2 class="section-title reveal">Algumas empresas vendem consultoria.<br>Outras vendem tecnologia.<br><em>A NewScale vende as duas juntas.</em></h2>
 
+    <div class="porque-statement reveal">
+      <p>A NewScale faz o <em>mapeamento completo do negócio</em>, entende os processos em profundidade e identifica onde a IA gera ganho real — de produtividade, de receita, de rentabilidade. E, além do diagnóstico, <em>implementa efetivamente as soluções</em> e <em>acompanha os resultados</em> ao longo do tempo.</p>
+    </div>
+
     <div class="porque-grid">
       <div class="porque-card reveal">
         <span class="porque-icon">🔍</span>
         <div class="porque-card-title">Diagnóstico real antes de qualquer solução</div>
-        <p class="porque-card-text">A NewScale faz o mapeamento completo do negócio, entende os processos em profundidade e identifica onde a IA gera ganho real — de produtividade, de receita, de rentabilidade. Não chegamos com soluções prontas. Chegamos com perguntas certas.</p>
+        <p class="porque-card-text">Não chegamos com soluções prontas. Mapeamos o negócio por inteiro, ouvimos a equipe e identificamos onde a IA gera ganho real de produtividade e resultado. Isso evita investir onde não há retorno.</p>
       </div>
       <div class="porque-card reveal reveal-delay-2">
         <span class="porque-icon">⚙️</span>
         <div class="porque-card-title">Implementamos o que diagnosticamos</div>
-        <p class="porque-card-text">Além do diagnóstico, a NewScale implementa efetivamente as soluções. Não entregamos um relatório e vamos embora — construímos, testamos e colocamos no ar. Agentes de atendimento, pipelines de conteúdo, automações de marketing — tudo rodando em clientes reais hoje.</p>
+        <p class="porque-card-text">Além do diagnóstico, a NewScale constrói e coloca no ar. Não entregamos relatório e saímos. Agentes de atendimento, pipelines de conteúdo, automações de marketing — tudo rodando em clientes reais hoje.</p>
       </div>
       <div class="porque-card reveal reveal-delay-1">
         <span class="porque-icon">📈</span>
         <div class="porque-card-title">Acompanhamos resultados continuamente</div>
-        <p class="porque-card-text">IA não é um projeto com começo, meio e fim. Os modelos mudam, as ferramentas evoluem, o negócio muda. A NewScale acompanha a eficácia das soluções implementadas e ajusta conforme necessário — garantindo que o investimento gere resultado no longo prazo.</p>
-      </div>
-      <div class="porque-card reveal reveal-delay-3">
-        <span class="porque-icon">🧭</span>
-        <div class="porque-card-title">Estratégia e execução na mesma equipe</div>
-        <p class="porque-card-text">Consultoria estratégica, marketing e growth, e engenharia com mais de 15 anos de experiência — na mesma empresa, no mesmo projeto. Sem o gap entre "o que foi recomendado" e "o que foi entregue". O que é planejado é o que é construído.</p>
+        <p class="porque-card-text">IA não é projeto com começo, meio e fim. Os modelos mudam, as ferramentas evoluem, o negócio cresce. A NewScale acompanha a eficácia das soluções e ajusta — garantindo que o investimento gere resultado no longo prazo.</p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- CTA -->
+<!-- ══ CTA ══ -->
 <div class="cta-section">
   <div class="cta-inner">
     <div class="section-label reveal" style="justify-content:center;color:rgba(176,110,74,0.7)">Próximos Passos</div>
     <h2 class="cta-title reveal">Prontos para <em>começar?</em></h2>
-    <p class="cta-text reveal">O kick-off pode acontecer em até 5 dias úteis após a assinatura. Cada semana que passa é uma semana que a Meditopia avança. Vamos mudar isso juntos.</p>
-
+    <p class="cta-text reveal">O kick-off pode acontecer em até 5 dias úteis após a assinatura. A Fase 1 já entrega resultado concreto em 6 semanas — e abre o mapa completo do que vem a seguir.</p>
     <div class="cta-steps reveal">
-      <div class="cta-step">
-        <div class="step-num">1</div>
-        <div class="step-text">Reunião com Anderson + sócio de marketing</div>
-      </div>
-      <div class="cta-step">
-        <div class="step-num">2</div>
-        <div class="step-text">Escolha do escopo e alinhamento de início</div>
-      </div>
-      <div class="cta-step">
-        <div class="step-num">3</div>
-        <div class="step-text">Assinatura de contrato</div>
-      </div>
-      <div class="cta-step">
-        <div class="step-num">4</div>
-        <div class="step-text">Kick-off em até 5 dias úteis</div>
-      </div>
+      <div class="cta-step"><div class="step-num">1</div><div class="step-text">Reunião com Anderson + sócio de marketing</div></div>
+      <div class="cta-step"><div class="step-num">2</div><div class="step-text">Escolha do escopo e alinhamento de início</div></div>
+      <div class="cta-step"><div class="step-num">3</div><div class="step-text">Assinatura de contrato</div></div>
+      <div class="cta-step"><div class="step-num">4</div><div class="step-text">Kick-off em até 5 dias úteis</div></div>
     </div>
   </div>
 </div>
 
-<!-- FOOTER -->
+<!-- ══ FOOTER ══ -->
 <div class="footer">
-  <div class="footer-brand">
-    NewScale
-    <span>Consulting</span>
-  </div>
-  <div class="footer-date">
-    Proposta exclusiva · Lojong<br>
-    Março de 2026
-  </div>
+  <div class="footer-brand">NewScale<span>Consulting</span></div>
+  <div class="footer-date">Proposta exclusiva · Lojong<br>Março de 2026</div>
 </div>
 
 <script>
+  // Toggle módulos
+  function toggleModulo(card) {
+    const isOpen = card.classList.contains('open');
+    card.classList.toggle('open', !isOpen);
+  }
+
+  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.06 });
   reveals.forEach(el => observer.observe(el));
 
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth' });
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) t.scrollIntoView({ behavior: 'smooth' });
     });
   });
 </script>
