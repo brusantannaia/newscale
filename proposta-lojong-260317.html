@@ -17,954 +17,258 @@
     --text-dark: #0D2226;
     --text-mid: #2C4A4E;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Josefin Sans', sans-serif;
-    background: var(--cream);
-    color: var(--text-dark);
-    overflow-x: hidden;
-  }
+  body { font-family: 'Josefin Sans', sans-serif; background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
 
   /* HERO */
   .hero {
-    min-height: 100vh;
-    background: var(--teal-deep);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 60px 40px;
-    overflow: hidden;
+    min-height: 100vh; background: var(--teal-deep);
+    position: relative; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; text-align: center;
+    padding: 60px 40px; overflow: hidden;
   }
-
   .hero-pattern {
-    position: absolute;
-    inset: 0;
-    opacity: 0.06;
-    background-image: 
+    position: absolute; inset: 0; opacity: 0.06;
+    background-image:
       radial-gradient(ellipse at 20% 50%, #B06E4A 0%, transparent 50%),
       radial-gradient(ellipse at 80% 20%, #435D51 0%, transparent 40%),
       radial-gradient(ellipse at 60% 80%, #14373C 0%, transparent 50%);
   }
-
-  /* Topographic lines */
-  .topo-lines {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-  }
-  .topo-lines svg {
-    width: 100%;
-    height: 100%;
-    opacity: 0.08;
-  }
-
+  .topo-lines { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+  .topo-lines svg { width: 100%; height: 100%; opacity: 0.08; }
   .hero-badge {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--copper);
-    border: 1px solid rgba(176,110,74,0.4);
-    padding: 8px 20px;
-    display: inline-block;
-    margin-bottom: 32px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.2s;
+    font-size: 10px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--copper); border: 1px solid rgba(176,110,74,0.4); padding: 8px 20px;
+    display: inline-block; margin-bottom: 32px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s;
   }
-
   .hero-brand {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 11px;
-    font-weight: 300;
-    letter-spacing: 8px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.4s;
+    font-size: 11px; font-weight: 300; letter-spacing: 8px; text-transform: uppercase;
+    color: rgba(255,255,255,0.5); margin-bottom: 20px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s;
   }
-
   .hero-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(48px, 8vw, 96px);
-    font-weight: 300;
-    color: var(--white);
-    line-height: 0.95;
-    letter-spacing: -1px;
-    margin-bottom: 8px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.6s;
+    font-size: clamp(44px, 7vw, 86px); font-weight: 300; color: var(--white);
+    line-height: 1.0; letter-spacing: -1px; margin-bottom: 8px;
+    opacity: 0; animation: fadeUp 0.8s ease forwards 0.6s;
   }
-
-  .hero-title em {
-    font-style: italic;
-    color: var(--copper);
-  }
-
+  .hero-title em { font-style: italic; color: var(--copper); }
   .hero-title-x {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(30px, 5vw, 56px);
-    font-weight: 300;
-    color: rgba(255,255,255,0.3);
-    margin-bottom: 8px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.7s;
+    font-size: clamp(30px, 5vw, 56px); font-weight: 300; color: rgba(255,255,255,0.3);
+    margin-bottom: 8px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.7s;
   }
-
   .hero-title-sub {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(32px, 5vw, 64px);
-    font-weight: 300;
-    font-style: italic;
-    color: var(--sand);
-    margin-bottom: 40px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.8s;
+    font-size: clamp(32px, 5vw, 64px); font-weight: 300; font-style: italic;
+    color: var(--sand); margin-bottom: 40px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.8s;
   }
-
   .hero-desc {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 300;
-    letter-spacing: 2px;
-    color: rgba(255,255,255,0.55);
-    max-width: 480px;
-    line-height: 2;
-    margin-bottom: 60px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 1s;
+    font-size: 13px; font-weight: 300; letter-spacing: 2px; color: rgba(255,255,255,0.55);
+    max-width: 480px; line-height: 2; margin-bottom: 60px;
+    opacity: 0; animation: fadeUp 0.8s ease forwards 1s;
   }
-
   .hero-scroll {
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 1.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    text-decoration: none;
+    opacity: 0; animation: fadeUp 0.8s ease forwards 1.3s;
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    cursor: pointer; text-decoration: none;
   }
-  .hero-scroll span {
-    font-size: 9px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.35);
-  }
+  .hero-scroll span { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.35); }
   .scroll-line {
-    width: 1px;
-    height: 50px;
+    width: 1px; height: 50px;
     background: linear-gradient(to bottom, rgba(176,110,74,0.8), transparent);
     animation: scrollPulse 2s ease-in-out infinite;
   }
 
-  /* SECTION BASE */
-  section {
-    padding: 100px 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
+  /* LABELS & TITLES */
   .section-label {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: var(--copper);
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
+    font-size: 9px; font-weight: 600; letter-spacing: 5px; text-transform: uppercase;
+    color: var(--copper); margin-bottom: 16px; display: flex; align-items: center; gap: 16px;
   }
-  .section-label::before {
-    content: '';
-    width: 32px;
-    height: 1px;
-    background: var(--copper);
-    display: inline-block;
-  }
-
+  .section-label::before { content: ''; width: 32px; height: 1px; background: var(--copper); display: inline-block; }
   .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(36px, 5vw, 60px);
-    font-weight: 300;
-    color: var(--teal-deep);
-    line-height: 1.1;
-    margin-bottom: 16px;
+    font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 5vw, 60px);
+    font-weight: 300; color: var(--teal-deep); line-height: 1.1; margin-bottom: 16px;
   }
-  .section-title em {
-    font-style: italic;
-    color: var(--copper);
-  }
+  .section-title em { font-style: italic; color: var(--copper); }
 
-  /* INTRO SECTION */
+  /* INTRO */
   .intro-section {
-    padding: 100px 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
+    padding: 100px 40px; max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
   }
-
-  .intro-text p {
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 2;
-    color: var(--text-mid);
-    margin-bottom: 20px;
-  }
-
-  .intro-text p strong {
-    color: var(--teal-deep);
-    font-weight: 600;
-  }
-
-  .intro-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-  }
-
+  .intro-text p { font-size: 15px; font-weight: 300; line-height: 2; color: var(--text-mid); margin-bottom: 20px; }
+  .intro-text p strong { color: var(--teal-deep); font-weight: 600; }
+  .intro-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
   .stat-card {
-    background: var(--teal-deep);
-    padding: 36px 28px;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease;
+    background: var(--teal-deep); padding: 36px 28px; position: relative;
+    overflow: hidden; transition: transform 0.3s ease;
   }
   .stat-card:hover { transform: translateY(-4px); }
   .stat-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; right: 0;
-    width: 60px; height: 60px;
-    background: rgba(176,110,74,0.15);
-    border-radius: 50%;
-    transform: translate(20px, 20px);
+    content: ''; position: absolute; bottom: 0; right: 0;
+    width: 60px; height: 60px; background: rgba(176,110,74,0.15);
+    border-radius: 50%; transform: translate(20px, 20px);
   }
   .stat-card:nth-child(2) { background: var(--copper); }
   .stat-card:nth-child(3) { background: var(--teal-mid); }
   .stat-card:nth-child(4) { background: var(--text-dark); }
-
   .stat-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 52px;
-    font-weight: 300;
-    color: var(--white);
-    line-height: 1;
-    margin-bottom: 8px;
+    font-family: 'Cormorant Garamond', serif; font-size: 52px;
+    font-weight: 300; color: var(--white); line-height: 1; margin-bottom: 8px;
   }
-  .stat-label {
-    font-size: 10px;
-    font-weight: 300;
-    letter-spacing: 2px;
-    color: rgba(255,255,255,0.65);
-    text-transform: uppercase;
-  }
+  .stat-label { font-size: 10px; font-weight: 300; letter-spacing: 2px; color: rgba(255,255,255,0.65); text-transform: uppercase; }
 
-  /* DORES SECTION */
-  .dores-section {
-    background: var(--teal-deep);
-    padding: 100px 0;
-  }
-  .dores-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-  }
+  /* OPORTUNIDADES */
+  .dores-section { background: var(--teal-deep); padding: 100px 0; }
+  .dores-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
   .dores-section .section-title { color: var(--white); }
   .dores-section .section-label { color: var(--copper); }
-
-  .dores-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    margin-top: 60px;
-  }
-
+  .dores-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 60px; }
   .dor-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.06);
-    padding: 40px 32px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s ease;
-    cursor: default;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);
+    padding: 40px 32px; position: relative; overflow: hidden; transition: all 0.4s ease;
   }
-
   .dor-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px;
-    height: 0;
-    background: var(--copper);
-    transition: height 0.4s ease;
+    content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0;
+    background: var(--copper); transition: height 0.4s ease;
   }
-
-  .dor-card:hover {
-    background: rgba(255,255,255,0.07);
-    transform: translateY(-4px);
-  }
+  .dor-card:hover { background: rgba(255,255,255,0.07); transform: translateY(-4px); }
   .dor-card:hover::before { height: 100%; }
-
-  .dor-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 64px;
-    font-weight: 300;
-    color: rgba(176,110,74,0.2);
-    line-height: 1;
-    margin-bottom: 20px;
-  }
-  .dor-title {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--copper);
-    margin-bottom: 16px;
-  }
-  .dor-text {
-    font-size: 13px;
-    font-weight: 300;
-    line-height: 1.9;
-    color: rgba(255,255,255,0.6);
-  }
+  .dor-num { font-family: 'Cormorant Garamond', serif; font-size: 64px; font-weight: 300; color: rgba(176,110,74,0.2); line-height: 1; margin-bottom: 20px; }
+  .dor-title { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .dor-text { font-size: 13px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.6); }
 
   /* FASES */
-  .fases-section {
-    padding: 100px 0;
-    background: var(--cream);
-  }
-  .fases-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-  }
+  .fases-section { padding: 100px 0; background: var(--cream); }
+  .fases-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 
-  .fase-block {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 0;
-    margin-top: 60px;
-    border: 1px solid rgba(20,55,60,0.1);
-    overflow: hidden;
-    transition: box-shadow 0.4s ease;
-  }
-  .fase-block:hover {
-    box-shadow: 0 20px 60px rgba(20,55,60,0.1);
-  }
-  .fase-block + .fase-block { margin-top: 24px; }
+  /* Sub-blocos dentro de uma fase */
+  .fase-wrapper { margin-top: 60px; }
+  .fase-wrapper + .fase-wrapper { margin-top: 48px; }
 
-  .fase-sidebar {
-    background: var(--teal-deep);
-    padding: 48px 36px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    overflow: hidden;
+  .fase-header {
+    background: var(--teal-deep); padding: 36px 44px;
+    display: flex; justify-content: space-between; align-items: flex-end;
+    flex-wrap: wrap; gap: 16px;
   }
-  .fase-block:nth-child(2) .fase-sidebar { background: var(--copper); }
-  .fase-block:nth-child(3) .fase-sidebar { background: var(--teal-mid); }
-  .fase-block:nth-child(4) .fase-sidebar { background: var(--text-dark); }
+  .fase-wrapper:nth-child(2) .fase-header { background: var(--copper); }
+  .fase-wrapper:nth-child(3) .fase-header { background: var(--teal-mid); }
+  .fase-wrapper:nth-child(4) .fase-header { background: var(--text-dark); }
 
-  .fase-sidebar::after {
-    content: '';
-    position: absolute;
-    bottom: -30px; right: -30px;
-    width: 120px; height: 120px;
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 50%;
-  }
+  .fase-header-left {}
+  .fase-tag { font-size: 9px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
+  .fase-name { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: var(--white); line-height: 1.1; }
+  .fase-duration { font-size: 10px; letter-spacing: 2px; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-top: 8px; }
 
-  .fase-num-big {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 100px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.12);
-    line-height: 1;
-    position: absolute;
-    bottom: 16px; right: 16px;
-  }
+  .fase-price-inline { text-align: right; }
+  .fase-price-inline .lbl { font-size: 9px; letter-spacing: 2px; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-bottom: 4px; }
+  .fase-price-inline .val { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 300; color: var(--white); }
+  .fase-price-inline .sub { font-size: 10px; color: rgba(255,255,255,0.4); margin-top: 2px; }
 
-  .fase-tag {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 12px;
+  /* Sub-seções dentro de cada fase */
+  .sub-blocks { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .sub-blocks.single { grid-template-columns: 1fr; }
+  .sub-block { background: var(--white); padding: 40px 44px; }
+  .sub-block-title {
+    font-size: 9px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--copper); margin-bottom: 16px; display: flex; align-items: center; gap: 12px;
   }
-  .fase-title-side {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
-    font-weight: 400;
-    color: var(--white);
-    line-height: 1.2;
-    margin-bottom: 24px;
+  .sub-block-title::before { content: ''; width: 20px; height: 1px; background: var(--copper); }
+  .sub-block-desc { font-size: 13px; font-weight: 300; line-height: 2; color: var(--text-mid); margin-bottom: 24px; }
+  .items-list { list-style: none; }
+  .items-list li {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 10px 0; border-bottom: 1px solid rgba(20,55,60,0.06);
+    font-size: 12px; font-weight: 300; line-height: 1.6; color: var(--text-mid);
   }
-  .fase-duration {
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: rgba(255,255,255,0.5);
-    text-transform: uppercase;
-  }
-  .fase-price-block {
-    margin-top: 24px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.15);
-  }
-  .fase-price {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-weight: 400;
-    color: var(--white);
-  }
-  .fase-price-label {
-    font-size: 9px;
-    letter-spacing: 2px;
-    color: rgba(255,255,255,0.45);
-    text-transform: uppercase;
-  }
+  .items-list li:last-child { border-bottom: none; }
+  .items-list li::before { content: '→'; color: var(--copper); flex-shrink: 0; }
 
-  .fase-content {
-    background: var(--white);
-    padding: 48px;
-  }
+  /* Fases 3 e 4 — sem preço */
+  .fase-no-price .fase-header { background: var(--teal-mid); }
+  .fase-wrapper:nth-child(3) .fase-header { background: var(--teal-mid); }
+  .fase-wrapper:nth-child(4) .fase-header { background: var(--text-dark); }
 
-  .fase-content-desc {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 2;
-    color: var(--text-mid);
-    margin-bottom: 32px;
-    padding-bottom: 32px;
-    border-bottom: 1px solid rgba(20,55,60,0.08);
-  }
-
-  .fase-items-title {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--copper);
-    margin-bottom: 20px;
-  }
-
-  .fase-items {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  .fase-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 14px 16px;
-    background: var(--cream);
-    font-size: 12px;
-    font-weight: 300;
-    line-height: 1.5;
-    color: var(--text-mid);
-    transition: background 0.3s ease;
-  }
-  .fase-item:hover { background: rgba(20,55,60,0.06); }
-
-  .fase-item::before {
-    content: '→';
-    color: var(--copper);
-    font-size: 12px;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  /* CAMINHO B */
-  .caminhoB-section {
-    background: linear-gradient(135deg, var(--teal-deep) 0%, #0D2226 100%);
-    padding: 100px 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .caminhoB-section::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -20%;
-    width: 600px;
-    height: 600px;
-    border: 1px solid rgba(176,110,74,0.1);
-    border-radius: 50%;
-  }
-  .caminhoB-section::after {
-    content: '';
-    position: absolute;
-    bottom: -30%;
-    right: -10%;
-    width: 400px;
-    height: 400px;
-    border: 1px solid rgba(176,110,74,0.08);
-    border-radius: 50%;
-  }
-
-  .caminhoB-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .caminhoB-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-    margin-top: 60px;
-  }
-
-  .caminhoB-card {
-    border: 1px solid rgba(176,110,74,0.25);
-    padding: 48px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .caminhoB-card::before {
-    content: 'B';
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 200px;
-    font-weight: 300;
-    color: rgba(176,110,74,0.06);
-    position: absolute;
-    right: -20px;
-    bottom: -40px;
-    line-height: 1;
-  }
-
-  .caminhoB-badge {
-    display: inline-block;
-    background: var(--copper);
-    color: var(--white);
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    padding: 6px 16px;
-    margin-bottom: 28px;
-  }
-
-  .caminhoB-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 40px;
-    font-weight: 300;
-    color: var(--white);
-    line-height: 1.1;
-    margin-bottom: 20px;
-  }
-
-  .caminhoB-price-area {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    margin: 32px 0;
-  }
-
-  .price-box {
-    background: rgba(255,255,255,0.05);
-    padding: 24px;
-  }
-  .price-box-label {
-    font-size: 9px;
-    letter-spacing: 3px;
-    color: rgba(255,255,255,0.4);
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  .price-box-value {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 36px;
-    font-weight: 300;
-    color: var(--white);
-  }
-  .price-box-sub {
-    font-size: 10px;
-    color: rgba(255,255,255,0.4);
-    margin-top: 4px;
-  }
-
-  .economy-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(176,110,74,0.2);
-    border: 1px solid rgba(176,110,74,0.3);
-    padding: 10px 18px;
-    font-size: 11px;
-    color: var(--copper-light);
-    letter-spacing: 1px;
-    margin-top: 20px;
-  }
-
-  .caminhoB-benefits {
-    list-style: none;
-  }
-  .caminhoB-benefits li {
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    font-size: 13px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.7);
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    line-height: 1.7;
-  }
-  .caminhoB-benefits li::before {
-    content: '✦';
-    color: var(--copper);
-    font-size: 10px;
-    flex-shrink: 0;
-    margin-top: 3px;
-  }
-
-  /* POR QUE NEWSCALE */
-  .porque-section {
-    padding: 100px 0;
-    background: var(--cream);
-  }
-  .porque-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-  }
-
-  .porque-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-    margin-top: 60px;
-  }
-
+  /* POR QUE */
+  .porque-section { padding: 100px 0; background: var(--cream); }
+  .porque-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+  .porque-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; margin-top: 60px; }
   .porque-card {
-    background: var(--white);
-    padding: 44px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s ease;
+    background: var(--white); padding: 44px; position: relative;
+    overflow: hidden; transition: all 0.4s ease;
   }
-  .porque-card:nth-child(odd) { background: var(--white); }
-  .porque-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 24px 48px rgba(20,55,60,0.1);
-  }
-
-  .porque-icon {
-    font-size: 28px;
-    margin-bottom: 20px;
-    display: block;
-  }
-
-  .porque-card-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
-    font-weight: 400;
-    color: var(--teal-deep);
-    margin-bottom: 14px;
-    line-height: 1.2;
-  }
-
-  .porque-card-text {
-    font-size: 13px;
-    font-weight: 300;
-    line-height: 2;
-    color: var(--text-mid);
-  }
-
+  .porque-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px rgba(20,55,60,0.1); }
+  .porque-icon { font-size: 28px; margin-bottom: 20px; display: block; }
+  .porque-card-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--teal-deep); margin-bottom: 14px; line-height: 1.2; }
+  .porque-card-text { font-size: 13px; font-weight: 300; line-height: 2; color: var(--text-mid); }
   .porque-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 0; height: 3px;
-    background: var(--copper);
-    transition: width 0.4s ease;
+    content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px;
+    background: var(--copper); transition: width 0.4s ease;
   }
   .porque-card:hover::after { width: 100%; }
 
-  /* RESUMO TABELA */
-  .resumo-section {
-    background: var(--teal-deep);
-    padding: 100px 0;
-  }
-  .resumo-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-  }
-
-  .resumo-section .section-title { color: var(--white); }
-  .resumo-section .section-label { color: var(--copper); }
-
-  .resumo-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 60px;
-    font-size: 13px;
-  }
-
-  .resumo-table thead tr {
-    background: rgba(255,255,255,0.04);
-    border-bottom: 1px solid rgba(176,110,74,0.3);
-  }
-
-  .resumo-table th {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.4);
-    padding: 16px 24px;
-    text-align: left;
-  }
-
-  .resumo-table td {
-    padding: 20px 24px;
-    color: rgba(255,255,255,0.8);
-    font-weight: 300;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    vertical-align: middle;
-  }
-
-  .resumo-table tbody tr {
-    transition: background 0.3s ease;
-  }
-  .resumo-table tbody tr:hover {
-    background: rgba(255,255,255,0.04);
-  }
-
-  .resumo-table .fase-badge {
-    display: inline-block;
-    background: rgba(176,110,74,0.2);
-    border: 1px solid rgba(176,110,74,0.3);
-    color: var(--copper-light);
-    font-size: 9px;
-    letter-spacing: 2px;
-    padding: 4px 12px;
-    text-transform: uppercase;
-  }
-
-  .resumo-table .highlight-row td {
-    background: rgba(176,110,74,0.08);
-    color: var(--white);
-  }
-  .resumo-table .highlight-row .fase-badge {
-    background: var(--copper);
-    color: var(--white);
-    border-color: var(--copper);
-  }
-
-  .price-highlight {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    font-weight: 300;
-    color: var(--white);
-  }
-
   /* CTA */
   .cta-section {
-    padding: 120px 40px;
-    text-align: center;
-    background: var(--cream);
-    position: relative;
-    overflow: hidden;
+    padding: 120px 40px; text-align: center;
+    background: var(--teal-deep); position: relative; overflow: hidden;
   }
-
   .cta-section::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
-    border: 1px solid rgba(20,55,60,0.05);
-    border-radius: 50%;
+    content: ''; position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%); width: 600px; height: 600px;
+    border: 1px solid rgba(255,255,255,0.04); border-radius: 50%;
   }
   .cta-section::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    height: 400px;
-    border: 1px solid rgba(20,55,60,0.07);
-    border-radius: 50%;
+    content: ''; position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%); width: 400px; height: 400px;
+    border: 1px solid rgba(255,255,255,0.06); border-radius: 50%;
   }
-
-  .cta-inner {
-    position: relative;
-    z-index: 1;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
+  .cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
   .cta-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(42px, 6vw, 72px);
-    font-weight: 300;
-    color: var(--teal-deep);
-    line-height: 1.05;
-    margin-bottom: 20px;
+    font-family: 'Cormorant Garamond', serif; font-size: clamp(42px, 6vw, 72px);
+    font-weight: 300; color: var(--white); line-height: 1.05; margin-bottom: 20px;
   }
-  .cta-title em {
-    font-style: italic;
-    color: var(--copper);
-  }
-
-  .cta-text {
-    font-size: 13px;
-    font-weight: 300;
-    letter-spacing: 1px;
-    color: var(--text-mid);
-    line-height: 2;
-    margin-bottom: 48px;
-  }
-
-  .cta-steps {
-    display: flex;
-    justify-content: center;
-    gap: 0;
-    margin-bottom: 60px;
-  }
-
-  .cta-step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding: 0 32px;
-    position: relative;
-  }
-
+  .cta-title em { font-style: italic; color: var(--copper); }
+  .cta-text { font-size: 13px; font-weight: 300; letter-spacing: 1px; color: rgba(255,255,255,0.55); line-height: 2; margin-bottom: 56px; }
+  .cta-steps { display: flex; justify-content: center; gap: 0; margin-bottom: 0; }
+  .cta-step { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 0 32px; position: relative; }
   .cta-step + .cta-step::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 20px;
-    width: 1px;
-    height: 30px;
-    background: rgba(20,55,60,0.15);
+    content: ''; position: absolute; left: 0; top: 20px; width: 1px; height: 30px;
+    background: rgba(255,255,255,0.1);
   }
-
   .step-num {
-    width: 40px;
-    height: 40px;
-    border: 1px solid var(--copper);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    font-weight: 300;
-    color: var(--copper);
+    width: 40px; height: 40px; border: 1px solid var(--copper); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; color: var(--copper);
   }
-
-  .step-text {
-    font-size: 11px;
-    font-weight: 300;
-    letter-spacing: 1px;
-    color: var(--text-mid);
-    text-align: center;
-    max-width: 120px;
-    line-height: 1.6;
-  }
+  .step-text { font-size: 11px; font-weight: 300; letter-spacing: 1px; color: rgba(255,255,255,0.5); text-align: center; max-width: 120px; line-height: 1.6; }
 
   /* FOOTER */
-  .footer {
-    background: var(--text-dark);
-    padding: 48px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .footer-brand {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 18px;
-    font-weight: 200;
-    letter-spacing: 6px;
-    color: var(--white);
-    text-transform: uppercase;
-  }
-  .footer-brand span {
-    display: block;
-    font-size: 8px;
-    letter-spacing: 5px;
-    color: rgba(255,255,255,0.3);
-    margin-top: 4px;
-  }
-
-  .footer-date {
-    font-size: 10px;
-    letter-spacing: 3px;
-    color: rgba(255,255,255,0.3);
-    text-align: right;
-  }
+  .footer { background: var(--text-dark); padding: 48px 40px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-brand { font-size: 18px; font-weight: 200; letter-spacing: 6px; color: var(--white); text-transform: uppercase; }
+  .footer-brand span { display: block; font-size: 8px; letter-spacing: 5px; color: rgba(255,255,255,0.3); margin-top: 4px; }
+  .footer-date { font-size: 10px; letter-spacing: 3px; color: rgba(255,255,255,0.3); text-align: right; }
 
   /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 1; transform: scaleY(1); }
-    50% { opacity: 0.4; transform: scaleY(0.7); }
-  }
-
-  /* Scroll reveal */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes scrollPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal-delay-1 { transition-delay: 0.1s; }
   .reveal-delay-2 { transition-delay: 0.2s; }
   .reveal-delay-3 { transition-delay: 0.3s; }
-  .reveal-delay-4 { transition-delay: 0.4s; }
-  .reveal-delay-5 { transition-delay: 0.5s; }
 
   /* RESPONSIVE */
   @media (max-width: 900px) {
     .intro-section { grid-template-columns: 1fr; gap: 48px; }
     .dores-grid { grid-template-columns: 1fr; }
-    .fase-block { grid-template-columns: 1fr; }
-    .caminhoB-grid { grid-template-columns: 1fr; }
+    .sub-blocks { grid-template-columns: 1fr; }
     .porque-grid { grid-template-columns: 1fr; }
     .cta-steps { flex-direction: column; align-items: center; }
     .cta-step + .cta-step::before { display: none; }
     .footer { flex-direction: column; gap: 20px; text-align: center; }
-    .resumo-table { font-size: 11px; }
-    .resumo-table th, .resumo-table td { padding: 14px 16px; }
+    .fase-header { flex-direction: column; align-items: flex-start; }
+    .fase-price-inline { text-align: left; }
   }
 </style>
 </head>
@@ -984,30 +288,29 @@
       <path d="M100,200 Q400,130 600,190 T1000,160 T1300,200" fill="none" stroke="white" stroke-width="0.3"/>
     </svg>
   </div>
-
-  <div class="hero-badge">Proposta Estratégica · Março 2026</div>
+  <div class="hero-badge">Proposta Exclusiva · Março 2026</div>
   <div class="hero-brand">NewScale Consulting</div>
-  <div class="hero-title"><em>Parceria</em></div>
-  <div class="hero-title-x">×</div>
-  <div class="hero-title-sub">Estratégica em IA</div>
+  <div class="hero-title"><em>Aplicação</em> Estratégica</div>
+  <div class="hero-title-x">de</div>
+  <div class="hero-title-sub">Inteligência Artificial</div>
   <div class="hero-desc">
     Uma proposta construída a partir da sua realidade — não um cardápio genérico de serviços, mas um plano desenhado para o Lojong competir em outro nível.
   </div>
-  <a href="#diagnostico" class="hero-scroll">
+  <a href="#contexto" class="hero-scroll">
     <span>Explorar</span>
     <div class="scroll-line"></div>
   </a>
 </div>
 
 <!-- INTRO -->
-<div id="diagnostico">
+<div id="contexto">
   <div class="intro-section">
     <div class="intro-text reveal">
       <div class="section-label">O Contexto</div>
       <h2 class="section-title">Um app pioneiro num mercado que <em>não para</em></h2>
-      <p>O Lojong foi o <strong>primeiro app de meditação 100% em português</strong> do Brasil. Vocês cresceram com o hype da pandemia, consolidaram presença em 7 idiomas e hoje competem contra players com capitalização bilionária.</p>
-      <p>Com uma equipe enxuta e operação 100% remota, vocês não podem competir no volume de investimento. Mas podem — e devem — competir em <strong>inteligência operacional</strong>. É exatamente aí que entra a IA.</p>
-      <p>Hoje o Lojong já usa IA de forma pontual. O que falta é estrutura, integração e estratégia para transformar uso isolado em <strong>vantagem competitiva sistêmica</strong>.</p>
+      <p>O Lojong foi o <strong>primeiro app de meditação 100% em português</strong> do Brasil. Cresceram com o hype da pandemia, consolidaram presença em 7 idiomas e hoje competem com consistência contra players com capitalização bilionária.</p>
+      <p>Com uma equipe enxuta e operação 100% remota, o Lojong já opera com muita eficiência. O que se abre agora é a oportunidade de usar a IA para <strong>amplificar o que já funciona bem</strong> — e desbloquear frentes que ainda consomem tempo e esforço manual desnecessário.</p>
+      <p>A proposta a seguir não parte do zero. Parte do que o Lojong já tem construído para levá-lo a um <strong>novo patamar de velocidade, escala e inteligência operacional.</strong></p>
     </div>
     <div class="intro-stats reveal reveal-delay-2">
       <div class="stat-card">
@@ -1015,57 +318,57 @@
         <div class="stat-label">Idiomas no app</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">~60%</div>
-        <div class="stat-label">Perdido em tarifas de lojas</div>
+        <div class="stat-number">2017</div>
+        <div class="stat-label">Pioneiros em português</div>
       </div>
       <div class="stat-card">
         <div class="stat-number">90%</div>
         <div class="stat-label">Da produção pode ser automatizada</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">2017</div>
-        <div class="stat-label">Pioneiros em português</div>
+        <div class="stat-number">10x</div>
+        <div class="stat-label">Potencial de escala com IA bem aplicada</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- DORES -->
+<!-- OPORTUNIDADES -->
 <div class="dores-section">
   <div class="dores-inner">
     <div class="section-label reveal">O que identificamos</div>
-    <h2 class="section-title reveal">6 frentes de <em>impacto imediato</em></h2>
+    <h2 class="section-title reveal">6 frentes onde a IA pode<br><em>amplificar o que já funciona</em></h2>
 
     <div class="dores-grid">
       <div class="dor-card reveal reveal-delay-1">
         <div class="dor-num">01</div>
-        <div class="dor-title">Atendimento fragmentado</div>
-        <div class="dor-text">Dois sistemas separados (Responde.ai + ManyChat) sem conversar entre si. Uma tentativa anterior que travou em alucinações. Time resolvendo na mão o que um agente resolveria em segundos.</div>
+        <div class="dor-title">Atendimento com potencial de escala</div>
+        <div class="dor-text">O atendimento via WhatsApp e Instagram já existe e funciona. Com agentes de IA bem estruturados, ele pode escalar para responder instantaneamente, 24h por dia, resolvendo a maioria dos casos antes de chegar ao time humano.</div>
       </div>
       <div class="dor-card reveal reveal-delay-2">
         <div class="dor-num">02</div>
-        <div class="dor-title">Time sem metodologia de IA</div>
-        <div class="dor-text">Conta de IA compartilhada, cada pessoa usando de um jeito, sem contexto, sem padrão. Não é culpa do time — é falta de metodologia. E é o que mais trava a adoção real de IA nas empresas.</div>
+        <div class="dor-title">Time pronto para evoluir com IA</div>
+        <div class="dor-text">A equipe já usa IA no dia a dia. Com uma metodologia estruturada e um copiloto treinado com o DNA do Lojong, cada pessoa passa a usar IA de forma mais consistente, mais rápida e com resultados muito melhores.</div>
       </div>
       <div class="dor-card reveal reveal-delay-3">
         <div class="dor-num">03</div>
-        <div class="dor-title">Produção de conteúdo lenta</div>
-        <div class="dor-text">Roteiros, traduções para 7 idiomas, geração de áudio, edição no Audacity — tudo na mão. Um programa por idioma por mês com muito trabalho braçal que poderia ser 90% automatizado.</div>
+        <div class="dor-title">Produção de conteúdo pronta para acelerar</div>
+        <div class="dor-text">Roteiros, traduções, geração de áudio — o processo já existe. Automatizar os passos repetitivos significa lançar mais programas em mais idiomas, com a mesma equipe, sem abrir mão da revisão humana que garante a qualidade.</div>
       </div>
       <div class="dor-card reveal reveal-delay-1">
         <div class="dor-num">04</div>
-        <div class="dor-title">Marketing com potencial represado</div>
-        <div class="dor-text">Landing pages criadas artesanalmente. Quizzes que o Leonardo sabe que funcionam (viu a Meditopia fazendo) mas ainda não escalou. Um growth engine esperando para ser montado.</div>
+        <div class="dor-title">Marketing com engine de crescimento</div>
+        <div class="dor-text">Landing pages, quizzes de conversão, campanhas — o Lojong já sabe o que funciona. O próximo passo é automatizar a execução para testar mais rápido, criar variações sem esforço e fechar vendas fora das lojas com tarifas muito menores.</div>
       </div>
       <div class="dor-card reveal reveal-delay-2">
         <div class="dor-num">05</div>
-        <div class="dor-title">Dados sem inteligência</div>
-        <div class="dor-text">Vocês têm os dados. Adjust, Meta Ads, App Store — a informação existe. O que falta é um sistema que leia, cruze, interprete e sugira ações. Hoje isso depende de planilha por planilha.</div>
+        <div class="dor-title">Dados ricos esperando por inteligência</div>
+        <div class="dor-text">Adjust, Meta Ads, App Store — o Lojong já gera dados valiosos. Conectar essas fontes num analista automatizado transforma informação dispersa em decisões de campanha mais rápidas e mais precisas.</div>
       </div>
       <div class="dor-card reveal reveal-delay-3">
         <div class="dor-num">06</div>
-        <div class="dor-title">Produto subutilizando IA</div>
-        <div class="dor-text">O app usa IA para produzir conteúdo, mas ainda não oferece experiências potencializadas para o usuário. Personalização real, recomendação inteligente — os concorrentes já estão fazendo.</div>
+        <div class="dor-title">Produto com espaço para personalização</div>
+        <div class="dor-text">O onboarding com perguntas já é um diferencial. Aprofundar a personalização — de forma invisível, sem que o usuário perceba que é IA — cria uma experiência que os grandes concorrentes ainda estão tentando replicar.</div>
       </div>
     </div>
   </div>
@@ -1074,172 +377,216 @@
 <!-- FASES -->
 <div class="fases-section">
   <div class="fases-inner">
-    <div class="section-label reveal">Caminho A — Faseado e Progressivo</div>
-    <h2 class="section-title reveal">Resultado rápido.<br>Expansão <em>com confiança.</em></h2>
+    <div class="section-label reveal">A Proposta</div>
+    <h2 class="section-title reveal">Faseado, progressivo<br>e com <em>resultado desde a Fase 1.</em></h2>
 
-    <!-- FASE 1 -->
-    <div class="fase-block reveal">
-      <div class="fase-sidebar">
-        <div>
+    <!-- ======= FASE 1 ======= -->
+    <div class="fase-wrapper reveal">
+      <div class="fase-header">
+        <div class="fase-header-left">
           <div class="fase-tag">Fase 1 · 6 semanas</div>
-          <div class="fase-title-side">Agentes de Atendimento + Diagnóstico</div>
+          <div class="fase-name">Agentes de Atendimento Inteligente<br>+ Diagnóstico Estratégico</div>
           <div class="fase-duration">Início imediato · Resultado em 6 semanas</div>
         </div>
-        <div class="fase-price-block">
-          <div class="fase-price-label">Investimento</div>
-          <div class="fase-price">R$ 14.000</div>
-          <div class="fase-price-label" style="margin-top:8px">+ R$ 3.000/mês manutenção</div>
+        <div class="fase-price-inline">
+          <div class="lbl">Investimento</div>
+          <div class="val">R$ 14.000</div>
+          <div class="sub">+ R$ 3.000/mês manutenção</div>
         </div>
-        <div class="fase-num-big">1</div>
       </div>
-      <div class="fase-content">
-        <p class="fase-content-desc">Resolve o problema mais imediato — o atendimento — enquanto mapeia todas as outras oportunidades com profundidade. Ao final, você tem um sistema rodando e um roadmap completo de IA para o Lojong.</p>
-        <div class="fase-items-title">O que será entregue</div>
-        <div class="fase-items">
-          <div class="fase-item">Base de conhecimento vetorizada (sem alucinações)</div>
-          <div class="fase-item">Agente roteador de intenções (suporte / venda / pagamento)</div>
-          <div class="fase-item">Integração com API do Hotmart para problemas de pagamento</div>
-          <div class="fase-item">Handoff inteligente para humano com contexto completo</div>
-          <div class="fase-item">Tratamento de mensagens fatiadas, áudio e imagens</div>
-          <div class="fase-item">Diagnóstico com todas as equipes + Roadmap de IA do Lojong</div>
-          <div class="fase-item">Benchmark com Calm, Headspace, Meditopia, Insight Timer</div>
-          <div class="fase-item">Dashboard de métricas de atendimento</div>
+
+      <div class="sub-blocks">
+        <!-- Sub 1A -->
+        <div class="sub-block">
+          <div class="sub-block-title">Sistema de Atendimento com IA</div>
+          <p class="sub-block-desc">Um sistema de agentes inteligentes centralizado via N8N, conectado ao WhatsApp e ao Instagram — as duas interfaces onde os clientes do Lojong já chegam hoje. A inteligência identifica automaticamente o que cada pessoa precisa e direciona para o agente certo, sem intervenção humana até onde for possível resolver.</p>
+          <ul class="items-list">
+            <li>Arquitetura centralizada no N8N — independente da plataforma na ponta (ManyChat, API do WhatsApp)</li>
+            <li>Base de conhecimento vetorizada (RAG) — resolve definitivamente o problema de respostas inventadas. A IA responde apenas com base no que sabe</li>
+            <li>Agente roteador de intenções — identifica se a pessoa quer suporte, tem problema de pagamento, quer comprar ou precisa de ajuda com o app</li>
+            <li>Agente de suporte: dúvidas sobre o app, problemas técnicos — coleta informações e escala para humano com contexto completo</li>
+            <li>Agente de assinatura e pagamento: consulta status via API Hotmart, orienta sobre cancelamento e upgrade, reenvia links</li>
+            <li>Agente de vendas: qualifica o lead, apresenta planos, tira dúvidas sobre premium — funciona no Instagram como primeira linha do funil</li>
+            <li>Tratamento de mensagens fatiadas, áudio transcrito e imagens</li>
+            <li>Handoff inteligente para humano — com resumo completo, sem a pessoa repetir tudo</li>
+            <li>Integração com CRM (a definir) e sistemas internos via API</li>
+            <li>Dashboard de métricas: taxa de resolução, tempo de resposta, volume por categoria</li>
+          </ul>
+        </div>
+
+        <!-- Sub 1B -->
+        <div class="sub-block">
+          <div class="sub-block-title">Diagnóstico Estratégico Completo</div>
+          <p class="sub-block-desc">Enquanto o sistema de atendimento é implementado, mergulhamos na operação do Lojong para mapear todas as outras oportunidades de IA — de forma rigorosa, ouvindo cada área e cruzando com o que os concorrentes já fazem. O resultado é um roadmap claro de onde agir a seguir.</p>
+          <ul class="items-list">
+            <li>Entrevistas com cada área da equipe: marketing, conteúdo, redação, áudio e dev</li>
+            <li>Mapeamento de todos os processos que tocam IA ou poderiam tocar</li>
+            <li>Análise de ferramentas atuais e identificação dos gargalos reais</li>
+            <li>Benchmark com concorrentes — Calm, Headspace, Meditopia, Insight Timer: o que estão fazendo com IA e onde o Lojong pode se diferenciar</li>
+            <li>Entrega: Roadmap de IA do Lojong — documento com todas as oportunidades priorizadas por impacto × esforço, com recomendação de sequência para os próximos 12 meses</li>
+          </ul>
         </div>
       </div>
     </div>
 
-    <!-- FASE 2 -->
-    <div class="fase-block reveal">
-      <div class="fase-sidebar">
-        <div>
+    <!-- ======= FASE 2 ======= -->
+    <div class="fase-wrapper reveal">
+      <div class="fase-header">
+        <div class="fase-header-left">
           <div class="fase-tag">Fase 2 · 8 semanas</div>
-          <div class="fase-title-side">Capacitação + Copiloto + Pipeline de Conteúdo</div>
+          <div class="fase-name">Pipeline de Conteúdo + Copiloto Interno<br>+ Capacitação da Equipe</div>
           <div class="fase-duration">Pode iniciar em paralelo ao fim da Fase 1</div>
         </div>
-        <div class="fase-price-block">
-          <div class="fase-price-label">Investimento</div>
-          <div class="fase-price">R$ 22.000</div>
-          <div class="fase-price-label" style="margin-top:8px">+ R$ 3.500/mês manutenção</div>
+        <div class="fase-price-inline">
+          <div class="lbl">Investimento</div>
+          <div class="val">R$ 22.000</div>
+          <div class="sub">+ R$ 3.500/mês manutenção</div>
         </div>
-        <div class="fase-num-big">2</div>
       </div>
-      <div class="fase-content">
-        <p class="fase-content-desc">Transforma a operação do dia a dia. A equipe aprende a usar IA de verdade, ganha um assistente interno treinado com o DNA do Lojong, e a produção de conteúdo fica exponencialmente mais rápida — com foco inicial em alemão e japonês.</p>
-        <div class="fase-items-title">O que será entregue</div>
-        <div class="fase-items">
-          <div class="fase-item">Treinamento por função: marketing, conteúdo, áudio, gestão</div>
-          <div class="fase-item">Playbook de IA do Lojong (documento vivo, atualizado mensalmente)</div>
-          <div class="fase-item">Copiloto interno treinado com conteúdo e tom de voz do Lojong</div>
-          <div class="fase-item">Pipeline de produção de conteúdo de ponta a ponta</div>
-          <div class="fase-item">Geração de áudio via API ElevenLabs + ajuste automático de silêncios</div>
-          <div class="fase-item">Tradução automática com glossário budista preservado</div>
-          <div class="fase-item">Workflow de conteúdo para Instagram com biblioteca de prompts</div>
-          <div class="fase-item">4 sessões ao vivo — cada pessoa sai com uma automação funcionando</div>
+
+      <div class="sub-blocks">
+        <!-- Sub 2A: Pipeline de conteúdo -->
+        <div class="sub-block">
+          <div class="sub-block-title">Pipeline de Produção de Conteúdo</div>
+          <p class="sub-block-desc">Um fluxo automatizado de ponta a ponta para a criação de programas de meditação — do tema ao áudio final pronto para revisão. Foco inicial em alemão e japonês, os idiomas que hoje representam o maior gargalo operacional.</p>
+          <ul class="items-list">
+            <li>Input: tema, duração, público, idioma primário</li>
+            <li>IA gera outline → roteiro completo → variações de duração (3, 5 e 10 min) → metadata e tags</li>
+            <li>QA automatizado de linguagem, tom, princípios e consistência antes de ir para revisão</li>
+            <li>Aprovação humana do roteiro</li>
+            <li>Tradução automática com glossário budista/mindfulness preservado + notas culturais para revisor nativo</li>
+            <li>Geração de áudio via API ElevenLabs com vozes pré-configuradas por idioma, emoção e timing</li>
+            <li>Ajuste automático de silêncios e normalização de volume — substitui o trabalho manual no Audacity</li>
+            <li>Fila de revisão humana final com aprovação simplificada</li>
+          </ul>
+        </div>
+
+        <!-- Sub 2B: Workflow Instagram -->
+        <div class="sub-block">
+          <div class="sub-block-title">Workflow de Conteúdo para Instagram</div>
+          <p class="sub-block-desc">Um processo estruturado que elimina a inconsistência da produção de conteúdo para redes sociais — do planejamento editorial ao agendamento, com qualidade de marca garantida em cada etapa.</p>
+          <ul class="items-list">
+            <li>Pilares de conteúdo definidos → calendário editorial assistido por IA</li>
+            <li>Geração de copies + prompts de imagem e vídeo otimizados por tipo de post</li>
+            <li>QA de marca antes de publicar — tom, linguagem e identidade visual consistentes</li>
+            <li>Biblioteca de prompts testados e versionados por formato (carrossel, reels, stories)</li>
+            <li>Processo estável e replicável — sem depender do "dia bom" de nenhuma ferramenta</li>
+          </ul>
+        </div>
+
+        <!-- Sub 2C: Copiloto -->
+        <div class="sub-block">
+          <div class="sub-block-title">Copiloto Interno Lojong</div>
+          <p class="sub-block-desc">Um assistente de IA customizado, treinado com o conteúdo, a estratégia e o tom de voz do Lojong. Disponível para toda a equipe, ele substitui o uso desordenado de contas genéricas por um assistente que já conhece a empresa de dentro.</p>
+          <ul class="items-list">
+            <li>Treinado com os programas, textos e posicionamento do Lojong</li>
+            <li>Base de conhecimento interna: estratégia de marketing, políticas, diretrizes de marca</li>
+            <li>Glossário multilíngue budista/mindfulness integrado para consistência nas traduções</li>
+            <li>Acessível para qualquer pessoa da equipe — resolve o problema de "cada um usando IA de um jeito"</li>
+            <li>Atualizado mensalmente com novos conteúdos e aprendizados da operação</li>
+          </ul>
+        </div>
+
+        <!-- Sub 2D: Playbook -->
+        <div class="sub-block">
+          <div class="sub-block-title">Playbook de IA do Lojong</div>
+          <p class="sub-block-desc">Um documento vivo que padroniza o uso de IA em toda a empresa. Não é um manual genérico — é construído com os fluxos reais do Lojong e evolui conforme a operação amadurece.</p>
+          <ul class="items-list">
+            <li>Workflow recomendado para cada tipo de tarefa por área</li>
+            <li>Tom de voz e diretrizes de marca para uso com IA</li>
+            <li>Dos and don'ts — o que a IA do Lojong pode e não pode dizer</li>
+            <li>Exemplos reais do time, atualizados conforme o uso evolui</li>
+            <li>Atualizado mensalmente com novidades relevantes do mundo de IA</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sub 2E: Capacitação — largura total -->
+      <div class="sub-blocks single" style="margin-top:2px;">
+        <div class="sub-block">
+          <div class="sub-block-title">Capacitação da Equipe por Função</div>
+          <p class="sub-block-desc">Não é um curso genérico de "como usar ChatGPT". É treinamento prático, com os fluxos reais do Lojong, adaptado para cada área. Ao final, cada pessoa sai com pelo menos uma automação pessoal funcionando no seu dia a dia.</p>
+          <ul class="items-list" style="columns:2;column-gap:40px;">
+            <li>Marketing: briefar IA para copy e criativos, gerar variações de anúncio, analisar resultados</li>
+            <li>Conteúdo e redação: IA como co-autora mantendo a voz do Lojong, revisão assistida, tradução com nuances</li>
+            <li>Áudio: otimizar uso do ElevenLabs, automatizar edição, gerenciar vozes por idioma</li>
+            <li>Gestão: avaliar oportunidades de IA, priorizar implementações, medir ROI</li>
+            <li>4 sessões ao vivo (remoto), 1h30 cada, com exercícios práticos entre sessões</li>
+            <li>Cada pessoa sai com pelo menos uma automação pessoal funcionando</li>
+          </ul>
         </div>
       </div>
     </div>
 
-    <!-- FASE 3 -->
-    <div class="fase-block reveal">
-      <div class="fase-sidebar">
-        <div>
-          <div class="fase-tag">Fase 3 · 6 semanas</div>
-          <div class="fase-title-side">Growth Engine + Inteligência de Dados</div>
-          <div class="fase-duration">Após conclusão da Fase 2</div>
+    <!-- ======= FASE 3 ======= -->
+    <div class="fase-wrapper reveal">
+      <div class="fase-header">
+        <div class="fase-header-left">
+          <div class="fase-tag">Fase 3 · A apresentar</div>
+          <div class="fase-name">Growth Engine + Inteligência de Dados</div>
+          <div class="fase-duration">Após conclusão da Fase 2 · Valores a definir</div>
         </div>
-        <div class="fase-price-block">
-          <div class="fase-price-label">Investimento</div>
-          <div class="fase-price">R$ 20.000</div>
-          <div class="fase-price-label" style="margin-top:8px">+ R$ 3.000/mês manutenção</div>
-        </div>
-        <div class="fase-num-big">3</div>
       </div>
-      <div class="fase-content">
-        <p class="fase-content-desc">Acelera a aquisição e dá inteligência real para as decisões de marketing. Landing pages em minutos, quizzes que convertem fora das lojas (salvando até 50% em tarifas), e análise automatizada de campanhas.</p>
-        <div class="fase-items-title">O que será entregue</div>
-        <div class="fase-items">
-          <div class="fase-item">Fábrica de landing pages (brief → geração → deploy automático)</div>
-          <div class="fase-item">Engine de quizzes com lógica de branching personalizada</div>
-          <div class="fase-item">Integração quiz → onboarding do app (respostas viram preferências)</div>
-          <div class="fase-item">Marketing AI Analyst: Meta Ads + Adjust + métricas do app</div>
-          <div class="fase-item">Relatório semanal automatizado com sugestões de ação</div>
-          <div class="fase-item">Análise de ASO por idioma e monitoramento de concorrentes</div>
-          <div class="fase-item">Alertas quando KPIs saem do esperado</div>
-          <div class="fase-item">Tracking unificado com UTMs e atribuição limpa</div>
+
+      <div class="sub-blocks">
+        <div class="sub-block">
+          <div class="sub-block-title">Fábrica de Landing Pages + Engine de Quizzes</div>
+          <p class="sub-block-desc">Landing pages criadas em minutos via pipeline automatizado, com deploy direto. Quizzes de conversão que capturam leads fora das lojas — economizando em tarifas e criando continuidade entre a campanha e a experiência no app.</p>
+          <ul class="items-list">
+            <li>Template-base em HTML com brandbook do Lojong embutido</li>
+            <li>Pipeline: brief → geração automática → deploy via GitHub/Netlify</li>
+            <li>Múltiplas variações para teste A/B sem esforço adicional</li>
+            <li>Integração com Hotmart para checkout direto fora das lojas</li>
+            <li>Engine de quiz com lógica de branching personalizada por campanha</li>
+            <li>Integração quiz → onboarding do app: respostas viram preferências iniciais do usuário</li>
+            <li>Estrutura reutilizável — construída uma vez, adaptada infinitamente</li>
+          </ul>
+        </div>
+
+        <div class="sub-block">
+          <div class="sub-block-title">Marketing AI Analyst + ASO Intelligence</div>
+          <p class="sub-block-desc">Um agente que conecta os dados de Meta Ads, Adjust e métricas do app — gerando relatórios automáticos, alertas inteligentes e análise de ASO para manter o Lojong bem ranqueado nos idiomas prioritários.</p>
+          <ul class="items-list">
+            <li>Conexão de Meta Ads + Adjust + métricas do app em um só lugar</li>
+            <li>Relatório semanal automatizado: o que funciona, o que cai, onde investir mais</li>
+            <li>Análise de ASO por idioma: ranking, keywords, reviews dos concorrentes</li>
+            <li>Alertas quando KPIs saem do esperado: CPI subiu, churn acelerou, review negativa em volume</li>
+            <li>Tracking unificado com UTMs e atribuição limpa — base confiável para decisões de marketing</li>
+          </ul>
         </div>
       </div>
     </div>
 
-    <!-- FASE 4 (opcional) -->
-    <div class="fase-block reveal">
-      <div class="fase-sidebar">
-        <div>
-          <div class="fase-tag">Fase 4 · Sob demanda</div>
-          <div class="fase-title-side">IA no Produto — Experiência do Usuário</div>
-          <div class="fase-duration">Após maturidade das fases anteriores</div>
-        </div>
-        <div class="fase-price-block">
-          <div class="fase-price-label">Estimativa por módulo</div>
-          <div class="fase-price">R$ 12–28k</div>
-          <div class="fase-price-label" style="margin-top:8px">Módulos independentes</div>
-        </div>
-        <div class="fase-num-big">4</div>
-      </div>
-      <div class="fase-content">
-        <p class="fase-content-desc">Onde o Lojong se diferencia como <em>produto</em>. O público de meditação é sensível à IA — por isso todas as implementações seguem o princípio da <strong>IA invisível</strong>: melhorar a experiência sem que o usuário sinta que está interagindo com uma máquina.</p>
-        <div class="fase-items-title">Módulos disponíveis</div>
-        <div class="fase-items">
-          <div class="fase-item">Recomendação inteligente: check-in diário → prática ideal do catálogo</div>
-          <div class="fase-item">Personalização progressiva: o app aprende e se adapta silenciosamente</div>
-          <div class="fase-item">Chatbot de bem-estar com guardrails rigorosos (baseado na filosofia Lojong)</div>
-          <div class="fase-item">Segmentação avançada por estado emocional e histórico de uso</div>
+    <!-- ======= FASE 4 ======= -->
+    <div class="fase-wrapper reveal">
+      <div class="fase-header" style="background:var(--text-dark)">
+        <div class="fase-header-left">
+          <div class="fase-tag">Fase 4 · Visão de Futuro</div>
+          <div class="fase-name">IA no Produto — Experiência do Usuário</div>
+          <div class="fase-duration">Após maturidade das fases anteriores · Módulos independentes</div>
         </div>
       </div>
-    </div>
 
-  </div>
-</div>
-
-<!-- CAMINHO B -->
-<div class="caminhoB-section">
-  <div class="caminhoB-inner">
-    <div class="section-label reveal" style="color:rgba(176,110,74,0.7)">Caminho B</div>
-    <h2 class="section-title reveal" style="color:white">Para quem quer <em style="color:var(--copper)">acelerar</em><br>sem olhar para trás</h2>
-
-    <div class="caminhoB-grid">
-      <div class="caminhoB-card reveal">
-        <div class="caminhoB-badge">Transformação Completa · 16 semanas</div>
-        <div class="caminhoB-title">Fases 1, 2 e 3<br>de forma integrada</div>
-        <p style="font-size:13px;font-weight:300;color:rgba(255,255,255,0.6);line-height:2;margin-bottom:24px;">As fases não são sequenciais isoladas — elas se alimentam. O diagnóstico da Fase 1 já informa a construção dos pipelines. O treinamento acontece enquanto os sistemas são implementados.</p>
-        <div class="caminhoB-price-area">
-          <div class="price-box">
-            <div class="price-box-label">Setup total</div>
-            <div class="price-box-value">R$ 48k</div>
-            <div class="price-box-sub">vs. R$ 56k no Caminho A</div>
-          </div>
-          <div class="price-box">
-            <div class="price-box-label">Manutenção unificada</div>
-            <div class="price-box-value">R$ 7,5k</div>
-            <div class="price-box-sub">vs. R$ 9,5k separado</div>
-          </div>
+      <div class="sub-blocks">
+        <div class="sub-block">
+          <div class="sub-block-title">IA Invisível na Experiência</div>
+          <p class="sub-block-desc">O público de meditação é sensível à presença de IA. Todas as implementações desta fase seguem o princípio da <strong>IA invisível</strong> — melhorar a experiência sem que o usuário sinta que está interagindo com uma máquina. O app simplesmente fica melhor.</p>
+          <ul class="items-list">
+            <li>Recomendação inteligente: check-in diário → prática ideal do catálogo com base em estado emocional e histórico</li>
+            <li>Personalização progressiva: o app aprende padrões silenciosamente — a pessoa sente que o app "entende" ela</li>
+          </ul>
         </div>
-        <div class="economy-tag">
-          ✦ Economia de R$ 8.000 no setup + R$ 2.000/mês
+        <div class="sub-block">
+          <div class="sub-block-title">Engajamento e Diferenciação</div>
+          <p class="sub-block-desc">Funcionalidades que criam vínculo com o usuário e diferenciam o Lojong de concorrentes que ainda estão tentando replicar o que ele pode ter primeiro.</p>
+          <ul class="items-list">
+            <li>Chatbot de bem-estar com guardrails rigorosos — baseado na filosofia e conteúdo do Lojong</li>
+            <li>Segmentação avançada por estado emocional e padrão de uso para recomendações cada vez mais precisas</li>
+          </ul>
         </div>
-        <p style="font-size:10px;letter-spacing:1px;color:rgba(255,255,255,0.3);margin-top:20px;">Pagamento: 40% no kick-off · 30% na entrega da Fase 1 · 30% na conclusão</p>
-      </div>
-
-      <div class="reveal reveal-delay-2">
-        <ul class="caminhoB-benefits">
-          <li>As fases se alimentam mutuamente — diagnóstico informa os pipelines, treinamento ocorre com sistemas reais já funcionando</li>
-          <li>Dedicação exclusiva da equipe NewScale durante as 16 semanas</li>
-          <li>Tracking unificado desde o início — os dados já nascem limpos para o AI Analyst</li>
-          <li>A equipe do Lojong aprende usando as ferramentas que já estão sendo implementadas — não em teoria, na prática</li>
-          <li>A Fase 4 (IA no produto) pode ser adicionada a qualquer momento como módulo complementar</li>
-          <li>Uma manutenção unificada cobre tudo — sem contratos separados, sem gestão fragmentada</li>
-        </ul>
       </div>
     </div>
+
   </div>
 </div>
 
@@ -1247,92 +594,39 @@
 <div class="porque-section">
   <div class="porque-inner">
     <div class="section-label reveal">Por que a NewScale</div>
-    <h2 class="section-title reveal">Muitas empresas vendem <em>tecnologia.</em><br>Nós vendemos resultado.</h2>
+    <h2 class="section-title reveal">Algumas empresas vendem consultoria.<br>Outras vendem tecnologia.<br><em>A NewScale vende as duas juntas.</em></h2>
 
     <div class="porque-grid">
       <div class="porque-card reveal">
-        <span class="porque-icon">🧘</span>
-        <div class="porque-card-title">Entendemos o negócio de vocês</div>
-        <p class="porque-card-text">Não só a parte técnica — entendemos meditação, mindfulness, o cuidado que esse público exige. Bruna é praticante, já usou o Lojong, e tem formação em Ayurveda e EFT. Isso garante que o agente de atendimento vai ter o tom certo e que qualquer IA no produto será implementada com a sensibilidade que o público espera.</p>
+        <span class="porque-icon">🔍</span>
+        <div class="porque-card-title">Diagnóstico real antes de qualquer solução</div>
+        <p class="porque-card-text">A NewScale faz o mapeamento completo do negócio, entende os processos em profundidade e identifica onde a IA gera ganho real — de produtividade, de receita, de rentabilidade. Não chegamos com soluções prontas. Chegamos com perguntas certas.</p>
       </div>
       <div class="porque-card reveal reveal-delay-2">
         <span class="porque-icon">⚙️</span>
-        <div class="porque-card-title">Já fizemos isso</div>
-        <p class="porque-card-text">Agentes de atendimento com múltiplas intenções, bases vetorizadas, pipelines de conteúdo, automação de marketing — tudo isso está rodando em clientes nossos hoje. Incluindo clínica com 4 agentes simultâneos atendendo pacientes, enfermeiras e fornecedores em paralelo.</p>
+        <div class="porque-card-title">Implementamos o que diagnosticamos</div>
+        <p class="porque-card-text">Além do diagnóstico, a NewScale implementa efetivamente as soluções. Não entregamos um relatório e vamos embora — construímos, testamos e colocamos no ar. Agentes de atendimento, pipelines de conteúdo, automações de marketing — tudo rodando em clientes reais hoje.</p>
       </div>
       <div class="porque-card reveal reveal-delay-1">
-        <span class="porque-icon">🔄</span>
-        <div class="porque-card-title">Não entregamos e vamos embora</div>
-        <p class="porque-card-text">O modelo de manutenção mensal existe porque IA não é um projeto com começo, meio e fim. Os modelos mudam, as ferramentas evoluem, o negócio de vocês muda. Estar junto continuamente é o que garante que o investimento se paga no longo prazo.</p>
+        <span class="porque-icon">📈</span>
+        <div class="porque-card-title">Acompanhamos resultados continuamente</div>
+        <p class="porque-card-text">IA não é um projeto com começo, meio e fim. Os modelos mudam, as ferramentas evoluem, o negócio muda. A NewScale acompanha a eficácia das soluções implementadas e ajusta conforme necessário — garantindo que o investimento gere resultado no longo prazo.</p>
       </div>
       <div class="porque-card reveal reveal-delay-3">
-        <span class="porque-icon">🎯</span>
-        <div class="porque-card-title">A equipe certa para o Lojong</div>
-        <p class="porque-card-text">Consultoria estratégica (Bruna), marketing e growth (sócio diretor de marketing), e equipe técnica com 15+ anos de experiência em engenharia e arquitetura de software. O mix exato que vocês precisam para ir da estratégia à implementação sem perder o fio.</p>
+        <span class="porque-icon">🧭</span>
+        <div class="porque-card-title">Estratégia e execução na mesma equipe</div>
+        <p class="porque-card-text">Consultoria estratégica, marketing e growth, e engenharia com mais de 15 anos de experiência — na mesma empresa, no mesmo projeto. Sem o gap entre "o que foi recomendado" e "o que foi entregue". O que é planejado é o que é construído.</p>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- TABELA RESUMO -->
-<div class="resumo-section">
-  <div class="resumo-inner">
-    <div class="section-label reveal">Resumo</div>
-    <h2 class="section-title reveal">Visão <em>consolidada</em> da proposta</h2>
-
-    <table class="resumo-table reveal">
-      <thead>
-        <tr>
-          <th>Etapa</th>
-          <th>Prazo</th>
-          <th>Setup</th>
-          <th>Manutenção</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="fase-badge">Fase 1</span><br><span style="font-size:12px;margin-top:6px;display:block;">Atendimento + Diagnóstico</span></td>
-          <td>6 semanas</td>
-          <td><span class="price-highlight">R$ 14.000</span></td>
-          <td>R$ 3.000/mês</td>
-        </tr>
-        <tr>
-          <td><span class="fase-badge">Fase 2</span><br><span style="font-size:12px;margin-top:6px;display:block;">Capacitação + Conteúdo</span></td>
-          <td>8 semanas</td>
-          <td><span class="price-highlight">R$ 22.000</span></td>
-          <td>R$ 3.500/mês</td>
-        </tr>
-        <tr>
-          <td><span class="fase-badge">Fase 3</span><br><span style="font-size:12px;margin-top:6px;display:block;">Growth + Analytics</span></td>
-          <td>6 semanas</td>
-          <td><span class="price-highlight">R$ 20.000</span></td>
-          <td>R$ 3.000/mês</td>
-        </tr>
-        <tr>
-          <td><span class="fase-badge">Fase 4</span><br><span style="font-size:12px;margin-top:6px;display:block;">IA no Produto</span></td>
-          <td>Sob demanda</td>
-          <td><span class="price-highlight">R$ 12–28k</span></td>
-          <td>A definir</td>
-        </tr>
-        <tr class="highlight-row">
-          <td><span class="fase-badge">Caminho B</span><br><span style="font-size:12px;margin-top:6px;display:block;">Transformação Completa (Fases 1+2+3)</span></td>
-          <td>16 semanas</td>
-          <td><span class="price-highlight">R$ 48.000</span><br><span style="font-size:10px;color:rgba(255,255,255,0.4);">Economia de R$ 8.000</span></td>
-          <td>R$ 7.500/mês<br><span style="font-size:10px;color:rgba(255,255,255,0.4);">Economia de R$ 2.000/mês</span></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p style="margin-top:24px;font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:1px;">* Custos de APIs (LLM, N8N hosting) são por conta do Lojong — estimativa de R$ 300–700/mês dependendo do volume.</p>
   </div>
 </div>
 
 <!-- CTA -->
 <div class="cta-section">
   <div class="cta-inner">
-    <div class="section-label reveal" style="justify-content:center">Próximos Passos</div>
+    <div class="section-label reveal" style="justify-content:center;color:rgba(176,110,74,0.7)">Próximos Passos</div>
     <h2 class="cta-title reveal">Prontos para <em>começar?</em></h2>
-    <p class="cta-text reveal">O kick-off pode acontecer em até 5 dias úteis após a assinatura. Cada semana que passa é uma semana que a Meditopia avança. Vamos mudar isso.</p>
+    <p class="cta-text reveal">O kick-off pode acontecer em até 5 dias úteis após a assinatura. Cada semana que passa é uma semana que a Meditopia avança. Vamos mudar isso juntos.</p>
 
     <div class="cta-steps reveal">
       <div class="cta-step">
@@ -1341,7 +635,7 @@
       </div>
       <div class="cta-step">
         <div class="step-num">2</div>
-        <div class="step-text">Escolha do caminho e alinhamento de escopo</div>
+        <div class="step-text">Escolha do escopo e alinhamento de início</div>
       </div>
       <div class="cta-step">
         <div class="step-num">3</div>
@@ -1368,19 +662,12 @@
 </div>
 
 <script>
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.08 });
-
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.06 });
   reveals.forEach(el => observer.observe(el));
 
-  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
