@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NewScale × Lojong — Proposta Estratégica de IA</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal-deep: #14373C;
+    --teal-mid: #435D51;
+    --sand: #D0D0CA;
+    --copper: #B06E4A;
+    --copper-light: #C8845E;
+    --cream: #F5F3EE;
+    --white: #FFFFFF;
+    --text-dark: #0D2226;
+    --text-mid: #2C4A4E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Josefin Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--teal-deep);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 40px;
+    overflow: hidden;
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    background-image: 
+      radial-gradient(ellipse at 20% 50%, #B06E4A 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, #435D51 0%, transparent 40%),
+      radial-gradient(ellipse at 60% 80%, #14373C 0%, transparent 50%);
+  }
+
+  /* Topographic lines */
+  .topo-lines {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .topo-lines svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.08;
+  }
+
+  .hero-badge {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--copper);
+    border: 1px solid rgba(176,110,74,0.4);
+    padding: 8px 20px;
+    display: inline-block;
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+
+  .hero-brand {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.4s;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 0.95;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.6s;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--copper);
+  }
+
+  .hero-title-x {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 5vw, 56px);
+    font-weight: 300;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 8px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.7s;
+  }
+
+  .hero-title-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 5vw, 64px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--sand);
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.8s;
+  }
+
+  .hero-desc {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.55);
+    max-width: 480px;
+    line-height: 2;
+    margin-bottom: 60px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 1s;
+  }
+
+  .hero-scroll {
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 1.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .hero-scroll span {
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+  .scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(176,110,74,0.8), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  /* SECTION BASE */
+  section {
+    padding: 100px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-label::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--copper);
+    display: inline-block;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 300;
+    color: var(--teal-deep);
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--copper);
+  }
+
+  /* INTRO SECTION */
+  .intro-section {
+    padding: 100px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .intro-text p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 2;
+    color: var(--text-mid);
+    margin-bottom: 20px;
+  }
+
+  .intro-text p strong {
+    color: var(--teal-deep);
+    font-weight: 600;
+  }
+
+  .intro-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  .stat-card {
+    background: var(--teal-deep);
+    padding: 36px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  .stat-card:hover { transform: translateY(-4px); }
+  .stat-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 60px; height: 60px;
+    background: rgba(176,110,74,0.15);
+    border-radius: 50%;
+    transform: translate(20px, 20px);
+  }
+  .stat-card:nth-child(2) { background: var(--copper); }
+  .stat-card:nth-child(3) { background: var(--teal-mid); }
+  .stat-card:nth-child(4) { background: var(--text-dark); }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.65);
+    text-transform: uppercase;
+  }
+
+  /* DORES SECTION */
+  .dores-section {
+    background: var(--teal-deep);
+    padding: 100px 0;
+  }
+  .dores-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .dores-section .section-title { color: var(--white); }
+  .dores-section .section-label { color: var(--copper); }
+
+  .dores-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+  }
+
+  .dor-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 40px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: default;
+  }
+
+  .dor-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--copper);
+    transition: height 0.4s ease;
+  }
+
+  .dor-card:hover {
+    background: rgba(255,255,255,0.07);
+    transform: translateY(-4px);
+  }
+  .dor-card:hover::before { height: 100%; }
+
+  .dor-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    font-weight: 300;
+    color: rgba(176,110,74,0.2);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+  .dor-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 16px;
+  }
+  .dor-text {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* FASES */
+  .fases-section {
+    padding: 100px 0;
+    background: var(--cream);
+  }
+  .fases-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .fase-block {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 0;
+    margin-top: 60px;
+    border: 1px solid rgba(20,55,60,0.1);
+    overflow: hidden;
+    transition: box-shadow 0.4s ease;
+  }
+  .fase-block:hover {
+    box-shadow: 0 20px 60px rgba(20,55,60,0.1);
+  }
+  .fase-block + .fase-block { margin-top: 24px; }
+
+  .fase-sidebar {
+    background: var(--teal-deep);
+    padding: 48px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .fase-block:nth-child(2) .fase-sidebar { background: var(--copper); }
+  .fase-block:nth-child(3) .fase-sidebar { background: var(--teal-mid); }
+  .fase-block:nth-child(4) .fase-sidebar { background: var(--text-dark); }
+
+  .fase-sidebar::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; right: -30px;
+    width: 120px; height: 120px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+  }
+
+  .fase-num-big {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 100px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.12);
+    line-height: 1;
+    position: absolute;
+    bottom: 16px; right: 16px;
+  }
+
+  .fase-tag {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 12px;
+  }
+  .fase-title-side {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+  .fase-duration {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+  }
+  .fase-price-block {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+  .fase-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--white);
+  }
+  .fase-price-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+  }
+
+  .fase-content {
+    background: var(--white);
+    padding: 48px;
+  }
+
+  .fase-content-desc {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 2;
+    color: var(--text-mid);
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(20,55,60,0.08);
+  }
+
+  .fase-items-title {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 20px;
+  }
+
+  .fase-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .fase-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    background: var(--cream);
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--text-mid);
+    transition: background 0.3s ease;
+  }
+  .fase-item:hover { background: rgba(20,55,60,0.06); }
+
+  .fase-item::before {
+    content: '→';
+    color: var(--copper);
+    font-size: 12px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* CAMINHO B */
+  .caminhoB-section {
+    background: linear-gradient(135deg, var(--teal-deep) 0%, #0D2226 100%);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .caminhoB-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 600px;
+    height: 600px;
+    border: 1px solid rgba(176,110,74,0.1);
+    border-radius: 50%;
+  }
+  .caminhoB-section::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    border: 1px solid rgba(176,110,74,0.08);
+    border-radius: 50%;
+  }
+
+  .caminhoB-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .caminhoB-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 60px;
+  }
+
+  .caminhoB-card {
+    border: 1px solid rgba(176,110,74,0.25);
+    padding: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .caminhoB-card::before {
+    content: 'B';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 200px;
+    font-weight: 300;
+    color: rgba(176,110,74,0.06);
+    position: absolute;
+    right: -20px;
+    bottom: -40px;
+    line-height: 1;
+  }
+
+  .caminhoB-badge {
+    display: inline-block;
+    background: var(--copper);
+    color: var(--white);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    margin-bottom: 28px;
+  }
+
+  .caminhoB-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .caminhoB-price-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 32px 0;
+  }
+
+  .price-box {
+    background: rgba(255,255,255,0.05);
+    padding: 24px;
+  }
+  .price-box-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .price-box-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--white);
+  }
+  .price-box-sub {
+    font-size: 10px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 4px;
+  }
+
+  .economy-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(176,110,74,0.2);
+    border: 1px solid rgba(176,110,74,0.3);
+    padding: 10px 18px;
+    font-size: 11px;
+    color: var(--copper-light);
+    letter-spacing: 1px;
+    margin-top: 20px;
+  }
+
+  .caminhoB-benefits {
+    list-style: none;
+  }
+  .caminhoB-benefits li {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    line-height: 1.7;
+  }
+  .caminhoB-benefits li::before {
+    content: '✦';
+    color: var(--copper);
+    font-size: 10px;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  /* POR QUE NEWSCALE */
+  .porque-section {
+    padding: 100px 0;
+    background: var(--cream);
+  }
+  .porque-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .porque-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+  }
+
+  .porque-card {
+    background: var(--white);
+    padding: 44px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+  }
+  .porque-card:nth-child(odd) { background: var(--white); }
+  .porque-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 48px rgba(20,55,60,0.1);
+  }
+
+  .porque-icon {
+    font-size: 28px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .porque-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--teal-deep);
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+
+  .porque-card-text {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 2;
+    color: var(--text-mid);
+  }
+
+  .porque-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 3px;
+    background: var(--copper);
+    transition: width 0.4s ease;
+  }
+  .porque-card:hover::after { width: 100%; }
+
+  /* RESUMO TABELA */
+  .resumo-section {
+    background: var(--teal-deep);
+    padding: 100px 0;
+  }
+  .resumo-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .resumo-section .section-title { color: var(--white); }
+  .resumo-section .section-label { color: var(--copper); }
+
+  .resumo-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 60px;
+    font-size: 13px;
+  }
+
+  .resumo-table thead tr {
+    background: rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(176,110,74,0.3);
+  }
+
+  .resumo-table th {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    padding: 16px 24px;
+    text-align: left;
+  }
+
+  .resumo-table td {
+    padding: 20px 24px;
+    color: rgba(255,255,255,0.8);
+    font-weight: 300;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    vertical-align: middle;
+  }
+
+  .resumo-table tbody tr {
+    transition: background 0.3s ease;
+  }
+  .resumo-table tbody tr:hover {
+    background: rgba(255,255,255,0.04);
+  }
+
+  .resumo-table .fase-badge {
+    display: inline-block;
+    background: rgba(176,110,74,0.2);
+    border: 1px solid rgba(176,110,74,0.3);
+    color: var(--copper-light);
+    font-size: 9px;
+    letter-spacing: 2px;
+    padding: 4px 12px;
+    text-transform: uppercase;
+  }
+
+  .resumo-table .highlight-row td {
+    background: rgba(176,110,74,0.08);
+    color: var(--white);
+  }
+  .resumo-table .highlight-row .fase-badge {
+    background: var(--copper);
+    color: var(--white);
+    border-color: var(--copper);
+  }
+
+  .price-highlight {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--white);
+  }
+
+  /* CTA */
+  .cta-section {
+    padding: 120px 40px;
+    text-align: center;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    border: 1px solid rgba(20,55,60,0.05);
+    border-radius: 50%;
+  }
+  .cta-section::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    border: 1px solid rgba(20,55,60,0.07);
+    border-radius: 50%;
+  }
+
+  .cta-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 300;
+    color: var(--teal-deep);
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+  .cta-title em {
+    font-style: italic;
+    color: var(--copper);
+  }
+
+  .cta-text {
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: var(--text-mid);
+    line-height: 2;
+    margin-bottom: 48px;
+  }
+
+  .cta-steps {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 60px;
+  }
+
+  .cta-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 0 32px;
+    position: relative;
+  }
+
+  .cta-step + .cta-step::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 1px;
+    height: 30px;
+    background: rgba(20,55,60,0.15);
+  }
+
+  .step-num {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--copper);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--copper);
+  }
+
+  .step-text {
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: var(--text-mid);
+    text-align: center;
+    max-width: 120px;
+    line-height: 1.6;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--text-dark);
+    padding: 48px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-brand {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+    letter-spacing: 6px;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+  .footer-brand span {
+    display: block;
+    font-size: 8px;
+    letter-spacing: 5px;
+    color: rgba(255,255,255,0.3);
+    margin-top: 4px;
+  }
+
+  .footer-date {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.3);
+    text-align: right;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 1; transform: scaleY(1); }
+    50% { opacity: 0.4; transform: scaleY(0.7); }
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .intro-section { grid-template-columns: 1fr; gap: 48px; }
+    .dores-grid { grid-template-columns: 1fr; }
+    .fase-block { grid-template-columns: 1fr; }
+    .caminhoB-grid { grid-template-columns: 1fr; }
+    .porque-grid { grid-template-columns: 1fr; }
+    .cta-steps { flex-direction: column; align-items: center; }
+    .cta-step + .cta-step::before { display: none; }
+    .footer { flex-direction: column; gap: 20px; text-align: center; }
+    .resumo-table { font-size: 11px; }
+    .resumo-table th, .resumo-table td { padding: 14px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-pattern"></div>
+  <div class="topo-lines">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,300 Q300,220 500,290 T900,260 T1200,300" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,500 Q300,440 500,490 T900,460 T1200,500" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M100,600 Q400,530 600,590 T1000,560 T1300,600" fill="none" stroke="white" stroke-width="0.3"/>
+      <path d="M100,200 Q400,130 600,190 T1000,160 T1300,200" fill="none" stroke="white" stroke-width="0.3"/>
+    </svg>
+  </div>
+
+  <div class="hero-badge">Proposta Estratégica · Março 2026</div>
+  <div class="hero-brand">NewScale Consulting</div>
+  <div class="hero-title"><em>Parceria</em></div>
+  <div class="hero-title-x">×</div>
+  <div class="hero-title-sub">Estratégica em IA</div>
+  <div class="hero-desc">
+    Uma proposta construída a partir da sua realidade — não um cardápio genérico de serviços, mas um plano desenhado para o Lojong competir em outro nível.
+  </div>
+  <a href="#diagnostico" class="hero-scroll">
+    <span>Explorar</span>
+    <div class="scroll-line"></div>
+  </a>
+</div>
+
+<!-- INTRO -->
+<div id="diagnostico">
+  <div class="intro-section">
+    <div class="intro-text reveal">
+      <div class="section-label">O Contexto</div>
+      <h2 class="section-title">Um app pioneiro num mercado que <em>não para</em></h2>
+      <p>O Lojong foi o <strong>primeiro app de meditação 100% em português</strong> do Brasil. Vocês cresceram com o hype da pandemia, consolidaram presença em 7 idiomas e hoje competem contra players com capitalização bilionária.</p>
+      <p>Com uma equipe enxuta e operação 100% remota, vocês não podem competir no volume de investimento. Mas podem — e devem — competir em <strong>inteligência operacional</strong>. É exatamente aí que entra a IA.</p>
+      <p>Hoje o Lojong já usa IA de forma pontual. O que falta é estrutura, integração e estratégia para transformar uso isolado em <strong>vantagem competitiva sistêmica</strong>.</p>
+    </div>
+    <div class="intro-stats reveal reveal-delay-2">
+      <div class="stat-card">
+        <div class="stat-number">7</div>
+        <div class="stat-label">Idiomas no app</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">~60%</div>
+        <div class="stat-label">Perdido em tarifas de lojas</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">90%</div>
+        <div class="stat-label">Da produção pode ser automatizada</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2017</div>
+        <div class="stat-label">Pioneiros em português</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DORES -->
+<div class="dores-section">
+  <div class="dores-inner">
+    <div class="section-label reveal">O que identificamos</div>
+    <h2 class="section-title reveal">6 frentes de <em>impacto imediato</em></h2>
+
+    <div class="dores-grid">
+      <div class="dor-card reveal reveal-delay-1">
+        <div class="dor-num">01</div>
+        <div class="dor-title">Atendimento fragmentado</div>
+        <div class="dor-text">Dois sistemas separados (Responde.ai + ManyChat) sem conversar entre si. Uma tentativa anterior que travou em alucinações. Time resolvendo na mão o que um agente resolveria em segundos.</div>
+      </div>
+      <div class="dor-card reveal reveal-delay-2">
+        <div class="dor-num">02</div>
+        <div class="dor-title">Time sem metodologia de IA</div>
+        <div class="dor-text">Conta de IA compartilhada, cada pessoa usando de um jeito, sem contexto, sem padrão. Não é culpa do time — é falta de metodologia. E é o que mais trava a adoção real de IA nas empresas.</div>
+      </div>
+      <div class="dor-card reveal reveal-delay-3">
+        <div class="dor-num">03</div>
+        <div class="dor-title">Produção de conteúdo lenta</div>
+        <div class="dor-text">Roteiros, traduções para 7 idiomas, geração de áudio, edição no Audacity — tudo na mão. Um programa por idioma por mês com muito trabalho braçal que poderia ser 90% automatizado.</div>
+      </div>
+      <div class="dor-card reveal reveal-delay-1">
+        <div class="dor-num">04</div>
+        <div class="dor-title">Marketing com potencial represado</div>
+        <div class="dor-text">Landing pages criadas artesanalmente. Quizzes que o Leonardo sabe que funcionam (viu a Meditopia fazendo) mas ainda não escalou. Um growth engine esperando para ser montado.</div>
+      </div>
+      <div class="dor-card reveal reveal-delay-2">
+        <div class="dor-num">05</div>
+        <div class="dor-title">Dados sem inteligência</div>
+        <div class="dor-text">Vocês têm os dados. Adjust, Meta Ads, App Store — a informação existe. O que falta é um sistema que leia, cruze, interprete e sugira ações. Hoje isso depende de planilha por planilha.</div>
+      </div>
+      <div class="dor-card reveal reveal-delay-3">
+        <div class="dor-num">06</div>
+        <div class="dor-title">Produto subutilizando IA</div>
+        <div class="dor-text">O app usa IA para produzir conteúdo, mas ainda não oferece experiências potencializadas para o usuário. Personalização real, recomendação inteligente — os concorrentes já estão fazendo.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FASES -->
+<div class="fases-section">
+  <div class="fases-inner">
+    <div class="section-label reveal">Caminho A — Faseado e Progressivo</div>
+    <h2 class="section-title reveal">Resultado rápido.<br>Expansão <em>com confiança.</em></h2>
+
+    <!-- FASE 1 -->
+    <div class="fase-block reveal">
+      <div class="fase-sidebar">
+        <div>
+          <div class="fase-tag">Fase 1 · 6 semanas</div>
+          <div class="fase-title-side">Agentes de Atendimento + Diagnóstico</div>
+          <div class="fase-duration">Início imediato · Resultado em 6 semanas</div>
+        </div>
+        <div class="fase-price-block">
+          <div class="fase-price-label">Investimento</div>
+          <div class="fase-price">R$ 14.000</div>
+          <div class="fase-price-label" style="margin-top:8px">+ R$ 3.000/mês manutenção</div>
+        </div>
+        <div class="fase-num-big">1</div>
+      </div>
+      <div class="fase-content">
+        <p class="fase-content-desc">Resolve o problema mais imediato — o atendimento — enquanto mapeia todas as outras oportunidades com profundidade. Ao final, você tem um sistema rodando e um roadmap completo de IA para o Lojong.</p>
+        <div class="fase-items-title">O que será entregue</div>
+        <div class="fase-items">
+          <div class="fase-item">Base de conhecimento vetorizada (sem alucinações)</div>
+          <div class="fase-item">Agente roteador de intenções (suporte / venda / pagamento)</div>
+          <div class="fase-item">Integração com API do Hotmart para problemas de pagamento</div>
+          <div class="fase-item">Handoff inteligente para humano com contexto completo</div>
+          <div class="fase-item">Tratamento de mensagens fatiadas, áudio e imagens</div>
+          <div class="fase-item">Diagnóstico com todas as equipes + Roadmap de IA do Lojong</div>
+          <div class="fase-item">Benchmark com Calm, Headspace, Meditopia, Insight Timer</div>
+          <div class="fase-item">Dashboard de métricas de atendimento</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FASE 2 -->
+    <div class="fase-block reveal">
+      <div class="fase-sidebar">
+        <div>
+          <div class="fase-tag">Fase 2 · 8 semanas</div>
+          <div class="fase-title-side">Capacitação + Copiloto + Pipeline de Conteúdo</div>
+          <div class="fase-duration">Pode iniciar em paralelo ao fim da Fase 1</div>
+        </div>
+        <div class="fase-price-block">
+          <div class="fase-price-label">Investimento</div>
+          <div class="fase-price">R$ 22.000</div>
+          <div class="fase-price-label" style="margin-top:8px">+ R$ 3.500/mês manutenção</div>
+        </div>
+        <div class="fase-num-big">2</div>
+      </div>
+      <div class="fase-content">
+        <p class="fase-content-desc">Transforma a operação do dia a dia. A equipe aprende a usar IA de verdade, ganha um assistente interno treinado com o DNA do Lojong, e a produção de conteúdo fica exponencialmente mais rápida — com foco inicial em alemão e japonês.</p>
+        <div class="fase-items-title">O que será entregue</div>
+        <div class="fase-items">
+          <div class="fase-item">Treinamento por função: marketing, conteúdo, áudio, gestão</div>
+          <div class="fase-item">Playbook de IA do Lojong (documento vivo, atualizado mensalmente)</div>
+          <div class="fase-item">Copiloto interno treinado com conteúdo e tom de voz do Lojong</div>
+          <div class="fase-item">Pipeline de produção de conteúdo de ponta a ponta</div>
+          <div class="fase-item">Geração de áudio via API ElevenLabs + ajuste automático de silêncios</div>
+          <div class="fase-item">Tradução automática com glossário budista preservado</div>
+          <div class="fase-item">Workflow de conteúdo para Instagram com biblioteca de prompts</div>
+          <div class="fase-item">4 sessões ao vivo — cada pessoa sai com uma automação funcionando</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FASE 3 -->
+    <div class="fase-block reveal">
+      <div class="fase-sidebar">
+        <div>
+          <div class="fase-tag">Fase 3 · 6 semanas</div>
+          <div class="fase-title-side">Growth Engine + Inteligência de Dados</div>
+          <div class="fase-duration">Após conclusão da Fase 2</div>
+        </div>
+        <div class="fase-price-block">
+          <div class="fase-price-label">Investimento</div>
+          <div class="fase-price">R$ 20.000</div>
+          <div class="fase-price-label" style="margin-top:8px">+ R$ 3.000/mês manutenção</div>
+        </div>
+        <div class="fase-num-big">3</div>
+      </div>
+      <div class="fase-content">
+        <p class="fase-content-desc">Acelera a aquisição e dá inteligência real para as decisões de marketing. Landing pages em minutos, quizzes que convertem fora das lojas (salvando até 50% em tarifas), e análise automatizada de campanhas.</p>
+        <div class="fase-items-title">O que será entregue</div>
+        <div class="fase-items">
+          <div class="fase-item">Fábrica de landing pages (brief → geração → deploy automático)</div>
+          <div class="fase-item">Engine de quizzes com lógica de branching personalizada</div>
+          <div class="fase-item">Integração quiz → onboarding do app (respostas viram preferências)</div>
+          <div class="fase-item">Marketing AI Analyst: Meta Ads + Adjust + métricas do app</div>
+          <div class="fase-item">Relatório semanal automatizado com sugestões de ação</div>
+          <div class="fase-item">Análise de ASO por idioma e monitoramento de concorrentes</div>
+          <div class="fase-item">Alertas quando KPIs saem do esperado</div>
+          <div class="fase-item">Tracking unificado com UTMs e atribuição limpa</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FASE 4 (opcional) -->
+    <div class="fase-block reveal">
+      <div class="fase-sidebar">
+        <div>
+          <div class="fase-tag">Fase 4 · Sob demanda</div>
+          <div class="fase-title-side">IA no Produto — Experiência do Usuário</div>
+          <div class="fase-duration">Após maturidade das fases anteriores</div>
+        </div>
+        <div class="fase-price-block">
+          <div class="fase-price-label">Estimativa por módulo</div>
+          <div class="fase-price">R$ 12–28k</div>
+          <div class="fase-price-label" style="margin-top:8px">Módulos independentes</div>
+        </div>
+        <div class="fase-num-big">4</div>
+      </div>
+      <div class="fase-content">
+        <p class="fase-content-desc">Onde o Lojong se diferencia como <em>produto</em>. O público de meditação é sensível à IA — por isso todas as implementações seguem o princípio da <strong>IA invisível</strong>: melhorar a experiência sem que o usuário sinta que está interagindo com uma máquina.</p>
+        <div class="fase-items-title">Módulos disponíveis</div>
+        <div class="fase-items">
+          <div class="fase-item">Recomendação inteligente: check-in diário → prática ideal do catálogo</div>
+          <div class="fase-item">Personalização progressiva: o app aprende e se adapta silenciosamente</div>
+          <div class="fase-item">Chatbot de bem-estar com guardrails rigorosos (baseado na filosofia Lojong)</div>
+          <div class="fase-item">Segmentação avançada por estado emocional e histórico de uso</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CAMINHO B -->
+<div class="caminhoB-section">
+  <div class="caminhoB-inner">
+    <div class="section-label reveal" style="color:rgba(176,110,74,0.7)">Caminho B</div>
+    <h2 class="section-title reveal" style="color:white">Para quem quer <em style="color:var(--copper)">acelerar</em><br>sem olhar para trás</h2>
+
+    <div class="caminhoB-grid">
+      <div class="caminhoB-card reveal">
+        <div class="caminhoB-badge">Transformação Completa · 16 semanas</div>
+        <div class="caminhoB-title">Fases 1, 2 e 3<br>de forma integrada</div>
+        <p style="font-size:13px;font-weight:300;color:rgba(255,255,255,0.6);line-height:2;margin-bottom:24px;">As fases não são sequenciais isoladas — elas se alimentam. O diagnóstico da Fase 1 já informa a construção dos pipelines. O treinamento acontece enquanto os sistemas são implementados.</p>
+        <div class="caminhoB-price-area">
+          <div class="price-box">
+            <div class="price-box-label">Setup total</div>
+            <div class="price-box-value">R$ 48k</div>
+            <div class="price-box-sub">vs. R$ 56k no Caminho A</div>
+          </div>
+          <div class="price-box">
+            <div class="price-box-label">Manutenção unificada</div>
+            <div class="price-box-value">R$ 7,5k</div>
+            <div class="price-box-sub">vs. R$ 9,5k separado</div>
+          </div>
+        </div>
+        <div class="economy-tag">
+          ✦ Economia de R$ 8.000 no setup + R$ 2.000/mês
+        </div>
+        <p style="font-size:10px;letter-spacing:1px;color:rgba(255,255,255,0.3);margin-top:20px;">Pagamento: 40% no kick-off · 30% na entrega da Fase 1 · 30% na conclusão</p>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <ul class="caminhoB-benefits">
+          <li>As fases se alimentam mutuamente — diagnóstico informa os pipelines, treinamento ocorre com sistemas reais já funcionando</li>
+          <li>Dedicação exclusiva da equipe NewScale durante as 16 semanas</li>
+          <li>Tracking unificado desde o início — os dados já nascem limpos para o AI Analyst</li>
+          <li>A equipe do Lojong aprende usando as ferramentas que já estão sendo implementadas — não em teoria, na prática</li>
+          <li>A Fase 4 (IA no produto) pode ser adicionada a qualquer momento como módulo complementar</li>
+          <li>Uma manutenção unificada cobre tudo — sem contratos separados, sem gestão fragmentada</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- POR QUE NEWSCALE -->
+<div class="porque-section">
+  <div class="porque-inner">
+    <div class="section-label reveal">Por que a NewScale</div>
+    <h2 class="section-title reveal">Muitas empresas vendem <em>tecnologia.</em><br>Nós vendemos resultado.</h2>
+
+    <div class="porque-grid">
+      <div class="porque-card reveal">
+        <span class="porque-icon">🧘</span>
+        <div class="porque-card-title">Entendemos o negócio de vocês</div>
+        <p class="porque-card-text">Não só a parte técnica — entendemos meditação, mindfulness, o cuidado que esse público exige. Bruna é praticante, já usou o Lojong, e tem formação em Ayurveda e EFT. Isso garante que o agente de atendimento vai ter o tom certo e que qualquer IA no produto será implementada com a sensibilidade que o público espera.</p>
+      </div>
+      <div class="porque-card reveal reveal-delay-2">
+        <span class="porque-icon">⚙️</span>
+        <div class="porque-card-title">Já fizemos isso</div>
+        <p class="porque-card-text">Agentes de atendimento com múltiplas intenções, bases vetorizadas, pipelines de conteúdo, automação de marketing — tudo isso está rodando em clientes nossos hoje. Incluindo clínica com 4 agentes simultâneos atendendo pacientes, enfermeiras e fornecedores em paralelo.</p>
+      </div>
+      <div class="porque-card reveal reveal-delay-1">
+        <span class="porque-icon">🔄</span>
+        <div class="porque-card-title">Não entregamos e vamos embora</div>
+        <p class="porque-card-text">O modelo de manutenção mensal existe porque IA não é um projeto com começo, meio e fim. Os modelos mudam, as ferramentas evoluem, o negócio de vocês muda. Estar junto continuamente é o que garante que o investimento se paga no longo prazo.</p>
+      </div>
+      <div class="porque-card reveal reveal-delay-3">
+        <span class="porque-icon">🎯</span>
+        <div class="porque-card-title">A equipe certa para o Lojong</div>
+        <p class="porque-card-text">Consultoria estratégica (Bruna), marketing e growth (sócio diretor de marketing), e equipe técnica com 15+ anos de experiência em engenharia e arquitetura de software. O mix exato que vocês precisam para ir da estratégia à implementação sem perder o fio.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TABELA RESUMO -->
+<div class="resumo-section">
+  <div class="resumo-inner">
+    <div class="section-label reveal">Resumo</div>
+    <h2 class="section-title reveal">Visão <em>consolidada</em> da proposta</h2>
+
+    <table class="resumo-table reveal">
+      <thead>
+        <tr>
+          <th>Etapa</th>
+          <th>Prazo</th>
+          <th>Setup</th>
+          <th>Manutenção</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="fase-badge">Fase 1</span><br><span style="font-size:12px;margin-top:6px;display:block;">Atendimento + Diagnóstico</span></td>
+          <td>6 semanas</td>
+          <td><span class="price-highlight">R$ 14.000</span></td>
+          <td>R$ 3.000/mês</td>
+        </tr>
+        <tr>
+          <td><span class="fase-badge">Fase 2</span><br><span style="font-size:12px;margin-top:6px;display:block;">Capacitação + Conteúdo</span></td>
+          <td>8 semanas</td>
+          <td><span class="price-highlight">R$ 22.000</span></td>
+          <td>R$ 3.500/mês</td>
+        </tr>
+        <tr>
+          <td><span class="fase-badge">Fase 3</span><br><span style="font-size:12px;margin-top:6px;display:block;">Growth + Analytics</span></td>
+          <td>6 semanas</td>
+          <td><span class="price-highlight">R$ 20.000</span></td>
+          <td>R$ 3.000/mês</td>
+        </tr>
+        <tr>
+          <td><span class="fase-badge">Fase 4</span><br><span style="font-size:12px;margin-top:6px;display:block;">IA no Produto</span></td>
+          <td>Sob demanda</td>
+          <td><span class="price-highlight">R$ 12–28k</span></td>
+          <td>A definir</td>
+        </tr>
+        <tr class="highlight-row">
+          <td><span class="fase-badge">Caminho B</span><br><span style="font-size:12px;margin-top:6px;display:block;">Transformação Completa (Fases 1+2+3)</span></td>
+          <td>16 semanas</td>
+          <td><span class="price-highlight">R$ 48.000</span><br><span style="font-size:10px;color:rgba(255,255,255,0.4);">Economia de R$ 8.000</span></td>
+          <td>R$ 7.500/mês<br><span style="font-size:10px;color:rgba(255,255,255,0.4);">Economia de R$ 2.000/mês</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:24px;font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:1px;">* Custos de APIs (LLM, N8N hosting) são por conta do Lojong — estimativa de R$ 300–700/mês dependendo do volume.</p>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-inner">
+    <div class="section-label reveal" style="justify-content:center">Próximos Passos</div>
+    <h2 class="cta-title reveal">Prontos para <em>começar?</em></h2>
+    <p class="cta-text reveal">O kick-off pode acontecer em até 5 dias úteis após a assinatura. Cada semana que passa é uma semana que a Meditopia avança. Vamos mudar isso.</p>
+
+    <div class="cta-steps reveal">
+      <div class="cta-step">
+        <div class="step-num">1</div>
+        <div class="step-text">Reunião com Anderson + sócio de marketing</div>
+      </div>
+      <div class="cta-step">
+        <div class="step-num">2</div>
+        <div class="step-text">Escolha do caminho e alinhamento de escopo</div>
+      </div>
+      <div class="cta-step">
+        <div class="step-num">3</div>
+        <div class="step-text">Assinatura de contrato</div>
+      </div>
+      <div class="cta-step">
+        <div class="step-num">4</div>
+        <div class="step-text">Kick-off em até 5 dias úteis</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-brand">
+    NewScale
+    <span>Consulting</span>
+  </div>
+  <div class="footer-date">
+    Proposta exclusiva · Lojong<br>
+    Março de 2026
+  </div>
+</div>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
