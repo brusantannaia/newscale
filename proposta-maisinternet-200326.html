@@ -3,1158 +3,1257 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NewScale × Mais Internet — Proposta Estratégica de IA</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400;600&display=swap" rel="stylesheet">
+<title>NewScale Consulting — Implementação de IA para Empresas | Diagnóstico Gratuito</title>
+<meta name="description" content="Consultoria especializada em implementação de Inteligência Artificial para empresas. Agentes de IA, automação de processos e integração com CRM, ERP e WhatsApp. Diagnóstico gratuito em 30 minutos.">
+<link rel="canonical" href="https://www.newscale.com.br/lp-institucional">
+<meta property="og:title" content="NewScale — IA Hiper-Personalizada para Empresas">
+<meta property="og:description" content="Implementações de IA sob medida que automatizam processos, reduzem custos e criam novos motores de crescimento para o seu negócio.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --teal-deep: #14373C;
-  --teal-mid: #435D51;
-  --copper: #B06E4A;
-  --copper-light: #C8845E;
-  --sand: #D0D0CA;
-  --cream: #F5F3EE;
-  --white: #FFFFFF;
-  --text-dark: #0D2226;
-  --text-mid: #2C4A4E;
+:root{
+  --ink:#14373C;--ink2:#1a4449;--sage:#435D51;
+  --terra:#B06E4A;--tl:#c4835e;
+  --sand:#A38362;--cream:#E8E6E0;--cl:#F4F3EF;--white:#FAFAF8;
+  --fd:'Cormorant Garamond',Georgia,serif;--fb:'DM Sans',system-ui,sans-serif;
+  --r:16px
 }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Josefin Sans', sans-serif; background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:var(--r)}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.c{max-width:1100px;margin:0 auto;padding:0 20px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}
+.rv.in{opacity:1;transform:none}
+.stag{font-size:.68rem;text-transform:uppercase;letter-spacing:.16em;font-weight:700;color:var(--terra);display:block;margin-bottom:12px}
+.stag-l{color:var(--tl)}
+.h2{font-family:var(--fd);font-size:clamp(1.85rem,3.2vw,2.6rem);font-weight:700;line-height:1.12;margin-bottom:12px}
+.sub{font-size:.95rem;line-height:1.72;font-weight:300}
+.btn-p{display:inline-flex;align-items:center;gap:9px;background:var(--terra);color:#fff;padding:14px 30px;border-radius:8px;font-weight:600;font-size:.93rem;transition:all .28s;box-shadow:0 4px 20px rgba(176,110,74,.3);white-space:nowrap}
+.btn-p:hover{background:var(--tl);transform:translateY(-2px);box-shadow:0 8px 28px rgba(176,110,74,.4)}
+.btn-p svg,.btn-s svg,.btn-xl svg{transition:transform .25s;flex-shrink:0}
+.btn-p:hover svg,.btn-s:hover svg,.btn-xl:hover svg{transform:translateX(3px)}
+.btn-s{display:inline-flex;align-items:center;gap:8px;background:var(--terra);color:#fff;padding:11px 24px;border-radius:7px;font-weight:600;font-size:.85rem;transition:all .28s;box-shadow:0 3px 12px rgba(176,110,74,.18)}
+.btn-s:hover{background:var(--tl);transform:translateY(-1px)}
+.btn-xl{display:inline-flex;align-items:center;gap:11px;background:var(--terra);color:#fff;padding:16px 44px;border-radius:8px;font-weight:600;font-size:1.02rem;transition:all .28s;box-shadow:0 6px 28px rgba(176,110,74,.36)}
+.btn-xl:hover{background:var(--tl);transform:translateY(-2px);box-shadow:0 12px 40px rgba(176,110,74,.45)}
+svg{display:block}
 
-/* HERO */
-.hero { min-height: 100vh; background: var(--teal-deep); position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px 40px; overflow: hidden; }
-.hero-pattern { position: absolute; inset: 0; opacity: 0.06; background-image: radial-gradient(ellipse at 20% 50%, #B06E4A 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, #435D51 0%, transparent 40%), radial-gradient(ellipse at 60% 80%, #14373C 0%, transparent 50%); }
-.topo-lines { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-.topo-lines svg { width: 100%; height: 100%; opacity: 0.08; }
-.hero-badge { font-size: 10px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--copper); border: 1px solid rgba(176,110,74,0.4); padding: 8px 20px; display: inline-block; margin-bottom: 32px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
-.hero-brand { font-size: 11px; font-weight: 300; letter-spacing: 8px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 20px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s; }
-.hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(44px, 7vw, 86px); font-weight: 300; color: var(--white); line-height: 1; letter-spacing: -1px; margin-bottom: 8px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.6s; }
-.hero-title em { font-style: italic; color: var(--copper); }
-.hero-title-x { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 50px); font-weight: 300; color: rgba(255,255,255,0.25); margin-bottom: 8px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.7s; }
-.hero-title-sub { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 4.5vw, 58px); font-weight: 300; font-style: italic; color: var(--sand); margin-bottom: 40px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.8s; }
-.hero-desc { font-size: 13px; font-weight: 300; letter-spacing: 2px; color: rgba(255,255,255,0.5); max-width: 500px; line-height: 2; margin-bottom: 60px; opacity: 0; animation: fadeUp 0.8s ease forwards 1s; }
-.hero-scroll { opacity: 0; animation: fadeUp 0.8s ease forwards 1.3s; display: flex; flex-direction: column; align-items: center; gap: 10px; cursor: pointer; text-decoration: none; }
-.hero-scroll span { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.3); }
-.scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, rgba(176,110,74,0.8), transparent); animation: scrollPulse 2s ease-in-out infinite; }
+/* ══ NAV ══ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;transition:all .4s}
+.nav.s{background:rgba(20,55,60,.97);backdrop-filter:blur(16px);padding:10px 0;box-shadow:0 2px 36px rgba(0,0,0,.18)}
+.ni{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nlogo img{height:72px;filter:brightness(0) invert(1);transition:height .3s}
+.nav.s .nlogo img{height:48px}
+.nlinks{display:flex;gap:24px;list-style:none}
+.nlinks a{color:rgba(255,255,255,.6);font-size:.84rem;font-weight:500;transition:color .22s;white-space:nowrap}
+.nlinks a:hover{color:#fff}
+.ncta{background:var(--terra);color:#fff!important;padding:9px 20px;border-radius:6px;font-size:.82rem;font-weight:600;transition:all .22s;white-space:nowrap;display:inline-block}
+.ncta:hover{background:var(--tl)!important}
+.nhbg{display:none;background:none;border:none;cursor:pointer;color:#fff;padding:4px}
+.nhbg svg{width:23px;height:23px}
+.mob{display:none;position:fixed;inset:0;background:rgba(20,55,60,.98);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:32px}
+.mob.open{display:flex}
+.mob a{color:#fff;font-size:1.3rem;font-family:var(--fd);font-weight:600}
+.mob .xb{position:absolute;top:20px;right:24px;background:none;border:none;color:#fff;font-size:1.9rem;cursor:pointer;line-height:1}
 
-/* UTILS */
-.section-label { font-size: 9px; font-weight: 600; letter-spacing: 5px; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; display: flex; align-items: center; gap: 16px; }
-.section-label::before { content: ''; width: 32px; height: 1px; background: var(--copper); display: inline-block; }
-.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 4.5vw, 56px); font-weight: 300; color: var(--teal-deep); line-height: 1.1; margin-bottom: 16px; }
-.section-title em { font-style: italic; color: var(--copper); }
-.section-title.light { color: var(--white); }
+/* ══ HERO v2 ══ */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:108px 0 48px}
+.hbg{position:absolute;inset:0;background:linear-gradient(145deg,#0c2427 0%,var(--ink) 38%,#1d4840 72%,var(--sage) 100%)}
+.hgrain{position:absolute;inset:0;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hglow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(176,110,74,.09),transparent 65%);top:-120px;right:-120px;animation:gf 9s ease-in-out infinite;pointer-events:none}
+@keyframes gf{0%,100%{transform:scale(1)}50%{transform:scale(1.06) translateY(-20px)}}
+.hero-in{position:relative;z-index:2;max-width:800px;margin:0 auto;text-align:center}
+.hpill{display:inline-flex;align-items:center;gap:7px;background:rgba(176,110,74,.1);border:1px solid rgba(176,110,74,.24);border-radius:40px;padding:5px 14px;font-size:.7rem;color:var(--tl);font-weight:700;margin-bottom:20px;letter-spacing:.07em;text-transform:uppercase}
+.hpill .dot{width:5px;height:5px;border-radius:50%;background:var(--terra);animation:bl 2s ease infinite;flex-shrink:0}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:.25}}
+.hero h1{font-family:var(--fd);font-size:clamp(2.3rem,4.2vw,3.5rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:16px;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--tl)}
+.hero-sub{font-size:.97rem;color:rgba(255,255,255,.55);line-height:1.72;margin-bottom:28px;font-weight:300;max-width:620px;margin-left:auto;margin-right:auto}
+/* hero journey steps */
+.hjournay{display:flex;gap:8px;margin-bottom:32px;align-items:center;flex-wrap:wrap;justify-content:center}
+.hjstep{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:10px 16px;transition:all .28s}
+.hjstep:hover{border-color:rgba(176,110,74,.3);background:rgba(176,110,74,.06)}
+.hjico{width:28px;height:28px;border-radius:50%;background:rgba(176,110,74,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hjico svg{width:13px;height:13px}
+.hjtext{font-size:.78rem;color:rgba(255,255,255,.6);line-height:1.3;font-weight:500}
+.hjarrow{color:rgba(255,255,255,.15);font-size:1.1rem;flex-shrink:0}
+.hero-note{font-size:.73rem;color:rgba(255,255,255,.28);margin-top:10px;font-style:italic}
+.hero-link{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.4);font-size:.8rem;margin-top:10px;transition:color .22s}
+.hero-link:hover{color:rgba(255,255,255,.75)}
 
-/* INTRO */
-.intro-section { padding: 100px 40px; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.intro-text p { font-size: 15px; font-weight: 300; line-height: 2; color: var(--text-mid); margin-bottom: 20px; }
-.intro-text p strong { color: var(--teal-deep); font-weight: 600; }
-.intro-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-.stat-card { background: var(--teal-deep); padding: 36px 28px; transition: transform 0.3s ease; }
-.stat-card:hover { transform: translateY(-4px); }
-.stat-card:nth-child(2) { background: var(--copper); }
-.stat-card:nth-child(3) { background: var(--teal-mid); }
-.stat-card:nth-child(4) { background: #1C464C; }
-.stat-number { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: var(--white); line-height: 1; margin-bottom: 8px; }
-.stat-label { font-size: 10px; font-weight: 300; letter-spacing: 2px; color: rgba(255,255,255,0.65); text-transform: uppercase; }
+/* hero right — floating result cards */
+.hcards{position:relative;width:100%;min-height:380px}
+.hcard{position:absolute;background:rgba(255,255,255,.06);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:22px 24px;transition:all .4s;cursor:default}
+.hcard:hover{transform:translateY(-4px) scale(1.02);border-color:rgba(176,110,74,.3);background:rgba(176,110,74,.08)}
+.hcard-val{font-family:var(--fd);font-size:2.2rem;font-weight:700;color:var(--tl);line-height:1;margin-bottom:4px}
+.hcard-lbl{font-size:.72rem;color:rgba(255,255,255,.4);line-height:1.4}
+.hcard-brand{font-size:.62rem;color:rgba(255,255,255,.2);margin-top:6px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.hcard-1{top:10px;left:10px;animation:hcf 3s ease-in-out infinite}
+.hcard-2{top:50px;right:0;animation:hcf 3s ease-in-out infinite .6s}
+.hcard-3{bottom:90px;left:30px;animation:hcf 3s ease-in-out infinite 1.2s}
+.hcard-4{bottom:20px;right:20px;animation:hcf 3s ease-in-out infinite 1.8s}
+@keyframes hcf{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+/* central diagram */
+.hdiag{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120px;height:120px}
+.hdiag-core{width:120px;height:120px;border-radius:50%;background:rgba(176,110,74,.12);border:2px solid rgba(176,110,74,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;animation:hpulse 3s ease-in-out infinite}
+.hdiag-core span:first-child{font-size:1.8rem;line-height:1}
+.hdiag-core span:last-child{font-size:.6rem;color:rgba(255,255,255,.5);font-weight:600;letter-spacing:.08em;margin-top:2px}
+@keyframes hpulse{0%,100%{box-shadow:0 0 0 0 rgba(176,110,74,.15)}50%{box-shadow:0 0 0 20px rgba(176,110,74,0)}}
+/* connecting lines */
+.hlines{position:absolute;inset:0;pointer-events:none}
 
-/* DORES */
-.dores-section { background: var(--teal-deep); padding: 100px 0; }
-.dores-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-.dores-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 60px; }
-.dore-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); padding: 40px 32px; position: relative; overflow: hidden; transition: all 0.4s ease; }
-.dore-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--copper); transition: height 0.4s ease; }
-.dore-card:hover { background: rgba(255,255,255,0.07); transform: translateY(-4px); }
-.dore-card:hover::before { height: 100%; }
-.dore-num { font-family: 'Cormorant Garamond', serif; font-size: 64px; font-weight: 300; color: rgba(176,110,74,0.2); line-height: 1; margin-bottom: 20px; }
-.dore-title { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
-.dore-text { font-size: 13px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.6); }
+/* ══ PROOF BAR v2 ══ */
+.pbar{background:var(--cream);padding:40px 0;border-top:1px solid rgba(20,55,60,.06)}
+.pbar-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.pbc{text-align:center;padding:20px 12px;background:var(--white);border-radius:12px;border:1px solid rgba(20,55,60,.06);transition:all .28s}
+.pbc:hover{border-color:rgba(176,110,74,.2);transform:translateY(-3px);box-shadow:0 8px 24px rgba(20,55,60,.06)}
+.pbc-val{font-family:var(--fd);font-size:clamp(1.6rem,2.4vw,2.2rem);font-weight:700;color:var(--terra);line-height:1;margin-bottom:6px}
+.pbc-lbl{font-size:.72rem;color:var(--sage);line-height:1.4}
 
-/* FASES */
-.fases-section { padding: 100px 0; background: var(--cream); }
-.fases-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-.fase-wrapper { margin-top: 56px; }
-.fase-wrapper + .fase-wrapper { margin-top: 32px; }
-.fase-header { background: var(--teal-deep); padding: 36px 44px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-.fase-wrapper:nth-child(2) .fase-header { background: var(--copper); }
-.fase-wrapper:nth-child(3) .fase-header { background: var(--teal-mid); }
-.fase-wrapper:nth-child(4) .fase-header { background: #1C464C; }
-.fase-tag { font-size: 9px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
-.fase-name { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: var(--white); line-height: 1.15; }
-.fase-duration { font-size: 10px; letter-spacing: 2px; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-top: 8px; }
-.fase-num-badge { font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 300; color: rgba(255,255,255,0.1); line-height: 1; flex-shrink: 0; }
-.modulos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-.modulo-card { background: var(--white); overflow: hidden; }
-.modulo-head { padding: 28px 32px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; transition: background 0.3s ease; user-select: none; }
-.modulo-head:hover { background: rgba(20,55,60,0.03); }
-.modulo-head-left { display: flex; align-items: flex-start; gap: 16px; flex: 1; }
-.modulo-icon-wrap { width: 40px; height: 40px; background: var(--cream); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; border-radius: 2px; }
-.modulo-label { font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--copper); margin-bottom: 6px; }
-.modulo-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--teal-deep); line-height: 1.2; }
-.modulo-toggle { width: 28px; height: 28px; border: 1px solid rgba(20,55,60,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.3s ease; }
-.modulo-toggle svg { transition: transform 0.3s ease; }
-.modulo-card.open .modulo-toggle { background: var(--copper); border-color: var(--copper); }
-.modulo-card.open .modulo-toggle svg { transform: rotate(180deg); }
-.modulo-card.open .modulo-toggle svg path { stroke: white; }
-.modulo-chips { padding: 0 32px 24px 92px; display: flex; flex-wrap: wrap; gap: 6px; }
-.modulo-card.open .modulo-chips { display: none; }
-.chip { font-size: 11px; font-weight: 300; letter-spacing: 0.5px; color: var(--teal-mid); background: rgba(20,55,60,0.06); padding: 5px 12px; border-radius: 2px; white-space: nowrap; }
-.modulo-body { max-height: 0; overflow: hidden; transition: max-height 0.45s ease; }
-.modulo-card.open .modulo-body { max-height: 1200px; }
-.modulo-body-inner { padding: 0 36px 36px 36px; border-top: 1px solid rgba(20,55,60,0.07); padding-top: 28px; }
-.modulo-desc { font-size: 15px; font-weight: 300; line-height: 2.1; color: var(--text-mid); margin-bottom: 28px; }
-.modulo-items { list-style: none; }
-.modulo-items li { display: flex; align-items: flex-start; gap: 12px; padding: 13px 0; border-bottom: 1px solid rgba(20,55,60,0.06); font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--text-mid); }
-.modulo-items li:last-child { border-bottom: none; }
-.modulo-items li::before { content: '→'; color: var(--copper); flex-shrink: 0; font-size: 13px; margin-top: 3px; font-weight: 400; }
-.modulo-full { grid-column: 1 / -1; }
+/* ══ 2 - PROBLEMA v2 ══ */
+.prob{background:var(--ink);padding:88px 0}
+.prob-top{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:48px}
+.pcta-banner{background:rgba(176,110,74,.08);border:1px solid rgba(176,110,74,.2);border-radius:16px;padding:32px;position:relative;overflow:hidden}
+.pcta-banner::before{content:'';position:absolute;top:-40px;right:-40px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(176,110,74,.12),transparent 70%);pointer-events:none}
+.pcta-title{font-family:var(--fd);font-size:1.35rem;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.25;position:relative}
+.pcta-title em{font-style:normal;color:var(--tl)}
+.pcta-desc{font-size:.84rem;color:rgba(255,255,255,.42);margin-bottom:18px;line-height:1.6;position:relative}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pcard{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:22px 20px;transition:all .28s;position:relative;overflow:hidden}
+.pcard:hover{border-color:rgba(176,110,74,.25);background:rgba(176,110,74,.05);transform:translateY(-3px)}
+.pcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--terra);opacity:0;transition:opacity .22s}
+.pcard:hover::before{opacity:1}
+.pcard-ico{width:36px;height:36px;border-radius:10px;background:rgba(176,110,74,.1);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.pcard-ico svg{width:16px;height:16px}
+.pcard h3{font-size:.88rem;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:5px;line-height:1.3}
+.pcard p{font-size:.76rem;color:rgba(255,255,255,.38);line-height:1.55}
 
-/* AGENTES HIGHLIGHT */
-.agentes-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-.agente-pill { background: rgba(20,55,60,0.04); border: 1px solid rgba(20,55,60,0.1); padding: 16px 20px; display: flex; flex-direction: column; gap: 4px; }
-.agente-pill-label { font-size: 8px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--copper); }
-.agente-pill-name { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 400; color: var(--teal-deep); }
+/* ══ 3 - METODOLOGIA ══ */
+.metodo{background:var(--cl);padding:88px 0}
+.mhdr{text-align:center;max-width:520px;margin:0 auto 48px}
+.msteps{display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative}
+.msteps::before{content:'';position:absolute;top:28px;left:calc(100%/12);right:calc(100%/12);height:2px;background:linear-gradient(90deg,var(--terra),var(--sand));z-index:0;pointer-events:none}
+.ms{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 6px;position:relative;z-index:1}
+.msc{width:56px;height:56px;border-radius:50%;background:var(--white);border:2px solid var(--terra);display:flex;align-items:center;justify-content:center;margin-bottom:13px;box-shadow:0 3px 16px rgba(176,110,74,.13);flex-shrink:0;transition:all .28s;cursor:default;position:relative}
+.msc:hover{background:var(--terra);transform:scale(1.08)}
+.msc svg{width:20px;height:20px;transition:all .28s}
+.msc:hover svg{stroke:#fff}
+.msn{position:absolute;top:-8px;right:-8px;width:20px;height:20px;border-radius:50%;background:var(--terra);color:#fff;font-size:.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:var(--fb)}
+.msl{font-family:var(--fd);font-size:.93rem;font-weight:700;color:var(--ink);margin-bottom:5px;line-height:1.2}
+.msd{font-size:.74rem;color:var(--sage);line-height:1.5}
+.mquote{max-width:600px;margin:44px auto 0;text-align:center;font-family:var(--fd);font-size:1.15rem;font-style:italic;color:var(--sage);line-height:1.65;padding:24px 30px;background:var(--white);border-radius:14px;border:1px solid rgba(20,55,60,.07);position:relative}
+.mquote::before{content:'\201C';font-size:3.5rem;font-family:var(--fd);color:var(--tl);opacity:.2;position:absolute;top:-10px;left:16px;line-height:1}
 
-/* VALUE BOX — resumo rápido do valor de cada módulo */
-.value-box { background: var(--teal-deep); padding: 20px 24px; margin-bottom: 28px; border-left: 3px solid var(--copper); display: flex; align-items: flex-start; gap: 16px; }
-.value-box-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
-.value-box-content {}
-.value-box-label { font-size: 8px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--copper); margin-bottom: 6px; }
-.value-box-text { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.9); line-height: 1.55; }
+/* ══ 4 - INTEGRAÇÕES ══ */
+.ints{padding:56px 0;background:var(--white);overflow:hidden}
+.inthdr{text-align:center;margin-bottom:24px}
+.inthdr h2{font-family:var(--fd);font-size:clamp(1.4rem,2.2vw,1.85rem);font-weight:700;margin-bottom:5px}
+.inthdr p{font-size:.86rem;color:var(--sage)}
+.inthdr p strong{color:var(--terra)}
+.tw{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.tk{display:flex;gap:52px;animation:tks 26s linear infinite;width:max-content;align-items:center;padding:8px 0}
+.tki{flex-shrink:0;width:36px;height:36px;opacity:.45;object-fit:contain;transition:opacity .28s}
+.tki:hover{opacity:.85}
+@keyframes tks{to{transform:translateX(-50%)}}
+.intx{text-align:center;font-size:.74rem;color:var(--sand);margin-top:14px;letter-spacing:.03em}
+.intcta{text-align:center;margin-top:22px}
 
-/* CRM SECTION */
-.crm-section { background: var(--cream); padding: 100px 0; border-top: 1px solid rgba(20,55,60,0.08); }
-.crm-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-.crm-context { font-size: 15px; font-weight: 300; line-height: 2; color: var(--text-mid); max-width: 800px; margin-bottom: 60px; }
-.crm-context strong { color: var(--teal-deep); font-weight: 600; }
-.crm-table-wrap { overflow-x: auto; }
-.crm-table { width: 100%; border-collapse: collapse; }
-.crm-table thead tr { background: var(--teal-deep); }
-.crm-table th { font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.7); padding: 18px 24px; text-align: left; }
-.crm-table th:first-child { color: rgba(255,255,255,0.4); }
-.crm-table tbody tr { border-bottom: 1px solid rgba(20,55,60,0.07); transition: background 0.2s ease; }
-.crm-table tbody tr:hover { background: rgba(20,55,60,0.03); }
-.crm-table tbody tr:last-child { border-bottom: none; }
-.crm-table td { padding: 18px 24px; font-size: 13px; font-weight: 300; color: var(--text-mid); vertical-align: middle; line-height: 1.6; }
-.crm-table td:first-child { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--teal-mid); background: rgba(20,55,60,0.03); border-right: 1px solid rgba(20,55,60,0.07); }
-.crm-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 400; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
-.crm-badge.bad { background: rgba(176,110,74,0.12); color: #7A4B2E; border: 1px solid rgba(176,110,74,0.25); }
-.crm-badge.good { background: rgba(67,93,81,0.12); color: #2A4A3A; border: 1px solid rgba(67,93,81,0.25); }
-.crm-badge.mid { background: rgba(20,55,60,0.08); color: var(--teal-mid); border: 1px solid rgba(20,55,60,0.15); }
-.crm-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-.crm-badge.bad::before { background: var(--copper); }
-.crm-badge.good::before { background: var(--teal-mid); }
-.crm-badge.mid::before { background: #8AACB0; }
-.crm-rec { background: var(--teal-deep); padding: 40px 44px; margin-top: 2px; display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
-.crm-rec-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(18px, 2vw, 22px); font-weight: 300; font-style: italic; color: rgba(255,255,255,0.85); line-height: 1.7; flex: 1; min-width: 280px; }
-.crm-rec-text em { color: var(--copper-light); font-style: normal; }
-.crm-rec-badge { background: var(--copper); padding: 20px 32px; text-align: center; flex-shrink: 0; }
-.crm-rec-badge-label { font-size: 8px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 6px; }
-.crm-rec-badge-name { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: var(--white); }
+/* ══ AGENTES QUE DESENVOLVEMOS ══ */
+.agentes{background:var(--cl);padding:88px 0}
+.aghdr{text-align:center;max-width:560px;margin:0 auto 48px}
+.aggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.agcard{background:var(--white);border:1px solid rgba(20,55,60,.07);border-radius:14px;padding:24px 20px;transition:all .3s;position:relative;overflow:hidden}
+.agcard:hover{border-color:rgba(176,110,74,.25);transform:translateY(-3px);box-shadow:0 10px 30px rgba(20,55,60,.07)}
+.agcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--terra);opacity:0;transition:opacity .25s;border-radius:14px 14px 0 0}
+.agcard:hover::before{opacity:1}
+.agcard-ico{width:40px;height:40px;border-radius:10px;background:rgba(176,110,74,.08);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.agcard-ico svg{width:18px;height:18px}
+.agcard h3{font-family:var(--fd);font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:6px;line-height:1.25}
+.agcard p{font-size:.74rem;color:var(--sage);line-height:1.55}
+.agcard-tags{display:flex;flex-wrap:wrap;gap:3px;margin-top:10px}
+.agcard-tag{font-size:.6rem;background:var(--cl);color:var(--sage);padding:2px 7px;border-radius:16px;border:1px solid rgba(20,55,60,.06)}
 
-/* INVESTIMENTO */
-.invest-section { background: var(--teal-deep); padding: 100px 0; }
-.invest-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-.invest-table-wrap { margin-top: 60px; overflow-x: auto; }
-.invest-table { width: 100%; border-collapse: collapse; }
-.invest-table thead tr { border-bottom: 1px solid rgba(176,110,74,0.3); }
-.invest-table th { font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.35); padding: 0 28px 16px; text-align: left; }
-.invest-table th:not(:first-child) { text-align: right; }
-.invest-table td { padding: 22px 28px; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
-.invest-table td:not(:first-child) { text-align: right; }
-.invest-table tbody tr:hover { background: rgba(255,255,255,0.03); }
-.invest-table tbody tr:last-child td { border-bottom: none; }
-.it-phase-badge { display: inline-block; background: rgba(176,110,74,0.18); border: 1px solid rgba(176,110,74,0.3); color: var(--copper-light); font-size: 8px; font-weight: 600; letter-spacing: 3px; padding: 3px 10px; text-transform: uppercase; margin-bottom: 6px; }
-.it-phase-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; color: var(--white); }
-.it-phase-sub { font-size: 10px; font-weight: 300; color: rgba(255,255,255,0.35); margin-top: 2px; }
-.it-price { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 300; color: var(--white); line-height: 1; }
-.it-price-sub { font-size: 10px; color: rgba(255,255,255,0.35); margin-top: 4px; }
-.it-duration { font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.5); letter-spacing: 1px; }
-.it-tbd { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.35); }
-.invest-note { font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.3); margin-top: 24px; line-height: 1.8; letter-spacing: 0.5px; }
+/* ══ 5 - CASES ══ */
+.cases{background:var(--ink);padding:88px 0}
+.ctop{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;gap:20px;flex-wrap:wrap}
+.ctabs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:20px}
+.ctab{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);color:rgba(255,255,255,.42);padding:7px 17px;border-radius:6px;font-size:.79rem;font-weight:600;cursor:pointer;transition:all .22s;letter-spacing:.02em}
+.ctab:hover{border-color:rgba(176,110,74,.35);color:var(--tl)}
+.ctab.on{background:rgba(176,110,74,.1);border-color:rgba(176,110,74,.35);color:var(--tl)}
+.cpanel{display:none;animation:cpi .3s ease}
+.cpanel.on{display:block}
+@keyframes cpi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.case-wrap{display:grid;grid-template-columns:1.3fr .7fr;gap:24px}
+.cmain{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:28px}
+/* case hero number */
+.case-hero-num{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.06)}
+.case-hero-val{font-family:var(--fd);font-size:2.8rem;font-weight:700;color:var(--tl);line-height:1}
+.case-hero-lbl{font-size:.82rem;color:rgba(255,255,255,.4);line-height:1.3}
+.cbdg{display:inline-block;background:rgba(176,110,74,.13);color:var(--tl);font-size:.65rem;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+.ctit{font-family:var(--fd);font-size:1.65rem;font-weight:700;color:#fff;margin-bottom:2px}
+.csec{font-size:.72rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:16px}
+.carea{font-size:.7rem;color:rgba(255,255,255,.28);margin-bottom:16px;font-style:italic}
+.cbl{margin-bottom:12px}
+.cbll{font-size:.62rem;color:var(--tl);text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-bottom:3px}
+.cblt{font-size:.84rem;color:rgba(255,255,255,.6);line-height:1.65}
+.ctchs{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
+.ctch{font-size:.63rem;background:rgba(255,255,255,.05);color:rgba(255,255,255,.36);padding:2px 9px;border-radius:20px}
+.cres-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.cres-card{background:rgba(176,110,74,.09);border:1px solid rgba(176,110,74,.18);border-radius:10px;padding:14px 16px}
+.cres-val{font-family:var(--fd);font-size:1.55rem;font-weight:700;color:var(--tl);line-height:1}
+.cres-lbl{font-size:.72rem;color:rgba(255,255,255,.38);margin-top:4px;line-height:1.4}
+.cres-card.wide{grid-column:span 2}
+.cside{display:flex;flex-direction:column;gap:9px}
+.cm{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:14px;display:flex;gap:11px;align-items:flex-start;transition:border-color .22s}
+.cm:hover{border-color:rgba(176,110,74,.22)}
+.cmico{width:32px;height:32px;border-radius:8px;background:rgba(176,110,74,.09);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cmv{font-family:var(--fd);font-size:1.25rem;font-weight:700;color:var(--tl);line-height:1}
+.cmd{font-size:.68rem;color:rgba(255,255,255,.36);margin-top:2px;line-height:1.4}
+.cstrip{display:flex;justify-content:center;gap:24px;margin-top:40px;flex-wrap:wrap;padding-top:28px;border-top:1px solid rgba(255,255,255,.05)}
+.ctag{font-family:var(--fd);font-size:.92rem;font-weight:600;color:rgba(255,255,255,.25);letter-spacing:.04em;cursor:default;transition:color .22s}
+.ctag:hover{color:var(--tl)}
 
-/* Cards de preço do módulo 1 */
-.invest-modulo1 { margin-top: 60px; }
-.invest-modulo1-header { background: var(--copper); padding: 28px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-.invest-modulo1-tag { font-size: 9px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
-.invest-modulo1-name { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; color: var(--white); margin-top: 4px; }
-.invest-modulo1-prazo { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
-.invest-modulo1-prazo-label { font-size: 8px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.5); }
-.invest-modulo1-prazo-val { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: var(--white); }
+/* ══ 6 - PARA QUEM v2 ══ */
+.pq{background:linear-gradient(145deg,#0c2427,var(--ink) 55%,#1d4840 100%);padding:88px 0;position:relative;overflow:hidden}
+.pq::after{content:'';position:absolute;bottom:-80px;right:-80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(176,110,74,.07),transparent 70%);pointer-events:none}
+.pqlayout{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;position:relative;z-index:2}
+.pqlist{list-style:none;margin:22px 0 28px}
+.pqi{display:flex;gap:13px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.pqi:last-child{border-bottom:none}
+.pqa-ico{width:32px;height:32px;border-radius:8px;background:rgba(176,110,74,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.pqa-ico svg{width:14px;height:14px}
+.pqt{font-size:.86rem;color:rgba(255,255,255,.6);line-height:1.55}
+.pqt strong{color:rgba(255,255,255,.8);font-weight:600}
+.pqr{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.pqb{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:13px;padding:18px 15px;transition:all .27s}
+.pqb:hover{border-color:rgba(176,110,74,.27);background:rgba(176,110,74,.05);transform:translateY(-3px)}
+.pqbv{font-family:var(--fd);font-size:1.8rem;font-weight:700;color:var(--tl);line-height:1;margin-bottom:5px}
+.pqbd{font-size:.71rem;color:rgba(255,255,255,.36);line-height:1.45}
 
-.invest-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-.invest-card { background: rgba(255,255,255,0.05); padding: 36px 40px; }
-.invest-card-label { font-size: 8px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--copper); margin-bottom: 12px; }
-.invest-card-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: var(--white); margin-bottom: 20px; line-height: 1.2; }
-.invest-card-price { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: var(--white); line-height: 1; margin-bottom: 4px; }
-.invest-card-price-label { font-size: 10px; font-weight: 300; color: rgba(255,255,255,0.4); letter-spacing: 1px; margin-bottom: 24px; }
-.invest-card-includes { list-style: none; }
-.invest-card-includes li { display: flex; align-items: flex-start; gap: 10px; font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.6; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-.invest-card-includes li:last-child { border-bottom: none; }
-.invest-card-includes li::before { content: '✓'; color: var(--copper); flex-shrink: 0; font-size: 11px; margin-top: 2px; font-weight: 600; }
+/* ══ 7 - FUNDADORES v2 ══ */
+.quem{background:var(--white);padding:88px 0}
+.qhdr{text-align:center;max-width:490px;margin:0 auto 44px}
+.founders{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px}
+.founder{display:grid;grid-template-columns:160px 1fr;border:1px solid rgba(20,55,60,.08);border-radius:18px;overflow:hidden;transition:box-shadow .28s}
+.founder:hover{box-shadow:0 12px 44px rgba(20,55,60,.09)}
+.fpic{position:relative;overflow:hidden;min-height:240px}
+.fpic img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .5s}
+.founder:hover .fpic img{transform:scale(1.04)}
+.fpph{width:100%;height:100%;min-height:240px;background:linear-gradient(160deg,var(--ink),var(--sage));display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:2rem;font-weight:700;color:rgba(255,255,255,.26)}
+.fbody{padding:24px 24px 24px 20px;background:var(--white)}
+.fn{font-family:var(--fd);font-size:1.4rem;font-weight:700;color:var(--ink);margin-bottom:2px}
+.fr{font-size:.7rem;color:var(--terra);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+.fb{font-size:.81rem;color:var(--sage);line-height:1.7;margin-bottom:10px}
+.fb-short{display:block}
+.fb-full{display:none}
+.fb-toggle{font-size:.73rem;color:var(--terra);font-weight:600;cursor:pointer;border:none;background:none;padding:0;margin-bottom:10px;transition:color .22s}
+.fb-toggle:hover{color:var(--tl)}
+.ftags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:9px}
+.ftag{font-size:.65rem;background:var(--cl);color:var(--sage);padding:3px 8px;border-radius:20px;border:1px solid rgba(20,55,60,.06);font-weight:500}
+.flogos{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:11px}
+.flog{font-size:.67rem;background:var(--cream);color:var(--ink);padding:3px 9px;border-radius:20px;font-weight:700;font-family:var(--fd)}
+.fq{font-family:var(--fd);font-size:.89rem;font-style:italic;color:var(--ink);border-left:2px solid var(--terra);padding-left:10px;line-height:1.55}
+.tband{background:linear-gradient(135deg,var(--ink),var(--sage));border-radius:16px;padding:28px 34px;display:flex;justify-content:space-between;align-items:center;gap:22px}
+.tbtext h3{font-family:var(--fd);font-size:1.38rem;font-weight:700;color:#fff;margin-bottom:5px}
+.tbtext p{font-size:.85rem;color:rgba(255,255,255,.5);max-width:500px;line-height:1.6}
+.tbbdg{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:11px;padding:15px 22px;text-align:center;flex-shrink:0}
+.tbbv{font-family:var(--fd);font-size:1.8rem;font-weight:700;color:var(--tl)}
+.tbbl{font-size:.68rem;color:rgba(255,255,255,.36);margin-top:2px}
 
-/* Combo + manutenção */
-.invest-combo { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 2px; }
-.invest-combo-total { background: var(--teal-deep); border: 1px solid rgba(176,110,74,0.3); padding: 32px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-.invest-combo-total-label { font-size: 9px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--copper); margin-bottom: 8px; }
-.invest-combo-total-val { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: var(--white); line-height: 1; }
-.invest-combo-total-sub { font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.4); margin-top: 4px; }
-.invest-parcelamento { background: rgba(176,110,74,0.12); border: 1px solid rgba(176,110,74,0.25); padding: 24px 32px; }
-.invest-parcelamento-label { font-size: 8px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--copper); margin-bottom: 14px; }
-.invest-parcela { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid rgba(176,110,74,0.12); }
-.invest-parcela:last-child { border-bottom: none; }
-.invest-parcela-num { width: 24px; height: 24px; border: 1px solid rgba(176,110,74,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; color: var(--copper); flex-shrink: 0; }
-.invest-parcela-info { flex: 1; }
-.invest-parcela-momento { font-size: 10px; font-weight: 600; letter-spacing: 1px; color: rgba(255,255,255,0.7); text-transform: uppercase; }
-.invest-parcela-val { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; color: var(--white); }
+/* ══ 8 - COMO FUNCIONA v2 ══ */
+.como{background:var(--cl);padding:88px 0}
+.cohdr{text-align:center;max-width:490px;margin:0 auto 48px}
+.tl{max-width:680px;margin:0 auto 36px;position:relative}
+.tl::before{content:'';position:absolute;left:23px;top:25px;bottom:25px;width:2px;background:linear-gradient(to bottom,var(--terra),var(--sand))}
+.tli{display:flex;gap:20px;margin-bottom:28px}
+.tli:last-child{margin-bottom:0}
+.tlid{width:46px;height:46px;border-radius:50%;background:var(--terra);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;z-index:2;font-family:var(--fd);font-size:1.05rem;box-shadow:0 0 0 4px rgba(176,110,74,.1);transition:all .25s}
+.tli:hover .tlid{background:var(--tl);transform:scale(1.07)}
+.tlib{padding-top:5px}
+.tlim{font-size:.66rem;color:var(--terra);font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px}
+.tlit{font-family:var(--fd);font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:3px}
+.tlid2{font-size:.84rem;color:var(--sage);line-height:1.65}
+.tli-time{display:inline-block;background:rgba(176,110,74,.1);color:var(--terra);font-size:.62rem;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:8px;vertical-align:middle}
 
-/* Manutenção */
-.invest-manutencao { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); padding: 32px 40px; }
-.invest-manutencao-label { font-size: 8px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 8px; }
-.invest-manutencao-price { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; color: var(--white); line-height: 1; margin-bottom: 4px; }
-.invest-manutencao-sub { font-size: 10px; color: rgba(255,255,255,0.35); margin-bottom: 20px; }
-.invest-manutencao-items { list-style: none; }
-.invest-manutencao-items li { display: flex; align-items: flex-start; gap: 8px; font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.5); padding: 5px 0; line-height: 1.5; }
-.invest-manutencao-items li::before { content: '—'; color: rgba(176,110,74,0.5); flex-shrink: 0; }
+/* ══ 9 - CUSTO INVISÍVEL v2 ══ */
+.custo{background:var(--white);padding:88px 0}
+.cuhdr{text-align:center;max-width:560px;margin:0 auto 44px}
+.cugrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:40px}
+.cucel{background:var(--cl);border:1px solid rgba(20,55,60,.06);border-radius:14px;padding:26px 22px;position:relative;transition:all .28s}
+.cucel:hover{background:var(--white);border-color:rgba(176,110,74,.2);transform:translateY(-3px);box-shadow:0 8px 24px rgba(20,55,60,.06)}
+.cucel::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--terra);opacity:0;transition:opacity .22s;border-radius:14px 14px 0 0}
+.cucel:hover::before{opacity:1}
+.cucel-num{font-family:var(--fd);font-size:1.6rem;font-weight:700;color:var(--terra);line-height:1;margin-bottom:8px}
+.cuico{width:32px;height:32px;border-radius:8px;background:rgba(176,110,74,.08);display:flex;align-items:center;justify-content:center;margin-bottom:11px}
+.cut{font-size:.83rem;font-weight:600;color:var(--ink);margin-bottom:4px;line-height:1.3}
+.cud{font-size:.74rem;color:var(--sage);line-height:1.55}
+.cubot{background:var(--ink);border-radius:16px;padding:36px 40px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.cubq{font-family:var(--fd);font-size:clamp(1.3rem,2.2vw,1.8rem);font-weight:700;color:#fff;line-height:1.25;margin-bottom:6px}
+.cubp{font-size:.88rem;color:rgba(255,255,255,.4);font-weight:300;line-height:1.6}
 
-/* Treinamento destaque */
-.invest-treinamento { background: var(--teal-mid); padding: 36px 40px; margin-top: 2px; display: flex; align-items: flex-start; gap: 28px; }
-.invest-treinamento-icon { font-size: 36px; flex-shrink: 0; }
-.invest-treinamento-content {}
-.invest-treinamento-badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); color: white; font-size: 8px; font-weight: 600; letter-spacing: 4px; padding: 4px 12px; text-transform: uppercase; margin-bottom: 10px; }
-.invest-treinamento-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; color: var(--white); margin-bottom: 10px; line-height: 1.2; }
-.invest-treinamento-desc { font-size: 13px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.75); }
-
-/* Módulos futuros */
-.invest-futuros { margin-top: 2px; }
-.invest-futuros-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-.invest-futuro-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 28px 36px; }
-.invest-futuro-badge { font-size: 8px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(176,110,74,0.6); margin-bottom: 8px; }
-.invest-futuro-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; color: rgba(255,255,255,0.7); margin-bottom: 6px; }
-.invest-futuro-sub { font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.3); }
-.invest-futuro-tbd { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.25); margin-top: 16px; }
-
-/* APIs aviso */
-.invest-apis-aviso { background: rgba(0,0,0,0.2); border-left: 3px solid rgba(176,110,74,0.4); padding: 20px 28px; margin-top: 24px; }
-.invest-apis-aviso p { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.4); line-height: 1.8; }
-.invest-apis-aviso strong { color: rgba(255,255,255,0.6); font-weight: 400; }
-
-/* POR QUE */
-.porque-section { padding: 100px 0; background: var(--cream); }
-.porque-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-.porque-statement { background: var(--teal-deep); padding: 56px; margin-top: 60px; margin-bottom: 2px; position: relative; overflow: hidden; }
-.porque-statement::before { content: '"'; font-family: 'Cormorant Garamond', serif; font-size: 220px; color: rgba(255,255,255,0.04); position: absolute; top: -20px; left: 24px; line-height: 1; }
-.porque-statement p { font-family: 'Cormorant Garamond', serif; font-size: clamp(20px, 2.5vw, 26px); font-weight: 300; font-style: italic; color: rgba(255,255,255,0.88); line-height: 1.75; max-width: 900px; position: relative; z-index: 1; }
-.porque-statement p em { color: var(--copper-light); font-style: normal; }
-
-/* Metodologia 6 passos */
-.porque-metodo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-.porque-metodo-step { background: var(--white); padding: 32px 28px; display: flex; gap: 20px; align-items: flex-start; transition: background 0.3s ease; }
-.porque-metodo-step:hover { background: rgba(20,55,60,0.03); }
-.porque-metodo-num { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: rgba(176,110,74,0.25); line-height: 1; flex-shrink: 0; width: 36px; }
-.porque-metodo-title { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal-deep); margin-bottom: 8px; }
-.porque-metodo-desc { font-size: 13px; font-weight: 300; line-height: 1.8; color: var(--text-mid); }
-
-/* 3 pilares */
-.porque-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 2px; }
-.porque-card { background: var(--white); padding: 40px; position: relative; overflow: hidden; transition: all 0.4s ease; }
-.porque-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px rgba(20,55,60,0.1); }
-.porque-card-svg { margin-bottom: 18px; }
-.porque-icon { font-size: 24px; margin-bottom: 18px; display: block; }
-.porque-card-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--teal-deep); margin-bottom: 12px; line-height: 1.2; }
-.porque-card-text { font-size: 13px; font-weight: 300; line-height: 2; color: var(--text-mid); }
-.porque-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: var(--copper); transition: width 0.4s ease; }
-.porque-card:hover::after { width: 100%; }
-
-/* Fundadores */
-.porque-fundadores { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 2px; }
-.porque-fundador { background: var(--teal-deep); display: flex; gap: 0; overflow: hidden; transition: all 0.3s ease; }
-.porque-fundador:hover { background: #1a424a; }
-.porque-fundador-foto { width: 120px; flex-shrink: 0; position: relative; background: var(--teal-mid); }
-.porque-fundador-foto img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
-.porque-fundador-body { padding: 28px 28px 28px 24px; flex: 1; }
-.porque-fundador-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--white); margin-bottom: 2px; }
-.porque-fundador-role { font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--copper); margin-bottom: 12px; }
-.porque-fundador-desc { font-size: 12px; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.55); margin-bottom: 14px; }
-.porque-fundador-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-.porque-fundador-tags span { font-size: 10px; font-weight: 300; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); padding: 3px 9px; }
-
-/* CTA */
-.cta-section { padding: 120px 40px; text-align: center; background: var(--teal-deep); position: relative; overflow: hidden; }
-.cta-section::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 800px; height: 800px; border: 1px solid rgba(255,255,255,0.03); border-radius: 50%; pointer-events: none; }
-.cta-section::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 500px; height: 500px; border: 1px solid rgba(255,255,255,0.05); border-radius: 50%; pointer-events: none; }
-.cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
-.cta-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(42px, 6vw, 72px); font-weight: 300; color: var(--white); line-height: 1.05; margin-bottom: 20px; }
-.cta-title em { font-style: italic; color: var(--copper); }
-.cta-text { font-size: 13px; font-weight: 300; letter-spacing: 1px; color: rgba(255,255,255,0.55); line-height: 2; margin-bottom: 64px; }
-
-/* Próximos passos verticais */
-.cta-steps-v2 { display: flex; flex-direction: column; gap: 2px; text-align: left; max-width: 800px; margin: 0 auto; }
-.cta-step-v2 { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); padding: 32px 36px; display: flex; gap: 28px; align-items: flex-start; transition: background 0.3s ease; }
-.cta-step-v2:hover { background: rgba(255,255,255,0.07); }
-.cta-step-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: rgba(176,110,74,0.35); line-height: 1; flex-shrink: 0; width: 48px; text-align: center; }
-.cta-step-body { flex: 1; }
-.cta-step-title { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--white); margin-bottom: 6px; }
-.cta-step-prazo { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--copper); background: rgba(176,110,74,0.15); border: 1px solid rgba(176,110,74,0.3); padding: 3px 10px; margin-bottom: 12px; }
-.cta-step-desc { font-size: 13px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.6); }
+/* ══ 10 - CTA FINAL ══ */
+.ctaf{background:linear-gradient(165deg,var(--ink),#194040 55%,var(--sage) 100%);padding:92px 0;text-align:center;position:relative;overflow:hidden}
+.ctaf::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='1' fill='%23fff' fill-opacity='.022'/%3E%3C/svg%3E")}
+.ctafin{position:relative;z-index:2}
+.ctaf h2{font-family:var(--fd);font-size:clamp(2rem,3.6vw,2.9rem);font-weight:700;color:#fff;margin-bottom:12px;line-height:1.14}
+.ctafsub{font-size:.97rem;color:rgba(255,255,255,.48);max-width:480px;margin:0 auto 34px;line-height:1.72;font-weight:300}
+.ctaftags{display:flex;justify-content:center;gap:14px;margin-top:28px;flex-wrap:wrap}
+.ctaftt{font-size:.75rem;color:rgba(255,255,255,.3);display:flex;align-items:center;gap:5px}
+.ctafn{margin-top:18px;font-size:.73rem;color:rgba(255,255,255,.2);font-style:italic}
 
 /* FOOTER */
-.footer { background: var(--text-dark); padding: 48px 40px; display: flex; justify-content: space-between; align-items: center; }
-.footer-brand { font-size: 18px; font-weight: 200; letter-spacing: 6px; color: var(--white); text-transform: uppercase; }
-.footer-brand span { display: block; font-size: 8px; letter-spacing: 5px; color: rgba(255,255,255,0.3); margin-top: 4px; }
-.footer-date { font-size: 10px; letter-spacing: 3px; color: rgba(255,255,255,0.3); text-align: right; }
+footer{background:var(--ink);padding:32px 0;text-align:center;border-top:1px solid rgba(255,255,255,.05)}
+.flinks{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:11px}
+.flinks span{font-size:.71rem;color:rgba(255,255,255,.25);letter-spacing:.02em}
+footer p{font-size:.72rem;color:rgba(255,255,255,.22)}
+footer a{color:rgba(255,255,255,.36);transition:color .22s}
+footer a:hover{color:var(--tl)}
 
-/* ANIMATIONS */
-@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes scrollPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-
-@media (max-width: 900px) {
-  .intro-section { grid-template-columns: 1fr; gap: 48px; }
-  .dores-grid, .modulos-grid, .porque-grid, .agentes-row, .porque-metodo-grid, .porque-fundadores { grid-template-columns: 1fr; }
-  .modulo-full { grid-column: 1; }
-  .cta-steps { flex-direction: column; align-items: center; }
-  .cta-step + .cta-step::before { display: none; }
-  .footer { flex-direction: column; gap: 20px; text-align: center; }
-  .crm-rec { flex-direction: column; gap: 24px; }
-  .porque-fundador { flex-direction: column; }
-  .porque-fundador-foto { width: 100%; height: 160px; }
+/* ══ RESPONSIVE ══ */
+@media(max-width:980px){
+  .nlinks,.ncta{display:none}
+  .nhbg{display:block}
+  .prob-top{grid-template-columns:1fr}
+  .pgrid{grid-template-columns:1fr 1fr}
+  .msteps{grid-template-columns:repeat(3,1fr);gap:24px}
+  .msteps::before{display:none}
+  .aggrid{grid-template-columns:1fr 1fr}
+  .case-wrap{grid-template-columns:1fr}
+  .cside{display:none}
+  .pqlayout{grid-template-columns:1fr}
+  .pqr{grid-template-columns:1fr 1fr}
+  .founders{grid-template-columns:1fr}
+  .founder{grid-template-columns:130px 1fr}
+  .cugrid{grid-template-columns:repeat(2,1fr)}
+  .cubot{grid-template-columns:1fr}
+  .tband{flex-direction:column;text-align:center}
+  .ctop{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:600px){
+  :root{--r:15px}
+  .hero h1{font-size:2rem}
+  .hero-in{padding:0}
+  .hjournay{flex-direction:column;align-items:flex-start}
+  .hjarrow{display:none}
+  .msteps{grid-template-columns:1fr 1fr}
+  .aggrid{grid-template-columns:1fr}
+  .cugrid{grid-template-columns:1fr}
+  .pqr{grid-template-columns:1fr 1fr}
+  .founder{grid-template-columns:1fr}
+  .fpic{height:180px}
+  .pgrid{grid-template-columns:1fr}
+  .cres-grid{grid-template-columns:1fr}
+  .cres-card.wide{grid-column:span 1}
+  .cubot{padding:28px 22px}
 }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-pattern"></div>
-  <div class="topo-lines">
-    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="0.5"/>
-      <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width="0.5"/>
-      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.4"/>
-      <path d="M0,300 Q300,220 500,290 T900,260 T1200,300" fill="none" stroke="white" stroke-width="0.4"/>
-      <path d="M0,500 Q300,440 500,490 T900,460 T1200,500" fill="none" stroke="white" stroke-width="0.3"/>
-      <path d="M100,600 Q400,530 600,590 T1000,560 T1300,600" fill="none" stroke="white" stroke-width="0.3"/>
-      <path d="M100,200 Q400,130 600,190 T1000,160 T1300,200" fill="none" stroke="white" stroke-width="0.3"/>
-    </svg>
+<!-- NAV -->
+<nav class="nav" id="nav">
+<div class="c ni">
+  <a href="#inicio" class="nlogo"><img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting — Implementação de IA para Empresas"></a>
+  <ul class="nlinks">
+    <li><a href="#fazemos">Metodologia</a></li>
+    <li><a href="#agentes">Agentes</a></li>
+    <li><a href="#cases">Cases</a></li>
+    <li><a href="#quem">Quem somos</a></li>
+    <li><a href="#como">Como funciona</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:10px">
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="ncta">Agendar diagn&oacute;stico gratuito</a>
   </div>
-  <div class="hero-badge">Proposta Executiva · Março 2026</div>
-  <div class="hero-brand">NewScale Consulting</div>
-  <div class="hero-title"><em>Aplicação</em> Estratégica</div>
-  <div class="hero-title-x">de</div>
-  <div class="hero-title-sub">Inteligência Artificial</div>
-  <div class="hero-desc">Uma proposta construída a partir da sua realidade — não um cardápio genérico, mas um plano desenhado para a Mais Internet operar em outro nível.</div>
-  <a href="#contexto" class="hero-scroll"><span>Explorar</span><div class="scroll-line"></div></a>
+  <button class="nhbg" onclick="document.getElementById('mn').classList.add('open')" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</div>
+</nav>
+<div class="mob" id="mn">
+  <button class="xb" onclick="this.parentElement.classList.remove('open')">&times;</button>
+  <a href="#fazemos" onclick="this.parentElement.classList.remove('open')">Metodologia</a>
+  <a href="#agentes" onclick="this.parentElement.classList.remove('open')">Agentes</a>
+  <a href="#cases" onclick="this.parentElement.classList.remove('open')">Cases</a>
+  <a href="#quem" onclick="this.parentElement.classList.remove('open')">Quem somos</a>
+  <a href="#como" onclick="this.parentElement.classList.remove('open')">Como funciona</a>
+  <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="ncta" style="margin-top:8px">Agendar diagn&oacute;stico</a>
 </div>
 
-<!-- CONTEXTO -->
-<div id="contexto">
-  <div class="intro-section">
-    <div class="intro-text reveal">
-      <div class="section-label">O Contexto</div>
-      <h2 class="section-title">Uma operação que já funciona — e pode ir <em>muito além</em></h2>
-      <p>Davi, a Mais Internet tem <strong>2.000 clientes ativos</strong>, uma equipe de campo rodando diariamente e 4 atendentes respondendo o WhatsApp o dia inteiro. A operação funciona — mas ela ainda depende muito da memória e do esforço individual de cada pessoa do time.</p>
-      <p>O que se abre agora é a oportunidade de usar a inteligência artificial para <strong>automatizar o que é repetitivo</strong>, <strong>registrar o que hoje se perde</strong> e <strong>dar visibilidade ao que está invisível</strong> — sem complicar a vida de ninguém.</p>
-      <p>A proposta a seguir parte do que a Mais Internet já tem construído para levá-la a um novo patamar de eficiência, controle e qualidade de atendimento.</p>
+<!-- ═══════════════════════════════
+     1ª DOBRA — HERO (REDESIGN)
+═══════════════════════════════ -->
+<section class="hero" id="inicio">
+  <div class="hbg"></div><div class="hgrain"></div><div class="hglow"></div>
+  <div class="c hero-in">
+    <div>
+      <div class="hpill"><span class="dot"></span>IA Hiper-Personalizada para o Seu Neg&oacute;cio</div>
+      <h1>Transforme Intelig&ecirc;ncia Artificial em ganho real de <em>produtividade, receita e efici&ecirc;ncia.</em></h1>
+      <p class="hero-sub">Solu&ccedil;&otilde;es sob medida, integradas aos seus sistemas, sem necessidade de equipe t&eacute;cnica interna. Do diagn&oacute;stico ao resultado em semanas &mdash; n&atilde;o em meses.</p>
+
+      <!-- Journey steps -->
+      <div class="hjournay">
+        <div class="hjstep">
+          <div class="hjico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+          <div class="hjtext">Diagn&oacute;stico<br>estrat&eacute;gico</div>
+        </div>
+        <span class="hjarrow">&rarr;</span>
+        <div class="hjstep">
+          <div class="hjico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+          <div class="hjtext">Planejamento &amp;<br>implementa&ccedil;&atilde;o integrada</div>
+        </div>
+        <span class="hjarrow">&rarr;</span>
+        <div class="hjstep">
+          <div class="hjico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <div class="hjtext">Monitoramento<br>de indicadores</div>
+        </div>
+        <span class="hjarrow">&rarr;</span>
+        <div class="hjstep">
+          <div class="hjico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div class="hjtext">Resultado<br>real</div>
+        </div>
+      </div>
+
+      <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="btn-p">
+        Agendar um diagn&oacute;stico gratuito
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <div><a href="#cases" class="hero-link">Ver cases implementados &darr;</a></div>
     </div>
-    <div class="intro-stats reveal reveal-delay-2">
-      <div class="stat-card"><div class="stat-number">2.000</div><div class="stat-label">Clientes ativos</div></div>
-      <div class="stat-card"><div class="stat-number">60+</div><div class="stat-label">Atendimentos por dia no WhatsApp</div></div>
-      <div class="stat-card"><div class="stat-number">6</div><div class="stat-label">Carros no campo todo dia</div></div>
-      <div class="stat-card"><div class="stat-number">70%</div><div class="stat-label">Das dúvidas são repetitivas e automatizáveis</div></div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     2ª DOBRA — PROBLEMA (REDESIGN)
+═══════════════════════════════ -->
+<section class="prob" id="problema">
+<div class="c">
+  <div class="prob-top">
+    <div class="rv">
+      <span class="stag stag-l">O problema real</span>
+      <h2 class="h2" style="color:#fff">Por que muitas empresas ainda n&atilde;o conseguem extrair valor real da IA?</h2>
+      <p class="sub" style="color:rgba(255,255,255,.42)">Implementar IA de forma estrat&eacute;gica &eacute; diferente de testar ferramentas. Os obst&aacute;culos s&atilde;o mais comuns do que parecem.</p>
+    </div>
+    <div class="pcta-banner rv" style="transition-delay:.1s">
+      <div class="pcta-title">A NewScale foi criada para resolver esse <em>gap entre o potencial da IA e os resultados reais.</em></div>
+      <div class="pcta-desc">Come&ccedil;amos pela conversa, n&atilde;o pelo pacote. Diagn&oacute;stico gratuito em 30 minutos, sem compromisso.</div>
+      <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20de%20IA%20para%20minha%20empresa." target="_blank" class="btn-s">
+        Solicitar avalia&ccedil;&atilde;o de IA
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="pgrid rv" style="transition-delay:.15s">
+    <div class="pcard">
+      <div class="pcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <h3>Excesso de ferramentas, nenhuma adaptada</h3>
+      <p>Op&ccedil;&otilde;es demais com promessas parecidas e nenhuma ajustada &agrave; opera&ccedil;&atilde;o real da empresa.</p>
+    </div>
+    <div class="pcard">
+      <div class="pcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+      <h3>M&oacute;dulos engessados dos fornecedores</h3>
+      <p>Parceiros integrados ofertam IA gen&eacute;rica que n&atilde;o se adapta &agrave;s necessidades do neg&oacute;cio.</p>
+    </div>
+    <div class="pcard">
+      <div class="pcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></div>
+      <h3>Sem clareza de por onde come&ccedil;ar</h3>
+      <p>A empresa fica paralisada por falta de direcionamento estrat&eacute;gico sobre quais processos priorizar.</p>
+    </div>
+    <div class="pcard">
+      <div class="pcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <h3>Falta de conhecimento t&eacute;cnico interno</h3>
+      <p>Sem preparo ou engajamento para adotar IA de forma consistente e produtiva.</p>
     </div>
   </div>
 </div>
+</section>
 
-<!-- DORES -->
-<div class="dores-section">
-  <div class="dores-inner">
-    <div class="section-label reveal">O que identificamos</div>
-    <h2 class="section-title light reveal">6 pontos onde a IA vai<br><em>liberar tempo e dinheiro</em></h2>
-    <div class="dores-grid">
-      <div class="dore-card reveal reveal-delay-1">
-        <div class="dore-num">01</div>
-        <div class="dore-title">Atendimento 100% manual</div>
-        <div class="dore-text">4 atendentes respondendo ~60 mensagens por dia com perguntas que se repetem toda semana. Boleto, Pix, cabo errado, reiniciar o equipamento — trabalho humano gasto em tarefa de robô.</div>
+<!-- ═══════════════════════════════
+     3ª DOBRA — METODOLOGIA (com ícones)
+═══════════════════════════════ -->
+<section class="metodo" id="fazemos">
+<div class="c">
+  <div class="mhdr rv">
+    <span class="stag">Metodologia NewScale</span>
+    <h2 class="h2">Da estrat&eacute;gia &agrave; implementa&ccedil;&atilde;o: IA funcionando na pr&aacute;tica</h2>
+    <p class="sub" style="color:var(--sage);margin:0 auto;max-width:460px">Cada empresa tem um contexto diferente. Por isso, come&ccedil;amos pela conversa &mdash; n&atilde;o pelo pacote.</p>
+  </div>
+  <div class="msteps rv" style="transition-delay:.1s">
+    <div class="ms">
+      <div class="msc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <span class="msn">1</span>
       </div>
-      <div class="dore-card reveal reveal-delay-2">
-        <div class="dore-num">02</div>
-        <div class="dore-title">WhatsApp em risco constante</div>
-        <div class="dore-text">Disparos ativos de cobrança pelo mesmo número que recebe suporte. Resultado: bloqueio recorrente pela Meta e instabilidade no canal principal de contato com 2.000 clientes.</div>
+      <div class="msl">Consultoria Sist&ecirc;mica</div>
+      <div class="msd">Vis&atilde;o pr&oacute;-neg&oacute;cio: marketing, vendas e opera&ccedil;&atilde;o. IA como motor de escala.</div>
+    </div>
+    <div class="ms">
+      <div class="msc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span class="msn">2</span>
       </div>
-      <div class="dore-card reveal reveal-delay-3">
-        <div class="dore-num">03</div>
-        <div class="dore-title">Combustível no achismo</div>
-        <div class="dore-text">Controle feito numa planilha que depende de alguém lembrar de preencher. Sem foto, sem quilometragem, sem rastreamento. Impossível saber se há desperdício ou desvio.</div>
+      <div class="msl">Roadmap de Automa&ccedil;&otilde;es</div>
+      <div class="msd">Cronograma faseado priorizando fluxos com maior potencial de destravar o neg&oacute;cio.</div>
+    </div>
+    <div class="ms">
+      <div class="msc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        <span class="msn">3</span>
       </div>
-      <div class="dore-card reveal reveal-delay-1">
-        <div class="dore-num">04</div>
-        <div class="dore-title">Qualidade de campo invisível</div>
-        <div class="dore-text">Sem checklist estruturado, sem pesquisa de satisfação pós-visita, sem rastreamento de produtividade por técnico. Não dá para saber quem está atendendo bem ou mal.</div>
+      <div class="msl">Implementa&ccedil;&atilde;o</div>
+      <div class="msd">Integramos sistemas, eliminamos tarefas manuais e criamos fluxos inteligentes.</div>
+    </div>
+    <div class="ms">
+      <div class="msc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        <span class="msn">4</span>
       </div>
-      <div class="dore-card reveal reveal-delay-2">
-        <div class="dore-num">05</div>
-        <div class="dore-title">Nenhuma inteligência sobre os dados</div>
-        <div class="dore-text">Sem dashboard integrado, você não sabe taxa de resolutividade, tempo médio de atendimento ou volume por região. Você age só quando o problema já virou crise.</div>
+      <div class="msl">Treinamento das Equipes</div>
+      <div class="msd">O humano passa a monitorar os Agentes de IA &mdash; liberando tempo para o que importa.</div>
+    </div>
+    <div class="ms">
+      <div class="msc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        <span class="msn">5</span>
       </div>
-      <div class="dore-card reveal reveal-delay-3">
-        <div class="dore-num">06</div>
-        <div class="dore-title">CRM limitado travando o futuro</div>
-        <div class="dore-text">A API do Gesprov é tão restrita que impede integrações relevantes. Sem API aberta, não há como verificar sinal, integrar TR-069 ou automatizar de verdade.</div>
+      <div class="msl">Acompanhamento de KPIs</div>
+      <div class="msd">M&eacute;tricas definidas em conjunto para validar ganho de escala.</div>
+    </div>
+    <div class="ms">
+      <div class="msc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span class="msn">6</span>
       </div>
+      <div class="msl">Sustenta&ccedil;&atilde;o</div>
+      <div class="msd">Monitoramento, otimiza&ccedil;&otilde;es e manuten&ccedil;&atilde;o para evolu&ccedil;&atilde;o cont&iacute;nua.</div>
     </div>
   </div>
+  <div class="mquote rv" style="transition-delay:.2s">N&atilde;o vendemos pacotes. Mergulhamos na sua empresa, entendemos como a equipe trabalha e desenhamos a solu&ccedil;&atilde;o a partir da realidade &mdash; n&atilde;o de um template.</div>
+  <div style="text-align:center;margin-top:30px" class="rv">
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20consultor." target="_blank" class="btn-s">
+      Quero falar com um consultor agora
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
 </div>
+</section>
 
-<!-- FASES -->
-<div class="fases-section">
-  <div class="fases-inner">
-    <div class="section-label reveal">A Proposta</div>
-    <h2 class="section-title reveal">Estruturada em 3 módulos.<br><em>Cada um com resultado próprio.</em></h2>
-    <p class="reveal" style="font-size:13px;font-weight:300;color:var(--text-mid);line-height:2;max-width:640px;margin-top:8px;">Clique em cada módulo para ver os detalhes das entregas.</p>
+<!-- ═══════════════════════════════
+     4ª DOBRA — INTEGRAÇÕES (ícones maiores)
+═══════════════════════════════ -->
+<section class="ints" id="integracoes">
+  <div class="c inthdr rv">
+    <h2>Integramos com os sistemas que sua empresa j&aacute; utiliza</h2>
+    <p>Dezenas de conectores dispon&iacute;veis &mdash; sem trocar sistema, sem parar a opera&ccedil;&atilde;o.</p>
+  </div>
+  <div class="tw">
+    <div class="tk">
+      <img class="tki" src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp">
+      <img class="tki" src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram">
+      <img class="tki" src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n">
+      <svg class="tki" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.282 9.821a5.985 5.985 0 00-.516-4.91 6.046 6.046 0 00-6.51-2.9A6.065 6.065 0 0011.705.001a6.047 6.047 0 00-5.764 4.166 5.986 5.986 0 00-3.997 2.9 6.049 6.049 0 00.749 7.112 5.98 5.98 0 00.51 4.911 6.051 6.051 0 006.515 2.9A5.985 5.985 0 0013.26 24a6.056 6.056 0 005.772-4.206 5.99 5.99 0 003.997-2.9 6.056 6.056 0 00-.747-7.073zM13.26 22.43a4.476 4.476 0 01-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 00.392-.681v-6.737l2.02 1.168a.071.071 0 01.038.052v5.583a4.504 4.504 0 01-4.494 4.494zM3.6 18.304a4.47 4.47 0 01-.535-3.014l.142.085 4.783 2.759a.771.771 0 00.78 0l5.843-3.369v2.332a.08.08 0 01-.033.062L9.74 19.95a4.5 4.5 0 01-6.14-1.646zM2.34 7.896a4.485 4.485 0 012.366-1.973V11.6a.766.766 0 00.388.676l5.815 3.355-2.02 1.168a.076.076 0 01-.071 0l-4.83-2.786A4.504 4.504 0 012.34 7.872zm16.597 3.855l-5.833-3.387L15.119 7.2a.076.076 0 01.071 0l4.83 2.791a4.494 4.494 0 01-.676 8.105v-5.678a.79.79 0 00-.407-.667zm2.01-3.023l-.141-.085-4.774-2.782a.776.776 0 00-.785 0L9.409 9.23V6.897a.066.066 0 01.028-.061l4.83-2.787a4.5 4.5 0 016.68 4.66zm-12.64 4.135l-2.02-1.164a.08.08 0 01-.038-.057V6.075a4.5 4.5 0 017.375-3.453l-.142.08L8.704 5.46a.795.795 0 00-.393.681zm1.097-2.365l2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z" fill="#000"/></svg>
+      <svg class="tki" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.303 3.248c-.194-.39-.537-.622-.91-.756a2.146 2.146 0 00-.46-.115c-.11-.012-.189-.016-.24-.015H8.308c-.052 0-.131.003-.241.015-.11.013-.26.044-.46.115-.374.134-.717.366-.91.756-.187.378-.187.775-.187 1.178v15.148c0 .403 0 .8.186 1.178.194.39.537.622.911.756.2.071.35.102.46.115.11.012.19.016.241.015h7.384c.052 0 .131-.003.241-.015.11-.013.26-.044.46-.115.374-.134.717-.366.91-.756.187-.378.187-.775.187-1.178V4.426c0-.403 0-.8-.186-1.178zM12 20.93a1.304 1.304 0 110-2.608 1.304 1.304 0 010 2.608z" fill="#000"/></svg>
+      <img class="tki" src="https://cdn.simpleicons.org/googlegemini/886FBF" alt="Google Gemini">
+      <img class="tki" src="https://cdn.simpleicons.org/meta/0081FB" alt="Meta">
+      <img class="tki" src="https://cdn.simpleicons.org/gmail/EA4335" alt="Gmail">
+      <img class="tki" src="https://cdn.simpleicons.org/googledrive/4285F4" alt="Google Drive">
+      <img class="tki" src="https://cdn.simpleicons.org/googlesheets/0F9D58" alt="Google Sheets">
+      <img class="tki" src="https://cdn.simpleicons.org/notion/000" alt="Notion">
+      <img class="tki" src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="HubSpot">
+      <img class="tki" src="https://cdn.simpleicons.org/trello/0052CC" alt="Trello">
+      <svg class="tki" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 7.387v10.478c0 .23-.08.424-.238.576a.806.806 0 01-.588.234h-4.453v-5.642h1.903l.286-2.199h-2.19V9.499c0-.638.18-1.073 1.095-1.073h1.17V6.44a15.678 15.678 0 00-1.704-.087c-1.686 0-2.84 1.027-2.84 2.913v1.618h-1.9v2.199h1.9v5.592H7.218v-5.592h1.9v-2.199h-1.9V9.266c0-1.886 1.154-2.913 2.84-2.913.57 0 1.157.03 1.704.087v1.986h-1.17c-.916 0-1.095.435-1.095 1.073v1.335h2.19l-.287 2.199h-1.903v5.642H.826a.806.806 0 01-.588-.234A.782.782 0 010 17.865V7.387c0-.232.08-.427.238-.584A.796.796 0 01.826 6.57h22.348c.234 0 .43.078.588.234.158.157.238.352.238.584z" fill="#0078D4"/></svg>
+      <svg class="tki" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.004 1.5H.996A.998.998 0 000 2.496v19.008a.998.998 0 00.996.996h22.008a.998.998 0 00.996-.996V2.496a.998.998 0 00-.996-.996zM1.5 3h7.5v6H1.5V3zm0 7.5h7.5v6H1.5v-6zm0 10.5v-3h7.5v3H1.5zm21 0H10.5v-3h12v3zm0-4.5H10.5v-6h12v6zm0-7.5H10.5V3h12v6z" fill="#217346"/></svg>
+      <svg class="tki" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.003 0C5.376 0 0 5.373 0 12c0 6.628 5.376 12 12.003 12 6.625 0 12-5.372 12-12S18.628.001 12.003 0zm-.353 4.208a1.29 1.29 0 011.29 1.291v4.222l3.552-2.05a1.29 1.29 0 011.29 2.235l-3.556 2.053 3.556 2.053a1.29 1.29 0 01-1.29 2.235l-3.552-2.05v4.094a1.29 1.29 0 01-2.581 0v-4.094l-3.552 2.05a1.29 1.29 0 01-1.29-2.235L8.073 11.96 4.517 9.906a1.29 1.29 0 011.29-2.235l3.552 2.05V5.5a1.29 1.29 0 011.29-1.291z" fill="#0078D4"/></svg>
+      <img class="tki" src="https://cdn.simpleicons.org/shopify/96BF48" alt="Shopify">
+      <svg class="tki" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.918 5.306c.15-.002.312.02.462.065.749.228 1.228.86 1.398 1.631a14.24 14.24 0 01.123 1.907l.003.148v.073c-.003.29-.012.618-.038.945-.073.905-.292 1.746-.758 2.456a3.05 3.05 0 01-1.932 1.29c-.239.065-.483.095-.726.095-.16 0-.32-.014-.478-.041a3.074 3.074 0 01-1.672-.957c-.444-.49-.724-1.1-.864-1.756a7.598 7.598 0 01-.155-1.552 7.628 7.628 0 01.155-1.553c.14-.655.42-1.266.864-1.755a3.074 3.074 0 011.672-.957c.233-.04.467-.048.702-.04h.003zM7.2 5.347c.15-.002.312.02.461.064.75.229 1.229.861 1.399 1.632.075.38.117.762.137 1.146l.006.168.003.148.002.073v.534c-.014.29-.033.618-.059.945-.073.905-.292 1.746-.758 2.456a3.05 3.05 0 01-1.932 1.29 2.79 2.79 0 01-.726.095c-.16 0-.32-.014-.478-.041a3.074 3.074 0 01-1.672-.957c-.444-.49-.724-1.1-.864-1.756a7.598 7.598 0 01-.155-1.552 7.628 7.628 0 01.155-1.553c.14-.655.42-1.266.864-1.755a3.074 3.074 0 011.672-.957 2.5 2.5 0 01.702-.04h.003zm9.718 7.98c.15-.003.312.018.462.064.749.228 1.228.86 1.398 1.631.075.38.117.762.137 1.146l.006.168.003.148v.608c-.003.29-.012.617-.038.944-.073.906-.292 1.747-.758 2.457a3.05 3.05 0 01-1.932 1.29c-.239.064-.483.094-.726.094-.16 0-.32-.014-.478-.04a3.074 3.074 0 01-1.672-.958c-.444-.49-.724-1.1-.864-1.755a7.598 7.598 0 01-.155-1.553 7.628 7.628 0 01.155-1.552c.14-.656.42-1.266.864-1.756a3.074 3.074 0 011.672-.957c.233-.04.467-.047.702-.04h.003zm-9.718.04c.15-.002.312.02.461.064.75.229 1.229.861 1.399 1.632.075.38.117.762.137 1.146l.006.168.003.148.002.073v.534c-.014.29-.033.618-.059.945-.073.905-.292 1.746-.758 2.456a3.05 3.05 0 01-1.932 1.29 2.79 2.79 0 01-.726.095c-.16 0-.32-.014-.478-.041a3.074 3.074 0 01-1.672-.957c-.444-.49-.724-1.1-.864-1.756a7.598 7.598 0 01-.155-1.552 7.628 7.628 0 01.155-1.553c.14-.655.42-1.266.864-1.755a3.074 3.074 0 011.672-.957 2.5 2.5 0 01.702-.04h.003z" fill="#00A1E0"/></svg>
+      <!-- duplicate set for infinite scroll -->
+      <img class="tki" src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp">
+      <img class="tki" src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram">
+      <img class="tki" src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n">
+      <svg class="tki" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.282 9.821a5.985 5.985 0 00-.516-4.91 6.046 6.046 0 00-6.51-2.9A6.065 6.065 0 0011.705.001a6.047 6.047 0 00-5.764 4.166 5.986 5.986 0 00-3.997 2.9 6.049 6.049 0 00.749 7.112 5.98 5.98 0 00.51 4.911 6.051 6.051 0 006.515 2.9A5.985 5.985 0 0013.26 24a6.056 6.056 0 005.772-4.206 5.99 5.99 0 003.997-2.9 6.056 6.056 0 00-.747-7.073zM13.26 22.43a4.476 4.476 0 01-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 00.392-.681v-6.737l2.02 1.168a.071.071 0 01.038.052v5.583a4.504 4.504 0 01-4.494 4.494zM3.6 18.304a4.47 4.47 0 01-.535-3.014l.142.085 4.783 2.759a.771.771 0 00.78 0l5.843-3.369v2.332a.08.08 0 01-.033.062L9.74 19.95a4.5 4.5 0 01-6.14-1.646zM2.34 7.896a4.485 4.485 0 012.366-1.973V11.6a.766.766 0 00.388.676l5.815 3.355-2.02 1.168a.076.076 0 01-.071 0l-4.83-2.786A4.504 4.504 0 012.34 7.872zm16.597 3.855l-5.833-3.387L15.119 7.2a.076.076 0 01.071 0l4.83 2.791a4.494 4.494 0 01-.676 8.105v-5.678a.79.79 0 00-.407-.667zm2.01-3.023l-.141-.085-4.774-2.782a.776.776 0 00-.785 0L9.409 9.23V6.897a.066.066 0 01.028-.061l4.83-2.787a4.5 4.5 0 016.68 4.66zm-12.64 4.135l-2.02-1.164a.08.08 0 01-.038-.057V6.075a4.5 4.5 0 017.375-3.453l-.142.08L8.704 5.46a.795.795 0 00-.393.681zm1.097-2.365l2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z" fill="#000"/></svg>
+      <svg class="tki" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.303 3.248c-.194-.39-.537-.622-.91-.756a2.146 2.146 0 00-.46-.115c-.11-.012-.189-.016-.24-.015H8.308c-.052 0-.131.003-.241.015-.11.013-.26.044-.46.115-.374.134-.717.366-.91.756-.187.378-.187.775-.187 1.178v15.148c0 .403 0 .8.186 1.178.194.39.537.622.911.756.2.071.35.102.46.115.11.012.19.016.241.015h7.384c.052 0 .131-.003.241-.015.11-.013.26-.044.46-.115.374-.134.717-.366.91-.756.187-.378.187-.775.187-1.178V4.426c0-.403 0-.8-.186-1.178zM12 20.93a1.304 1.304 0 110-2.608 1.304 1.304 0 010 2.608z" fill="#000"/></svg>
+      <img class="tki" src="https://cdn.simpleicons.org/googlegemini/886FBF" alt="Google Gemini">
+      <img class="tki" src="https://cdn.simpleicons.org/meta/0081FB" alt="Meta">
+      <img class="tki" src="https://cdn.simpleicons.org/gmail/EA4335" alt="Gmail">
+      <img class="tki" src="https://cdn.simpleicons.org/googledrive/4285F4" alt="Google Drive">
+      <img class="tki" src="https://cdn.simpleicons.org/googlesheets/0F9D58" alt="Google Sheets">
+      <img class="tki" src="https://cdn.simpleicons.org/notion/000" alt="Notion">
+      <img class="tki" src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="HubSpot">
+      <img class="tki" src="https://cdn.simpleicons.org/trello/0052CC" alt="Trello">
+      <svg class="tki" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 7.387v10.478c0 .23-.08.424-.238.576a.806.806 0 01-.588.234h-4.453v-5.642h1.903l.286-2.199h-2.19V9.499c0-.638.18-1.073 1.095-1.073h1.17V6.44a15.678 15.678 0 00-1.704-.087c-1.686 0-2.84 1.027-2.84 2.913v1.618h-1.9v2.199h1.9v5.592H7.218v-5.592h1.9v-2.199h-1.9V9.266c0-1.886 1.154-2.913 2.84-2.913.57 0 1.157.03 1.704.087v1.986h-1.17c-.916 0-1.095.435-1.095 1.073v1.335h2.19l-.287 2.199h-1.903v5.642H.826a.806.806 0 01-.588-.234A.782.782 0 010 17.865V7.387c0-.232.08-.427.238-.584A.796.796 0 01.826 6.57h22.348c.234 0 .43.078.588.234.158.157.238.352.238.584z" fill="#0078D4"/></svg>
+      <svg class="tki" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.004 1.5H.996A.998.998 0 000 2.496v19.008a.998.998 0 00.996.996h22.008a.998.998 0 00.996-.996V2.496a.998.998 0 00-.996-.996zM1.5 3h7.5v6H1.5V3zm0 7.5h7.5v6H1.5v-6zm0 10.5v-3h7.5v3H1.5zm21 0H10.5v-3h12v3zm0-4.5H10.5v-6h12v6zm0-7.5H10.5V3h12v6z" fill="#217346"/></svg>
+      <svg class="tki" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.003 0C5.376 0 0 5.373 0 12c0 6.628 5.376 12 12.003 12 6.625 0 12-5.372 12-12S18.628.001 12.003 0zm-.353 4.208a1.29 1.29 0 011.29 1.291v4.222l3.552-2.05a1.29 1.29 0 011.29 2.235l-3.556 2.053 3.556 2.053a1.29 1.29 0 01-1.29 2.235l-3.552-2.05v4.094a1.29 1.29 0 01-2.581 0v-4.094l-3.552 2.05a1.29 1.29 0 01-1.29-2.235L8.073 11.96 4.517 9.906a1.29 1.29 0 011.29-2.235l3.552 2.05V5.5a1.29 1.29 0 011.29-1.291z" fill="#0078D4"/></svg>
+      <img class="tki" src="https://cdn.simpleicons.org/shopify/96BF48" alt="Shopify">
+      <svg class="tki" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.918 5.306c.15-.002.312.02.462.065.749.228 1.228.86 1.398 1.631a14.24 14.24 0 01.123 1.907l.003.148v.073c-.003.29-.012.618-.038.945-.073.905-.292 1.746-.758 2.456a3.05 3.05 0 01-1.932 1.29c-.239.065-.483.095-.726.095-.16 0-.32-.014-.478-.041a3.074 3.074 0 01-1.672-.957c-.444-.49-.724-1.1-.864-1.756a7.598 7.598 0 01-.155-1.552 7.628 7.628 0 01.155-1.553c.14-.655.42-1.266.864-1.755a3.074 3.074 0 011.672-.957c.233-.04.467-.048.702-.04h.003zM7.2 5.347c.15-.002.312.02.461.064.75.229 1.229.861 1.399 1.632.075.38.117.762.137 1.146l.006.168.003.148.002.073v.534c-.014.29-.033.618-.059.945-.073.905-.292 1.746-.758 2.456a3.05 3.05 0 01-1.932 1.29 2.79 2.79 0 01-.726.095c-.16 0-.32-.014-.478-.041a3.074 3.074 0 01-1.672-.957c-.444-.49-.724-1.1-.864-1.756a7.598 7.598 0 01-.155-1.552 7.628 7.628 0 01.155-1.553c.14-.655.42-1.266.864-1.755a3.074 3.074 0 011.672-.957 2.5 2.5 0 01.702-.04h.003zm9.718 7.98c.15-.003.312.018.462.064.749.228 1.228.86 1.398 1.631.075.38.117.762.137 1.146l.006.168.003.148v.608c-.003.29-.012.617-.038.944-.073.906-.292 1.747-.758 2.457a3.05 3.05 0 01-1.932 1.29c-.239.064-.483.094-.726.094-.16 0-.32-.014-.478-.04a3.074 3.074 0 01-1.672-.958c-.444-.49-.724-1.1-.864-1.755a7.598 7.598 0 01-.155-1.553 7.628 7.628 0 01.155-1.552c.14-.656.42-1.266.864-1.756a3.074 3.074 0 011.672-.957c.233-.04.467-.047.702-.04h.003zm-9.718.04c.15-.002.312.02.461.064.75.229 1.229.861 1.399 1.632.075.38.117.762.137 1.146l.006.168.003.148.002.073v.534c-.014.29-.033.618-.059.945-.073.905-.292 1.746-.758 2.456a3.05 3.05 0 01-1.932 1.29 2.79 2.79 0 01-.726.095c-.16 0-.32-.014-.478-.041a3.074 3.074 0 01-1.672-.957c-.444-.49-.724-1.1-.864-1.756a7.598 7.598 0 01-.155-1.552 7.628 7.628 0 01.155-1.553c.14-.655.42-1.266.864-1.755a3.074 3.074 0 011.672-.957 2.5 2.5 0 01.702-.04h.003z" fill="#00A1E0"/></svg>
+    </div>
+  </div>
+  <div class="c intx rv">Google Calendar &nbsp;&middot;&nbsp; Looker Studio &nbsp;&middot;&nbsp; RD Station &nbsp;&middot;&nbsp; Kommo &nbsp;&middot;&nbsp; Power BI &nbsp;&middot;&nbsp; VTEX &nbsp;&middot;&nbsp; Nuvem Shop &nbsp;&middot;&nbsp; ERP (Protheus &middot; Linx &middot; Sankhya &middot; Omie &middot; Tiny) &nbsp;&middot;&nbsp; Bubble &nbsp;&middot;&nbsp; Aplicativos Propriet&aacute;rios</div>
+  <div class="intcta rv">
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="btn-s">
+      Agendar diagn&oacute;stico gratuito
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
 
-    <!-- MÓDULO 1 -->
-    <div class="fase-wrapper reveal">
-      <div class="fase-header">
+<!-- ═══════════════════════════════
+     AGENTES QUE DESENVOLVEMOS
+═══════════════════════════════ -->
+<section class="agentes" id="agentes">
+<div class="c">
+  <div class="aghdr rv">
+    <span class="stag">Portf&oacute;lio de solu&ccedil;&otilde;es</span>
+    <h2 class="h2">Agentes que desenvolvemos</h2>
+    <p class="sub" style="color:var(--sage);margin:0 auto;max-width:500px">Cada agente &eacute; customizado para a realidade do cliente &mdash; abaixo, os tipos que j&aacute; implementamos e operamos.</p>
+  </div>
+  <div class="aggrid rv" style="transition-delay:.1s">
+
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+      <h3>Agentes de Vendas / Convers&atilde;o</h3>
+      <p>WhatsApp, Instagram, Webchat e App. Apresenta&ccedil;&atilde;o de produtos; quebra de obje&ccedil;&otilde;es; follow-ups; redu&ccedil;&atilde;o de no-show; resgate de leads; qualifica&ccedil;&atilde;o; agendamento; integra&ccedil;&atilde;o com CRM e e-Commerce. B2B e B2C.</p>
+      <div class="agcard-tags"><span class="agcard-tag">WhatsApp</span><span class="agcard-tag">Instagram</span><span class="agcard-tag">CRM</span><span class="agcard-tag">e-Commerce</span></div>
+    </div>
+
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+      <h3>Agentes de SAC</h3>
+      <p>WhatsApp, Instagram, Webchat e App. Triagem por tipo de problema; suporte t&eacute;cnico; FAQ; envio e recebimento de documentos; preenchimento autom&aacute;tico do CRM; transbordo para humano com hist&oacute;rico completo.</p>
+      <div class="agcard-tags"><span class="agcard-tag">Suporte</span><span class="agcard-tag">FAQ</span><span class="agcard-tag">CRM</span><span class="agcard-tag">Transbordo</span></div>
+    </div>
+
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+      <h3>Agentes Financeiro / Cobran&ccedil;a</h3>
+      <p>WhatsApp. Sinaliza&ccedil;&atilde;o de inadimpl&ecirc;ncia; negocia&ccedil;&atilde;o com cliente; envio de link de pagamento ou 2&ordf; via de boleto; integra&ccedil;&atilde;o com ERP; transbordo para humano com hist&oacute;rico.</p>
+      <div class="agcard-tags"><span class="agcard-tag">WhatsApp</span><span class="agcard-tag">ERP</span><span class="agcard-tag">Cobran&ccedil;a</span></div>
+    </div>
+
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+      <h3>Agentes de CRM / Fideliza&ccedil;&atilde;o e Reten&ccedil;&atilde;o</h3>
+      <p>WhatsApp, SMS e App. Campanhas personalizadas por perfil e hist&oacute;rico; cross e up-sell; relacionamento (anivers&aacute;rios); aumento de LTV; integra&ccedil;&atilde;o com ERP, Datalake e CRM.</p>
+      <div class="agcard-tags"><span class="agcard-tag">CRM</span><span class="agcard-tag">SMS</span><span class="agcard-tag">LTV</span><span class="agcard-tag">Datalake</span></div>
+    </div>
+
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <h3>Agentes / Copilotos de Marketing</h3>
+      <p>Cria&ccedil;&atilde;o de campanhas; calend&aacute;rio editorial; social media; performance / tr&aacute;fego pago; newsletter e blog; e-mail marketing; WhatsApp e SMS; trade marketing / PDV; landing pages; publica&ccedil;&otilde;es autom&aacute;ticas via API.</p>
+      <div class="agcard-tags"><span class="agcard-tag">Campanhas</span><span class="agcard-tag">Social</span><span class="agcard-tag">Tr&aacute;fego</span><span class="agcard-tag">E-mail</span></div>
+    </div>
+
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <h3>Agentes de Dados e Intelig&ecirc;ncia / Growth</h3>
+      <p>Integrado a diferentes pontos de contato e sistemas. Gera relat&oacute;rios gerenciais e dashboards; insights; sugest&otilde;es de pontos cr&iacute;ticos do funil. Integra&ccedil;&atilde;o com Meta Ads, Google Ads, GA4, CRM, ERP.</p>
+      <div class="agcard-tags"><span class="agcard-tag">Dashboards</span><span class="agcard-tag">Meta Ads</span><span class="agcard-tag">GA4</span><span class="agcard-tag">Growth</span></div>
+    </div>
+
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+      <h3>Agentes de Opera&ccedil;&atilde;o Cl&iacute;nica / Assistencial</h3>
+      <p>L&ecirc; e interpreta exames e prontu&aacute;rio; cruza com protocolo cl&iacute;nico; gera roteiro de consulta em tempo real; emite alertas de risco; relat&oacute;rios gerenciais sobre carteira de pacientes; integra&ccedil;&atilde;o com ERP.</p>
+      <div class="agcard-tags"><span class="agcard-tag">Sa&uacute;de</span><span class="agcard-tag">Prontu&aacute;rio</span><span class="agcard-tag">Alertas</span><span class="agcard-tag">ERP</span></div>
+    </div>
+
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <h3>Agentes de RH / Recrutamento e Sele&ccedil;&atilde;o</h3>
+      <p>Conversa; qualifica; cruza perfil e curr&iacute;culo com banco de vagas; l&ecirc; PDFs e Word; cadastra no CRM; agenda entrevista; referencia candidato para consultor correto; follow-ups de no-show.</p>
+      <div class="agcard-tags"><span class="agcard-tag">WhatsApp</span><span class="agcard-tag">CRM</span><span class="agcard-tag">Curr&iacute;culo</span><span class="agcard-tag">RH</span></div>
+    </div>
+
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+      <h3>Agentes de Checklist e Plano de A&ccedil;&atilde;o para Franquias</h3>
+      <p>Interface de &aacute;udio; preenche checklist no CRM durante visitas de campo; avalia performance da unidade; gera insights e plano de a&ccedil;&atilde;o; envia ao franqueado; faz follow-ups.</p>
+      <div class="agcard-tags"><span class="agcard-tag">Franquias</span><span class="agcard-tag">&Aacute;udio</span><span class="agcard-tag">CRM</span><span class="agcard-tag">Campo</span></div>
+    </div>
+
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg></div>
+      <h3>Agentes &ldquo;Dedo-Duro&rdquo; para Franquias</h3>
+      <p>Rastreia sistemas e indicadores; aponta quebras no modelo de neg&oacute;cio; gera alertas para consultores e franqueado; contribui na constru&ccedil;&atilde;o de planos de a&ccedil;&atilde;o para melhoria.</p>
+      <div class="agcard-tags"><span class="agcard-tag">Monitoramento</span><span class="agcard-tag">Alertas</span><span class="agcard-tag">Franquias</span></div>
+    </div>
+
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+      <h3>Agentes de Monitoramento de Grupos de WhatsApp</h3>
+      <p>Observa intera&ccedil;&otilde;es como membro; relat&oacute;rios de promotores e detratores; temperatura das conversas; assuntos em alta; nuvem de tags; alertas de crise; painel gerencial.</p>
+      <div class="agcard-tags"><span class="agcard-tag">WhatsApp</span><span class="agcard-tag">Grupos</span><span class="agcard-tag">Alertas</span><span class="agcard-tag">Painel</span></div>
+    </div>
+
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+      <h3>Agente de Stress Test para Valida&ccedil;&atilde;o de Processos</h3>
+      <p>Ativa processos de diversas formas em escala para garantir que os sistemas funcionam corretamente; entrega relat&oacute;rios; identifica etapas com problemas para corre&ccedil;&atilde;o.</p>
+      <div class="agcard-tags"><span class="agcard-tag">QA</span><span class="agcard-tag">Escala</span><span class="agcard-tag">Processos</span><span class="agcard-tag">Relat&oacute;rios</span></div>
+    </div>
+
+  </div>
+
+  <!-- Visual: Marketing Copilot Desktop — sophisticated mockup -->
+  <div style="margin-top:48px" class="rv" style="transition-delay:.2s">
+    <div style="background:linear-gradient(160deg,var(--ink) 0%,#1a3d42 40%,var(--sage) 100%);border-radius:20px;overflow:hidden;max-width:920px;margin:0 auto;position:relative;box-shadow:0 20px 60px rgba(20,55,60,.25)">
+      <!-- Grain overlay -->
+      <div style="position:absolute;inset:0;opacity:.03;background-image:url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%22.85%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E');pointer-events:none"></div>
+      <!-- Glow -->
+      <div style="position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(176,110,74,.12),transparent 70%);top:-60px;right:-60px;pointer-events:none"></div>
+
+      <!-- Header bar -->
+      <div style="padding:28px 36px 0;position:relative;display:flex;align-items:center;justify-content:space-between">
         <div>
-          <div class="fase-tag">Módulo 1 · Início imediato</div>
-          <div class="fase-name">Agentes de Atendimento ao Cliente + Controle de Frota</div>
-          <div class="fase-duration">WhatsApp + Telegram · Resultado visível em semanas</div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--terra);animation:bl 2s ease infinite"></div>
+            <span style="font-size:.6rem;color:var(--tl);font-weight:700;text-transform:uppercase;letter-spacing:.12em">NewScale AI Platform</span>
+          </div>
+          <div style="font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:700;color:#fff;line-height:1.15">Copilotos de Marketing</div>
+          <div style="font-size:.78rem;color:rgba(255,255,255,.4);margin-top:4px;font-weight:300">8 m&oacute;dulos integrados &middot; publica&ccedil;&otilde;es autom&aacute;ticas via API</div>
         </div>
-        <div class="fase-num-badge">1</div>
+        <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale" style="height:28px;filter:brightness(0) invert(1);opacity:.25">
       </div>
-      <div class="modulos-grid">
 
-        <!-- 1A -->
-        <div class="modulo-card modulo-full" onclick="toggleModulo(this)">
-          <div class="modulo-head">
-            <div class="modulo-head-left">
-              <div class="modulo-icon-wrap">💬</div>
-              <div class="modulo-head-text">
-                <div class="modulo-label">Módulo 1A</div>
-                <div class="modulo-title">3 Agentes de Atendimento no WhatsApp</div>
-              </div>
-            </div>
-            <div class="modulo-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="#2C4A4E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          </div>
-          <div class="modulo-chips">
-            <span class="chip">API oficial WhatsApp</span>
-            <span class="chip">Agente de Suporte Técnico</span>
-            <span class="chip">Agente Financeiro + Cobrança</span>
-            <span class="chip">Agente de Vendas</span>
-            <span class="chip">Texto, áudio e foto</span>
-            <span class="chip">24h por dia</span>
-          </div>
-          <div class="modulo-body">
-            <div class="modulo-body-inner">
-              <div class="value-box">
-                <div class="value-box-icon">⚡</div>
-                <div class="value-box-content">
-                  <div class="value-box-label">O que isso resolve</div>
-                  <div class="value-box-text">Seus 4 atendentes param de responder boleto e cabo — e passam a tratar só o que realmente precisa de gente. O WhatsApp nunca mais trava por bloqueio da Meta.</div>
-                </div>
-              </div>
-              <p class="modulo-desc">Imagine seus 4 atendentes parando de responder boleto e cabo — e passando a tratar só o que realmente precisa de um ser humano. São 3 agentes especialistas: um focado 100% em suporte técnico, um dedicado exclusivamente ao financeiro e cobrança, e um treinado para converter quem está flertando com o serviço. Cada um com seu próprio conjunto de regras, conhecimento e tom — via API oficial da Meta, com menos risco de bloqueio.</p>
-              <div class="agentes-row" style="margin-bottom: 28px;">
-                <div class="agente-pill"><div class="agente-pill-label">Agente 1</div><div class="agente-pill-name">Suporte Técnico</div></div>
-                <div class="agente-pill"><div class="agente-pill-label">Agente 2</div><div class="agente-pill-name">Financeiro + Cobrança</div></div>
-                <div class="agente-pill"><div class="agente-pill-label">Agente 3</div><div class="agente-pill-name">Vendas e Conversão</div></div>
-              </div>
-              <ul class="modulo-items">
-                <li><strong>Suporte Técnico:</strong> o agente pede foto do equipamento, identifica o problema (cabo trocado, luz apagada, sinal fraco), guia o reset e só abre OS quando não resolve remotamente — o atendente humano recebe o caso com contexto completo, sem o cliente repetir nada</li>
-                <li><strong>Financeiro + Cobrança:</strong> envia segunda via e QR Code Pix na hora, dispara régua automática antes do vencimento, aciona régua de recuperação de inadimplência com escalonamento progressivo até o bloqueio — tudo dentro das regras que você definir, sem intervenção manual</li>
-                <li><strong>Vendas e Conversão:</strong> responde o lead que está flertando com a contratação, quebra objeções em tempo real, apresenta os planos de forma persuasiva e encaminha para o fechamento — capturando receita que hoje escapa por falta de resposta rápida</li>
-                <li>Dois números separados: um só receptivo (nunca dispara, nunca é bloqueado) e um para campanhas de cobrança e marketing — o canal principal fica protegido para sempre</li>
-                <li>Entende áudio transcrito e lê imagens — o cliente manda voz ou foto e é atendido sem fricção, exatamente como prefere</li>
-                <li>Queda de região? Os 200 clientes que entram ao mesmo tempo recebem resposta contextualizada em segundos — o time fica livre para resolver o problema, não para apagar incêndio no WhatsApp</li>
-              </ul>
-            </div>
-          </div>
+      <!-- Modules grid -->
+      <div style="padding:24px 36px 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;position:relative">
+        <!-- Active module -->
+        <div style="background:rgba(176,110,74,.12);border:1px solid rgba(176,110,74,.35);border-radius:12px;padding:20px 16px;position:relative;overflow:hidden">
+          <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--tl)"></div>
+          <svg style="display:block;width:22px;height:22px;margin-bottom:10px" viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <div style="font-size:.76rem;color:#fff;font-weight:600;margin-bottom:3px">Campanhas</div>
+          <div style="font-size:.6rem;color:rgba(255,255,255,.35);line-height:1.4">Cria&ccedil;&atilde;o e gest&atilde;o de campanhas multicanal</div>
         </div>
-
-        <!-- 1B -->
-        <div class="modulo-card modulo-full" onclick="toggleModulo(this)">
-          <div class="modulo-head">
-            <div class="modulo-head-left">
-              <div class="modulo-icon-wrap">🚗</div>
-              <div class="modulo-head-text">
-                <div class="modulo-label">Módulo 1B</div>
-                <div class="modulo-title">Monitoramento de Frota e Combustível via Telegram</div>
-              </div>
-            </div>
-            <div class="modulo-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="#2C4A4E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          </div>
-          <div class="modulo-chips">
-            <span class="chip">Integração com rastreador (se disponível)</span>
-            <span class="chip">Ou localização em tempo real pelo Telegram</span>
-            <span class="chip">Cruzamento com OS do dia</span>
-            <span class="chip">Alertas de inconsistência apenas</span>
-            <span class="chip">Registro de combustível por foto</span>
-          </div>
-          <div class="modulo-body">
-            <div class="modulo-body-inner">
-              <div class="value-box">
-                <div class="value-box-icon">🎯</div>
-                <div class="value-box-content">
-                  <div class="value-box-label">O que isso resolve</div>
-                  <div class="value-box-text">Fim do controle de combustível no achismo. Você sabe exatamente quanto cada carro gasta, onde cada técnico esteve e se o itinerário bate com as OS — sem precisar perguntar para ninguém.</div>
-                </div>
-              </div>
-              <p class="modulo-desc">Chega de planilha que depende de alguém lembrar de preencher. A IA monitora os itinerários dos seus técnicos, cruza com as ordens de serviço do dia e só aparece quando algo não fecha — sem gerar ruído desnecessário e sem mudar a rotina de quem está no campo.</p>
-              <ul class="modulo-items">
-                <li><strong>Opção A — com rastreador:</strong> a IA lê o itinerário diretamente do GPS, cruza com as OS e o gasto de combustível de forma completamente silenciosa — o técnico não precisa fazer nada além do seu trabalho</li>
-                <li><strong>Opção B — sem rastreador:</strong> técnico mantém localização ativa no Telegram durante o horário útil (um gesto, 10 segundos) — a IA faz o mesmo cruzamento e só emite alerta se algo não bater</li>
-                <li>Abasteceu? Tira foto do comprovante, manda no Telegram — o sistema lê o valor via OCR e registra na hora, sem formulário, sem digitação</li>
-                <li>Foto do painel do carro registra a quilometragem automaticamente — fim do controle manual de KM</li>
-                <li>Planilha em tempo real: custo de combustível por carro, por técnico, por mês — você abre e a informação está lá, completa e confiável</li>
-                <li>Alertas inteligentes: consumo fora da média do veículo, abastecimento sem KM registrada, itinerário incompatível com as OS do dia — você só é acionado quando há algo real para investigar</li>
-              </ul>
-            </div>
-          </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:20px 16px;transition:all .22s">
+          <svg style="display:block;width:22px;height:22px;margin-bottom:10px" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <div style="font-size:.76rem;color:rgba(255,255,255,.7);font-weight:600;margin-bottom:3px">Calend&aacute;rio Editorial</div>
+          <div style="font-size:.6rem;color:rgba(255,255,255,.25);line-height:1.4">Planejamento multi-canal</div>
         </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:20px 16px;transition:all .22s">
+          <svg style="display:block;width:22px;height:22px;margin-bottom:10px" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"/></svg>
+          <div style="font-size:.76rem;color:rgba(255,255,255,.7);font-weight:600;margin-bottom:3px">Social Media</div>
+          <div style="font-size:.6rem;color:rgba(255,255,255,.25);line-height:1.4">Cria&ccedil;&atilde;o e publica&ccedil;&atilde;o</div>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:20px 16px;transition:all .22s">
+          <svg style="display:block;width:22px;height:22px;margin-bottom:10px" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <div style="font-size:.76rem;color:rgba(255,255,255,.7);font-weight:600;margin-bottom:3px">Performance</div>
+          <div style="font-size:.6rem;color:rgba(255,255,255,.25);line-height:1.4">Tr&aacute;fego pago e Google</div>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:20px 16px;transition:all .22s">
+          <svg style="display:block;width:22px;height:22px;margin-bottom:10px" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div style="font-size:.76rem;color:rgba(255,255,255,.7);font-weight:600;margin-bottom:3px">Newsletter &amp; Blog</div>
+          <div style="font-size:.6rem;color:rgba(255,255,255,.25);line-height:1.4">E-mail marketing automatizado</div>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:20px 16px;transition:all .22s">
+          <svg style="display:block;width:22px;height:22px;margin-bottom:10px" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          <div style="font-size:.76rem;color:rgba(255,255,255,.7);font-weight:600;margin-bottom:3px">WhatsApp &amp; SMS</div>
+          <div style="font-size:.6rem;color:rgba(255,255,255,.25);line-height:1.4">Comunica&ccedil;&atilde;o direta</div>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:20px 16px;transition:all .22s">
+          <svg style="display:block;width:22px;height:22px;margin-bottom:10px" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg>
+          <div style="font-size:.76rem;color:rgba(255,255,255,.7);font-weight:600;margin-bottom:3px">Trade / PDV</div>
+          <div style="font-size:.6rem;color:rgba(255,255,255,.25);line-height:1.4">Marketing no ponto de venda</div>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:20px 16px;transition:all .22s">
+          <svg style="display:block;width:22px;height:22px;margin-bottom:10px" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-linecap="round"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/></svg>
+          <div style="font-size:.76rem;color:rgba(255,255,255,.7);font-weight:600;margin-bottom:3px">Landing Pages</div>
+          <div style="font-size:.6rem;color:rgba(255,255,255,.25);line-height:1.4">P&aacute;ginas de convers&atilde;o</div>
+        </div>
+      </div>
 
+      <!-- Bottom status bar -->
+      <div style="padding:14px 36px;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between">
+        <div style="display:flex;gap:20px">
+          <span style="font-size:.6rem;color:rgba(255,255,255,.2);display:flex;align-items:center;gap:4px"><span style="width:5px;height:5px;border-radius:50%;background:#4ade80"></span> Todos os m&oacute;dulos ativos</span>
+          <span style="font-size:.6rem;color:rgba(255,255,255,.15)">Publica&ccedil;&otilde;es via API &middot; Multi-canal &middot; IA Generativa</span>
+        </div>
+        <span style="font-size:.58rem;color:rgba(255,255,255,.1)">Powered by NewScale Consulting</span>
       </div>
     </div>
+  </div>
 
-    <!-- MÓDULO 2 -->
-    <div class="fase-wrapper reveal">
-      <div class="fase-header">
-        <div>
-          <div class="fase-tag">Módulo 2 · Após Módulo 1</div>
-          <div class="fase-name">Qualidade de Campo + Pesquisa de Satisfação</div>
-          <div class="fase-duration">Telegram · Playbook digital + NPS automatizado</div>
-        </div>
-        <div class="fase-num-badge">2</div>
-      </div>
-      <div class="modulos-grid">
-
-        <!-- 2A -->
-        <div class="modulo-card" onclick="toggleModulo(this)">
-          <div class="modulo-head">
-            <div class="modulo-head-left">
-              <div class="modulo-icon-wrap">🔧</div>
-              <div class="modulo-head-text">
-                <div class="modulo-label">Módulo 2A</div>
-                <div class="modulo-title">Agente de Qualidade Técnica via Telegram</div>
-              </div>
-            </div>
-            <div class="modulo-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="#2C4A4E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          </div>
-          <div class="modulo-chips">
-            <span class="chip">Playbook passo a passo</span>
-            <span class="chip">Checklist guiado por áudio</span>
-            <span class="chip">Preenchimento automático do CRM</span>
-            <span class="chip">Fechamento automático do ticket</span>
-          </div>
-          <div class="modulo-body">
-            <div class="modulo-body-inner">
-              <div class="value-box">
-                <div class="value-box-icon">📋</div>
-                <div class="value-box-content">
-                  <div class="value-box-label">O que isso resolve</div>
-                  <div class="value-box-text">Cada técnico passa a seguir o mesmo protocolo, em todo atendimento, sem que você precise cobrar. O CRM se preenche sozinho. O checklist não depende mais de memória.</div>
-                </div>
-              </div>
-              <p class="modulo-desc">Todo técnico chega numa OS e faz do seu jeito. Com esse agente, isso muda — sem precisar cobrar ninguém. O próprio Telegram guia o técnico pelo playbook da Mais Internet, pergunta a pergunta, e preenche o CRM automaticamente enquanto ele trabalha.</p>
-              <ul class="modulo-items">
-                <li>Técnico chega na OS, informa o código no Telegram — o agente já sabe qual é o tipo de atendimento e entrega o checklist exato da empresa para aquela situação</li>
-                <li>Técnico responde por áudio a cada etapa, do jeito mais natural possível — a IA transcreve, interpreta e preenche o CRM sem ele precisar tocar em nenhum campo</li>
-                <li>Garante padronização total: o mesmo protocolo, seguido por todos os técnicos, em todos os atendimentos — independente da experiência de cada um</li>
-                <li>Ao finalizar o checklist, o técnico fecha o ticket com um comando — isso aciona automaticamente a pesquisa de satisfação para o cliente, sem nenhuma ação extra</li>
-                <li>Técnico novo na empresa? Em horas ele já está operando com todo o conhecimento técnico da Mais Internet na palma da mão — onboarding que antes levava semanas</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2B -->
-        <div class="modulo-card" onclick="toggleModulo(this)">
-          <div class="modulo-head">
-            <div class="modulo-head-left">
-              <div class="modulo-icon-wrap">⭐</div>
-              <div class="modulo-head-text">
-                <div class="modulo-label">Módulo 2B</div>
-                <div class="modulo-title">Pesquisa de Satisfação Pós-Visita</div>
-              </div>
-            </div>
-            <div class="modulo-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="#2C4A4E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          </div>
-          <div class="modulo-chips">
-            <span class="chip">Disparo automático 20min após a visita</span>
-            <span class="chip">NPS por técnico</span>
-            <span class="chip">Ranking de desempenho</span>
-            <span class="chip">Base para promoção e plano de carreira</span>
-          </div>
-          <div class="modulo-body">
-            <div class="modulo-body-inner">
-              <div class="value-box">
-                <div class="value-box-icon">⭐</div>
-                <div class="value-box-content">
-                  <div class="value-box-label">O que isso resolve</div>
-                  <div class="value-box-text">Você passa a saber, com dados reais, quem está atendendo bem e quem não está. Decisões de promoção, treinamento e bonificação deixam de ser baseadas em percepção.</div>
-                </div>
-              </div>
-              <p class="modulo-desc">Você tem 6 técnicos no campo todo dia — mas sabe quem está atendendo bem? Com a pesquisa automatizada, você passa a ter dados reais de satisfação por técnico, construídos atendimento a atendimento, sem esforço nenhum da sua parte.</p>
-              <ul class="modulo-items">
-                <li>20 minutos após o técnico fechar o ticket, o cliente recebe uma pesquisa rápida no WhatsApp — no melhor momento, quando a memória ainda está fresca</li>
-                <li>Perguntas curtas e diretas, resposta com um toque — a taxa de resposta é alta porque é fácil demais não responder</li>
-                <li>Dados acumulados por técnico: nota média, volume de atendimentos, evolução ao longo do tempo — tudo num painel, sem você precisar pedir relatório para ninguém</li>
-                <li>Ranking claro: quem está se destacando, quem precisa de suporte, quem está pronto para uma promoção — decisões de RH baseadas em número, não em percepção</li>
-                <li>Bônus de desempenho, plano de carreira, reconhecimento público — tudo isso vira possível quando você tem a base de dados para sustentar</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- MÓDULO 3 -->
-    <div class="fase-wrapper reveal">
-      <div class="fase-header" style="background:var(--teal-mid)">
-        <div>
-          <div class="fase-tag">Módulo 3 · Após Módulos 1 e 2</div>
-          <div class="fase-name">Monitoramento de Sinal + Dashboard Executivo</div>
-          <div class="fase-duration">Antecipação de problemas · Visão 360 da operação</div>
-        </div>
-        <div class="fase-num-badge">3</div>
-      </div>
-      <div class="modulos-grid">
-
-        <!-- 3A -->
-        <div class="modulo-card" onclick="toggleModulo(this)">
-          <div class="modulo-head">
-            <div class="modulo-head-left">
-              <div class="modulo-icon-wrap">📡</div>
-              <div class="modulo-head-text">
-                <div class="modulo-label">Módulo 3A</div>
-                <div class="modulo-title">Agente de Monitoramento de Sinal</div>
-              </div>
-            </div>
-            <div class="modulo-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="#2C4A4E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          </div>
-          <div class="modulo-chips">
-            <span class="chip">Leitura contínua de dados de sinal</span>
-            <span class="chip">Identificação de padrão antes do problema</span>
-            <span class="chip">Alerta proativo para equipe técnica</span>
-            <span class="chip">Redução de volume de reclamações</span>
-          </div>
-          <div class="modulo-body">
-            <div class="modulo-body-inner">
-              <div class="value-box">
-                <div class="value-box-icon">📡</div>
-                <div class="value-box-content">
-                  <div class="value-box-label">O que isso resolve</div>
-                  <div class="value-box-text">Você deixa de descobrir que a rede caiu quando o WhatsApp explode. A equipe técnica já está atuando antes que o primeiro cliente perceba qualquer problema.</div>
-                </div>
-              </div>
-              <p class="modulo-desc">Hoje você só descobre que a rede caiu quando o WhatsApp explode. Com esse agente, a equipe técnica já está atuando antes que o primeiro cliente perceba. É a diferença entre apagar incêndio e evitar que ele comece.</p>
-              <ul class="modulo-items">
-                <li>A IA lê os dados de sinal das regiões atendidas o dia inteiro, sem parar — detecta degradação horas antes de virar queda total</li>
-                <li>Quando identifica um padrão de problema, levanta a mão imediatamente para o responsável técnico com localização e natureza do que está acontecendo</li>
-                <li>A equipe chega para resolver antes que o cliente perceba — o pico de 200 mensagens simultâneas deixa de existir</li>
-                <li>Menos reclamação, menos churn, mais confiança: o cliente que nunca viu a internet cair tem muito menos motivo para trocar de provedor</li>
-                <li>Escopo exato definido após mapeamento da infraestrutura da Mais Internet — funciona independente se a rede é via antena, fibra ou satélite</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3B -->
-        <div class="modulo-card" onclick="toggleModulo(this)">
-          <div class="modulo-head">
-            <div class="modulo-head-left">
-              <div class="modulo-icon-wrap">📊</div>
-              <div class="modulo-head-text">
-                <div class="modulo-label">Módulo 3B</div>
-                <div class="modulo-title">Dashboard Executivo de Operações</div>
-              </div>
-            </div>
-            <div class="modulo-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="#2C4A4E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          </div>
-          <div class="modulo-chips">
-            <span class="chip">Volume de atendimento do mês</span>
-            <span class="chip">Tempo médio de atendimento</span>
-            <span class="chip">Taxa de resolutividade</span>
-            <span class="chip">Desempenho por técnico</span>
-            <span class="chip">Qualidade de sinal por região</span>
-          </div>
-          <div class="modulo-body">
-            <div class="modulo-body-inner">
-              <div class="value-box">
-                <div class="value-box-icon">📊</div>
-                <div class="value-box-content">
-                  <div class="value-box-label">O que isso resolve</div>
-                  <div class="value-box-text">Você para de abrir sistema por sistema tentando entender o que está acontecendo. Toda a operação — atendimento, campo, frota, sinal e financeiro — num painel único, em tempo real.</div>
-                </div>
-              </div>
-              <p class="modulo-desc">Tudo que foi construído nos Módulos 1 e 2 vira leitura visual num painel único. Você para de abrir sistema por sistema para tentar entender o que está acontecendo — e passa a tomar decisões com clareza, em segundos.</p>
-              <ul class="modulo-items">
-                <li><strong>Atendimento:</strong> volume mensal, tempo médio de resposta, taxa de resolução sem humano, top motivos de chamado — você sabe onde a operação está forte e onde precisa de atenção</li>
-                <li><strong>Campo:</strong> atendimentos por técnico, tempo médio de visita, nota de satisfação, taxa de resolução na primeira visita — performance individual visível, sem achismo</li>
-                <li><strong>Frota:</strong> KM rodados, custo de combustível por carro e por técnico, histórico de abastecimentos — controle real de custo operacional de campo</li>
-                <li><strong>Sinal:</strong> qualidade por região, histórico de instabilidades, correlação entre degradação de sinal e aumento de chamados — inteligência que nenhum concorrente regional tem</li>
-                <li><strong>Financeiro:</strong> inadimplência atual, recuperação via régua automática, bloqueios do mês — o fluxo de caixa em tempo real, sem depender de relatório manual</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
+  <div style="text-align:center;margin-top:32px" class="rv">
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20agentes%20de%20IA%20da%20NewScale." target="_blank" class="btn-s">
+      Quero saber mais sobre os agentes
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
   </div>
 </div>
+</section>
 
-<!-- CRM COMPARATIVO -->
-<div class="crm-section">
-  <div class="crm-inner">
-    <div class="section-label reveal">Recomendação de CRM</div>
-    <h2 class="section-title reveal">A fundação que faz<br><em>tudo isso funcionar</em></h2>
-    <p class="crm-context reveal">Davi, todas as automações acima dependem de uma coisa: <strong>API aberta no CRM.</strong> O Gesprov atual tem apenas 8 endpoints — sem acesso a sinal, sem provisionamento, sem integração real. Antes de escalar, vale resolver essa base. Mapeamos as três principais alternativas do mercado de provedores.</p>
-
-    <div class="crm-table-wrap reveal">
-      <table class="crm-table">
-        <thead>
-          <tr>
-            <th>Critério</th>
-            <th>Gesprov <span style="opacity:0.5;font-weight:300">(atual)</span></th>
-            <th>SGP</th>
-            <th>IXCSOFT</th>
-            <th>MK-AUTH</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>API aberta</td>
-            <td><span class="crm-badge bad">Muito limitada — 8 endpoints</span></td>
-            <td><span class="crm-badge good">Completa e documentada</span></td>
-            <td><span class="crm-badge good">Completa e documentada</span></td>
-            <td><span class="crm-badge mid">Parcial</span></td>
-          </tr>
-          <tr>
-            <td>Leitura de sinal</td>
-            <td><span class="crm-badge bad">Não disponível</span></td>
-            <td><span class="crm-badge good">Disponível via API</span></td>
-            <td><span class="crm-badge good">Disponível via API</span></td>
-            <td><span class="crm-badge bad">Não disponível</span></td>
-          </tr>
-          <tr>
-            <td>Integração TR-069</td>
-            <td><span class="crm-badge bad">Não disponível</span></td>
-            <td><span class="crm-badge good">Nativa</span></td>
-            <td><span class="crm-badge good">Nativa</span></td>
-            <td><span class="crm-badge mid">Parcial</span></td>
-          </tr>
-          <tr>
-            <td>Integração Mikrotik</td>
-            <td><span class="crm-badge bad">Não disponível</span></td>
-            <td><span class="crm-badge good">Nativa</span></td>
-            <td><span class="crm-badge good">Nativa</span></td>
-            <td><span class="crm-badge good">Nativa</span></td>
-          </tr>
-          <tr>
-            <td>Geração de OS via API</td>
-            <td><span class="crm-badge mid">Básica</span></td>
-            <td><span class="crm-badge good">Completa</span></td>
-            <td><span class="crm-badge good">Completa</span></td>
-            <td><span class="crm-badge mid">Parcial</span></td>
-          </tr>
-          <tr>
-            <td>Bloquio / desbloqueio via API</td>
-            <td><span class="crm-badge good">Disponível</span></td>
-            <td><span class="crm-badge good">Disponível</span></td>
-            <td><span class="crm-badge good">Disponível</span></td>
-            <td><span class="crm-badge good">Disponível</span></td>
-          </tr>
-          <tr>
-            <td>Suporte ativo ao produto</td>
-            <td><span class="crm-badge bad">Aparentemente abandonado</span></td>
-            <td><span class="crm-badge good">Ativo</span></td>
-            <td><span class="crm-badge good">Ativo</span></td>
-            <td><span class="crm-badge mid">Comunidade</span></td>
-          </tr>
-          <tr>
-            <td>Custo estimado mensal</td>
-            <td><span class="crm-badge mid">~R$ 200–400</span></td>
-            <td><span class="crm-badge mid">~R$ 400–800</span></td>
-            <td><span class="crm-badge mid">~R$ 500–900</span></td>
-            <td><span class="crm-badge good">~R$ 150–300</span></td>
-          </tr>
-          <tr>
-            <td>Complexidade de migração</td>
-            <td>—</td>
-            <td><span class="crm-badge mid">Média — você já está negociando</span></td>
-            <td><span class="crm-badge mid">Média-alta</span></td>
-            <td><span class="crm-badge good">Baixa</span></td>
-          </tr>
-        </tbody>
-      </table>
+<!-- ═══════════════════════════════
+     5ª DOBRA — CASES (com hero number)
+═══════════════════════════════ -->
+<section class="cases" id="cases">
+<div class="c">
+  <div class="ctop">
+    <div class="rv">
+      <span class="stag stag-l">Resultados reais</span>
+      <h2 class="h2" style="color:#fff">Cases que falam por si</h2>
+      <p class="sub" style="color:rgba(255,255,255,.42);max-width:400px">Projetos implementados com resultados mensur&aacute;veis &mdash; em sa&uacute;de, RH, eventos, varejo e perfumaria.</p>
     </div>
+  </div>
 
-    <div class="crm-rec reveal">
-      <p class="crm-rec-text">Nossa recomendação é seguir com a migração para o <em>SGP</em> — você já está em negociação, a API é completa, a integração com TR-069 e Mikrotik é nativa, e o suporte ao produto é ativo. Com ele, desbloqueamos os Módulos 2 e 3 sem limitação.</p>
-      <div class="crm-rec-badge">
-        <div class="crm-rec-badge-label">Recomendado</div>
-        <div class="crm-rec-badge-name">SGP</div>
+  <div class="ctabs rv">
+    <button class="ctab on" onclick="sc('colo',this)">Sa&uacute;de</button>
+    <button class="ctab" onclick="sc('din',this)">RH</button>
+    <button class="ctab" onclick="sc('tacto',this)">Eventos</button>
+    <button class="ctab" onclick="sc('kahla',this)">Joalheria</button>
+    <button class="ctab" onclick="sc('belc',this)">Varejo</button>
+  </div>
+
+  <!-- COLO SAÚDE -->
+  <div class="cpanel on" id="case-colo">
+    <div class="case-wrap">
+      <div class="cmain">
+        <div class="case-hero-num">
+          <div class="case-hero-val">R$0,09</div>
+          <div class="case-hero-lbl">custo por relat&oacute;rio cl&iacute;nico<br>vs. 30+ min de folha por atendimento</div>
+        </div>
+        <div class="cbdg">Sa&uacute;de &middot; Implementado</div>
+        <div class="ctit">COLO Sa&uacute;de</div>
+        <div class="csec">Sa&uacute;de &middot; Cuidados Paliativos e Homecare</div>
+        <div class="cbl"><div class="cbll">Problema</div><div class="cblt">Equipe de enfermagem gastava 30+ minutos por atendimento analisando prontu&aacute;rio e exames, cruzando com protocolo e gerando relat&oacute;rios manualmente.</div></div>
+        <div class="cbl"><div class="cbll">Solu&ccedil;&atilde;o</div><div class="cblt">Dois agentes de IA orquestrados: padroniza&ccedil;&atilde;o de dados + aplica&ccedil;&atilde;o de protocolo m&eacute;dico com gera&ccedil;&atilde;o autom&aacute;tica de diagn&oacute;stico, plano de tratamento e orienta&ccedil;&otilde;es.</div></div>
+        <div class="cres-grid">
+          <div class="cres-card"><div class="cres-val">R$0,09</div><div class="cres-lbl">por relat&oacute;rio gerado</div></div>
+          <div class="cres-card"><div class="cres-val">+26%</div><div class="cres-lbl">capacidade de atendimento di&aacute;ria</div></div>
+          <div class="cres-card"><div class="cres-val">30 dias</div><div class="cres-lbl">do briefing ao go-live</div></div>
+          <div class="cres-card"><div class="cres-val">&uarr; NPS</div><div class="cres-lbl">pacientes e equipe mais satisfeitos</div></div>
+        </div>
+        <div class="ctchs"><span class="ctch">N8N</span><span class="ctch">Bubble</span><span class="ctch">Google Drive</span><span class="ctch">IA 2 Est&aacute;gios</span></div>
+      </div>
+      <div class="cside">
+        <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div><div class="cmv">30+ min</div><div class="cmd">economizados por atendimento</div></div></div>
+        <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div><div class="cmv">R$0,09</div><div class="cmd">custo por relat&oacute;rio gerado por IA</div></div></div>
+        <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><div class="cmv">+26%</div><div class="cmd">capacidade de atendimento di&aacute;ria</div></div></div>
+        <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div><div class="cmv">&darr; Turnover</div><div class="cmd">redu&ccedil;&atilde;o do problema treinamento vs. turnover</div></div></div>
       </div>
     </div>
+  </div>
 
+  <!-- DINÂMICA RH -->
+  <div class="cpanel" id="case-din">
+    <div class="case-wrap">
+      <div class="cmain">
+        <div class="case-hero-num">
+          <div class="case-hero-val">+42%</div>
+          <div class="case-hero-lbl">taxa de convers&atilde;o de candidatos<br>com redu&ccedil;&atilde;o de 33% no tempo de preenchimento</div>
+        </div>
+        <div class="cbdg">RH &middot; Implementado</div>
+        <div class="ctit">Consultoria de RH</div>
+        <div class="csec">RH &middot; Recrutamento e Sele&ccedil;&atilde;o</div>
+        <div class="cbl"><div class="cbll">Problema</div><div class="cblt">Alto volume de atendimento via WhatsApp. Dificuldade de cruzamento entre perfil do candidato e vagas. Cadastro manual e risco de perda de dados.</div></div>
+        <div class="cbl"><div class="cbll">Solu&ccedil;&atilde;o</div><div class="cblt">N&uacute;mero &uacute;nico oficial com Agente IA Orquestrador: identifica perfil, consulta vagas via API, extrai dados de curr&iacute;culo e realiza cadastro autom&aacute;tico no CRM.</div></div>
+        <div class="cres-grid">
+          <div class="cres-card"><div class="cres-val">+42%</div><div class="cres-lbl">taxa de convers&atilde;o de candidatos</div></div>
+          <div class="cres-card"><div class="cres-val">-33%</div><div class="cres-lbl">tempo de preenchimento de vagas</div></div>
+          <div class="cres-card"><div class="cres-val">-48%</div><div class="cres-lbl">dispensas no per&iacute;odo de experi&ecirc;ncia</div></div>
+          <div class="cres-card"><div class="cres-val">+27%</div><div class="cres-lbl">satisfa&ccedil;&atilde;o dos candidatos</div></div>
+        </div>
+        <div class="ctchs"><span class="ctch">WhatsApp API</span><span class="ctch">Selecty API</span><span class="ctch">Google Sheets</span><span class="ctch">Agentes de IA</span></div>
+      </div>
+      <div class="cside">
+        <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div><div class="cmv">24h/7d</div><div class="cmd">atendimento de candidatos sem pausa</div></div></div>
+        <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><div class="cmv">+42%</div><div class="cmd">taxa de convers&atilde;o de candidatos</div></div></div>
+        <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M9 11l3 3L22 4"/></svg></div><div><div class="cmv">-48%</div><div class="cmd">dispensas no per&iacute;odo de experi&ecirc;ncia</div></div></div>
+        <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><div class="cmv">Auto</div><div class="cmd">extrai dados de curr&iacute;culos PDF e Word</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASA TACTO -->
+  <div class="cpanel" id="case-tacto">
+    <div class="case-wrap">
+      <div class="cmain">
+        <div class="case-hero-num">
+          <div class="case-hero-val">+18%</div>
+          <div class="case-hero-lbl">faturamento no 2&ordm; m&ecirc;s<br>com +24% de convers&atilde;o de leads</div>
+        </div>
+        <div class="cbdg">Eventos &middot; Implementado</div>
+        <div class="ctit">Casa Tacto</div>
+        <div class="csec">Eventos e Festas &middot; Loca&ccedil;&atilde;o</div>
+        <div class="cbl"><div class="cbll">Problema</div><div class="cblt">Horas perdidas respondendo as mesmas perguntas no WhatsApp. Leads esfriavam fora do hor&aacute;rio. CRM preenchido manualmente.</div></div>
+        <div class="cbl"><div class="cbll">Solu&ccedil;&atilde;o</div><div class="cblt">Atendente virtual com tom da marca, qualifica&ccedil;&atilde;o autom&aacute;tica, envio de material, agendamento de visitas e cadastro direto no Kommo CRM. Ativo 24h/7d.</div></div>
+        <div class="cres-grid">
+          <div class="cres-card"><div class="cres-val">+24%</div><div class="cres-lbl">convers&atilde;o de leads</div></div>
+          <div class="cres-card"><div class="cres-val">+18%</div><div class="cres-lbl">faturamento no 2&ordm; m&ecirc;s</div></div>
+          <div class="cres-card wide"><div class="cres-val">Time comercial 100% focado em oportunidades</div><div class="cres-lbl">triagem feita pela IA &middot; 15-20 dias de implanta&ccedil;&atilde;o</div></div>
+        </div>
+        <div class="ctchs"><span class="ctch">WhatsApp API</span><span class="ctch">Kommo CRM</span><span class="ctch">Agente IA Conversacional</span></div>
+      </div>
+      <div class="cside">
+        <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div><div class="cmv">15-20 dias</div><div class="cmd">do briefing ao agente em produ&ccedil;&atilde;o</div></div></div>
+        <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><div class="cmv">+24%</div><div class="cmd">taxa de convers&atilde;o de leads</div></div></div>
+        <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div><div class="cmv">+18%</div><div class="cmd">faturamento no 2&ordm; m&ecirc;s</div></div></div>
+        <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h4"/></svg></div><div><div class="cmv">24h/7d</div><div class="cmd">atendimento sem perda de leads</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASA KAHLA -->
+  <div class="cpanel" id="case-kahla">
+    <div class="case-wrap">
+      <div class="cmain">
+        <div class="case-hero-num">
+          <div class="case-hero-val">+37%</div>
+          <div class="case-hero-lbl">convers&atilde;o de leads<br>com +22% de faturamento no 2&ordm; m&ecirc;s</div>
+        </div>
+        <div class="cbdg">Joalheria &middot; Implementado</div>
+        <div class="ctit">Casa Kahla</div>
+        <div class="csec">Joalheria &middot; Varejo (Loja F&iacute;sica + e-Commerce)</div>
+        <div class="cbl"><div class="cbll">Problema</div><div class="cblt">Atendimento repetitivo via WhatsApp consumindo tempo da opera&ccedil;&atilde;o. Perguntas sobre produtos e rastreamento impedindo foco em vendas consultivas.</div></div>
+        <div class="cbl"><div class="cbll">Solu&ccedil;&atilde;o</div><div class="cblt">Agente de IA com cat&aacute;logo Shopify integrado, pol&iacute;ticas da marca e hist&oacute;rico de atendimento. Respostas personalizadas no tom premium da marca, 24h/dia.</div></div>
+        <div class="cres-grid">
+          <div class="cres-card"><div class="cres-val">+37%</div><div class="cres-lbl">convers&atilde;o de leads</div></div>
+          <div class="cres-card"><div class="cres-val">+22%</div><div class="cres-lbl">faturamento no 2&ordm; m&ecirc;s</div></div>
+          <div class="cres-card wide"><div class="cres-val">Time 100% focado em leads qualificados</div><div class="cres-lbl">triagem feita pela IA &middot; 25-30 dias de implanta&ccedil;&atilde;o</div></div>
+        </div>
+        <div class="ctchs"><span class="ctch">WhatsApp API</span><span class="ctch">Shopify</span><span class="ctch">Agentes IA</span></div>
+      </div>
+      <div class="cside">
+        <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M16 10a4 4 0 01-8 0"/></svg></div><div><div class="cmv">Cat&aacute;logo</div><div class="cmd">IA conhece todos os produtos</div></div></div>
+        <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><div class="cmv">+37%</div><div class="cmd">convers&atilde;o de leads</div></div></div>
+        <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div><div class="cmv">+22%</div><div class="cmd">faturamento no 2&ordm; m&ecirc;s</div></div></div>
+        <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><div><div class="cmv">Tom</div><div class="cmd">personalidade premium preservada</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BELCENTER -->
+  <div class="cpanel" id="case-belc">
+    <div class="case-wrap">
+      <div class="cmain">
+        <div class="case-hero-num">
+          <div class="case-hero-val">+34%</div>
+          <div class="case-hero-lbl">taxa de recompra semestral<br>com +54% de convers&atilde;o nas iniciativas de CRM</div>
+        </div>
+        <div class="cbdg">Varejo &middot; Implementado</div>
+        <div class="ctit">Belcenter</div>
+        <div class="csec">Perfumaria e Cosm&eacute;ticos &middot; Varejo</div>
+        <div class="cbl"><div class="cbll">Problema</div><div class="cblt">Queda da fidelidade e taxa de recompra em fun&ccedil;&atilde;o do aumento da concorr&ecirc;ncia com marketplaces: mesmos produtos, guerra de pre&ccedil;os.</div></div>
+        <div class="cbl"><div class="cbll">Solu&ccedil;&atilde;o</div><div class="cblt">Programa de fidelidade com CRM integrado. Ofertas preditivas por Agentes de IA conforme hist&oacute;rico de compras. Ativa&ccedil;&atilde;o via WhatsApp com API oficial.</div></div>
+        <div class="cres-grid">
+          <div class="cres-card"><div class="cres-val">+34%</div><div class="cres-lbl">recompra semestral</div></div>
+          <div class="cres-card"><div class="cres-val">+54%</div><div class="cres-lbl">convers&atilde;o das iniciativas de CRM</div></div>
+          <div class="cres-card wide"><div class="cres-val">Clientes mais fi&eacute;is, menos propensos a trocar</div><div class="cres-lbl">integra&ccedil;&atilde;o completa com ERP Linx</div></div>
+        </div>
+        <div class="ctchs"><span class="ctch">WhatsApp API</span><span class="ctch">RD Station</span><span class="ctch">ERP Linx</span><span class="ctch">Agentes de IA</span></div>
+      </div>
+      <div class="cside">
+        <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><div><div class="cmv">+34%</div><div class="cmd">recompra semestral</div></div></div>
+        <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><div class="cmv">+54%</div><div class="cmd">convers&atilde;o de CRM</div></div></div>
+        <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div><div class="cmv">Preditivo</div><div class="cmd">ofertas personalizadas por IA</div></div></div>
+        <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><div class="cmv">ERP</div><div class="cmd">integra&ccedil;&atilde;o completa com Linx</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cstrip rv">
+    <div class="ctag">COLO Sa&uacute;de</div>
+    <div class="ctag">Consultoria de RH</div>
+    <div class="ctag">Casa Tacto</div>
+    <div class="ctag">Casa Kahla</div>
+    <div class="ctag">Belcenter</div>
+  </div>
+  <div style="text-align:center;margin-top:34px" class="rv">
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20de%20IA%20para%20minha%20empresa." target="_blank" class="btn-s">
+      Solicitar avalia&ccedil;&atilde;o de IA para minha empresa
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
   </div>
 </div>
+</section>
 
-<!-- INVESTIMENTO -->
-<div class="invest-section">
-  <div class="invest-inner">
-    <div class="section-label reveal">Investimento</div>
-    <h2 class="section-title light reveal">Condições claras,<br><em>sem surpresas no caminho.</em></h2>
-
-    <!-- MÓDULO 1 — preços definidos -->
-    <div class="invest-modulo1 reveal">
-      <div class="invest-modulo1-header">
-        <div>
-          <div class="invest-modulo1-tag">Módulo 1 · Disponível agora</div>
-          <div class="invest-modulo1-name">Agentes de Atendimento + Controle de Frota</div>
-        </div>
-        <div class="invest-modulo1-prazo">
-          <div class="invest-modulo1-prazo-label">Prazo de entrega</div>
-          <div class="invest-modulo1-prazo-val">4 a 6 semanas</div>
-        </div>
-      </div>
-
-      <!-- Cards 1A e 1B -->
-      <div class="invest-cards">
-        <div class="invest-card">
-          <div class="invest-card-label">Módulo 1A</div>
-          <div class="invest-card-name">3 Agentes de Atendimento no WhatsApp</div>
-          <div class="invest-card-price">R$ 15.000</div>
-          <div class="invest-card-price-label">Implementação</div>
-          <ul class="invest-card-includes">
-            <li>Integração via API Oficial do WhatsApp Business (Meta) — sem risco de bloqueio</li>
-            <li>Agente de Suporte Técnico com diagnóstico por foto, reset guiado e abertura de OS</li>
-            <li>Agente Financeiro com régua de cobrança, segunda via, Pix e liberação em confiança</li>
-            <li>Agente de Vendas com quebra de objeções e qualificação de leads</li>
-            <li>Roteador inteligente de intenções — direciona cada cliente para o agente certo</li>
-            <li>Configuração de dois números (receptivo + disparo) para proteger o canal principal</li>
-            <li>Prompts e regras de negócio 100% personalizados para a Mais Internet</li>
-            <li>Testes completos antes do lançamento</li>
-          </ul>
-        </div>
-        <div class="invest-card">
-          <div class="invest-card-label">Módulo 1B</div>
-          <div class="invest-card-name">Gestão de Frota e Combustível via Telegram</div>
-          <div class="invest-card-price">R$ 16.000</div>
-          <div class="invest-card-price-sub">Implementação</div>
-          <div class="invest-card-price-label" style="margin-top:4px;">Implementação</div>
-          <ul class="invest-card-includes">
-            <li>Bot no Telegram para os 6 carros da equipe de campo</li>
-            <li>Registro de abastecimento via foto do comprovante com leitura OCR automática</li>
-            <li>Registro de quilometragem via foto do painel</li>
-            <li>Cruzamento de itinerário com ordens de serviço do dia</li>
-            <li>Integração com rastreador GPS (se disponível) ou localização via Telegram</li>
-            <li>Alertas automáticos de inconsistência — consumo fora da média, itinerário incompatível</li>
-            <li>Planilha Google Sheets em tempo real por carro e por técnico</li>
-            <li>Log estruturado de atendimentos técnicos por OS</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Total combo + parcelamento + manutenção -->
-      <div class="invest-combo">
-        <div class="invest-combo-total">
-          <div>
-            <div class="invest-combo-total-label">Total Módulo 1 — Combo</div>
-            <div class="invest-combo-total-val">R$ 31.000</div>
-            <div class="invest-combo-total-sub">Módulo 1A + Módulo 1B</div>
-          </div>
-        </div>
-        <div class="invest-parcelamento">
-          <div class="invest-parcelamento-label">Forma de Pagamento — 3 parcelas</div>
-          <div class="invest-parcela">
-            <div class="invest-parcela-num">1</div>
-            <div class="invest-parcela-info">
-              <div class="invest-parcela-momento">Ato — Assinatura do contrato</div>
-              <div class="invest-parcela-val">R$ 10.000</div>
-            </div>
-          </div>
-          <div class="invest-parcela">
-            <div class="invest-parcela-num">2</div>
-            <div class="invest-parcela-info">
-              <div class="invest-parcela-momento">Meio do projeto — Semana 3</div>
-              <div class="invest-parcela-val">R$ 10.000</div>
-            </div>
-          </div>
-          <div class="invest-parcela">
-            <div class="invest-parcela-num">3</div>
-            <div class="invest-parcela-info">
-              <div class="invest-parcela-momento">Entrega — Go-live aprovado</div>
-              <div class="invest-parcela-val">R$ 10.000</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Manutenção mensal -->
-      <div class="invest-cards" style="margin-top:2px;">
-        <div class="invest-manutencao">
-          <div class="invest-manutencao-label">Manutenção Mensal — Combo Módulo 1</div>
-          <div class="invest-manutencao-price">R$ 2.800</div>
-          <div class="invest-manutencao-sub">por mês · após o go-live</div>
-          <ul class="invest-manutencao-items">
-            <li>Monitoramento contínuo de todos os agentes e fluxos</li>
-            <li>Ajustes de prompts, regras e comportamentos conforme necessidade</li>
-            <li>Atualização da base de conhecimento técnico e comercial</li>
-            <li>Suporte técnico prioritário via WhatsApp</li>
-            <li>Relatório mensal de performance dos agentes</li>
-            <li>Otimização de custos de API — garantindo o menor consumo possível</li>
-          </ul>
-        </div>
-      </div>
+<!-- ═══════════════════════════════
+     6ª DOBRA — PARA QUEM (perfis concretos)
+═══════════════════════════════ -->
+<section class="pq" id="paraquem">
+<div class="c">
+  <div class="pqlayout">
+    <div class="rv">
+      <span class="stag stag-l">Perfil ideal</span>
+      <h2 class="h2" style="color:#fff">Para quem &eacute; a NewScale</h2>
+      <p class="sub" style="color:rgba(255,255,255,.42)">Nossa consultoria &eacute; ideal para:</p>
+      <ul class="pqlist">
+        <li class="pqi">
+          <div class="pqa-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <span class="pqt"><strong>Empres&aacute;rios, CEOs, VPs, Diretores e Gerentes</strong> que sabem que est&atilde;o perdendo competitividade por n&atilde;o terem IA estrat&eacute;gica na opera&ccedil;&atilde;o</span>
+        </li>
+        <li class="pqi">
+          <div class="pqa-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <span class="pqt"><strong>Empresas que querem escalar de forma eficiente</strong> sem aumentar headcount proporcionalmente</span>
+        </li>
+        <li class="pqi">
+          <div class="pqa-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <span class="pqt"><strong>Neg&oacute;cios focados em ROI</strong> que buscam reduzir CAC, aumentar LTV e ampliar ROAS com intelig&ecirc;ncia aplicada</span>
+        </li>
+        <li class="pqi">
+          <div class="pqa-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <span class="pqt"><strong>Empres&aacute;rios que sentem</strong> que suas equipes fazem uso superficial de IA e querem destravar esse potencial</span>
+        </li>
+      </ul>
+      <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20consultor." target="_blank" class="btn-s">
+        Quero falar com um consultor agora
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
-
-    <!-- TREINAMENTO EM DESTAQUE -->
-    <div class="invest-treinamento reveal">
-      <div class="invest-treinamento-icon">🎓</div>
-      <div class="invest-treinamento-content">
-        <div class="invest-treinamento-badge">Incluso em todos os módulos</div>
-        <div class="invest-treinamento-title">Treinamento completo para toda a sua equipe</div>
-        <div class="invest-treinamento-desc">Não entregamos um sistema e sumimos. Antes do go-live, treinamos pessoalmente atendentes, técnicos de campo e gestores — mostrando como acompanhar as conversas, como escalar para humano quando necessário, como ajustar as respostas e como extrair o máximo de cada automação. Você e sua equipe saem confiantes para operar de forma autônoma.</div>
-      </div>
-    </div>
-
-    <!-- MÓDULOS FUTUROS -->
-    <div class="invest-futuros reveal" style="margin-top:40px;">
-      <div style="font-size:9px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:16px;display:flex;align-items:center;gap:16px;"><span style="width:32px;height:1px;background:rgba(255,255,255,0.2);display:inline-block;"></span>Próximos módulos</div>
-      <div class="invest-futuros-grid">
-        <div class="invest-futuro-card">
-          <div class="invest-futuro-badge">Módulo 2</div>
-          <div class="invest-futuro-name">Qualidade de Campo + Pesquisa de Satisfação</div>
-          <div class="invest-futuro-sub">Após conclusão do Módulo 1</div>
-          <div class="invest-futuro-tbd">A orçar</div>
-        </div>
-        <div class="invest-futuro-card">
-          <div class="invest-futuro-badge">Módulo 3</div>
-          <div class="invest-futuro-name">Monitoramento de Sinal + Dashboard Executivo</div>
-          <div class="invest-futuro-sub">Após Módulo 2 · Requer novo CRM com API aberta</div>
-          <div class="invest-futuro-tbd">A orçar</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- AVISO APIs -->
-    <div class="invest-apis-aviso reveal">
-      <p><strong>Importante:</strong> os custos de APIs externas não estão inclusos nesta proposta e são pagos diretamente pelo contratante. Isso inclui a API oficial do WhatsApp Business (Meta), os modelos de linguagem da OpenAI e a hospedagem do N8N. Estimativa de custo operacional mensal: <strong>R$ 400–800</strong> dependendo do volume de uso — valores que a NewScale ajuda a otimizar continuamente dentro do escopo de manutenção.</p>
-    </div>
-
-  </div>
-</div>
-
-<!-- POR QUE NEWSCALE -->
-<div class="porque-section">
-  <div class="porque-inner">
-    <div class="section-label reveal">Por que a NewScale</div>
-    <h2 class="section-title reveal">Não vendemos pacotes.<br><em>Mergulhamos na sua empresa.</em></h2>
-
-    <div class="porque-statement reveal">
-      <p>Cada projeto começa pela conversa — não pelo contrato. Entendemos como a operação funciona hoje, qual é o tom de voz da empresa, quais são as regras de negócio e o que a equipe precisa. <em>Só depois a gente constrói.</em> E depois que entrega, a gente fica — otimizando, ajustando e evoluindo junto com o seu negócio.</p>
-    </div>
-
-    <!-- Metodologia em 6 passos — espelhando a landing -->
-    <div class="porque-metodo reveal" style="margin-top:2px;">
-      <div class="porque-metodo-grid">
-        <div class="porque-metodo-step">
-          <div class="porque-metodo-num">1</div>
-          <div class="porque-metodo-body">
-            <div class="porque-metodo-title">Consultoria Sistêmica</div>
-            <div class="porque-metodo-desc">Visão completa do negócio: atendimento, campo, financeiro e operação. IA como motor de escala, não de cosmética.</div>
-          </div>
-        </div>
-        <div class="porque-metodo-step">
-          <div class="porque-metodo-num">2</div>
-          <div class="porque-metodo-body">
-            <div class="porque-metodo-title">Roadmap Faseado</div>
-            <div class="porque-metodo-desc">Priorizamos os processos com maior potencial de retorno — como os 3 módulos desta proposta — antes de qualquer outra coisa.</div>
-          </div>
-        </div>
-        <div class="porque-metodo-step">
-          <div class="porque-metodo-num">3</div>
-          <div class="porque-metodo-body">
-            <div class="porque-metodo-title">Implementação Integrada</div>
-            <div class="porque-metodo-desc">Conectamos seus sistemas, eliminamos tarefas manuais e construímos fluxos inteligentes que funcionam nos canais que sua equipe já usa.</div>
-          </div>
-        </div>
-        <div class="porque-metodo-step">
-          <div class="porque-metodo-num">4</div>
-          <div class="porque-metodo-body">
-            <div class="porque-metodo-title">Treinamento das Equipes</div>
-            <div class="porque-metodo-desc">Cada pessoa aprende seu papel no novo fluxo. O humano passa a monitorar e decidir — a IA faz o operacional.</div>
-          </div>
-        </div>
-        <div class="porque-metodo-step">
-          <div class="porque-metodo-num">5</div>
-          <div class="porque-metodo-body">
-            <div class="porque-metodo-title">Acompanhamento de KPIs</div>
-            <div class="porque-metodo-desc">Definimos métricas juntos antes de começar. Você sabe exatamente o que esperar — e como acompanhar o ganho real.</div>
-          </div>
-        </div>
-        <div class="porque-metodo-step">
-          <div class="porque-metodo-num">6</div>
-          <div class="porque-metodo-body">
-            <div class="porque-metodo-title">Sustentação Contínua</div>
-            <div class="porque-metodo-desc">Monitoramento, otimizações e manutenção para que o sistema evolua junto com a Mais Internet — não fique parado no tempo.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Os três pilares abaixo -->
-    <div class="porque-grid" style="margin-top:2px;">
-      <div class="porque-card reveal">
-        <div class="porque-card-svg">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="1.5" stroke-linecap="round" width="26" height="26"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        </div>
-        <div class="porque-card-title">Diagnóstico antes de qualquer proposta</div>
-        <p class="porque-card-text">Começamos pela conversa, não pelo pacote. Mapeamos o que realmente precisa ser resolvido antes de sugerir qualquer solução — por isso as entregas da NewScale são cirúrgicas, não genéricas.</p>
-      </div>
-      <div class="porque-card reveal reveal-delay-2">
-        <div class="porque-card-svg">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="1.5" stroke-linecap="round" width="26" height="26"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-        </div>
-        <div class="porque-card-title">Implementamos o que diagnosticamos</div>
-        <p class="porque-card-text">Não entregamos relatório e sumimos. Construímos, testamos, treinamos a equipe e acompanhamos o lançamento. Você vê o sistema funcionando — não só ouve a apresentação.</p>
-      </div>
-      <div class="porque-card reveal reveal-delay-1">
-        <div class="porque-card-svg">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="1.5" stroke-linecap="round" width="26" height="26"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <div class="porque-card-title">Sustentação de longo prazo</div>
-        <p class="porque-card-text">IA não é projeto com começo, meio e fim. Os modelos evoluem, a operação cresce. A manutenção garante que o sistema continue funcionando — e melhorando — com o tempo.</p>
-      </div>
-    </div>
-
-    <!-- Fundadores -->
-    <div class="porque-fundadores reveal">
-      <div class="porque-fundador">
-        <div class="porque-fundador-foto" style="background:linear-gradient(160deg,var(--teal-deep),var(--teal-mid))">
-          <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG" alt="Bruna Santanna" onerror="this.style.display='none'">
-        </div>
-        <div class="porque-fundador-body">
-          <div class="porque-fundador-name">Bruna Santanna</div>
-          <div class="porque-fundador-role">Co-Fundadora · Estratégia & Implementação</div>
-          <div class="porque-fundador-desc">ESPM. Empresária há 10+ anos. Mentora de IA no programa Potenc.IA (OLX, Magalu, B3 e CI&T). Professora de IA para equipes corporativas. Implementa IA no próprio negócio todos os dias — só vende o que usa.</div>
-          <div class="porque-fundador-tags">
-            <span>SulAmérica</span><span>Whirlpool</span><span>Blackbox AI</span><span>Potenc.IA</span>
-          </div>
-        </div>
-      </div>
-      <div class="porque-fundador">
-        <div class="porque-fundador-foto" style="background:linear-gradient(160deg,var(--teal-deep),var(--teal-mid))">
-          <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/BRUNO-VARELLA-PQ.jpeg" alt="Bruno Varella" onerror="this.style.display='none'">
-        </div>
-        <div class="porque-fundador-body">
-          <div class="porque-fundador-name">Bruno Varella</div>
-          <div class="porque-fundador-role">Co-Fundador · Marketing, Produto & Escala</div>
-          <div class="porque-fundador-desc">ESPM. 17+ anos em Marketing, Produto e Novos Negócios. Ex-Warner Bros., Ex-Natura & Co., Ex-Sorridents. Já implantou Agentes de IA em redes de franquias com 700+ unidades.</div>
-          <div class="porque-fundador-tags">
-            <span>Warner Bros.</span><span>Natura & Co</span><span>Sorridents</span><span>700+ franquias</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- CTA -->
-<div class="cta-section">
-  <div class="cta-inner" style="max-width:900px;">
-    <div class="section-label reveal" style="justify-content:center;color:rgba(176,110,74,0.7)">Próximos Passos</div>
-    <h2 class="cta-title reveal">Como a gente <em>vai entregar</em></h2>
-    <p class="cta-text reveal">Um processo estruturado, transparente e sem surpresas — do primeiro alinhamento até a operação rodando de forma autônoma.</p>
-
-    <div class="cta-steps-v2 reveal">
-
-      <div class="cta-step-v2">
-        <div class="cta-step-num">1</div>
-        <div class="cta-step-body">
-          <div class="cta-step-title">Reunião de Imersão na Operação</div>
-          <div class="cta-step-prazo">Semana 1</div>
-          <div class="cta-step-desc">Mergulhamos fundo na Mais Internet — atendimento, campo, frota, sistemas. Mapeamos os fluxos atuais, o tom de voz da empresa, as regras de negócio e os pontos de integração com o CRM. Saímos com tudo que precisamos para construir.</div>
-        </div>
-      </div>
-
-      <div class="cta-step-v2">
-        <div class="cta-step-num">2</div>
-        <div class="cta-step-body">
-          <div class="cta-step-title">Definição da Estratégia e Arquitetura</div>
-          <div class="cta-step-prazo">Semana 1–2</div>
-          <div class="cta-step-desc">Com base na imersão, apresentamos a arquitetura completa das automações — quais agentes fazem o quê, como se comunicam entre si, onde estão os pontos de aprovação humana e qual é o fluxo de cada jornada de cliente.</div>
-        </div>
-      </div>
-
-      <div class="cta-step-v2">
-        <div class="cta-step-num">3</div>
-        <div class="cta-step-body">
-          <div class="cta-step-title">Construção e Testes do Módulo 1</div>
-          <div class="cta-step-prazo">Semanas 2–5</div>
-          <div class="cta-step-desc">Desenvolvemos os 3 agentes de WhatsApp e o controle de frota via Telegram. Testamos internamente com cenários reais da operação, ajustamos tom, fluxos e regras. Você acompanha e valida antes de qualquer lançamento.</div>
-        </div>
-      </div>
-
-      <div class="cta-step-v2">
-        <div class="cta-step-num">4</div>
-        <div class="cta-step-body">
-          <div class="cta-step-title">Lançamento Assistido + Treinamento da Equipe</div>
-          <div class="cta-step-prazo">Semana 6</div>
-          <div class="cta-step-desc">Lançamos o Módulo 1 com a sua equipe ao lado — treinamos os atendentes, mostramos como acompanhar as conversas, como escalar para humano e como ajustar as respostas. A equipe de campo é orientada sobre o Telegram. Você não está sozinho no go-live.</div>
-        </div>
-      </div>
-
-      <div class="cta-step-v2">
-        <div class="cta-step-num">5</div>
-        <div class="cta-step-body">
-          <div class="cta-step-title">Ajustes, Otimização e Início do Módulo 2</div>
-          <div class="cta-step-prazo">Semanas 7–10</div>
-          <div class="cta-step-desc">Acompanhamos de perto as primeiras semanas em produção — ajustamos prompts, fluxos e regras com base nos casos reais. Em paralelo, iniciamos a construção do agente de qualidade técnica e da pesquisa de satisfação pós-visita.</div>
-        </div>
-      </div>
-
-      <div class="cta-step-v2">
-        <div class="cta-step-num">6</div>
-        <div class="cta-step-body">
-          <div class="cta-step-title">Dashboard Executivo e Módulo 3</div>
-          <div class="cta-step-prazo">A partir da semana 11</div>
-          <div class="cta-step-desc">Com os Módulos 1 e 2 estabilizados e o novo CRM operacional, iniciamos o monitoramento de sinal e o dashboard executivo — consolidando toda a operação numa visão única de tomada de decisão.</div>
-        </div>
-      </div>
-
+    <div class="pqr rv" style="transition-delay:.12s">
+      <div class="pqb"><div class="pqbv">+42%</div><div class="pqbd">convers&atilde;o de candidatos (Consultoria de RH)</div></div>
+      <div class="pqb"><div class="pqbv">+37%</div><div class="pqbd">convers&atilde;o de leads (Casa Kahla)</div></div>
+      <div class="pqb"><div class="pqbv">+34%</div><div class="pqbd">recompra semestral (Belcenter)</div></div>
+      <div class="pqb"><div class="pqbv">+26%</div><div class="pqbd">capacidade di&aacute;ria (COLO Sa&uacute;de)</div></div>
+      <div class="pqb"><div class="pqbv">30 dias</div><div class="pqbd">do briefing ao go-live</div></div>
+      <div class="pqb"><div class="pqbv">Zero</div><div class="pqbd">equipe t&eacute;cnica interna necess&aacute;ria</div></div>
     </div>
   </div>
 </div>
+</section>
 
-<!-- FOOTER -->
-<div class="footer">
-  <div class="footer-brand">NewScale<span>Consulting</span></div>
-  <div class="footer-date">Proposta exclusiva · Mais Internet<br>Março de 2026</div>
+<!-- ═══════════════════════════════
+     7ª DOBRA — FUNDADORES (bios curtos)
+═══════════════════════════════ -->
+<section class="quem" id="quem">
+<div class="c">
+  <div class="qhdr rv">
+    <span class="stag">Os fundadores</span>
+    <h2 class="h2">Quem implementa e ensina IA na pr&aacute;tica</h2>
+    <p class="sub" style="color:var(--sage);margin:0 auto;max-width:480px">Usamos IA nos nossos pr&oacute;prios neg&oacute;cios e carreiras corporativas antes de implementar no seu.</p>
+  </div>
+  <div class="founders rv" style="transition-delay:.1s">
+    <div class="founder">
+      <div class="fpic"><img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/BRUNO-VARELLA-PQ.jpeg" alt="Bruno Varella" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=fpph>BV</div>'"></div>
+      <div class="fbody">
+        <div class="fn">Bruno Varella</div>
+        <div class="fr">Co-Fundador &middot; Marketing, Produto &amp; Escala</div>
+        <p class="fb">
+          <span class="fb-short">ESPM. 17+ anos em Marketing, Produto e Novos Neg&oacute;cios. Ex-Warner Bros., Ex-Natura &amp; Co., Ex-Sorridents. J&aacute; implantou Agentes de IA em redes de franquias com 700+ unidades.</span>
+          <span class="fb-full">ESPM. 17+ anos em Marketing, Produto e Novos Neg&oacute;cios, sendo 12+ em cargos de Ger&ecirc;ncia S&ecirc;nior ou Lideran&ccedil;a Executiva. 7 anos como Gerente Sr. de Marketing e Varejo na Warner Bros. Discovery; 4 anos em Gest&atilde;o de Projetos de Inova&ccedil;&atilde;o na Natura &amp; Co. (EKOS e Tododia); 3 anos como Diretor de Marketing e Novos Neg&oacute;cios na SaluS (Sorridents e GIO Est&eacute;tica Avan&ccedil;ada); 1 ano como Diretor de Marketing e Produto na Piticas. Gestor de equipes com 30+ pessoas.</span>
+        </p>
+        <button class="fb-toggle" onclick="toggleBio(this)">Ver mais &darr;</button>
+        <div class="ftags"><span class="ftag">Marketing Estrat&eacute;gico</span><span class="ftag">Escala</span><span class="ftag">Franquias</span><span class="ftag">Agentes IA</span></div>
+        <div class="flogos"><span class="flog">Warner Bros.</span><span class="flog">Natura &amp; Co</span><span class="flog">Sorridents</span><span class="flog">GIO Est&eacute;tica</span><span class="flog">Piticas</span></div>
+        <div class="fq">&ldquo;J&aacute; implementei automa&ccedil;&atilde;o em redes com 700 franquias. Na NewScale, fazemos o mesmo &mdash; no seu tamanho.&rdquo;</div>
+      </div>
+    </div>
+    <div class="founder">
+      <div class="fpic"><img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG" alt="Bruna Santanna" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=fpph>BS</div>'"></div>
+      <div class="fbody">
+        <div class="fn">Bruna Santanna</div>
+        <div class="fr">Co-Fundadora &middot; Empreendedora &amp; Educa&ccedil;&atilde;o Corporativa</div>
+        <p class="fb">
+          <span class="fb-short">ESPM. Empres&aacute;ria h&aacute; 10+ anos. Ex-SulAm&eacute;rica, Ex-Whirlpool, Ex-Blackbox AI. Mentora de IA no programa Potenc.IA (OLX, Magalu, B3, CI&amp;T).</span>
+          <span class="fb-full">ESPM. Empres&aacute;ria h&aacute; 10+ anos. Ex-SulAm&eacute;rica, Ex-Whirlpool, Ex-Blackbox AI (Growth). Fundou e operou a Casa Kahla por 8 anos. Mentora de IA no programa Potenc.IA (parceria OLX, Magalu, B3 e CI&amp;T). Professora de IA e automa&ccedil;&atilde;o para equipes corporativas.</span>
+        </p>
+        <button class="fb-toggle" onclick="toggleBio(this)">Ver mais &darr;</button>
+        <div class="ftags"><span class="ftag">Estrat&eacute;gia</span><span class="ftag">Diagn&oacute;stico</span><span class="ftag">Educa&ccedil;&atilde;o em IA</span><span class="ftag">Mentoria</span></div>
+        <div class="flogos"><span class="flog">SulAm&eacute;rica</span><span class="flog">Whirlpool</span><span class="flog">Blackbox AI</span><span class="flog">Potenc.IA</span><span class="flog">Casa Kahla</span></div>
+        <div class="fq">&ldquo;Implemento IA no meu pr&oacute;prio neg&oacute;cio todo dia. S&oacute; ensino e vendo o que eu mesma usa.&rdquo;</div>
+      </div>
+    </div>
+  </div>
+  <div class="tband rv" style="transition-delay:.2s">
+    <div class="tbtext">
+      <h3>Os Bastidores: Equipe T&eacute;cnica Dedicada</h3>
+      <p>Engenheiros, programadores e desenvolvedores de IA especializados em automa&ccedil;&atilde;o, integra&ccedil;&otilde;es e engenharia de prompts.</p>
+    </div>
+    <div class="tbbdg"><div class="tbbv">100%</div><div class="tbbl">dedicados ao projeto</div></div>
+  </div>
+  <div style="text-align:center;margin-top:26px" class="rv">
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="btn-s">
+      Agendar um diagn&oacute;stico gratuito
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
 </div>
+</section>
+
+<!-- ═══════════════════════════════
+     8ª DOBRA — COMO FUNCIONA (com time tags)
+═══════════════════════════════ -->
+<section class="como" id="como">
+<div class="c">
+  <div class="cohdr rv">
+    <span class="stag">Passo a passo</span>
+    <h2 class="h2">Do primeiro contato ao resultado</h2>
+    <p class="sub" style="color:var(--sage);margin:0 auto;max-width:440px">Sem surpresas, sem letras mi&uacute;das. Voc&ecirc; sabe o que vai acontecer em cada etapa.</p>
+  </div>
+  <div class="tl rv" style="transition-delay:.1s">
+    <div class="tli">
+      <div class="tlid">1</div>
+      <div class="tlib">
+        <div class="tlim">Briefing &middot; Sem compromisso</div>
+        <div class="tlit">Diagn&oacute;stico gratuito por v&iacute;deo <span class="tli-time">30 min</span></div>
+        <div class="tlid2">Conversa explorat&oacute;ria para entender a opera&ccedil;&atilde;o, as dores e onde a IA pode gerar maior impacto.</div>
+      </div>
+    </div>
+    <div class="tli">
+      <div class="tlid">2</div>
+      <div class="tlib">
+        <div class="tlim">Ap&oacute;s o diagn&oacute;stico</div>
+        <div class="tlit">Proposta personalizada <span class="tli-time">1 semana</span></div>
+        <div class="tlid2">Plano claro: quais processos automatizar, quanto tempo, quanto custa e quais indicadores monitorar. Sem pacotes gen&eacute;ricos.</div>
+      </div>
+    </div>
+    <div class="tli">
+      <div class="tlid">3</div>
+      <div class="tlib">
+        <div class="tlim">Prazo conforme complexidade</div>
+        <div class="tlit">Implementa&ccedil;&atilde;o <span class="tli-time">4-12 semanas</span></div>
+        <div class="tlid2">Mergulhamos na opera&ccedil;&atilde;o, mapeamos processos, criamos agentes e constru&iacute;mos automa&ccedil;&otilde;es. Acompanhamento semanal.</div>
+      </div>
+    </div>
+    <div class="tli">
+      <div class="tlid">4</div>
+      <div class="tlib">
+        <div class="tlim">Incluso no projeto</div>
+        <div class="tlit">Treinamento &amp; Workshop</div>
+        <div class="tlid2">Capacitamos as equipes com workshops pr&aacute;ticos, documenta&ccedil;&atilde;o completa e suporte p&oacute;s-entrega.</div>
+      </div>
+    </div>
+    <div class="tli">
+      <div class="tlid">5</div>
+      <div class="tlib">
+        <div class="tlim">Resultado</div>
+        <div class="tlit">Opera&ccedil;&atilde;o destravada &amp; indicadores monitorados</div>
+        <div class="tlid2">Tudo rodando otimizado. Sua equipe com mais tempo para o que realmente importa.</div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center" class="rv">
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20de%20IA%20para%20minha%20empresa." target="_blank" class="btn-s">
+      Solicitar avalia&ccedil;&atilde;o de IA para minha empresa
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════
+     9ª DOBRA — CUSTO INVISÍVEL (reduzido + números)
+═══════════════════════════════ -->
+<section class="custo" id="custo">
+<div class="c">
+  <div class="cuhdr rv">
+    <span class="stag">O custo invis&iacute;vel</span>
+    <h2 class="h2">O quanto custa <em style="font-style:normal;color:var(--terra)">N&Atilde;O</em> automatizar</h2>
+    <p class="sub" style="color:var(--sage);margin:0 auto;max-width:500px">Antes de falar de investimento, veja o que voc&ecirc; j&aacute; est&aacute; perdendo sem perceber.</p>
+  </div>
+  <div class="cugrid rv" style="transition-delay:.1s">
+    <div class="cucel">
+      <div class="cucel-num">2+</div>
+      <div class="cut">Colaboradores fazendo o que a IA faria</div>
+      <div class="cud">No mesmo departamento, com mais lentid&atilde;o e maior taxa de erro.</div>
+    </div>
+    <div class="cucel">
+      <div class="cucel-num">8h/sem</div>
+      <div class="cut">No WhatsApp respondendo sempre o mesmo</div>
+      <div class="cud">Todos os dias &mdash; quando um agente faria isso 24h em segundos.</div>
+    </div>
+    <div class="cucel">
+      <div class="cucel-num">&darr; Leads</div>
+      <div class="cut">Leads esfriando e convers&atilde;o baixa</div>
+      <div class="cud">Demora nos retornos, cliente fechando com o concorrente.</div>
+    </div>
+    <div class="cucel">
+      <div class="cucel-num">8-12h</div>
+      <div class="cut">Montando relat&oacute;rios que a IA faz em segundos</div>
+      <div class="cud">Com menor capacidade anal&iacute;tica e de gera&ccedil;&atilde;o de insights.</div>
+    </div>
+    <div class="cucel">
+      <div class="cucel-num">&darr; $$</div>
+      <div class="cut">Faturamento perdido enquanto concorrentes usam IA</div>
+      <div class="cud">Cada m&ecirc;s sem IA &eacute; desvantagem competitiva que cresce.</div>
+    </div>
+    <div class="cucel">
+      <div class="cucel-num">Talentos</div>
+      <div class="cut">Profissionais de alto potencial drenados pelo operacional</div>
+      <div class="cud">Presos em rotinas, sem aprendizado e sem crescimento.</div>
+    </div>
+  </div>
+  <div class="cubot rv" style="transition-delay:.2s">
+    <div>
+      <div class="cubq">Quanto disso est&aacute; acontecendo no seu neg&oacute;cio agora?</div>
+      <div class="cubp">A maioria dos empres&aacute;rios s&oacute; percebe o tamanho da inefici&ecirc;ncia depois que v&ecirc; os indicadores do projeto funcionando.</div>
+    </div>
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="btn-s" style="flex-shrink:0">
+      Agendar diagn&oacute;stico gratuito
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════
+     10ª DOBRA — CTA FINAL
+═══════════════════════════════ -->
+<section class="ctaf" id="contato">
+<div class="c ctafin">
+  <h2>Quer saber quanto sua opera&ccedil;&atilde;o<br>est&aacute; deixando de ganhar?</h2>
+  <p class="ctafsub">30 min. Sem compromisso. Mapeamos onde a IA pode gerar impacto real no seu neg&oacute;cio.</p>
+  <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="btn-xl">
+    Agendar um diagn&oacute;stico gratuito
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+  <div class="ctaftags">
+    <span class="ctaftt"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Sa&uacute;de</span>
+    <span class="ctaftt"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>RH &amp; Recrutamento</span>
+    <span class="ctaftt"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/></svg>Varejo &amp; E-commerce</span>
+    <span class="ctaftt"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Franquias</span>
+    <span class="ctaftt"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>Eventos</span>
+    <span class="ctaftt"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/><circle cx="12" cy="12" r="3"/></svg>Servi&ccedil;os &amp; Opera&ccedil;&otilde;es</span>
+  </div>
+  <div class="ctafn">Trabalhamos com volume limitado de clientes por m&ecirc;s para garantir a qualidade de cada implementa&ccedil;&atilde;o.</div>
+</div>
+</section>
+
+<footer>
+  <div class="c">
+    <div class="flinks">
+      <span>Implementa&ccedil;&atilde;o de IA para Empresas</span>
+      <span>Agentes de Atendimento</span>
+      <span>Automa&ccedil;&atilde;o de Processos</span>
+      <span>Consultoria em Intelig&ecirc;ncia Artificial</span>
+      <span>Diagn&oacute;stico Gratuito</span>
+    </div>
+    <p style="margin-bottom:6px"><a href="mailto:bruna@newscale.tech">bruna@newscale.tech</a>&nbsp;&middot;&nbsp;<a href="https://wa.me/5511971901020" target="_blank">(11) 97190-1020</a></p>
+    <p>&copy; 2026 NewScale Consulting. Todos os direitos reservados.</p>
+  </div>
+</footer>
 
 <script>
-function toggleModulo(card) { card.classList.toggle('open'); }
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.06 });
-reveals.forEach(el => observer.observe(el));
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) t.scrollIntoView({ behavior: 'smooth' });
-  });
-});
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('s',scrollY>50)},{passive:true});
+const ro=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');ro.unobserve(x.target)}})},{threshold:.08,rootMargin:'0px 0px -28px 0px'});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+function sc(id,btn){
+  document.querySelectorAll('.cpanel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.ctab').forEach(b=>b.classList.remove('on'));
+  document.getElementById('case-'+id).classList.add('on');
+  btn.classList.add('on');
+}
+function toggleBio(btn){
+  const fb=btn.previousElementSibling;
+  const short=fb.querySelector('.fb-short');
+  const full=fb.querySelector('.fb-full');
+  if(full.style.display==='inline'){
+    full.style.display='none';
+    short.style.display='inline';
+    btn.textContent='Ver mais \u2193';
+  }else{
+    full.style.display='inline';
+    short.style.display='none';
+    btn.textContent='Ver menos \u2191';
+  }
+}
+</script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>if(window.netlifyIdentity){window.netlifyIdentity.on('init',u=>{if(!u){window.netlifyIdentity.on('login',()=>{document.location.href='/admin/'})}})}
 </script>
 </body>
 </html>
