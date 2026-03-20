@@ -32,7 +32,7 @@ a{color:inherit;text-decoration:none}
 .stag-l{color:var(--tl)}
 .h2{font-family:var(--fd);font-size:clamp(1.85rem,3.2vw,2.6rem);font-weight:700;line-height:1.12;margin-bottom:12px}
 .sub{font-size:.95rem;line-height:1.72;font-weight:300}
-.btn-p{display:inline-flex;align-items:center;gap:10px;background:var(--terra);color:#fff;padding:16px 36px;border-radius:8px;font-weight:600;font-size:1rem;transition:all .28s;box-shadow:0 4px 24px rgba(176,110,74,.35);white-space:nowrap}
+.btn-p{display:inline-flex;align-items:center;gap:9px;background:var(--terra);color:#fff;padding:14px 30px;border-radius:8px;font-weight:600;font-size:.93rem;transition:all .28s;box-shadow:0 4px 20px rgba(176,110,74,.3);white-space:nowrap}
 .btn-p:hover{background:var(--tl);transform:translateY(-2px);box-shadow:0 8px 28px rgba(176,110,74,.4)}
 .btn-p svg,.btn-s svg,.btn-xl svg{transition:transform .25s;flex-shrink:0}
 .btn-p:hover svg,.btn-s:hover svg,.btn-xl:hover svg{transform:translateX(3px)}
@@ -42,12 +42,12 @@ a{color:inherit;text-decoration:none}
 .btn-xl:hover{background:var(--tl);transform:translateY(-2px);box-shadow:0 12px 40px rgba(176,110,74,.45)}
 svg{display:block}
 
-/* NAV */
+/* ══ NAV ══ */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;transition:all .4s}
 .nav.s{background:rgba(20,55,60,.97);backdrop-filter:blur(16px);padding:10px 0;box-shadow:0 2px 36px rgba(0,0,0,.18)}
 .ni{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.nlogo img{height:80px;filter:brightness(0) invert(1);transition:height .3s}
-.nav.s .nlogo img{height:54px}
+.nlogo img{height:72px;filter:brightness(0) invert(1);transition:height .3s}
+.nav.s .nlogo img{height:48px}
 .nlinks{display:flex;gap:24px;list-style:none}
 .nlinks a{color:rgba(255,255,255,.6);font-size:.84rem;font-weight:500;transition:color .22s;white-space:nowrap}
 .nlinks a:hover{color:#fff}
@@ -60,32 +60,53 @@ svg{display:block}
 .mob a{color:#fff;font-size:1.3rem;font-family:var(--fd);font-weight:600}
 .mob .xb{position:absolute;top:20px;right:24px;background:none;border:none;color:#fff;font-size:1.9rem;cursor:pointer;line-height:1}
 
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 0 72px}
+/* ══ HERO v2 ══ */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:108px 0 48px}
 .hbg{position:absolute;inset:0;background:linear-gradient(145deg,#0c2427 0%,var(--ink) 38%,#1d4840 72%,var(--sage) 100%)}
 .hgrain{position:absolute;inset:0;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.hglow{position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(176,110,74,.07),transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);animation:gf 9s ease-in-out infinite;pointer-events:none}
-.hglow2{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(67,93,81,.18),transparent 70%);bottom:-100px;right:-80px;pointer-events:none}
-@keyframes gf{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-52%) scale(1.04)}}
-.hero-in{position:relative;z-index:2;max-width:860px;margin:0 auto;text-align:center;width:100%}
-.hpill{display:inline-flex;align-items:center;gap:7px;background:rgba(176,110,74,.1);border:1px solid rgba(176,110,74,.24);border-radius:40px;padding:6px 16px;font-size:.72rem;color:var(--tl);font-weight:700;margin-bottom:24px;letter-spacing:.07em;text-transform:uppercase}
-.hpill .dot{width:6px;height:6px;border-radius:50%;background:var(--terra);animation:bl 2s ease infinite;flex-shrink:0}
+.hglow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(176,110,74,.09),transparent 65%);top:-120px;right:-120px;animation:gf 9s ease-in-out infinite;pointer-events:none}
+@keyframes gf{0%,100%{transform:scale(1)}50%{transform:scale(1.06) translateY(-20px)}}
+.hero-in{position:relative;z-index:2;max-width:800px;margin:0 auto;text-align:center}
+.hpill{display:inline-flex;align-items:center;gap:7px;background:rgba(176,110,74,.1);border:1px solid rgba(176,110,74,.24);border-radius:40px;padding:5px 14px;font-size:.7rem;color:var(--tl);font-weight:700;margin-bottom:20px;letter-spacing:.07em;text-transform:uppercase}
+.hpill .dot{width:5px;height:5px;border-radius:50%;background:var(--terra);animation:bl 2s ease infinite;flex-shrink:0}
 @keyframes bl{0%,100%{opacity:1}50%{opacity:.25}}
-.hero h1{font-family:var(--fd);font-size:clamp(2.6rem,5vw,4.2rem);font-weight:700;color:#fff;line-height:1.07;margin-bottom:20px;letter-spacing:-.02em}
+.hero h1{font-family:var(--fd);font-size:clamp(2.3rem,4.2vw,3.5rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:16px;letter-spacing:-.01em}
 .hero h1 em{font-style:normal;color:var(--tl)}
-.hero-sub{font-size:1.02rem;color:rgba(255,255,255,.52);line-height:1.75;margin-bottom:36px;font-weight:300;max-width:640px;margin-left:auto;margin-right:auto}
-.hjournay{display:flex;gap:6px;margin-bottom:40px;align-items:center;flex-wrap:wrap;justify-content:center}
-.hjstep{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:11px 18px;transition:all .28s}
-.hjstep:hover{border-color:rgba(176,110,74,.35);background:rgba(176,110,74,.07);transform:translateY(-2px)}
-.hjico{width:30px;height:30px;border-radius:50%;background:rgba(176,110,74,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.hjico svg{width:14px;height:14px}
-.hjtext{font-size:.82rem;color:rgba(255,255,255,.65);line-height:1.3;font-weight:500;white-space:nowrap}
-.hjarrow{color:rgba(176,110,74,.3);font-size:1.2rem;flex-shrink:0}
+.hero-sub{font-size:.97rem;color:rgba(255,255,255,.55);line-height:1.72;margin-bottom:28px;font-weight:300;max-width:620px;margin-left:auto;margin-right:auto}
+/* hero journey steps */
+.hjournay{display:flex;gap:8px;margin-bottom:32px;align-items:center;flex-wrap:wrap;justify-content:center}
+.hjstep{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:10px 16px;transition:all .28s}
+.hjstep:hover{border-color:rgba(176,110,74,.3);background:rgba(176,110,74,.06)}
+.hjico{width:28px;height:28px;border-radius:50%;background:rgba(176,110,74,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hjico svg{width:13px;height:13px}
+.hjtext{font-size:.78rem;color:rgba(255,255,255,.6);line-height:1.3;font-weight:500}
+.hjarrow{color:rgba(255,255,255,.15);font-size:1.1rem;flex-shrink:0}
 .hero-note{font-size:.73rem;color:rgba(255,255,255,.28);margin-top:10px;font-style:italic}
-.hero-link{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.35);font-size:.82rem;margin-top:14px;transition:color .22s}
-.hero-link:hover{color:rgba(255,255,255,.7)}
+.hero-link{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.4);font-size:.8rem;margin-top:10px;transition:color .22s}
+.hero-link:hover{color:rgba(255,255,255,.75)}
 
-/* PROOF BAR */
+/* hero right — floating result cards */
+.hcards{position:relative;width:100%;min-height:380px}
+.hcard{position:absolute;background:rgba(255,255,255,.06);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:22px 24px;transition:all .4s;cursor:default}
+.hcard:hover{transform:translateY(-4px) scale(1.02);border-color:rgba(176,110,74,.3);background:rgba(176,110,74,.08)}
+.hcard-val{font-family:var(--fd);font-size:2.2rem;font-weight:700;color:var(--tl);line-height:1;margin-bottom:4px}
+.hcard-lbl{font-size:.72rem;color:rgba(255,255,255,.4);line-height:1.4}
+.hcard-brand{font-size:.62rem;color:rgba(255,255,255,.2);margin-top:6px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.hcard-1{top:10px;left:10px;animation:hcf 3s ease-in-out infinite}
+.hcard-2{top:50px;right:0;animation:hcf 3s ease-in-out infinite .6s}
+.hcard-3{bottom:90px;left:30px;animation:hcf 3s ease-in-out infinite 1.2s}
+.hcard-4{bottom:20px;right:20px;animation:hcf 3s ease-in-out infinite 1.8s}
+@keyframes hcf{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+/* central diagram */
+.hdiag{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120px;height:120px}
+.hdiag-core{width:120px;height:120px;border-radius:50%;background:rgba(176,110,74,.12);border:2px solid rgba(176,110,74,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;animation:hpulse 3s ease-in-out infinite}
+.hdiag-core span:first-child{font-size:1.8rem;line-height:1}
+.hdiag-core span:last-child{font-size:.6rem;color:rgba(255,255,255,.5);font-weight:600;letter-spacing:.08em;margin-top:2px}
+@keyframes hpulse{0%,100%{box-shadow:0 0 0 0 rgba(176,110,74,.15)}50%{box-shadow:0 0 0 20px rgba(176,110,74,0)}}
+/* connecting lines */
+.hlines{position:absolute;inset:0;pointer-events:none}
+
+/* ══ PROOF BAR v2 ══ */
 .pbar{background:var(--cream);padding:40px 0;border-top:1px solid rgba(20,55,60,.06)}
 .pbar-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
 .pbc{text-align:center;padding:20px 12px;background:var(--white);border-radius:12px;border:1px solid rgba(20,55,60,.06);transition:all .28s}
@@ -93,7 +114,7 @@ svg{display:block}
 .pbc-val{font-family:var(--fd);font-size:clamp(1.6rem,2.4vw,2.2rem);font-weight:700;color:var(--terra);line-height:1;margin-bottom:6px}
 .pbc-lbl{font-size:.72rem;color:var(--sage);line-height:1.4}
 
-/* PROBLEMA */
+/* ══ 2 - PROBLEMA v2 ══ */
 .prob{background:var(--ink);padding:88px 0}
 .prob-top{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:48px}
 .pcta-banner{background:rgba(176,110,74,.08);border:1px solid rgba(176,110,74,.2);border-radius:16px;padding:32px;position:relative;overflow:hidden}
@@ -111,7 +132,7 @@ svg{display:block}
 .pcard h3{font-size:.88rem;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:5px;line-height:1.3}
 .pcard p{font-size:.76rem;color:rgba(255,255,255,.38);line-height:1.55}
 
-/* METODOLOGIA */
+/* ══ 3 - METODOLOGIA ══ */
 .metodo{background:var(--cl);padding:88px 0}
 .mhdr{text-align:center;max-width:520px;margin:0 auto 48px}
 .msteps{display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative}
@@ -127,7 +148,7 @@ svg{display:block}
 .mquote{max-width:600px;margin:44px auto 0;text-align:center;font-family:var(--fd);font-size:1.15rem;font-style:italic;color:var(--sage);line-height:1.65;padding:24px 30px;background:var(--white);border-radius:14px;border:1px solid rgba(20,55,60,.07);position:relative}
 .mquote::before{content:'\201C';font-size:3.5rem;font-family:var(--fd);color:var(--tl);opacity:.2;position:absolute;top:-10px;left:16px;line-height:1}
 
-/* INTEGRAÇÕES */
+/* ══ 4 - INTEGRAÇÕES ══ */
 .ints{padding:56px 0;background:var(--white);overflow:hidden}
 .inthdr{text-align:center;margin-bottom:24px}
 .inthdr h2{font-family:var(--fd);font-size:clamp(1.4rem,2.2vw,1.85rem);font-weight:700;margin-bottom:5px}
@@ -141,7 +162,7 @@ svg{display:block}
 .intx{text-align:center;font-size:.74rem;color:var(--sand);margin-top:14px;letter-spacing:.03em}
 .intcta{text-align:center;margin-top:22px}
 
-/* AGENTES */
+/* ══ AGENTES QUE DESENVOLVEMOS ══ */
 .agentes{background:var(--cl);padding:88px 0}
 .aghdr{text-align:center;max-width:560px;margin:0 auto 48px}
 .aggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -156,7 +177,7 @@ svg{display:block}
 .agcard-tags{display:flex;flex-wrap:wrap;gap:3px;margin-top:10px}
 .agcard-tag{font-size:.6rem;background:var(--cl);color:var(--sage);padding:2px 7px;border-radius:16px;border:1px solid rgba(20,55,60,.06)}
 
-/* CASES */
+/* ══ 5 - CASES ══ */
 .cases{background:var(--ink);padding:88px 0}
 .ctop{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;gap:20px;flex-wrap:wrap}
 .ctabs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:20px}
@@ -168,12 +189,14 @@ svg{display:block}
 @keyframes cpi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .case-wrap{display:grid;grid-template-columns:1.3fr .7fr;gap:24px}
 .cmain{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:28px}
+/* case hero number */
 .case-hero-num{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.06)}
 .case-hero-val{font-family:var(--fd);font-size:2.8rem;font-weight:700;color:var(--tl);line-height:1}
 .case-hero-lbl{font-size:.82rem;color:rgba(255,255,255,.4);line-height:1.3}
 .cbdg{display:inline-block;background:rgba(176,110,74,.13);color:var(--tl);font-size:.65rem;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
 .ctit{font-family:var(--fd);font-size:1.65rem;font-weight:700;color:#fff;margin-bottom:2px}
 .csec{font-size:.72rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:16px}
+.carea{font-size:.7rem;color:rgba(255,255,255,.28);margin-bottom:16px;font-style:italic}
 .cbl{margin-bottom:12px}
 .cbll{font-size:.62rem;color:var(--tl);text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-bottom:3px}
 .cblt{font-size:.84rem;color:rgba(255,255,255,.6);line-height:1.65}
@@ -194,7 +217,7 @@ svg{display:block}
 .ctag{font-family:var(--fd);font-size:.92rem;font-weight:600;color:rgba(255,255,255,.25);letter-spacing:.04em;cursor:default;transition:color .22s}
 .ctag:hover{color:var(--tl)}
 
-/* PARA QUEM */
+/* ══ 6 - PARA QUEM v2 ══ */
 .pq{background:linear-gradient(145deg,#0c2427,var(--ink) 55%,#1d4840 100%);padding:88px 0;position:relative;overflow:hidden}
 .pq::after{content:'';position:absolute;bottom:-80px;right:-80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(176,110,74,.07),transparent 70%);pointer-events:none}
 .pqlayout{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;position:relative;z-index:2}
@@ -211,7 +234,7 @@ svg{display:block}
 .pqbv{font-family:var(--fd);font-size:1.8rem;font-weight:700;color:var(--tl);line-height:1;margin-bottom:5px}
 .pqbd{font-size:.71rem;color:rgba(255,255,255,.36);line-height:1.45}
 
-/* FUNDADORES */
+/* ══ 7 - FUNDADORES v2 ══ */
 .quem{background:var(--white);padding:88px 0}
 .qhdr{text-align:center;max-width:490px;margin:0 auto 44px}
 .founders{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px}
@@ -241,7 +264,7 @@ svg{display:block}
 .tbbv{font-family:var(--fd);font-size:1.8rem;font-weight:700;color:var(--tl)}
 .tbbl{font-size:.68rem;color:rgba(255,255,255,.36);margin-top:2px}
 
-/* COMO FUNCIONA */
+/* ══ 8 - COMO FUNCIONA v2 ══ */
 .como{background:var(--cl);padding:88px 0}
 .cohdr{text-align:center;max-width:490px;margin:0 auto 48px}
 .tl{max-width:680px;margin:0 auto 36px;position:relative}
@@ -256,7 +279,7 @@ svg{display:block}
 .tlid2{font-size:.84rem;color:var(--sage);line-height:1.65}
 .tli-time{display:inline-block;background:rgba(176,110,74,.1);color:var(--terra);font-size:.62rem;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:8px;vertical-align:middle}
 
-/* CUSTO INVISÍVEL */
+/* ══ 9 - CUSTO INVISÍVEL v2 ══ */
 .custo{background:var(--white);padding:88px 0}
 .cuhdr{text-align:center;max-width:560px;margin:0 auto 44px}
 .cugrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:40px}
@@ -272,7 +295,7 @@ svg{display:block}
 .cubq{font-family:var(--fd);font-size:clamp(1.3rem,2.2vw,1.8rem);font-weight:700;color:#fff;line-height:1.25;margin-bottom:6px}
 .cubp{font-size:.88rem;color:rgba(255,255,255,.4);font-weight:300;line-height:1.6}
 
-/* CTA FINAL */
+/* ══ 10 - CTA FINAL ══ */
 .ctaf{background:linear-gradient(165deg,var(--ink),#194040 55%,var(--sage) 100%);padding:92px 0;text-align:center;position:relative;overflow:hidden}
 .ctaf::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='1' fill='%23fff' fill-opacity='.022'/%3E%3C/svg%3E")}
 .ctafin{position:relative;z-index:2}
@@ -290,7 +313,7 @@ footer p{font-size:.72rem;color:rgba(255,255,255,.22)}
 footer a{color:rgba(255,255,255,.36);transition:color .22s}
 footer a:hover{color:var(--tl)}
 
-/* RESPONSIVE */
+/* ══ RESPONSIVE ══ */
 @media(max-width:980px){
   .nlinks,.ncta{display:none}
   .nhbg{display:block}
@@ -360,45 +383,53 @@ footer a:hover{color:var(--tl)}
   <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="ncta" style="margin-top:8px">Agendar diagn&oacute;stico</a>
 </div>
 
-<!-- HERO -->
+<!-- ═══════════════════════════════
+     1ª DOBRA — HERO (REDESIGN)
+═══════════════════════════════ -->
 <section class="hero" id="inicio">
-  <div class="hbg"></div><div class="hgrain"></div><div class="hglow"></div><div class="hglow2"></div>
+  <div class="hbg"></div><div class="hgrain"></div><div class="hglow"></div>
   <div class="c hero-in">
-    <div class="hpill"><span class="dot"></span>IA Hiper-Personalizada para o Seu Neg&oacute;cio</div>
-    <h1>Transforme Intelig&ecirc;ncia Artificial em ganho real de <em>produtividade, receita e efici&ecirc;ncia.</em></h1>
-    <p class="hero-sub">Solu&ccedil;&otilde;es sob medida, integradas aos seus sistemas, sem necessidade de equipe t&eacute;cnica interna. Do diagn&oacute;stico ao resultado em semanas &mdash; n&atilde;o em meses.</p>
+    <div>
+      <div class="hpill"><span class="dot"></span>IA Hiper-Personalizada para o Seu Neg&oacute;cio</div>
+      <h1>Transforme Intelig&ecirc;ncia Artificial em ganho real de <em>produtividade, receita e efici&ecirc;ncia.</em></h1>
+      <p class="hero-sub">Solu&ccedil;&otilde;es sob medida, integradas aos seus sistemas, sem necessidade de equipe t&eacute;cnica interna. Do diagn&oacute;stico ao resultado em semanas &mdash; n&atilde;o em meses.</p>
 
-    <div class="hjournay">
-      <div class="hjstep">
-        <div class="hjico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
-        <div class="hjtext">Diagn&oacute;stico estrat&eacute;gico</div>
+      <!-- Journey steps -->
+      <div class="hjournay">
+        <div class="hjstep">
+          <div class="hjico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+          <div class="hjtext">Diagn&oacute;stico<br>estrat&eacute;gico</div>
+        </div>
+        <span class="hjarrow">&rarr;</span>
+        <div class="hjstep">
+          <div class="hjico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+          <div class="hjtext">Planejamento &amp;<br>implementa&ccedil;&atilde;o integrada</div>
+        </div>
+        <span class="hjarrow">&rarr;</span>
+        <div class="hjstep">
+          <div class="hjico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <div class="hjtext">Monitoramento<br>de indicadores</div>
+        </div>
+        <span class="hjarrow">&rarr;</span>
+        <div class="hjstep">
+          <div class="hjico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div class="hjtext">Resultado<br>real</div>
+        </div>
       </div>
-      <span class="hjarrow">&rarr;</span>
-      <div class="hjstep">
-        <div class="hjico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
-        <div class="hjtext">Planejamento &amp; implementa&ccedil;&atilde;o</div>
-      </div>
-      <span class="hjarrow">&rarr;</span>
-      <div class="hjstep">
-        <div class="hjico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <div class="hjtext">Monitoramento de indicadores</div>
-      </div>
-      <span class="hjarrow">&rarr;</span>
-      <div class="hjstep">
-        <div class="hjico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-        <div class="hjtext">Resultado real</div>
-      </div>
+
+      <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="btn-p">
+        Agendar um diagn&oacute;stico gratuito
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <div><a href="#cases" class="hero-link">Ver cases implementados &darr;</a></div>
     </div>
 
-    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="btn-p">
-      Agendar um diagn&oacute;stico gratuito
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
-    <div><a href="#cases" class="hero-link">Ver cases implementados &darr;</a></div>
   </div>
 </section>
 
-<!-- PROBLEMA -->
+<!-- ═══════════════════════════════
+     2ª DOBRA — PROBLEMA (REDESIGN)
+═══════════════════════════════ -->
 <section class="prob" id="problema">
 <div class="c">
   <div class="prob-top">
@@ -442,7 +473,9 @@ footer a:hover{color:var(--tl)}
 </div>
 </section>
 
-<!-- METODOLOGIA -->
+<!-- ═══════════════════════════════
+     3ª DOBRA — METODOLOGIA (com ícones)
+═══════════════════════════════ -->
 <section class="metodo" id="fazemos">
 <div class="c">
   <div class="mhdr rv">
@@ -510,58 +543,52 @@ footer a:hover{color:var(--tl)}
 </div>
 </section>
 
-<!-- INTEGRAÇÕES — AJUSTE 2: texto corrigido + logos SVG inline para garantir visibilidade -->
+<!-- ═══════════════════════════════
+     4ª DOBRA — INTEGRAÇÕES (ícones maiores)
+═══════════════════════════════ -->
 <section class="ints" id="integracoes">
   <div class="c inthdr rv">
     <h2>Integramos com os sistemas que sua empresa j&aacute; utiliza</h2>
-    <!-- AJUSTE 3: frase atualizada conforme solicitado -->
     <p>Dezenas de conectores dispon&iacute;veis &mdash; sem trocar sistema, sem parar a opera&ccedil;&atilde;o.</p>
   </div>
   <div class="tw">
     <div class="tk">
-      <!-- AJUSTE 4: logos com fallback e tamanho aumentado para melhor visibilidade -->
-      <img class="tki" src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2218%22 font-size=%2218%22>📱</text></svg>'">
-      <img class="tki" src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram">
-      <img class="tki" src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n">
-      <img class="tki" src="https://cdn.simpleicons.org/openai/000000" alt="OpenAI">
-      <img class="tki" src="https://cdn.simpleicons.org/anthropic/000000" alt="Anthropic">
-      <img class="tki" src="https://cdn.simpleicons.org/googlegemini/886FBF" alt="Google Gemini">
-      <img class="tki" src="https://cdn.simpleicons.org/meta/0081FB" alt="Meta">
-      <img class="tki" src="https://cdn.simpleicons.org/gmail/EA4335" alt="Gmail">
-      <img class="tki" src="https://cdn.simpleicons.org/googledrive/4285F4" alt="Google Drive">
-      <img class="tki" src="https://cdn.simpleicons.org/googlesheets/0F9D58" alt="Google Sheets">
-      <img class="tki" src="https://cdn.simpleicons.org/notion/000000" alt="Notion">
-      <img class="tki" src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="HubSpot">
-      <img class="tki" src="https://cdn.simpleicons.org/trello/0052CC" alt="Trello">
-      <img class="tki" src="https://cdn.simpleicons.org/microsoftoutlook/0078D4" alt="Outlook">
-      <!-- AJUSTE 5: Excel com URL corrigida -->
-      <img class="tki" src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Excel" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span style=font-size:22px;opacity:.45 title=Excel>📊</span>')">
-      <img class="tki" src="https://cdn.simpleicons.org/microsoftonedrive/0078D4" alt="OneDrive">
-      <img class="tki" src="https://cdn.simpleicons.org/shopify/96BF48" alt="Shopify">
-      <img class="tki" src="https://cdn.simpleicons.org/salesforce/00A1E0" alt="Salesforce">
-      <img class="tki" src="https://cdn.simpleicons.org/slack/4A154B" alt="Slack">
-      <img class="tki" src="https://cdn.simpleicons.org/googlecalendar/4285F4" alt="Google Calendar">
-      <!-- Repeat for seamless loop -->
       <img class="tki" src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp">
       <img class="tki" src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram">
       <img class="tki" src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n">
-      <img class="tki" src="https://cdn.simpleicons.org/openai/000000" alt="OpenAI">
-      <img class="tki" src="https://cdn.simpleicons.org/anthropic/000000" alt="Anthropic">
+      <img class="tki" src="https://cdn.simpleicons.org/openai/000" alt="ChatGPT / OpenAI">
+      <img class="tki" src="https://cdn.simpleicons.org/anthropic/000" alt="Claude / Anthropic">
       <img class="tki" src="https://cdn.simpleicons.org/googlegemini/886FBF" alt="Google Gemini">
       <img class="tki" src="https://cdn.simpleicons.org/meta/0081FB" alt="Meta">
       <img class="tki" src="https://cdn.simpleicons.org/gmail/EA4335" alt="Gmail">
       <img class="tki" src="https://cdn.simpleicons.org/googledrive/4285F4" alt="Google Drive">
       <img class="tki" src="https://cdn.simpleicons.org/googlesheets/0F9D58" alt="Google Sheets">
-      <img class="tki" src="https://cdn.simpleicons.org/notion/000000" alt="Notion">
+      <img class="tki" src="https://cdn.simpleicons.org/notion/000" alt="Notion">
       <img class="tki" src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="HubSpot">
       <img class="tki" src="https://cdn.simpleicons.org/trello/0052CC" alt="Trello">
-      <img class="tki" src="https://cdn.simpleicons.org/microsoftoutlook/0078D4" alt="Outlook">
+      <img class="tki" src="https://cdn.simpleicons.org/microsoftoutlook/0078D4" alt="Microsoft Outlook">
       <img class="tki" src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Excel">
       <img class="tki" src="https://cdn.simpleicons.org/microsoftonedrive/0078D4" alt="OneDrive">
       <img class="tki" src="https://cdn.simpleicons.org/shopify/96BF48" alt="Shopify">
       <img class="tki" src="https://cdn.simpleicons.org/salesforce/00A1E0" alt="Salesforce">
-      <img class="tki" src="https://cdn.simpleicons.org/slack/4A154B" alt="Slack">
-      <img class="tki" src="https://cdn.simpleicons.org/googlecalendar/4285F4" alt="Google Calendar">
+      <img class="tki" src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp">
+      <img class="tki" src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram">
+      <img class="tki" src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n">
+      <img class="tki" src="https://cdn.simpleicons.org/openai/000" alt="ChatGPT / OpenAI">
+      <img class="tki" src="https://cdn.simpleicons.org/anthropic/000" alt="Claude / Anthropic">
+      <img class="tki" src="https://cdn.simpleicons.org/googlegemini/886FBF" alt="Google Gemini">
+      <img class="tki" src="https://cdn.simpleicons.org/meta/0081FB" alt="Meta">
+      <img class="tki" src="https://cdn.simpleicons.org/gmail/EA4335" alt="Gmail">
+      <img class="tki" src="https://cdn.simpleicons.org/googledrive/4285F4" alt="Google Drive">
+      <img class="tki" src="https://cdn.simpleicons.org/googlesheets/0F9D58" alt="Google Sheets">
+      <img class="tki" src="https://cdn.simpleicons.org/notion/000" alt="Notion">
+      <img class="tki" src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="HubSpot">
+      <img class="tki" src="https://cdn.simpleicons.org/trello/0052CC" alt="Trello">
+      <img class="tki" src="https://cdn.simpleicons.org/microsoftoutlook/0078D4" alt="Microsoft Outlook">
+      <img class="tki" src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Excel">
+      <img class="tki" src="https://cdn.simpleicons.org/microsoftonedrive/0078D4" alt="OneDrive">
+      <img class="tki" src="https://cdn.simpleicons.org/shopify/96BF48" alt="Shopify">
+      <img class="tki" src="https://cdn.simpleicons.org/salesforce/00A1E0" alt="Salesforce">
     </div>
   </div>
   <div class="c intx rv">Google Calendar &nbsp;&middot;&nbsp; Looker Studio &nbsp;&middot;&nbsp; RD Station &nbsp;&middot;&nbsp; Kommo &nbsp;&middot;&nbsp; Power BI &nbsp;&middot;&nbsp; VTEX &nbsp;&middot;&nbsp; Nuvem Shop &nbsp;&middot;&nbsp; ERP (Protheus &middot; Linx &middot; Sankhya &middot; Omie &middot; Tiny) &nbsp;&middot;&nbsp; Bubble &nbsp;&middot;&nbsp; Aplicativos Propriet&aacute;rios</div>
@@ -573,7 +600,9 @@ footer a:hover{color:var(--tl)}
   </div>
 </section>
 
-<!-- AGENTES QUE DESENVOLVEMOS -->
+<!-- ═══════════════════════════════
+     AGENTES QUE DESENVOLVEMOS
+═══════════════════════════════ -->
 <section class="agentes" id="agentes">
 <div class="c">
   <div class="aghdr rv">
@@ -586,42 +615,42 @@ footer a:hover{color:var(--tl)}
     <div class="agcard">
       <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
       <h3>Agentes de Vendas / Convers&atilde;o</h3>
-      <p>WhatsApp, Instagram, Webchat e App. Apresenta&ccedil;&atilde;o de produtos/servi&ccedil;os; saneamento de d&uacute;vidas e quebras de obje&ccedil;&atilde;o; follow-ups; redu&ccedil;&atilde;o de no-show; resgate de leads abandonadores; qualifica&ccedil;&atilde;o de leads; agendamento de reuni&atilde;o; integra&ccedil;&atilde;o com CRM e e-Commerce; acompanhamento de indicadores; B2B e B2C.</p>
+      <p>WhatsApp, Instagram, Webchat e App. Apresenta&ccedil;&atilde;o de produtos; quebra de obje&ccedil;&otilde;es; follow-ups; redu&ccedil;&atilde;o de no-show; resgate de leads; qualifica&ccedil;&atilde;o; agendamento; integra&ccedil;&atilde;o com CRM e e-Commerce. B2B e B2C.</p>
       <div class="agcard-tags"><span class="agcard-tag">WhatsApp</span><span class="agcard-tag">Instagram</span><span class="agcard-tag">CRM</span><span class="agcard-tag">e-Commerce</span></div>
     </div>
 
     <div class="agcard">
       <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
       <h3>Agentes de SAC</h3>
-      <p>WhatsApp, Instagram, Webchat e App. Triagem por tipo de problema; suporte t&eacute;cnico; FAQ; envio e recebimento de documentos; preenchimento autom&aacute;tico do CRM; acompanhamento de indicadores; transbordo para humano em casos excepcionais, j&aacute; com todo o hist&oacute;rico disponibilizado.</p>
+      <p>WhatsApp, Instagram, Webchat e App. Triagem por tipo de problema; suporte t&eacute;cnico; FAQ; envio e recebimento de documentos; preenchimento autom&aacute;tico do CRM; transbordo para humano com hist&oacute;rico completo.</p>
       <div class="agcard-tags"><span class="agcard-tag">Suporte</span><span class="agcard-tag">FAQ</span><span class="agcard-tag">CRM</span><span class="agcard-tag">Transbordo</span></div>
     </div>
 
     <div class="agcard">
       <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
       <h3>Agentes Financeiro / Cobran&ccedil;a</h3>
-      <p>WhatsApp. Sinaliza&ccedil;&atilde;o de inadimpl&ecirc;ncia; negocia&ccedil;&atilde;o com cliente; envio de novo link de pagamento ou 2&ordf; via de boleto; integra&ccedil;&atilde;o com ERP; acompanhamento de indicadores; transbordo para humano em casos excepcionais, j&aacute; com todo o hist&oacute;rico disponibilizado.</p>
+      <p>WhatsApp. Sinaliza&ccedil;&atilde;o de inadimpl&ecirc;ncia; negocia&ccedil;&atilde;o com cliente; envio de link de pagamento ou 2&ordf; via de boleto; integra&ccedil;&atilde;o com ERP; transbordo para humano com hist&oacute;rico.</p>
       <div class="agcard-tags"><span class="agcard-tag">WhatsApp</span><span class="agcard-tag">ERP</span><span class="agcard-tag">Cobran&ccedil;a</span></div>
     </div>
 
     <div class="agcard">
       <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
       <h3>Agentes de CRM / Fideliza&ccedil;&atilde;o e Reten&ccedil;&atilde;o</h3>
-      <p>WhatsApp, SMS e App. Sugere e dispara campanhas personalizadas por perfil e/ou hist&oacute;rico de compras; estimula cross e up-sell; estreita relacionamento, como em anivers&aacute;rios; aumenta LTV; integra&ccedil;&atilde;o com ERP, Datalake e CRM; acompanhamento de indicadores.</p>
+      <p>WhatsApp, SMS e App. Campanhas personalizadas por perfil e hist&oacute;rico; cross e up-sell; relacionamento (anivers&aacute;rios); aumento de LTV; integra&ccedil;&atilde;o com ERP, Datalake e CRM.</p>
       <div class="agcard-tags"><span class="agcard-tag">CRM</span><span class="agcard-tag">SMS</span><span class="agcard-tag">LTV</span><span class="agcard-tag">Datalake</span></div>
     </div>
 
     <div class="agcard">
       <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
       <h3>Agentes / Copilotos de Marketing</h3>
-      <p>M&oacute;dulo de cria&ccedil;&atilde;o de campanhas; calend&aacute;rio editorial; social media; performance / tr&aacute;fego pago; newsletter e blog; e-mail marketing; WhatsApp e SMS; trade marketing / PDV; landing pages; publica&ccedil;&otilde;es autom&aacute;ticas via API.</p>
+      <p>Cria&ccedil;&atilde;o de campanhas; calend&aacute;rio editorial; social media; performance / tr&aacute;fego pago; newsletter e blog; e-mail marketing; WhatsApp e SMS; trade marketing / PDV; landing pages; publica&ccedil;&otilde;es autom&aacute;ticas via API.</p>
       <div class="agcard-tags"><span class="agcard-tag">Campanhas</span><span class="agcard-tag">Social</span><span class="agcard-tag">Tr&aacute;fego</span><span class="agcard-tag">E-mail</span></div>
     </div>
 
     <div class="agcard">
       <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
       <h3>Agentes de Dados e Intelig&ecirc;ncia / Growth</h3>
-      <p>Integrado a diferentes pontos de contato e sistemas. Gera relat&oacute;rios gerenciais e dashboards; insights; sugest&otilde;es de pontos cr&iacute;ticos do funil onde atuar e priorizar. Integra&ccedil;&atilde;o com Meta Ads, Google Ads, GA4, CRM, ERP, sistemas propriet&aacute;rios.</p>
+      <p>Integrado a diferentes pontos de contato e sistemas. Gera relat&oacute;rios gerenciais e dashboards; insights; sugest&otilde;es de pontos cr&iacute;ticos do funil. Integra&ccedil;&atilde;o com Meta Ads, Google Ads, GA4, CRM, ERP.</p>
       <div class="agcard-tags"><span class="agcard-tag">Dashboards</span><span class="agcard-tag">Meta Ads</span><span class="agcard-tag">GA4</span><span class="agcard-tag">Growth</span></div>
     </div>
 
@@ -635,42 +664,42 @@ footer a:hover{color:var(--tl)}
     <div class="agcard">
       <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
       <h3>Agentes de RH / Recrutamento e Sele&ccedil;&atilde;o</h3>
-      <p>Conversa; qualifica; cruza perfil do candidato e curr&iacute;culo com banco de vagas e faz an&aacute;lise de ader&ecirc;ncia; l&ecirc; PDFs e Word; cadastra no CRM; integra&ccedil;&atilde;o com o sistema de RH; agenda entrevista e referencia candidato para o consultor correto; faz follow-ups de no-show; acompanhamento de indicadores.</p>
+      <p>Conversa; qualifica; cruza perfil e curr&iacute;culo com banco de vagas; l&ecirc; PDFs e Word; cadastra no CRM; agenda entrevista; referencia candidato para consultor correto; follow-ups de no-show.</p>
       <div class="agcard-tags"><span class="agcard-tag">WhatsApp</span><span class="agcard-tag">CRM</span><span class="agcard-tag">Curr&iacute;culo</span><span class="agcard-tag">RH</span></div>
     </div>
 
     <div class="agcard">
       <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
       <h3>Agentes de Checklist e Plano de A&ccedil;&atilde;o para Franquias</h3>
-      <p>Com interface de &aacute;udio, preenche automaticamente o checklist no CRM durante visitas de campo; avalia performance da unidade franqueada; gera insights e sugere plano de a&ccedil;&atilde;o para elevar ader&ecirc;ncia ao modelo de neg&oacute;cios; envia ao franqueado; faz follow-ups.</p>
+      <p>Interface de &aacute;udio; preenche checklist no CRM durante visitas de campo; avalia performance da unidade; gera insights e plano de a&ccedil;&atilde;o; envia ao franqueado; faz follow-ups.</p>
       <div class="agcard-tags"><span class="agcard-tag">Franquias</span><span class="agcard-tag">&Aacute;udio</span><span class="agcard-tag">CRM</span><span class="agcard-tag">Campo</span></div>
     </div>
 
     <div class="agcard">
       <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg></div>
       <h3>Agentes &ldquo;Dedo-Duro&rdquo; para Franquias</h3>
-      <p>Rastreia sistemas e indicadores; aponta quebras no modelo de neg&oacute;cio e n&atilde;o seguimento das diretrizes da franqueadora; gera alertas para consultores de campo e outras &aacute;reas; gera alertas para o franqueado; contribui na constru&ccedil;&atilde;o de planos de a&ccedil;&atilde;o para melhoria dos resultados.</p>
+      <p>Rastreia sistemas e indicadores; aponta quebras no modelo de neg&oacute;cio; gera alertas para consultores e franqueado; contribui na constru&ccedil;&atilde;o de planos de a&ccedil;&atilde;o para melhoria.</p>
       <div class="agcard-tags"><span class="agcard-tag">Monitoramento</span><span class="agcard-tag">Alertas</span><span class="agcard-tag">Franquias</span></div>
     </div>
 
     <div class="agcard">
       <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
       <h3>Agentes de Monitoramento de Grupos de WhatsApp</h3>
-      <p>Observa intera&ccedil;&otilde;es como membro; gera relat&oacute;rios sobre membros promotores e detratores; temperatura das conversas; assuntos em alta; nuvem de tags; alertas de crise; painel gerencial com recomenda&ccedil;&atilde;o de onde atuar.</p>
+      <p>Observa intera&ccedil;&otilde;es como membro; relat&oacute;rios de promotores e detratores; temperatura das conversas; assuntos em alta; nuvem de tags; alertas de crise; painel gerencial.</p>
       <div class="agcard-tags"><span class="agcard-tag">WhatsApp</span><span class="agcard-tag">Grupos</span><span class="agcard-tag">Alertas</span><span class="agcard-tag">Painel</span></div>
     </div>
 
     <div class="agcard">
       <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
       <h3>Agente de Stress Test para Valida&ccedil;&atilde;o de Processos</h3>
-      <p>Ativa processos de diversas formas distintas, em escala, para garantir que os sistemas est&atilde;o funcionando corretamente; entrega relat&oacute;rios; identifica etapas com problemas para corre&ccedil;&atilde;o.</p>
+      <p>Ativa processos de diversas formas em escala para garantir que os sistemas funcionam corretamente; entrega relat&oacute;rios; identifica etapas com problemas para corre&ccedil;&atilde;o.</p>
       <div class="agcard-tags"><span class="agcard-tag">QA</span><span class="agcard-tag">Escala</span><span class="agcard-tag">Processos</span><span class="agcard-tag">Relat&oacute;rios</span></div>
     </div>
 
   </div>
 
-  <!-- Visual N8N flows -->
-  <div style="margin-top:48px;text-align:center" class="rv">
+  <!-- Visual: N8N flows placeholder -->
+  <div style="margin-top:48px;text-align:center" class="rv" style="transition-delay:.2s">
     <div style="background:var(--white);border:1px solid rgba(20,55,60,.07);border-radius:16px;padding:40px 30px;max-width:800px;margin:0 auto">
       <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:16px">
         <img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n" style="width:28px;height:28px;opacity:.6">
@@ -678,21 +707,23 @@ footer a:hover{color:var(--tl)}
       </div>
       <p style="font-size:.82rem;color:var(--sage);max-width:500px;margin:0 auto 20px;line-height:1.6">Cada agente &eacute; orquestrado por fluxos inteligentes no N8N, integrando APIs, IA e seus sistemas em tempo real.</p>
       <div style="background:linear-gradient(135deg,var(--ink),var(--sage));border-radius:12px;padding:48px 24px;position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;opacity:.04;background-image:url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%22.85%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')"></div>
+        <!-- Simulated N8N flow diagram -->
         <svg viewBox="0 0 700 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:660px;margin:0 auto;display:block;position:relative">
           <rect x="0" y="35" width="100" height="50" rx="8" fill="rgba(255,255,255,.08)" stroke="rgba(176,110,74,.4)" stroke-width="1.5"/>
           <text x="50" y="55" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="8" font-family="DM Sans" font-weight="600">TRIGGER</text>
           <text x="50" y="70" text-anchor="middle" fill="rgba(255,255,255,.3)" font-size="7" font-family="DM Sans">WhatsApp</text>
           <line x1="100" y1="60" x2="150" y2="60" stroke="rgba(176,110,74,.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
           <rect x="150" y="35" width="100" height="50" rx="8" fill="rgba(176,110,74,.12)" stroke="rgba(176,110,74,.4)" stroke-width="1.5"/>
-          <text x="200" y="55" text-anchor="middle" fill="#c4835e" font-size="8" font-family="DM Sans" font-weight="600">AGENTE IA</text>
-          <text x="200" y="70" text-anchor="middle" fill="rgba(255,255,255,.3)" font-size="7" font-family="DM Sans">Classifica&#xe7;&#xe3;o</text>
+          <text x="200" y="55" text-anchor="middle" fill="var(--tl)" font-size="8" font-family="DM Sans" font-weight="600">AGENTE IA</text>
+          <text x="200" y="70" text-anchor="middle" fill="rgba(255,255,255,.3)" font-size="7" font-family="DM Sans">Classifica&ccedil;&atilde;o</text>
           <line x1="250" y1="60" x2="300" y2="60" stroke="rgba(176,110,74,.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
           <rect x="300" y="35" width="100" height="50" rx="8" fill="rgba(255,255,255,.08)" stroke="rgba(176,110,74,.4)" stroke-width="1.5"/>
           <text x="350" y="55" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="8" font-family="DM Sans" font-weight="600">API</text>
           <text x="350" y="70" text-anchor="middle" fill="rgba(255,255,255,.3)" font-size="7" font-family="DM Sans">CRM / ERP</text>
           <line x1="400" y1="60" x2="450" y2="60" stroke="rgba(176,110,74,.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
           <rect x="450" y="35" width="100" height="50" rx="8" fill="rgba(176,110,74,.12)" stroke="rgba(176,110,74,.4)" stroke-width="1.5"/>
-          <text x="500" y="55" text-anchor="middle" fill="#c4835e" font-size="8" font-family="DM Sans" font-weight="600">AGENTE IA</text>
+          <text x="500" y="55" text-anchor="middle" fill="var(--tl)" font-size="8" font-family="DM Sans" font-weight="600">AGENTE IA</text>
           <text x="500" y="70" text-anchor="middle" fill="rgba(255,255,255,.3)" font-size="7" font-family="DM Sans">Resposta</text>
           <line x1="550" y1="60" x2="600" y2="60" stroke="rgba(176,110,74,.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
           <rect x="600" y="35" width="100" height="50" rx="8" fill="rgba(255,255,255,.08)" stroke="rgba(176,110,74,.4)" stroke-width="1.5"/>
@@ -704,17 +735,19 @@ footer a:hover{color:var(--tl)}
     </div>
   </div>
 
-  <!-- Visual Marketing Copilot Desktop -->
+  <!-- Visual: Marketing Copilot Desktop mockup -->
   <div style="margin-top:28px;text-align:center" class="rv">
     <div style="background:var(--white);border:1px solid rgba(20,55,60,.07);border-radius:16px;padding:40px 30px;max-width:800px;margin:0 auto">
       <span style="font-family:var(--fd);font-size:1.2rem;font-weight:700;color:var(--ink);display:block;margin-bottom:16px">Copilotos de Marketing &mdash; Vis&atilde;o Desktop</span>
       <div style="background:var(--ink);border-radius:12px;overflow:hidden;border:2px solid rgba(255,255,255,.08)">
+        <!-- Browser bar -->
         <div style="background:rgba(255,255,255,.06);padding:8px 14px;display:flex;align-items:center;gap:6px;border-bottom:1px solid rgba(255,255,255,.06)">
-          <span style="width:8px;height:8px;border-radius:50%;background:#ff5f57"></span>
-          <span style="width:8px;height:8px;border-radius:50%;background:#ffbd2e"></span>
-          <span style="width:8px;height:8px;border-radius:50%;background:#28c840"></span>
+          <span style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.12)"></span>
+          <span style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.12)"></span>
+          <span style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.12)"></span>
           <span style="flex:1;margin-left:12px;background:rgba(255,255,255,.05);border-radius:4px;padding:4px 10px;font-size:.6rem;color:rgba(255,255,255,.2)">app.newscale.tech/marketing-copilots</span>
         </div>
+        <!-- Desktop modules grid -->
         <div style="padding:20px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
           <div style="background:rgba(176,110,74,.08);border:1px solid rgba(176,110,74,.2);border-radius:8px;padding:16px 12px;text-align:center">
             <div style="font-size:1.3rem;margin-bottom:4px">&#x1F4E3;</div>
@@ -766,7 +799,9 @@ footer a:hover{color:var(--tl)}
 </div>
 </section>
 
-<!-- CASES — AJUSTE 6: "Dinâmica RH" → "Consultoria de RH" em todos os lugares -->
+<!-- ═══════════════════════════════
+     5ª DOBRA — CASES (com hero number)
+═══════════════════════════════ -->
 <section class="cases" id="cases">
 <div class="c">
   <div class="ctop">
@@ -815,7 +850,7 @@ footer a:hover{color:var(--tl)}
     </div>
   </div>
 
-  <!-- CONSULTORIA DE RH (antes Dinâmica RH) -->
+  <!-- DINÂMICA RH -->
   <div class="cpanel" id="case-din">
     <div class="case-wrap">
       <div class="cmain">
@@ -948,7 +983,9 @@ footer a:hover{color:var(--tl)}
 </div>
 </section>
 
-<!-- PARA QUEM — AJUSTES 7 e 8: textos dos dois primeiros bullets atualizados -->
+<!-- ═══════════════════════════════
+     6ª DOBRA — PARA QUEM (perfis concretos)
+═══════════════════════════════ -->
 <section class="pq" id="paraquem">
 <div class="c">
   <div class="pqlayout">
@@ -959,13 +996,11 @@ footer a:hover{color:var(--tl)}
       <ul class="pqlist">
         <li class="pqi">
           <div class="pqa-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-          <!-- AJUSTE 7: texto atualizado -->
-          <span class="pqt"><strong>Empres&aacute;rios, CEOs, VPs, Diretores e Gerentes</strong> que sabem que est&atilde;o perdendo competitividade por n&atilde;o terem IA estrat&eacute;gica na opera&ccedil;&atilde;o.</span>
+          <span class="pqt"><strong>Empres&aacute;rios, CEOs, VPs, Diretores e Gerentes</strong> que sabem que est&atilde;o perdendo competitividade por n&atilde;o terem IA estrat&eacute;gica na opera&ccedil;&atilde;o</span>
         </li>
         <li class="pqi">
           <div class="pqa-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-          <!-- AJUSTE 8: texto atualizado -->
-          <span class="pqt"><strong>Empresas que querem escalar de forma eficiente</strong> sem aumentar headcount proporcionalmente.</span>
+          <span class="pqt"><strong>Empresas que querem escalar de forma eficiente</strong> sem aumentar headcount proporcionalmente</span>
         </li>
         <li class="pqi">
           <div class="pqa-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
@@ -993,13 +1028,14 @@ footer a:hover{color:var(--tl)}
 </div>
 </section>
 
-<!-- FUNDADORES — AJUSTE 9: subtítulo atualizado -->
+<!-- ═══════════════════════════════
+     7ª DOBRA — FUNDADORES (bios curtos)
+═══════════════════════════════ -->
 <section class="quem" id="quem">
 <div class="c">
   <div class="qhdr rv">
     <span class="stag">Os fundadores</span>
     <h2 class="h2">Quem implementa e ensina IA na pr&aacute;tica</h2>
-    <!-- AJUSTE 9: frase atualizada -->
     <p class="sub" style="color:var(--sage);margin:0 auto;max-width:480px">Usamos IA nos nossos pr&oacute;prios neg&oacute;cios e carreiras corporativas antes de implementar no seu.</p>
   </div>
   <div class="founders rv" style="transition-delay:.1s">
@@ -1050,7 +1086,9 @@ footer a:hover{color:var(--tl)}
 </div>
 </section>
 
-<!-- COMO FUNCIONA — AJUSTE 10: "PRAZO CONFORME COMPLEXIDADE" no step 3 -->
+<!-- ═══════════════════════════════
+     8ª DOBRA — COMO FUNCIONA (com time tags)
+═══════════════════════════════ -->
 <section class="como" id="como">
 <div class="c">
   <div class="cohdr rv">
@@ -1078,7 +1116,6 @@ footer a:hover{color:var(--tl)}
     <div class="tli">
       <div class="tlid">3</div>
       <div class="tlib">
-        <!-- AJUSTE 10: label corrigido para "PRAZO CONFORME COMPLEXIDADE" -->
         <div class="tlim">Prazo conforme complexidade</div>
         <div class="tlit">Implementa&ccedil;&atilde;o <span class="tli-time">4-12 semanas</span></div>
         <div class="tlid2">Mergulhamos na opera&ccedil;&atilde;o, mapeamos processos, criamos agentes e constru&iacute;mos automa&ccedil;&otilde;es. Acompanhamento semanal.</div>
@@ -1110,7 +1147,9 @@ footer a:hover{color:var(--tl)}
 </div>
 </section>
 
-<!-- CUSTO INVISÍVEL -->
+<!-- ═══════════════════════════════
+     9ª DOBRA — CUSTO INVISÍVEL (reduzido + números)
+═══════════════════════════════ -->
 <section class="custo" id="custo">
 <div class="c">
   <div class="cuhdr rv">
@@ -1163,7 +1202,9 @@ footer a:hover{color:var(--tl)}
 </div>
 </section>
 
-<!-- CTA FINAL -->
+<!-- ═══════════════════════════════
+     10ª DOBRA — CTA FINAL
+═══════════════════════════════ -->
 <section class="ctaf" id="contato">
 <div class="c ctafin">
   <h2>Quer saber quanto sua opera&ccedil;&atilde;o<br>est&aacute; deixando de ganhar?</h2>
@@ -1193,12 +1234,12 @@ footer a:hover{color:var(--tl)}
       <span>Consultoria em Intelig&ecirc;ncia Artificial</span>
       <span>Diagn&oacute;stico Gratuito</span>
     </div>
-    <p style="margin-bottom:6px"><a href="/cdn-cgi/l/email-protection#385a4a4d565978565d4f4b5b59545d164c5d5b50"><span class="__cf_email__" data-cfemail="bbd9c9ced5dafbd5deccc8d8dad7de95cfded8d3">[email&#160;protected]</span></a>&nbsp;&middot;&nbsp;<a href="https://wa.me/5511971901020" target="_blank">(11) 97190-1020</a></p>
+    <p style="margin-bottom:6px"><a href="mailto:bruna@newscale.tech">bruna@newscale.tech</a>&nbsp;&middot;&nbsp;<a href="https://wa.me/5511971901020" target="_blank">(11) 97190-1020</a></p>
     <p>&copy; 2026 NewScale Consulting. Todos os direitos reservados.</p>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{nav.classList.toggle('s',scrollY>50)},{passive:true});
 const ro=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');ro.unobserve(x.target)}})},{threshold:.08,rootMargin:'0px 0px -28px 0px'});
@@ -1214,4 +1255,18 @@ function toggleBio(btn){
   const short=fb.querySelector('.fb-short');
   const full=fb.querySelector('.fb-full');
   if(full.style.display==='inline'){
-    ful
+    full.style.display='none';
+    short.style.display='inline';
+    btn.textContent='Ver mais \u2193';
+  }else{
+    full.style.display='inline';
+    short.style.display='none';
+    btn.textContent='Ver menos \u2191';
+  }
+}
+</script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>if(window.netlifyIdentity){window.netlifyIdentity.on('init',u=>{if(!u){window.netlifyIdentity.on('login',()=>{document.location.href='/admin/'})}})}
+</script>
+</body>
+</html>
