@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NewScale × Mais Internet — Proposta Estratégica de IA</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal-deep: #14373C;
+  --teal-mid: #435D51;
+  --copper: #B06E4A;
+  --copper-light: #C8845E;
+  --sand: #D0D0CA;
+  --cream: #F5F3EE;
+  --white: #FFFFFF;
+  --text-dark: #0D2226;
+  --text-mid: #2C4A4E;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Josefin Sans', sans-serif; background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
+
+/* HERO */
+.hero { min-height: 100vh; background: var(--teal-deep); position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px 40px; overflow: hidden; }
+.hero-pattern { position: absolute; inset: 0; opacity: 0.06; background-image: radial-gradient(ellipse at 20% 50%, #B06E4A 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, #435D51 0%, transparent 40%), radial-gradient(ellipse at 60% 80%, #14373C 0%, transparent 50%); }
+.topo-lines { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.topo-lines svg { width: 100%; height: 100%; opacity: 0.08; }
+.hero-badge { font-size: 10px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--copper); border: 1px solid rgba(176,110,74,0.4); padding: 8px 20px; display: inline-block; margin-bottom: 32px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
+.hero-brand { font-size: 11px; font-weight: 300; letter-spacing: 8px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 20px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s; }
+.hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(44px, 7vw, 86px); font-weight: 300; color: var(--white); line-height: 1; letter-spacing: -1px; margin-bottom: 8px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.6s; }
+.hero-title em { font-style: italic; color: var(--copper); }
+.hero-title-x { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 50px); font-weight: 300; color: rgba(255,255,255,0.25); margin-bottom: 8px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.7s; }
+.hero-title-sub { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 4.5vw, 58px); font-weight: 300; font-style: italic; color: var(--sand); margin-bottom: 40px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.8s; }
+.hero-desc { font-size: 13px; font-weight: 300; letter-spacing: 2px; color: rgba(255,255,255,0.5); max-width: 500px; line-height: 2; margin-bottom: 60px; opacity: 0; animation: fadeUp 0.8s ease forwards 1s; }
+.hero-scroll { opacity: 0; animation: fadeUp 0.8s ease forwards 1.3s; display: flex; flex-direction: column; align-items: center; gap: 10px; cursor: pointer; text-decoration: none; }
+.hero-scroll span { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+.scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, rgba(176,110,74,0.8), transparent); animation: scrollPulse 2s ease-in-out infinite; }
+
+/* UTILS */
+.section-label { font-size: 9px; font-weight: 600; letter-spacing: 5px; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; display: flex; align-items: center; gap: 16px; }
+.section-label::before { content: ''; width: 32px; height: 1px; background: var(--copper); display: inline-block; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 4.5vw, 56px); font-weight: 300; color: var(--teal-deep); line-height: 1.1; margin-bottom: 16px; }
+.section-title em { font-style: italic; color: var(--copper); }
+.section-title.light { color: var(--white); }
+
+/* INTRO */
+.intro-section { padding: 100px 40px; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.intro-text p { font-size: 15px; font-weight: 300; line-height: 2; color: var(--text-mid); margin-bottom: 20px; }
+.intro-text p strong { color: var(--teal-deep); font-weight: 600; }
+.intro-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.stat-card { background: var(--teal-deep); padding: 36px 28px; transition: transform 0.3s ease; }
+.stat-card:hover { transform: translateY(-4px); }
+.stat-card:nth-child(2) { background: var(--copper); }
+.stat-card:nth-child(3) { background: var(--teal-mid); }
+.stat-card:nth-child(4) { background: #1C464C; }
+.stat-number { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: var(--white); line-height: 1; margin-bottom: 8px; }
+.stat-label { font-size: 10px; font-weight: 300; letter-spacing: 2px; color: rgba(255,255,255,0.65); text-transform: uppercase; }
+
+/* DORES */
+.dores-section { background: var(--teal-deep); padding: 100px 0; }
+.dores-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.dores-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 60px; }
+.dore-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); padding: 40px 32px; position: relative; overflow: hidden; transition: all 0.4s ease; }
+.dore-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--copper); transition: height 0.4s ease; }
+.dore-card:hover { background: rgba(255,255,255,0.07); transform: translateY(-4px); }
+.dore-card:hover::before { height: 100%; }
+.dore-num { font-family: 'Cormorant Garamond', serif; font-size: 64px; font-weight: 300; color: rgba(176,110,74,0.2); line-height: 1; margin-bottom: 20px; }
+.dore-title { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+.dore-text { font-size: 13px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.6); }
+
+/* FASES */
+.fases-section { padding: 100px 0; background: var(--cream); }
+.fases-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.fase-wrapper { margin-top: 56px; }
+.fase-wrapper + .fase-wrapper { margin-top: 32px; }
+.fase-header { background: var(--teal-deep); padding: 36px 44px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.fase-wrapper:nth-child(2) .fase-header { background: var(--copper); }
+.fase-wrapper:nth-child(3) .fase-header { background: var(--teal-mid); }
+.fase-wrapper:nth-child(4) .fase-header { background: #1C464C; }
+.fase-tag { font-size: 9px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
+.fase-name { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: var(--white); line-height: 1.15; }
+.fase-duration { font-size: 10px; letter-spacing: 2px; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-top: 8px; }
+.fase-num-badge { font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 300; color: rgba(255,255,255,0.1); line-height: 1; flex-shrink: 0; }
+.modulos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.modulo-card { background: var(--white); overflow: hidden; }
+.modulo-head { padding: 28px 32px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; transition: background 0.3s ease; user-select: none; }
+.modulo-head:hover { background: rgba(20,55,60,0.03); }
+.modulo-head-left { display: flex; align-items: flex-start; gap: 16px; flex: 1; }
+.modulo-icon-wrap { width: 40px; height: 40px; background: var(--cream); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; border-radius: 2px; }
+.modulo-label { font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--copper); margin-bottom: 6px; }
+.modulo-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--teal-deep); line-height: 1.2; }
+.modulo-toggle { width: 28px; height: 28px; border: 1px solid rgba(20,55,60,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.3s ease; }
+.modulo-toggle svg { transition: transform 0.3s ease; }
+.modulo-card.open .modulo-toggle { background: var(--copper); border-color: var(--copper); }
+.modulo-card.open .modulo-toggle svg { transform: rotate(180deg); }
+.modulo-card.open .modulo-toggle svg path { stroke: white; }
+.modulo-chips { padding: 0 32px 24px 92px; display: flex; flex-wrap: wrap; gap: 6px; }
+.modulo-card.open .modulo-chips { display: none; }
+.chip { font-size: 11px; font-weight: 300; letter-spacing: 0.5px; color: var(--teal-mid); background: rgba(20,55,60,0.06); padding: 5px 12px; border-radius: 2px; white-space: nowrap; }
+.modulo-body { max-height: 0; overflow: hidden; transition: max-height 0.45s ease; }
+.modulo-card.open .modulo-body { max-height: 1200px; }
+.modulo-body-inner { padding: 0 36px 36px 36px; border-top: 1px solid rgba(20,55,60,0.07); padding-top: 28px; }
+.modulo-desc { font-size: 15px; font-weight: 300; line-height: 2.1; color: var(--text-mid); margin-bottom: 28px; }
+.modulo-items { list-style: none; }
+.modulo-items li { display: flex; align-items: flex-start; gap: 12px; padding: 13px 0; border-bottom: 1px solid rgba(20,55,60,0.06); font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--text-mid); }
+.modulo-items li:last-child { border-bottom: none; }
+.modulo-items li::before { content: '→'; color: var(--copper); flex-shrink: 0; font-size: 13px; margin-top: 3px; font-weight: 400; }
+.modulo-full { grid-column: 1 / -1; }
+
+/* AGENTES HIGHLIGHT */
+.agentes-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.agente-pill { background: rgba(20,55,60,0.04); border: 1px solid rgba(20,55,60,0.1); padding: 16px 20px; display: flex; flex-direction: column; gap: 4px; }
+.agente-pill-label { font-size: 8px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--copper); }
+.agente-pill-name { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 400; color: var(--teal-deep); }
+
+/* VALUE BOX — resumo rápido do valor de cada módulo */
+.value-box { background: var(--teal-deep); padding: 20px 24px; margin-bottom: 28px; border-left: 3px solid var(--copper); display: flex; align-items: flex-start; gap: 16px; }
+.value-box-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+.value-box-content {}
+.value-box-label { font-size: 8px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--copper); margin-bottom: 6px; }
+.value-box-text { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.9); line-height: 1.55; }
+
+/* CRM SECTION */
+.crm-section { background: var(--cream); padding: 100px 0; border-top: 1px solid rgba(20,55,60,0.08); }
+.crm-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.crm-context { font-size: 15px; font-weight: 300; line-height: 2; color: var(--text-mid); max-width: 800px; margin-bottom: 60px; }
+.crm-context strong { color: var(--teal-deep); font-weight: 600; }
+.crm-table-wrap { overflow-x: auto; }
+.crm-table { width: 100%; border-collapse: collapse; }
+.crm-table thead tr { background: var(--teal-deep); }
+.crm-table th { font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.7); padding: 18px 24px; text-align: left; }
+.crm-table th:first-child { color: rgba(255,255,255,0.4); }
+.crm-table tbody tr { border-bottom: 1px solid rgba(20,55,60,0.07); transition: background 0.2s ease; }
+.crm-table tbody tr:hover { background: rgba(20,55,60,0.03); }
+.crm-table tbody tr:last-child { border-bottom: none; }
+.crm-table td { padding: 18px 24px; font-size: 13px; font-weight: 300; color: var(--text-mid); vertical-align: middle; line-height: 1.6; }
+.crm-table td:first-child { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--teal-mid); background: rgba(20,55,60,0.03); border-right: 1px solid rgba(20,55,60,0.07); }
+.crm-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 400; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
+.crm-badge.bad { background: rgba(176,110,74,0.12); color: #7A4B2E; border: 1px solid rgba(176,110,74,0.25); }
+.crm-badge.good { background: rgba(67,93,81,0.12); color: #2A4A3A; border: 1px solid rgba(67,93,81,0.25); }
+.crm-badge.mid { background: rgba(20,55,60,0.08); color: var(--teal-mid); border: 1px solid rgba(20,55,60,0.15); }
+.crm-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.crm-badge.bad::before { background: var(--copper); }
+.crm-badge.good::before { background: var(--teal-mid); }
+.crm-badge.mid::before { background: #8AACB0; }
+.crm-rec { background: var(--teal-deep); padding: 40px 44px; margin-top: 2px; display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+.crm-rec-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(18px, 2vw, 22px); font-weight: 300; font-style: italic; color: rgba(255,255,255,0.85); line-height: 1.7; flex: 1; min-width: 280px; }
+.crm-rec-text em { color: var(--copper-light); font-style: normal; }
+.crm-rec-badge { background: var(--copper); padding: 20px 32px; text-align: center; flex-shrink: 0; }
+.crm-rec-badge-label { font-size: 8px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 6px; }
+.crm-rec-badge-name { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: var(--white); }
+
+/* INVESTIMENTO */
+.invest-section { background: var(--teal-deep); padding: 100px 0; }
+.invest-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.invest-table-wrap { margin-top: 60px; overflow-x: auto; }
+.invest-table { width: 100%; border-collapse: collapse; }
+.invest-table thead tr { border-bottom: 1px solid rgba(176,110,74,0.3); }
+.invest-table th { font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.35); padding: 0 28px 16px; text-align: left; }
+.invest-table th:not(:first-child) { text-align: right; }
+.invest-table td { padding: 22px 28px; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+.invest-table td:not(:first-child) { text-align: right; }
+.invest-table tbody tr:hover { background: rgba(255,255,255,0.03); }
+.invest-table tbody tr:last-child td { border-bottom: none; }
+.it-phase-badge { display: inline-block; background: rgba(176,110,74,0.18); border: 1px solid rgba(176,110,74,0.3); color: var(--copper-light); font-size: 8px; font-weight: 600; letter-spacing: 3px; padding: 3px 10px; text-transform: uppercase; margin-bottom: 6px; }
+.it-phase-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; color: var(--white); }
+.it-phase-sub { font-size: 10px; font-weight: 300; color: rgba(255,255,255,0.35); margin-top: 2px; }
+.it-price { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 300; color: var(--white); line-height: 1; }
+.it-price-sub { font-size: 10px; color: rgba(255,255,255,0.35); margin-top: 4px; }
+.it-duration { font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.5); letter-spacing: 1px; }
+.it-tbd { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.35); }
+.invest-note { font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.3); margin-top: 24px; line-height: 1.8; letter-spacing: 0.5px; }
+
+/* Cards de preço do módulo 1 */
+.invest-modulo1 { margin-top: 60px; }
+.invest-modulo1-header { background: var(--copper); padding: 28px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.invest-modulo1-tag { font-size: 9px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+.invest-modulo1-name { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; color: var(--white); margin-top: 4px; }
+.invest-modulo1-prazo { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.invest-modulo1-prazo-label { font-size: 8px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+.invest-modulo1-prazo-val { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: var(--white); }
+
+.invest-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.invest-card { background: rgba(255,255,255,0.05); padding: 36px 40px; }
+.invest-card-label { font-size: 8px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--copper); margin-bottom: 12px; }
+.invest-card-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: var(--white); margin-bottom: 20px; line-height: 1.2; }
+.invest-card-price { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: var(--white); line-height: 1; margin-bottom: 4px; }
+.invest-card-price-label { font-size: 10px; font-weight: 300; color: rgba(255,255,255,0.4); letter-spacing: 1px; margin-bottom: 24px; }
+.invest-card-includes { list-style: none; }
+.invest-card-includes li { display: flex; align-items: flex-start; gap: 10px; font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.6; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.invest-card-includes li:last-child { border-bottom: none; }
+.invest-card-includes li::before { content: '✓'; color: var(--copper); flex-shrink: 0; font-size: 11px; margin-top: 2px; font-weight: 600; }
+
+/* Combo + manutenção */
+.invest-combo { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 2px; }
+.invest-combo-total { background: var(--teal-deep); border: 1px solid rgba(176,110,74,0.3); padding: 32px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.invest-combo-total-label { font-size: 9px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--copper); margin-bottom: 8px; }
+.invest-combo-total-val { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: var(--white); line-height: 1; }
+.invest-combo-total-sub { font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.4); margin-top: 4px; }
+.invest-parcelamento { background: rgba(176,110,74,0.12); border: 1px solid rgba(176,110,74,0.25); padding: 24px 32px; }
+.invest-parcelamento-label { font-size: 8px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--copper); margin-bottom: 14px; }
+.invest-parcela { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid rgba(176,110,74,0.12); }
+.invest-parcela:last-child { border-bottom: none; }
+.invest-parcela-num { width: 24px; height: 24px; border: 1px solid rgba(176,110,74,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; color: var(--copper); flex-shrink: 0; }
+.invest-parcela-info { flex: 1; }
+.invest-parcela-momento { font-size: 10px; font-weight: 600; letter-spacing: 1px; color: rgba(255,255,255,0.7); text-transform: uppercase; }
+.invest-parcela-val { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; color: var(--white); }
+
+/* Manutenção */
+.invest-manutencao { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); padding: 32px 40px; }
+.invest-manutencao-label { font-size: 8px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 8px; }
+.invest-manutencao-price { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; color: var(--white); line-height: 1; margin-bottom: 4px; }
+.invest-manutencao-sub { font-size: 10px; color: rgba(255,255,255,0.35); margin-bottom: 20px; }
+.invest-manutencao-items { list-style: none; }
+.invest-manutencao-items li { display: flex; align-items: flex-start; gap: 8px; font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.5); padding: 5px 0; line-height: 1.5; }
+.invest-manutencao-items li::before { content: '—'; color: rgba(176,110,74,0.5); flex-shrink: 0; }
+
+/* Treinamento destaque */
+.invest-treinamento { background: var(--teal-mid); padding: 36px 40px; margin-top: 2px; display: flex; align-items: flex-start; gap: 28px; }
+.invest-treinamento-icon { font-size: 36px; flex-shrink: 0; }
+.invest-treinamento-content {}
+.invest-treinamento-badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); color: white; font-size: 8px; font-weight: 600; letter-spacing: 4px; padding: 4px 12px; text-transform: uppercase; margin-bottom: 10px; }
+.invest-treinamento-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; color: var(--white); margin-bottom: 10px; line-height: 1.2; }
+.invest-treinamento-desc { font-size: 13px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.75); }
+
+/* Módulos futuros */
+.invest-futuros { margin-top: 2px; }
+.invest-futuros-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.invest-futuro-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 28px 36px; }
+.invest-futuro-badge { font-size: 8px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(176,110,74,0.6); margin-bottom: 8px; }
+.invest-futuro-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; color: rgba(255,255,255,0.7); margin-bottom: 6px; }
+.invest-futuro-sub { font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.3); }
+.invest-futuro-tbd { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.25); margin-top: 16px; }
+
+/* APIs aviso */
+.invest-apis-aviso { background: rgba(0,0,0,0.2); border-left: 3px solid rgba(176,110,74,0.4); padding: 20px 28px; margin-top: 24px; }
+.invest-apis-aviso p { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.4); line-height: 1.8; }
+.invest-apis-aviso strong { color: rgba(255,255,255,0.6); font-weight: 400; }
+
+/* POR QUE */
+.porque-section { padding: 100px 0; background: var(--cream); }
+.porque-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.porque-statement { background: var(--teal-deep); padding: 56px; margin-top: 60px; margin-bottom: 2px; position: relative; overflow: hidden; }
+.porque-statement::before { content: '"'; font-family: 'Cormorant Garamond', serif; font-size: 220px; color: rgba(255,255,255,0.04); position: absolute; top: -20px; left: 24px; line-height: 1; }
+.porque-statement p { font-family: 'Cormorant Garamond', serif; font-size: clamp(20px, 2.5vw, 26px); font-weight: 300; font-style: italic; color: rgba(255,255,255,0.88); line-height: 1.75; max-width: 900px; position: relative; z-index: 1; }
+.porque-statement p em { color: var(--copper-light); font-style: normal; }
+.porque-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 2px; }
+.porque-card { background: var(--white); padding: 40px; position: relative; overflow: hidden; transition: all 0.4s ease; }
+.porque-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px rgba(20,55,60,0.1); }
+.porque-icon { font-size: 24px; margin-bottom: 18px; display: block; }
+.porque-card-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--teal-deep); margin-bottom: 12px; line-height: 1.2; }
+.porque-card-text { font-size: 13px; font-weight: 300; line-height: 2; color: var(--text-mid); }
+.porque-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: var(--copper); transition: width 0.4s ease; }
+.porque-card:hover::after { width: 100%; }
+
+/* CTA */
+.cta-section { padding: 120px 40px; text-align: center; background: var(--teal-deep); position: relative; overflow: hidden; }
+.cta-section::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 800px; height: 800px; border: 1px solid rgba(255,255,255,0.03); border-radius: 50%; pointer-events: none; }
+.cta-section::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 500px; height: 500px; border: 1px solid rgba(255,255,255,0.05); border-radius: 50%; pointer-events: none; }
+.cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+.cta-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(42px, 6vw, 72px); font-weight: 300; color: var(--white); line-height: 1.05; margin-bottom: 20px; }
+.cta-title em { font-style: italic; color: var(--copper); }
+.cta-text { font-size: 13px; font-weight: 300; letter-spacing: 1px; color: rgba(255,255,255,0.55); line-height: 2; margin-bottom: 64px; }
+
+/* Próximos passos verticais */
+.cta-steps-v2 { display: flex; flex-direction: column; gap: 2px; text-align: left; max-width: 800px; margin: 0 auto; }
+.cta-step-v2 { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); padding: 32px 36px; display: flex; gap: 28px; align-items: flex-start; transition: background 0.3s ease; }
+.cta-step-v2:hover { background: rgba(255,255,255,0.07); }
+.cta-step-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: rgba(176,110,74,0.35); line-height: 1; flex-shrink: 0; width: 48px; text-align: center; }
+.cta-step-body { flex: 1; }
+.cta-step-title { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--white); margin-bottom: 6px; }
+.cta-step-prazo { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--copper); background: rgba(176,110,74,0.15); border: 1px solid rgba(176,110,74,0.3); padding: 3px 10px; margin-bottom: 12px; }
+.cta-step-desc { font-size: 13px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.6); }
+
+/* FOOTER */
+.footer { background: var(--text-dark); padding: 48px 40px; display: flex; justify-content: space-between; align-items: center; }
+.footer-brand { font-size: 18px; font-weight: 200; letter-spacing: 6px; color: var(--white); text-transform: uppercase; }
+.footer-brand span { display: block; font-size: 8px; letter-spacing: 5px; color: rgba(255,255,255,0.3); margin-top: 4px; }
+.footer-date { font-size: 10px; letter-spacing: 3px; color: rgba(255,255,255,0.3); text-align: right; }
+
+/* ANIMATIONS */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes scrollPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+@media (max-width: 900px) {
+  .intro-section { grid-template-columns: 1fr; gap: 48px; }
+  .dores-grid, .modulos-grid, .porque-grid, .agentes-row { grid-template-columns: 1fr; }
+  .modulo-full { grid-column: 1; }
+  .cta-steps { flex-direction: column; align-items: center; }
+  .cta-step + .cta-step::before { display: none; }
+  .footer { flex-direction: column; gap: 20px; text-align: center; }
+  .crm-rec { flex-direction: column; gap: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-pattern"></div>
+  <div class="topo-lines">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,300 Q300,220 500,290 T900,260 T1200,300" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,500 Q300,440 500,490 T900,460 T1200,500" fill="none" stroke="white" stroke-width="0.3"/>
+      <path d="M100,600 Q400,530 600,590 T1000,560 T1300,600" fill="none" stroke="white" stroke-width="0.3"/>
+      <path d="M100,200 Q400,130 600,190 T1000,160 T1300,200" fill="none" stroke="white" stroke-width="0.3"/>
+    </svg>
+  </div>
+  <div class="hero-badge">Proposta Executiva · Março 2026</div>
+  <div class="hero-brand">NewScale Consulting</div>
+  <div class="hero-title"><em>Aplicação</em> Estratégica</div>
+  <div class="hero-title-x">de</div>
+  <div class="hero-title-sub">Inteligência Artificial</div>
+  <div class="hero-desc">Uma proposta construída a partir da sua realidade — não um cardápio genérico, mas um plano desenhado para a Mais Internet operar em outro nível.</div>
+  <a href="#contexto" class="hero-scroll"><span>Explorar</span><div class="scroll-line"></div></a>
+</div>
+
+<!-- CONTEXTO -->
+<div id="contexto">
+  <div class="intro-section">
+    <div class="intro-text reveal">
+      <div class="section-label">O Contexto</div>
+      <h2 class="section-title">Uma operação que já funciona — e pode ir <em>muito além</em></h2>
+      <p>Davi, a Mais Internet tem <strong>2.000 clientes ativos</strong>, uma equipe de campo rodando diariamente e 4 atendentes respondendo o WhatsApp o dia inteiro. A operação funciona — mas ela ainda depende muito da memória e do esforço individual de cada pessoa do time.</p>
+      <p>O que se abre agora é a oportunidade de usar a inteligência artificial para <strong>automatizar o que é repetitivo</strong>, <strong>registrar o que hoje se perde</strong> e <strong>dar visibilidade ao que está invisível</strong> — sem complicar a vida de ninguém.</p>
+      <p>A proposta a seguir parte do que a Mais Internet já tem construído para levá-la a um novo patamar de eficiência, controle e qualidade de atendimento.</p>
+    </div>
+    <div class="intro-stats reveal reveal-delay-2">
+      <div class="stat-card"><div class="stat-number">2.000</div><div class="stat-label">Clientes ativos</div></div>
+      <div class="stat-card"><div class="stat-number">60+</div><div class="stat-label">Atendimentos por dia no WhatsApp</div></div>
+      <div class="stat-card"><div class="stat-number">6</div><div class="stat-label">Carros no campo todo dia</div></div>
+      <div class="stat-card"><div class="stat-number">70%</div><div class="stat-label">Das dúvidas são repetitivas e automatizáveis</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- DORES -->
+<div class="dores-section">
+  <div class="dores-inner">
+    <div class="section-label reveal">O que identificamos</div>
+    <h2 class="section-title light reveal">6 pontos onde a IA vai<br><em>liberar tempo e dinheiro</em></h2>
+    <div class="dores-grid">
+      <div class="dore-card reveal reveal-delay-1">
+        <div class="dore-num">01</div>
+        <div class="dore-title">Atendimento 100% manual</div>
+        <div class="dore-text">4 atendentes respondendo ~60 mensagens por dia com perguntas que se repetem toda semana. Boleto, Pix, cabo errado, reiniciar o equipamento — trabalho humano gasto em tarefa de robô.</div>
+      </div>
+      <div class="dore-card reveal reveal-delay-2">
+        <div class="dore-num">02</div>
+        <div class="dore-title">WhatsApp em risco constante</div>
+        <div class="dore-text">Disparos ativos de cobrança pelo mesmo número que recebe suporte. Resultado: bloqueio recorrente pela Meta e instabilidade no canal principal de contato com 2.000 clientes.</div>
+      </div>
+      <div class="dore-card reveal reveal-delay-3">
+        <div class="dore-num">03</div>
+        <div class="dore-title">Combustível no achismo</div>
+        <div class="dore-text">Controle feito numa planilha que depende de alguém lembrar de preencher. Sem foto, sem quilometragem, sem rastreamento. Impossível saber se há desperdício ou desvio.</div>
+      </div>
+      <div class="dore-card reveal reveal-delay-1">
+        <div class="dore-num">04</div>
+        <div class="dore-title">Qualidade de campo invisível</div>
+        <div class="dore-text">Sem checklist estruturado, sem pesquisa de satisfação pós-visita, sem rastreamento de produtividade por técnico. Não dá para saber quem está atendendo bem ou mal.</div>
+      </div>
+      <div class="dore-card reveal reveal-delay-2">
+        <div class="dore-num">05</div>
+        <div class="dore-title">Nenhuma inteligência sobre os dados</div>
+        <div class="dore-text">Sem dashboard integrado, você não sabe taxa de resolutividade, tempo médio de atendimento ou volume por região. Você age só quando o problema já virou crise.</div>
+      </div>
+      <div class="dore-card reveal reveal-delay-3">
+        <div class="dore-num">06</div>
+        <div class="dore-title">CRM limitado travando o futuro</div>
+        <div class="dore-text">A API do Gesprov é tão restrita que impede integrações relevantes. Sem API aberta, não há como verificar sinal, integrar TR-069 ou automatizar de verdade.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FASES -->
+<div class="fases-section">
+  <div class="fases-inner">
+    <div class="section-label reveal">A Proposta</div>
+    <h2 class="section-title reveal">Estruturada em 3 módulos.<br><em>Cada um com resultado próprio.</em></h2>
+    <p class="reveal" style="font-size:13px;font-weight:300;color:var(--text-mid);line-height:2;max-width:640px;margin-top:8px;">Clique em cada módulo para ver os detalhes das entregas.</p>
+
+    <!-- MÓDULO 1 -->
+    <div class="fase-wrapper reveal">
+      <div class="fase-header">
+        <div>
+          <div class="fase-tag">Módulo 1 · Início imediato</div>
+          <div class="fase-name">Agentes de Atendimento ao Cliente + Controle de Frota</div>
+          <div class="fase-duration">WhatsApp + Telegram · Resultado visível em semanas</div>
+        </div>
+        <div class="fase-num-badge">1</div>
+      </div>
+      <div class="modulos-grid">
+
+        <!-- 1A -->
+        <div class="modulo-card modulo-full" onclick="toggleModulo(this)">
+          <div class="modulo-head">
+            <div class="modulo-head-left">
+              <div class="modulo-icon-wrap">💬</div>
+              <div class="modulo-head-text">
+                <div class="modulo-label">Módulo 1A</div>
+                <div class="modulo-title">3 Agentes de Atendimento no WhatsApp</div>
+              </div>
+            </div>
+            <div class="modulo-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="#2C4A4E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="modulo-chips">
+            <span class="chip">API oficial WhatsApp</span>
+            <span class="chip">Agente de Suporte Técnico</span>
+            <span class="chip">Agente Financeiro + Cobrança</span>
+            <span class="chip">Agente de Vendas</span>
+            <span class="chip">Texto, áudio e foto</span>
+            <span class="chip">24h por dia</span>
+          </div>
+          <div class="modulo-body">
+            <div class="modulo-body-inner">
+              <div class="value-box">
+                <div class="value-box-icon">⚡</div>
+                <div class="value-box-content">
+                  <div class="value-box-label">O que isso resolve</div>
+                  <div class="value-box-text">Seus 4 atendentes param de responder boleto e cabo — e passam a tratar só o que realmente precisa de gente. O WhatsApp nunca mais trava por bloqueio da Meta.</div>
+                </div>
+              </div>
+              <p class="modulo-desc">Imagine seus 4 atendentes parando de responder boleto e cabo — e passando a tratar só o que realmente precisa de um ser humano. Um agente roteador inteligente recebe tudo, entende a intenção do cliente em segundos e direciona para o especialista certo. Via API oficial da Meta — sem risco de bloqueio, sem interrupção.</p>
+              <div class="agentes-row" style="margin-bottom: 28px;">
+                <div class="agente-pill"><div class="agente-pill-label">Agente 1</div><div class="agente-pill-name">Suporte Técnico</div></div>
+                <div class="agente-pill"><div class="agente-pill-label">Agente 2</div><div class="agente-pill-name">Financeiro + Cobrança</div></div>
+                <div class="agente-pill"><div class="agente-pill-label">Agente 3</div><div class="agente-pill-name">Vendas e Conversão</div></div>
+              </div>
+              <ul class="modulo-items">
+                <li><strong>Suporte Técnico:</strong> o agente pede foto do equipamento, identifica o problema (cabo trocado, luz apagada, sinal fraco), guia o reset e só abre OS quando não resolve remotamente — o atendente humano recebe o caso com contexto completo, sem o cliente repetir nada</li>
+                <li><strong>Financeiro + Cobrança:</strong> envia segunda via e QR Code Pix na hora, dispara régua automática antes do vencimento, aciona régua de recuperação de inadimplência com escalonamento progressivo até o bloqueio — tudo dentro das regras que você definir, sem intervenção manual</li>
+                <li><strong>Vendas e Conversão:</strong> responde o lead que está flertando com a contratação, quebra objeções em tempo real, apresenta os planos de forma persuasiva e encaminha para o fechamento — capturando receita que hoje escapa por falta de resposta rápida</li>
+                <li>Dois números separados: um só receptivo (nunca dispara, nunca é bloqueado) e um para campanhas de cobrança e marketing — o canal principal fica protegido para sempre</li>
+                <li>Entende áudio transcrito e lê imagens — o cliente manda voz ou foto e é atendido sem fricção, exatamente como prefere</li>
+                <li>Queda de região? Os 200 clientes que entram ao mesmo tempo recebem resposta contextualizada em segundos — o time fica livre para resolver o problema, não para apagar incêndio no WhatsApp</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1B -->
+        <div class="modulo-card modulo-full" onclick="toggleModulo(this)">
+          <div class="modulo-head">
+            <div class="modulo-head-left">
+              <div class="modulo-icon-wrap">🚗</div>
+              <div class="modulo-head-text">
+                <div class="modulo-label">Módulo 1B</div>
+                <div class="modulo-title">Monitoramento de Frota e Combustível via Telegram</div>
+              </div>
+            </div>
+            <div class="modulo-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="#2C4A4E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="modulo-chips">
+            <span class="chip">Integração com rastreador (se disponível)</span>
+            <span class="chip">Ou localização em tempo real pelo Telegram</span>
+            <span class="chip">Cruzamento com OS do dia</span>
+            <span class="chip">Alertas de inconsistência apenas</span>
+            <span class="chip">Registro de combustível por foto</span>
+          </div>
+          <div class="modulo-body">
+            <div class="modulo-body-inner">
+              <div class="value-box">
+                <div class="value-box-icon">🎯</div>
+                <div class="value-box-content">
+                  <div class="value-box-label">O que isso resolve</div>
+                  <div class="value-box-text">Fim do controle de combustível no achismo. Você sabe exatamente quanto cada carro gasta, onde cada técnico esteve e se o itinerário bate com as OS — sem precisar perguntar para ninguém.</div>
+                </div>
+              </div>
+              <p class="modulo-desc">Chega de planilha que depende de alguém lembrar de preencher. A IA monitora os itinerários dos seus técnicos, cruza com as ordens de serviço do dia e só aparece quando algo não fecha — sem gerar ruído desnecessário e sem mudar a rotina de quem está no campo.</p>
+              <ul class="modulo-items">
+                <li><strong>Opção A — com rastreador:</strong> a IA lê o itinerário diretamente do GPS, cruza com as OS e o gasto de combustível de forma completamente silenciosa — o técnico não precisa fazer nada além do seu trabalho</li>
+                <li><strong>Opção B — sem rastreador:</strong> técnico mantém localização ativa no Telegram durante o horário útil (um gesto, 10 segundos) — a IA faz o mesmo cruzamento e só emite alerta se algo não bater</li>
+                <li>Abasteceu? Tira foto do comprovante, manda no Telegram — o sistema lê o valor via OCR e registra na hora, sem formulário, sem digitação</li>
+                <li>Foto do painel do carro registra a quilometragem automaticamente — fim do controle manual de KM</li>
+                <li>Planilha em tempo real: custo de combustível por carro, por técnico, por mês — você abre e a informação está lá, completa e confiável</li>
+                <li>Alertas inteligentes: consumo fora da média do veículo, abastecimento sem KM registrada, itinerário incompatível com as OS do dia — você só é acionado quando há algo real para investigar</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MÓDULO 2 -->
+    <div class="fase-wrapper reveal">
+      <div class="fase-header">
+        <div>
+          <div class="fase-tag">Módulo 2 · Após Módulo 1</div>
+          <div class="fase-name">Qualidade de Campo + Pesquisa de Satisfação</div>
+          <div class="fase-duration">Telegram · Playbook digital + NPS automatizado</div>
+        </div>
+        <div class="fase-num-badge">2</div>
+      </div>
+      <div class="modulos-grid">
+
+        <!-- 2A -->
+        <div class="modulo-card" onclick="toggleModulo(this)">
+          <div class="modulo-head">
+            <div class="modulo-head-left">
+              <div class="modulo-icon-wrap">🔧</div>
+              <div class="modulo-head-text">
+                <div class="modulo-label">Módulo 2A</div>
+                <div class="modulo-title">Agente de Qualidade Técnica via Telegram</div>
+              </div>
+            </div>
+            <div class="modulo-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="#2C4A4E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="modulo-chips">
+            <span class="chip">Playbook passo a passo</span>
+            <span class="chip">Checklist guiado por áudio</span>
+            <span class="chip">Preenchimento automático do CRM</span>
+            <span class="chip">Fechamento automático do ticket</span>
+          </div>
+          <div class="modulo-body">
+            <div class="modulo-body-inner">
+              <div class="value-box">
+                <div class="value-box-icon">📋</div>
+                <div class="value-box-content">
+                  <div class="value-box-label">O que isso resolve</div>
+                  <div class="value-box-text">Cada técnico passa a seguir o mesmo protocolo, em todo atendimento, sem que você precise cobrar. O CRM se preenche sozinho. O checklist não depende mais de memória.</div>
+                </div>
+              </div>
+              <p class="modulo-desc">Todo técnico chega numa OS e faz do seu jeito. Com esse agente, isso muda — sem precisar cobrar ninguém. O próprio Telegram guia o técnico pelo playbook da Mais Internet, pergunta a pergunta, e preenche o CRM automaticamente enquanto ele trabalha.</p>
+              <ul class="modulo-items">
+                <li>Técnico chega na OS, informa o código no Telegram — o agente já sabe qual é o tipo de atendimento e entrega o checklist exato da empresa para aquela situação</li>
+                <li>Técnico responde por áudio a cada etapa, do jeito mais natural possível — a IA transcreve, interpreta e preenche o CRM sem ele precisar tocar em nenhum campo</li>
+                <li>Garante padronização total: o mesmo protocolo, seguido por todos os técnicos, em todos os atendimentos — independente da experiência de cada um</li>
+                <li>Ao finalizar o checklist, o técnico fecha o ticket com um comando — isso aciona automaticamente a pesquisa de satisfação para o cliente, sem nenhuma ação extra</li>
+                <li>Técnico novo na empresa? Em horas ele já está operando com todo o conhecimento técnico da Mais Internet na palma da mão — onboarding que antes levava semanas</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2B -->
+        <div class="modulo-card" onclick="toggleModulo(this)">
+          <div class="modulo-head">
+            <div class="modulo-head-left">
+              <div class="modulo-icon-wrap">⭐</div>
+              <div class="modulo-head-text">
+                <div class="modulo-label">Módulo 2B</div>
+                <div class="modulo-title">Pesquisa de Satisfação Pós-Visita</div>
+              </div>
+            </div>
+            <div class="modulo-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="#2C4A4E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="modulo-chips">
+            <span class="chip">Disparo automático 20min após a visita</span>
+            <span class="chip">NPS por técnico</span>
+            <span class="chip">Ranking de desempenho</span>
+            <span class="chip">Base para promoção e plano de carreira</span>
+          </div>
+          <div class="modulo-body">
+            <div class="modulo-body-inner">
+              <div class="value-box">
+                <div class="value-box-icon">⭐</div>
+                <div class="value-box-content">
+                  <div class="value-box-label">O que isso resolve</div>
+                  <div class="value-box-text">Você passa a saber, com dados reais, quem está atendendo bem e quem não está. Decisões de promoção, treinamento e bonificação deixam de ser baseadas em percepção.</div>
+                </div>
+              </div>
+              <p class="modulo-desc">Você tem 6 técnicos no campo todo dia — mas sabe quem está atendendo bem? Com a pesquisa automatizada, você passa a ter dados reais de satisfação por técnico, construídos atendimento a atendimento, sem esforço nenhum da sua parte.</p>
+              <ul class="modulo-items">
+                <li>20 minutos após o técnico fechar o ticket, o cliente recebe uma pesquisa rápida no WhatsApp — no melhor momento, quando a memória ainda está fresca</li>
+                <li>Perguntas curtas e diretas, resposta com um toque — a taxa de resposta é alta porque é fácil demais não responder</li>
+                <li>Dados acumulados por técnico: nota média, volume de atendimentos, evolução ao longo do tempo — tudo num painel, sem você precisar pedir relatório para ninguém</li>
+                <li>Ranking claro: quem está se destacando, quem precisa de suporte, quem está pronto para uma promoção — decisões de RH baseadas em número, não em percepção</li>
+                <li>Bônus de desempenho, plano de carreira, reconhecimento público — tudo isso vira possível quando você tem a base de dados para sustentar</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MÓDULO 3 -->
+    <div class="fase-wrapper reveal">
+      <div class="fase-header" style="background:var(--teal-mid)">
+        <div>
+          <div class="fase-tag">Módulo 3 · Após Módulos 1 e 2</div>
+          <div class="fase-name">Monitoramento de Sinal + Dashboard Executivo</div>
+          <div class="fase-duration">Antecipação de problemas · Visão 360 da operação</div>
+        </div>
+        <div class="fase-num-badge">3</div>
+      </div>
+      <div class="modulos-grid">
+
+        <!-- 3A -->
+        <div class="modulo-card" onclick="toggleModulo(this)">
+          <div class="modulo-head">
+            <div class="modulo-head-left">
+              <div class="modulo-icon-wrap">📡</div>
+              <div class="modulo-head-text">
+                <div class="modulo-label">Módulo 3A</div>
+                <div class="modulo-title">Agente de Monitoramento de Sinal</div>
+              </div>
+            </div>
+            <div class="modulo-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="#2C4A4E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="modulo-chips">
+            <span class="chip">Leitura contínua de dados de sinal</span>
+            <span class="chip">Identificação de padrão antes do problema</span>
+            <span class="chip">Alerta proativo para equipe técnica</span>
+            <span class="chip">Redução de volume de reclamações</span>
+          </div>
+          <div class="modulo-body">
+            <div class="modulo-body-inner">
+              <div class="value-box">
+                <div class="value-box-icon">📡</div>
+                <div class="value-box-content">
+                  <div class="value-box-label">O que isso resolve</div>
+                  <div class="value-box-text">Você deixa de descobrir que a rede caiu quando o WhatsApp explode. A equipe técnica já está atuando antes que o primeiro cliente perceba qualquer problema.</div>
+                </div>
+              </div>
+              <p class="modulo-desc">Hoje você só descobre que a rede caiu quando o WhatsApp explode. Com esse agente, a equipe técnica já está atuando antes que o primeiro cliente perceba. É a diferença entre apagar incêndio e evitar que ele comece.</p>
+              <ul class="modulo-items">
+                <li>A IA lê os dados de sinal das regiões atendidas o dia inteiro, sem parar — detecta degradação horas antes de virar queda total</li>
+                <li>Quando identifica um padrão de problema, levanta a mão imediatamente para o responsável técnico com localização e natureza do que está acontecendo</li>
+                <li>A equipe chega para resolver antes que o cliente perceba — o pico de 200 mensagens simultâneas deixa de existir</li>
+                <li>Menos reclamação, menos churn, mais confiança: o cliente que nunca viu a internet cair tem muito menos motivo para trocar de provedor</li>
+                <li>Escopo exato definido após mapeamento da infraestrutura da Mais Internet — funciona independente se a rede é via antena, fibra ou satélite</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3B -->
+        <div class="modulo-card" onclick="toggleModulo(this)">
+          <div class="modulo-head">
+            <div class="modulo-head-left">
+              <div class="modulo-icon-wrap">📊</div>
+              <div class="modulo-head-text">
+                <div class="modulo-label">Módulo 3B</div>
+                <div class="modulo-title">Dashboard Executivo de Operações</div>
+              </div>
+            </div>
+            <div class="modulo-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="#2C4A4E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="modulo-chips">
+            <span class="chip">Volume de atendimento do mês</span>
+            <span class="chip">Tempo médio de atendimento</span>
+            <span class="chip">Taxa de resolutividade</span>
+            <span class="chip">Desempenho por técnico</span>
+            <span class="chip">Qualidade de sinal por região</span>
+          </div>
+          <div class="modulo-body">
+            <div class="modulo-body-inner">
+              <div class="value-box">
+                <div class="value-box-icon">📊</div>
+                <div class="value-box-content">
+                  <div class="value-box-label">O que isso resolve</div>
+                  <div class="value-box-text">Você para de abrir sistema por sistema tentando entender o que está acontecendo. Toda a operação — atendimento, campo, frota, sinal e financeiro — num painel único, em tempo real.</div>
+                </div>
+              </div>
+              <p class="modulo-desc">Tudo que foi construído nos Módulos 1 e 2 vira leitura visual num painel único. Você para de abrir sistema por sistema para tentar entender o que está acontecendo — e passa a tomar decisões com clareza, em segundos.</p>
+              <ul class="modulo-items">
+                <li><strong>Atendimento:</strong> volume mensal, tempo médio de resposta, taxa de resolução sem humano, top motivos de chamado — você sabe onde a operação está forte e onde precisa de atenção</li>
+                <li><strong>Campo:</strong> atendimentos por técnico, tempo médio de visita, nota de satisfação, taxa de resolução na primeira visita — performance individual visível, sem achismo</li>
+                <li><strong>Frota:</strong> KM rodados, custo de combustível por carro e por técnico, histórico de abastecimentos — controle real de custo operacional de campo</li>
+                <li><strong>Sinal:</strong> qualidade por região, histórico de instabilidades, correlação entre degradação de sinal e aumento de chamados — inteligência que nenhum concorrente regional tem</li>
+                <li><strong>Financeiro:</strong> inadimplência atual, recuperação via régua automática, bloqueios do mês — o fluxo de caixa em tempo real, sem depender de relatório manual</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CRM COMPARATIVO -->
+<div class="crm-section">
+  <div class="crm-inner">
+    <div class="section-label reveal">Recomendação de CRM</div>
+    <h2 class="section-title reveal">A fundação que faz<br><em>tudo isso funcionar</em></h2>
+    <p class="crm-context reveal">Davi, todas as automações acima dependem de uma coisa: <strong>API aberta no CRM.</strong> O Gesprov atual tem apenas 8 endpoints — sem acesso a sinal, sem provisionamento, sem integração real. Antes de escalar, vale resolver essa base. Mapeamos as três principais alternativas do mercado de provedores.</p>
+
+    <div class="crm-table-wrap reveal">
+      <table class="crm-table">
+        <thead>
+          <tr>
+            <th>Critério</th>
+            <th>Gesprov <span style="opacity:0.5;font-weight:300">(atual)</span></th>
+            <th>SGP</th>
+            <th>IXCSOFT</th>
+            <th>MK-AUTH</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>API aberta</td>
+            <td><span class="crm-badge bad">Muito limitada — 8 endpoints</span></td>
+            <td><span class="crm-badge good">Completa e documentada</span></td>
+            <td><span class="crm-badge good">Completa e documentada</span></td>
+            <td><span class="crm-badge mid">Parcial</span></td>
+          </tr>
+          <tr>
+            <td>Leitura de sinal</td>
+            <td><span class="crm-badge bad">Não disponível</span></td>
+            <td><span class="crm-badge good">Disponível via API</span></td>
+            <td><span class="crm-badge good">Disponível via API</span></td>
+            <td><span class="crm-badge bad">Não disponível</span></td>
+          </tr>
+          <tr>
+            <td>Integração TR-069</td>
+            <td><span class="crm-badge bad">Não disponível</span></td>
+            <td><span class="crm-badge good">Nativa</span></td>
+            <td><span class="crm-badge good">Nativa</span></td>
+            <td><span class="crm-badge mid">Parcial</span></td>
+          </tr>
+          <tr>
+            <td>Integração Mikrotik</td>
+            <td><span class="crm-badge bad">Não disponível</span></td>
+            <td><span class="crm-badge good">Nativa</span></td>
+            <td><span class="crm-badge good">Nativa</span></td>
+            <td><span class="crm-badge good">Nativa</span></td>
+          </tr>
+          <tr>
+            <td>Geração de OS via API</td>
+            <td><span class="crm-badge mid">Básica</span></td>
+            <td><span class="crm-badge good">Completa</span></td>
+            <td><span class="crm-badge good">Completa</span></td>
+            <td><span class="crm-badge mid">Parcial</span></td>
+          </tr>
+          <tr>
+            <td>Bloquio / desbloqueio via API</td>
+            <td><span class="crm-badge good">Disponível</span></td>
+            <td><span class="crm-badge good">Disponível</span></td>
+            <td><span class="crm-badge good">Disponível</span></td>
+            <td><span class="crm-badge good">Disponível</span></td>
+          </tr>
+          <tr>
+            <td>Suporte ativo ao produto</td>
+            <td><span class="crm-badge bad">Aparentemente abandonado</span></td>
+            <td><span class="crm-badge good">Ativo</span></td>
+            <td><span class="crm-badge good">Ativo</span></td>
+            <td><span class="crm-badge mid">Comunidade</span></td>
+          </tr>
+          <tr>
+            <td>Custo estimado mensal</td>
+            <td><span class="crm-badge mid">~R$ 200–400</span></td>
+            <td><span class="crm-badge mid">~R$ 400–800</span></td>
+            <td><span class="crm-badge mid">~R$ 500–900</span></td>
+            <td><span class="crm-badge good">~R$ 150–300</span></td>
+          </tr>
+          <tr>
+            <td>Complexidade de migração</td>
+            <td>—</td>
+            <td><span class="crm-badge mid">Média — você já está negociando</span></td>
+            <td><span class="crm-badge mid">Média-alta</span></td>
+            <td><span class="crm-badge good">Baixa</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="crm-rec reveal">
+      <p class="crm-rec-text">Nossa recomendação é seguir com a migração para o <em>SGP</em> — você já está em negociação, a API é completa, a integração com TR-069 e Mikrotik é nativa, e o suporte ao produto é ativo. Com ele, desbloqueamos os Módulos 2 e 3 sem limitação.</p>
+      <div class="crm-rec-badge">
+        <div class="crm-rec-badge-label">Recomendado</div>
+        <div class="crm-rec-badge-name">SGP</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- INVESTIMENTO -->
+<div class="invest-section">
+  <div class="invest-inner">
+    <div class="section-label reveal">Investimento</div>
+    <h2 class="section-title light reveal">Condições claras,<br><em>sem surpresas no caminho.</em></h2>
+
+    <!-- MÓDULO 1 — preços definidos -->
+    <div class="invest-modulo1 reveal">
+      <div class="invest-modulo1-header">
+        <div>
+          <div class="invest-modulo1-tag">Módulo 1 · Disponível agora</div>
+          <div class="invest-modulo1-name">Agentes de Atendimento + Controle de Frota</div>
+        </div>
+        <div class="invest-modulo1-prazo">
+          <div class="invest-modulo1-prazo-label">Prazo de entrega</div>
+          <div class="invest-modulo1-prazo-val">4 a 6 semanas</div>
+        </div>
+      </div>
+
+      <!-- Cards 1A e 1B -->
+      <div class="invest-cards">
+        <div class="invest-card">
+          <div class="invest-card-label">Módulo 1A</div>
+          <div class="invest-card-name">3 Agentes de Atendimento no WhatsApp</div>
+          <div class="invest-card-price">R$ 15.000</div>
+          <div class="invest-card-price-label">Implementação</div>
+          <ul class="invest-card-includes">
+            <li>Integração via API Oficial do WhatsApp Business (Meta) — sem risco de bloqueio</li>
+            <li>Agente de Suporte Técnico com diagnóstico por foto, reset guiado e abertura de OS</li>
+            <li>Agente Financeiro com régua de cobrança, segunda via, Pix e liberação em confiança</li>
+            <li>Agente de Vendas com quebra de objeções e qualificação de leads</li>
+            <li>Roteador inteligente de intenções — direciona cada cliente para o agente certo</li>
+            <li>Configuração de dois números (receptivo + disparo) para proteger o canal principal</li>
+            <li>Prompts e regras de negócio 100% personalizados para a Mais Internet</li>
+            <li>Testes completos antes do lançamento</li>
+          </ul>
+        </div>
+        <div class="invest-card">
+          <div class="invest-card-label">Módulo 1B</div>
+          <div class="invest-card-name">Gestão de Frota e Combustível via Telegram</div>
+          <div class="invest-card-price">R$ 12.000</div>
+          <div class="invest-card-price-sub">Implementação</div>
+          <div class="invest-card-price-label" style="margin-top:4px;">Implementação</div>
+          <ul class="invest-card-includes">
+            <li>Bot no Telegram para os 6 carros da equipe de campo</li>
+            <li>Registro de abastecimento via foto do comprovante com leitura OCR automática</li>
+            <li>Registro de quilometragem via foto do painel</li>
+            <li>Cruzamento de itinerário com ordens de serviço do dia</li>
+            <li>Integração com rastreador GPS (se disponível) ou localização via Telegram</li>
+            <li>Alertas automáticos de inconsistência — consumo fora da média, itinerário incompatível</li>
+            <li>Planilha Google Sheets em tempo real por carro e por técnico</li>
+            <li>Log estruturado de atendimentos técnicos por OS</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Total combo + parcelamento + manutenção -->
+      <div class="invest-combo">
+        <div class="invest-combo-total">
+          <div>
+            <div class="invest-combo-total-label">Total Módulo 1 — Combo</div>
+            <div class="invest-combo-total-val">R$ 27.000</div>
+            <div class="invest-combo-total-sub">Módulo 1A + Módulo 1B</div>
+          </div>
+        </div>
+        <div class="invest-parcelamento">
+          <div class="invest-parcelamento-label">Forma de Pagamento — 3 parcelas</div>
+          <div class="invest-parcela">
+            <div class="invest-parcela-num">1</div>
+            <div class="invest-parcela-info">
+              <div class="invest-parcela-momento">Ato — Assinatura do contrato</div>
+              <div class="invest-parcela-val">R$ 9.000</div>
+            </div>
+          </div>
+          <div class="invest-parcela">
+            <div class="invest-parcela-num">2</div>
+            <div class="invest-parcela-info">
+              <div class="invest-parcela-momento">Meio do projeto — Semana 3</div>
+              <div class="invest-parcela-val">R$ 9.000</div>
+            </div>
+          </div>
+          <div class="invest-parcela">
+            <div class="invest-parcela-num">3</div>
+            <div class="invest-parcela-info">
+              <div class="invest-parcela-momento">Entrega — Go-live aprovado</div>
+              <div class="invest-parcela-val">R$ 9.000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Manutenção mensal -->
+      <div class="invest-cards" style="margin-top:2px;">
+        <div class="invest-manutencao">
+          <div class="invest-manutencao-label">Manutenção Mensal — Combo Módulo 1</div>
+          <div class="invest-manutencao-price">R$ 2.800</div>
+          <div class="invest-manutencao-sub">por mês · após o go-live</div>
+          <ul class="invest-manutencao-items">
+            <li>Monitoramento contínuo de todos os agentes e fluxos</li>
+            <li>Ajustes de prompts, regras e comportamentos conforme necessidade</li>
+            <li>Atualização da base de conhecimento técnico e comercial</li>
+            <li>Suporte técnico prioritário via WhatsApp</li>
+            <li>Relatório mensal de performance dos agentes</li>
+            <li>Otimização de custos de API — garantindo o menor consumo possível</li>
+          </ul>
+        </div>
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 28px 36px; display: flex; flex-direction: column; justify-content: center; gap: 16px;">
+          <div style="font-size:9px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:rgba(176,110,74,0.7);">Resumo financeiro</div>
+          <div>
+            <div style="font-size:11px;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:4px;">Implementação total</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--white);">R$ 27.000</div>
+          </div>
+          <div style="width:100%;height:1px;background:rgba(255,255,255,0.06);"></div>
+          <div>
+            <div style="font-size:11px;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:4px;">Manutenção mensal</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--white);">R$ 2.800<span style="font-size:14px;color:rgba(255,255,255,0.3);font-family:'Josefin Sans',sans-serif;font-weight:300;">/mês</span></div>
+          </div>
+          <div style="width:100%;height:1px;background:rgba(255,255,255,0.06);"></div>
+          <div>
+            <div style="font-size:11px;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:4px;">Prazo de entrega</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--copper);">4 a 6 semanas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TREINAMENTO EM DESTAQUE -->
+    <div class="invest-treinamento reveal">
+      <div class="invest-treinamento-icon">🎓</div>
+      <div class="invest-treinamento-content">
+        <div class="invest-treinamento-badge">Incluso em todos os módulos</div>
+        <div class="invest-treinamento-title">Treinamento completo para toda a sua equipe</div>
+        <div class="invest-treinamento-desc">Não entregamos um sistema e sumimos. Antes do go-live, treinamos pessoalmente atendentes, técnicos de campo e gestores — mostrando como acompanhar as conversas, como escalar para humano quando necessário, como ajustar as respostas e como extrair o máximo de cada automação. Você e sua equipe saem confiantes para operar de forma autônoma.</div>
+      </div>
+    </div>
+
+    <!-- MÓDULOS FUTUROS -->
+    <div class="invest-futuros reveal" style="margin-top:40px;">
+      <div style="font-size:9px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:16px;display:flex;align-items:center;gap:16px;"><span style="width:32px;height:1px;background:rgba(255,255,255,0.2);display:inline-block;"></span>Próximos módulos</div>
+      <div class="invest-futuros-grid">
+        <div class="invest-futuro-card">
+          <div class="invest-futuro-badge">Módulo 2</div>
+          <div class="invest-futuro-name">Qualidade de Campo + Pesquisa de Satisfação</div>
+          <div class="invest-futuro-sub">Após conclusão do Módulo 1</div>
+          <div class="invest-futuro-tbd">A orçar</div>
+        </div>
+        <div class="invest-futuro-card">
+          <div class="invest-futuro-badge">Módulo 3</div>
+          <div class="invest-futuro-name">Monitoramento de Sinal + Dashboard Executivo</div>
+          <div class="invest-futuro-sub">Após Módulo 2 · Requer novo CRM com API aberta</div>
+          <div class="invest-futuro-tbd">A orçar</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AVISO APIs -->
+    <div class="invest-apis-aviso reveal">
+      <p><strong>Importante:</strong> os custos de APIs externas não estão inclusos nesta proposta e são pagos diretamente pelo contratante. Isso inclui a API oficial do WhatsApp Business (Meta), os modelos de linguagem da OpenAI e a hospedagem do N8N. Estimativa de custo operacional mensal: <strong>R$ 400–800</strong> dependendo do volume de uso — valores que a NewScale ajuda a otimizar continuamente dentro do escopo de manutenção.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- POR QUE NEWSCALE -->
+<div class="porque-section">
+  <div class="porque-inner">
+    <div class="section-label reveal">Por que a NewScale</div>
+    <h2 class="section-title reveal">Não é só tecnologia.<br>É alguém que já <em>errou os erros</em><br>para que você não precise.</h2>
+    <div class="porque-statement reveal">
+      <p>Cada projeto começa com um <em>mergulho real na sua operação</em> — entender como funciona o atendimento hoje, qual é o tom de voz da empresa, quais são as regras de negócio, o que a equipe precisa. Só depois a gente constrói. E depois que entrega, <em>a gente fica — otimizando, ajustando, evoluindo</em> junto com o seu negócio.</p>
+    </div>
+    <div class="porque-grid">
+      <div class="porque-card reveal">
+        <span class="porque-icon">🔍</span>
+        <div class="porque-card-title">Entendimento real antes de qualquer linha de código</div>
+        <p class="porque-card-text">Converso com sua equipe, mapeio o atendimento hoje, entendo as regras e só então construo. O agente que vai atender seus clientes é feito para a Mais Internet — não um template genérico com o nome trocado.</p>
+      </div>
+      <div class="porque-card reveal reveal-delay-2">
+        <span class="porque-icon">⚙️</span>
+        <div class="porque-card-title">Entrego rodando, não em papel</div>
+        <p class="porque-card-text">Não entrego diagnóstico e saio. Construo, testo com você, treino a equipe e acompanho o lançamento. Você vê funcionando — não só ouve a apresentação.</p>
+      </div>
+      <div class="porque-card reveal reveal-delay-1">
+        <span class="porque-icon">📈</span>
+        <div class="porque-card-title">Continuo após o lançamento</div>
+        <p class="porque-card-text">IA não é projeto com começo, meio e fim. Os modelos evoluem, a operação muda, surgem novas necessidades. A manutenção garante que o sistema continue funcionando bem — e melhorando com o tempo.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-inner" style="max-width:900px;">
+    <div class="section-label reveal" style="justify-content:center;color:rgba(176,110,74,0.7)">Próximos Passos</div>
+    <h2 class="cta-title reveal">Como a gente <em>vai entregar</em></h2>
+    <p class="cta-text reveal">Um processo estruturado, transparente e sem surpresas — do primeiro alinhamento até a operação rodando de forma autônoma.</p>
+
+    <div class="cta-steps-v2 reveal">
+
+      <div class="cta-step-v2">
+        <div class="cta-step-num">1</div>
+        <div class="cta-step-body">
+          <div class="cta-step-title">Reunião de Imersão na Operação</div>
+          <div class="cta-step-prazo">Semana 1</div>
+          <div class="cta-step-desc">Mergulhamos fundo na Mais Internet — atendimento, campo, frota, sistemas. Mapeamos os fluxos atuais, o tom de voz da empresa, as regras de negócio e os pontos de integração com o CRM. Saímos com tudo que precisamos para construir.</div>
+        </div>
+      </div>
+
+      <div class="cta-step-v2">
+        <div class="cta-step-num">2</div>
+        <div class="cta-step-body">
+          <div class="cta-step-title">Definição da Estratégia e Arquitetura</div>
+          <div class="cta-step-prazo">Semana 1–2</div>
+          <div class="cta-step-desc">Com base na imersão, apresentamos a arquitetura completa das automações — quais agentes fazem o quê, como se comunicam entre si, onde estão os pontos de aprovação humana e qual é o fluxo de cada jornada de cliente.</div>
+        </div>
+      </div>
+
+      <div class="cta-step-v2">
+        <div class="cta-step-num">3</div>
+        <div class="cta-step-body">
+          <div class="cta-step-title">Construção e Testes do Módulo 1</div>
+          <div class="cta-step-prazo">Semanas 2–5</div>
+          <div class="cta-step-desc">Desenvolvemos os 3 agentes de WhatsApp e o controle de frota via Telegram. Testamos internamente com cenários reais da operação, ajustamos tom, fluxos e regras. Você acompanha e valida antes de qualquer lançamento.</div>
+        </div>
+      </div>
+
+      <div class="cta-step-v2">
+        <div class="cta-step-num">4</div>
+        <div class="cta-step-body">
+          <div class="cta-step-title">Lançamento Assistido + Treinamento da Equipe</div>
+          <div class="cta-step-prazo">Semana 6</div>
+          <div class="cta-step-desc">Lançamos o Módulo 1 com a sua equipe ao lado — treinamos os atendentes, mostramos como acompanhar as conversas, como escalar para humano e como ajustar as respostas. A equipe de campo é orientada sobre o Telegram. Você não está sozinho no go-live.</div>
+        </div>
+      </div>
+
+      <div class="cta-step-v2">
+        <div class="cta-step-num">5</div>
+        <div class="cta-step-body">
+          <div class="cta-step-title">Ajustes, Otimização e Início do Módulo 2</div>
+          <div class="cta-step-prazo">Semanas 7–10</div>
+          <div class="cta-step-desc">Acompanhamos de perto as primeiras semanas em produção — ajustamos prompts, fluxos e regras com base nos casos reais. Em paralelo, iniciamos a construção do agente de qualidade técnica e da pesquisa de satisfação pós-visita.</div>
+        </div>
+      </div>
+
+      <div class="cta-step-v2">
+        <div class="cta-step-num">6</div>
+        <div class="cta-step-body">
+          <div class="cta-step-title">Dashboard Executivo e Módulo 3</div>
+          <div class="cta-step-prazo">A partir da semana 11</div>
+          <div class="cta-step-desc">Com os Módulos 1 e 2 estabilizados e o novo CRM operacional, iniciamos o monitoramento de sinal e o dashboard executivo — consolidando toda a operação numa visão única de tomada de decisão.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-brand">NewScale<span>Consulting</span></div>
+  <div class="footer-date">Proposta exclusiva · Mais Internet<br>Março de 2026</div>
+</div>
+
+<script>
+function toggleModulo(card) { card.classList.toggle('open'); }
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.06 });
+reveals.forEach(el => observer.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
