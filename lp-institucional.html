@@ -317,7 +317,6 @@ footer a:hover{color:var(--tl)}
 @media(max-width:980px){
   .nlinks,.ncta{display:none}
   .nhbg{display:block}
-  .prob-top{grid-template-columns:1fr}
   .pgrid{grid-template-columns:1fr 1fr}
   .msteps{grid-template-columns:repeat(3,1fr);gap:24px}
   .msteps::before{display:none}
@@ -335,9 +334,15 @@ footer a:hover{color:var(--tl)}
 }
 @media(max-width:600px){
   :root{--r:15px}
-  .hero h1{font-size:2rem}
-  .hero-in{padding:0}
-  .hjournay{flex-direction:column;align-items:flex-start}
+  .hero{padding:96px 0 40px}
+  .hero h1{font-size:1.85rem}
+  .hero-in{padding:0;text-align:left}
+  .hpill{font-size:.6rem;padding:4px 11px}
+  .hero-sub{font-size:.88rem;margin-left:0;margin-right:0}
+  .hjournay{flex-direction:row;align-items:stretch;gap:0;justify-content:flex-start;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:4px;margin-bottom:28px}
+  .hjstep{flex:1;flex-direction:column;text-align:center;gap:6px;border-radius:8px;padding:12px 8px;border:none;background:transparent}
+  .hjico{width:32px;height:32px;margin:0 auto}
+  .hjtext{font-size:.68rem}
   .hjarrow{display:none}
   .msteps{grid-template-columns:1fr 1fr}
   .aggrid{grid-template-columns:1fr}
@@ -366,7 +371,7 @@ footer a:hover{color:var(--tl)}
     <li><a href="#como">Como funciona</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:10px">
-    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="ncta">Agendar diagn&oacute;stico gratuito</a>
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito%20com%20a%20NewScale." target="_blank" class="ncta">Agendar diagn&oacute;stico gratuito</a>
   </div>
   <button class="nhbg" onclick="document.getElementById('mn').classList.add('open')" aria-label="Menu">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -380,7 +385,7 @@ footer a:hover{color:var(--tl)}
   <a href="#cases" onclick="this.parentElement.classList.remove('open')">Cases</a>
   <a href="#quem" onclick="this.parentElement.classList.remove('open')">Quem somos</a>
   <a href="#como" onclick="this.parentElement.classList.remove('open')">Como funciona</a>
-  <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="ncta" style="margin-top:8px">Agendar diagn&oacute;stico</a>
+  <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito%20com%20a%20NewScale." target="_blank" class="ncta" style="margin-top:8px">Agendar diagn&oacute;stico</a>
 </div>
 
 <!-- ═══════════════════════════════
@@ -417,7 +422,7 @@ footer a:hover{color:var(--tl)}
         </div>
       </div>
 
-      <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="btn-p">
+      <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito%20com%20a%20NewScale." target="_blank" class="btn-p">
         Agendar um diagn&oacute;stico gratuito
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
@@ -432,23 +437,13 @@ footer a:hover{color:var(--tl)}
 ═══════════════════════════════ -->
 <section class="prob" id="problema">
 <div class="c">
-  <div class="prob-top">
-    <div class="rv">
-      <span class="stag stag-l">O problema real</span>
-      <h2 class="h2" style="color:#fff">Por que muitas empresas ainda n&atilde;o conseguem extrair valor real da IA?</h2>
-      <p class="sub" style="color:rgba(255,255,255,.42)">Implementar IA de forma estrat&eacute;gica &eacute; diferente de testar ferramentas. Os obst&aacute;culos s&atilde;o mais comuns do que parecem.</p>
-    </div>
-    <div class="pcta-banner rv" style="transition-delay:.1s">
-      <div class="pcta-title">A NewScale foi criada para resolver esse <em>gap entre o potencial da IA e os resultados reais.</em></div>
-      <div class="pcta-desc">Come&ccedil;amos pela conversa, n&atilde;o pelo pacote. Diagn&oacute;stico gratuito em 30 minutos, sem compromisso.</div>
-      <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20de%20IA%20para%20minha%20empresa." target="_blank" class="btn-s">
-        Solicitar avalia&ccedil;&atilde;o de IA
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
+  <div style="max-width:560px;margin-bottom:40px" class="rv">
+    <span class="stag stag-l">O problema real</span>
+    <h2 class="h2" style="color:#fff">Por que muitas empresas ainda n&atilde;o conseguem extrair valor real da IA?</h2>
+    <p class="sub" style="color:rgba(255,255,255,.42)">Implementar IA de forma estrat&eacute;gica &eacute; diferente de testar ferramentas. Os obst&aacute;culos s&atilde;o mais comuns do que parecem.</p>
   </div>
 
-  <div class="pgrid rv" style="transition-delay:.15s">
+  <div class="pgrid rv" style="transition-delay:.1s">
     <div class="pcard">
       <div class="pcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
       <h3>Excesso de ferramentas, nenhuma adaptada</h3>
@@ -469,6 +464,15 @@ footer a:hover{color:var(--tl)}
       <h3>Falta de conhecimento t&eacute;cnico interno</h3>
       <p>Sem preparo ou engajamento para adotar IA de forma consistente e produtiva.</p>
     </div>
+  </div>
+
+  <div class="pcta-banner rv" style="transition-delay:.2s;margin-top:32px">
+    <div class="pcta-title">A NewScale foi criada para resolver esse <em>gap entre o potencial da IA e os resultados reais.</em></div>
+    <div class="pcta-desc">Come&ccedil;amos pela conversa, n&atilde;o pelo pacote. Diagn&oacute;stico gratuito em 30 minutos, sem compromisso.</div>
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito%20com%20a%20NewScale." target="_blank" class="btn-s">
+      Solicitar avalia&ccedil;&atilde;o de IA
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
   </div>
 </div>
 </section>
@@ -535,7 +539,7 @@ footer a:hover{color:var(--tl)}
   </div>
   <div class="mquote rv" style="transition-delay:.2s">N&atilde;o vendemos pacotes. Mergulhamos na sua empresa, entendemos como a equipe trabalha e desenhamos a solu&ccedil;&atilde;o a partir da realidade &mdash; n&atilde;o de um template.</div>
   <div style="text-align:center;margin-top:30px" class="rv">
-    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20consultor." target="_blank" class="btn-s">
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito%20com%20a%20NewScale." target="_blank" class="btn-s">
       Quero falar com um consultor agora
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
@@ -594,7 +598,7 @@ footer a:hover{color:var(--tl)}
   </div>
   <div class="c intx rv">Google Calendar &nbsp;&middot;&nbsp; Looker Studio &nbsp;&middot;&nbsp; RD Station &nbsp;&middot;&nbsp; Kommo &nbsp;&middot;&nbsp; Power BI &nbsp;&middot;&nbsp; VTEX &nbsp;&middot;&nbsp; Nuvem Shop &nbsp;&middot;&nbsp; ERP (Protheus &middot; Linx &middot; Sankhya &middot; Omie &middot; Tiny) &nbsp;&middot;&nbsp; Bubble &nbsp;&middot;&nbsp; Aplicativos Propriet&aacute;rios</div>
   <div class="intcta rv">
-    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="btn-s">
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito%20com%20a%20NewScale." target="_blank" class="btn-s">
       Agendar diagn&oacute;stico gratuito
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
@@ -778,7 +782,7 @@ footer a:hover{color:var(--tl)}
   </div>
 
   <div style="text-align:center;margin-top:32px" class="rv">
-    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20agentes%20de%20IA%20da%20NewScale." target="_blank" class="btn-s">
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito%20com%20a%20NewScale." target="_blank" class="btn-s">
       Quero saber mais sobre os agentes
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
@@ -962,7 +966,7 @@ footer a:hover{color:var(--tl)}
     <div class="ctag">Belcenter</div>
   </div>
   <div style="text-align:center;margin-top:34px" class="rv">
-    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20de%20IA%20para%20minha%20empresa." target="_blank" class="btn-s">
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito%20com%20a%20NewScale." target="_blank" class="btn-s">
       Solicitar avalia&ccedil;&atilde;o de IA para minha empresa
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
@@ -998,7 +1002,7 @@ footer a:hover{color:var(--tl)}
           <span class="pqt"><strong>Empres&aacute;rios que sentem</strong> que suas equipes fazem uso superficial de IA e querem destravar esse potencial</span>
         </li>
       </ul>
-      <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20consultor." target="_blank" class="btn-s">
+      <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito%20com%20a%20NewScale." target="_blank" class="btn-s">
         Quero falar com um consultor agora
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
@@ -1065,7 +1069,7 @@ footer a:hover{color:var(--tl)}
     <div class="tbbdg"><div class="tbbv">100%</div><div class="tbbl">dedicados ao projeto</div></div>
   </div>
   <div style="text-align:center;margin-top:26px" class="rv">
-    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="btn-s">
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito%20com%20a%20NewScale." target="_blank" class="btn-s">
       Agendar um diagn&oacute;stico gratuito
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
@@ -1126,7 +1130,7 @@ footer a:hover{color:var(--tl)}
     </div>
   </div>
   <div style="text-align:center" class="rv">
-    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20de%20IA%20para%20minha%20empresa." target="_blank" class="btn-s">
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito%20com%20a%20NewScale." target="_blank" class="btn-s">
       Solicitar avalia&ccedil;&atilde;o de IA para minha empresa
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
@@ -1181,7 +1185,7 @@ footer a:hover{color:var(--tl)}
       <div class="cubq">Quanto disso est&aacute; acontecendo no seu neg&oacute;cio agora?</div>
       <div class="cubp">A maioria dos empres&aacute;rios s&oacute; percebe o tamanho da inefici&ecirc;ncia depois que v&ecirc; os indicadores do projeto funcionando.</div>
     </div>
-    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="btn-s" style="flex-shrink:0">
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito%20com%20a%20NewScale." target="_blank" class="btn-s" style="flex-shrink:0">
       Agendar diagn&oacute;stico gratuito
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
@@ -1196,7 +1200,7 @@ footer a:hover{color:var(--tl)}
 <div class="c ctafin">
   <h2>Quer saber quanto sua opera&ccedil;&atilde;o<br>est&aacute; deixando de ganhar?</h2>
   <p class="ctafsub">30 min. Sem compromisso. Mapeamos onde a IA pode gerar impacto real no seu neg&oacute;cio.</p>
-  <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="btn-xl">
+  <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito%20com%20a%20NewScale." target="_blank" class="btn-xl">
     Agendar um diagn&oacute;stico gratuito
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
