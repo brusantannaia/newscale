@@ -245,14 +245,38 @@ body { font-family: 'Josefin Sans', sans-serif; background: var(--cream); color:
 .porque-statement::before { content: '"'; font-family: 'Cormorant Garamond', serif; font-size: 220px; color: rgba(255,255,255,0.04); position: absolute; top: -20px; left: 24px; line-height: 1; }
 .porque-statement p { font-family: 'Cormorant Garamond', serif; font-size: clamp(20px, 2.5vw, 26px); font-weight: 300; font-style: italic; color: rgba(255,255,255,0.88); line-height: 1.75; max-width: 900px; position: relative; z-index: 1; }
 .porque-statement p em { color: var(--copper-light); font-style: normal; }
+
+/* Metodologia 6 passos */
+.porque-metodo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.porque-metodo-step { background: var(--white); padding: 32px 28px; display: flex; gap: 20px; align-items: flex-start; transition: background 0.3s ease; }
+.porque-metodo-step:hover { background: rgba(20,55,60,0.03); }
+.porque-metodo-num { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: rgba(176,110,74,0.25); line-height: 1; flex-shrink: 0; width: 36px; }
+.porque-metodo-title { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal-deep); margin-bottom: 8px; }
+.porque-metodo-desc { font-size: 13px; font-weight: 300; line-height: 1.8; color: var(--text-mid); }
+
+/* 3 pilares */
 .porque-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 2px; }
 .porque-card { background: var(--white); padding: 40px; position: relative; overflow: hidden; transition: all 0.4s ease; }
 .porque-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px rgba(20,55,60,0.1); }
+.porque-card-svg { margin-bottom: 18px; }
 .porque-icon { font-size: 24px; margin-bottom: 18px; display: block; }
 .porque-card-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--teal-deep); margin-bottom: 12px; line-height: 1.2; }
 .porque-card-text { font-size: 13px; font-weight: 300; line-height: 2; color: var(--text-mid); }
 .porque-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: var(--copper); transition: width 0.4s ease; }
 .porque-card:hover::after { width: 100%; }
+
+/* Fundadores */
+.porque-fundadores { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 2px; }
+.porque-fundador { background: var(--teal-deep); display: flex; gap: 0; overflow: hidden; transition: all 0.3s ease; }
+.porque-fundador:hover { background: #1a424a; }
+.porque-fundador-foto { width: 120px; flex-shrink: 0; position: relative; background: var(--teal-mid); }
+.porque-fundador-foto img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+.porque-fundador-body { padding: 28px 28px 28px 24px; flex: 1; }
+.porque-fundador-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--white); margin-bottom: 2px; }
+.porque-fundador-role { font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--copper); margin-bottom: 12px; }
+.porque-fundador-desc { font-size: 12px; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.55); margin-bottom: 14px; }
+.porque-fundador-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.porque-fundador-tags span { font-size: 10px; font-weight: 300; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); padding: 3px 9px; }
 
 /* CTA */
 .cta-section { padding: 120px 40px; text-align: center; background: var(--teal-deep); position: relative; overflow: hidden; }
@@ -290,12 +314,14 @@ body { font-family: 'Josefin Sans', sans-serif; background: var(--cream); color:
 
 @media (max-width: 900px) {
   .intro-section { grid-template-columns: 1fr; gap: 48px; }
-  .dores-grid, .modulos-grid, .porque-grid, .agentes-row { grid-template-columns: 1fr; }
+  .dores-grid, .modulos-grid, .porque-grid, .agentes-row, .porque-metodo-grid, .porque-fundadores { grid-template-columns: 1fr; }
   .modulo-full { grid-column: 1; }
   .cta-steps { flex-direction: column; align-items: center; }
   .cta-step + .cta-step::before { display: none; }
   .footer { flex-direction: column; gap: 20px; text-align: center; }
   .crm-rec { flex-direction: column; gap: 24px; }
+  .porque-fundador { flex-direction: column; }
+  .porque-fundador-foto { width: 100%; height: 160px; }
 }
 </style>
 </head>
@@ -930,27 +956,115 @@ body { font-family: 'Josefin Sans', sans-serif; background: var(--cream); color:
 <div class="porque-section">
   <div class="porque-inner">
     <div class="section-label reveal">Por que a NewScale</div>
-    <h2 class="section-title reveal">Não é só tecnologia.<br>É alguém que já <em>errou os erros</em><br>para que você não precise.</h2>
+    <h2 class="section-title reveal">Não vendemos pacotes.<br><em>Mergulhamos na sua empresa.</em></h2>
+
     <div class="porque-statement reveal">
-      <p>Cada projeto começa com um <em>mergulho real na sua operação</em> — entender como funciona o atendimento hoje, qual é o tom de voz da empresa, quais são as regras de negócio, o que a equipe precisa. Só depois a gente constrói. E depois que entrega, <em>a gente fica — otimizando, ajustando, evoluindo</em> junto com o seu negócio.</p>
+      <p>Cada projeto começa pela conversa — não pelo contrato. Entendemos como a operação funciona hoje, qual é o tom de voz da empresa, quais são as regras de negócio e o que a equipe precisa. <em>Só depois a gente constrói.</em> E depois que entrega, a gente fica — otimizando, ajustando e evoluindo junto com o seu negócio.</p>
     </div>
-    <div class="porque-grid">
+
+    <!-- Metodologia em 6 passos — espelhando a landing -->
+    <div class="porque-metodo reveal" style="margin-top:2px;">
+      <div class="porque-metodo-grid">
+        <div class="porque-metodo-step">
+          <div class="porque-metodo-num">1</div>
+          <div class="porque-metodo-body">
+            <div class="porque-metodo-title">Consultoria Sistêmica</div>
+            <div class="porque-metodo-desc">Visão completa do negócio: atendimento, campo, financeiro e operação. IA como motor de escala, não de cosmética.</div>
+          </div>
+        </div>
+        <div class="porque-metodo-step">
+          <div class="porque-metodo-num">2</div>
+          <div class="porque-metodo-body">
+            <div class="porque-metodo-title">Roadmap Faseado</div>
+            <div class="porque-metodo-desc">Priorizamos os processos com maior potencial de retorno — como os 3 módulos desta proposta — antes de qualquer outra coisa.</div>
+          </div>
+        </div>
+        <div class="porque-metodo-step">
+          <div class="porque-metodo-num">3</div>
+          <div class="porque-metodo-body">
+            <div class="porque-metodo-title">Implementação Integrada</div>
+            <div class="porque-metodo-desc">Conectamos seus sistemas, eliminamos tarefas manuais e construímos fluxos inteligentes que funcionam nos canais que sua equipe já usa.</div>
+          </div>
+        </div>
+        <div class="porque-metodo-step">
+          <div class="porque-metodo-num">4</div>
+          <div class="porque-metodo-body">
+            <div class="porque-metodo-title">Treinamento das Equipes</div>
+            <div class="porque-metodo-desc">Cada pessoa aprende seu papel no novo fluxo. O humano passa a monitorar e decidir — a IA faz o operacional.</div>
+          </div>
+        </div>
+        <div class="porque-metodo-step">
+          <div class="porque-metodo-num">5</div>
+          <div class="porque-metodo-body">
+            <div class="porque-metodo-title">Acompanhamento de KPIs</div>
+            <div class="porque-metodo-desc">Definimos métricas juntos antes de começar. Você sabe exatamente o que esperar — e como acompanhar o ganho real.</div>
+          </div>
+        </div>
+        <div class="porque-metodo-step">
+          <div class="porque-metodo-num">6</div>
+          <div class="porque-metodo-body">
+            <div class="porque-metodo-title">Sustentação Contínua</div>
+            <div class="porque-metodo-desc">Monitoramento, otimizações e manutenção para que o sistema evolua junto com a Mais Internet — não fique parado no tempo.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Os três pilares abaixo -->
+    <div class="porque-grid" style="margin-top:2px;">
       <div class="porque-card reveal">
-        <span class="porque-icon">🔍</span>
-        <div class="porque-card-title">Entendimento real antes de qualquer linha de código</div>
-        <p class="porque-card-text">Converso com sua equipe, mapeio o atendimento hoje, entendo as regras e só então construo. O agente que vai atender seus clientes é feito para a Mais Internet — não um template genérico com o nome trocado.</p>
+        <div class="porque-card-svg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="1.5" stroke-linecap="round" width="26" height="26"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+        <div class="porque-card-title">Diagnóstico antes de qualquer proposta</div>
+        <p class="porque-card-text">Começamos pela conversa, não pelo pacote. Mapeamos o que realmente precisa ser resolvido antes de sugerir qualquer solução — por isso as entregas da NewScale são cirúrgicas, não genéricas.</p>
       </div>
       <div class="porque-card reveal reveal-delay-2">
-        <span class="porque-icon">⚙️</span>
-        <div class="porque-card-title">Entrego rodando, não em papel</div>
-        <p class="porque-card-text">Não entrego diagnóstico e saio. Construo, testo com você, treino a equipe e acompanho o lançamento. Você vê funcionando — não só ouve a apresentação.</p>
+        <div class="porque-card-svg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="1.5" stroke-linecap="round" width="26" height="26"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <div class="porque-card-title">Implementamos o que diagnosticamos</div>
+        <p class="porque-card-text">Não entregamos relatório e sumimos. Construímos, testamos, treinamos a equipe e acompanhamos o lançamento. Você vê o sistema funcionando — não só ouve a apresentação.</p>
       </div>
       <div class="porque-card reveal reveal-delay-1">
-        <span class="porque-icon">📈</span>
-        <div class="porque-card-title">Continuo após o lançamento</div>
-        <p class="porque-card-text">IA não é projeto com começo, meio e fim. Os modelos evoluem, a operação muda, surgem novas necessidades. A manutenção garante que o sistema continue funcionando bem — e melhorando com o tempo.</p>
+        <div class="porque-card-svg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="1.5" stroke-linecap="round" width="26" height="26"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="porque-card-title">Sustentação de longo prazo</div>
+        <p class="porque-card-text">IA não é projeto com começo, meio e fim. Os modelos evoluem, a operação cresce. A manutenção garante que o sistema continue funcionando — e melhorando — com o tempo.</p>
       </div>
     </div>
+
+    <!-- Fundadores -->
+    <div class="porque-fundadores reveal">
+      <div class="porque-fundador">
+        <div class="porque-fundador-foto" style="background:linear-gradient(160deg,var(--teal-deep),var(--teal-mid))">
+          <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG" alt="Bruna Santanna" onerror="this.style.display='none'">
+        </div>
+        <div class="porque-fundador-body">
+          <div class="porque-fundador-name">Bruna Santanna</div>
+          <div class="porque-fundador-role">Co-Fundadora · Estratégia & Implementação</div>
+          <div class="porque-fundador-desc">ESPM. Empresária há 10+ anos. Mentora de IA no programa Potenc.IA (OLX, Magalu, B3 e CI&T). Professora de IA para equipes corporativas. Implementa IA no próprio negócio todos os dias — só vende o que usa.</div>
+          <div class="porque-fundador-tags">
+            <span>SulAmérica</span><span>Whirlpool</span><span>Blackbox AI</span><span>Potenc.IA</span>
+          </div>
+        </div>
+      </div>
+      <div class="porque-fundador">
+        <div class="porque-fundador-foto" style="background:linear-gradient(160deg,var(--teal-deep),var(--teal-mid))">
+          <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/BRUNO-VARELLA-PQ.jpeg" alt="Bruno Varella" onerror="this.style.display='none'">
+        </div>
+        <div class="porque-fundador-body">
+          <div class="porque-fundador-name">Bruno Varella</div>
+          <div class="porque-fundador-role">Co-Fundador · Marketing, Produto & Escala</div>
+          <div class="porque-fundador-desc">ESPM. 17+ anos em Marketing, Produto e Novos Negócios. Ex-Warner Bros., Ex-Natura & Co., Ex-Sorridents. Já implantou Agentes de IA em redes de franquias com 700+ unidades.</div>
+          <div class="porque-fundador-tags">
+            <span>Warner Bros.</span><span>Natura & Co</span><span>Sorridents</span><span>700+ franquias</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
