@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -43,184 +42,173 @@ a{color:inherit;text-decoration:none}
 .btn-xl:hover{background:var(--tl);transform:translateY(-2px);box-shadow:0 12px 40px rgba(176,110,74,.45)}
 svg{display:block}
 
-/* ══ NAV ══ */
+/* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;transition:all .4s}
 .nav.s{background:rgba(20,55,60,.97);backdrop-filter:blur(16px);padding:10px 0;box-shadow:0 2px 36px rgba(0,0,0,.18)}
 .ni{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.nlogo img{height:72px;filter:brightness(0) invert(1);transition:height .3s}
-.nav.s .nlogo img{height:48px}
+/* AJUSTE 1: logo maior */
+.nlogo img{height:80px;filter:brightness(0) invert(1);transition:height .3s}
+.nav.s .nlogo img{height:56px}
 .nlinks{display:flex;gap:24px;list-style:none}
 .nlinks a{color:rgba(255,255,255,.6);font-size:.84rem;font-weight:500;transition:color .22s;white-space:nowrap}
 .nlinks a:hover{color:#fff}
-.ncta{background:var(–terra);color:#fff!important;padding:9px 20px;border-radius:6px;font-size:.82rem;font-weight:600;transition:all .22s;white-space:nowrap;display:inline-block}
-.ncta:hover{background:var(–tl)!important}
+.ncta{background:var(--terra);color:#fff!important;padding:9px 20px;border-radius:6px;font-size:.82rem;font-weight:600;transition:all .22s;white-space:nowrap;display:inline-block}
+.ncta:hover{background:var(--tl)!important}
 .nhbg{display:none;background:none;border:none;cursor:pointer;color:#fff;padding:4px}
 .nhbg svg{width:23px;height:23px}
 .mob{display:none;position:fixed;inset:0;background:rgba(20,55,60,.98);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:32px}
 .mob.open{display:flex}
-.mob a{color:#fff;font-size:1.3rem;font-family:var(–fd);font-weight:600}
+.mob a{color:#fff;font-size:1.3rem;font-family:var(--fd);font-weight:600}
 .mob .xb{position:absolute;top:20px;right:24px;background:none;border:none;color:#fff;font-size:1.9rem;cursor:pointer;line-height:1}
 
-/* ══ HERO v2 ══ */
+/* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:108px 0 48px}
-.hbg{position:absolute;inset:0;background:linear-gradient(145deg,#0c2427 0%,var(–ink) 38%,#1d4840 72%,var(–sage) 100%)}
-.hgrain{position:absolute;inset:0;opacity:.03;background-image:url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 200 200’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘n’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=’.85’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23n)’/%3E%3C/svg%3E”)}
+.hbg{position:absolute;inset:0;background:linear-gradient(145deg,#0c2427 0%,var(--ink) 38%,#1d4840 72%,var(--sage) 100%)}
+.hgrain{position:absolute;inset:0;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .hglow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(176,110,74,.09),transparent 65%);top:-120px;right:-120px;animation:gf 9s ease-in-out infinite;pointer-events:none}
 @keyframes gf{0%,100%{transform:scale(1)}50%{transform:scale(1.06) translateY(-20px)}}
-.hero-in{position:relative;z-index:2;max-width:800px;margin:0 auto;text-align:center}
-.hpill{display:inline-flex;align-items:center;gap:7px;background:rgba(176,110,74,.1);border:1px solid rgba(176,110,74,.24);border-radius:40px;padding:5px 14px;font-size:.7rem;color:var(–tl);font-weight:700;margin-bottom:20px;letter-spacing:.07em;text-transform:uppercase}
-.hpill .dot{width:5px;height:5px;border-radius:50%;background:var(–terra);animation:bl 2s ease infinite;flex-shrink:0}
+/* AJUSTE 1: hero em duas colunas para distribuir melhor */
+.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;width:100%}
+.hero-left{max-width:600px}
+.hpill{display:inline-flex;align-items:center;gap:7px;background:rgba(176,110,74,.1);border:1px solid rgba(176,110,74,.24);border-radius:40px;padding:5px 14px;font-size:.7rem;color:var(--tl);font-weight:700;margin-bottom:20px;letter-spacing:.07em;text-transform:uppercase}
+.hpill .dot{width:5px;height:5px;border-radius:50%;background:var(--terra);animation:bl 2s ease infinite;flex-shrink:0}
 @keyframes bl{0%,100%{opacity:1}50%{opacity:.25}}
-.hero h1{font-family:var(–fd);font-size:clamp(2.3rem,4.2vw,3.5rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:16px;letter-spacing:-.01em}
-.hero h1 em{font-style:normal;color:var(–tl)}
-.hero-sub{font-size:.97rem;color:rgba(255,255,255,.55);line-height:1.72;margin-bottom:28px;font-weight:300;max-width:620px;margin-left:auto;margin-right:auto}
-/* hero journey steps */
-.hjournay{display:flex;gap:8px;margin-bottom:32px;align-items:center;flex-wrap:wrap;justify-content:center}
-.hjstep{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:10px 16px;transition:all .28s}
+.hero h1{font-family:var(--fd);font-size:clamp(2rem,3.8vw,3.2rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:16px;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--tl)}
+.hero-sub{font-size:.95rem;color:rgba(255,255,255,.55);line-height:1.72;margin-bottom:28px;font-weight:300}
+.hjournay{display:flex;flex-direction:column;gap:8px;margin-bottom:32px}
+.hjstep{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:10px 16px;transition:all .28s}
 .hjstep:hover{border-color:rgba(176,110,74,.3);background:rgba(176,110,74,.06)}
 .hjico{width:28px;height:28px;border-radius:50%;background:rgba(176,110,74,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .hjico svg{width:13px;height:13px}
-.hjtext{font-size:.78rem;color:rgba(255,255,255,.6);line-height:1.3;font-weight:500}
-.hjarrow{color:rgba(255,255,255,.15);font-size:1.1rem;flex-shrink:0}
+.hjnum{width:20px;height:20px;border-radius:50%;background:rgba(176,110,74,.25);color:var(--tl);font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hjtext{font-size:.82rem;color:rgba(255,255,255,.7);line-height:1.3;font-weight:500}
 .hero-note{font-size:.73rem;color:rgba(255,255,255,.28);margin-top:10px;font-style:italic}
 .hero-link{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.4);font-size:.8rem;margin-top:10px;transition:color .22s}
 .hero-link:hover{color:rgba(255,255,255,.75)}
+/* hero right stats */
+.hero-right{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hstat{background:rgba(255,255,255,.05);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:20px 18px;transition:all .3s}
+.hstat:hover{border-color:rgba(176,110,74,.3);background:rgba(176,110,74,.07);transform:translateY(-3px)}
+.hstat-val{font-family:var(--fd);font-size:2rem;font-weight:700;color:var(--tl);line-height:1;margin-bottom:4px}
+.hstat-lbl{font-size:.72rem;color:rgba(255,255,255,.38);line-height:1.4}
+.hstat-brand{font-size:.6rem;color:rgba(255,255,255,.2);margin-top:5px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.hstat.wide{grid-column:span 2;display:flex;align-items:center;gap:16px;padding:16px 18px}
+.hstat.wide .hstat-val{font-size:1.5rem;margin-bottom:0;flex-shrink:0}
+.hstat.wide .hstat-lbl{font-size:.7rem}
 
-/* hero right — floating result cards */
-.hcards{position:relative;width:100%;min-height:380px}
-.hcard{position:absolute;background:rgba(255,255,255,.06);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:22px 24px;transition:all .4s;cursor:default}
-.hcard:hover{transform:translateY(-4px) scale(1.02);border-color:rgba(176,110,74,.3);background:rgba(176,110,74,.08)}
-.hcard-val{font-family:var(–fd);font-size:2.2rem;font-weight:700;color:var(–tl);line-height:1;margin-bottom:4px}
-.hcard-lbl{font-size:.72rem;color:rgba(255,255,255,.4);line-height:1.4}
-.hcard-brand{font-size:.62rem;color:rgba(255,255,255,.2);margin-top:6px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
-.hcard-1{top:10px;left:10px;animation:hcf 3s ease-in-out infinite}
-.hcard-2{top:50px;right:0;animation:hcf 3s ease-in-out infinite .6s}
-.hcard-3{bottom:90px;left:30px;animation:hcf 3s ease-in-out infinite 1.2s}
-.hcard-4{bottom:20px;right:20px;animation:hcf 3s ease-in-out infinite 1.8s}
-@keyframes hcf{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-/* central diagram */
-.hdiag{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120px;height:120px}
-.hdiag-core{width:120px;height:120px;border-radius:50%;background:rgba(176,110,74,.12);border:2px solid rgba(176,110,74,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;animation:hpulse 3s ease-in-out infinite}
-.hdiag-core span:first-child{font-size:1.8rem;line-height:1}
-.hdiag-core span:last-child{font-size:.6rem;color:rgba(255,255,255,.5);font-weight:600;letter-spacing:.08em;margin-top:2px}
-@keyframes hpulse{0%,100%{box-shadow:0 0 0 0 rgba(176,110,74,.15)}50%{box-shadow:0 0 0 20px rgba(176,110,74,0)}}
-/* connecting lines */
-.hlines{position:absolute;inset:0;pointer-events:none}
-
-/* ══ PROOF BAR v2 ══ */
-.pbar{background:var(–cream);padding:40px 0;border-top:1px solid rgba(20,55,60,.06)}
+/* PROOF BAR */
+.pbar{background:var(--cream);padding:40px 0;border-top:1px solid rgba(20,55,60,.06)}
 .pbar-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
-.pbc{text-align:center;padding:20px 12px;background:var(–white);border-radius:12px;border:1px solid rgba(20,55,60,.06);transition:all .28s}
+.pbc{text-align:center;padding:20px 12px;background:var(--white);border-radius:12px;border:1px solid rgba(20,55,60,.06);transition:all .28s}
 .pbc:hover{border-color:rgba(176,110,74,.2);transform:translateY(-3px);box-shadow:0 8px 24px rgba(20,55,60,.06)}
-.pbc-val{font-family:var(–fd);font-size:clamp(1.6rem,2.4vw,2.2rem);font-weight:700;color:var(–terra);line-height:1;margin-bottom:6px}
-.pbc-lbl{font-size:.72rem;color:var(–sage);line-height:1.4}
+.pbc-val{font-family:var(--fd);font-size:clamp(1.6rem,2.4vw,2.2rem);font-weight:700;color:var(--terra);line-height:1;margin-bottom:6px}
+.pbc-lbl{font-size:.72rem;color:var(--sage);line-height:1.4}
 
-/* ══ 2 - PROBLEMA v2 ══ */
-.prob{background:var(–ink);padding:88px 0}
+/* PROBLEMA */
+.prob{background:var(--ink);padding:88px 0}
 .prob-top{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:48px}
 .pcta-banner{background:rgba(176,110,74,.08);border:1px solid rgba(176,110,74,.2);border-radius:16px;padding:32px;position:relative;overflow:hidden}
-.pcta-banner::before{content:’’;position:absolute;top:-40px;right:-40px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(176,110,74,.12),transparent 70%);pointer-events:none}
-.pcta-title{font-family:var(–fd);font-size:1.35rem;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.25;position:relative}
-.pcta-title em{font-style:normal;color:var(–tl)}
+.pcta-banner::before{content:'';position:absolute;top:-40px;right:-40px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(176,110,74,.12),transparent 70%);pointer-events:none}
+.pcta-title{font-family:var(--fd);font-size:1.35rem;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.25;position:relative}
+.pcta-title em{font-style:normal;color:var(--tl)}
 .pcta-desc{font-size:.84rem;color:rgba(255,255,255,.42);margin-bottom:18px;line-height:1.6;position:relative}
 .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .pcard{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:22px 20px;transition:all .28s;position:relative;overflow:hidden}
 .pcard:hover{border-color:rgba(176,110,74,.25);background:rgba(176,110,74,.05);transform:translateY(-3px)}
-.pcard::before{content:’’;position:absolute;top:0;left:0;right:0;height:2px;background:var(–terra);opacity:0;transition:opacity .22s}
+.pcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--terra);opacity:0;transition:opacity .22s}
 .pcard:hover::before{opacity:1}
 .pcard-ico{width:36px;height:36px;border-radius:10px;background:rgba(176,110,74,.1);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
 .pcard-ico svg{width:16px;height:16px}
 .pcard h3{font-size:.88rem;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:5px;line-height:1.3}
 .pcard p{font-size:.76rem;color:rgba(255,255,255,.38);line-height:1.55}
 
-/* ══ 3 - METODOLOGIA ══ */
-.metodo{background:var(–cl);padding:88px 0}
+/* METODOLOGIA */
+.metodo{background:var(--cl);padding:88px 0}
 .mhdr{text-align:center;max-width:520px;margin:0 auto 48px}
 .msteps{display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative}
-.msteps::before{content:’’;position:absolute;top:28px;left:calc(100%/12);right:calc(100%/12);height:2px;background:linear-gradient(90deg,var(–terra),var(–sand));z-index:0;pointer-events:none}
+.msteps::before{content:'';position:absolute;top:28px;left:calc(100%/12);right:calc(100%/12);height:2px;background:linear-gradient(90deg,var(--terra),var(--sand));z-index:0;pointer-events:none}
 .ms{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 6px;position:relative;z-index:1}
-.msc{width:56px;height:56px;border-radius:50%;background:var(–white);border:2px solid var(–terra);display:flex;align-items:center;justify-content:center;margin-bottom:13px;box-shadow:0 3px 16px rgba(176,110,74,.13);flex-shrink:0;transition:all .28s;cursor:default;position:relative}
-.msc:hover{background:var(–terra);transform:scale(1.08)}
+.msc{width:56px;height:56px;border-radius:50%;background:var(--white);border:2px solid var(--terra);display:flex;align-items:center;justify-content:center;margin-bottom:13px;box-shadow:0 3px 16px rgba(176,110,74,.13);flex-shrink:0;transition:all .28s;cursor:default;position:relative}
+.msc:hover{background:var(--terra);transform:scale(1.08)}
 .msc svg{width:20px;height:20px;transition:all .28s}
 .msc:hover svg{stroke:#fff}
-.msn{position:absolute;top:-8px;right:-8px;width:20px;height:20px;border-radius:50%;background:var(–terra);color:#fff;font-size:.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:var(–fb)}
-.msl{font-family:var(–fd);font-size:.93rem;font-weight:700;color:var(–ink);margin-bottom:5px;line-height:1.2}
-.msd{font-size:.74rem;color:var(–sage);line-height:1.5}
-.mquote{max-width:600px;margin:44px auto 0;text-align:center;font-family:var(–fd);font-size:1.15rem;font-style:italic;color:var(–sage);line-height:1.65;padding:24px 30px;background:var(–white);border-radius:14px;border:1px solid rgba(20,55,60,.07);position:relative}
-.mquote::before{content:’\201C’;font-size:3.5rem;font-family:var(–fd);color:var(–tl);opacity:.2;position:absolute;top:-10px;left:16px;line-height:1}
+.msn{position:absolute;top:-8px;right:-8px;width:20px;height:20px;border-radius:50%;background:var(--terra);color:#fff;font-size:.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:var(--fb)}
+.msl{font-family:var(--fd);font-size:.93rem;font-weight:700;color:var(--ink);margin-bottom:5px;line-height:1.2}
+.msd{font-size:.74rem;color:var(--sage);line-height:1.5}
+.mquote{max-width:600px;margin:44px auto 0;text-align:center;font-family:var(--fd);font-size:1.15rem;font-style:italic;color:var(--sage);line-height:1.65;padding:24px 30px;background:var(--white);border-radius:14px;border:1px solid rgba(20,55,60,.07);position:relative}
+.mquote::before{content:'\201C';font-size:3.5rem;font-family:var(--fd);color:var(--tl);opacity:.2;position:absolute;top:-10px;left:16px;line-height:1}
 
-/* ══ 4 - INTEGRAÇÕES ══ */
-.ints{padding:56px 0;background:var(–white);overflow:hidden}
+/* INTEGRAÇÕES */
+.ints{padding:56px 0;background:var(--white);overflow:hidden}
 .inthdr{text-align:center;margin-bottom:24px}
-.inthdr h2{font-family:var(–fd);font-size:clamp(1.4rem,2.2vw,1.85rem);font-weight:700;margin-bottom:5px}
-.inthdr p{font-size:.86rem;color:var(–sage)}
-.inthdr p strong{color:var(–terra)}
+.inthdr h2{font-family:var(--fd);font-size:clamp(1.4rem,2.2vw,1.85rem);font-weight:700;margin-bottom:5px}
+.inthdr p{font-size:.86rem;color:var(--sage)}
+.inthdr p strong{color:var(--terra)}
 .tw{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
 .tk{display:flex;gap:52px;animation:tks 26s linear infinite;width:max-content;align-items:center;padding:8px 0}
 .tki{flex-shrink:0;width:36px;height:36px;opacity:.45;object-fit:contain;transition:opacity .28s}
 .tki:hover{opacity:.85}
 @keyframes tks{to{transform:translateX(-50%)}}
-.intx{text-align:center;font-size:.74rem;color:var(–sand);margin-top:14px;letter-spacing:.03em}
+.intx{text-align:center;font-size:.74rem;color:var(--sand);margin-top:14px;letter-spacing:.03em}
 .intcta{text-align:center;margin-top:22px}
 
-/* ══ AGENTES QUE DESENVOLVEMOS ══ */
-.agentes{background:var(–cl);padding:88px 0}
+/* AGENTES */
+.agentes{background:var(--cl);padding:88px 0}
 .aghdr{text-align:center;max-width:560px;margin:0 auto 48px}
 .aggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.agcard{background:var(–white);border:1px solid rgba(20,55,60,.07);border-radius:14px;padding:24px 20px;transition:all .3s;position:relative;overflow:hidden}
+.agcard{background:var(--white);border:1px solid rgba(20,55,60,.07);border-radius:14px;padding:24px 20px;transition:all .3s;position:relative;overflow:hidden}
 .agcard:hover{border-color:rgba(176,110,74,.25);transform:translateY(-3px);box-shadow:0 10px 30px rgba(20,55,60,.07)}
-.agcard::before{content:’’;position:absolute;top:0;left:0;right:0;height:3px;background:var(–terra);opacity:0;transition:opacity .25s;border-radius:14px 14px 0 0}
+.agcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--terra);opacity:0;transition:opacity .25s;border-radius:14px 14px 0 0}
 .agcard:hover::before{opacity:1}
 .agcard-ico{width:40px;height:40px;border-radius:10px;background:rgba(176,110,74,.08);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
 .agcard-ico svg{width:18px;height:18px}
-.agcard h3{font-family:var(–fd);font-size:1.05rem;font-weight:700;color:var(–ink);margin-bottom:6px;line-height:1.25}
-.agcard p{font-size:.74rem;color:var(–sage);line-height:1.55}
+.agcard h3{font-family:var(--fd);font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:6px;line-height:1.25}
+.agcard p{font-size:.74rem;color:var(--sage);line-height:1.55}
 .agcard-tags{display:flex;flex-wrap:wrap;gap:3px;margin-top:10px}
-.agcard-tag{font-size:.6rem;background:var(–cl);color:var(–sage);padding:2px 7px;border-radius:16px;border:1px solid rgba(20,55,60,.06)}
+.agcard-tag{font-size:.6rem;background:var(--cl);color:var(--sage);padding:2px 7px;border-radius:16px;border:1px solid rgba(20,55,60,.06)}
 
-/* ══ 5 - CASES ══ */
-.cases{background:var(–ink);padding:88px 0}
+/* CASES */
+.cases{background:var(--ink);padding:88px 0}
 .ctop{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;gap:20px;flex-wrap:wrap}
 .ctabs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:20px}
 .ctab{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);color:rgba(255,255,255,.42);padding:7px 17px;border-radius:6px;font-size:.79rem;font-weight:600;cursor:pointer;transition:all .22s;letter-spacing:.02em}
-.ctab:hover{border-color:rgba(176,110,74,.35);color:var(–tl)}
-.ctab.on{background:rgba(176,110,74,.1);border-color:rgba(176,110,74,.35);color:var(–tl)}
+.ctab:hover{border-color:rgba(176,110,74,.35);color:var(--tl)}
+.ctab.on{background:rgba(176,110,74,.1);border-color:rgba(176,110,74,.35);color:var(--tl)}
 .cpanel{display:none;animation:cpi .3s ease}
 .cpanel.on{display:block}
 @keyframes cpi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .case-wrap{display:grid;grid-template-columns:1.3fr .7fr;gap:24px}
 .cmain{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:28px}
-/* case hero number */
 .case-hero-num{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.06)}
-.case-hero-val{font-family:var(–fd);font-size:2.8rem;font-weight:700;color:var(–tl);line-height:1}
+.case-hero-val{font-family:var(--fd);font-size:2.8rem;font-weight:700;color:var(--tl);line-height:1}
 .case-hero-lbl{font-size:.82rem;color:rgba(255,255,255,.4);line-height:1.3}
-.cbdg{display:inline-block;background:rgba(176,110,74,.13);color:var(–tl);font-size:.65rem;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
-.ctit{font-family:var(–fd);font-size:1.65rem;font-weight:700;color:#fff;margin-bottom:2px}
+.cbdg{display:inline-block;background:rgba(176,110,74,.13);color:var(--tl);font-size:.65rem;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+.ctit{font-family:var(--fd);font-size:1.65rem;font-weight:700;color:#fff;margin-bottom:2px}
 .csec{font-size:.72rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:16px}
-.carea{font-size:.7rem;color:rgba(255,255,255,.28);margin-bottom:16px;font-style:italic}
 .cbl{margin-bottom:12px}
-.cbll{font-size:.62rem;color:var(–tl);text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-bottom:3px}
+.cbll{font-size:.62rem;color:var(--tl);text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-bottom:3px}
 .cblt{font-size:.84rem;color:rgba(255,255,255,.6);line-height:1.65}
 .ctchs{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
 .ctch{font-size:.63rem;background:rgba(255,255,255,.05);color:rgba(255,255,255,.36);padding:2px 9px;border-radius:20px}
 .cres-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
 .cres-card{background:rgba(176,110,74,.09);border:1px solid rgba(176,110,74,.18);border-radius:10px;padding:14px 16px}
-.cres-val{font-family:var(–fd);font-size:1.55rem;font-weight:700;color:var(–tl);line-height:1}
+.cres-val{font-family:var(--fd);font-size:1.55rem;font-weight:700;color:var(--tl);line-height:1}
 .cres-lbl{font-size:.72rem;color:rgba(255,255,255,.38);margin-top:4px;line-height:1.4}
 .cres-card.wide{grid-column:span 2}
 .cside{display:flex;flex-direction:column;gap:9px}
 .cm{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:14px;display:flex;gap:11px;align-items:flex-start;transition:border-color .22s}
 .cm:hover{border-color:rgba(176,110,74,.22)}
 .cmico{width:32px;height:32px;border-radius:8px;background:rgba(176,110,74,.09);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.cmv{font-family:var(–fd);font-size:1.25rem;font-weight:700;color:var(–tl);line-height:1}
+.cmv{font-family:var(--fd);font-size:1.25rem;font-weight:700;color:var(--tl);line-height:1}
 .cmd{font-size:.68rem;color:rgba(255,255,255,.36);margin-top:2px;line-height:1.4}
 .cstrip{display:flex;justify-content:center;gap:24px;margin-top:40px;flex-wrap:wrap;padding-top:28px;border-top:1px solid rgba(255,255,255,.05)}
-.ctag{font-family:var(–fd);font-size:.92rem;font-weight:600;color:rgba(255,255,255,.25);letter-spacing:.04em;cursor:default;transition:color .22s}
-.ctag:hover{color:var(–tl)}
+.ctag{font-family:var(--fd);font-size:.92rem;font-weight:600;color:rgba(255,255,255,.25);letter-spacing:.04em;cursor:default;transition:color .22s}
+.ctag:hover{color:var(--tl)}
 
-/* ══ 6 - PARA QUEM v2 ══ */
-.pq{background:linear-gradient(145deg,#0c2427,var(–ink) 55%,#1d4840 100%);padding:88px 0;position:relative;overflow:hidden}
-.pq::after{content:’’;position:absolute;bottom:-80px;right:-80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(176,110,74,.07),transparent 70%);pointer-events:none}
+/* PARA QUEM */
+.pq{background:linear-gradient(145deg,#0c2427,var(--ink) 55%,#1d4840 100%);padding:88px 0;position:relative;overflow:hidden}
+.pq::after{content:'';position:absolute;bottom:-80px;right:-80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(176,110,74,.07),transparent 70%);pointer-events:none}
 .pqlayout{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;position:relative;z-index:2}
 .pqlist{list-style:none;margin:22px 0 28px}
 .pqi{display:flex;gap:13px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05)}
@@ -232,11 +220,11 @@ svg{display:block}
 .pqr{display:grid;grid-template-columns:1fr 1fr;gap:11px}
 .pqb{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:13px;padding:18px 15px;transition:all .27s}
 .pqb:hover{border-color:rgba(176,110,74,.27);background:rgba(176,110,74,.05);transform:translateY(-3px)}
-.pqbv{font-family:var(–fd);font-size:1.8rem;font-weight:700;color:var(–tl);line-height:1;margin-bottom:5px}
+.pqbv{font-family:var(--fd);font-size:1.8rem;font-weight:700;color:var(--tl);line-height:1;margin-bottom:5px}
 .pqbd{font-size:.71rem;color:rgba(255,255,255,.36);line-height:1.45}
 
-/* ══ 7 - FUNDADORES v2 ══ */
-.quem{background:var(–white);padding:88px 0}
+/* FUNDADORES */
+.quem{background:var(--white);padding:88px 0}
 .qhdr{text-align:center;max-width:490px;margin:0 auto 44px}
 .founders{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px}
 .founder{display:grid;grid-template-columns:160px 1fr;border:1px solid rgba(20,55,60,.08);border-radius:18px;overflow:hidden;transition:box-shadow .28s}
@@ -244,120 +232,118 @@ svg{display:block}
 .fpic{position:relative;overflow:hidden;min-height:240px}
 .fpic img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .5s}
 .founder:hover .fpic img{transform:scale(1.04)}
-.fpph{width:100%;height:100%;min-height:240px;background:linear-gradient(160deg,var(–ink),var(–sage));display:flex;align-items:center;justify-content:center;font-family:var(–fd);font-size:2rem;font-weight:700;color:rgba(255,255,255,.26)}
-.fbody{padding:24px 24px 24px 20px;background:var(–white)}
-.fn{font-family:var(–fd);font-size:1.4rem;font-weight:700;color:var(–ink);margin-bottom:2px}
-.fr{font-size:.7rem;color:var(–terra);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
-.fb{font-size:.81rem;color:var(–sage);line-height:1.7;margin-bottom:10px}
+.fpph{width:100%;height:100%;min-height:240px;background:linear-gradient(160deg,var(--ink),var(--sage));display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:2rem;font-weight:700;color:rgba(255,255,255,.26)}
+.fbody{padding:24px 24px 24px 20px;background:var(--white)}
+.fn{font-family:var(--fd);font-size:1.4rem;font-weight:700;color:var(--ink);margin-bottom:2px}
+.fr{font-size:.7rem;color:var(--terra);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+.fb{font-size:.81rem;color:var(--sage);line-height:1.7;margin-bottom:10px}
 .fb-short{display:block}
 .fb-full{display:none}
-.fb-toggle{font-size:.73rem;color:var(–terra);font-weight:600;cursor:pointer;border:none;background:none;padding:0;margin-bottom:10px;transition:color .22s}
-.fb-toggle:hover{color:var(–tl)}
+.fb-toggle{font-size:.73rem;color:var(--terra);font-weight:600;cursor:pointer;border:none;background:none;padding:0;margin-bottom:10px;transition:color .22s}
+.fb-toggle:hover{color:var(--tl)}
 .ftags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:9px}
-.ftag{font-size:.65rem;background:var(–cl);color:var(–sage);padding:3px 8px;border-radius:20px;border:1px solid rgba(20,55,60,.06);font-weight:500}
+.ftag{font-size:.65rem;background:var(--cl);color:var(--sage);padding:3px 8px;border-radius:20px;border:1px solid rgba(20,55,60,.06);font-weight:500}
 .flogos{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:11px}
-.flog{font-size:.67rem;background:var(–cream);color:var(–ink);padding:3px 9px;border-radius:20px;font-weight:700;font-family:var(–fd)}
-.fq{font-family:var(–fd);font-size:.89rem;font-style:italic;color:var(–ink);border-left:2px solid var(–terra);padding-left:10px;line-height:1.55}
-.tband{background:linear-gradient(135deg,var(–ink),var(–sage));border-radius:16px;padding:28px 34px;display:flex;justify-content:space-between;align-items:center;gap:22px}
-.tbtext h3{font-family:var(–fd);font-size:1.38rem;font-weight:700;color:#fff;margin-bottom:5px}
+.flog{font-size:.67rem;background:var(--cream);color:var(--ink);padding:3px 9px;border-radius:20px;font-weight:700;font-family:var(--fd)}
+.fq{font-family:var(--fd);font-size:.89rem;font-style:italic;color:var(--ink);border-left:2px solid var(--terra);padding-left:10px;line-height:1.55}
+.tband{background:linear-gradient(135deg,var(--ink),var(--sage));border-radius:16px;padding:28px 34px;display:flex;justify-content:space-between;align-items:center;gap:22px}
+.tbtext h3{font-family:var(--fd);font-size:1.38rem;font-weight:700;color:#fff;margin-bottom:5px}
 .tbtext p{font-size:.85rem;color:rgba(255,255,255,.5);max-width:500px;line-height:1.6}
 .tbbdg{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:11px;padding:15px 22px;text-align:center;flex-shrink:0}
-.tbbv{font-family:var(–fd);font-size:1.8rem;font-weight:700;color:var(–tl)}
+.tbbv{font-family:var(--fd);font-size:1.8rem;font-weight:700;color:var(--tl)}
 .tbbl{font-size:.68rem;color:rgba(255,255,255,.36);margin-top:2px}
 
-/* ══ 8 - COMO FUNCIONA v2 ══ */
-.como{background:var(–cl);padding:88px 0}
+/* COMO FUNCIONA */
+.como{background:var(--cl);padding:88px 0}
 .cohdr{text-align:center;max-width:490px;margin:0 auto 48px}
 .tl{max-width:680px;margin:0 auto 36px;position:relative}
-.tl::before{content:’’;position:absolute;left:23px;top:25px;bottom:25px;width:2px;background:linear-gradient(to bottom,var(–terra),var(–sand))}
+.tl::before{content:'';position:absolute;left:23px;top:25px;bottom:25px;width:2px;background:linear-gradient(to bottom,var(--terra),var(--sand))}
 .tli{display:flex;gap:20px;margin-bottom:28px}
 .tli:last-child{margin-bottom:0}
-.tlid{width:46px;height:46px;border-radius:50%;background:var(–terra);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;z-index:2;font-family:var(–fd);font-size:1.05rem;box-shadow:0 0 0 4px rgba(176,110,74,.1);transition:all .25s}
-.tli:hover .tlid{background:var(–tl);transform:scale(1.07)}
+.tlid{width:46px;height:46px;border-radius:50%;background:var(--terra);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;z-index:2;font-family:var(--fd);font-size:1.05rem;box-shadow:0 0 0 4px rgba(176,110,74,.1);transition:all .25s}
+.tli:hover .tlid{background:var(--tl);transform:scale(1.07)}
 .tlib{padding-top:5px}
-.tlim{font-size:.66rem;color:var(–terra);font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px}
-.tlit{font-family:var(–fd);font-size:1.15rem;font-weight:700;color:var(–ink);margin-bottom:3px}
-.tlid2{font-size:.84rem;color:var(–sage);line-height:1.65}
-.tli-time{display:inline-block;background:rgba(176,110,74,.1);color:var(–terra);font-size:.62rem;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:8px;vertical-align:middle}
+.tlim{font-size:.66rem;color:var(--terra);font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px}
+.tlit{font-family:var(--fd);font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:3px}
+.tlid2{font-size:.84rem;color:var(--sage);line-height:1.65}
+.tli-time{display:inline-block;background:rgba(176,110,74,.1);color:var(--terra);font-size:.62rem;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:8px;vertical-align:middle}
 
-/* ══ 9 - CUSTO INVISÍVEL v2 ══ */
-.custo{background:var(–white);padding:88px 0}
+/* CUSTO INVISÍVEL */
+.custo{background:var(--white);padding:88px 0}
 .cuhdr{text-align:center;max-width:560px;margin:0 auto 44px}
 .cugrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:40px}
-.cucel{background:var(–cl);border:1px solid rgba(20,55,60,.06);border-radius:14px;padding:26px 22px;position:relative;transition:all .28s}
-.cucel:hover{background:var(–white);border-color:rgba(176,110,74,.2);transform:translateY(-3px);box-shadow:0 8px 24px rgba(20,55,60,.06)}
-.cucel::before{content:’’;position:absolute;top:0;left:0;right:0;height:2px;background:var(–terra);opacity:0;transition:opacity .22s;border-radius:14px 14px 0 0}
+.cucel{background:var(--cl);border:1px solid rgba(20,55,60,.06);border-radius:14px;padding:26px 22px;position:relative;transition:all .28s}
+.cucel:hover{background:var(--white);border-color:rgba(176,110,74,.2);transform:translateY(-3px);box-shadow:0 8px 24px rgba(20,55,60,.06)}
+.cucel::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--terra);opacity:0;transition:opacity .22s;border-radius:14px 14px 0 0}
 .cucel:hover::before{opacity:1}
-.cucel-num{font-family:var(–fd);font-size:1.6rem;font-weight:700;color:var(–terra);line-height:1;margin-bottom:8px}
+.cucel-num{font-family:var(--fd);font-size:1.6rem;font-weight:700;color:var(--terra);line-height:1;margin-bottom:8px}
 .cuico{width:32px;height:32px;border-radius:8px;background:rgba(176,110,74,.08);display:flex;align-items:center;justify-content:center;margin-bottom:11px}
-.cut{font-size:.83rem;font-weight:600;color:var(–ink);margin-bottom:4px;line-height:1.3}
-.cud{font-size:.74rem;color:var(–sage);line-height:1.55}
-.cubot{background:var(–ink);border-radius:16px;padding:36px 40px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
-.cubq{font-family:var(–fd);font-size:clamp(1.3rem,2.2vw,1.8rem);font-weight:700;color:#fff;line-height:1.25;margin-bottom:6px}
+.cut{font-size:.83rem;font-weight:600;color:var(--ink);margin-bottom:4px;line-height:1.3}
+.cud{font-size:.74rem;color:var(--sage);line-height:1.55}
+.cubot{background:var(--ink);border-radius:16px;padding:36px 40px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.cubq{font-family:var(--fd);font-size:clamp(1.3rem,2.2vw,1.8rem);font-weight:700;color:#fff;line-height:1.25;margin-bottom:6px}
 .cubp{font-size:.88rem;color:rgba(255,255,255,.4);font-weight:300;line-height:1.6}
 
-/* ══ 10 - CTA FINAL ══ */
-.ctaf{background:linear-gradient(165deg,var(–ink),#194040 55%,var(–sage) 100%);padding:92px 0;text-align:center;position:relative;overflow:hidden}
-.ctaf::before{content:’’;position:absolute;inset:0;background:url(“data:image/svg+xml,%3Csvg width=‘80’ height=‘80’ viewBox=‘0 0 80 80’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Ccircle cx=‘40’ cy=‘40’ r=‘1’ fill=’%23fff’ fill-opacity=’.022’/%3E%3C/svg%3E”)}
+/* CTA FINAL */
+.ctaf{background:linear-gradient(165deg,var(--ink),#194040 55%,var(--sage) 100%);padding:92px 0;text-align:center;position:relative;overflow:hidden}
+.ctaf::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='1' fill='%23fff' fill-opacity='.022'/%3E%3C/svg%3E")}
 .ctafin{position:relative;z-index:2}
-.ctaf h2{font-family:var(–fd);font-size:clamp(2rem,3.6vw,2.9rem);font-weight:700;color:#fff;margin-bottom:12px;line-height:1.14}
+.ctaf h2{font-family:var(--fd);font-size:clamp(2rem,3.6vw,2.9rem);font-weight:700;color:#fff;margin-bottom:12px;line-height:1.14}
 .ctafsub{font-size:.97rem;color:rgba(255,255,255,.48);max-width:480px;margin:0 auto 34px;line-height:1.72;font-weight:300}
 .ctaftags{display:flex;justify-content:center;gap:14px;margin-top:28px;flex-wrap:wrap}
 .ctaftt{font-size:.75rem;color:rgba(255,255,255,.3);display:flex;align-items:center;gap:5px}
 .ctafn{margin-top:18px;font-size:.73rem;color:rgba(255,255,255,.2);font-style:italic}
 
 /* FOOTER */
-footer{background:var(–ink);padding:32px 0;text-align:center;border-top:1px solid rgba(255,255,255,.05)}
+footer{background:var(--ink);padding:32px 0;text-align:center;border-top:1px solid rgba(255,255,255,.05)}
 .flinks{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:11px}
 .flinks span{font-size:.71rem;color:rgba(255,255,255,.25);letter-spacing:.02em}
 footer p{font-size:.72rem;color:rgba(255,255,255,.22)}
 footer a{color:rgba(255,255,255,.36);transition:color .22s}
-footer a:hover{color:var(–tl)}
+footer a:hover{color:var(--tl)}
 
-/* ══ RESPONSIVE ══ */
+/* RESPONSIVE */
 @media(max-width:980px){
-.nlinks,.ncta{display:none}
-.nhbg{display:block}
-.prob-top{grid-template-columns:1fr}
-.pgrid{grid-template-columns:1fr 1fr}
-.msteps{grid-template-columns:repeat(3,1fr);gap:24px}
-.msteps::before{display:none}
-.aggrid{grid-template-columns:1fr 1fr}
-.case-wrap{grid-template-columns:1fr}
-.cside{display:none}
-.pqlayout{grid-template-columns:1fr}
-.pqr{grid-template-columns:1fr 1fr}
-.founders{grid-template-columns:1fr}
-.founder{grid-template-columns:130px 1fr}
-.cugrid{grid-template-columns:repeat(2,1fr)}
-.cubot{grid-template-columns:1fr}
-.tband{flex-direction:column;text-align:center}
-.ctop{flex-direction:column;align-items:flex-start}
+  .nlinks,.ncta{display:none}
+  .nhbg{display:block}
+  .hero-in{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .hero-left{max-width:100%}
+  .hero h1{font-size:2rem}
+  .prob-top{grid-template-columns:1fr}
+  .pgrid{grid-template-columns:1fr 1fr}
+  .msteps{grid-template-columns:repeat(3,1fr);gap:24px}
+  .msteps::before{display:none}
+  .aggrid{grid-template-columns:1fr 1fr}
+  .case-wrap{grid-template-columns:1fr}
+  .cside{display:none}
+  .pqlayout{grid-template-columns:1fr}
+  .pqr{grid-template-columns:1fr 1fr}
+  .founders{grid-template-columns:1fr}
+  .founder{grid-template-columns:130px 1fr}
+  .cugrid{grid-template-columns:repeat(2,1fr)}
+  .cubot{grid-template-columns:1fr}
+  .tband{flex-direction:column;text-align:center}
+  .ctop{flex-direction:column;align-items:flex-start}
 }
 @media(max-width:600px){
-:root{–r:15px}
-.hero h1{font-size:2rem}
-.hero-in{padding:0}
-.hjournay{flex-direction:column;align-items:flex-start}
-.hjarrow{display:none}
-.msteps{grid-template-columns:1fr 1fr}
-.aggrid{grid-template-columns:1fr}
-.cugrid{grid-template-columns:1fr}
-.pqr{grid-template-columns:1fr 1fr}
-.founder{grid-template-columns:1fr}
-.fpic{height:180px}
-.pgrid{grid-template-columns:1fr}
-.cres-grid{grid-template-columns:1fr}
-.cres-card.wide{grid-column:span 1}
-.cubot{padding:28px 22px}
+  :root{--r:15px}
+  .msteps{grid-template-columns:1fr 1fr}
+  .aggrid{grid-template-columns:1fr}
+  .cugrid{grid-template-columns:1fr}
+  .pqr{grid-template-columns:1fr 1fr}
+  .founder{grid-template-columns:1fr}
+  .fpic{height:180px}
+  .pgrid{grid-template-columns:1fr}
+  .cres-grid{grid-template-columns:1fr}
+  .cres-card.wide{grid-column:span 1}
+  .cubot{padding:28px 22px}
 }
 </style>
-
 </head>
 <body>
 
 <!-- NAV -->
-
 <nav class="nav" id="nav">
 <div class="c ni">
   <a href="#inicio" class="nlogo"><img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting — Implementação de IA para Empresas"></a>
@@ -386,57 +372,90 @@ footer a:hover{color:var(–tl)}
   <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="ncta" style="margin-top:8px">Agendar diagn&oacute;stico</a>
 </div>
 
-<!-- ═══════════════════════════════
-     1ª DOBRA — HERO (REDESIGN)
-═══════════════════════════════ -->
-
+<!-- HERO — layout 2 colunas (ajuste 1) -->
 <section class="hero" id="inicio">
   <div class="hbg"></div><div class="hgrain"></div><div class="hglow"></div>
   <div class="c hero-in">
-    <div>
+
+    <!-- coluna esquerda -->
+    <div class="hero-left">
       <div class="hpill"><span class="dot"></span>IA Hiper-Personalizada para o Seu Neg&oacute;cio</div>
       <h1>Transforme Intelig&ecirc;ncia Artificial em ganho real de <em>produtividade, receita e efici&ecirc;ncia.</em></h1>
       <p class="hero-sub">Solu&ccedil;&otilde;es sob medida, integradas aos seus sistemas, sem necessidade de equipe t&eacute;cnica interna. Do diagn&oacute;stico ao resultado em semanas &mdash; n&atilde;o em meses.</p>
 
-```
-  <!-- Journey steps -->
-  <div class="hjournay">
-    <div class="hjstep">
-      <div class="hjico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
-      <div class="hjtext">Diagn&oacute;stico<br>estrat&eacute;gico</div>
-    </div>
-    <span class="hjarrow">&rarr;</span>
-    <div class="hjstep">
-      <div class="hjico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
-      <div class="hjtext">Planejamento &amp;<br>implementa&ccedil;&atilde;o integrada</div>
-    </div>
-    <span class="hjarrow">&rarr;</span>
-    <div class="hjstep">
-      <div class="hjico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-      <div class="hjtext">Monitoramento<br>de indicadores</div>
-    </div>
-    <span class="hjarrow">&rarr;</span>
-    <div class="hjstep">
-      <div class="hjico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-      <div class="hjtext">Resultado<br>real</div>
-    </div>
-  </div>
+      <!-- AJUSTE 2: ordem corrigida — Monitoramento em 3º -->
+      <div class="hjournay">
+        <div class="hjstep">
+          <div class="hjnum">1</div>
+          <div class="hjico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+          <div class="hjtext">Diagn&oacute;stico estrat&eacute;gico</div>
+        </div>
+        <div class="hjstep">
+          <div class="hjnum">2</div>
+          <div class="hjico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+          <div class="hjtext">Planejamento &amp; implementa&ccedil;&atilde;o integrada</div>
+        </div>
+        <div class="hjstep">
+          <div class="hjnum">3</div>
+          <div class="hjico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <div class="hjtext">Monitoramento de indicadores</div>
+        </div>
+        <div class="hjstep">
+          <div class="hjnum">4</div>
+          <div class="hjico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div class="hjtext">Resultado real</div>
+        </div>
+      </div>
 
-  <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="btn-p">
-    Agendar um diagn&oacute;stico gratuito
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-  </a>
-  <div><a href="#cases" class="hero-link">Ver cases implementados &darr;</a></div>
-</div>
-```
+      <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="btn-p">
+        Agendar um diagn&oacute;stico gratuito
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <div><a href="#cases" class="hero-link">Ver cases implementados &darr;</a></div>
+    </div>
+
+    <!-- coluna direita: stats flutuantes -->
+    <div class="hero-right rv" style="transition-delay:.2s">
+      <div class="hstat">
+        <div class="hstat-val">R$0,09</div>
+        <div class="hstat-lbl">por relat&oacute;rio cl&iacute;nico gerado por IA</div>
+        <div class="hstat-brand">COLO Sa&uacute;de</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-val">+42%</div>
+        <div class="hstat-lbl">convers&atilde;o de candidatos</div>
+        <div class="hstat-brand">Consultoria de RH</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-val">+37%</div>
+        <div class="hstat-lbl">convers&atilde;o de leads</div>
+        <div class="hstat-brand">Casa Kahla</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-val">+34%</div>
+        <div class="hstat-lbl">taxa de recompra semestral</div>
+        <div class="hstat-brand">Belcenter</div>
+      </div>
+      <div class="hstat wide">
+        <div class="hstat-val">30d</div>
+        <div>
+          <div class="hstat-lbl">do briefing ao go-live &mdash; sem equipe t&eacute;cnica interna necess&aacute;ria</div>
+          <div class="hstat-brand">M&eacute;dia dos projetos</div>
+        </div>
+      </div>
+      <div class="hstat wide">
+        <div class="hstat-val">24h</div>
+        <div>
+          <div class="hstat-lbl">atendimento ininterrupto &mdash; agentes sempre ativos</div>
+          <div class="hstat-brand">Todos os clientes</div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </section>
 
-<!-- ═══════════════════════════════
-     2ª DOBRA — PROBLEMA (REDESIGN)
-═══════════════════════════════ -->
-
+<!-- PROBLEMA -->
 <section class="prob" id="problema">
 <div class="c">
   <div class="prob-top">
@@ -454,7 +473,6 @@ footer a:hover{color:var(–tl)}
       </a>
     </div>
   </div>
-
   <div class="pgrid rv" style="transition-delay:.15s">
     <div class="pcard">
       <div class="pcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
@@ -480,10 +498,7 @@ footer a:hover{color:var(–tl)}
 </div>
 </section>
 
-<!-- ═══════════════════════════════
-     3ª DOBRA — METODOLOGIA (com ícones)
-═══════════════════════════════ -->
-
+<!-- METODOLOGIA -->
 <section class="metodo" id="fazemos">
 <div class="c">
   <div class="mhdr rv">
@@ -551,53 +566,58 @@ footer a:hover{color:var(–tl)}
 </div>
 </section>
 
-<!-- ═══════════════════════════════
-     4ª DOBRA — INTEGRAÇÕES (ícones maiores)
-═══════════════════════════════ -->
-
+<!-- INTEGRAÇÕES — AJUSTE 3: frase atualizada + logos corrigidos -->
 <section class="ints" id="integracoes">
   <div class="c inthdr rv">
     <h2>Integramos com os sistemas que sua empresa j&aacute; utiliza</h2>
+    <!-- AJUSTE 3: frase substituída conforme doc -->
     <p>Dezenas de conectores dispon&iacute;veis &mdash; sem trocar sistema, sem parar a opera&ccedil;&atilde;o.</p>
   </div>
   <div class="tw">
     <div class="tk">
+      <!-- AJUSTE 4: logos corrigidos com fallback SVG para Excel e outros que falhavam -->
       <img class="tki" src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp">
       <img class="tki" src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram">
       <img class="tki" src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n">
-      <img class="tki" src="https://cdn.simpleicons.org/openai/000" alt="ChatGPT / OpenAI">
-      <img class="tki" src="https://cdn.simpleicons.org/anthropic/000" alt="Claude / Anthropic">
+      <img class="tki" src="https://cdn.simpleicons.org/openai/10a37f" alt="ChatGPT / OpenAI">
+      <img class="tki" src="https://cdn.simpleicons.org/anthropic/d97757" alt="Claude / Anthropic">
       <img class="tki" src="https://cdn.simpleicons.org/googlegemini/886FBF" alt="Google Gemini">
       <img class="tki" src="https://cdn.simpleicons.org/meta/0081FB" alt="Meta">
       <img class="tki" src="https://cdn.simpleicons.org/gmail/EA4335" alt="Gmail">
       <img class="tki" src="https://cdn.simpleicons.org/googledrive/4285F4" alt="Google Drive">
-      <img class="tki" src="https://cdn.simpleicons.org/googlesheets/0F9D58" alt="Google Sheets">
-      <img class="tki" src="https://cdn.simpleicons.org/notion/000" alt="Notion">
+      <img class="tki" src="https://cdn.simpleicons.org/googlesheets/34A853" alt="Google Sheets">
+      <img class="tki" src="https://cdn.simpleicons.org/notion/000000" alt="Notion">
       <img class="tki" src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="HubSpot">
       <img class="tki" src="https://cdn.simpleicons.org/trello/0052CC" alt="Trello">
       <img class="tki" src="https://cdn.simpleicons.org/microsoftoutlook/0078D4" alt="Microsoft Outlook">
-      <img class="tki" src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Excel">
+      <!-- Excel: usando ícone de microsoftexcel com cor correta -->
+      <svg class="tki" viewBox="0 0 24 24" fill="#217346" xmlns="http://www.w3.org/2000/svg" style="width:36px;height:36px"><path d="M21.17 1.5H8.83C7.82 1.5 7 2.32 7 3.33v2.17H2.83C1.82 5.5 1 6.32 1 7.33v9.34c0 1.01.82 1.83 1.83 1.83H7v2.17c0 1.01.82 1.83 1.83 1.83h12.34c1.01 0 1.83-.82 1.83-1.83V3.33c0-1.01-.82-1.83-1.83-1.83zM7 14.83H3.5v-2h3.5v2zm0-3.5H3.5v-2H7v2zm0-3.5H3.5v-2H7v2zm13.5 11.17H8.5V3h12v16.5zM10.5 15l2.5-3.5-2.5-3.5h2l1.5 2.1 1.5-2.1h2l-2.5 3.5 2.5 3.5h-2l-1.5-2.1-1.5 2.1h-2z"/></svg>
       <img class="tki" src="https://cdn.simpleicons.org/microsoftonedrive/0078D4" alt="OneDrive">
       <img class="tki" src="https://cdn.simpleicons.org/shopify/96BF48" alt="Shopify">
       <img class="tki" src="https://cdn.simpleicons.org/salesforce/00A1E0" alt="Salesforce">
+      <img class="tki" src="https://cdn.simpleicons.org/slack/4A154B" alt="Slack">
+      <img class="tki" src="https://cdn.simpleicons.org/airtable/18BFFF" alt="Airtable">
+      <!-- duplicar para loop contínuo -->
       <img class="tki" src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp">
       <img class="tki" src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram">
       <img class="tki" src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n">
-      <img class="tki" src="https://cdn.simpleicons.org/openai/000" alt="ChatGPT / OpenAI">
-      <img class="tki" src="https://cdn.simpleicons.org/anthropic/000" alt="Claude / Anthropic">
+      <img class="tki" src="https://cdn.simpleicons.org/openai/10a37f" alt="ChatGPT / OpenAI">
+      <img class="tki" src="https://cdn.simpleicons.org/anthropic/d97757" alt="Claude / Anthropic">
       <img class="tki" src="https://cdn.simpleicons.org/googlegemini/886FBF" alt="Google Gemini">
       <img class="tki" src="https://cdn.simpleicons.org/meta/0081FB" alt="Meta">
       <img class="tki" src="https://cdn.simpleicons.org/gmail/EA4335" alt="Gmail">
       <img class="tki" src="https://cdn.simpleicons.org/googledrive/4285F4" alt="Google Drive">
-      <img class="tki" src="https://cdn.simpleicons.org/googlesheets/0F9D58" alt="Google Sheets">
-      <img class="tki" src="https://cdn.simpleicons.org/notion/000" alt="Notion">
+      <img class="tki" src="https://cdn.simpleicons.org/googlesheets/34A853" alt="Google Sheets">
+      <img class="tki" src="https://cdn.simpleicons.org/notion/000000" alt="Notion">
       <img class="tki" src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="HubSpot">
       <img class="tki" src="https://cdn.simpleicons.org/trello/0052CC" alt="Trello">
       <img class="tki" src="https://cdn.simpleicons.org/microsoftoutlook/0078D4" alt="Microsoft Outlook">
-      <img class="tki" src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Excel">
+      <svg class="tki" viewBox="0 0 24 24" fill="#217346" xmlns="http://www.w3.org/2000/svg" style="width:36px;height:36px"><path d="M21.17 1.5H8.83C7.82 1.5 7 2.32 7 3.33v2.17H2.83C1.82 5.5 1 6.32 1 7.33v9.34c0 1.01.82 1.83 1.83 1.83H7v2.17c0 1.01.82 1.83 1.83 1.83h12.34c1.01 0 1.83-.82 1.83-1.83V3.33c0-1.01-.82-1.83-1.83-1.83zM7 14.83H3.5v-2h3.5v2zm0-3.5H3.5v-2H7v2zm0-3.5H3.5v-2H7v2zm13.5 11.17H8.5V3h12v16.5zM10.5 15l2.5-3.5-2.5-3.5h2l1.5 2.1 1.5-2.1h2l-2.5 3.5 2.5 3.5h-2l-1.5-2.1-1.5 2.1h-2z"/></svg>
       <img class="tki" src="https://cdn.simpleicons.org/microsoftonedrive/0078D4" alt="OneDrive">
       <img class="tki" src="https://cdn.simpleicons.org/shopify/96BF48" alt="Shopify">
       <img class="tki" src="https://cdn.simpleicons.org/salesforce/00A1E0" alt="Salesforce">
+      <img class="tki" src="https://cdn.simpleicons.org/slack/4A154B" alt="Slack">
+      <img class="tki" src="https://cdn.simpleicons.org/airtable/18BFFF" alt="Airtable">
     </div>
   </div>
   <div class="c intx rv">Google Calendar &nbsp;&middot;&nbsp; Looker Studio &nbsp;&middot;&nbsp; RD Station &nbsp;&middot;&nbsp; Kommo &nbsp;&middot;&nbsp; Power BI &nbsp;&middot;&nbsp; VTEX &nbsp;&middot;&nbsp; Nuvem Shop &nbsp;&middot;&nbsp; ERP (Protheus &middot; Linx &middot; Sankhya &middot; Omie &middot; Tiny) &nbsp;&middot;&nbsp; Bubble &nbsp;&middot;&nbsp; Aplicativos Propriet&aacute;rios</div>
@@ -609,10 +629,7 @@ footer a:hover{color:var(–tl)}
   </div>
 </section>
 
-<!-- ═══════════════════════════════
-     AGENTES QUE DESENVOLVEMOS
-═══════════════════════════════ -->
-
+<!-- AJUSTE 5: SEÇÃO AGENTES QUE DESENVOLVEMOS (adicionada antes dos Cases) -->
 <section class="agentes" id="agentes">
 <div class="c">
   <div class="aghdr rv">
@@ -622,183 +639,195 @@ footer a:hover{color:var(–tl)}
   </div>
   <div class="aggrid rv" style="transition-delay:.1s">
 
-```
-<div class="agcard">
-  <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-  <h3>Agentes de Vendas / Convers&atilde;o</h3>
-  <p>WhatsApp, Instagram, Webchat e App. Apresenta&ccedil;&atilde;o de produtos; quebra de obje&ccedil;&otilde;es; follow-ups; redu&ccedil;&atilde;o de no-show; resgate de leads; qualifica&ccedil;&atilde;o; agendamento; integra&ccedil;&atilde;o com CRM e e-Commerce. B2B e B2C.</p>
-  <div class="agcard-tags"><span class="agcard-tag">WhatsApp</span><span class="agcard-tag">Instagram</span><span class="agcard-tag">CRM</span><span class="agcard-tag">e-Commerce</span></div>
-</div>
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+      <h3>Agentes de Vendas / Convers&atilde;o</h3>
+      <p>WhatsApp, Instagram, Webchat e App. Apresenta&ccedil;&atilde;o de produtos; quebra de obje&ccedil;&otilde;es; follow-ups; redu&ccedil;&atilde;o de no-show; resgate de leads; qualifica&ccedil;&atilde;o; agendamento; integra&ccedil;&atilde;o com CRM e e-Commerce. B2B e B2C.</p>
+      <div class="agcard-tags"><span class="agcard-tag">WhatsApp</span><span class="agcard-tag">Instagram</span><span class="agcard-tag">CRM</span><span class="agcard-tag">e-Commerce</span></div>
+    </div>
 
-<div class="agcard">
-  <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-  <h3>Agentes de SAC</h3>
-  <p>WhatsApp, Instagram, Webchat e App. Triagem por tipo de problema; suporte t&eacute;cnico; FAQ; envio e recebimento de documentos; preenchimento autom&aacute;tico do CRM; transbordo para humano com hist&oacute;rico completo.</p>
-  <div class="agcard-tags"><span class="agcard-tag">Suporte</span><span class="agcard-tag">FAQ</span><span class="agcard-tag">CRM</span><span class="agcard-tag">Transbordo</span></div>
-</div>
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+      <h3>Agentes de SAC</h3>
+      <p>WhatsApp, Instagram, Webchat e App. Triagem por tipo de problema; suporte t&eacute;cnico; FAQ; envio e recebimento de documentos; preenchimento autom&aacute;tico do CRM; transbordo para humano com hist&oacute;rico completo.</p>
+      <div class="agcard-tags"><span class="agcard-tag">Suporte</span><span class="agcard-tag">FAQ</span><span class="agcard-tag">CRM</span><span class="agcard-tag">Transbordo</span></div>
+    </div>
 
-<div class="agcard">
-  <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-  <h3>Agentes Financeiro / Cobran&ccedil;a</h3>
-  <p>WhatsApp. Sinaliza&ccedil;&atilde;o de inadimpl&ecirc;ncia; negocia&ccedil;&atilde;o com cliente; envio de link de pagamento ou 2&ordf; via de boleto; integra&ccedil;&atilde;o com ERP; transbordo para humano com hist&oacute;rico.</p>
-  <div class="agcard-tags"><span class="agcard-tag">WhatsApp</span><span class="agcard-tag">ERP</span><span class="agcard-tag">Cobran&ccedil;a</span></div>
-</div>
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+      <h3>Agentes Financeiro / Cobran&ccedil;a</h3>
+      <p>WhatsApp. Sinaliza&ccedil;&atilde;o de inadimpl&ecirc;ncia; negocia&ccedil;&atilde;o com cliente; envio de link de pagamento ou 2&ordf; via de boleto; integra&ccedil;&atilde;o com ERP; transbordo para humano com hist&oacute;rico.</p>
+      <div class="agcard-tags"><span class="agcard-tag">WhatsApp</span><span class="agcard-tag">ERP</span><span class="agcard-tag">Cobran&ccedil;a</span></div>
+    </div>
 
-<div class="agcard">
-  <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
-  <h3>Agentes de CRM / Fideliza&ccedil;&atilde;o e Reten&ccedil;&atilde;o</h3>
-  <p>WhatsApp, SMS e App. Campanhas personalizadas por perfil e hist&oacute;rico; cross e up-sell; relacionamento (anivers&aacute;rios); aumento de LTV; integra&ccedil;&atilde;o com ERP, Datalake e CRM.</p>
-  <div class="agcard-tags"><span class="agcard-tag">CRM</span><span class="agcard-tag">SMS</span><span class="agcard-tag">LTV</span><span class="agcard-tag">Datalake</span></div>
-</div>
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+      <h3>Agentes de CRM / Fideliza&ccedil;&atilde;o e Reten&ccedil;&atilde;o</h3>
+      <p>WhatsApp, SMS e App. Campanhas personalizadas por perfil e hist&oacute;rico; cross e up-sell; relacionamento (anivers&aacute;rios); aumento de LTV; integra&ccedil;&atilde;o com ERP, Datalake e CRM.</p>
+      <div class="agcard-tags"><span class="agcard-tag">CRM</span><span class="agcard-tag">SMS</span><span class="agcard-tag">LTV</span><span class="agcard-tag">Datalake</span></div>
+    </div>
 
-<div class="agcard">
-  <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-  <h3>Agentes / Copilotos de Marketing</h3>
-  <p>Cria&ccedil;&atilde;o de campanhas; calend&aacute;rio editorial; social media; performance / tr&aacute;fego pago; newsletter e blog; e-mail marketing; WhatsApp e SMS; trade marketing / PDV; landing pages; publica&ccedil;&otilde;es autom&aacute;ticas via API.</p>
-  <div class="agcard-tags"><span class="agcard-tag">Campanhas</span><span class="agcard-tag">Social</span><span class="agcard-tag">Tr&aacute;fego</span><span class="agcard-tag">E-mail</span></div>
-</div>
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <h3>Agentes / Copilotos de Marketing</h3>
+      <p>Cria&ccedil;&atilde;o de campanhas; calend&aacute;rio editorial; social media; performance / tr&aacute;fego pago; newsletter e blog; e-mail marketing; WhatsApp e SMS; trade marketing / PDV; landing pages; publica&ccedil;&otilde;es autom&aacute;ticas via API.</p>
+      <div class="agcard-tags"><span class="agcard-tag">Campanhas</span><span class="agcard-tag">Social</span><span class="agcard-tag">Tr&aacute;fego</span><span class="agcard-tag">E-mail</span></div>
+    </div>
 
-<div class="agcard">
-  <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-  <h3>Agentes de Dados e Intelig&ecirc;ncia / Growth</h3>
-  <p>Integrado a diferentes pontos de contato e sistemas. Gera relat&oacute;rios gerenciais e dashboards; insights; sugest&otilde;es de pontos cr&iacute;ticos do funil. Integra&ccedil;&atilde;o com Meta Ads, Google Ads, GA4, CRM, ERP.</p>
-  <div class="agcard-tags"><span class="agcard-tag">Dashboards</span><span class="agcard-tag">Meta Ads</span><span class="agcard-tag">GA4</span><span class="agcard-tag">Growth</span></div>
-</div>
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <h3>Agentes de Dados e Intelig&ecirc;ncia / Growth</h3>
+      <p>Integrado a diferentes pontos de contato e sistemas. Gera relat&oacute;rios gerenciais e dashboards; insights; sugest&otilde;es de pontos cr&iacute;ticos do funil. Integra&ccedil;&atilde;o com Meta Ads, Google Ads, GA4, CRM, ERP.</p>
+      <div class="agcard-tags"><span class="agcard-tag">Dashboards</span><span class="agcard-tag">Meta Ads</span><span class="agcard-tag">GA4</span><span class="agcard-tag">Growth</span></div>
+    </div>
 
-<div class="agcard">
-  <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-  <h3>Agentes de Opera&ccedil;&atilde;o Cl&iacute;nica / Assistencial</h3>
-  <p>L&ecirc; e interpreta exames e prontu&aacute;rio; cruza com protocolo cl&iacute;nico; gera roteiro de consulta em tempo real; emite alertas de risco; relat&oacute;rios gerenciais sobre carteira de pacientes; integra&ccedil;&atilde;o com ERP.</p>
-  <div class="agcard-tags"><span class="agcard-tag">Sa&uacute;de</span><span class="agcard-tag">Prontu&aacute;rio</span><span class="agcard-tag">Alertas</span><span class="agcard-tag">ERP</span></div>
-</div>
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+      <h3>Agentes de Opera&ccedil;&atilde;o Cl&iacute;nica / Assistencial</h3>
+      <p>L&ecirc; e interpreta exames e prontu&aacute;rio; cruza com protocolo cl&iacute;nico; gera roteiro de consulta em tempo real; emite alertas de risco; relat&oacute;rios gerenciais sobre carteira de pacientes; integra&ccedil;&atilde;o com ERP.</p>
+      <div class="agcard-tags"><span class="agcard-tag">Sa&uacute;de</span><span class="agcard-tag">Prontu&aacute;rio</span><span class="agcard-tag">Alertas</span><span class="agcard-tag">ERP</span></div>
+    </div>
 
-<div class="agcard">
-  <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-  <h3>Agentes de RH / Recrutamento e Sele&ccedil;&atilde;o</h3>
-  <p>Conversa; qualifica; cruza perfil e curr&iacute;culo com banco de vagas; l&ecirc; PDFs e Word; cadastra no CRM; agenda entrevista; referencia candidato para consultor correto; follow-ups de no-show.</p>
-  <div class="agcard-tags"><span class="agcard-tag">WhatsApp</span><span class="agcard-tag">CRM</span><span class="agcard-tag">Curr&iacute;culo</span><span class="agcard-tag">RH</span></div>
-</div>
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <h3>Agentes de RH / Recrutamento e Sele&ccedil;&atilde;o</h3>
+      <p>Conversa; qualifica; cruza perfil e curr&iacute;culo com banco de vagas; l&ecirc; PDFs e Word; cadastra no CRM; agenda entrevista; referencia candidato para consultor correto; follow-ups de no-show.</p>
+      <div class="agcard-tags"><span class="agcard-tag">WhatsApp</span><span class="agcard-tag">CRM</span><span class="agcard-tag">Curr&iacute;culo</span><span class="agcard-tag">RH</span></div>
+    </div>
 
-<div class="agcard">
-  <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
-  <h3>Agentes de Checklist e Plano de A&ccedil;&atilde;o para Franquias</h3>
-  <p>Interface de &aacute;udio; preenche checklist no CRM durante visitas de campo; avalia performance da unidade; gera insights e plano de a&ccedil;&atilde;o; envia ao franqueado; faz follow-ups.</p>
-  <div class="agcard-tags"><span class="agcard-tag">Franquias</span><span class="agcard-tag">&Aacute;udio</span><span class="agcard-tag">CRM</span><span class="agcard-tag">Campo</span></div>
-</div>
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+      <h3>Agentes de Checklist e Plano de A&ccedil;&atilde;o para Franquias</h3>
+      <p>Interface de &aacute;udio; preenche checklist no CRM durante visitas de campo; avalia performance da unidade; gera insights e plano de a&ccedil;&atilde;o; envia ao franqueado; faz follow-ups.</p>
+      <div class="agcard-tags"><span class="agcard-tag">Franquias</span><span class="agcard-tag">&Aacute;udio</span><span class="agcard-tag">CRM</span><span class="agcard-tag">Campo</span></div>
+    </div>
 
-<div class="agcard">
-  <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg></div>
-  <h3>Agentes &ldquo;Dedo-Duro&rdquo; para Franquias</h3>
-  <p>Rastreia sistemas e indicadores; aponta quebras no modelo de neg&oacute;cio; gera alertas para consultores e franqueado; contribui na constru&ccedil;&atilde;o de planos de a&ccedil;&atilde;o para melhoria.</p>
-  <div class="agcard-tags"><span class="agcard-tag">Monitoramento</span><span class="agcard-tag">Alertas</span><span class="agcard-tag">Franquias</span></div>
-</div>
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg></div>
+      <h3>Agentes &ldquo;Dedo-Duro&rdquo; para Franquias</h3>
+      <p>Rastreia sistemas e indicadores; aponta quebras no modelo de neg&oacute;cio; gera alertas para consultores e franqueado; contribui na constru&ccedil;&atilde;o de planos de a&ccedil;&atilde;o para melhoria.</p>
+      <div class="agcard-tags"><span class="agcard-tag">Monitoramento</span><span class="agcard-tag">Alertas</span><span class="agcard-tag">Franquias</span></div>
+    </div>
 
-<div class="agcard">
-  <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-  <h3>Agentes de Monitoramento de Grupos de WhatsApp</h3>
-  <p>Observa intera&ccedil;&otilde;es como membro; relat&oacute;rios de promotores e detratores; temperatura das conversas; assuntos em alta; nuvem de tags; alertas de crise; painel gerencial.</p>
-  <div class="agcard-tags"><span class="agcard-tag">WhatsApp</span><span class="agcard-tag">Grupos</span><span class="agcard-tag">Alertas</span><span class="agcard-tag">Painel</span></div>
-</div>
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+      <h3>Agentes de Monitoramento de Grupos de WhatsApp</h3>
+      <p>Observa intera&ccedil;&otilde;es como membro; relat&oacute;rios de promotores e detratores; temperatura das conversas; assuntos em alta; nuvem de tags; alertas de crise; painel gerencial.</p>
+      <div class="agcard-tags"><span class="agcard-tag">WhatsApp</span><span class="agcard-tag">Grupos</span><span class="agcard-tag">Alertas</span><span class="agcard-tag">Painel</span></div>
+    </div>
 
-<div class="agcard">
-  <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-  <h3>Agente de Stress Test para Valida&ccedil;&atilde;o de Processos</h3>
-  <p>Ativa processos de diversas formas em escala para garantir que os sistemas funcionam corretamente; entrega relat&oacute;rios; identifica etapas com problemas para corre&ccedil;&atilde;o.</p>
-  <div class="agcard-tags"><span class="agcard-tag">QA</span><span class="agcard-tag">Escala</span><span class="agcard-tag">Processos</span><span class="agcard-tag">Relat&oacute;rios</span></div>
-</div>
-```
+    <div class="agcard">
+      <div class="agcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+      <h3>Agente de Stress Test para Valida&ccedil;&atilde;o de Processos</h3>
+      <p>Ativa processos de diversas formas em escala para garantir que os sistemas funcionam corretamente; entrega relat&oacute;rios; identifica etapas com problemas para corre&ccedil;&atilde;o.</p>
+      <div class="agcard-tags"><span class="agcard-tag">QA</span><span class="agcard-tag">Escala</span><span class="agcard-tag">Processos</span><span class="agcard-tag">Relat&oacute;rios</span></div>
+    </div>
 
   </div>
 
-  <!-- Visual: N8N flows placeholder -->
-
+  <!-- Visual N8N flows -->
   <div style="margin-top:48px;text-align:center" class="rv" style="transition-delay:.2s">
     <div style="background:var(--white);border:1px solid rgba(20,55,60,.07);border-radius:16px;padding:40px 30px;max-width:800px;margin:0 auto">
       <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:16px">
-        <img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n" style="width:28px;height:28px;opacity:.6">
+        <img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n" style="width:28px;height:28px;opacity:.7">
         <span style="font-family:var(--fd);font-size:1.2rem;font-weight:700;color:var(--ink)">Fluxos constru&iacute;dos em N8N</span>
       </div>
       <p style="font-size:.82rem;color:var(--sage);max-width:500px;margin:0 auto 20px;line-height:1.6">Cada agente &eacute; orquestrado por fluxos inteligentes no N8N, integrando APIs, IA e seus sistemas em tempo real.</p>
       <div style="background:linear-gradient(135deg,var(--ink),var(--sage));border-radius:12px;padding:48px 24px;position:relative;overflow:hidden">
         <div style="position:absolute;inset:0;opacity:.04;background-image:url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%22.85%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')"></div>
-        <!-- Simulated N8N flow diagram -->
-        <svg viewBox="0 0 700 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:660px;margin:0 auto;display:block;position:relative">
-          <rect x="0" y="35" width="100" height="50" rx="8" fill="rgba(255,255,255,.08)" stroke="rgba(176,110,74,.4)" stroke-width="1.5"/>
-          <text x="50" y="55" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="8" font-family="DM Sans" font-weight="600">TRIGGER</text>
-          <text x="50" y="70" text-anchor="middle" fill="rgba(255,255,255,.3)" font-size="7" font-family="DM Sans">WhatsApp</text>
-          <line x1="100" y1="60" x2="150" y2="60" stroke="rgba(176,110,74,.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
-          <rect x="150" y="35" width="100" height="50" rx="8" fill="rgba(176,110,74,.12)" stroke="rgba(176,110,74,.4)" stroke-width="1.5"/>
-          <text x="200" y="55" text-anchor="middle" fill="var(--tl)" font-size="8" font-family="DM Sans" font-weight="600">AGENTE IA</text>
-          <text x="200" y="70" text-anchor="middle" fill="rgba(255,255,255,.3)" font-size="7" font-family="DM Sans">Classifica&ccedil;&atilde;o</text>
-          <line x1="250" y1="60" x2="300" y2="60" stroke="rgba(176,110,74,.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
-          <rect x="300" y="35" width="100" height="50" rx="8" fill="rgba(255,255,255,.08)" stroke="rgba(176,110,74,.4)" stroke-width="1.5"/>
-          <text x="350" y="55" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="8" font-family="DM Sans" font-weight="600">API</text>
-          <text x="350" y="70" text-anchor="middle" fill="rgba(255,255,255,.3)" font-size="7" font-family="DM Sans">CRM / ERP</text>
-          <line x1="400" y1="60" x2="450" y2="60" stroke="rgba(176,110,74,.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
-          <rect x="450" y="35" width="100" height="50" rx="8" fill="rgba(176,110,74,.12)" stroke="rgba(176,110,74,.4)" stroke-width="1.5"/>
-          <text x="500" y="55" text-anchor="middle" fill="var(--tl)" font-size="8" font-family="DM Sans" font-weight="600">AGENTE IA</text>
-          <text x="500" y="70" text-anchor="middle" fill="rgba(255,255,255,.3)" font-size="7" font-family="DM Sans">Resposta</text>
-          <line x1="550" y1="60" x2="600" y2="60" stroke="rgba(176,110,74,.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
-          <rect x="600" y="35" width="100" height="50" rx="8" fill="rgba(255,255,255,.08)" stroke="rgba(176,110,74,.4)" stroke-width="1.5"/>
-          <text x="650" y="55" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="8" font-family="DM Sans" font-weight="600">OUTPUT</text>
-          <text x="650" y="70" text-anchor="middle" fill="rgba(255,255,255,.3)" font-size="7" font-family="DM Sans">Resultado</text>
+        <svg viewBox="0 0 700 160" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:660px;margin:0 auto;display:block;position:relative">
+          <!-- Node 1: Trigger -->
+          <rect x="0" y="45" width="110" height="60" rx="10" fill="rgba(255,255,255,.08)" stroke="rgba(176,110,74,.5)" stroke-width="1.5"/>
+          <text x="55" y="67" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="7.5" font-family="DM Sans" font-weight="700" letter-spacing="1">TRIGGER</text>
+          <text x="55" y="82" text-anchor="middle" fill="var(--tl)" font-size="8.5" font-family="DM Sans">WhatsApp</text>
+          <text x="55" y="97" text-anchor="middle" fill="rgba(255,255,255,.25)" font-size="6.5" font-family="DM Sans">Mensagem recebida</text>
+          <!-- Arrow -->
+          <line x1="110" y1="75" x2="148" y2="75" stroke="rgba(176,110,74,.35)" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <polygon points="148,71 156,75 148,79" fill="rgba(176,110,74,.5)"/>
+          <!-- Node 2: AI Agent -->
+          <rect x="156" y="45" width="120" height="60" rx="10" fill="rgba(176,110,74,.14)" stroke="rgba(176,110,74,.55)" stroke-width="1.5"/>
+          <text x="216" y="67" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="7.5" font-family="DM Sans" font-weight="700" letter-spacing="1">AGENTE IA</text>
+          <text x="216" y="82" text-anchor="middle" fill="var(--tl)" font-size="8.5" font-family="DM Sans">Classifica&ccedil;&atilde;o</text>
+          <text x="216" y="97" text-anchor="middle" fill="rgba(255,255,255,.25)" font-size="6.5" font-family="DM Sans">Intent + Contexto</text>
+          <!-- Arrow -->
+          <line x1="276" y1="75" x2="314" y2="75" stroke="rgba(176,110,74,.35)" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <polygon points="314,71 322,75 314,79" fill="rgba(176,110,74,.5)"/>
+          <!-- Node 3: API -->
+          <rect x="322" y="45" width="110" height="60" rx="10" fill="rgba(255,255,255,.08)" stroke="rgba(176,110,74,.5)" stroke-width="1.5"/>
+          <text x="377" y="67" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="7.5" font-family="DM Sans" font-weight="700" letter-spacing="1">INTEGRA&Ccedil;&Atilde;O</text>
+          <text x="377" y="82" text-anchor="middle" fill="var(--tl)" font-size="8.5" font-family="DM Sans">CRM / ERP</text>
+          <text x="377" y="97" text-anchor="middle" fill="rgba(255,255,255,.25)" font-size="6.5" font-family="DM Sans">Dados em tempo real</text>
+          <!-- Arrow -->
+          <line x1="432" y1="75" x2="470" y2="75" stroke="rgba(176,110,74,.35)" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <polygon points="470,71 478,75 470,79" fill="rgba(176,110,74,.5)"/>
+          <!-- Node 4: AI Response -->
+          <rect x="478" y="45" width="120" height="60" rx="10" fill="rgba(176,110,74,.14)" stroke="rgba(176,110,74,.55)" stroke-width="1.5"/>
+          <text x="538" y="67" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="7.5" font-family="DM Sans" font-weight="700" letter-spacing="1">AGENTE IA</text>
+          <text x="538" y="82" text-anchor="middle" fill="var(--tl)" font-size="8.5" font-family="DM Sans">Resposta</text>
+          <text x="538" y="97" text-anchor="middle" fill="rgba(255,255,255,.25)" font-size="6.5" font-family="DM Sans">Personalizada + Log</text>
+          <!-- Arrow -->
+          <line x1="598" y1="75" x2="636" y2="75" stroke="rgba(176,110,74,.35)" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <polygon points="636,71 644,75 636,79" fill="rgba(176,110,74,.5)"/>
+          <!-- Node 5: Output -->
+          <rect x="644" y="45" width="56" height="60" rx="10" fill="rgba(255,255,255,.08)" stroke="rgba(176,110,74,.5)" stroke-width="1.5"/>
+          <text x="672" y="70" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="7.5" font-family="DM Sans" font-weight="700" letter-spacing="1">OUTPUT</text>
+          <text x="672" y="85" text-anchor="middle" fill="var(--tl)" font-size="8.5" font-family="DM Sans">&#10003;</text>
+          <text x="672" y="99" text-anchor="middle" fill="rgba(255,255,255,.25)" font-size="6" font-family="DM Sans">Resultado</text>
         </svg>
         <p style="font-size:.68rem;color:rgba(255,255,255,.25);margin-top:16px;font-style:italic;position:relative">Exemplo simplificado de fluxo &mdash; cada projeto tem arquitetura customizada</p>
       </div>
     </div>
   </div>
 
-  <!-- Visual: Marketing Copilot Desktop mockup -->
-
+  <!-- Visual: Marketing Copilot Desktop -->
   <div style="margin-top:28px;text-align:center" class="rv">
     <div style="background:var(--white);border:1px solid rgba(20,55,60,.07);border-radius:16px;padding:40px 30px;max-width:800px;margin:0 auto">
-      <span style="font-family:var(--fd);font-size:1.2rem;font-weight:700;color:var(--ink);display:block;margin-bottom:16px">Copilotos de Marketing &mdash; Vis&atilde;o Desktop</span>
+      <span style="font-family:var(--fd);font-size:1.2rem;font-weight:700;color:var(--ink);display:block;margin-bottom:6px">Copilotos de Marketing &mdash; Vis&atilde;o Desktop</span>
+      <p style="font-size:.78rem;color:var(--sage);margin-bottom:18px">Painel unificado com todos os m&oacute;dulos de marketing integrados &mdash; identidade NewScale.</p>
       <div style="background:var(--ink);border-radius:12px;overflow:hidden;border:2px solid rgba(255,255,255,.08)">
-        <!-- Browser bar -->
         <div style="background:rgba(255,255,255,.06);padding:8px 14px;display:flex;align-items:center;gap:6px;border-bottom:1px solid rgba(255,255,255,.06)">
-          <span style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.12)"></span>
-          <span style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.12)"></span>
-          <span style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.12)"></span>
-          <span style="flex:1;margin-left:12px;background:rgba(255,255,255,.05);border-radius:4px;padding:4px 10px;font-size:.6rem;color:rgba(255,255,255,.2)">app.newscale.tech/marketing-copilots</span>
+          <span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span>
+          <span style="width:9px;height:9px;border-radius:50%;background:#febc2e"></span>
+          <span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span>
+          <span style="flex:1;margin-left:12px;background:rgba(255,255,255,.05);border-radius:4px;padding:4px 10px;font-size:.6rem;color:rgba(255,255,255,.2)">app.newscale.tech / copilotos-marketing</span>
+          <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale" style="height:14px;filter:brightness(0) invert(1);opacity:.25;flex-shrink:0">
         </div>
-        <!-- Desktop modules grid -->
-        <div style="padding:20px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
-          <div style="background:rgba(176,110,74,.08);border:1px solid rgba(176,110,74,.2);border-radius:8px;padding:16px 12px;text-align:center">
-            <div style="font-size:1.3rem;margin-bottom:4px">&#x1F4E3;</div>
-            <div style="font-size:.62rem;color:var(--tl);font-weight:600">Campanhas</div>
+        <div style="display:flex;gap:0">
+          <!-- sidebar -->
+          <div style="width:140px;background:rgba(0,0,0,.2);padding:16px 12px;border-right:1px solid rgba(255,255,255,.06);flex-shrink:0">
+            <div style="font-size:.55rem;color:rgba(255,255,255,.25);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px">M&oacute;dulos</div>
+            <div style="font-size:.65rem;color:var(--tl);font-weight:600;padding:6px 8px;background:rgba(176,110,74,.12);border-radius:5px;margin-bottom:4px;border-left:2px solid var(--terra)">&#x1F4E3; Campanhas</div>
+            <div style="font-size:.65rem;color:rgba(255,255,255,.35);padding:6px 8px;margin-bottom:4px">&#x1F4C5; Calend&aacute;rio</div>
+            <div style="font-size:.65rem;color:rgba(255,255,255,.35);padding:6px 8px;margin-bottom:4px">&#x1F4F1; Social Media</div>
+            <div style="font-size:.65rem;color:rgba(255,255,255,.35);padding:6px 8px;margin-bottom:4px">&#x1F3AF; Performance</div>
+            <div style="font-size:.65rem;color:rgba(255,255,255,.35);padding:6px 8px;margin-bottom:4px">&#x1F4E7; Newsletter</div>
+            <div style="font-size:.65rem;color:rgba(255,255,255,.35);padding:6px 8px;margin-bottom:4px">&#x1F4AC; WhatsApp</div>
+            <div style="font-size:.65rem;color:rgba(255,255,255,.35);padding:6px 8px;margin-bottom:4px">&#x1F6CD; Trade / PDV</div>
+            <div style="font-size:.65rem;color:rgba(255,255,255,.35);padding:6px 8px">&#x1F310; Landing Pages</div>
           </div>
-          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:16px 12px;text-align:center">
-            <div style="font-size:1.3rem;margin-bottom:4px">&#x1F4C5;</div>
-            <div style="font-size:.62rem;color:rgba(255,255,255,.4);font-weight:600">Calend&aacute;rio</div>
+          <!-- main area -->
+          <div style="flex:1;padding:20px">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+              <div style="font-size:.8rem;color:#fff;font-weight:600">Criar Nova Campanha</div>
+              <div style="background:var(--terra);color:#fff;font-size:.6rem;font-weight:600;padding:4px 12px;border-radius:4px">Gerar com IA</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+              <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:12px">
+                <div style="font-size:.58rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Campanha Ativa</div>
+                <div style="font-size:.75rem;color:#fff;font-weight:600;margin-bottom:2px">Lan&ccedil;amento Q2</div>
+                <div style="font-size:.62rem;color:var(--tl)">&#9679; Em execu&ccedil;&atilde;o</div>
+              </div>
+              <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:12px">
+                <div style="font-size:.58rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Taxa de Abertura</div>
+                <div style="font-size:1.2rem;font-family:var(--fd);color:var(--tl);font-weight:700">38,4%</div>
+                <div style="font-size:.62rem;color:rgba(255,255,255,.3)">&#11014; +12% vs m&ecirc;s anterior</div>
+              </div>
+            </div>
+            <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:12px">
+              <div style="font-size:.62rem;color:rgba(255,255,255,.3);margin-bottom:8px">&#x1F916; Sugest&atilde;o da IA</div>
+              <div style="font-size:.7rem;color:rgba(255,255,255,.55);line-height:1.5">Com base no hist&oacute;rico, os melhores hor&aacute;rios para disparo s&atilde;o ter&ccedil;a e quinta, entre 10h e 14h. Segmento: clientes com compra nos &uacute;ltimos 90 dias.</div>
+            </div>
           </div>
-          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:16px 12px;text-align:center">
-            <div style="font-size:1.3rem;margin-bottom:4px">&#x1F4F1;</div>
-            <div style="font-size:.62rem;color:rgba(255,255,255,.4);font-weight:600">Social Media</div>
-          </div>
-          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:16px 12px;text-align:center">
-            <div style="font-size:1.3rem;margin-bottom:4px">&#x1F3AF;</div>
-            <div style="font-size:.62rem;color:rgba(255,255,255,.4);font-weight:600">Performance</div>
-          </div>
-          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:16px 12px;text-align:center">
-            <div style="font-size:1.3rem;margin-bottom:4px">&#x1F4E7;</div>
-            <div style="font-size:.62rem;color:rgba(255,255,255,.4);font-weight:600">Newsletter</div>
-          </div>
-          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:16px 12px;text-align:center">
-            <div style="font-size:1.3rem;margin-bottom:4px">&#x1F4AC;</div>
-            <div style="font-size:.62rem;color:rgba(255,255,255,.4);font-weight:600">WhatsApp</div>
-          </div>
-          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:16px 12px;text-align:center">
-            <div style="font-size:1.3rem;margin-bottom:4px">&#x1F6CD;</div>
-            <div style="font-size:.62rem;color:rgba(255,255,255,.4);font-weight:600">Trade / PDV</div>
-          </div>
-          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:16px 12px;text-align:center">
-            <div style="font-size:1.3rem;margin-bottom:4px">&#x1F310;</div>
-            <div style="font-size:.62rem;color:rgba(255,255,255,.4);font-weight:600">Landing Pages</div>
-          </div>
-        </div>
-        <div style="padding:0 20px 16px;display:flex;align-items:center;justify-content:space-between">
-          <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale" style="height:18px;filter:brightness(0) invert(1);opacity:.3">
-          <span style="font-size:.58rem;color:rgba(255,255,255,.15)">Powered by NewScale Consulting</span>
         </div>
       </div>
     </div>
@@ -813,10 +842,7 @@ footer a:hover{color:var(–tl)}
 </div>
 </section>
 
-<!-- ═══════════════════════════════
-     5ª DOBRA — CASES (com hero number)
-═══════════════════════════════ -->
-
+<!-- CASES — AJUSTE 6: "Dinâmica RH" → "Consultoria de RH" em todos os lugares -->
 <section class="cases" id="cases">
 <div class="c">
   <div class="ctop">
@@ -836,7 +862,6 @@ footer a:hover{color:var(–tl)}
   </div>
 
   <!-- COLO SAÚDE -->
-
   <div class="cpanel on" id="case-colo">
     <div class="case-wrap">
       <div class="cmain">
@@ -866,8 +891,7 @@ footer a:hover{color:var(–tl)}
     </div>
   </div>
 
-  <!-- DINÂMICA RH -->
-
+  <!-- CONSULTORIA DE RH (antes: Dinâmica RH) -->
   <div class="cpanel" id="case-din">
     <div class="case-wrap">
       <div class="cmain">
@@ -898,7 +922,6 @@ footer a:hover{color:var(–tl)}
   </div>
 
   <!-- CASA TACTO -->
-
   <div class="cpanel" id="case-tacto">
     <div class="case-wrap">
       <div class="cmain">
@@ -919,7 +942,7 @@ footer a:hover{color:var(–tl)}
         <div class="ctchs"><span class="ctch">WhatsApp API</span><span class="ctch">Kommo CRM</span><span class="ctch">Agente IA Conversacional</span></div>
       </div>
       <div class="cside">
-        <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div><div class="cmv">15-20 dias</div><div class="cmd">do briefing ao agente em produ&ccedil;&atilde;o</div></div></div>
+        <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div><div class="cmv">15-20d</div><div class="cmd">do briefing ao agente em produ&ccedil;&atilde;o</div></div></div>
         <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><div class="cmv">+24%</div><div class="cmd">taxa de convers&atilde;o de leads</div></div></div>
         <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div><div class="cmv">+18%</div><div class="cmd">faturamento no 2&ordm; m&ecirc;s</div></div></div>
         <div class="cm"><div class="cmico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h4"/></svg></div><div><div class="cmv">24h/7d</div><div class="cmd">atendimento sem perda de leads</div></div></div>
@@ -928,7 +951,6 @@ footer a:hover{color:var(–tl)}
   </div>
 
   <!-- CASA KAHLA -->
-
   <div class="cpanel" id="case-kahla">
     <div class="case-wrap">
       <div class="cmain">
@@ -958,7 +980,6 @@ footer a:hover{color:var(–tl)}
   </div>
 
   <!-- BELCENTER -->
-
   <div class="cpanel" id="case-belc">
     <div class="case-wrap">
       <div class="cmain">
@@ -1003,10 +1024,7 @@ footer a:hover{color:var(–tl)}
 </div>
 </section>
 
-<!-- ═══════════════════════════════
-     6ª DOBRA — PARA QUEM (perfis concretos)
-═══════════════════════════════ -->
-
+<!-- PARA QUEM — AJUSTES 7 e 8: textos ajustados -->
 <section class="pq" id="paraquem">
 <div class="c">
   <div class="pqlayout">
@@ -1017,11 +1035,13 @@ footer a:hover{color:var(–tl)}
       <ul class="pqlist">
         <li class="pqi">
           <div class="pqa-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-          <span class="pqt"><strong>Empres&aacute;rios, CEOs, VPs, Diretores e Gerentes</strong> que sabem que est&atilde;o perdendo competitividade por n&atilde;o terem IA estrat&eacute;gica na opera&ccedil;&atilde;o</span>
+          <!-- AJUSTE 7: texto corrigido -->
+          <span class="pqt"><strong>Empres&aacute;rios, CEOs, VPs, Diretores e Gerentes</strong> que sabem que est&atilde;o perdendo competitividade por n&atilde;o terem IA estrat&eacute;gica na opera&ccedil;&atilde;o.</span>
         </li>
         <li class="pqi">
           <div class="pqa-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-          <span class="pqt"><strong>Empresas que querem escalar de forma eficiente</strong> sem aumentar headcount proporcionalmente</span>
+          <!-- AJUSTE 8: texto corrigido -->
+          <span class="pqt"><strong>Empresas que querem escalar de forma eficiente</strong> sem aumentar headcount proporcionalmente.</span>
         </li>
         <li class="pqi">
           <div class="pqa-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
@@ -1049,15 +1069,13 @@ footer a:hover{color:var(–tl)}
 </div>
 </section>
 
-<!-- ═══════════════════════════════
-     7ª DOBRA — FUNDADORES (bios curtos)
-═══════════════════════════════ -->
-
+<!-- FUNDADORES — AJUSTE 9: frase corrigida -->
 <section class="quem" id="quem">
 <div class="c">
   <div class="qhdr rv">
     <span class="stag">Os fundadores</span>
     <h2 class="h2">Quem implementa e ensina IA na pr&aacute;tica</h2>
+    <!-- AJUSTE 9: frase corrigida -->
     <p class="sub" style="color:var(--sage);margin:0 auto;max-width:480px">Usamos IA nos nossos pr&oacute;prios neg&oacute;cios e carreiras corporativas antes de implementar no seu.</p>
   </div>
   <div class="founders rv" style="transition-delay:.1s">
@@ -1088,7 +1106,7 @@ footer a:hover{color:var(–tl)}
         <button class="fb-toggle" onclick="toggleBio(this)">Ver mais &darr;</button>
         <div class="ftags"><span class="ftag">Estrat&eacute;gia</span><span class="ftag">Diagn&oacute;stico</span><span class="ftag">Educa&ccedil;&atilde;o em IA</span><span class="ftag">Mentoria</span></div>
         <div class="flogos"><span class="flog">SulAm&eacute;rica</span><span class="flog">Whirlpool</span><span class="flog">Blackbox AI</span><span class="flog">Potenc.IA</span><span class="flog">Casa Kahla</span></div>
-        <div class="fq">&ldquo;Implemento IA no meu pr&oacute;prio neg&oacute;cio todo dia. S&oacute; ensino e vendo o que eu mesma usa.&rdquo;</div>
+        <div class="fq">&ldquo;Implemento IA no meu pr&oacute;prio neg&oacute;cio todo dia. S&oacute; ensino e vendo o que eu mesma uso.&rdquo;</div>
       </div>
     </div>
   </div>
@@ -1108,10 +1126,7 @@ footer a:hover{color:var(–tl)}
 </div>
 </section>
 
-<!-- ═══════════════════════════════
-     8ª DOBRA — COMO FUNCIONA (com time tags)
-═══════════════════════════════ -->
-
+<!-- COMO FUNCIONA — AJUSTE 10: "Prazo conforme complexidade" -->
 <section class="como" id="como">
 <div class="c">
   <div class="cohdr rv">
@@ -1139,6 +1154,7 @@ footer a:hover{color:var(–tl)}
     <div class="tli">
       <div class="tlid">3</div>
       <div class="tlib">
+        <!-- AJUSTE 10: "Prazo conforme complexidade" -->
         <div class="tlim">Prazo conforme complexidade</div>
         <div class="tlit">Implementa&ccedil;&atilde;o <span class="tli-time">4-12 semanas</span></div>
         <div class="tlid2">Mergulhamos na opera&ccedil;&atilde;o, mapeamos processos, criamos agentes e constru&iacute;mos automa&ccedil;&otilde;es. Acompanhamento semanal.</div>
@@ -1170,10 +1186,7 @@ footer a:hover{color:var(–tl)}
 </div>
 </section>
 
-<!-- ═══════════════════════════════
-     9ª DOBRA — CUSTO INVISÍVEL (reduzido + números)
-═══════════════════════════════ -->
-
+<!-- CUSTO INVISÍVEL -->
 <section class="custo" id="custo">
 <div class="c">
   <div class="cuhdr rv">
@@ -1182,36 +1195,12 @@ footer a:hover{color:var(–tl)}
     <p class="sub" style="color:var(--sage);margin:0 auto;max-width:500px">Antes de falar de investimento, veja o que voc&ecirc; j&aacute; est&aacute; perdendo sem perceber.</p>
   </div>
   <div class="cugrid rv" style="transition-delay:.1s">
-    <div class="cucel">
-      <div class="cucel-num">2+</div>
-      <div class="cut">Colaboradores fazendo o que a IA faria</div>
-      <div class="cud">No mesmo departamento, com mais lentid&atilde;o e maior taxa de erro.</div>
-    </div>
-    <div class="cucel">
-      <div class="cucel-num">8h/sem</div>
-      <div class="cut">No WhatsApp respondendo sempre o mesmo</div>
-      <div class="cud">Todos os dias &mdash; quando um agente faria isso 24h em segundos.</div>
-    </div>
-    <div class="cucel">
-      <div class="cucel-num">&darr; Leads</div>
-      <div class="cut">Leads esfriando e convers&atilde;o baixa</div>
-      <div class="cud">Demora nos retornos, cliente fechando com o concorrente.</div>
-    </div>
-    <div class="cucel">
-      <div class="cucel-num">8-12h</div>
-      <div class="cut">Montando relat&oacute;rios que a IA faz em segundos</div>
-      <div class="cud">Com menor capacidade anal&iacute;tica e de gera&ccedil;&atilde;o de insights.</div>
-    </div>
-    <div class="cucel">
-      <div class="cucel-num">&darr; $$</div>
-      <div class="cut">Faturamento perdido enquanto concorrentes usam IA</div>
-      <div class="cud">Cada m&ecirc;s sem IA &eacute; desvantagem competitiva que cresce.</div>
-    </div>
-    <div class="cucel">
-      <div class="cucel-num">Talentos</div>
-      <div class="cut">Profissionais de alto potencial drenados pelo operacional</div>
-      <div class="cud">Presos em rotinas, sem aprendizado e sem crescimento.</div>
-    </div>
+    <div class="cucel"><div class="cucel-num">2+</div><div class="cut">Colaboradores fazendo o que a IA faria</div><div class="cud">No mesmo departamento, com mais lentid&atilde;o e maior taxa de erro.</div></div>
+    <div class="cucel"><div class="cucel-num">8h/sem</div><div class="cut">No WhatsApp respondendo sempre o mesmo</div><div class="cud">Todos os dias &mdash; quando um agente faria isso 24h em segundos.</div></div>
+    <div class="cucel"><div class="cucel-num">&darr; Leads</div><div class="cut">Leads esfriando e convers&atilde;o baixa</div><div class="cud">Demora nos retornos, cliente fechando com o concorrente.</div></div>
+    <div class="cucel"><div class="cucel-num">8-12h</div><div class="cut">Montando relat&oacute;rios que a IA faz em segundos</div><div class="cud">Com menor capacidade anal&iacute;tica e de gera&ccedil;&atilde;o de insights.</div></div>
+    <div class="cucel"><div class="cucel-num">&darr; $$</div><div class="cut">Faturamento perdido enquanto concorrentes usam IA</div><div class="cud">Cada m&ecirc;s sem IA &eacute; desvantagem competitiva que cresce.</div></div>
+    <div class="cucel"><div class="cucel-num">Talentos</div><div class="cut">Profissionais de alto potencial drenados pelo operacional</div><div class="cud">Presos em rotinas, sem aprendizado e sem crescimento.</div></div>
   </div>
   <div class="cubot rv" style="transition-delay:.2s">
     <div>
@@ -1226,10 +1215,7 @@ footer a:hover{color:var(–tl)}
 </div>
 </section>
 
-<!-- ═══════════════════════════════
-     10ª DOBRA — CTA FINAL
-═══════════════════════════════ -->
-
+<!-- CTA FINAL -->
 <section class="ctaf" id="contato">
 <div class="c ctafin">
   <h2>Quer saber quanto sua opera&ccedil;&atilde;o<br>est&aacute; deixando de ganhar?</h2>
@@ -1290,11 +1276,5 @@ function toggleBio(btn){
   }
 }
 </script>
-
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-<script>if(window.netlifyIdentity){window.netlifyIdentity.on('init',u=>{if(!u){window.netlifyIdentity.on('login',()=>{document.location.href='/admin/'})}})}
-</script>
-
 </body>
 </html>
