@@ -61,28 +61,28 @@ svg{display:block}
 .mob .xb{position:absolute;top:20px;right:24px;background:none;border:none;color:#fff;font-size:1.9rem;cursor:pointer;line-height:1}
 
 /* ══ HERO v2 ══ */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:108px 0 48px}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:120px 0 64px}
 .hbg{position:absolute;inset:0;background:linear-gradient(145deg,#0c2427 0%,var(--ink) 38%,#1d4840 72%,var(--sage) 100%)}
 .hgrain{position:absolute;inset:0;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .hglow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(176,110,74,.09),transparent 65%);top:-120px;right:-120px;animation:gf 9s ease-in-out infinite;pointer-events:none}
 @keyframes gf{0%,100%{transform:scale(1)}50%{transform:scale(1.06) translateY(-20px)}}
-.hero-in{position:relative;z-index:2;max-width:800px;margin:0 auto;text-align:center}
-.hpill{display:inline-flex;align-items:center;gap:7px;background:rgba(176,110,74,.1);border:1px solid rgba(176,110,74,.24);border-radius:40px;padding:5px 14px;font-size:.7rem;color:var(--tl);font-weight:700;margin-bottom:20px;letter-spacing:.07em;text-transform:uppercase}
+.hero-in{position:relative;z-index:2;max-width:760px;margin:0 auto;text-align:center}
+.hpill{display:inline-flex;align-items:center;gap:7px;background:rgba(176,110,74,.1);border:1px solid rgba(176,110,74,.24);border-radius:40px;padding:6px 16px;font-size:.7rem;color:var(--tl);font-weight:700;margin-bottom:28px;letter-spacing:.07em;text-transform:uppercase}
 .hpill .dot{width:5px;height:5px;border-radius:50%;background:var(--terra);animation:bl 2s ease infinite;flex-shrink:0}
 @keyframes bl{0%,100%{opacity:1}50%{opacity:.25}}
-.hero h1{font-family:var(--fd);font-size:clamp(2.3rem,4.2vw,3.5rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:16px;letter-spacing:-.01em}
+.hero h1{font-family:var(--fd);font-size:clamp(2.3rem,4.2vw,3.5rem);font-weight:700;color:#fff;line-height:1.12;margin-bottom:22px;letter-spacing:-.01em}
 .hero h1 em{font-style:normal;color:var(--tl)}
-.hero-sub{font-size:.97rem;color:rgba(255,255,255,.55);line-height:1.72;margin-bottom:28px;font-weight:300;max-width:620px;margin-left:auto;margin-right:auto}
+.hero-sub{font-size:.97rem;color:rgba(255,255,255,.52);line-height:1.78;margin-bottom:36px;font-weight:300;max-width:580px;margin-left:auto;margin-right:auto}
 /* hero journey steps */
-.hjournay{display:flex;gap:8px;margin-bottom:32px;align-items:center;flex-wrap:wrap;justify-content:center}
-.hjstep{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:10px 16px;transition:all .28s}
+.hjournay{display:flex;gap:10px;margin-bottom:40px;align-items:center;flex-wrap:wrap;justify-content:center}
+.hjstep{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:12px 18px;transition:all .28s}
 .hjstep:hover{border-color:rgba(176,110,74,.3);background:rgba(176,110,74,.06)}
-.hjico{width:28px;height:28px;border-radius:50%;background:rgba(176,110,74,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.hjico svg{width:13px;height:13px}
+.hjico{width:30px;height:30px;border-radius:50%;background:rgba(176,110,74,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hjico svg{width:14px;height:14px}
 .hjtext{font-size:.78rem;color:rgba(255,255,255,.6);line-height:1.3;font-weight:500}
 .hjarrow{color:rgba(255,255,255,.15);font-size:1.1rem;flex-shrink:0}
 .hero-note{font-size:.73rem;color:rgba(255,255,255,.28);margin-top:10px;font-style:italic}
-.hero-link{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.4);font-size:.8rem;margin-top:10px;transition:color .22s}
+.hero-link{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.4);font-size:.8rem;margin-top:14px;transition:color .22s}
 .hero-link:hover{color:rgba(255,255,255,.75)}
 
 /* hero right — floating result cards */
