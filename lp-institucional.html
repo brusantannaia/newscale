@@ -6,6 +6,7 @@
 <title>NewScale Consulting — Implementação de IA para Empresas | Diagnóstico Gratuito</title>
 <meta name="description" content="Consultoria especializada em implementação de Inteligência Artificial para empresas. Agentes de IA, automação de processos e integração com CRM, ERP e WhatsApp. Diagnóstico gratuito em 30 minutos.">
 <link rel="canonical" href="https://www.newscale.com.br/lp-institucional">
+<meta property="og:url" content="https://www.newscale.com.br/lp-institucional">
 <meta property="og:title" content="NewScale — IA Hiper-Personalizada para Empresas">
 <meta property="og:description" content="Implementações de IA sob medida que automatizam processos, reduzem custos e criam novos motores de crescimento para o seu negócio.">
 <meta property="og:type" content="website">
@@ -74,12 +75,12 @@ svg{display:block}
 .hero h1 em{font-style:normal;color:var(--tl)}
 .hero-sub{font-size:.97rem;color:rgba(255,255,255,.52);line-height:1.78;margin-bottom:36px;font-weight:300;max-width:580px;margin-left:auto;margin-right:auto}
 /* hero journey steps */
-.hjournay{display:flex;gap:10px;margin-bottom:40px;align-items:center;flex-wrap:wrap;justify-content:center}
-.hjstep{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:12px 18px;transition:all .28s}
+.hjournay{display:flex;gap:8px;margin-bottom:40px;align-items:center;flex-wrap:nowrap;justify-content:center}
+.hjstep{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:10px 12px;transition:all .28s;flex-shrink:0}
 .hjstep:hover{border-color:rgba(176,110,74,.3);background:rgba(176,110,74,.06)}
 .hjico{width:30px;height:30px;border-radius:50%;background:rgba(176,110,74,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .hjico svg{width:14px;height:14px}
-.hjtext{font-size:.78rem;color:rgba(255,255,255,.6);line-height:1.3;font-weight:500}
+.hjtext{font-size:.72rem;color:rgba(255,255,255,.6);line-height:1.3;font-weight:500}
 .hjarrow{color:rgba(255,255,255,.15);font-size:1.1rem;flex-shrink:0}
 .hero-note{font-size:.73rem;color:rgba(255,255,255,.28);margin-top:10px;font-style:italic}
 .hero-link{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.4);font-size:.8rem;margin-top:14px;transition:color .22s}
@@ -349,11 +350,15 @@ footer a:hover{color:var(--tl)}
   .cugrid{grid-template-columns:1fr}
   .pqr{grid-template-columns:1fr 1fr}
   .founder{grid-template-columns:1fr}
-  .fpic{height:180px}
+  .fpic{height:320px}
+  .fpic img{object-position:center top}
   .pgrid{grid-template-columns:1fr}
   .cres-grid{grid-template-columns:1fr}
   .cres-card.wide{grid-column:span 1}
   .cubot{padding:28px 22px}
+  .copilot-grid{grid-template-columns:repeat(2,1fr)!important;padding:16px 16px 20px!important}
+  .copilot-header{padding:20px 16px 0!important;flex-wrap:wrap;gap:8px}
+  .copilot-footer{padding:12px 16px!important;flex-wrap:wrap;gap:6px}
 }
 </style>
 </head>
@@ -712,7 +717,7 @@ footer a:hover{color:var(--tl)}
       <div style="position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(176,110,74,.12),transparent 70%);top:-60px;right:-60px;pointer-events:none"></div>
 
       <!-- Header bar -->
-      <div style="padding:28px 36px 0;position:relative;display:flex;align-items:center;justify-content:space-between">
+      <div style="padding:28px 36px 0;position:relative;display:flex;align-items:center;justify-content:space-between" class="copilot-header">
         <div>
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
             <div style="width:8px;height:8px;border-radius:50%;background:var(--terra);animation:bl 2s ease infinite"></div>
@@ -725,7 +730,7 @@ footer a:hover{color:var(--tl)}
       </div>
 
       <!-- Modules grid -->
-      <div style="padding:24px 36px 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;position:relative">
+      <div style="padding:24px 36px 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;position:relative" class="copilot-grid">
         <!-- Active module -->
         <div style="background:rgba(176,110,74,.12);border:1px solid rgba(176,110,74,.35);border-radius:12px;padding:20px 16px;position:relative;overflow:hidden">
           <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--tl)"></div>
@@ -771,7 +776,7 @@ footer a:hover{color:var(--tl)}
       </div>
 
       <!-- Bottom status bar -->
-      <div style="padding:14px 36px;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between">
+      <div style="padding:14px 36px;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between" class="copilot-footer">
         <div style="display:flex;gap:20px">
           <span style="font-size:.6rem;color:rgba(255,255,255,.2);display:flex;align-items:center;gap:4px"><span style="width:5px;height:5px;border-radius:50%;background:#4ade80"></span> Todos os m&oacute;dulos ativos</span>
           <span style="font-size:.6rem;color:rgba(255,255,255,.15)">Publica&ccedil;&otilde;es via API &middot; Multi-canal &middot; IA Generativa</span>
@@ -1157,7 +1162,7 @@ footer a:hover{color:var(--tl)}
     <div class="cucel">
       <div class="cucel-num">8h/sem</div>
       <div class="cut">No WhatsApp respondendo sempre o mesmo</div>
-      <div class="cud">Todos os dias &mdash; quando um agente faria isso 24h em segundos.</div>
+      <div class="cud">Todos os dias &mdash; quando um agente faria isso 24h/7 e responderia em segundos.</div>
     </div>
     <div class="cucel">
       <div class="cucel-num">&darr; Leads</div>
@@ -1167,7 +1172,7 @@ footer a:hover{color:var(--tl)}
     <div class="cucel">
       <div class="cucel-num">8-12h</div>
       <div class="cut">Montando relat&oacute;rios que a IA faz em segundos</div>
-      <div class="cud">Com menor capacidade anal&iacute;tica e de gera&ccedil;&atilde;o de insights.</div>
+      <div class="cud">Com melhor capacidade anal&iacute;tica e de gera&ccedil;&atilde;o de insights.</div>
     </div>
     <div class="cucel">
       <div class="cucel-num">&darr; $$</div>
@@ -1225,12 +1230,12 @@ footer a:hover{color:var(--tl)}
       <span>Consultoria em Intelig&ecirc;ncia Artificial</span>
       <span>Diagn&oacute;stico Gratuito</span>
     </div>
-    <p style="margin-bottom:6px"><a href="mailto:bruna@newscale.tech">bruna@newscale.tech</a>&nbsp;&middot;&nbsp;<a href="https://wa.me/5511971901020" target="_blank">(11) 97190-1020</a></p>
+    <p style="margin-bottom:6px"><a href="/cdn-cgi/l/email-protection#305242455e51705e55474353515c551e44555358"><span class="__cf_email__" data-cfemail="d9bbabacb7b899b7bcaeaabab8b5bcf7adbcbab1">[email&#160;protected]</span></a>&nbsp;&middot;&nbsp;<a href="https://wa.me/5511971901020" target="_blank">(11) 97190-1020</a></p>
     <p>&copy; 2026 NewScale Consulting. Todos os direitos reservados.</p>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{nav.classList.toggle('s',scrollY>50)},{passive:true});
 const ro=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');ro.unobserve(x.target)}})},{threshold:.08,rootMargin:'0px 0px -28px 0px'});
@@ -1256,8 +1261,4 @@ function toggleBio(btn){
   }
 }
 </script>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>if(window.netlifyIdentity){window.netlifyIdentity.on('init',u=>{if(!u){window.netlifyIdentity.on('login',()=>{document.location.href='/admin/'})}})}
-</script>
-</body>
-</html>
+<script src="https://id
