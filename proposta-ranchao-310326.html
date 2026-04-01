@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta — Grupo Stringhetta · NewScale Consulting</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --ink:   #14373C;
+  --ink2:  #1a4449;
+  --sage:  #435D51;
+  --terra: #B06E4A;
+  --tl:    #c4835e;
+  --sand:  #A38362;
+  --cream: #E8E6E0;
+  --cl:    #F4F3EF;
+  --white: #FAFAF8;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cl);
+  color: var(--ink);
+  line-height: 1.72;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* SCROLL REVEAL */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.75s ease, transform 0.75s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+.reveal-d5 { transition-delay: 0.5s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pulse {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(8px); }
+}
+
+/* ════════ 1. HERO ════════ */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #0c2427 0%, #14373C 38%, #1d4840 72%, #435D51 100%);
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center; padding: 80px 40px 60px;
+  overflow: hidden; position: relative;
+}
+.topo-bg { position: absolute; inset: 0; opacity: 0.12; pointer-events: none; }
+.topo-bg svg { width: 100%; height: 100%; }
+.grain-overlay {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+}
+.hero-logo { width: 130px; margin-bottom: 40px; animation: fadeUp 0.6s ease both; animation-delay: 0.1s; }
+.hero-badge {
+  display: inline-block;
+  background: rgba(176,110,74,0.15); border: 1px solid rgba(176,110,74,0.45);
+  color: var(--tl); font-size: 0.63rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 7px 22px; border-radius: 100px; margin-bottom: 28px;
+  animation: fadeUp 0.6s ease both; animation-delay: 0.25s;
+}
+.hero-eyebrow {
+  font-size: 0.66rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--cream); opacity: 0.5; margin-bottom: 16px;
+  animation: fadeUp 0.6s ease both; animation-delay: 0.4s;
+}
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5.5vw, 66px); font-weight: 300;
+  color: var(--white); line-height: 1.08; max-width: 780px; margin-bottom: 24px;
+  animation: fadeUp 0.6s ease both; animation-delay: 0.55s;
+}
+.hero-title em { font-style: italic; color: var(--tl); }
+.hero-desc {
+  font-size: 0.97rem; font-weight: 300; color: var(--cream); opacity: 0.72;
+  max-width: 510px; line-height: 1.82; margin-bottom: 48px;
+  animation: fadeUp 0.6s ease both; animation-delay: 0.7s;
+}
+.hero-meta {
+  display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 52px;
+  animation: fadeUp 0.6s ease both; animation-delay: 0.85s;
+}
+.hero-meta-item { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream); opacity: 0.5; }
+.hero-meta-sep { color: var(--terra); opacity: 0.5; }
+.hero-scroll { animation: fadeIn 1s ease both, pulse 2.5s ease 2s infinite; animation-delay: 1.1s; cursor: pointer; text-decoration: none; }
+.hero-scroll svg { opacity: 0.35; }
+
+/* ════════ 2. CONTEXTO ════════ */
+.contexto-section { background: var(--white); padding: 100px 60px; }
+.contexto-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.section-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--terra); margin-bottom: 16px; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 3.2vw, 42px); font-weight: 700; line-height: 1.1; color: var(--ink); margin-bottom: 28px; }
+.section-title em { font-style: italic; color: var(--sage); }
+.contexto-text p { font-size: 0.93rem; font-weight: 300; color: #2e4e52; line-height: 1.82; margin-bottom: 16px; }
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.stat-card { border-radius: 14px; padding: 26px 22px; display: flex; flex-direction: column; justify-content: flex-end; }
+.stat-card:nth-child(1) { background: var(--ink); }
+.stat-card:nth-child(2) { background: var(--terra); }
+.stat-card:nth-child(3) { background: var(--sage); }
+.stat-card:nth-child(4) { background: var(--ink2); }
+.stat-number { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 300; color: var(--white); line-height: 1; margin-bottom: 6px; }
+.stat-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+
+/* ════════ 3. DORES ════════ */
+.dores-section { background: var(--ink); padding: 100px 60px; }
+.dores-inner { max-width: 1160px; margin: 0 auto; }
+.section-title-light { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 3.2vw, 42px); font-weight: 700; line-height: 1.1; color: var(--white); margin-bottom: 52px; }
+.section-title-light em { font-style: italic; color: var(--tl); }
+.dores-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.dore-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 30px 26px; transition: border-color 0.3s, background 0.3s; position: relative; overflow: hidden; }
+.dore-card:hover { border-color: rgba(176,110,74,0.3); background: rgba(176,110,74,0.05); }
+.dore-num { font-family: 'Cormorant Garamond', serif; font-size: 3.6rem; font-weight: 300; color: rgba(255,255,255,0.06); position: absolute; top: 14px; right: 20px; line-height: 1; }
+.dore-title { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terra); margin-bottom: 12px; }
+.dore-text { font-size: 0.86rem; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.74; }
+
+/* ════════ 4. MÓDULOS ════════ */
+.proposta-section { background: var(--cl); padding: 100px 60px; }
+.proposta-inner { max-width: 1100px; margin: 0 auto; }
+.proposta-header { margin-bottom: 52px; }
+.proposta-subtitle { font-size: 0.88rem; font-weight: 300; color: var(--sage); margin-top: 12px; }
+
+.fase-block { margin-bottom: 40px; }
+.fase-header { display: flex; justify-content: space-between; align-items: center; border-radius: 14px 14px 0 0; padding: 26px 30px; color: var(--white); }
+.fase-header.f1 { background: var(--ink); }
+.fase-header.f2 { background: var(--terra); }
+.fase-header.f3 { background: var(--sage); }
+.fase-tag { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 5px; }
+.fase-name { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 600; line-height: 1.1; }
+.fase-duration { font-size: 0.76rem; font-weight: 300; color: rgba(255,255,255,0.55); margin-top: 4px; }
+.fase-num-badge { font-family: 'Cormorant Garamond', serif; font-size: 3.8rem; font-weight: 300; color: rgba(255,255,255,0.14); line-height: 1; flex-shrink: 0; }
+
+.modulo-card { background: var(--white); border: 1px solid rgba(20,55,60,0.08); border-top: none; cursor: pointer; user-select: none; transition: box-shadow 0.3s; }
+.modulo-card:last-child { border-radius: 0 0 14px 14px; }
+.modulo-card:hover { box-shadow: 0 8px 28px rgba(20,55,60,0.08); }
+
+.modulo-header { display: flex; align-items: center; padding: 22px 30px; gap: 14px; }
+.modulo-icon { font-size: 1.35rem; flex-shrink: 0; }
+.modulo-label { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terra); margin-bottom: 2px; }
+.modulo-title { font-family: 'Cormorant Garamond', serif; font-size: 1.22rem; font-weight: 600; color: var(--ink); }
+.modulo-arrow { margin-left: auto; color: var(--terra); transition: transform 0.3s; flex-shrink: 0; font-size: 0.8rem; }
+.modulo-card.open .modulo-arrow { transform: rotate(180deg); }
+
+.modulo-chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 30px 18px 70px; }
+.modulo-card.open .modulo-chips { display: none; }
+.chip { background: rgba(176,110,74,0.09); color: var(--terra); font-size: 0.66rem; font-weight: 600; padding: 4px 11px; border-radius: 20px; }
+
+.modulo-body { display: none; padding: 4px 30px 26px 30px; }
+.modulo-card.open .modulo-body { display: block; }
+
+.value-box { background: var(--ink); border-radius: 10px; padding: 20px 22px; display: flex; gap: 14px; align-items: flex-start; margin-bottom: 22px; }
+.value-box-icon { font-size: 1.4rem; flex-shrink: 0; }
+.value-box-label { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); margin-bottom: 5px; }
+.value-box-text { font-size: 0.88rem; font-weight: 400; color: rgba(255,255,255,0.82); line-height: 1.65; }
+
+.modulo-desc { font-size: 0.88rem; font-weight: 300; color: var(--ink2); line-height: 1.78; margin-bottom: 18px; }
+.modulo-items { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.modulo-items li { font-size: 0.86rem; font-weight: 300; color: #2e4e52; line-height: 1.65; padding-left: 18px; position: relative; }
+.modulo-items li::before { content: '→'; position: absolute; left: 0; color: var(--terra); font-size: 0.78rem; }
+.modulo-items li strong { font-weight: 600; color: var(--ink); }
+
+/* ════════ 5. RESULTADOS ════════ */
+.resultados-section { background: var(--white); padding: 100px 60px; }
+.resultados-inner { max-width: 1100px; margin: 0 auto; }
+.resultados-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 50px; }
+.resultado-card { background: var(--cl); border: 1px solid rgba(20,55,60,0.07); border-radius: 14px; padding: 30px 26px; transition: box-shadow 0.3s, border-color 0.3s; }
+.resultado-card:hover { border-color: rgba(176,110,74,0.2); box-shadow: 0 8px 24px rgba(20,55,60,0.07); }
+.resultado-icon { font-size: 1.8rem; margin-bottom: 16px; }
+.resultado-title { font-family: 'Cormorant Garamond', serif; font-size: 1.18rem; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+.resultado-text { font-size: 0.85rem; font-weight: 300; color: #4a6a6e; line-height: 1.72; }
+
+/* ════════ 6. INVESTIMENTO ════════ */
+.invest-section { background: linear-gradient(165deg, #14373C, #194040 55%, #435D51 100%); padding: 100px 60px; }
+.invest-inner { max-width: 960px; margin: 0 auto; }
+.invest-subtitle { font-size: 0.9rem; font-weight: 300; color: rgba(255,255,255,0.45); margin-top: 10px; margin-bottom: 56px; }
+.invest-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 48px 48px; text-align: center; margin-bottom: 28px; position: relative; overflow: hidden; }
+.invest-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--terra); }
+.invest-price-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); margin-bottom: 14px; }
+.invest-price { font-family: 'Cormorant Garamond', serif; font-size: clamp(50px, 7vw, 78px); font-weight: 300; color: var(--white); line-height: 1; margin-bottom: 10px; }
+.invest-price-desc { font-size: 0.86rem; font-weight: 300; color: rgba(255,255,255,0.5); margin-bottom: 32px; }
+.invest-divider { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 0 -48px 32px; }
+.invest-includes { list-style: none; text-align: left; display: flex; flex-direction: column; gap: 13px; }
+.invest-includes li { display: flex; gap: 13px; align-items: flex-start; font-size: 0.88rem; font-weight: 300; color: rgba(255,255,255,0.72); line-height: 1.6; }
+.invest-includes li::before { content: '✓'; color: var(--terra); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.invest-notice { background: rgba(176,110,74,0.1); border: 1px solid rgba(176,110,74,0.22); border-radius: 12px; padding: 20px 26px; margin-top: 22px; }
+.invest-notice-title { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terra); margin-bottom: 7px; }
+.invest-notice-text { font-size: 0.84rem; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.68; }
+
+/* ════════ 7. POR QUE NEWSCALE ════════ */
+.porque-section { background: var(--cl); padding: 100px 60px; }
+.porque-inner { max-width: 1100px; margin: 0 auto; }
+.quote-block { background: var(--ink); border-radius: 16px; padding: 50px 50px 46px; position: relative; margin-bottom: 68px; overflow: hidden; }
+.quote-mark { font-family: 'Cormorant Garamond', serif; font-size: 7rem; line-height: 0.6; color: rgba(176,110,74,0.2); position: absolute; top: 28px; left: 34px; pointer-events: none; }
+.quote-text { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.82); line-height: 1.7; position: relative; z-index: 1; max-width: 800px; }
+.metodo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-bottom: 68px; }
+.metodo-card { background: var(--white); border: 1px solid rgba(20,55,60,0.07); border-radius: 14px; padding: 28px 24px; transition: box-shadow 0.3s, border-color 0.3s; }
+.metodo-card:hover { border-color: rgba(176,110,74,0.2); box-shadow: 0 8px 24px rgba(20,55,60,0.07); }
+.metodo-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: rgba(176,110,74,0.28); line-height: 1; margin-bottom: 10px; }
+.metodo-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); margin-bottom: 8px; }
+.metodo-text { font-size: 0.83rem; font-weight: 300; color: #4a6a6e; line-height: 1.68; }
+.fundadores-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+.fundador-card { background: var(--ink); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; }
+.fundador-photo { width: 100%; height: 270px; object-fit: cover; object-position: center top; display: block; filter: sepia(0.25) saturate(0.85); }
+.fundador-body { padding: 26px 26px 30px; }
+.fundador-name { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 600; color: var(--white); margin-bottom: 3px; }
+.fundador-role { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); margin-bottom: 13px; }
+.fundador-bio { font-size: 0.82rem; font-weight: 300; color: rgba(255,255,255,0.62); line-height: 1.7; margin-bottom: 16px; }
+.fundador-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.fundador-tag { background: rgba(176,110,74,0.12); color: var(--tl); font-size: 0.6rem; font-weight: 700; padding: 3px 9px; border-radius: 20px; letter-spacing: 0.06em; }
+
+/* ════════ 8. PRÓXIMOS PASSOS ════════ */
+.steps-section { background: var(--ink); padding: 100px 60px; }
+.steps-inner { max-width: 880px; margin: 0 auto; }
+.steps-list { display: flex; flex-direction: column; gap: 0; margin-top: 54px; }
+.step-item { display: grid; grid-template-columns: 54px 1fr; gap: 26px; position: relative; padding-bottom: 42px; }
+.step-item:last-child { padding-bottom: 0; }
+.step-item:not(:last-child)::after { content: ''; position: absolute; left: 26px; top: 52px; bottom: 0; width: 2px; background: rgba(176,110,74,0.18); }
+.step-num-wrap { display: flex; flex-direction: column; align-items: center; }
+.step-num { width: 50px; height: 50px; border-radius: 50%; background: rgba(176,110,74,0.13); border: 2px solid var(--terra); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--terra); flex-shrink: 0; }
+.step-prazo { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); margin-bottom: 5px; }
+.step-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--white); margin-bottom: 9px; }
+.step-desc { font-size: 0.86rem; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.72; }
+.steps-cta { margin-top: 54px; text-align: center; }
+.steps-cta-text { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-style: italic; font-weight: 300; color: rgba(255,255,255,0.55); margin-bottom: 26px; }
+.btn-primary { display: inline-block; background: var(--terra); color: var(--white); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 15px 34px; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 24px rgba(176,110,74,0.35); transition: background 0.3s, transform 0.3s; }
+.btn-primary:hover { background: var(--tl); transform: translateY(-2px); }
+
+/* ════════ 9. FOOTER ════════ */
+.footer { background: #0c2427; padding: 34px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-brand { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.06em; color: var(--white); }
+.footer-brand span { font-size: 0.6rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.3); display: block; margin-top: 1px; }
+.footer-date { font-size: 0.7rem; font-weight: 300; color: rgba(255,255,255,0.32); text-align: right; line-height: 1.6; }
+.footer-contact { font-size: 0.7rem; font-weight: 300; color: rgba(255,255,255,0.32); }
+.footer-contact a { color: var(--terra); text-decoration: none; }
+
+/* ════════ RESPONSIVE ════════ */
+@media (max-width: 900px) {
+  .contexto-inner { grid-template-columns: 1fr; gap: 44px; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .dores-grid { grid-template-columns: 1fr; }
+  .metodo-grid { grid-template-columns: 1fr 1fr; }
+  .resultados-grid { grid-template-columns: 1fr; }
+  .fundadores-grid { grid-template-columns: 1fr; }
+  .footer { flex-direction: column; gap: 18px; text-align: center; }
+  .footer-date { text-align: center; }
+  .hero, .contexto-section, .dores-section, .proposta-section,
+  .resultados-section, .invest-section, .porque-section, .steps-section { padding: 72px 24px; }
+  .invest-card { padding: 32px 24px; }
+  .invest-divider { margin: 0 -24px 28px; }
+  .quote-block { padding: 38px 26px; }
+  .modulo-chips { padding-left: 22px; }
+}
+@media (max-width: 600px) {
+  .metodo-grid, .stats-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- 1. HERO -->
+<section class="hero" id="top">
+  <div class="topo-bg">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="0.8"/>
+      <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width="0.6"/>
+      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,300 Q300,220 500,290 T900,260 T1200,300" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,500 Q300,440 500,490 T900,460 T1200,500" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,520 Q250,470 450,510 T850,490 T1200,530" fill="none" stroke="white" stroke-width="0.3"/>
+      <path d="M0,250 Q350,180 550,245 T950,215 T1200,250" fill="none" stroke="white" stroke-width="0.35"/>
+    </svg>
+  </div>
+  <div class="grain-overlay"></div>
+
+  <img class="hero-logo" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting">
+  <div class="hero-badge">Proposta Executiva · Março 2026</div>
+  <p class="hero-eyebrow">NewScale Consulting</p>
+  <h1 class="hero-title">
+    Aceleração com<br>
+    <em>Inteligência Artificial</em><br>
+    para o Grupo Stringhetta
+  </h1>
+  <p class="hero-desc">
+    Uma proposta construída a partir da escuta da sua operação — não um cardápio genérico, mas um programa desenhado para o Grupo Stringhetta dar o próximo passo com IA de forma real e aplicada.
+  </p>
+  <div class="hero-meta">
+    <span class="hero-meta-item">Rafael Magaldi</span>
+    <span class="hero-meta-sep">·</span>
+    <span class="hero-meta-item">Validade 15 dias</span>
+    <span class="hero-meta-sep">·</span>
+    <span class="hero-meta-item">4 encontros</span>
+  </div>
+  <a class="hero-scroll" href="#contexto">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+  </a>
+</section>
+
+
+<!-- 2. CONTEXTO -->
+<section class="contexto-section" id="contexto">
+  <div class="contexto-inner">
+    <div class="contexto-text">
+      <p class="section-label reveal">O Contexto</p>
+      <h2 class="section-title reveal reveal-d1">Uma operação que já funciona — e pode ficar <em>muito mais rápida</em></h2>
+      <div class="reveal reveal-d2">
+        <p>O Grupo Stringhetta já possui uma operação organizada dentro do Agri Manager, com controle financeiro completo e processos bem definidos. Hoje, parte desse trabalho ainda depende de atividades manuais para manter os dados atualizados e gerar visibilidade.</p>
+        <p>Com o uso do Claude já iniciado, abre-se uma oportunidade importante: ir além do que já está sendo feito no dia a dia e explorar a ferramenta com mais profundidade — utilizando projetos, estruturação de contexto e aplicações práticas que realmente reduzem trabalho manual e aumentam a eficiência.</p>
+        <p>O próximo passo é simples: usar melhor a ferramenta dentro da rotina, de forma prática, aplicada e conectada às tarefas do dia a dia. Este programa foi desenhado para isso: ajudar o time a evoluir o uso da IA, indo além do básico e incorporando o Claude de forma mais inteligente, rápida e eficiente nos processos.</p>
+      </div>
+    </div>
+    <div class="stats-grid reveal reveal-d3">
+      <div class="stat-card">
+        <div class="stat-number">Claude</div>
+        <div class="stat-label">Ferramenta já contratada e em uso pelo time</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Encontros — 1 presencial + 3 online</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Aplicado à realidade da Fazenda Ranchão</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">Mai</div>
+        <div class="stat-label">Início previsto — imersão em Ponta Grossa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 3. DORES -->
+<section class="dores-section">
+  <div class="dores-inner">
+    <p class="section-label reveal" style="color: var(--tl);">O que identificamos</p>
+    <h2 class="section-title-light reveal reveal-d1">5 oportunidades onde o Claude<br><em>pode fazer mais pela operação</em></h2>
+    <div class="dores-grid">
+      <div class="dore-card reveal reveal-d1">
+        <span class="dore-num">01</span>
+        <div class="dore-title">Claude usado muito abaixo do potencial</div>
+        <p class="dore-text">O time já assinou o Claude e está começando a usar — mas ainda há muito espaço para ir além. Projetos, Skills, Conectores, Cowork e automações são recursos que podem transformar o dia a dia da equipe.</p>
+      </div>
+      <div class="dore-card reveal reveal-d2">
+        <span class="dore-num">02</span>
+        <div class="dore-title">Fluxo financeiro com ganho de velocidade</div>
+        <p class="dore-text">A atualização do fluxo de caixa é feita a partir dos dados do Agri Manager. Com o Claude bem configurado, esse processo pode acontecer de forma muito mais rápida — com mais análise e menos esforço manual.</p>
+      </div>
+      <div class="dore-card reveal reveal-d3">
+        <span class="dore-num">03</span>
+        <div class="dore-title">Análise de PDFs e documentos</div>
+        <p class="dore-text">Cotações de seguro, apólices e relatórios chegam em PDF com várias páginas. O Claude lê, compara e apresenta o que importa em segundos — sem que ninguém precise fazer isso manualmente.</p>
+      </div>
+      <div class="dore-card reveal reveal-d1">
+        <span class="dore-num">04</span>
+        <div class="dore-title">Dados do Agri Manager com mais visibilidade</div>
+        <p class="dore-text">Toda a informação financeira da fazenda está no sistema. Com o Claude bem treinado no contexto da operação, é possível gerar análises, resumos e respostas a partir desses dados com muito mais agilidade.</p>
+      </div>
+      <div class="dore-card reveal reveal-d2">
+        <span class="dore-num">05</span>
+        <div class="dore-title">Prompts e projetos que ainda não existem</div>
+        <p class="dore-text">Cada pessoa do time tem tarefas repetitivas que o Claude pode fazer em segundos — mas que ainda não foram configuradas. Estruturar contexto, criar projetos e usar Skills é o próximo nível de uso da ferramenta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 4. MÓDULOS -->
+<section class="proposta-section">
+  <div class="proposta-inner">
+    <div class="proposta-header">
+      <p class="section-label reveal">A Proposta</p>
+      <h2 class="section-title reveal reveal-d1">Estruturada em 2 frentes.<br><em>Cada uma com resultado próprio.</em></h2>
+      <p class="proposta-subtitle reveal reveal-d2">Clique em cada módulo para ver os detalhes das entregas.</p>
+    </div>
+
+    <!-- FRENTE 1 -->
+    <div class="fase-block reveal">
+      <div class="fase-header f1">
+        <div>
+          <div class="fase-tag">Frente 1 · Ponta Grossa · Presencial</div>
+          <div class="fase-name">Workshop de Imersão</div>
+          <div class="fase-duration">Dia único · 9h às 17h · 11–15 de maio de 2026</div>
+        </div>
+        <div class="fase-num-badge">1</div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-header">
+          <span class="modulo-icon">🧠</span>
+          <div>
+            <div class="modulo-label">Manhã</div>
+            <div class="modulo-title">Fundamentos que fazem a diferença</div>
+          </div>
+          <span class="modulo-arrow">▼</span>
+        </div>
+        <div class="modulo-chips">
+          <span class="chip">Como a IA funciona</span>
+          <span class="chip">Prompts eficientes</span>
+          <span class="chip">Claude avançado</span>
+          <span class="chip">Segurança corporativa</span>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <span class="value-box-icon">⚡</span>
+            <div class="value-box-content">
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">O time para de usar o Claude como Google e começa a extrair resultado real — com contexto, instrução e saída que funcionam toda vez.</div>
+            </div>
+          </div>
+          <p class="modulo-desc">A parte mais importante do programa: virar a chave. Não adianta ter a ferramenta se a mentalidade de uso é a de 2015. Essa sessão transforma como o time pensa sobre a IA — o que é possível, o que não é, e como perguntar do jeito certo para ter resultado consistente.</p>
+          <ul class="modulo-items">
+            <li><strong>Como a IA funciona na prática:</strong> limites reais, riscos e oportunidades — sem hype, com clareza para quem toma decisão</li>
+            <li><strong>Boas práticas corporativas:</strong> o que pode, o que não pode, como proteger informações sensíveis da operação da fazenda</li>
+            <li><strong>Estruturação de prompts:</strong> contexto + instrução + saída — a fórmula que garante consistência nos resultados, toda vez</li>
+            <li><strong>Claude avançado — Projetos, Skills, Conectores:</strong> o que o Grupo Stringhetta ainda não está usando e deveria estar</li>
+            <li><strong>Claude Cowork e Claude Code:</strong> como automatizar tarefas de arquivos, planilhas e relatórios direto na operação</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-header">
+          <span class="modulo-icon">💻</span>
+          <div>
+            <div class="modulo-label">Tarde</div>
+            <div class="modulo-title">Mão na massa — cada um no seu computador</div>
+          </div>
+          <span class="modulo-arrow">▼</span>
+        </div>
+        <div class="modulo-chips">
+          <span class="chip">Fluxo de caixa</span>
+          <span class="chip">Agri Manager</span>
+          <span class="chip">Cotações em PDF</span>
+          <span class="chip">Diagnóstico ao vivo</span>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <span class="value-box-icon">🎯</span>
+            <div class="value-box-content">
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">Cada pessoa sai do dia com um projeto concreto já funcionando — aplicado à sua própria dor, nas suas próprias planilhas e processos da fazenda.</div>
+            </div>
+          </div>
+          <p class="modulo-desc">Sem exercício inventado. Cada participante trabalha no próprio computador, com os arquivos reais da operação. Aqui a manhã teórica vira resultado prático — e o diagnóstico ao vivo revela o que pode ser automatizado imediatamente.</p>
+          <ul class="modulo-items">
+            <li><strong>Fluxo de caixa e planilhas:</strong> aplicação direta da IA nos processos financeiros da Fazenda Ranchão — velocidade na atualização e análise dos dados do Agri Manager</li>
+            <li><strong>Cotações de seguro em PDF:</strong> extração e comparação de dados de múltiplas páginas em segundos, sem leitura manual</li>
+            <li><strong>Diagnóstico do Agri Manager:</strong> identificação do que pode ser extraído hoje e como a IA pode trabalhar sobre esses dados imediatamente</li>
+            <li><strong>Mapeamento de automações:</strong> o que pode ser automatizado agora, o que gera ganho rápido e o que exige projeto mais estruturado</li>
+            <li><strong>Rodrigo — Excel e dados da agricultura:</strong> sessão dedicada para integrar o que está salvo em Excel com as possibilidades da IA</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-header">
+          <span class="modulo-icon">🚀</span>
+          <div>
+            <div class="modulo-label">Encerramento do dia</div>
+            <div class="modulo-title">Cada participante sai com algo concreto</div>
+          </div>
+          <span class="modulo-arrow">▼</span>
+        </div>
+        <div class="modulo-chips">
+          <span class="chip">Projeto pessoal definido</span>
+          <span class="chip">Claude configurado</span>
+          <span class="chip">Roadmap de próximos passos</span>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <span class="value-box-icon">📋</span>
+            <div class="value-box-content">
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">Ninguém sai do dia com teoria na cabeça e zero na mão. Cada pessoa define um projeto real, já com os primeiros fluxos configurados no Claude.</div>
+            </div>
+          </div>
+          <p class="modulo-desc">O encerramento é o ponto de partida para o que vem depois. Cada participante define seu projeto pessoal — algo concreto que resolve uma dor real do seu trabalho — e sai sabendo exatamente o que vai desenvolver nas próximas semanas.</p>
+          <ul class="modulo-items">
+            <li><strong>Projeto pessoal definido:</strong> algo concreto que resolve uma dor real, escolhido por cada participante com apoio da Bruna no dia</li>
+            <li><strong>Primeiros fluxos configurados:</strong> não só ideia — começo implementado, testado e funcionando ainda no dia do workshop</li>
+            <li><strong>Clareza de desenvolvimento:</strong> cada um sabe o que vai construir nas semanas seguintes e como vai usar os encontros online</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRENTE 2 -->
+    <div class="fase-block reveal">
+      <div class="fase-header f2">
+        <div>
+          <div class="fase-tag">Frente 2 · Online · Semanal</div>
+          <div class="fase-name">3 Sessões de Acompanhamento</div>
+          <div class="fase-duration">1h30 a 2h cada · Evolução contínua dos projetos da equipe</div>
+        </div>
+        <div class="fase-num-badge">2</div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-header">
+          <span class="modulo-icon">📈</span>
+          <div>
+            <div class="modulo-label">Sessões 1, 2 e 3</div>
+            <div class="modulo-title">Acompanhamento vivo — sem conteúdo fixo</div>
+          </div>
+          <span class="modulo-arrow">▼</span>
+        </div>
+        <div class="modulo-chips">
+          <span class="chip">Revisão dos projetos</span>
+          <span class="chip">Aprofundamento por demanda</span>
+          <span class="chip">Novidades filtradas da IA</span>
+          <span class="chip">Novos automatismos</span>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <span class="value-box-icon">🔄</span>
+            <div class="value-box-content">
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">O time sai do "entender" e vai para o usar de verdade, todos os dias — com projetos evoluindo, novas automações e dúvidas resolvidas na hora.</div>
+            </div>
+          </div>
+          <p class="modulo-desc">Cada sessão é construída em cima do que está acontecendo na operação — não é um curso com conteúdo fixo, é um acompanhamento vivo. O time traz o que tentou, o que não funcionou, o que quer aprofundar. A Bruna destrava e aponta o próximo passo.</p>
+          <ul class="modulo-items">
+            <li><strong>Revisão e avanço dos projetos:</strong> cada pessoa apresenta o que desenvolveu — revisamos, ajustamos e evoluímos junto</li>
+            <li><strong>Aprofundamento por demanda:</strong> Claude Code, automações, conectores, relatórios ou planilhas — o que o time precisar naquele momento</li>
+            <li><strong>Novidades da IA filtradas:</strong> o mundo da IA muda toda semana — o que realmente importa para a operação do Grupo Stringhetta, sem ruído</li>
+            <li><strong>Novas oportunidades de ganho:</strong> com o time mais confiante, surgem ideias — destravamos o que precisar e identificamos o próximo ponto de automação</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- 5. O QUE MUDA -->
+<section class="resultados-section">
+  <div class="resultados-inner">
+    <p class="section-label reveal">O que muda</p>
+    <h2 class="section-title reveal reveal-d1">Ao final do programa, o Grupo Stringhetta terá:</h2>
+    <div class="resultados-grid">
+      <div class="resultado-card reveal reveal-d1">
+        <div class="resultado-icon">🔄</div>
+        <div class="resultado-title">Virada real de mentalidade</div>
+        <p class="resultado-text">O time para de usar o Claude como ferramenta de pesquisa e começa a usá-lo como parceiro de trabalho — com prompts estruturados, projetos configurados e fluxos que funcionam.</p>
+      </div>
+      <div class="resultado-card reveal reveal-d2">
+        <div class="resultado-icon">🛠️</div>
+        <div class="resultado-title">Projetos práticos em andamento</div>
+        <p class="resultado-text">Cada participante sai com um projeto concreto em andamento ou concluído — algo que resolve uma tarefa real do seu trabalho, testado na operação da fazenda.</p>
+      </div>
+      <div class="resultado-card reveal reveal-d3">
+        <div class="resultado-icon">⚡</div>
+        <div class="resultado-title">Mais velocidade no dia a dia</div>
+        <p class="resultado-text">Tarefas que hoje levam horas — atualização de dados, leitura de documentos, análise de cotações — começam a acontecer em minutos, com o Claude bem configurado para cada pessoa.</p>
+      </div>
+      <div class="resultado-card reveal reveal-d1">
+        <div class="resultado-icon">🗺️</div>
+        <div class="resultado-title">Clareza sobre o que automatizar</div>
+        <p class="resultado-text">Mapa claro do que pode ser feito agora com o Claude — e o que exige uma estrutura técnica mais robusta. Sem promessa vazia, sem investimento no lugar errado.</p>
+      </div>
+      <div class="resultado-card reveal reveal-d2">
+        <div class="resultado-icon">🤝</div>
+        <div class="resultado-title">Claude integrado à rotina do time</div>
+        <p class="resultado-text">Não uma ferramenta que o time testou uma vez e largou. Um recurso que faz parte do fluxo diário — com contexto, projetos e automações configurados para a realidade da operação.</p>
+      </div>
+      <div class="resultado-card reveal reveal-d3">
+        <div class="resultado-icon">📍</div>
+        <div class="resultado-title">Roadmap para a próxima fase</div>
+        <p class="resultado-text">Se fizer sentido avançar para integrações mais robustas com o Agri Manager ou projetos de automação, o time já sabe por onde começar e o que priorizar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 6. INVESTIMENTO -->
+<section class="invest-section">
+  <div class="invest-inner">
+    <p class="section-label reveal" style="color: var(--tl);">Investimento</p>
+    <h2 class="section-title-light reveal reveal-d1">Condições claras,<br><em>sem surpresas no caminho.</em></h2>
+    <p class="invest-subtitle reveal reveal-d2">Pacote completo — workshop presencial + 3 sessões online + suporte entre encontros</p>
+
+    <div class="invest-card reveal reveal-d3">
+      <div class="invest-price-label">Valor total do programa</div>
+      <div class="invest-price">R$ 8.300</div>
+      <div class="invest-price-desc">Condições de pagamento a combinar · Parcelamento disponível</div>
+      <hr class="invest-divider">
+      <ul class="invest-includes">
+        <li>1 dia de workshop presencial em Ponta Grossa — das 9h às 17h, com toda a equipe</li>
+        <li>3 sessões online de 1h30 a 2h cada, com foco nos projetos reais da operação</li>
+        <li>Suporte por mensagem entre as sessões para dúvidas práticas do dia a dia</li>
+        <li>Diagnóstico ao vivo do Agri Manager e mapeamento das oportunidades de automação</li>
+        <li>Todos os entregáveis descritos nesta proposta</li>
+      </ul>
+    </div>
+
+    <div class="invest-notice reveal reveal-d4">
+      <div class="invest-notice-title">Custos de deslocamento</div>
+      <div class="invest-notice-text">Passagem aérea, transfer e alimentação no dia do workshop presencial ficam por conta do Grupo Stringhetta, alinhados diretamente com Rafael. Não estão inclusos no valor acima.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 7. POR QUE A NEWSCALE -->
+<section class="porque-section">
+  <div class="porque-inner">
+    <p class="section-label reveal">Por que a NewScale</p>
+    <h2 class="section-title reveal reveal-d1" style="margin-bottom: 44px;">Não entregamos relatório<br><em>e sumimos.</em></h2>
+
+    <div class="quote-block reveal reveal-d2">
+      <span class="quote-mark">"</span>
+      <p class="quote-text">Cada projeto começa pela conversa — não pelo contrato. Entendemos como a operação funciona hoje, qual é o tom de voz da empresa, quais são as regras de negócio e o que a equipe precisa. Só depois a gente constrói. E depois que entrega, a gente fica — otimizando, ajustando e evoluindo junto com o seu negócio.</p>
+    </div>
+
+    <p class="section-label reveal" style="margin-bottom: 22px;">Nossa metodologia</p>
+    <div class="metodo-grid">
+      <div class="metodo-card reveal reveal-d1">
+        <div class="metodo-num">01</div>
+        <div class="metodo-title">Consultoria Sistêmica</div>
+        <p class="metodo-text">Visão completa do negócio: financeiro, campo e operação. IA como motor de escala, não de cosmética.</p>
+      </div>
+      <div class="metodo-card reveal reveal-d2">
+        <div class="metodo-num">02</div>
+        <div class="metodo-title">Roadmap Faseado</div>
+        <p class="metodo-text">Priorizamos os processos com maior potencial de retorno antes de qualquer outra coisa.</p>
+      </div>
+      <div class="metodo-card reveal reveal-d3">
+        <div class="metodo-num">03</div>
+        <div class="metodo-title">Implementação Integrada</div>
+        <p class="metodo-text">Conectamos sistemas, eliminamos tarefas manuais e construímos fluxos inteligentes nos canais que o time já usa.</p>
+      </div>
+      <div class="metodo-card reveal reveal-d1">
+        <div class="metodo-num">04</div>
+        <div class="metodo-title">Treinamento das Equipes</div>
+        <p class="metodo-text">Cada pessoa aprende seu papel no novo fluxo. O humano monitora e decide — a IA faz o operacional.</p>
+      </div>
+      <div class="metodo-card reveal reveal-d2">
+        <div class="metodo-num">05</div>
+        <div class="metodo-title">Acompanhamento de KPIs</div>
+        <p class="metodo-text">Definimos métricas juntos antes de começar. Você sabe exatamente o que esperar — e como acompanhar o ganho real.</p>
+      </div>
+      <div class="metodo-card reveal reveal-d3">
+        <div class="metodo-num">06</div>
+        <div class="metodo-title">Sustentação Contínua</div>
+        <p class="metodo-text">Monitoramento, otimizações e evolução para que o sistema acompanhe o crescimento do negócio — não fique parado no tempo.</p>
+      </div>
+    </div>
+
+    <div class="fundadores-grid" style="margin-top: 68px; grid-template-columns: 1fr; max-width: 600px;">
+      <div class="fundador-card reveal reveal-d1">
+        <img class="fundador-photo" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG" alt="Bruna Santanna">
+        <div class="fundador-body">
+          <div class="fundador-name">Bruna Santanna</div>
+          <div class="fundador-role">Fundadora · IA & Educação Corporativa</div>
+          <p class="fundador-bio">ESPM. Empresária há 10+ anos. Mentora de IA no programa Potenc.IA (OLX, Magalu, B3 e CI&T). Professora de IA para equipes corporativas. Implementa IA no próprio negócio todos os dias — só vende o que usa.</p>
+          <div class="fundador-tags">
+            <span class="fundador-tag">SulAmérica</span>
+            <span class="fundador-tag">Whirlpool</span>
+            <span class="fundador-tag">Blackbox AI</span>
+            <span class="fundador-tag">Potenc.IA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 8. PRÓXIMOS PASSOS -->
+<section class="steps-section">
+  <div class="steps-inner">
+    <p class="section-label reveal" style="color: var(--tl);">Próximos passos</p>
+    <h2 class="section-title-light reveal reveal-d1">O que acontece<br><em>a partir de agora</em></h2>
+
+    <div class="steps-list">
+      <div class="step-item reveal">
+        <div class="step-num-wrap"><div class="step-num">01</div></div>
+        <div>
+          <div class="step-prazo">Agora</div>
+          <div class="step-title">Aprovação da proposta</div>
+          <p class="step-desc">Rafael confirma o programa e alinhamos as condições de pagamento. A partir daqui, abrimos a agenda e começamos a planejar o workshop presencial.</p>
+        </div>
+      </div>
+      <div class="step-item reveal reveal-d1">
+        <div class="step-num-wrap"><div class="step-num">02</div></div>
+        <div>
+          <div class="step-prazo">Em seguida</div>
+          <div class="step-title">Agendamento da imersão presencial</div>
+          <p class="step-desc">Rafael e Bruna definem a data entre 11 e 15 de maio. Naele cuida da logística interna. Bruna confirma passagem e deslocamento de São Paulo até Ponta Grossa.</p>
+        </div>
+      </div>
+      <div class="step-item reveal reveal-d2">
+        <div class="step-num-wrap"><div class="step-num">03</div></div>
+        <div>
+          <div class="step-prazo">Antes do workshop</div>
+          <div class="step-title">Envio do relatório financeiro de exemplo</div>
+          <p class="step-desc">Naele envia um exemplo do relatório extraído do Agri Manager. Isso permite que a Bruna chegue já com o contexto da estrutura de dados — sem perder tempo no dia.</p>
+        </div>
+      </div>
+      <div class="step-item reveal reveal-d3">
+        <div class="step-num-wrap"><div class="step-num">04</div></div>
+        <div>
+          <div class="step-prazo">Maio 2026</div>
+          <div class="step-title">Workshop de imersão presencial</div>
+          <p class="step-desc">Um dia inteiro em Ponta Grossa. Das 9h às 17h, o time mergulha nos fundamentos, coloca a mão na massa com os seus próprios processos e sai com projeto definido e primeiros fluxos configurados.</p>
+        </div>
+      </div>
+      <div class="step-item reveal reveal-d4">
+        <div class="step-num-wrap"><div class="step-num">05</div></div>
+        <div>
+          <div class="step-prazo">Semanas seguintes</div>
+          <div class="step-title">3 sessões online de acompanhamento</div>
+          <p class="step-desc">Uma sessão por semana, de 1h30 a 2h. Revisamos o que cada um desenvolveu, destravamos o que precisa, aprofundamos onde o time quer ir mais fundo — e identificamos os próximos pontos de ganho na operação. Você não está sozinho no go-live.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="steps-cta reveal">
+      <p class="steps-cta-text">"Saímos com tudo que precisamos para construir."</p>
+      <a class="btn-primary" href="mailto:bruna@newscale.tech">Aprovar proposta → bruna@newscale.tech</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- 9. FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">
+    NEWSCALE
+    <span>CONSULTING</span>
+  </div>
+  <div class="footer-contact">
+    <a href="mailto:bruna@newscale.tech">bruna@newscale.tech</a>
+  </div>
+  <div class="footer-date">
+    Proposta exclusiva · Grupo Stringhetta<br>
+    Março de 2026
+  </div>
+</footer>
