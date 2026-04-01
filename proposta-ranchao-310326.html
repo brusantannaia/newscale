@@ -116,19 +116,9 @@ body {
 .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 300; color: var(--white); line-height: 1; margin-bottom: 6px; }
 .stat-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
 
-/* ════════ 3. DORES ════════ */
-.dores-section { background: var(--ink); padding: 100px 60px; }
-.dores-inner { max-width: 1160px; margin: 0 auto; }
+/* ════════ 4. MÓDULOS ════════ */
 .section-title-light { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 3.2vw, 42px); font-weight: 700; line-height: 1.1; color: var(--white); margin-bottom: 52px; }
 .section-title-light em { font-style: italic; color: var(--tl); }
-.dores-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.dore-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 30px 26px; transition: border-color 0.3s, background 0.3s; position: relative; overflow: hidden; }
-.dore-card:hover { border-color: rgba(176,110,74,0.3); background: rgba(176,110,74,0.05); }
-.dore-num { font-family: 'Cormorant Garamond', serif; font-size: 3.6rem; font-weight: 300; color: rgba(255,255,255,0.06); position: absolute; top: 14px; right: 20px; line-height: 1; }
-.dore-title { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terra); margin-bottom: 12px; }
-.dore-text { font-size: 0.86rem; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.74; }
-
-/* ════════ 4. MÓDULOS ════════ */
 .proposta-section { background: var(--cl); padding: 100px 60px; }
 .proposta-inner { max-width: 1100px; margin: 0 auto; }
 .proposta-header { margin-bottom: 52px; }
@@ -185,20 +175,20 @@ body {
 
 /* ════════ 6. INVESTIMENTO ════════ */
 .invest-section { background: linear-gradient(165deg, #14373C, #194040 55%, #435D51 100%); padding: 100px 60px; }
-.invest-inner { max-width: 960px; margin: 0 auto; }
+.invest-inner { max-width: 860px; margin: 0 auto; }
 .invest-subtitle { font-size: 0.9rem; font-weight: 300; color: rgba(255,255,255,0.45); margin-top: 10px; margin-bottom: 56px; }
-.invest-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 48px 48px; text-align: center; margin-bottom: 28px; position: relative; overflow: hidden; }
+.invest-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 56px 56px 48px; text-align: center; margin-bottom: 22px; position: relative; overflow: hidden; }
 .invest-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--terra); }
-.invest-price-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); margin-bottom: 14px; }
-.invest-price { font-family: 'Cormorant Garamond', serif; font-size: clamp(50px, 7vw, 78px); font-weight: 300; color: var(--white); line-height: 1; margin-bottom: 10px; }
-.invest-price-desc { font-size: 0.86rem; font-weight: 300; color: rgba(255,255,255,0.5); margin-bottom: 32px; }
-.invest-divider { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 0 -48px 32px; }
+.invest-price-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); margin-bottom: 16px; }
+.invest-price { font-family: 'Cormorant Garamond', serif; font-size: clamp(56px, 8vw, 88px); font-weight: 300; color: var(--white); line-height: 1; margin-bottom: 10px; }
+.invest-price-desc { font-size: 0.86rem; font-weight: 300; color: rgba(255,255,255,0.45); margin-bottom: 36px; }
+.invest-divider { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 0 -56px 36px; }
 .invest-includes { list-style: none; text-align: left; display: flex; flex-direction: column; gap: 13px; }
 .invest-includes li { display: flex; gap: 13px; align-items: flex-start; font-size: 0.88rem; font-weight: 300; color: rgba(255,255,255,0.72); line-height: 1.6; }
-.invest-includes li::before { content: '✓'; color: var(--terra); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-.invest-notice { background: rgba(176,110,74,0.1); border: 1px solid rgba(176,110,74,0.22); border-radius: 12px; padding: 20px 26px; margin-top: 22px; }
-.invest-notice-title { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terra); margin-bottom: 7px; }
-.invest-notice-text { font-size: 0.84rem; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.68; }
+.invest-includes li::before { content: '✓'; color: var(--terra); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+.invest-notice { background: rgba(176,110,74,0.1); border: 1px solid rgba(176,110,74,0.22); border-radius: 12px; padding: 22px 28px; }
+.invest-notice-title { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terra); margin-bottom: 8px; }
+.invest-notice-text { font-size: 0.84rem; font-weight: 300; color: rgba(255,255,255,0.52); line-height: 1.68; }
 
 /* ════════ 7. POR QUE NEWSCALE ════════ */
 .porque-section { background: var(--cl); padding: 100px 60px; }
@@ -214,7 +204,7 @@ body {
 .metodo-text { font-size: 0.83rem; font-weight: 300; color: #4a6a6e; line-height: 1.68; }
 .fundadores-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
 .fundador-card { background: var(--ink); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; }
-.fundador-photo { width: 100%; height: 270px; object-fit: cover; object-position: center top; display: block; filter: sepia(0.25) saturate(0.85); }
+.fundador-photo { width: 100%; height: 340px; object-fit: cover; object-position: center 30%; display: block; filter: sepia(0.25) saturate(0.85); }
 .fundador-body { padding: 26px 26px 30px; }
 .fundador-name { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 600; color: var(--white); margin-bottom: 3px; }
 .fundador-role { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); margin-bottom: 13px; }
@@ -251,16 +241,13 @@ body {
 @media (max-width: 900px) {
   .contexto-inner { grid-template-columns: 1fr; gap: 44px; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
-  .dores-grid { grid-template-columns: 1fr; }
   .metodo-grid { grid-template-columns: 1fr 1fr; }
   .resultados-grid { grid-template-columns: 1fr; }
   .fundadores-grid { grid-template-columns: 1fr; }
   .footer { flex-direction: column; gap: 18px; text-align: center; }
   .footer-date { text-align: center; }
-  .hero, .contexto-section, .dores-section, .proposta-section,
+  .hero, .contexto-section, .proposta-section,
   .resultados-section, .invest-section, .porque-section, .steps-section { padding: 72px 24px; }
-  .invest-card { padding: 32px 24px; }
-  .invest-divider { margin: 0 -24px 28px; }
   .quote-block { padding: 38px 26px; }
   .modulo-chips { padding-left: 22px; }
 }
@@ -340,42 +327,6 @@ body {
       <div class="stat-card">
         <div class="stat-number">Mai</div>
         <div class="stat-label">Início previsto — imersão em Ponta Grossa</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- 3. DORES -->
-<section class="dores-section">
-  <div class="dores-inner">
-    <p class="section-label reveal" style="color: var(--tl);">O que identificamos</p>
-    <h2 class="section-title-light reveal reveal-d1">5 oportunidades onde o Claude<br><em>pode fazer mais pela operação</em></h2>
-    <div class="dores-grid">
-      <div class="dore-card reveal reveal-d1">
-        <span class="dore-num">01</span>
-        <div class="dore-title">Claude usado muito abaixo do potencial</div>
-        <p class="dore-text">O time já assinou o Claude e está começando a usar — mas ainda há muito espaço para ir além. Projetos, Skills, Conectores, Cowork e automações são recursos que podem transformar o dia a dia da equipe.</p>
-      </div>
-      <div class="dore-card reveal reveal-d2">
-        <span class="dore-num">02</span>
-        <div class="dore-title">Fluxo financeiro com ganho de velocidade</div>
-        <p class="dore-text">A atualização do fluxo de caixa é feita a partir dos dados do Agri Manager. Com o Claude bem configurado, esse processo pode acontecer de forma muito mais rápida — com mais análise e menos esforço manual.</p>
-      </div>
-      <div class="dore-card reveal reveal-d3">
-        <span class="dore-num">03</span>
-        <div class="dore-title">Análise de PDFs e documentos</div>
-        <p class="dore-text">Cotações de seguro, apólices e relatórios chegam em PDF com várias páginas. O Claude lê, compara e apresenta o que importa em segundos — sem que ninguém precise fazer isso manualmente.</p>
-      </div>
-      <div class="dore-card reveal reveal-d1">
-        <span class="dore-num">04</span>
-        <div class="dore-title">Dados do Agri Manager com mais visibilidade</div>
-        <p class="dore-text">Toda a informação financeira da fazenda está no sistema. Com o Claude bem treinado no contexto da operação, é possível gerar análises, resumos e respostas a partir desses dados com muito mais agilidade.</p>
-      </div>
-      <div class="dore-card reveal reveal-d2">
-        <span class="dore-num">05</span>
-        <div class="dore-title">Prompts e projetos que ainda não existem</div>
-        <p class="dore-text">Cada pessoa do time tem tarefas repetitivas que o Claude pode fazer em segundos — mas que ainda não foram configuradas. Estruturar contexto, criar projetos e usar Skills é o próximo nível de uso da ferramenta.</p>
       </div>
     </div>
   </div>
@@ -606,9 +557,9 @@ body {
       <hr class="invest-divider">
       <ul class="invest-includes">
         <li>1 dia de workshop presencial em Ponta Grossa — das 9h às 17h, com toda a equipe</li>
-        <li>3 sessões online de 1h30 a 2h cada, com foco nos projetos reais da operação</li>
+        <li>3 sessões online de 1h30 a 2h cada, com foco nos processos reais da operação</li>
         <li>Suporte por mensagem entre as sessões para dúvidas práticas do dia a dia</li>
-        <li>Diagnóstico ao vivo do Agri Manager e mapeamento das oportunidades de automação</li>
+        <li>Material de referência customizado para o Grupo Stringhetta</li>
         <li>Todos os entregáveis descritos nesta proposta</li>
       </ul>
     </div>
@@ -737,7 +688,7 @@ body {
 
     <div class="steps-cta reveal">
       <p class="steps-cta-text">"Saímos com tudo que precisamos para construir."</p>
-      <a class="btn-primary" href="mailto:bruna@newscale.tech">Aprovar proposta → bruna@newscale.tech</a>
+      <a class="btn-primary" href="mailto:bruna@newscale.tech" >Aprovar proposta → bruna@newscale.tech</a>
     </div>
   </div>
 </section>
