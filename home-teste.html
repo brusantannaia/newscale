@@ -3,62 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NewScale Consulting — Implementação de IA para Empresas</title>
-<meta name="description" content="Automação com Inteligência Artificial integrada ao seu CRM, ERP e WhatsApp. Diagnóstico gratuito em 30 minutos.">
+<title>NewScale Consulting — Implementação de IA Hiper-Personalizada para Empresas</title>
+<meta name="description" content="Consultoria especializada em implementação de Inteligência Artificial para empresas. Automatize processos, aumente produtividade e receita com agentes de IA integrados ao seu CRM, ERP e WhatsApp. Diagnóstico gratuito em 30 minutos.">
+<meta name="keywords" content="implementação de inteligência artificial para empresas, consultoria em IA para empresas, automação com IA, agentes de IA para empresas, inteligência artificial para negócios, IA para atendimento, IA para vendas, IA para operações, integração de IA com CRM, diagnóstico de IA para empresas">
+<link rel="canonical" href="https://newscale.tech/">
+<meta property="og:title" content="NewScale Consulting — IA Hiper-Personalizada para Empresas">
+<meta property="og:description" content="Implementações de IA sob medida que automatizam processos, reduzem custos e criam novos motores de crescimento para o seu negócio.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#14373C;--ink-light:#1e4a51;--sage:#435D51;--terra:#B06E4A;--terra-light:#c4835e;--sand:#A38362;--cream:#E8E6E0;--cream-light:#F4F3EF;--white:#FAFAF8;--accent:#D0C4B0;--font-display:'Cormorant Garamond',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif}
+:root{
+  --ink:#14373C;
+  --ink-light:#1e4a51;
+  --sage:#435D51;
+  --terra:#B06E4A;
+  --terra-light:#c4835e;
+  --sand:#A38362;
+  --cream:#E8E6E0;
+  --cream-light:#F4F3EF;
+  --white:#FAFAF8;
+  --accent:#D0C4B0;
+  --font-display:'Cormorant Garamond',Georgia,serif;
+  --font-body:'DM Sans',system-ui,sans-serif
+}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;font-size:16px}
 body{font-family:var(--font-body);color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 .container{max-width:1140px;margin:0 auto;padding:0 24px}
-.reveal{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
 
-/* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;transition:all .4s ease}
-.nav.scrolled{background:rgba(20,55,60,.97);backdrop-filter:blur(12px);padding:12px 0;box-shadow:0 2px 30px rgba(0,0,0,.15)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:#fff;letter-spacing:.02em}
-.nav-logo span{color:var(--accent)}
-.nav-cta{background:var(--terra);color:#fff;padding:10px 24px;border-radius:6px;font-size:.85rem;font-weight:600;transition:all .3s ease;border:none;cursor:pointer}
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;transition:all .4s ease}
+.nav.scrolled{background:rgba(20,55,60,.97);backdrop-filter:blur(12px);padding:10px 0;box-shadow:0 2px 30px rgba(0,0,0,.15)}
+.nav.scrolled .nav-logo img{height:28px!important}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.nav-logo img{height:40px;width:auto;filter:brightness(0) invert(1);transition:height .3s ease}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-link{color:rgba(255,255,255,.7);font-size:.88rem;font-weight:500;transition:color .3s;letter-spacing:.01em}
+.nav-link:hover{color:#fff}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-cta{background:var(--terra);color:#fff;padding:10px 24px;border-radius:6px;font-size:.85rem;font-weight:600;transition:all .3s ease;white-space:nowrap;display:inline-block}
 .nav-cta:hover{background:var(--terra-light);transform:translateY(-1px)}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px;color:#fff}
+.nav-hamburger svg{width:24px;height:24px}
+.nav-mobile-overlay{display:none;position:fixed;inset:0;background:rgba(20,55,60,.98);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:32px}
+.nav-mobile-overlay.open{display:flex}
+.nav-mobile-overlay a{color:#fff;font-size:1.3rem;font-family:var(--font-display);font-weight:600}
+.nav-mobile-overlay .close-btn{position:absolute;top:20px;right:24px;background:none;border:none;color:#fff;font-size:1.8rem;cursor:pointer}
 
-/* HERO */
+/* ── HERO ── */
 .hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(165deg,var(--ink) 0%,#1a4950 40%,var(--sage) 100%);position:relative;overflow:hidden;padding:120px 0 80px}
-.hero::before{content:none}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;position:relative;z-index:2}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(176,110,74,.15);border:1px solid rgba(176,110,74,.3);border-radius:40px;padding:6px 18px;font-size:.8rem;color:var(--terra-light);font-weight:500;margin-bottom:28px;letter-spacing:.05em;text-transform:uppercase}
 .hero-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--terra);animation:pulse 2s ease infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 .hero h1{font-family:var(--font-display);font-size:clamp(2.4rem,5vw,3.6rem);font-weight:700;color:#fff;line-height:1.15;margin-bottom:24px}
 .hero h1 em{font-style:normal;color:var(--terra-light)}
-.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:40px;max-width:540px;font-weight:300}
-.hero-proof{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:24px 28px;margin-bottom:36px;max-width:540px}
-.hero-proof .stat{font-family:var(--font-display);font-size:2.4rem;font-weight:700;color:var(--terra-light);line-height:1}
-.hero-proof .stat-label{font-size:.9rem;color:rgba(255,255,255,.6);margin-top:4px}
-.hero-proof .stat-source{font-size:.75rem;color:rgba(255,255,255,.35);margin-top:8px}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:32px;max-width:540px;font-weight:300}
+.hero-checklist{list-style:none;margin-bottom:40px;max-width:560px}
+.hero-checklist li{display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:rgba(255,255,255,.65);padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05);line-height:1.55}
+.hero-checklist li:last-child{border-bottom:none}
+.hero-checklist li::before{content:'';width:18px;height:18px;border-radius:50%;background:rgba(176,110,74,.2);border:1px solid rgba(176,110,74,.4);display:flex;flex-shrink:0;margin-top:1px;background-image:url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%23c4835e' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+.hero-note{font-size:.78rem;color:rgba(255,255,255,.35);margin-top:12px;font-style:italic}
 .hero-cta{display:inline-flex;align-items:center;gap:10px;background:var(--terra);color:#fff;padding:16px 36px;border-radius:8px;font-weight:600;font-size:1.05rem;transition:all .3s ease;box-shadow:0 4px 20px rgba(176,110,74,.35)}
 .hero-cta:hover{background:var(--terra-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(176,110,74,.45)}
 .hero-cta svg{transition:transform .3s}
 .hero-cta:hover svg{transform:translateX(3px)}
-.hero-flow{position:relative}
-.flow-box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:32px;backdrop-filter:blur(8px)}
-.flow-step{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.06)}
-.flow-step:last-child{border-bottom:none}
-.flow-icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
-.flow-icon.input{background:rgba(176,110,74,.15);color:var(--terra-light)}
-.flow-icon.ai{background:rgba(176,110,74,.2);color:var(--terra-light)}
-.flow-icon.output{background:rgba(255,255,255,.1);color:#fff}
-.flow-label{font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:2px;text-transform:uppercase;letter-spacing:.05em;font-weight:500}
-.flow-text{font-size:1rem;color:#fff;font-weight:500}
-.flow-arrow{text-align:center;color:rgba(255,255,255,.2);font-size:1.4rem;padding:4px 0}
-
-/* HERO VISUAL */
 .hero-visual{display:flex;align-items:center;justify-content:center}
 .node-anim{opacity:0;animation:nodeIn .8s ease forwards}
 .line-anim{opacity:0;animation:lineIn .6s ease forwards}
@@ -66,122 +81,173 @@ a{color:inherit;text-decoration:none}
 @keyframes nodeIn{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
 @keyframes lineIn{from{opacity:0}to{opacity:1}}
 @keyframes spin{to{transform:rotate(360deg)}}
-.node-center circle:first-child{animation:glowPulse 3s ease infinite}
-@keyframes glowPulse{0%,100%{filter:drop-shadow(0 0 8px rgba(176,110,74,.2))}50%{filter:drop-shadow(0 0 20px rgba(176,110,74,.4))}}
 
-/* INTEGRATIONS BAR */
-.integrations{padding:60px 0;background:var(--cream-light);overflow:hidden}
-.integrations h3{font-family:var(--font-display);font-size:1.5rem;font-weight:700;text-align:center;margin-bottom:8px}
-.integrations .int-sub{text-align:center;font-size:.9rem;color:var(--sage);margin-bottom:32px}
-.integrations .int-sub strong{color:var(--terra)}
-.logo-track{display:flex;gap:48px;animation:scroll 30s linear infinite;width:max-content}
-.logo-track-wrap{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
-.logo-item{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:48px;height:48px;font-size:1.8rem;opacity:.55;transition:opacity .3s}
-.logo-item:hover{opacity:1}
-@keyframes scroll{to{transform:translateX(-50%)}}
-
-/* PROBLEMA */
-.problema{padding:100px 0;background:var(--white)}
+/* ── SECTION HELPERS ── */
 .section-tag{display:inline-block;font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;font-weight:600;color:var(--terra);margin-bottom:16px}
 .section-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,2.8rem);font-weight:700;line-height:1.2;margin-bottom:16px}
-.section-sub{font-size:1.05rem;color:var(--sage);line-height:1.7;max-width:600px;margin-bottom:48px;font-weight:300}
-.cost-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
-.cost-card{background:var(--cream-light);border-radius:14px;padding:32px;border:1px solid rgba(20,55,60,.05);transition:all .4s ease;position:relative;overflow:hidden}
-.cost-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(20,55,60,.08)}
-.cost-card::after{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--terra);border-radius:0 4px 4px 0}
-.cost-number{font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--ink);margin-bottom:4px}
-.cost-label{font-size:.95rem;color:var(--sage);line-height:1.5}
-.cost-bottom{margin-top:48px;text-align:center;padding:28px;background:var(--ink);border-radius:14px;color:#fff}
-.cost-bottom .big{font-family:var(--font-display);font-size:1.8rem;font-weight:700;margin-bottom:4px}
-.cost-bottom p{font-size:.95rem;color:rgba(255,255,255,.6);font-weight:300}
+.section-sub{font-size:1.05rem;color:var(--sage);line-height:1.7;max-width:600px;font-weight:300}
+.cta-link{display:inline-flex;align-items:center;gap:10px;background:var(--terra);color:#fff;padding:14px 32px;border-radius:8px;font-weight:600;font-size:.95rem;transition:all .3s ease;box-shadow:0 4px 16px rgba(176,110,74,.25)}
+.cta-link:hover{background:var(--terra-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(176,110,74,.35)}
+.cta-link svg{transition:transform .3s}
+.cta-link:hover svg{transform:translateX(3px)}
+.cta-ghost{display:inline-flex;align-items:center;gap:8px;color:var(--terra);font-weight:600;font-size:.95rem;border-bottom:1px solid rgba(176,110,74,.3);padding-bottom:2px;transition:all .3s}
+.cta-ghost:hover{border-color:var(--terra);gap:12px}
 
-/* SOLUCAO */
-.solucao{padding:100px 0;background:var(--cream-light)}
-.metodo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:48px}
-.metodo-step{text-align:center;position:relative;padding:32px 16px}
-.metodo-num{width:44px;height:44px;border-radius:50%;background:var(--terra);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;margin:0 auto 16px}
-.metodo-name{font-family:var(--font-display);font-size:1.3rem;font-weight:700;margin-bottom:8px}
-.metodo-desc{font-size:.85rem;color:var(--sage);line-height:1.6}
-.metodo-step:not(:last-child)::after{content:'\2192';position:absolute;right:-16px;top:44px;font-size:1.4rem;color:var(--sand);font-weight:300}
-.solucao-note{text-align:center;font-family:var(--font-display);font-size:1.3rem;font-style:italic;color:var(--sage);max-width:600px;margin:0 auto;line-height:1.6}
+/* ── 2ª DOBRA — PROBLEMA ── */
+.problema{padding:96px 0;background:var(--ink)}
+.problema-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:48px}
+.prob-item{display:flex;align-items:flex-start;gap:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:22px 20px}
+.prob-icon{width:40px;height:40px;border-radius:10px;background:rgba(176,110,74,.1);border:1px solid rgba(176,110,74,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.prob-icon svg{stroke:var(--terra-light)}
+.prob-text{font-size:.9rem;color:rgba(255,255,255,.65);line-height:1.6}
+.prob-footer{background:rgba(255,255,255,.04);border:1px solid rgba(176,110,74,.2);border-radius:14px;padding:28px 32px;text-align:center}
+.prob-footer p{font-family:var(--font-display);font-size:1.35rem;font-weight:600;color:#fff;line-height:1.4;margin-bottom:24px}
+.prob-footer p em{font-style:normal;color:var(--terra-light)}
 
-/* CASES */
-.cases{padding:100px 0;background:var(--white)}
+/* ── 3ª DOBRA — O QUE FAZEMOS ── */
+.fazemos{padding:96px 0;background:var(--white)}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.svc-card{background:var(--white);border-radius:16px;padding:36px;border:1px solid rgba(20,55,60,.08);transition:all .4s ease;position:relative;display:flex;flex-direction:column}
+.svc-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(20,55,60,.1);border-color:rgba(176,110,74,.25)}
+.svc-icon{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,rgba(176,110,74,.08),rgba(176,110,74,.15));display:flex;align-items:center;justify-content:justify-center;margin-bottom:22px;align-items:center;justify-content:center}
+.svc-num{width:28px;height:28px;border-radius:50%;background:var(--terra);color:#fff;font-weight:700;font-size:.8rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-bottom:4px}
+.svc-title{font-family:var(--font-display);font-size:1.35rem;font-weight:700;margin-bottom:10px;color:var(--ink)}
+.svc-desc{font-size:.9rem;color:var(--sage);line-height:1.7;flex-grow:1}
+.svc-note{font-size:.78rem;color:var(--terra);font-weight:500;margin-top:14px;font-style:italic}
+.fazemos-note{text-align:center;max-width:680px;margin:48px auto 0;font-family:var(--font-display);font-size:1.2rem;font-style:italic;color:var(--sage);line-height:1.6;padding:28px;background:var(--cream-light);border-radius:14px;border:1px solid rgba(20,55,60,.06)}
+
+/* ── 4ª DOBRA — INTEGRAÇÕES ── */
+.integrations{padding:72px 0;background:var(--cream-light);overflow:hidden}
+.integrations h2{font-family:var(--font-display);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;text-align:center;margin-bottom:8px}
+.integrations .int-sub{text-align:center;font-size:.92rem;color:var(--sage);margin-bottom:36px;max-width:500px;margin-left:auto;margin-right:auto}
+.integrations .int-sub strong{color:var(--terra)}
+.logo-track-wrap{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.logo-track{display:flex;gap:52px;animation:scroll 30s linear infinite;width:max-content;align-items:center;padding:8px 0}
+.logo-item{flex-shrink:0;width:34px;height:34px;opacity:.45;transition:opacity .3s;object-fit:contain}
+.logo-item:hover{opacity:.9}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.int-cta{text-align:center;margin-top:36px}
+
+/* ── 5ª DOBRA — CASES ── */
+.cases{padding:96px 0;background:var(--white)}
+.cases-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:56px}
+.stat-box{text-align:center;padding:24px 16px;background:var(--cream-light);border-radius:12px;border:1px solid rgba(20,55,60,.06)}
+.stat-box .big{font-family:var(--font-display);font-size:2.2rem;font-weight:700;color:var(--ink);line-height:1}
+.stat-box .label{font-size:.78rem;color:var(--sage);margin-top:6px;line-height:1.4}
 .cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
 .case-card{background:var(--ink);border-radius:16px;padding:36px;color:#fff;position:relative;overflow:hidden;transition:all .4s ease}
 .case-card:hover{transform:translateY(-4px);box-shadow:0 16px 50px rgba(20,55,60,.25)}
 .case-badge{display:inline-block;background:rgba(176,110,74,.15);color:var(--terra-light);font-size:.7rem;font-weight:600;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px}
-.case-badge.pending{background:rgba(255,255,255,.1);color:rgba(255,255,255,.5)}
-.case-title{font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:6px}
-.case-sector{font-size:.8rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px}
-.case-block{margin-bottom:16px}
-.case-block-label{font-size:.7rem;color:var(--terra-light);text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:6px}
-.case-block p{font-size:.9rem;color:rgba(255,255,255,.75);line-height:1.6}
-.case-result{background:rgba(176,110,74,.1);border:1px solid rgba(176,110,74,.2);border-radius:10px;padding:16px 20px;margin-top:20px}
-.case-result .big{font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--terra-light)}
-.case-result .small{font-size:.8rem;color:rgba(255,255,255,.5);margin-top:2px}
-.case-techs{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
-.case-tech{font-size:.7rem;background:rgba(255,255,255,.08);color:rgba(255,255,255,.5);padding:3px 10px;border-radius:20px}
+.case-title{font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:4px}
+.case-sector{font-size:.78rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px}
+.case-block{margin-bottom:14px}
+.case-block-label{font-size:.68rem;color:var(--terra-light);text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:5px}
+.case-block p{font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.6}
+.case-result{background:rgba(176,110,74,.1);border:1px solid rgba(176,110,74,.2);border-radius:10px;padding:14px 18px;margin-top:20px}
+.case-result .big{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--terra-light)}
+.case-result .small{font-size:.78rem;color:rgba(255,255,255,.45);margin-top:3px;line-height:1.5}
+.case-techs{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.case-tech{font-size:.68rem;background:rgba(255,255,255,.07);color:rgba(255,255,255,.45);padding:3px 10px;border-radius:20px}
 
-/* QUEM SOMOS */
-.quem{padding:100px 0;background:var(--cream-light)}
-.quem-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:40px}
-.quem-card{background:var(--white);border-radius:16px;padding:40px;border:1px solid rgba(20,55,60,.06)}
-.quem-photo{width:80px;height:80px;border-radius:50%;background:var(--cream);margin-bottom:20px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:var(--sage);overflow:hidden}
+/* ── 6ª DOBRA — PARA QUEM É ── */
+.paraquem{padding:96px 0;background:var(--cream-light)}
+.paraquem-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}
+.pq-list{list-style:none;margin:28px 0 36px}
+.pq-item{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid rgba(20,55,60,.06)}
+.pq-item:last-child{border-bottom:none}
+.pq-dot{width:8px;height:8px;border-radius:50%;background:var(--terra);flex-shrink:0;margin-top:6px}
+.pq-text{font-size:.95rem;color:var(--ink);line-height:1.6}
+.pq-aside{background:var(--ink);border-radius:16px;padding:36px;color:#fff}
+.pq-aside-title{font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:20px;color:#fff}
+.pq-metric{border-bottom:1px solid rgba(255,255,255,.08);padding:14px 0}
+.pq-metric:last-child{border-bottom:none}
+.pq-metric .val{font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--terra-light);line-height:1}
+.pq-metric .desc{font-size:.8rem;color:rgba(255,255,255,.5);margin-top:3px;line-height:1.5}
+
+/* ── 7ª DOBRA — FUNDADORES ── */
+.quem{padding:96px 0;background:var(--white)}
+.quem-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:32px}
+.quem-card{background:var(--white);border-radius:16px;padding:36px;border:1px solid rgba(20,55,60,.08)}
+.quem-photo{width:72px;height:72px;border-radius:50%;background:var(--cream);margin-bottom:18px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:var(--sage);overflow:hidden;border:2px solid rgba(176,110,74,.2)}
 .quem-photo img{width:100%;height:100%;object-fit:cover}
-.quem-name{font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:2px}
-.quem-role{font-size:.85rem;color:var(--terra);font-weight:600;margin-bottom:16px}
-.quem-bio{font-size:.9rem;color:var(--sage);line-height:1.7;margin-bottom:16px}
-.quem-tags{display:flex;flex-wrap:wrap;gap:6px}
-.quem-tag{font-size:.7rem;background:var(--cream);color:var(--sage);padding:4px 10px;border-radius:20px;font-weight:500}
-.quem-quote{font-family:var(--font-display);font-size:1.05rem;font-style:italic;color:var(--ink);border-left:3px solid var(--terra);padding-left:16px;margin-top:16px;line-height:1.5}
-.quem-team{text-align:center;font-size:1rem;color:var(--sage);padding:24px;background:var(--white);border-radius:12px;border:1px solid rgba(20,55,60,.06)}
+.quem-name{font-family:var(--font-display);font-size:1.45rem;font-weight:700;margin-bottom:2px}
+.quem-role{font-size:.82rem;color:var(--terra);font-weight:600;margin-bottom:14px;letter-spacing:.02em;text-transform:uppercase}
+.quem-bio{font-size:.88rem;color:var(--sage);line-height:1.7;margin-bottom:14px}
+.quem-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.quem-tag{font-size:.7rem;background:var(--cream-light);color:var(--sage);padding:4px 10px;border-radius:20px;font-weight:500;border:1px solid rgba(20,55,60,.06)}
+.quem-logos{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.quem-logo-tag{font-size:.7rem;background:var(--cream);color:var(--ink);padding:4px 12px;border-radius:20px;font-weight:600;font-family:var(--font-display)}
+.quem-quote{font-family:var(--font-display);font-size:1rem;font-style:italic;color:var(--ink);border-left:3px solid var(--terra);padding-left:16px;margin-top:16px;line-height:1.6}
+.quem-team{background:linear-gradient(135deg,var(--ink) 0%,var(--sage) 100%);border-radius:14px;padding:36px;color:#fff;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.quem-team-text{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:8px}
+.quem-team-desc{font-size:.9rem;color:rgba(255,255,255,.65);line-height:1.6}
+.quem-team-badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:20px 24px;text-align:center;flex-shrink:0}
+.quem-team-badge .num{font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--terra-light)}
+.quem-team-badge .lbl{font-size:.75rem;color:rgba(255,255,255,.5);margin-top:2px}
 
-/* COMO FUNCIONA */
-.como{padding:100px 0;background:var(--white)}
-.timeline{max-width:700px;margin:0 auto 48px;position:relative}
-.timeline::before{content:'';position:absolute;left:23px;top:20px;bottom:20px;width:2px;background:linear-gradient(to bottom,var(--terra),var(--sand))}
-.tl-item{display:flex;gap:24px;margin-bottom:40px;position:relative}
-.tl-dot{width:48px;height:48px;border-radius:50%;background:var(--terra);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;z-index:2;font-size:.95rem}
-.tl-content h3{font-family:var(--font-display);font-size:1.3rem;font-weight:700;margin-bottom:4px}
-.tl-content .tl-detail{font-size:.9rem;color:var(--sage);line-height:1.6}
-.tl-content .tl-meta{font-size:.8rem;color:var(--terra);font-weight:600;margin-bottom:4px}
-.invest-box{max-width:700px;margin:0 auto;background:var(--ink);border-radius:14px;padding:32px;color:#fff;text-align:center}
-.invest-box .invest-title{font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:8px}
-.invest-box p{font-size:.95rem;color:rgba(255,255,255,.6);line-height:1.6;font-weight:300}
+/* ── 8ª DOBRA — COMO FUNCIONA ── */
+.como{padding:96px 0;background:var(--cream-light)}
+.timeline{max-width:720px;margin:0 auto 48px;position:relative}
+.timeline::before{content:'';position:absolute;left:23px;top:24px;bottom:24px;width:2px;background:linear-gradient(to bottom,var(--terra),var(--sand))}
+.tl-item{display:flex;gap:24px;margin-bottom:36px;position:relative}
+.tl-dot{width:48px;height:48px;border-radius:50%;background:var(--terra);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;z-index:2;font-size:.95rem;box-shadow:0 0 0 4px rgba(176,110,74,.15)}
+.tl-content h3{font-family:var(--font-display);font-size:1.25rem;font-weight:700;margin-bottom:3px}
+.tl-content .tl-detail{font-size:.9rem;color:var(--sage);line-height:1.65}
+.tl-content .tl-meta{font-size:.75rem;color:var(--terra);font-weight:600;margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em}
+.como-cta{max-width:720px;margin:0 auto;text-align:center}
 
-/* CTA FINAL */
+/* ── 9ª DOBRA — CUSTO INVISÍVEL ── */
+.custo{padding:96px 0;background:var(--white)}
+.custo-intro{text-align:center;max-width:680px;margin:0 auto 56px}
+.custo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-bottom:48px}
+.custo-card{background:var(--cream-light);border-radius:14px;padding:28px 24px;border:1px solid rgba(20,55,60,.05);position:relative;overflow:hidden;transition:all .4s ease}
+.custo-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(20,55,60,.08)}
+.custo-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--terra);border-radius:0 2px 2px 0}
+.custo-card p{font-size:.92rem;color:var(--sage);line-height:1.6;padding-left:4px}
+.custo-card p strong{color:var(--ink);display:block;margin-bottom:4px;font-size:1rem}
+.custo-bottom{background:var(--ink);border-radius:14px;padding:36px;text-align:center;color:#fff}
+.custo-bottom .big{font-family:var(--font-display);font-size:1.7rem;font-weight:700;color:#fff;margin-bottom:8px}
+.custo-bottom p{font-size:.95rem;color:rgba(255,255,255,.55);font-weight:300;max-width:540px;margin:0 auto 28px}
+
+/* ── 10ª DOBRA — CTA FINAL ── */
 .cta-final{padding:100px 0;background:linear-gradient(165deg,var(--ink) 0%,var(--sage) 100%);text-align:center;position:relative;overflow:hidden}
 .cta-final::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='1.5' fill='%23ffffff' fill-opacity='0.04'/%3E%3C/svg%3E")}
 .cta-final *{position:relative;z-index:2}
 .cta-final h2{font-family:var(--font-display);font-size:clamp(2rem,4vw,2.8rem);font-weight:700;color:#fff;margin-bottom:16px;line-height:1.2}
-.cta-final .sub{font-size:1.1rem;color:rgba(255,255,255,.65);max-width:550px;margin:0 auto 40px;line-height:1.7;font-weight:300}
+.cta-final .sub{font-size:1.05rem;color:rgba(255,255,255,.65);max-width:540px;margin:0 auto 40px;line-height:1.7;font-weight:300}
 .cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--terra);color:#fff;padding:18px 44px;border-radius:8px;font-weight:600;font-size:1.1rem;transition:all .3s ease;box-shadow:0 6px 30px rgba(176,110,74,.4)}
 .cta-btn:hover{background:var(--terra-light);transform:translateY(-3px);box-shadow:0 10px 40px rgba(176,110,74,.5)}
-.cta-sectors{display:flex;justify-content:center;gap:24px;margin-top:40px;flex-wrap:wrap}
+.cta-sectors{display:flex;justify-content:center;gap:20px;margin-top:40px;flex-wrap:wrap}
 .cta-sector{font-size:.8rem;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:6px}
-.cta-limit{margin-top:24px;font-size:.85rem;color:rgba(255,255,255,.35);font-style:italic}
+.cta-limit{margin-top:24px;font-size:.82rem;color:rgba(255,255,255,.3);font-style:italic}
 
-/* FOOTER */
+/* ── FOOTER ── */
 footer{background:var(--ink);padding:40px 0;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
 footer p{font-size:.8rem;color:rgba(255,255,255,.3)}
 footer a{color:rgba(255,255,255,.45);transition:color .3s}
 footer a:hover{color:var(--terra-light)}
 
-/* RESPONSIVE */
-@media(max-width:900px){
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .nav-links{display:none}
+  .nav-hamburger{display:block}
   .hero-grid{grid-template-columns:1fr;text-align:center}
-  .hero-sub,.hero-proof{margin-left:auto;margin-right:auto}
-  .hero-flow,.hero-visual{display:none}
-  .metodo-grid{grid-template-columns:1fr 1fr;gap:16px}
-  .metodo-step:not(:last-child)::after{display:none}
+  .hero-sub,.hero-checklist{margin-left:auto;margin-right:auto}
+  .hero-checklist li{text-align:left}
+  .hero-visual{display:none}
+  .problema-grid{grid-template-columns:1fr}
+  .paraquem-grid{grid-template-columns:1fr}
+  .pq-aside{margin-top:0}
   .quem-grid{grid-template-columns:1fr}
-  .cases-grid{grid-template-columns:1fr}
+  .cases-stats{grid-template-columns:1fr 1fr}
+  .quem-team{grid-template-columns:1fr}
+  .quem-team-badge{display:none}
 }
 @media(max-width:600px){
-  .metodo-grid{grid-template-columns:1fr}
   .hero h1{font-size:2rem}
   .section-title{font-size:1.8rem}
+  .cases-stats{grid-template-columns:1fr 1fr}
+  .custo-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -190,328 +256,523 @@ footer a:hover{color:var(--terra-light)}
 <!-- NAV -->
 <nav class="nav" id="nav">
 <div class="container nav-inner">
-  <a href="#inicio" class="nav-logo"><img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting" style="height:32px;width:auto;filter:brightness(0) invert(1)"></a>
-  <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="nav-cta">Agendar diagn&oacute;stico</a>
+  <a href="#inicio" class="nav-logo"><img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting — Implementação de IA para Empresas"></a>
+  <ul class="nav-links">
+    <li><a href="#fazemos" class="nav-link">O que fazemos</a></li>
+    <li><a href="#cases" class="nav-link">Cases</a></li>
+    <li><a href="#quem" class="nav-link">Quem somos</a></li>
+    <li><a href="#como" class="nav-link">Como funciona</a></li>
+    <li><a href="#contato" class="nav-link">Contato</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="nav-cta">Agendar diagn&oacute;stico gratuito</a>
+    <button class="nav-hamburger" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
 </div>
 </nav>
 
-<!-- 1. HERO -->
+<div class="nav-mobile-overlay" id="mobileNav">
+  <button class="close-btn" onclick="this.parentElement.classList.remove('open')">&times;</button>
+  <a href="#fazemos" onclick="this.parentElement.classList.remove('open')">O que fazemos</a>
+  <a href="#cases" onclick="this.parentElement.classList.remove('open')">Cases</a>
+  <a href="#quem" onclick="this.parentElement.classList.remove('open')">Quem somos</a>
+  <a href="#como" onclick="this.parentElement.classList.remove('open')">Como funciona</a>
+  <a href="#contato" onclick="this.parentElement.classList.remove('open')">Contato</a>
+  <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="nav-cta" style="margin-top:16px">Agendar diagn&oacute;stico gratuito</a>
+</div>
+
+<!-- ════════════════════════════════════
+     1ª DOBRA — HERO
+     ════════════════════════════════════ -->
 <section class="hero" id="inicio">
 <div class="container hero-grid" style="position:relative;z-index:2">
   <div>
-    <div class="hero-eyebrow"><span class="dot"></span> IA sob medida para empresas</div>
-    <h1>Todo mundo quer usar IA, mas quase ningu&eacute;m sabe <em>por onde come&ccedil;ar.</em></h1>
-    <p class="hero-sub">A forma r&aacute;pida de colocar a IA pra trabalhar no seu neg&oacute;cio. Automa&ccedil;&atilde;o inteligente integrada ao CRM, ERP e WhatsApp que voc&ecirc; j&aacute; usa &mdash; sem trocar sistema, sem complica&ccedil;&atilde;o.</p>
+    <div class="hero-eyebrow"><span class="dot"></span> IA Hiper-Personalizada para Empresas</div>
+    <h1>Transforme Intelig&ecirc;ncia Artificial em ganho real de <em>produtividade, receita e efici&ecirc;ncia.</em></h1>
+    <p class="hero-sub">Implementamos solu&ccedil;&otilde;es customizadas e integradas de IA que automatizam processos, reduzem custos e criam novos motores de crescimento e escala &mdash; sem necessidade de equipe t&eacute;cnica interna.</p>
+    <ul class="hero-checklist">
+      <li>Mapeamento de Processos + Diagn&oacute;stico de Oportunidades de Ganho de Produtividade</li>
+      <li>Defini&ccedil;&atilde;o das Prioridades de Automa&ccedil;&atilde;o com foco em Aumento de Receita e Redu&ccedil;&atilde;o de Despesa</li>
+      <li>Desenho da Arquitetura de Tecnologia + Orquestra&ccedil;&atilde;o dos Diferentes Agentes de IA</li>
+      <li>Implementa&ccedil;&atilde;o R&aacute;pida em Ambiente Controlado (piloto)</li>
+      <li>Treinamento das Equipes e Roll-out para Opera&ccedil;&atilde;o Completa</li>
+      <li>Sustenta&ccedil;&atilde;o: monitoramento de indicadores, otimiza&ccedil;&otilde;es e suporte cont&iacute;nuo</li>
+    </ul>
     <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="hero-cta">
-      Agendar diagn&oacute;stico gratuito
+      Agendar um diagn&oacute;stico gratuito
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
+    <p class="hero-note">30 minutos &middot; Sem compromisso &middot; Por v&iacute;deo</p>
   </div>
-  <!-- Animated node diagram -->
   <div class="hero-visual" aria-hidden="true">
     <svg viewBox="0 0 400 360" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:420px;margin:0 auto;display:block">
-      <!-- Connection lines -->
       <line x1="80" y1="80" x2="200" y2="180" stroke="rgba(255,255,255,.12)" stroke-width="1.5" class="line-anim"/>
       <line x1="320" y1="60" x2="200" y2="180" stroke="rgba(255,255,255,.12)" stroke-width="1.5" class="line-anim" style="animation-delay:.2s"/>
       <line x1="60" y1="260" x2="200" y2="180" stroke="rgba(255,255,255,.12)" stroke-width="1.5" class="line-anim" style="animation-delay:.4s"/>
       <line x1="340" y1="280" x2="200" y2="180" stroke="rgba(255,255,255,.12)" stroke-width="1.5" class="line-anim" style="animation-delay:.6s"/>
       <line x1="200" y1="180" x2="200" y2="340" stroke="rgba(176,110,74,.3)" stroke-width="2" class="line-anim" style="animation-delay:.8s"/>
-      <!-- Input nodes -->
-      <g class="node-anim">
-        <circle cx="80" cy="80" r="28" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
-        <text x="80" y="76" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="18">&#x1F4E7;</text>
-        <text x="80" y="94" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="9" font-family="DM Sans">CRM</text>
-      </g>
-      <g class="node-anim" style="animation-delay:.15s">
-        <circle cx="320" cy="60" r="28" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
-        <text x="320" y="56" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="18">&#x1F4AC;</text>
-        <text x="320" y="74" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="9" font-family="DM Sans">WhatsApp</text>
-      </g>
-      <g class="node-anim" style="animation-delay:.3s">
-        <circle cx="60" cy="260" r="28" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
-        <text x="60" y="256" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="18">&#x1F4CA;</text>
-        <text x="60" y="274" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="9" font-family="DM Sans">ERP</text>
-      </g>
-      <g class="node-anim" style="animation-delay:.45s">
-        <circle cx="340" cy="280" r="28" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
-        <text x="340" y="276" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="18">&#x1F4C4;</text>
-        <text x="340" y="294" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="9" font-family="DM Sans">Docs</text>
-      </g>
-      <!-- Center AI node -->
-      <g class="node-anim node-center" style="animation-delay:.6s">
+      <g class="node-anim"><circle cx="80" cy="80" r="28" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.15)" stroke-width="1"/><text x="80" y="76" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="18">&#x1F4CA;</text><text x="80" y="94" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="9" font-family="DM Sans">ERP</text></g>
+      <g class="node-anim" style="animation-delay:.15s"><circle cx="320" cy="60" r="28" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.15)" stroke-width="1"/><text x="320" y="56" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="18">&#x1F4AC;</text><text x="320" y="74" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="9" font-family="DM Sans">WhatsApp</text></g>
+      <g class="node-anim" style="animation-delay:.3s"><circle cx="60" cy="260" r="28" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.15)" stroke-width="1"/><text x="60" y="256" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="18">&#x1F4E7;</text><text x="60" y="274" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="9" font-family="DM Sans">CRM</text></g>
+      <g class="node-anim" style="animation-delay:.45s"><circle cx="340" cy="280" r="28" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.15)" stroke-width="1"/><text x="340" y="276" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="18">&#x1F4C4;</text><text x="340" y="294" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="9" font-family="DM Sans">Docs</text></g>
+      <g class="node-anim" style="animation-delay:.6s">
         <circle cx="200" cy="180" r="42" fill="rgba(176,110,74,.15)" stroke="rgba(176,110,74,.4)" stroke-width="2"/>
         <circle cx="200" cy="180" r="56" fill="none" stroke="rgba(176,110,74,.1)" stroke-width="1" stroke-dasharray="4 4" class="orbit"/>
         <text x="200" y="174" text-anchor="middle" fill="#fff" font-size="22">&#x1F9E0;</text>
         <text x="200" y="196" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="10" font-family="DM Sans" font-weight="600">AGENTE IA</text>
       </g>
-      <!-- Output node -->
-      <g class="node-anim" style="animation-delay:.8s">
-        <circle cx="200" cy="340" r="24" fill="rgba(176,110,74,.1)" stroke="rgba(176,110,74,.3)" stroke-width="1.5"/>
-        <text x="200" y="336" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="16">&#x2705;</text>
-        <text x="200" y="352" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="8" font-family="DM Sans">Resultado</text>
-      </g>
+      <g class="node-anim" style="animation-delay:.8s"><circle cx="200" cy="340" r="24" fill="rgba(176,110,74,.1)" stroke="rgba(176,110,74,.3)" stroke-width="1.5"/><text x="200" y="336" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="16">&#x2705;</text><text x="200" y="352" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="8" font-family="DM Sans">Resultado</text></g>
     </svg>
   </div>
 </div>
 </section>
 
-<!-- 2. O QUE FAZEMOS -->
-<section class="servicos" id="servicos" style="padding:100px 0;background:var(--white)">
+<!-- ════════════════════════════════════
+     2ª DOBRA — PROBLEMA / GAP
+     ════════════════════════════════════ -->
+<section class="problema" id="problema">
 <div class="container">
-  <div class="reveal" style="text-align:center">
-    <div class="section-tag">Nossos servi&ccedil;os</div>
-    <h2 class="section-title">O que fazemos na pr&aacute;tica</h2>
-    <p class="section-sub" style="margin-left:auto;margin-right:auto">Cada empresa tem um contexto diferente. Por isso, come&ccedil;amos sempre pela conversa &mdash; n&atilde;o pelo pacote.</p>
+  <div class="reveal" style="text-align:center;margin-bottom:48px">
+    <div class="section-tag" style="color:var(--terra-light)">O problema real</div>
+    <h2 class="section-title" style="color:#fff">Por que muitas empresas ainda n&atilde;o extraem valor real da IA?</h2>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px" class="reveal">
-    <div style="background:var(--cream-light);border-radius:16px;padding:40px;border:1px solid rgba(20,55,60,.05);transition:all .4s ease" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(20,55,60,.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
-      <div style="width:48px;height:48px;border-radius:10px;background:rgba(176,110,74,.12);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:20px">&#x1F50D;</div>
-      <h3 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;margin-bottom:12px">Consultoria em Intelig&ecirc;ncia Artificial</h3>
-      <p style="font-size:.95rem;color:var(--sage);line-height:1.7">Analisamos sua opera&ccedil;&atilde;o, identificamos o que vale a pena automatizar e entregamos um plano claro para aplicar IA de forma pr&aacute;tica e estrat&eacute;gica.</p>
+  <div class="problema-grid reveal">
+    <div class="prob-item">
+      <div class="prob-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+      <p class="prob-text"><strong style="color:rgba(255,255,255,.85);display:block;margin-bottom:2px">Excesso de ferramentas, pouca clareza</strong>Muitas op&ccedil;&otilde;es no mercado com promessas similares e pouca diferencia&ccedil;&atilde;o real de resultado.</p>
     </div>
-    <div style="background:var(--cream-light);border-radius:16px;padding:40px;border:1px solid rgba(20,55,60,.05);transition:all .4s ease" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(20,55,60,.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
-      <div style="width:48px;height:48px;border-radius:10px;background:rgba(176,110,74,.12);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:20px">&#x2699;&#xFE0F;</div>
-      <h3 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;margin-bottom:12px">Automa&ccedil;&atilde;o de Processos com IA</h3>
-      <p style="font-size:.95rem;color:var(--sage);line-height:1.7">Conectamos sistemas, eliminamos tarefas manuais e criamos fluxos inteligentes que economizam tempo e aumentam a efici&ecirc;ncia da sua equipe.</p>
+    <div class="prob-item">
+      <div class="prob-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg></div>
+      <p class="prob-text"><strong style="color:rgba(255,255,255,.85);display:block;margin-bottom:2px">M&oacute;dulos engessados de fornecedores atuais</strong>Parceiros j&aacute; integrados ofertam IA gen&eacute;rica que n&atilde;o se adapta &agrave; realidade operacional do neg&oacute;cio.</p>
     </div>
-    <div style="background:var(--cream-light);border-radius:16px;padding:40px;border:1px solid rgba(20,55,60,.05);transition:all .4s ease" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(20,55,60,.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
-      <div style="width:48px;height:48px;border-radius:10px;background:rgba(176,110,74,.12);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:20px">&#x1F4AC;</div>
-      <h3 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;margin-bottom:12px">Agentes IA para Atendimento</h3>
-      <p style="font-size:.95rem;color:var(--sage);line-height:1.7">Criamos agentes IA que respondem com naturalidade e intelig&ecirc;ncia nos seus canais, reduzindo a carga da equipe e melhorando a experi&ecirc;ncia do cliente.</p>
+    <div class="prob-item">
+      <div class="prob-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+      <p class="prob-text"><strong style="color:rgba(255,255,255,.85);display:block;margin-bottom:2px">Projetos que n&atilde;o sa&iacute;em do piloto</strong>Implementa&ccedil;&otilde;es iniciadas sem metodologia clara travam antes de chegar &agrave; opera&ccedil;&atilde;o real.</p>
     </div>
+    <div class="prob-item">
+      <div class="prob-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <p class="prob-text"><strong style="color:rgba(255,255,255,.85);display:block;margin-bottom:2px">Falta de conhecimento t&eacute;cnico interno</strong>Equipes sem preparo t&eacute;cnico ou sem engajamento suficiente para adotar IA de forma consist&ecirc;nte.</p>
+    </div>
+    <div class="prob-item">
+      <div class="prob-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+      <p class="prob-text"><strong style="color:rgba(255,255,255,.85);display:block;margin-bottom:2px">Automa&ccedil;&otilde;es mal estruturadas</strong>Fluxos criados sem vis&atilde;o de neg&oacute;cio que n&atilde;o geram retorno financeiro mensur&aacute;vel.</p>
+    </div>
+    <div class="prob-item">
+      <div class="prob-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M9 9l6 6M15 9l-6 6"/></svg></div>
+      <p class="prob-text"><strong style="color:rgba(255,255,255,.85);display:block;margin-bottom:2px">Sem ponto de partida definido</strong>Ningu&eacute;m sabe por onde come&ccedil;ar &mdash; e a empresa fica paralisada enquanto concorrentes avan&ccedil;am.</p>
+    </div>
+  </div>
+  <div class="prob-footer reveal">
+    <p>A NewScale foi criada exatamente para resolver esse gap entre o <em>potencial da IA</em> e os resultados reais que o seu neg&oacute;cio pode extrair dela.</p>
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20de%20IA%20para%20minha%20empresa." target="_blank" class="cta-link">
+      Solicitar avalia&ccedil;&atilde;o de IA para minha empresa
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
   </div>
 </div>
 </section>
 
-<!-- INTEGRATIONS BAR -->
-<section class="integrations">
+<!-- ════════════════════════════════════
+     3ª DOBRA — O QUE FAZEMOS
+     ════════════════════════════════════ -->
+<section class="fazemos" id="fazemos">
 <div class="container">
-  <h3>Integramos com as ferramentas que sua empresa j&aacute; usa</h3>
-  <p class="int-sub">Mais de <strong>200 integra&ccedil;&otilde;es</strong> dispon&iacute;veis &mdash; solu&ccedil;&otilde;es de IA sob medida conectadas ao seu ecossistema.</p>
+  <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto 48px">
+    <div class="section-tag">Metodologia</div>
+    <h2 class="section-title">O que fazemos na pr&aacute;tica</h2>
+    <p class="section-sub" style="margin:0 auto">Cada empresa tem um contexto e desafios diferentes. Por isso, come&ccedil;amos sempre pela conversa &mdash; n&atilde;o pelo pacote. Conhe&ccedil;a nossa metodologia.</p>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-card reveal">
+      <div class="svc-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      </div>
+      <h3 class="svc-title">Consultoria com Vis&atilde;o Sist&ecirc;mica de Neg&oacute;cios</h3>
+      <p class="svc-desc">Analisamos marketing, vendas e efici&ecirc;ncia operacional como um todo. A IA entra como motor de escala, reduzindo fric&ccedil;&otilde;es e erros &mdash; e extraindo mais do capital humano das equipes.</p>
+      <span class="svc-note">Vis&atilde;o pr&oacute;-neg&oacute;cio, n&atilde;o pr&oacute;-tecnologia</span>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      </div>
+      <h3 class="svc-title">Roadmap de Automa&ccedil;&otilde;es</h3>
+      <p class="svc-desc">Mapeamos as possibilidades de automa&ccedil;&atilde;o e desenhamos um cronograma faseado, priorizando fluxos com maior potencial de destravar o neg&oacute;cio e gerar retorno.</p>
+      <span class="svc-note">Prioriza&ccedil;&atilde;o estrat&eacute;gica por impacto financeiro</span>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/><circle cx="12" cy="12" r="3"/></svg>
+      </div>
+      <h3 class="svc-title">Implementa&ccedil;&atilde;o de Automa&ccedil;&otilde;es</h3>
+      <p class="svc-desc">Integramos sistemas, eliminamos tarefas manuais e criamos fluxos inteligentes que economizam tempo, reduzem erros e aumentam a efici&ecirc;ncia operacional da equipe.</p>
+      <span class="svc-note">4 a 12 semanas do piloto ao roll-out completo</span>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <h3 class="svc-title">Treinamento das Equipes</h3>
+      <p class="svc-desc">O papel do humano muda: de operar fluxos e sistemas para monitorar os agentes de IA trabalhando. As automa&ccedil;&otilde;es liberam tempo para o que realmente importa.</p>
+      <span class="svc-note">Workshops pr&aacute;ticos e documenta&ccedil;&atilde;o completa</span>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <h3 class="svc-title">Acompanhamento de Indicadores</h3>
+      <p class="svc-desc">Definimos KPIs em conjunto com o cliente para validar ganho de escala e, quando necess&aacute;rio, realizar ajustes de otimiza&ccedil;&atilde;o cont&iacute;nua ao longo do tempo.</p>
+      <span class="svc-note">Resultados mensur&aacute;veis desde o piloto</span>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3 class="svc-title">Sustenta&ccedil;&atilde;o do Projeto</h3>
+      <p class="svc-desc">Quando aplic&aacute;vel, oferecemos pacotes de monitoramento, otimiza&ccedil;&otilde;es e manuten&ccedil;&atilde;o para garantir estabilidade, evolu&ccedil;&atilde;o cont&iacute;nua e retorno sustent&aacute;vel.</p>
+      <span class="svc-note">Opera&ccedil;&atilde;o assistida com garantia de qualidade</span>
+    </div>
+  </div>
+  <div class="fazemos-note reveal">&ldquo;N&atilde;o vendemos pacotes. Mergulhamos na sua empresa, entendemos como a equipe trabalha, e desenhamos a solu&ccedil;&atilde;o a partir da realidade operacional &mdash; n&atilde;o de um template.&rdquo;</div>
+  <div style="text-align:center;margin-top:40px" class="reveal">
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20consultor." target="_blank" class="cta-link">
+      Quero falar com um consultor agora
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════
+     4ª DOBRA — INTEGRAÇÕES
+     ════════════════════════════════════ -->
+<section class="integrations" id="integracoes">
+<div class="container">
+  <div class="reveal">
+    <h2>Integramos com os sistemas e ferramentas que sua empresa j&aacute; utiliza</h2>
+    <p class="int-sub">Conhe&ccedil;a algumas das integra&ccedil;&otilde;es que j&aacute; realizamos. Mais de <strong>500 conectores dispon&iacute;veis</strong> &mdash; sem necessidade de trocar sistema.</p>
+  </div>
 </div>
 <div class="logo-track-wrap">
   <div class="logo-track">
-    <span class="logo-item" title="WhatsApp"><svg viewBox="0 0 24 24" width="36" height="36" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span>
-    <span class="logo-item" title="Google Sheets"><svg viewBox="0 0 24 24" width="32" height="32" fill="#0F9D58"><path d="M19 11V9h-6V3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2v-8zm-6-7.5L18.5 9H13V3.5zM8 13h3v2H8v-2zm0 4h3v2H8v-2zm5-4h3v2h-3v-2zm0 4h3v2h-3v-2z"/></svg></span>
-    <span class="logo-item" title="Slack"><svg viewBox="0 0 24 24" width="32" height="32"><path fill="#E01E5A" d="M5.042 15.165a2.528 2.528 0 01-2.52 2.523A2.528 2.528 0 010 15.165a2.527 2.527 0 012.522-2.52h2.52v2.52z"/><path fill="#36C5F0" d="M15.165 5.042a2.528 2.528 0 012.523-2.52A2.528 2.528 0 0120.21 5.042a2.527 2.527 0 01-2.522 2.52h-2.52V5.042z"/><path fill="#2EB67D" d="M8.835 18.958a2.528 2.528 0 01-2.523 2.52A2.528 2.528 0 013.79 18.958a2.527 2.527 0 012.522-2.52h2.52v2.52z"/><path fill="#ECB22E" d="M18.958 15.165a2.527 2.527 0 012.52-2.52A2.528 2.528 0 0124 15.165a2.528 2.528 0 01-2.522 2.523h-2.52v-2.523z"/></svg></span>
-    <span class="logo-item" title="Bubble"><svg viewBox="0 0 24 24" width="32" height="32" fill="none"><circle cx="12" cy="12" r="10" stroke="#1a1a2e" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#1a1a2e"/></svg></span>
-    <span class="logo-item" title="OpenAI"><svg viewBox="0 0 24 24" width="32" height="32" fill="#000"><path d="M22.282 9.821a5.985 5.985 0 00-.516-4.91 6.046 6.046 0 00-6.51-2.9A6.065 6.065 0 0011.66.418 6.043 6.043 0 005.58 1.44a6.008 6.008 0 00-2.024 1.986 5.985 5.985 0 00.516 4.91 6.046 6.046 0 002.4 2.172 6.065 6.065 0 00-.344 2.014c.003 1.09.303 2.159.87 3.088a6.046 6.046 0 006.51 2.9 6.065 6.065 0 004.595 2.012 6.043 6.043 0 006.08-1.022 6.008 6.008 0 002.024-1.986 5.985 5.985 0 00-.516-4.91 6.046 6.046 0 00-2.4-2.172 6.065 6.065 0 00.344-2.014 5.973 5.973 0 00-.87-3.088 6.126 6.126 0 00-.483-.513z"/></svg></span>
-    <span class="logo-item" title="N8N" style="font-weight:700;font-size:1.1rem;color:var(--ink);opacity:.5">n8n</span>
-    <span class="logo-item" title="Gmail"><svg viewBox="0 0 24 24" width="32" height="32"><path fill="#4285F4" d="M2 6l10 7 10-7v12H2z"/><path fill="#EA4335" d="M22 6l-10 7L2 6V4l10 7 10-7z"/></svg></span>
-    <span class="logo-item" title="Kommo CRM" style="font-weight:700;font-size:.7rem;color:#5858FA;opacity:.5">Kommo</span>
-    <span class="logo-item" title="Google Drive"><svg viewBox="0 0 24 24" width="32" height="32"><path fill="#0066DA" d="M2.3 16.1l2.1 3.6h15.2l2.1-3.6z"/><path fill="#00AC47" d="M8.3 1.3L2.3 11.9l2.1 3.6 6-10.6z"/><path fill="#FFBA00" d="M21.7 11.9L15.7 1.3H8.3l6 10.6z"/></svg></span>
-    <span class="logo-item" title="Shopify"><svg viewBox="0 0 24 24" width="32" height="32" fill="#96BF48"><path d="M15.337 23.979l7.216-1.561S19.811 5.09 19.795 4.99a.338.338 0 00-.29-.283c-.12-.014-2.405-.074-2.405-.074s-1.593-1.55-1.765-1.722c-.172-.172-.508-.12-.638-.083l-.878.272A4.72 4.72 0 0012.872.974C12.408.354 11.8.002 11.09 0c-.045 0-.09.002-.135.004-.065-.075-.132-.147-.204-.214C10.196-.71 9.43-.054 8.792 1.044c-.897 1.543-1.581 3.912-1.581 3.912S5.66 5.412 5.498 5.47a.67.67 0 00-.405.435c-.05.174-2.473 19.058-2.473 19.058l12.717 1.016z"/></svg></span>
-    <span class="logo-item" title="Select"><svg viewBox="0 0 24 24" width="32" height="32" fill="none"><rect x="3" y="3" width="18" height="18" rx="4" stroke="var(--ink)" stroke-width="2"/><path d="M8 12h8M12 8v8" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/></svg></span>
-    <span class="logo-item" title="Outlook"><svg viewBox="0 0 24 24" width="32" height="32" fill="#0078D4"><path d="M24 7.387v10.478c0 .23-.08.424-.238.576-.16.154-.353.23-.578.23H10.08V6.58h13.104c.225 0 .418.077.578.23.158.152.238.346.238.576zM8.654 3v18L0 18.616V5.384L8.654 3z"/></svg></span>
-    <span class="logo-item" title="Excel"><svg viewBox="0 0 24 24" width="32" height="32" fill="#217346"><path d="M23 1.5H8.654v5.077h5.77V1.5H23zM14.423 7.846H8.654V12h5.77V7.846zm0 5.423H8.654v4.154h5.77v-4.154zM23 7.846h-7.308V12H23V7.846zm0 5.423h-7.308v4.154H23v-4.154zM14.423 18.538H8.654V22.5H23v-3.962h-8.577zM8.654 1.5L0 3.346v17.308L8.654 22.5V1.5z"/></svg></span>
-    <!-- duplicate set for infinite scroll -->
-    <span class="logo-item" title="WhatsApp"><svg viewBox="0 0 24 24" width="36" height="36" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span>
-    <span class="logo-item" title="Google Sheets"><svg viewBox="0 0 24 24" width="32" height="32" fill="#0F9D58"><path d="M19 11V9h-6V3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2v-8zm-6-7.5L18.5 9H13V3.5zM8 13h3v2H8v-2zm0 4h3v2H8v-2zm5-4h3v2h-3v-2zm0 4h3v2h-3v-2z"/></svg></span>
-    <span class="logo-item" title="Slack"><svg viewBox="0 0 24 24" width="32" height="32"><path fill="#E01E5A" d="M5.042 15.165a2.528 2.528 0 01-2.52 2.523A2.528 2.528 0 010 15.165a2.527 2.527 0 012.522-2.52h2.52v2.52z"/><path fill="#36C5F0" d="M15.165 5.042a2.528 2.528 0 012.523-2.52A2.528 2.528 0 0120.21 5.042a2.527 2.527 0 01-2.522 2.52h-2.52V5.042z"/><path fill="#2EB67D" d="M8.835 18.958a2.528 2.528 0 01-2.523 2.52A2.528 2.528 0 013.79 18.958a2.527 2.527 0 012.522-2.52h2.52v2.52z"/><path fill="#ECB22E" d="M18.958 15.165a2.527 2.527 0 012.52-2.52A2.528 2.528 0 0124 15.165a2.528 2.528 0 01-2.522 2.523h-2.52v-2.523z"/></svg></span>
-    <span class="logo-item" title="Bubble"><svg viewBox="0 0 24 24" width="32" height="32" fill="none"><circle cx="12" cy="12" r="10" stroke="#1a1a2e" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#1a1a2e"/></svg></span>
-    <span class="logo-item" title="OpenAI"><svg viewBox="0 0 24 24" width="32" height="32" fill="#000"><path d="M22.282 9.821a5.985 5.985 0 00-.516-4.91 6.046 6.046 0 00-6.51-2.9A6.065 6.065 0 0011.66.418 6.043 6.043 0 005.58 1.44a6.008 6.008 0 00-2.024 1.986 5.985 5.985 0 00.516 4.91 6.046 6.046 0 002.4 2.172 6.065 6.065 0 00-.344 2.014c.003 1.09.303 2.159.87 3.088a6.046 6.046 0 006.51 2.9 6.065 6.065 0 004.595 2.012 6.043 6.043 0 006.08-1.022 6.008 6.008 0 002.024-1.986 5.985 5.985 0 00-.516-4.91 6.046 6.046 0 00-2.4-2.172 6.065 6.065 0 00.344-2.014 5.973 5.973 0 00-.87-3.088 6.126 6.126 0 00-.483-.513z"/></svg></span>
-    <span class="logo-item" title="N8N" style="font-weight:700;font-size:1.1rem;color:var(--ink);opacity:.5">n8n</span>
-    <span class="logo-item" title="Gmail"><svg viewBox="0 0 24 24" width="32" height="32"><path fill="#4285F4" d="M2 6l10 7 10-7v12H2z"/><path fill="#EA4335" d="M22 6l-10 7L2 6V4l10 7 10-7z"/></svg></span>
-    <span class="logo-item" title="Kommo CRM" style="font-weight:700;font-size:.7rem;color:#5858FA;opacity:.5">Kommo</span>
-    <span class="logo-item" title="Google Drive"><svg viewBox="0 0 24 24" width="32" height="32"><path fill="#0066DA" d="M2.3 16.1l2.1 3.6h15.2l2.1-3.6z"/><path fill="#00AC47" d="M8.3 1.3L2.3 11.9l2.1 3.6 6-10.6z"/><path fill="#FFBA00" d="M21.7 11.9L15.7 1.3H8.3l6 10.6z"/></svg></span>
-    <span class="logo-item" title="Shopify"><svg viewBox="0 0 24 24" width="32" height="32" fill="#96BF48"><path d="M15.337 23.979l7.216-1.561S19.811 5.09 19.795 4.99a.338.338 0 00-.29-.283c-.12-.014-2.405-.074-2.405-.074s-1.593-1.55-1.765-1.722c-.172-.172-.508-.12-.638-.083l-.878.272A4.72 4.72 0 0012.872.974C12.408.354 11.8.002 11.09 0c-.045 0-.09.002-.135.004-.065-.075-.132-.147-.204-.214C10.196-.71 9.43-.054 8.792 1.044c-.897 1.543-1.581 3.912-1.581 3.912S5.66 5.412 5.498 5.47a.67.67 0 00-.405.435c-.05.174-2.473 19.058-2.473 19.058l12.717 1.016z"/></svg></span>
-    <span class="logo-item" title="Select"><svg viewBox="0 0 24 24" width="32" height="32" fill="none"><rect x="3" y="3" width="18" height="18" rx="4" stroke="var(--ink)" stroke-width="2"/><path d="M8 12h8M12 8v8" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/></svg></span>
-    <span class="logo-item" title="Outlook"><svg viewBox="0 0 24 24" width="32" height="32" fill="#0078D4"><path d="M24 7.387v10.478c0 .23-.08.424-.238.576-.16.154-.353.23-.578.23H10.08V6.58h13.104c.225 0 .418.077.578.23.158.152.238.346.238.576zM8.654 3v18L0 18.616V5.384L8.654 3z"/></svg></span>
-    <span class="logo-item" title="Excel"><svg viewBox="0 0 24 24" width="32" height="32" fill="#217346"><path d="M23 1.5H8.654v5.077h5.77V1.5H23zM14.423 7.846H8.654V12h5.77V7.846zm0 5.423H8.654v4.154h5.77v-4.154zM23 7.846h-7.308V12H23V7.846zm0 5.423h-7.308v4.154H23v-4.154zM14.423 18.538H8.654V22.5H23v-3.962h-8.577zM8.654 1.5L0 3.346v17.308L8.654 22.5V1.5z"/></svg></span>
+    <img class="logo-item" src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp" width="36" height="36">
+    <img class="logo-item" src="https://cdn.simpleicons.org/openai/000" alt="OpenAI / ChatGPT" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/anthropic/000" alt="Claude / Anthropic" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/googlegemini/886FBF" alt="Google Gemini" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/meta/0081FB" alt="Meta" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/googlesheets/0F9D58" alt="Google Sheets" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/googledrive" alt="Google Drive" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/gmail/EA4335" alt="Gmail" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/notion/000" alt="Notion" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="HubSpot" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/shopify/96BF48" alt="Shopify" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/microsoftoutlook/0078D4" alt="Microsoft Outlook" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Microsoft Excel" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/slack" alt="Slack" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/trello/0052CC" alt="Trello" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/salesforce/00A1E0" alt="Salesforce" width="32" height="32">
+    <!-- duplicate -->
+    <img class="logo-item" src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp" width="36" height="36">
+    <img class="logo-item" src="https://cdn.simpleicons.org/openai/000" alt="OpenAI / ChatGPT" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/anthropic/000" alt="Claude / Anthropic" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/googlegemini/886FBF" alt="Google Gemini" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/meta/0081FB" alt="Meta" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/googlesheets/0F9D58" alt="Google Sheets" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/googledrive" alt="Google Drive" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/gmail/EA4335" alt="Gmail" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/notion/000" alt="Notion" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="HubSpot" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/shopify/96BF48" alt="Shopify" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/microsoftoutlook/0078D4" alt="Microsoft Outlook" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Microsoft Excel" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/slack" alt="Slack" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/trello/0052CC" alt="Trello" width="32" height="32">
+    <img class="logo-item" src="https://cdn.simpleicons.org/salesforce/00A1E0" alt="Salesforce" width="32" height="32">
   </div>
+</div>
+<div class="int-cta container reveal">
+  <p style="font-size:.82rem;color:var(--sage);margin-bottom:16px">ERP (SAP, Protheus, Sankhya, Omie, Tiny, Linx) &middot; Kommo &middot; RD Station &middot; VTEX &middot; NuvemShop &middot; Bubble &middot; Aplicativos propriet&aacute;rios &middot; e muito mais</p>
+  <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="cta-link">
+    Agendar um diagn&oacute;stico gratuito
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
 </div>
 </section>
 
-<!-- 3. SOLUCAO -->
-<section class="solucao" id="metodo">
-<div class="container">
-  <div class="reveal" style="text-align:center">
-    <div class="section-tag">M&eacute;todo NewScale</div>
-    <h2 class="section-title">N&oacute;s implementamos. Voc&ecirc; colhe o resultado.</h2>
-    <p class="section-sub" style="margin-left:auto;margin-right:auto">IA integrada aos sistemas que sua empresa j&aacute; usa &mdash; sem trocar nada, sem parar a opera&ccedil;&atilde;o.</p>
-  </div>
-  <div class="metodo-grid reveal">
-    <div class="metodo-step">
-      <div class="metodo-num">1</div>
-      <div class="metodo-name">Diagn&oacute;stico</div>
-      <div class="metodo-desc">30 min gratuito. Mapeamos onde sua opera&ccedil;&atilde;o sangra tempo e dinheiro.</div>
-    </div>
-    <div class="metodo-step">
-      <div class="metodo-num">2</div>
-      <div class="metodo-name">Arquitetura</div>
-      <div class="metodo-desc">Proposta sob medida para o seu contexto e desafio.</div>
-    </div>
-    <div class="metodo-step">
-      <div class="metodo-num">3</div>
-      <div class="metodo-name">Implementa&ccedil;&atilde;o</div>
-      <div class="metodo-desc">4-12 semanas. Mergulhamos na sua opera&ccedil;&atilde;o, conversamos com a equipe, entendemos cada processo &mdash; e constru&iacute;mos a automa&ccedil;&atilde;o de forma que a transi&ccedil;&atilde;o seja natural, sem mudan&ccedil;as bruscas.</div>
-    </div>
-    <div class="metodo-step">
-      <div class="metodo-num">4</div>
-      <div class="metodo-name">Autonomia</div>
-      <div class="metodo-desc">Tudo rodando sem depender de n&oacute;s. Treinamento e workshop para sua equipe. Suporte incluso.</div>
-    </div>
-  </div>
-  <p class="solucao-note reveal">&ldquo;N&atilde;o vendemos pacotes. Mergulhamos na sua empresa, entendemos como a equipe trabalha, e desenhamos a solu&ccedil;&atilde;o a partir da realidade &mdash; n&atilde;o de um template.&rdquo;</p>
-</div>
-</section>
-
-<!-- 4. CASES -->
+<!-- ════════════════════════════════════
+     5ª DOBRA — CASES
+     ════════════════════════════════════ -->
 <section class="cases" id="cases">
 <div class="container">
-  <div class="reveal" style="text-align:center">
+  <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 48px">
     <div class="section-tag">Resultados reais</div>
     <h2 class="section-title">Cases que falam por si</h2>
-    <p class="section-sub" style="margin-left:auto;margin-right:auto">Projetos implementados com resultados mensur&aacute;veis.</p>
+    <p class="section-sub" style="margin:0 auto">Projetos implementados recentemente com resultados mensur&aacute;veis &mdash; organizados por setor e desafio.</p>
   </div>
+
+  <div class="cases-stats reveal">
+    <div class="stat-box">
+      <div class="big">10+</div>
+      <div class="label">Projetos implementados</div>
+    </div>
+    <div class="stat-box">
+      <div class="big">30 min</div>
+      <div class="label">Economizados por atendimento cl&iacute;nico</div>
+    </div>
+    <div class="stat-box">
+      <div class="big">24h</div>
+      <div class="label">Atendimento ativo, sem pausas</div>
+    </div>
+    <div class="stat-box">
+      <div class="big">R$0,09</div>
+      <div class="label">Por relat&oacute;rio gerado por IA</div>
+    </div>
+  </div>
+
   <div class="cases-grid">
 
-    <!-- CASE 1 COLO -->
+    <!-- Sa&uacute;de -->
     <div class="case-card reveal">
-      <div class="case-badge">Implementado</div>
+      <div class="case-badge">Sa&uacute;de</div>
       <h3 class="case-title">COLO Sa&uacute;de</h3>
-      <div class="case-sector">Sa&uacute;de &middot; Atendimento cl&iacute;nico</div>
+      <div class="case-sector">Atendimento Cl&iacute;nico &middot; Paliativos</div>
       <div class="case-block">
         <div class="case-block-label">Problema</div>
-        <p>Equipe de enfermagem gastava 30+ minutos por atendimento analisando exames, aplicando protocolo institucional e gerando relat&oacute;rios manualmente. Processo 100% humano, com risco de inconsist&ecirc;ncias e gargalo na escala.</p>
+        <p>Equipe de enfermagem gastava 30+ minutos por atendimento analisando exames, aplicando protocolo institucional e gerando relat&oacute;rios manualmente &mdash; com risco de inconsist&ecirc;ncias e gargalos de escala.</p>
       </div>
       <div class="case-block">
         <div class="case-block-label">Solu&ccedil;&atilde;o</div>
-        <p>Dois agentes de IA orquestrados: o primeiro coleta e padroniza dados e exames do paciente; o segundo aplica o protocolo m&eacute;dico, gera diagn&oacute;stico, plano de tratamento e roteiro de orienta&ccedil;&atilde;o &mdash; tudo salvo automaticamente no prontu&aacute;rio. Regras de alerta para par&acirc;metros cr&iacute;ticos. Protocolo atualizado automaticamente.</p>
+        <p>Dois agentes de IA orquestrados: o primeiro padroniza dados e exames do paciente; o segundo aplica o protocolo m&eacute;dico e gera diagn&oacute;stico, plano de tratamento e roteiro de orienta&ccedil;&atilde;o &mdash; tudo salvo automaticamente no prontu&aacute;rio.</p>
       </div>
       <div class="case-result">
         <div class="big">R$0,09 por relat&oacute;rio</div>
-        <div class="small">30+ min economizados por atendimento &middot; Equipe focada no paciente &middot; 30 dias at&eacute; go-live</div>
+        <div class="small">30+ min economizados por atendimento &middot; Equipe focada no paciente &middot; 30 dias at&eacute; go-live &middot; Redu&ccedil;&atilde;o significativa no per&iacute;odo de treinamento de novas enfermeiras</div>
       </div>
-      <div class="case-techs">
-        <span class="case-tech">N8N</span><span class="case-tech">Bubble</span><span class="case-tech">Google Drive</span><span class="case-tech">IA dois est&aacute;gios</span>
-      </div>
+      <div class="case-techs"><span class="case-tech">N8N</span><span class="case-tech">Bubble</span><span class="case-tech">Google Drive</span><span class="case-tech">IA dois est&aacute;gios</span></div>
     </div>
 
-    <!-- CASE 2 DINAMICA -->
+    <!-- RH -->
     <div class="case-card reveal">
-      <div class="case-badge">Implementado</div>
+      <div class="case-badge">Recursos Humanos</div>
       <h3 class="case-title">Din&acirc;mica RH</h3>
-      <div class="case-sector">Recursos Humanos &middot; Recrutamento</div>
+      <div class="case-sector">Recrutamento &middot; Sele&ccedil;&atilde;o</div>
       <div class="case-block">
         <div class="case-block-label">Problema</div>
-        <p>Alto volume de atendimento via WhatsApp com m&uacute;ltiplos n&uacute;meros distribu&iacute;dos entre consultoras. Atendimento descentralizado, cadastro manual, risco de perda de candidatos. Crescimento exigia mais equipe e mais custo fixo.</p>
+        <p>Alto volume de atendimento via WhatsApp distribu&iacute;do entre consultoras. Atendimento descentralizado, cadastro manual e risco de perda de candidatos &mdash; crescimento exigia mais equipe e mais custo fixo.</p>
       </div>
       <div class="case-block">
         <div class="case-block-label">Solu&ccedil;&atilde;o</div>
-        <p>N&uacute;mero &uacute;nico oficial com Agente IA Orquestrador: identifica vagas automaticamente, consulta base via API, direciona para consultora correta, faz cadastro autom&aacute;tico e extrai dados de curr&iacute;culo (PDF/Word). Integra&ccedil;&atilde;o com campanhas sazonais.</p>
+        <p>N&uacute;mero &uacute;nico oficial com Agente IA Orquestrador: identifica vagas, consulta base via API, direciona para consultora correta, realiza cadastro autom&aacute;tico e extrai dados de curr&iacute;culo (PDF/Word).</p>
       </div>
       <div class="case-result">
         <div class="big">Atendimento centralizado 24h</div>
-        <div class="small">Cadastro autom&aacute;tico &middot; Extra&ccedil;&atilde;o inteligente de curr&iacute;culo &middot; Zero perda de leads</div>
+        <div class="small">Cadastro autom&aacute;tico &middot; Extrai&ccedil;&atilde;o inteligente de curr&iacute;culo &middot; Zero perda de leads &middot; Aumento na satisfa&ccedil;&atilde;o dos candidatos</div>
       </div>
-      <div class="case-techs">
-        <span class="case-tech">WhatsApp API</span><span class="case-tech">Select (API)</span><span class="case-tech">Google Sheets</span><span class="case-tech">Agente IA</span>
-      </div>
+      <div class="case-techs"><span class="case-tech">WhatsApp API</span><span class="case-tech">Selecty (API)</span><span class="case-tech">Google Sheets</span><span class="case-tech">Agente IA</span></div>
     </div>
 
-    <!-- CASE 3 CASA TACTO -->
+    <!-- Eventos -->
     <div class="case-card reveal">
-      <div class="case-badge">Implementado</div>
+      <div class="case-badge">Eventos</div>
       <h3 class="case-title">Casa Tacto</h3>
-      <div class="case-sector">Eventos &middot; Casa de festas</div>
+      <div class="case-sector">Casa de Festas &middot; Eventos</div>
       <div class="case-block">
         <div class="case-block-label">Problema</div>
-        <p>Horas perdidas respondendo as mesmas perguntas no WhatsApp. Leads chegavam fora do hor&aacute;rio e esfriavam. Qualifica&ccedil;&atilde;o, envio de material e preenchimento do CRM feitos manualmente.</p>
+        <p>Horas perdidas respondendo as mesmas perguntas no WhatsApp. Leads chegavam fora do hor&aacute;rio e esfriavam. Qualifica&ccedil;&atilde;o, envio de material e CRM feitos manualmente.</p>
       </div>
       <div class="case-block">
         <div class="case-block-label">Solu&ccedil;&atilde;o</div>
-        <p>Atendente virtual WhatsApp treinado com o tom e roteiro da marca. Qualifica&ccedil;&atilde;o autom&aacute;tica (data, tipo de evento, n&uacute;mero de pessoas), envio estrat&eacute;gico de material, agendamento de visitas e cadastro autom&aacute;tico no Kommo CRM. Dispon&iacute;vel 24h.</p>
+        <p>Atendente virtual treinado com o tom e roteiro da marca. Qualifica&ccedil;&atilde;o autom&aacute;tica, envio estrat&eacute;gico de material, agendamento de visitas e cadastro direto no Kommo CRM. Ativo 24h.</p>
       </div>
       <div class="case-result">
-        <div class="big">Atendimento 24h personalizado</div>
-        <div class="small">Qualifica&ccedil;&atilde;o autom&aacute;tica &middot; CRM integrado &middot; 7-10 dias de implementa&ccedil;&atilde;o</div>
+        <div class="big">Convers&atilde;o aumentada 24h</div>
+        <div class="small">Qualifica&ccedil;&atilde;o autom&aacute;tica &middot; CRM integrado &middot; Respostas imediatas a qualquer hora &middot; 7-10 dias de implementa&ccedil;&atilde;o</div>
       </div>
-      <div class="case-techs">
-        <span class="case-tech">WhatsApp API</span><span class="case-tech">Kommo CRM</span><span class="case-tech">Agente IA conversacional</span>
-      </div>
+      <div class="case-techs"><span class="case-tech">WhatsApp API</span><span class="case-tech">Kommo CRM</span><span class="case-tech">Agente IA conversacional</span></div>
     </div>
 
-    <!-- CASE 4 CASA KAHLA -->
+    <!-- Joalheria -->
     <div class="case-card reveal">
-      <div class="case-badge">Implementado</div>
+      <div class="case-badge">E-commerce &middot; Joalheria</div>
       <h3 class="case-title">Casa Kahla</h3>
-      <div class="case-sector">E-commerce &middot; Joalheria</div>
+      <div class="case-sector">Varejo &middot; Joias Personalizadas</div>
       <div class="case-block">
         <div class="case-block-label">Problema</div>
-        <p>Atendimento repetitivo via WhatsApp &mdash; perguntas sobre produtos, personaliza&ccedil;&atilde;o, rastreamento &mdash; consumindo tempo da opera&ccedil;&atilde;o e impedindo foco em vendas estrat&eacute;gicas.</p>
+        <p>Atendimento repetitivo via WhatsApp &mdash; perguntas sobre produtos, personaliza&ccedil;&atilde;o e rastreamento &mdash; consumindo tempo da opera&ccedil;&atilde;o e impedindo foco em vendas estrat&eacute;gicas.</p>
       </div>
       <div class="case-block">
         <div class="case-block-label">Solu&ccedil;&atilde;o</div>
-        <p>Agente de IA para WhatsApp com conhecimento completo do cat&aacute;logo, pol&iacute;ticas da marca e hist&oacute;rico de atendimento. Respostas personalizadas no tom da marca.</p>
+        <p>Agente de IA com conhecimento completo do cat&aacute;logo, pol&iacute;ticas da marca e hist&oacute;rico de atendimento. Respostas personalizadas no tom premium da marca.</p>
       </div>
       <div class="case-result">
         <div class="big">Opera&ccedil;&atilde;o liberada</div>
-        <div class="small">Atendimento autom&aacute;tico &middot; Cat&aacute;logo integrado &middot; Tom da marca preservado</div>
+        <div class="small">Atendimento autom&aacute;tico &middot; Cat&aacute;logo Shopify integrado &middot; Tom da marca preservado &middot; Ganho real de produtividade</div>
       </div>
-      <div class="case-techs">
-        <span class="case-tech">WhatsApp API</span><span class="case-tech">Agente IA</span><span class="case-tech">Cat&aacute;logo Shopify</span>
-      </div>
+      <div class="case-techs"><span class="case-tech">WhatsApp API</span><span class="case-tech">Agente IA</span><span class="case-tech">Shopify</span></div>
     </div>
 
+    <!-- Belcenter -->
+    <div class="case-card reveal">
+      <div class="case-badge">Franquias &middot; Est&eacute;tica</div>
+      <h3 class="case-title">Belcenter</h3>
+      <div class="case-sector">Rede de Franquias &middot; Cl&iacute;nicas de Est&eacute;tica</div>
+      <div class="case-block">
+        <div class="case-block-label">Problema</div>
+        <p>Rede com m&uacute;ltiplas unidades enfrentava alto volume de agendamentos manuais, atendimento despadronizado entre franquias e dificuldade em centralizar informa&ccedil;&otilde;es comerciais.</p>
+      </div>
+      <div class="case-block">
+        <div class="case-block-label">Solu&ccedil;&atilde;o</div>
+        <p>Agente de IA padronizado para toda a rede: atendimento inicial, qualifica&ccedil;&atilde;o do lead, agendamento autom&aacute;tico e envio de materiais &mdash; com personaliza&ccedil;&atilde;o por unidade franqueada.</p>
+      </div>
+      <div class="case-result">
+        <div class="big">Padroniza&ccedil;&atilde;o em toda a rede</div>
+        <div class="small">Agendamentos automatizados &middot; Atendimento uniforme entre unidades &middot; Redu&ccedil;&atilde;o de carga operacional das equipes</div>
+      </div>
+      <div class="case-techs"><span class="case-tech">WhatsApp API</span><span class="case-tech">Agente IA</span><span class="case-tech">Integra&ccedil;&atilde;o CRM</span><span class="case-tech">Multi-unidade</span></div>
+    </div>
+
+  </div>
+  <div style="text-align:center;margin-top:48px" class="reveal">
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20de%20IA%20para%20minha%20empresa." target="_blank" class="cta-link">
+      Solicitar avalia&ccedil;&atilde;o de IA para minha empresa
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
   </div>
 </div>
 </section>
 
-<!-- 5. QUEM SOMOS -->
+<!-- ════════════════════════════════════
+     6ª DOBRA — PARA QUEM É
+     ════════════════════════════════════ -->
+<section class="paraquem" id="paraquem">
+<div class="container">
+  <div class="paraquem-grid">
+    <div class="reveal">
+      <div class="section-tag">Perfil ideal</div>
+      <h2 class="section-title">Para quem &eacute; a NewScale</h2>
+      <p class="section-sub">Nossa consultoria foi criada para empresas e l&iacute;deres que sabem que h&aacute; mais a extrair do neg&oacute;cio &mdash; e que precisam de uma parceria que entenda tanto de IA quanto de opera&ccedil;&atilde;o real.</p>
+      <ul class="pq-list">
+        <li class="pq-item"><span class="pq-dot"></span><span class="pq-text">M&eacute;dias e grandes empresas que perdem tra&ccedil;&atilde;o e competitividade por n&atilde;o conseguirem implementar IA de forma estrat&eacute;gica na opera&ccedil;&atilde;o</span></li>
+        <li class="pq-item"><span class="pq-dot"></span><span class="pq-text">Empres&aacute;rios cujas equipes ainda fazem uso superficial e pouco estrat&eacute;gico da Intelig&ecirc;ncia Artificial</span></li>
+        <li class="pq-item"><span class="pq-dot"></span><span class="pq-text">Empresas que buscam ampliar ROI e ROAS, reduzindo CAC e aumentando LTV</span></li>
+        <li class="pq-item"><span class="pq-dot"></span><span class="pq-text">Neg&oacute;cios que visam aumentar receitas, reduzir despesas operacionais e elevar a satisfa&ccedil;&atilde;o de clientes e colaboradores</span></li>
+        <li class="pq-item"><span class="pq-dot"></span><span class="pq-text">L&iacute;deres que querem implementar IA de forma s&oacute;lida, mensur&aacute;vel e integrada &mdash; n&atilde;o apenas testar ferramentas isoladas</span></li>
+      </ul>
+      <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20consultor." target="_blank" class="cta-link">
+        Quero falar com um consultor agora
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="reveal">
+      <div class="pq-aside">
+        <div class="pq-aside-title">O que nossos clientes costumam ganhar</div>
+        <div class="pq-metric">
+          <div class="val">30+ min</div>
+          <div class="desc">economizados por atendimento cl&iacute;nico automatizado</div>
+        </div>
+        <div class="pq-metric">
+          <div class="val">24h/7d</div>
+          <div class="desc">atendimento e qualifica&ccedil;&atilde;o de leads sem custo adicional de equipe</div>
+        </div>
+        <div class="pq-metric">
+          <div class="val">4&ndash;12sem</div>
+          <div class="desc">do diagn&oacute;stico ao projeto em opera&ccedil;&atilde;o completa</div>
+        </div>
+        <div class="pq-metric">
+          <div class="val">Zero</div>
+          <div class="desc">necessidade de equipe t&eacute;cnica interna para implementar</div>
+        </div>
+        <div class="pq-metric">
+          <div class="val">&gt;90%</div>
+          <div class="desc">redu&ccedil;&atilde;o de erros humanos em fluxos repetitivos automatizados</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════
+     7ª DOBRA — FUNDADORES
+     ════════════════════════════════════ -->
 <section class="quem" id="quem">
 <div class="container">
-  <div class="reveal" style="text-align:center">
-    <div class="section-tag">Quem est&aacute; por tr&aacute;s</div>
+  <div class="reveal" style="text-align:center;max-width:620px;margin:0 auto 48px">
+    <div class="section-tag">Os fundadores</div>
     <h2 class="section-title">Quem implementa e ensina IA na pr&aacute;tica</h2>
-    <p class="section-sub" style="margin-left:auto;margin-right:auto">N&atilde;o somos te&oacute;ricos. Usamos IA nos nossos pr&oacute;prios neg&oacute;cios antes de implementar nos seus.</p>
+    <p class="section-sub" style="margin:0 auto">N&atilde;o somos te&oacute;ricos. Usamos IA nos nossos pr&oacute;prios neg&oacute;cios e carreiras antes de implementar no seu.</p>
   </div>
   <div class="quem-grid reveal">
     <div class="quem-card">
       <div class="quem-photo">
-        <img src="bruna-santanna.jpg" alt="Bruna Santanna" onerror="this.parentElement.innerHTML='BS'">
+        <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG" alt="Bruna Santanna" onerror="this.parentElement.innerHTML='BS'">
       </div>
       <div class="quem-name">Bruna Santanna</div>
       <div class="quem-role">Co-fundadora &middot; Estrat&eacute;gia &amp; Educa&ccedil;&atilde;o</div>
-      <div class="quem-bio">ESPM. Empres&aacute;ria h&aacute; 10+ anos. Ex-SulAm&eacute;rica, Ex-Whirlpool, Ex-Blackbox AI (Growth). Fundou e operou a Casa Kahla por 8 anos (joalheria). Mentora de IA no programa Potenc.IA (parceria OLX, Magalu, B3, CI&amp;T). Professora de IA e automa&ccedil;&atilde;o para equipes corporativas.</div>
+      <p class="quem-bio">ESPM. Empres&aacute;ria h&aacute; 10+ anos. Ex-SulAm&eacute;rica, Ex-Whirlpool, Ex-Blackbox AI (Growth). Fundou e operou a Casa Kahla por 8 anos. Mentora de IA no programa Potenc.IA (parceria OLX, Magalu, B3 e CI&amp;T). Professora de IA e automa&ccedil;&atilde;o para equipes corporativas.</p>
       <div class="quem-tags">
         <span class="quem-tag">Estrat&eacute;gia</span><span class="quem-tag">Diagn&oacute;stico</span><span class="quem-tag">Educa&ccedil;&atilde;o em IA</span><span class="quem-tag">Mentoria</span>
+      </div>
+      <div class="quem-logos">
+        <span class="quem-logo-tag">SulAm&eacute;rica</span><span class="quem-logo-tag">Whirlpool</span><span class="quem-logo-tag">Potenc.IA</span><span class="quem-logo-tag">Casa Kahla</span>
       </div>
       <div class="quem-quote">&ldquo;Implemento IA no meu pr&oacute;prio neg&oacute;cio todo dia. S&oacute; ensino e vendo o que eu mesma uso.&rdquo;</div>
     </div>
     <div class="quem-card">
-      <div class="quem-photo">BV</div>
+      <div class="quem-photo"><img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/BRUNO-VARELLA-PQ.jpeg" alt="Bruno Varella" onerror="this.parentElement.innerHTML='BV'"></div>
       <div class="quem-name">Bruno Varella</div>
       <div class="quem-role">Co-fundador &middot; Marketing &amp; Escala</div>
-      <div class="quem-bio">ESPM. 15+ anos em marketing. Ex-Warner Bros Discovery, Natura &amp; Co, Piticas, Salus (Sorridents/GIO). Diretor de Marketing com equipes de 25+ pessoas. Pioneiro em Agentes de IA para atendimento em redes de franquias.</div>
+      <p class="quem-bio">ESPM. 17+ anos em Marketing, Produto e Novos Neg&oacute;cios, sendo 12+ em gest&atilde;o executiva. Ex-Warner Bros. Discovery (7 anos), Natura &amp; Co. (EKOS e Tododia), Sorridents/GIO (Salus), Piticas. Gestor de equipes com 30+ pessoas. Pioneiro em agentes de IA para redes de franquias.</p>
       <div class="quem-tags">
         <span class="quem-tag">Marketing</span><span class="quem-tag">Escala</span><span class="quem-tag">Franquias</span><span class="quem-tag">Agentes IA</span>
+      </div>
+      <div class="quem-logos">
+        <span class="quem-logo-tag">Warner Bros.</span><span class="quem-logo-tag">Natura &amp; Co</span><span class="quem-logo-tag">Sorridents</span><span class="quem-logo-tag">Piticas</span>
       </div>
       <div class="quem-quote">&ldquo;J&aacute; implementei automa&ccedil;&atilde;o em redes com 600 franquias. Na NewScale, fazemos o mesmo &mdash; no seu tamanho.&rdquo;</div>
     </div>
   </div>
-  <div class="quem-team reveal" style="padding:36px;background:var(--ink);color:#fff;border-radius:14px;border:none;font-size:1.05rem">
-    <div style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;margin-bottom:8px;color:#fff">Equipe t&eacute;cnica dedicada</div>
-    Engenheiros e desenvolvedores de IA especializados em automa&ccedil;&atilde;o, integra&ccedil;&otilde;es e engenharia de prompts. Cada projeto tem um time t&eacute;cnico focado na sua implementa&ccedil;&atilde;o.
+  <div class="quem-team reveal">
+    <div>
+      <div class="quem-team-text">Equipe t&eacute;cnica dedicada</div>
+      <p class="quem-team-desc">Engenheiros, programadores e desenvolvedores de IA especializados em automa&ccedil;&atilde;o, integra&ccedil;&otilde;es e engenharia de prompts. Cada projeto tem um time t&eacute;cnico focado na sua implementa&ccedil;&atilde;o &mdash; do piloto ao roll-out completo.</p>
+    </div>
+    <div class="quem-team-badge">
+      <div class="num">100%</div>
+      <div class="lbl">dedicados ao projeto</div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:36px" class="reveal">
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="cta-link">
+      Agendar um diagn&oacute;stico gratuito
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
   </div>
 </div>
 </section>
 
-<!-- 6. COMO FUNCIONA -->
+<!-- ════════════════════════════════════
+     8ª DOBRA — COMO FUNCIONA
+     ════════════════════════════════════ -->
 <section class="como" id="como">
 <div class="container">
-  <div class="reveal" style="text-align:center">
+  <div class="reveal" style="text-align:center;max-width:620px;margin:0 auto 56px">
     <div class="section-tag">Passo a passo</div>
     <h2 class="section-title">Do primeiro contato ao resultado</h2>
-    <p class="section-sub" style="margin-left:auto;margin-right:auto">Sem surpresas, sem letras mi&uacute;das. Voc&ecirc; sabe o que vai acontecer em cada etapa.</p>
+    <p class="section-sub" style="margin:0 auto">Sem surpresas, sem letras mi&uacute;das. Voc&ecirc; sabe exatamente o que vai acontecer em cada etapa.</p>
   </div>
   <div class="timeline reveal">
     <div class="tl-item">
       <div class="tl-dot">1</div>
       <div class="tl-content">
-        <div class="tl-meta">Sem compromisso</div>
-        <h3>Diagn&oacute;stico gratuito (30 min)</h3>
-        <div class="tl-detail">Conversa por v&iacute;deo. Entendemos sua opera&ccedil;&atilde;o e identificamos onde IA gera mais impacto.</div>
+        <div class="tl-meta">Briefing &middot; Sem compromisso &middot; 30 min</div>
+        <h3>Diagn&oacute;stico gratuito por v&iacute;deo</h3>
+        <div class="tl-detail">Conversa explorat&oacute;ria para entender sua opera&ccedil;&atilde;o, dores e principais desafios. Identificamos os pontos onde a IA pode gerar maior impacto no seu neg&oacute;cio.</div>
       </div>
     </div>
     <div class="tl-item">
@@ -519,121 +780,149 @@ footer a:hover{color:var(--terra-light)}
       <div class="tl-content">
         <div class="tl-meta">Ap&oacute;s o diagn&oacute;stico</div>
         <h3>Proposta personalizada</h3>
-        <div class="tl-detail">Plano claro: o que ser&aacute; feito, quanto tempo leva, quanto custa. Sem pacotes gen&eacute;ricos.</div>
+        <div class="tl-detail">Plano claro: quais processos ser&atilde;o automatizados por ordem de prioridade, quanto tempo levar&aacute;, quanto custar&aacute; e quais indicadores ser&atilde;o monitorados. Sem pacotes gen&eacute;ricos.</div>
       </div>
     </div>
     <div class="tl-item">
       <div class="tl-dot">3</div>
       <div class="tl-content">
-        <div class="tl-meta">4-12 semanas</div>
+        <div class="tl-meta">4 a 12 semanas &middot; dependendo da complexidade</div>
         <h3>Implementa&ccedil;&atilde;o</h3>
-        <div class="tl-detail">Mergulhamos na sua opera&ccedil;&atilde;o. Conversamos com a equipe, mapeamos processos, e constru&iacute;mos a automa&ccedil;&atilde;o de forma que a transi&ccedil;&atilde;o seja natural. Acompanhamento semanal &mdash; voc&ecirc; valida cada etapa.</div>
+        <div class="tl-detail">Mergulhamos na opera&ccedil;&atilde;o. Conversamos com as equipes, mapeamos processos e gargalos, criamos agentes e constru&iacute;mos automa&ccedil;&otilde;es para uma transi&ccedil;&atilde;o natural. Acompanhamento semanal com valida&ccedil;&atilde;o a cada etapa.</div>
       </div>
     </div>
     <div class="tl-item">
       <div class="tl-dot">4</div>
       <div class="tl-content">
-        <div class="tl-meta">Incluso</div>
+        <div class="tl-meta">Incluso no projeto</div>
         <h3>Treinamento &amp; Workshop</h3>
-        <div class="tl-detail">Capacita&ccedil;&atilde;o da equipe para usar as novas ferramentas com confian&ccedil;a. Workshops pr&aacute;ticos, documenta&ccedil;&atilde;o completa e suporte p&oacute;s-entrega.</div>
+        <div class="tl-detail">Capacita&ccedil;&atilde;o das equipes para usar e monitorar as novas ferramentas com confian&ccedil;a. Workshops pr&aacute;ticos, documenta&ccedil;&atilde;o completa e suporte p&oacute;s-entrega.</div>
       </div>
     </div>
     <div class="tl-item">
       <div class="tl-dot">5</div>
       <div class="tl-content">
         <div class="tl-meta">Resultado</div>
-        <h3>Opera&ccedil;&atilde;o aut&ocirc;noma</h3>
-        <div class="tl-detail">Tudo rodando sem depender de n&oacute;s. Sua equipe no controle.</div>
+        <h3>Opera&ccedil;&atilde;o destravada e acompanhamento de indicadores</h3>
+        <div class="tl-detail">Tudo rodando de forma otimizada. Sua equipe com mais tempo para o que realmente importa &mdash; e KPIs claros para mensurar os ganhos obtidos.</div>
       </div>
     </div>
   </div>
-
+  <div class="como-cta reveal">
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20de%20IA%20para%20minha%20empresa." target="_blank" class="cta-link">
+      Solicitar avalia&ccedil;&atilde;o de IA para minha empresa
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
 </div>
 </section>
 
-<!-- PROBLEMA (moved near end) -->
-<section class="problema" id="problema" style="padding:100px 0;background:var(--cream-light)">
+<!-- ════════════════════════════════════
+     9ª DOBRA — CUSTO INVISÍVEL
+     ════════════════════════════════════ -->
+<section class="custo" id="custo">
 <div class="container">
-  <div class="reveal" style="text-align:center">
+  <div class="custo-intro reveal">
     <div class="section-tag">O custo invis&iacute;vel</div>
-    <h2 class="section-title">O que custa N&Atilde;O automatizar</h2>
-    <p class="section-sub" style="margin-left:auto;margin-right:auto">Antes de falar em investimento, olha o que voc&ecirc; j&aacute; est&aacute; gastando sem perceber.</p>
+    <h2 class="section-title">Quanto custa n&atilde;o otimizar processos?</h2>
+    <p class="section-sub" style="margin:0 auto">Antes de falarmos em investimento, veja o que voc&ecirc; j&aacute; est&aacute; perdendo sem perceber.</p>
   </div>
-  <div class="cost-grid">
-    <div class="cost-card reveal">
-      <div class="cost-number">30 min</div>
-      <div class="cost-label">por relat&oacute;rio feito &agrave; m&atilde;o &mdash; quando IA faz por R$0,09</div>
+  <div class="custo-grid">
+    <div class="custo-card reveal">
+      <p><strong>2 colaboradores fazendo o que a IA faria</strong>Dois profissionais no mesmo departamento executando tarefas repetitivas que agentes de IA fariam com mais agilidade e menor taxa de erro.</p>
     </div>
-    <div class="cost-card reveal">
-      <div class="cost-number">5h/semana</div>
-      <div class="cost-label">respondendo as mesmas perguntas no WhatsApp &mdash; todo dia, o dia inteiro</div>
+    <div class="custo-card reveal">
+      <p><strong>8h/semana no WhatsApp respondendo as mesmas perguntas</strong>Todos os dias, o mesmo atendimento manual &mdash; quando um agente de IA faria isso em tempo real, a qualquer hora.</p>
     </div>
-    <div class="cost-card reveal">
-      <div class="cost-number">R$8-15k</div>
-      <div class="cost-label">por m&ecirc;s em sal&aacute;rio de quem faz trabalho repetitivo que IA automatiza</div>
+    <div class="custo-card reveal">
+      <p><strong>Leads esfriando e convers&otilde;es baixas</strong>Atendimento despadronizado, demora nos retornos, respostas incompletas &mdash; enquanto o concorrente j&aacute; usa IA para responder em segundos.</p>
     </div>
-    <div class="cost-card reveal">
-      <div class="cost-number">Leads frios</div>
-      <div class="cost-label">que chegam fora do hor&aacute;rio e ficam sem resposta at&eacute; o dia seguinte</div>
+    <div class="custo-card reveal">
+      <p><strong>8 a 12h montando relat&oacute;rios que a IA faz em segundos</strong>E com menor capacidade anal&iacute;tica do que um agente de IA configurado corretamente para a sua opera&ccedil;&atilde;o.</p>
+    </div>
+    <div class="custo-card reveal">
+      <p><strong>Perda de faturamento enquanto concorrentes implementam IA</strong>Cada m&ecirc;s sem IA estrat&eacute;gica &eacute; uma lacuna de efici&ecirc;ncia que os concorrentes est&atilde;o usando para ganhar vantagem.</p>
+    </div>
+    <div class="custo-card reveal">
+      <p><strong>SaaS caros e engessados com cada customiza&ccedil;&atilde;o cobrada &agrave; parte</strong>A empresa se adapta ao sistema &mdash; em vez do sistema se adaptar ao neg&oacute;cio.</p>
+    </div>
+    <div class="custo-card reveal">
+      <p><strong>Talentos drenados por repeti&ccedil;&atilde;o operacional</strong>Colaboradores de alto potencial presos em atividades rotineiras, sem crescimento, sem aprendizado e sem perspectiva.</p>
+    </div>
+    <div class="custo-card reveal">
+      <p><strong>Desgaste silencioso das equipes</strong>Processos manuais repetitivos geram erros, retrabalho e desmotiva&ccedil;&atilde;o &mdash; com impacto direto na reten&ccedil;&atilde;o e cultura.</p>
     </div>
   </div>
-  <div class="cost-bottom reveal">
+  <div class="custo-bottom reveal">
     <div class="big">Quanto disso est&aacute; acontecendo no seu neg&oacute;cio agora?</div>
-    <p>A maioria dos empres&aacute;rios s&oacute; descobre quando faz as contas.</p>
+    <p>A maioria dos empres&aacute;rios s&oacute; percebe o tamanho da inefici&ecirc;ncia quando v&ecirc; os indicadores do projeto funcionando.</p>
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="cta-link">
+      Agendar um diagn&oacute;stico gratuito
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
   </div>
 </div>
 </section>
 
-<!-- CTA FINAL -->
+<!-- ════════════════════════════════════
+     10ª DOBRA — CTA FINAL
+     ════════════════════════════════════ -->
 <section class="cta-final" id="contato">
 <div class="container">
-  <h2>Quer saber quanto sua opera&ccedil;&atilde;o est&aacute; perdendo?</h2>
-  <p class="sub">30 minutos. Sem compromisso. Mapeamos onde IA pode gerar impacto real no seu neg&oacute;cio.</p>
+  <h2>Quer saber quanto sua opera&ccedil;&atilde;o est&aacute; deixando de ganhar?</h2>
+  <p class="sub">30 minutos. Sem compromisso. Mapeamos onde a IA pode gerar impacto real no seu neg&oacute;cio &mdash; e voc&ecirc; sai com clareza sobre o pr&oacute;ximo passo.</p>
   <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="cta-btn">
-    Agendar meu diagn&oacute;stico gratuito
+    Agendar um diagn&oacute;stico gratuito
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
   <div class="cta-sectors">
-    <div class="cta-sector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> Sa&uacute;de</div>
-    <div class="cta-sector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg> Varejo</div>
-    <div class="cta-sector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> RH</div>
-    <div class="cta-sector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Eventos</div>
+    <div class="cta-sector">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> Sa&uacute;de
+    </div>
+    <div class="cta-sector">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> RH &amp; Recrutamento
+    </div>
+    <div class="cta-sector">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/></svg> Varejo &amp; E-commerce
+    </div>
+    <div class="cta-sector">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg> Franquias
+    </div>
+    <div class="cta-sector">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/><circle cx="12" cy="12" r="3"/></svg> Servi&ccedil;os
+    </div>
+    <div class="cta-sector">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg> Eventos
+    </div>
   </div>
-  <div class="cta-limit">Poucas vagas por m&ecirc;s &mdash; trabalhamos com volume limitado de clientes para garantir qualidade.</div>
+  <div class="cta-limit">Trabalhamos com volume limitado de clientes por m&ecirc;s para garantir a qualidade de cada implementa&ccedil;&atilde;o.</div>
 </div>
 </section>
 
 <footer>
   <div class="container">
-    <div style="margin-bottom:20px;display:flex;justify-content:center;gap:32px;flex-wrap:wrap;font-size:.85rem;color:rgba(255,255,255,.5)">
-      <span>Implementa&ccedil;&atilde;o de IA</span>
+    <div style="margin-bottom:20px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap;font-size:.8rem;color:rgba(255,255,255,.4)">
+      <span>Implementa&ccedil;&atilde;o de IA para Empresas</span>
       <span>Agentes de Atendimento</span>
       <span>Automa&ccedil;&atilde;o de Processos</span>
+      <span>Consultoria em Intelig&ecirc;ncia Artificial</span>
       <span>Treinamento &amp; Workshop</span>
-      <span>Diagn&oacute;stico de IA</span>
+      <span>Diagn&oacute;stico de IA Gratuito</span>
     </div>
     <p style="margin-bottom:8px"><a href="mailto:bruna@newscale.tech">bruna@newscale.tech</a> &middot; <a href="https://wa.me/5511971901020" target="_blank">(11) 97190-1020</a></p>
-    <p>NewScale Consulting &middot; Bv Servicos de Marketing e Consultoria &middot; 48.533.847/0001-68</p>
+    <p>&copy; 2026 NewScale Consulting. Todos os direitos reservados.</p>
   </div>
 </footer>
 
 <script>
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>50)});
-const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+if(window.netlifyIdentity){window.netlifyIdentity.on("init",user=>{if(!user){window.netlifyIdentity.on("login",()=>{document.location.href="/admin/"})}})}
+</script>
 </body>
 </html>

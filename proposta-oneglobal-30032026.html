@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NewScale × OneGlobal — Proposta Estratégica de IA</title>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    /* NewScale brand palette */
+    --teal:      #14373C;
+    --teal-mid:  #1f4f56;
+    --green:     #435D51;
+    --terra:     #B06E4A;
+    --terra-lt:  #c8845f;
+    --sand:      #D0D0CA;
+    --sand-dark: #b8b8b0;
+
+    /* Page tokens */
+    --bg:        #0e2226;   /* deep teal — darker than brand teal for depth */
+    --bg2:       #14373C;   /* brand teal */
+    --bg3:       #1a4047;   /* slightly lighter teal */
+    --accent:    #B06E4A;   /* terracota as main accent */
+    --accent2:   #c8845f;   /* lighter terracota for hover */
+    --text:      #EEE8DF;   /* warm off-white */
+    --muted:     #9aada5;   /* muted sage */
+    --border:    rgba(176,110,74,0.2); /* terracota border */
+    --card-bg:   rgba(20,55,60,0.7);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.2rem 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(14,34,38,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .nav-brand { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 14px; letter-spacing: 0.08em; color: var(--sand); }
+  .nav-tag { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(176,110,74,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--terra); margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content: ''; display: block; width: 30px; height: 0.5px; background: var(--terra);
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 300;
+    line-height: 1.15;
+    max-width: 820px;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+  .hero h1 em { font-style: italic; color: var(--terra); font-weight: 300; }
+  .hero-sub {
+    font-size: 1.05rem; color: var(--muted); max-width: 560px; margin-bottom: 3rem; line-height: 1.8;
+  }
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 0.9rem 2rem;
+    border: 0.5px solid var(--terra);
+    color: var(--terra); font-size: 12px; font-weight: 500; letter-spacing: 0.1em;
+    text-decoration: none; text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+  .hero-cta:hover { background: var(--terra); color: var(--text); }
+  .hero-cta::after { content: '↓'; }
+
+  /* STATS */
+  .stats {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    max-width: 900px; margin: 0 auto 0;
+    border-top: 0.5px solid var(--border);
+    border-left: 0.5px solid var(--border);
+  }
+  .stat {
+    padding: 2rem 1.5rem;
+    border-right: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+    text-align: center;
+  }
+  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; color: var(--terra); }
+  .stat-label { font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+
+  /* SECTIONS */
+  section { padding: 6rem 2rem; max-width: 900px; margin: 0 auto; }
+  .section-tag {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--terra); margin-bottom: 1rem;
+  }
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 300; line-height: 1.2; margin-bottom: 1.5rem; letter-spacing: -0.01em;
+  }
+  h2 em { font-style: italic; color: var(--terra); }
+  .lead { font-size: 1.05rem; color: var(--muted); line-height: 1.9; max-width: 680px; }
+
+  /* DIVIDER */
+  .full-divider { height: 0.5px; background: var(--border); max-width: 100%; margin: 0; }
+
+  /* DORES */
+  .dores-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); margin-top: 3rem; }
+  .dor { background: var(--bg); padding: 2rem; transition: background 0.3s; }
+  .dor:hover { background: var(--bg3); }
+  .dor-num { font-size: 11px; color: var(--terra); font-weight: 500; letter-spacing: 0.08em; margin-bottom: 0.8rem; }
+  .dor-title { font-size: 1rem; font-weight: 500; margin-bottom: 0.6rem; }
+  .dor-text { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+  /* MÓDULOS */
+  .modulos-wrap { margin-top: 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
+  .modulo-card {
+    border: 0.5px solid var(--border);
+    background: var(--card-bg);
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+  .modulo-card:hover { border-color: rgba(176,110,74,0.5); }
+  .modulo-header {
+    padding: 1.8rem 2rem;
+    display: grid; grid-template-columns: auto 1fr auto;
+    gap: 1.5rem; align-items: center;
+    cursor: pointer;
+  }
+  .modulo-num {
+    width: 44px; height: 44px; border: 0.5px solid var(--terra);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; color: var(--terra);
+    flex-shrink: 0;
+  }
+  .modulo-fase { font-size: 11px; color: var(--terra); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+  .modulo-title { font-size: 1.1rem; font-weight: 500; }
+  .modulo-sub { font-size: 13px; color: var(--muted); margin-top: 3px; }
+  .modulo-toggle { font-size: 22px; color: var(--muted); transition: transform 0.3s; user-select: none; flex-shrink: 0; }
+  .modulo-card.open .modulo-toggle { transform: rotate(45deg); color: var(--terra); }
+  .modulo-body { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+  .modulo-card.open .modulo-body { max-height: 1200px; }
+  .modulo-inner { padding: 0 2rem 2rem; border-top: 0.5px solid var(--border); }
+  .modulo-desc { font-size: 14px; color: var(--muted); line-height: 1.8; margin: 1.5rem 0; }
+  .modulo-resolve {
+    background: rgba(176,110,74,0.07); border-left: 2px solid var(--terra);
+    padding: 1rem 1.2rem; margin-bottom: 1.5rem;
+    font-size: 13px; color: var(--text); line-height: 1.7;
+  }
+  .modulo-resolve strong { color: var(--terra); }
+  .features { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .features li { font-size: 13px; color: var(--muted); padding-left: 1.2rem; position: relative; line-height: 1.6; }
+  .features li::before { content: '—'; position: absolute; left: 0; color: var(--terra); }
+
+  /* SISTEMAS */
+  .sistemas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+  .sistema-card { border: 0.5px solid var(--border); padding: 1.2rem; background: var(--bg2); }
+  .sistema-name { font-size: 13px; font-weight: 500; color: var(--terra); margin-bottom: 4px; }
+  .sistema-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+  /* INVESTIMENTO */
+  .inv-section { background: var(--bg2); padding: 6rem 2rem; }
+  .inv-inner { max-width: 900px; margin: 0 auto; }
+  .inv-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--border); margin-top: 3rem; }
+  .inv-card { background: var(--bg2); padding: 2rem; }
+  .inv-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+  .inv-modname { font-size: 14px; font-weight: 500; margin-bottom: 1rem; line-height: 1.4; }
+  .inv-price-row { display: flex; justify-content: space-between; align-items: baseline; padding: 8px 0; border-top: 0.5px solid var(--border); }
+  .inv-price-label { font-size: 12px; color: var(--muted); }
+  .inv-price-val { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: var(--text); }
+  .inv-price-val span { font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--muted); }
+  .inv-total {
+    grid-column: span 3;
+    background: rgba(176,110,74,0.08);
+    border: 0.5px solid var(--terra);
+    padding: 2rem;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;
+  }
+  .inv-total-item { text-align: center; }
+  .inv-total-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--terra); }
+  .inv-total-label { font-size: 11px; color: var(--muted); margin-top: 4px; }
+  .inv-bonus {
+    margin-top: 1.5rem; padding: 1.2rem 1.5rem;
+    border: 0.5px dashed rgba(176,110,74,0.4);
+    background: rgba(176,110,74,0.04);
+    font-size: 13px; color: var(--muted); line-height: 1.7;
+  }
+  .inv-bonus strong { color: var(--terra); }
+  .inv-parcelas { margin-top: 1.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .parcela { border: 0.5px solid var(--border); padding: 1.2rem; text-align: center; background: var(--bg3); }
+  .parcela-num { font-size: 11px; color: var(--terra); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+  .parcela-momento { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+  .parcela-val { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--text); }
+  .inv-api-note { margin-top: 1.5rem; font-size: 12px; color: var(--muted); line-height: 1.7; padding-top: 1rem; border-top: 0.5px solid var(--border); }
+
+  /* NEWSCALE */
+  .ns-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+  .ns-card { padding: 1.5rem; border: 0.5px solid var(--border); }
+  .ns-card-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: rgba(176,110,74,0.25); margin-bottom: 0.5rem; }
+  .ns-card-title { font-size: 14px; font-weight: 500; margin-bottom: 0.5rem; }
+  .ns-card-text { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+  /* FOUNDERS */
+  .founders { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+  .founder { display: flex; gap: 1.2rem; align-items: flex-start; }
+  .founder-photo { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 0.5px solid var(--border); flex-shrink: 0; }
+  .founder-name { font-size: 14px; font-weight: 500; }
+  .founder-role { font-size: 12px; color: var(--terra); margin-bottom: 4px; }
+  .founder-bio { font-size: 12px; color: var(--muted); line-height: 1.6; }
+  .founder-logos { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+  .founder-logo-tag { font-size: 10px; padding: 2px 8px; border: 0.5px solid var(--border); color: var(--muted); letter-spacing: 0.04em; }
+
+  /* PRÓXIMOS PASSOS */
+  .steps { display: flex; flex-direction: column; gap: 0; margin-top: 3rem; }
+  .step { display: grid; grid-template-columns: 60px 1fr; gap: 1.5rem; padding: 2rem 0; border-bottom: 0.5px solid var(--border); }
+  .step:first-child { border-top: 0.5px solid var(--border); }
+  .step-num { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--terra); padding-top: 2px; }
+  .step-timing { font-size: 11px; color: var(--terra); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 4px; }
+  .step-title { font-size: 1rem; font-weight: 500; margin-bottom: 6px; }
+  .step-desc { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 4rem 2rem; border-top: 0.5px solid var(--border); font-size: 12px; color: var(--muted); }
+  footer strong { color: var(--sand); }
+  footer a { color: var(--terra); text-decoration: none; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .hero > * { animation: fadeUp 0.7s ease both; }
+  .hero-eyebrow { animation-delay: 0.1s; }
+  .hero h1 { animation-delay: 0.25s; }
+  .hero-sub { animation-delay: 0.4s; }
+  .hero-cta { animation-delay: 0.55s; }
+  .stats { animation-delay: 0.7s; }
+
+  @media (max-width: 680px) {
+    .stats { grid-template-columns: 1fr 1fr; }
+    .dores-grid { grid-template-columns: 1fr; }
+    .sistemas-grid { grid-template-columns: 1fr 1fr; }
+    .inv-grid { grid-template-columns: 1fr; }
+    .inv-total { grid-column: span 1; grid-template-columns: 1fr; }
+    .inv-parcelas { grid-template-columns: 1fr; }
+    .ns-grid { grid-template-columns: 1fr 1fr; }
+    .founders { grid-template-columns: 1fr; }
+    .modulo-header { grid-template-columns: auto 1fr auto; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-brand">NewScale × OneGlobal</span>
+  <span class="nav-tag">Proposta Estratégica · Abril 2026</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <p class="hero-eyebrow">Proposta Executiva · Abril 2026</p>
+  <h1>Uma corretora que opera com <em>inteligência</em>, não com esforço manual</h1>
+  <p class="hero-sub">Uma proposta construída a partir da realidade da OneGlobal — não um pacote genérico, mas um plano desenhado para operar em outro nível de eficiência e controle.</p>
+  <a href="#contexto" class="hero-cta">Explorar a proposta</a>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">6</div>
+      <div class="stat-label">sistemas ativos sem conversar entre si</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3</div>
+      <div class="stat-label">módulos de automação na Fase 1</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">0</div>
+      <div class="stat-label">digitação manual por apólice cadastrada</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3</div>
+      <div class="stat-label">meses para a Fase 1 completa e operando</div>
+    </div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- CONTEXTO -->
+<section id="contexto">
+  <p class="section-tag">O Contexto</p>
+  <h2>Uma operação sólida — que ainda depende demais de <em>esforço humano repetitivo</em></h2>
+  <p class="lead">A OneGlobal tem carteira consolidada, equipe experiente e processos que funcionam. O que ainda falta é visibilidade unificada, automação dos fluxos mais repetitivos e controle de acesso aos sistemas das operadoras. A proposta a seguir parte do que já está construído para levar a operação a outro patamar — sem complicar a vida de ninguém.</p>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- DORES -->
+<section id="dores">
+  <p class="section-tag">O que identificamos</p>
+  <h2>5 pontos onde a IA vai <em>liberar tempo e reduzir risco</em></h2>
+
+  <div class="dores-grid">
+    <div class="dor">
+      <div class="dor-num">01</div>
+      <div class="dor-title">Senhas de operadoras expostas</div>
+      <div class="dor-text">As credenciais de acesso aos portais das operadoras ficam numa planilha no Sharepoint — visível a todos, sem controle de quem acessou o quê e sem auditoria. Qualquer edição acidental apaga uma senha sem rastreabilidade.</div>
+    </div>
+    <div class="dor">
+      <div class="dor-num">02</div>
+      <div class="dor-title">Cadastro de apólices feito à mão</div>
+      <div class="dor-text">Cada apólice recebida em PDF precisa ser lida por alguém do time, que extrai os dados e digita campo a campo no Odoo e no Sharepoint. Processo lento, sujeito a erros e inteiramente dependente de atenção humana.</div>
+    </div>
+    <div class="dor">
+      <div class="dor-num">03</div>
+      <div class="dor-title">Faturamento controlado em Excel</div>
+      <div class="dor-text">Acessar portal de cada operadora, baixar NF e boleto, validar valores, enviar ao cliente e monitorar pagamento — tudo feito manualmente, para cada cliente, todo mês. O Excel é o elo mais frágil de um processo crítico.</div>
+    </div>
+    <div class="dor">
+      <div class="dor-num">04</div>
+      <div class="dor-title">Dados do cliente espalhados em 6 sistemas</div>
+      <div class="dor-text">Cadastro no Odoo, pipeline no Pipedrive, saúde no Airtable, arquivos no Sharepoint, faturamento no Excel, atendimento no Blip. Nenhum sistema enxerga o outro. Qualquer visão completa exige abrir tudo ao mesmo tempo.</div>
+    </div>
+    <div class="dor">
+      <div class="dor-num">05</div>
+      <div class="dor-title">Renovações que consomem horas do consultor</div>
+      <div class="dor-text">Coletar propostas de múltiplas operadoras, comparar manualmente e montar uma apresentação para o cliente é um processo que toma horas por renovação — um trabalho altamente replicável que a IA pode assumir.</div>
+    </div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- MÓDULOS -->
+<section id="proposta">
+  <p class="section-tag">A Proposta</p>
+  <h2>Estruturada em 3 módulos. <em>Cada um com resultado próprio.</em></h2>
+  <p class="lead">A Fase 1 foi desenhada para entregar impacto operacional imediato — eliminando os processos mais repetitivos e construindo a fundação segura que habilita toda a automação futura.</p>
+
+  <div class="modulos-wrap">
+
+    <!-- M01 -->
+    <div class="modulo-card" id="m01">
+      <div class="modulo-header" onclick="toggle('m01')">
+        <div class="modulo-num">1</div>
+        <div class="modulo-info">
+          <div class="modulo-fase">Módulo 01 · Disponível imediatamente</div>
+          <div class="modulo-title">Cofre de Senhas Corporativo</div>
+          <div class="modulo-sub">Acesso seguro, por perfil, com auditoria completa</div>
+        </div>
+        <div class="modulo-toggle">+</div>
+      </div>
+      <div class="modulo-body">
+        <div class="modulo-inner">
+          <p class="modulo-desc">Substitui a planilha do Sharepoint por um ambiente seguro onde cada área e profissional da OneGlobal enxerga apenas as credenciais que são da sua responsabilidade — e cada acesso fica registrado.</p>
+          <div class="modulo-resolve"><strong>O que isso resolve:</strong> fim do risco de vazamento de credenciais, edição acidental e acesso indevido. Cada colaborador enxerga só o que precisa. Cada acesso vira um registro. E quando alguém sai da empresa, o acesso é revogado na hora — sem depender de ninguém lembrar de mudar a planilha.</div>
+          <ul class="features">
+            <li>Grupos de acesso espelhando as áreas da OneGlobal: Comercial, Faturamento, Saúde/Operações, Atendimento, Administração</li>
+            <li>Cada credencial contém sistema, operadora, URL, usuário, senha criptografada, responsável, validade e instruções de acesso</li>
+            <li>Login via credenciais corporativas (integração com Microsoft 365 / SSO)</li>
+            <li>Senha revelada só sob demanda — com opção de copiar sem mostrar na tela</li>
+            <li>Log completo de acesso: quem acessou, qual credencial, quando</li>
+            <li>Alertas de acesso fora do horário ou por localização não reconhecida</li>
+            <li>Histórico de versões anteriores de cada senha</li>
+            <li>Alertas de senhas próximas da expiração</li>
+            <li>Integração direta com os Módulos 02 e 03: os agentes acessam os portais das operadoras pelo cofre, sem que nenhum humano precise ver ou digitar a senha</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- M02 -->
+    <div class="modulo-card" id="m02">
+      <div class="modulo-header" onclick="toggle('m02')">
+        <div class="modulo-num">2</div>
+        <div class="modulo-info">
+          <div class="modulo-fase">Módulo 02 · Após Módulo 01</div>
+          <div class="modulo-title">Leitura e Cadastro Automático de Apólices</div>
+          <div class="modulo-sub">Odoo + Sharepoint + Sistemas das Operadoras</div>
+        </div>
+        <div class="modulo-toggle">+</div>
+      </div>
+      <div class="modulo-body">
+        <div class="modulo-inner">
+          <p class="modulo-desc">Um agente de IA lê a apólice em PDF — de qualquer seguradora, em qualquer layout — extrai todos os dados estruturados, valida contra o que já existe no Odoo e preenche os sistemas automaticamente. Sem digitação. Sem erro de transcrição.</p>
+          <div class="modulo-resolve"><strong>O que isso resolve:</strong> o tempo de cadastro de uma apólice cai a zero. Não importa se veio da Bradesco, da SulAmérica ou da Porto — o agente identifica a seguradora, lê o documento e cadastra. O operador recebe um resumo para conferência antes de qualquer dado ser gravado, e um log completo fica registrado para auditoria.</div>
+          <ul class="features">
+            <li>Entrada via upload manual, e-mail ou pasta monitorada no Sharepoint</li>
+            <li>Identificação automática do tipo de apólice e da seguradora emissora</li>
+            <li>Extração de dados comuns a todos os ramos: número, vigência, prêmio, forma de pagamento, CNPJ do segurado</li>
+            <li>Dados adicionais por ramo: beneficiários e faixa etária (Saúde/Odonto), capitais segurados (Vida), bens e franquias (Patrimonial/RC)</li>
+            <li>Validação automática contra o cadastro existente — inconsistências são sinalizadas antes de qualquer gravação</li>
+            <li>Arquivamento automático no Sharepoint na estrutura: Cliente › Ramo › Ano</li>
+            <li>Notificação ao responsável com log de tudo que foi extraído e cadastrado</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- M03 -->
+    <div class="modulo-card" id="m03">
+      <div class="modulo-header" onclick="toggle('m03')">
+        <div class="modulo-num">3</div>
+        <div class="modulo-info">
+          <div class="modulo-fase">Módulo 03 · Após Módulo 02</div>
+          <div class="modulo-title">Workflow de Faturamento Automatizado</div>
+          <div class="modulo-sub">Do portal da operadora ao pagamento confirmado — sem intervenção manual</div>
+        </div>
+        <div class="modulo-toggle">+</div>
+      </div>
+      <div class="modulo-body">
+        <div class="modulo-inner">
+          <p class="modulo-desc">O agente acessa os portais das operadoras, extrai NFs e boletos, valida os valores contra as movimentações do período, envia os documentos ao cliente e monitora o pagamento — com régua de cobrança automática. Para contas PME, o fluxo é 100% autônomo. Para grandes contas, há um checkpoint de aprovação humana antes de cada envio.</p>
+          <div class="modulo-resolve"><strong>O que isso resolve:</strong> o time para de acessar portal por portal todo mês. As divergências de valor são detectadas antes do envio, não depois do pagamento incorreto. A régua de cobrança roda automaticamente. E o gestor tem visão em tempo real de tudo que foi faturado, enviado e pago — sem depender de ninguém atualizar o Excel.</div>
+          <ul class="features">
+            <li>Calendário de faturamento centralizado: operadoras, datas de competência e vencimento, valor de referência do mês anterior</li>
+            <li>Acesso automático aos portais das operadoras via API (onde disponível) ou RPA</li>
+            <li>Download e arquivamento de NFs e boletos no Sharepoint: Cliente › Operadora › Competência</li>
+            <li>Validação de valores: cruza o que a operadora cobrou com o que deveria cobrar dado as movimentações do período (inclusões, exclusões, reajustes)</li>
+            <li>Fluxo diferenciado: PME roda de forma totalmente automatizada; grandes contas têm aprovação humana explícita antes do envio</li>
+            <li>E-mail automático ao cliente com NF + boleto, template personalizado, CC para os contatos financeiros cadastrados</li>
+            <li>Régua de cobrança automática: lembretes em D+1, D+5, D+10 e escalada para o gestor em D+15+</li>
+            <li>Visão consolidada de inadimplência: clientes em aberto, valor total, histórico de comportamento</li>
+            <li>Relatório mensal de faturamento realizado vs. esperado e consolidação de comissionamento</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- SISTEMAS -->
+<section id="sistemas">
+  <p class="section-tag">Integração</p>
+  <h2>Os sistemas da OneGlobal, <em>finalmente conectados</em></h2>
+  <p class="lead">A Fase 1 integra 5 dos 6 sistemas atuais da OneGlobal, usando cada um como fonte dos dados que ele melhor guarda.</p>
+
+  <div class="sistemas-grid">
+    <div class="sistema-card">
+      <div class="sistema-name">Odoo · ERP</div>
+      <div class="sistema-desc">Cadastro de clientes, apólices, beneficiários, dados financeiros dos contratos e NFs emitidas</div>
+    </div>
+    <div class="sistema-card">
+      <div class="sistema-name">Sharepoint</div>
+      <div class="sistema-desc">Armazenamento estruturado de apólices em PDF, documentos contratuais e arquivos de renovação</div>
+    </div>
+    <div class="sistema-card">
+      <div class="sistema-name">Airtable</div>
+      <div class="sistema-desc">Movimentações de beneficiários e dados de sinistralidade para validação do faturamento</div>
+    </div>
+    <div class="sistema-card">
+      <div class="sistema-name">Excel · Faturamento</div>
+      <div class="sistema-desc">Migração do cronograma atual para o novo workflow automatizado — sem perda de histórico</div>
+    </div>
+    <div class="sistema-card">
+      <div class="sistema-name">Blip · WhatsApp</div>
+      <div class="sistema-desc">Canal de régua de cobrança automática para clientes inadimplentes</div>
+    </div>
+    <div class="sistema-card">
+      <div class="sistema-name">Portais das Operadoras</div>
+      <div class="sistema-desc">Acesso via API ou RPA para extração automática de NFs, boletos e dados de beneficiários</div>
+    </div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- INVESTIMENTO -->
+<div class="inv-section" id="investimento">
+  <div class="inv-inner">
+    <p class="section-tag">Investimento</p>
+    <h2>Condições claras, <em>sem surpresas no caminho.</em></h2>
+
+    <div class="inv-grid">
+      <div class="inv-card">
+        <div class="inv-label">Módulo 01</div>
+        <div class="inv-modname">Cofre de Senhas</div>
+        <div class="inv-price-row">
+          <span class="inv-price-label">Implantação</span>
+          <span class="inv-price-val">Bônus <span>gratuito</span></span>
+        </div>
+        <div class="inv-price-row">
+          <span class="inv-price-label">Mensalidade</span>
+          <span class="inv-price-val">R$ 500 <span>/mês</span></span>
+        </div>
+      </div>
+      <div class="inv-card">
+        <div class="inv-label">Módulo 02</div>
+        <div class="inv-modname">Leitura e Cadastro de Apólices</div>
+        <div class="inv-price-row">
+          <span class="inv-price-label">Implantação</span>
+          <span class="inv-price-val">R$ 8.000</span>
+        </div>
+        <div class="inv-price-row">
+          <span class="inv-price-label">Mensalidade</span>
+          <span class="inv-price-val">R$ 1.800 <span>/mês</span></span>
+        </div>
+      </div>
+      <div class="inv-card">
+        <div class="inv-label">Módulo 03</div>
+        <div class="inv-modname">Workflow de Faturamento</div>
+        <div class="inv-price-row">
+          <span class="inv-price-label">Implantação</span>
+          <span class="inv-price-val">R$ 12.000</span>
+        </div>
+        <div class="inv-price-row">
+          <span class="inv-price-label">Mensalidade</span>
+          <span class="inv-price-val">R$ 2.700 <span>/mês</span></span>
+        </div>
+      </div>
+
+      <div class="inv-total">
+        <div class="inv-total-item">
+          <div class="inv-total-num">R$ 20.000</div>
+          <div class="inv-total-label">implantação total · Fase 1</div>
+        </div>
+        <div class="inv-total-item">
+          <div class="inv-total-num">R$ 5.000</div>
+          <div class="inv-total-label">mensalidade · após go-live</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="inv-bonus">
+      <strong>Bônus inclusos no fechamento da Fase 1 completa:</strong><br>
+      Implantação do Cofre de Senhas (R$ 3.000) oferecida gratuitamente · Live de conscientização e cultura de adoção de IA para toda a equipe da OneGlobal
+    </div>
+
+    <div class="inv-parcelas">
+      <div class="parcela">
+        <div class="parcela-num">Parcela 1</div>
+        <div class="parcela-momento">Assinatura do contrato</div>
+        <div class="parcela-val">R$ 7.000</div>
+      </div>
+      <div class="parcela">
+        <div class="parcela-num">Parcela 2</div>
+        <div class="parcela-momento">Meio do projeto · Semana 4</div>
+        <div class="parcela-val">R$ 7.000</div>
+      </div>
+      <div class="parcela">
+        <div class="parcela-num">Parcela 3</div>
+        <div class="parcela-momento">Go-live aprovado</div>
+        <div class="parcela-val">R$ 6.000</div>
+      </div>
+    </div>
+
+    <div class="inv-api-note">
+      <strong>Importante:</strong> os custos de APIs externas não estão inclusos nesta proposta e são pagos diretamente pela OneGlobal. Isso inclui os modelos de linguagem (OpenAI / Anthropic) e integrações com portais de operadoras. A NewScale ajuda a otimizar esses custos continuamente dentro do escopo de manutenção. Estimativa de custo operacional mensal: <strong>até R$ 1.000,00</strong> dependendo do volume de apólices e faturas processadas.
+    </div>
+
+    <br>
+    <p class="section-tag" style="margin-top:2rem;">Próximos módulos · Fase 2</p>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:1.5rem; line-height:1.7;">Com a Fase 1 consolidada, a Fase 2 eleva a proposta de valor da OneGlobal para seus próprios clientes — diferenciação competitiva visível e inteligência de gestão em tempo real. Investimento a definir após a conclusão da Fase 1.</p>
+
+    <div style="display:flex; flex-direction:column; gap:1rem;">
+
+      <div class="modulo-card" id="m04">
+        <div class="modulo-header" onclick="toggle('m04')">
+          <div class="modulo-num" style="border-color:var(--muted); color:var(--muted);">4</div>
+          <div class="modulo-info">
+            <div class="modulo-fase" style="color:var(--muted);">Módulo 04 · Fase 2 · A orçar</div>
+            <div class="modulo-title">Comparativo Automatizado de Propostas Comerciais</div>
+            <div class="modulo-sub">Da proposta de cada operadora à apresentação pronta para o cliente</div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="modulo-inner">
+            <p class="modulo-desc">Quando uma renovação se aproxima, o consultor hoje precisa coletar propostas de múltiplas operadoras — cada uma num formato diferente —, comparar manualmente e montar uma apresentação para o cliente. São horas de trabalho altamente replicável que um agente de IA pode assumir por completo.</p>
+            <div class="modulo-resolve"><strong>O que isso resolve:</strong> o consultor para de montar apresentações do zero. O agente lê todas as propostas, cruza com o histórico do cliente e entrega uma apresentação comparativa no template da OneGlobal — com sugestão de melhor opção e justificativa baseada em dados. O que levava horas passa a levar minutos.</div>
+            <ul class="features">
+              <li>Leitura automática de propostas de múltiplas operadoras — cada uma em formato e layout diferente</li>
+              <li>Extração de dados comparáveis: coberturas, prêmios, carências, redes credenciadas, reajustes históricos</li>
+              <li>Cruzamento com o histórico do cliente no Odoo: operadoras anteriores, sinistralidade, perfil da base de beneficiários</li>
+              <li>Geração automática da apresentação comparativa no template visual da OneGlobal</li>
+              <li>Sugestão de melhor opção com justificativa fundamentada nos dados do cliente e nas condições de mercado</li>
+              <li>Quanto mais rico o histórico no Odoo — garantido pelos módulos da Fase 1 — mais precisa e personalizada a recomendação</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="modulo-card" id="m05">
+        <div class="modulo-header" onclick="toggle('m05')">
+          <div class="modulo-num" style="border-color:var(--muted); color:var(--muted);">5</div>
+          <div class="modulo-info">
+            <div class="modulo-fase" style="color:var(--muted);">Módulo 05 · Fase 2 · A orçar</div>
+            <div class="modulo-title">Central do Cliente</div>
+            <div class="modulo-sub">Visão 360° de cada cliente — dados, contratos, workflows e status em tempo real</div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="modulo-inner">
+            <p class="modulo-desc">Hoje, ter uma visão completa de um cliente exige abrir o Odoo, o Pipedrive, o Airtable, o Sharepoint, o Excel e o Blip ao mesmo tempo — e ainda assim os dados não se cruzam. A Central do Cliente unifica tudo num único ambiente, construído sobre os dados limpos gerados pelos módulos da Fase 1.</p>
+            <div class="modulo-resolve"><strong>O que isso resolve:</strong> qualquer pessoa da OneGlobal acessa o perfil completo de um cliente em segundos — cadastro, apólices ativas, sinistralidade, faturamento, renovações pendentes e status dos workflows de cada departamento. O gestor enxerga onde estão os gargalos, os atrasos e os riscos — e age antes que o problema chegue ao cliente.</div>
+            <ul class="features">
+              <li>Dados cadastrais unificados: identificação, contatos-chave, responsável comercial, status do relacionamento</li>
+              <li>Portfólio completo de apólices: ativas, em renovação, histórico de operadoras e reajustes aplicados</li>
+              <li>Base de beneficiários com estratificação por faixa etária, gênero e distribuição geográfica</li>
+              <li>Sinistralidade em tempo real com alertas de clientes em zona de risco</li>
+              <li>Status de faturamento e inadimplência integrado ao workflow do Módulo 03</li>
+              <li>Visão gerencial de workflows por departamento: Comercial, Faturamento, Implantação, Atendimento, Saúde e Documentação</li>
+              <li>Dashboard executivo com indicadores consolidados, ranking de atrasos e alertas de prazo vencido por área</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="full-divider"></div>
+
+<!-- POR QUE NEWSCALE -->
+<section id="newscale">
+  <p class="section-tag">Por que a NewScale</p>
+  <h2>Não vendemos pacotes. <em>Mergulhamos na sua empresa.</em></h2>
+  <p class="lead">Cada projeto começa pela conversa — não pelo contrato. Entendemos como a operação funciona hoje, quais são as regras de negócio e o que a equipe precisa. Só depois a gente constrói.</p>
+
+  <div class="ns-grid">
+    <div class="ns-card">
+      <div class="ns-card-num">1</div>
+      <div class="ns-card-title">Diagnóstico antes de qualquer proposta</div>
+      <div class="ns-card-text">Mapeamos o que realmente precisa ser resolvido antes de sugerir qualquer solução — por isso as entregas são cirúrgicas, não genéricas.</div>
+    </div>
+    <div class="ns-card">
+      <div class="ns-card-num">2</div>
+      <div class="ns-card-title">Implementamos o que diagnosticamos</div>
+      <div class="ns-card-text">Não entregamos relatório e sumimos. Construímos, testamos, treinamos a equipe e acompanhamos o lançamento. Você vê funcionando — não só ouve a apresentação.</div>
+    </div>
+    <div class="ns-card">
+      <div class="ns-card-num">3</div>
+      <div class="ns-card-title">Sustentação de longo prazo</div>
+      <div class="ns-card-text">IA não é projeto com começo, meio e fim. A manutenção garante que o sistema continue funcionando — e melhorando — conforme a operação cresce.</div>
+    </div>
+    <div class="ns-card">
+      <div class="ns-card-num">4</div>
+      <div class="ns-card-title">Roadmap faseado</div>
+      <div class="ns-card-text">Priorizamos os processos com maior retorno imediato. A Fase 1 entrega resultado concreto antes de qualquer investimento na Fase 2.</div>
+    </div>
+    <div class="ns-card">
+      <div class="ns-card-num">5</div>
+      <div class="ns-card-title">Treinamento das equipes</div>
+      <div class="ns-card-text">Cada pessoa aprende seu papel no novo fluxo. O humano passa a monitorar e decidir — a IA faz o operacional.</div>
+    </div>
+    <div class="ns-card">
+      <div class="ns-card-num">6</div>
+      <div class="ns-card-title">Acompanhamento de KPIs</div>
+      <div class="ns-card-text">Definimos métricas juntos antes de começar. Você sabe exatamente o que esperar — e como medir o ganho real ao longo do tempo.</div>
+    </div>
+  </div>
+
+  <div class="founders">
+    <div class="founder">
+      <img class="founder-photo" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG" alt="Bruna Santanna">
+      <div>
+        <div class="founder-role">Co-Fundadora · Estratégia & Implementação</div>
+        <div class="founder-name">Bruna Santanna</div>
+        <div class="founder-bio">ESPM. Empresária há 10+ anos. Mentora de IA no programa Potenc.IA (OLX, Magalu, B3 e CI&T). Professora de IA para equipes corporativas. Implementa IA no próprio negócio todos os dias — só vende o que usa.</div>
+        <div class="founder-logos">
+          <span class="founder-logo-tag">SulAmérica</span>
+          <span class="founder-logo-tag">Whirlpool</span>
+          <span class="founder-logo-tag">Potenc.IA</span>
+        </div>
+      </div>
+    </div>
+    <div class="founder">
+      <img class="founder-photo" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/BRUNO-VARELLA-PQ.jpeg" alt="Bruno Varella">
+      <div>
+        <div class="founder-role">Co-Fundador · Marketing, Produto & Escala</div>
+        <div class="founder-name">Bruno Varella</div>
+        <div class="founder-bio">ESPM. 17+ anos em Marketing, Produto e Novos Negócios. Ex-Warner Bros., Ex-Natura & Co., Ex-Sorridents. Já implantou agentes de IA em redes de franquias com 700+ unidades.</div>
+        <div class="founder-logos">
+          <span class="founder-logo-tag">Warner Bros.</span>
+          <span class="founder-logo-tag">Natura & Co</span>
+          <span class="founder-logo-tag">Sorridents</span>
+          <span class="founder-logo-tag">700+ franquias</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- PRÓXIMOS PASSOS -->
+<section id="proximos-passos">
+  <p class="section-tag">Próximos Passos</p>
+  <h2>Como a gente <em>vai entregar</em></h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-timing">Semana 1</div>
+        <div class="step-title">Reunião de imersão na operação</div>
+        <div class="step-desc">Mergulhamos fundo na OneGlobal — fluxos atuais de faturamento, operadoras ativas, volumes de apólices recebidas por mês, acessos existentes. Mapeamos os pontos de integração com cada sistema e levantamos as regras de negócio que o agente precisa respeitar. Saímos com tudo que precisamos para construir.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-timing">Semanas 1–2</div>
+        <div class="step-title">Definição da arquitetura e do cofre</div>
+        <div class="step-desc">Apresentamos a arquitetura completa das automações — quais agentes fazem o quê, como se autenticam nos portais, onde estão os checkpoints humanos. Em paralelo, implantamos o Cofre de Senhas e migramos as credenciais da planilha atual com a equipe da OneGlobal.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-timing">Semanas 2–5</div>
+        <div class="step-title">Construção e testes do Módulo 02</div>
+        <div class="step-desc">Desenvolvemos o agente de leitura de apólices, treinado para as principais seguradoras da carteira da OneGlobal. Testamos com apólices reais, ajustamos a extração e validamos o fluxo de conferência humana antes do go-live.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-timing">Semanas 5–9</div>
+        <div class="step-title">Construção e testes do Módulo 03</div>
+        <div class="step-desc">Desenvolvemos o workflow de faturamento, mapeamos os portais das operadoras (API vs. RPA), configuramos a régua de aprovação PME/grandes contas e testamos com dados reais de um ciclo de faturamento completo antes do lançamento.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div>
+        <div class="step-timing">Semana 10</div>
+        <div class="step-title">Go-live assistido + treinamento da equipe</div>
+        <div class="step-desc">Lançamos a Fase 1 com a equipe ao lado — treinamos operações, faturamento e gestão. Mostramos como acompanhar os fluxos, como aprovar ou intervir quando necessário e como extrair o máximo de cada automação. A OneGlobal não está sozinha no go-live.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div>
+        <div class="step-timing">A partir da semana 11</div>
+        <div class="step-title">Ajustes, otimização e planejamento da Fase 2</div>
+        <div class="step-desc">Acompanhamos de perto as primeiras semanas em produção — ajustamos fluxos, regras e prompts com base nos casos reais. Com a Fase 1 estabilizada, iniciamos o planejamento dos Módulos 04 e 05.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="background:#0D2226; padding:48px 40px; display:flex; justify-content:space-between; align-items:center;">
+    <div style="font-size:18px; font-weight:200; letter-spacing:6px; color:#FFFFFF; text-transform:uppercase;">NewScale<span style="display:block; font-size:8px; letter-spacing:5px; color:rgba(255,255,255,0.3); margin-top:4px;">Consulting</span></div>
+    <div style="font-size:10px; letter-spacing:3px; color:rgba(255,255,255,0.3); text-align:right;">Proposta exclusiva · OneGlobal<br>Abril de 2026</div>
+  </div>
+</footer>
+
+<script>
+  function toggle(id) {
+    const card = document.getElementById(id);
+    card.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
