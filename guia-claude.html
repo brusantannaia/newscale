@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia Claude — Bruna Santanna</title>
+  <meta name="description" content="Todo mundo tá falando de Claude. Aqui está o guia pra você finalmente entender o hype.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F5F3EE;
+      --warm-white: #FDFCFA;
+      --charcoal: #2A2A2A;
+      --sage: #7D8B7A;
+      --terracotta: #C17A5A;
+      --terracotta-dark: #A66548;
+      --soft-brown: #8B7355;
+      --light-sage: #E8EBE6;
+      --border: #D9D5CE;
+    }
+
+    html, body {
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 300;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Animations ── */
+    @keyframes up {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade { opacity: 0; animation: up 0.55s ease forwards; }
+    .d1  { animation-delay: 0.05s; }
+    .d2  { animation-delay: 0.12s; }
+    .d3  { animation-delay: 0.20s; }
+    .d4  { animation-delay: 0.28s; }
+    .d5  { animation-delay: 0.36s; }
+    .d6  { animation-delay: 0.44s; }
+    .d7  { animation-delay: 0.52s; }
+    .d8  { animation-delay: 0.60s; }
+    .d9  { animation-delay: 0.68s; }
+
+    /* ── Layout ── */
+    .page {
+      max-width: 580px;
+      margin: 0 auto;
+      padding: clamp(40px, 6vw, 80px) clamp(20px, 5vw, 40px);
+    }
+
+    /* ── Brand tag ── */
+    .brand-tag {
+      display: inline-block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sage);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 5px 14px;
+      margin-bottom: 36px;
+    }
+
+    /* ── Hero ── */
+    .eyebrow {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(11px, 1.8vw, 13px);
+      font-weight: 500;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(38px, 8vw, 58px);
+      font-weight: 500;
+      line-height: 1.12;
+      color: var(--charcoal);
+      margin-bottom: 18px;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+
+    .subtitle {
+      font-size: clamp(17px, 3vw, 20px);
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 16px;
+    }
+
+    .body-copy {
+      font-size: clamp(14px, 2.2vw, 15.5px);
+      color: var(--soft-brown);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    /* ── Feature box ── */
+    .feature-box {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 36px;
+    }
+
+    .feature-box ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .feature-box li {
+      font-size: clamp(13.5px, 2vw, 15px);
+      color: var(--charcoal);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .feature-box li::before {
+      content: "→";
+      color: var(--terracotta);
+      font-size: 14px;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    /* ── Form ── */
+    .form-section {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: clamp(24px, 5vw, 36px) clamp(22px, 5vw, 36px);
+      margin-bottom: 40px;
+    }
+
+    .form-label {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(22px, 4vw, 28px);
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+    }
+
+    .form-note {
+      font-size: 13px;
+      color: var(--sage);
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      background: var(--cream);
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--charcoal);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-input::placeholder { color: #B5B0A8; }
+    .form-input:focus { border-color: var(--sage); }
+
+    .form-btn {
+      width: 100%;
+      padding: 14px 20px;
+      background: var(--terracotta);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .form-btn:hover  { background: var(--terracotta-dark); }
+    .form-btn:active { transform: scale(0.98); }
+    .form-btn:disabled { opacity: 0.65; cursor: not-allowed; }
+
+    .form-msg {
+      font-size: 13px;
+      margin-top: 10px;
+      text-align: center;
+      min-height: 18px;
+    }
+    .form-msg.success { color: #5A8C5A; }
+    .form-msg.error   { color: #C05A5A; }
+
+    .privacy-note {
+      font-size: 12px;
+      color: var(--sage);
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 40px 0;
+    }
+
+    /* ── About ── */
+    .about {
+      display: flex;
+      gap: 22px;
+      align-items: flex-start;
+    }
+
+    .about-photo {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 2px solid var(--border);
+    }
+
+    .about-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(18px, 3vw, 22px);
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 4px;
+    }
+
+    .about-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sage);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3px 10px;
+      margin-bottom: 8px;
+    }
+
+    .about-bio {
+      font-size: clamp(13px, 2vw, 14.5px);
+      color: var(--soft-brown);
+      line-height: 1.65;
+    }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 24px;
+      align-items: center;
+    }
+
+    footer a {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--sage);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    footer a:hover { color: var(--terracotta); }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--border);
+      width: 100%;
+      margin-top: 6px;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 520px) {
+      .about { flex-direction: column; }
+      .about-photo { width: 60px; height: 60px; }
+      footer { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Brand tag -->
+  <div class="brand-tag fade d1">Bruna Santanna</div>
+
+  <!-- Hero -->
+  <p class="eyebrow fade d2">Guia gratuito</p>
+
+  <h1 class="fade d3">
+    Todo mundo tá falando de <em>Claude.</em>
+  </h1>
+
+  <p class="subtitle fade d4">Aqui está o guia pra você finalmente entender o hype.</p>
+
+  <p class="body-copy fade d5">
+    Escrito pra quem já usa ChatGPT e quer saber o que está perdendo.<br>
+    Sem tecnicês, sem enrolação.
+  </p>
+
+  <!-- Feature box -->
+  <div class="feature-box fade d5">
+    <ul>
+      <li>O que é o Claude e por que ele é diferente do ChatGPT</li>
+      <li>Quando usar um, quando usar o outro — e quando usar os dois</li>
+      <li>As funcionalidades que a maioria ignora e mudam o jogo</li>
+      <li>Primeiros passos práticos pra começar hoje</li>
+    </ul>
+  </div>
+
+  <!-- Email form -->
+  <div class="form-section fade d6">
+    <label class="form-label">Receba agora, grátis.</label>
+    <p class="form-note">Zero spam. Só conteúdo que vale seu tempo.</p>
+
+    <form id="leadForm" novalidate>
+      <div class="form-group">
+        <input
+          type="email"
+          id="emailInput"
+          class="form-input"
+          placeholder="Seu melhor e-mail"
+          required
+          autocomplete="email"
+        >
+        <button type="submit" class="form-btn" id="submitBtn">
+          Quero o guia gratuito →
+        </button>
+      </div>
+      <p class="form-msg" id="formMsg"></p>
+      <p class="privacy-note">Seus dados ficam só comigo. Sem spam, prometo.</p>
+    </form>
+  </div>
+
+  <!-- Divider -->
+  <div class="divider fade d7"></div>
+
+  <!-- About -->
+  <div class="about fade d8">
+    <img
+      src="https://brunasantanna.com/bruna-santanna.jpg"
+      alt="Bruna Santanna"
+      class="about-photo"
+      onerror="this.style.display='none'"
+    >
+    <div>
+      <p class="about-name">Bruna Santanna</p>
+      <span class="about-badge">Estrategista de IA</span>
+      <p class="about-bio">
+        Estratégia e implementação de IA para empresas e profissionais.
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="fade d9">
+    <a href="https://instagram.com/brusantanna.ai" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://newscale.tech" target="_blank" rel="noopener">Newscale</a>
+    <a href="https://www.linkedin.com/in/bruna-araujo-santanna/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="mailto:eu@brunasantanna.com">Contato</a>
+    <p class="footer-copy">© 2025 Bruna Santanna</p>
+  </footer>
+
+</div>
+
+<!-- ─────────────────────────────────────────────
+     FORM LOGIC
+     Envia o e-mail para o Google Apps Script
+     e redireciona para o PDF do guia.
+     ───────────────────────────────────────────── -->
+<script>
+  // ⚠️ COLE AQUI A URL DO SEU GOOGLE APPS SCRIPT depois de fazer o deploy
+  // Instruções no arquivo INSTRUCOES-GOOGLE-SHEETS.md
+  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx90IdrA_L6n3jVdoYBinBPxPfWq0h6Iua1MrI8gQ7-RgBXhU1rOqF9dM2n7mLdAeMW/exec";
+  const REDIRECT_URL    = "https://brunasantanna.com/guia-claude-bruna.pdf";
+
+  const form      = document.getElementById("leadForm");
+  const input     = document.getElementById("emailInput");
+  const btn       = document.getElementById("submitBtn");
+  const msg       = document.getElementById("formMsg");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = input.value.trim();
+
+    // Basic validation
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      msg.textContent = "Por favor, insira um e-mail válido.";
+      msg.className   = "form-msg error";
+      return;
+    }
+
+    btn.disabled    = true;
+    btn.textContent = "Enviando...";
+    msg.textContent = "";
+    msg.className   = "form-msg";
+
+    try {
+      // Se a URL ainda não foi configurada, vai direto pro PDF
+      if (APPS_SCRIPT_URL === "COLE_SUA_URL_AQUI") {
+        window.location.href = REDIRECT_URL;
+        return;
+      }
+
+      await fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",           // Google Apps Script exige no-cors
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: email,
+          timestamp: new Date().toISOString(),
+          source: window.location.href
+        })
+      });
+
+      // no-cors não retorna body, então vamos direto pro PDF
+      window.location.href = REDIRECT_URL;
+
+    } catch (err) {
+      console.error(err);
+      // Mesmo com erro, redireciona pro PDF (melhor UX)
+      window.location.href = REDIRECT_URL;
+    }
+  });
+</script>
+
+</body>
+</html>
