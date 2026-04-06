@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta — Stoller do Brasil · NewScale Consulting</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#14373C; --ink2:#1a4449; --sage:#435D51;
+  --terra:#B06E4A; --tl:#c4835e; --sand:#A38362;
+  --cream:#E8E6E0; --cl:#F4F3EF; --white:#FAFAF8;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--ink);-webkit-font-smoothing:antialiased}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{opacity:.45;transform:scale(1)}50%{opacity:.95;transform:scale(1.07)}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .75s ease,transform .75s ease}
+.reveal.visible{opacity:1;transform:none}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}.rd4{transition-delay:.4s}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(20,55,60,.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.05)}
+.nav-logo img{height:26px}
+.nav-tag{font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--terra)}
+
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(145deg,#0b2124 0%,#14373C 38%,#1c4840 72%,#435D51 100%);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:110px 40px 90px;position:relative;overflow:hidden}
+.hero-topo{position:absolute;inset:0;opacity:.07;pointer-events:none}
+.hero-topo svg{width:100%;height:100%}
+.hero-grain{position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.025}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(176,110,74,.12);border:1px solid rgba(176,110,74,.22);border-radius:40px;padding:6px 20px;margin-bottom:28px;font-size:.71rem;font-weight:600;color:rgba(255,255,255,.65);letter-spacing:.08em;animation:fadeUp .8s ease .1s both}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--terra);animation:pulse 2s ease infinite}
+.hero-eyebrow{font-size:.67rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);margin-bottom:20px;animation:fadeUp .8s ease .25s both}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4.4rem);font-weight:700;color:#fff;line-height:1.1;max-width:880px;margin:0 auto 26px;animation:fadeUp .9s ease .4s both}
+.hero h1 em{font-style:italic;color:var(--tl)}
+.hero-sub{font-size:clamp(.9rem,1.5vw,1.05rem);color:rgba(255,255,255,.55);font-weight:300;max-width:600px;margin:0 auto 56px;line-height:1.78;animation:fadeUp .9s ease .6s both}
+.hero-scroll{display:flex;flex-direction:column;align-items:center;gap:10px;text-decoration:none;animation:fadeUp .9s ease .8s both}
+.hero-scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,var(--terra),transparent)}
+.hero-scroll-label{font-size:.61rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+
+/* SECTIONS */
+section{padding:100px 48px}
+.container{max-width:1160px;margin:0 auto}
+.section-label{font-size:.63rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);margin-bottom:14px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.85rem,3.2vw,2.7rem);font-weight:700;color:var(--ink);line-height:1.16}
+.section-title em{font-style:italic;color:var(--terra)}
+.section-title.light{color:#fff}
+
+/* CONTEXTO */
+.ctx-section{background:var(--cl)}
+.ctx-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.ctx-text p{font-size:.94rem;color:#2C4A4E;line-height:1.82;margin-bottom:20px;font-weight:300}
+.ctx-text p strong{font-weight:600;color:var(--ink)}
+.ctx-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stat-card{border-radius:14px;padding:28px 24px}
+.stat-card:nth-child(1){background:var(--ink)}.stat-card:nth-child(2){background:var(--terra)}
+.stat-card:nth-child(3){background:var(--sage)}.stat-card:nth-child(4){background:#1C3E43}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:700;color:rgba(255,255,255,.95);line-height:1;margin-bottom:8px}
+.stat-lbl{font-size:.67rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5)}
+
+/* DORES */
+.dores-section{background:var(--ink)}
+.dores-section .section-title{color:#fff}
+.dores-section .section-label{color:var(--tl)}
+.dores-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:52px}
+.dore-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:32px 28px;transition:border-color .3s,background .3s}
+.dore-card:hover{border-color:rgba(176,110,74,.3);background:rgba(176,110,74,.05)}
+.dore-card.wide{grid-column:span 2}
+.dore-num{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:700;color:rgba(176,110,74,.12);line-height:1;margin-bottom:14px}
+.dore-title{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--tl);margin-bottom:12px}
+.dore-text{font-size:.86rem;color:rgba(255,255,255,.58);line-height:1.76;font-weight:300}
+
+/* PROGRAMAS */
+.prog-section{background:var(--white)}
+.prog-header{margin-bottom:52px}
+.adapt-banner{display:flex;align-items:flex-start;gap:16px;background:rgba(176,110,74,.07);border:1px solid rgba(176,110,74,.18);border-left:3px solid var(--terra);border-radius:0 12px 12px 0;padding:22px 28px;margin-bottom:52px}
+.adapt-banner-icon{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+.adapt-banner-title{font-size:.84rem;font-weight:700;color:var(--ink);margin-bottom:6px}
+.adapt-banner-text{font-size:.82rem;color:#4a6a6e;line-height:1.72;font-weight:300}
+.adapt-banner-text strong{font-weight:600;color:var(--ink)}
+.fase-block{margin-bottom:32px}
+.fase-hdr{display:flex;justify-content:space-between;align-items:center;padding:26px 34px;border-radius:14px 14px 0 0}
+.fase-hdr.c1{background:var(--ink)}.fase-hdr.c2{background:var(--terra)}
+.fase-tag{font-size:.61rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.5);margin-bottom:6px}
+.fase-name{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:700;color:#fff;line-height:1.15}
+.fase-dur{font-size:.72rem;color:rgba(255,255,255,.45);margin-top:4px}
+.fase-badge{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:rgba(255,255,255,.65);flex-shrink:0}
+.fase-body{background:var(--cl);border-radius:0 0 14px 14px;padding:36px;margin-top:1px}
+.fase-body-intro{font-size:.93rem;color:#2C4A4E;line-height:1.78;font-weight:300;margin-bottom:28px}
+.fase-body-intro strong{font-weight:600;color:var(--ink)}
+.blocos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.bloco{background:var(--white);border:1px solid rgba(20,55,60,.08);border-radius:12px;padding:24px 20px;transition:border-color .25s,box-shadow .25s}
+.bloco:hover{border-color:rgba(176,110,74,.2);box-shadow:0 6px 20px rgba(20,55,60,.07)}
+.bloco-ico{font-size:1.3rem;margin-bottom:12px}
+.bloco-lbl{font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--terra);margin-bottom:5px}
+.bloco-title{font-size:.9rem;font-weight:600;color:var(--ink);line-height:1.3;margin-bottom:8px}
+.bloco-text{font-size:.79rem;color:#4a6a6e;line-height:1.66;font-weight:300}
+
+/* GPT */
+.gpt-section{background:linear-gradient(135deg,#081e22 0%,#0f2d32 30%,#14373C 60%,#1a4035 100%);position:relative;overflow:hidden}
+.gpt-topo{position:absolute;inset:0;opacity:.08;pointer-events:none}
+.gpt-topo svg{width:100%;height:100%}
+.gpt-grain{position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.025}
+.gpt-glow{position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:700px;height:320px;border-radius:50%;background:radial-gradient(ellipse at center,rgba(176,110,74,.22) 0%,transparent 70%);pointer-events:none;animation:pulse 4.5s ease infinite}
+.gpt-inner{position:relative;z-index:1;padding:100px 48px}
+.gpt-fire-badge{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(176,110,74,.28),rgba(176,110,74,.1));border:1px solid rgba(176,110,74,.38);border-radius:40px;padding:8px 24px;margin-bottom:22px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tl)}
+.fire{font-size:1rem;animation:floatY 2.5s ease infinite;display:inline-block}
+.gpt-sec-lbl{font-size:.64rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(176,110,74,.65);margin-bottom:12px}
+.gpt-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:20px}
+.gpt-title em{font-style:italic;color:var(--tl)}
+.gpt-sub{font-size:1rem;color:rgba(255,255,255,.5);font-weight:300;max-width:600px;line-height:1.75;margin-bottom:60px}
+.gpt-sub strong{color:rgba(255,255,255,.82);font-weight:600}
+.gpt-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start;margin-bottom:52px}
+.gpt-chat-wrap{animation:floatY 5s ease infinite}
+.gpt-chat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:18px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.45)}
+.gpt-chat-bar{background:rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:14px 20px;display:flex;align-items:center;gap:12px}
+.gpt-dots{display:flex;gap:6px}
+.gpt-dot{width:9px;height:9px;border-radius:50%}
+.gpt-dot.r{background:#ff6b6b}.gpt-dot.y{background:#ffd93d}.gpt-dot.g{background:#6bcb77}
+.gpt-bar-name{font-size:.72rem;color:rgba(255,255,255,.35);letter-spacing:.05em;flex:1;text-align:center}
+.gpt-bar-tag{font-size:.58rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(176,110,74,.15);color:var(--tl);border-radius:20px;padding:2px 10px}
+.gpt-chat-body{padding:22px 20px;display:flex;flex-direction:column;gap:12px}
+.gpt-msg{border-radius:12px;padding:14px 18px;font-size:.8rem;line-height:1.65}
+.gpt-msg-lbl{font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-bottom:6px}
+.gpt-msg.user{background:rgba(176,110,74,.13);border:1px solid rgba(176,110,74,.2);color:rgba(255,255,255,.72)}
+.gpt-msg.ai{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.72)}
+.hl{color:var(--tl);font-weight:600}
+.gpt-typing{display:flex;gap:5px;padding:10px 18px}
+.gpt-typing span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);animation:pulse 1.3s ease infinite}
+.gpt-typing span:nth-child(2){animation-delay:.2s}.gpt-typing span:nth-child(3){animation-delay:.4s}
+.gpt-chat-foot{border-top:1px solid rgba(255,255,255,.05);padding:14px 20px;display:flex;align-items:center;gap:12px}
+.gpt-input-mock{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:10px 14px;font-size:.78rem;color:rgba(255,255,255,.22);font-family:'DM Sans',sans-serif}
+.gpt-send-btn{width:34px;height:34px;border-radius:8px;background:var(--terra);display:flex;align-items:center;justify-content:center;font-size:.85rem;box-shadow:0 4px 14px rgba(176,110,74,.35)}
+.gpt-feats{display:flex;flex-direction:column;gap:16px}
+.gpt-feat{display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:18px;transition:border-color .3s,background .3s}
+.gpt-feat:hover{border-color:rgba(176,110,74,.25);background:rgba(176,110,74,.05)}
+.gpt-feat-icon{width:40px;height:40px;border-radius:10px;background:rgba(176,110,74,.12);border:1px solid rgba(176,110,74,.2);display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0}
+.gpt-feat-title{font-size:.87rem;font-weight:600;color:#fff;margin-bottom:3px}
+.gpt-feat-text{font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.6;font-weight:300}
+.gpt-bottom{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.gpt-callout{background:linear-gradient(135deg,rgba(176,110,74,.18),rgba(176,110,74,.07));border:1px solid rgba(176,110,74,.28);border-radius:16px;padding:36px;display:flex;flex-direction:column;justify-content:space-between}
+.gpt-callout-text{font-family:'Cormorant Garamond',serif;font-size:1.32rem;font-weight:600;color:rgba(255,255,255,.82);line-height:1.55;font-style:italic;margin-bottom:24px}
+.gpt-callout-text strong{font-style:normal;color:#fff;font-weight:700}
+.gpt-callout-tag{display:inline-flex;align-items:center;gap:8px;font-size:.67rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--tl)}
+.gpt-callout-tag::before{content:'';display:block;width:24px;height:1px;background:var(--terra)}
+.gpt-incluso{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:36px}
+.gpt-incluso-title{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.32);margin-bottom:22px}
+.gpt-incluso-ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+.gpt-incluso-ul li{display:flex;align-items:flex-start;gap:12px}
+.gpt-bullet{width:22px;height:22px;border-radius:6px;background:rgba(176,110,74,.15);border:1px solid rgba(176,110,74,.25);display:flex;align-items:center;justify-content:center;font-size:.72rem;color:var(--tl);flex-shrink:0;margin-top:2px}
+.gpt-incluso-txt{font-size:.83rem;color:rgba(255,255,255,.55);line-height:1.55;font-weight:300}
+.gpt-incluso-txt strong{color:rgba(255,255,255,.82);font-weight:600}
+
+/* INVEST */
+.inv-section{background:#0e2b30}
+.inv-section .section-title{color:#fff}
+.inv-section .section-label{color:var(--tl)}
+.inv-sub{font-size:.89rem;color:rgba(255,255,255,.4);margin-top:10px;font-weight:300}
+.inv-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:52px}
+.inv-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;overflow:hidden;transition:border-color .3s}
+.inv-card:hover{border-color:rgba(176,110,74,.25)}
+.inv-card.feat{border-color:rgba(176,110,74,.3);background:rgba(176,110,74,.06)}
+.inv-bar{height:3px}
+.inv-bar.c1{background:var(--tl)}.inv-bar.c2{background:var(--terra)}
+.inv-body{padding:32px 28px}
+.inv-lbl{font-size:.59rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:rgba(255,255,255,.32);margin-bottom:8px}
+.inv-name{font-size:1rem;font-weight:600;color:#fff;margin-bottom:6px;line-height:1.3}
+.inv-meta{font-size:.73rem;color:rgba(255,255,255,.3);margin-bottom:24px;font-weight:300}
+.inv-price{font-family:'Cormorant Garamond',serif;font-size:2.7rem;font-weight:700;color:#fff;line-height:1}
+.inv-price-note{font-size:.71rem;color:rgba(176,110,74,.8);margin-top:4px;margin-bottom:24px;font-weight:500}
+.inv-ul{list-style:none;display:flex;flex-direction:column;gap:9px;border-top:1px solid rgba(255,255,255,.06);padding-top:20px}
+.inv-ul li{font-size:.79rem;color:rgba(255,255,255,.5);padding-left:18px;position:relative;line-height:1.55;font-weight:300}
+.inv-ul li::before{content:'✓';position:absolute;left:0;color:var(--tl);font-weight:700;font-size:.74rem}
+.inv-total{margin-top:36px;background:rgba(176,110,74,.08);border:1px solid rgba(176,110,74,.22);border-radius:14px;padding:32px 36px;display:flex;justify-content:space-between;align-items:center}
+.inv-total-lbl{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.32);margin-bottom:8px}
+.inv-total-name{font-size:1rem;color:rgba(255,255,255,.7);font-weight:400}
+.inv-total-val{font-family:'Cormorant Garamond',serif;font-size:3.1rem;font-weight:700;color:#fff;line-height:1;text-align:right}
+.inv-total-sub{font-size:.71rem;color:rgba(255,255,255,.3);margin-top:5px;text-align:right}
+.inv-obs{margin-top:24px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:10px;padding:20px 24px;font-size:.77rem;color:rgba(255,255,255,.3);line-height:1.72;font-weight:300}
+.inv-obs strong{color:rgba(255,255,255,.48);font-weight:600}
+
+/* POR QUÊ */
+.pq-section{background:var(--white)}
+.pq-quote{background:var(--ink);border-radius:16px;padding:40px 48px;margin-bottom:64px;position:relative}
+.pq-quote::before{content:'"';font-family:'Cormorant Garamond',serif;font-size:8rem;line-height:.7;color:var(--terra);opacity:.18;position:absolute;top:20px;left:36px}
+.pq-quote-text{font-size:1.05rem;color:rgba(255,255,255,.72);line-height:1.82;font-weight:300;font-style:italic;position:relative;z-index:1;padding-left:20px}
+.metodo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:52px 0}
+.metodo-card{background:var(--white);border:1px solid rgba(20,55,60,.07);border-radius:14px;padding:28px 24px;transition:box-shadow .3s,border-color .3s}
+.metodo-card:hover{box-shadow:0 8px 24px rgba(20,55,60,.08);border-color:rgba(176,110,74,.2)}
+.metodo-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:rgba(176,110,74,.2);margin-bottom:12px}
+.metodo-title{font-size:.8rem;font-weight:700;color:var(--ink);margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em}
+.metodo-text{font-size:.81rem;color:#4a6a6e;line-height:1.72;font-weight:300}
+.founders-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--ink);text-align:center;margin-bottom:40px}
+.founders-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.founder-card{background:var(--white);border:1px solid rgba(20,55,60,.07);border-radius:16px;overflow:hidden;display:flex;transition:box-shadow .3s}
+.founder-card:hover{box-shadow:0 10px 30px rgba(20,55,60,.09)}
+.founder-photo{width:120px;flex-shrink:0;background:linear-gradient(135deg,var(--ink),var(--sage));overflow:hidden}
+.founder-photo img{width:100%;height:100%;object-fit:cover;object-position:top;filter:grayscale(20%)}
+.founder-info{padding:24px 22px;flex:1}
+.founder-name{font-weight:700;font-size:1.03rem;color:var(--ink);margin-bottom:4px}
+.founder-role{font-size:.71rem;color:var(--terra);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+.founder-bio{font-size:.78rem;color:#4a6a6e;line-height:1.7;font-weight:300;margin-bottom:14px}
+.founder-tags{display:flex;flex-wrap:wrap;gap:6px}
+.founder-tag{font-size:.59rem;font-weight:700;background:rgba(20,55,60,.06);color:var(--sage);border-radius:20px;padding:3px 10px;letter-spacing:.05em}
+
+/* PRÓXIMOS */
+.prox-section{background:linear-gradient(165deg,#14373C,#194040 55%,#435D51 100%)}
+.prox-section .section-title{color:#fff}
+.prox-section .section-label{color:var(--tl)}
+.prox-sub{font-size:.9rem;color:rgba(255,255,255,.45);margin-top:12px;font-weight:300}
+.steps{margin-top:56px;display:flex;flex-direction:column}
+.step{display:flex;gap:28px;align-items:flex-start;padding:28px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.step:last-child{border-bottom:none}
+.step-left{flex-shrink:0;text-align:center;width:72px}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:700;color:rgba(176,110,74,.22);line-height:1}
+.step-line{width:1px;height:32px;background:rgba(255,255,255,.07);margin:8px auto 0}
+.step:last-child .step-line{display:none}
+.step-period{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--tl);margin-bottom:6px}
+.step-title{font-size:1rem;font-weight:600;color:#fff;margin-bottom:8px}
+.step-desc{font-size:.84rem;color:rgba(255,255,255,.47);line-height:1.72;font-weight:300}
+.prox-cta{margin-top:64px;text-align:center}
+.prox-cta-text{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:600;color:rgba(255,255,255,.55);font-style:italic;margin-bottom:32px}
+.btn-primary{display:inline-block;background:var(--terra);color:#fff;text-decoration:none;padding:16px 44px;border-radius:8px;font-size:.87rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;box-shadow:0 4px 24px rgba(176,110,74,.38);transition:background .2s,transform .2s,box-shadow .2s}
+.btn-primary:hover{background:var(--tl);transform:translateY(-2px);box-shadow:0 8px 32px rgba(176,110,74,.45)}
+.prox-validade{margin-top:24px;font-size:.73rem;color:rgba(255,255,255,.2);letter-spacing:.05em}
+
+/* FOOTER */
+footer{background:#0a2226;padding:36px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.04)}
+.footer-brand{font-size:1.08rem;font-weight:700;color:rgba(255,255,255,.28);letter-spacing:.08em;text-transform:uppercase}
+.footer-brand span{font-weight:300}
+.footer-date{font-size:.71rem;color:rgba(255,255,255,.18);text-align:right;line-height:1.6}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  section{padding:72px 24px}
+  nav{padding:16px 24px}
+  .ctx-grid,.gpt-grid,.gpt-bottom,.founders-grid{grid-template-columns:1fr}
+  .dores-grid,.metodo-grid,.blocos-grid{grid-template-columns:1fr}
+  .dore-card.wide{grid-column:span 1}
+  .inv-grid{grid-template-columns:1fr}
+  .inv-total{flex-direction:column;gap:20px}
+  .inv-total-val,.inv-total-sub{text-align:left}
+  .footer{flex-direction:column;gap:16px;text-align:center}
+  .footer-date{text-align:center}
+}
+@media(max-width:600px){
+  .hero h1{font-size:2rem}
+  .founder-card{flex-direction:column}
+  .founder-photo{width:100%;height:180px}
+  .pq-quote{padding:32px 24px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting"></div>
+  <div class="nav-tag">Proposta Executiva · Stoller do Brasil · Abril 2026</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-topo">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width=".8"/>
+      <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width=".6"/>
+      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width=".5"/>
+      <path d="M0,300 Q300,220 500,290 T900,260 T1200,300" fill="none" stroke="white" stroke-width=".5"/>
+      <path d="M0,500 Q300,440 500,490 T900,460 T1200,500" fill="none" stroke="white" stroke-width=".4"/>
+      <path d="M0,250 Q400,160 600,240 T1200,220" fill="none" stroke="white" stroke-width=".3"/>
+    </svg>
+  </div>
+  <div class="hero-grain"></div>
+  <div class="hero-badge"><span class="hero-dot"></span>Proposta Executiva · Abril de 2026</div>
+  <div class="hero-eyebrow">NewScale Consulting</div>
+  <h1>Programa de Ativação em IA<br>para o <em>time de alta performance</em><br>da Stoller</h1>
+  <p class="hero-sub">Do operacional ao estratégico — como a inteligência artificial libera o time Stoller para o que realmente importa: relacionamento, campo e resultado.</p>
+  <a href="#contexto" class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <div class="hero-scroll-label">Explorar</div>
+  </a>
+</section>
+
+<!-- CONTEXTO -->
+<section id="contexto" class="ctx-section">
+  <div class="container">
+    <div class="ctx-grid">
+      <div>
+        <div class="section-label reveal">O Contexto</div>
+        <h2 class="section-title reveal rd1">Uma operação robusta.<br><em>Com espaço para ir além.</em></h2>
+        <div style="margin-top:32px">
+          <p class="reveal rd2">A Stoller tem um dos modelos de negócio mais sofisticados do agro brasileiro. Um Plano de Canal estruturado, cinco culturas prioritárias, 240 RTVs em cinco macrorregiões e um Grupo Identidade com os principais pesquisadores e consultores do país. O processo existe. O time é competente. O modelo funciona.</p>
+          <p class="reveal rd3">O desafio é outro: <strong>o operacional está consumindo o tempo que deveria ser investido em campo.</strong> Múltiplas ferramentas, dados espalhados entre Salesforce, Planner e planilhas, e apresentações montadas à mão toda semana. Tempo que poderia estar no agricultor, no distribuidor, no relacionamento que gera resultado.</p>
+          <p class="reveal rd4">Com a retomada do mercado prevista para 2027, o momento é agora: <strong>preparar o time, eliminar o atrito operacional e dar a alavanca que falta para o básico ser feito com excelência.</strong></p>
+        </div>
+      </div>
+      <div class="ctx-stats reveal rd2">
+        <div class="stat-card"><div class="stat-num">240</div><div class="stat-lbl">RTVs em campo no Brasil</div></div>
+        <div class="stat-card"><div class="stat-num">5</div><div class="stat-lbl">Culturas · Soja, Milho, Algodão, Cana, Café</div></div>
+        <div class="stat-card"><div class="stat-num">25</div><div class="stat-lbl">Pesquisadores no Grupo Identidade</div></div>
+        <div class="stat-card"><div class="stat-num">8 meses</div><div class="stat-lbl">De safra para executar e gerir o Plano</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DORES -->
+<section class="dores-section">
+  <div class="container">
+    <div class="section-label reveal">O que identificamos</div>
+    <h2 class="section-title light reveal rd1">3 pontos onde a IA vai <em style="color:var(--tl)">liberar tempo e amplificar resultado.</em></h2>
+    <div class="dores-grid">
+      <div class="dore-card reveal">
+        <div class="dore-num">01</div>
+        <div class="dore-title">Operacional consumindo o estratégico</div>
+        <div class="dore-text">O Plano de Canal é robusto e bem estruturado — mas exige alimentação constante de múltiplas ferramentas. Cada hora gasta em registros e compilações é uma hora que poderia estar em campo, com o distribuidor ou com o agricultor.</div>
+      </div>
+      <div class="dore-card reveal rd1">
+        <div class="dore-num">02</div>
+        <div class="dore-title">Apresentações montadas do zero toda semana</div>
+        <div class="dore-text">PowerPoints para o canal são construídos a partir de pelo menos quatro fontes diferentes. Horas de trabalho de compilação manual para algo que, com IA, poderia ser gerado em minutos — com mais consistência e qualidade.</div>
+      </div>
+      <div class="dore-card wide reveal rd2">
+        <div class="dore-num">03</div>
+        <div class="dore-title">Um time de alto nível que ainda não tem alavanca tecnológica</div>
+        <div class="dore-text">RTVs e pesquisadores do Grupo Identidade são profissionais excepcionais. Ferramentas de IA para análise de dados, revisão de literatura, estruturação de planos e síntese de informações já estão disponíveis — e podem multiplicar o impacto de quem já entrega muito. O potencial está sendo deixado na mesa.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMAS -->
+<section class="prog-section">
+  <div class="container">
+    <div class="prog-header">
+      <div class="section-label reveal">A Proposta</div>
+      <h2 class="section-title reveal rd1">Dois programas.<br><em>Cada um com entrega própria.</em></h2>
+    </div>
+
+    <div class="adapt-banner reveal">
+      <div class="adapt-banner-icon">🔄</div>
+      <div>
+        <div class="adapt-banner-title">Conteúdo construído a partir da realidade da Stoller — não de um roteiro fechado.</div>
+        <div class="adapt-banner-text">Antes de qualquer evento, a NewScale realiza uma <strong>imersão aprofundada nos processos e times envolvidos:</strong> fluxo dos RTVs, ferramentas disponíveis, nível de maturidade em IA de cada público. <strong>Os conteúdos são revisados, adaptados e validados com a Stoller antes de cada evento.</strong> O que você vê aqui é uma estrutura de referência — o resultado final fala a língua de quem vai estar na sala.</div>
+      </div>
+    </div>
+
+    <!-- PROGRAMA 1 -->
+    <div class="fase-block reveal">
+      <div class="fase-hdr c1">
+        <div>
+          <div class="fase-tag">Programa 1 · Junho · Atibaia</div>
+          <div class="fase-name">Ativação Comercial — Congresso Brasileiro Stoller</div>
+          <div class="fase-dur">240 RTVs + gestores · 2 horas · Palestra com demonstrações ao vivo</div>
+        </div>
+        <div class="fase-badge">1</div>
+      </div>
+      <div class="fase-body">
+        <p class="fase-body-intro">Uma palestra de 2 horas construída a partir do universo real dos RTVs — seus processos, suas ferramentas, sua rotina. O time sai com clareza sobre o que fazer diferente na semana seguinte. E com <strong>uma ferramenta nas mãos</strong> para continuar evoluindo depois do evento.</p>
+        <div class="blocos-grid">
+          <div class="bloco">
+            <div class="bloco-ico">🧠</div>
+            <div class="bloco-lbl">Bloco 1 · ~30 min</div>
+            <div class="bloco-title">IA sem mistério</div>
+            <div class="bloco-text">O que é IA de verdade, como extrair resultado real, quais ferramentas estão disponíveis na Stoller/Corteva e o que um profissional precisa saber sobre segurança e limites antes de usar.</div>
+          </div>
+          <div class="bloco">
+            <div class="bloco-ico">📊</div>
+            <div class="bloco-lbl">Bloco 2 · ~50 min</div>
+            <div class="bloco-title">IA no Plano de Canal</div>
+            <div class="bloco-text">Demonstrações ao vivo com o processo real dos RTVs — automação de registros, geração de apresentações a partir de dados brutos, estruturação de planos de ação e análise de mercado. Antes e depois concretos.</div>
+          </div>
+          <div class="bloco">
+            <div class="bloco-ico">🗓️</div>
+            <div class="bloco-lbl">Bloco 3 · ~30 min</div>
+            <div class="bloco-title">Expansão e perguntas</div>
+            <div class="bloco-text">IA para organização de rotina, preparação de reuniões e planejamento de safra. Apresentação ao vivo do Assistente Personalizado. Espaço aberto para dúvidas do time.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROGRAMA 2 -->
+    <div class="fase-block reveal">
+      <div class="fase-hdr c2">
+        <div>
+          <div class="fase-tag">Programa 2 · 6 ou 7 de Maio · Campinas</div>
+          <div class="fase-name">Ativação Técnica — Grupo Identidade</div>
+          <div class="fase-dur">~25 consultores e pesquisadores · 2 horas · Workshop + roda de conversa</div>
+        </div>
+        <div class="fase-badge">2</div>
+      </div>
+      <div class="fase-body">
+        <p class="fase-body-intro">Um workshop prático para pesquisadores e consultores de alto nível — professores de USP, Unicamp e Unesp, especialistas em cana, soja, fisiologia de plantas e nutrição. O objetivo é mostrar como IA <strong>amplifica o trabalho de quem já pensa profundo</strong>, sem comprometer o rigor científico.</p>
+        <div class="blocos-grid">
+          <div class="bloco">
+            <div class="bloco-ico">🔬</div>
+            <div class="bloco-lbl">Bloco 1 · ~30 min</div>
+            <div class="bloco-title">IA para quem pensa profundo</div>
+            <div class="bloco-text">Desmistificação para público acadêmico — IA não substitui o pesquisador, amplifica o alcance do que ele já faz. O que é uma LLM, ética, viés e como extrair o melhor de uma IA em contexto científico.</div>
+          </div>
+          <div class="bloco">
+            <div class="bloco-ico">🛠️</div>
+            <div class="bloco-lbl">Bloco 2 · ~50 min</div>
+            <div class="bloco-title">Ferramentas que mudam o jogo</div>
+            <div class="bloco-text">NotebookLM para análise cruzada de dezenas de artigos em minutos. Claude para estruturação de análises e revisão de dados. Revisão de literatura, gaps e hipóteses — com exemplos do universo agro.</div>
+          </div>
+          <div class="bloco">
+            <div class="bloco-ico">💬</div>
+            <div class="bloco-lbl">Bloco 3 · ~40 min</div>
+            <div class="bloco-title">Roda de conversa</div>
+            <div class="bloco-text">Espaço aberto para dúvidas, ideias e direcionamento individual. Cada pesquisador traz sua realidade e recebe orientação concreta sobre como IA pode entrar no seu trabalho específico.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GPT -->
+<section class="gpt-section">
+  <div class="gpt-topo">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="1"/>
+      <path d="M0,300 Q300,200 500,280 T1000,250 T1200,300" fill="none" stroke="white" stroke-width=".7"/>
+      <path d="M0,500 Q300,420 500,480 T1000,450 T1200,500" fill="none" stroke="white" stroke-width=".6"/>
+    </svg>
+  </div>
+  <div class="gpt-grain"></div>
+  <div class="gpt-glow"></div>
+  <div class="gpt-inner">
+    <div class="container">
+      <div class="gpt-fire-badge"><span class="fire">🔥</span>Entregável exclusivo · Incluso no Programa 1</div>
+      <div class="gpt-sec-lbl">Diferencial da proposta</div>
+      <h2 class="gpt-title reveal">Assistente de IA Personalizado<br><em>para o Plano de Canal Stoller</em></h2>
+      <p class="gpt-sub reveal rd1">A Stoller não sai apenas com conhecimento — sai com <strong>uma ferramenta própria.</strong> Um assistente treinado com a lógica do negócio, disponível para os 240 RTVs via link simples, no dia seguinte ao evento.</p>
+
+      <div class="gpt-grid">
+        <div class="gpt-chat-wrap reveal">
+          <div class="gpt-chat">
+            <div class="gpt-chat-bar">
+              <div class="gpt-dots"><div class="gpt-dot r"></div><div class="gpt-dot y"></div><div class="gpt-dot g"></div></div>
+              <div class="gpt-bar-name">Assistente Plano de Canal · Stoller</div>
+              <div class="gpt-bar-tag">● online</div>
+            </div>
+            <div class="gpt-chat-body">
+              <div class="gpt-msg user">
+                <div class="gpt-msg-lbl">RTV — Regional Sul</div>
+                Visitei o distribuidor em Maringá, foco em soja nessa safra. Me ajuda a montar as primeiras ações do plano?
+              </div>
+              <div class="gpt-msg ai">
+                <div class="gpt-msg-lbl">Assistente Stoller</div>
+                Com base no foco em soja e no perfil regional, aqui estão <span class="hl">4 ações prioritárias</span> para as primeiras 6 semanas: <span class="hl">análise de market share</span> na região, <span class="hl">demo day</span> com os técnicos do canal, <span class="hl">plano de mídia local</span> segmentado por cultura e <span class="hl">capacitação da equipe</span> de vendas do distribuidor...
+              </div>
+              <div class="gpt-msg ai">
+                <div class="gpt-msg-lbl">Assistente Stoller</div>
+                Quer que eu gere o cronograma no formato do Planner e monte os slides de apresentação?
+              </div>
+              <div class="gpt-typing"><span></span><span></span><span></span></div>
+            </div>
+            <div class="gpt-chat-foot">
+              <div class="gpt-input-mock">Pode gerar o cronograma e os slides...</div>
+              <div class="gpt-send-btn">→</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gpt-feats reveal rd1">
+          <div class="gpt-feat">
+            <div class="gpt-feat-icon">🧠</div>
+            <div>
+              <div class="gpt-feat-title">Treinado com o Plano de Canal</div>
+              <div class="gpt-feat-text">Conhece o modelo de negócio Stoller, as cinco culturas e o ciclo de safra. Não é genérico — fala o idioma do RTV.</div>
+            </div>
+          </div>
+          <div class="gpt-feat">
+            <div class="gpt-feat-icon">⚡</div>
+            <div>
+              <div class="gpt-feat-title">Sugere ações, estrutura planos, gera cronogramas</div>
+              <div class="gpt-feat-text">O RTV descreve a situação com o distribuidor e o assistente entrega ações concretas, próximos passos e materiais prontos para usar.</div>
+            </div>
+          </div>
+          <div class="gpt-feat">
+            <div class="gpt-feat-icon">🔗</div>
+            <div>
+              <div class="gpt-feat-title">Acesso via link — simples, direto, no celular</div>
+              <div class="gpt-feat-text">Um link entregue no evento. Sem instalação, sem cadastro, sem complexidade. O RTV abre e começa a usar na hora.</div>
+            </div>
+          </div>
+          <div class="gpt-feat">
+            <div class="gpt-feat-icon">🔄</div>
+            <div>
+              <div class="gpt-feat-title">Disponível depois do evento, todos os dias</div>
+              <div class="gpt-feat-text">Os 240 RTVs têm acesso contínuo no dia a dia — para qualquer dúvida, plano ou apresentação. O evento termina. O assistente continua.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gpt-bottom reveal">
+        <div class="gpt-callout">
+          <div class="gpt-callout-text">Na prática, o time Stoller passa a ter um <strong>"copiloto"</strong> para executar melhor o próprio modelo de negócio — disponível a qualquer momento, para qualquer RTV, via um link simples.<br><br><strong>O evento entrega conhecimento. O assistente entrega resultado contínuo.</strong></div>
+          <div class="gpt-callout-tag">Incluso no Programa 1 · Sem custo adicional</div>
+        </div>
+        <div class="gpt-incluso">
+          <div class="gpt-incluso-title">O que está incluso no assistente</div>
+          <ul class="gpt-incluso-ul">
+            <li><div class="gpt-bullet">✦</div><div class="gpt-incluso-txt"><strong>Desenvolvimento completo</strong> — construído com a lógica do Plano de Canal após a imersão</div></li>
+            <li><div class="gpt-bullet">✦</div><div class="gpt-incluso-txt"><strong>Testes e validação</strong> — ajustado com o time Stoller antes do evento</div></li>
+            <li><div class="gpt-bullet">✦</div><div class="gpt-incluso-txt"><strong>Entrega ao vivo no congresso</strong> — demonstrado e disponível no mesmo dia</div></li>
+            <li><div class="gpt-bullet">✦</div><div class="gpt-incluso-txt"><strong>Acesso via link</strong> — sem instalação, funciona no celular</div></li>
+            <li><div class="gpt-bullet">✦</div><div class="gpt-incluso-txt"><strong>Suporte contínuo pós-evento</strong> — disponível no dia a dia dos 240 RTVs</div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTIMENTO -->
+<section class="inv-section">
+  <div class="container">
+    <div class="section-label reveal">Investimento</div>
+    <h2 class="section-title reveal rd1">Condições claras,<br><em style="color:var(--tl)">sem surpresas no caminho.</em></h2>
+    <p class="inv-sub reveal rd2">Os dois programas podem ser contratados em conjunto ou separadamente.</p>
+    <div class="inv-grid reveal">
+      <div class="inv-card feat">
+        <div class="inv-bar c1"></div>
+        <div class="inv-body">
+          <div class="inv-lbl">Programa 1</div>
+          <div class="inv-name">Ativação Comercial — Congresso Stoller</div>
+          <div class="inv-meta">240 pessoas · Atibaia · Junho · 2 horas</div>
+          <div class="inv-price">R$ 16.000</div>
+          <div class="inv-price-note">🔥 inclui o Assistente GPT Personalizado</div>
+          <ul class="inv-ul">
+            <li>Imersão aprofundada no Plano de Canal</li>
+            <li>Material 100% customizado e validado</li>
+            <li>Palestra de 2h com demonstrações ao vivo</li>
+            <li>Assistente GPT Personalizado do Plano de Canal</li>
+            <li>Testes e validação do assistente antes do evento</li>
+            <li>Acesso contínuo via link para os 240 RTVs</li>
+          </ul>
+        </div>
+      </div>
+      <div class="inv-card">
+        <div class="inv-bar c2"></div>
+        <div class="inv-body">
+          <div class="inv-lbl">Programa 2</div>
+          <div class="inv-name">Ativação Técnica — Grupo Identidade</div>
+          <div class="inv-meta">~25 pesquisadores · Campinas · 6 ou 7 de maio · 2h</div>
+          <div class="inv-price">R$ 9.000</div>
+          <div class="inv-price-note">pagamento único</div>
+          <ul class="inv-ul">
+            <li>Imersão com o time técnico antes do evento</li>
+            <li>Material customizado para público acadêmico/agro</li>
+            <li>Pré-validação com stakeholders</li>
+            <li>Workshop de 2h + roda de conversa</li>
+            <li>Direcionamento individual por área de pesquisa</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="inv-total reveal">
+      <div>
+        <div class="inv-total-lbl">Total do Programa Completo</div>
+        <div class="inv-total-name">2 programas · deslocamentos inclusos · Assistente GPT incluso</div>
+      </div>
+      <div>
+        <div class="inv-total-val">R$ 25.000</div>
+        <div class="inv-total-sub">ou 50% no fechamento + 50% após o último evento</div>
+      </div>
+    </div>
+    <div class="inv-obs reveal">
+      <strong>Validade da proposta:</strong> 15 dias.&nbsp; &nbsp;<strong>Sobre os conteúdos:</strong> os valores são fixos independentemente dos ajustes feitos nas imersões — a adaptação não gera custo adicional.
+    </div>
+  </div>
+</section>
+
+<!-- POR QUÊ NEWSCALE -->
+<section class="pq-section">
+  <div class="container">
+    <div class="section-label reveal">Por que a NewScale</div>
+    <h2 class="section-title reveal rd1">Não entregamos palestra<br><em>e sumimos.</em></h2>
+    <div class="pq-quote reveal rd2">
+      <p class="pq-quote-text">Cada projeto começa pela conversa — não pelo contrato. Entendemos como a operação funciona hoje, quais são as necessidades reais do time e o que a equipe precisa para sair diferente. Só depois a gente constrói. E quando entrega, a gente fica disponível — porque o impacto real começa depois do evento, não durante.</p>
+    </div>
+    <div class="metodo-grid">
+      <div class="metodo-card reveal"><div class="metodo-num">01</div><div class="metodo-title">Imersão Real</div><div class="metodo-text">Estudamos o processo antes de escrever um slide. O conteúdo fala a língua do time — não de qualquer empresa do agro, da Stoller.</div></div>
+      <div class="metodo-card reveal rd1"><div class="metodo-num">02</div><div class="metodo-title">Conteúdo Adaptado</div><div class="metodo-text">Nada é fechado antes da imersão. O roteiro, os exemplos e os casos de uso são construídos e validados com a Stoller — a partir da realidade de quem vai estar na sala.</div></div>
+      <div class="metodo-card reveal rd2"><div class="metodo-num">03</div><div class="metodo-title">Resultado antes de feature</div><div class="metodo-text">A conversa começa pelo problema operacional real — não por explicação de redes neurais. A tecnologia é o meio. O resultado do time é o tema.</div></div>
+      <div class="metodo-card reveal"><div class="metodo-num">04</div><div class="metodo-title">Demonstrações ao Vivo</div><div class="metodo-text">Não são prints de ChatGPT. São demonstrações com o universo real do time — o Plano de Canal, artigos de nutrição de plantas, o Salesforce que usam todo dia.</div></div>
+      <div class="metodo-card reveal rd1"><div class="metodo-num">05</div><div class="metodo-title">Entregável que Continua</div><div class="metodo-text">O Assistente GPT Personalizado não é um slide. É uma ferramenta que o time usa no dia seguinte. O evento não morre quando a palestra acaba.</div></div>
+      <div class="metodo-card reveal rd2"><div class="metodo-num">06</div><div class="metodo-title">Pré-Validação Sempre</div><div class="metodo-text">Nenhum evento acontece sem que o conteúdo seja validado com a Stoller antes. Sem surpresas no palco — só o que faz sentido para aquele público específico.</div></div>
+    </div>
+    <div class="founders-title reveal">Quem está por trás</div>
+    <div class="founders-grid reveal">
+      <div class="founder-card">
+        <div class="founder-photo"><img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG" alt="Bruna Santanna"></div>
+        <div class="founder-info">
+          <div class="founder-name">Bruna Santanna</div>
+          <div class="founder-role">Sócia · IA Aplicada e Educação</div>
+          <p class="founder-bio">ESPM. Empresária há 10+ anos. Mentora de IA no programa Potenc.IA. Professora de IA para equipes corporativas. Implementa IA no próprio negócio todos os dias — só ensina o que usa.</p>
+          <div class="founder-tags"><span class="founder-tag">SulAmérica</span><span class="founder-tag">Whirlpool</span><span class="founder-tag">Potenc.IA</span><span class="founder-tag">OLX · Magalu · B3</span></div>
+        </div>
+      </div>
+      <div class="founder-card">
+        <div class="founder-photo"><img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/BRUNO-VARELLA-PQ.jpeg" alt="Bruno Varella"></div>
+        <div class="founder-info">
+          <div class="founder-name">Bruno Varella</div>
+          <div class="founder-role">Sócio · Estratégia e Implementação</div>
+          <p class="founder-bio">ESPM. 17+ anos em Marketing, Produto e Novos Negócios. Ex-Warner Bros., Ex-Natura & Co., Ex-Sorridents. Implantou Agentes de IA em redes de franquias com 700+ unidades.</p>
+          <div class="founder-tags"><span class="founder-tag">Warner Bros.</span><span class="founder-tag">Natura & Co</span><span class="founder-tag">Sorridents</span><span class="founder-tag">700+ franquias</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRÓXIMOS PASSOS -->
+<section class="prox-section">
+  <div class="container">
+    <div class="section-label reveal">Próximos Passos</div>
+    <h2 class="section-title reveal rd1">Como isso<br><em style="color:var(--tl)">começa a acontecer.</em></h2>
+    <p class="prox-sub reveal rd2">Você não está sozinho a partir do fechamento.</p>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-left"><div class="step-num">1</div><div class="step-line"></div></div>
+        <div>
+          <div class="step-period">Semanas 1–2 de Maio</div>
+          <div class="step-title">Imersão e construção do material — Grupo Identidade</div>
+          <div class="step-desc">Reunião com Mateus e o time técnico para entender o perfil dos pesquisadores, ferramentas disponíveis e o que priorizar. Material construído e validado com a Stoller antes do workshop acontecer.</div>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-left"><div class="step-num">2</div><div class="step-line"></div></div>
+        <div>
+          <div class="step-period">6 ou 7 de Maio · Campinas</div>
+          <div class="step-title">Workshop — Grupo Identidade</div>
+          <div class="step-desc">2 horas com 25 pesquisadores e consultores. Demonstrações com NotebookLM, Claude e IA para pesquisa no agro. Roda de conversa com direcionamento individual. O grupo sai com ferramentas e caminho concreto.</div>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-left"><div class="step-num">3</div><div class="step-line"></div></div>
+        <div>
+          <div class="step-period">Maio · Preparação do Congresso</div>
+          <div class="step-title">Imersão no Plano de Canal + construção do Assistente GPT</div>
+          <div class="step-desc">Reunião aprofundada com Flávio e o time comercial. A partir daí: material da palestra e Assistente GPT Personalizado construídos, testados e validados com a Stoller antes do evento.</div>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-left"><div class="step-num">4</div><div class="step-line"></div></div>
+        <div>
+          <div class="step-period">Pré-Evento · Junho</div>
+          <div class="step-title">Validação final do conteúdo e do Assistente</div>
+          <div class="step-desc">Revisão do roteiro com Flávio. Testes do Assistente GPT com o time. Ajustes finos para que tudo esteja perfeitamente alinhado com o que os 240 RTVs precisam no Congresso.</div>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-left"><div class="step-num">5</div><div class="step-line"></div></div>
+        <div>
+          <div class="step-period">Segunda Semana de Junho · Atibaia</div>
+          <div class="step-title">Palestra no Congresso + entrega do Assistente para os 240 RTVs</div>
+          <div class="step-desc">2 horas com 240 RTVs. Demonstrações ao vivo com o universo deles. Entrega do Assistente GPT Personalizado — pronto para usar a partir do dia seguinte. O evento termina. O resultado continua.</div>
+        </div>
+      </div>
+    </div>
+    <div class="prox-cta">
+      <p class="prox-cta-text">"A alavanca está aqui. O time está pronto."</p>
+      <a href="mailto:bruna@newscale.com.br?subject=Proposta Stoller — Programa de IA" class="btn-primary">Vamos começar →</a>
+      <p class="prox-validade">Proposta válida por 15 dias · NewScale Consulting · bruna@newscale.com.br</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">NewScale<span>Consulting</span></div>
+  <div class="footer-date">Proposta exclusiva · Stoller do Brasil<br>Abril de 2026</div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.06});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t)t.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
