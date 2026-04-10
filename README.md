@@ -107,6 +107,7 @@ Bruna Santanna - Fundadora da Newscale Consulting
 
 LinkedIn: https://www.linkedin.com/in/bruna-araujo-santanna/
 
+
 E-mail: brunasantanna.ia@gmail.com
 
 📄 Licença
