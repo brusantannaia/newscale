@@ -4,140 +4,936 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Proposta Comercial — VASTRASS · NewScale Consulting</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #14373C;
-    --ink2: #1a4449;
-    --sage: #435D51;
-    --terra: #B06E4A;
-    --tl: #c4835e;
-    --sand: #A38362;
-    --cream: #E8E6E0;
-    --cl: #F4F3EF;
-    --white: #FAFAF8;
+    --teal-deep: #14373C;
+    --teal-mid: #435D51;
+    --copper: #B06E4A;
+    --copper-light: #C8845E;
+    --sand: #D0D0CA;
+    --cream: #F5F3EE;
+    --white: #FFFFFF;
+    --text-dark: #0D2226;
+    --text-mid: #2C4A4E;
   }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
   body {
     font-family: 'DM Sans', sans-serif;
-    background: var(--ink);
-    color: var(--white);
-    overflow-x: hidden;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.6;
   }
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    padding: 18px 48px;
-    display: flex; align-items: center; justify-content: space-between;
-    background: rgba(20,55,60,0.88);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-  .nav-logo img { height: 30px; }
-  .nav-badge {
-    font-size: 0.63rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.14em;
-    color: var(--tl);
-    background: rgba(176,110,74,0.12);
-    padding: 5px 14px; border-radius: 20px;
-    border: 1px solid rgba(176,110,74,0.2);
-  }
-
-  /* HERO */
+  /* ===== HERO ===== */
   .hero {
     min-height: 100vh;
-    background: linear-gradient(145deg, #0c2427 0%, #14373C 38%, #1d4840 72%, #435D51 100%);
-    display: flex; flex-direction: column;
-    justify-content: center; align-items: center;
-    text-align: center; padding: 120px 40px 80px;
-    position: relative; overflow: hidden;
+    background: var(--teal-deep);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 40px;
+    overflow: hidden;
+    position: relative;
   }
-  .hero-topo {
-    position: absolute; inset: 0; pointer-events: none;
+
+  .topo-lines {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.08;
   }
-  .hero-topo svg { width: 100%; height: 100%; opacity: 0.13; }
-  .grain-overlay {
-    position: absolute; inset: 0; pointer-events: none;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    opacity: 0.03;
+
+  .topo-lines svg { width: 100%; height: 100%; }
+
+  .hero-badge {
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.7);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 40px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.6s ease both;
+    animation-delay: 0.2s;
   }
-  .hero-content { position: relative; z-index: 2; max-width: 820px; }
+
+  .hero-eyebrow {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--copper-light);
+    margin-bottom: 20px;
+    animation: fadeUp 0.6s ease both;
+    animation-delay: 0.4s;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 6vw, 76px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.1;
+    max-width: 820px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.7s ease both;
+    animation-delay: 0.6s;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--copper-light);
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 52px;
+    animation: fadeUp 0.7s ease both;
+    animation-delay: 0.8s;
+  }
+
+  .hero-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    animation: fadeUp 0.6s ease both;
+    animation-delay: 1s;
+  }
+
+  .hero-cta a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.5);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .cta-arrow {
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.5);
+    font-size: 18px;
+    transition: all 0.3s;
+  }
+
+  .cta-arrow:hover { border-color: var(--copper-light); color: var(--copper-light); }
 
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(28px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes bounce {
-    0%,100% { transform: translateY(0); }
-    50%      { transform: translateY(7px); }
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  .hero-tag {
-    display: inline-block;
-    font-size: 0.63rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.13em;
-    color: rgba(255,255,255,0.55);
-    background: rgba(255,255,255,0.07);
-    padding: 6px 16px; border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.1);
-    animation: fadeUp 0.7s ease both 0.05s;
-    margin-bottom: 22px;
-  }
-  .hero-eyebrow {
-    font-size: 0.67rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.18em;
-    color: var(--tl);
-    animation: fadeUp 0.7s ease both 0.2s;
+  /* ===== SECTIONS ===== */
+  section { padding: 100px 60px; }
+
+  .label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--copper);
     margin-bottom: 14px;
   }
-  .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.5rem, 5vw, 4.1rem);
-    font-weight: 700; line-height: 1.1;
-    color: var(--white);
-    animation: fadeUp 0.7s ease both 0.4s;
-    margin-bottom: 26px;
-  }
-  .hero h1 em { font-style: italic; color: var(--tl); }
-  .hero-desc {
-    font-size: 0.97rem; font-weight: 300;
-    line-height: 1.77; color: rgba(255,255,255,0.62);
-    max-width: 620px; margin: 0 auto 44px;
-    animation: fadeUp 0.7s ease both 0.6s;
-  }
-  .hero-cta {
-    display: inline-flex; align-items: center; gap: 10px;
-    font-size: 0.76rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.1em;
-    color: rgba(255,255,255,0.7); text-decoration: none;
-    animation: fadeUp 0.7s ease both 0.8s;
-  }
-  .hero-cta svg { animation: bounce 2.2s infinite; }
 
-  /* SECTIONS */
-  section { padding: 100px 48px; }
-  .label {
-    font-size: 0.63rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.18em;
-    color: var(--tl); margin-bottom: 12px;
-  }
-  h2 {
+  .section-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.85rem, 3.2vw, 2.75rem);
-    font-weight: 700; line-height: 1.17; color: var(--white);
-  }
-  h2 em { font-style: italic; color: var(--tl); }
-  .section-sub {
-    margin-top: 14px;
-    font-size: 0.89rem; font-weight: 300;
-    color: rgba(255,255,255,0.52); line-height: 1.72;
-    max-width: 560px;
+    font-size: clamp(34px, 4vw, 56px);
+    font-weight: 400;
+    color: var(--text-dark);
+    line-height: 1.15;
+    margin-bottom: 20px;
   }
 
-  /* REVEAL */
+  .section-title em { font-style: italic; color: var(--copper); }
+
+  .section-title.white { color: var(--white); }
+  .section-title.white em { color: var(--copper-light); }
+
+  /* ===== INTRO / CONTEXTO ===== */
+  .intro-section {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    padding: 100px 80px;
+  }
+
+  .intro-text p {
+    font-size: 16px;
+    color: var(--text-mid);
+    line-height: 1.85;
+    margin-bottom: 18px;
+  }
+
+  .intro-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .stat-card {
+    padding: 30px 24px;
+    border-radius: 4px;
+    background: var(--teal-deep);
+    color: white;
+  }
+
+  .stat-card:nth-child(2) { background: var(--copper); }
+  .stat-card:nth-child(3) { background: var(--teal-mid); }
+  .stat-card:nth-child(4) { background: #1C464C; }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 46px;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.75;
+  }
+
+  /* ===== DORES ===== */
+  .dores-section {
+    background: var(--teal-deep);
+    padding: 100px 80px;
+  }
+
+  .dores-section .label { color: var(--copper-light); }
+
+  .dores-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 52px;
+  }
+
+  .dore-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-left: 3px solid transparent;
+    padding: 36px 28px;
+    border-radius: 4px;
+    transition: all 0.3s;
+    position: relative;
+  }
+
+  .dore-card:hover { border-left-color: var(--copper); background: rgba(255,255,255,0.07); }
+
+  .dore-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.06);
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    line-height: 1;
+  }
+
+  .dore-title {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--copper-light);
+    margin-bottom: 14px;
+  }
+
+  .dore-text {
+    font-size: 15px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.8;
+  }
+
+  /* ===== PROPOSTA ===== */
+  .proposta-section {
+    background: var(--cream);
+    padding: 100px 80px;
+  }
+
+  .planos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 60px;
+  }
+
+  .plano-card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.06);
+  }
+
+  .plano-card.destaque {
+    border: 2px solid var(--copper);
+    position: relative;
+  }
+
+  .plano-badge-top {
+    position: absolute;
+    top: -1px;
+    right: 28px;
+    background: var(--copper);
+    color: white;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 0 0 6px 6px;
+  }
+
+  .plano-header {
+    padding: 40px 36px 32px;
+    background: var(--teal-deep);
+    color: white;
+  }
+
+  .plano-card.destaque .plano-header { background: var(--copper); }
+
+  .plano-tag {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 10px;
+  }
+
+  .plano-nome {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    line-height: 1.1;
+  }
+
+  .plano-subtitulo {
+    font-size: 14px;
+    opacity: 0.7;
+    font-weight: 300;
+  }
+
+  .plano-body {
+    padding: 36px;
+  }
+
+  .modulo-accordion {
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 6px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .modulo-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    background: var(--cream);
+    user-select: none;
+  }
+
+  .modulo-head-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .modulo-icon { font-size: 20px; }
+
+  .modulo-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 2px;
+  }
+
+  .modulo-nome {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-dark);
+  }
+
+  .modulo-arrow {
+    font-size: 12px;
+    color: var(--copper);
+    transition: transform 0.3s;
+  }
+
+  .modulo-accordion.open .modulo-arrow { transform: rotate(180deg); }
+
+  .modulo-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0 20px 14px;
+    background: var(--cream);
+  }
+
+  .modulo-accordion.open .modulo-chips { display: none; }
+
+  .chip {
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(176,110,74,0.1);
+    color: var(--copper);
+    text-transform: uppercase;
+  }
+
+  .modulo-body {
+    display: none;
+    padding: 24px 20px;
+    border-top: 1px solid rgba(0,0,0,0.07);
+  }
+
+  .modulo-accordion.open .modulo-body { display: block; }
+
+  .value-box {
+    display: flex;
+    gap: 14px;
+    background: rgba(20,55,60,0.05);
+    border-left: 3px solid var(--teal-deep);
+    padding: 16px 18px;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 20px;
+  }
+
+  .value-box-icon { font-size: 20px; flex-shrink: 0; }
+
+  .value-box-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal-deep);
+    margin-bottom: 4px;
+    opacity: 0.7;
+  }
+
+  .value-box-text {
+    font-size: 14px;
+    color: var(--text-dark);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .modulo-desc {
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.8;
+    margin-bottom: 18px;
+  }
+
+  .modulo-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .modulo-items li {
+    font-size: 13.5px;
+    color: var(--text-mid);
+    padding-left: 18px;
+    position: relative;
+    line-height: 1.7;
+  }
+
+  .modulo-items li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--copper);
+    font-size: 12px;
+  }
+
+  .modulo-items li strong { color: var(--text-dark); }
+
+  /* Diferencial exclusivo (versão plus) */
+  .plus-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: var(--copper);
+    color: white;
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin-bottom: 6px;
+  }
+
+  /* ===== INVESTIMENTO ===== */
+  .invest-section {
+    background: var(--teal-deep);
+    padding: 100px 80px;
+  }
+
+  .invest-section .label { color: var(--copper-light); }
+
+  .invest-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 60px;
+  }
+
+  .invest-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .invest-card.destaque { border-color: var(--copper); }
+
+  .invest-card-header {
+    padding: 30px 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .invest-plan-tag {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 8px;
+  }
+
+  .invest-plan-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 6px;
+  }
+
+  .invest-price-block { margin-top: 20px; }
+
+  .invest-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    color: white;
+    line-height: 1;
+  }
+
+  .invest-card.destaque .invest-price { color: var(--copper-light); }
+
+  .invest-parcelas {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 6px;
+  }
+
+  .invest-card-body { padding: 28px 32px; }
+
+  .invest-incluso-title {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 16px;
+  }
+
+  .invest-incluso-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .invest-incluso-list li {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    padding-left: 18px;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .invest-incluso-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--copper-light);
+    font-size: 12px;
+  }
+
+  .invest-diferencial {
+    margin-top: 20px;
+    padding: 16px;
+    background: rgba(176,110,74,0.1);
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--copper-light);
+    line-height: 1.7;
+  }
+
+  /* ===== MANUTENÇÃO MENSAL ===== */
+  .manutencao-card {
+    margin-top: 40px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--copper);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .manutencao-header {
+    padding: 32px 36px 28px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .manutencao-badge {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--copper-light);
+    background: rgba(176,110,74,0.15);
+    padding: 4px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .manutencao-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: white;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .manutencao-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .manutencao-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 46px;
+    font-weight: 300;
+    color: var(--copper-light);
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .manutencao-price span {
+    font-size: 20px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .manutencao-desc-short {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    max-width: 200px;
+    line-height: 1.5;
+  }
+
+  .manutencao-body {
+    padding: 28px 36px;
+  }
+
+  .manutencao-incluso-title {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 18px;
+  }
+
+  .manutencao-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  @media (max-width: 900px) {
+    .manutencao-cols { grid-template-columns: 1fr; }
+    .manutencao-header { flex-direction: column; align-items: flex-start; }
+    .manutencao-price { font-size: 38px; }
+  }
+
+  .aviso-apis {
+    margin-top: 52px;
+    padding: 28px 32px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px;
+  }
+
+  .aviso-apis p {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.8;
+  }
+
+  .aviso-apis strong { color: rgba(255,255,255,0.65); }
+
+  /* ===== POR QUE NEWSCALE ===== */
+  .porque-section {
+    background: var(--cream);
+    padding: 100px 80px;
+  }
+
+  .quote-block {
+    background: var(--teal-deep);
+    padding: 52px 60px;
+    border-radius: 6px;
+    position: relative;
+    margin-bottom: 72px;
+    overflow: hidden;
+  }
+
+  .quote-aspas {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 180px;
+    color: rgba(255,255,255,0.05);
+    position: absolute;
+    top: -20px;
+    left: 28px;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
+    max-width: 700px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .metodologia-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 72px;
+  }
+
+  .metodo-card {
+    padding: 32px 28px;
+    background: var(--white);
+    border-radius: 6px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+    border-top: 3px solid var(--teal-deep);
+    transition: transform 0.3s;
+  }
+
+  .metodo-card:nth-child(2n) { border-top-color: var(--copper); }
+  .metodo-card:hover { transform: translateY(-4px); }
+
+  .metodo-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: rgba(0,0,0,0.07);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .metodo-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  .metodo-text { font-size: 14px; color: var(--text-mid); line-height: 1.75; }
+
+  .fundadores-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 52px;
+  }
+
+  .fundador-card {
+    display: flex;
+    gap: 24px;
+    background: var(--white);
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+    align-items: flex-start;
+  }
+
+  .fundador-foto {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 3px solid var(--cream);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  }
+
+  .fundador-nome {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+
+  .fundador-cargo {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 12px;
+  }
+
+  .fundador-bio { font-size: 13.5px; color: var(--text-mid); line-height: 1.75; margin-bottom: 14px; }
+
+  .fundador-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  .fundador-tag {
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(20,55,60,0.08);
+    color: var(--teal-deep);
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== PRÓXIMOS PASSOS ===== */
+  .steps-section {
+    background: var(--teal-deep);
+    padding: 100px 80px;
+  }
+
+  .steps-section .label { color: var(--copper-light); }
+
+  .steps-list {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .step-item {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    padding: 36px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .step-item:last-child { border-bottom: none; }
+
+  .step-num-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    flex-shrink: 0;
+  }
+
+  .step-num {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .step-line { width: 1px; height: 100%; background: rgba(255,255,255,0.07); flex: 1; min-height: 20px; }
+
+  .step-prazo {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--copper-light);
+    margin-bottom: 8px;
+  }
+
+  .step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .step-desc {
+    font-size: 15px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.8;
+    max-width: 580px;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: #0A2226;
+    padding: 48px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 1px;
+  }
+
+  .footer-brand span {
+    color: var(--copper-light);
+    font-style: italic;
+  }
+
+  .footer-date {
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 1px;
+    text-align: right;
+    line-height: 1.7;
+  }
+
+  /* ===== REVEAL ===== */
   .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal-delay-1 { transition-delay: 0.1s; }
@@ -145,874 +941,586 @@
   .reveal-delay-3 { transition-delay: 0.3s; }
   .reveal-delay-4 { transition-delay: 0.4s; }
 
-  /* CONTEXTO */
-  .contexto-section { background: var(--ink); }
-  .contexto-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 64px; align-items: center;
-    max-width: 1100px; margin: 0 auto;
-  }
-  .contexto-text p {
-    margin-top: 20px;
-    font-size: 0.91rem; font-weight: 300;
-    line-height: 1.78; color: rgba(255,255,255,0.62);
-  }
-  .contexto-stats {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
-  }
-  .stat-card {
-    padding: 28px 22px; border-radius: 14px;
-    border: 1px solid rgba(255,255,255,0.07);
-  }
-  .stat-card:nth-child(1) { background: rgba(20,55,60,0.6); }
-  .stat-card:nth-child(2) { background: rgba(67,93,81,0.5); }
-  .stat-card:nth-child(3) { background: rgba(176,110,74,0.12); }
-  .stat-card:nth-child(4) { background: rgba(26,68,73,0.5); }
-  .stat-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.7rem; font-weight: 700;
-    color: var(--white); line-height: 1;
-  }
-  .stat-label {
-    margin-top: 6px;
-    font-size: 0.65rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.11em;
-    color: rgba(255,255,255,0.42);
-  }
-
-  /* DORES */
-  .dores-section {
-    background: linear-gradient(180deg, #0f2e33 0%, #14373C 100%);
-  }
-  .dores-section .section-head { max-width: 1100px; margin: 0 auto 52px; }
-  .dores-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 20px; max-width: 1100px; margin: 0 auto;
-  }
-  .dore-card {
-    padding: 32px 26px; border-radius: 14px;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.07);
-    transition: border-color 0.3s, background 0.3s;
-  }
-  .dore-card:hover {
-    border-color: rgba(176,110,74,0.3);
-    background: rgba(176,110,74,0.05);
-  }
-  .dore-card.span2 { grid-column: span 1; }
-  .dore-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3.4rem; font-weight: 700;
-    color: rgba(255,255,255,0.06); line-height: 1; margin-bottom: 12px;
-  }
-  .dore-title {
-    font-size: 0.7rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.12em;
-    color: var(--tl); margin-bottom: 10px;
-  }
-  .dore-text {
-    font-size: 0.85rem; font-weight: 300;
-    line-height: 1.73; color: rgba(255,255,255,0.58);
-  }
-
-  /* PROPOSTA */
-  .proposta-section { background: var(--ink); }
-  .proposta-section .section-head { max-width: 1100px; margin: 0 auto 52px; }
-  .opcoes-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 28px; max-width: 1100px; margin: 0 auto;
-  }
-  .opcao-card {
-    border-radius: 18px; overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.08);
-  }
-  .opcao-card.destaque { border-color: rgba(176,110,74,0.4); }
-  .opcao-header {
-    padding: 28px 30px;
-    display: flex; align-items: flex-start; justify-content: space-between; gap: 20px;
-  }
-  .opcao-card:nth-child(1) .opcao-header { background: var(--sage); }
-  .opcao-card:nth-child(2) .opcao-header { background: var(--terra); }
-  .opcao-tag {
-    font-size: 0.6rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.12em;
-    color: rgba(255,255,255,0.65);
-    background: rgba(0,0,0,0.2);
-    padding: 4px 12px; border-radius: 20px;
-    margin-bottom: 10px; display: inline-block;
-  }
-  .opcao-nome {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.7rem; font-weight: 700; color: var(--white); line-height: 1.1;
-  }
-  .opcao-price-box { text-align: right; flex-shrink: 0; }
-  .opcao-price-label {
-    font-size: 0.6rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.1em;
-    color: rgba(255,255,255,0.5); margin-bottom: 4px;
-  }
-  .opcao-price {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem; font-weight: 700; color: var(--white); line-height: 1;
-  }
-  .opcao-price-parcela { font-size: 0.67rem; color: rgba(255,255,255,0.55); margin-top: 4px; }
-  .opcao-body { padding: 28px 30px; background: rgba(255,255,255,0.025); }
-  .opcao-desc {
-    font-size: 0.87rem; font-weight: 300;
-    line-height: 1.72; color: rgba(255,255,255,0.58);
-    margin-bottom: 24px; padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-  }
-  .entregas-title {
-    font-size: 0.6rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.14em;
-    color: rgba(255,255,255,0.38); margin-bottom: 16px;
-  }
-  .entrega-item {
-    display: flex; gap: 12px; margin-bottom: 14px; align-items: flex-start;
-  }
-  .entrega-icon {
-    width: 20px; height: 20px; flex-shrink: 0;
-    background: rgba(176,110,74,0.15); border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.6rem; color: var(--tl); margin-top: 2px;
-    font-weight: 700;
-  }
-  .entrega-text { font-size: 0.84rem; font-weight: 300; line-height: 1.62; color: rgba(255,255,255,0.62); }
-  .entrega-text strong { color: var(--white); font-weight: 600; }
-  .opcao-limite {
-    margin-top: 20px; padding: 14px 16px;
-    background: rgba(255,255,255,0.04); border-radius: 10px;
-    border-left: 3px solid rgba(255,255,255,0.12);
-    font-size: 0.78rem; font-weight: 300;
-    color: rgba(255,255,255,0.42); line-height: 1.6;
-  }
-  .opcao-limite strong { color: rgba(255,255,255,0.6); font-weight: 500; }
-  .opcao-plus {
-    margin-top: 20px; padding: 14px 16px;
-    background: rgba(176,110,74,0.08); border-radius: 10px;
-    border-left: 3px solid var(--terra);
-    font-size: 0.8rem; font-weight: 400;
-    color: rgba(255,255,255,0.58); line-height: 1.6;
-  }
-  .opcao-plus strong { color: var(--tl); font-weight: 600; }
-
-  /* INVESTIMENTO */
-  .invest-section {
-    background: linear-gradient(165deg, #14373C, #194040 55%, #435D51 100%);
-  }
-  .invest-section .section-head { max-width: 1100px; margin: 0 auto 52px; }
-  .invest-cards {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 28px; max-width: 1100px; margin: 0 auto 24px;
-  }
-  .invest-card {
-    border-radius: 18px; overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.09);
-  }
-  .invest-card.featured { border-color: rgba(176,110,74,0.45); }
-  .invest-card-header {
-    padding: 26px 28px; background: rgba(0,0,0,0.22);
-    display: flex; align-items: center; justify-content: space-between; gap: 16px;
-  }
-  .invest-card.featured .invest-card-header { background: rgba(176,110,74,0.15); }
-  .invest-card-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem; font-weight: 700; color: var(--white);
-  }
-  .invest-card-value { text-align: right; }
-  .invest-card-value .val {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem; font-weight: 700; color: var(--white);
-  }
-  .invest-card-value .val-parcela { font-size: 0.68rem; color: rgba(255,255,255,0.48); margin-top: 2px; }
-  .invest-card-body { padding: 28px; }
-  .invest-includes { list-style: none; margin-bottom: 20px; }
-  .invest-includes li {
-    display: flex; gap: 10px; align-items: flex-start;
-    padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
-    font-size: 0.84rem; font-weight: 300; color: rgba(255,255,255,0.62); line-height: 1.5;
-  }
-  .invest-includes li:last-child { border-bottom: none; }
-  .invest-includes li::before { content: "✓"; color: var(--tl); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-  .invest-pagto {
-    padding: 14px 16px; background: rgba(255,255,255,0.05); border-radius: 10px;
-    font-size: 0.8rem; color: rgba(255,255,255,0.52); line-height: 1.6;
-  }
-  .invest-pagto strong { color: var(--white); font-weight: 500; }
-  .invest-treinamento {
-    max-width: 1100px; margin: 0 auto 20px;
-    padding: 18px 28px; background: rgba(176,110,74,0.08);
-    border-radius: 14px; border: 1px solid rgba(176,110,74,0.2);
-    font-size: 0.84rem; font-weight: 300;
-    color: rgba(255,255,255,0.62); line-height: 1.65;
-    display: flex; gap: 14px; align-items: center;
-  }
-  .invest-treinamento .icon { font-size: 1.3rem; flex-shrink: 0; }
-  .invest-treinamento strong { color: var(--white); font-weight: 500; }
-  .invest-aviso {
-    max-width: 1100px; margin: 0 auto;
-    padding: 22px 28px; background: rgba(0,0,0,0.2);
-    border-radius: 14px; border: 1px solid rgba(255,255,255,0.07);
-    font-size: 0.81rem; font-weight: 300;
-    color: rgba(255,255,255,0.48); line-height: 1.72;
-  }
-  .invest-aviso strong { color: rgba(255,255,255,0.72); font-weight: 500; }
-
-  .invest-manutencao {
-    max-width: 1100px; margin: 0 auto 20px;
-    padding: 28px 32px;
-    background: rgba(20,55,60,0.5);
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.1);
-    display: flex; align-items: center; justify-content: space-between; gap: 32px;
-  }
-  .invest-manutencao-info { flex: 1; }
-  .invest-manutencao-label {
-    font-size: 0.62rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.16em;
-    color: var(--tl); margin-bottom: 8px;
-  }
-  .invest-manutencao-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem; font-weight: 700; color: var(--white);
-    margin-bottom: 10px;
-  }
-  .invest-manutencao-desc {
-    font-size: 0.83rem; font-weight: 300;
-    line-height: 1.68; color: rgba(255,255,255,0.55);
-  }
-  .invest-manutencao-price-box { text-align: right; flex-shrink: 0; }
-  .invest-manutencao-price-label {
-    font-size: 0.6rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.1em;
-    color: rgba(255,255,255,0.45); margin-bottom: 4px;
-  }
-  .invest-manutencao-price {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem; font-weight: 700; color: var(--white); line-height: 1;
-  }
-  .invest-manutencao-price span {
-    font-size: 0.8rem; font-weight: 300; color: rgba(255,255,255,0.5);
-    display: block; margin-top: 4px;
-  }
-  .invest-manutencao-items {
-    margin-top: 14px; list-style: none;
-    display: flex; flex-wrap: wrap; gap: 8px;
-  }
-  .invest-manutencao-items li {
-    font-size: 0.72rem; font-weight: 500;
-    color: rgba(255,255,255,0.6);
-    background: rgba(255,255,255,0.06);
-    padding: 4px 12px; border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.08);
-  }
+  /* ===== RESPONSIVE ===== */
   @media (max-width: 900px) {
-    .invest-manutencao { flex-direction: column; gap: 20px; }
-    .invest-manutencao-price-box { text-align: left; }
-  }
-
-  /* POR QUE NEWSCALE */
-  .porque-section { background: var(--cl); }
-  .porque-section .section-head { max-width: 1100px; margin: 0 auto 52px; }
-  .porque-section .label { color: var(--terra); }
-  .porque-section h2 { color: var(--ink); }
-  .quote-block {
-    max-width: 1100px; margin: 0 auto 56px;
-    padding: 44px 52px;
-    background: var(--ink); border-radius: 18px;
-    position: relative; overflow: hidden;
-  }
-  .quote-decor {
-    position: absolute; top: 10px; left: 36px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 9rem; line-height: 1;
-    color: rgba(176,110,74,0.13);
-    user-select: none; pointer-events: none;
-  }
-  .quote-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.25rem; font-style: italic;
-    line-height: 1.82; color: rgba(255,255,255,0.82);
-    position: relative; z-index: 1;
-  }
-  .metodologia-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 18px; max-width: 1100px; margin: 0 auto 52px;
-  }
-  .metodo-card {
-    padding: 28px 24px; background: var(--white); border-radius: 14px;
-    border: 1px solid rgba(20,55,60,0.07);
-    transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
-  }
-  .metodo-card:hover {
-    box-shadow: 0 8px 28px rgba(20,55,60,0.08);
-    border-color: rgba(176,110,74,0.2);
-    transform: translateY(-3px);
-  }
-  .metodo-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem; font-weight: 700;
-    color: rgba(20,55,60,0.09); line-height: 1; margin-bottom: 10px;
-  }
-  .metodo-title {
-    font-size: 0.7rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.1em;
-    color: var(--terra); margin-bottom: 8px;
-  }
-  .metodo-text { font-size: 0.83rem; font-weight: 300; line-height: 1.7; color: rgba(20,55,60,0.62); }
-  .pilares-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 18px; max-width: 1100px; margin: 0 auto 52px;
-  }
-  .pilar-card {
-    padding: 30px 26px; background: var(--white); border-radius: 14px;
-    border: 1px solid rgba(20,55,60,0.07);
-    border-top: 3px solid var(--terra);
-    transition: box-shadow 0.3s, transform 0.3s;
-  }
-  .pilar-card:hover {
-    box-shadow: 0 10px 32px rgba(20,55,60,0.09);
-    transform: translateY(-3px);
-  }
-  .pilar-icon { font-size: 1.5rem; margin-bottom: 14px; }
-  .pilar-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.18rem; font-weight: 700; color: var(--ink); margin-bottom: 10px;
-  }
-  .pilar-text { font-size: 0.83rem; font-weight: 300; line-height: 1.7; color: rgba(20,55,60,0.58); }
-  .fundadores-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 22px; max-width: 1100px; margin: 0 auto;
-  }
-  .fundador-card {
-    display: flex; gap: 22px; align-items: flex-start;
-    padding: 28px; background: var(--white); border-radius: 14px;
-    border: 1px solid rgba(20,55,60,0.07);
-    transition: box-shadow 0.3s;
-  }
-  .fundador-card:hover { box-shadow: 0 8px 28px rgba(20,55,60,0.08); }
-  .fundador-foto {
-    width: 70px; height: 70px; border-radius: 50%;
-    object-fit: cover; flex-shrink: 0;
-    border: 3px solid var(--cream);
-  }
-  .fundador-nome {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.12rem; font-weight: 700; color: var(--ink); margin-bottom: 6px;
-  }
-  .fundador-bio { font-size: 0.79rem; font-weight: 300; line-height: 1.65; color: rgba(20,55,60,0.58); margin-bottom: 12px; }
-  .fundador-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .ftag {
-    font-size: 0.58rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.08em;
-    color: var(--terra); background: rgba(176,110,74,0.1);
-    padding: 3px 10px; border-radius: 20px;
-  }
-
-  /* PRÓXIMOS PASSOS */
-  .steps-section {
-    background: linear-gradient(145deg, #0c2427 0%, #14373C 60%, #435D51 100%);
-  }
-  .steps-section .section-head { max-width: 800px; margin: 0 auto 60px; text-align: center; }
-  .steps-list { max-width: 800px; margin: 0 auto; }
-  .step-item { display: flex; gap: 28px; padding-bottom: 44px; position: relative; }
-  .step-item:last-child { padding-bottom: 0; }
-  .step-item::before {
-    content: '';
-    position: absolute; left: 17px; top: 44px; bottom: 0;
-    width: 1px; background: rgba(176,110,74,0.22);
-  }
-  .step-item:last-child::before { display: none; }
-  .step-num-wrap { flex-shrink: 0; }
-  .step-num {
-    width: 34px; height: 34px; border-radius: 50%;
-    background: var(--terra); color: var(--white);
-    font-size: 0.78rem; font-weight: 700;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .step-prazo {
-    font-size: 0.6rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.13em;
-    color: var(--tl); margin-bottom: 6px;
-  }
-  .step-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.28rem; font-weight: 700; color: var(--white);
-    margin-bottom: 8px; line-height: 1.2;
-  }
-  .step-desc { font-size: 0.85rem; font-weight: 300; line-height: 1.73; color: rgba(255,255,255,0.52); }
-  .steps-closing {
-    max-width: 800px; margin: 60px auto 0;
-    text-align: center;
-  }
-  .steps-closing p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.38rem; font-style: italic;
-    color: rgba(255,255,255,0.55); line-height: 1.6;
-  }
-
-  /* FOOTER */
-  footer {
-    background: #0a2226;
-    padding: 36px 48px;
-    display: flex; align-items: center; justify-content: space-between;
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
-  .footer-brand {
-    font-size: 1rem; font-weight: 700; color: var(--white); letter-spacing: 0.04em;
-  }
-  .footer-brand span { color: var(--terra); margin-left: 4px; font-weight: 300; }
-  .footer-date { font-size: 0.7rem; color: rgba(255,255,255,0.32); text-align: right; line-height: 1.6; }
-
-  /* RESPONSIVE */
-  @media (max-width: 900px) {
-    nav { padding: 14px 22px; }
-    section { padding: 70px 22px; }
-    .contexto-grid { grid-template-columns: 1fr; gap: 40px; }
+    section { padding: 72px 28px; }
+    .intro-section { grid-template-columns: 1fr; padding: 72px 28px; gap: 52px; }
     .dores-grid { grid-template-columns: 1fr; }
-    .opcoes-grid { grid-template-columns: 1fr; }
-    .invest-cards { grid-template-columns: 1fr; }
+    .planos-grid { grid-template-columns: 1fr; }
+    .invest-grid { grid-template-columns: 1fr; }
     .metodologia-grid { grid-template-columns: 1fr; }
-    .pilares-grid { grid-template-columns: 1fr; }
     .fundadores-grid { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 16px; text-align: center; }
+    .footer { flex-direction: column; gap: 20px; text-align: center; padding: 40px 28px; }
     .footer-date { text-align: center; }
-    .quote-block { padding: 32px 26px; }
+    .dores-section, .proposta-section, .invest-section, .porque-section, .steps-section {
+      padding: 72px 28px;
+    }
+    .quote-block { padding: 36px 28px; }
+    .step-item { gap: 20px; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">
-    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting">
-  </div>
-  <div class="nav-badge">Proposta Executiva · Abril 2025</div>
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="top">
-  <div class="hero-topo">
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="topo-lines">
     <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="0.8"/>
-      <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width="0.6"/>
-      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.4"/>
       <path d="M0,300 Q300,220 500,290 T900,260 T1200,300" fill="none" stroke="white" stroke-width="0.4"/>
-      <path d="M0,500 Q300,440 500,490 T900,460 T1200,500" fill="none" stroke="white" stroke-width="0.35"/>
-      <path d="M0,250 Q250,170 450,240 T850,210 T1200,250" fill="none" stroke="white" stroke-width="0.3"/>
+      <path d="M0,500 Q300,440 500,490 T900,460 T1200,500" fill="none" stroke="white" stroke-width="0.3"/>
     </svg>
   </div>
-  <div class="grain-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-tag">Proposta Executiva · Abril 2025</div>
-    <div class="hero-eyebrow">NewScale Consulting</div>
-    <h1>Inteligência artificial<br>a serviço de <em>cada Bíblia</em><br>que a VASTRASS entrega.</h1>
-    <p class="hero-desc">Uma proposta construída a partir da sua realidade, Vanessa — não um cardápio genérico, mas um plano desenhado para a VASTRASS atender mais, perder menos vendas e crescer sem depender de mais horas de trabalho humano.</p>
-    <a href="#contexto" class="hero-cta">
-      Ver a proposta
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <path d="M8 3v10M3 9l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
+  <div class="hero-badge">Proposta Executiva · Abril 2026</div>
+  <div class="hero-eyebrow">NewScale Consulting</div>
+  <h1 class="hero-title">Inteligência que <em>atende, vende e registra</em> — enquanto você cria</h1>
+  <p class="hero-sub">Uma proposta construída a partir da realidade da VASTRASS — não um cardápio genérico, mas um plano desenhado para a Vanessa parar de perder vendas no volume e focar no que realmente importa.</p>
+  <div class="hero-cta">
+    <span style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);">ver a proposta</span>
+    <a href="#contexto" class="cta-arrow">↓</a>
   </div>
 </section>
 
-<!-- CONTEXTO -->
-<section class="contexto-section" id="contexto">
-  <div class="contexto-grid">
-    <div class="contexto-text reveal">
-      <div class="label">O Contexto</div>
-      <h2>Uma operação que já prova o produto — e pode ir <em>muito além</em>.</h2>
-      <p>Vanessa, a VASTRASS chegou aonde chegou pelo talento artesanal, pela autenticidade da sua presença e pela força de um produto que as pessoas amam de verdade. Oito anos de mercado, 94 mil seguidores construídos sem tráfego pago e vendas que aparecem toda vez que uma influenciadora cristã fala do produto. Isso não é sorte — é prova de produto e de marca.</p>
-      <p>O que se abre agora é a oportunidade de usar inteligência artificial para garantir que nenhuma cliente que chegou com interesse vá embora sem resposta. Para que a Aline passe a tratar só o que realmente precisa de atenção humana. E para que você, Vanessa, pare de depender de estar disponível para cada pergunta de preço e personalização.</p>
-      <p>A IA não vai substituir o carinho que você coloca em cada Bíblia. Vai garantir que a cliente sinta esse carinho desde o primeiro contato.</p>
+<!-- ===== CONTEXTO ===== -->
+<div id="contexto" class="intro-section">
+  <div class="intro-text">
+    <div class="label reveal">O Contexto</div>
+    <h2 class="section-title reveal reveal-delay-1">Uma marca que já funciona — e pode ir <em>muito além</em></h2>
+    <p class="reveal reveal-delay-2">Vanessa, a VASTRASS tem 94 mil seguidores, 8 anos de mercado e um produto artesanal que as pessoas amam — e que se espalha por parcerias com influenciadoras cristãs. Isso é raro. A operação existe e gera resultado sem tráfego pago.</p>
+    <p class="reveal reveal-delay-2">O problema não é a demanda. É o que acontece quando ela chega. Uma única parceria trouxe quase 1.000 novos seguidores de uma vez. A capacidade humana de responder no tempo certo, com a qualidade certa, não acompanha esse volume — e a venda quente esfria.</p>
+    <p class="reveal reveal-delay-3">O que se abre agora é a oportunidade de colocar inteligência artificial para fazer o que é repetitivo — atender, qualificar, montar o produto, dar preço — para que você e a Aline foquem no que realmente precisa de gente: relacionamento, criação e fechamento.</p>
+  </div>
+  <div class="intro-stats reveal reveal-delay-2">
+    <div class="stat-card">
+      <div class="stat-number">94K</div>
+      <div class="stat-label">Seguidores no Instagram</div>
     </div>
-    <div class="contexto-stats reveal reveal-delay-2">
-      <div class="stat-card">
-        <div class="stat-number">94k</div>
-        <div class="stat-label">Seguidores no Instagram</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">8+</div>
-        <div class="stat-label">Anos de mercado</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">50+</div>
-        <div class="stat-label">Msgs por pico de parceria</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">24h</div>
-        <div class="stat-label">Sem atendimento fora do horário</div>
-      </div>
+    <div class="stat-card">
+      <div class="stat-number">8+</div>
+      <div class="stat-label">Anos de mercado</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">50+</div>
+      <div class="stat-label">Mensagens por pico de parceria</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">24/7</div>
+      <div class="stat-label">O que o agente vai cobrir</div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- DORES -->
-<section class="dores-section" id="dores">
-  <div class="section-head reveal">
-    <div class="label">O que identificamos</div>
-    <h2>5 pontos onde a IA vai <em>liberar vendas</em> que hoje escapam.</h2>
-  </div>
+<!-- ===== DORES ===== -->
+<section class="dores-section">
+  <div class="label reveal">O que identificamos</div>
+  <h2 class="section-title white reveal reveal-delay-1">5 pontos onde a IA vai <em>liberar tempo e converter mais</em></h2>
   <div class="dores-grid">
     <div class="dore-card reveal reveal-delay-1">
-      <div class="dore-num">01</div>
-      <div class="dore-title">Pico sem dar conta</div>
-      <div class="dore-text">Depois de cada parceria com influenciadora, chegam 50 a 1.000 novas pessoas de uma vez. Aline e Vanessa não conseguem responder a tempo — e a venda quente esfria em horas.</div>
+      <div class="dore-num">1</div>
+      <div class="dore-title">Lead quente esperando resposta</div>
+      <p class="dore-text">A pessoa viu a parceria, entrou em êxtase com o produto e mandou mensagem. Enquanto não chega resposta, ela esfria — e muitas vezes não volta. A venda foi paga pela influenciadora, mas ficou no ar.</p>
     </div>
     <div class="dore-card reveal reveal-delay-2">
-      <div class="dore-num">02</div>
-      <div class="dore-title">Lead perdido por demora</div>
-      <div class="dore-text">A compra de uma Bíblia personalizada é emocional e imediatista. Se a resposta não chega rápida, a pessoa desiste — e o investimento da parceria vai junto.</div>
+      <div class="dore-num">2</div>
+      <div class="dore-title">Aline não dá conta do pico</div>
+      <p class="dore-text">Uma atendente para 1.000 mensagens em poucos dias. Nem respondendo no limite do humano possível, o atendimento chega no nível de qualidade que o produto artesanal merece. Não é erro da Aline — é estrutura.</p>
     </div>
     <div class="dore-card reveal reveal-delay-3">
-      <div class="dore-num">03</div>
-      <div class="dore-title">Sem cobertura fora do horário</div>
-      <div class="dore-text">Domingos, noites de semana. Quando uma cliente decide presentear alguém especial, ela não agenda a decisão para segunda. Hoje ninguém está lá para receber essa venda.</div>
+      <div class="dore-num">3</div>
+      <div class="dore-title">Pergunta repetida, resposta manual</div>
+      <p class="dore-text">"Qual o valor?" — a mesma pergunta, dezenas de vezes por dia, respondida manualmente uma a uma. Produto com possibilidades de personalização que exige perguntas adicionais. Trabalho humano gasto em tarefa de robô.</p>
     </div>
     <div class="dore-card reveal reveal-delay-1">
-      <div class="dore-num">04</div>
-      <div class="dore-title">Ausência de controle de leads</div>
-      <div class="dore-text">Não há registro de quem chegou, em que etapa está ou por que desistiu. Cada pico de demanda é um acúmulo de conversas que se perdem sem histórico ou acompanhamento.</div>
+      <div class="dore-num">4</div>
+      <div class="dore-title">Nenhum controle de quem chegou</div>
+      <p class="dore-text">Sem CRM, sem planilha, sem registro. Quem chegou nesse pico? Quem perguntou e não comprou? Quem ficou sem resposta? Essas informações somem — e com elas, a possibilidade de retomar contato e fechar depois.</p>
     </div>
     <div class="dore-card reveal reveal-delay-2">
-      <div class="dore-num">05</div>
-      <div class="dore-title">Montagem de pedido é manual</div>
-      <div class="dore-text">Perguntar sobre modelo, plaquinha, nome, personalização e calcular preço depende de uma pessoa disponível. Uma conversa que levaria minutos leva horas — ou dias.</div>
+      <div class="dore-num">5</div>
+      <div class="dore-title">Fim de semana e noite descobertos</div>
+      <p class="dore-text">Domingo a pessoa tá em casa, lembra que precisa de um presente especial e manda mensagem. Na segunda ninguém responde mais. O atendimento humano tem horário — a intenção de compra, não.</p>
+    </div>
+    <div class="dore-card reveal reveal-delay-3">
+      <div class="dore-num">6</div>
+      <div class="dore-title">Social selling jogado fora</div>
+      <p class="dore-text">Gente que comentou "amei" no post da influenciadora já demonstrou interesse. Mas sem uma abordagem proativa e rápida no direct ou WhatsApp, esse calor se dissipa. Clientes em potencial que poderiam virar compra ficam só como seguidores.</p>
     </div>
   </div>
 </section>
 
-<!-- PROPOSTA -->
+<!-- ===== PROPOSTA ===== -->
 <section class="proposta-section" id="proposta">
-  <div class="section-head reveal">
-    <div class="label">A Proposta</div>
-    <h2>Duas opções de entrega.<br><em>Uma decisão</em> de prioridade.</h2>
-    <p class="section-sub">Comece pelo essencial e expanda quando quiser — ou já entre com a solução completa. As duas opções têm o mesmo DNA: atendimento no tom da Vastrá, 24 horas por dia, 7 dias por semana.</p>
-  </div>
-  <div class="opcoes-grid">
+  <div class="label reveal">A Proposta</div>
+  <h2 class="section-title reveal reveal-delay-1">Duas opções. <em>O mesmo ponto de partida.</em></h2>
+  <p style="font-size:16px;color:var(--text-mid);max-width:580px;margin-top:12px;line-height:1.8;" class="reveal reveal-delay-2">Ambas começam com o Agente de Atendimento no WhatsApp. A diferença está em até onde ele chega sozinho — e o quanto o humano precisa intervir para fechar a venda.</p>
+  <p style="font-size:13px;color:var(--copper);margin-top:10px;letter-spacing:0.5px;" class="reveal reveal-delay-3">Clique em cada módulo para ver os detalhes das entregas.</p>
 
-    <!-- OPÇÃO 1 -->
-    <div class="opcao-card reveal reveal-delay-1">
-      <div class="opcao-header">
-        <div>
-          <div class="opcao-tag">Opção 1 · Início imediato</div>
-          <div class="opcao-nome">Agente Essencial</div>
-        </div>
-        <div class="opcao-price-box">
-          <div class="opcao-price-label">Investimento</div>
-          <div class="opcao-price">R$ 4.000</div>
-          <div class="opcao-price-parcela">2× de R$ 2.000</div>
-        </div>
+  <div class="planos-grid">
+
+    <!-- PLANO ESSENCIAL -->
+    <div class="plano-card reveal reveal-delay-1">
+      <div class="plano-header">
+        <div class="plano-tag">Opção 1 · Ponto de entrada</div>
+        <div class="plano-nome">Essencial</div>
+        <div class="plano-subtitulo">Atendimento inteligente com passagem para o humano fechar</div>
       </div>
-      <div class="opcao-body">
-        <p class="opcao-desc">Agente de atendimento receptivo no WhatsApp que responde, qualifica, monta o pedido, informa o preço e registra tudo no Google Sheets — sem intervenção humana até a etapa de frete e pagamento.</p>
-        <div class="entregas-title">O que está incluso</div>
-        <div class="entrega-item">
-          <div class="entrega-icon">✓</div>
-          <div class="entrega-text"><strong>Atendimento receptivo 24/7:</strong> responde automaticamente toda mensagem que chega no WhatsApp da Vastrá, no tom de voz da Vanessa, em qualquer horário.</div>
+      <div class="plano-body">
+
+        <!-- Módulo 1 -->
+        <div class="modulo-accordion" onclick="toggleModulo(this)">
+          <div class="modulo-head">
+            <div class="modulo-head-left">
+              <div class="modulo-icon">🤖</div>
+              <div>
+                <div class="modulo-label">Módulo principal</div>
+                <div class="modulo-nome">Agente de Atendimento WhatsApp</div>
+              </div>
+            </div>
+            <div class="modulo-arrow">▼</div>
+          </div>
+          <div class="modulo-chips">
+            <span class="chip">Receptivo 24/7</span>
+            <span class="chip">Qualificação</span>
+            <span class="chip">Tom de voz da VASTRASS</span>
+          </div>
+          <div class="modulo-body">
+            <div class="value-box">
+              <div class="value-box-icon">⚡</div>
+              <div class="value-box-content">
+                <div class="value-box-label">O que isso resolve</div>
+                <div class="value-box-text">Nenhuma mensagem fica sem resposta — independente do horário, da carga de parceria ou de quantas pessoas chegaram ao mesmo tempo.</div>
+              </div>
+            </div>
+            <p class="modulo-desc">O agente atende as clientes que chegam no WhatsApp da VASTRASS com o tom de voz da Vanessa — caloroso, pessoal, atencioso. Ele conduz a conversa, entende o que a cliente quer, monta o produto de acordo com as opções disponíveis e passa o preço. Quando chega na etapa do frete, ele passa para a Aline com todo o contexto da conversa já registrado.</p>
+            <ul class="modulo-items">
+              <li><strong>Atendimento receptivo 24/7:</strong> responde em segundos, mesmo em picos de parceria com centenas de mensagens simultâneas</li>
+              <li><strong>Roteiro de qualificação completo:</strong> conduzido com as perguntas certas para entender qual modelo a cliente quer, qual personalização e o nome para gravação</li>
+              <li><strong>Montagem de produto e preço:</strong> com base nos modelos e combinações possíveis da VASTRASS, o agente calcula e informa o valor final para a cliente</li>
+              <li><strong>Quebra de objeções treinada:</strong> o agente está preparado para responder as dúvidas mais comuns — prazo, qualidade, formas de pagamento — sem deixar a venda esfriar</li>
+              <li><strong>Passagem inteligente para humano:</strong> quando a cliente avança para frete ou solicita atendimento humano, o agente transfere a conversa com o histórico completo para a Aline</li>
+              <li><strong>Personalidade e tom de voz da Vanessa:</strong> emoções, emojis, linguagem — tudo configurado para soar como a marca, não como um robô genérico</li>
+            </ul>
+          </div>
         </div>
-        <div class="entrega-item">
-          <div class="entrega-icon">✓</div>
-          <div class="entrega-text"><strong>Roteiro de qualificação:</strong> faz as perguntas certas — modelo desejado, nome para a plaquinha, tipo de pingente, forma de entrega — para entender exatamente o que a cliente quer.</div>
+
+        <!-- Módulo 2 -->
+        <div class="modulo-accordion" onclick="toggleModulo(this)">
+          <div class="modulo-head">
+            <div class="modulo-head-left">
+              <div class="modulo-icon">📊</div>
+              <div>
+                <div class="modulo-label">Módulo de controle</div>
+                <div class="modulo-nome">CRM em Planilha Google Sheets</div>
+              </div>
+            </div>
+            <div class="modulo-arrow">▼</div>
+          </div>
+          <div class="modulo-chips">
+            <span class="chip">Registro automático</span>
+            <span class="chip">Funil de leads</span>
+            <span class="chip">Status em tempo real</span>
+          </div>
+          <div class="modulo-body">
+            <div class="value-box">
+              <div class="value-box-icon">📋</div>
+              <div class="value-box-content">
+                <div class="value-box-label">O que isso resolve</div>
+                <div class="value-box-text">Você passa a saber quem chegou, quem comprou, quem abandonou e por quê — sem depender de memória de ninguém.</div>
+              </div>
+            </div>
+            <p class="modulo-desc">Cada atendimento gera um registro automático na planilha. Sem digitar nada. A Vanessa e a Aline passam a ter visibilidade total de quem está em cada etapa do funil.</p>
+            <ul class="modulo-items">
+              <li><strong>Cadastro automático de leads:</strong> nome, telefone e e-mail coletados durante a conversa e registrados sem intervenção humana</li>
+              <li><strong>Status de funil em tempo real:</strong> qualificado, não qualificado, em negociação, aguardando frete, venda realizada</li>
+              <li><strong>Motivo de desqualificação registrado:</strong> preço, prazo, produto não disponível — você entende onde está perdendo e por quê</li>
+              <li><strong>Venda confirmada marcada na planilha:</strong> quando a cliente confirma o pedido, o status é atualizado automaticamente</li>
+            </ul>
+          </div>
         </div>
-        <div class="entrega-item">
-          <div class="entrega-icon">✓</div>
-          <div class="entrega-text"><strong>Montagem do pedido com preço:</strong> com base nas respostas, monta a configuração do produto e informa o valor final automaticamente, sem precisar de humano.</div>
-        </div>
-        <div class="entrega-item">
-          <div class="entrega-icon">✓</div>
-          <div class="entrega-text"><strong>Quebra de objeções:</strong> treinado com os principais questionamentos — prazo, frete, personalização, formas de pagamento — para não perder a venda por falta de resposta.</div>
-        </div>
-        <div class="entrega-item">
-          <div class="entrega-icon">✓</div>
-          <div class="entrega-text"><strong>CRM em Google Sheets:</strong> registra nome, telefone, e-mail, modelo de interesse e etapa do funil — novo, qualificado, desqualificado, aguardando frete, convertido — com motivo de saída quando aplicável.</div>
-        </div>
-        <div class="entrega-item">
-          <div class="entrega-icon">✓</div>
-          <div class="entrega-text"><strong>Transferência para humano:</strong> quando a cliente solicitar atendimento pessoal, o agente passa a conversa para Aline ou Vanessa com todo o contexto.</div>
-        </div>
-        <div class="opcao-limite">
-          <strong>Limite de escopo:</strong> cálculo de frete e geração de link de pagamento ficam com o humano — o agente pergunta sobre a entrega e passa a bola para a equipe finalizar.
-        </div>
+
       </div>
     </div>
 
-    <!-- OPÇÃO 2 -->
-    <div class="opcao-card destaque reveal reveal-delay-2">
-      <div class="opcao-header">
-        <div>
-          <div class="opcao-tag">Opção 2 · Solução Completa</div>
-          <div class="opcao-nome">Agente Completo</div>
-        </div>
-        <div class="opcao-price-box">
-          <div class="opcao-price-label">Investimento</div>
-          <div class="opcao-price">R$ 7.600</div>
-          <div class="opcao-price-parcela">2× de R$ 3.800</div>
-        </div>
+    <!-- PLANO COMPLETO -->
+    <div class="plano-card destaque reveal reveal-delay-2">
+      <div class="plano-badge-top">Recomendado</div>
+      <div class="plano-header">
+        <div class="plano-tag">Opção 2 · Operação autônoma</div>
+        <div class="plano-nome">Completo</div>
+        <div class="plano-subtitulo">Tudo da opção Essencial + frete automático e link de pagamento integrado</div>
       </div>
-      <div class="opcao-body">
-        <p class="opcao-desc">Tudo o que o Agente Essencial faz — mais a integração completa com transportadora e adquirente. O agente fecha a venda inteira: do primeiro "oi" ao pedido confirmado e pronto para expedição.</p>
-        <div class="entregas-title">Tudo da Opção 1, mais</div>
-        <div class="entrega-item">
-          <div class="entrega-icon">+</div>
-          <div class="entrega-text"><strong>Integração com transportadora:</strong> calcula o frete automaticamente consultando o portal com base no CEP da cliente, sem precisar acionar nenhuma pessoa da equipe.</div>
+      <div class="plano-body">
+
+        <!-- Módulo 1 - mesmo -->
+        <div class="modulo-accordion" onclick="toggleModulo(this)">
+          <div class="modulo-head">
+            <div class="modulo-head-left">
+              <div class="modulo-icon">🤖</div>
+              <div>
+                <div class="modulo-label">Módulo principal</div>
+                <div class="modulo-nome">Agente de Atendimento WhatsApp</div>
+              </div>
+            </div>
+            <div class="modulo-arrow">▼</div>
+          </div>
+          <div class="modulo-chips">
+            <span class="chip">Tudo da opção Essencial</span>
+            <span class="chip">+ Frete integrado</span>
+            <span class="chip">+ Pagamento</span>
+          </div>
+          <div class="modulo-body">
+            <div class="value-box">
+              <div class="value-box-icon">⚡</div>
+              <div class="value-box-content">
+                <div class="value-box-label">O que isso resolve</div>
+                <div class="value-box-text">A venda fecha dentro do WhatsApp — do primeiro "oi" ao link de pagamento — sem precisar de nenhuma intervenção humana no meio do caminho.</div>
+              </div>
+            </div>
+            <p class="modulo-desc">Todos os recursos da opção Essencial, com dois passos adicionais que eliminam completamente a dependência humana para fechar a venda: cálculo de frete automático e geração de link de pagamento dentro da própria conversa.</p>
+            <ul class="modulo-items">
+              <li><strong>Todos os recursos da opção Essencial</strong> — atendimento, qualificação, montagem de produto, preço, tom de voz</li>
+              <li><strong>Integração com transportadora para cálculo de frete:</strong> a cliente informa o CEP e o agente já calcula e informa o custo sem precisar da Aline</li>
+              <li><strong>Geração de link de pagamento:</strong> ao confirmar o pedido, o agente envia o link para pagamento direto no WhatsApp</li>
+              <li><strong>Verificação de compensação do pagamento:</strong> o agente confirma que o pagamento foi recebido e sinaliza que o pedido está apto para expedição</li>
+              <li><strong>Follow-up automático de abandono:</strong> se a cliente parou de responder, o agente retoma o contato no tempo configurado — reativando o interesse sem depender da Aline</li>
+            </ul>
+          </div>
         </div>
-        <div class="entrega-item">
-          <div class="entrega-icon">+</div>
-          <div class="entrega-text"><strong>Geração de link de pagamento:</strong> após a confirmação do pedido e do frete, o agente gera e envia o link de pagamento diretamente na conversa — sem intervenção manual.</div>
+
+        <!-- Módulo 2 - mesmo -->
+        <div class="modulo-accordion" onclick="toggleModulo(this)">
+          <div class="modulo-head">
+            <div class="modulo-head-left">
+              <div class="modulo-icon">📊</div>
+              <div>
+                <div class="modulo-label">Módulo de controle</div>
+                <div class="modulo-nome">CRM em Planilha Google Sheets</div>
+              </div>
+            </div>
+            <div class="modulo-arrow">▼</div>
+          </div>
+          <div class="modulo-chips">
+            <span class="chip">Registro automático</span>
+            <span class="chip">Funil de leads</span>
+            <span class="chip">+ Status de pagamento</span>
+          </div>
+          <div class="modulo-body">
+            <div class="value-box">
+              <div class="value-box-icon">📋</div>
+              <div class="value-box-content">
+                <div class="value-box-label">O que isso resolve</div>
+                <div class="value-box-text">A planilha passa a refletir não só quem está no funil — mas quem pagou, o valor de frete cobrado e se o pedido está pronto para produção.</div>
+              </div>
+            </div>
+            <p class="modulo-desc">Tudo da opção Essencial, com campos adicionais de valor do frete, confirmação de pagamento e status de expedição — dando à Vanessa uma visão completa da operação em um único lugar.</p>
+            <ul class="modulo-items">
+              <li><strong>Todos os campos da opção Essencial</strong> — cadastro, funil, motivo de desqualificação</li>
+              <li><strong>Registro de valor do frete cobrado:</strong> por pedido, automaticamente</li>
+              <li><strong>Status de pagamento:</strong> aguardando, compensado, recusado</li>
+              <li><strong>Sinalização de expedição:</strong> quando pagamento confirmado, o status muda para "pronto para produção"</li>
+            </ul>
+          </div>
         </div>
-        <div class="entrega-item">
-          <div class="entrega-icon">+</div>
-          <div class="entrega-text"><strong>Confirmação e registro de pagamento:</strong> após a compensação, o agente atualiza a planilha com status "pago" e sinaliza que o pedido pode seguir para expedição — sem depender de conferência manual.</div>
+
+        <!-- Módulo extra - só no Plus -->
+        <div class="modulo-accordion" onclick="toggleModulo(this)">
+          <div class="modulo-head">
+            <div class="modulo-head-left">
+              <div class="modulo-icon">🔗</div>
+              <div>
+                <div class="modulo-label">Exclusivo desta opção</div>
+                <div class="modulo-nome">Integrações de Frete e Pagamento</div>
+              </div>
+            </div>
+            <div class="modulo-arrow">▼</div>
+          </div>
+          <div class="modulo-chips">
+            <span class="chip">Transportadora</span>
+            <span class="chip">Adquirência</span>
+            <span class="chip">Confirmação automática</span>
+          </div>
+          <div class="modulo-body">
+            <div class="value-box">
+              <div class="value-box-icon">🔗</div>
+              <div class="value-box-content">
+                <div class="value-box-label">O que isso resolve</div>
+                <div class="value-box-text">A Aline deixa de ser necessária para fechar o pedido. A venda completa — do atendimento ao pagamento confirmado — acontece sem intervenção humana.</div>
+              </div>
+            </div>
+            <p class="modulo-desc">Conectamos o agente com o portal da transportadora para cálculo de frete automático por CEP e com a adquirência (ex: Mercado Pago, PagSeguro ou outra de preferência) para geração de link de pagamento. O agente monitora a compensação e atualiza o status do pedido automaticamente.</p>
+            <ul class="modulo-items">
+              <li><strong>Integração com transportadora:</strong> o agente consulta o frete em tempo real conforme o CEP informado pela cliente</li>
+              <li><strong>Geração de link de pagamento:</strong> link gerado automaticamente com o valor total (produto + frete) assim que a cliente confirmar o pedido</li>
+              <li><strong>Monitoramento de compensação:</strong> o sistema verifica se o pagamento foi confirmado e atualiza a planilha sem precisar de ninguém</li>
+              <li><strong>Notificação de pedido pago:</strong> a Aline ou a Vanessa recebe um aviso quando um pedido é confirmado e está pronto para produção</li>
+            </ul>
+          </div>
         </div>
-        <div class="opcao-plus">
-          <strong>Resultado:</strong> a equipe entra em cena só para produzir e expedir. O atendimento, a venda e o controle financeiro rodam sozinhos.
-        </div>
+
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- INVESTIMENTO -->
-<section class="invest-section" id="investimento">
-  <div class="section-head reveal">
-    <div class="label">Investimento</div>
-    <h2>Condições claras,<br><em>sem surpresas</em> no caminho.</h2>
-  </div>
-  <div class="invest-cards">
+<!-- ===== INVESTIMENTO ===== -->
+<section class="invest-section">
+  <div class="label reveal">Investimento</div>
+  <h2 class="section-title white reveal reveal-delay-1">Condições claras, <em>sem surpresas no caminho.</em></h2>
+
+  <div class="invest-grid">
+
     <div class="invest-card reveal reveal-delay-1">
       <div class="invest-card-header">
-        <div class="invest-card-name">Agente Essencial</div>
-        <div class="invest-card-value">
-          <div class="val">R$ 4.000</div>
-          <div class="val-parcela">2× de R$ 2.000</div>
+        <div class="invest-plan-tag">Opção 1</div>
+        <div class="invest-plan-name">Essencial</div>
+        <div class="invest-price-block">
+          <div class="invest-price">R$ 4.000</div>
+          <div class="invest-parcelas">Em 2x · 50% na assinatura, 50% na entrega</div>
         </div>
       </div>
       <div class="invest-card-body">
-        <ul class="invest-includes">
-          <li>Agente de atendimento receptivo WhatsApp 24/7</li>
-          <li>Roteiro de qualificação personalizado para a Vastrá</li>
-          <li>Montagem do pedido e precificação automática</li>
-          <li>Quebra de objeções treinada com histórico real</li>
-          <li>CRM integrado ao Google Sheets</li>
-          <li>Transferência inteligente para humano</li>
-          <li>Treinamento da equipe incluso</li>
+        <div class="invest-incluso-title">O que está incluso</div>
+        <ul class="invest-incluso-list">
+          <li>Agente de atendimento WhatsApp treinado com o tom de voz da VASTRASS</li>
+          <li>Roteiro completo de qualificação e montagem de produto</li>
+          <li>Quebra de objeções configurada</li>
+          <li>Passagem para humano com contexto completo</li>
+          <li>CRM em Google Sheets com funil de leads automatizado</li>
+          <li>Sessão de imersão e alinhamento de marca</li>
+          <li>Treinamento da Aline no novo fluxo</li>
+          <li>Ajustes no primeiro mês após o go-live</li>
         </ul>
-        <div class="invest-pagto">
-          <strong>Forma de pagamento:</strong> 50% no ato da contratação + 50% na entrega do agente em produção.
+        <div class="invest-diferencial" style="margin-top:20px;background:rgba(255,255,255,0.04);border-radius:4px;padding:14px 16px;font-size:13px;color:rgba(255,255,255,0.45);line-height:1.7;">
+          Cálculo de frete e geração de link de pagamento ficam a cargo da Aline — o agente passa a conversa com todas as informações prontas para ela fechar.
         </div>
       </div>
     </div>
-    <div class="invest-card featured reveal reveal-delay-2">
+
+    <div class="invest-card destaque reveal reveal-delay-2">
       <div class="invest-card-header">
-        <div class="invest-card-name">Agente Completo</div>
-        <div class="invest-card-value">
-          <div class="val">R$ 7.600</div>
-          <div class="val-parcela">2× de R$ 3.800</div>
+        <div class="invest-plan-tag">Opção 2 · Recomendada</div>
+        <div class="invest-plan-name">Completo</div>
+        <div class="invest-price-block">
+          <div class="invest-price">R$ 7.600</div>
+          <div class="invest-parcelas">Em 2x · 50% na assinatura, 50% na entrega</div>
         </div>
       </div>
       <div class="invest-card-body">
-        <ul class="invest-includes">
-          <li>Tudo do Agente Essencial</li>
-          <li>Integração com transportadora (frete por CEP automático)</li>
-          <li>Integração com adquirente para geração de link de pagamento</li>
-          <li>Confirmação automática de pagamento e atualização de status</li>
-          <li>Sinalização de pedido pronto para expedição</li>
-          <li>CRM com funil completo até a conversão financeira</li>
-          <li>Treinamento da equipe incluso</li>
+        <div class="invest-incluso-title">Tudo da opção Essencial, mais:</div>
+        <ul class="invest-incluso-list">
+          <li>Integração com portal de transportadora para cálculo de frete automático</li>
+          <li>Integração com adquirência para geração de link de pagamento</li>
+          <li>Monitoramento de compensação de pagamento</li>
+          <li>Atualização automática de status de expedição na planilha</li>
+          <li>Follow-up automático de abandono de conversa</li>
+          <li>Notificação para a Vanessa/Aline quando pedido for confirmado e pago</li>
         </ul>
-        <div class="invest-pagto">
-          <strong>Forma de pagamento:</strong> 50% no ato da contratação + 50% na entrega do agente em produção.
+        <div class="invest-diferencial">
+          ✦ Na opção Completo, a venda fecha inteiramente no WhatsApp — do primeiro contato ao pagamento confirmado — sem precisar da Aline no meio do caminho.
         </div>
       </div>
     </div>
+
   </div>
-  <div class="invest-manutencao reveal">
-    <div class="invest-manutencao-info">
-      <div class="invest-manutencao-label">Manutenção Mensal · Recorrente</div>
-      <div class="invest-manutencao-title">Sustentação Contínua</div>
-      <div class="invest-manutencao-desc">Depois do go-live, a gente não some. A mensalidade cobre o monitoramento ativo do agente, ajustes de fluxo conforme surgem novas situações reais de atendimento, atualizações na base de conhecimento do produto e suporte técnico contínuo — para que o sistema evolua junto com a VASTRASS.</div>
-      <ul class="invest-manutencao-items">
-        <li>Monitoramento do agente</li>
-        <li>Ajustes de fluxo e respostas</li>
-        <li>Atualização de produtos e preços</li>
-        <li>Suporte técnico contínuo</li>
-        <li>Relatório mensal de atendimentos</li>
-      </ul>
+
+  <!-- MANUTENÇÃO MENSAL -->
+  <div class="manutencao-card reveal reveal-delay-2">
+    <div class="manutencao-header">
+      <div class="manutencao-badge">Recorrente · Após o go-live</div>
+      <div class="manutencao-title">Manutenção &amp; Sustentação Contínua</div>
+      <div class="manutencao-price-row">
+        <div class="manutencao-price">R$ 967<span>/mês</span></div>
+        <div class="manutencao-desc-short">Cobrado mensalmente após o primeiro mês de ajustes gratuitos</div>
+      </div>
     </div>
-    <div class="invest-manutencao-price-box">
-      <div class="invest-manutencao-price-label">Mensalidade</div>
-      <div class="invest-manutencao-price">R$ 967</div>
-      <span>/ mês · incluso em ambas as opções</span>
+    <div class="manutencao-body">
+      <div class="manutencao-incluso-title">O que está incluso na mensalidade</div>
+      <div class="manutencao-cols">
+        <ul class="invest-incluso-list">
+          <li>Monitoramento contínuo dos atendimentos do agente</li>
+          <li>Ajustes de fluxo, tom de voz e respostas conforme necessário</li>
+          <li>Atualização de catálogo, preços e combinações de produto</li>
+        </ul>
+        <ul class="invest-incluso-list">
+          <li>Correção de eventuais falhas ou desvios de comportamento</li>
+          <li>Suporte direto via WhatsApp com a equipe NewScale</li>
+          <li>Evolução incremental do agente conforme o negócio cresce</li>
+        </ul>
+      </div>
+      <div class="invest-diferencial" style="margin-top:20px;">
+        ✦ O primeiro mês pós-go-live está incluso no projeto — a mensalidade começa a partir do segundo mês de operação, quando o sistema já estiver estável e validado com você.
+      </div>
     </div>
   </div>
-  <div class="invest-treinamento reveal">
-    <span class="icon">🎓</span>
-    <span>O <strong>treinamento da equipe está incluso</strong> em ambas as opções. Vanessa e Aline aprendem como monitorar o agente, acompanhar o painel de leads no Sheets e acionar a equipe quando necessário — sem depender de suporte para o dia a dia.</span>
-  </div>
-  <div class="invest-aviso reveal">
-    <strong>Importante:</strong> os custos de APIs externas não estão inclusos nesta proposta e são pagos diretamente pela VASTRASS. Isso inclui a API oficial do WhatsApp Business (Meta), os modelos de linguagem utilizados e a hospedagem do ambiente de automação. <strong>Estimativa de custo operacional mensal: R$ 400–800</strong>, dependendo do volume de atendimentos.
+
+  <div class="aviso-apis reveal reveal-delay-2">
+    <p><strong>Importante:</strong> os custos de APIs externas não estão inclusos nesta proposta e são pagos diretamente pela contratante. Isso inclui a API oficial do WhatsApp Business (Meta), os modelos de linguagem de IA e a hospedagem da automação. Estimativa de custo operacional mensal: <strong>R$ 200–500</strong> dependendo do volume de mensagens. Na opção Completo, acrescem os custos das integrações de frete e pagamento, que variam conforme o parceiro escolhido.</p>
   </div>
 </section>
 
-<!-- POR QUE NEWSCALE -->
-<section class="porque-section" id="porque">
-  <div class="section-head reveal">
-    <div class="label">Por que a NewScale</div>
-    <h2 style="color: var(--ink);">Não entregamos relatório<br>e <em style="color: var(--terra);">sumimos</em>.</h2>
+<!-- ===== POR QUE NEWSCALE ===== -->
+<section class="porque-section">
+  <div class="label reveal">Por que a NewScale</div>
+  <h2 class="section-title reveal reveal-delay-1">Não entregamos <em>relatório e sumimos.</em></h2>
+
+  <div class="quote-block reveal reveal-delay-2">
+    <div class="quote-aspas">"</div>
+    <p class="quote-text">Cada projeto começa pela conversa — não pelo contrato. Entendemos como a operação funciona hoje, qual é o tom de voz da marca, quais são as regras de negócio e o que a equipe precisa. Só depois a gente constrói. E depois que entrega, a gente fica — otimizando, ajustando e evoluindo junto com o seu negócio.</p>
   </div>
-  <div class="quote-block reveal">
-    <div class="quote-decor">"</div>
-    <p class="quote-text">Cada projeto começa pela conversa — não pelo contrato. Entendemos como a operação funciona hoje, qual é o tom de voz da empresa, quais são as regras de negócio e o que a equipe precisa. Só depois a gente constrói. E depois que entrega, a gente fica — otimizando, ajustando e evoluindo junto com o seu negócio.</p>
-  </div>
+
   <div class="metodologia-grid">
     <div class="metodo-card reveal reveal-delay-1">
-      <div class="metodo-num">01</div>
+      <div class="metodo-num">1</div>
       <div class="metodo-title">Consultoria Sistêmica</div>
-      <div class="metodo-text">Visão completa do negócio: atendimento, vendas e operação. A IA entra como motor de escala — não de cosmética.</div>
+      <p class="metodo-text">Visão completa do negócio: atendimento, processo de venda, produto e operação. IA como motor de escala — não de cosmética.</p>
     </div>
     <div class="metodo-card reveal reveal-delay-2">
-      <div class="metodo-num">02</div>
+      <div class="metodo-num">2</div>
       <div class="metodo-title">Roadmap Faseado</div>
-      <div class="metodo-text">Priorizamos os processos com maior potencial de retorno antes de qualquer outra coisa. Nada de implementar por implementar.</div>
+      <p class="metodo-text">Priorizamos os processos com maior potencial de retorno antes de qualquer outra coisa — começamos onde dói mais.</p>
     </div>
     <div class="metodo-card reveal reveal-delay-3">
-      <div class="metodo-num">03</div>
+      <div class="metodo-num">3</div>
       <div class="metodo-title">Implementação Integrada</div>
-      <div class="metodo-text">Conectamos seus canais, eliminamos tarefas manuais e construímos fluxos que funcionam onde a equipe já está.</div>
+      <p class="metodo-text">Conectamos seus canais, eliminamos tarefas manuais e construímos fluxos que funcionam nos sistemas que você já usa.</p>
     </div>
     <div class="metodo-card reveal reveal-delay-1">
-      <div class="metodo-num">04</div>
+      <div class="metodo-num">4</div>
       <div class="metodo-title">Treinamento das Equipes</div>
-      <div class="metodo-text">Cada pessoa aprende seu papel no novo fluxo. O humano monitora e decide — a IA cuida do operacional.</div>
+      <p class="metodo-text">Cada pessoa aprende seu papel no novo fluxo. O humano passa a monitorar e decidir — a IA faz o operacional repetitivo.</p>
     </div>
     <div class="metodo-card reveal reveal-delay-2">
-      <div class="metodo-num">05</div>
+      <div class="metodo-num">5</div>
       <div class="metodo-title">Acompanhamento de KPIs</div>
-      <div class="metodo-text">Definimos métricas juntos antes de começar. Você sabe exatamente o que esperar — e como acompanhar o ganho real.</div>
+      <p class="metodo-text">Definimos métricas juntos antes de começar. Você sabe exatamente o que esperar — e como medir o ganho real.</p>
     </div>
     <div class="metodo-card reveal reveal-delay-3">
-      <div class="metodo-num">06</div>
+      <div class="metodo-num">6</div>
       <div class="metodo-title">Sustentação Contínua</div>
-      <div class="metodo-text">Monitoramento, otimizações e manutenção para que o sistema evolua junto com a VASTRASS — não fique parado no tempo.</div>
+      <p class="metodo-text">Monitoramento, otimizações e manutenção para que o sistema evolua junto com o negócio — não fique parado no tempo.</p>
     </div>
   </div>
-  <div class="pilares-grid">
-    <div class="pilar-card reveal reveal-delay-1">
-      <div class="pilar-icon">🔍</div>
-      <div class="pilar-title">Mergulho real no negócio</div>
-      <div class="pilar-text">Antes de qualquer automação, a gente entende como a VASTRASS funciona de verdade — seus modelos, personalizações, tom de atendimento e o que não pode errar.</div>
-    </div>
-    <div class="pilar-card reveal reveal-delay-2">
-      <div class="pilar-icon">⚡</div>
-      <div class="pilar-title">Entrega com velocidade</div>
-      <div class="pilar-text">O agente vai ao ar em semanas, não em meses. A gente trabalha em fases para que você veja resultado enquanto o escopo avança.</div>
-    </div>
-    <div class="pilar-card reveal reveal-delay-3">
-      <div class="pilar-icon">🤝</div>
-      <div class="pilar-title">Parceria de longo prazo</div>
-      <div class="pilar-text">Não desaparecemos depois do go-live. Acompanhamos os atendimentos reais, fazemos ajustes e evoluímos o agente junto com o crescimento da VASTRASS.</div>
-    </div>
-  </div>
+
+  <div class="label reveal" style="margin-top:72px;">Quem vai cuidar do projeto</div>
   <div class="fundadores-grid">
     <div class="fundador-card reveal reveal-delay-1">
-      <img class="fundador-foto" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG" alt="Bruna Santanna">
+      <img class="fundador-foto" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG" alt="Bruna Santanna" onerror="this.style.display='none'">
       <div>
         <div class="fundador-nome">Bruna Santanna</div>
-        <p class="fundador-bio">ESPM. Empresária há 10+ anos. Mentora de IA no programa Potenc.IA (OLX, Magalu, B3 e CI&T). Professora de IA para equipes corporativas. Implementa IA no próprio negócio todos os dias — só vende o que usa.</p>
+        <div class="fundador-cargo">Sócia-fundadora · IA & Estratégia</div>
+        <p class="fundador-bio">ESPM. Empresária há 10+ anos. Mentora de IA no programa Potenc.IA. Professora de IA para equipes corporativas. Desenvolveu o primeiro agente para a própria joalheria — e só vende o que usa.</p>
         <div class="fundador-tags">
-          <span class="ftag">SulAmérica</span>
-          <span class="ftag">Whirlpool</span>
-          <span class="ftag">Blackbox AI</span>
-          <span class="ftag">Potenc.IA</span>
+          <span class="fundador-tag">SulAmérica</span>
+          <span class="fundador-tag">Whirlpool</span>
+          <span class="fundador-tag">Blackbox AI</span>
+          <span class="fundador-tag">Potenc.IA</span>
         </div>
       </div>
     </div>
     <div class="fundador-card reveal reveal-delay-2">
-      <img class="fundador-foto" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/BRUNO-VARELLA-PQ.jpeg" alt="Bruno Varella">
+      <img class="fundador-foto" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/BRUNO-VARELLA-PQ.jpeg" alt="Bruno Varella" onerror="this.style.display='none'">
       <div>
         <div class="fundador-nome">Bruno Varella</div>
-        <p class="fundador-bio">ESPM. 17+ anos em Marketing, Produto e Novos Negócios. Ex-Warner Bros., Ex-Natura & Co., Ex-Sorridents. Já implantou Agentes de IA em redes de franquias com 700+ unidades.</p>
+        <div class="fundador-cargo">Sócio-fundador · Marketing & Produto</div>
+        <p class="fundador-bio">ESPM. 17+ anos em Marketing, Produto e Novos Negócios. Ex-Warner Bros., Ex-Natura & Co., Ex-Sorridents. Já implantou agentes de IA em redes de franquias com 700+ unidades.</p>
         <div class="fundador-tags">
-          <span class="ftag">Warner Bros.</span>
-          <span class="ftag">Natura & Co</span>
-          <span class="ftag">Sorridents</span>
-          <span class="ftag">700+ franquias</span>
+          <span class="fundador-tag">Warner Bros.</span>
+          <span class="fundador-tag">Natura & Co</span>
+          <span class="fundador-tag">Sorridents</span>
+          <span class="fundador-tag">700+ franquias</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRÓXIMOS PASSOS -->
-<section class="steps-section" id="passos">
-  <div class="section-head reveal">
-    <div class="label">Próximos Passos</div>
-    <h2>Como a gente chega ao<br><em>go-live</em> juntos.</h2>
-  </div>
+<!-- ===== PRÓXIMOS PASSOS ===== -->
+<section class="steps-section">
+  <div class="label reveal">Próximos Passos</div>
+  <h2 class="section-title white reveal reveal-delay-1">Do aceite ao <em>go-live em 5 semanas.</em></h2>
+
   <div class="steps-list">
-    <div class="step-item reveal">
-      <div class="step-num-wrap"><div class="step-num">1</div></div>
+    <div class="step-item reveal reveal-delay-1">
+      <div class="step-num-wrap">
+        <div class="step-num">1</div>
+      </div>
       <div>
         <div class="step-prazo">Semana 1</div>
-        <div class="step-title">Reunião de imersão</div>
-        <div class="step-desc">Levantamento completo de todos os modelos de Bíblias, opções de personalização, plaquinhas, pingentes e preços. Mapeamento das principais dúvidas e objeções das clientes. Definição do tom de voz e das regras de atendimento da VASTRASS. Saímos com tudo que precisamos para construir.</div>
+        <div class="step-title">Reunião de Imersão</div>
+        <p class="step-desc">A gente mergulha no negócio com você: tom de voz, modelos de bíblias, combinações de personalização, tabela de preços, principais dúvidas das clientes, objeções mais comuns e o jeito que a Aline atende bem. Saímos com tudo que precisamos para construir.</p>
       </div>
     </div>
-    <div class="step-item reveal">
-      <div class="step-num-wrap"><div class="step-num">2</div></div>
+    <div class="step-item reveal reveal-delay-2">
+      <div class="step-num-wrap">
+        <div class="step-num">2</div>
+      </div>
       <div>
         <div class="step-prazo">Semanas 1–2</div>
-        <div class="step-title">Arquitetura e base de conhecimento</div>
-        <div class="step-desc">Construção do banco de dados do produto, do roteiro de atendimento e da estrutura do CRM no Google Sheets. Configuração do ambiente e das integrações necessárias para o agente operar.</div>
+        <div class="step-title">Arquitetura e Estratégia</div>
+        <p class="step-desc">Desenhamos o fluxo completo do agente: do primeiro contato à passagem para humano (ou ao pagamento, na opção Completo). Você valida cada etapa antes de começarmos a construir — nada é surpresa.</p>
       </div>
     </div>
-    <div class="step-item reveal">
-      <div class="step-num-wrap"><div class="step-num">3</div></div>
+    <div class="step-item reveal reveal-delay-3">
+      <div class="step-num-wrap">
+        <div class="step-num">3</div>
+      </div>
       <div>
         <div class="step-prazo">Semanas 2–4</div>
-        <div class="step-title">Construção e testes do agente</div>
-        <div class="step-desc">Desenvolvimento do agente com todos os fluxos: qualificação, montagem de pedido, precificação, quebra de objeções e registro no Sheets. Testes internos com simulações de atendimento real antes de ir ao ar.</div>
+        <div class="step-title">Construção e Testes</div>
+        <p class="step-desc">Desenvolvemos o agente, configuramos a planilha de CRM, testamos todos os fluxos — incluindo situações atípicas — e refinamos o tom de voz até você se reconhecer em cada resposta. Na opção Completo, incluímos aqui a integração com frete e pagamento.</p>
       </div>
     </div>
-    <div class="step-item reveal">
-      <div class="step-num-wrap"><div class="step-num">4</div></div>
+    <div class="step-item reveal reveal-delay-1">
+      <div class="step-num-wrap">
+        <div class="step-num">4</div>
+      </div>
       <div>
         <div class="step-prazo">Semana 5</div>
-        <div class="step-title">Go-live e treinamento</div>
-        <div class="step-desc">Lançamento em produção com Vanessa e Aline acompanhando ao vivo. Treinamento completo para monitorar o agente, acompanhar o Sheets e saber quando acionar a equipe. Você não está sozinha no go-live.</div>
+        <div class="step-title">Go-live e Treinamento</div>
+        <p class="step-desc">O agente entra no ar no seu WhatsApp. Treinamos você e a Aline no novo fluxo — como monitorar, como intervir quando preciso e como acompanhar os leads na planilha. Você não está sozinha no go-live.</p>
       </div>
     </div>
-    <div class="step-item reveal">
-      <div class="step-num-wrap"><div class="step-num">5</div></div>
+    <div class="step-item reveal reveal-delay-2">
+      <div class="step-num-wrap">
+        <div class="step-num">5</div>
+      </div>
       <div>
         <div class="step-prazo">Semanas 6+</div>
-        <div class="step-title">Ajustes e evolução</div>
-        <div class="step-desc">Acompanhamento dos atendimentos reais, correções de rota e otimizações com base no que o agente encontra na prática. Daqui pra frente, a gente avança para as próximas frentes juntos — à medida que a VASTRASS cresce.</div>
+        <div class="step-title">Ajustes e Evolução</div>
+        <p class="step-desc">O primeiro mês pós-go-live inclui ajustes sem custo adicional. A gente monitora os atendimentos, refina respostas que precisam de melhoria e corrige qualquer desvio. A partir daqui, se quiser avançar para social selling ou marketing com IA, a gente já vai estar com o negócio todo na cabeça.</p>
       </div>
     </div>
-  </div>
-  <div class="steps-closing reveal">
-    <p>"A gente constrói junto, testa junto e só vai ao ar quando estiver certo."</p>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
   <div class="footer-brand">NewScale<span>Consulting</span></div>
-  <div class="footer-date">Proposta exclusiva · VASTRASS<br>Abril de 2025</div>
+  <div class="footer-date">Proposta exclusiva · VASTRASS<br>Abril de 2026</div>
 </footer>
 
 <script>
+  function toggleModulo(card) {
+    card.classList.toggle('open');
+  }
+
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
   }, { threshold: 0.06 });
   reveals.forEach(el => observer.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
 </script>
 </body>
 </html>
