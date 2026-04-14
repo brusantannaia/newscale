@@ -1,11 +1,17 @@
 [build]
   command = "npm run build"
-  publish = "_site"
+  publish = "."
 
 [build.environment]
   NODE_VERSION = "18"
 
-# Redireciona /admin para /admin/ com barra no final
+# Headers de segurança para propostas (proteção extra)
+[[headers]]
+  for = "/propostas/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+# Redirecionamento /admin para /admin/ com barra no final
 [[redirects]]
   from = "/admin"
   to = "/admin/"

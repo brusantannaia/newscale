@@ -5,84 +5,8 @@
 User-agent: *
 Allow: /
 
+# 🚫 BLOQUEAR PROPOSTAS COMERCIAIS
+Disallow: /propostas/
+
 # Sitemap
 Sitemap: https://newscale.tech/sitemap.xml
-
-# ═══════════════════════════════════════════════════════════════
-# REGRAS ESPECÍFICAS POR BOT (boas práticas)
-# ═══════════════════════════════════════════════════════════════
-
-# Google
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 0
-
-# Googlebot para imagens
-User-agent: Googlebot-Image
-Allow: /
-
-# Bing
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 0
-
-# Outros bots importantes
-User-agent: Slurp
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Baiduspider
-Allow: /
-
-User-agent: YandexBot
-Allow: /
-
-# ═══════════════════════════════════════════════════════════════
-# BLOQUEIOS (quando necessário no futuro)
-# ═══════════════════════════════════════════════════════════════
-
-# Quando landing pages segmentadas forem criadas (noindex via meta tag):
-# User-agent: *
-# Disallow: /lp/
-
-# Quando blog for criado - permitir indexação:
-# User-agent: *
-# Allow: /blog/
-
-# Bloquear arquivos/diretórios que não devem ser indexados:
-# Disallow: /assets/temp/
-# Disallow: /admin/
-# Disallow: /*.pdf$
-# Disallow: /*?utm_*
-
-# ═══════════════════════════════════════════════════════════════
-# BOTS INDESEJADOS (adicionar conforme necessário)
-# ═══════════════════════════════════════════════════════════════
-
-# Bloquear scrapers agressivos ou maliciosos:
-# User-agent: AhrefsBot
-# Disallow: /
-
-# User-agent: SemrushBot
-# Disallow: /
-
-# User-agent: MJ12bot
-# Disallow: /
-
-# User-agent: dotbot
-# Disallow: /
-
-# ═══════════════════════════════════════════════════════════════
-# NOTAS IMPORTANTES
-# ═══════════════════════════════════════════════════════════════
-#
-# 1. Este arquivo permite indexação completa do site (comportamento desejado)
-# 2. Landing pages segmentadas devem usar <meta name="robots" content="noindex, follow">
-#    no HTML, não no robots.txt
-# 3. Atualizar lastmod no sitemap.xml sempre que houver mudanças significativas
-# 4. Monitorar Google Search Console para erros de rastreamento
-# 5. Sitemap pode incluir anchors (#fazemos, #cases, etc.) para melhor indexação
-#
-# ═══════════════════════════════════════════════════════════════
