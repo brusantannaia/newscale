@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Proposta — Ismart | NewScale Consulting</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --ink: #14373C;
+    --ink2: #1a4449;
+    --sage: #435D51;
+    --terra: #B06E4A;
+    --tl: #c4835e;
+    --sand: #A38362;
+    --cream: #E8E6E0;
+    --cl: #F4F3EF;
+    --white: #FAFAF8;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    color: var(--ink);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* SCROLL REVEAL */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 48px;
+    background: rgba(20,55,60,0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  nav img { height: 28px; }
+  .nav-badge {
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--tl);
+    background: rgba(176,110,74,0.12); padding: 4px 12px; border-radius: 20px;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(145deg, #0c2427 0%, #14373C 38%, #1d4840 72%, #435D51 100%);
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    text-align: center; padding: 120px 40px 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero .topo-lines { position: absolute; inset: 0; opacity: 0.07; pointer-events: none; }
+  .hero .topo-lines svg { width: 100%; height: 100%; }
+  .grain-overlay {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+  }
+  .hero-inner { position: relative; z-index: 2; max-width: 800px; }
+  .hero-badge {
+    display: inline-block; margin-bottom: 28px;
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--tl);
+    background: rgba(176,110,74,0.12); border: 1px solid rgba(176,110,74,0.25);
+    padding: 6px 16px; border-radius: 20px;
+    animation: fadeUp 0.6s ease 0.2s both;
+  }
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif; font-size: 0.72rem;
+    font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(255,255,255,0.45); margin-bottom: 20px;
+    animation: fadeUp 0.6s ease 0.4s both;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.6rem, 5vw, 4rem); font-weight: 700;
+    color: #fff; line-height: 1.12; margin-bottom: 24px;
+    animation: fadeUp 0.6s ease 0.6s both;
+  }
+  .hero h1 em { font-style: italic; color: var(--tl); }
+  .hero-desc {
+    font-size: 1.05rem; font-weight: 300; line-height: 1.72;
+    color: rgba(255,255,255,0.65); max-width: 620px; margin: 0 auto 48px;
+    animation: fadeUp 0.6s ease 0.8s both;
+  }
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: rgba(255,255,255,0.5); font-size: 0.78rem;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    animation: fadeUp 0.6s ease 1s both;
+    transition: color 0.3s;
+  }
+  .hero-cta:hover { color: var(--tl); }
+  .hero-cta svg { animation: bounce 2s ease infinite; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* SECTIONS COMMON */
+  section { padding: 96px 48px; }
+  .section-label {
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--terra); margin-bottom: 14px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700;
+    color: var(--ink); line-height: 1.18; margin-bottom: 16px;
+  }
+  .section-title em { font-style: italic; color: var(--terra); }
+  .section-sub {
+    font-size: 0.92rem; font-weight: 300; line-height: 1.7;
+    color: #4a6a6e; max-width: 560px;
+  }
+  .section-header { margin-bottom: 60px; }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* CONTEXTO */
+  .contexto { background: var(--cl); }
+  .contexto-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+  }
+  .contexto-text p {
+    font-size: 0.95rem; line-height: 1.78; color: #3a5a5e; margin-bottom: 16px;
+  }
+  .contexto-text p:last-child { margin-bottom: 0; }
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .stat-card {
+    padding: 28px 24px; border-radius: 14px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .stat-card:nth-child(1) { background: var(--ink); }
+  .stat-card:nth-child(2) { background: var(--terra); }
+  .stat-card:nth-child(3) { background: var(--sage); }
+  .stat-card:nth-child(4) { background: var(--ink2); }
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem; font-weight: 700; color: #fff; line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: rgba(255,255,255,0.6);
+  }
+
+  /* PROGRAMAS */
+  .programas { background: var(--white); }
+  .programas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .prog-card {
+    background: var(--cl); border: 1px solid rgba(20,55,60,0.07);
+    border-radius: 14px; padding: 28px 24px;
+    border-top: 3px solid var(--terra);
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  .prog-card:hover { box-shadow: 0 8px 28px rgba(20,55,60,0.08); transform: translateY(-3px); }
+  .prog-icon { font-size: 1.6rem; margin-bottom: 14px; }
+  .prog-title {
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--terra); margin-bottom: 8px;
+  }
+  .prog-text { font-size: 0.87rem; line-height: 1.7; color: #4a6a6e; }
+
+  /* OPORTUNIDADES */
+  .oportunidades { background: var(--cl); }
+  .dores-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .dore-card {
+    background: var(--white); border: 1px solid rgba(20,55,60,0.07);
+    border-radius: 14px; padding: 32px 28px;
+    border-left: 3px solid transparent;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  }
+  .dore-card:hover {
+    border-left-color: var(--terra);
+    box-shadow: 0 8px 28px rgba(20,55,60,0.07);
+    transform: translateY(-3px);
+  }
+  .dore-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2rem; font-weight: 700;
+    color: var(--terra); opacity: 0.18; line-height: 1; margin-bottom: 12px;
+  }
+  .dore-title {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--terra); margin-bottom: 10px;
+  }
+  .dore-text { font-size: 0.88rem; line-height: 1.7; color: #4a6a6e; }
+
+  /* PROPOSTA */
+  .proposta { background: var(--ink); }
+  .proposta .section-label { color: var(--tl); }
+  .proposta .section-title { color: #fff; }
+  .proposta .section-sub { color: rgba(255,255,255,0.5); }
+
+  .fase-block { margin-bottom: 40px; border-radius: 16px; overflow: hidden; }
+  .fase-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 28px 36px; cursor: default;
+  }
+  .fase-header.f1 { background: var(--sage); }
+  .fase-header.f2 { background: var(--terra); }
+  .fase-header.f3 { background: linear-gradient(135deg, #0c2427, #1a4449); border: 1px solid rgba(255,255,255,0.1); }
+  .fase-tag {
+    font-size: 0.63rem; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 6px;
+  }
+  .fase-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem; font-weight: 700; color: #fff;
+  }
+  .fase-duration { font-size: 0.75rem; color: rgba(255,255,255,0.55); margin-top: 4px; }
+  .fase-num-badge {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem; font-weight: 700;
+    color: rgba(255,255,255,0.12); line-height: 1;
+  }
+  .fase-body { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); }
+
+  .modulo { border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .modulo:last-child { border-bottom: none; }
+  .modulo-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 32px; cursor: pointer; transition: background 0.2s;
+  }
+  .modulo-header:hover { background: rgba(255,255,255,0.03); }
+  .modulo-left { display: flex; align-items: center; gap: 14px; }
+  .modulo-icon { font-size: 1.3rem; }
+  .modulo-label {
+    font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--tl); margin-bottom: 3px;
+  }
+  .modulo-title { font-size: 0.95rem; font-weight: 600; color: #fff; }
+  .modulo-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+  .chip {
+    font-size: 0.62rem; font-weight: 600; letter-spacing: 0.06em;
+    padding: 3px 10px; border-radius: 20px;
+    background: rgba(176,110,74,0.12); color: var(--tl);
+    border: 1px solid rgba(176,110,74,0.2);
+  }
+  .modulo-arrow {
+    color: rgba(255,255,255,0.3); font-size: 1.1rem;
+    transition: transform 0.3s; flex-shrink: 0; margin-left: 16px;
+  }
+  .modulo.open .modulo-arrow { transform: rotate(180deg); }
+  .modulo.open .modulo-chips { display: none; }
+  .modulo-body { display: none; padding: 0 32px 28px; }
+  .modulo.open .modulo-body { display: block; }
+
+  .value-box {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: rgba(176,110,74,0.08); border: 1px solid rgba(176,110,74,0.18);
+    border-radius: 10px; padding: 18px 20px; margin-bottom: 20px;
+  }
+  .value-box-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .value-box-label {
+    font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--tl); margin-bottom: 4px;
+  }
+  .value-box-text { font-size: 0.88rem; line-height: 1.65; color: rgba(255,255,255,0.75); }
+  .modulo-desc { font-size: 0.88rem; line-height: 1.72; color: rgba(255,255,255,0.55); margin-bottom: 20px; }
+  .modulo-items { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .modulo-items li {
+    font-size: 0.87rem; line-height: 1.65; color: rgba(255,255,255,0.6);
+    padding-left: 18px; position: relative;
+  }
+  .modulo-items li::before { content: '→'; position: absolute; left: 0; color: var(--terra); font-size: 0.8rem; }
+  .modulo-items li strong { color: rgba(255,255,255,0.88); }
+  .metodologia-note {
+    margin-top: 16px; padding: 14px 18px;
+    background: rgba(255,255,255,0.03); border-left: 2px solid var(--sage);
+    border-radius: 0 8px 8px 0;
+    font-size: 0.82rem; font-style: italic;
+    color: rgba(255,255,255,0.4); line-height: 1.65;
+  }
+
+  /* COMPROMISSO SOCIAL */
+  .social {
+    background: linear-gradient(165deg, #1a3a2a 0%, #1f4535 50%, #2a5040 100%);
+    position: relative; overflow: hidden;
+  }
+  .social .grain-overlay { position: absolute; inset: 0; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+  }
+  .social .container { position: relative; z-index: 1; }
+  .social .section-label { color: rgba(255,255,255,0.5); }
+  .social .section-title { color: #fff; }
+  .social-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+  }
+  .social-text p {
+    font-size: 0.95rem; line-height: 1.78; color: rgba(255,255,255,0.65); margin-bottom: 16px;
+  }
+  .social-text p:last-child { margin-bottom: 0; }
+  .social-quote {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px; padding: 40px 36px; position: relative;
+  }
+  .social-quote-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 6rem; line-height: 1; color: rgba(255,255,255,0.07);
+    font-weight: 700; position: absolute; top: 12px; left: 28px;
+  }
+  .social-quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; font-style: italic; font-weight: 400;
+    color: rgba(255,255,255,0.85); line-height: 1.65; position: relative; z-index: 1;
+  }
+  .social-badge {
+    display: inline-block; margin-top: 20px;
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: rgba(255,255,255,0.45);
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    padding: 5px 14px; border-radius: 20px;
+  }
+
+  /* INVESTIMENTO */
+  .investimento { background: var(--cl); }
+  .inv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
+  .inv-card {
+    background: var(--white); border: 1px solid rgba(20,55,60,0.07);
+    border-radius: 16px; overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  .inv-card:hover { box-shadow: 0 12px 32px rgba(20,55,60,0.1); transform: translateY(-4px); }
+  .inv-card-top { height: 4px; }
+  .inv-card-top.c1 { background: var(--sage); }
+  .inv-card-top.c2 { background: var(--terra); }
+  .inv-card-top.c3 { background: var(--ink); }
+  .inv-card-body { padding: 28px 28px 32px; }
+  .inv-fase {
+    font-size: 0.63rem; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--terra); margin-bottom: 8px;
+  }
+  .inv-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 700; color: var(--ink);
+    margin-bottom: 20px; line-height: 1.2;
+  }
+  .inv-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem; font-weight: 700; color: var(--ink); line-height: 1; margin-bottom: 6px;
+  }
+  .inv-price span { font-size: 1rem; font-weight: 400; color: var(--sand); }
+  .inv-note { font-size: 0.75rem; color: var(--sand); margin-bottom: 20px; }
+  .inv-includes { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .inv-includes li {
+    font-size: 0.83rem; color: #4a6a6e; padding-left: 16px; position: relative; line-height: 1.5;
+  }
+  .inv-includes li::before { content: '✓'; position: absolute; left: 0; color: var(--terra); font-size: 0.75rem; font-weight: 700; }
+  .inv-total {
+    background: var(--ink); border-radius: 16px; padding: 36px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 24px;
+  }
+  .inv-total-label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 8px;
+  }
+  .inv-total-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; font-weight: 700; color: #fff; line-height: 1;
+  }
+  .inv-total-value span { font-size: 1.2rem; color: rgba(255,255,255,0.5); }
+  .inv-total-desc {
+    font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.6;
+    max-width: 320px; text-align: right;
+  }
+  .inv-extra {
+    margin-top: 20px; padding: 16px 20px;
+    background: rgba(176,110,74,0.06); border: 1px solid rgba(176,110,74,0.15);
+    border-radius: 10px; font-size: 0.82rem; color: #5a7a7e; line-height: 1.65;
+  }
+  .inv-extra strong { color: var(--terra); }
+
+  /* POR QUE NEWSCALE */
+  .porque { background: var(--white); }
+  .quote-block {
+    background: var(--ink); border-radius: 16px; padding: 48px 52px;
+    position: relative; margin-bottom: 64px; overflow: hidden;
+  }
+  .quote-mark {
+    position: absolute; top: 20px; left: 36px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 8rem; line-height: 1; color: rgba(255,255,255,0.05); font-weight: 700; pointer-events: none;
+  }
+  .quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem; font-style: italic; font-weight: 400;
+    color: rgba(255,255,255,0.82); line-height: 1.65; position: relative; z-index: 1;
+  }
+  .metodologia-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 64px; }
+  .met-card {
+    padding: 28px 24px; background: var(--cl);
+    border: 1px solid rgba(20,55,60,0.07); border-radius: 14px; transition: border-color 0.3s;
+  }
+  .met-card:hover { border-color: rgba(176,110,74,0.3); }
+  .met-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 700; color: var(--terra); opacity: 0.5; margin-bottom: 10px; line-height: 1;
+  }
+  .met-title { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); margin-bottom: 8px; }
+  .met-text { font-size: 0.85rem; line-height: 1.7; color: #4a6a6e; }
+  .fundadores-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .fundador-card {
+    display: flex; gap: 24px; align-items: flex-start;
+    padding: 28px; background: var(--cl);
+    border: 1px solid rgba(20,55,60,0.07); border-radius: 16px; transition: box-shadow 0.3s;
+  }
+  .fundador-card:hover { box-shadow: 0 8px 28px rgba(20,55,60,0.07); }
+  .fundador-photo { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid rgba(176,110,74,0.3); }
+  .fundador-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+  .fundador-bio { font-size: 0.82rem; line-height: 1.68; color: #4a6a6e; margin-bottom: 12px; }
+  .fundador-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .ftag {
+    font-size: 0.62rem; font-weight: 600; letter-spacing: 0.06em;
+    padding: 3px 10px; border-radius: 20px;
+    background: rgba(20,55,60,0.06); color: var(--ink); border: 1px solid rgba(20,55,60,0.1);
+  }
+
+  /* PRÓXIMOS PASSOS */
+  .proximos { background: linear-gradient(165deg, #14373C, #194040 55%, #435D51 100%); }
+  .proximos .section-label { color: var(--tl); }
+  .proximos .section-title { color: #fff; }
+  .steps-list { display: flex; flex-direction: column; gap: 0; }
+  .step {
+    display: flex; gap: 32px; align-items: flex-start;
+    padding: 32px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .step:last-child { border-bottom: none; }
+  .step-left { flex-shrink: 0; width: 160px; }
+  .step-prazo { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tl); margin-bottom: 4px; }
+  .step-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 700; color: rgba(255,255,255,0.08); line-height: 1; }
+  .step-right { flex: 1; padding-top: 4px; }
+  .step-title { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
+  .step-desc { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; font-style: italic; color: rgba(255,255,255,0.82); line-height: 1.55; margin-bottom: 10px; }
+  .step-text { font-size: 0.86rem; line-height: 1.72; color: rgba(255,255,255,0.45); }
+  .proximos-cta { margin-top: 56px; text-align: center; }
+  .proximos-cta p { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.6); margin-bottom: 28px; }
+  .btn-primary {
+    display: inline-block; background: var(--terra); color: #fff;
+    padding: 16px 36px; border-radius: 8px;
+    font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; text-decoration: none;
+    box-shadow: 0 4px 20px rgba(176,110,74,0.35);
+    transition: background 0.3s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--tl); transform: translateY(-2px); }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink); padding: 32px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  footer img { height: 22px; opacity: 0.6; }
+  .footer-date { font-size: 0.7rem; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; text-align: right; line-height: 1.6; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    section { padding: 72px 24px; }
+    .contexto-grid { grid-template-columns: 1fr; gap: 40px; }
+    .programas-grid { grid-template-columns: 1fr; }
+    .dores-grid { grid-template-columns: 1fr; }
+    .inv-grid { grid-template-columns: 1fr; }
+    .inv-total { flex-direction: column; }
+    .inv-total-desc { text-align: left; max-width: 100%; }
+    .metodologia-grid { grid-template-columns: 1fr; }
+    .fundadores-grid { grid-template-columns: 1fr; }
+    .social-inner { grid-template-columns: 1fr; gap: 40px; }
+    .step { flex-direction: column; gap: 12px; }
+    .step-left { width: auto; }
+    footer { flex-direction: column; gap: 16px; text-align: center; }
+    .footer-date { text-align: center; }
+    .quote-block { padding: 32px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div style="display:flex; align-items:center; gap:20px;">
+    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting" style="height:38px;"/>
+    <span style="color:rgba(255,255,255,0.2); font-size:1.1rem; line-height:1;">×</span>
+    <img src="data:image/jpeg;base64,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" alt="Ismart" style="height:30px; opacity:0.85;"/>
+  </div>
+  <span class="nav-badge">Proposta Executiva · Abril 2025</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="topo-lines">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,300 Q300,220 500,290 T900,260 T1200,300" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,500 Q300,440 500,490 T900,460 T1200,500" fill="none" stroke="white" stroke-width="0.3"/>
+    </svg>
+  </div>
+  <div class="grain-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">Proposta Executiva · Abril 2025</div>
+    <div class="hero-eyebrow">NewScale Consulting</div>
+    <h1>Inteligência Artificial a serviço<br/>de quem <em>transforma vidas</em></h1>
+    <p class="hero-desc">Um programa desenhado para o time do Ismart — não um curso genérico, mas uma jornada construída a partir da missão de uma organização que há 26 anos identifica e apoia talentos que o mundo não pode desperdiçar.</p>
+    <a href="#contexto" class="hero-cta">
+      Ver proposta completa
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- CONTEXTO -->
+<section class="contexto" id="contexto">
+  <div class="container">
+    <div class="contexto-grid">
+      <div class="contexto-text">
+        <div class="section-label reveal">O Contexto</div>
+        <h2 class="section-title reveal reveal-delay-1">Uma organização que já muda destinos —<br/>e está pronta para <em>ir mais longe</em></h2>
+        <div class="reveal reveal-delay-2">
+          <p>Bárbara, o Ismart chegou ao ano de seu 26º aniversário com algo raro: um time distribuído em quatro cidades, uma missão social de impacto comprovado e uma liderança que entende que a inteligência artificial não é uma tendência para observar de longe.</p>
+          <p>Metade do time já tem acesso ao Claude. Algumas pessoas já fazem coisas muito interessantes. O desafio agora não é convencer — é nivelar, aprofundar e direcionar essa energia para projetos que ampliem o alcance e o impacto de cada uma das áreas.</p>
+          <p>O programa que desenhamos parte exatamente desse ponto: aproveitar o que já está em movimento para ir muito mais longe — com método, prática e um olhar de dentro para cada área da organização.</p>
+        </div>
+      </div>
+      <div class="stats-grid reveal reveal-delay-3">
+        <div class="stat-card">
+          <div class="stat-number">26+</div>
+          <div class="stat-label">Anos de atuação</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">190k+</div>
+          <div class="stat-label">Jovens inscritos nos processos seletivos</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">9.000+</div>
+          <div class="stat-label">Jovens apoiados em 26 anos</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">700+</div>
+          <div class="stat-label">Graduados desde 2007</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMAS -->
+<section class="programas" id="programas">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">Os Programas</div>
+      <h2 class="section-title reveal reveal-delay-1">Uma estrutura de impacto<br/><em>do fundamental à universidade</em></h2>
+      <p class="section-sub reveal reveal-delay-2">O Ismart opera um ecossistema completo de apoio ao jovem talento — cada programa com sua dinâmica, seu público e suas oportunidades de amplificação com IA.</p>
+    </div>
+    <div class="programas-grid">
+      <div class="prog-card reveal">
+        <div class="prog-icon">🏫</div>
+        <div class="prog-title">Bolsa Talento</div>
+        <p class="prog-text">Bolsa de estudo integral para o Ensino Médio em escolas particulares parceiras, com auxílio financeiro, acompanhamento individual, inglês e tecnologia. Atende jovens de SP, RJ, BH e São José dos Campos.</p>
+      </div>
+      <div class="prog-card reveal reveal-delay-1">
+        <div class="prog-icon">💻</div>
+        <div class="prog-title">Ismart Online</div>
+        <p class="prog-text">Programa 100% digital de preparação e desenvolvimento. Redação, português e matemática via plataforma, com comunidade ativa para jovens de qualquer parte do Brasil — do 7º ao 9º ano.</p>
+      </div>
+      <div class="prog-card reveal reveal-delay-2">
+        <div class="prog-icon">🎓</div>
+        <div class="prog-title">Desenvolvimento Universitário</div>
+        <p class="prog-text">Apoio aos universitários Ismart com foco em excelência e mercado de trabalho. Atividades de crescimento profissional e pessoal, bolsa-auxílio e preparação para posições de destaque.</p>
+      </div>
+      <div class="prog-card reveal reveal-delay-1">
+        <div class="prog-icon">⚽</div>
+        <div class="prog-title">Liga do Futuro</div>
+        <p class="prog-text">Programa que amplia o ecossistema de desenvolvimento dos jovens apoiados pelo Ismart, fortalecendo habilidades socioemocionais e de liderança ao longo da jornada.</p>
+      </div>
+      <div class="prog-card reveal reveal-delay-2">
+        <div class="prog-icon">📚</div>
+        <div class="prog-title">Educadores</div>
+        <p class="prog-text">Frente dedicada ao desenvolvimento dos profissionais que acompanham os alunos — porque o impacto do Ismart passa também por quem está ao lado desses jovens no dia a dia.</p>
+      </div>
+      <div class="prog-card reveal reveal-delay-3">
+        <div class="prog-icon">🖥️</div>
+        <div class="prog-title">Academia Digital</div>
+        <p class="prog-text">Iniciativa de letramento digital para os jovens apoiados — um espaço que já aponta para onde o Ismart quer levar sua comunidade: preparada para o mercado que vem aí.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPORTUNIDADES -->
+<section class="oportunidades" id="oportunidades">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">O que identificamos</div>
+      <h2 class="section-title reveal reveal-delay-1">5 oportunidades para <em>amplificar o impacto</em></h2>
+      <p class="section-sub reveal reveal-delay-2">Cada ponto abaixo representa um espaço real de crescimento — não uma crítica ao que existe, mas uma porta aberta para que o time chegue mais longe na missão que já vive.</p>
+    </div>
+    <div class="dores-grid">
+      <div class="dore-card reveal">
+        <div class="dore-num">01</div>
+        <div class="dore-title">Claude já está no time — falta extrair tudo que ele tem</div>
+        <p class="dore-text">35 pessoas com acesso é um ponto de partida raro. Com a abordagem certa, esse número vira resultado concreto em cada área — não uso pontual, mas prática que muda como o trabalho funciona e libera energia para o que importa: os jovens.</p>
+      </div>
+      <div class="dore-card reveal reveal-delay-1">
+        <div class="dore-num">02</div>
+        <div class="dore-title">Prompting como superpoder coletivo</div>
+        <p class="dore-text">Quem aprende a estruturar bem um raciocínio com IA passa a operar em outro nível. Essa é a habilidade que separa quem usa de quem aproveita de verdade — e ela se aprende rápido quando ensinada da forma certa.</p>
+      </div>
+      <div class="dore-card reveal reveal-delay-2">
+        <div class="dore-num">03</div>
+        <div class="dore-title">Cada área tem projetos esperando acontecer</div>
+        <p class="dore-text">As ideias já existem dentro do time. O que a formação e a mentoria fazem é dar o espaço e o método para elas saírem do "seria legal" e virarem realidade — com acompanhamento de quem já colocou IA para rodar.</p>
+      </div>
+      <div class="dore-card reveal reveal-delay-1">
+        <div class="dore-num">04</div>
+        <div class="dore-title">Skills compartilhadas para o time inteiro</div>
+        <p class="dore-text">O Claude permite construir automações e skills que toda a organização usa — da apresentação no padrão da marca à base de conhecimento por área. Um ganho de produtividade coletiva que libera tempo para o que mais importa.</p>
+      </div>
+      <div class="dore-card reveal reveal-delay-2">
+        <div class="dore-num">05</div>
+        <div class="dore-title">O Hackathon pode ser um marco</div>
+        <p class="dore-text">Com o time formado e projetos em andamento, o encontro de julho tem potencial de virar um ponto de virada real na cultura de IA do Ismart — não uma dinâmica, mas um acelerador com resultado para mostrar no dia seguinte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROPOSTA -->
+<section class="proposta" id="proposta">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">A Proposta</div>
+      <h2 class="section-title reveal reveal-delay-1">Estruturada em 3 fases.<br/><em>Cada uma com resultado próprio.</em></h2>
+      <p class="section-sub reveal reveal-delay-2">Clique em cada módulo para ver os detalhes das entregas. Antes de cada fase, fazemos uma imersão no contexto do time para calibrar o que for necessário.</p>
+    </div>
+
+    <!-- FASE 1 -->
+    <div class="fase-block reveal">
+      <div class="fase-header f1">
+        <div>
+          <div class="fase-tag">Fase 1 · Online · Para as 70 pessoas</div>
+          <div class="fase-name">Workshops de Formação</div>
+          <div class="fase-duration">3 sessões de 2h · Conteúdo calibrado para a realidade do Ismart</div>
+        </div>
+        <div class="fase-num-badge">1</div>
+      </div>
+      <div class="fase-body">
+        <div class="modulo open" onclick="toggleModulo(this)">
+          <div class="modulo-header">
+            <div class="modulo-left">
+              <span class="modulo-icon">🧠</span>
+              <div>
+                <div class="modulo-label">Workshop 1</div>
+                <div class="modulo-title">Fundamentos e Mentalidade</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px">
+              <div class="modulo-chips">
+                <span class="chip">Prompting</span>
+                <span class="chip">Contexto</span>
+                <span class="chip">Mentalidade IA</span>
+              </div>
+              <div class="modulo-arrow">▼</div>
+            </div>
+          </div>
+          <div class="modulo-body">
+            <div class="value-box">
+              <div class="value-box-icon">⚡</div>
+              <div class="value-box-content">
+                <div class="value-box-label">O que isso resolve</div>
+                <div class="value-box-text">Ao final desta sessão, ninguém mais vai abrir o Claude sem saber o que está fazendo — e cada pessoa vai entender como estruturar um pedido que realmente gera resultado.</div>
+              </div>
+            </div>
+            <p class="modulo-desc">Aula prática desde o primeiro minuto. A teoria serve para virar a chavinha — não para ficar no slide. O time vai entender como pensar com IA, o que diferencia um bom prompt de um pedido raso, e por que o Claude não é Google.</p>
+            <ul class="modulo-items">
+              <li><strong>Como a IA raciocina:</strong> entendendo o modelo para pedir da forma certa</li>
+              <li><strong>Anatomia de um bom prompt:</strong> contexto, papel, objetivo, formato — na prática</li>
+              <li><strong>Exercício ao vivo:</strong> cada participante cria seu primeiro prompt profissional</li>
+              <li><strong>As três frentes de uso:</strong> fazer mais rápido, fazer melhor, fazer o que nunca foi feito</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="modulo" onclick="toggleModulo(this)">
+          <div class="modulo-header">
+            <div class="modulo-left">
+              <span class="modulo-icon">🛠️</span>
+              <div>
+                <div class="modulo-label">Workshop 2</div>
+                <div class="modulo-title">Claude na Prática</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px">
+              <div class="modulo-chips">
+                <span class="chip">Projetos</span>
+                <span class="chip">Skills</span>
+                <span class="chip">Ferramentas</span>
+              </div>
+              <div class="modulo-arrow">▼</div>
+            </div>
+          </div>
+          <div class="modulo-body">
+            <div class="value-box">
+              <div class="value-box-icon">🎯</div>
+              <div class="value-box-content">
+                <div class="value-box-label">O que isso resolve</div>
+                <div class="value-box-text">Cada participante sai desta sessão com pelo menos uma ideia de projeto mapeada para a sua área — e sabendo exatamente como usar o Claude para desenvolvê-la.</div>
+              </div>
+            </div>
+            <p class="modulo-desc">Mergulho nas funcionalidades que mais geram impacto no dia a dia. Projetos, skills, tokens, ferramentas complementares — tudo mostrado com exemplos reais e espaço para experimentar ao vivo.</p>
+            <ul class="modulo-items">
+              <li><strong>Criando projetos no Claude:</strong> como organizar contexto e memória por área de trabalho</li>
+              <li><strong>Skills compartilhadas:</strong> o que são, como criar, como distribuir para o time inteiro</li>
+              <li><strong>Ferramentas complementares:</strong> Notebook LM e outras que ampliam o que o Claude já faz</li>
+              <li><strong>Mapeamento de ideias:</strong> cada participante conversa com o Claude e levanta possibilidades para sua rotina</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="modulo" onclick="toggleModulo(this)">
+          <div class="modulo-header">
+            <div class="modulo-left">
+              <span class="modulo-icon">🚀</span>
+              <div>
+                <div class="modulo-label">Workshop 3</div>
+                <div class="modulo-title">Avançando — Automações e Claude Code</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px">
+              <div class="modulo-chips">
+                <span class="chip">Automações</span>
+                <span class="chip">Claude Code</span>
+                <span class="chip">Projetos avançados</span>
+              </div>
+              <div class="modulo-arrow">▼</div>
+            </div>
+          </div>
+          <div class="modulo-body">
+            <div class="value-box">
+              <div class="value-box-icon">🔓</div>
+              <div class="value-box-content">
+                <div class="value-box-label">O que isso resolve</div>
+                <div class="value-box-text">Claude Code deixa de ser intimidador e passa a ser uma ferramenta real — quem nunca colocou a mão vai sair desta sessão tendo dado o primeiro passo, com clareza de onde faz sentido usar.</div>
+              </div>
+            </div>
+            <p class="modulo-desc">Para quem quer ir além. Automações, Claude Code desmistificado e um funil natural para quem vai entrar na mentoria de projetos. Esta sessão é o elo entre a formação e o desenvolvimento real.</p>
+            <ul class="modulo-items">
+              <li><strong>Automações no dia a dia:</strong> o que dá para fazer sem escrever uma linha de código</li>
+              <li><strong>Claude Code na prática:</strong> para que serve, quando usar, primeiros passos ao vivo</li>
+              <li><strong>Tarefas agendadas:</strong> como o Claude pode rodar processos sem intervenção manual</li>
+              <li><strong>Seleção de projetos:</strong> cada área já vai com a ideia do que vai desenvolver na mentoria</li>
+            </ul>
+            <div class="metodologia-note">Antes de cada workshop, fazemos uma imersão rápida no contexto do time para calibrar exemplos e exercícios. O conteúdo é adaptado — não aplicado de prateleira.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FASE 2 -->
+    <div class="fase-block reveal reveal-delay-1">
+      <div class="fase-header f2">
+        <div>
+          <div class="fase-tag">Fase 2 · Online · Times selecionados por área</div>
+          <div class="fase-name">Mentoria de Projetos</div>
+          <div class="fase-duration">4 sessões em grupo · 1 projeto por área · Mão na massa do início ao fim</div>
+        </div>
+        <div class="fase-num-badge">2</div>
+      </div>
+      <div class="fase-body">
+        <div class="modulo open" onclick="toggleModulo(this)">
+          <div class="modulo-header">
+            <div class="modulo-left">
+              <span class="modulo-icon">🎯</span>
+              <div>
+                <div class="modulo-label">4 sessões em grupo</div>
+                <div class="modulo-title">Do projeto à entrega — com acompanhamento real</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px">
+              <div class="modulo-chips">
+                <span class="chip">5 projetos</span>
+                <span class="chip">Mentoria em grupo</span>
+                <span class="chip">Resultado aplicado</span>
+              </div>
+              <div class="modulo-arrow">▼</div>
+            </div>
+          </div>
+          <div class="modulo-body">
+            <div class="value-box">
+              <div class="value-box-icon">🏗️</div>
+              <div class="value-box-content">
+                <div class="value-box-label">O que isso resolve</div>
+                <div class="value-box-text">Cada área sai com um projeto funcionando — construído pelo próprio time, com acompanhamento de quem já colocou IA para rodar em contextos muito diferentes.</div>
+              </div>
+            </div>
+            <p class="modulo-desc">As sessões acontecem em grupo, com todos os times juntos — o que cria troca entre áreas e acelera o aprendizado coletivo. A estrutura vai do alinhamento inicial até a apresentação dos resultados.</p>
+            <ul class="modulo-items">
+              <li><strong>Sessão 1:</strong> apresentação dos projetos por área, alinhamento de escopo e primeiros passos práticos</li>
+              <li><strong>Sessão 2:</strong> desenvolvimento — mão na massa, resolução de bloqueios, ajuste de rota</li>
+              <li><strong>Sessão 3:</strong> refinamento, testes e ajustes de cada projeto</li>
+              <li><strong>Sessão 4:</strong> apresentação dos resultados por área e definição dos próximos passos de cada iniciativa</li>
+            </ul>
+            <div class="metodologia-note">Se algum projeto demandar nível de desenvolvimento mais robusto — volume grande de dados, integrações complexas — sinalizamos e indicamos o caminho certo. Sem forçar uma solução que não serve.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FASE 3 -->
+    <div class="fase-block reveal reveal-delay-2">
+      <div class="fase-header f3">
+        <div>
+          <div class="fase-tag">Fase 3 · Presencial · São Paulo · Julho</div>
+          <div class="fase-name">Hackathon Ismart</div>
+          <div class="fase-duration">1 dia inteiro · Time completo reunido · Iniciativas reais para rodar</div>
+        </div>
+        <div class="fase-num-badge">3</div>
+      </div>
+      <div class="fase-body">
+        <div class="modulo open" onclick="toggleModulo(this)">
+          <div class="modulo-header">
+            <div class="modulo-left">
+              <span class="modulo-icon">⚡</span>
+              <div>
+                <div class="modulo-label">Presencial · SP · Julho</div>
+                <div class="modulo-title">Um dia que move o que o dia a dia não deixa mover</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px">
+              <div class="modulo-chips">
+                <span class="chip">Presencial</span>
+                <span class="chip">70 pessoas</span>
+                <span class="chip">Prêmio</span>
+              </div>
+              <div class="modulo-arrow">▼</div>
+            </div>
+          </div>
+          <div class="modulo-body">
+            <div class="value-box">
+              <div class="value-box-icon">🏆</div>
+              <div class="value-box-content">
+                <div class="value-box-label">O que isso resolve</div>
+                <div class="value-box-text">Um dia inteiro com o time inteiro pensando junto — e saindo com iniciativas reais para rodar. Não uma dinâmica. Um acelerador com resultado para mostrar no dia seguinte.</div>
+              </div>
+            </div>
+            <p class="modulo-desc">O hackathon é o fechamento natural de toda a jornada. Com o time já formado e com projetos em andamento, o encontro de julho tem tudo para virar um marco na cultura de IA do Ismart — com desafio, colaboração, prêmio e muito resultado.</p>
+            <ul class="modulo-items">
+              <li><strong>Desenho da dinâmica e dos desafios:</strong> estrutura e regras criadas especificamente para o contexto do Ismart</li>
+              <li><strong>Facilitação do dia completo:</strong> condução das etapas, grupos e apresentações</li>
+              <li><strong>Estrutura de avaliação:</strong> critérios, pitches e premiação por categoria</li>
+              <li><strong>Relatório pós-evento:</strong> iniciativas mapeadas, projetos que merecem seguir e recomendações de próximos passos</li>
+            </ul>
+            <div class="metodologia-note">Deslocamento e hospedagem cobrados à parte, conforme logística do evento.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMPROMISSO SOCIAL -->
+<section class="social" id="social">
+  <div class="grain-overlay"></div>
+  <div class="container">
+    <div class="social-header reveal" style="text-align:center; margin-bottom:52px;">
+      <div style="display:flex; align-items:center; justify-content:center; gap:28px; margin-bottom:20px; flex-wrap:wrap;">
+        <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale" style="height:26px; opacity:0.8;"/>
+        <span style="color:rgba(255,255,255,0.25); font-size:1.4rem;">×</span>
+        <img src="data:image/jpeg;base64,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" alt="Ismart" style="height:44px; border-radius:6px;"/>
+      </div>
+      <div class="section-label" style="color:rgba(255,255,255,0.5);">Compromisso Social</div>
+      <h2 class="section-title" style="color:#fff; margin:0 auto; max-width:600px;">Um presente<br/><em style="color:var(--tl);">para os alunos</em></h2>
+    </div>
+
+    <div class="social-inner">
+      <div class="reveal">
+        <div class="social-quote">
+          <div class="social-quote-mark">"</div>
+          <p class="social-quote-text">Quem aprende a usar IA com intenção não está só aprendendo uma ferramenta — está se preparando para um mercado que vai exigir isso de todo mundo. Esses jovens merecem chegar lá na frente.</p>
+          <div class="social-badge">Bruna Santanna · NewScale</div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="social-text">
+          <p>Ao fechar essa parceria, a NewScale se compromete a realizar uma <strong style="color:#fff;">ação gratuita de formação em IA para alunos do Ismart</strong> — sem custo, sem condições.</p>
+          <p>Formato, duração e momento serão definidos juntos com o Ismart, respeitando a rotina e a realidade dos jovens.</p>
+        </div>
+        <div style="margin-top:28px; padding:24px 28px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12); border-radius:14px;">
+          <div style="font-size:0.62rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--tl); margin-bottom:14px;">O que está incluído</div>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; align-items:center; gap:12px; font-size:0.88rem; color:rgba(255,255,255,0.75);">
+              <span style="color:var(--terra); font-size:1rem;">✦</span> Formação em IA para alunos Ismart
+            </div>
+            <div style="display:flex; align-items:center; gap:12px; font-size:0.88rem; color:rgba(255,255,255,0.75);">
+              <span style="color:var(--terra); font-size:1rem;">✦</span> Sem custo adicional
+            </div>
+            <div style="display:flex; align-items:center; gap:12px; font-size:0.88rem; color:rgba(255,255,255,0.75);">
+              <span style="color:var(--terra); font-size:1rem;">✦</span> Formato definido em conjunto com o Ismart
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTIMENTO -->
+<section class="investimento" id="investimento">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">O Investimento</div>
+      <h2 class="section-title reveal reveal-delay-1">Condições claras,<br/><em>sem surpresas no caminho.</em></h2>
+      <p class="section-sub reveal reveal-delay-2">Cada fase tem valor próprio e pode ser aprovada de forma independente — mas o programa completo é onde o resultado se multiplica.</p>
+    </div>
+
+    <div class="inv-grid">
+      <div class="inv-card reveal">
+        <div class="inv-card-top c1"></div>
+        <div class="inv-card-body">
+          <div class="inv-fase">Fase 1</div>
+          <div class="inv-name">Workshops de Formação</div>
+          <div class="inv-price"><span>R$</span> 10.000</div>
+          <div class="inv-note">3 sessões · 70 pessoas · Online</div>
+          <ul class="inv-includes">
+            <li>3 workshops de 2h cada</li>
+            <li>Material digital personalizado</li>
+            <li>Imersão prévia no contexto do time</li>
+            <li>Exercícios práticos com o Claude</li>
+            <li>Suporte por canal combinado entre sessões</li>
+          </ul>
+        </div>
+      </div>
+      <div class="inv-card reveal reveal-delay-1">
+        <div class="inv-card-top c2"></div>
+        <div class="inv-card-body">
+          <div class="inv-fase">Fase 2</div>
+          <div class="inv-name">Mentoria de Projetos</div>
+          <div class="inv-price"><span>R$</span> 7.500</div>
+          <div class="inv-note">4 sessões em grupo · 5 projetos · Online</div>
+          <ul class="inv-includes">
+            <li>4 sessões de mentoria em grupo</li>
+            <li>Acompanhamento de 1 projeto por área</li>
+            <li>Feedback e orientação entre sessões</li>
+            <li>Sinalização de projetos que demandam dev</li>
+            <li>Material de apoio por projeto</li>
+          </ul>
+        </div>
+      </div>
+      <div class="inv-card reveal reveal-delay-2">
+        <div class="inv-card-top c3"></div>
+        <div class="inv-card-body">
+          <div class="inv-fase">Fase 3</div>
+          <div class="inv-name">Hackathon Ismart</div>
+          <div class="inv-price"><span>R$</span> 12.000</div>
+          <div class="inv-note">1 dia presencial · SP · Julho · Time completo</div>
+          <ul class="inv-includes">
+            <li>Desenho da dinâmica e dos desafios</li>
+            <li>Facilitação do dia completo</li>
+            <li>Estrutura de grupos, pitches e premiação</li>
+            <li>Relatório pós-evento com iniciativas</li>
+            <li>Deslocamento/hospedagem à parte</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="inv-total reveal">
+      <div>
+        <div class="inv-total-label">Investimento total — programa completo</div>
+        <div class="inv-total-value"><span>R$</span> 29.500</div>
+      </div>
+      <div style="text-align:right">
+        <div class="inv-total-desc">Programa faseado — cada etapa pode ser aprovada de forma independente conforme o orçamento. O valor total reflete a jornada completa da formação ao hackathon.</div>
+      </div>
+    </div>
+
+    <div class="inv-extra reveal">
+      <strong>Importante:</strong> deslocamento e hospedagem para o Hackathon presencial não estão inclusos neste valor e serão orçados à parte conforme a logística definida pelo Ismart para o evento de julho.
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE NEWSCALE -->
+<section class="porque" id="porque">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">Por que a NewScale</div>
+      <h2 class="section-title reveal reveal-delay-1">Começamos com uma imersão<br/><em>na sua empresa.</em></h2>
+    </div>
+
+    <div class="quote-block reveal">
+      <div class="quote-mark">"</div>
+      <p class="quote-text">Cada programa começa pela escuta — não pelo slide. Entendemos o momento do time, o que já funciona, onde está o bloqueio real. Só depois a gente desenha. E durante todo o caminho, estamos junto — ajustando, calibrando, garantindo que o que foi construído realmente rode.</p>
+    </div>
+
+    <div class="metodologia-grid">
+      <div class="met-card reveal">
+        <div class="met-num">01</div>
+        <div class="met-title">Imersão Antes de Qualquer Coisa</div>
+        <p class="met-text">Conversamos com quem vai usar. Entendemos o contexto, o nível do time, as áreas e os objetivos reais antes de definir um conteúdo ou dinâmica.</p>
+      </div>
+      <div class="met-card reveal reveal-delay-1">
+        <div class="met-num">02</div>
+        <div class="met-title">Conteúdo Calibrado, Não Genérico</div>
+        <p class="met-text">Cada workshop e sessão de mentoria é ajustado para a realidade do Ismart. Exemplos, exercícios e projetos vêm do contexto de quem está na sala.</p>
+      </div>
+      <div class="met-card reveal reveal-delay-2">
+        <div class="met-num">03</div>
+        <div class="met-title">Prática do Primeiro ao Último Minuto</div>
+        <p class="met-text">Não existem slides de teoria sem aplicação imediata. Cada conceito é testado ao vivo — porque é na prática que a chavinha vira.</p>
+      </div>
+      <div class="met-card reveal reveal-delay-1">
+        <div class="met-num">04</div>
+        <div class="met-title">Formação que Vira Cultura</div>
+        <p class="met-text">O objetivo não é ensinar uma ferramenta — é criar uma nova forma de trabalhar. O programa é desenhado para que o uso da IA se torne hábito, não evento.</p>
+      </div>
+      <div class="met-card reveal reveal-delay-2">
+        <div class="met-num">05</div>
+        <div class="met-title">Sinalização Honesta de Complexidade</div>
+        <p class="met-text">Se um projeto demandar nível técnico além do escopo, apontamos o caminho certo. Não forçamos uma solução inadequada para fechar o contrato.</p>
+      </div>
+      <div class="met-card reveal reveal-delay-3">
+        <div class="met-num">06</div>
+        <div class="met-title">Presença no Que Importa</div>
+        <p class="met-text">Do workshop ao hackathon presencial em julho, estamos junto nas etapas que fazem diferença — do início ao fim da jornada.</p>
+      </div>
+    </div>
+
+    <div class="fundadores-grid">
+      <div class="fundador-card reveal">
+        <img class="fundador-photo" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG" alt="Bruna Santanna"/>
+        <div>
+          <div class="fundador-name">Bruna Santanna</div>
+          <p class="fundador-bio">ESPM. Empresária há 10+ anos. Mentora de IA no programa Potenc.IA — formou mais de 1.000 profissionais em empresas como OLX, Magalu, B3 e CI&T. Professora de IA para equipes corporativas. Implementa IA no próprio negócio todos os dias — só ensina o que usa.</p>
+          <div class="fundador-tags">
+            <span class="ftag">SulAmérica</span>
+            <span class="ftag">Whirlpool</span>
+            <span class="ftag">Blackbox AI</span>
+            <span class="ftag">Potenc.IA</span>
+          </div>
+        </div>
+      </div>
+      <div class="fundador-card reveal reveal-delay-1">
+        <img class="fundador-photo" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/BRUNO-VARELLA-PQ.jpeg" alt="Bruno Varella"/>
+        <div>
+          <div class="fundador-name">Bruno Varella</div>
+          <p class="fundador-bio">ESPM. 17+ anos em Marketing, Produto e Novos Negócios. Ex-Warner Bros., Ex-Natura & Co., Ex-Sorridents. Já implantou Agentes de IA em redes de franquias com 700+ unidades. Lidera a frente de automações e implementação da NewScale.</p>
+          <div class="fundador-tags">
+            <span class="ftag">Warner Bros.</span>
+            <span class="ftag">Natura & Co</span>
+            <span class="ftag">Sorridents</span>
+            <span class="ftag">700+ franquias</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRÓXIMOS PASSOS -->
+<section class="proximos" id="proximos">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">Próximos Passos</div>
+      <h2 class="section-title reveal reveal-delay-1">Como a gente começa<br/><em>a partir daqui.</em></h2>
+    </div>
+
+    <div class="steps-list">
+      <div class="step reveal">
+        <div class="step-left">
+          <div class="step-prazo">Semana 1</div>
+          <div class="step-num">01</div>
+        </div>
+        <div class="step-right">
+          <div class="step-title">Alinhamento e Imersão</div>
+          <div class="step-desc">Antes de qualquer entrega, a gente se conhece.</div>
+          <p class="step-text">Conversa com Bárbara e líderes de área para entender o momento real do time, calibrar o conteúdo dos workshops e iniciar o mapeamento dos projetos que cada área quer desenvolver na mentoria.</p>
+        </div>
+      </div>
+      <div class="step reveal reveal-delay-1">
+        <div class="step-left">
+          <div class="step-prazo">Semanas 2–4</div>
+          <div class="step-num">02</div>
+        </div>
+        <div class="step-right">
+          <div class="step-title">Workshops 1 e 2</div>
+          <div class="step-desc">70 pessoas. Fundamentos, prática e ideias nascendo.</div>
+          <p class="step-text">Dois primeiros workshops com todo o time — online, práticos, com espaço para experimentar ao vivo. Ao final, cada pessoa já tem pelo menos uma ideia de projeto para a sua área.</p>
+        </div>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-left">
+          <div class="step-prazo">Semana 5</div>
+          <div class="step-num">03</div>
+        </div>
+        <div class="step-right">
+          <div class="step-title">Workshop 3 + Seleção de Projetos</div>
+          <div class="step-desc">Automações, Claude Code e o funil para a mentoria.</div>
+          <p class="step-text">Terceiro workshop com foco em quem quer ir além — e seleção final dos projetos por área que vão entrar na mentoria. Cada time sai com escopo definido e pronto para começar.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-left">
+          <div class="step-prazo">Semanas 6–9</div>
+          <div class="step-num">04</div>
+        </div>
+        <div class="step-right">
+          <div class="step-title">Mentoria de Projetos</div>
+          <div class="step-desc">Mão na massa. Do escopo ao projeto funcionando.</div>
+          <p class="step-text">4 sessões em grupo com os times selecionados — do alinhamento inicial até a apresentação dos resultados. Cada área sai com um projeto real para mostrar no hackathon.</p>
+        </div>
+      </div>
+      <div class="step reveal reveal-delay-1">
+        <div class="step-left">
+          <div class="step-prazo">Julho</div>
+          <div class="step-num">05</div>
+        </div>
+        <div class="step-right">
+          <div class="step-title">Hackathon Ismart — SP</div>
+          <div class="step-desc">Um dia inteiro. Time reunido. Resultado para mostrar.</div>
+          <p class="step-text">Com o time formado e os projetos em andamento, o hackathon de julho vira o que deve ser: um acelerador real. Grupos, desafios, pitches, prêmios — e iniciativas que saem dali para rodar de verdade.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="proximos-cta reveal">
+      <p>Prontos para fazer isso acontecer.</p>
+      <a href="https://wa.me/5511971901020" target="_blank" class="btn-primary">Vamos começar →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting"/>
+  <div class="footer-date">Proposta exclusiva · Ismart<br/>Abril de 2025</div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.06 });
+  reveals.forEach(el => observer.observe(el));
+
+  function toggleModulo(card) { card.classList.toggle('open'); }
+</script>
+</body>
+</html>
