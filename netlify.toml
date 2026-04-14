@@ -16,3 +16,69 @@
   from = "/admin"
   to = "/admin/"
   status = 301
+
+# Redirecionamentos de propostas movidas para /propostas/
+[[redirects]]
+  from = "/proposta-Alvaro-11082025.html"
+  to = "/propostas/proposta-Alvaro-11082025.html"
+  status = 301
+
+[[redirects]]
+  from = "/proposta-atmosfera/*"
+  to = "/propostas/proposta-atmosfera/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/proposta-colo.html"
+  to = "/propostas/proposta-colo.html"
+  status = 301
+
+[[redirects]]
+  from = "/proposta-ismart-260413.html"
+  to = "/propostas/proposta-ismart-260413.html"
+  status = 301
+
+[[redirects]]
+  from = "/proposta-lojong-260317.html"
+  to = "/propostas/proposta-lojong-260317.html"
+  status = 301
+
+[[redirects]]
+  from = "/proposta-maisinternet-200326.html"
+  to = "/propostas/proposta-maisinternet-200326.html"
+  status = 301
+
+[[redirects]]
+  from = "/proposta-oneglobal-30032026.html"
+  to = "/propostas/proposta-oneglobal-30032026.html"
+  status = 301
+
+[[redirects]]
+  from = "/proposta-ranchao-310326.html"
+  to = "/propostas/proposta-ranchao-310326.html"
+  status = 301
+
+[[redirects]]
+  from = "/proposta-stoller-060426.html"
+  to = "/propostas/proposta-stoller-060426.html"
+  status = 301
+
+[[redirects]]
+  from = "/proposta-tacto.html"
+  to = "/propostas/proposta-tacto.html"
+  status = 301
+
+[[redirects]]
+  from = "/proposta-vastrass-130426.html"
+  to = "/propostas/proposta-vastrass-130426.html"
+  status = 301
+
+[[redirects]]
+  from = "/proposta_allisson.html"
+  to = "/propostas/proposta_allisson.html"
+  status = 301
+
+[[redirects]]
+  from = "/proposta_dinamicarh.html"
+  to = "/propostas/proposta_dinamicarh.html"
+  status = 301
