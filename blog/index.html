@@ -222,9 +222,13 @@
         <div class="bc-nl-msg" id="nl-msg">Recebemos seu e-mail. Até breve!</div>
       </div>
       <div>
-        <form class="bc-nl-form" onsubmit="handleNl(event)">
-          <input type="email" placeholder="seu@email.com" required aria-label="Seu e-mail">
-          <button type="submit" class="btn" style="height:48px;white-space:nowrap">Me avise</button>
+        <form class="bc-nl-form" name="blog-newsletter" method="POST" data-netlify="true" onsubmit="handleNl(event)">
+          <input type="hidden" name="form-name" value="blog-newsletter">
+          <input type="email" name="email" placeholder="seu@email.com" required aria-label="Seu e-mail">
+          <button type="submit" style="height:48px;white-space:nowrap;display:inline-flex;align-items:center;gap:8px;padding:0 22px;background:var(--terra);color:#fff;border:none;border-radius:8px;font-size:.84rem;font-weight:600;cursor:pointer;transition:opacity .2s;font-family:var(--fb)" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Me avise quando publicar
+          </button>
         </form>
       </div>
     </div>
