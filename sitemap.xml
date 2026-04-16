@@ -4,104 +4,134 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-<!-- Homepage / Página Principal -->
+<!-- Homepage -->
 <url>
   <loc>https://newscale.tech/</loc>
-  <lastmod>2026-04-09</lastmod>
+  <lastmod>2025-06-01</lastmod>
   <changefreq>weekly</changefreq>
   <priority>1.0</priority>
 </url>
 
-<!-- Seção Metodologia (anchor importante) -->
+<!-- Sobre -->
 <url>
-  <loc>https://newscale.tech/#fazemos</loc>
-  <lastmod>2026-04-09</lastmod>
+  <loc>https://newscale.tech/sobre</loc>
+  <lastmod>2025-06-01</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
 </url>
 
-<!-- Seção Agentes (anchor importante) -->
+<!-- Metodologia -->
 <url>
-  <loc>https://newscale.tech/#agentes</loc>
-  <lastmod>2026-04-09</lastmod>
+  <loc>https://newscale.tech/metodologia</loc>
+  <lastmod>2025-06-01</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
 </url>
 
-<!-- Seção Cases (anchor importante) -->
+<!-- Agentes de IA -->
 <url>
-  <loc>https://newscale.tech/#cases</loc>
-  <lastmod>2026-04-09</lastmod>
+  <loc>https://newscale.tech/agentes</loc>
+  <lastmod>2025-06-01</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.9</priority>
 </url>
 
-<!-- Seção Quem Somos (anchor importante) -->
+<!-- Cases -->
 <url>
-  <loc>https://newscale.tech/#quem</loc>
-  <lastmod>2026-04-09</lastmod>
+  <loc>https://newscale.tech/cases</loc>
+  <lastmod>2025-06-01</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
+  <priority>0.9</priority>
 </url>
 
-<!-- Seção Como Funciona (anchor importante) -->
+<!-- Blog -->
 <url>
-  <loc>https://newscale.tech/#como</loc>
-  <lastmod>2026-04-09</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-
-<!-- Seção Contato / CTA Final (anchor importante) -->
-<url>
-  <loc>https://newscale.tech/#contato</loc>
-  <lastmod>2026-04-09</lastmod>
+  <loc>https://newscale.tech/blog/</loc>
+  <lastmod>2025-06-01</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 
-<!-- 
-FUTURAS PÁGINAS (adicionar quando forem criadas):
-
-Blog (quando implementado):
+<!-- Blog posts -->
 <url>
-  <loc>https://newscale.tech/blog</loc>
-  <lastmod>YYYY-MM-DD</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.9</priority>
+  <loc>https://newscale.tech/blog/agente-de-vendas-whatsapp/</loc>
+  <lastmod>2025-06-10</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
 </url>
 
-Landing Pages Segmentadas (quando implementadas):
+<url>
+  <loc>https://newscale.tech/blog/automacao-financeira-n8n/</loc>
+  <lastmod>2025-05-28</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://newscale.tech/blog/como-calcular-roi-automacao-ia/</loc>
+  <lastmod>2025-05-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://newscale.tech/blog/agente-sac-ia-atendimento/</loc>
+  <lastmod>2025-04-30</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://newscale.tech/blog/automacao-franquia-checklist/</loc>
+  <lastmod>2025-04-12</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://newscale.tech/blog/crm-atualizado-por-ia/</loc>
+  <lastmod>2025-03-25</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://newscale.tech/blog/quando-sua-empresa-esta-pronta-para-ia/</loc>
+  <lastmod>2025-03-10</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<!-- Trabalhe Conosco -->
+<url>
+  <loc>https://newscale.tech/trabalhe-conosco</loc>
+  <lastmod>2025-06-01</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+
+<!--
+FUTURAS LANDING PAGES (adicionar quando criadas):
 <url>
   <loc>https://newscale.tech/lp/saude</loc>
   <lastmod>YYYY-MM-DD</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
 </url>
-
 <url>
   <loc>https://newscale.tech/lp/rh</loc>
   <lastmod>YYYY-MM-DD</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
 </url>
-
 <url>
   <loc>https://newscale.tech/lp/varejo</loc>
   <lastmod>YYYY-MM-DD</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
 </url>
-
 <url>
   <loc>https://newscale.tech/lp/franquias</loc>
-  <lastmod>YYYY-MM-DD</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-
-<url>
-  <loc>https://newscale.tech/lp/eventos</loc>
   <lastmod>YYYY-MM-DD</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>

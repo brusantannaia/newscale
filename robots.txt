@@ -5,7 +5,10 @@
 User-agent: *
 Allow: /
 
-# 🚫 BLOQUEAR PROPOSTAS COMERCIAIS
+# Bloquear LP antiga (noindex individual não é suficiente para crawl budget)
+Disallow: /lp/
+
+# Bloquear propostas comerciais
 Disallow: /propostas/
 
 # Sitemap

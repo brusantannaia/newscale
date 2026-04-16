@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Blog | NewScale Consulting — IA aplicada a negócios</title>
+<meta name="description" content="Insights práticos sobre inteligência artificial para empresários que querem resultados reais. Automação, agentes de IA, ROI e casos de uso reais.">
+<link rel="canonical" href="https://newscale.tech/blog/">
+
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Blog NewScale — IA aplicada a negócios">
+<meta property="og:description" content="Insights práticos sobre inteligência artificial para empresários que querem resultados reais.">
+<meta property="og:url" content="https://newscale.tech/blog/">
+<meta property="og:image" content="https://newscale.tech/assets/img/og-image.jpg">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="NewScale Consulting">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog NewScale — IA aplicada a negócios">
+<meta name="twitter:description" content="Insights práticos sobre inteligência artificial para empresários que querem resultados reais.">
+<meta name="twitter:image" content="https://newscale.tech/assets/img/og-image.jpg">
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JJ9X1LXN4L"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JJ9X1LXN4L');</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/assets/css/styles.css">
+
+<!-- Schema JSON-LD — Blog -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Blog NewScale Consulting",
+  "description": "Insights práticos sobre inteligência artificial aplicada a negócios para empresários que querem resultados reais.",
+  "url": "https://newscale.tech/blog/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "NewScale Consulting",
+    "url": "https://newscale.tech",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png"
+    }
+  },
+  "inLanguage": "pt-BR"
+}
+</script>
+
+<style>
+.blog-coming { padding: 80px 0 96px; background: var(--white); }
+.bc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+.bc-card { background: var(--cl); border: 1px solid rgba(20,55,60,.07); border-radius: 16px; padding: 28px; position: relative; overflow: hidden; transition: all .28s; }
+.bc-card:hover { border-color: rgba(176,110,74,.18); transform: translateY(-3px); box-shadow: 0 10px 32px rgba(20,55,60,.06); }
+.bc-thumb { height: 120px; border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; }
+.bc-badge { position: absolute; top: 20px; right: 20px; font-size: .6rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding: 4px 10px; border-radius: 20px; background: rgba(176,110,74,.12); color: var(--terra); border: 1px solid rgba(176,110,74,.2); }
+.bc-cat { font-size: .62rem; font-weight: 700; color: var(--terra); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 10px; }
+.bc-card h3 { font-family: var(--fd); font-size: 1.15rem; font-weight: 700; color: var(--ink); line-height: 1.32; margin-bottom: 12px; }
+.bc-meta { font-size: .68rem; color: var(--sand); display: flex; gap: 12px; align-items: center; }
+.bc-nl { margin-top: 56px; background: linear-gradient(135deg, var(--ink) 0%, #0d2e34 100%); border-radius: 20px; padding: 48px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+.bc-nl-body h3 { font-family: var(--fd); font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.bc-nl-body p { font-size: .88rem; color: rgba(255,255,255,.5); }
+.bc-nl-form { display: flex; gap: 12px; flex-shrink: 0; }
+.bc-nl-form input { padding: 0 18px; height: 48px; border: 1px solid rgba(255,255,255,.12); border-radius: 10px; background: rgba(255,255,255,.06); color: #fff; font-size: .9rem; width: 240px; font-family: var(--fb); }
+.bc-nl-form input::placeholder { color: rgba(255,255,255,.3); }
+.bc-nl-form input:focus { outline: none; border-color: rgba(176,110,74,.5); }
+.bc-nl-msg { font-size: .82rem; color: rgba(255,255,255,.6); margin-top: 12px; display: none; }
+@media (max-width: 900px) { .bc-grid { grid-template-columns: 1fr 1fr; } .bc-nl { flex-direction: column; padding: 36px 28px; } .bc-nl-form { flex-direction: column; width: 100%; } .bc-nl-form input { width: 100%; } }
+@media (max-width: 600px) { .bc-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="c ni">
+    <a href="/" class="nlogo" aria-label="NewScale — página inicial">
+      <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting" loading="eager">
+    </a>
+    <ul class="nlinks">
+      <li><a href="/metodologia.html">Metodologia</a></li>
+      <li><a href="/agentes.html">Agentes</a></li>
+      <li><a href="/cases.html">Cases</a></li>
+      <li><a href="/sobre.html">Sobre</a></li>
+      <li><a href="/blog/" class="active">Blog</a></li>
+    </ul>
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito%20com%20a%20NewScale." target="_blank" rel="noopener" class="ncta">Diagnóstico gratuito</a>
+    <button class="nhbg" id="menu-open" aria-label="Abrir menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="mob" id="mn">
+  <button class="xb" id="menu-close" aria-label="Fechar menu">&times;</button>
+  <a href="/metodologia.html">Metodologia</a>
+  <a href="/agentes.html">Agentes</a>
+  <a href="/cases.html">Cases</a>
+  <a href="/sobre.html">Sobre</a>
+  <a href="/blog/">Blog</a>
+  <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito%20com%20a%20NewScale." target="_blank" rel="noopener" class="ncta" style="margin-top:8px">Diagnóstico gratuito</a>
+</div>
+
+<!-- ═══════════════════════════════
+     HERO
+═══════════════════════════════ -->
+<section class="page-hero" aria-label="Blog NewScale">
+  <div class="hbg"></div>
+  <div class="hgrain"></div>
+  <div class="hglow"></div>
+  <div class="c page-hero-in rv">
+    <div class="hpill"><span class="dot"></span>Blog</div>
+    <h1>Inteligência Artificial <em>aplicada a negócios</em></h1>
+    <p>Insights práticos para empresários que querem resultados reais — sem jargão, sem hype, sem teoria inútil.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     ARTIGOS EM BREVE
+═══════════════════════════════ -->
+<section class="blog-coming" aria-label="Artigos em breve">
+  <div class="c">
+    <div class="mhdr rv">
+      <span class="stag">Conteúdo</span>
+      <h2 class="h2">Artigos que estamos preparando</h2>
+      <p class="sub" style="color:var(--sage);margin:0 auto;max-width:480px">Cada artigo nasce de uma conversa real com empresários — dúvidas concretas, sem resposta genérica.</p>
+    </div>
+
+    <div class="bc-grid rv" style="transition-delay:.1s">
+
+      <!-- Card 1 -->
+      <div class="bc-card">
+        <span class="bc-badge">Em breve</span>
+        <div class="bc-thumb" style="background:linear-gradient(135deg,rgba(176,110,74,.12) 0%,rgba(67,93,81,.08) 100%)">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.4" stroke-linecap="round" opacity=".6"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="9" cy="10" r="1.5"/><path d="M14 10h3M14 13h2"/></svg>
+        </div>
+        <div class="bc-cat">Conceitos</div>
+        <h3>Agentes de IA vs. Chatbots: qual a diferença real?</h3>
+        <div class="bc-meta">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          6 min de leitura
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bc-card">
+        <span class="bc-badge">Em breve</span>
+        <div class="bc-thumb" style="background:linear-gradient(135deg,rgba(67,93,81,.1) 0%,rgba(163,131,98,.08) 100%)">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.4" stroke-linecap="round" opacity=".7"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <div class="bc-cat">ROI & Resultados</div>
+        <h3>ROI de IA: quanto tempo para ter retorno real?</h3>
+        <div class="bc-meta">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          8 min de leitura
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bc-card">
+        <span class="bc-badge">Em breve</span>
+        <div class="bc-thumb" style="background:linear-gradient(135deg,rgba(20,55,60,.07) 0%,rgba(176,110,74,.1) 100%)">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.4" stroke-linecap="round" opacity=".45"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="bc-cat">Estratégia</div>
+        <h3>IA sem equipe técnica interna: mito ou realidade?</h3>
+        <div class="bc-meta">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          7 min de leitura
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bc-card">
+        <span class="bc-badge">Em breve</span>
+        <div class="bc-thumb" style="background:linear-gradient(135deg,rgba(176,110,74,.08) 0%,rgba(163,131,98,.1) 100%)">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--sand)" stroke-width="1.4" stroke-linecap="round" opacity=".7"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </div>
+        <div class="bc-cat">Guia prático</div>
+        <h3>Como escolher uma consultoria de IA (5 perguntas essenciais)</h3>
+        <div class="bc-meta">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          5 min de leitura
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bc-card">
+        <span class="bc-badge">Em breve</span>
+        <div class="bc-thumb" style="background:linear-gradient(135deg,rgba(67,93,81,.1) 0%,rgba(20,55,60,.07) 100%)">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.4" stroke-linecap="round" opacity=".7"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="bc-cat">Automação</div>
+        <h3>5 processos que toda empresa pode automatizar com IA hoje</h3>
+        <div class="bc-meta">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          9 min de leitura
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Newsletter CTA -->
+    <div class="bc-nl rv" style="transition-delay:.2s">
+      <div class="bc-nl-body">
+        <h3>Avise-me quando publicar</h3>
+        <p>Sem spam. Só conteúdo que vale o seu tempo.</p>
+        <div class="bc-nl-msg" id="nl-msg">Recebemos seu e-mail. Até breve!</div>
+      </div>
+      <div>
+        <form class="bc-nl-form" onsubmit="handleNl(event)">
+          <input type="email" placeholder="seu@email.com" required aria-label="Seu e-mail">
+          <button type="submit" class="btn" style="height:48px;white-space:nowrap">Me avise</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="c">
+    <div class="footer-in">
+      <div class="footer-logo">
+        <a href="/"><img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting" loading="lazy"></a>
+      </div>
+      <nav class="footer-links" aria-label="Links do rodapé">
+        <a href="/metodologia.html">Metodologia</a>
+        <a href="/agentes.html">Agentes de IA</a>
+        <a href="/cases.html">Cases</a>
+        <a href="/sobre.html">Sobre</a>
+        <a href="/blog/">Blog</a>
+        <a href="/trabalhe-conosco.html">Trabalhe Conosco</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:contato@newscale.tech">contato@newscale.tech</a>
+        <a href="https://wa.me/5511971901020" target="_blank" rel="noopener">(11) 97190-1020</a>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/bruno-varella-dominguez/" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>Bruno
+          </a>
+          <a href="https://www.linkedin.com/in/brusantanna/" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>Bruna
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 NewScale Consulting. Todos os direitos reservados.</p>
+      <p>Consultoria de IA &middot; Agentes de Automação &middot; São Paulo, SP</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+<script>
+function handleNl(e) {
+  e.preventDefault();
+  var msg = document.getElementById('nl-msg');
+  if (msg) { msg.style.display = 'block'; }
+  e.target.style.display = 'none';
+}
+</script>
+</body>
+</html>
