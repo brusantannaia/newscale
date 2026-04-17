@@ -7,31 +7,15 @@
 <!-- Homepage -->
 <url>
   <loc>https://newscale.tech/</loc>
-  <lastmod>2025-06-01</lastmod>
+  <lastmod>2026-04-16</lastmod>
   <changefreq>weekly</changefreq>
   <priority>1.0</priority>
-</url>
-
-<!-- Sobre -->
-<url>
-  <loc>https://newscale.tech/sobre</loc>
-  <lastmod>2025-06-01</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-
-<!-- Metodologia -->
-<url>
-  <loc>https://newscale.tech/metodologia</loc>
-  <lastmod>2025-06-01</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
 </url>
 
 <!-- Agentes de IA -->
 <url>
   <loc>https://newscale.tech/agentes</loc>
-  <lastmod>2025-06-01</lastmod>
+  <lastmod>2026-04-16</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.9</priority>
 </url>
@@ -39,103 +23,47 @@
 <!-- Cases -->
 <url>
   <loc>https://newscale.tech/cases</loc>
-  <lastmod>2025-06-01</lastmod>
+  <lastmod>2026-04-16</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.9</priority>
 </url>
 
-<!-- Blog -->
+<!-- Metodologia -->
 <url>
-  <loc>https://newscale.tech/blog/</loc>
-  <lastmod>2025-06-01</lastmod>
-  <changefreq>weekly</changefreq>
+  <loc>https://newscale.tech/metodologia</loc>
+  <lastmod>2026-04-16</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.8</priority>
 </url>
 
-<!-- Blog posts -->
+<!-- Sobre -->
 <url>
-  <loc>https://newscale.tech/blog/agente-de-vendas-whatsapp/</loc>
-  <lastmod>2025-06-10</lastmod>
+  <loc>https://newscale.tech/sobre</loc>
+  <lastmod>2026-04-16</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
+  <priority>0.8</priority>
 </url>
 
+<!-- Blog (índice) -->
 <url>
-  <loc>https://newscale.tech/blog/automacao-financeira-n8n/</loc>
-  <lastmod>2025-05-28</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-
-<url>
-  <loc>https://newscale.tech/blog/como-calcular-roi-automacao-ia/</loc>
-  <lastmod>2025-05-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-
-<url>
-  <loc>https://newscale.tech/blog/agente-sac-ia-atendimento/</loc>
-  <lastmod>2025-04-30</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-
-<url>
-  <loc>https://newscale.tech/blog/automacao-franquia-checklist/</loc>
-  <lastmod>2025-04-12</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-
-<url>
-  <loc>https://newscale.tech/blog/crm-atualizado-por-ia/</loc>
-  <lastmod>2025-03-25</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-
-<url>
-  <loc>https://newscale.tech/blog/quando-sua-empresa-esta-pronta-para-ia/</loc>
-  <lastmod>2025-03-10</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
+  <loc>https://newscale.tech/blog/</loc>
+  <lastmod>2026-04-16</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
 </url>
 
 <!-- Trabalhe Conosco -->
 <url>
   <loc>https://newscale.tech/trabalhe-conosco</loc>
-  <lastmod>2025-06-01</lastmod>
+  <lastmod>2026-04-16</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
 </url>
 
 <!--
-FUTURAS LANDING PAGES (adicionar quando criadas):
-<url>
-  <loc>https://newscale.tech/lp/saude</loc>
-  <lastmod>YYYY-MM-DD</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-<url>
-  <loc>https://newscale.tech/lp/rh</loc>
-  <lastmod>YYYY-MM-DD</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-<url>
-  <loc>https://newscale.tech/lp/varejo</loc>
-  <lastmod>YYYY-MM-DD</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-<url>
-  <loc>https://newscale.tech/lp/franquias</loc>
-  <lastmod>YYYY-MM-DD</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
+ADICIONAR QUANDO PUBLICADOS:
+- Posts de blog individuais
+- Landing pages de segmento (/lp/saude, /lp/rh, /lp/franquias, etc.)
 -->
 
 </urlset>

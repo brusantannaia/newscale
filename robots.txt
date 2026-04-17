@@ -13,3 +13,6 @@ Disallow: /propostas/
 
 # Sitemap
 Sitemap: https://newscale.tech/sitemap.xml
+
+# LLMs context file (para indexação por sistemas de IA)
+# https://newscale.tech/llms.txt

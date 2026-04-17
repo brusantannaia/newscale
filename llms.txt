@@ -1,0 +1,76 @@
+# NewScale Consulting
+> Consultoria brasileira especializada em implementação de agentes de IA e automação estratégica para empresas. Do diagnóstico ao resultado em semanas — sem equipe técnica interna necessária.
+
+## Sobre a empresa
+NewScale Consulting é uma consultoria fundada por Bruno Varella e Bruna Santanna, com sede em São Paulo, SP, Brasil. Implementamos agentes de IA e automações em operações reais de empresas de médio porte, integrando com os sistemas que o cliente já usa. Não vendemos templates — construímos cada solução do zero, a partir do diagnóstico da operação.
+
+Diferenciais:
+- Diagnóstico gratuito de 30 minutos antes de qualquer proposta
+- Implementação completa (não só consultoria): do briefing ao go-live em 15–90 dias
+- Sustentação contínua pós-entrega
+- Foco em resultado mensurável — KPIs definidos antes e monitorados depois
+
+## Fundadores
+- Bruno Varella — Co-Fundador (Marketing, Produto & Escala). 17+ anos em Warner Bros. Discovery, Natura & Co., Sorridents. Especialista em agentes de IA para franquias e operações complexas. LinkedIn: https://www.linkedin.com/in/bruno-varella-dominguez/
+- Bruna Santanna — Co-Fundadora (Estratégia de IA & Educação). Empreendedora, educadora em IA, fundadora da BruSantanna.AI. LinkedIn: https://www.linkedin.com/in/bruna-araujo-santanna/
+
+## Serviços
+- Diagnóstico e estratégia de IA (gratuito)
+- Desenvolvimento de agentes de IA customizados
+- Automação de processos operacionais e comerciais
+- Integração com ERP, CRM, WhatsApp API, e-Commerce e sistemas proprietários
+- Copilotos de Marketing com IA generativa
+- Sustentação, monitoramento e otimização contínua
+
+## Agentes que já desenvolvemos
+- Agentes de Vendas e Conversão (WhatsApp, Instagram, Webchat, App)
+- Agentes de SAC e Suporte 24/7 com transbordo para humano
+- Agentes Financeiros e de Cobrança (WhatsApp + ERP)
+- Agentes de CRM, Fidelização e Retenção
+- Copilotos de Marketing (8 módulos: campanhas, social media, newsletter, performance, WhatsApp, trade/PDV, landing pages, calendário editorial)
+- Agentes de Dados, Inteligência e Growth (Meta Ads, Google Ads, GA4, CRM)
+- Agentes de Operação Clínica e Assistencial (prontuários, protocolos, alertas)
+- Agentes de RH e Recrutamento (WhatsApp + currículo PDF/Word + CRM)
+- Agentes de Checklist e Plano de Ação para Franquias (áudio + CRM)
+- Agentes Dedo-Duro para Franquias (monitoramento + alertas em tempo real)
+- Agentes de Monitoramento de Grupos de WhatsApp
+- Agente de Stress Test para Validação de Processos (QA em escala)
+- Agentes de Leitura Inteligente de Documentos (PDF/OCR → ERP/CRM)
+- Agentes de Pré-Orçamento e Cotação Assistida (tabelas + histórico + gate de aprovação)
+- Agentes de Gestão de Frota e Combustível (OCR de comprovantes + rastreamento)
+- Agentes de NPS e Satisfação Pós-Atendimento (disparo automático + alertas)
+
+## Setores atendidos
+Saúde & Homecare, RH & Recrutamento, Franquias, Varejo & e-Commerce, Joalheria & Personalização, Eventos, Indústria & Distribuidoras, Corretoras de Seguros, Telecom & Provedores de Internet, Consultoria
+
+## Tecnologias e integrações
+n8n, Python, OpenAI API (GPT-4o), Claude (Anthropic), Google Gemini, Supabase, WhatsApp Business API (Evolution, Cloud API), Instagram API, Shopify, ERP (Protheus, Linx, Sankhya, Omie, Tiny), CRM (Kommo, HubSpot, RD Station, Selecty), Bubble, Make, Google Workspace, Meta Ads, Google Ads, GA4, Power BI, Looker Studio, Telegram
+
+## Resultados verificáveis (cases)
+- Consultoria de RH (Recrutamento e Seleção): +42% conversão de candidatos | -33% tempo de preenchimento de vagas | -48% dispensas no período de experiência
+- COLO Saúde (Homecare e Cuidados Paliativos): R$0,09 por relatório clínico gerado | +26% capacidade de atendimento | 30 dias do briefing ao go-live
+- Belcenter (Perfumaria e Cosméticos, Varejo): +34% taxa de recompra semestral | +54% conversão nas ações de CRM
+- Casa Tacto (Locação de Espaços para Eventos): +24% conversão de leads | +18% faturamento no 2º mês
+- Casa Kahla (Joalheria, Loja Física + e-Commerce): +37% conversão de leads | +22% faturamento no 2º mês
+
+## Metodologia (6 etapas)
+1. Diagnóstico gratuito (30 min) — mapeamento de oportunidades com ROI potencial
+2. Estratégia — priorização e arquitetura da solução
+3. Prototipagem — MVP funcional para validação
+4. Desenvolvimento — construção completa com integrações
+5. Go-live — testes, ajustes e ativação em produção
+6. Sustentação — monitoramento contínuo, otimizações e evolução
+
+Prazo: 15 a 90 dias do briefing ao go-live, dependendo da complexidade.
+
+## Contato
+- Site: https://newscale.tech
+- WhatsApp: +55 11 97190-1020
+- E-mail: contato@newscale.tech
+- Instagram: https://www.instagram.com/newscaleai/
+- LinkedIn Bruno: https://www.linkedin.com/in/bruno-varella-dominguez/
+- LinkedIn Bruna: https://www.linkedin.com/in/bruna-araujo-santanna/
+- Diagnóstico gratuito: https://wa.me/5511971901020
+
+## Localização
+São Paulo, SP, Brasil — atendimento remoto em todo o Brasil
