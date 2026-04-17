@@ -1,0 +1,2076 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta · Igreja Adventista do Sétimo Dia</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal-deep: #14373C;
+    --teal-mid: #435D51;
+    --copper: #B06E4A;
+    --copper-light: #C8845E;
+    --sand: #A38362;
+    --cream: #F5F3EE;
+    --cream-alt: #E8E6E0;
+    --white: #FAFAF8;
+    --text-dark: #0D2226;
+    --text-mid: #2C4A4E;
+    --text-soft: #5a6e72;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.65;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 700; line-height: 1.15; }
+
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
+
+  /* ============ HEADER COM LOGOS ============ */
+  .top-header {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    padding: 32px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+  }
+
+  .top-header-left,
+  .top-header-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .logo-newscale {
+    height: 42px;
+    width: auto;
+  }
+
+  .logo-client {
+    height: 54px;
+    width: auto;
+  }
+
+  .header-divider {
+    width: 1px;
+    height: 36px;
+    background: rgba(255,255,255,0.2);
+  }
+
+  .header-client-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.3;
+  }
+
+  .header-client-label strong {
+    display: block;
+    color: rgba(255,255,255,0.85);
+    font-weight: 600;
+    margin-top: 3px;
+    letter-spacing: 0.08em;
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    min-height: 100vh;
+    background: var(--teal-deep);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 140px 40px 100px;
+    overflow: hidden;
+    position: relative;
+    color: white;
+  }
+
+  .topo-lines {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    opacity: 0.12;
+    pointer-events: none;
+  }
+
+  .topo-lines svg { width: 100%; height: 100%; }
+
+  .hero-content { position: relative; z-index: 2; max-width: 920px; }
+
+  .hero-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(176,110,74,0.18);
+    border: 1px solid rgba(176,110,74,0.4);
+    color: var(--copper-light);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    border-radius: 30px;
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.2s forwards;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.4s forwards;
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 4.8vw, 3.8rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+    line-height: 1.18;
+    max-width: 900px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.6s forwards;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--copper-light);
+  }
+
+  .hero-desc {
+    font-size: clamp(1rem, 1.6vw, 1.18rem);
+    color: rgba(255,255,255,0.78);
+    max-width: 720px;
+    margin: 0 auto 48px;
+    line-height: 1.7;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.8s forwards;
+  }
+
+  .hero-client {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.55);
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 1s forwards;
+  }
+
+  .hero-client strong { color: white; font-weight: 600; }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.5);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 1.2s forwards;
+  }
+
+  .hero-scroll::after {
+    content: '';
+    display: block;
+    width: 1px; height: 36px;
+    background: rgba(255,255,255,0.4);
+    margin: 10px auto 0;
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.2); }
+  }
+
+  /* ============ SECTION COMMON ============ */
+  section { padding: 110px 0; position: relative; }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--copper);
+    margin-bottom: 18px;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 3.5vw, 2.9rem);
+    color: var(--text-dark);
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+    max-width: 880px;
+  }
+
+  .section-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--copper);
+  }
+
+  .section-sub {
+    font-size: 1.05rem;
+    color: var(--text-soft);
+    max-width: 720px;
+    line-height: 1.7;
+  }
+
+  /* ============ CONTEXTO ============ */
+  .contexto { background: var(--cream); }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 70px;
+    align-items: start;
+  }
+
+  .intro-text p {
+    font-size: 1.02rem;
+    color: var(--text-mid);
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .intro-text strong { color: var(--text-dark); font-weight: 600; }
+
+  .intro-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .stat-card {
+    padding: 32px 26px;
+    border-radius: 12px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card.ink { background: var(--teal-deep); }
+  .stat-card.terra { background: var(--copper); }
+  .stat-card.sage { background: var(--teal-mid); }
+  .stat-card.ink2 { background: #1a4449; }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    opacity: 0.85;
+  }
+
+  /* ============ OPORTUNIDADES ============ */
+  .oportunidades { background: var(--cream-alt); }
+
+  .oport-head { margin-bottom: 40px; max-width: 820px; }
+
+  .oport-disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    background: rgba(176,110,74,0.08);
+    border: 1px solid rgba(176,110,74,0.25);
+    border-left: 3px solid var(--copper);
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 48px;
+    max-width: 960px;
+    font-size: 0.94rem;
+    line-height: 1.65;
+    color: var(--text-mid);
+  }
+
+  .oport-disclaimer strong {
+    color: var(--copper);
+    font-weight: 700;
+  }
+
+  .oport-disclaimer-icon {
+    width: 28px; height: 28px;
+    color: var(--copper);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .oport-disclaimer-icon svg {
+    width: 100%; height: 100%;
+  }
+
+  .oport-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .oport-card {
+    background: var(--white);
+    border: 1px solid rgba(20,55,60,0.08);
+    border-radius: 14px;
+    padding: 40px 32px 36px;
+    position: relative;
+    transition: all 0.35s ease;
+    overflow: hidden;
+  }
+
+  .oport-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 3px; height: 100%;
+    background: var(--copper);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.4s ease;
+  }
+
+  .oport-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 40px rgba(20,55,60,0.08);
+    border-color: rgba(176,110,74,0.25);
+  }
+
+  .oport-card:hover::before { transform: scaleY(1); }
+
+  .oport-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.6rem;
+    font-weight: 300;
+    color: var(--copper);
+    opacity: 0.22;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .oport-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--copper);
+    margin-bottom: 14px;
+  }
+
+  .oport-text {
+    font-size: 0.96rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  /* ============ O QUE VÃO LEVAR ============ */
+  .levar { background: var(--cream); }
+
+  .levar-head { margin-bottom: 64px; max-width: 820px; }
+
+  .levar-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-bottom: 56px;
+  }
+
+  .levar-card {
+    background: var(--white);
+    border: 1px solid rgba(20,55,60,0.08);
+    border-radius: 16px;
+    padding: 40px 38px;
+    position: relative;
+    transition: all 0.35s ease;
+    overflow: hidden;
+  }
+
+  .levar-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 0; height: 100%;
+    background: linear-gradient(180deg, var(--copper) 0%, var(--copper-light) 100%);
+    transition: width 0.4s ease;
+  }
+
+  .levar-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(20,55,60,0.09);
+    border-color: rgba(176,110,74,0.25);
+  }
+
+  .levar-card:hover::before { width: 4px; }
+
+  .levar-card-num {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--copper);
+    opacity: 0.35;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .levar-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+
+  .levar-card-text {
+    font-size: 0.96rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  .levar-bonus {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    background: var(--teal-deep);
+    color: white;
+    padding: 44px 48px;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .levar-bonus::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: var(--copper);
+  }
+
+  .levar-bonus-icon {
+    width: 56px; height: 56px;
+    flex-shrink: 0;
+    color: var(--copper-light);
+    background: rgba(176,110,74,0.15);
+    border: 1px solid rgba(176,110,74,0.3);
+    border-radius: 14px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .levar-bonus-icon svg {
+    width: 100%; height: 100%;
+  }
+
+  .levar-bonus-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--copper-light);
+    margin-bottom: 8px;
+  }
+
+  .levar-bonus-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 12px;
+    line-height: 1.25;
+  }
+
+  .levar-bonus-text {
+    font-size: 0.98rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.7;
+  }
+
+  /* ============ DIFERENCIAL / PRÉ-TRABALHO ============ */
+  .diferencial {
+    background: var(--teal-deep);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .diferencial .topo-lines { opacity: 0.07; }
+
+  .diferencial .container { position: relative; z-index: 2; }
+
+  .diferencial .section-label { color: var(--copper-light); }
+  .diferencial .section-title { color: white; }
+  .diferencial .section-title em { color: var(--copper-light); }
+  .diferencial .section-sub { color: rgba(255,255,255,0.75); }
+
+  .dif-process {
+    margin-top: 64px;
+  }
+
+  .dif-process-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .dif-process-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--copper-light);
+    margin-bottom: 18px;
+  }
+
+  .dif-process-flow {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .dif-arrow {
+    color: var(--copper);
+    font-style: normal;
+    font-weight: 400;
+    opacity: 0.8;
+  }
+
+  .dif-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .dif-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 34px 26px 30px;
+    position: relative;
+    transition: all 0.35s ease;
+    overflow: hidden;
+  }
+
+  .dif-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 2px;
+    background: var(--copper);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .dif-card:hover {
+    transform: translateY(-4px);
+    background: rgba(176,110,74,0.06);
+    border-color: rgba(176,110,74,0.3);
+  }
+
+  .dif-card:hover::before { transform: scaleX(1); }
+
+  .dif-card-icon {
+    width: 52px; height: 52px;
+    border-radius: 12px;
+    background: rgba(176,110,74,0.15);
+    border: 1px solid rgba(176,110,74,0.3);
+    color: var(--copper-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+  }
+
+  .dif-card-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .dif-card-step {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--copper-light);
+    margin-bottom: 10px;
+  }
+
+  .dif-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+
+  .dif-card-text {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.65;
+  }
+
+  /* ============ PROPOSTA / MÓDULOS ============ */
+  .proposta { background: var(--cream); }
+
+  .prop-head { margin-bottom: 56px; max-width: 820px; }
+
+  .prop-sub-instruction {
+    font-size: 0.88rem;
+    color: var(--text-soft);
+    margin-top: 10px;
+    font-style: italic;
+  }
+
+  .fase {
+    margin-bottom: 24px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid rgba(20,55,60,0.08);
+  }
+
+  .fase-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 36px;
+    background: var(--teal-deep);
+    color: white;
+  }
+
+  .fase:nth-child(3) .fase-header { background: var(--copper); }
+  .fase:nth-child(4) .fase-header { background: var(--teal-mid); }
+
+  .fase-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    opacity: 0.75;
+    margin-bottom: 6px;
+  }
+
+  .fase-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .fase-duration {
+    font-size: 0.82rem;
+    opacity: 0.8;
+    margin-top: 4px;
+  }
+
+  .fase-num-badge {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    opacity: 0.35;
+    line-height: 1;
+  }
+
+  .modulo {
+    padding: 34px 36px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .modulo:hover { background: rgba(176,110,74,0.03); }
+
+  .modulo-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .modulo-title-wrap { flex: 1; }
+
+  .modulo-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--copper);
+    margin-bottom: 8px;
+  }
+
+  .modulo-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.3;
+  }
+
+  .modulo-toggle {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(176,110,74,0.3);
+    color: var(--copper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    transition: transform 0.35s ease, background 0.3s ease;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .modulo.open .modulo-toggle {
+    background: var(--copper);
+    color: white;
+    transform: rotate(45deg);
+  }
+
+  .modulo-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+    transition: all 0.3s ease;
+  }
+
+  .chip {
+    background: rgba(20,55,60,0.05);
+    color: var(--text-mid);
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 20px;
+  }
+
+  .modulo.open .modulo-chips { display: none; }
+
+  .modulo-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+
+  .modulo.open .modulo-body { max-height: 2000px; }
+
+  .modulo-body-inner { padding-top: 28px; }
+
+  .value-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: rgba(176,110,74,0.08);
+    border: 1px solid rgba(176,110,74,0.2);
+    padding: 22px 24px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+  }
+
+  .value-box-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .value-box-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--copper);
+    margin-bottom: 6px;
+  }
+
+  .value-box-text {
+    font-size: 1rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    line-height: 1.55;
+  }
+
+  .modulo-desc {
+    font-size: 0.96rem;
+    color: var(--text-mid);
+    line-height: 1.75;
+    margin-bottom: 22px;
+  }
+
+  .modulo-items {
+    list-style: none;
+    padding: 0;
+  }
+
+  .modulo-items li {
+    position: relative;
+    padding: 10px 0 10px 28px;
+    font-size: 0.94rem;
+    color: var(--text-mid);
+    line-height: 1.65;
+    border-bottom: 1px solid rgba(20,55,60,0.06);
+  }
+
+  .modulo-items li:last-child { border-bottom: none; }
+
+  .modulo-items li::before {
+    content: '';
+    position: absolute;
+    left: 4px; top: 20px;
+    width: 10px; height: 2px;
+    background: var(--copper);
+  }
+
+  .modulo-items li strong {
+    color: var(--text-dark);
+    font-weight: 600;
+  }
+
+  /* ============ INVESTIMENTO ============ */
+  .investimento {
+    background: linear-gradient(165deg, #14373C, #194040 55%, #435D51 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .investimento .topo-lines { opacity: 0.07; }
+
+  .investimento .container { position: relative; z-index: 2; }
+
+  .investimento .section-label { color: var(--copper-light); }
+  .investimento .section-title { color: white; }
+  .investimento .section-title em { color: var(--copper-light); }
+
+  .invest-intro {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.78);
+    margin-bottom: 56px;
+    max-width: 720px;
+    line-height: 1.7;
+  }
+
+  .invest-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 18px;
+    padding: 48px 48px 40px;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .invest-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: var(--copper);
+  }
+
+  .invest-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--copper-light);
+    margin-bottom: 10px;
+  }
+
+  .invest-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 24px;
+  }
+
+  .invest-value-row {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+
+  .invest-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.4rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+  }
+
+  .invest-value-desc {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+  }
+
+  .invest-value-desc strong { color: var(--copper-light); font-weight: 600; }
+
+  .invest-inclusos-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--copper-light);
+    margin-bottom: 18px;
+  }
+
+  .invest-inclusos {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 32px;
+  }
+
+  .invest-inclusos li {
+    position: relative;
+    padding-left: 22px;
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.55;
+  }
+
+  .invest-inclusos li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 8px;
+    width: 10px; height: 2px;
+    background: var(--copper);
+  }
+
+  .pagamento-box {
+    background: rgba(176,110,74,0.12);
+    border: 1px solid rgba(176,110,74,0.3);
+    border-radius: 14px;
+    padding: 32px 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .pagamento-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--copper-light);
+    margin-bottom: 8px;
+  }
+
+  .pagamento-text {
+    font-size: 1.08rem;
+    color: white;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .pagamento-text strong {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: var(--copper-light);
+  }
+
+  /* ============ POR QUE NEWSCALE ============ */
+  .porque { background: var(--cream); }
+
+  .quote-box {
+    background: var(--teal-deep);
+    color: white;
+    padding: 60px 56px;
+    border-radius: 18px;
+    margin-bottom: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .quote-box::before {
+    content: '"';
+    position: absolute;
+    top: -30px; left: 36px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12rem;
+    color: var(--copper);
+    opacity: 0.2;
+    line-height: 1;
+  }
+
+  .quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.35rem, 2.3vw, 1.75rem);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.95);
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+  }
+
+  .metodologia-head { text-align: center; margin-bottom: 60px; }
+
+  .metodologia-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .metodo-card {
+    background: var(--white);
+    border: 1px solid rgba(20,55,60,0.08);
+    border-radius: 14px;
+    padding: 34px 30px;
+    transition: all 0.3s ease;
+  }
+
+  .metodo-card:hover {
+    border-color: rgba(176,110,74,0.25);
+    box-shadow: 0 8px 26px rgba(20,55,60,0.06);
+    transform: translateY(-3px);
+  }
+
+  .metodo-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--copper);
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+
+  .metodo-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+  }
+
+  .metodo-text {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    line-height: 1.65;
+  }
+
+  /* Fundadora */
+  .fundadora-wrap { margin-top: 120px; }
+  .fundadora-head { text-align: center; margin-bottom: 56px; }
+
+  .fundadora-card {
+    background: var(--white);
+    border: 1px solid rgba(20,55,60,0.08);
+    border-radius: 22px;
+    padding: 56px 60px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1040px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(20,55,60,0.06);
+  }
+
+  .fundadora-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 4px;
+    background: linear-gradient(90deg, var(--teal-deep) 0%, var(--copper) 50%, var(--teal-mid) 100%);
+  }
+
+  .fundadora-photo-wrap {
+    position: relative;
+    width: 260px;
+    height: 260px;
+  }
+
+  .fundadora-photo {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    border: 4px solid var(--white);
+    box-shadow: 0 14px 36px rgba(20,55,60,0.18);
+  }
+
+  .fundadora-photo-deco {
+    position: absolute;
+    top: -10px; left: -10px;
+    width: 280px;
+    height: 280px;
+    border: 2px solid var(--copper);
+    border-radius: 50%;
+    opacity: 0.35;
+    z-index: 1;
+  }
+
+  .fundadora-photo-deco::after {
+    content: '';
+    position: absolute;
+    bottom: -18px; right: -18px;
+    width: 80px; height: 80px;
+    background: var(--copper);
+    border-radius: 50%;
+    opacity: 0.12;
+  }
+
+  .fundadora-content { min-width: 0; }
+
+  .fundadora-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .fundadora-role {
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--copper);
+    margin-bottom: 22px;
+  }
+
+  .fundadora-bio {
+    font-size: 0.97rem;
+    color: var(--text-mid);
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .fundadora-pilares {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    padding: 24px 0;
+    margin-bottom: 28px;
+    border-top: 1px solid rgba(20,55,60,0.08);
+    border-bottom: 1px solid rgba(20,55,60,0.08);
+  }
+
+  .fundadora-pilar {
+    text-align: center;
+  }
+
+  .fundadora-pilar-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--teal-deep);
+    line-height: 1;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .fundadora-pilar-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--text-soft);
+  }
+
+  .fundadora-tags-wrap {
+    margin-top: 4px;
+  }
+
+  .fundadora-tags-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--text-soft);
+    margin-bottom: 12px;
+  }
+
+  .fundadora-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tag {
+    background: rgba(176,110,74,0.1);
+    color: var(--copper);
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(176,110,74,0.15);
+  }
+
+  /* ============ FOOTER ============ */
+  .footer {
+    background: #0a1f23;
+    color: rgba(255,255,255,0.5);
+    padding: 50px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.02em;
+  }
+
+  .footer-brand span {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--copper-light);
+    margin-left: 8px;
+  }
+
+  .footer-date {
+    font-size: 0.82rem;
+    text-align: right;
+    line-height: 1.5;
+  }
+
+  /* ============ REVEAL ============ */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 900px) {
+    section { padding: 80px 0; }
+    .container { padding: 0 24px; }
+    .top-header {
+      padding: 20px 24px;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .logo-newscale { height: 34px; }
+    .logo-client { height: 44px; }
+    .header-client-label { font-size: 0.62rem; text-align: center; }
+    .hero { padding: 220px 24px 80px; }
+    .intro-grid { grid-template-columns: 1fr; gap: 40px; }
+    .intro-stats { grid-template-columns: 1fr 1fr; }
+    .oport-grid { grid-template-columns: 1fr; }
+    .dif-grid { grid-template-columns: 1fr; gap: 16px; }
+    .dif-process-flow { font-size: 1rem; gap: 10px; }
+    .metodologia-grid { grid-template-columns: 1fr; }
+    .fundadora-card {
+      grid-template-columns: 1fr;
+      padding: 40px 28px;
+      text-align: center;
+      gap: 36px;
+    }
+    .fundadora-photo-wrap { margin: 0 auto; width: 200px; height: 200px; }
+    .fundadora-photo { width: 200px; height: 200px; }
+    .fundadora-photo-deco { width: 220px; height: 220px; }
+    .fundadora-photo-deco::after { width: 60px; height: 60px; }
+    .fundadora-name { font-size: 1.9rem; }
+    .fundadora-pilares { grid-template-columns: 1fr; gap: 14px; }
+    .fundadora-tags { justify-content: center; }
+    .fundadora-tags-label { text-align: center; }
+    .levar-grid { grid-template-columns: 1fr; }
+    .levar-bonus { flex-direction: column; padding: 32px 28px; gap: 20px; }
+    .oport-disclaimer { flex-direction: column; gap: 12px; padding: 22px; }
+    .invest-card { padding: 36px 28px; }
+    .invest-inclusos { grid-template-columns: 1fr; }
+    .invest-value { font-size: 2.6rem; }
+    .passo { grid-template-columns: 1fr; gap: 6px; }
+    .passo-prazo { font-size: 0.68rem; }
+    .fase-header { padding: 22px 24px; flex-direction: column; align-items: flex-start; gap: 12px; }
+    .fase-num-badge { display: none; }
+    .modulo { padding: 26px 24px; }
+    .modulo-title { font-size: 1.2rem; }
+    .footer { flex-direction: column; gap: 20px; text-align: center; }
+    .footer-date { text-align: center; }
+    .quote-box { padding: 48px 32px; }
+  }
+
+  @media (min-width: 901px) and (max-width: 1200px) {
+    .dif-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <!-- Header com logos -->
+  <div class="top-header">
+    <div class="top-header-left">
+      <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting" class="logo-newscale">
+    </div>
+    <div class="top-header-right">
+      <div class="header-client-label">
+        Proposta para
+        <strong>Igreja Adventista do Sétimo Dia</strong>
+      </div>
+      <div class="header-divider"></div>
+      <img src="data:image/jpeg;base64,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" alt="Igreja Adventista do Sétimo Dia" class="logo-client">
+    </div>
+  </div>
+
+  <div class="topo-lines">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,300 Q300,220 500,290 T900,260 T1200,300" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,500 Q300,440 500,490 T900,460 T1200,500" fill="none" stroke="white" stroke-width="0.3"/>
+      <path d="M0,250 Q250,180 500,230 T900,200 T1200,240" fill="none" stroke="white" stroke-width="0.3"/>
+      <path d="M0,550 Q300,500 550,540 T950,510 T1200,540" fill="none" stroke="white" stroke-width="0.3"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge">Proposta Executiva · Abril 2026</div>
+    <div class="hero-eyebrow">NewScale Consulting</div>
+    <h1 class="hero-title">Inteligência Artificial <em>aplicada</em> ao dia a dia da Igreja Adventista</h1>
+    <p class="hero-desc">
+      Uma capacitação construída a partir da rotina real das equipes de Departamento Pessoal e Recursos Humanos da Igreja Adventista. Não uma palestra genérica, mas um encontro desenhado para que cada participante saia sabendo exatamente como usar IA no trabalho na segunda-feira seguinte.
+    </p>
+    <div class="hero-client">Preparada para <strong>Igreja Adventista do Sétimo Dia</strong></div>
+  </div>
+
+  <a href="#contexto" class="hero-scroll">Continuar</a>
+</section>
+
+<!-- ============ CONTEXTO ============ -->
+<section class="contexto" id="contexto">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-text reveal">
+        <div class="section-label">O Contexto</div>
+        <h2 class="section-title">Uma rede que já opera com excelência e pode <em>escalar</em> sem precisar crescer o time</h2>
+        <p style="margin-top: 30px;">
+          Thiago, a Igreja Adventista administra, através da União Noroeste Brasileira, uma operação rara: <strong>9 escritórios regionais</strong>, times de Departamento Pessoal e Recursos Humanos distribuídos por Acre, Rondônia, Amazonas e Roraima, e uma agenda de capacitação que mantém todos esses profissionais alinhados a cada dois anos.
+        </p>
+        <p>
+          O Evento Essenciais é, por natureza, um espaço de atualização técnica. O que a inteligência artificial oferece agora é uma oportunidade concreta: <strong>transformar as rotinas mais repetitivas de DP e RH em processos assistidos</strong>, liberando as pessoas para o que só elas podem fazer (análise, julgamento, cuidado com quem está do outro lado).
+        </p>
+        <p>
+          Essa proposta é para uma capacitação de 4 horas, com cerca de 30 participantes, <strong>totalmente customizada</strong> para a realidade das equipes que você reúne em Manaus em setembro.
+        </p>
+      </div>
+
+      <div class="intro-stats reveal reveal-delay-1">
+        <div class="stat-card ink">
+          <div class="stat-number">9</div>
+          <div class="stat-label">Escritórios regionais</div>
+        </div>
+        <div class="stat-card terra">
+          <div class="stat-number">~30</div>
+          <div class="stat-label">Participantes DP e RH</div>
+        </div>
+        <div class="stat-card sage">
+          <div class="stat-number">4h</div>
+          <div class="stat-label">De capacitação prática</div>
+        </div>
+        <div class="stat-card ink2">
+          <div class="stat-number">4</div>
+          <div class="stat-label">Estados atendidos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPORTUNIDADES ============ -->
+<section class="oportunidades">
+  <div class="container">
+    <div class="oport-head reveal">
+      <div class="section-label">Insights e exemplos</div>
+      <h2 class="section-title">Onde a IA pode <em>amplificar</em> o trabalho das equipes de DP e RH</h2>
+      <p class="section-sub">Os pontos abaixo são insights e possibilidades, não uma lista de entregas. Servem como aquecimento: os exemplos concretos que vão virar aula serão definidos na reunião de imersão, a partir do dia a dia real dos escritórios. Durante a capacitação, cada participante é estimulado a enxergar na própria área o que faz sentido automatizar.</p>
+    </div>
+
+    <div class="oport-disclaimer reveal">
+      <div class="oport-disclaimer-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+      </div>
+      <div>
+        <strong>Importante:</strong> a proposta não inclui a execução de automações pela NewScale. O que a capacitação entrega é repertório, método e estímulo para que cada pessoa desenvolva suas próprias ideias e construa, na sua área, o que for possível com as ferramentas que já tem em mãos.
+      </div>
+    </div>
+
+    <div class="oport-grid">
+      <div class="oport-card reveal">
+        <div class="oport-num">01</div>
+        <div class="oport-title">Consulta à legislação trabalhista</div>
+        <p class="oport-text">IA como apoio ágil para cruzar normas, prazos e hipóteses do dia a dia, com validação humana no fim da cadeia.</p>
+      </div>
+
+      <div class="oport-card reveal reveal-delay-1">
+        <div class="oport-num">02</div>
+        <div class="oport-title">Conferência de cálculos</div>
+        <p class="oport-text">Comparativos e checagens de folha, rescisões e provisões tratados com apoio da IA. O analista valida, a máquina executa a parte mecânica.</p>
+      </div>
+
+      <div class="oport-card reveal reveal-delay-2">
+        <div class="oport-num">03</div>
+        <div class="oport-title">Processos de admissão e rescisão</div>
+        <p class="oport-text">Checklists dinâmicos, geração de minutas e roteiros padronizados. Menos retrabalho, mais consistência entre as unidades.</p>
+      </div>
+
+      <div class="oport-card reveal">
+        <div class="oport-num">04</div>
+        <div class="oport-title">Gestão de pessoas e análise de perfil</div>
+        <p class="oport-text">IA como apoio em feedbacks, entrevistas estruturadas e leitura de perfis. Mais tempo de qualidade com as pessoas, menos tempo em papel.</p>
+      </div>
+
+      <div class="oport-card reveal reveal-delay-1">
+        <div class="oport-num">05</div>
+        <div class="oport-title">Documentos e comunicações internas</div>
+        <p class="oport-text">E-mails, comunicados, políticas e atas produzidos em minutos, no tom certo, liberando horas de escrita manual a cada semana.</p>
+      </div>
+
+      <div class="oport-card reveal reveal-delay-2">
+        <div class="oport-num">06</div>
+        <div class="oport-title">Uso seguro com dados sensíveis</div>
+        <p class="oport-text">Entender o que pode e o que não pode ser colocado em uma IA. LGPD na prática, regras simples para proteger informação de colaboradores e da instituição.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ O QUE VÃO LEVAR ============ -->
+<section class="levar">
+  <div class="container">
+    <div class="levar-head reveal">
+      <div class="section-label">O que a equipe leva</div>
+      <h2 class="section-title">Quatro capacidades que ficam com <em>cada participante</em></h2>
+      <p class="section-sub">A meta não é dar peixe, é dar a vara, o anzol e a leitura do rio. Cada pessoa sai da capacitação com autonomia para aplicar IA no próprio trabalho, independente do departamento, da senioridade ou da familiaridade anterior com a tecnologia.</p>
+    </div>
+
+    <div class="levar-grid">
+      <div class="levar-card reveal">
+        <div class="levar-card-num">01</div>
+        <div class="levar-card-title">Pensar com IA</div>
+        <p class="levar-card-text">Mudança de mentalidade. Parar de usar IA como buscador e começar a usar como parceira de raciocínio, de planejamento e de estruturação de problemas.</p>
+      </div>
+
+      <div class="levar-card reveal reveal-delay-1">
+        <div class="levar-card-title-wrap">
+          <div class="levar-card-num">02</div>
+          <div class="levar-card-title">Estruturar automações</div>
+        </div>
+        <p class="levar-card-text">Aprender a enxergar uma rotina repetitiva e imaginar como ela pode virar um fluxo assistido por IA. Critérios claros para separar o que vale automatizar do que é melhor manter manual.</p>
+      </div>
+
+      <div class="levar-card reveal reveal-delay-2">
+        <div class="levar-card-num">03</div>
+        <div class="levar-card-title">Extrair o melhor da IA</div>
+        <p class="levar-card-text">Técnicas concretas de prompting, contexto e iteração. A diferença entre uma resposta fraca e uma resposta útil quase sempre está em como se pergunta, e isso se aprende.</p>
+      </div>
+
+      <div class="levar-card reveal reveal-delay-3">
+        <div class="levar-card-num">04</div>
+        <div class="levar-card-title">Chegar onde quiser com IA</div>
+        <p class="levar-card-text">Autonomia de longo prazo. Saber aprender sozinho, testar novas ferramentas e adaptar o que aprendeu para situações que ainda nem existem. IA muda rápido, e a capacidade de acompanhar é o que importa.</p>
+      </div>
+    </div>
+
+    <div class="levar-bonus reveal">
+      <div class="levar-bonus-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
+      <div>
+        <div class="levar-bonus-label">Momento coletivo</div>
+        <div class="levar-bonus-title">Ideação de projetos em grupo</div>
+        <p class="levar-bonus-text">Durante a capacitação reservamos um momento para que os participantes, organizados por área ou por afinidade de desafio, imaginem em conjunto projetos possíveis de IA. Pode ser um projeto individual de cada um, uma ideia para a própria área, ou uma ideia entre escritórios. O objetivo é que saiam com uma lista de possibilidades concretas para levar adiante depois do evento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIFERENCIAL / PRÉ-TRABALHO ============ -->
+<section class="diferencial">
+  <div class="topo-lines">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.4"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="reveal" style="max-width: 880px;">
+      <div class="section-label">O Diferencial</div>
+      <h2 class="section-title">Não é palestra <em>genérica</em>. É capacitação desenhada pra vocês.</h2>
+      <p class="section-sub">
+        Toda capacitação que entregamos passa por um pré-trabalho de mergulho na empresa. A aula não começa em setembro. Começa antes, quando a gente senta para entender a realidade das equipes que vão estar na sala.
+      </p>
+    </div>
+
+    <div class="dif-process reveal reveal-delay-1">
+      <div class="dif-process-header">
+        <div class="dif-process-label">O que isso significa na prática</div>
+        <div class="dif-process-flow">
+          <span>Escuta</span>
+          <span class="dif-arrow">→</span>
+          <span>Mergulho</span>
+          <span class="dif-arrow">→</span>
+          <span>Construção</span>
+          <span class="dif-arrow">→</span>
+          <span>Aula sob medida</span>
+        </div>
+      </div>
+
+      <div class="dif-grid">
+        <div class="dif-card">
+          <div class="dif-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+          </div>
+          <div class="dif-card-step">Passo 01</div>
+          <div class="dif-card-title">Reunião de imersão</div>
+          <p class="dif-card-text">Sentamos com você e com quem mais fizer sentido do time para entender a realidade das equipes que vão estar na sala.</p>
+        </div>
+
+        <div class="dif-card">
+          <div class="dif-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+          <div class="dif-card-step">Passo 02</div>
+          <div class="dif-card-title">Mapeamento das rotinas</div>
+          <p class="dif-card-text">Identificamos ferramentas em uso (Copilot em primeiro plano), processos que mais consomem tempo e oportunidades concretas de automação.</p>
+        </div>
+
+        <div class="dif-card">
+          <div class="dif-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="9" y1="13" x2="15" y2="13"/>
+              <line x1="9" y1="17" x2="13" y2="17"/>
+            </svg>
+          </div>
+          <div class="dif-card-step">Passo 03</div>
+          <div class="dif-card-title">Casos reais dos escritórios</div>
+          <p class="dif-card-text">Coletamos situações concretas do dia a dia que viram os exemplos e exercícios durante a capacitação.</p>
+        </div>
+
+        <div class="dif-card">
+          <div class="dif-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <div class="dif-card-step">Passo 04</div>
+          <div class="dif-card-title">Aula construída sob medida</div>
+          <p class="dif-card-text">A capacitação é desenhada com os exemplos, a linguagem e os casos de uso da Igreja Adventista. Nada de prompt genérico.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROPOSTA / MÓDULOS ============ -->
+<section class="proposta">
+  <div class="container">
+    <div class="prop-head reveal">
+      <div class="section-label">A Proposta</div>
+      <h2 class="section-title">Um programa em <em>três etapas</em>, do diagnóstico à aplicação</h2>
+      <p class="section-sub">
+        A capacitação de 4 horas é o ponto central, mas ela é apoiada por um pré-trabalho de personalização e por materiais que ficam com a equipe depois do evento.
+      </p>
+      <p class="prop-sub-instruction">Clique em cada etapa para ver os detalhes das entregas.</p>
+    </div>
+
+    <!-- FASE 1 -->
+    <div class="fase reveal">
+      <div class="fase-header">
+        <div>
+          <div class="fase-tag">Etapa 1 · Pré-trabalho</div>
+          <div class="fase-name">Imersão e diagnóstico</div>
+          <div class="fase-duration">Antes do evento · Online · ~2 horas</div>
+        </div>
+        <div class="fase-num-badge">1</div>
+      </div>
+
+      <div class="modulo" onclick="toggleModulo(this)">
+        <div class="modulo-head">
+          <div class="modulo-title-wrap">
+            <div class="modulo-label">Módulo de diagnóstico</div>
+            <div class="modulo-title">Reunião de imersão com a Igreja Adventista</div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-chips">
+          <span class="chip">Reunião online · até 2h</span>
+          <span class="chip">Escuta ativa</span>
+          <span class="chip">Mapeamento de rotinas</span>
+        </div>
+        <div class="modulo-body">
+          <div class="modulo-body-inner">
+            <div class="value-box">
+              <div class="value-box-icon">⚡</div>
+              <div class="value-box-content">
+                <div class="value-box-label">O que isso resolve</div>
+                <div class="value-box-text">A aula é construída sobre a realidade de vocês, e não sobre um roteiro pronto que serve pra qualquer cliente.</div>
+              </div>
+            </div>
+            <p class="modulo-desc">
+              Reunião online com Thiago e com quem mais fizer sentido do time. O objetivo é entender por dentro o que as equipes de DP e RH dos 9 escritórios fazem no dia a dia, quais processos mais consomem tempo, quais ferramentas são usadas e onde a IA pode gerar impacto real.
+            </p>
+            <ul class="modulo-items">
+              <li><strong>Mapeamento de ferramentas em uso:</strong> Copilot do Office 365 em primeiro plano, mais o que já estiver presente na rotina. Definimos o que será central na aula</li>
+              <li><strong>Rotinas-chave de DP:</strong> legislação trabalhista, cálculos, admissão, rescisão, controles recorrentes. Identificamos onde a IA entra com mais ganho</li>
+              <li><strong>Rotinas-chave de RH:</strong> gestão de pessoas, análise de perfil, comunicação interna, treinamentos. Mapeamos oportunidades de automação assistida</li>
+              <li><strong>Casos reais dos escritórios:</strong> situações concretas que servirão de exemplo durante a capacitação, tudo com a linguagem e o contexto da Igreja Adventista</li>
+              <li><strong>Perfil da turma:</strong> nível de familiaridade com IA, expectativas e receios. Calibramos a aula para quem estará ali</li>
+              <li><strong>Alinhamento de formato:</strong> dinâmica, momentos de prática, se haverá notebooks, ritmo do dia</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FASE 2 -->
+    <div class="fase reveal">
+      <div class="fase-header">
+        <div>
+          <div class="fase-tag">Etapa 2 · Capacitação presencial</div>
+          <div class="fase-name">Aula prática · 4 horas em Manaus</div>
+          <div class="fase-duration">16 de setembro de 2026 · ~30 participantes</div>
+        </div>
+        <div class="fase-num-badge">2</div>
+      </div>
+
+      <div class="modulo" onclick="toggleModulo(this)">
+        <div class="modulo-head">
+          <div class="modulo-title-wrap">
+            <div class="modulo-label">Bloco 1 · Fundamentos</div>
+            <div class="modulo-title">Como pensar e usar IA com critério</div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-chips">
+          <span class="chip">Raciocínio com IA</span>
+          <span class="chip">Prompt que funciona</span>
+          <span class="chip">LGPD e dados sensíveis</span>
+        </div>
+        <div class="modulo-body">
+          <div class="modulo-body-inner">
+            <div class="value-box">
+              <div class="value-box-icon">🎯</div>
+              <div class="value-box-content">
+                <div class="value-box-label">O que isso resolve</div>
+                <div class="value-box-text">Todo mundo sai da base (quem nunca usou IA e quem já usa mas sem profundidade) com o mesmo ponto de partida conceitual.</div>
+              </div>
+            </div>
+            <p class="modulo-desc">
+              A maioria das pessoas usa IA como se fosse um buscador melhorado. Esse bloco abre a mente pra um uso estratégico: como pensar com a IA, como dar contexto, como construir prompts que de fato entregam resultado, e também o que nunca se deve colocar em uma ferramenta de IA.
+            </p>
+            <ul class="modulo-items">
+              <li><strong>O que é IA generativa hoje:</strong> ChatGPT, Copilot, Claude: diferenças práticas e quando cada uma faz sentido</li>
+              <li><strong>A arte do prompt:</strong> estrutura, contexto, persona, exemplos: o que separa um prompt fraco de um prompt que poupa horas</li>
+              <li><strong>IA para planejar antes de executar:</strong> usar a ferramenta pra pensar estrategicamente, não apenas pra produzir texto pronto</li>
+              <li><strong>LGPD na prática com IA:</strong> o que pode e o que não pode ser colocado na ferramenta. Regras simples e claras para proteger dados de colaboradores, cálculos e informações sensíveis da instituição</li>
+              <li><strong>Segurança com dados da empresa:</strong> por que toda informação enviada a uma IA vira dado para terceiros, e como se proteger disso no dia a dia</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="modulo" onclick="toggleModulo(this)">
+        <div class="modulo-head">
+          <div class="modulo-title-wrap">
+            <div class="modulo-label">Bloco 2 · Aplicação em DP e RH</div>
+            <div class="modulo-title">Casos de uso reais para as rotinas da Igreja Adventista</div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-chips">
+          <span class="chip">Casos reais</span>
+          <span class="chip">Mão na massa</span>
+          <span class="chip">Exemplos dos escritórios</span>
+        </div>
+        <div class="modulo-body">
+          <div class="modulo-body-inner">
+            <div class="value-box">
+              <div class="value-box-icon">🧩</div>
+              <div class="value-box-content">
+                <div class="value-box-label">O que isso resolve</div>
+                <div class="value-box-text">Cada participante sai com exemplos concretos aplicáveis na segunda-feira. Não com inspiração, com aplicação.</div>
+              </div>
+            </div>
+            <p class="modulo-desc">
+              A parte central da aula. Aqui trabalhamos os casos de uso mapeados no pré-trabalho, exemplos vindos do próprio dia a dia dos escritórios da Igreja Adventista. Eu conduzo com demonstração ao vivo no computador, mostrando como se faz, e os participantes acompanham o raciocínio passo a passo.
+            </p>
+            <ul class="modulo-items">
+              <li><strong>Copilot no dia a dia do DP e RH:</strong> como extrair o máximo da ferramenta que vocês já têm licenciada, dentro de Word, Outlook, Teams e Excel</li>
+              <li><strong>Legislação trabalhista com IA:</strong> como fazer consultas inteligentes, cruzar cenários, gerar roteiros de resposta, sempre com revisão humana</li>
+              <li><strong>Conferência de cálculos e análises:</strong> exemplos práticos de como acelerar comparativos de folha, rescisões e provisões</li>
+              <li><strong>Admissão e rescisão:</strong> geração de checklists, minutas e comunicações padronizadas entre os 9 escritórios</li>
+              <li><strong>Comunicação interna:</strong> e-mails, comunicados, políticas e atas, do rascunho à versão final em minutos</li>
+              <li><strong>Gestão de pessoas:</strong> estruturação de feedbacks, preparação de entrevistas, leitura de perfis com IA como apoio</li>
+              <li><strong>Mini-exercícios em grupo:</strong> a turma se divide para aplicar os prompts em situações reais dos escritórios, se houver notebooks disponíveis</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="modulo" onclick="toggleModulo(this)">
+        <div class="modulo-head">
+          <div class="modulo-title-wrap">
+            <div class="modulo-label">Bloco 3 · Automações</div>
+            <div class="modulo-title">O que dá pra automatizar sem depender de TI</div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-chips">
+          <span class="chip">Automações leves</span>
+          <span class="chip">Agentes personalizados</span>
+          <span class="chip">Sem código</span>
+        </div>
+        <div class="modulo-body">
+          <div class="modulo-body-inner">
+            <div class="value-box">
+              <div class="value-box-icon">⚙️</div>
+              <div class="value-box-content">
+                <div class="value-box-label">O que isso resolve</div>
+                <div class="value-box-text">Cada colaborador vira capaz de criar as próprias automações, sem depender de desenvolvedor, sem esperar projeto.</div>
+              </div>
+            </div>
+            <p class="modulo-desc">
+              Muitas tarefas chatas do dia a dia podem virar automações que o próprio colaborador monta em minutos. Aqui mostramos como pensar e construir essas pequenas automações, incluindo a lógica de criar instruções fixas para tarefas repetitivas.
+            </p>
+            <ul class="modulo-items">
+              <li><strong>Identificando o que vale automatizar:</strong> critérios simples para separar o que merece virar automação do que é melhor deixar manual</li>
+              <li><strong>Instruções e personas:</strong> como configurar a IA para atuar com um papel específico em tarefas que se repetem (conferência, triagem, redação padrão)</li>
+              <li><strong>Fluxos simples dentro do Copilot e do Office 365:</strong> como ganhar tempo nos aplicativos que vocês já usam</li>
+              <li><strong>Ideação em grupo:</strong> momento coletivo de brainstorm guiado, em que cada participante imagina automações possíveis para a própria área ou para projetos entre escritórios</li>
+              <li><strong>Q&amp;A final:</strong> espaço aberto para cada participante trazer uma dúvida do seu dia a dia e resolver na hora</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FASE 3 -->
+    <div class="fase reveal">
+      <div class="fase-header">
+        <div>
+          <div class="fase-tag">Etapa 3 · Pós-evento</div>
+          <div class="fase-name">Material de apoio</div>
+          <div class="fase-duration">Entregue após o evento · Fica com a equipe</div>
+        </div>
+        <div class="fase-num-badge">3</div>
+      </div>
+
+      <div class="modulo" onclick="toggleModulo(this)">
+        <div class="modulo-head">
+          <div class="modulo-title-wrap">
+            <div class="modulo-label">Entregáveis</div>
+            <div class="modulo-title">O que fica com a Igreja Adventista depois da aula</div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-chips">
+          <span class="chip">Material de apoio</span>
+          <span class="chip">Boas práticas</span>
+          <span class="chip">Checklists</span>
+        </div>
+        <div class="modulo-body">
+          <div class="modulo-body-inner">
+            <div class="value-box">
+              <div class="value-box-icon">📦</div>
+              <div class="value-box-content">
+                <div class="value-box-label">O que isso resolve</div>
+                <div class="value-box-text">O aprendizado não fica só na cabeça de quem participou. Vira referência consultável para os 9 escritórios continuarem aplicando.</div>
+              </div>
+            </div>
+            <p class="modulo-desc">
+              Tudo o que for trabalhado na aula é consolidado em um material prático de apoio que fica com os times, para consulta e reforço dos conceitos depois do evento.
+            </p>
+            <ul class="modulo-items">
+              <li><strong>Material de apoio em PDF:</strong> resumo dos conceitos principais, boas práticas de uso, regras de LGPD aplicadas e checklist de segurança com dados sensíveis</li>
+              <li><strong>Referências práticas:</strong> links e caminhos para aprofundamento nas ferramentas apresentadas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INVESTIMENTO ============ -->
+<section class="investimento">
+  <div class="topo-lines">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.4"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="reveal" style="max-width: 820px; margin-bottom: 40px;">
+      <div class="section-label">Investimento</div>
+      <h2 class="section-title">Condições <em>claras</em>, sem surpresas no caminho</h2>
+      <p class="invest-intro">
+        Valor único que inclui todas as três etapas do programa: o pré-trabalho de imersão, a capacitação presencial de 4 horas em Manaus e o material de apoio entregue após o evento.
+      </p>
+    </div>
+
+    <div class="invest-card reveal">
+      <div class="invest-label">Programa completo</div>
+      <div class="invest-card-title">Capacitação customizada de IA para DP e RH</div>
+
+      <div class="invest-value-row">
+        <div class="invest-value">R$ 7.000</div>
+        <div class="invest-value-desc">
+          Valor total do programa<br>
+          <strong>Todas as etapas inclusas</strong>
+        </div>
+      </div>
+
+      <div class="invest-inclusos-title">O que está incluso</div>
+      <ul class="invest-inclusos">
+        <li>Reunião de imersão prévia (até 2 horas)</li>
+        <li>Diagnóstico e personalização da aula</li>
+        <li>Aula presencial de 4 horas em Manaus</li>
+        <li>Condução e slides da capacitação</li>
+        <li>Momento de ideação de projetos em grupo</li>
+        <li>Material de apoio em PDF pós-evento</li>
+      </ul>
+
+      <div class="pagamento-box">
+        <div>
+          <div class="pagamento-label">Forma de pagamento</div>
+          <div class="pagamento-text"><strong>50% + 50%</strong> · Sinal na assinatura e saldo após a entrega do evento</div>
+        </div>
+        <div>
+          <div class="pagamento-label">Emissão</div>
+          <div class="pagamento-text">Nota fiscal via <strong>CNPJ</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size: 0.88rem; color: rgba(255,255,255,0.6); margin-top: 32px; max-width: 720px; line-height: 1.6;">
+      Passagem aérea, hospedagem e alimentação em Manaus ficam por conta da Igreja Adventista, conforme alinhado em reunião.
+    </p>
+  </div>
+</section>
+
+<!-- ============ POR QUE NEWSCALE ============ -->
+<section class="porque">
+  <div class="container">
+    <div class="quote-box reveal">
+      <p class="quote-text">
+        Cada capacitação começa pela escuta, não pelo slide. Entendemos como a operação funciona hoje, quais são as rotinas reais das pessoas que vão estar na sala e o que a equipe precisa aprender de verdade. Só depois a aula é desenhada. E o que fica depois (materiais, repertório, autonomia) é construído para ser usado, não arquivado.
+      </p>
+    </div>
+
+    <div class="metodologia-head reveal">
+      <div class="section-label">Nossa metodologia</div>
+      <h2 class="section-title" style="margin: 0 auto;">Como conduzimos cada <em>capacitação</em></h2>
+    </div>
+
+    <div class="metodologia-grid">
+      <div class="metodo-card reveal">
+        <div class="metodo-num">01</div>
+        <div class="metodo-title">Escuta Primeiro</div>
+        <p class="metodo-text">Entendemos a operação, as ferramentas em uso, as rotinas reais e o perfil da turma. Só depois a aula começa a ser desenhada.</p>
+      </div>
+
+      <div class="metodo-card reveal reveal-delay-1">
+        <div class="metodo-num">02</div>
+        <div class="metodo-title">Conteúdo Customizado</div>
+        <p class="metodo-text">Nada de exemplo genérico. Os casos de uso são da sua empresa, na linguagem da sua empresa, com as ferramentas que sua empresa já tem.</p>
+      </div>
+
+      <div class="metodo-card reveal reveal-delay-2">
+        <div class="metodo-num">03</div>
+        <div class="metodo-title">Prática Viva</div>
+        <p class="metodo-text">Eu executo na tela, a turma acompanha o raciocínio e, quando possível, aplica em exercícios próprios. Ninguém sai com dúvida conceitual.</p>
+      </div>
+
+      <div class="metodo-card reveal">
+        <div class="metodo-num">04</div>
+        <div class="metodo-title">Segurança em Primeiro Lugar</div>
+        <p class="metodo-text">LGPD e cuidado com dados sensíveis são parte do conteúdo, sempre. Ninguém sai da aula sem saber o que não pode ser colocado em uma IA.</p>
+      </div>
+
+      <div class="metodo-card reveal reveal-delay-1">
+        <div class="metodo-num">05</div>
+        <div class="metodo-title">Aplicação Imediata</div>
+        <p class="metodo-text">A meta é que, na segunda-feira seguinte, cada participante consiga aplicar pelo menos uma coisa nova na própria rotina.</p>
+      </div>
+
+      <div class="metodo-card reveal reveal-delay-2">
+        <div class="metodo-num">06</div>
+        <div class="metodo-title">Continuidade na Mão do Time</div>
+        <p class="metodo-text">Material de apoio e repertório prático ficam com a equipe. A capacitação continua viva mesmo quando eu já fui embora.</p>
+      </div>
+    </div>
+
+    <div class="fundadora-wrap">
+      <div class="fundadora-head reveal">
+        <div class="section-label">Quem conduz</div>
+        <h2 class="section-title" style="margin: 0 auto;">Uma profissional que <em>implementa</em> o que ensina</h2>
+      </div>
+
+      <div class="fundadora-card reveal reveal-delay-1">
+        <div class="fundadora-photo-wrap">
+          <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG" alt="Bruna Santanna" class="fundadora-photo">
+          <div class="fundadora-photo-deco"></div>
+        </div>
+        <div class="fundadora-content">
+          <div class="fundadora-name">Bruna Santanna</div>
+          <div class="fundadora-role">Co-fundadora · NewScale Consulting</div>
+
+          <p class="fundadora-bio">
+            ESPM. Empresária há 10+ anos. Ex-SulAmérica, Ex-Whirlpool, Ex-Blackbox AI, onde atuou em marketing e novos negócios. Mentora de IA no programa Potenc.IA (OLX, Magalu, B3, CI&amp;T), com mais de 1.000 alunas formadas. Professora de IA para equipes corporativas. Implementa inteligência artificial no próprio negócio todos os dias. Só ensina o que de fato usa.
+          </p>
+
+          <div class="fundadora-pilares">
+            <div class="fundadora-pilar">
+              <div class="fundadora-pilar-num">10+</div>
+              <div class="fundadora-pilar-label">Anos como empresária</div>
+            </div>
+            <div class="fundadora-pilar">
+              <div class="fundadora-pilar-num">1.000+</div>
+              <div class="fundadora-pilar-label">Alunas formadas</div>
+            </div>
+            <div class="fundadora-pilar">
+              <div class="fundadora-pilar-num">ESPM</div>
+              <div class="fundadora-pilar-label">Formação acadêmica</div>
+            </div>
+          </div>
+
+          <div class="fundadora-tags-wrap">
+            <div class="fundadora-tags-label">Passagens e parcerias</div>
+            <div class="fundadora-tags">
+              <span class="tag">Ex-SulAmérica</span>
+              <span class="tag">Ex-Whirlpool</span>
+              <span class="tag">Ex-Blackbox AI</span>
+              <span class="tag">Potenc.IA</span>
+              <span class="tag">OLX</span>
+              <span class="tag">Magalu</span>
+              <span class="tag">B3</span>
+              <span class="tag">CI&amp;T</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<div style="background: #0a1f23;">
+  <div class="footer">
+    <div class="footer-brand">NewScale<span>Consulting</span></div>
+    <div class="footer-date">
+      Proposta exclusiva · Igreja Adventista do Sétimo Dia<br>
+      Abril de 2026
+    </div>
+  </div>
+</div>
+
+<script>
+  // Accordion
+  function toggleModulo(card) {
+    card.classList.toggle('open');
+    const toggle = card.querySelector('.modulo-toggle');
+    if (toggle) {
+      toggle.textContent = card.classList.contains('open') ? '+' : '+';
+    }
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.06 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
