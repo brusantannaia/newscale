@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Comercial — Pirilampa · NewScale Consulting</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink: #14373C; --ink2: #1a4449; --sage: #435D51;
+  --terra: #B06E4A; --tl: #c4835e; --sand: #A38362;
+  --cream: #E8E6E0; --cl: #F4F3EF; --white: #FAFAF8;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; font-weight: 300; color: var(--ink); background: var(--white); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.rd1{transition-delay:.1s} .rd2{transition-delay:.2s} .rd3{transition-delay:.3s} .rd4{transition-delay:.4s}
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+@keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(7px)} }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(145deg,#0c2427 0%,#14373C 38%,#1d4840 72%,#435D51 100%);
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  text-align:center; padding:80px 40px; overflow:hidden; position:relative;
+}
+.topo-lines { position:absolute; inset:0; opacity:.09; pointer-events:none; }
+.topo-lines svg { width:100%; height:100%; }
+.grain-ov {
+  position:absolute; inset:0; pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:.03;
+}
+.hero-content { position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; }
+.hero-logo { margin-bottom:52px; animation:fadeUp .8s ease both .1s; }
+.hero-logo img { height:48px; opacity:.9; }
+.hero-badge {
+  display:inline-block; background:rgba(176,110,74,.15); color:var(--tl);
+  font-size:.63rem; font-weight:700; padding:5px 14px; border-radius:20px;
+  text-transform:uppercase; letter-spacing:.14em; border:1px solid rgba(176,110,74,.25);
+  margin-bottom:30px; animation:fadeUp .8s ease both .25s;
+}
+.hero h1 {
+  font-family:'Cormorant Garamond',serif; font-weight:700;
+  font-size:clamp(2.4rem,4.5vw,3.9rem); color:#fff; line-height:1.1;
+  max-width:800px; margin-bottom:24px; animation:fadeUp .8s ease both .4s;
+}
+.hero h1 em { font-style:italic; color:var(--tl); }
+.hero-sub {
+  font-size:.95rem; font-weight:300; color:rgba(255,255,255,.62);
+  max-width:540px; line-height:1.78; margin-bottom:56px;
+  animation:fadeUp .8s ease both .58s;
+}
+.hero-scroll {
+  display:flex; flex-direction:column; align-items:center; gap:8px;
+  color:rgba(255,255,255,.3); font-size:.68rem;
+  text-transform:uppercase; letter-spacing:.12em; text-decoration:none; transition:color .3s;
+  animation:fadeUp .8s ease both .75s;
+}
+.hero-scroll:hover { color:rgba(255,255,255,.55); }
+.hero-scroll svg { animation:bounce 2.2s infinite; }
+
+/* NAV */
+nav {
+  position:sticky; top:0; z-index:100;
+  background:rgba(20,55,60,.96); backdrop-filter:blur(12px);
+  padding:15px 52px; display:flex; justify-content:space-between; align-items:center;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav-logo img { height:34px; }
+.nav-links { display:flex; gap:30px; list-style:none; }
+.nav-links a { color:rgba(255,255,255,.5); text-decoration:none; font-size:.72rem; font-weight:500; letter-spacing:.07em; text-transform:uppercase; transition:color .3s; }
+.nav-links a:hover { color:var(--tl); }
+
+/* SHARED */
+.si { max-width:1160px; margin:0 auto; }
+.section-label { display:block; font-size:.63rem; font-weight:700; text-transform:uppercase; letter-spacing:.16em; color:var(--terra); margin-bottom:10px; }
+h2 { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:clamp(1.9rem,3.2vw,2.65rem); line-height:1.17; color:var(--ink); }
+h2 em { font-style:italic; color:var(--terra); }
+.section-sub { font-size:.89rem; font-weight:300; color:rgba(20,55,60,.58); margin-top:12px; max-width:520px; }
+
+/* CONTEXTO */
+.contexto { padding:96px 52px; background:var(--cl); }
+.ctx-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; }
+.intro-text p { font-size:.91rem; line-height:1.8; color:rgba(20,55,60,.78); margin-top:18px; }
+.intro-stats { display:grid; grid-template-columns:1fr 1fr; gap:14px; padding-top:12px; }
+.stat-card { background:var(--ink); border-radius:16px; padding:28px 24px; color:#fff; }
+.stat-card:nth-child(2){background:var(--terra)}
+.stat-card:nth-child(3){background:var(--sage)}
+.stat-card:nth-child(4){background:#2a5a60}
+.stat-number { font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:700; line-height:1; margin-bottom:6px; }
+.stat-label { font-size:.63rem; font-weight:600; text-transform:uppercase; letter-spacing:.1em; opacity:.72; }
+
+/* DORES */
+.dores { padding:96px 52px; background:var(--ink); }
+.dores h2 { color:#fff; }
+.dores .section-label { color:var(--tl); }
+.dores .section-sub { color:rgba(255,255,255,.42); }
+.dores-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:52px; }
+.dore-card {
+  background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07);
+  border-radius:16px; padding:32px 28px; position:relative; overflow:hidden;
+  transition:border-color .3s,background .3s;
+}
+.dore-card:hover { border-color:rgba(176,110,74,.35); background:rgba(176,110,74,.04); }
+.dore-num { font-family:'Cormorant Garamond',serif; font-size:5rem; font-weight:700; color:rgba(255,255,255,.04); position:absolute; top:8px; right:18px; line-height:1; }
+.dore-title { font-size:.63rem; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:var(--tl); margin-bottom:12px; }
+.dore-text { font-size:.87rem; font-weight:300; color:rgba(255,255,255,.63); line-height:1.74; }
+
+/* PROPOSTA */
+.proposta { padding:96px 52px; background:var(--white); }
+.modulo-fase { margin-top:48px; border-radius:20px; overflow:hidden; border:1px solid rgba(20,55,60,.09); }
+.fase-header {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:28px 36px; cursor:pointer; user-select:none;
+}
+.bg-ink{background:var(--ink)} .bg-terra{background:var(--terra)} .bg-sage{background:var(--sage)} .bg-slate{background:#2a5a60}
+.fase-tag { font-size:.6rem; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:rgba(255,255,255,.5); margin-bottom:4px; }
+.fase-name { font-family:'Cormorant Garamond',serif; font-size:1.45rem; font-weight:700; color:#fff; }
+.fase-duration { font-size:.74rem; font-weight:400; color:rgba(255,255,255,.58); margin-top:4px; }
+.fase-num-badge { font-family:'Cormorant Garamond',serif; font-size:3.8rem; font-weight:700; color:rgba(255,255,255,.1); line-height:1; }
+.fase-body { background:var(--white); }
+
+.modulo-card { border-bottom:1px solid rgba(20,55,60,.07); overflow:hidden; }
+.modulo-card:last-child { border-bottom:none; }
+.modulo-header { display:flex; justify-content:space-between; align-items:center; padding:22px 36px; cursor:pointer; user-select:none; transition:background .25s; }
+.modulo-header:hover { background:rgba(20,55,60,.03); }
+.modulo-left { display:flex; align-items:center; gap:14px; }
+.modulo-icon { font-size:1.35rem; }
+.modulo-label { font-size:.6rem; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:var(--terra); margin-bottom:2px; }
+.modulo-title { font-family:'Cormorant Garamond',serif; font-size:1.18rem; font-weight:700; color:var(--ink); }
+.modulo-chips { display:flex; gap:8px; flex-wrap:wrap; margin-top:6px; }
+.chip { background:rgba(20,55,60,.06); color:var(--ink); font-size:.6rem; font-weight:600; padding:3px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:.07em; transition:opacity .3s; }
+.modulo-card.open .chip { opacity:0; pointer-events:none; }
+.modulo-toggle { width:28px; height:28px; border-radius:50%; background:rgba(20,55,60,.06); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .25s,transform .35s; flex-shrink:0; }
+.modulo-card.open .modulo-toggle { background:var(--terra); transform:rotate(45deg); }
+.modulo-toggle svg { transition:stroke .25s; }
+.modulo-card.open .modulo-toggle svg { stroke:#fff !important; }
+.modulo-body { max-height:0; overflow:hidden; transition:max-height .55s cubic-bezier(.4,0,.2,1),padding .3s; padding:0 36px; }
+.modulo-card.open .modulo-body { max-height:1400px; padding:0 36px 32px; }
+
+.value-box { display:flex; gap:14px; align-items:flex-start; background:rgba(176,110,74,.07); border:1px solid rgba(176,110,74,.18); border-radius:12px; padding:18px 20px; margin-bottom:20px; }
+.value-box-icon { font-size:1.3rem; flex-shrink:0; margin-top:2px; }
+.value-box-label { font-size:.6rem; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:var(--terra); margin-bottom:4px; }
+.value-box-text { font-size:.88rem; font-weight:400; color:var(--ink); line-height:1.65; }
+.modulo-desc { font-size:.88rem; font-weight:300; color:rgba(20,55,60,.72); line-height:1.78; margin-bottom:18px; }
+.modulo-items { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.modulo-items li { font-size:.86rem; font-weight:300; color:rgba(20,55,60,.75); line-height:1.68; padding-left:18px; position:relative; }
+.modulo-items li::before { content:''; position:absolute; left:0; top:.6em; width:6px; height:6px; border-radius:50%; background:var(--terra); }
+.modulo-items li strong { font-weight:600; color:var(--ink); }
+.futuro-tag { display:inline-flex; align-items:center; gap:6px; background:rgba(67,93,81,.1); color:var(--sage); font-size:.62rem; font-weight:700; padding:4px 12px; border-radius:20px; text-transform:uppercase; letter-spacing:.1em; margin-bottom:16px; border:1px solid rgba(67,93,81,.2); }
+
+/* INVESTIMENTO */
+.investimento { padding:96px 52px; background:var(--ink); }
+.investimento h2 { color:#fff; }
+.investimento .section-label { color:var(--tl); }
+.investimento .section-sub { color:rgba(255,255,255,.45); }
+.inv-grid { display:grid; grid-template-columns:1.2fr 1fr; gap:24px; margin-top:52px; }
+.inv-card { background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.09); border-radius:20px; padding:36px 32px; }
+.inv-card.featured { border-color:rgba(176,110,74,.35); background:rgba(176,110,74,.07); }
+.inv-card-tag { font-size:.6rem; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:var(--tl); margin-bottom:10px; }
+.inv-card-name { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:700; color:#fff; margin-bottom:20px; }
+.inv-price-main { font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:700; color:#fff; line-height:1; }
+.inv-price-main sup { font-size:1.1rem; font-weight:400; opacity:.6; }
+.inv-price-parcel { font-size:.8rem; font-weight:400; color:rgba(255,255,255,.5); margin-top:6px; margin-bottom:24px; }
+.inv-price-parcel strong { color:var(--tl); }
+.inv-divider { height:1px; background:rgba(255,255,255,.08); margin:20px 0; }
+.inv-includes { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.inv-includes li { display:flex; gap:10px; align-items:flex-start; font-size:.84rem; font-weight:300; color:rgba(255,255,255,.7); line-height:1.55; }
+.inv-includes li::before { content:'✓'; color:var(--tl); font-weight:700; font-size:.8rem; flex-shrink:0; margin-top:1px; }
+.inv-side { display:flex; flex-direction:column; gap:20px; }
+.inv-card-sm { padding:26px 26px; }
+.inv-card-sm .inv-card-name { font-size:1.15rem; margin-bottom:10px; }
+.inv-monthly-price { font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:700; color:#fff; }
+.inv-monthly-price sup { font-size:.85rem; opacity:.55; }
+.inv-orcar-badge { display:inline-block; background:rgba(67,93,81,.25); color:rgba(255,255,255,.55); font-size:.62rem; font-weight:700; padding:4px 12px; border-radius:20px; text-transform:uppercase; letter-spacing:.1em; margin-top:8px; }
+.inv-api-note { margin-top:36px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07); border-radius:12px; padding:20px 24px; font-size:.82rem; font-weight:300; color:rgba(255,255,255,.45); line-height:1.68; }
+.inv-api-note strong { color:rgba(255,255,255,.65); font-weight:500; }
+
+/* POR QUE */
+.porque { padding:96px 52px; background:var(--cl); }
+.quote-block { background:var(--ink); border-radius:18px; padding:40px 44px; position:relative; margin-bottom:60px; max-width:860px; }
+.quote-mark { font-family:'Cormorant Garamond',serif; font-size:7rem; font-weight:700; color:var(--terra); line-height:.6; position:absolute; top:28px; left:36px; opacity:.35; }
+.quote-text { font-family:'Cormorant Garamond',serif; font-size:1.28rem; font-style:italic; font-weight:400; color:rgba(255,255,255,.85); line-height:1.65; padding-left:20px; }
+.metodo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-bottom:60px; }
+.metodo-card { background:var(--white); border-radius:14px; padding:26px 24px; border:1px solid rgba(20,55,60,.07); transition:border-color .3s,box-shadow .3s; }
+.metodo-card:hover { border-color:rgba(176,110,74,.2); box-shadow:0 8px 24px rgba(20,55,60,.07); }
+.metodo-num { font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:700; color:var(--terra); margin-bottom:8px; }
+.metodo-title { font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--ink); margin-bottom:8px; }
+.metodo-text { font-size:.84rem; font-weight:300; color:rgba(20,55,60,.65); line-height:1.68; }
+.fund-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.fund-card { background:linear-gradient(135deg,var(--ink),var(--sage)); border-radius:18px; padding:32px 28px; display:flex; gap:22px; align-items:flex-start; }
+.fund-img { width:68px; height:68px; border-radius:50%; object-fit:cover; flex-shrink:0; border:2px solid rgba(176,110,74,.4); }
+.fund-name { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:700; color:#fff; margin-bottom:2px; }
+.fund-role { font-size:.62rem; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:var(--tl); margin-bottom:8px; }
+.fund-bio { font-size:.82rem; font-weight:300; color:rgba(255,255,255,.68); line-height:1.65; margin-bottom:12px; }
+.fund-tags { display:flex; flex-wrap:wrap; gap:6px; }
+.f-tag { background:rgba(255,255,255,.1); color:rgba(255,255,255,.65); font-size:.6rem; font-weight:600; padding:2px 9px; border-radius:20px; letter-spacing:.06em; }
+
+/* PRÓXIMOS */
+.proximos { padding:96px 52px; background:var(--ink); }
+.proximos h2 { color:#fff; }
+.proximos .section-label { color:var(--tl); }
+.proximos .section-sub { color:rgba(255,255,255,.42); }
+.steps { margin-top:52px; }
+.step { display:grid; grid-template-columns:80px 1fr; gap:28px; padding:28px 0; border-bottom:1px solid rgba(255,255,255,.06); align-items:start; }
+.step:last-child { border-bottom:none; }
+.step-nc { display:flex; flex-direction:column; align-items:center; }
+.step-num { width:44px; height:44px; border-radius:50%; background:var(--terra); color:#fff; font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.step-line { width:1px; flex:1; background:rgba(176,110,74,.2); min-height:32px; margin-top:8px; }
+.step:last-child .step-line { display:none; }
+.step-period { font-size:.62rem; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:var(--tl); margin-bottom:4px; }
+.step-title { font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:700; color:#fff; margin-bottom:8px; }
+.step-text { font-size:.86rem; font-weight:300; color:rgba(255,255,255,.58); line-height:1.72; }
+.prox-cta { margin-top:56px; background:rgba(255,255,255,.05); border:1px solid rgba(176,110,74,.25); border-radius:18px; padding:36px 40px; display:flex; justify-content:space-between; align-items:center; gap:24px; }
+.cta-main { font-family:'Cormorant Garamond',serif; font-size:1.65rem; font-weight:700; color:#fff; margin-bottom:6px; }
+.cta-sub { font-size:.86rem; font-weight:300; color:rgba(255,255,255,.5); }
+.cta-btn { display:inline-block; background:var(--terra); color:#fff; padding:14px 30px; border-radius:10px; font-size:.83rem; font-weight:600; text-decoration:none; letter-spacing:.04em; white-space:nowrap; box-shadow:0 4px 20px rgba(176,110,74,.35); transition:background .25s,transform .2s; flex-shrink:0; }
+.cta-btn:hover { background:var(--tl); transform:translateY(-2px); }
+
+/* FOOTER */
+footer { background:#0c2427; padding:36px 52px; display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(255,255,255,.06); }
+.footer-brand { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:700; color:#fff; letter-spacing:.04em; }
+.footer-brand span { color:var(--tl); font-weight:300; font-style:italic; margin-left:4px; }
+.footer-date { font-size:.74rem; color:rgba(255,255,255,.35); text-align:right; line-height:1.6; }
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  section,.contexto,.dores,.proposta,.investimento,.porque,.proximos{padding:72px 24px}
+  nav{padding:14px 24px} .nav-links{display:none}
+  .ctx-grid,.inv-grid,.fund-grid,.metodo-grid{grid-template-columns:1fr}
+  .dores-grid{grid-template-columns:1fr 1fr}
+  .prox-cta{flex-direction:column;text-align:center}
+  footer{flex-direction:column;gap:16px;text-align:center} .footer-date{text-align:center}
+}
+@media(max-width:560px){
+  .dores-grid{grid-template-columns:1fr}
+  .modulo-header,.fase-header{padding:18px 20px}
+  .modulo-card.open .modulo-body{padding:0 20px 24px}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="topo-lines">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="0.6"/>
+      <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,300 Q300,220 500,290 T900,260 T1200,300" fill="none" stroke="white" stroke-width="0.35"/>
+      <path d="M0,500 Q300,440 500,490 T900,460 T1200,500" fill="none" stroke="white" stroke-width="0.3"/>
+      <path d="M0,250 Q250,170 450,240 T850,210 T1200,250" fill="none" stroke="white" stroke-width="0.25"/>
+      <path d="M0,550 Q250,500 450,540 T850,510 T1200,550" fill="none" stroke="white" stroke-width="0.25"/>
+    </svg>
+  </div>
+  <div class="grain-ov"></div>
+  <div class="hero-content">
+    <div class="hero-logo">
+      <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting">
+    </div>
+    <div class="hero-badge">Proposta Executiva · Abril 2025</div>
+    <h1>Inteligência Artificial<br>aplicada à <em>operação real</em><br>da Pirilampa</h1>
+    <p class="hero-sub">Uma proposta construída a partir da conversa com o Igor — não um cardápio genérico, mas um plano desenhado para a Pirilampa escalar com equipe enxuta e atendimento que não depende de planilha.</p>
+    <a href="#contexto" class="hero-scroll">
+      <span>Conheça a proposta</span>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale">
+  </div>
+  <ul class="nav-links">
+    <li><a href="#contexto">Contexto</a></li>
+    <li><a href="#dores">Diagnóstico</a></li>
+    <li><a href="#proposta">Proposta</a></li>
+    <li><a href="#investimento">Investimento</a></li>
+    <li><a href="#proximos">Próximos passos</a></li>
+  </ul>
+</nav>
+
+<!-- CONTEXTO -->
+<section class="contexto" id="contexto">
+  <div class="si">
+    <div class="ctx-grid">
+      <div class="intro-text reveal">
+        <span class="section-label">O Contexto</span>
+        <h2>Uma operação que já funciona — e que pode ir <em>muito além</em></h2>
+        <p>Igor, a Pirilampa foi de R$ 400 mil para R$ 1 milhão em um ano — com meta de dobrar de novo em 2025. Isso não acontece por acidente. É resultado de uma proposta de valor clara, produto com design autoral e assinado, e uma operação intencionalmente enxuta.</p>
+        <p>O que se abre agora é a oportunidade de usar inteligência artificial para automatizar o que é repetitivo, registrar o que hoje se perde em planilha e dar visibilidade ao que está invisível para os sócios — sem complicar a operação e sem aumentar headcount.</p>
+        <p>A Pirilampa não precisa de mais gente para atender mais. Precisa de um agente que atenda do jeito certo, na hora certa, e libere o time humano para o que só humano faz bem.</p>
+      </div>
+      <div class="intro-stats reveal rd2">
+        <div class="stat-card">
+          <div class="stat-number">~350</div>
+          <div class="stat-label">Luminárias vendidas / mês</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">6%</div>
+          <div class="stat-label">Taxa de solicitações pós-venda</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">70%</div>
+          <div class="stat-label">Vendas pelo e-commerce próprio</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">R$ 2M+</div>
+          <div class="stat-label">Meta de faturamento 2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DORES -->
+<section class="dores" id="dores">
+  <div class="si">
+    <div class="reveal">
+      <span class="section-label">O que identificamos</span>
+      <h2>7 pontos onde a IA vai <em>liberar tempo e proteger receita</em></h2>
+      <p class="section-sub">Mapeados diretamente da conversa com o Igor — três módulos, um diagnóstico integrado. Cada ponto tem nome, sobrenome e custo concreto para a operação.</p>
+    </div>
+    <div class="dores-grid">
+      <div class="dore-card reveal rd1">
+        <div class="dore-num">01</div>
+        <div class="dore-title">Atendimento manual sem escala</div>
+        <div class="dore-text">Uma pessoa responde WhatsApp com dúvidas que se repetem todo dia — produto disponível, prazo de entrega, formas de pagamento, política de troca. Trabalho humano gasto em tarefa de robô, enquanto o volume de pedidos segue crescendo.</div>
+      </div>
+      <div class="dore-card reveal rd2">
+        <div class="dore-num">02</div>
+        <div class="dore-title">SAC concentrado em planilha, difícil de gerir</div>
+        <div class="dore-text">As reclamações e solicitações já são registradas — mas numa planilha que exige análise manual para revelar qualquer padrão. Saber os principais motivos de reclamação, os produtos com maior índice de defeito ou o tempo médio de resolução requer cruzamento de dados que ninguém tem tempo de fazer no dia a dia. O dashboard muda esse jogo: os indicadores ficam visíveis sem esforço, facilitando a tomada de decisão dos sócios.</div>
+      </div>
+      <div class="dore-card reveal rd3">
+        <div class="dore-num">03</div>
+        <div class="dore-title">Fricção na jornada de compra via WhatsApp</div>
+        <div class="dore-text">Muitos clientes chegam ao WhatsApp a partir do plugin do e-commerce para tirar dúvidas. Quando a conversa avança e demonstram intenção de compra, precisariam retornar ao site para finalizar — um atrito desnecessário. Com o agente, toda a jornada acontece dentro do próprio WhatsApp: dúvidas, disponibilidade, frete e pagamento sem sair do canal, reduzindo abandono e aumentando conversão.</div>
+      </div>
+      <div class="dore-card reveal rd1">
+        <div class="dore-num">04</div>
+        <div class="dore-title">Recomendação de produto sem suporte</div>
+        <div class="dore-text">Cliente pergunta qual luminária combina com o ambiente e espera uma resposta que depende de disponibilidade humana. Um agente treinado com o catálogo da NuvemShop faz essa recomendação em segundos, com foto, descrição e link direto para o produto.</div>
+      </div>
+      <div class="dore-card reveal rd2">
+        <div class="dore-num">05</div>
+        <div class="dore-title">Indicadores de pós-venda inacessíveis no dia a dia</div>
+        <div class="dore-text">Volume de tickets, valor desembolsado com SAC, produtos com maior índice de defeito, tempo médio de resolução, escaladas para o Reclame Aqui — nenhum desses números está acessível sem uma análise manual da planilha. Com o dashboard, essas visões surgem automaticamente, sem esforço adicional de ninguém.</div>
+      </div>
+      <div class="dore-card reveal rd3">
+        <div class="dore-num">06</div>
+        <div class="dore-title">Gestão de insumos reativa, sem previsão</div>
+        <div class="dore-text">Com múltiplos fornecedores, lead times diferentes e insumos que se repetem em produtos distintos, a decisão de quando e quanto comprar depende do olho do gestor. Um atraso na reposição significa prazo de entrega mais longo e venda perdida — exatamente o problema que a Pirilampa mais quer evitar à medida que escala.</div>
+      </div>
+      <div class="dore-card reveal rd1">
+        <div class="dore-num">07</div>
+        <div class="dore-title">Taxas de adquirência sem conciliação sistemática</div>
+        <div class="dore-text">MDR do Pagar.me, take rate da NuvemShop, taxas de marketplace — cada uma com suas regras de cobrança. Sem uma conciliação automatizada, é impossível confirmar mês a mês se o que foi cobrado bate com o que foi contratado. Discrepâncias passam em branco e viram custo invisível para a operação.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROPOSTA -->
+<section class="proposta" id="proposta">
+  <div class="si">
+    <div class="reveal">
+      <span class="section-label">A Proposta</span>
+      <h2>Estruturada em 3 módulos. <em>Cada um com resultado próprio.</em></h2>
+      <p class="section-sub">Começamos pelo que resolve mais rápido e com mais impacto. Os módulos seguintes já estão mapeados e podem ser ativados na sequência. Clique em cada bloco para ver os detalhes das entregas.</p>
+    </div>
+
+    <!-- MÓDULO 1 -->
+    <div class="modulo-fase reveal rd1">
+      <div class="fase-header bg-ink" onclick="toggleFase(this)">
+        <div>
+          <div class="fase-tag">Módulo 1 · Início imediato · Precificado</div>
+          <div class="fase-name">Agente de Atendimento — WhatsApp + NuvemShop</div>
+          <div class="fase-duration">WhatsApp · NuvemShop · Pagar.me · Bling · Dashboard gerencial</div>
+        </div>
+        <div class="fase-num-badge">1</div>
+      </div>
+      <div class="fase-body">
+
+        <div class="modulo-card" id="card-venda">
+          <div class="modulo-header" onclick="toggleModulo('card-venda')">
+            <div class="modulo-left">
+              <div class="modulo-icon">🛍️</div>
+              <div>
+                <div class="modulo-label">Frente 1 do Módulo 1</div>
+                <div class="modulo-title">Apoio à Venda</div>
+                <div class="modulo-chips">
+                  <span class="chip">Dúvidas gerais</span>
+                  <span class="chip">Recomendação de produto</span>
+                  <span class="chip">Cálculo de frete</span>
+                  <span class="chip">Link de pagamento</span>
+                  <span class="chip">Cadastro NuvemShop</span>
+                </div>
+              </div>
+            </div>
+            <button class="modulo-toggle" aria-label="Expandir">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="#14373C" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+          <div class="modulo-body">
+            <div class="value-box">
+              <div class="value-box-icon">⚡</div>
+              <div>
+                <div class="value-box-label">O que isso resolve</div>
+                <div class="value-box-text">O agente atende 24h por dia, 7 dias por semana — tira dúvidas, recomenda produtos, calcula frete e conduz a venda dentro do próprio WhatsApp. A equipe fica disponível para o que realmente exige atenção humana: decisões, exceções e relacionamento.</div>
+              </div>
+            </div>
+            <p class="modulo-desc">Um agente conversacional treinado com todo o repertório da Pirilampa — catálogo, políticas, prazos, formas de pagamento — integrado à NuvemShop e ao Pagar.me para conduzir a jornada de compra de ponta a ponta, sem fricção e sem depender de horário comercial.</p>
+            <ul class="modulo-items">
+              <li><strong>Atendimento de dúvidas gerais:</strong> produto disponível, prazo de entrega por região, formas de pagamento, garantia e política de troca — respondidos com base nas informações reais da loja, sem improviso.</li>
+              <li><strong>Recomendação personalizada de produto:</strong> cliente descreve o ambiente ou o que procura; o agente cruza com o catálogo da NuvemShop e devolve sugestões com foto, descrição e link direto para o produto.</li>
+              <li><strong>Cálculo de frete em tempo real:</strong> agente solicita o CEP, consulta as transportadoras disponíveis e apresenta as opções com prazo e valor antes de fechar o pedido.</li>
+              <li><strong>Geração de link de pagamento via Pagar.me:</strong> cliente decide comprar, o agente gera o link dentro do próprio WhatsApp — sem precisar migrar para o site para finalizar.</li>
+              <li><strong>Cadastro automático de cliente na NuvemShop:</strong> agente coleta os dados necessários e preenche o cadastro na plataforma sem intervenção manual.</li>
+              <li><strong>Quebra de objeções:</strong> agente treinado com os principais argumentos de venda da Pirilampa — design autoral, prazo de entrega competitivo versus o mercado artesanal, proposta de valor como surpresa positiva de preço.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="modulo-card" id="card-sac">
+          <div class="modulo-header" onclick="toggleModulo('card-sac')">
+            <div class="modulo-left">
+              <div class="modulo-icon">🔧</div>
+              <div>
+                <div class="modulo-label">Frente 2 do Módulo 1</div>
+                <div class="modulo-title">SAC e Pós-venda</div>
+                <div class="modulo-chips">
+                  <span class="chip">Triagem inteligente</span>
+                  <span class="chip">Resolução autônoma</span>
+                  <span class="chip">Transbordo com histórico</span>
+                  <span class="chip">Dashboard gerencial</span>
+                </div>
+              </div>
+            </div>
+            <button class="modulo-toggle" aria-label="Expandir">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="#14373C" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+          <div class="modulo-body">
+            <div class="value-box">
+              <div class="value-box-icon">📋</div>
+              <div>
+                <div class="value-box-label">O que isso resolve</div>
+                <div class="value-box-text">A planilha manual de SAC deixa de existir. Cada atendimento vira um registro automático com protocolo, histórico e status — visível em tempo real no dashboard. O time intervém só nos casos que realmente exigem decisão humana.</div>
+              </div>
+            </div>
+            <p class="modulo-desc">O agente realiza triagem inteligente de todos os contatos de pós-venda, conduz de forma autônoma os casos que se encaixam nas regras definidas pelos sócios (trocas, devoluções, manutenções simples) e transborda para humano com histórico completo quando o caso exige decisão. Tudo registrado e visível num dashboard que substitui o Excel atual.</p>
+            <ul class="modulo-items">
+              <li><strong>Triagem inteligente:</strong> agente identifica o motivo do contato (troca, devolução, defeito, atraso, dúvida pós-compra) e direciona para o fluxo correto, seguindo o roteiro de atendimento padrão da Pirilampa.</li>
+              <li><strong>Resolução autônoma de casos simples:</strong> casos que se encaixam nas regras de negócio definidas pelos sócios são resolvidos 100% pela IA — com orientação ao cliente, geração de protocolo e próximos passos claros.</li>
+              <li><strong>Transbordo para humano com histórico completo:</strong> quando o caso precisa de decisão humana, o atendente recebe o histórico íntegro da conversa, o diagnóstico inicial e o contexto do pedido — sem o cliente repetir nada.</li>
+              <li><strong>Protocolo automático para o cliente:</strong> ao abrir um chamado, o cliente recebe número de protocolo de confirmação — eliminando o "já vi sua mensagem" manual.</li>
+              <li><strong>Recebimento de fotos e registro no Google Drive:</strong> o agente solicita e recebe fotos enviadas pelo cliente (produto com defeito, embalagem danificada, etc.) e as salva automaticamente em pasta organizada no Drive, vinculada ao protocolo do caso — garantindo histórico e governança sem depender de ninguém guardar manualmente.</li>
+              <li><strong>Pesquisa de satisfação ao encerramento:</strong> ao final de cada caso resolvido, o agente envia automaticamente uma pesquisa de satisfação ao cliente. A nota é registrada no dashboard gerencial, permitindo acompanhar a qualidade do atendimento por período, tipo de ocorrência e canal. Opcionalmente, casos com avaliação negativa podem disparar o envio automático de um cupom de desconto para compra futura — com prazo de validade definido pelos sócios — como gesto de reparação sem intervenção manual.</li>
+              <li><strong>Dashboard gerencial com indicadores:</strong> painel com todos os atendimentos registrados, filtros por status e tipo de solicitação, e indicadores de volume, tempo médio de resolução, taxa de resolução autônoma, índice de transbordo e NPS do atendimento — para os sócios acompanharem sem depender da memória de ninguém.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MÓDULO 2 -->
+    <div class="modulo-fase reveal rd2" style="margin-top:20px">
+      <div class="fase-header bg-sage" onclick="toggleFase(this)">
+        <div>
+          <div class="fase-tag">Módulo 2 · Próxima fase · A orçar</div>
+          <div class="fase-name">Agente de Planejamento de Demanda (MRP)</div>
+          <div class="fase-duration">Bling · Histórico de vendas · Ordens de compra automáticas · Forecast por SKU</div>
+        </div>
+        <div class="fase-num-badge">2</div>
+      </div>
+      <div class="fase-body">
+        <div class="modulo-card" id="card-mrp">
+          <div class="modulo-header" onclick="toggleModulo('card-mrp')">
+            <div class="modulo-left">
+              <div class="modulo-icon">📦</div>
+              <div>
+                <div class="modulo-label">Escopo mapeado</div>
+                <div class="modulo-title">Previsão de demanda e gestão de compra de insumos</div>
+                <div class="modulo-chips">
+                  <span class="chip">Forecast de vendas</span>
+                  <span class="chip">Alerta de ruptura</span>
+                  <span class="chip">Ordem de compra</span>
+                  <span class="chip">Lead time por fornecedor</span>
+                </div>
+              </div>
+            </div>
+            <button class="modulo-toggle" aria-label="Expandir">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="#14373C" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+          <div class="modulo-body">
+            <div class="futuro-tag">🔮 Módulo futuro — escopo já mapeado</div>
+            <div class="value-box">
+              <div class="value-box-icon">🏭</div>
+              <div>
+                <div class="value-box-label">O que isso resolve</div>
+                <div class="value-box-text">Fim do controle de insumos no achismo. O agente lê o histórico de vendas dos últimos 3 meses, projeta a demanda futura por SKU e calcula automaticamente quais insumos precisam ser comprados, de quais fornecedores e até quando — antes que a ruptura aconteça.</div>
+              </div>
+            </div>
+            <p class="modulo-desc">Um agente que funciona como um MRP simplificado: lê os dados de vendas do Bling, projeta a demanda futura por SKU e triangula essa projeção com o estoque de produtos já montados (beneficiados) e com o estoque atual de insumos disponíveis. A partir dessa triangulação, calcula com precisão quais componentes realmente precisam ser comprados — cruzando as fichas técnicas de cada produto, onde um mesmo insumo pode aparecer em múltiplas luminárias — e gera ordens de compra priorizadas pelo lead time de cada fornecedor.</p>
+            <ul class="modulo-items">
+              <li><strong>Forecast de vendas por SKU:</strong> com base no histórico dos últimos 3 meses, projeta a demanda futura por produto e sinaliza os itens com maior velocidade de giro.</li>
+              <li><strong>Triangulação com estoque montado e de insumos:</strong> cruza a demanda projetada com o estoque de produtos já beneficiados e com o estoque atual de cada insumo no Bling — evitando compras desnecessárias de componentes que já estão disponíveis.</li>
+              <li><strong>Cálculo de necessidade líquida de insumos:</strong> identifica quais componentes precisam ser repostos considerando que o mesmo insumo entra em luminárias diferentes, garantindo que nenhuma compra seja feita em duplicidade nem nenhum item fique em falta.</li>
+              <li><strong>Alerta de ruptura com antecedência:</strong> respeitando o lead time de cada fornecedor cadastrado, o agente calcula a data limite para inclusão do pedido sem risco de parar a produção.</li>
+              <li><strong>Ordem de compra automática:</strong> gera a ordem com quantidade, fornecedor, valor estimado e data limite — pronta para aprovação dos sócios, sem montar manualmente.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MÓDULO 3 -->
+    <div class="modulo-fase reveal rd3" style="margin-top:20px">
+      <div class="fase-header bg-slate" onclick="toggleFase(this)">
+        <div>
+          <div class="fase-tag">Módulo 3 · Próxima fase · A orçar</div>
+          <div class="fase-name">Agente de Conciliação de Taxas</div>
+          <div class="fase-duration">Bling · Pagar.me · NuvemShop · Westwing · Boban</div>
+        </div>
+        <div class="fase-num-badge">3</div>
+      </div>
+      <div class="fase-body">
+        <div class="modulo-card" id="card-taxas">
+          <div class="modulo-header" onclick="toggleModulo('card-taxas')">
+            <div class="modulo-left">
+              <div class="modulo-icon">💳</div>
+              <div>
+                <div class="modulo-label">Escopo mapeado</div>
+                <div class="modulo-title">Controle e conciliação automática de taxas das adquirências</div>
+                <div class="modulo-chips">
+                  <span class="chip">MDR / Take rate</span>
+                  <span class="chip">Pagar.me</span>
+                  <span class="chip">NuvemShop</span>
+                  <span class="chip">Alerta de discrepância</span>
+                </div>
+              </div>
+            </div>
+            <button class="modulo-toggle" aria-label="Expandir">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="#14373C" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+          <div class="modulo-body">
+            <div class="futuro-tag">🔮 Módulo futuro — escopo já mapeado</div>
+            <div class="value-box">
+              <div class="value-box-icon">🔍</div>
+              <div>
+                <div class="value-box-label">O que isso resolve</div>
+                <div class="value-box-text">Chega de ficar com a pulga atrás da orelha sem conseguir confirmar. O agente cruza o faturamento bruto do Bling com os extratos das adquirências e valida automaticamente se as taxas cobradas batem com o que foi contratado — sinalizando qualquer discrepância antes que passe em branco.</div>
+              </div>
+            </div>
+            <p class="modulo-desc">Um agente que lê as regras de cobrança de cada adquirência (MDR, take rate da NuvemShop, taxas do Pagar.me e outros), cruza com o faturamento real registrado no Bling e emite um relatório mensal automatizado de conciliação — com alerta visual para qualquer valor fora do esperado.</p>
+            <ul class="modulo-items">
+              <li><strong>Cadastro de regras por adquirência:</strong> as taxas contratadas de cada meio de pagamento são configuradas no backend do agente como referência fixa para a conciliação.</li>
+              <li><strong>Leitura automática do Bling:</strong> agente lê os faturamentos brutos registrados no ERP por período e por canal (site próprio, Westwing, Boban).</li>
+              <li><strong>Conciliação com os extratos das adquirências:</strong> cruza os valores esperados com os efetivamente descontados e aponta divergências com nível de criticidade.</li>
+              <li><strong>Relatório mensal automatizado:</strong> gerado e enviado para os sócios no fechamento do mês, com posição consolidada por adquirência e flag de alertas pendentes.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- INVESTIMENTO -->
+<section class="investimento" id="investimento">
+  <div class="si">
+    <div class="reveal">
+      <span class="section-label">Investimento</span>
+      <h2>Condições claras, <em>sem surpresas</em> no caminho.</h2>
+      <p class="section-sub">Precificamos apenas o Módulo 1. Os módulos 2 e 3 serão orçados na sequência, conforme o ritmo da Pirilampa.</p>
+    </div>
+
+    <div class="inv-grid">
+      <div class="inv-card featured reveal rd1">
+        <div class="inv-card-tag">Módulo 1 · Implementação</div>
+        <div class="inv-card-name">Agente de Atendimento<br>WhatsApp + NuvemShop</div>
+        <div class="inv-price-main"><sup>R$</sup>7.900</div>
+        <div class="inv-price-parcel">ou em <strong>3× de R$ 2.633</strong> sem acréscimo</div>
+        <div class="inv-divider"></div>
+        <ul class="inv-includes">
+          <li>Agente de apoio à venda 24/7 integrado à NuvemShop</li>
+          <li>Recomendação de produto baseada no catálogo real da loja</li>
+          <li>Cálculo de frete integrado às transportadoras em uso</li>
+          <li>Geração de link de pagamento via Pagar.me no WhatsApp</li>
+          <li>Cadastro automático de cliente na NuvemShop</li>
+          <li>Agente de SAC com triagem, resolução autônoma e transbordo</li>
+          <li>Dashboard gerencial com histórico e indicadores de atendimento</li>
+          <li>Treinamento da equipe para monitoramento e uso do dashboard</li>
+          <li>30 dias de garantia após go-live</li>
+        </ul>
+      </div>
+
+      <div class="inv-side">
+        <div class="inv-card inv-card-sm reveal rd2">
+          <div class="inv-card-tag">Manutenção mensal</div>
+          <div class="inv-card-name">Sustentação contínua</div>
+          <div class="inv-monthly-price"><sup>R$</sup>890<sup style="font-size:.75rem;vertical-align:baseline;opacity:.55">/mês</sup></div>
+          <div class="inv-divider"></div>
+          <ul class="inv-includes" style="font-size:.81rem">
+            <li>Manutenção das integrações (NuvemShop, Pagar.me, Meta)</li>
+            <li>Ajustes de regras de negócio e roteiros do agente</li>
+            <li>Atualização das regras de adquirências acompanhando mudanças de fornecedor da Pirilampa</li>
+            <li>Otimização de modelos e redução de custo de API</li>
+            <li>Suporte prioritário a qualquer instabilidade</li>
+          </ul>
+        </div>
+
+        <div class="inv-card inv-card-sm reveal rd3">
+          <div class="inv-card-tag">Módulos 2 e 3</div>
+          <div class="inv-card-name">Próximas fases</div>
+          <div class="inv-orcar-badge">A orçar na sequência</div>
+          <p style="font-size:.82rem;font-weight:300;color:rgba(255,255,255,.5);line-height:1.65;margin-top:14px">
+            Planejamento de demanda e compra de insumos (MRP) e conciliação automática de taxas das adquirências. Os escopos já estão mapeados — o orçamento será apresentado quando a Pirilampa estiver pronta para avançar.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="inv-api-note reveal rd2">
+      <strong>Importante sobre custos de API:</strong> os custos de APIs externas não estão inclusos nesta proposta e são pagos diretamente pela Pirilampa. Isso inclui a API oficial do WhatsApp Business (Meta), os modelos de linguagem utilizados pelo agente e a hospedagem do N8N. Estimativa de custo operacional mensal: <strong>R$ 300–600</strong> dependendo do volume de atendimentos.
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE NEWSCALE -->
+<section class="porque" id="porque">
+  <div class="si">
+    <div class="reveal">
+      <span class="section-label">Por que a NewScale</span>
+      <h2>Não entregamos relatório e <em>sumimos.</em></h2>
+    </div>
+
+    <div class="quote-block reveal rd1">
+      <div class="quote-mark">"</div>
+      <p class="quote-text">Cada projeto começa pela conversa — não pelo contrato. Entendemos como a operação funciona hoje, qual é o tom de voz da empresa, quais são as regras de negócio e o que a equipe precisa. Só depois a gente constrói. E depois que entrega, a gente fica — otimizando, ajustando e evoluindo junto com o seu negócio.</p>
+    </div>
+
+    <div class="metodo-grid">
+      <div class="metodo-card reveal rd1">
+        <div class="metodo-num">01</div>
+        <div class="metodo-title">Consultoria Sistêmica</div>
+        <div class="metodo-text">Visão completa do negócio: atendimento, operação e financeiro. IA como motor de escala, não de cosmética.</div>
+      </div>
+      <div class="metodo-card reveal rd2">
+        <div class="metodo-num">02</div>
+        <div class="metodo-title">Roadmap Faseado</div>
+        <div class="metodo-text">Priorizamos os processos com maior retorno antes de qualquer outra coisa — sem implementar pelo hype.</div>
+      </div>
+      <div class="metodo-card reveal rd3">
+        <div class="metodo-num">03</div>
+        <div class="metodo-title">Implementação Integrada</div>
+        <div class="metodo-text">Conectamos seus sistemas, eliminamos tarefas manuais e construímos fluxos nos canais que sua equipe já usa.</div>
+      </div>
+      <div class="metodo-card reveal rd1">
+        <div class="metodo-num">04</div>
+        <div class="metodo-title">Treinamento das Equipes</div>
+        <div class="metodo-text">Cada pessoa aprende seu papel no novo fluxo. O humano passa a monitorar e decidir — a IA faz o operacional.</div>
+      </div>
+      <div class="metodo-card reveal rd2">
+        <div class="metodo-num">05</div>
+        <div class="metodo-title">Acompanhamento de KPIs</div>
+        <div class="metodo-text">Definimos métricas juntos antes de começar. Você sabe exatamente o que esperar — e como acompanhar o ganho real.</div>
+      </div>
+      <div class="metodo-card reveal rd3">
+        <div class="metodo-num">06</div>
+        <div class="metodo-title">Sustentação Contínua</div>
+        <div class="metodo-text">Monitoramento, otimizações e manutenção para que o sistema evolua junto com o negócio — não fique parado no tempo.</div>
+      </div>
+    </div>
+
+    <div class="fund-grid reveal">
+      <div class="fund-card">
+        <img class="fund-img" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG" alt="Bruna Santanna">
+        <div>
+          <div class="fund-name">Bruna Santanna</div>
+          <div class="fund-role">Co-Fundadora · Empreendedora &amp; Educação em IA</div>
+          <div class="fund-bio">ESPM. Empresária há 10+ anos. Ex-SulAmérica, Ex-Whirlpool. Fundou e operou a Casa Kahla por 8 anos. Mentora de IA no programa Potenc.IA (OLX, Magalu, B3, CI&T). Professora de IA para equipes corporativas.</div>
+          <div class="fund-tags">
+            <span class="f-tag">SulAmérica</span>
+            <span class="f-tag">Whirlpool</span>
+            <span class="f-tag">Blackbox AI</span>
+            <span class="f-tag">Potenc.IA</span>
+            <span class="f-tag">Casa Kahla</span>
+          </div>
+        </div>
+      </div>
+      <div class="fund-card">
+        <img class="fund-img" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/BRUNO-VARELLA-PQ.jpeg" alt="Bruno Varella">
+        <div>
+          <div class="fund-name">Bruno Varella</div>
+          <div class="fund-role">Co-Fundador · Marketing, Produto &amp; Escala</div>
+          <div class="fund-bio">ESPM. 17+ anos em Marketing, Produto e Novos Negócios — 12+ em cargos de liderança executiva. Ex-Warner Bros. Discovery, Ex-Natura & Co., Ex-Sorridents. Implementou agentes de IA em redes de franquias com 700+ unidades.</div>
+          <div class="fund-tags">
+            <span class="f-tag">Warner Bros.</span>
+            <span class="f-tag">Natura & Co</span>
+            <span class="f-tag">Sorridents</span>
+            <span class="f-tag">GIO Estética</span>
+            <span class="f-tag">700+ franquias</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRÓXIMOS PASSOS -->
+<section class="proximos" id="proximos">
+  <div class="si">
+    <div class="reveal">
+      <span class="section-label">Próximos Passos</span>
+      <h2>Do aceite ao <em>go-live</em> em até 8 semanas.</h2>
+      <p class="section-sub">Um cronograma realista, sem promessa de milagre e sem surpresa no meio do caminho.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal rd1">
+        <div class="step-nc">
+          <div class="step-num">1</div>
+          <div class="step-line"></div>
+        </div>
+        <div>
+          <div class="step-period">Semana 1</div>
+          <div class="step-title">Reunião de imersão</div>
+          <div class="step-text">Sessão aprofundada com Igor e Ri para mapear todas as regras de negócio do atendimento, os fluxos de SAC, os critérios de transbordo e o tom de voz que o agente precisa ter. Saímos com tudo que precisamos para construir — sem chute, sem genérico.</div>
+        </div>
+      </div>
+      <div class="step reveal rd2">
+        <div class="step-nc">
+          <div class="step-num">2</div>
+          <div class="step-line"></div>
+        </div>
+        <div>
+          <div class="step-period">Semanas 1–2</div>
+          <div class="step-title">Arquitetura e integrações</div>
+          <div class="step-text">Construção da arquitetura do agente, configuração das integrações com NuvemShop, Pagar.me e Bling, e estruturação do dashboard gerencial. Nenhuma peça é genérica — tudo reflete a operação real da Pirilampa.</div>
+        </div>
+      </div>
+      <div class="step reveal rd3">
+        <div class="step-nc">
+          <div class="step-num">3</div>
+          <div class="step-line"></div>
+        </div>
+        <div>
+          <div class="step-period">Semanas 3–5</div>
+          <div class="step-title">Construção e treinamento do agente</div>
+          <div class="step-text">Desenvolvimento dos fluxos de venda e SAC, treinamento do agente com o catálogo, as políticas e o tom de voz da Pirilampa, e testes internos com simulações de atendimento real — incluindo os cenários mais críticos mapeados na imersão.</div>
+        </div>
+      </div>
+      <div class="step reveal rd1">
+        <div class="step-nc">
+          <div class="step-num">4</div>
+          <div class="step-line"></div>
+        </div>
+        <div>
+          <div class="step-period">Semanas 5–7</div>
+          <div class="step-title">Validação com a equipe</div>
+          <div class="step-text">A equipe da Pirilampa testa o agente em ambiente controlado, valida os fluxos, ajusta os textos e aprova os critérios de transbordo. Cada ciclo de feedback é incorporado antes de avançar. Nada vai para produção sem o aval de vocês.</div>
+        </div>
+      </div>
+      <div class="step reveal rd2">
+        <div class="step-nc">
+          <div class="step-num">5</div>
+          <div class="step-line"></div>
+        </div>
+        <div>
+          <div class="step-period">Semana 8</div>
+          <div class="step-title">Go-live + treinamento</div>
+          <div class="step-text">O agente entra em produção com acompanhamento em tempo real da NewScale. Treinamento da equipe para uso do dashboard, monitoramento dos atendimentos e identificação de ajustes finos. Você não está sozinho no go-live.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prox-cta reveal rd2">
+      <div>
+        <div class="cta-main">Vamos começar?</div>
+        <div class="cta-sub">Fale com a NewScale para alinhar os próximos passos e dar início à imersão.</div>
+      </div>
+      <a href="https://wa.me/5511971901020" class="cta-btn">Falar com a NewScale →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">NewScale<span>Consulting</span></div>
+  <div class="footer-date">Proposta exclusiva · Pirilampa<br>Abril de 2025</div>
+</footer>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.06 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Accordion módulo
+function toggleModulo(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+
+// Accordion fase
+function toggleFase(header) {
+  const body = header.nextElementSibling;
+  if (!body) return;
+  body.style.display = (body.style.display === 'none') ? 'block' : 'none';
+}
+</script>
+</body>
+</html>
