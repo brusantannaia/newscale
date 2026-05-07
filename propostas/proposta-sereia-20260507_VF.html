@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta NewScale × Sereia · v2 · Maio 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal-deep: #14373C;
+  --teal-mid: #435D51;
+  --copper: #B06E4A;
+  --copper-light: #C8845E;
+  --sand: #D0D0CA;
+  --cream: #F5F3EE;
+  --white: #FFFFFF;
+  --text-dark: #0D2226;
+  --text-mid: #2C4A4E;
+  --ink2: #1a4449;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text-dark); overflow-x: hidden; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 16px 48px; display: flex; justify-content: space-between; align-items: center;
+  background: rgba(20,55,60,0.92); backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav-logo img { height: 36px; display: block; }
+.nav-badge { font-size: 0.65rem; color: rgba(255,255,255,0.45); letter-spacing: 0.1em; text-transform: uppercase; }
+
+.hero {
+  min-height: 100vh; background: linear-gradient(145deg, #0c2427 0%, #14373C 38%, #1d4840 72%, #435D51 100%);
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center; padding: 140px 40px 100px; position: relative; overflow: hidden;
+}
+.topo-lines { position: absolute; inset: 0; opacity: 0.09; pointer-events: none; }
+.topo-lines svg { width: 100%; height: 100%; }
+.hero-logo { margin-bottom: 44px; animation: fadeUp 0.6s ease 0.1s both; }
+.hero-logo img { height: 64px; display: block; margin: 0 auto; }
+.hero-badge {
+  display: inline-block; background: rgba(176,110,74,0.15); border: 1px solid rgba(176,110,74,0.35);
+  color: var(--copper-light); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; padding: 6px 18px; border-radius: 20px; margin-bottom: 32px;
+  animation: fadeUp 0.6s ease 0.2s both;
+}
+.hero-eyebrow {
+  font-size: 0.72rem; color: rgba(255,255,255,0.45); letter-spacing: 0.2em; text-transform: uppercase;
+  margin-bottom: 20px; font-weight: 500; animation: fadeUp 0.6s ease 0.4s both;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif; font-weight: 700;
+  font-size: clamp(2.4rem, 5vw, 4.2rem); color: #fff; line-height: 1.1;
+  margin-bottom: 24px; max-width: 820px; animation: fadeUp 0.6s ease 0.6s both;
+}
+.hero h1 em { font-style: italic; color: #a8c5a0; }
+.hero-desc {
+  font-size: 1rem; color: rgba(255,255,255,0.62); line-height: 1.75; max-width: 560px;
+  animation: fadeUp 0.6s ease 0.8s both;
+}
+.hero-cta { margin-top: 52px; animation: fadeUp 0.6s ease 1s both; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.hero-cta a {
+  font-size: 0.72rem; color: rgba(255,255,255,0.4); letter-spacing: 0.12em; text-transform: uppercase;
+  text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 8px;
+}
+.scroll-arrow { width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 14px; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+section { padding: 100px 48px; }
+.section-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper); margin-bottom: 14px; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: clamp(1.9rem, 3.2vw, 2.8rem); color: var(--teal-deep); line-height: 1.2; margin-bottom: 12px; }
+.section-title em { font-style: italic; color: var(--teal-mid); }
+.section-sub { font-size: 0.92rem; color: #5a7070; line-height: 1.7; max-width: 600px; }
+
+.intro-section { background: var(--cream); display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 72px; align-items: start; }
+.intro-text p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 18px; }
+.intro-text strong { color: var(--teal-deep); font-weight: 600; }
+.intro-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.stat-card { border-radius: 14px; padding: 28px 22px; color: #fff; }
+.stat-card:nth-child(1) { background: var(--teal-deep); }
+.stat-card:nth-child(2) { background: var(--copper); }
+.stat-card:nth-child(3) { background: var(--teal-mid); }
+.stat-card:nth-child(4) { background: var(--ink2); }
+.stat-number { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 700; line-height: 1; margin-bottom: 8px; }
+.stat-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.75; }
+
+.custo-section { background: #fff; padding-top: 80px; padding-bottom: 80px; }
+.custo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; margin-top: 40px; }
+.custo-text p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 18px; }
+.custo-text strong { color: var(--teal-deep); font-weight: 600; }
+.custo-list { background: var(--cream); border-radius: 16px; padding: 32px; }
+.custo-item { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px dashed rgba(20,55,60,0.15); }
+.custo-item:last-of-type { border-bottom: none; }
+.custo-item-label { font-size: 0.88rem; color: var(--text-mid); line-height: 1.5; padding-right: 16px; }
+.custo-item-value { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: var(--copper); white-space: nowrap; }
+.custo-total { display: flex; justify-content: space-between; align-items: center; padding-top: 22px; margin-top: 8px; border-top: 2px solid var(--teal-deep); }
+.custo-total-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal-deep); }
+.custo-total-value { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; color: var(--teal-deep); }
+.custo-aviso { margin-top: 24px; font-size: 0.78rem; color: #5a7070; line-height: 1.65; font-style: italic; }
+
+.dores-section { background: var(--teal-deep); }
+.dores-section .section-title { color: #fff; }
+.dores-section .section-label { color: var(--copper-light); }
+.dores-section .section-sub { color: rgba(255,255,255,0.5); }
+.dores-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 52px; }
+.dore-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 32px 28px; position: relative; overflow: hidden; transition: border-color 0.3s, background 0.3s; }
+.dore-card:hover { border-color: rgba(176,110,74,0.35); background: rgba(176,110,74,0.06); }
+.dore-num { font-family: 'Cormorant Garamond', serif; font-size: 5rem; font-weight: 700; color: rgba(255,255,255,0.05); position: absolute; top: 8px; right: 16px; line-height: 1; }
+.dore-tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--copper-light); margin-bottom: 10px; }
+.dore-card h3 { font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 12px; line-height: 1.35; }
+.dore-card p { font-size: 0.85rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+.demo-section { background: var(--cream); padding-top: 100px; padding-bottom: 100px; }
+.demo-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; margin-top: 52px; align-items: center; }
+.whatsapp-mockup { background: #0d2226; border-radius: 24px; padding: 16px; box-shadow: 0 24px 80px rgba(20,55,60,0.18); max-width: 360px; margin: 0 auto; }
+.wa-header { display: flex; align-items: center; gap: 12px; padding: 12px 8px 16px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.wa-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--copper), var(--teal-mid)); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; color: #fff; }
+.wa-name { font-size: 0.88rem; font-weight: 600; color: #fff; }
+.wa-status { font-size: 0.7rem; color: rgba(255,255,255,0.4); }
+.wa-body { background: #142e32; border-radius: 12px; padding: 16px 12px; margin-top: 12px; min-height: 360px; display: flex; flex-direction: column; gap: 10px; }
+.wa-msg { max-width: 78%; padding: 8px 12px; border-radius: 12px; font-size: 0.78rem; line-height: 1.5; }
+.wa-msg.received { background: #1d4045; color: rgba(255,255,255,0.88); align-self: flex-start; border-top-left-radius: 4px; }
+.wa-msg.sent { background: var(--copper); color: #fff; align-self: flex-end; border-top-right-radius: 4px; }
+.wa-msg.audio { display: flex; align-items: center; gap: 10px; padding: 10px 12px; min-width: 200px; }
+.wa-msg.audio.received { background: #1d4045; color: rgba(255,255,255,0.88); align-self: flex-start; border-top-left-radius: 4px; }
+.wa-msg.audio.sent { background: var(--copper); color: #fff; align-self: flex-end; border-top-right-radius: 4px; }
+.wa-audio-icon { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; flex-shrink: 0; }
+.wa-msg.audio.received .wa-audio-icon { background: var(--copper); color: #fff; }
+.wa-msg.audio.sent .wa-audio-icon { background: rgba(255,255,255,0.95); color: var(--copper); }
+.wa-audio-bar { flex: 1; height: 3px; background: rgba(255,255,255,0.15); border-radius: 2px; position: relative; }
+.wa-msg.audio.sent .wa-audio-bar { background: rgba(255,255,255,0.3); }
+.wa-audio-bar::after { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 60%; background: var(--copper-light); border-radius: 2px; }
+.wa-msg.audio.sent .wa-audio-bar::after { background: rgba(255,255,255,0.9); }
+.wa-audio-time { font-size: 0.7rem; color: rgba(255,255,255,0.4); }
+.wa-msg-time { font-size: 0.62rem; color: rgba(255,255,255,0.35); margin-top: 2px; display: block; }
+.demo-text h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--teal-deep); margin-bottom: 16px; line-height: 1.2; }
+.demo-text p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 16px; }
+.demo-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+.demo-bullets li { font-size: 0.88rem; color: var(--text-mid); padding-left: 26px; position: relative; line-height: 1.6; }
+.demo-bullets li::before { content: '✓'; position: absolute; left: 0; top: 0; width: 18px; height: 18px; border-radius: 50%; background: var(--copper); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; }
+
+.proposta-section { background: var(--white); }
+.fase-block { margin-bottom: 48px; }
+.fase-header { display: flex; justify-content: space-between; align-items: center; padding: 24px 32px; border-radius: 14px 14px 0 0; color: #fff; }
+.fase-tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.65; margin-bottom: 6px; }
+.fase-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; }
+.fase-duration { font-size: 0.78rem; opacity: 0.6; margin-top: 4px; }
+.fase-num-badge { width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; flex-shrink: 0; }
+.fase-1 .fase-header { background: var(--teal-deep); }
+.fase-2 .fase-header { background: var(--copper); }
+.fase-3 .fase-header { background: var(--teal-mid); }
+.modulos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 16px 0; }
+.modulo-full { grid-column: 1 / -1; }
+.modulo-card { border: 1px solid rgba(20,55,60,0.1); border-radius: 12px; overflow: hidden; cursor: pointer; transition: border-color 0.25s, box-shadow 0.25s; }
+.modulo-card:hover { border-color: rgba(176,110,74,0.3); box-shadow: 0 6px 24px rgba(20,55,60,0.06); }
+.modulo-header { padding: 20px 24px; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.modulo-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+.modulo-info { flex: 1; }
+.modulo-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); margin-bottom: 4px; }
+.modulo-title { font-size: 0.97rem; font-weight: 600; color: var(--teal-deep); line-height: 1.35; }
+.modulo-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.chip { font-size: 0.62rem; font-weight: 500; padding: 3px 10px; border-radius: 12px; background: rgba(20,55,60,0.07); color: var(--text-mid); letter-spacing: 0.04em; }
+.toggle-btn { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(20,55,60,0.15); display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--teal-mid); transition: transform 0.3s; flex-shrink: 0; margin-top: 4px; }
+.modulo-card.open .toggle-btn { transform: rotate(45deg); }
+.modulo-card.open .modulo-chips { display: none; }
+.modulo-body { max-height: 0; overflow: hidden; transition: max-height 0.45s ease; }
+.modulo-card.open .modulo-body { max-height: 2400px; }
+.modulo-body-inner { padding: 20px 24px 24px; border-top: 1px solid rgba(20,55,60,0.07); }
+.value-box { display: flex; gap: 14px; align-items: flex-start; background: rgba(20,55,60,0.04); border-radius: 10px; padding: 16px 18px; margin-bottom: 16px; }
+.value-box-icon { font-size: 1.2rem; flex-shrink: 0; }
+.value-box-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); margin-bottom: 4px; }
+.value-box-text { font-size: 0.87rem; color: var(--teal-deep); font-weight: 500; line-height: 1.55; }
+.modulo-desc { font-size: 0.87rem; color: #5a7070; line-height: 1.75; margin-bottom: 14px; }
+.modulo-desc strong { color: var(--teal-deep); }
+.modulo-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.modulo-items li { font-size: 0.84rem; color: var(--text-mid); line-height: 1.65; padding-left: 16px; position: relative; }
+.modulo-items li::before { content: "→"; position: absolute; left: 0; color: var(--copper); font-size: 0.8rem; }
+.modulo-items li strong { color: var(--teal-deep); }
+.disclaimer-box { margin-top: 14px; background: rgba(176,110,74,0.07); border: 1px solid rgba(176,110,74,0.18); border-radius: 8px; padding: 12px 16px; font-size: 0.8rem; color: #7a5a3a; line-height: 1.65; }
+.disclaimer-box strong { color: var(--copper); }
+
+.onda2-section { background: linear-gradient(160deg, #14373C 0%, #1d4840 60%, #2a5b50 100%); padding: 90px 48px; color: #fff; position: relative; overflow: hidden; }
+.onda2-section .section-title { color: #fff; }
+.onda2-section .section-label { color: var(--copper-light); }
+.onda2-section .section-sub { color: rgba(255,255,255,0.6); }
+.onda2-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; margin-top: 48px; align-items: center; }
+.onda2-text p { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.85; margin-bottom: 18px; }
+.onda2-text p strong { color: #a8c5a0; font-weight: 600; }
+.onda2-bullets { list-style: none; margin-top: 22px; display: flex; flex-direction: column; gap: 12px; }
+.onda2-bullets li { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 14px 18px; font-size: 0.88rem; color: rgba(255,255,255,0.72); line-height: 1.55; }
+.onda2-bullets li strong { color: #fff; font-weight: 600; }
+.onda2-card { background: rgba(176,110,74,0.12); border: 1px solid rgba(176,110,74,0.35); border-radius: 18px; padding: 36px 32px; }
+.onda2-card-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper-light); margin-bottom: 16px; }
+.onda2-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #fff; line-height: 1.25; margin-bottom: 14px; }
+.onda2-card-desc { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 22px; }
+.onda2-card-price { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; color: #fff; line-height: 1; }
+.onda2-card-price-sub { font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-top: 6px; margin-bottom: 18px; }
+.onda2-card-mensal { font-size: 0.85rem; color: var(--copper-light); font-weight: 600; }
+.onda2-card-aluna { margin-top: 22px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.82rem; color: rgba(255,255,255,0.5); font-style: italic; line-height: 1.6; }
+.onda2-card-aluna strong { color: #a8c5a0; font-style: normal; font-weight: 600; }
+
+.sistemas-section { background: var(--cream); }
+.sistemas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+.sis-card { background: var(--white); border: 1px solid rgba(20,55,60,0.08); border-radius: 14px; padding: 28px 24px; transition: border-color 0.25s, box-shadow 0.25s; }
+.sis-card:hover { border-color: rgba(176,110,74,0.25); box-shadow: 0 8px 24px rgba(20,55,60,0.06); }
+.sis-card-top { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.sis-icon { font-size: 1.3rem; }
+.sis-name { font-size: 0.95rem; font-weight: 600; color: var(--teal-deep); }
+.sis-badge { display: inline-block; margin-bottom: 10px; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 12px; }
+.badge-green { background: rgba(67,93,81,0.1); color: #2d6b3a; }
+.badge-yellow { background: rgba(176,110,74,0.12); color: #9b5e2a; }
+.badge-blue { background: rgba(20,55,60,0.08); color: #2a5a60; }
+.sis-desc { font-size: 0.82rem; color: #5a7070; line-height: 1.7; margin-bottom: 12px; }
+.sis-detail { font-size: 0.78rem; color: var(--text-mid); background: rgba(20,55,60,0.04); border-radius: 8px; padding: 10px 14px; line-height: 1.65; }
+.sis-note { grid-column: 1 / -1; background: var(--white); border: 1px solid rgba(20,55,60,0.08); border-radius: 14px; padding: 24px 28px; display: flex; gap: 16px; align-items: flex-start; }
+.sis-note-icon { font-size: 1.1rem; flex-shrink: 0; padding-top: 2px; }
+.sis-note p { font-size: 0.84rem; color: #5a7070; line-height: 1.75; }
+.sis-note strong { color: var(--teal-deep); font-weight: 600; }
+
+.roi-section { background: #fff; padding-top: 100px; padding-bottom: 100px; }
+.roi-intro { max-width: 780px; margin-bottom: 56px; }
+.roi-intro p { font-size: 0.98rem; color: var(--text-mid); line-height: 1.85; }
+.roi-intro strong { color: var(--teal-deep); }
+.roi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 36px; }
+.roi-card { border: 1px solid rgba(20,55,60,0.1); border-radius: 16px; padding: 32px 28px; }
+.roi-card.gain { background: linear-gradient(135deg, #f8fbf6, #eef5ee); border-color: rgba(67,93,81,0.2); }
+.roi-card.cost { background: linear-gradient(135deg, #fff7f2, #fdf0e7); border-color: rgba(176,110,74,0.25); }
+.roi-card-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 14px; }
+.roi-card.gain .roi-card-tag { color: #2d6b3a; }
+.roi-card.cost .roi-card-tag { color: #9b5e2a; }
+.roi-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--teal-deep); margin-bottom: 18px; line-height: 1.25; }
+.roi-line { display: flex; justify-content: space-between; align-items: baseline; padding: 12px 0; border-bottom: 1px dashed rgba(20,55,60,0.12); font-size: 0.86rem; color: var(--text-mid); gap: 16px; }
+.roi-line:last-of-type { border-bottom: none; }
+.roi-line-value { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: var(--teal-deep); white-space: nowrap; }
+.roi-card.cost .roi-line-value { color: var(--copper); }
+.roi-card.gain .roi-line-value { color: #2d6b3a; }
+.roi-conclusao { background: var(--teal-deep); border-radius: 18px; padding: 44px 48px; color: #fff; display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center; }
+.roi-conclusao-eyebrow { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper-light); margin-bottom: 14px; }
+.roi-conclusao h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 700; color: #fff; margin-bottom: 14px; line-height: 1.25; }
+.roi-conclusao p { font-size: 0.92rem; color: rgba(255,255,255,0.65); line-height: 1.75; }
+.roi-payback { background: rgba(176,110,74,0.15); border: 1px solid rgba(176,110,74,0.35); border-radius: 14px; padding: 28px 32px; text-align: center; }
+.roi-payback-num { font-family: 'Cormorant Garamond', serif; font-size: 3.6rem; font-weight: 700; color: var(--copper-light); line-height: 1; }
+.roi-payback-label { font-size: 0.72rem; color: rgba(255,255,255,0.55); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 8px; }
+
+.investimento-section { background: var(--teal-deep); }
+.investimento-section .section-title { color: #fff; }
+.investimento-section .section-label { color: var(--copper-light); }
+.inv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 52px; }
+.inv-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; overflow: hidden; }
+.inv-card-top { height: 4px; }
+.inv-card-top.c1 { background: var(--copper); }
+.inv-card-top.c2 { background: #5e8870; }
+.inv-card-top.c3 { background: var(--copper-light); }
+.inv-card-body { padding: 28px 24px; }
+.inv-module { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 8px; }
+.inv-title { font-size: 1.05rem; font-weight: 600; color: #fff; margin-bottom: 20px; line-height: 1.35; }
+.inv-price { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 4px; }
+.inv-price-sub { font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-bottom: 22px; }
+.inv-includes { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.inv-includes li { font-size: 0.82rem; color: rgba(255,255,255,0.6); padding-left: 16px; position: relative; line-height: 1.5; }
+.inv-includes li::before { content: "✓"; position: absolute; left: 0; color: var(--copper-light); font-size: 0.75rem; }
+.inv-mensal-block { border-top: 1px solid rgba(255,255,255,0.09); margin-top: 22px; padding-top: 18px; }
+.inv-mensal-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
+.inv-mensal-value { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--copper-light); }
+.inv-mensal-sub { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+.inv-pacote { margin-top: 32px; background: linear-gradient(135deg, rgba(176,110,74,0.12) 0%, rgba(20,55,60,0.4) 100%); border: 1px solid rgba(176,110,74,0.35); border-radius: 16px; padding: 36px 40px; position: relative; overflow: hidden; }
+.inv-pacote::before { content: ''; position: absolute; top: -1px; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--copper), var(--copper-light), var(--copper)); }
+.inv-pacote-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 32px; }
+.inv-pacote-tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper-light); margin-bottom: 10px; }
+.inv-pacote-main { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.inv-pacote-main span { color: var(--copper-light); }
+.inv-pacote-sub { font-size: 0.85rem; color: rgba(255,255,255,0.45); margin-bottom: 16px; }
+.inv-pacote-sub strong { color: rgba(255,255,255,0.7); }
+.inv-pacote-mensal { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: #fff; }
+.inv-pacote-mensal span { color: var(--copper-light); }
+.inv-pacote-mensal-sub { font-size: 0.85rem; color: rgba(255,255,255,0.45); margin-top: 4px; }
+.inv-prazo-box { text-align: right; flex-shrink: 0; }
+.inv-prazo-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 8px; }
+.inv-prazo-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 700; color: #fff; line-height: 1; }
+.inv-prazo-sub { font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-top: 6px; }
+.inv-aviso { margin-top: 28px; background: rgba(176,110,74,0.08); border: 1px solid rgba(176,110,74,0.2); border-radius: 10px; padding: 20px 24px; font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+.inv-aviso strong { color: rgba(255,255,255,0.75); }
+
+.mensalidade-cobertura { margin-top: 36px; padding: 36px 40px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; }
+.mensalidade-cobertura-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper-light); margin-bottom: 24px; }
+.mensalidade-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 32px; }
+.mens-item { display: flex; gap: 14px; align-items: flex-start; }
+.mens-icon { font-size: 1.2rem; flex-shrink: 0; padding-top: 2px; }
+.mens-content h4 { font-size: 0.92rem; font-weight: 600; color: #fff; margin-bottom: 6px; line-height: 1.35; }
+.mens-content p { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.65; }
+@media (max-width: 900px) { .mensalidade-grid { grid-template-columns: 1fr; gap: 22px; } .mensalidade-cobertura { padding: 28px 24px; } }
+
+.bonus-section { background: var(--cream); padding-top: 90px; padding-bottom: 90px; }
+.bonus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+.bonus-card { background: #fff; border: 1px solid rgba(20,55,60,0.08); border-radius: 14px; padding: 28px 22px; position: relative; overflow: hidden; }
+.bonus-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--copper), var(--copper-light)); }
+.bonus-tag { display: inline-block; background: rgba(176,110,74,0.12); color: var(--copper); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 4px 10px; border-radius: 12px; margin-bottom: 14px; }
+.bonus-card h4 { font-size: 0.95rem; font-weight: 600; color: var(--teal-deep); line-height: 1.35; margin-bottom: 10px; }
+.bonus-card p { font-size: 0.82rem; color: #5a7070; line-height: 1.7; margin-bottom: 12px; }
+.bonus-valor { font-size: 0.78rem; font-weight: 600; color: var(--copper); }
+
+.garantia-section { background: #fff; padding-top: 100px; padding-bottom: 100px; }
+.garantia-block { background: linear-gradient(135deg, var(--teal-deep), #1d4840); border-radius: 24px; padding: 56px 64px; color: #fff; position: relative; overflow: hidden; display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
+.garantia-block::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--copper), var(--copper-light), #a8c5a0); }
+.garantia-eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper-light); margin-bottom: 18px; }
+.garantia-block h3 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 20px; }
+.garantia-block h3 em { font-style: italic; color: #a8c5a0; }
+.garantia-block p { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 14px; }
+.garantia-selo { width: 220px; height: 220px; border-radius: 50%; border: 2px solid rgba(176,110,74,0.4); margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; position: relative; }
+.garantia-selo::after { content: ''; position: absolute; inset: 12px; border-radius: 50%; border: 1px dashed rgba(176,110,74,0.3); }
+.garantia-selo-num { font-family: 'Cormorant Garamond', serif; font-size: 3.4rem; font-weight: 700; color: var(--copper-light); line-height: 1; }
+.garantia-selo-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-top: 8px; }
+.garantia-selo-sub { font-size: 0.7rem; color: rgba(255,255,255,0.45); margin-top: 6px; line-height: 1.5; }
+
+.porque-section { background: var(--cream); }
+.quote-block { background: var(--teal-deep); border-radius: 16px; padding: 48px; margin: 48px 0; position: relative; overflow: hidden; }
+.quote-mark { font-family: 'Cormorant Garamond', serif; font-size: 8rem; color: rgba(255,255,255,0.06); position: absolute; top: -10px; left: 24px; line-height: 1; }
+.quote-text { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: rgba(255,255,255,0.88); line-height: 1.65; font-style: italic; position: relative; z-index: 1; max-width: 700px; }
+.metodologia-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 52px; }
+.met-card { background: var(--white); border: 1px solid rgba(20,55,60,0.08); border-radius: 14px; padding: 28px 24px; }
+.met-num { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 700; color: var(--copper); opacity: 0.4; line-height: 1; margin-bottom: 10px; }
+.met-title { font-size: 0.9rem; font-weight: 600; color: var(--teal-deep); margin-bottom: 8px; }
+.met-desc { font-size: 0.83rem; color: #5a7070; line-height: 1.7; }
+.fundadores-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.fundador-card { background: var(--white); border: 1px solid rgba(20,55,60,0.08); border-radius: 14px; padding: 32px; display: flex; gap: 24px; align-items: flex-start; }
+.fundador-foto { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 3px solid rgba(20,55,60,0.1); }
+.fundador-name { font-size: 1rem; font-weight: 600; color: var(--teal-deep); margin-bottom: 4px; }
+.fundador-role { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--copper); margin-bottom: 10px; }
+.fundador-bio { font-size: 0.83rem; color: #5a7070; line-height: 1.7; margin-bottom: 14px; }
+.fundador-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.fundador-tag { font-size: 0.62rem; padding: 3px 10px; border-radius: 12px; background: rgba(20,55,60,0.07); color: var(--text-mid); letter-spacing: 0.04em; }
+
+.faq-section { background: var(--cream); padding-top: 100px; padding-bottom: 100px; }
+.faq-list { max-width: 860px; margin: 48px auto 0; display: flex; flex-direction: column; gap: 10px; }
+.faq-item { background: #fff; border: 1px solid rgba(20,55,60,0.08); border-radius: 12px; padding: 22px 28px; cursor: pointer; transition: border-color 0.25s, box-shadow 0.25s; }
+.faq-item:hover { border-color: rgba(176,110,74,0.3); }
+.faq-item.open { border-color: var(--copper); box-shadow: 0 8px 24px rgba(20,55,60,0.05); }
+.faq-q { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; font-size: 0.95rem; font-weight: 600; color: var(--teal-deep); line-height: 1.5; }
+.faq-toggle { width: 24px; height: 24px; border-radius: 50%; border: 1px solid rgba(20,55,60,0.2); display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--teal-mid); flex-shrink: 0; transition: transform 0.3s; }
+.faq-item.open .faq-toggle { transform: rotate(45deg); background: var(--copper); color: #fff; border-color: var(--copper); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.45s ease, margin 0.3s; font-size: 0.88rem; color: var(--text-mid); line-height: 1.8; }
+.faq-item.open .faq-a { max-height: 600px; margin-top: 14px; }
+
+.passos-section { background: var(--teal-deep); }
+.passos-section .section-title { color: #fff; }
+.passos-section .section-label { color: var(--copper-light); }
+.passos-section .section-sub { color: rgba(255,255,255,0.5); }
+.passos-list { display: flex; flex-direction: column; gap: 0; margin-top: 52px; }
+.passo-item { display: flex; gap: 32px; align-items: flex-start; padding: 32px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.passo-item:last-child { border-bottom: none; }
+.passo-num { width: 52px; height: 52px; border-radius: 50%; background: rgba(176,110,74,0.15); border: 1px solid rgba(176,110,74,0.3); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--copper-light); flex-shrink: 0; }
+.passo-prazo { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 6px; }
+.passo-title { font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 8px; }
+.passo-desc { font-size: 0.87rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+.passos-closing { margin-top: 48px; text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic; color: rgba(255,255,255,0.55); }
+
+.cta-fechamento { background: #fff; padding: 110px 48px; position: relative; overflow: hidden; }
+.cta-fechamento-inner { max-width: 920px; margin: 0 auto; background: linear-gradient(140deg, #14373C 0%, #1d4840 50%, #2a5b50 100%); border-radius: 28px; padding: 72px 64px; color: #fff; position: relative; overflow: hidden; text-align: center; }
+.cta-fechamento-inner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--copper), var(--copper-light), #a8c5a0); }
+.cta-fechamento h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 22px; }
+.cta-fechamento h2 em { font-style: italic; color: #a8c5a0; }
+.cta-fechamento p { font-size: 1rem; color: rgba(255,255,255,0.62); line-height: 1.75; max-width: 560px; margin: 0 auto 36px; }
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
+.cta-btn-primary { background: var(--copper); color: #fff; padding: 18px 36px; border-radius: 999px; font-size: 0.88rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background 0.25s, transform 0.2s; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; }
+.cta-btn-primary:hover { background: var(--copper-light); transform: translateY(-2px); }
+.cta-btn-secondary { background: transparent; color: rgba(255,255,255,0.85); padding: 18px 32px; border-radius: 999px; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em; text-decoration: none; transition: background 0.25s; border: 1px solid rgba(255,255,255,0.25); display: inline-flex; align-items: center; gap: 10px; }
+.cta-btn-secondary:hover { background: rgba(255,255,255,0.08); }
+.cta-validade { display: inline-flex; align-items: center; gap: 10px; background: rgba(176,110,74,0.18); border: 1px solid rgba(176,110,74,0.35); border-radius: 999px; padding: 8px 18px; font-size: 0.72rem; color: var(--copper-light); letter-spacing: 0.08em; font-weight: 600; text-transform: uppercase; }
+.cta-validade-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--copper-light); animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.3); } }
+
+footer { background: #0a1f22; padding: 40px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-brand { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.4); text-transform: uppercase; }
+.footer-brand span { color: var(--copper); }
+.footer-date { font-size: 0.75rem; color: rgba(255,255,255,0.25); text-align: right; line-height: 1.6; }
+
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+@media (max-width: 900px) {
+  section { padding: 70px 24px; }
+  nav { padding: 14px 24px; }
+  .nav-badge { display: none; }
+  .intro-section { grid-template-columns: 1fr; gap: 40px; }
+  .custo-grid { grid-template-columns: 1fr; gap: 32px; }
+  .dores-grid { grid-template-columns: 1fr; }
+  .demo-grid { grid-template-columns: 1fr; gap: 36px; }
+  .modulos-grid { grid-template-columns: 1fr; }
+  .modulo-full { grid-column: 1; }
+  .onda2-grid { grid-template-columns: 1fr; gap: 32px; }
+  .sistemas-grid { grid-template-columns: 1fr; }
+  .roi-grid { grid-template-columns: 1fr; }
+  .roi-conclusao { grid-template-columns: 1fr; padding: 32px; }
+  .inv-grid { grid-template-columns: 1fr; }
+  .inv-pacote-inner { flex-direction: column; }
+  .inv-prazo-box { text-align: left; }
+  .bonus-grid { grid-template-columns: 1fr 1fr; }
+  .garantia-block { grid-template-columns: 1fr; padding: 36px 28px; gap: 28px; }
+  .metodologia-grid { grid-template-columns: 1fr 1fr; }
+  .fundadores-grid { grid-template-columns: 1fr; }
+  .fundador-card { flex-direction: column; }
+  .cta-fechamento-inner { padding: 48px 28px; }
+  footer { flex-direction: column; text-align: center; }
+  .footer-date { text-align: center; }
+}
+@media (max-width: 500px) {
+  .metodologia-grid { grid-template-columns: 1fr; }
+  .intro-stats { grid-template-columns: 1fr 1fr; }
+  .bonus-grid { grid-template-columns: 1fr; }
+}
+
+/* DASHBOARD SIMULADO */
+.dashboard-preview {
+  background: #0d2226; border-radius: 18px; padding: 28px 28px 22px;
+  box-shadow: 0 32px 80px rgba(20,55,60,0.22);
+}
+.dashboard-header-bar {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.dashboard-title-text {
+  font-size: 0.88rem; font-weight: 600; color: #fff; margin-bottom: 4px;
+}
+.dashboard-subtitle-text {
+  font-size: 0.68rem; color: rgba(255,255,255,0.35); letter-spacing: 0.06em;
+}
+.dashboard-live-badge {
+  display: flex; align-items: center; gap: 7px;
+  background: rgba(46,160,67,0.12); border: 1px solid rgba(46,160,67,0.25);
+  border-radius: 20px; padding: 5px 14px;
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #6ac57a;
+}
+.live-dot {
+  width: 7px; height: 7px; border-radius: 50%; background: #6ac57a;
+  animation: pulse 2s infinite;
+}
+.dash-stats-row {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 24px;
+}
+.dash-stat {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px; padding: 16px 14px; text-align: center;
+}
+.dash-stat-num {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 700;
+  color: var(--copper-light); line-height: 1;
+}
+.dash-stat-label {
+  font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.35); margin-top: 6px;
+}
+.dash-table {
+  width: 100%; border-collapse: collapse; margin-bottom: 20px;
+}
+.dash-table th {
+  font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.3); padding: 8px 12px; text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.dash-table td {
+  font-size: 0.82rem; color: rgba(255,255,255,0.65);
+  padding: 12px 12px; border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: middle;
+}
+.dash-table tr:last-child td { border-bottom: none; }
+.status-badge {
+  display: inline-block; padding: 3px 10px; border-radius: 10px;
+  font-size: 0.67rem; font-weight: 600; white-space: nowrap;
+}
+.status-ok { background: rgba(46,160,67,0.14); color: #6ac57a; }
+.status-wip { background: rgba(176,110,74,0.14); color: var(--copper-light); }
+.status-alert { background: rgba(180,40,40,0.14); color: #e07070; }
+.dash-ocorrencia {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: rgba(180,40,40,0.08); border: 1px solid rgba(180,40,40,0.2);
+  border-radius: 10px; padding: 14px 16px; margin-top: 4px; margin-bottom: 16px;
+}
+.dash-ocorrencia-icon { font-size: 1rem; flex-shrink: 0; color: #e07070; padding-top: 2px; }
+.dash-ocorrencia-title { font-size: 0.82rem; font-weight: 600; color: #e07070; margin-bottom: 4px; }
+.dash-ocorrencia-desc { font-size: 0.78rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+.dash-ocorrencia-badge {
+  flex-shrink: 0; margin-left: auto; align-self: center;
+  background: rgba(176,110,74,0.12); border: 1px solid rgba(176,110,74,0.25);
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 0.65rem; font-weight: 600; color: var(--copper-light); white-space: nowrap;
+}
+.dash-ilustrativo {
+  text-align: right; font-size: 0.62rem; color: rgba(255,255,255,0.18);
+  letter-spacing: 0.06em; padding-top: 8px;
+}
+@media (max-width: 900px) {
+  .dash-stats-row { grid-template-columns: repeat(2, 1fr); }
+  .dash-table th:nth-child(4), .dash-table td:nth-child(4),
+  .dash-table th:nth-child(6), .dash-table td:nth-child(6) { display: none; }
+  .dash-ocorrencia { flex-direction: column; }
+  .dash-ocorrencia-badge { margin-left: 0; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting" onerror="this.parentNode.innerHTML='<span style=\'font-family:DM Sans,sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.12em;color:#fff;text-transform:uppercase;\'>NewScale<span style=\'color:#B06E4A;\'>Consulting</span></span>'">
+  </div>
+  <div class="nav-badge">Proposta Executiva · Sereia · Maio de 2026</div>
+</nav>
+
+<section class="hero" id="topo">
+  <div class="topo-lines">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,300 Q300,220 500,290 T900,260 T1200,300" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,500 Q300,440 500,490 T900,460 T1200,500" fill="none" stroke="white" stroke-width="0.3"/>
+    </svg>
+  </div>
+  <div class="hero-logo">
+    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting" onerror="this.parentNode.innerHTML='<span style=\'font-family:DM Sans,sans-serif;font-weight:700;font-size:1.4rem;letter-spacing:.14em;color:#fff;text-transform:uppercase;\'>NewScale <span style=\'color:#B06E4A;\'>Consulting</span></span>'">
+  </div>
+  <div class="hero-badge">Proposta Executiva · Maio de 2026</div>
+  <div class="hero-eyebrow">NewScale Consulting × Sereia</div>
+  <h1>Operação de alto padrão —<br><em>sem depender de memória,<br>papel ou boa vontade.</em></h1>
+  <p class="hero-desc">Uma proposta construída a partir da operação real da Sereia — não uma automação genérica, mas um conjunto de agentes desenhados para que cada imóvel seja gerido com o mesmo padrão, do inventário à vistoria de saída.</p>
+  <div class="hero-cta">
+    <a href="#contexto"><div class="scroll-arrow">↓</div>Ver proposta</a>
+  </div>
+</section>
+
+<section class="intro-section reveal" id="contexto">
+  <div class="intro-text">
+    <div class="section-label">O Contexto</div>
+    <h2 class="section-title">Uma gestora que já entrega<br>muito mais que hospedagem —<br>e pode <em>escalar sem atritos.</em></h2>
+    <p>A Sereia, sob liderança de <strong>Ana Beatriz e Sérgio</strong>, construiu algo raro: uma cadeia completa de valor no mercado de temporada em Ilhabela — da captação do terreno, passando pela construção com a Vital, pela gestão do imóvel, até a entrega de uma experiência de alto padrão ao hóspede com concierge, faxineiras, lancha e bióloga a bordo nos avistamentos de cetáceos. Um portfólio que já faturou mais de R$ 400 mil em um único imóvel num ano e foi reconhecido entre as 100 melhores empresas para trabalhar como anfitrião no Brasil.</p>
+    <p>Com novos imóveis entrando toda semana e uma operação sem baixa temporada, o desafio agora não é mais conquistar mercado — é garantir que o crescimento do portfólio não comprometa o padrão de qualidade que virou o diferencial do negócio. O <strong>Hector</strong> auditando manualmente cada relatório de faxina. O <strong>Ronaldo</strong> coordenando uma operação que cresce mais rápido do que dá pra acompanhar a olho. A <strong>Ana Beatriz</strong> recebendo proprietário no escritório porque a informação saltou três camadas.</p>
+    <p>Esta proposta endereça exatamente o que foi mapeado na reunião de 29 de abril: inventário guiado por IA, checklists personalizados por imóvel, cadeia de aprovação hierárquica que funciona de verdade e visibilidade contínua sobre o que está acontecendo em cada propriedade — tudo conectado ao Stays, sem aplicativo novo para a equipe baixar.</p>
+  </div>
+  <div class="intro-stats">
+    <div class="stat-card"><div class="stat-number">R$ 400k+</div><div class="stat-label">Faturamento em 1 imóvel em 1 ano</div></div>
+    <div class="stat-card"><div class="stat-number">4h</div><div class="stat-label">Para inventariar uma casa grande manualmente</div></div>
+    <div class="stat-card"><div class="stat-number">4 camadas</div><div class="stat-label">De aprovação sem sistema que as conecte</div></div>
+    <div class="stat-card"><div class="stat-number">Semanal</div><div class="stat-label">Ritmo de entrada de novos imóveis</div></div>
+  </div>
+</section>
+
+<section class="custo-section" id="custo">
+  <div class="reveal">
+    <div class="section-label">O custo do que já está acontecendo</div>
+    <h2 class="section-title">Cada mês sem isso rodando<br>tem um <em>preço — e ele aparece</em><br>na conta da Sereia.</h2>
+    <p class="section-sub">Estimativa conservadora dos custos hoje "invisíveis" da operação manual — horas de equipe técnica em retrabalho, risco de churn de proprietário e perda de capacidade de absorver novos imóveis.</p>
+  </div>
+  <div class="custo-grid">
+    <div class="custo-text reveal">
+      <p>O Hector é engenheiro de processos. O Ronaldo é gestor de operações. <strong>Toda hora deles que vai para conferir manualmente checklist, baixar relatório do Stays, montar planilha e passar adiante é hora que não vai para o que eles sabem fazer melhor</strong> — desenhar processo, escalar a operação, abrir frente para novos imóveis.</p>
+      <p>O proprietário insatisfeito não escala bonito. Ele não abre ticket, não preenche formulário — ele liga direto pra Ana Beatriz. Cada vez que isso acontece, é porque a cadeia de aprovação não pegou o problema antes. <strong>O custo não é só a hora gasta apagando incêndio — é o risco de perder o contrato de gestão de um imóvel que faz R$ 260k–400k de receita por ano.</strong></p>
+      <p>E há o custo de oportunidade silencioso: <strong>imóveis que vocês não conseguem absorver porque a operação está no limite</strong>. Cada semana sem o sistema rodando significa mais imóveis entrando sem inventário estruturado e mais base de dados desorganizada para corrigir depois.</p>
+    </div>
+    <div class="custo-list reveal">
+      <div class="custo-item"><div class="custo-item-label">Hector — auditoria manual de relatórios (~10h/sem)</div><div class="custo-item-value">~R$ 3.200/mês</div></div>
+      <div class="custo-item"><div class="custo-item-label">Ronaldo — coordenação de faxinas e checagem (~15h/sem)</div><div class="custo-item-value">~R$ 3.600/mês</div></div>
+      <div class="custo-item"><div class="custo-item-label">Beatriz — atendimento de proprietário em crise (~5h/mês)</div><div class="custo-item-value">~R$ 1.000/mês</div></div>
+      <div class="custo-item"><div class="custo-item-label">Inventário manual — 4h por casa grande × novos imóveis</div><div class="custo-item-value">~R$ 1.600/mês</div></div>
+      <div class="custo-total"><div class="custo-total-label">Custo operacional escondido</div><div class="custo-total-value">~R$ 9.400/mês</div></div>
+      <p class="custo-aviso">Estimativa conservadora baseada em valor-hora médio de R$ 60–80 para coordenação operacional e R$ 200/h para tempo executivo. Não inclui o risco de perda de contrato com proprietário (1 imóvel cancelado = R$ 260k–400k de receita anual perdida).</p>
+    </div>
+  </div>
+</section>
+
+<section class="dores-section" id="oportunidades">
+  <div class="reveal">
+    <div class="section-label">Oportunidades identificadas</div>
+    <h2 class="section-title">5 pontos onde a IA vai <em style="color:#a8c5a0;">amplificar<br>o que já funciona</em> na operação.</h2>
+    <p class="section-sub">Cada item abaixo representa uma oportunidade de ganho real de velocidade, governança e padrão — sem complicar a rotina de quem está no campo.</p>
+  </div>
+  <div class="dores-grid">
+    <div class="dore-card reveal reveal-delay-1"><div class="dore-num">1</div><div class="dore-tag">Inventário</div><h3>Inventário que ainda depende de horas presenciais para cada imóvel</h3><p>Cadastrar um imóvel grande leva até 4 horas de trabalho presencial, e os estúdios chegam a 30–40 minutos cada. Com novos imóveis chegando toda semana e pouco braço disponível, o inventário se torna um gargalo que atrasa todos os processos seguintes — inclusive os checklists de faxina e vistoria.</p></div>
+    <div class="dore-card reveal reveal-delay-2"><div class="dore-num">2</div><div class="dore-tag">Checklists operacionais</div><h3>Protocolo de qualidade que varia conforme quem está no campo</h3><p>Faxineiras com diferentes perfis e tempos de casa, supervisores de manutenção e responsáveis por check-in e check-out operam hoje sem um guia que conduza cada passo — o que significa que a qualidade do serviço depende da memória e da boa vontade de cada um, não de um processo.</p></div>
+    <div class="dore-card reveal reveal-delay-3"><div class="dore-num">3</div><div class="dore-tag">Visibilidade contínua</div><h3>Status dos imóveis que só aparece depois de muita pergunta</h3><p>Saber se um imóvel está limpo e pronto para receber um hóspede exige que o responsável de vendas entre no sistema, verifique cada tarefa e pergunte ao Ronaldo, que por sua vez depende de a faxineira ter atualizado o status. Três camadas de incerteza para uma pergunta simples.</p></div>
+    <div class="dore-card reveal reveal-delay-1"><div class="dore-num">4</div><div class="dore-tag">Aprovação hierárquica</div><h3>Relatórios que pulam etapas e chegam direto ao proprietário</h3><p>O processo tem quatro camadas — faxineira, supervisor, Ronaldo, Hector na auditoria — mas na prática o que foi feito (ou não foi feito) salta direto para o proprietário, que liga pra Beatriz. Sem registro estruturado em cada etapa, a Sereia perde a chance de resolver 95% dos problemas antes que eles virem reclamação.</p></div>
+    <div class="dore-card reveal reveal-delay-2"><div class="dore-num">5</div><div class="dore-tag">Divergências de inventário</div><h3>Saída de hóspede sem comparação sistemática com o inventário original</h3><p>Quando um hóspede vai embora, a comparação entre o que havia no imóvel e o que ficou depende da memória ou de planilhas desconectadas. Copos a menos, box quebrado, ar condicionado com problema — sem um processo de vistoria vinculado ao inventário original, cobranças e ajustes viram disputa.</p></div>
+  </div>
+</section>
+
+<section class="proposta-section" id="proposta">
+  <div class="reveal" style="margin-bottom: 52px;">
+    <div class="section-label">A Proposta</div>
+    <h2 class="section-title">Estruturada em 3 módulos.<br><em>Cada um com resultado próprio.</em></h2>
+    <p class="section-sub">Clique em cada módulo para ver os detalhes. A implantação é faseada — o Módulo 1 já entra em produção enquanto os demais são construídos em paralelo.</p>
+  </div>
+
+  <div class="fase-block fase-1 reveal">
+    <div class="fase-header">
+      <div>
+        <div class="fase-tag">Módulo 1 · Início imediato</div>
+        <div class="fase-name">Agente de Checklist Operacional</div>
+        <div class="fase-duration">WhatsApp ou Telegram · Integrado ao Stays · Resultado visível em 3–4 semanas</div>
+      </div>
+      <div class="fase-num-badge">1</div>
+    </div>
+    <div class="modulos-grid">
+      <div class="modulo-card modulo-full" onclick="toggleModulo(this)">
+        <div class="modulo-header">
+          <div class="modulo-icon">✅</div>
+          <div class="modulo-info">
+            <div class="modulo-label">Condução operacional</div>
+            <div class="modulo-title">Agente que guia faxineiras, supervisores e responsáveis por check-in/out passo a passo — por áudio, texto ou imagem</div>
+            <div class="modulo-chips"><span class="chip">WhatsApp ou Telegram</span><span class="chip">Stays API</span><span class="chip">n8n</span><span class="chip">IA de voz</span><span class="chip">Google Drive</span></div>
+          </div>
+          <div class="toggle-btn">+</div>
+        </div>
+        <div class="modulo-body"><div class="modulo-body-inner">
+          <div class="value-box"><div class="value-box-icon">⚡</div><div><div class="value-box-label">O que isso resolve</div><div class="value-box-text">A faxineira chega no imóvel, manda um áudio no WhatsApp e o agente já sabe qual é o imóvel, quais são as tarefas daquele dia e vai conduzindo cada passo — sem papel, sem app complicado, sem depender de memória.</div></div></div>
+          <p class="modulo-desc">O agente identifica o imóvel pelo código, nome ou endereço completo informado pelo responsável, consulta o Stays para puxar as características cadastradas e realiza um cruzamento entre o checklist padrão da Sereia e as características daquela propriedade — montando um roteiro personalizado que só pergunta o que faz sentido. A pessoa vai respondendo por áudio, texto ou foto, e tudo é registrado automaticamente no Stays.</p>
+          <ul class="modulo-items">
+            <li><strong>Identificação inteligente do imóvel:</strong> o responsável informa código, nome ou endereço — o agente localiza no Stays e puxa todas as características cadastradas para montar o checklist correto</li>
+            <li><strong>Detecção automática do tipo de checklist:</strong> com base no perfil do usuário (mapeamento telefone → função mantido pela Sereia), o agente identifica quem está usando — faxineira, supervisor, responsável por check-in — e abre o fluxo correto, sem que a pessoa precise escolher</li>
+            <li><strong>Checklist cruzado por imóvel:</strong> se o imóvel não tem geladeira, o agente confirma essa ausência ao invés de perguntar; se tem área gourmet, adiciona os itens correspondentes ao roteiro</li>
+            <li><strong>Múltiplos fluxos suportados:</strong> primeiro inventário, check-in, check-out, faxina pré/pós locação e manutenção — cada um com seu roteiro próprio, a confirmar com a Sereia os checklists completos de cada fluxo</li>
+            <li><strong>Aceita áudio, texto e imagem:</strong> o agente transcreve áudios, interpreta respostas e salva fotos com nomenclatura padronizada no Drive ou no Stays</li>
+            <li><strong>Alerta de itens não preenchidos:</strong> antes de encerrar, o agente verifica se todas as tarefas foram respondidas — qualquer lacuna é sinalizada de volta à pessoa antes do encerramento</li>
+            <li><strong>Alertas proativos por agenda:</strong> com base nas datas de check-out e faxina cadastradas no Stays, o agente avisa os responsáveis quando um imóvel está no dia sem checklist iniciado</li>
+            <li><strong>Base de conhecimento integrada (FAQ):</strong> o mesmo agente responde dúvidas operacionais recorrentes, sem precisar chamar o gestor</li>
+            <li><strong>Canal flexível:</strong> WhatsApp como padrão para equipe de campo (já é o que elas usam). Telegram opcional para fluxos internos de alto volume — gratuito e sem custos por conversa do Meta</li>
+          </ul>
+          <div class="disclaimer-box"><strong>Importante:</strong> os checklists detalhados de cada fluxo (faxina, check-in, check-out, manutenção) são responsabilidade da Sereia e precisam ser fornecidos no kickoff. A NewScale orienta na estruturação — mas o conteúdo e as regras operacionais são do cliente.</div>
+        </div></div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-header">
+          <div class="modulo-icon">📊</div>
+          <div class="modulo-info"><div class="modulo-label">Dashboard Operacional · Módulo 1</div><div class="modulo-title">Painel de execução — quem fez o quê, em qual imóvel, com qual resultado e no prazo</div><div class="modulo-chips"><span class="chip">Looker Studio</span><span class="chip">Google Sheets</span><span class="chip">Atualização contínua</span></div></div>
+          <div class="toggle-btn">+</div>
+        </div>
+        <div class="modulo-body"><div class="modulo-body-inner">
+          <div class="value-box"><div class="value-box-icon">📈</div><div><div class="value-box-label">O que isso resolve</div><div class="value-box-text">Foco: execução do dia a dia. Ronaldo e Hector param de perguntar "o imóvel tá limpo?" — o painel mostra, imóvel por imóvel, o que foi feito, por quem e com qual qualidade. Atualizado a cada poucos minutos pelo agente em campo.</div></div></div>
+          <p class="modulo-desc">Painel de nível operacional com refresh automático (cache do Looker Studio configurado para janela de 15 minutos). Voltado para supervisores e gestores operacionais.</p>
+          <ul class="modulo-items">
+            <li><strong>Status de execução por imóvel:</strong> cada imóvel com status de faxina, check-in ou check-out do dia — pendente, em andamento, concluído ou com ocorrência — atualizado continuamente</li>
+            <li><strong>SLAs de tarefas:</strong> tempo médio de execução por tipo de checklist e por colaborador — identifica gargalos e desvios de produtividade</li>
+            <li><strong>Efetividade por responsável:</strong> taxa de preenchimento completo dos checklists de cada faxineira, supervisor ou responsável — incluindo tarefas puladas e ocorrências abertas</li>
+            <li><strong>Histórico operacional por imóvel:</strong> linha do tempo de todas as visitas e faxinas, com evidências fotográficas e log de quem executou cada etapa</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-header">
+          <div class="modulo-icon">🔔</div>
+          <div class="modulo-info"><div class="modulo-label">Alertas automáticos</div><div class="modulo-title">Notificações de não-conformidade e pendências para os gestores</div><div class="modulo-chips"><span class="chip">E-mail</span><span class="chip">WhatsApp/Telegram</span><span class="chip">Stays API</span></div></div>
+          <div class="toggle-btn">+</div>
+        </div>
+        <div class="modulo-body"><div class="modulo-body-inner">
+          <div class="value-box"><div class="value-box-icon">🚨</div><div><div class="value-box-label">O que isso resolve</div><div class="value-box-text">Problemas não chegam mais ao proprietário como surpresa — a Sereia já sabe, já tem o histórico e, na maioria das vezes, já tem uma solução.</div></div></div>
+          <ul class="modulo-items">
+            <li><strong>Alerta de checklist encerrado com pendências:</strong> ao final de cada visita, relatório automático ao supervisor com itens incompletos ou ocorrências</li>
+            <li><strong>Alerta de imóvel sem checklist no dia programado:</strong> quando há faxina ou check-out agendado sem checklist iniciado, o sistema avisa o gestor automaticamente</li>
+            <li><strong>Relatório diário consolidado:</strong> resumo de todos os imóveis ativos no fim do dia — concluídos, pendentes e com ocorrências — para Ronaldo e diretoria</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fase-block fase-2 reveal">
+    <div class="fase-header">
+      <div><div class="fase-tag">Módulo 2 · Em paralelo ao Módulo 1</div><div class="fase-name">Agente de Inventário Assistido por IA</div><div class="fase-duration">WhatsApp ou Telegram · Visão Computacional · Integrado ao Stays</div></div>
+      <div class="fase-num-badge">2</div>
+    </div>
+    <div class="modulos-grid">
+      <div class="modulo-card modulo-full" onclick="toggleModulo(this)">
+        <div class="modulo-header">
+          <div class="modulo-icon">🏠</div>
+          <div class="modulo-info"><div class="modulo-label">Inventário guiado</div><div class="modulo-title">Agente que conduz o responsável cômodo a cômodo — com IA de visão como assistente de contagem e registro automático no Stays</div><div class="modulo-chips"><span class="chip">WhatsApp ou Telegram</span><span class="chip">Vision AI</span><span class="chip">Stays API</span><span class="chip">Google Drive</span></div></div>
+          <div class="toggle-btn">+</div>
+        </div>
+        <div class="modulo-body"><div class="modulo-body-inner">
+          <div class="value-box"><div class="value-box-icon">📦</div><div><div class="value-box-label">O que isso resolve</div><div class="value-box-text">Um imóvel que levaria 4 horas de inventário manual é cadastrado de forma guiada, com foto e validação humana — e o resultado sobe direto no Stays como fonte de verdade para todos os checklists futuros.</div></div></div>
+          <p class="modulo-desc">O agente guia o responsável pelo imóvel cômodo a cômodo, solicitando informações de cada item (número, marca, fabricante, cor, material) e fotos de referência. A IA de visão atua como <strong>assistente de contagem</strong> — sugere a quantidade identificada na foto e o responsável valida — acelerando o processo, mas sem substituir o olho humano, que continua sendo a verdade final do registro.</p>
+          <ul class="modulo-items">
+            <li><strong>Condução cômodo a cômodo:</strong> roteiro adaptado ao tipo de imóvel cadastrado no Stays (sala, cozinha, quartos, banheiros, área gourmet)</li>
+            <li><strong>Visão computacional como assistente:</strong> a IA sugere quantidade identificada na foto, mas a pessoa em campo é quem confirma — o agente nunca registra contagem sem validação humana, eliminando risco de erro silencioso</li>
+            <li><strong>Fotos com nomenclatura padronizada:</strong> cada imagem é nomeada automaticamente (ex.: casa-xyz_cozinha_geladeira_01) e salva no Drive ou no Stays</li>
+            <li><strong>Envio ao proprietário para aprovação:</strong> após validação do gestor, o inventário pode ser enviado ao proprietário — criando registro assinado que evita disputas futuras</li>
+            <li><strong>Base para checklists automáticos:</strong> o inventário registrado no Módulo 2 vira o input que o Módulo 1 usa para personalizar os checklists de faxina e vistoria</li>
+            <li><strong>Base de conhecimento integrada:</strong> o agente responde dúvidas durante o processo — padrões de nomenclatura, critérios de registro, como tratar itens sem marca visível</li>
+          </ul>
+          <div class="disclaimer-box"><strong>Transparência técnica:</strong> a contagem por visão computacional tem acurácia variável conforme qualidade da foto, iluminação e densidade do ambiente. Por isso operamos no modelo "IA sugere, humano confirma" — não automatizamos o registro sem validação. A análise comparativa antes/depois (detectar copo quebrado em foto pós-saída) é mais complexa e fica em fase posterior, após validarmos taxa de acerto em projeto piloto com 5–10 imóveis reais.</div>
+        </div></div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-header">
+          <div class="modulo-icon">📦</div>
+          <div class="modulo-info"><div class="modulo-label">Dashboard de Inventário · Módulo 2</div><div class="modulo-title">Painel de cobertura — quais imóveis têm inventário completo, incompleto ou ainda não iniciado</div><div class="modulo-chips"><span class="chip">Looker Studio</span><span class="chip">Google Sheets</span></div></div>
+          <div class="toggle-btn">+</div>
+        </div>
+        <div class="modulo-body"><div class="modulo-body-inner">
+          <div class="value-box"><div class="value-box-icon">🗂️</div><div><div class="value-box-label">O que isso resolve</div><div class="value-box-text">Foco: patrimônio e integridade do portfólio. Mostra quais imóveis estão prontos para operar com checklist inteligente e quais ainda têm gaps no inventário.</div></div></div>
+          <ul class="modulo-items">
+            <li><strong>Cobertura do portfólio:</strong> percentual de imóveis com inventário completo, parcial e sem inventário</li>
+            <li><strong>Priorização por check-in próximo:</strong> imóveis com reserva nos próximos dias e sem inventário registrado são sinalizados como prioridade</li>
+            <li><strong>Histórico de divergências patrimoniais:</strong> registro consolidado das diferenças encontradas entre inventário original e vistoria de saída — por imóvel, por período e por tipo de item</li>
+            <li><strong>Rastreabilidade de aprovações:</strong> log dos inventários aprovados pelo proprietário e pendentes de confirmação formal</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-header">
+          <div class="modulo-icon">⚖️</div>
+          <div class="modulo-info"><div class="modulo-label">Vistoria de saída</div><div class="modulo-title">Cruzamento automático entre inventário original e estado do imóvel na saída do hóspede</div><div class="modulo-chips"><span class="chip">Alertas automáticos</span><span class="chip">Stays API</span><span class="chip">E-mail/WhatsApp</span></div></div>
+          <div class="toggle-btn">+</div>
+        </div>
+        <div class="modulo-body"><div class="modulo-body-inner">
+          <div class="value-box"><div class="value-box-icon">🔍</div><div><div class="value-box-label">O que isso resolve</div><div class="value-box-text">Toda divergência entre o inventário original e o estado na saída gera um alerta imediato — com foto, quantidade e item especificado.</div></div></div>
+          <ul class="modulo-items">
+            <li><strong>Comparação automática:</strong> ao finalizar a vistoria, o sistema cruza o que foi registrado com o inventário original e lista cada divergência</li>
+            <li><strong>Alerta com especificação:</strong> relatório de saída enviado imediatamente com itens divergentes, para que o responsável decida se cobra o hóspede ou registra como desgaste natural</li>
+            <li><strong>Atualização do inventário:</strong> ao confirmar uma divergência como permanente, o inventário é atualizado no Stays para que a próxima vistoria tenha a referência correta</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fase-block fase-3 reveal">
+    <div class="fase-header">
+      <div><div class="fase-tag">Módulo 3 · Orquestração gerencial</div><div class="fase-name">Workflow de Aprovação Hierárquica e Relatórios</div><div class="fase-duration">Dashboard macro · Alertas por alçada · Gestão de não-conformidades</div></div>
+      <div class="fase-num-badge">3</div>
+    </div>
+    <div class="modulos-grid">
+      <div class="modulo-card modulo-full" onclick="toggleModulo(this)">
+        <div class="modulo-header">
+          <div class="modulo-icon">🔄</div>
+          <div class="modulo-info"><div class="modulo-label">Fluxo de aprovação</div><div class="modulo-title">Cadeia faxineira → supervisor → gestor → auditor → diretoria — com registro em cada etapa e passagem automática para a próxima alçada</div><div class="modulo-chips"><span class="chip">n8n</span><span class="chip">E-mail</span><span class="chip">WhatsApp/Telegram</span><span class="chip">Stays API</span></div></div>
+          <div class="toggle-btn">+</div>
+        </div>
+        <div class="modulo-body"><div class="modulo-body-inner">
+          <div class="value-box"><div class="value-box-icon">⚡</div><div><div class="value-box-label">O que isso resolve</div><div class="value-box-text">O proprietário para de ser a primeira pessoa a ouvir sobre um problema no imóvel dele. A cadeia de validação funciona de verdade — com registro, responsável e prazo em cada etapa.</div></div></div>
+          <ul class="modulo-items">
+            <li><strong>Passagem automática entre alçadas:</strong> faxina encerrada → vai para supervisor com pendências; supervisor aprova → vai para Ronaldo com adições; Ronaldo aprova → vai para Hector na auditoria; Hector valida → diretoria recebe visão consolidada</li>
+            <li><strong>Aprovação com registro no Stays:</strong> cada etapa aprovada é registrada no sistema mãe — nenhuma informação fica apenas no WhatsApp ou na memória</li>
+            <li><strong>Aprovação prévia configurável:</strong> opcional para gestores precisarem aprovar antes da gravação definitiva no Stays</li>
+            <li><strong>Escalada automática de não-conformidades maiores:</strong> quebras, ausências de itens de valor e problemas estruturais geram alertas diretos para o gestor</li>
+            <li><strong>Relatório consolidado por período:</strong> semanal ou mensal com visão macro de todos os imóveis, ocorrências, SLAs e comissões — pronto para diretoria</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-header">
+          <div class="modulo-icon">🖥️</div>
+          <div class="modulo-info"><div class="modulo-label">Dashboard Gerencial · Módulo 3</div><div class="modulo-title">Painel executivo — visão cruzada de aprovações, ocorrências e saúde geral do portfólio</div><div class="modulo-chips"><span class="chip">Looker Studio</span><span class="chip">Atualização contínua</span><span class="chip">Multi-imóvel</span></div></div>
+          <div class="toggle-btn">+</div>
+        </div>
+        <div class="modulo-body"><div class="modulo-body-inner">
+          <div class="value-box"><div class="value-box-icon">📊</div><div><div class="value-box-label">O que isso resolve</div><div class="value-box-text">Foco: gestão e governança. Onde estão paradas as aprovações, quais ocorrências estão em aberto há mais tempo, o que precisa de decisão agora.</div></div></div>
+          <ul class="modulo-items">
+            <li><strong>Funil de aprovação hierárquica:</strong> quantos checklists em cada etapa e há quanto tempo estão parados — sinalizando gargalos</li>
+            <li><strong>Ocorrências críticas em aberto:</strong> não-conformidades maiores com prazo de resolução, responsável e tempo de atraso</li>
+            <li><strong>Visão executiva de portfólio:</strong> uma linha por imóvel mostrando o semáforo de saúde em quatro dimensões — inventário, faxina no SLA, aprovação em dia e ocorrências em aberto</li>
+            <li><strong>Base para comissões:</strong> log consolidado de tarefas concluídas e aprovadas por colaborador e por imóvel — exportável para validação pela diretoria</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-header">
+          <div class="modulo-icon">📧</div>
+          <div class="modulo-info"><div class="modulo-label">Relatórios automáticos</div><div class="modulo-title">Envio programado de relatórios por imóvel, período e alçada — sem ninguém montar planilha</div><div class="modulo-chips"><span class="chip">Gmail API</span><span class="chip">WhatsApp/Telegram</span><span class="chip">Google Sheets</span></div></div>
+          <div class="toggle-btn">+</div>
+        </div>
+        <div class="modulo-body"><div class="modulo-body-inner">
+          <div class="value-box"><div class="value-box-icon">📬</div><div><div class="value-box-label">O que isso resolve</div><div class="value-box-text">Ninguém mais precisa baixar relatório do Stays, montar planilha e passar para três pessoas. O sistema manda automaticamente.</div></div></div>
+          <ul class="modulo-items">
+            <li><strong>Relatório de encerramento de visita:</strong> gerado ao finalizar qualquer checklist e enviado para a próxima alçada</li>
+            <li><strong>Relatório diário do gestor:</strong> resumo do dia com status de todos os imóveis ativos, no horário definido pela Sereia</li>
+            <li><strong>Relatório semanal/mensal para diretoria:</strong> visão consolidada de operação, ocorrências e desempenho — formatado para reuniões e validação de comissões</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="demo-section" id="como-funciona">
+  <div class="reveal">
+    <div class="section-label">Como funciona no dia a dia</div>
+    <h2 class="section-title">A faxineira chega na casa.<br><em>Vinte minutos depois, o checklist<br>está no Stays — sem digitar nada.</em></h2>
+    <p class="section-sub">Exemplo do fluxo do Módulo 1 em ação. A equipe de campo só usa WhatsApp; tudo que acontece é registrado, validado e organizado por trás — e aparece em tempo real nos dashboards dos gestores.</p>
+  </div>
+  <div class="demo-grid">
+    <div class="whatsapp-mockup reveal">
+      <div class="wa-header">
+        <div class="wa-avatar">S</div>
+        <div><div class="wa-name">Sereia · Operação</div><div class="wa-status">online</div></div>
+      </div>
+      <div class="wa-body">
+        <div class="wa-msg audio sent"><div class="wa-audio-icon">▶</div><div class="wa-audio-bar"></div><div class="wa-audio-time">0:08</div></div>
+        <div class="wa-msg received">Oi! Identifiquei a Casa <strong>Tucanos 12</strong> — 3 quartos, 3 banheiros, área gourmet. Hóspede saiu hoje 11h, próximo check-in amanhã 14h. Vou te guiar pela faxina.<span class="wa-msg-time">10:22</span></div>
+        <div class="wa-msg received"><strong>1/9 · Cozinha</strong><br>Confere se os 12 copos do inventário estão completos? Manda foto se faltar algum.<span class="wa-msg-time">10:23</span></div>
+        <div class="wa-msg sent">✓ Tá tudo aí, são 12<span class="wa-msg-time">10:31</span></div>
+        <div class="wa-msg received">Anotado. <strong>2/9 · Banheiro suíte</strong>: tudo ok com o box?<span class="wa-msg-time">10:31</span></div>
+        <div class="wa-msg audio sent"><div class="wa-audio-icon">▶</div><div class="wa-audio-bar"></div><div class="wa-audio-time">0:14</div></div>
+        <div class="wa-msg received">Entendi — registro de hóspede deixou trinco do box solto. Já abri uma ocorrência pro Ronaldo. Manda foto pra eu salvar como evidência?<span class="wa-msg-time">10:33</span></div>
+      </div>
+    </div>
+    <div class="demo-text reveal">
+      <h3>O que acontece <em>por trás</em> dessa conversa</h3>
+      <p>Enquanto a faxineira só está mandando áudio e texto no WhatsApp, o agente está identificando o imóvel no Stays, puxando o inventário cadastrado, conduzindo o checklist correto da Casa Tucanos 12, transcrevendo os áudios, salvando as fotos com nomenclatura padronizada e registrando cada passo no sistema.</p>
+      <ul class="demo-bullets">
+        <li><strong>Imóvel identificado em segundos</strong> via código, nome ou áudio — sem ela precisar abrir app, sistema ou QR Code</li>
+        <li><strong>Checklist personalizado</strong> — só pergunta o que existe naquele imóvel (não tem geladeira? Não pergunta da geladeira)</li>
+        <li><strong>Ocorrência aberta automaticamente</strong> e roteada pro Ronaldo no momento que ela reportou o trinco solto</li>
+        <li><strong>Tudo registrado no Stays</strong> — não fica perdido no WhatsApp ou na cabeça de ninguém</li>
+        <li><strong>Se ela tentar encerrar sem responder algo</strong>, o agente avisa: "ainda falta confirmar a varanda"</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DASHBOARD SIMULADO -->
+  <div class="dashboard-preview reveal" style="margin-top: 56px;">
+    <div class="dashboard-header-bar">
+      <div>
+        <div class="dashboard-title-text">Painel Operacional · Sereia</div>
+        <div class="dashboard-subtitle-text">Módulo 1 — Execução do dia a dia · Atualização contínua</div>
+      </div>
+      <div class="dashboard-live-badge"><span class="live-dot"></span>ao vivo</div>
+    </div>
+
+    <div class="dash-stats-row">
+      <div class="dash-stat">
+        <div class="dash-stat-num">14</div>
+        <div class="dash-stat-label">Checklists hoje</div>
+      </div>
+      <div class="dash-stat">
+        <div class="dash-stat-num" style="color:#6ac57a;">11</div>
+        <div class="dash-stat-label">Concluídos</div>
+      </div>
+      <div class="dash-stat">
+        <div class="dash-stat-num" style="color:var(--copper-light);">2</div>
+        <div class="dash-stat-label">Em andamento</div>
+      </div>
+      <div class="dash-stat">
+        <div class="dash-stat-num" style="color:#e07070;">1</div>
+        <div class="dash-stat-label">Ocorrência aberta</div>
+      </div>
+    </div>
+
+    <table class="dash-table">
+      <thead>
+        <tr>
+          <th>Imóvel</th>
+          <th>Tipo</th>
+          <th>Responsável</th>
+          <th>Início</th>
+          <th>Status</th>
+          <th>Itens</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span style="font-weight:600; color:#fff;">Casa Tucanos 12</span></td>
+          <td><span style="color:rgba(255,255,255,0.45); font-size:0.78rem;">Faxina pós-saída</span></td>
+          <td>Maria F.</td>
+          <td>10:22</td>
+          <td><span class="status-badge status-alert">⚠ Ocorrência</span></td>
+          <td><span style="color:rgba(255,255,255,0.5); font-size:0.78rem;">7/9 itens</span></td>
+        </tr>
+        <tr>
+          <td><span style="font-weight:600; color:#fff;">Suíte Mar Azul 04</span></td>
+          <td><span style="color:rgba(255,255,255,0.45); font-size:0.78rem;">Check-out</span></td>
+          <td>Paulo S.</td>
+          <td>09:15</td>
+          <td><span class="status-badge status-ok">✓ Concluído</span></td>
+          <td><span style="color:rgba(255,255,255,0.5); font-size:0.78rem;">12/12 itens</span></td>
+        </tr>
+        <tr>
+          <td><span style="font-weight:600; color:#fff;">Vila Coqueiros 07</span></td>
+          <td><span style="color:rgba(255,255,255,0.45); font-size:0.78rem;">Faxina pré-entrada</span></td>
+          <td>Ana R.</td>
+          <td>11:05</td>
+          <td><span class="status-badge status-wip">→ Em andamento</span></td>
+          <td><span style="color:rgba(255,255,255,0.5); font-size:0.78rem;">4/8 itens</span></td>
+        </tr>
+        <tr>
+          <td><span style="font-weight:600; color:#fff;">Casa das Pedras 02</span></td>
+          <td><span style="color:rgba(255,255,255,0.45); font-size:0.78rem;">Check-in</span></td>
+          <td>Carlos M.</td>
+          <td>08:50</td>
+          <td><span class="status-badge status-ok">✓ Concluído</span></td>
+          <td><span style="color:rgba(255,255,255,0.5); font-size:0.78rem;">10/10 itens</span></td>
+        </tr>
+        <tr>
+          <td><span style="font-weight:600; color:#fff;">Estúdio Ilhabela 15</span></td>
+          <td><span style="color:rgba(255,255,255,0.45); font-size:0.78rem;">Faxina pós-saída</span></td>
+          <td>Maria F.</td>
+          <td>—</td>
+          <td><span class="status-badge" style="background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.4);">⏳ Pendente</span></td>
+          <td><span style="color:rgba(255,255,255,0.3); font-size:0.78rem;">0/7 itens</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="dash-ocorrencia">
+      <div class="dash-ocorrencia-icon">⚠</div>
+      <div>
+        <div class="dash-ocorrencia-title">Ocorrência aberta — Casa Tucanos 12 · 10:33</div>
+        <div class="dash-ocorrencia-desc">Trinco do box da suíte master relatado como solto. Foto de evidência registrada. Aguardando ação do supervisor Ronaldo.</div>
+      </div>
+      <div class="dash-ocorrencia-badge">Aguardando Ronaldo</div>
+    </div>
+
+    <div class="dash-ilustrativo">Visualização ilustrativa</div>
+  </div>
+</section>
+
+<section class="investimento-section" id="investimento">
+  <div class="reveal">
+    <div class="section-label">Investimento</div>
+    <h2 class="section-title">Investimento que se paga<br>em <em style="color:#a8c5a0;">menos de 3 meses.</em></h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.45); margin-top:12px;">Cada módulo entrega resultado independente e pode ser contratado individualmente. Fechando os 3 juntos, condição especial em setup e mensalidade.</p>
+  </div>
+  <div class="inv-grid">
+    <div class="inv-card reveal reveal-delay-1">
+      <div class="inv-card-top c1"></div>
+      <div class="inv-card-body">
+        <div class="inv-module">Módulo 1</div>
+        <div class="inv-title">Agente de Checklist Operacional + Dashboard + Alertas</div>
+        <div class="inv-price">R$ 12.000</div>
+        <div class="inv-price-sub">Implementação · Parcele em até 3x sem juros</div>
+        <ul class="inv-includes">
+          <li>Agente WhatsApp ou Telegram com checklist por imóvel</li>
+          <li>Múltiplos fluxos (check-in, check-out, faxina, manutenção)</li>
+          <li>Integração bidirecional com Stays API</li>
+          <li>Base de conhecimento (FAQ operacional)</li>
+          <li>Alertas proativos por agenda</li>
+          <li>Dashboard de tarefas e SLAs (Looker Studio)</li>
+          <li>Treinamento da equipe incluso</li>
+        </ul>
+        <div class="inv-mensal-block"><div class="inv-mensal-label">Manutenção mensal</div><div class="inv-mensal-value">R$ 1.260<span style="font-size:0.78rem; font-family:'DM Sans',sans-serif; font-weight:400; color:rgba(255,255,255,0.35);">/mês</span></div><div class="inv-mensal-sub">Hospedagem, monitoramento e otimizações contínuas</div></div>
+      </div>
+    </div>
+    <div class="inv-card reveal reveal-delay-2">
+      <div class="inv-card-top c2"></div>
+      <div class="inv-card-body">
+        <div class="inv-module">Módulo 2</div>
+        <div class="inv-title">Agente de Inventário Assistido por IA + Vistoria de Saída</div>
+        <div class="inv-price">R$ 9.500</div>
+        <div class="inv-price-sub">Implementação · Parcele em até 3x sem juros</div>
+        <ul class="inv-includes">
+          <li>Agente WhatsApp ou Telegram guiado por cômodo</li>
+          <li>IA de visão como assistente de contagem (humano valida)</li>
+          <li>Upload automático de fotos no Drive (nomenclatura padrão)</li>
+          <li>Envio do inventário ao proprietário para aprovação</li>
+          <li>Cruzamento automático inventário × vistoria de saída</li>
+          <li>Dashboard de cobertura de inventário do portfólio</li>
+          <li>Treinamento da equipe incluso</li>
+        </ul>
+        <div class="inv-mensal-block"><div class="inv-mensal-label">Manutenção mensal</div><div class="inv-mensal-value">R$ 1.100<span style="font-size:0.78rem; font-family:'DM Sans',sans-serif; font-weight:400; color:rgba(255,255,255,0.35);">/mês</span></div><div class="inv-mensal-sub">Hospedagem, monitoramento e otimizações contínuas</div></div>
+      </div>
+    </div>
+    <div class="inv-card reveal reveal-delay-3">
+      <div class="inv-card-top c3"></div>
+      <div class="inv-card-body">
+        <div class="inv-module">Módulo 3</div>
+        <div class="inv-title">Workflow de Aprovação Hierárquica + Relatórios Automáticos</div>
+        <div class="inv-price">R$ 7.500</div>
+        <div class="inv-price-sub">Implementação · Parcele em até 3x sem juros</div>
+        <ul class="inv-includes">
+          <li>Fluxo automático faxineira → supervisor → Ronaldo → Hector → diretoria</li>
+          <li>Registro de aprovação no Stays em cada etapa</li>
+          <li>Dashboard macro de portfólio (Looker Studio)</li>
+          <li>Alertas de não-conformidade por alçada</li>
+          <li>Relatório diário e semanal automático por e-mail/WhatsApp</li>
+          <li>Histórico para validação de comissões</li>
+          <li>Treinamento da equipe incluso</li>
+        </ul>
+        <div class="inv-mensal-block"><div class="inv-mensal-label">Manutenção mensal</div><div class="inv-mensal-value">R$ 630<span style="font-size:0.78rem; font-family:'DM Sans',sans-serif; font-weight:400; color:rgba(255,255,255,0.35);">/mês</span></div><div class="inv-mensal-sub">Hospedagem, monitoramento e otimizações contínuas</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="inv-pacote reveal" style="margin-top:32px;">
+    <div class="inv-pacote-inner">
+      <div>
+        <div class="inv-pacote-tag">✦ Condição especial — Pacote 3 Módulos</div>
+        <div class="inv-pacote-main">Setup por <span>R$ 25.800</span></div>
+        <div class="inv-pacote-sub">Versus R$ 29.000 separados — você economiza <strong>R$ 3.200 no setup</strong></div>
+        <div style="font-size:0.82rem; color:rgba(255,255,255,0.45); margin-bottom:12px;">Parcelamento em 2x de R$ 12.900 sem juros disponível</div>
+        <div class="inv-pacote-mensal">Mensalidade de <span>R$ 2.390/mês</span></div>
+        <div class="inv-pacote-mensal-sub">Versus R$ 2.990/mês separados — <strong style="color:rgba(255,255,255,0.7);">R$ 600/mês a menos</strong>, todo mês</div>
+      </div>
+      <div class="inv-prazo-box">
+        <div class="inv-prazo-label">Prazo total de entrega</div>
+        <div class="inv-prazo-num">90 dias</div>
+        <div class="inv-prazo-sub">corridos a contar da<br>assinatura do contrato</div>
+        <div style="margin-top:18px; padding-top:14px; border-top: 1px solid rgba(255,255,255,0.12);">
+          <div style="font-size:0.62rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color: rgba(255,255,255,0.4); margin-bottom:6px;">Validade desta condição</div>
+          <div style="font-size:0.95rem; color: var(--copper-light); font-weight:600;">Até 31 de maio de 2026</div>
+          <div style="font-size:0.7rem; color:rgba(255,255,255,0.32); margin-top:4px;">para começar antes da temporada de baleias</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mensalidade-cobertura reveal">
+    <div class="mensalidade-cobertura-tag">O que está coberto na mensalidade de manutenção</div>
+    <div class="mensalidade-grid">
+      <div class="mens-item">
+        <div class="mens-icon">🔧</div>
+        <div class="mens-content">
+          <h4>Monitoramento contínuo</h4>
+          <p>Acompanhamento do desempenho dos agentes e identificação proativa de falhas antes que afetem a operação.</p>
+        </div>
+      </div>
+      <div class="mens-item">
+        <div class="mens-icon">🔄</div>
+        <div class="mens-content">
+          <h4>Ajustes e evoluções de fluxo</h4>
+          <p>Alterações nos checklists, regras de aprovação, gatilhos de alerta e roteiros dos agentes — dentro de um volume mensal de ajustes incluído na mensalidade. Demandas adicionais são orçadas separadamente.</p>
+        </div>
+      </div>
+      <div class="mens-item">
+        <div class="mens-icon">🔗</div>
+        <div class="mens-content">
+          <h4>Manutenção das integrações</h4>
+          <p>Garantia de funcionamento das conexões com Stays, WhatsApp/Telegram, n8n e Google Drive — inclusive após atualizações dos próprios sistemas.</p>
+        </div>
+      </div>
+      <div class="mens-item">
+        <div class="mens-icon">🆘</div>
+        <div class="mens-content">
+          <h4>Suporte a incidentes</h4>
+          <p>Canal direto com a equipe NewScale para resolução rápida de qualquer falha em produção — com SLA definido em contrato.</p>
+        </div>
+      </div>
+      <div class="mens-item">
+        <div class="mens-icon">📚</div>
+        <div class="mens-content">
+          <h4>Atualização da base de conhecimento</h4>
+          <p>Inclusão de novos imóveis, novos fluxos operacionais, regras hierárquicas atualizadas e ajustes de prompt no repertório dos agentes conforme a operação evolui.</p>
+        </div>
+      </div>
+      <div class="mens-item">
+        <div class="mens-icon">📊</div>
+        <div class="mens-content">
+          <h4>Otimização contínua de prompts</h4>
+          <p>Refinamento dos prompts dos agentes conforme novos modelos de IA são lançados e conforme observamos padrões de uso da equipe Sereia em campo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="inv-aviso reveal">
+    <strong>Importante — custos operacionais externos:</strong> os custos de APIs de terceiros não estão inclusos e são pagos diretamente pela Sereia ao fornecedor. Isso inclui WhatsApp Business (Meta), modelos de linguagem e visão (OpenAI / Anthropic), hospedagem do n8n e External API do Stays. <strong>Estimativa:</strong> R$ 600–1.500/mês nos primeiros meses, ajustável após mês 1 conforme volume real medido.
+  </div>
+
+  <div class="roi-conclusao reveal" style="margin-top: 32px; background: rgba(255,255,255,0.04); border: 1px solid rgba(176,110,74,0.3);">
+    <div>
+      <div class="roi-conclusao-eyebrow">Sanity check do investimento</div>
+      <h3>R$ 25.800 de setup = 6,5% do faturamento de UM imóvel num ano.</h3>
+      <p>Considerando apenas a economia de horas técnicas que Hector e Ronaldo deixam de gastar em auditoria e coordenação manual (estimativa de ~R$ 9.400/mês), o investimento se paga em menos de 3 meses. Incluindo a redução de risco de churn de proprietário, o payback pode ser ainda mais rápido.</p>
+    </div>
+    <div class="roi-payback">
+      <div class="roi-payback-num">~3</div>
+      <div class="roi-payback-label">meses de payback</div>
+      <div style="font-size:0.78rem; color:rgba(255,255,255,0.4); margin-top:14px; line-height:1.6;">Cenário conservador, só com economia de horas técnicas.</div>
+    </div>
+  </div>
+</section>
+
+<section class="onda2-section" id="onda2">
+  <div class="reveal">
+    <div class="section-label">Onda 2 · Cetáceos Ilhabela</div>
+    <h2 class="section-title">A bióloga já tem o conteúdo.<br><em>Falta a estratégia que transforma<br>baleia em reserva fechada.</em></h2>
+    <p class="section-sub">A temporada de avistamento de cetáceos começa em junho. A Ana Beatriz tem o repertório biológico, a página dedicada e o tráfego pago rodando — mas o Instagram do Cetáceos ainda está sendo gerido no improviso. Essa onda muda isso.</p>
+  </div>
+  <div class="onda2-grid">
+    <div class="onda2-text reveal">
+      <p>A Ana Beatriz já entrou no nosso ecossistema — está fazendo o curso de IA da Bruna Santanna. <strong>A NewScale agora completa o ciclo</strong>: leva a metodologia para dentro da operação de marketing do Cetáceos Ilhabela com agentes próprios e consultoria estratégica de quem implanta IA todos os dias no próprio negócio.</p>
+      <p>Esta onda é desenhada para entrar <strong>na sequência da Onda 1</strong> ou em paralelo se a equipe absorver — escopo enxuto, foco em resultado mensurável: mais reservas de avistamento, menos tempo gasto criando conteúdo no escuro.</p>
+      <ul class="onda2-bullets">
+        <li><strong>Agente de análise de Instagram —</strong> identifica formatos e temas que mais converteram em reserva nos últimos 12 meses, cruzando engajamento com histórico de fechamentos via DM e página do Cetáceos.</li>
+        <li><strong>Skill de criação de conteúdo educativo —</strong> transforma o repertório biológico da Ana Beatriz em roteiros de vídeos, carrosséis e legendas alinhados ao formato que comprovadamente funciona para o nicho.</li>
+        <li><strong>Cronograma editorial mensal automatizado —</strong> calendário com recomendação semanal de tipo de conteúdo (curiosidade, educação, prova social, oferta) e horários de melhor performance.</li>
+        <li><strong>Dashboard de performance —</strong> visão consolidada de alcance, engajamento, mensagens recebidas e reservas geradas por canal e tipo de conteúdo.</li>
+        <li><strong>Análise de concorrência —</strong> monitoramento de páginas referência (nacional e internacional) com identificação automática de tendências e formatos novos.</li>
+      </ul>
+    </div>
+    <div class="onda2-card reveal">
+      <div class="onda2-card-tag">Onda 2 · A definir</div>
+      <div class="onda2-card-title">Consultoria + Copilotos de Marketing</div>
+      <div class="onda2-card-desc">Implantação em 30 dias após o go-live da Onda 1. Inclui workshop estratégico de 4h com Bruna Santanna sobre posicionamento do Cetáceos no Instagram.</div>
+      <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: #fff; line-height: 1.3; margin-top: 8px;">Investimento sob consulta</div>
+      <div class="onda2-card-price-sub">Escopo e proposta detalhados após o kickoff da Onda 1, conforme prioridades estratégicas validadas.</div>
+      <div class="onda2-card-aluna"><strong>Sinergia natural:</strong> a Ana Beatriz já é aluna do curso de IA da Bruna. A Onda 2 é a aplicação prática direta na operação do Cetáceos — com a metodologia que ela já está aprendendo, agora rodando no negócio.</div>
+    </div>
+  </div>
+</section>
+
+<section class="garantia-section" id="garantia">
+  <div class="reveal">
+    <div class="section-label">Compromisso NewScale</div>
+    <h2 class="section-title">A gente entrega o sistema<br><em>funcionando — não um relatório bonito.</em></h2>
+  </div>
+  <div class="garantia-block reveal" style="margin-top:48px;">
+    <div>
+      <div class="garantia-eyebrow">Compromisso NewScale</div>
+      <h3>A gente <em>não desliga até funcionar</em><br>exatamente como foi combinado.</h3>
+      <p>Esse é o nosso compromisso real. Não vamos entregar um relatório bonito, sumir e deixar vocês sozinhos com um sistema que "quase funciona". Se algo do escopo desta proposta não estiver rodando como acordado — checklist personalizado por imóvel, integração com o Stays, alertas funcionando, dashboards atualizando, fluxo hierárquico passando entre alçadas — a gente continua mexendo, ajustando e refinando até estar redondo. Sem cobrar a mais.</p>
+      <p>É uma garantia que faz sentido para vocês e para nós: o nosso sucesso depende de adoção real. Se o sistema não funciona como combinado, vocês não usam — e aí ninguém ganha. Por isso a NewScale fica até estar 100% no ponto, e segue otimizando depois disso na manutenção mensal.</p>
+    </div>
+    <div>
+      <div class="garantia-selo">
+        <div class="garantia-selo-num">100%</div>
+        <div class="garantia-selo-label">do escopo</div>
+        <div class="garantia-selo-sub">Mexemos até<br>funcionar como<br>foi combinado</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="porque-section" id="newscale">
+  <div class="reveal">
+    <div class="section-label">Por que a NewScale</div>
+    <h2 class="section-title">Não entregamos relatório<br>e <em>sumimos.</em></h2>
+    <p class="section-sub">Construímos, testamos, treinamos a equipe e acompanhamos o lançamento. Você vê o sistema funcionando — não só ouve a apresentação.</p>
+  </div>
+
+  <div class="quote-block reveal">
+    <div class="quote-mark">"</div>
+    <p class="quote-text">A Ana Beatriz já é nossa aluna no curso de IA — está aprendendo a metodologia que aplicamos todos os dias no nosso próprio negócio. A NewScale agora chega ao restante da operação Sereia: levando essa metodologia direto pro chão de operação, do Hector ao Ronaldo, da faxineira que está em campo ao proprietário que recebe relatório formal toda semana.</p>
+    <p style="font-size:0.82rem; color: rgba(255,255,255,0.5); font-style: normal; margin-top: 18px; position: relative; z-index: 1;">— Bruna Santanna, Co-Fundadora NewScale Consulting</p>
+  </div>
+
+  <div class="metodologia-grid reveal">
+    <div class="met-card"><div class="met-num">01</div><div class="met-title">Consultoria Sistêmica</div><p class="met-desc">Visão completa do negócio: operação, campo, gestão e proprietários. IA como motor de escala, não de cosmética.</p></div>
+    <div class="met-card"><div class="met-num">02</div><div class="met-title">Roadmap Faseado</div><p class="met-desc">Priorizamos os processos com maior potencial de retorno. O Módulo 1 vai a ar primeiro — e já gera resultado enquanto os seguintes são construídos.</p></div>
+    <div class="met-card"><div class="met-num">03</div><div class="met-title">Implementação Integrada</div><p class="met-desc">Conectamos o Stays, os canais da equipe e os painéis de gestão. Fluxos que funcionam onde as pessoas já estão — não em um app novo que ninguém vai usar.</p></div>
+    <div class="met-card"><div class="met-num">04</div><div class="met-title">Treinamento das Equipes</div><p class="met-desc">Faxineiras, supervisores, gestores e diretoria — cada um aprende seu papel no novo fluxo. O humano passa a monitorar e decidir; a IA faz o operacional.</p></div>
+    <div class="met-card"><div class="met-num">05</div><div class="met-title">Acompanhamento de KPIs</div><p class="met-desc">Definimos as métricas juntos antes de começar. Taxa de preenchimento, cobertura de inventário, SLA de faxinas — você sabe exatamente o que esperar.</p></div>
+    <div class="met-card"><div class="met-num">06</div><div class="met-title">Sustentação Contínua</div><p class="met-desc">Monitoramento, otimizações e ajustes para que o sistema evolua com a operação — e não fique parado no tempo enquanto o portfólio cresce.</p></div>
+  </div>
+
+  <div class="fundadores-grid reveal">
+    <div class="fundador-card">
+      <img class="fundador-foto" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG" alt="Bruna Santanna" onerror="this.style.display='none'">
+      <div>
+        <div class="fundador-name">Bruna Santanna</div>
+        <div class="fundador-role">Co-Fundadora</div>
+        <p class="fundador-bio">ESPM. Empresária há 10+ anos. Mentora de IA no programa Potenc.IA (OLX, Magalu, B3 e CI&T). Professora de IA para equipes corporativas. Implementa IA no próprio negócio todos os dias — só vende o que usa.</p>
+        <div class="fundador-tags"><span class="fundador-tag">SulAmérica</span><span class="fundador-tag">Whirlpool</span><span class="fundador-tag">Blackbox AI</span><span class="fundador-tag">Potenc.IA</span></div>
+      </div>
+    </div>
+    <div class="fundador-card">
+      <img class="fundador-foto" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/BRUNO-VARELLA-PQ.jpeg" alt="Bruno Varella" onerror="this.style.display='none'">
+      <div>
+        <div class="fundador-name">Bruno Varella</div>
+        <div class="fundador-role">Co-Fundador</div>
+        <p class="fundador-bio">ESPM. 17+ anos em Marketing, Produto e Novos Negócios. Ex-Warner Bros., Ex-Natura & Co. Trabalhou em M&A para franqueadoras e implantou orquestrações de IA em operações com múltiplas unidades distribuídas — contexto próximo ao da Sereia.</p>
+        <div class="fundador-tags"><span class="fundador-tag">Warner Bros.</span><span class="fundador-tag">Natura & Co</span><span class="fundador-tag">M&A em franqueadoras</span><span class="fundador-tag">Multi-unidades</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section" id="faq">
+  <div class="reveal">
+    <div class="section-label">Dúvidas comuns antes do fechamento</div>
+    <h2 class="section-title">As seis perguntas que<br><em>sempre aparecem —</em><br>já respondidas.</h2>
+    <p class="section-sub">Se ficar alguma dúvida fora dessa lista, é só chamar a gente direto.</p>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">E se as faxineiras forem resistentes ou tiverem dificuldade com tecnologia?<div class="faq-toggle">+</div></div>
+      <div class="faq-a">A interface é WhatsApp — o aplicativo que elas já usam todo dia. Não há app novo, não há login, não há treinamento extenso. O agente conduz pelo passo a passo, aceita áudio (não precisa digitar) e perdoa erros: se ela esquecer algo, ele lembra. No treinamento de go-live acompanhamos a primeira faxina assistida em campo. Nossa experiência com equipes de campo de baixo letramento digital mostra que a adoção é mais rápida pelo WhatsApp do que por qualquer dashboard novo.</div>
+    </div>
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">E se o Stays mudar a API ou o Meta mudar regras do WhatsApp?<div class="faq-toggle">+</div></div>
+      <div class="faq-a">A manutenção mensal cobre exatamente isso. A NewScale monitora versões dos sistemas integrados e atualiza os fluxos do n8n quando há quebra ou mudança de comportamento. É parte do contrato — vocês não precisam se preocupar com manutenção técnica. Telegram, como alternativa para fluxos internos, é mais estável e está incluso na arquitetura desde o início como rede de segurança.</div>
+    </div>
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">Quanto tempo a equipe da Sereia precisa investir durante a implementação?<div class="faq-toggle">+</div></div>
+      <div class="faq-a">Na semana 1 (kickoff), aproximadamente 6 horas distribuídas entre Hector, Ronaldo e Beatriz para entrega dos checklists operacionais, regras hierárquicas e validação dos cadastros do Stays. Nas semanas 2 a 5, reuniões pontuais de 1h a cada 5 dias para validar entregas. Após go-live, a operação é a operação — vocês só usam. Em modelos comparáveis, a equipe da Sereia investe ao todo cerca de 18–24 horas em 90 dias.</div>
+    </div>
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">E se quisermos crescer e adicionar 50 imóveis novos?<div class="faq-toggle">+</div></div>
+      <div class="faq-a">A arquitetura foi desenhada para escala. Adicionar novos imóveis no Stays automaticamente os torna disponíveis para o agente — não há configuração caso a caso. O custo de APIs externas escala proporcionalmente ao volume de checklists, mas o custo de manutenção da NewScale é fixo. Em volumes muito altos (500+ imóveis), reavaliamos a estrutura de hospedagem do n8n para garantir performance, mas dentro de um tier ainda confortável.</div>
+    </div>
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">Os dados ficam onde? E se quisermos sair, conseguimos levar tudo?<div class="faq-toggle">+</div></div>
+      <div class="faq-a">Toda a fonte de verdade fica no Stays — sistema da Sereia, não da NewScale. As fotos e evidências ficam no Google Drive da Sereia. Os dashboards do Looker Studio são da Sereia. A NewScale opera apenas a camada de orquestração (n8n) e os agentes — se vocês saírem do contrato, mantêm 100% dos dados, históricos e cadastros. Nada da operação é "aprisionado" pela NewScale.</div>
+    </div>
+  </div>
+</section>
+
+<section class="passos-section" id="passos">
+  <div class="reveal">
+    <div class="section-label">Próximos Passos · Cronograma 90 dias</div>
+    <h2 class="section-title" style="color:#fff;">A temporada de baleias começa<br>em <em style="color:#a8c5a0;">junho. O sistema precisa<br>estar rodando antes.</em></h2>
+    <p class="section-sub">Cronograma a contar da assinatura do contrato. Construção faseada para que o Módulo 1 já entre em uso na semana 5 — antes da alta temporada de Cetáceos pegar a operação no improviso.</p>
+  </div>
+  <div class="passos-list">
+    <div class="passo-item reveal"><div class="passo-num">1</div><div><div class="passo-prazo">Dias 1–7 · Semana 1</div><div class="passo-title">Imersão e Kickoff</div><p class="passo-desc">Reunião de kickoff com Ronaldo, Hector e equipe para mapear acessos (Stays API, WhatsApp/Telegram, Drive), coletar os checklists operacionais de cada fluxo e validar as regras hierárquicas. Saímos com tudo que precisamos para construir.</p></div></div>
+    <div class="passo-item reveal"><div class="passo-num">2</div><div><div class="passo-prazo">Dias 8–21 · Semanas 2–3</div><div class="passo-title">Arquitetura e Construção — Módulos 1 e 2</div><p class="passo-desc">Desenvolvimento simultâneo do Agente de Checklist e do Agente de Inventário. Integração com Stays API, configuração dos fluxos no n8n, construção da base de conhecimento e testes com imóveis reais antes de ir a ar.</p></div></div>
+    <div class="passo-item reveal"><div class="passo-num">3</div><div><div class="passo-prazo">Dias 22–35 · Semanas 4–5</div><div class="passo-title">Go-live Módulos 1 e 2 + Onboarding presencial</div><p class="passo-desc">Lançamento dos agentes em produção. Treinamento presencial em Ilhabela com faxineiras, supervisores e responsáveis por check-in/out. A partir daqui, a operação já registra tudo no sistema. Vocês não estão sozinhos no go-live.</p></div></div>
+    <div class="passo-item reveal"><div class="passo-num">4</div><div><div class="passo-prazo">Dias 36–50 · Semanas 6–7</div><div class="passo-title">Construção e Go-live — Módulo 3</div><p class="passo-desc">Com os agentes operacionais estabilizados e gerando dados, construção do workflow de aprovação hierárquica, relatórios automáticos e dashboard macro. Integração dos três módulos numa única visão gerencial — do campo à diretoria.</p></div></div>
+    <div class="passo-item reveal"><div class="passo-num">5</div><div><div class="passo-prazo">Dias 51–60 · Semanas 8–9</div><div class="passo-title">Ajustes Finais e Entrega</div><p class="passo-desc">Período de observação e ajuste fino com a operação real. Inclusão dos fluxos de check-in e manutenção. Entrega do manual operacional e do acesso completo aos dashboards para a equipe de gestão.</p></div></div>
+  </div>
+  <p class="passos-closing reveal">Cada imóvel operando com processo registrado é um imóvel que não vira problema — e um proprietário que continua confiando na Sereia.</p>
+</section>
+
+<section class="cta-fechamento">
+  <div class="cta-fechamento-inner reveal">
+    <div class="cta-validade" style="margin-bottom: 28px;"><div class="cta-validade-dot"></div>Condição válida até 31 de maio · 2026</div>
+    <h2>Ana Beatriz, Sérgio —<br><em>vamos começar?</em></h2>
+    <p>Vocês têm o portfólio, o padrão e a operação. A NewScale entrega a infraestrutura para que cada imóvel novo entre no padrão Sereia desde o primeiro dia, e cada problema seja resolvido antes do proprietário ouvir falar dele. Setup de R$ 25.800 no pacote completo, com o compromisso da NewScale de mexer até funcionar exatamente como combinado.</p>
+    <div class="cta-buttons">
+      <a class="cta-btn-primary" href="https://wa.me/5511971901020?text=Aceito%20a%20proposta%20da%20NewScale%20para%20a%20Sereia.%20Quando%20podemos%20fechar%20contrato%3F" target="_blank">Aceito a proposta · Vamos fechar →</a>
+      <a class="cta-btn-secondary" href="https://wa.me/5511971901020?text=Tenho%20uma%20d%C3%BAvida%20sobre%20a%20proposta%20da%20Sereia" target="_blank">Tenho uma dúvida primeiro</a>
+    </div>
+    <p style="font-size:0.78rem; color: rgba(255,255,255,0.42); max-width:520px; margin:0 auto;">Os botões abrem uma conversa direta com Bruna Santanna no WhatsApp (+55 11 97190-1020) para combinarmos o envio do contrato e a data de kickoff.</p>
+    <div style="margin-top:48px; padding-top:36px; border-top:1px solid rgba(255,255,255,0.08); display:grid; grid-template-columns: repeat(3,1fr); gap: 24px; max-width: 600px; margin-left:auto; margin-right:auto;">
+      <div><div style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--copper-light);">~3</div><div style="font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 4px;">Meses de payback</div></div>
+      <div><div style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--copper-light);">100%</div><div style="font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 4px;">Do escopo entregue</div></div>
+      <div><div style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--copper-light);">90</div><div style="font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 4px;">Dias de entrega</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">NewScale<span>Consulting</span></div>
+  <div class="footer-date">Proposta exclusiva · Sereia · v2<br>5 de maio de 2026 · Validade até 31/05/2026</div>
+</footer>
+
+<script>
+function toggleModulo(card) { card.classList.toggle('open'); }
+function toggleFaq(item) {
+  document.querySelectorAll('.faq-item.open').forEach(other => { if (other !== item) other.classList.remove('open'); });
+  item.classList.toggle('open');
+}
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.06 });
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
