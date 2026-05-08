@@ -1,0 +1,2117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Comercial · Rafael Furlanetti · NewScale Consulting · v4</title>
+
+<!-- Buscadores: sem indexação -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet">
+
+<!-- LLMs: bloqueio de crawlers de treinamento e indexação -->
+<meta name="GPTBot" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="OAI-SearchBot" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="ChatGPT-User" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="ClaudeBot" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="Claude-Web" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="anthropic-ai" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="PerplexityBot" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="CCBot" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="Google-Extended" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="Google-CloudVertexBot" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="Meta-ExternalAgent" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="Meta-ExternalFetcher" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="Applebot-Extended" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="Amazonbot" content="noindex, nofollow, noarchive, nosnippet">
+
+<!-- Open Graph: preview ao compartilhar via WhatsApp / redes -->
+<meta property="og:title" content="Proposta | Rafael Furlanetti &amp; NewScale Consulting">
+<meta property="og:description" content="Proposta comercial exclusiva — confidencial.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://raw.githubusercontent.com/brusantannaia/newscale/main/og-cover.jpg">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #14373C;
+  --ink2: #1a4449;
+  --sage: #435D51;
+  --terra: #B06E4A;
+  --tl: #c4835e;
+  --sand: #A38362;
+  --cream: #E8E6E0;
+  --cl: #F4F3EF;
+  --white: #FAFAF8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+section { padding: 100px 40px; position: relative; }
+img { display: block; max-width: 100%; }
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 48px;
+  background: transparent;
+  transition: background 0.4s, backdrop-filter 0.4s;
+}
+.navbar.scrolled {
+  background: rgba(12, 36, 39, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.navbar-logo img { height: 52px; opacity: 0.95; display: block; }
+.navbar-tag {
+  font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--tl);
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #0c2427 0%, #14373C 38%, #1d4840 72%, #435D51 100%);
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center; padding: 120px 40px 80px; overflow: hidden; position: relative;
+}
+.topo-lines { position: absolute; inset: 0; opacity: 0.08; pointer-events: none; }
+.topo-lines svg { width: 100%; height: 100%; }
+.grain-overlay {
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.03; pointer-events: none;
+}
+.hero-badge {
+  display: inline-block; background: rgba(176,110,74,0.15); color: var(--tl);
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(176,110,74,0.25);
+  margin-bottom: 28px; animation: fadeUp 0.6s ease both 0.2s; position: relative; z-index: 2;
+}
+.hero-eyebrow {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.45); margin-bottom: 20px; animation: fadeUp 0.6s ease both 0.3s;
+  position: relative; z-index: 2;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem); font-weight: 700; color: #fff;
+  line-height: 1.15; max-width: 880px; margin-bottom: 28px;
+  animation: fadeUp 0.6s ease both 0.4s; position: relative; z-index: 2;
+}
+.hero h1 em { font-style: italic; color: var(--tl); }
+.hero-desc {
+  font-size: 0.97rem; font-weight: 300; color: rgba(255,255,255,0.65);
+  max-width: 640px; line-height: 1.75; margin-bottom: 52px;
+  animation: fadeUp 0.6s ease both 0.5s; position: relative; z-index: 2;
+}
+.hero-cta {
+  animation: fadeUp 0.6s ease both 0.7s;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  color: rgba(255,255,255,0.35); font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  cursor: pointer; text-decoration: none; transition: color 0.3s;
+  position: relative; z-index: 2;
+}
+.hero-cta:hover { color: rgba(255,255,255,0.7); }
+.hero-cta svg { animation: bounce 2s infinite; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* ===== SECTION COMMON ===== */
+.section-label {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--terra); display: block; margin-bottom: 14px;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem); font-weight: 700;
+  color: var(--ink); line-height: 1.2; margin-bottom: 22px;
+}
+.section-title em { font-style: italic; color: var(--terra); }
+.section-title-light { color: #fff; }
+.section-title-light em { color: var(--tl); }
+
+/* ===== CONTEXTO ===== */
+.context-section { background: var(--cl); }
+.context-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.context-text p {
+  font-size: 0.95rem; line-height: 1.85; color: #3a5b60;
+  margin-bottom: 18px; font-weight: 300;
+}
+.context-text p strong { color: var(--ink); font-weight: 600; }
+.intro-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.stat-card {
+  background: var(--ink); border-radius: 14px; padding: 28px 24px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.stat-card:nth-child(2) { background: var(--terra); }
+.stat-card:nth-child(3) { background: var(--sage); }
+.stat-card:nth-child(4) { background: #1a4449; }
+.stat-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem; font-weight: 700; color: #fff; line-height: 1;
+}
+.stat-label {
+  font-size: 0.66rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7);
+  line-height: 1.4;
+}
+
+/* ===== CUSTO DA INAÇÃO ===== */
+.custo-section { background: #fff; }
+.custo-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: start; }
+.custo-text p { font-size: 0.95rem; line-height: 1.85; color: #3a5b60; margin-bottom: 16px; font-weight: 300; }
+.custo-text p strong { color: var(--ink); font-weight: 600; }
+.custo-list { background: var(--cl); border-radius: 16px; padding: 32px 36px; }
+.custo-item {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 20px; padding: 16px 0; border-bottom: 1px dashed rgba(20,55,60,0.15);
+}
+.custo-item-text { flex: 1; }
+.custo-item-label { font-size: 0.92rem; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+.custo-item-sub { font-size: 0.78rem; color: #6a8a8f; line-height: 1.5; font-weight: 300; }
+.custo-item-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-weight: 700; color: var(--terra); white-space: nowrap;
+}
+.custo-total {
+  padding-top: 22px; margin-top: 6px; border-top: 2px solid var(--ink);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.custo-total-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); }
+.custo-total-value {
+  font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--ink);
+}
+.custo-note { font-size: 0.74rem; color: #6a8a8f; margin-top: 18px; line-height: 1.6; font-style: italic; }
+
+/* ===== DORES ===== */
+.dores-section { background: var(--ink); }
+.dores-inner { max-width: 1200px; margin: 0 auto; }
+.dores-header { max-width: 720px; margin-bottom: 56px; }
+.dores-header p { font-size: 0.93rem; color: rgba(255,255,255,0.55); line-height: 1.78; font-weight: 300; }
+.dores-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.dore-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px; padding: 32px 28px; position: relative; overflow: hidden;
+  transition: border-color 0.3s, background 0.3s;
+}
+.dore-card:hover { border-color: rgba(176,110,74,0.3); background: rgba(176,110,74,0.04); }
+.dore-num {
+  font-family: 'Cormorant Garamond', serif; font-size: 5rem; font-weight: 700;
+  color: rgba(176,110,74,0.08); line-height: 1; position: absolute; top: 12px; right: 20px;
+}
+.dore-tag {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--tl); margin-bottom: 10px;
+}
+.dore-title {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.18rem; font-weight: 700;
+  color: #fff; line-height: 1.3; margin-bottom: 14px; position: relative; z-index: 1;
+}
+.dore-text { font-size: 0.86rem; font-weight: 300; color: rgba(255,255,255,0.65); line-height: 1.75; }
+
+/* ===== MÓDULOS ===== */
+.modulos-section { background: var(--white); }
+.modulos-inner { max-width: 1100px; margin: 0 auto; }
+.modulos-header { margin-bottom: 56px; max-width: 720px; }
+.modulos-header p { font-size: 0.95rem; color: #3a5b60; line-height: 1.85; font-weight: 300; }
+.fase-block { margin-bottom: 56px; }
+.fase-header {
+  display: flex; justify-content: space-between; align-items: center;
+  background: var(--ink); color: #fff; padding: 28px 32px; border-radius: 14px 14px 0 0;
+}
+.fase-block:nth-of-type(2) .fase-header { background: var(--terra); }
+.fase-block:nth-of-type(3) .fase-header { background: var(--sage); }
+.fase-tag {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55); margin-bottom: 6px;
+}
+.fase-name {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; line-height: 1.2;
+  margin-bottom: 4px;
+}
+.fase-duration { font-size: 0.78rem; color: rgba(255,255,255,0.7); font-weight: 300; }
+.fase-num-badge {
+  font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 700; color: rgba(255,255,255,0.18); line-height: 1;
+}
+.modulo-card {
+  background: #fff; border: 1px solid rgba(20,55,60,0.1);
+  border-top: none; cursor: pointer; transition: background 0.2s;
+}
+.modulo-card:not(:last-child) { border-bottom: none; }
+.modulo-card:last-child { border-radius: 0 0 14px 14px; }
+.modulo-card:hover { background: var(--cl); }
+.modulo-card-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 22px 28px; gap: 20px;
+}
+.modulo-card-left { display: flex; gap: 18px; align-items: flex-start; flex: 1; }
+.modulo-icon {
+  font-size: 1.5rem; width: 44px; height: 44px; flex-shrink: 0;
+  background: rgba(176,110,74,0.08); border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+}
+.modulo-label {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--terra); margin-bottom: 4px;
+}
+.modulo-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+.modulo-chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip {
+  font-size: 0.65rem; font-weight: 600; padding: 3px 10px;
+  background: rgba(20,55,60,0.07); color: var(--ink); border-radius: 20px;
+}
+.modulo-card.open .modulo-chips { display: none; }
+.modulo-toggle {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 300;
+  color: var(--terra); flex-shrink: 0; transition: transform 0.3s;
+  width: 32px; text-align: center;
+}
+.modulo-card.open .modulo-toggle { transform: rotate(45deg); }
+.modulo-body {
+  max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s;
+  padding: 0 28px;
+}
+.modulo-card.open .modulo-body { max-height: 1500px; padding: 0 28px 28px; }
+.value-box {
+  background: var(--cl); border-left: 3px solid var(--terra);
+  padding: 14px 18px; border-radius: 8px; margin-bottom: 18px;
+  display: flex; gap: 14px; align-items: flex-start;
+}
+.value-box-icon { font-size: 1.2rem; }
+.value-box-label {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--terra); margin-bottom: 4px;
+}
+.value-box-text { font-size: 0.86rem; color: var(--ink); font-weight: 500; line-height: 1.5; }
+.modulo-desc { font-size: 0.86rem; color: #4a6a6f; line-height: 1.75; margin-bottom: 14px; font-weight: 300; }
+.modulo-items { list-style: none; padding-left: 0; }
+.modulo-items li {
+  font-size: 0.84rem; color: #4a6a6f; line-height: 1.7; padding-left: 18px;
+  position: relative; margin-bottom: 10px; font-weight: 300;
+}
+.modulo-items li::before {
+  content: '→'; position: absolute; left: 0; color: var(--terra); font-weight: 700;
+}
+.modulo-items li strong { color: var(--ink); font-weight: 600; }
+.disclaimer-box {
+  background: rgba(176,110,74,0.06); border-left: 3px solid var(--sand);
+  padding: 12px 16px; border-radius: 6px; margin-top: 16px;
+  font-size: 0.78rem; color: #6a8a8f; line-height: 1.6; font-style: italic;
+}
+
+/* ===== COMO FUNCIONA ===== */
+.como-section { background: var(--cl); }
+.como-inner { max-width: 1200px; margin: 0 auto; }
+.como-header { margin-bottom: 56px; max-width: 720px; }
+.como-header p { font-size: 0.95rem; color: #3a5b60; line-height: 1.85; font-weight: 300; }
+
+.demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 80px; align-items: start; }
+.demo-block-title {
+  font-size: 0.66rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--terra); margin-bottom: 8px;
+}
+.demo-block-name {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700;
+  color: var(--ink); margin-bottom: 12px; line-height: 1.2;
+}
+.demo-block-desc { font-size: 0.85rem; color: #4a6a6f; line-height: 1.7; margin-bottom: 24px; font-weight: 300; }
+
+/* WhatsApp Mockup */
+.wa-phone {
+  background: #0c2427; border-radius: 32px; padding: 14px;
+  max-width: 300px; margin: 0 auto;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+}
+.wa-screen { background: #ECE5DD; border-radius: 22px; overflow: hidden; height: 480px; display: flex; flex-direction: column; }
+.wa-header {
+  background: #075E54; color: #fff; padding: 12px 16px;
+  display: flex; gap: 10px; align-items: center; flex-shrink: 0;
+}
+.wa-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--terra); color: #fff; display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.85rem; flex-shrink: 0;
+}
+.wa-name { font-size: 0.88rem; font-weight: 600; }
+.wa-status { font-size: 0.66rem; opacity: 0.7; }
+.wa-body {
+  background: #ECE5DD; padding: 16px 12px; flex: 1; overflow-y: auto;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath d='M0 10 L10 0 M10 20 L20 10' stroke='%23d4ccbe' stroke-width='0.3'/%3E%3C/svg%3E");
+  display: flex; flex-direction: column; gap: 8px;
+}
+.wa-time-divider {
+  align-self: center; font-size: 0.62rem; color: #5e6f74;
+  background: rgba(225,245,254,0.92); padding: 3px 10px; border-radius: 8px; margin: 4px 0;
+}
+.wa-msg {
+  max-width: 85%; padding: 8px 11px 6px; border-radius: 8px;
+  font-size: 0.78rem; line-height: 1.45; color: #303030;
+  position: relative; box-shadow: 0 1px 0.5px rgba(11,20,26,0.13);
+  white-space: pre-line;
+}
+.wa-msg.received { background: #fff; align-self: flex-start; border-top-left-radius: 0; }
+.wa-msg.sent { background: #DCF8C6; align-self: flex-end; border-top-right-radius: 0; }
+.wa-msg .wa-from {
+  font-size: 0.68rem; font-weight: 600; color: var(--terra); margin-bottom: 2px;
+}
+.wa-msg .wa-meta {
+  font-size: 0.6rem; color: #888; text-align: right; margin-top: 4px;
+}
+.wa-msg.audio {
+  display: flex; align-items: center; gap: 8px;
+  background: #fff; padding: 8px 12px; min-width: 200px;
+}
+.wa-audio-play {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--terra); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; flex-shrink: 0;
+}
+.wa-audio-bar {
+  flex: 1; height: 3px; background: #ddd; border-radius: 2px; position: relative;
+}
+.wa-audio-bar::after {
+  content: ''; position: absolute; left: 0; top: -3px; width: 9px; height: 9px;
+  background: var(--terra); border-radius: 50%;
+}
+.wa-audio-time { font-size: 0.66rem; color: #777; }
+.wa-card {
+  background: #f7f7f5; border-radius: 6px; padding: 8px 10px; margin-top: 6px;
+  font-size: 0.72rem; color: #303030; line-height: 1.4;
+  border-left: 3px solid var(--terra);
+}
+.wa-card-name { font-weight: 700; color: var(--ink); display: block; margin-bottom: 2px; }
+.wa-tag-row { display: flex; gap: 4px; margin-top: 4px; flex-wrap: wrap; }
+.wa-tag {
+  font-size: 0.6rem; padding: 2px 7px; background: rgba(176,110,74,0.12); color: var(--terra);
+  border-radius: 8px; font-weight: 600;
+}
+
+/* Dashboard Mockup */
+.dash-mock {
+  background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+  border: 1px solid rgba(20,55,60,0.08);
+}
+.dash-header {
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid rgba(20,55,60,0.08); padding-bottom: 14px; margin-bottom: 16px;
+}
+.dash-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 700; color: var(--ink); }
+.dash-pill { font-size: 0.62rem; font-weight: 600; padding: 3px 10px; background: rgba(67,93,81,0.1); color: var(--sage); border-radius: 12px; }
+.dash-funnel {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px;
+  margin-bottom: 18px;
+}
+.funnel-step {
+  background: var(--cl); border-radius: 8px; padding: 12px 8px; text-align: center;
+}
+.funnel-step:nth-child(1) { background: rgba(20,55,60,0.06); }
+.funnel-step:nth-child(2) { background: rgba(67,93,81,0.10); }
+.funnel-step:nth-child(3) { background: rgba(176,110,74,0.12); }
+.funnel-step:nth-child(4) { background: rgba(176,110,74,0.18); }
+.funnel-step:nth-child(5) { background: var(--terra); color: #fff; }
+.funnel-icon { font-size: 0.85rem; margin-bottom: 4px; }
+.funnel-num { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--ink); line-height: 1; }
+.funnel-step:nth-child(5) .funnel-num { color: #fff; }
+.funnel-label { font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #6a8a8f; margin-top: 4px; }
+.funnel-step:nth-child(5) .funnel-label { color: rgba(255,255,255,0.85); }
+.dash-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.dash-card {
+  background: var(--cl); border-radius: 10px; padding: 14px 16px;
+}
+.dash-card-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terra); margin-bottom: 6px; }
+.dash-card-text { font-size: 0.78rem; color: var(--ink); line-height: 1.45; }
+.dash-card-text strong { font-weight: 700; }
+.dash-alert {
+  background: rgba(176,110,74,0.08); border-left: 3px solid var(--terra);
+  padding: 10px 14px; border-radius: 6px; font-size: 0.74rem; color: var(--ink);
+  margin-top: 10px; line-height: 1.5;
+}
+
+/* Antes / Depois */
+.ad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.ad-col { border-radius: 16px; padding: 32px 28px; }
+.ad-col-antes { background: var(--cl); border: 1px solid rgba(20,55,60,0.08); }
+.ad-col-depois { background: linear-gradient(155deg, var(--ink), var(--sage)); color: #fff; }
+.ad-col-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; }
+.ad-col-antes .ad-col-title { color: var(--ink); }
+.ad-col-depois .ad-col-title { color: #fff; }
+.ad-col-sub { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 22px; }
+.ad-col-antes .ad-col-sub { color: var(--sand); }
+.ad-col-depois .ad-col-sub { color: var(--tl); }
+.ad-step { display: flex; gap: 14px; padding: 10px 0; align-items: flex-start; }
+.ad-step-time {
+  font-family: 'Cormorant Garamond', serif; font-weight: 700; min-width: 56px; font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+}
+.ad-col-antes .ad-step-time { color: var(--ink); }
+.ad-col-depois .ad-step-time { color: var(--tl); }
+.ad-step-text { font-size: 0.82rem; line-height: 1.55; font-weight: 300; }
+.ad-col-antes .ad-step-text { color: #4a6a6f; }
+.ad-col-depois .ad-step-text { color: rgba(255,255,255,0.78); }
+.ad-total {
+  margin-top: 18px; padding-top: 18px; border-top: 1px dashed currentColor;
+  display: flex; justify-content: space-between; align-items: baseline;
+  opacity: 0.95;
+}
+.ad-col-antes .ad-total { border-top-color: rgba(20,55,60,0.18); }
+.ad-col-depois .ad-total { border-top-color: rgba(255,255,255,0.18); }
+.ad-total-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.ad-total-num { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 700; }
+.ad-col-antes .ad-total-num { color: var(--terra); }
+.ad-col-depois .ad-total-num { color: var(--tl); }
+
+/* ===== INVESTIMENTO ===== */
+.invest-section { background: var(--ink); }
+.invest-inner { max-width: 1100px; margin: 0 auto; }
+.invest-header { max-width: 720px; margin-bottom: 56px; }
+.invest-header p { font-size: 0.93rem; color: rgba(255,255,255,0.6); line-height: 1.78; font-weight: 300; }
+.invest-modules-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 24px; }
+.invest-mod-card {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 14px; padding: 36px 36px;
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center;
+}
+.invest-mod-tag {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--tl); margin-bottom: 8px;
+}
+.invest-mod-name {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700;
+  color: #fff; margin-bottom: 12px; line-height: 1.2;
+}
+.invest-mod-desc { font-size: 0.84rem; color: rgba(255,255,255,0.6); line-height: 1.7; font-weight: 300; }
+.invest-mod-price-block { text-align: right; }
+.invest-mod-price-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 6px; }
+.invest-mod-price { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 6px; }
+.invest-mod-sub { font-size: 0.74rem; color: rgba(255,255,255,0.55); }
+.invest-pacote-card {
+  background: rgba(176,110,74,0.07); border: 1px solid rgba(176,110,74,0.25);
+  border-radius: 16px; padding: 40px 36px; margin-top: 32px;
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center;
+  position: relative;
+}
+.invest-pacote-card::before {
+  content: 'POR QUE ESSE VALOR'; position: absolute; top: -10px; left: 24px;
+  background: var(--terra); color: #fff; font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.16em; padding: 4px 12px; border-radius: 20px;
+}
+.invest-pacote-text h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 700; color: #fff; margin-bottom: 14px; line-height: 1.3; }
+.invest-pacote-text p { font-size: 0.86rem; color: rgba(255,255,255,0.7); line-height: 1.75; font-weight: 300; }
+.invest-pacote-text p strong { color: var(--tl); font-weight: 600; }
+.invest-validade {
+  display: inline-flex; gap: 8px; align-items: center;
+  background: rgba(255,255,255,0.06); padding: 8px 14px; border-radius: 20px;
+  font-size: 0.74rem; color: rgba(255,255,255,0.85); font-weight: 500;
+  margin-top: 20px;
+}
+.invest-validade::before {
+  content: ''; width: 8px; height: 8px; background: var(--tl); border-radius: 50%;
+  animation: pulse 1.6s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.4); }
+}
+
+.mens-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+.mens-title { font-size: 0.9rem; font-weight: 700; color: rgba(255,255,255,0.7); margin-bottom: 18px; letter-spacing: 0.04em; grid-column: 1 / -1; }
+.mens-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 22px 22px; }
+.mens-card-icon { font-size: 1.1rem; margin-bottom: 10px; }
+.mens-card-title { font-size: 0.86rem; font-weight: 600; color: #fff; margin-bottom: 6px; line-height: 1.3; }
+.mens-card-desc { font-size: 0.76rem; color: rgba(255,255,255,0.55); line-height: 1.6; font-weight: 300; }
+
+.roi-check {
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; margin-top: 56px;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px; padding: 36px 40px; align-items: center;
+}
+.roi-check-text h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 14px; line-height: 1.3; }
+.roi-check-text p { font-size: 0.86rem; color: rgba(255,255,255,0.7); line-height: 1.75; font-weight: 300; }
+.roi-payback {
+  text-align: center;
+  padding: 24px;
+  border-left: 1px solid rgba(255,255,255,0.1);
+}
+.roi-payback-label { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 10px; }
+.roi-payback-num { font-family: 'Cormorant Garamond', serif; font-size: 3.2rem; font-weight: 700; color: var(--tl); line-height: 1; }
+.roi-payback-sub { font-size: 0.78rem; color: rgba(255,255,255,0.65); margin-top: 8px; }
+
+.invest-aviso {
+  margin-top: 40px; padding: 18px 22px; background: rgba(176,110,74,0.06);
+  border-left: 3px solid var(--terra); border-radius: 8px;
+  font-size: 0.78rem; color: rgba(255,255,255,0.7); line-height: 1.65; font-style: italic;
+}
+
+/* ===== ONDA FUTURA ===== */
+.onda-section {
+  background: linear-gradient(155deg, #0c2427, #14373C 60%, #1d4840 100%);
+}
+.onda-inner { max-width: 1100px; margin: 0 auto; }
+.onda-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: start; }
+.onda-text p { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.85; font-weight: 300; margin-bottom: 18px; }
+.onda-text p strong { color: var(--tl); font-weight: 600; }
+.onda-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(196,131,94,0.25);
+  border-radius: 16px; padding: 32px 30px;
+}
+.onda-card-tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tl); margin-bottom: 8px; }
+.onda-card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
+.onda-card ul { list-style: none; }
+.onda-card li {
+  font-size: 0.84rem; color: rgba(255,255,255,0.75); padding: 8px 0;
+  border-bottom: 1px dashed rgba(255,255,255,0.08); padding-left: 18px; position: relative;
+  font-weight: 300;
+}
+.onda-card li:last-child { border-bottom: none; }
+.onda-card li::before { content: '◇'; position: absolute; left: 0; color: var(--tl); }
+
+/* ===== GARANTIA ===== */
+.garantia-section { background: #fff; }
+.garantia-inner { max-width: 1100px; margin: 0 auto; }
+.garantia-block {
+  background: linear-gradient(135deg, var(--ink), var(--sage));
+  border-radius: 20px; padding: 48px 56px;
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center;
+  overflow: hidden; position: relative;
+}
+.garantia-text h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 700; color: #fff; margin-bottom: 16px; line-height: 1.25; }
+.garantia-text p { font-size: 0.93rem; color: rgba(255,255,255,0.78); line-height: 1.78; font-weight: 300; }
+.garantia-selo {
+  text-align: center;
+  border-left: 1px solid rgba(255,255,255,0.15); padding-left: 36px;
+}
+.garantia-selo-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 12px; }
+.garantia-selo-num { font-family: 'Cormorant Garamond', serif; font-size: 3.6rem; font-weight: 700; color: var(--tl); line-height: 1; margin-bottom: 8px; }
+.garantia-selo-sub { font-size: 0.78rem; color: rgba(255,255,255,0.65); }
+
+/* ===== POR QUE NEWSCALE ===== */
+.pq-section { background: var(--cl); }
+.pq-inner { max-width: 1100px; margin: 0 auto; }
+.quote-block {
+  background: linear-gradient(155deg, var(--ink), var(--ink2)); border-radius: 18px;
+  padding: 48px 56px; margin-bottom: 60px; position: relative; overflow: hidden;
+}
+.quote-block::before {
+  content: '"'; position: absolute; top: 12px; left: 36px;
+  font-family: 'Cormorant Garamond', serif; font-size: 9rem;
+  color: rgba(196,131,94,0.18); line-height: 1;
+}
+.quote-block::after {
+  content: '"'; position: absolute; bottom: -40px; right: 48px;
+  font-family: 'Cormorant Garamond', serif; font-size: 9rem;
+  color: rgba(196,131,94,0.18); line-height: 1;
+}
+.quote-text {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 400;
+  color: #fff; line-height: 1.5; font-style: italic; margin-bottom: 20px;
+  position: relative; z-index: 1;
+}
+.quote-author { font-size: 0.8rem; font-weight: 600; color: var(--tl); position: relative; z-index: 1; }
+
+.metodologia-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 60px; }
+.met-card { background: #fff; border-radius: 14px; padding: 28px 26px; border: 1px solid rgba(20,55,60,0.06); }
+.met-num { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 700; color: var(--terra); line-height: 1; margin-bottom: 14px; }
+.met-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+.met-text { font-size: 0.82rem; color: #4a6a6f; line-height: 1.65; font-weight: 300; }
+
+.fundadores-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.fundador-card { background: #fff; border-radius: 16px; overflow: hidden; display: flex; gap: 0; border: 1px solid rgba(20,55,60,0.06); }
+.fundador-photo { width: 140px; height: auto; min-height: 180px; flex-shrink: 0; background: var(--cl); object-fit: cover; }
+.fundador-info { padding: 24px 26px; }
+.fundador-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.fundador-role { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terra); margin-bottom: 12px; }
+.fundador-bio { font-size: 0.78rem; color: #4a6a6f; line-height: 1.6; font-weight: 300; margin-bottom: 12px; }
+.fundador-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.fundador-tag { font-size: 0.62rem; font-weight: 600; padding: 3px 9px; background: rgba(20,55,60,0.07); color: var(--ink); border-radius: 12px; }
+
+/* ===== FAQ ===== */
+.faq-section { background: #fff; }
+.faq-inner { max-width: 880px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid rgba(20,55,60,0.1); padding: 22px 0; cursor: pointer; }
+.faq-q { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.faq-q-text { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; color: var(--ink); line-height: 1.4; }
+.faq-toggle { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; color: var(--terra); transition: transform 0.3s; flex-shrink: 0; }
+.faq-item.open .faq-toggle { transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s, padding 0.3s; font-size: 0.86rem; color: #4a6a6f; line-height: 1.78; font-weight: 300; }
+.faq-item.open .faq-a { max-height: 600px; padding-top: 14px; }
+
+/* ===== PRÓXIMOS PASSOS ===== */
+.passos-section { background: linear-gradient(155deg, #0c2427, #14373C 60%, #1d4840 100%); }
+.passos-inner { max-width: 880px; margin: 0 auto; }
+.passos-list { margin-top: 48px; }
+.step-item {
+  display: flex; gap: 22px; padding: 22px 0; position: relative;
+}
+.step-item:not(:last-child)::after {
+  content: ''; position: absolute; left: 20px; top: 64px; bottom: 0;
+  width: 1px; background: rgba(176,110,74,0.2);
+}
+.step-num {
+  width: 40px; height: 40px; border-radius: 50%; background: var(--terra); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 1.1rem;
+  flex-shrink: 0; z-index: 1;
+}
+.step-prazo { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tl); margin-bottom: 4px; }
+.step-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.step-desc { font-size: 0.86rem; color: rgba(255,255,255,0.65); line-height: 1.7; font-weight: 300; }
+.passos-frase {
+  margin-top: 56px; text-align: center; font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem; font-style: italic; color: var(--tl); line-height: 1.5;
+}
+
+/* ===== CTA FECHAMENTO ===== */
+.cta-section { background: #fff; }
+.cta-inner { max-width: 1000px; margin: 0 auto; }
+.cta-fechamento-inner {
+  background: linear-gradient(150deg, #0c2427, #14373C 55%, #1d4840 100%);
+  border-radius: 24px; padding: 64px 56px; text-align: center; position: relative;
+}
+.cta-validade {
+  display: inline-flex; gap: 8px; align-items: center;
+  background: rgba(255,255,255,0.06); padding: 7px 16px; border-radius: 20px;
+  font-size: 0.7rem; color: rgba(255,255,255,0.85); font-weight: 600;
+  margin-bottom: 24px; letter-spacing: 0.06em;
+}
+.cta-validade::before {
+  content: ''; width: 8px; height: 8px; background: var(--tl); border-radius: 50%;
+  animation: pulse 1.6s infinite;
+}
+.cta-fechamento-inner h2 {
+  font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 22px;
+}
+.cta-fechamento-inner h2 em { font-style: italic; color: var(--tl); }
+.cta-fechamento-inner p {
+  font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.78;
+  max-width: 620px; margin: 0 auto 36px; font-weight: 300;
+}
+.cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+.cta-btn {
+  font-size: 0.86rem; font-weight: 600;
+  text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.02em;
+}
+.cta-btn-primary {
+  background: var(--terra); color: #fff;
+  box-shadow: 0 8px 28px rgba(176,110,74,0.35);
+  padding: 16px 30px; border-radius: 40px;
+}
+.cta-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(176,110,74,0.45); }
+.cta-btn-secondary {
+  background: transparent; color: rgba(255,255,255,0.85);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 16px 30px; border-radius: 40px;
+}
+.cta-btn-secondary:hover { background: rgba(255,255,255,0.08); }
+.cta-metricas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.1); }
+.cta-met-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--tl); line-height: 1; margin-bottom: 6px; }
+.cta-met-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #0c2427; color: rgba(255,255,255,0.5);
+  padding: 36px 48px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.74rem;
+}
+.footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; color: #fff; }
+.footer-brand span { color: var(--tl); font-weight: 400; margin-left: 6px; }
+.footer-date { text-align: right; line-height: 1.5; }
+
+/* ===== REVEAL ===== */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  section { padding: 70px 24px; }
+  .navbar { padding: 14px 24px; }
+  .navbar-tag { display: none; }
+  .hero { padding: 80px 24px; }
+  .context-inner, .custo-inner, .demo-grid, .onda-grid, .roi-check,
+  .garantia-block, .ad-grid, .invest-mod-card, .invest-pacote-card {
+    grid-template-columns: 1fr; gap: 32px;
+  }
+  .intro-stats { grid-template-columns: 1fr 1fr; }
+  .dores-grid, .mens-grid, .metodologia-grid, .fundadores-grid {
+    grid-template-columns: 1fr;
+  }
+  .invest-pacote-card { flex-direction: column; gap: 28px; }
+  .invest-mod-price-block { text-align: left; }
+  .footer { flex-direction: column; gap: 16px; text-align: center; }
+  .footer-date { text-align: center; }
+  .quote-block, .garantia-block, .cta-fechamento-inner { padding: 36px 28px; }
+  .cta-metricas { grid-template-columns: 1fr; gap: 22px; }
+  .fundador-card { flex-direction: column; }
+  .fundador-photo { width: 100%; height: 220px; }
+  .dash-funnel { grid-template-columns: 1fr 1fr; }
+  .roi-payback { border-left: none; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; margin-top: 8px; }
+  .garantia-selo { border-left: none; border-top: 1px solid rgba(255,255,255,0.15); padding-left: 0; padding-top: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-logo">
+    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting">
+  </div>
+  <div class="navbar-tag">Proposta Executiva · Rafael Furlanetti · Maio 2026</div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="topo">
+  <div class="topo-lines">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,300 Q300,220 500,290 T900,260 T1200,300" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,500 Q300,440 500,490 T900,460 T1200,500" fill="none" stroke="white" stroke-width="0.3"/>
+      <path d="M0,250 Q250,180 450,240 T850,210 T1200,250" fill="none" stroke="white" stroke-width="0.3"/>
+      <path d="M0,550 Q250,500 450,540 T850,510 T1200,550" fill="none" stroke="white" stroke-width="0.25"/>
+    </svg>
+  </div>
+  <div class="grain-overlay"></div>
+
+  <div class="hero-badge">Proposta Executiva · Maio 2026 · Para Rafael Furlanetti</div>
+  <div class="hero-eyebrow">NewScale Consulting × Rafael Furlanetti</div>
+  <h1>"Como a gente se adapta a isso, como é que a gente usa isso ao nosso favor."<br><em>Esta proposta é nossa resposta.</em></h1>
+  <p class="hero-desc">A pergunta foi sua, no Deep Story. A resposta é construir, em 45 dias, o ecossistema AI-first que vai escalar o que você já faz na cabeça — e dar ao seu novo clube de mentoria diferenciação que nenhum concorrente brasileiro entrega.</p>
+
+  <a class="hero-cta" href="#contexto">
+    <span>Ver proposta</span>
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M10 4v12M4 10l6 6 6-6" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+</section>
+
+<!-- ===== CONTEXTO ===== -->
+<section class="context-section" id="contexto">
+  <div class="context-inner">
+    <div class="context-text reveal">
+      <span class="section-label">O Contexto</span>
+      <h2 class="section-title">Você já é o sistema. <em>Falta escalá-lo.</em></h2>
+      <p>Rafael, em fevereiro, no Money Report Next Generation, você disse uma frase que define seu ativo mais valioso: <strong>"armazena percepções e opiniões dos contatos para guiar objetivos profissionais e pessoais"</strong>. É exatamente isso que faz você ser quem é dentro da XP, da ANCORD, e agora no Hot Market.</p>
+      <p>Esse ativo tem dois limites que você conhece bem: <strong>cabe na sua cabeça</strong> e <strong>cabe no seu dia.</strong> O Furla News que você criou em 2010 já mostra que você intuitivamente sistematiza o que vê. O passo natural é transformar isso em arquitetura de software — pessoal, privada, e à sua disposição via WhatsApp.</p>
+      <p>O momento é único. Hot Market acabou de estrear. ANCORD desde abril/2025. E o seu novo projeto — o clube premium — está prestes a nascer. <strong>A NewScale entra para construir o ecossistema tecnológico desse clube e da sua operação pessoal, AI-first desde o primeiro dia.</strong></p>
+    </div>
+    <div class="intro-stats reveal reveal-delay-2">
+      <div class="stat-card"><div class="stat-number">255k</div><div class="stat-label">Seguidores no Instagram (@rafaelfurla)</div></div>
+      <div class="stat-card"><div class="stat-number">15+</div><div class="stat-label">Anos de rede no mercado financeiro premium</div></div>
+      <div class="stat-card"><div class="stat-number">CNN</div><div class="stat-label">Hot Market — semanal, peer-to-peer</div></div>
+      <div class="stat-card"><div class="stat-number">300k</div><div class="stat-label">Ticket-alvo por membro do clube/ano</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CUSTO DA INAÇÃO ===== -->
+<section class="custo-section">
+  <div class="custo-inner">
+    <div class="custo-text reveal">
+      <span class="section-label">Custo da inação</span>
+      <h2 class="section-title">O que <em>não fazer agora</em> custa.</h2>
+      <p>Não é só tempo. É <strong>relevância na onda da IA</strong> — exatamente o que você falou ao vivo na CNN: <em>"você não vai ser demitido pela IA, mas vai ser demitido por alguém que usa IA muito bem".</em></p>
+      <p>Aqui está a estimativa conservadora do que está em jogo, por mês, sem o ecossistema rodando:</p>
+    </div>
+    <div class="custo-list reveal reveal-delay-1">
+      <div class="custo-item">
+        <div class="custo-item-text">
+          <div class="custo-item-label">Seu tempo em tarefas que IA já faria</div>
+          <div class="custo-item-sub">~10h/semana lembrando contatos, preparando reuniões, garimpando histórico em apps. Hora-equivalente conservadora: R$ 500.</div>
+        </div>
+        <div class="custo-item-value">R$ 20.000</div>
+      </div>
+      <div class="custo-item">
+        <div class="custo-item-text">
+          <div class="custo-item-label">Atraso no lançamento do clube</div>
+          <div class="custo-item-sub">1 mês de atraso × 4 membros não fechados (lista quente não mapeada) × R$ 300k de ticket. Receita postergada.</div>
+        </div>
+        <div class="custo-item-value">R$ 1.200.000</div>
+      </div>
+      <div class="custo-item">
+        <div class="custo-item-text">
+          <div class="custo-item-label">Hot Market sem pré-produção otimizada</div>
+          <div class="custo-item-sub">Cada episódio que rola sem dossiê profundo do entrevistado perde diferenciação vs. outros entrevistadores. Vale relevância de marca.</div>
+        </div>
+        <div class="custo-item-value">imensurável</div>
+      </div>
+      <div class="custo-item">
+        <div class="custo-item-text">
+          <div class="custo-item-label">Risco reputacional de membro errado entrar</div>
+          <div class="custo-item-sub">Você é presidente da ANCORD e figura pública. Background check manual deixa brecha. 1 caso ruim = anos de marca.</div>
+        </div>
+        <div class="custo-item-value">crítico</div>
+      </div>
+      <div class="custo-total">
+        <div class="custo-total-label">Estimativa direta no caixa / mês</div>
+        <div class="custo-total-value">R$ 1.220.000+</div>
+      </div>
+      <div class="custo-note">* Não estão contabilizadas: oportunidades de network não capturadas, ansiedade operacional ("acordar de madrugada pensando em problemas" — sua frase no Deep Story), e custo de oportunidade de adoção tardia da IA num mercado em transformação.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DORES / OPORTUNIDADES ===== -->
+<section class="dores-section">
+  <div class="dores-inner">
+    <div class="dores-header reveal">
+      <span class="section-label">As 6 oportunidades</span>
+      <h2 class="section-title section-title-light">O que mapeamos <em>especificamente para você.</em></h2>
+      <p>Não é genérico. Cada item abaixo vem do seu contexto público — Hot Market, ANCORD, lives da pandemia com 70 mil pessoas, mentoria a herdeiros no Money Report. A NewScale lê o que você disse e propõe o que falta.</p>
+    </div>
+    <div class="dores-grid">
+
+      <div class="dore-card reveal">
+        <div class="dore-num">1</div>
+        <div class="dore-tag">Memória externa</div>
+        <div class="dore-title">Sua mente, fora da sua cabeça, sempre disponível.</div>
+        <div class="dore-text">Você lembra nomes, sobrenomes e aniversários de todos. É um ativo finito — o seu cérebro tem teto. Vamos transformar essa "régua mental" em sistema consultável via WhatsApp em segundos.</div>
+      </div>
+
+      <div class="dore-card reveal reveal-delay-1">
+        <div class="dore-num">2</div>
+        <div class="dore-tag">Lead-mapping</div>
+        <div class="dore-title">Mapear quem chamar primeiro pro clube.</div>
+        <div class="dore-text">Sua agenda do iPhone + 255k seguidores no Instagram. Vamos extrair, deduplicar, enriquecer (Receita, LinkedIn público, mídia) e ranquear leads pro clube usando os critérios que você já aplica intuitivamente.</div>
+      </div>
+
+      <div class="dore-card reveal reveal-delay-2">
+        <div class="dore-num">3</div>
+        <div class="dore-tag">Filtro reputacional</div>
+        <div class="dore-title">Caranguejos não entram.</div>
+        <div class="dore-text">Você foge das pessoas que "puxam pra baixo" — disse no Pivotando. Background check automatizado via <a href="https://vaas.com.br" target="_blank" style="color:var(--tl); text-decoration:none; font-weight:600;">VAAS</a> blinda a imagem do clube e a sua, antes de qualquer aceite.</div>
+      </div>
+
+      <div class="dore-card reveal">
+        <div class="dore-num">4</div>
+        <div class="dore-tag">Hot Market</div>
+        <div class="dore-title">Cada episódio com 1.000 fontes na manga.</div>
+        <div class="dore-text">Você se inspirou em David Rubenstein, faz peer-to-peer. A IA pré-produz: pesquisa profunda do convidado, ângulos pouco explorados, perguntas-surpresa. Diferenciação vs. todo entrevistador no Brasil.</div>
+      </div>
+
+      <div class="dore-card reveal reveal-delay-1">
+        <div class="dore-num">5</div>
+        <div class="dore-tag">Operação 24/7</div>
+        <div class="dore-title">Você dorme. O ecossistema não.</div>
+        <div class="dore-text">"Se um cliente me ligar à meia-noite ou no domingo, vou estar pronto" — você disse no Deep Story. O concierge IA atende 24/7 com qualidade da sua presença, e te aciona só no que importa.</div>
+      </div>
+
+      <div class="dore-card reveal reveal-delay-2">
+        <div class="dore-num">6</div>
+        <div class="dore-tag">Privacidade</div>
+        <div class="dore-title">Dado seu não vira commodity.</div>
+        <div class="dore-text">Sua rede é sua. Cifragem em repouso, RLS por usuário, vault separado, logs de auditoria. Compliance ANCORD-aware desde o desenho. A privacidade vendida como blindagem, não como detalhe técnico.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== MÓDULOS ===== -->
+<section class="modulos-section" id="proposta">
+  <div class="modulos-inner">
+    <div class="modulos-header reveal">
+      <span class="section-label">A proposta</span>
+      <h2 class="section-title">A armadura, em <em>3 ondas.</em></h2>
+      <p>Você usou a metáfora certa na CNN Money: <em>"a IA é a armadura do Homem de Ferro — ela vai fazer o seu trabalho ser mais produtivo."</em> Você continua sendo o Tony Stark. A NewScale constrói a armadura, anel por anel.</p>
+    </div>
+
+    <!-- ONDA 1 -->
+    <div class="fase-block reveal">
+      <div class="fase-header">
+        <div>
+          <div class="fase-tag">Onda 1 · 45 dias · Esta proposta</div>
+          <div class="fase-name">Limpar a mesa, mapear sua rede, recuperar 2 horas por dia.</div>
+          <div class="fase-duration">WhatsApp + base modular cifrada · Go-live em até 45 dias após aceite</div>
+        </div>
+        <div class="fase-num-badge">01</div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-card-header">
+          <div class="modulo-card-left">
+            <div class="modulo-icon">🧠</div>
+            <div>
+              <div class="modulo-label">Núcleo</div>
+              <div class="modulo-name">Mente Externa — Vault cifrado + extração da agenda</div>
+              <div class="modulo-chips">
+                <span class="chip">iPhone</span><span class="chip">Cifragem em repouso</span><span class="chip">Vault privado</span>
+              </div>
+            </div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <div class="value-box-icon">🎯</div>
+            <div>
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">Sua agenda do iPhone deixa de ser "lista de números" e vira base estruturada, viva, segura — pronta pra responder qualquer pergunta sua em segundos.</div>
+            </div>
+          </div>
+          <p class="modulo-desc">Configuramos um vault dedicado (banco de dados modular, cifragem em repouso, RLS por usuário, logs de auditoria), extraímos sua agenda iCloud/iPhone via vCard, deduplicamos contatos e criamos a primeira camada da sua memória externa.</p>
+          <ul class="modulo-items">
+            <li><strong>Extração da agenda iPhone:</strong> via export iCloud (vCard). Você executa, NewScale processa. Zero acesso ao seu Apple ID.</li>
+            <li><strong>Vault cifrado dedicado:</strong> Supabase com RLS, infra isolada, backup diário criptografado. Você é o único administrador.</li>
+            <li><strong>Schema modular:</strong> contato, empresa, último contato, tags livres, score, histórico de interação. Pronto pra crescer.</li>
+            <li><strong>Logs de auditoria:</strong> toda consulta fica registrada. Você sabe sempre o que foi visto, por quem, quando.</li>
+          </ul>
+          <div class="disclaimer-box">A extração da agenda exige um único passo manual seu (export do iCloud). Não acessamos seu Apple ID. Caminho de privacidade revisado e documentado antes de qualquer ação.</div>
+        </div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-card-header">
+          <div class="modulo-card-left">
+            <div class="modulo-icon">🔍</div>
+            <div>
+              <div class="modulo-label">Inteligência</div>
+              <div class="modulo-name">Enriquecimento automático + Scoring por critérios DELE</div>
+              <div class="modulo-chips">
+                <span class="chip">Receita Federal</span><span class="chip">LinkedIn público</span><span class="chip">Mídia</span><span class="chip">Score IA</span>
+              </div>
+            </div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <div class="value-box-icon">🎯</div>
+            <div>
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">Você abre a base e cada contato já vem rico: cargo atual, empresa, faturamento estimado, presença pública, score de prioridade pro clube — calculado com SEUS critérios.</div>
+            </div>
+          </div>
+          <p class="modulo-desc">A IA enriquece cada contato com fontes públicas e calcula um score (0-100) baseado nos critérios que você mesmo verbalizou em entrevistas: capacidade de pivotar, foco em resolver problema (não em status), antifragilidade, humildade genuína, franqueza brutal. Caranguejos vão pro fim da fila. Para dados que não aparecem no Google — societários, processos, histórico patrimonial, vínculos empresariais — integramos via API com plataformas especializadas em enriquecimento de base.</p>
+          <ul class="modulo-items">
+            <li><strong>Enriquecimento automático:</strong> dados públicos da Receita, LinkedIn, mídia, redes sociais. Cada contato vira um perfil rico.</li>
+            <li><strong>Background check via API especializada:</strong> integração prioritária com a <strong><a href="https://vaas.com.br" target="_blank" style="color:var(--terra); text-decoration:none;">VAAS</a></strong> — plataforma brasileira especializada em enriquecimento de base com dados societários, patrimônio estimado, vínculos e histórico que dificilmente ficam públicos na internet. Complementada quando necessário por Serasa Experian DataLab, Neoway ou BigDataCorp. Relatório gerado automaticamente por contato.</li>
+            <li><strong>Scoring por critérios DELE:</strong> 5 critérios públicos seus codificados em modelo. Lead alto = perfil que VOCÊ escolheria.</li>
+            <li><strong>Filtros prontos:</strong> "donos de varejo &gt;R$200M em SP", "empresários com exit recente", "investidores ativos em fintech B2B" — combinações infinitas.</li>
+            <li><strong>Atualização contínua:</strong> sinais públicos (anúncios, exits, IPOs) atualizam o score automaticamente.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-card-header">
+          <div class="modulo-card-left">
+            <div class="modulo-icon">💬</div>
+            <div>
+              <div class="modulo-label">Interface</div>
+              <div class="modulo-name">CRM Conversacional via WhatsApp + Daily Briefing 7h</div>
+              <div class="modulo-chips">
+                <span class="chip">WhatsApp-first</span><span class="chip">Furla News v2</span><span class="chip">Linguagem natural</span>
+              </div>
+            </div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <div class="value-box-icon">🎯</div>
+            <div>
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">Você não abre nada novo. Pergunta no WhatsApp, recebe a resposta. Toda manhã às 7h, recebe o seu Furla News pessoal — agenda, alertas, aniversariantes, oportunidades.</div>
+            </div>
+          </div>
+          <p class="modulo-desc">O cockpit principal mora no WhatsApp que você já usa. Daily Briefing às 7h sistematiza o que você já criou em 2010 (o Furla News interno) — agora personalizado por dia, com alertas inteligentes. CRM conversacional responde qualquer consulta em linguagem natural.</p>
+          <ul class="modulo-items">
+            <li><strong>Daily Briefing 7h:</strong> agenda do dia + briefings de cada reunião + aniversariantes da rede + 3 alertas relevantes (anúncios, exits, mídia).</li>
+            <li><strong>CRM conversacional:</strong> "quem dos meus contatos é dono de varejo &gt;R$200M em SP?" → resposta em 5 segundos com lista, perfis e sugestão de abordagem.</li>
+            <li><strong>Briefing pré-reunião:</strong> 30min antes de cada reunião, dossiê chega no WhatsApp com último contato, contexto, pergunta-âncora.</li>
+            <li><strong>Captura por áudio (mente externa):</strong> você grava 30s pós-reunião, agente atualiza CRM, taggeia, sugere conexões.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-card-header">
+          <div class="modulo-card-left">
+            <div class="modulo-icon">📲</div>
+            <div>
+              <div class="modulo-label">Captação</div>
+              <div class="modulo-name">Bot no DM do Instagram</div>
+              <div class="modulo-chips">
+                <span class="chip">@rafaelfurla</span><span class="chip">Qualifica</span><span class="chip">Agenda</span>
+              </div>
+            </div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <div class="value-box-icon">🎯</div>
+            <div>
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">Toda DM no Instagram que pode ser lead vira lead estruturado, qualificado, e vai direto pro mesmo banco. Nada se perde no inbox de 255k seguidores.</div>
+            </div>
+          </div>
+          <p class="modulo-desc">Bot inteligente no DM do @rafaelfurla qualifica entradas, coleta informação relevante (empresa, segmento, faturamento, contato), agenda quando faz sentido e tudo migra pra base. Cada contato chega com origem identificada e pronto para scoring.</p>
+          <ul class="modulo-items">
+            <li><strong>Bot no DM Instagram:</strong> responde dúvidas frequentes, qualifica, coleta dados, agenda conforme prioridade.</li>
+            <li><strong>Qualificação adaptativa:</strong> o bot adapta as perguntas conforme o perfil que vai respondendo — quem já é empresário de grande porte pula triagens básicas.</li>
+            <li><strong>Migração automática pro banco:</strong> tudo vira contato com origem identificada, pronto pra scoring.</li>
+            <li><strong>Aprovação humana sempre:</strong> nada que sai pelo seu Instagram em seu nome, sai sem você aprovar com 1 toque.</li>
+          </ul>
+          <div class="disclaimer-box">Bot no Instagram opera dentro das regras da Meta API. Resposta automática só em DMs novos não-comerciais; mensagens sensíveis sempre escalam pra você antes.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ONDA 2 -->
+    <div class="fase-block reveal">
+      <div class="fase-header">
+        <div>
+          <div class="fase-tag">Onda 2 · ~90 dias · Após validação da Onda 1</div>
+          <div class="fase-name">O clube nasce diferente. Matching, dossiê, concierge, financeiro.</div>
+          <div class="fase-duration">Ecossistema completo do clube · Investimento discutido após Onda 1</div>
+        </div>
+        <div class="fase-num-badge">02</div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-card-header">
+          <div class="modulo-card-left">
+            <div class="modulo-icon">🤝</div>
+            <div>
+              <div class="modulo-label">Experiência do membro</div>
+              <div class="modulo-name">Matching IA + Dossiê pré-evento + Concierge no WhatsApp</div>
+              <div class="modulo-chips">
+                <span class="chip">Embeddings</span><span class="chip">PDF + áudio</span><span class="chip">24/7</span>
+              </div>
+            </div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <div class="value-box-icon">🎯</div>
+            <div>
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">Cada membro do clube recebe valor 1:1 personalizado em escala. Matching semanal, dossiês antes de cada evento, concierge IA exclusivo. É o que justifica os R$ 300k vs concorrência.</div>
+            </div>
+          </div>
+          <ul class="modulo-items">
+            <li><strong>Matching por embeddings:</strong> semanalmente, IA sugere "esses 3 membros valem uma conversa essa semana, e por quê".</li>
+            <li><strong>Dossiê pré-evento personalizado:</strong> 12h antes de cada encontro, cada membro recebe PDF + áudio: "vão estar 25 pessoas, esses 6 são especialmente relevantes pra você, perguntas pra puxar".</li>
+            <li><strong>Concierge IA por membro:</strong> WhatsApp privado, contexto individual, 24/7. Replica a sensação de "ter você como mentor" em escala.</li>
+            <li><strong>AMA assíncrona com sua aprovação:</strong> membro grava pergunta, IA prepara resposta no seu estilo, você aprova em 30s, membro recebe.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-card-header">
+          <div class="modulo-card-left">
+            <div class="modulo-icon">🛡️</div>
+            <div>
+              <div class="modulo-label">Compliance</div>
+              <div class="modulo-name">Background check automatizado + memory cards de membros</div>
+              <div class="modulo-chips">
+                <span class="chip">VAAS</span><span class="chip">Serasa Experian</span><span class="chip">Neoway</span><span class="chip">Análise reputacional</span>
+              </div>
+            </div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <div class="value-box-icon">🎯</div>
+            <div>
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">Antes de cada aceite no clube, dossiê completo: histórico, processos, mídia, redes. Você não precisa virar advogado nem investigador — a IA traz o relatório.</div>
+            </div>
+          </div>
+          <ul class="modulo-items">
+            <li><strong>Background check automatizado via API:</strong> integração prioritária com a <strong><a href="https://vaas.com.br" target="_blank" style="color:var(--terra); text-decoration:none;">VAAS</a></strong> — relatório completo com dados societários, patrimônio estimado, processos e vínculos antes de cada aceite no clube. Complementada por Serasa Experian DataLab ou Neoway quando necessário. PDF entregue automaticamente, com fontes citadas.</li>
+            <li><strong>Score de risco reputacional:</strong> alertas claros por nível de exposição (mídia, redes, histórico judicial). Você decide com dado.</li>
+            <li><strong>Memory cards de membros:</strong> perfil rico, atualizado a cada interação, histórico de tudo já discutido.</li>
+            <li><strong>Onboarding inteligente:</strong> nos primeiros 30 dias do membro, jornada guiada por IA — ele sente o valor desde a semana 1.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-card-header">
+          <div class="modulo-card-left">
+            <div class="modulo-icon">📺</div>
+            <div>
+              <div class="modulo-label">Hot Market</div>
+              <div class="modulo-name">Pré e pós-produção do programa</div>
+              <div class="modulo-chips">
+                <span class="chip">CNN Brasil</span><span class="chip">Pesquisa profunda</span><span class="chip">Clipes adaptados</span>
+              </div>
+            </div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <div class="value-box-icon">🎯</div>
+            <div>
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">Cada episódio do Hot Market vai ao ar com pesquisa profunda do convidado, ângulos pouco explorados, fatos-surpresa pra usar ao vivo. Diferencia você de qualquer outro entrevistador no Brasil.</div>
+            </div>
+          </div>
+          <ul class="modulo-items">
+            <li><strong>Pré-produção:</strong> 1.000+ fontes do convidado em 30min — perguntas pouco exploradas, fatos-surpresa, ângulos novos.</li>
+            <li><strong>Pós-produção:</strong> recortes do episódio adaptados pra LinkedIn, Reels, Shorts, Threads — tudo com seu tom de voz.</li>
+            <li><strong>Repurpose:</strong> entrevistas viram drafts pra coluna A Gazeta, posts pro IG, threads pro X.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-card-header">
+          <div class="modulo-card-left">
+            <div class="modulo-icon">💰</div>
+            <div>
+              <div class="modulo-label">Financeiro</div>
+              <div class="modulo-name">Régua de cobrança + conciliação + NF + dashboard</div>
+              <div class="modulo-chips">
+                <span class="chip">WhatsApp</span><span class="chip">Auto-conciliação</span><span class="chip">MRR/LTV/Churn</span>
+              </div>
+            </div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <div class="value-box-icon">🎯</div>
+            <div>
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">O backoffice do clube roda sozinho. Cobrança via WhatsApp, conciliação bancária com IA, NF emitida automaticamente, dashboard real-time da saúde financeira. Você não vira CFO de mentoria.</div>
+            </div>
+          </div>
+          <ul class="modulo-items">
+            <li><strong>Régua de cobrança via WhatsApp:</strong> mensalidades em dia sem você pegar no telefone.</li>
+            <li><strong>Conciliação bancária com IA:</strong> extrato bancário → reconciliação automática.</li>
+            <li><strong>Emissão de NF integrada:</strong> via API com sistemas como SAP Business One, TOTVS Protheus ou Oracle NetSuite para operações de maior porte — ou Omie, Bling e Nuvemshop para estruturas mais enxutas. A escolha segue o que você já usa ou prefere.</li>
+            <li><strong>Dashboard real-time:</strong> MRR, churn, LTV, ARPU — métricas-chave em 1 tela.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ONDA 3 -->
+    <div class="fase-block reveal">
+      <div class="fase-header">
+        <div>
+          <div class="fase-tag">Onda 3 · ~240 dias · Após maturidade da Onda 2</div>
+          <div class="fase-name">Plataforma. Você vira "operador-zero".</div>
+          <div class="fase-duration">Inteligência avançada + escala · Investimento discutido em momento próprio</div>
+        </div>
+        <div class="fase-num-badge">03</div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-card-header">
+          <div class="modulo-card-left">
+            <div class="modulo-icon">🧬</div>
+            <div>
+              <div class="modulo-label">Inteligência avançada</div>
+              <div class="modulo-name">RAG da comunidade + marketplace de deal-flow + voz</div>
+              <div class="modulo-chips">
+                <span class="chip">Memória viva</span><span class="chip">Matching de capital</span><span class="chip">Estilo Rafael</span>
+              </div>
+            </div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <div class="value-box-icon">🎯</div>
+            <div>
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">O clube vira plataforma. Tudo que rola em call/grupo/evento é memória viva. Membros se conectam por sinergia automaticamente. Sua "voz estratégica" replica nos canais com sua aprovação.</div>
+            </div>
+          </div>
+          <ul class="modulo-items">
+            <li><strong>RAG da comunidade:</strong> "alguém aqui já contratou CFO part-time?" → resposta com citação de fala/post histórico.</li>
+            <li><strong>Marketplace de deal-flow:</strong> membro publica ronda; IA conecta com investidores certos do clube.</li>
+            <li><strong>Voz estratégica do Rafael:</strong> drafts no seu estilo (com aprovação) pra coluna A Gazeta, comentários, respostas em escala.</li>
+            <li><strong>Detecção precoce de churn:</strong> alerta antes do membro decidir sair, com sugestão de ação.</li>
+            <li><strong>Co-piloto da decisão:</strong> membros consultam estratégia, IA prepara 3 ângulos + sugere 1:1 com mentor.</li>
+            <li><strong>Compliance ANCORD-aware:</strong> sistema bloqueia uso de informação sensível por design.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== COMO FUNCIONA NO DIA A DIA ===== -->
+<section class="como-section" id="como">
+  <div class="como-inner">
+    <div class="como-header reveal">
+      <span class="section-label">Como funciona no dia a dia</span>
+      <h2 class="section-title">Sua armadura, <em>na prática.</em></h2>
+      <p>Esses mockups mostram exatamente o que você vai ver no seu WhatsApp e no painel — não é genérico. Cada tela é entregável da Onda 1 (algumas apontam pra Onda 2, identificadas como tal).</p>
+    </div>
+
+    <!-- Mockup 1: WhatsApp do Rafael -->
+    <div class="demo-grid">
+      <div class="reveal">
+        <div class="demo-block-title">Cockpit principal · Onda 1</div>
+        <div class="demo-block-name">Seu WhatsApp vira o cockpit. Daily Briefing às 7h. Consulta em linguagem natural. Áudio pós-reunião atualiza a base.</div>
+        <div class="demo-block-desc">Tudo que você precisa pra operar sua rede mora aqui. Sem app novo, sem dashboard pra abrir, sem aprender nada. O agente "Furla News" é o seu copiloto via WhatsApp — chega às 7h da manhã, responde quando você pergunta, escuta quando você grava.</div>
+
+        <div style="background: rgba(176,110,74,0.08); border-left: 3px solid var(--terra); padding: 14px 18px; border-radius: 8px; margin-top: 18px;">
+          <div style="font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-bottom: 6px;">Entregáveis amarrados</div>
+          <div style="font-size: 0.82rem; color: var(--ink); line-height: 1.55;">→ Daily Briefing 7h<br>→ CRM conversacional<br>→ Captura de áudio (mente externa)<br>→ Briefing pré-reunião automático</div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <div class="wa-phone">
+          <div class="wa-screen">
+            <div class="wa-header">
+              <div class="wa-avatar">FN</div>
+              <div>
+                <div class="wa-name">Furla News · IA</div>
+                <div class="wa-status">online · seu copiloto</div>
+              </div>
+            </div>
+            <div class="wa-body">
+              <div class="wa-time-divider">HOJE · 07:00</div>
+
+              <div class="wa-msg received">
+                <div class="wa-from">Furla News</div>
+                ☕ Bom dia, Rafael.
+
+Hoje você tem <strong>4 reuniões.</strong>
+🎂 3 aniversariantes da rede:
+  · Abílio Diniz
+  · Marcelo Toledo
+  · Pedro Moreira (Caixa)
+
+🚨 <strong>2 alertas:</strong>
+• João Pedro (JP Varejo) anunciou aporte de R$80M ontem — momento de chamar pro clube.
+• Carla (lead quente) silenciou há 3 semanas.
+                <div class="wa-meta">07:00</div>
+              </div>
+
+              <div class="wa-time-divider">10:32</div>
+
+              <div class="wa-msg sent">
+                Quem dos meus contatos é dono de varejo &gt;R$200M em SP?
+                <div class="wa-meta">10:32 ✓✓</div>
+              </div>
+
+              <div class="wa-msg received">
+                <div class="wa-from">Furla News</div>
+                Encontrei <strong>47 contatos.</strong>
+Top 3 por score do clube:
+                <div class="wa-card">
+                  <span class="wa-card-name">João Pedro Silva — JP Varejo (R$420M)</span>
+                  Último contato: 12/abr · Expert XP 2024
+                  <div class="wa-tag-row"><span class="wa-tag">Score 92</span><span class="wa-tag">Quente</span></div>
+                </div>
+                <div class="wa-card">
+                  <span class="wa-card-name">Marina Costa — Costa &amp; Filhos (R$310M)</span>
+                  Último contato: 02/mar · indicação Cadu
+                  <div class="wa-tag-row"><span class="wa-tag">Score 87</span></div>
+                </div>
+                <div class="wa-meta">10:32</div>
+              </div>
+
+              <div class="wa-time-divider">14:18</div>
+
+              <div class="wa-msg sent audio">
+                <div class="wa-audio-play">▶</div>
+                <div class="wa-audio-bar"></div>
+                <div class="wa-audio-time">0:42</div>
+              </div>
+
+              <div class="wa-msg received">
+                <div class="wa-from">Furla News</div>
+                ✅ Atualizei o perfil do <strong>Abílio Diniz.</strong>
+🏷 Tags adicionadas: investidor ativo, fintech B2B, logística.
+🤝 3 membros do clube casam com critério: João L. (logística B2B), Marcelo P., Vinícius R.
+✉ Quer que eu prepare e-mail de apresentação?
+                <div class="wa-meta">14:18</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mockup 2: Dashboard dark -->
+    <div class="demo-grid">
+      <div class="reveal">
+        <div class="demo-block-title">Painel do Clube · Onda 2 (preview)</div>
+        <div class="demo-block-name">Quando o clube nascer, sua leitura macro do funil mora aqui. 1 tela. Sem ruído.</div>
+        <div class="demo-block-desc">Você não vai abrir esse painel todo dia — porque o Daily Briefing já te avisa. Mas quando quiser saber a saúde do clube, ela tá aqui em 5 segundos. Esse painel cresce com você: começa simples na Onda 2 e vira plataforma na Onda 3.</div>
+
+        <div style="background: rgba(176,110,74,0.08); border-left: 3px solid var(--terra); padding: 14px 18px; border-radius: 8px; margin-top: 18px;">
+          <div style="font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-bottom: 6px;">Entregáveis amarrados</div>
+          <div style="font-size: 0.82rem; color: var(--ink); line-height: 1.55;">→ Funil de leads do clube (Onda 1 + 2)<br>→ Métricas do clube (Onda 2)<br>→ Alertas operacionais (Onda 2)</div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <!-- Dashboard dark -->
+        <div style="background:#0e2125; border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,0.07); font-family:'DM Sans',sans-serif;">
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 18px; border-bottom:1px solid rgba(255,255,255,0.07); background:rgba(0,0,0,0.2);">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div style="width:7px; height:7px; border-radius:50%; background:#2bbd6e;"></div>
+              <div>
+                <div style="font-size:0.78rem; font-weight:600; color:#fff;">Painel do Clube · Rafael</div>
+                <div style="font-size:0.62rem; color:rgba(255,255,255,0.38);">atualização contínua · agentes ativos</div>
+              </div>
+            </div>
+            <div style="width:26px; height:26px; border-radius:50%; background:#B06E4A; color:#fff; font-size:0.65rem; font-weight:600; display:flex; align-items:center; justify-content:center;">RF</div>
+          </div>
+
+          <div style="padding:14px 18px; display:flex; flex-direction:column; gap:12px;">
+            <!-- KPIs -->
+            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:8px;">
+              <div style="background:rgba(255,255,255,0.04); border-radius:8px; border:1px solid rgba(255,255,255,0.07); padding:10px 10px 8px;">
+                <div style="font-size:1.1rem; font-weight:600; color:#fff; line-height:1;">3.847</div>
+                <div style="font-size:0.6rem; color:rgba(255,255,255,0.38); margin-top:3px;">Contatos</div>
+                <div style="font-size:0.58rem; background:rgba(29,158,117,0.18); color:#5DCAA5; padding:1px 5px; border-radius:3px; margin-top:4px; width:fit-content;">+214</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.04); border-radius:8px; border:1px solid rgba(255,255,255,0.07); padding:10px 10px 8px;">
+                <div style="font-size:1.1rem; font-weight:600; color:#5DCAA5; line-height:1;">312</div>
+                <div style="font-size:0.6rem; color:rgba(255,255,255,0.38); margin-top:3px;">Score 85+</div>
+                <div style="font-size:0.58rem; background:rgba(29,158,117,0.18); color:#5DCAA5; padding:1px 5px; border-radius:3px; margin-top:4px; width:fit-content;">+47</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.04); border-radius:8px; border:1px solid rgba(255,255,255,0.07); padding:10px 10px 8px;">
+                <div style="font-size:1.1rem; font-weight:600; color:#fff; line-height:1;">23</div>
+                <div style="font-size:0.6rem; color:rgba(255,255,255,0.38); margin-top:3px;">Membros</div>
+                <div style="font-size:0.58rem; background:rgba(29,158,117,0.18); color:#5DCAA5; padding:1px 5px; border-radius:3px; margin-top:4px; width:fit-content;">+3</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.04); border-radius:8px; border:1px solid rgba(255,255,255,0.07); padding:10px 10px 8px;">
+                <div style="font-size:1.1rem; font-weight:600; color:#FAC775; line-height:1;">6,9M</div>
+                <div style="font-size:0.6rem; color:rgba(255,255,255,0.38); margin-top:3px;">MRR anual</div>
+                <div style="font-size:0.58rem; background:rgba(186,117,23,0.18); color:#FAC775; padding:1px 5px; border-radius:3px; margin-top:4px; width:fit-content;">meta 15M</div>
+              </div>
+            </div>
+
+            <!-- Funil -->
+            <div style="background:rgba(255,255,255,0.04); border-radius:8px; border:1px solid rgba(255,255,255,0.07); padding:12px 14px;">
+              <div style="font-size:0.65rem; font-weight:600; color:rgba(255,255,255,0.55); margin-bottom:10px;">Funil de qualificação</div>
+              <div style="display:flex; align-items:flex-end; gap:5px; height:54px;">
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; height:100%; justify-content:flex-end;">
+                  <div style="font-size:0.62rem; color:rgba(255,255,255,0.7); font-weight:600;">3.847</div>
+                  <div style="width:100%; height:54px; background:rgba(255,255,255,0.1); border-radius:3px 3px 0 0;"></div>
+                  <div style="font-size:0.56rem; color:rgba(255,255,255,0.3); text-align:center;">Base</div>
+                </div>
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; height:100%; justify-content:flex-end;">
+                  <div style="font-size:0.62rem; color:rgba(255,255,255,0.7); font-weight:600;">2.901</div>
+                  <div style="width:100%; height:41px; background:rgba(255,255,255,0.15); border-radius:3px 3px 0 0;"></div>
+                  <div style="font-size:0.56rem; color:rgba(255,255,255,0.3); text-align:center;">Enriq.</div>
+                </div>
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; height:100%; justify-content:flex-end;">
+                  <div style="font-size:0.62rem; color:rgba(255,255,255,0.7); font-weight:600;">312</div>
+                  <div style="width:100%; height:26px; background:rgba(196,131,94,0.45); border-radius:3px 3px 0 0;"></div>
+                  <div style="font-size:0.56rem; color:rgba(255,255,255,0.3); text-align:center;">85+</div>
+                </div>
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; height:100%; justify-content:flex-end;">
+                  <div style="font-size:0.62rem; color:rgba(255,255,255,0.7); font-weight:600;">47</div>
+                  <div style="width:100%; height:14px; background:rgba(196,131,94,0.65); border-radius:3px 3px 0 0;"></div>
+                  <div style="font-size:0.56rem; color:rgba(255,255,255,0.3); text-align:center;">Conver.</div>
+                </div>
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; height:100%; justify-content:flex-end;">
+                  <div style="font-size:0.62rem; color:rgba(255,255,255,0.7); font-weight:600;">23</div>
+                  <div style="width:100%; height:8px; background:#c4835e; border-radius:3px;"></div>
+                  <div style="font-size:0.56rem; color:rgba(255,255,255,0.3); text-align:center;">Membros</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Alerta -->
+            <div style="background:rgba(186,117,23,0.1); border:1px solid rgba(186,117,23,0.25); border-radius:7px; padding:9px 12px; font-size:0.7rem; color:rgba(255,255,255,0.6); line-height:1.5;">
+              ⚠ <strong style="color:rgba(255,255,255,0.85);">2 background checks aguardam revisão</strong> · 1 cobrança em atraso · 4 membros sem interação há 21+ dias
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mockup 3: Banco de dados vivo -->
+    <div class="demo-grid" style="margin-top: 60px;">
+      <div class="reveal">
+        <div class="demo-block-title">Banco de dados vivo · Onda 1</div>
+        <div class="demo-block-name">Cada contato vira um perfil multidimensional. Não é planilha. É memória viva com schema que cresce.</div>
+        <div class="demo-block-desc">O banco não é um CSV estático. É um schema relacional estruturado onde cada contato tem perfil, histórico, score, origem, tags livres e trilha de auditoria. Tudo alimentado pelos agentes automaticamente — e consultável por você em linguagem natural no WhatsApp.</div>
+
+        <div style="background: rgba(176,110,74,0.08); border-left: 3px solid var(--terra); padding: 14px 18px; border-radius: 8px; margin-top: 18px;">
+          <div style="font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-bottom: 6px;">Entregáveis amarrados</div>
+          <div style="font-size: 0.82rem; color: var(--ink); line-height: 1.55;">→ Vault cifrado com RLS<br>→ Schema modular expansível<br>→ Logs de auditoria imutáveis<br>→ Atualização automática por agentes</div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <div style="background:#fff; border-radius:14px; border:1px solid rgba(20,55,60,0.1); overflow:hidden; font-family:'DM Sans',sans-serif; box-shadow:0 8px 32px rgba(0,0,0,0.06);">
+          <!-- Header do registro -->
+          <div style="background:var(--ink); padding:14px 18px; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <div style="font-size:0.6rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:3px;">Contato · ID #0041</div>
+              <div style="font-size:0.95rem; font-weight:700; color:#fff; font-family:'Cormorant Garamond',serif;">João Pedro Silva</div>
+              <div style="font-size:0.66rem; color:rgba(255,255,255,0.55);">JP Varejo · CEO · R$420M faturamento</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:1.8rem; font-weight:700; color:var(--tl); font-family:'Cormorant Garamond',serif; line-height:1;">92</div>
+              <div style="font-size:0.58rem; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:0.08em;">Score clube</div>
+            </div>
+          </div>
+
+          <!-- Campos do schema -->
+          <div style="padding:14px 18px; display:flex; flex-direction:column; gap:0;">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:0; border-bottom:1px solid rgba(20,55,60,0.07);">
+              <div style="padding:9px 10px 9px 0; border-right:1px solid rgba(20,55,60,0.07);">
+                <div style="font-size:0.58rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--terra); margin-bottom:2px;">Origem</div>
+                <div style="font-size:0.78rem; color:var(--ink);">Expert XP 2024</div>
+              </div>
+              <div style="padding:9px 0 9px 14px;">
+                <div style="font-size:0.58rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--terra); margin-bottom:2px;">Último contato</div>
+                <div style="font-size:0.78rem; color:var(--ink);">12 abr 2026</div>
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:0; border-bottom:1px solid rgba(20,55,60,0.07);">
+              <div style="padding:9px 10px 9px 0; border-right:1px solid rgba(20,55,60,0.07);">
+                <div style="font-size:0.58rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--terra); margin-bottom:2px;">Patrimônio est.</div>
+                <div style="font-size:0.78rem; color:var(--ink);">R$ 85–140M <span style="font-size:0.6rem; color:#6a8a8f;">via VAAS</span></div>
+              </div>
+              <div style="padding:9px 0 9px 14px;">
+                <div style="font-size:0.58rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--terra); margin-bottom:2px;">Processos ativos</div>
+                <div style="font-size:0.78rem; color:#1D9E75; font-weight:600;">Nenhum</div>
+              </div>
+            </div>
+            <div style="padding:9px 0; border-bottom:1px solid rgba(20,55,60,0.07);">
+              <div style="font-size:0.58rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--terra); margin-bottom:5px;">Tags livres</div>
+              <div style="display:flex; gap:5px; flex-wrap:wrap;">
+                <span style="font-size:0.62rem; padding:2px 8px; background:rgba(176,110,74,0.1); color:var(--terra); border-radius:10px; font-weight:600;">varejo B2C</span>
+                <span style="font-size:0.62rem; padding:2px 8px; background:rgba(176,110,74,0.1); color:var(--terra); border-radius:10px; font-weight:600;">investidor ativo</span>
+                <span style="font-size:0.62rem; padding:2px 8px; background:rgba(176,110,74,0.1); color:var(--terra); border-radius:10px; font-weight:600;">fintech B2B</span>
+                <span style="font-size:0.62rem; padding:2px 8px; background:rgba(176,110,74,0.1); color:var(--terra); border-radius:10px; font-weight:600;">logística</span>
+              </div>
+            </div>
+            <div style="padding:9px 0;">
+              <div style="font-size:0.58rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--terra); margin-bottom:5px;">Histórico de interações</div>
+              <div style="display:flex; flex-direction:column; gap:4px;">
+                <div style="display:flex; gap:8px; align-items:flex-start;">
+                  <div style="font-size:0.62rem; color:var(--tl); font-weight:600; min-width:54px;">12 abr</div>
+                  <div style="font-size:0.72rem; color:#4a6a6f; line-height:1.4;">Expert XP — conversa sobre exit do fundo logístico. Mencionou interesse em clube.</div>
+                </div>
+                <div style="display:flex; gap:8px; align-items:flex-start;">
+                  <div style="font-size:0.62rem; color:var(--tl); font-weight:600; min-width:54px;">08 mai</div>
+                  <div style="font-size:0.72rem; color:#4a6a6f; line-height:1.4;">Agente: aporte R$80M anunciado. Score atualizado 87→92.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="background:var(--cl); padding:8px 18px; font-size:0.62rem; color:#6a8a8f; font-style:italic;">🔒 Vault cifrado · auditado em 08/mai 09:14 · admin: Rafael</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mockup 4: Encadeamento de agentes -->
+    <div class="demo-grid" style="margin-top: 60px;">
+      <div class="reveal">
+        <div class="demo-block-title">Encadeamento de agentes · Onda 1</div>
+        <div class="demo-block-name">Você grava 42 segundos. Quatro agentes trabalham em sequência. O banco sai atualizado.</div>
+        <div class="demo-block-desc">O fluxo de agentes da Onda 1 funciona como uma linha de montagem inteligente. Cada agente tem uma função específica — transcrever, enriquecer, pontuar, sugerir. Nenhum depende de você no meio do caminho. Você entra no início (áudio) e recebe no fim (banco atualizado + sugestão de ação).</div>
+
+        <div style="background: rgba(176,110,74,0.08); border-left: 3px solid var(--terra); padding: 14px 18px; border-radius: 8px; margin-top: 18px;">
+          <div style="font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-bottom: 6px;">Tempo médio do fluxo</div>
+          <div style="font-size: 0.82rem; color: var(--ink); line-height: 1.55;">→ Gatilho: áudio de 42s no WhatsApp<br>→ Tempo total: ~35 segundos de processamento<br>→ Saída: banco atualizado + sugestão de ação no WhatsApp</div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <div style="background:#fff; border-radius:14px; border:1px solid rgba(20,55,60,0.1); padding:20px; font-family:'DM Sans',sans-serif; box-shadow:0 8px 32px rgba(0,0,0,0.06);">
+          <!-- Gatilho -->
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+            <div style="width:36px; height:36px; border-radius:10px; background:#DCF8C6; display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0;">🎙️</div>
+            <div>
+              <div style="font-size:0.62rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--terra);">Gatilho</div>
+              <div style="font-size:0.8rem; font-weight:600; color:var(--ink);">Áudio via WhatsApp · 0:42s</div>
+              <div style="font-size:0.72rem; color:#6a8a8f;">"...Abílio falou em interesse em logística B2B e fintech..."</div>
+            </div>
+          </div>
+
+          <!-- Linha conectora -->
+          <div style="margin-left:18px; width:1px; height:12px; background:rgba(176,110,74,0.25);"></div>
+
+          <!-- Agente 1 -->
+          <div style="background:rgba(20,55,60,0.04); border-radius:10px; padding:10px 12px; border-left:3px solid var(--ink); margin-bottom:4px;">
+            <div style="font-size:0.58rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink); margin-bottom:2px;">Agente 1 · Transcritor</div>
+            <div style="font-size:0.76rem; color:var(--ink); font-weight:500;">Transcreve e estrutura o áudio</div>
+            <div style="font-size:0.7rem; color:#6a8a8f; margin-top:2px;">Extrai nomes, empresas, tópicos e sentimento da conversa</div>
+            <div style="font-size:0.62rem; color:var(--tl); margin-top:4px;">~4s · Whisper API</div>
+          </div>
+
+          <div style="margin-left:18px; width:1px; height:8px; background:rgba(176,110,74,0.25);"></div>
+
+          <!-- Agente 2 -->
+          <div style="background:rgba(176,110,74,0.05); border-radius:10px; padding:10px 12px; border-left:3px solid var(--terra); margin-bottom:4px;">
+            <div style="font-size:0.58rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--terra); margin-bottom:2px;">Agente 2 · Enriquecedor</div>
+            <div style="font-size:0.76rem; color:var(--ink); font-weight:500;">Cruza contato com base + APIs externas</div>
+            <div style="font-size:0.7rem; color:#6a8a8f; margin-top:2px;">Verifica se o contato já existe, busca dados novos (VAAS, Receita, LinkedIn)</div>
+            <div style="font-size:0.62rem; color:var(--tl); margin-top:4px;">~12s · VAAS + Receita Federal API</div>
+          </div>
+
+          <div style="margin-left:18px; width:1px; height:8px; background:rgba(176,110,74,0.25);"></div>
+
+          <!-- Agente 3 -->
+          <div style="background:rgba(67,93,81,0.06); border-radius:10px; padding:10px 12px; border-left:3px solid var(--sage); margin-bottom:4px;">
+            <div style="font-size:0.58rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--sage); margin-bottom:2px;">Agente 3 · Scoring</div>
+            <div style="font-size:0.76rem; color:var(--ink); font-weight:500;">Recalcula score com novos dados</div>
+            <div style="font-size:0.7rem; color:#6a8a8f; margin-top:2px;">Aplica os 5 critérios do Rafael. Atualiza prioridade no funil.</div>
+            <div style="font-size:0.62rem; color:var(--tl); margin-top:4px;">~8s · Claude/OpenAI + lógica de critérios</div>
+          </div>
+
+          <div style="margin-left:18px; width:1px; height:8px; background:rgba(176,110,74,0.25);"></div>
+
+          <!-- Agente 4 -->
+          <div style="background:rgba(196,131,94,0.08); border-radius:10px; padding:10px 12px; border-left:3px solid var(--tl); margin-bottom:10px;">
+            <div style="font-size:0.58rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--tl); margin-bottom:2px;">Agente 4 · Ação</div>
+            <div style="font-size:0.76rem; color:var(--ink); font-weight:500;">Gera sugestão + atualiza banco + notifica</div>
+            <div style="font-size:0.7rem; color:#6a8a8f; margin-top:2px;">Sugere conexões, prepara rascunho de e-mail, envia confirmação no WhatsApp</div>
+            <div style="font-size:0.62rem; color:var(--tl); margin-top:4px;">~11s · WhatsApp API Meta</div>
+          </div>
+
+          <!-- Output -->
+          <div style="background:var(--ink); border-radius:10px; padding:10px 14px; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <div style="font-size:0.62rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:2px;">Saída · ~35 segundos depois</div>
+              <div style="font-size:0.78rem; color:#fff; font-weight:500;">Banco atualizado + sugestão no WhatsApp</div>
+            </div>
+            <div style="font-size:1.4rem; font-weight:700; color:var(--tl); font-family:'Cormorant Garamond',serif;">✓</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Antes / Depois -->
+    <div class="reveal" style="margin-top: 60px;">
+      <div class="demo-block-title">Antes vs. Depois</div>
+      <div class="demo-block-name">Um dia normal seu — antes da Onda 1, e 45 dias depois.</div>
+    </div>
+
+    <div class="ad-grid reveal reveal-delay-1" style="margin-top: 32px;">
+      <div class="ad-col ad-col-antes">
+        <div class="ad-col-title">Hoje</div>
+        <div class="ad-col-sub">sem o ecossistema</div>
+        <div class="ad-step"><div class="ad-step-time">07:00</div><div class="ad-step-text">Acorda. Abre WhatsApp. 200+ mensagens da noite.</div></div>
+        <div class="ad-step"><div class="ad-step-time">07:45</div><div class="ad-step-text">Tenta lembrar quem chamar pra próxima reunião do clube. Abre LinkedIn.</div></div>
+        <div class="ad-step"><div class="ad-step-time">08:20</div><div class="ad-step-text">Manda áudio pro time pedindo o contato do Marcos. Espera.</div></div>
+        <div class="ad-step"><div class="ad-step-time">09:00</div><div class="ad-step-text">Reunião sem o contexto completo do último encontro.</div></div>
+        <div class="ad-step"><div class="ad-step-time">14:00</div><div class="ad-step-text">Tenta lembrar do que discutiu com Marina semana passada. Não acha no celular.</div></div>
+        <div class="ad-step"><div class="ad-step-time">23:00</div><div class="ad-step-text">Acorda às 4h pensando em problemas — sua frase no Deep Story.</div></div>
+        <div class="ad-total">
+          <div class="ad-total-label">Tempo "garimpando"</div>
+          <div class="ad-total-num">~2h30/dia</div>
+        </div>
+      </div>
+
+      <div class="ad-col ad-col-depois">
+        <div class="ad-col-title">Daqui a 45 dias</div>
+        <div class="ad-col-sub">com a armadura ligada</div>
+        <div class="ad-step"><div class="ad-step-time">07:00</div><div class="ad-step-text">Daily Briefing já chegou. 4 reuniões com briefing pronto. 3 alertas claros.</div></div>
+        <div class="ad-step"><div class="ad-step-time">07:45</div><div class="ad-step-text">Pergunta no WhatsApp "quem chamar pro próximo encontro?" — recebe 5 nomes ranqueados.</div></div>
+        <div class="ad-step"><div class="ad-step-time">09:00</div><div class="ad-step-text">Reunião com último contato + contexto + pergunta-âncora sugerida.</div></div>
+        <div class="ad-step"><div class="ad-step-time">14:00</div><div class="ad-step-text">"Lembra do que discutimos com Marina?" → resposta em 5s, com data e tópicos.</div></div>
+        <div class="ad-step"><div class="ad-step-time">17:30</div><div class="ad-step-text">Grava 30s pós-almoço com Abílio. Sistema atualiza CRM, sugere 3 conexões, prepara e-mail.</div></div>
+        <div class="ad-step"><div class="ad-step-time">23:00</div><div class="ad-step-text">Dorme tranquilo. Se algo mudar, o sistema te avisa de manhã.</div></div>
+        <div class="ad-total">
+          <div class="ad-total-label">Tempo recuperado</div>
+          <div class="ad-total-num">~2h/dia</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== INVESTIMENTO ===== -->
+<section class="invest-section" id="investimento">
+  <div class="invest-inner">
+    <div class="invest-header reveal">
+      <span class="section-label">Investimento</span>
+      <h2 class="section-title section-title-light">Onda 1, com <em>condição de lançamento.</em></h2>
+      <p>Esta proposta cobre exclusivamente a Onda 1 (45 dias). Ondas 2 e 3 têm escopo definido e são discutidas em momento próprio, com base no que você sentir entregue.</p>
+    </div>
+
+    <div class="invest-modules-grid reveal">
+      <div class="invest-mod-card">
+        <div>
+          <div class="invest-mod-tag">Implementação · 45 dias</div>
+          <div class="invest-mod-name">Onda 1 — A armadura básica</div>
+          <div class="invest-mod-desc">Vault cifrado + extração da agenda + enriquecimento com background check via API especializada + scoring por critérios DELE + CRM conversacional via WhatsApp + Daily Briefing 7h + bot Instagram. Go-live em até 45 dias após aceite.</div>
+        </div>
+        <div class="invest-mod-price-block">
+          <div class="invest-mod-price-label">Investimento de implementação</div>
+          <div class="invest-mod-price">R$ 14.900</div>
+          <div class="invest-mod-sub">Pagamento: 50% no aceite + 50% no go-live (Dia 45)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="invest-pacote-card reveal reveal-delay-1">
+      <div class="invest-pacote-text">
+        <h3>É barato porque é caso de lançamento. Não porque vale pouco.</h3>
+        <p>A NewScale escolheu este projeto como <strong>caso de lançamento estratégico</strong>. Você é uma das vozes mais relevantes do mercado financeiro brasileiro e está num momento único — Hot Market, ANCORD, e agora o clube.</p>
+        <p>Em vez de cobrar o que vale (R$ 60-120k de setup pra esse escopo), <strong>investimos junto com você</strong>: ticket de entrada compatível com decisão de impulso, e oportunidade de continuarmos juntos nas Ondas 2 e 3.</p>
+        <p>Você não está pagando consultoria. <strong>Está garantindo prioridade num projeto que a NewScale quer construir do zero.</strong></p>
+        <div class="invest-validade">Condição válida por 14 dias · até 21 de maio de 2026</div>
+      </div>
+      <div>
+        <div style="text-align: right;">
+          <div style="font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 6px;">Mensalidade pós-Onda 1</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 700; color: var(--tl); line-height: 1; margin-bottom: 8px;">R$ 4.200<span style="font-size: 1rem; color: rgba(255,255,255,0.55);">/mês</span></div>
+          <div style="font-size: 0.74rem; color: rgba(255,255,255,0.6); line-height: 1.5;">A partir do Dia 46 · cobre operação, manutenção, ajustes e otimizações contínuas</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mens-grid">
+      <div class="mens-title">O que está coberto na mensalidade</div>
+      <div class="mens-card">
+        <div class="mens-card-icon">🛠️</div>
+        <div class="mens-card-title">Manutenção e otimização</div>
+        <div class="mens-card-desc">Tudo do escopo da Onda 1 funcionando todo dia, com ajustes conforme uso real seu.</div>
+      </div>
+      <div class="mens-card">
+        <div class="mens-card-icon">📊</div>
+        <div class="mens-card-title">Revisão mensal de uso</div>
+        <div class="mens-card-desc">Análise dos seus padrões de consulta, sugestão de melhorias, novas regras conforme você precisa.</div>
+      </div>
+      <div class="mens-card">
+        <div class="mens-card-icon">🔐</div>
+        <div class="mens-card-title">Segurança e backup</div>
+        <div class="mens-card-desc">Auditoria contínua de acesso, backup diário criptografado, monitoramento 24/7 da infra.</div>
+      </div>
+      <div class="mens-card">
+        <div class="mens-card-icon">💬</div>
+        <div class="mens-card-title">Suporte direto da Bruna</div>
+        <div class="mens-card-desc">Você fala com a fundadora — não com SAC. Resposta em horas úteis, não dias.</div>
+      </div>
+      <div class="mens-card">
+        <div class="mens-card-icon">🆕</div>
+        <div class="mens-card-title">Pequenos incrementos</div>
+        <div class="mens-card-desc">Novos filtros, novas integrações leves, novos prompts conforme sua operação evolui.</div>
+      </div>
+      <div class="mens-card">
+        <div class="mens-card-icon">📈</div>
+        <div class="mens-card-title">Relatório de impacto</div>
+        <div class="mens-card-desc">Você vê o ROI real todo mês: tempo recuperado, leads identificados, decisões aceleradas.</div>
+      </div>
+    </div>
+
+    <div class="roi-check reveal">
+      <div class="roi-check-text">
+        <h4>Sanity check de ROI</h4>
+        <p><strong>Investimento Onda 1:</strong> R$ 14.900 · ~0,1% do faturamento ano 1 do clube (50 membros × R$ 300k = R$ 15M).</p>
+        <p><strong>Mensalidade:</strong> R$ 4.200 · ~1,4% da mensalidade de UM membro do clube (R$ 25k/mês).</p>
+        <p>Se a Onda 1 mapear apenas <strong>1 lead</strong> que vira membro do clube, paga 20× o investimento de implementação.</p>
+      </div>
+      <div class="roi-payback">
+        <div class="roi-payback-label">Payback estimado</div>
+        <div class="roi-payback-num">&lt; 1 mês</div>
+        <div class="roi-payback-sub">com 1 membro fechado a partir da base mapeada</div>
+      </div>
+    </div>
+
+    <div class="invest-aviso">
+      Custos de infraestrutura e APIs externas (armazenamento de dados, hospedagem, segurança, motores de IA, API oficial do Meta e demais integrações) são <strong>faturados diretamente contra você</strong> — sem intermediação da NewScale e sem mark-up. Estimativa para Onda 1: R$ 800–1.500/mês, dependendo do volume de consultas e do nível de armazenamento ativo.
+    </div>
+  </div>
+</section>
+
+<!-- ===== ONDA FUTURA ===== -->
+<section class="onda-section">
+  <div class="onda-inner">
+    <div class="onda-grid">
+      <div class="onda-text reveal">
+        <span class="section-label" style="color: var(--tl);">Ondas 2 e 3 (escopo, não cotação)</span>
+        <h2 class="section-title section-title-light">Você decide depois <em>do que viu funcionar.</em></h2>
+        <p>O escopo das Ondas 2 e 3 já está mapeado — está nos módulos abertos acima. <strong>O que não está aqui é o investimento.</strong></p>
+        <p>Por escolha. Você ainda não viu a Onda 1 rodar. Não faz sentido você fechar nada agora. <strong>Quando a Onda 1 estiver entregue, você decide se quer seguir, e em que ritmo.</strong></p>
+        <p>A NewScale aceita esse risco porque acredita que a Onda 1 vai vender as próximas ondas sozinha. Se não vender, é sinal claro pra você não seguir — e nós aprendemos.</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="onda-card">
+          <div class="onda-card-tag">Onda 2 · ~90 dias</div>
+          <div class="onda-card-name">O clube nasce diferente</div>
+          <ul>
+            <li>Matching IA entre membros (semanal)</li>
+            <li>Dossiê pré-evento personalizado</li>
+            <li>Concierge IA por membro (24/7)</li>
+            <li>AMA assíncrona com sua aprovação</li>
+            <li>Background check automatizado</li>
+            <li>Memory cards de cada membro</li>
+            <li>Hot Market — pré e pós-produção</li>
+            <li>Régua de cobrança + conciliação + NF</li>
+            <li>Dashboard real-time do clube</li>
+          </ul>
+        </div>
+
+        <div class="onda-card" style="margin-top: 16px;">
+          <div class="onda-card-tag">Onda 3 · ~240 dias</div>
+          <div class="onda-card-name">Plataforma — você vira "operador-zero"</div>
+          <ul>
+            <li>RAG da comunidade (memória viva)</li>
+            <li>Marketplace de deal-flow</li>
+            <li>Voz estratégica do Rafael</li>
+            <li>Detecção precoce de churn</li>
+            <li>Co-piloto da decisão por membro</li>
+            <li>Compliance ANCORD-aware</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GARANTIA ===== -->
+<section class="garantia-section">
+  <div class="garantia-inner">
+    <div class="garantia-block reveal">
+      <div class="garantia-text">
+        <h3>Mexemos até funcionar.</h3>
+        <p>Nada de "entregamos o que estava no contrato e tchau". Se na Onda 1 algum bloco não atende ao escopo combinado, a NewScale continua trabalhando — sem cobrança adicional — até estar redondo. <strong>Seu critério, não o nosso.</strong></p>
+        <p style="margin-top: 14px;">Você não está sozinho no go-live — e também não estará no dia seguinte.</p>
+      </div>
+      <div class="garantia-selo">
+        <div class="garantia-selo-label">Compromisso</div>
+        <div class="garantia-selo-num">100%</div>
+        <div class="garantia-selo-sub">do escopo entregue ou seguimos trabalhando</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== POR QUE NEWSCALE ===== -->
+<section class="pq-section">
+  <div class="pq-inner">
+    <div class="reveal" style="margin-bottom: 56px;">
+      <span class="section-label">Por que a NewScale</span>
+      <h2 class="section-title">Implementamos o que <em>vendemos.</em></h2>
+    </div>
+
+    <div class="quote-block reveal">
+      <div class="quote-text">Cada projeto começa pela conversa — não pelo contrato. A gente entende como a operação funciona hoje, quais as regras de negócio, o que a equipe precisa. Só depois constrói. E depois que entrega, a gente fica — otimizando, ajustando e evoluindo junto com o seu negócio.</div>
+      <div class="quote-author">— Bruna Santanna, Co-Fundadora NewScale Consulting</div>
+    </div>
+
+    <div class="metodologia-grid">
+      <div class="met-card reveal">
+        <div class="met-num">01</div>
+        <div class="met-title">Consultoria sistêmica</div>
+        <div class="met-text">Visão completa do negócio: atendimento, operação e financeiro. IA como motor de escala — não de cosmética.</div>
+      </div>
+      <div class="met-card reveal reveal-delay-1">
+        <div class="met-num">02</div>
+        <div class="met-title">Roadmap faseado</div>
+        <div class="met-text">Priorizamos os processos com maior potencial de retorno antes de qualquer outra coisa.</div>
+      </div>
+      <div class="met-card reveal reveal-delay-2">
+        <div class="met-num">03</div>
+        <div class="met-title">Implementação integrada</div>
+        <div class="met-text">Conectamos seus sistemas, eliminamos tarefas manuais e construímos fluxos inteligentes nos canais que sua equipe já usa.</div>
+      </div>
+      <div class="met-card reveal">
+        <div class="met-num">04</div>
+        <div class="met-title">Treinamento das equipes</div>
+        <div class="met-text">Cada pessoa aprende o papel no novo fluxo. O humano monitora e decide — a IA faz o operacional.</div>
+      </div>
+      <div class="met-card reveal reveal-delay-1">
+        <div class="met-num">05</div>
+        <div class="met-title">Acompanhamento de KPIs</div>
+        <div class="met-text">Métricas definidas juntos antes de começar. Você sabe o que esperar — e como acompanhar o ganho real.</div>
+      </div>
+      <div class="met-card reveal reveal-delay-2">
+        <div class="met-num">06</div>
+        <div class="met-title">Sustentação contínua</div>
+        <div class="met-text">Monitoramento, otimizações e manutenção para que o sistema evolua junto com o negócio — não fique parado no tempo.</div>
+      </div>
+    </div>
+
+    <div class="fundadores-grid">
+      <div class="fundador-card reveal">
+        <img class="fundador-photo" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG" alt="Bruna Santanna">
+        <div class="fundador-info">
+          <div class="fundador-name">Bruna Santanna</div>
+          <div class="fundador-role">Co-Fundadora · NewScale</div>
+          <div class="fundador-bio">ESPM. Empresária há 10+ anos. Mentora de IA no programa Potenc.IA. Professora de IA para equipes corporativas. Implementa IA no próprio negócio todos os dias — só vende o que usa.</div>
+          <div class="fundador-tags">
+            <div class="fundador-tag">SulAmérica</div>
+            <div class="fundador-tag">Whirlpool</div>
+            <div class="fundador-tag">Blackbox AI</div>
+            <div class="fundador-tag">Potenc.IA</div>
+          </div>
+        </div>
+      </div>
+      <div class="fundador-card reveal reveal-delay-1">
+        <img class="fundador-photo" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/BRUNO-VARELLA-PQ.jpeg" alt="Bruno Varella">
+        <div class="fundador-info">
+          <div class="fundador-name">Bruno Varella</div>
+          <div class="fundador-role">Co-Fundador · NewScale</div>
+          <div class="fundador-bio">ESPM. 17+ anos em Marketing, Produto e Novos Negócios. Ex-Warner Bros., Ex-Natura &amp; Co. Já implantou Agentes de IA em redes de franquias com 700+ unidades.</div>
+          <div class="fundador-tags">
+            <div class="fundador-tag">Warner Bros.</div>
+            <div class="fundador-tag">Natura &amp; Co</div>
+            <div class="fundador-tag">700+ franquias</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="reveal" style="margin-bottom: 40px;">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title">As 7 perguntas que <em>você provavelmente tem.</em></h2>
+    </div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <div class="faq-q-text">Por que tão barato?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-a">
+        Porque a NewScale escolheu esse projeto como <strong>caso de lançamento estratégico</strong>. Construir o ecossistema AI-first de uma figura como você, num projeto novo (o clube) e em momento de pico de visibilidade (Hot Market, ANCORD), vale mais pra nós do que o ticket de hoje. Não estamos cobrando o que vale — estamos investindo numa parceria que pode crescer pelas Ondas 2 e 3, e por outros projetos seus.
+      </div>
+    </div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <div class="faq-q-text">Vocês vão acessar minha agenda do iPhone — como garantem privacidade?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-a">
+        Você executa o export do iCloud (vCard) — a NewScale não toca no seu Apple ID. O arquivo vai pra um vault dedicado, com cifragem em repouso, RLS por usuário e infra isolada. Você é o único administrador. Logs imutáveis registram toda consulta. Backup diário criptografado. Se você decidir parar, você leva tudo num clique e nós apagamos da nossa infra.
+      </div>
+    </div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <div class="faq-q-text">Isso de algum jeito atrapalha minha posição na XP ou na ANCORD?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-a">
+        Não. Este é um <strong>projeto pessoal seu</strong> — independente, em infra separada, sem qualquer integração com sistemas internos da XP ou da ANCORD. Você é o cliente. A NewScale entende a sensibilidade do seu cargo (ANCORD especialmente) e desenha tudo com compliance em mente — informação sensível de mercado, por exemplo, é bloqueada por design no sistema (Onda 3).
+      </div>
+    </div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <div class="faq-q-text">E se eu quiser parar depois de 45 dias?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-a">
+        Sem multa, sem fidelidade. Você cancela a mensalidade quando quiser — e leva todos os dados, schema e prompts num clique. A NewScale apaga sua infra da nossa nuvem mediante sua confirmação. Mensalidades pagas até o cancelamento não são reembolsadas; mensalidades futuras são canceladas no ato.
+      </div>
+    </div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <div class="faq-q-text">Os dados dos meus contatos vão pra terceiros?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-a">
+        Não. Sua base é sua e fica isolada na sua infra. Para enriquecer um contato, fazemos consultas pontuais a fontes públicas (Receita, LinkedIn público, mídia). Para o scoring, usamos APIs de IA (OpenAI/Anthropic) com a opção <strong>"no-training"</strong> ativada — o conteúdo enviado nunca treina os modelos deles. Tudo documentado e auditável.
+      </div>
+    </div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <div class="faq-q-text">Vocês usam o que aprendem aqui pra outros clientes?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-a">
+        Aprendemos sim — sobre <strong>arquitetura, padrões e técnicas</strong>. Mas nenhum dado seu, nenhum nome, nenhum critério específico vaza. Estabelecemos NDA antes de começar e revisamos contigo o que pode ou não virar caso público no futuro (se algum dia rolar). Por padrão, a resposta é: nada sai sem sua aprovação por escrito.
+      </div>
+    </div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <div class="faq-q-text">Por que devo confiar uma operação tão sensível à NewScale?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-a">
+        Porque a Onda 1 é desenhada exatamente pra você responder essa pergunta sozinho em 45 dias. Você verá funcionando, terá toda a auditoria, terá a infra na sua mão. <strong>Confiança a gente não pede no slide — a gente entrega na operação.</strong> Se em 45 dias não convencer, você cancela. Se convencer, conversamos sobre as Ondas 2 e 3 com base no que você sentiu funcionar.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== PRÓXIMOS PASSOS ===== -->
+<section class="passos-section">
+  <div class="passos-inner">
+    <div class="reveal">
+      <span class="section-label">Próximos passos</span>
+      <h2 class="section-title section-title-light">45 dias até o <em>go-live da Onda 1.</em></h2>
+    </div>
+
+    <div class="passos-list">
+      <div class="step-item reveal">
+        <div class="step-num">1</div>
+        <div>
+          <div class="step-prazo">Dia 0 · após seu aceite</div>
+          <div class="step-title">Aceite + NDA + Kickoff de 90 minutos</div>
+          <div class="step-desc">Assinatura digital, NDA recíproco, e 1 reunião de 90min para alinhar critérios do scoring (validação dos 5 critérios mapeados), prioridade de filtros e pontos de privacidade.</div>
+        </div>
+      </div>
+
+      <div class="step-item reveal">
+        <div class="step-num">2</div>
+        <div>
+          <div class="step-prazo">Dias 1–5</div>
+          <div class="step-title">Setup da infra cifrada</div>
+          <div class="step-desc">Vault dedicado provisionado, schema modular configurado, logs de auditoria ativos. Você recebe credenciais de administrador único.</div>
+        </div>
+      </div>
+
+      <div class="step-item reveal">
+        <div class="step-num">3</div>
+        <div>
+          <div class="step-prazo">Dias 6–18</div>
+          <div class="step-title">Extração da agenda + enriquecimento + background check</div>
+          <div class="step-desc">Você executa o export iCloud (15 min). NewScale processa, deduplica, enriquece via API especializada com dados que não estão no Google. Primeira versão do scoring rodando.</div>
+        </div>
+      </div>
+
+      <div class="step-item reveal">
+        <div class="step-num">4</div>
+        <div>
+          <div class="step-prazo">Dias 19–30</div>
+          <div class="step-title">CRM no WhatsApp + Daily Briefing 7h</div>
+          <div class="step-desc">Configuração do agente Furla News no seu WhatsApp. Calibragem do tom, dos alertas, do horário. Primeiro Briefing teste no Dia 22.</div>
+        </div>
+      </div>
+
+      <div class="step-item reveal">
+        <div class="step-num">5</div>
+        <div>
+          <div class="step-prazo">Dias 31–42</div>
+          <div class="step-title">Bot Instagram + integração completa ao banco</div>
+          <div class="step-desc">Bot configurado no DM do @rafaelfurla com regras de qualificação. Tudo migrando para o banco unificado com origem identificada e scoring automático.</div>
+        </div>
+      </div>
+
+      <div class="step-item reveal">
+        <div class="step-num">6</div>
+        <div>
+          <div class="step-prazo">Dia 45 · Go-live</div>
+          <div class="step-title">Revisão de resultados + decisão sobre Onda 2</div>
+          <div class="step-desc">Reunião de 60min: tempo recuperado, leads identificados, primeiros aprendizados. Você decide se segue pra Onda 2, e em que ritmo.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="passos-frase">"Você não está sozinho no go-live — e também não estará no dia seguinte."</div>
+  </div>
+</section>
+
+<!-- ===== CTA FECHAMENTO ===== -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-fechamento-inner">
+      <div class="cta-validade">CONDIÇÃO VÁLIDA ATÉ 21 DE MAIO DE 2026</div>
+      <h2>Rafael, vamos ligar a armadura?<br><em>Quanto antes começa, antes você sente.</em></h2>
+      <p>Onda 1 entregue em 45 dias por R$ 14.900. Mensalidade de R$ 4.200 a partir do Dia 46. Ondas 2 e 3 só se você decidir, depois de ver funcionando. <strong>Risco mínimo, decisão sua.</strong></p>
+
+      <div class="cta-buttons">
+        <a class="cta-btn cta-btn-primary" href="https://wa.me/5511971901020?text=Bruna%2C%20li%20a%20proposta%20da%20Onda%201%20e%20quero%20fechar.%20Vamos%20agendar%20o%20kickoff%3F" target="_blank">Aceitar e agendar o kickoff</a>
+        <a class="cta-btn cta-btn-secondary" href="https://wa.me/5511971901020?text=Bruna%2C%20li%20a%20proposta%20e%20tenho%20algumas%20d%C3%BAvidas%20antes%20de%20decidir." target="_blank">Tirar uma dúvida primeiro</a>
+      </div>
+
+      <div class="cta-metricas">
+        <div>
+          <div class="cta-met-num">3</div>
+          <div class="cta-met-label">dias até o kickoff</div>
+        </div>
+        <div>
+          <div class="cta-met-num">45</div>
+          <div class="cta-met-label">dias até o go-live</div>
+        </div>
+        <div>
+          <div class="cta-met-num">2h</div>
+          <div class="cta-met-label">por dia recuperadas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-brand">NewScale<span>Consulting</span></div>
+  <div class="footer-date">Proposta exclusiva · Rafael Furlanetti · v4<br>08 de maio de 2026 · Validade até 21/maio/2026</div>
+</footer>
+
+<script>
+// Navbar scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Módulos accordion
+function toggleModulo(card) {
+  card.classList.toggle('open');
+}
+
+// FAQ accordion (fecha outros)
+function toggleFaq(item) {
+  document.querySelectorAll('.faq-item.open').forEach(other => {
+    if (other !== item) other.classList.remove('open');
+  });
+  item.classList.toggle('open');
+}
+
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.06 });
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
