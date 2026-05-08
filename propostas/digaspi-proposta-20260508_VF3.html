@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta | Di Gaspi & NewScale Consulting</title>
+<meta property="og:title" content="Proposta | Di Gaspi & NewScale Consulting">
+<meta property="og:description" content="Uma proposta construída a partir da operação real da Di Gaspi — um plano desenhado para liberar o time do trabalho que uma máquina faz melhor.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Proposta | Di Gaspi & NewScale Consulting">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #14373C;
+  --ink2: #1a4449;
+  --sage: #435D51;
+  --terra: #B06E4A;
+  --tl: #c4835e;
+  --sand: #A38362;
+  --cream: #E8E6E0;
+  --cl: #F4F3EF;
+  --white: #FAFAF8;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; font-weight: 400; color: var(--ink); background: var(--white); overflow-x: hidden; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(20,55,60,0.96); backdrop-filter: blur(12px); padding: 16px 48px; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo img { height: 44px; }
+.nav-badge { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+
+/* HERO */
+.hero { min-height: 100vh; background: linear-gradient(145deg, #0c2427 0%, #14373C 38%, #1d4840 72%, #435D51 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 120px 40px 80px; position: relative; overflow: hidden; }
+.hero-topo { position: absolute; inset: 0; opacity: 0.08; pointer-events: none; }
+.hero-topo svg { width: 100%; height: 100%; }
+.grain { position: absolute; inset: 0; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); opacity: 0.03; }
+.hero-badge { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--tl); margin-bottom: 20px; animation: fadeUp 0.7s ease 0.2s both; }
+.hero-eyebrow { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 28px; animation: fadeUp 0.7s ease 0.4s both; }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 700; color: #fff; line-height: 1.08; margin-bottom: 28px; animation: fadeUp 0.7s ease 0.6s both; }
+.hero h1 em { font-style: italic; color: rgba(255,255,255,0.7); }
+.hero-desc { font-size: 0.97rem; color: rgba(255,255,255,0.55); line-height: 1.75; max-width: 560px; margin: 0 auto 52px; animation: fadeUp 0.7s ease 0.8s both; }
+.hero-cta { animation: fadeUp 0.7s ease 1s both; }
+.hero-cta a { display: inline-flex; align-items: center; gap: 10px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.3s; }
+.hero-cta a:hover { color: #fff; }
+.scroll-arrow { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 1rem; transition: border-color 0.3s; }
+.hero-cta a:hover .scroll-arrow { border-color: rgba(255,255,255,0.6); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+/* COMMONS */
+section { padding: 100px 48px; }
+.container { max-width: 1100px; margin: 0 auto; }
+.section-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--terra); margin-bottom: 16px; display: block; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 3.4vw, 2.8rem); font-weight: 700; line-height: 1.12; color: var(--ink); margin-bottom: 20px; }
+.section-title em { font-style: italic; color: var(--terra); }
+.section-title.light { color: #fff; }
+.section-title.light em { color: rgba(255,255,255,0.6); }
+.section-sub { font-size: 0.9rem; color: rgba(20,55,60,0.6); line-height: 1.75; max-width: 640px; }
+
+/* CONTEXTO */
+#contexto { background: var(--cl); }
+.intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 48px; }
+.intro-text p { font-size: 0.9rem; color: rgba(20,55,60,0.7); line-height: 1.8; margin-bottom: 18px; }
+.intro-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.stat-card { border-radius: 14px; padding: 28px 24px; display: flex; flex-direction: column; gap: 8px; }
+.stat-card:nth-child(1) { background: var(--ink); }
+.stat-card:nth-child(2) { background: var(--terra); }
+.stat-card:nth-child(3) { background: var(--sage); }
+.stat-card:nth-child(4) { background: var(--ink2); }
+.stat-number { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 700; color: #fff; line-height: 1; }
+.stat-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+
+/* CUSTO DA INAÇÃO */
+.custo-section { background: var(--white); padding: 100px 48px; }
+.custo-inner { max-width: 1100px; margin: 0 auto; }
+.custo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.custo-text p { font-size: 0.95rem; color: #2C4A4E; line-height: 1.8; margin-bottom: 18px; }
+.custo-list { background: var(--cl); border-radius: 16px; padding: 32px; }
+.custo-item { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding: 16px 0; border-bottom: 1px dashed rgba(20,55,60,0.15); }
+.custo-item-label { font-size: 0.88rem; font-weight: 500; color: #2C4A4E; line-height: 1.5; padding-right: 16px; }
+.custo-item-sub { font-size: 0.75rem; color: #7a9a9f; margin-top: 2px; }
+.custo-item-value { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--terra); white-space: nowrap; }
+.custo-total { padding-top: 22px; margin-top: 6px; border-top: 2px solid var(--ink); display: flex; justify-content: space-between; align-items: center; }
+.custo-total-label { font-size: 0.82rem; font-weight: 700; color: var(--ink); text-transform: uppercase; letter-spacing: 0.08em; }
+.custo-total-value { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--ink); }
+.custo-aviso { margin-top: 20px; font-size: 0.76rem; color: #8aabaf; line-height: 1.6; padding: 12px 16px; background: rgba(20,55,60,0.03); border-radius: 8px; border-left: 3px solid rgba(20,55,60,0.1); }
+
+/* DORES */
+#dores { background: var(--ink); }
+#dores .section-title { color: #fff; }
+#dores .section-label { color: var(--tl); }
+#dores .section-sub { color: rgba(255,255,255,0.45); }
+.dores-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+.dore-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 32px 28px; position: relative; overflow: hidden; transition: border-color 0.3s, background 0.3s; }
+.dore-card:hover { border-color: rgba(176,110,74,0.3); background: rgba(176,110,74,0.05); }
+.dore-num { font-family: 'Cormorant Garamond', serif; font-size: 5rem; font-weight: 700; color: rgba(255,255,255,0.04); position: absolute; top: 8px; right: 20px; line-height: 1; pointer-events: none; }
+.dore-title { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tl); margin-bottom: 12px; }
+.dore-text { font-size: 0.86rem; color: rgba(255,255,255,0.6); line-height: 1.75; }
+
+/* PROPOSTA */
+#proposta { background: var(--white); }
+.proposta-intro { font-size: 0.88rem; color: rgba(20,55,60,0.55); line-height: 1.75; margin-bottom: 48px; max-width: 680px; }
+.fase-block { border-radius: 16px; overflow: hidden; margin-bottom: 20px; border: 1px solid rgba(20,55,60,0.1); cursor: pointer; transition: box-shadow 0.3s; }
+.fase-block:hover { box-shadow: 0 8px 32px rgba(20,55,60,0.1); }
+.fase-header { display: flex; justify-content: space-between; align-items: center; padding: 28px 32px; gap: 20px; background: var(--ink); }
+.fase-header.terra { background: var(--terra); }
+.fase-tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 6px; }
+.fase-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 6px; }
+.fase-duration { font-size: 0.75rem; color: rgba(255,255,255,0.45); }
+.fase-right { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+.fase-num-badge { width: 52px; height: 52px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: rgba(255,255,255,0.6); }
+.fase-arrow svg { width: 20px; height: 20px; transition: transform 0.3s; }
+.fase-block.open .fase-arrow svg { transform: rotate(180deg); }
+.fase-body { background: var(--cl); max-height: 0; overflow: hidden; transition: max-height 0.5s ease, padding 0.3s ease; padding: 0 32px; }
+.fase-block.open .fase-body { max-height: 2000px; padding: 32px; }
+.modulo-card { background: var(--white); border: 1px solid rgba(20,55,60,0.08); border-radius: 12px; padding: 24px 28px; margin-bottom: 14px; cursor: pointer; transition: border-color 0.3s, box-shadow 0.3s; }
+.modulo-card:last-child { margin-bottom: 0; }
+.modulo-card:hover { border-color: rgba(176,110,74,0.25); box-shadow: 0 4px 20px rgba(20,55,60,0.07); }
+.modulo-header { display: flex; align-items: flex-start; gap: 16px; }
+.modulo-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+.modulo-meta { flex: 1; }
+.modulo-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--terra); margin-bottom: 4px; }
+.modulo-title { font-size: 0.95rem; font-weight: 600; color: var(--ink); line-height: 1.4; margin-bottom: 10px; }
+.modulo-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.06em; padding: 3px 10px; border-radius: 20px; background: rgba(176,110,74,0.09); color: var(--terra); text-transform: uppercase; }
+.modulo-arrow { flex-shrink: 0; color: rgba(20,55,60,0.3); font-size: 1.2rem; transition: transform 0.3s; }
+.modulo-card.open .modulo-arrow { transform: rotate(180deg); }
+.modulo-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; margin-top: 0; }
+.modulo-card.open .modulo-body { max-height: 1000px; margin-top: 20px; }
+.value-box { background: rgba(20,55,60,0.04); border-left: 3px solid var(--terra); border-radius: 0 8px 8px 0; padding: 16px 20px; margin-bottom: 18px; display: flex; gap: 14px; align-items: flex-start; }
+.vb-icon { font-size: 1.2rem; flex-shrink: 0; }
+.vb-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-bottom: 5px; }
+.vb-text { font-size: 0.86rem; color: var(--ink); line-height: 1.65; font-weight: 500; }
+.modulo-desc { font-size: 0.86rem; color: rgba(20,55,60,0.65); line-height: 1.75; margin-bottom: 14px; }
+.modulo-items { list-style: none; padding: 0; }
+.modulo-items li { font-size: 0.84rem; color: rgba(20,55,60,0.7); line-height: 1.65; padding: 8px 0; border-bottom: 1px solid rgba(20,55,60,0.06); padding-left: 16px; position: relative; }
+.modulo-items li::before { content: '→'; position: absolute; left: 0; color: var(--terra); font-size: 0.75rem; }
+.modulo-items li:last-child { border-bottom: none; }
+.modulo-items li strong { color: var(--ink); font-weight: 600; }
+.segunda-onda { background: rgba(20,55,60,0.03); border: 1px dashed rgba(20,55,60,0.15); border-radius: 14px; padding: 28px 32px; margin-top: 8px; }
+.segunda-onda-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(20,55,60,0.35); margin-bottom: 10px; }
+.segunda-onda h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; color: rgba(20,55,60,0.5); margin-bottom: 8px; }
+.segunda-onda p { font-size: 0.84rem; color: rgba(20,55,60,0.45); line-height: 1.7; }
+
+/* COMO FUNCIONA */
+.demo-section { background: var(--cl); padding: 100px 48px; }
+.demo-inner { max-width: 1100px; margin: 0 auto; }
+.demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-bottom: 72px; }
+.demo-text h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 700; color: var(--ink); margin-bottom: 16px; line-height: 1.25; }
+.demo-text p { font-size: 0.9rem; color: #4a6a6f; line-height: 1.8; margin-bottom: 14px; }
+.demo-feature { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px; }
+.demo-feature-icon { font-size: 1.1rem; margin-top: 2px; }
+.demo-feature-text { font-size: 0.86rem; color: #4a6a6f; line-height: 1.65; }
+.demo-feature-text strong { color: var(--ink); }
+
+/* FLOW MOCKUP */
+.flow-box { background: #0f2a2e; border-radius: 20px; overflow: hidden; box-shadow: 0 24px 60px rgba(14,40,44,0.2); }
+.flow-topbar { background: #0a2025; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.flow-dots { display: flex; gap: 5px; }
+.flow-dots span { width: 10px; height: 10px; border-radius: 50%; }
+.flow-title-bar { font-size: 0.65rem; color: rgba(255,255,255,0.25); letter-spacing: 0.08em; }
+.flow-status { display: flex; align-items: center; gap: 6px; font-size: 0.65rem; color: rgba(255,255,255,0.25); }
+.flow-status-dot { width: 6px; height: 6px; border-radius: 50%; background: #28c840; }
+.flow-body { padding: 20px; display: flex; flex-direction: column; gap: 8px; }
+.flow-step { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.03); }
+.flow-step.active { background: rgba(196,131,94,0.1); border-color: rgba(196,131,94,0.3); }
+.flow-step.done { background: rgba(67,93,81,0.1); border-color: rgba(67,93,81,0.25); }
+.flow-step-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+.flow-step-label { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 2px; }
+.flow-step.active .flow-step-label { color: var(--tl); }
+.flow-step.done .flow-step-label { color: rgba(168,197,160,0.7); }
+.flow-step-text { font-size: 0.74rem; color: rgba(255,255,255,0.55); line-height: 1.45; }
+.flow-step.active .flow-step-text { color: rgba(255,255,255,0.85); }
+.flow-step.done .flow-step-text { color: rgba(255,255,255,0.4); }
+.flow-connector { width: 1px; height: 8px; background: rgba(255,255,255,0.1); margin-left: 28px; }
+.flow-result { background: rgba(168,197,160,0.08); border: 1px solid rgba(168,197,160,0.2); border-radius: 10px; padding: 10px 12px; }
+.flow-result-label { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(168,197,160,0.7); margin-bottom: 3px; }
+.flow-result-text { font-size: 0.74rem; color: rgba(255,255,255,0.6); line-height: 1.45; }
+
+/* EMAIL MOCKUP */
+.email-box { background: #1e1e1e; border-radius: 20px; overflow: hidden; box-shadow: 0 24px 60px rgba(14,40,44,0.2); font-family: -apple-system, Arial, sans-serif; }
+.email-topbar { background: #2d2d2d; padding: 10px 16px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.email-topbar-dots { display: flex; gap: 5px; }
+.email-topbar-dots span { width: 10px; height: 10px; border-radius: 50%; }
+.email-client-bar { font-size: 0.6rem; color: rgba(255,255,255,0.2); letter-spacing: 0.06em; }
+.email-header-row { background: #252525; padding: 14px 18px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.email-from { font-size: 0.7rem; color: rgba(255,255,255,0.35); margin-bottom: 3px; }
+.email-from span { color: var(--tl); }
+.email-subject { font-size: 0.82rem; font-weight: 600; color: #fff; }
+.email-body { padding: 18px; background: #f8f6f2; }
+.email-greeting { font-size: 0.78rem; color: #2C4A4E; margin-bottom: 10px; line-height: 1.5; }
+.email-summary-label { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-bottom: 8px; }
+.email-nf-row { display: flex; justify-content: space-between; align-items: center; padding: 7px 10px; border-radius: 7px; margin-bottom: 4px; background: #fff; border: 1px solid rgba(20,55,60,0.08); }
+.email-nf-row.alert { background: #fff8f5; border-color: rgba(176,110,74,0.25); }
+.email-nf-name { font-size: 0.72rem; font-weight: 600; color: #14373C; }
+.email-nf-value { font-size: 0.72rem; color: #6a8a8f; }
+.email-nf-badge { font-size: 0.55rem; font-weight: 700; padding: 2px 7px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.06em; }
+.badge-ok-email { background: rgba(67,93,81,0.12); color: #435D51; }
+.badge-warn-email { background: rgba(176,110,74,0.15); color: #B06E4A; }
+.email-alert-box { background: #fff3ee; border: 1px solid rgba(176,110,74,0.3); border-radius: 8px; padding: 10px 12px; margin: 10px 0; }
+.email-alert-label { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terra); margin-bottom: 4px; }
+.email-alert-text { font-size: 0.7rem; color: #6a5040; line-height: 1.5; }
+.email-btns { display: flex; gap: 8px; margin-top: 12px; }
+.email-btn-aprovar { background: var(--ink); color: #fff; border: none; border-radius: 6px; padding: 8px 16px; font-size: 0.72rem; font-weight: 700; cursor: pointer; flex: 1; }
+.email-btn-revisar { background: transparent; color: var(--terra); border: 1px solid rgba(176,110,74,0.4); border-radius: 6px; padding: 8px 16px; font-size: 0.72rem; font-weight: 600; cursor: pointer; flex: 1; }
+.email-footer-note { font-size: 0.62rem; color: #9aacaf; margin-top: 8px; line-height: 1.5; }
+
+/* ANTES/DEPOIS */
+.ad-section { padding: 0; }
+.ad-title { text-align: center; margin-bottom: 32px; }
+.ad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.ad-col { border-radius: 16px; padding: 32px; }
+.ad-col-antes { background: var(--white); border: 1px solid rgba(20,55,60,0.1); }
+.ad-col-depois { background: linear-gradient(155deg, var(--ink), var(--sage)); color: #fff; }
+.ad-col-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 20px; display: block; }
+.ad-col-antes .ad-col-label { color: var(--terra); }
+.ad-col-depois .ad-col-label { color: rgba(255,255,255,0.5); }
+.ad-steps { display: flex; flex-direction: column; gap: 14px; }
+.ad-step { display: flex; gap: 14px; align-items: flex-start; }
+.ad-step-time { font-family: 'Cormorant Garamond', serif; font-weight: 700; min-width: 52px; font-size: 0.92rem; }
+.ad-col-antes .ad-step-time { color: var(--ink); }
+.ad-col-depois .ad-step-time { color: var(--tl); }
+.ad-step-desc { font-size: 0.82rem; line-height: 1.65; }
+.ad-col-antes .ad-step-desc { color: #5a7a7f; }
+.ad-col-depois .ad-step-desc { color: rgba(255,255,255,0.75); }
+.ad-total { margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(20,55,60,0.1); display: flex; justify-content: space-between; align-items: center; }
+.ad-col-depois .ad-total { border-top-color: rgba(255,255,255,0.15); }
+.ad-total-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; }
+.ad-col-antes .ad-total-label { color: #7a9a9f; }
+.ad-col-depois .ad-total-label { color: rgba(255,255,255,0.45); }
+.ad-total-num { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 700; }
+.ad-col-antes .ad-total-num { color: var(--terra); }
+.ad-col-depois .ad-total-num { color: #fff; }
+
+/* SISTEMAS */
+#sistemas { background: var(--cl); }
+.sistemas-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
+.sistema-card { background: var(--white); border: 1px solid rgba(20,55,60,0.08); border-radius: 14px; padding: 28px; transition: box-shadow 0.3s; }
+.sistema-card:hover { box-shadow: 0 6px 24px rgba(20,55,60,0.08); }
+.sistema-name { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.sistema-role { font-size: 0.72rem; font-weight: 500; color: rgba(20,55,60,0.45); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+.sistema-badge { display: inline-block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; margin-bottom: 12px; }
+.badge-ok { background: rgba(67,93,81,0.1); color: var(--sage); }
+.sistema-note { font-size: 0.82rem; color: rgba(20,55,60,0.55); line-height: 1.7; }
+
+/* ONDA FUTURA */
+.onda-section { background: linear-gradient(155deg, #0c2427, #14373C 60%, #1d4840 100%); padding: 100px 48px; }
+.onda-inner { max-width: 1100px; margin: 0 auto; }
+.onda-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: start; }
+.onda-section .section-title { color: #fff; }
+.onda-text p { font-size: 0.92rem; color: rgba(255,255,255,0.82); line-height: 1.85; margin-bottom: 16px; }
+.onda-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(196,131,94,0.25); border-radius: 16px; padding: 32px 28px; }
+.onda-card-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tl); margin-bottom: 16px; }
+.onda-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; }
+.onda-item:last-child { margin-bottom: 0; }
+.onda-item-icon { font-size: 1rem; margin-top: 2px; }
+.onda-item-text { font-size: 0.84rem; color: rgba(255,255,255,0.6); line-height: 1.65; }
+.onda-item-text strong { color: rgba(255,255,255,0.9); }
+
+/* INVESTIMENTO */
+#investimento { background: var(--ink); }
+#investimento .section-title { color: #fff; }
+#investimento .section-label { color: var(--tl); }
+.inv-intro { font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.75; max-width: 640px; margin-bottom: 48px; }
+.inv-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 28px; }
+.inv-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 32px; transition: border-color 0.3s; }
+.inv-card:hover { border-color: rgba(176,110,74,0.3); }
+.inv-card-tag { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--tl); margin-bottom: 8px; }
+.inv-card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 24px; }
+.inv-price-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 6px; }
+.inv-price-value { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 6px; }
+.inv-price-value span { font-size: 0.9rem; font-family: 'DM Sans', sans-serif; font-weight: 400; color: rgba(255,255,255,0.35); }
+.inv-payment { font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+.inv-monthly { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 24px; }
+.inv-monthly strong { color: rgba(255,255,255,0.75); }
+.inv-includes { list-style: none; }
+.inv-includes li { font-size: 0.8rem; color: rgba(255,255,255,0.5); padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.05); padding-left: 14px; position: relative; line-height: 1.5; }
+.inv-includes li::before { content: '✓'; position: absolute; left: 0; color: var(--tl); font-size: 0.7rem; }
+.inv-includes li:last-child { border-bottom: none; }
+.inv-pacote { background: rgba(176,110,74,0.1); border: 1px solid rgba(176,110,74,0.25); border-radius: 16px; padding: 36px; margin-bottom: 24px; }
+.inv-pacote-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; }
+.inv-pacote-tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--tl); margin-bottom: 12px; }
+.inv-pacote-main { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.inv-pacote-main span { color: var(--tl); }
+.inv-pacote-sub { font-size: 0.82rem; color: rgba(255,255,255,0.45); margin-bottom: 4px; }
+.inv-parcelamento { font-size: 0.78rem; color: rgba(255,255,255,0.3); margin-bottom: 20px; }
+.inv-pacote-mensal { font-size: 1rem; font-weight: 600; color: rgba(255,255,255,0.7); margin-bottom: 4px; }
+.inv-pacote-mensal span { color: var(--tl); font-size: 1.1rem; }
+.inv-pacote-mensal-sub { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+.inv-prazo-box { background: rgba(255,255,255,0.05); border-radius: 12px; padding: 24px 28px; text-align: center; flex-shrink: 0; min-width: 160px; }
+.inv-prazo-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 10px; }
+.inv-prazo-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 4px; }
+.inv-prazo-sub { font-size: 0.72rem; color: rgba(255,255,255,0.35); line-height: 1.5; }
+.inv-aviso { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 20px 24px; font-size: 0.8rem; color: rgba(255,255,255,0.4); line-height: 1.7; margin-top: 24px; }
+.inv-aviso strong { color: rgba(255,255,255,0.6); }
+
+/* COBERTURA MENSALIDADE — novo layout */
+.mens-section { margin-bottom: 40px; }
+.mens-section-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 24px; display: block; }
+.mens-grid-new { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.mens-card-new { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 22px 20px; display: flex; gap: 14px; align-items: flex-start; }
+.mens-card-new:hover { border-color: rgba(176,110,74,0.2); }
+.mens-icon-wrap { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; background: rgba(255,255,255,0.06); }
+.mens-card-title-new { font-size: 0.82rem; font-weight: 700; color: rgba(255,255,255,0.85); margin-bottom: 5px; }
+.mens-card-desc-new { font-size: 0.76rem; color: rgba(255,255,255,0.4); line-height: 1.65; }
+
+/* GARANTIA */
+.garantia-section { background: var(--white); padding: 100px 48px; }
+.garantia-inner { max-width: 1100px; margin: 0 auto; }
+.garantia-block { background: linear-gradient(135deg, var(--ink), var(--sage)); border-radius: 20px; padding: 48px 56px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
+.garantia-text .section-title { color: #fff; margin-bottom: 16px; }
+.garantia-text p { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.8; }
+.garantia-selo { text-align: center; }
+.garantia-selo-num { font-family: 'Cormorant Garamond', serif; font-size: 3.6rem; font-weight: 700; color: var(--tl); line-height: 1; }
+.garantia-selo-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 8px; }
+
+/* POR QUE NEWSCALE */
+.porque-section { background: var(--cl); }
+.porque-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 40px 0 52px; }
+.porque-card { background: var(--white); border: 1px solid rgba(20,55,60,0.08); border-radius: 14px; padding: 28px; transition: box-shadow 0.3s, border-color 0.3s; }
+.porque-card:hover { box-shadow: 0 6px 24px rgba(20,55,60,0.08); border-color: rgba(176,110,74,0.2); }
+.porque-card.dark { background: var(--ink); border-color: transparent; grid-column: span 2; }
+.porque-card-icon { font-size: 1.6rem; margin-bottom: 14px; }
+.porque-card-title { font-size: 0.9rem; font-weight: 700; color: var(--ink); margin-bottom: 10px; line-height: 1.35; }
+.porque-card.dark .porque-card-title { color: #fff; }
+.porque-card-text { font-size: 0.84rem; color: rgba(20,55,60,0.6); line-height: 1.75; }
+.porque-card.dark .porque-card-text { color: rgba(255,255,255,0.55); }
+.quote-block { background: var(--ink); border-radius: 16px; padding: 40px 48px; margin: 0 0 48px; position: relative; }
+.quote-mark { font-family: 'Cormorant Garamond', serif; font-size: 6rem; font-weight: 700; color: var(--terra); opacity: 0.25; position: absolute; top: 10px; left: 32px; line-height: 1; }
+.quote-text { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: rgba(255,255,255,0.75); line-height: 1.7; font-style: italic; position: relative; z-index: 1; }
+.metodologia-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 40px 0; }
+.met-card { background: var(--white); border: 1px solid rgba(20,55,60,0.08); border-radius: 12px; padding: 24px; transition: box-shadow 0.3s, border-color 0.3s; }
+.met-card:hover { box-shadow: 0 6px 24px rgba(20,55,60,0.08); border-color: rgba(176,110,74,0.2); }
+.met-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: rgba(20,55,60,0.15); margin-bottom: 8px; line-height: 1; }
+.met-title { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+.met-desc { font-size: 0.8rem; color: rgba(20,55,60,0.55); line-height: 1.7; }
+.fundadores-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+.fundador-card { background: var(--white); border: 1px solid rgba(20,55,60,0.08); border-radius: 14px; overflow: hidden; display: flex; transition: box-shadow 0.3s; }
+.fundador-card:hover { box-shadow: 0 8px 28px rgba(20,55,60,0.1); }
+.fundador-foto { width: 110px; min-height: 140px; object-fit: cover; flex-shrink: 0; filter: grayscale(0.2); }
+.fundador-body { padding: 24px; flex: 1; }
+.fundador-name { font-size: 0.95rem; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.fundador-role { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terra); margin-bottom: 10px; }
+.fundador-bio { font-size: 0.78rem; color: rgba(20,55,60,0.6); line-height: 1.65; margin-bottom: 12px; }
+.fundador-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.fundador-tag { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em; padding: 3px 9px; border-radius: 20px; background: rgba(20,55,60,0.07); color: rgba(20,55,60,0.5); text-transform: uppercase; }
+
+/* FAQ */
+.faq-section { background: var(--white); padding: 100px 48px; }
+.faq-inner { max-width: 800px; margin: 0 auto; }
+.faq-header { text-align: center; margin-bottom: 48px; }
+.faq-list { display: flex; flex-direction: column; gap: 12px; }
+.faq-item { border: 1px solid rgba(20,55,60,0.1); border-radius: 12px; overflow: hidden; cursor: pointer; transition: border-color 0.3s; padding: 22px 28px; }
+.faq-item:hover { border-color: rgba(176,110,74,0.3); }
+.faq-item.open { border-color: var(--terra); box-shadow: 0 8px 24px rgba(20,55,60,0.05); }
+.faq-q { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+.faq-q-text { font-size: 0.95rem; font-weight: 600; color: var(--ink); line-height: 1.5; }
+.faq-arrow { font-size: 1.2rem; color: var(--terra); transition: transform 0.3s; min-width: 20px; text-align: center; }
+.faq-item.open .faq-arrow { transform: rotate(45deg); }
+.faq-a { display: none; margin-top: 14px; font-size: 0.88rem; color: #2C4A4E; line-height: 1.8; }
+.faq-item.open .faq-a { display: block; }
+
+/* PRÓXIMOS PASSOS */
+.passos-section { background: linear-gradient(165deg, #14373C, #194040 55%, #435D51 100%); padding: 100px 48px; }
+.passos-list { margin-top: 56px; max-width: 760px; }
+.passo-item { display: flex; gap: 28px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.passo-item:last-child { border-bottom: none; margin-bottom: 0; }
+.passo-num { width: 44px; height: 44px; border-radius: 50%; background: rgba(176,110,74,0.2); border: 1px solid rgba(176,110,74,0.3); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; color: var(--tl); flex-shrink: 0; }
+.passo-prazo { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 6px; }
+.passo-title { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.passo-desc { font-size: 0.84rem; color: rgba(255,255,255,0.5); line-height: 1.75; }
+.passos-closing { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: rgba(255,255,255,0.45); margin-top: 48px; line-height: 1.6; }
+
+/* CTA FECHAMENTO */
+.cta-section { background: var(--white); padding: 100px 48px; }
+.cta-inner { max-width: 900px; margin: 0 auto; }
+.cta-fechamento-inner { background: linear-gradient(150deg, #0c2427, #14373C 55%, #1d4840 100%); border-radius: 24px; padding: 64px 56px; text-align: center; position: relative; overflow: hidden; }
+.cta-topo { position: absolute; inset: 0; opacity: 0.06; pointer-events: none; }
+.cta-topo svg { width: 100%; height: 100%; }
+.cta-validade { display: inline-flex; align-items: center; gap: 8px; background: rgba(176,110,74,0.12); border: 1px solid rgba(176,110,74,0.25); color: var(--tl); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 6px 16px; border-radius: 20px; margin-bottom: 28px; position: relative; z-index: 1; }
+.pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--tl); display: inline-block; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.3); } }
+.cta-fechamento-inner h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700; color: #fff; margin-bottom: 20px; line-height: 1.2; position: relative; z-index: 1; }
+.cta-fechamento-inner h2 em { font-style: italic; color: var(--tl); }
+.cta-fechamento-inner p { font-size: 0.92rem; color: rgba(255,255,255,0.55); line-height: 1.8; max-width: 560px; margin: 0 auto 40px; position: relative; z-index: 1; }
+.cta-btns { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; position: relative; z-index: 1; }
+.cta-btn-primary { background: #25D366; color: #fff; text-decoration: none; box-shadow: 0 8px 28px rgba(37,211,102,0.3); padding: 16px 30px; border-radius: 40px; font-size: 0.84rem; font-weight: 700; letter-spacing: 0.04em; transition: background 0.3s, transform 0.2s; display: inline-flex; align-items: center; gap: 10px; }
+.cta-btn-primary:hover { background: #1ebe5d; transform: translateY(-2px); }
+.cta-btn-primary svg { width: 18px; height: 18px; }
+.cta-btn-secondary { background: transparent; color: rgba(255,255,255,0.85); text-decoration: none; border: 1px solid rgba(255,255,255,0.25); padding: 16px 30px; border-radius: 40px; font-size: 0.84rem; font-weight: 600; transition: border-color 0.3s, color 0.3s; }
+.cta-btn-secondary:hover { border-color: rgba(255,255,255,0.5); color: #fff; }
+.cta-metricas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; position: relative; z-index: 1; }
+.cta-metrica-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; color: var(--tl); line-height: 1; }
+.cta-metrica-label { font-size: 0.72rem; font-weight: 500; color: rgba(255,255,255,0.4); margin-top: 6px; }
+
+/* FOOTER */
+footer { background: #0a1f22; padding: 40px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-brand { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.3); text-transform: uppercase; }
+.footer-brand span { color: var(--terra); }
+.footer-date { font-size: 0.75rem; color: rgba(255,255,255,0.2); text-align: right; line-height: 1.6; }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.r1 { transition-delay: 0.05s; }
+.r2 { transition-delay: 0.15s; }
+.r3 { transition-delay: 0.25s; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  nav { padding: 14px 24px; }
+  .nav-badge { display: none; }
+  section { padding: 70px 24px; }
+  .passos-section,.cta-section,.demo-section,.custo-section,.onda-section,.garantia-section,.faq-section { padding: 70px 24px; }
+  footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+  .footer-date { text-align: center; }
+  .intro-grid,.custo-grid,.demo-grid,.onda-grid,.garantia-block { grid-template-columns: 1fr; gap: 40px; }
+  .intro-stats { grid-template-columns: 1fr 1fr; }
+  .dores-grid { grid-template-columns: 1fr; }
+  .sistemas-grid,.inv-grid,.fundadores-grid { grid-template-columns: 1fr; }
+  .inv-pacote-inner { flex-direction: column; }
+  .porque-grid { grid-template-columns: 1fr; }
+  .porque-card.dark { grid-column: 1; }
+  .metodologia-grid,.mens-grid-new { grid-template-columns: 1fr 1fr; }
+  .cta-fechamento-inner { padding: 40px 28px; }
+  .cta-metricas { grid-template-columns: 1fr; gap: 22px; }
+  .ad-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 500px) {
+  .metodologia-grid,.mens-grid-new { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 2.1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting" onerror="this.parentNode.innerHTML='<span style=\'font-family:DM Sans,sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.12em;color:#fff;text-transform:uppercase;\'>NewScale<span style=\'color:#B06E4A;\'>Consulting</span></span>'">
+  </div>
+  <div class="nav-badge">Proposta Executiva · Di Gaspi · Maio de 2026</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-topo">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,300 Q300,220 500,290 T900,260 T1200,300" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,500 Q300,440 500,490 T900,460 T1200,500" fill="none" stroke="white" stroke-width="0.3"/>
+      <path d="M0,250 Q250,180 450,240 T850,210 T1200,250" fill="none" stroke="white" stroke-width="0.3"/>
+      <path d="M0,550 Q250,490 450,540 T850,510 T1200,560" fill="none" stroke="white" stroke-width="0.25"/>
+    </svg>
+  </div>
+  <div class="grain"></div>
+  <div class="hero-badge">Proposta Executiva · Maio de 2026</div>
+  <div class="hero-eyebrow">NewScale Consulting × Di Gaspi</div>
+  <h1>36 anos construindo<br>uma rede. Agora é hora<br>de <em>deixar a IA trabalhar.</em></h1>
+  <p class="hero-desc">Uma proposta construída a partir da operação real da Di Gaspi — não um cardápio genérico, mas um plano desenhado para liberar o seu time do trabalho que uma máquina faz melhor, e devolver o tempo estratégico para quem constrói o negócio.</p>
+  <div class="hero-cta">
+    <a href="#contexto"><div class="scroll-arrow">↓</div>Ver proposta</a>
+  </div>
+</section>
+
+<!-- CONTEXTO -->
+<section id="contexto">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-text reveal">
+        <div class="section-label">O Contexto</div>
+        <h2 class="section-title">Uma rede construída com<br>inteligência — e que pode<br><em>operar com ela também.</em></h2>
+        <p>A Di Gaspi tem 36 anos de história, 60 lojas próprias, uma marca consolidada no varejo de calçados e moda e um time de marketing que gerencia campanhas, calendário promocional, material de ponto de venda, shooting, redes sociais e performance — tudo ao mesmo tempo.</p>
+        <p>Ao longo desse crescimento, a operação foi se tornando cada vez mais densa — e processos como o lançamento de notas fiscais no Protheus, feito nota por nota, campo a campo, foram absorvendo tempo que poderia estar em análise, estratégia e relacionamento. É exatamente esse o ponto onde a IA pode fazer mais pela Di Gaspi agora.</p>
+        <p>A proposta que se segue foi construída a partir do entendimento profundo de como o processo funciona hoje — e de como ele pode funcionar com muito mais velocidade, acurácia e autonomia, sem exigir mudança de sistema nem de cultura.</p>
+      </div>
+      <div class="reveal r2">
+        <div class="intro-stats">
+          <div class="stat-card"><div class="stat-number">60</div><div class="stat-label">Lojas próprias · 60 CNPJs</div></div>
+          <div class="stat-card"><div class="stat-number">150+</div><div class="stat-label">Notas fiscais por mês só no Marketing</div></div>
+          <div class="stat-card"><div class="stat-number">36</div><div class="stat-label">Anos de história no varejo brasileiro</div></div>
+          <div class="stat-card"><div class="stat-number">20–30</div><div class="stat-label">Dias de ciclo manual para cada nota</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTO DA INAÇÃO -->
+<!-- 10 min/nota × 150 notas = 1.500 min = 25h/mês -->
+<section class="custo-section">
+  <div class="custo-inner">
+    <div class="custo-grid">
+      <div class="custo-text reveal">
+        <span class="section-label">O Custo de Seguir Como Está</span>
+        <h2 class="section-title">Cada mês sem automação tem <em>um preço concreto.</em></h2>
+        <p>Não é sobre tecnologia — é sobre o que o tempo do seu time vale. O colaborador que passa horas por semana lançando nota no Protheus poderia estar em análise de campanha, relacionamento com fornecedores ou estruturando o próximo grande projeto de PDV. A aprovação que fica parada esperando assinatura física poderia já ter gerado o pagamento ao fornecedor.</p>
+        <p>Os números abaixo são estimativas conservadoras baseadas no volume descrito — 150+ notas por mês, ciclo de 20 a 30 dias e os gargalos identificados no processo atual. Não incluem o custo de multa e juros por boletos que vencem enquanto a nota ainda está na fila de lançamento.</p>
+      </div>
+      <div class="custo-list reveal r2">
+        <div class="custo-item">
+          <div>
+            <div class="custo-item-label">Coordenador lançando NFS-e nota a nota no Protheus</div>
+            <div class="custo-item-sub">~10 min/nota × 150 notas/mês = 25h de trabalho especializado</div>
+          </div>
+          <div class="custo-item-value">~R$ 2.250</div>
+        </div>
+        <div class="custo-item">
+          <div>
+            <div class="custo-item-label">Fluxo de aprovação física — impressão, assinatura, digitalização</div>
+            <div class="custo-item-sub">~2h/semana de coordenador + gestor em ciclo de 80–150 notas</div>
+          </div>
+          <div class="custo-item-value">~R$ 720</div>
+        </div>
+        <div class="custo-item">
+          <div>
+            <div class="custo-item-label">Retrabalho por erros de lançamento (campo errado, CNPJ incorreto)</div>
+            <div class="custo-item-sub">Taxa de erro estimada ~5–8% × ciclo de correção manual</div>
+          </div>
+          <div class="custo-item-value">~R$ 560</div>
+        </div>
+        <div class="custo-item">
+          <div>
+            <div class="custo-item-label">Manutenção manual de tabelas De-Para (municípios, fornecedores)</div>
+            <div class="custo-item-sub">Atualização ad hoc por quem executa, sem base estruturada</div>
+          </div>
+          <div class="custo-item-value">~R$ 320</div>
+        </div>
+        <div class="custo-item">
+          <div>
+            <div class="custo-item-label">Multas e juros por boletos vencidos durante o ciclo de lançamento</div>
+            <div class="custo-item-sub">20–30 dias de ciclo vs. vencimento de 30 dias — margem mínima</div>
+          </div>
+          <div class="custo-item-value">potencial alto</div>
+        </div>
+        <div class="custo-total">
+          <div class="custo-total-label">Custo operacional estimado / mês</div>
+          <div class="custo-total-value">~R$ 3.850+</div>
+        </div>
+        <div class="custo-aviso">⚠ Estimativas conservadoras baseadas no volume e processo descritos. Não incluem multas e juros por atraso de pagamento, custo de relacionamento com fornecedores impactado pelo ciclo longo, nem o valor de oportunidade das horas de coordenador fora do estratégico.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DORES -->
+<section id="dores">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Oportunidades identificadas</div>
+      <h2 class="section-title light">5 pontos onde a Di Gaspi<br>pode ganhar <em>muito mais velocidade,<br>precisão e fôlego estratégico.</em></h2>
+      <p class="section-sub">Cada um desses pontos representa uma oportunidade concreta de liberar energia do time e tornar o processo mais robusto, rápido e escalável.</p>
+    </div>
+    <div class="dores-grid" style="margin-top:48px;">
+      <div class="dore-card reveal r1">
+        <div class="dore-num">1</div>
+        <div class="dore-title">Tempo estratégico que pode voltar para o time</div>
+        <div class="dore-text">Com 150+ notas por mês para processar manualmente, o time de marketing gasta horas por semana em lançamentos no Protheus. São horas que poderiam estar em campanhas, análise de performance e relacionamento com fornecedores — atividades que só gente qualificada consegue fazer.</div>
+      </div>
+      <div class="dore-card reveal r2">
+        <div class="dore-num">2</div>
+        <div class="dore-title">Aprovação que pode ser mais ágil e rastreável</div>
+        <div class="dore-text">Com 80 a 150 notas chegando por mês para aprovação, o fluxo de assinatura física cria gargalos naturais no ciclo de pagamento. Digitalizar e consolidar esse processo significa aprovações mais rápidas, mais visibilidade para a gestão e menos risco de atrasos.</div>
+      </div>
+      <div class="dore-card reveal r3">
+        <div class="dore-num">3</div>
+        <div class="dore-title">Acurácia que pode ser muito maior</div>
+        <div class="dore-text">Todo processo manual de alta repetição tem margem de erro — e em lançamento fiscal, um campo errado reinicia o ciclo inteiro. Automação com validação inteligente eleva a taxa de acerto, reduz retrabalho e protege o relacionamento da Di Gaspi com seus fornecedores.</div>
+      </div>
+      <div class="dore-card reveal r1">
+        <div class="dore-num">4</div>
+        <div class="dore-title">Complexidade que pode virar inteligência automatizada</div>
+        <div class="dore-text">São 60 CNPJs de filiais, tabelas de De-Para de códigos municipais, base de itens de PDV com nomenclaturas variadas por fornecedor. Hoje esse conhecimento vive em planilhas departamentalizadas e não padronizadas. Com IA, ele vira uma base estruturada que qualquer processo pode consumir com precisão.</div>
+      </div>
+      <div class="dore-card reveal r2">
+        <div class="dore-num">5</div>
+        <div class="dore-title">Um piloto que abre caminho para a empresa toda</div>
+        <div class="dore-text">O Marketing não é o único departamento com esse processo — Fiscal, Compras e RH têm o mesmo fluxo. Começar aqui significa criar um modelo comprovado e replicável. O que funcionar no Marketing vira argumento concreto para expandir a automação para toda a Di Gaspi.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROPOSTA -->
+<section id="proposta">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">A Proposta</div>
+      <h2 class="section-title">Estruturada em 2 módulos.<br><em>Cada um com resultado próprio.</em></h2>
+      <p class="proposta-intro">Começamos pelo Marketing como piloto — onde a dor é mais urgente e o processo já está documentado. Os módulos foram desenhados para serem expandidos para outros departamentos assim que o piloto provar o modelo. Clique em cada módulo para ver os detalhes das entregas.</p>
+    </div>
+
+    <!-- MÓDULO 1 -->
+    <div class="fase-block reveal" onclick="toggleFase(this)">
+      <div class="fase-header">
+        <div class="fase-meta">
+          <div class="fase-tag">Módulo 1 · Início imediato</div>
+          <div class="fase-name">Agente de Lançamento de NFS-e no Protheus</div>
+          <div class="fase-duration">TOTVS Protheus + N8N + IA · Resultado visível em 6–8 semanas</div>
+        </div>
+        <div class="fase-right">
+          <div class="fase-num-badge">1</div>
+          <div class="fase-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg></div>
+        </div>
+      </div>
+      <div class="fase-body">
+        <div class="modulo-card" onclick="toggleModulo(event,this)">
+          <div class="modulo-header">
+            <div class="modulo-icon">🤖</div>
+            <div class="modulo-meta">
+              <div class="modulo-label">Processo principal</div>
+              <div class="modulo-title">Do e-mail ao Protheus sem ninguém digitar nada: o agente que lê, interpreta e lança cada NFS-e automaticamente</div>
+              <div class="modulo-chips"><span class="chip">Leitura NFS-e</span><span class="chip">Extração de dados</span><span class="chip">De-Para municípios</span><span class="chip">Lançamento no Protheus</span><span class="chip">Log de auditoria</span></div>
+            </div>
+            <div class="modulo-arrow">▾</div>
+          </div>
+          <div class="modulo-body">
+            <div class="value-box"><div class="vb-icon">⚡</div><div><div class="vb-label">O que isso resolve</div><div class="vb-text">O colaborador para de lançar nota no Protheus e volta a fazer o que deveria fazer — enquanto o agente processa 150 notas por mês em minutos, não em dias.</div></div></div>
+            <p class="modulo-desc">Um agente de IA que monitora uma caixa de e-mail ou pasta centralizada, lê os documentos fiscais recebidos, extrai todas as informações necessárias, consulta as bases de conhecimento e preenche o pedido de compra e a pré-nota no Protheus — exatamente como um humano faria, só que sem errar e sem parar.</p>
+            <ul class="modulo-items">
+              <li><strong>Monitoramento da caixa de entrada:</strong> o agente roda em rotinas programadas, identifica novas notas fiscais chegando no e-mail centralizador do marketing e inicia o processo automaticamente</li>
+              <li><strong>Leitura e extração inteligente:</strong> lê NFS-e em PDF e XML, extrai fornecedor, CNPJ, valor, data de vencimento, código de serviço, forma de pagamento e dados bancários sem intervenção humana</li>
+              <li><strong>Identificação automática de filial:</strong> cruza o CNPJ da nota com a base das 60 filiais da Di Gaspi e preenche o campo correto no Protheus — elimina um dos erros mais comuns do processo manual</li>
+              <li><strong>De-Para de códigos municipais:</strong> antes de lançar, consulta a base de compatibilidade de códigos (incluindo os padrões específicos de São Paulo) e traduz automaticamente para o código correto do sistema</li>
+              <li><strong>Lançamento no Protheus via API:</strong> preenche pedido de compra e pré-nota nos campos corretos do módulo SIGACOM, replicando o fluxo atual sem exigir nenhuma mudança no sistema</li>
+              <li><strong>Alerta de divergências:</strong> fornecedor não cadastrado, CNPJ não encontrado, campo sem correspondência — tudo é sinalizado antes de qualquer lançamento, com a informação do que falta para o humano resolver</li>
+              <li><strong>Log de auditoria completo:</strong> cada lançamento fica registrado com data, hora, o que foi preenchido pelo agente e o que foi ajustado — visibilidade total para gestão e para o fiscal</li>
+              <li><strong>Salvamento organizado no SharePoint:</strong> os documentos fiscais são salvos automaticamente em estrutura de pastas por ano/mês/fornecedor para governança e consulta futura</li>
+            </ul>
+          </div>
+        </div>
+        <div class="modulo-card" onclick="toggleModulo(event,this)">
+          <div class="modulo-header">
+            <div class="modulo-icon">✅</div>
+            <div class="modulo-meta">
+              <div class="modulo-label">Integrado ao Módulo 1</div>
+              <div class="modulo-title">Interface de aprovação digital: o diretor aprova com um clique, não com uma pilha de papel</div>
+              <div class="modulo-chips"><span class="chip">Aprovação por e-mail</span><span class="chip">Resumo consolidado</span><span class="chip">Registro de aprovação</span><span class="chip">Sem impressão</span></div>
+            </div>
+            <div class="modulo-arrow">▾</div>
+          </div>
+          <div class="modulo-body">
+            <div class="value-box"><div class="vb-icon">📋</div><div><div class="vb-label">O que isso resolve</div><div class="vb-text">Fim da pilha de papel. O diretor recebe um resumo consolidado das notas, aprova tudo ou sinaliza pendências com um clique — e a aprovação fica registrada com data e hora.</div></div></div>
+            <p class="modulo-desc">Em vez de imprimir, assinar e escanear cada nota individualmente, o agente gera um resumo estruturado das notas pendentes de aprovação e dispara por e-mail. O responsável revisa o que precisar e aprova. O registro do aceite fica no log de auditoria — com mais rastreabilidade do que o processo atual de papel.</p>
+            <ul class="modulo-items">
+              <li><strong>Resumo consolidado por lote:</strong> ao invés de 50 e-mails separados, o diretor recebe um único consolidado com todas as notas pendentes — fornecedor, valor, filial, vencimento e o que o agente preencheu</li>
+              <li><strong>Aprovação com um clique:</strong> link de aceite que registra automaticamente a aprovação, com data, hora e usuário — sem precisar abrir o Protheus</li>
+              <li><strong>Sinalização de exceções:</strong> divergências identificadas pelo agente aparecem destacadas no resumo, com a informação específica do que precisa de atenção humana antes do lançamento final</li>
+              <li><strong>Log de aprovação auditável:</strong> quem aprovou, quando aprovou, quais exceções foram revisadas — histórico completo disponível para gestão, fiscal e auditoria interna</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MÓDULO 2 — header terra para contraste correto -->
+    <div class="fase-block reveal" onclick="toggleFase(this)">
+      <div class="fase-header terra">
+        <div class="fase-meta">
+          <div class="fase-tag">Módulo 2 · Segunda onda · após estabilização do Módulo 1</div>
+          <div class="fase-name">Agente de NF-e de Produto + Base de Conhecimento PDV</div>
+          <div class="fase-duration">Lançamento de notas de produto · Resultado visível em 4–6 semanas após o Módulo 1</div>
+        </div>
+        <div class="fase-right">
+          <div class="fase-num-badge">2</div>
+          <div class="fase-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg></div>
+        </div>
+      </div>
+      <div class="fase-body">
+        <div class="modulo-card" onclick="toggleModulo(event,this)">
+          <div class="modulo-header">
+            <div class="modulo-icon">📦</div>
+            <div class="modulo-meta">
+              <div class="modulo-label">Upgrade do Módulo 1</div>
+              <div class="modulo-title">Notas de produto com múltiplas linhas: o agente que lê cada item, encontra o código interno e lança sem digitar nada</div>
+              <div class="modulo-chips"><span class="chip">NF-e de produto</span><span class="chip">De-Para de itens PDV</span><span class="chip">Base de nomenclaturas</span><span class="chip">Múltiplos fornecedores</span></div>
+            </div>
+            <div class="modulo-arrow">▾</div>
+          </div>
+          <div class="modulo-body">
+            <div class="value-box"><div class="vb-icon">🗂️</div><div><div class="vb-label">O que isso resolve</div><div class="vb-text">Uma campanha que vai para 60 lojas deixa de gerar 60 lançamentos manuais linha a linha. O agente lê a nota, identifica cada item e lança tudo automaticamente — incluindo os produtos com nomenclaturas diferentes entre fornecedores.</div></div></div>
+            <p class="modulo-desc">As notas de produto são mais complexas porque cada item precisa ser mapeado para um código interno do Protheus — um código que não está na nota, existe só no sistema da Di Gaspi. A solução é construir uma base de conhecimento com todas as correspondências: como cada fornecedor chama o mesmo produto e qual o código interno correspondente. Uma vez mapeada, o agente consulta essa base a cada lançamento.</p>
+            <ul class="modulo-items">
+              <li><strong>Curadoria da base de nomenclaturas:</strong> mapeamento de como cada fornecedor homologado descreve os materiais de PDV — testeira, topo de arara, bandeija de caixa — e o código interno correspondente no Protheus</li>
+              <li><strong>Lançamento linha a linha automatizado:</strong> o agente abre o popup de produto para cada linha da nota, preenche código, quantidade, valor e centro de custo sem intervenção humana</li>
+              <li><strong>Detecção de divergências de nomenclatura:</strong> quando um fornecedor muda a descrição de um item sem avisar, o agente sinaliza o item não reconhecido ao invés de lançar errado</li>
+              <li><strong>Base viva retroalimentada:</strong> novos mapeamentos adicionados pelo time alimentam a base e ficam disponíveis para todos os lançamentos futuros — o agente fica mais preciso com o tempo</li>
+              <li><strong>Suporte a campanhas multi-loja:</strong> uma campanha para 60 lojas gera 60 lançamentos automáticos — o agente replica o processo para cada filial sem retrabalho humano</li>
+            </ul>
+          </div>
+        </div>
+        <div class="segunda-onda">
+          <div class="segunda-onda-label">Visão de expansão · Além do Marketing</div>
+          <h4>O mesmo agente, para a empresa toda.</h4>
+          <p>Uma vez que o piloto do Marketing estiver rodando e os resultados forem visíveis, o modelo está pronto para escalar. O Fiscal já sinalizou interesse. Compras tem o mesmo processo. RH tem notas de folha e benefícios. A infraestrutura construída nos Módulos 1 e 2 é a base — expandir para outros departamentos é uma questão de configuração, não de reconstrução.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA NA PRÁTICA -->
+<section class="demo-section" id="demo">
+  <div class="demo-inner">
+    <div style="text-align:center;margin-bottom:60px;" class="reveal">
+      <span class="section-label">Como funciona na prática</span>
+      <h2 class="section-title">O agente no lugar certo —<br><em>e o time de volta ao estratégico.</em></h2>
+    </div>
+
+    <!-- LINHA 1: Flow do agente + texto explicativo -->
+    <div class="demo-grid">
+      <div class="reveal">
+        <div class="flow-box">
+          <div class="flow-topbar">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div class="flow-dots"><span style="background:#ff5f57;"></span><span style="background:#febc2e;"></span><span style="background:#28c840;"></span></div>
+              <span class="flow-title-bar">Agente NFS-e · Di Gaspi Marketing</span>
+            </div>
+            <div class="flow-status"><span class="flow-status-dot"></span>Processando</div>
+          </div>
+          <div class="flow-body">
+            <div class="flow-step done">
+              <div class="flow-step-icon">📧</div>
+              <div><div class="flow-step-label">Etapa 1 — Concluído</div><div class="flow-step-text">Nova NFS-e detectada · Agência Criação Ativa · PDF + XML recebidos em nf.marketing@digaspi.com.br</div></div>
+            </div>
+            <div class="flow-connector"></div>
+            <div class="flow-step done">
+              <div class="flow-step-icon">🔍</div>
+              <div><div class="flow-step-label">Etapa 2 — Concluído</div><div class="flow-step-text">Extraído: CNPJ 12.345.678/0001-90 · R$ 4.800,00 · Venc. 15/06/2026 · Cód. serviço 17.01 · SP</div></div>
+            </div>
+            <div class="flow-connector"></div>
+            <div class="flow-step done">
+              <div class="flow-step-icon">🗺️</div>
+              <div><div class="flow-step-label">Etapa 3 — Concluído</div><div class="flow-step-text">De-Para: código IBGE 3550308 → cód. interno Protheus confirmado · Filial: Matriz HQ</div></div>
+            </div>
+            <div class="flow-connector"></div>
+            <div class="flow-step active">
+              <div class="flow-step-icon">⚙️</div>
+              <div><div class="flow-step-label">Etapa 4 — Em execução</div><div class="flow-step-text">Lançando pedido de compra e pré-nota no SIGACOM · Preenchendo 14 campos do formulário...</div></div>
+            </div>
+            <div class="flow-connector"></div>
+            <div class="flow-step">
+              <div class="flow-step-icon">✅</div>
+              <div><div class="flow-step-label">Etapa 5 — Aguardando</div><div class="flow-step-text">Salvar no SharePoint · Adicionar ao lote de aprovação · Notificar Gustavo</div></div>
+            </div>
+            <div class="flow-result">
+              <div class="flow-result-label">⏱ Tempo total estimado</div>
+              <div class="flow-result-text">~2–3 minutos por nota · 150 notas processadas sem intervenção humana</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-text reveal r2">
+        <h3>O colaborador cuida da estratégia.<br>O agente cuida do operacional.</h3>
+        <p>Lançamentos, De-Para de códigos e filas de aprovação saem da lista de tarefas manuais do time. O que fica para a equipe é o que tem valor real: análise, decisão criativa e relacionamento com fornecedores.</p>
+        <div class="demo-feature">
+          <div class="demo-feature-icon">⚡</div>
+          <div class="demo-feature-text"><strong>150 notas por mês processadas automaticamente</strong> — sem ninguém abrir o Protheus para lançar campo a campo</div>
+        </div>
+        <div class="demo-feature">
+          <div class="demo-feature-icon">🎯</div>
+          <div class="demo-feature-text"><strong>Inteligência contextual</strong> — o agente sabe qual filial, qual código municipal e qual fornecedor para cada nota</div>
+        </div>
+        <div class="demo-feature">
+          <div class="demo-feature-icon">🔔</div>
+          <div class="demo-feature-text"><strong>O time só é acionado</strong> quando há uma exceção que exige decisão humana — o resto roda sozinho</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LINHA 2: Mock-up e-mail de aprovação + texto explicativo -->
+    <div class="demo-grid" style="margin-top:56px;margin-bottom:72px;">
+      <div class="demo-text reveal">
+        <h3>O diretor aprova o lote inteiro<br>com um clique — sem papel.</h3>
+        <p>Em vez de uma pilha de notas impressas esperando assinatura, o responsável recebe um único e-mail consolidado com todas as pendentes. Exceções ficam destacadas. A aprovação é registrada com data e hora.</p>
+        <div class="demo-feature">
+          <div class="demo-feature-icon">📋</div>
+          <div class="demo-feature-text"><strong>Lote único por período</strong> — todas as notas pendentes em uma tela só, com os dados que importam</div>
+        </div>
+        <div class="demo-feature">
+          <div class="demo-feature-icon">⚠️</div>
+          <div class="demo-feature-text"><strong>Divergências em destaque</strong> — fornecedor novo, campo em aberto ou valor fora do padrão aparecem sinalizados antes da aprovação</div>
+        </div>
+        <div class="demo-feature">
+          <div class="demo-feature-icon">🔒</div>
+          <div class="demo-feature-text"><strong>Log auditável</strong> — quem aprovou, quando e quais exceções foram revisadas ficam registrados automaticamente</div>
+        </div>
+      </div>
+
+      <div class="reveal r2">
+        <div class="email-box">
+          <div class="email-topbar">
+            <div class="email-topbar-dots"><span style="background:#ff5f57;"></span><span style="background:#febc2e;"></span><span style="background:#28c840;"></span></div>
+            <span class="email-client-bar">Outlook — Caixa de Entrada</span>
+          </div>
+          <div class="email-header-row">
+            <div class="email-from">De: <span>Agente Di Gaspi &lt;nf.marketing@digaspi.com.br&gt;</span></div>
+            <div class="email-subject">✅ Aprovação de NFs — 8 notas pendentes · Semana 20/05 a 26/05</div>
+          </div>
+          <div class="email-body">
+            <div class="email-greeting">Gestor, bom dia.<br>O agente processou <strong>8 notas fiscais</strong> esta semana. 6 estão prontas para aprovação direta. 2 têm divergências sinalizadas abaixo — precisam de atenção antes do lançamento final.</div>
+
+            <div class="email-summary-label">Notas prontas para aprovação</div>
+            <div class="email-nf-row">
+              <div><div class="email-nf-name">Agência Criação Ativa</div><div class="email-nf-value">R$ 4.800,00 · Matriz HQ · Venc. 15/06</div></div>
+              <span class="email-nf-badge badge-ok-email">✓ OK</span>
+            </div>
+            <div class="email-nf-row">
+              <div><div class="email-nf-name">Studio Visual Ltda.</div><div class="email-nf-value">R$ 2.200,00 · Filial SP-01 · Venc. 18/06</div></div>
+              <span class="email-nf-badge badge-ok-email">✓ OK</span>
+            </div>
+            <div class="email-nf-row">
+              <div><div class="email-nf-name">Produtora Cena Viva</div><div class="email-nf-value">R$ 7.500,00 · Matriz HQ · Venc. 20/06</div></div>
+              <span class="email-nf-badge badge-ok-email">✓ OK</span>
+            </div>
+
+            <div class="email-alert-box">
+              <div class="email-alert-label">⚠ Divergências — requer revisão</div>
+              <div class="email-alert-text"><strong>Gráfica Print Express · R$ 3.100,00:</strong> CNPJ não localizado no cadastro de fornecedores do Protheus. Possível novo fornecedor — precisa de cadastro antes do lançamento.<br><br><strong>Mídia Outdoor Co. · R$ 1.650,00:</strong> código de serviço 25.01 não encontrado na tabela De-Para. Verificar qual código municipal corresponde à SP antes de aprovar.</div>
+            </div>
+
+            <div class="email-btns">
+              <button class="email-btn-aprovar">✓ Aprovar as 6 notas OK</button>
+              <button class="email-btn-revisar">Ver detalhes completos</button>
+            </div>
+            <div class="email-footer-note">Aprovação registrada com data, hora e usuário · Log completo disponível no SharePoint · As 2 notas com divergência só serão lançadas após resolução manual.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANTES / DEPOIS -->
+    <div class="ad-section">
+      <div class="ad-title reveal">
+        <span class="section-label">A diferença concreta</span>
+        <h2 class="section-title" style="font-size:1.6rem;">Lançamento de NFS-e de serviço:<br><em>como era vs. como fica</em></h2>
+      </div>
+      <div class="ad-grid">
+        <div class="ad-col ad-col-antes reveal">
+          <span class="ad-col-label">📋 Como é hoje</span>
+          <div class="ad-steps">
+            <div class="ad-step"><div class="ad-step-time">min 0</div><div class="ad-step-desc">NFS-e chega no e-mail geral — Gustavo identifica, baixa o PDF e abre o Protheus</div></div>
+            <div class="ad-step"><div class="ad-step-time">min 3</div><div class="ad-step-desc">Busca o CNPJ do fornecedor no sistema, confere cadastro e cria o pedido de compra campo a campo</div></div>
+            <div class="ad-step"><div class="ad-step-time">min 6</div><div class="ad-step-desc">Consulta tabela De-Para de municípios (planilha manual) para preencher o código correto de SP</div></div>
+            <div class="ad-step"><div class="ad-step-time">min 8</div><div class="ad-step-desc">Imprime a nota, encaminha para aprovação do gestor — que pode estar em reunião ou em outra cidade</div></div>
+            <div class="ad-step"><div class="ad-step-time">dias</div><div class="ad-step-desc">Nota aprovada, digitalizada e arquivada em pasta de e-mail — sem estrutura padronizada</div></div>
+          </div>
+          <div class="ad-total">
+            <div class="ad-total-label">Tempo de execução</div>
+            <div class="ad-total-num">~10 min + ciclo de aprovação</div>
+          </div>
+        </div>
+        <div class="ad-col ad-col-depois reveal r2">
+          <span class="ad-col-label">✅ Como fica com a NewScale</span>
+          <div class="ad-steps">
+            <div class="ad-step"><div class="ad-step-time">Auto</div><div class="ad-step-desc">NFS-e chega no e-mail dedicado — o agente detecta e inicia o processamento automaticamente</div></div>
+            <div class="ad-step"><div class="ad-step-time">Auto</div><div class="ad-step-desc">Agente extrai todos os dados, identifica a filial correta e consulta a base De-Para de municípios</div></div>
+            <div class="ad-step"><div class="ad-step-time">Auto</div><div class="ad-step-desc">Pedido de compra e pré-nota são preenchidos no Protheus via API — sem intervenção humana</div></div>
+            <div class="ad-step"><div class="ad-step-time">Auto</div><div class="ad-step-desc">Nota salva no SharePoint em estrutura organizada e adicionada ao lote de aprovação digital</div></div>
+            <div class="ad-step"><div class="ad-step-time">Gustavo</div><div class="ad-step-desc">Acionado apenas se houver divergência — fornecedor não encontrado, campo sem correspondência</div></div>
+          </div>
+          <div class="ad-total">
+            <div class="ad-total-label">Tempo da equipe</div>
+            <div class="ad-total-num">~0 min (exceções: ~5 min)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SISTEMAS -->
+<section id="sistemas">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Integração Técnica</div>
+      <h2 class="section-title">Os sistemas que a Di Gaspi<br>já usa — <em>trabalhando juntos.</em></h2>
+      <p class="section-sub">Nenhuma mudança de sistema. Nenhuma migração. A solução se encaixa no que já existe.</p>
+    </div>
+    <div class="sistemas-grid" style="margin-top:40px;">
+      <div class="sistema-card reveal r1">
+        <div class="sistema-name">TOTVS Protheus</div>
+        <div class="sistema-role">ERP central · Módulo SIGACOM (Compras)</div>
+        <div class="sistema-badge badge-ok">✓ API REST nativa confirmada</div>
+        <p class="sistema-note">O Protheus possui infraestrutura de API REST nativa, confirmada pelo time de TI da Di Gaspi. O time interno já faz customizações em ADVPL — o que significa que, se algum endpoint específico para os campos do módulo de compras precisar ser adaptado, o próprio time consegue fazer. A integração via N8N se comunica diretamente com o Protheus para criar pedidos e pré-notas nos campos exatos que o processo atual exige.</p>
+      </div>
+      <div class="sistema-card reveal r2">
+        <div class="sistema-name">Trello</div>
+        <div class="sistema-role">Gestão de demandas · Controle de pagamentos</div>
+        <div class="sistema-badge badge-ok">✓ Integração via API disponível</div>
+        <p class="sistema-note">O time já usa o Trello como ponto de entrada das solicitações de nota — com campos de fornecedor, CNPJ, valor, loja, código de serviço e anexo da NF. O agente pode ler os cards do Trello como fonte alternativa de dados, além do e-mail centralizado, garantindo que nenhuma nota seja perdida no processo.</p>
+      </div>
+      <div class="sistema-card reveal r1">
+        <div class="sistema-name">Microsoft SharePoint</div>
+        <div class="sistema-role">Armazenamento de documentos fiscais</div>
+        <div class="sistema-badge badge-ok">✓ Integração nativa via N8N</div>
+        <p class="sistema-note">O agente salva automaticamente cada documento fiscal em estrutura de pastas organizada por ano, mês e fornecedor no SharePoint da Di Gaspi — garantindo governança, rastreabilidade e acesso fácil para o fiscal e auditoria, sem depender de e-mails arquivados manualmente.</p>
+      </div>
+      <div class="sistema-card reveal r2">
+        <div class="sistema-name">E-mail Centralizado</div>
+        <div class="sistema-role">Caixa de entrada dedicada ao Marketing</div>
+        <div class="sistema-badge badge-ok">✓ Monitoramento automatizado</div>
+        <p class="sistema-note">A criação de uma caixa de e-mail dedicada para recebimento de notas do Marketing (ex: nf.marketing@digaspi.com.br) é o ponto de entrada mais simples e robusto. Os fornecedores são orientados a usar esse endereço como destinatário principal. O agente monitora essa caixa em rotinas programadas e inicia o processamento automaticamente a cada nova mensagem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ONDA FUTURA -->
+<section class="onda-section">
+  <div class="onda-inner">
+    <div class="onda-grid">
+      <div class="onda-text reveal">
+        <span class="section-label" style="color:var(--tl);">Onda Futura</span>
+        <h2 class="section-title" style="color:#fff;">Quando o piloto do Marketing<br>provar o modelo, <em>a Di Gaspi inteira está pronta para escalar.</em></h2>
+        <p>O que construímos nos Módulos 1 e 2 não serve só para o Marketing — serve como template para cada departamento que tiver o mesmo processo. A infraestrutura de agentes, bases de conhecimento e integrações foi pensada para ser replicada com custo marginal baixo.</p>
+        <p>Com a base dos módulos funcionando e resultados visíveis, abrimos espaço para iniciativas que dependem do histórico consolidado: dashboards financeiros cruzados por departamento, agentes de conciliação fiscal e inteligência automatizada sobre ciclo de pagamento por fornecedor.</p>
+      </div>
+      <div class="onda-card reveal r2">
+        <div class="onda-card-label">Próximas iniciativas mapeadas</div>
+        <div class="onda-item">
+          <div class="onda-item-icon">📊</div>
+          <div class="onda-item-text"><strong>Expansão para o departamento fiscal</strong> — mesmo agente de NFS-e configurado para o fiscal, com suas regras específicas de CNPJ e centros de custo</div>
+        </div>
+        <div class="onda-item">
+          <div class="onda-item-icon">🛒</div>
+          <div class="onda-item-text"><strong>Automação de Compras</strong> — lançamento de NF-e de fornecedores de produto com base nas notas de compra que chegam para as 60 lojas</div>
+        </div>
+        <div class="onda-item">
+          <div class="onda-item-icon">👥</div>
+          <div class="onda-item-text"><strong>Automação de RH</strong> — processamento de notas de folha, benefícios e prestadores de serviço com os mesmos fluxos já validados</div>
+        </div>
+        <div class="onda-item">
+          <div class="onda-item-icon">📈</div>
+          <div class="onda-item-text"><strong>Dashboard de KPIs financeiros</strong> — visão consolidada de ciclo de pagamento, inadimplência com fornecedores e performance de processamento por departamento</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTIMENTO -->
+<section id="investimento">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Investimento</div>
+      <h2 class="section-title light">Condições claras,<br>sem <em>surpresas no caminho.</em></h2>
+      <p class="inv-intro">Cada módulo tem valor independente. Para quem optar pelos dois módulos juntos desde o início, há uma condição diferenciada com desconto no setup e na manutenção mensal. O pagamento da implementação é feito em duas parcelas: 50% no ato da contratação e 50% na entrega e aprovação.</p>
+    </div>
+
+    <div class="inv-grid">
+      <div class="inv-card reveal r1">
+        <div class="inv-card-tag">Módulo 1</div>
+        <div class="inv-card-name">Agente de NFS-e + Aprovação Digital</div>
+        <div class="inv-price-label">Implementação</div>
+        <div class="inv-price-value">R$ 12.000 <span>no total</span></div>
+        <div class="inv-payment">50% no ato · 50% na entrega e aprovação</div>
+        <div class="inv-monthly">Manutenção mensal: <strong>R$ 1.490/mês</strong></div>
+        <ul class="inv-includes">
+          <li>Agente de leitura e extração de NFS-e (PDF e XML)</li>
+          <li>Integração com Protheus via API REST</li>
+          <li>Base de conhecimento de códigos municipais</li>
+          <li>Interface de aprovação digital por e-mail</li>
+          <li>Log de auditoria com histórico completo</li>
+          <li>Salvamento organizado no SharePoint</li>
+          <li>Monitoramento da caixa de e-mail centralizada</li>
+          <li>Treinamento do time incluso</li>
+          <li>Suporte no primeiro ciclo completo de uso</li>
+        </ul>
+      </div>
+      <div class="inv-card reveal r2">
+        <div class="inv-card-tag">Módulo 2</div>
+        <div class="inv-card-name">Agente de NF-e de Produto + Base PDV</div>
+        <div class="inv-price-label">Implementação</div>
+        <div class="inv-price-value">R$ 9.500 <span>no total</span></div>
+        <div class="inv-payment">50% no ato · 50% na entrega e aprovação</div>
+        <div class="inv-monthly">Manutenção mensal: <strong>R$ 990/mês</strong></div>
+        <ul class="inv-includes">
+          <li>Curadoria da base de itens de PDV por fornecedor</li>
+          <li>De-Para de nomenclaturas → códigos internos Protheus</li>
+          <li>Lançamento automatizado linha a linha por nota</li>
+          <li>Suporte a campanhas multi-loja (60 filiais)</li>
+          <li>Base viva retroalimentada pelo uso</li>
+          <li>Alerta de itens não reconhecidos</li>
+          <li>Treinamento do time incluso</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="inv-pacote reveal">
+      <div class="inv-pacote-inner">
+        <div>
+          <div class="inv-pacote-tag">✦ Condição especial — Pacote 2 Módulos</div>
+          <div class="inv-pacote-main">Setup por <span>R$ 19.500</span></div>
+          <div class="inv-pacote-sub">Versus R$ 21.500 separados — você economiza <strong>R$ 2.000 no setup</strong></div>
+          <div class="inv-parcelamento">Parcelamento em 2x de R$ 9.750 sem juros disponível</div>
+          <div class="inv-pacote-mensal">Mensalidade de <span>R$ 1.940/mês</span></div>
+          <div class="inv-pacote-mensal-sub">Versus R$ 2.480/mês separados — <strong style="color:rgba(255,255,255,0.65);">R$ 540/mês a menos</strong>, todo mês</div>
+
+        </div>
+        <div class="inv-prazo-box">
+          <div class="inv-prazo-label">Prazo total de entrega</div>
+          <div class="inv-prazo-num">90</div>
+          <div class="inv-prazo-sub">dias corridos a contar da<br>assinatura do contrato</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COBERTURA DA MENSALIDADE — novo layout com ícone + título bold + descrição -->
+    <div class="mens-section reveal">
+      <span class="mens-section-label">O que está coberto na mensalidade de manutenção</span>
+      <div class="mens-grid-new">
+        <div class="mens-card-new">
+          <div class="mens-icon-wrap">🔧</div>
+          <div>
+            <div class="mens-card-title-new">Monitoramento contínuo</div>
+            <div class="mens-card-desc-new">Acompanhamento do desempenho dos agentes e identificação proativa de falhas antes que afetem o processamento das notas.</div>
+          </div>
+        </div>
+        <div class="mens-card-new">
+          <div class="mens-icon-wrap">⚙️</div>
+          <div>
+            <div class="mens-card-title-new">Ajustes e evoluções de fluxo</div>
+            <div class="mens-card-desc-new">Alterações nas regras de extração, De-Para e critérios de validação — dentro de um volume mensal de ajustes incluso. Demandas adicionais são orçadas separadamente.</div>
+          </div>
+        </div>
+        <div class="mens-card-new">
+          <div class="mens-icon-wrap">🔗</div>
+          <div>
+            <div class="mens-card-title-new">Manutenção das integrações</div>
+            <div class="mens-card-desc-new">Garantia de funcionamento das conexões com Protheus, SharePoint, Trello e e-mail — inclusive após atualizações dos próprios sistemas.</div>
+          </div>
+        </div>
+        <div class="mens-card-new">
+          <div class="mens-icon-wrap">🆘</div>
+          <div>
+            <div class="mens-card-title-new">Suporte a incidentes</div>
+            <div class="mens-card-desc-new">Canal direto com o time NewScale via WhatsApp para resolução rápida de qualquer falha em produção — com SLA definido em contrato.</div>
+          </div>
+        </div>
+        <div class="mens-card-new">
+          <div class="mens-icon-wrap">🗂️</div>
+          <div>
+            <div class="mens-card-title-new">Atualização das bases de conhecimento</div>
+            <div class="mens-card-desc-new">Inclusão de novos municípios, novos fornecedores homologados e novos códigos de serviço nas tabelas De-Para que os agentes consultam.</div>
+          </div>
+        </div>
+        <div class="mens-card-new">
+          <div class="mens-icon-wrap">📊</div>
+          <div>
+            <div class="mens-card-title-new">Relatórios mensais de performance</div>
+            <div class="mens-card-desc-new">Revisão mensal dos principais KPIs — volume processado, taxa de erro, notas com exceção — com recomendações de otimização com base nos dados reais de uso.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="inv-aviso reveal">
+      <strong>Sobre custos de plataforma:</strong> os custos de APIs e ferramentas externas não estão inclusos nesta proposta e são pagos diretamente pela Di Gaspi. Isso inclui os modelos de linguagem utilizados (OpenAI / Anthropic), o plano de hospedagem do N8N e eventuais custos de licença de e-mail dedicado. A mensalidade NewScale cobre a gestão, monitoramento e manutenção técnica dessas ferramentas — não o custo dos planos em si. <strong>Estimativa de custo operacional mensal: R$ 300–600</strong> dependendo do volume de notas processadas — custo variável e proporcional ao uso.
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="garantia-section">
+  <div class="garantia-inner reveal">
+    <div class="garantia-block">
+      <div class="garantia-text">
+        <span class="section-label" style="color:rgba(255,255,255,0.5);">Nossa garantia</span>
+        <h2 class="section-title" style="color:#fff; margin-bottom:16px;">Entregamos o que foi <em>combinado — e ficamos até estar redondo.</em></h2>
+        <p>Nada de "entregamos o que estava no contrato e tchau". Se o agente está rodando mas em algum ponto não atende ao escopo combinado, a NewScale continua trabalhando — sem cobrança adicional — até estar funcionando como foi prometido. O time da Di Gaspi merece ver o sistema funcionando de verdade antes de considerarmos a entrega concluída.</p>
+      </div>
+      <div class="garantia-selo">
+        <div class="garantia-selo-num">100%</div>
+        <div class="garantia-selo-label">de comprometimento<br>com o escopo acordado</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE NEWSCALE -->
+<section class="porque-section" id="newscale">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Por que a NewScale</div>
+      <h2 class="section-title">Nem consultoria que vai embora.<br><em>Nem sistema que te molda.</em></h2>
+      <p class="section-sub">Existe uma lacuna entre receber recomendações e ter uma solução funcionando na sua operação. É nessa lacuna que a NewScale atua.</p>
+    </div>
+
+    <div class="porque-grid reveal">
+      <div class="porque-card">
+        <div class="porque-card-icon">📋</div>
+        <div class="porque-card-title">Não somos uma consultoria tradicional</div>
+        <p class="porque-card-text">Consultores entregam diagnósticos e recomendações — e vão embora. A execução fica com você. A NewScale fica até o sistema estar funcionando, a equipe estar treinada e os primeiros resultados estarem visíveis.</p>
+      </div>
+      <div class="porque-card">
+        <div class="porque-card-icon">📦</div>
+        <div class="porque-card-title">Não somos um SaaS de prateleira</div>
+        <p class="porque-card-text">Sistemas prontos fazem você adaptar seu negócio ao que foi construído. A NewScale faz o oposto: entende como a Di Gaspi opera, quais são as suas regras de negócio, e constrói a solução tecnológica que serve ao seu processo — não ao contrário.</p>
+      </div>
+      <div class="porque-card dark">
+        <div class="porque-card-icon">🎯</div>
+        <div class="porque-card-title">O que somos: implementação sob medida com sustentação contínua</div>
+        <p class="porque-card-text">Mergulhamos no negócio do cliente, entendemos os processos com profundidade, projetamos a arquitetura certa para aquele contexto específico — e construímos. Depois do go-live, acompanhamos os resultados, ajustamos o que precisar e evoluímos o sistema junto com a empresa. Cada cliente tem uma solução que é sua, não uma instância de algo genérico.</p>
+      </div>
+    </div>
+
+    <div class="quote-block reveal">
+      <div class="quote-mark">"</div>
+      <p class="quote-text">Cada projeto começa pela conversa — não pelo contrato. Entendemos como a operação funciona hoje, quais são as regras de negócio e o que a equipe precisa. Só depois a gente constrói. E depois que entrega, a gente fica — otimizando, ajustando e evoluindo junto com o seu negócio.</p>
+    </div>
+
+    <div class="metodologia-grid reveal">
+      <div class="met-card"><div class="met-num">01</div><div class="met-title">Consultoria Sistêmica</div><p class="met-desc">Visão completa do negócio: campo, financeiro e operação. IA como motor de escala — não de cosmética.</p></div>
+      <div class="met-card"><div class="met-num">02</div><div class="met-title">Roadmap Faseado</div><p class="met-desc">Priorizamos os processos com maior retorno imediato. O Módulo 1 vai a ar primeiro — e já gera resultado enquanto o seguinte é construído.</p></div>
+      <div class="met-card"><div class="met-num">03</div><div class="met-title">Implementação Integrada</div><p class="met-desc">Conectamos os sistemas que você já usa — Protheus, Trello, SharePoint, e-mail. Fluxos que funcionam onde as pessoas já estão.</p></div>
+      <div class="met-card"><div class="met-num">04</div><div class="met-title">Treinamento das Equipes</div><p class="met-desc">O colaborador, o gestor financeiro e o fiscal aprendem seu papel no novo fluxo. O humano passa a monitorar e decidir — a IA faz o operacional.</p></div>
+      <div class="met-card"><div class="met-num">05</div><div class="met-title">Acompanhamento de KPIs</div><p class="met-desc">Definimos as métricas juntos antes de começar — tempo de processamento, taxa de erro, notas atrasadas. Você sabe exatamente o que esperar.</p></div>
+      <div class="met-card"><div class="met-num">06</div><div class="met-title">Sustentação Contínua</div><p class="met-desc">Monitoramento, otimizações e ajustes para que o sistema evolua com a operação — e não fique parado no tempo enquanto a empresa cresce.</p></div>
+    </div>
+
+    <div class="fundadores-grid reveal">
+      <div class="fundador-card">
+        <img class="fundador-foto" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG" alt="Bruna Santanna" onerror="this.style.display='none'">
+        <div class="fundador-body">
+          <div class="fundador-name">Bruna Santanna</div>
+          <div class="fundador-role">Co-Fundadora</div>
+          <p class="fundador-bio">ESPM. Empresária há 10+ anos. Mentora de IA no programa Potenc.IA (OLX, Magalu, B3 e CI&T). Professora de IA para equipes corporativas. Implementa IA no próprio negócio todos os dias — só vende o que usa.</p>
+          <div class="fundador-tags"><span class="fundador-tag">SulAmérica</span><span class="fundador-tag">Whirlpool</span><span class="fundador-tag">Blackbox AI</span><span class="fundador-tag">Potenc.IA</span></div>
+        </div>
+      </div>
+      <div class="fundador-card">
+        <img class="fundador-foto" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/BRUNO-VARELLA-PQ.jpeg" alt="Bruno Varella" onerror="this.style.display='none'">
+        <div class="fundador-body">
+          <div class="fundador-name">Bruno Varella</div>
+          <div class="fundador-role">Co-Fundador</div>
+          <p class="fundador-bio">ESPM. 17+ anos em Marketing, Produto e Novos Negócios. Ex-Warner Bros., Ex-Natura & Co., Ex-Sorridents. Já implantou Agentes de IA em redes de franquias com 700+ unidades — contexto próximo ao da Di Gaspi.</p>
+          <div class="fundador-tags"><span class="fundador-tag">Warner Bros.</span><span class="fundador-tag">Natura & Co</span><span class="fundador-tag">Sorridents</span><span class="fundador-tag">700+ franquias</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="faq-header reveal">
+      <span class="section-label">Perguntas frequentes</span>
+      <h2 class="section-title">O que costuma <em>surgir antes do sim.</em></h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-q-text">E se a API do Protheus não cobrir todos os campos que o processo precisa?</div><div class="faq-arrow">+</div></div>
+        <div class="faq-a">A API REST do Protheus foi confirmada pelo responsável de TI da Di Gaspi e o time interno já faz customizações em ADVPL. Se algum endpoint específico para os campos do módulo de compras precisar ser adaptado, o próprio time de TI da Di Gaspi consegue fazer — é uma vantagem de ter um time interno capacitado. Mapeamos isso durante o kickoff e comunicamos o caminho exato antes de qualquer desenvolvimento.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-q-text">O time vai precisar aprender a usar um sistema novo?</div><div class="faq-arrow">+</div></div>
+        <div class="faq-a">Não. O objetivo é exatamente o contrário — tirar tarefas da lista do time, não adicionar novos sistemas. O Gustavo continua no e-mail que já usa. O Trello permanece como está. O Protheus continua sendo o ERP. A mudança é que o agente faz o trabalho repetitivo no lugar do time — e o time só é acionado quando há uma exceção real que precisa de decisão humana.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-q-text">Posso contratar só o Módulo 1 agora e decidir sobre o 2 depois?</div><div class="faq-arrow">+</div></div>
+        <div class="faq-a">Sim. Cada módulo tem valor e entrega independente. A condição de pacote — R$ 19.500 de implementação e R$ 1.940/mês — só é válida para a contratação dos dois juntos. Se preferir iniciar com o Módulo 1 e avaliar os resultados antes de partir para o Módulo 2, o valor separado é R$ 12.000 de implementação e R$ 1.490/mês de sustentação. O Módulo 2 pode ser contratado depois sem nenhuma penalidade — a infraestrutura do Módulo 1 já serve como base para ele.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-q-text">Como garantir que o agente não vai lançar uma nota errada no Protheus?</div><div class="faq-arrow">+</div></div>
+        <div class="faq-a">O agente tem validação em múltiplas etapas antes de qualquer lançamento: cruza CNPJ, confirma filial, verifica o De-Para de municípios e confere o código de serviço. Qualquer campo sem correspondência confirmada gera alerta para o time — o agente nunca assume uma informação incerta. No primeiro ciclo, o time acompanha cada lançamento lado a lado antes de o agente operar de forma autônoma.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-q-text">Em quanto tempo o sistema entra em funcionamento?</div><div class="faq-arrow">+</div></div>
+        <div class="faq-a">O Módulo 1 entra em produção em 6 a 8 semanas após o kickoff. O Módulo 2 entra 4 a 6 semanas depois, com o Módulo 1 já estabilizado. Com o pacote completo, a operação completa está em go-live em 90 dias corridos da assinatura do contrato. O kickoff acontece na semana 1 — e é nele que mapeamos todos os acessos, validamos as tabelas De-Para existentes e alinhamos as regras de negócio específicas da Di Gaspi.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-q-text">O que acontece quando expandirmos para Fiscal, Compras ou RH?</div><div class="faq-arrow">+</div></div>
+        <div class="faq-a">A infraestrutura construída no piloto do Marketing foi desenhada para ser replicada. Adicionar um novo departamento significa configurar os CNPJs e regras específicas daquele fluxo, criar uma nova caixa de entrada dedicada e ajustar os parâmetros do agente — não reconstruir do zero. O custo de expansão é marginal em relação ao que foi investido nos dois primeiros módulos.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRÓXIMOS PASSOS -->
+<section class="passos-section" id="passos">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label" style="color:var(--tl);">Próximos Passos</div>
+      <h2 class="section-title light">90 dias corridos.<br><em style="color:rgba(255,255,255,0.55);">Do contrato ao agente<br>rodando em produção.</em></h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.4);">Cronograma a contar da assinatura do contrato. O Módulo 1 já gera resultado enquanto o Módulo 2 é construído em paralelo.</p>
+    </div>
+    <div class="passos-list">
+      <div class="passo-item reveal">
+        <div class="passo-num">1</div>
+        <div>
+          <div class="passo-prazo">Dias 1–7 · Semana 1</div>
+          <div class="passo-title">Imersão e Kickoff</div>
+          <p class="passo-desc">Reunião de kickoff com o colaborador de marketing e o responsável de TI para mapear todos os acessos necessários (Protheus API, SharePoint, e-mail centralizado), validar as tabelas de De-Para de códigos municipais existentes, coletar as planilhas de filiais e fornecedores homologados e alinhar as regras de negócio específicas da Di Gaspi. Saímos com tudo que precisamos para construir — sem idas e vindas.</p>
+        </div>
+      </div>
+      <div class="passo-item reveal">
+        <div class="passo-num">2</div>
+        <div>
+          <div class="passo-prazo">Dias 8–21 · Semanas 2–3</div>
+          <div class="passo-title">Arquitetura, Integração e Construção</div>
+          <p class="passo-desc">Desenvolvimento do agente de leitura e extração de NFS-e, integração com o Protheus via API REST (em parceria com o responsável de TI da Di Gaspi), construção das bases de conhecimento de códigos municipais e configuração do fluxo de aprovação digital. Testes com documentos fiscais reais do marketing.</p>
+        </div>
+      </div>
+      <div class="passo-item reveal">
+        <div class="passo-num">3</div>
+        <div>
+          <div class="passo-prazo">Dias 22–42 · Semanas 4–6</div>
+          <div class="passo-title">Go-live Módulo 1 + Treinamento</div>
+          <p class="passo-desc">Lançamento do agente em produção com acompanhamento da NewScale. Treinamento com o colaborador de marketing, o gestor financeiro e o time sobre o novo fluxo — como monitorar o agente, como tratar divergências e como consultar os logs de auditoria. A partir daqui, as notas de serviço param de passar pela mão do time.</p>
+        </div>
+      </div>
+      <div class="passo-item reveal">
+        <div class="passo-num">4</div>
+        <div>
+          <div class="passo-prazo">Dias 43–70 · Semanas 7–10</div>
+          <div class="passo-title">Construção e Go-live — Módulo 2</div>
+          <p class="passo-desc">Com o Módulo 1 estabilizado, início da curadoria da base de itens de PDV em parceria com o coordenador de marketing — mapeamento de nomenclaturas de cada fornecedor homologado e os respectivos códigos internos do Protheus. Desenvolvimento do agente de NF-e de produto e testes com notas reais de campanha.</p>
+        </div>
+      </div>
+      <div class="passo-item reveal">
+        <div class="passo-num">5</div>
+        <div>
+          <div class="passo-prazo">Dias 71–90 · Semanas 11–13</div>
+          <div class="passo-title">Ajustes Finais, Entrega e Visão de Expansão</div>
+          <p class="passo-desc">Período de observação e ajuste fino com os dois módulos rodando em produção — novos padrões de nota identificados, ajustes de regras, expansão da base de conhecimento. Entrega do painel de KPIs (tempo médio de processamento, taxa de erro, notas atrasadas). Apresentação dos indicadores do piloto para embasar a conversa de expansão para outros departamentos.</p>
+        </div>
+      </div>
+    </div>
+    <p class="passos-closing reveal">Você não está sozinho no go-live — e nem depois dele.</p>
+  </div>
+</section>
+
+<!-- CTA FECHAMENTO -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-fechamento-inner reveal">
+      <div class="cta-topo">
+        <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice"><path d="M0,300 Q200,200 400,280 T800,250 T1200,300" fill="none" stroke="white" stroke-width="0.8"/><path d="M0,250 Q300,160 500,230 T900,200 T1200,250" fill="none" stroke="white" stroke-width="0.6"/><path d="M0,350 Q200,290 400,330 T800,310 T1200,360" fill="none" stroke="white" stroke-width="0.5"/></svg>
+      </div>
+      <div class="cta-validade"><span class="pulse"></span> Proposta válida até 31 de maio de 2026</div>
+      <h2>A Di Gaspi já tem a rede, os processos<br>e o time. Falta só <em>deixar a IA trabalhar.</em></h2>
+      <p>36 anos de construção e 60 lojas próprias — a estrutura já existe. O próximo passo é tirar o operacional do caminho para que o time se concentre no que gera resultado de verdade.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/5511971901020?text=Ol%C3%A1%2C%20Bruna!%20Vi%20a%20proposta%20da%20NewScale%20para%20a%20Di%20Gaspi%20e%20quero%20conversar%20sobre%20os%20pr%C3%B3ximos%20passos." class="cta-btn-primary" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Falar com a Bruna
+        </a>
+        <a href="https://wa.me/5511971901020?text=Ol%C3%A1%2C%20Bruna!%20Tenho%20uma%20d%C3%BAvida%20sobre%20a%20proposta%20da%20Di%20Gaspi%20antes%20de%20avan%C3%A7ar." class="cta-btn-secondary" target="_blank" rel="noopener">Tenho uma dúvida antes</a>
+      </div>
+      <div class="cta-metricas">
+        <div><div class="cta-metrica-num">90 dias</div><div class="cta-metrica-label">Do kickoff ao agente rodando em produção</div></div>
+        <div><div class="cta-metrica-num">2×</div><div class="cta-metrica-label">Parcelamento sem juros na implementação</div></div>
+        <div><div class="cta-metrica-num">5 etapas</div><div class="cta-metrica-label">Do kickoff ao go-live com acompanhamento em cada uma</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">NewScale<span>Consulting</span></div>
+  <div class="footer-date">Proposta exclusiva · Di Gaspi<br>Maio de 2026 · Válida até 31/05/2026</div>
+</footer>
+
+<script>
+function toggleFase(block) { block.classList.toggle('open'); }
+function toggleModulo(e, card) { e.stopPropagation(); card.classList.toggle('open'); }
+function toggleFaq(item) {
+  document.querySelectorAll('.faq-item.open').forEach(other => { if (other !== item) other.classList.remove('open'); });
+  item.classList.toggle('open');
+}
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.06 });
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
