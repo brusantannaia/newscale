@@ -1,0 +1,1869 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Comercial · KORU · NewScale Consulting · v1</title>
+
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="bingbot" content="noindex, nofollow">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&amp;family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&amp;display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #14373C;
+  --ink2: #1a4449;
+  --sage: #435D51;
+  --terra: #B06E4A;
+  --tl: #c4835e;
+  --sand: #A38362;
+  --cream: #E8E6E0;
+  --cl: #F4F3EF;
+  --white: #FAFAF8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 18px;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.85rem, 3.2vw, 2.6rem);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 28px;
+}
+.section-title em { font-style: italic; color: var(--terra); font-weight: 600; }
+
+.section-title-light {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.85rem, 3.2vw, 2.6rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 28px;
+}
+.section-title-light em { font-style: italic; color: var(--tl); font-weight: 600; }
+
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 48px;
+  background: transparent;
+  transition: background 0.4s, backdrop-filter 0.4s;
+}
+.navbar.scrolled {
+  background: rgba(12, 36, 39, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.navbar-logos { display: flex; align-items: center; gap: 18px; }
+.navbar-logos img { height: 52px; opacity: 0.95; display: block; }
+.navbar-x {
+  color: rgba(255,255,255,0.35); font-size: 1.4rem; font-weight: 300;
+  font-family: 'Cormorant Garamond', serif;
+}
+.logo-koru-circle {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: #C500F0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'DM Sans', sans-serif; font-weight: 700;
+  font-size: 0.74rem; color: #fff; letter-spacing: -0.02em;
+  box-shadow: 0 4px 16px rgba(197, 0, 240, 0.3);
+}
+.navbar-tag {
+  font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--tl);
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #0c2427 0%, #14373C 38%, #1d4840 72%, #435D51 100%);
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center; padding: 120px 40px 80px; overflow: hidden; position: relative;
+}
+.topo-lines { position: absolute; inset: 0; opacity: 0.08; pointer-events: none; }
+.topo-lines svg { width: 100%; height: 100%; }
+.grain-overlay {
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.03; pointer-events: none;
+}
+.hero-badge {
+  display: inline-block; background: rgba(176,110,74,0.15); color: var(--tl);
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(176,110,74,0.25);
+  margin-bottom: 28px; animation: fadeUp 0.6s ease both 0.2s;
+  position: relative; z-index: 2;
+}
+.hero-eyebrow {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.45); margin-bottom: 20px; animation: fadeUp 0.6s ease both 0.3s;
+  position: relative; z-index: 2;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem); font-weight: 700; color: #fff;
+  line-height: 1.15; max-width: 900px; margin-bottom: 28px;
+  animation: fadeUp 0.6s ease both 0.4s;
+  position: relative; z-index: 2;
+}
+.hero h1 em { font-style: italic; color: var(--tl); }
+.hero-desc {
+  font-size: 0.97rem; font-weight: 300; color: rgba(255,255,255,0.65);
+  max-width: 660px; line-height: 1.75; margin-bottom: 52px;
+  animation: fadeUp 0.6s ease both 0.5s;
+  position: relative; z-index: 2;
+}
+.hero-cta {
+  animation: fadeUp 0.6s ease both 0.7s;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  color: rgba(255,255,255,0.35); font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  cursor: pointer; text-decoration: none; transition: color 0.3s;
+  position: relative; z-index: 2;
+}
+.hero-cta:hover { color: rgba(255,255,255,0.7); }
+.hero-cta svg { animation: bounce 2s infinite; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* ===== CONTEXT ===== */
+.context-section { background: var(--cl); padding: 100px 40px; }
+.context-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.context-text p {
+  font-size: 0.92rem; color: #4a6a6f; line-height: 1.78; margin-bottom: 18px;
+}
+.intro-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.stat-card {
+  background: var(--ink); border-radius: 14px; padding: 28px 24px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.stat-card:nth-child(2) { background: var(--terra); }
+.stat-card:nth-child(3) { background: var(--sage); }
+.stat-card:nth-child(4) { background: var(--ink2); }
+.stat-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem; font-weight: 700; color: #fff; line-height: 1;
+}
+.stat-label {
+  font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.65);
+}
+
+/* ===== DORES ===== */
+.dores-section { background: var(--ink); padding: 100px 40px; }
+.dores-inner { max-width: 1100px; margin: 0 auto; }
+.dores-header { margin-bottom: 56px; max-width: 720px; }
+.dores-header p { font-size: 0.92rem; color: rgba(255,255,255,0.6); line-height: 1.78; }
+.dores-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.dore-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px; padding: 32px 28px; position: relative; overflow: hidden;
+  transition: border-color 0.3s, background 0.3s;
+}
+.dore-card:hover { border-color: rgba(176,110,74,0.3); background: rgba(176,110,74,0.04); }
+.dore-num {
+  font-family: 'Cormorant Garamond', serif; font-size: 5rem; font-weight: 700;
+  color: rgba(176,110,74,0.08); line-height: 1; position: absolute; top: 12px; right: 20px;
+}
+.dore-tag {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--tl); margin-bottom: 10px;
+}
+.dore-title {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700;
+  color: #fff; line-height: 1.25; margin-bottom: 14px; position: relative; z-index: 1;
+}
+.dore-text { font-size: 0.86rem; font-weight: 300; color: rgba(255,255,255,0.65); line-height: 1.75; position: relative; z-index: 1; }
+
+/* ===== MÓDULO ===== */
+.modulo-section { background: var(--white); padding: 100px 40px; }
+.modulo-inner { max-width: 1100px; margin: 0 auto; }
+.modulo-header { margin-bottom: 48px; max-width: 720px; }
+.modulo-header p { font-size: 0.92rem; color: #4a6a6f; line-height: 1.78; margin-top: 16px; }
+
+.fase-header {
+  background: var(--ink); color: #fff; border-radius: 14px 14px 0 0;
+  padding: 28px 32px; display: flex; justify-content: space-between; align-items: center;
+}
+.fase-tag {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--tl); margin-bottom: 6px;
+}
+.fase-name {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; line-height: 1.2;
+}
+.fase-duration {
+  font-size: 0.78rem; font-weight: 400; color: rgba(255,255,255,0.55); margin-top: 8px;
+}
+.fase-num-badge {
+  font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 700;
+  color: rgba(196,131,94,0.2); line-height: 1;
+}
+
+.modulo-card {
+  background: #fff; border: 1px solid rgba(20,55,60,0.08);
+  border-top: none; border-radius: 0 0 14px 14px;
+  padding: 28px 32px; cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+.modulo-card:hover { box-shadow: 0 8px 24px rgba(20,55,60,0.06); }
+.modulo-card-header {
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 24px;
+}
+.modulo-card-left { display: flex; gap: 20px; align-items: flex-start; flex: 1; }
+.modulo-icon {
+  font-size: 1.6rem; width: 48px; height: 48px;
+  background: rgba(176,110,74,0.1); border-radius: 12px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.modulo-label {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--terra); margin-bottom: 6px;
+}
+.modulo-name {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700;
+  color: var(--ink); line-height: 1.25;
+}
+.modulo-chips {
+  display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px;
+  transition: opacity 0.3s, max-height 0.3s; opacity: 1; max-height: 100px; overflow: hidden;
+}
+.modulo-card.open .modulo-chips { opacity: 0; max-height: 0; margin-top: 0; }
+.chip {
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.05em;
+  background: rgba(67,93,81,0.08); color: var(--sage);
+  padding: 4px 10px; border-radius: 20px;
+}
+.modulo-toggle {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(176,110,74,0.1); color: var(--terra);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; font-weight: 300; flex-shrink: 0;
+  transition: transform 0.3s, background 0.3s;
+}
+.modulo-card.open .modulo-toggle {
+  transform: rotate(45deg);
+  background: var(--terra); color: #fff;
+}
+.modulo-body {
+  max-height: 0; overflow: hidden; transition: max-height 0.5s ease, padding-top 0.3s;
+  padding-top: 0;
+}
+.modulo-card.open .modulo-body { max-height: 2000px; padding-top: 24px; }
+
+.value-box {
+  background: var(--cl); border-radius: 12px; padding: 20px 22px;
+  display: flex; gap: 16px; align-items: flex-start; margin-bottom: 24px;
+}
+.value-box-icon {
+  font-size: 1.4rem; width: 40px; height: 40px;
+  background: rgba(176,110,74,0.12); border-radius: 10px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.value-box-label {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--terra); margin-bottom: 4px;
+}
+.value-box-text {
+  font-size: 0.92rem; color: var(--ink); font-weight: 500; line-height: 1.6;
+}
+.modulo-desc {
+  font-size: 0.9rem; color: #4a6a6f; line-height: 1.75; margin-bottom: 20px;
+}
+.modulo-items { list-style: none; }
+.modulo-items li {
+  font-size: 0.88rem; color: #4a6a6f; line-height: 1.7; padding: 10px 0;
+  border-bottom: 1px dashed rgba(20,55,60,0.08);
+  position: relative; padding-left: 22px;
+}
+.modulo-items li:last-child { border-bottom: none; }
+.modulo-items li::before {
+  content: '→'; position: absolute; left: 0; top: 10px; color: var(--terra); font-weight: 600;
+}
+.modulo-items li strong { color: var(--ink); font-weight: 600; }
+
+/* ===== COMO FUNCIONA ===== */
+.como-section { background: var(--cl); padding: 100px 40px; }
+.como-inner { max-width: 1100px; margin: 0 auto; }
+.como-header { margin-bottom: 56px; max-width: 720px; }
+.como-header p { font-size: 0.92rem; color: #4a6a6f; line-height: 1.78; margin-top: 16px; }
+
+.demo-grid {
+  display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: start;
+  margin-bottom: 80px;
+}
+
+/* Mockup mobile */
+.mock-phone {
+  background: #0a1c1f; border-radius: 36px;
+  padding: 14px; max-width: 320px; margin: 0 auto;
+  box-shadow: 0 24px 60px rgba(20,55,60,0.18);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.mock-screen {
+  background: #ece5dd; border-radius: 24px; padding: 18px 14px; min-height: 480px;
+}
+.mock-header {
+  display: flex; align-items: center; gap: 10px;
+  padding-bottom: 12px; border-bottom: 1px solid rgba(20,55,60,0.08); margin-bottom: 14px;
+}
+.mock-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--terra), var(--sage));
+  color: #fff; display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif; font-weight: 700;
+}
+.mock-info-name { font-size: 0.82rem; font-weight: 600; color: var(--ink); }
+.mock-info-status { font-size: 0.65rem; color: var(--sage); }
+.wa-msg {
+  font-size: 0.78rem; line-height: 1.5; padding: 8px 12px;
+  border-radius: 12px; max-width: 80%; margin-bottom: 8px;
+  word-wrap: break-word;
+}
+.wa-msg.received {
+  background: #fff; color: var(--ink);
+  border-bottom-left-radius: 4px;
+}
+.wa-msg.sent {
+  background: #dcf8c6; color: var(--ink);
+  margin-left: auto; border-bottom-right-radius: 4px;
+}
+.wa-time {
+  font-size: 0.6rem; color: rgba(20,55,60,0.5);
+  display: block; margin-top: 2px;
+}
+.wa-card {
+  background: #fff; border-left: 3px solid var(--terra);
+  padding: 10px 12px; border-radius: 10px;
+  font-size: 0.74rem; max-width: 80%; margin-bottom: 8px;
+}
+.wa-card-title { font-weight: 700; color: var(--ink); margin-bottom: 4px; font-size: 0.72rem; }
+.wa-card-row { color: #5a7a7f; line-height: 1.5; }
+.wa-card-row b { color: var(--ink); }
+
+.demo-text-block { padding-top: 12px; }
+.demo-eyebrow {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--terra); margin-bottom: 14px;
+}
+.demo-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem; font-weight: 700; color: var(--ink);
+  line-height: 1.25; margin-bottom: 18px;
+}
+.demo-title em { font-style: italic; color: var(--terra); }
+.demo-text {
+  font-size: 0.88rem; color: #4a6a6f; line-height: 1.78; margin-bottom: 14px;
+}
+
+/* Dashboard mockup */
+.dash-grid {
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px;
+  align-items: start; margin-bottom: 80px;
+}
+.dash-mock {
+  background: #fff; border-radius: 16px; padding: 24px;
+  border: 1px solid rgba(20,55,60,0.08);
+  box-shadow: 0 12px 36px rgba(20,55,60,0.08);
+}
+.dash-mock-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: 16px; border-bottom: 1px solid rgba(20,55,60,0.06); margin-bottom: 18px;
+}
+.dash-mock-title { font-size: 0.88rem; font-weight: 700; color: var(--ink); }
+.dash-mock-tag {
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  background: rgba(67,93,81,0.1); color: var(--sage);
+  padding: 3px 10px; border-radius: 20px;
+}
+.dash-row {
+  display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 12px;
+  padding: 14px 0; border-bottom: 1px dashed rgba(20,55,60,0.07);
+  align-items: center;
+}
+.dash-row:last-child { border-bottom: none; }
+.dash-row.dash-head {
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(20,55,60,0.4); padding: 6px 0;
+}
+.dash-name { font-size: 0.84rem; font-weight: 500; color: var(--ink); }
+.dash-bar-wrap {
+  display: flex; align-items: center; gap: 8px;
+}
+.dash-bar {
+  flex: 1; height: 6px; background: rgba(20,55,60,0.06); border-radius: 4px; overflow: hidden;
+}
+.dash-bar-fill { height: 100%; background: var(--terra); border-radius: 4px; }
+.dash-bar-fill.s { background: var(--sage); }
+.dash-bar-fill.i { background: var(--ink2); }
+.dash-bar-num {
+  font-family: 'Cormorant Garamond', serif; font-weight: 700;
+  font-size: 0.92rem; color: var(--ink); min-width: 28px;
+}
+
+/* Tela final do participante — Devolutiva */
+.result-screen {
+  background: #fff; border-radius: 16px; padding: 32px 30px;
+  border: 1px solid rgba(20,55,60,0.08);
+  box-shadow: 0 12px 36px rgba(20,55,60,0.08);
+  max-width: 440px; margin: 0 auto;
+}
+.result-header {
+  padding-bottom: 18px; border-bottom: 1px solid rgba(20,55,60,0.06);
+  margin-bottom: 28px;
+}
+.result-eyebrow {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--terra); margin-bottom: 6px;
+}
+.result-jornada {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.15rem;
+  font-weight: 700; color: var(--ink); line-height: 1.3;
+}
+.result-rings {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+  margin-bottom: 24px;
+}
+.ring-item {
+  display: flex; flex-direction: column; align-items: center;
+  position: relative;
+}
+.ring-svg-wrap { position: relative; width: 100px; height: 100px; }
+.ring-svg {
+  width: 100px; height: 100px;
+  transform: rotate(-90deg);
+}
+.ring-bg {
+  fill: none; stroke: rgba(20,55,60,0.08); stroke-width: 8;
+}
+.ring-fill {
+  fill: none; stroke-width: 8; stroke-linecap: round;
+}
+.ring-fill.terra { stroke: var(--terra); }
+.ring-fill.sage { stroke: var(--sage); }
+.ring-fill.ink2 { stroke: var(--ink2); }
+.ring-center {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  font-family: 'Cormorant Garamond', serif; font-size: 1.6rem;
+  font-weight: 700; color: var(--ink); line-height: 1;
+}
+.ring-label {
+  font-size: 0.66rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: #5a7a7f; margin-top: 10px;
+}
+.result-comment {
+  display: flex; gap: 14px; padding: 16px 18px;
+  background: var(--cl); border-radius: 10px;
+  border-left: 3px solid var(--terra);
+}
+.result-comment-icon { font-size: 1.2rem; flex-shrink: 0; line-height: 1.4; }
+.result-comment-label {
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--terra); margin-bottom: 4px;
+}
+.result-comment-text {
+  font-size: 0.82rem; color: var(--ink); line-height: 1.55;
+}
+
+/* Disclaimer dos mockups */
+.mock-disclaimer {
+  margin-top: 48px; text-align: center;
+  font-size: 0.74rem; font-style: italic;
+  color: rgba(74, 106, 111, 0.7); line-height: 1.6;
+  max-width: 720px; margin-left: auto; margin-right: auto;
+}
+
+/* Antes / Depois */
+.ad-section { padding-top: 24px; }
+.ad-header { margin-bottom: 36px; }
+.ad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.ad-col {
+  border-radius: 14px; padding: 28px 26px; min-height: 380px;
+  display: flex; flex-direction: column;
+}
+.ad-col-antes { background: #fff; border: 1px solid rgba(20,55,60,0.08); }
+.ad-col-depois { background: linear-gradient(155deg, var(--ink), var(--sage)); color: #fff; }
+.ad-col-tag {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.ad-col-antes .ad-col-tag { color: var(--sand); }
+.ad-col-depois .ad-col-tag { color: var(--tl); }
+.ad-col-title {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700;
+  margin-bottom: 24px;
+}
+.ad-col-antes .ad-col-title { color: var(--ink); }
+.ad-col-depois .ad-col-title { color: #fff; }
+.ad-step {
+  display: flex; gap: 14px; padding: 12px 0;
+  border-bottom: 1px dashed rgba(20,55,60,0.08);
+}
+.ad-col-depois .ad-step { border-bottom-color: rgba(255,255,255,0.08); }
+.ad-step:last-of-type { border-bottom: none; }
+.ad-step-time {
+  font-family: 'Cormorant Garamond', serif; font-weight: 700; min-width: 56px;
+  font-variant-numeric: tabular-nums; font-size: 0.92rem;
+}
+.ad-col-antes .ad-step-time { color: var(--ink); }
+.ad-col-depois .ad-step-time { color: var(--tl); }
+.ad-step-text { font-size: 0.84rem; line-height: 1.6; }
+.ad-col-antes .ad-step-text { color: #4a6a6f; }
+.ad-col-depois .ad-step-text { color: rgba(255,255,255,0.78); }
+.ad-total {
+  margin-top: auto; padding-top: 18px; border-top: 1px solid rgba(20,55,60,0.1);
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+.ad-col-depois .ad-total { border-top-color: rgba(255,255,255,0.18); }
+.ad-total-label {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+}
+.ad-col-antes .ad-total-label { color: var(--sand); }
+.ad-col-depois .ad-total-label { color: var(--tl); }
+.ad-total-num {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 700;
+}
+.ad-col-antes .ad-total-num { color: var(--ink); }
+.ad-col-depois .ad-total-num { color: #fff; }
+
+/* ===== INVESTIMENTO ===== */
+.invest-section { background: var(--ink); padding: 100px 40px; }
+.invest-inner { max-width: 1100px; margin: 0 auto; }
+.invest-header { margin-bottom: 56px; max-width: 720px; }
+.invest-header p {
+  font-size: 0.92rem; color: rgba(255,255,255,0.6); line-height: 1.78; margin-top: 16px;
+}
+
+.invest-mod-card {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 16px; padding: 40px 36px; margin-bottom: 24px;
+}
+.invest-mod-card-top {
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 32px;
+  padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 24px;
+}
+.invest-mod-name {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700;
+  color: #fff; margin-bottom: 8px;
+}
+.invest-mod-tag {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--tl); margin-bottom: 10px;
+}
+.invest-mod-meta {
+  font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.65;
+}
+.invest-mod-price {
+  font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 700;
+  color: #fff; line-height: 1; white-space: nowrap;
+}
+.invest-mod-price-label {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,0.5); margin-top: 8px;
+}
+.invest-mod-list-title {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--tl); margin-bottom: 14px;
+}
+.invest-mod-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+.invest-mod-list li {
+  font-size: 0.82rem; color: rgba(255,255,255,0.78); line-height: 1.6;
+  padding-left: 18px; position: relative;
+}
+.invest-mod-list li::before {
+  content: '✓'; position: absolute; left: 0; top: 0; color: var(--terra); font-weight: 700;
+}
+
+.invest-pay {
+  background: rgba(196,131,94,0.06); border: 1px solid rgba(196,131,94,0.2);
+  border-radius: 14px; padding: 28px 30px; margin-bottom: 24px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;
+}
+.invest-pay-label {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--tl); margin-bottom: 8px;
+}
+.invest-pay-text { font-size: 0.92rem; color: #fff; line-height: 1.6; font-weight: 500; }
+.invest-pay-detail { font-size: 0.8rem; color: rgba(255,255,255,0.65); line-height: 1.65; }
+
+/* ROI */
+.roi-check {
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center;
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px; padding: 36px 32px; margin-bottom: 24px;
+}
+.roi-text-title {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700;
+  color: #fff; margin-bottom: 12px;
+}
+.roi-text { font-size: 0.86rem; color: rgba(255,255,255,0.65); line-height: 1.78; }
+.roi-num-block {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  border-left: 1px solid rgba(255,255,255,0.1); padding-left: 32px;
+}
+.roi-payback-num {
+  font-family: 'Cormorant Garamond', serif; font-size: 3.2rem; font-weight: 700;
+  color: var(--tl); line-height: 1;
+}
+.roi-payback-label {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,0.5); margin-top: 12px;
+}
+
+/* Aviso APIs */
+.invest-aviso {
+  background: rgba(0,0,0,0.15); border-left: 3px solid var(--terra);
+  border-radius: 8px; padding: 18px 22px;
+}
+.invest-aviso-label {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--tl); margin-bottom: 6px;
+}
+.invest-aviso-text { font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+
+/* ===== DIAG ===== */
+.diag-section { background: var(--cl); padding: 100px 40px; }
+.diag-inner { max-width: 1100px; margin: 0 auto; }
+.diag-intro {
+  font-size: 0.92rem; color: #4a6a6f; line-height: 1.78;
+  max-width: 680px; margin-top: 16px; margin-bottom: 48px;
+}
+.diag-table {
+  border: 1px solid rgba(20,55,60,0.1); border-radius: 16px;
+  overflow: hidden; background: #fff;
+}
+.diag-row {
+  display: grid; grid-template-columns: 200px 1fr 1fr 1fr; gap: 0;
+  border-bottom: 1px solid rgba(20,55,60,0.07);
+}
+.diag-row:last-child { border-bottom: none; }
+.diag-row > div {
+  padding: 18px 20px; font-size: 0.82rem;
+  border-right: 1px solid rgba(20,55,60,0.07);
+}
+.diag-row > div:last-child { border-right: none; }
+.diag-row--header { background: var(--ink); }
+.diag-row--header > div {
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.45); border-right-color: rgba(255,255,255,0.07);
+}
+.diag-sys-name-sm {
+  font-weight: 700; color: var(--ink); font-size: 0.88rem; margin-bottom: 4px;
+}
+.diag-region-sm { font-size: 0.68rem; color: var(--terra); font-weight: 600; }
+.diag-cell-text { color: #5a7a7f; line-height: 1.65; }
+.diag-cell-rec {
+  background: rgba(20,55,60,0.02); color: var(--ink); font-weight: 500;
+}
+.diag-badge {
+  font-size: 0.6rem; font-weight: 700; padding: 3px 10px;
+  border-radius: 20px; display: inline-block; margin-top: 4px;
+}
+.diag-badge--good { background: rgba(67,93,81,0.1); color: var(--sage); }
+.diag-badge--mid { background: rgba(163,131,98,0.12); color: var(--sand); }
+
+/* ===== GARANTIA ===== */
+.garantia-section { background: #fff; padding: 100px 40px; }
+.garantia-inner { max-width: 1100px; margin: 0 auto; }
+.garantia-block {
+  background: linear-gradient(135deg, var(--ink), var(--sage));
+  border-radius: 20px; padding: 48px 56px;
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center;
+  overflow: hidden; position: relative;
+}
+.garantia-block::before {
+  content: ''; position: absolute; right: -40px; top: -40px;
+  width: 160px; height: 160px; border: 1px solid rgba(196,131,94,0.18);
+  border-radius: 50%;
+}
+.garantia-block::after {
+  content: ''; position: absolute; right: -10px; top: -10px;
+  width: 100px; height: 100px; border: 1px solid rgba(196,131,94,0.1);
+  border-radius: 50%;
+}
+.garantia-eyebrow {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--tl); margin-bottom: 14px;
+}
+.garantia-title {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 700;
+  color: #fff; line-height: 1.25; margin-bottom: 18px;
+}
+.garantia-title em { font-style: italic; color: var(--tl); }
+.garantia-text { font-size: 0.92rem; color: rgba(255,255,255,0.78); line-height: 1.78; }
+.garantia-selo {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  position: relative; z-index: 1;
+}
+.garantia-selo-num {
+  font-family: 'Cormorant Garamond', serif; font-size: 3.6rem; font-weight: 700;
+  color: var(--tl); line-height: 1;
+}
+.garantia-selo-label {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,0.65); margin-top: 12px;
+}
+
+/* ===== POR QUE A NEWSCALE ===== */
+.why-section { background: var(--cl); padding: 100px 40px; }
+.why-inner { max-width: 1100px; margin: 0 auto; }
+.quote-block {
+  background: linear-gradient(150deg, var(--ink), var(--sage) 90%);
+  border-radius: 20px; padding: 48px 56px;
+  position: relative; margin-bottom: 80px;
+}
+.quote-mark {
+  font-family: 'Cormorant Garamond', serif; font-size: 6rem; font-weight: 700;
+  color: rgba(196,131,94,0.2); line-height: 0.7; position: absolute;
+  top: 28px; left: 36px;
+}
+.quote-text {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400;
+  color: rgba(255,255,255,0.92); line-height: 1.5; font-style: italic;
+  position: relative; z-index: 1; margin-left: 40px;
+}
+.quote-author {
+  font-size: 0.78rem; color: var(--tl); font-weight: 600;
+  margin-top: 24px; letter-spacing: 0.04em;
+  position: relative; z-index: 1; margin-left: 40px;
+}
+
+.met-header { margin-bottom: 40px; }
+.metodologia-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 80px;
+}
+.met-card {
+  background: #fff; border: 1px solid rgba(20,55,60,0.07);
+  border-radius: 14px; padding: 28px 24px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.met-card:hover {
+  border-color: rgba(176,110,74,0.25);
+  box-shadow: 0 8px 24px rgba(20,55,60,0.06);
+}
+.met-num {
+  font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700;
+  color: var(--terra); line-height: 1; margin-bottom: 14px;
+}
+.met-title {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 700;
+  color: var(--ink); margin-bottom: 10px;
+}
+.met-text { font-size: 0.82rem; color: #4a6a6f; line-height: 1.7; }
+
+.fundadores-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.fundador-card {
+  background: #fff; border-radius: 16px; overflow: hidden;
+  border: 1px solid rgba(20,55,60,0.08);
+  display: flex; gap: 0;
+}
+.fundador-photo {
+  width: 180px; min-height: 220px;
+  background-size: cover; background-position: center;
+  flex-shrink: 0;
+}
+.fundador-info { padding: 28px 26px; flex: 1; }
+.fundador-name {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700;
+  color: var(--ink); margin-bottom: 4px;
+}
+.fundador-role {
+  font-size: 0.66rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--terra); margin-bottom: 16px;
+}
+.fundador-bio { font-size: 0.82rem; color: #4a6a6f; line-height: 1.7; margin-bottom: 16px; }
+.fundador-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.f-tag {
+  font-size: 0.62rem; font-weight: 600;
+  background: rgba(67,93,81,0.08); color: var(--sage);
+  padding: 4px 10px; border-radius: 20px;
+}
+
+/* ===== FAQ ===== */
+.faq-section { background: #fff; padding: 100px 40px; }
+.faq-inner { max-width: 800px; margin: 0 auto; }
+.faq-header { text-align: center; margin-bottom: 48px; }
+.faq-list { display: flex; flex-direction: column; gap: 12px; }
+.faq-item {
+  background: var(--cl); border: 1px solid rgba(20,55,60,0.06);
+  border-radius: 12px; padding: 22px 26px; cursor: pointer;
+  transition: border-color 0.3s, background 0.3s;
+}
+.faq-item:hover { border-color: rgba(176,110,74,0.2); }
+.faq-item.open { background: #fff; border-color: rgba(176,110,74,0.3); }
+.faq-q {
+  display: flex; justify-content: space-between; align-items: center; gap: 20px;
+  font-size: 0.92rem; font-weight: 600; color: var(--ink);
+}
+.faq-q-icon {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(176,110,74,0.1); color: var(--terra);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; font-weight: 300; flex-shrink: 0;
+  transition: transform 0.3s, background 0.3s;
+}
+.faq-item.open .faq-q-icon {
+  transform: rotate(45deg); background: var(--terra); color: #fff;
+}
+.faq-a {
+  max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding-top 0.3s;
+  padding-top: 0;
+  font-size: 0.86rem; color: #4a6a6f; line-height: 1.78;
+}
+.faq-item.open .faq-a { max-height: 500px; padding-top: 14px; }
+
+/* ===== PRÓXIMOS PASSOS ===== */
+.steps-section {
+  background: linear-gradient(155deg, #0c2427, var(--ink) 50%, var(--sage) 100%);
+  padding: 100px 40px;
+}
+.steps-inner { max-width: 800px; margin: 0 auto; }
+.steps-header { text-align: center; margin-bottom: 56px; }
+.steps-list { display: flex; flex-direction: column; gap: 32px; }
+.step-item { display: flex; gap: 24px; position: relative; }
+.step-item:not(:last-child)::after {
+  content: ''; position: absolute; left: 20px; top: 44px; bottom: -32px;
+  width: 1px; background: rgba(196,131,94,0.2);
+}
+.step-num {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--terra); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 1.05rem;
+  flex-shrink: 0; position: relative; z-index: 1;
+}
+.step-prazo {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--tl); margin-bottom: 4px;
+}
+.step-title {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700;
+  color: #fff; margin-bottom: 8px;
+}
+.step-desc { font-size: 0.86rem; color: rgba(255,255,255,0.72); line-height: 1.78; }
+.steps-closer {
+  margin-top: 56px; text-align: center;
+  font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic;
+  color: var(--tl); line-height: 1.6;
+}
+
+/* ===== CTA ===== */
+.cta-fechamento { background: #fff; padding: 100px 40px; }
+.cta-fechamento-wrap { max-width: 1100px; margin: 0 auto; }
+.cta-fechamento-inner {
+  background: linear-gradient(150deg, #0c2427, var(--ink) 55%, #1d4840 100%);
+  border-radius: 24px; padding: 64px 56px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.cta-validade {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(176,110,74,0.15); border: 1px solid rgba(196,131,94,0.3);
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--tl); padding: 6px 16px; border-radius: 20px; margin-bottom: 28px;
+}
+.cta-validade .pulse-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--terra);
+  animation: pulse 1.6s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.4); }
+}
+.cta-h2 {
+  font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 3.5vw, 2.7rem);
+  font-weight: 700; color: #fff; line-height: 1.18; margin-bottom: 22px;
+}
+.cta-h2 em { font-style: italic; color: var(--tl); }
+.cta-p {
+  font-size: 0.95rem; color: rgba(255,255,255,0.72); line-height: 1.78;
+  max-width: 580px; margin: 0 auto 36px;
+}
+.cta-btns {
+  display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px;
+}
+.cta-btn-primary, .cta-btn-secondary {
+  text-decoration: none; padding: 16px 30px; border-radius: 40px;
+  font-size: 0.86rem; font-weight: 600; letter-spacing: 0.04em;
+  display: inline-flex; align-items: center; gap: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.cta-btn-primary {
+  background: var(--terra); color: #fff;
+  box-shadow: 0 8px 28px rgba(176,110,74,0.35);
+}
+.cta-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(176,110,74,0.5); }
+.cta-btn-secondary {
+  background: transparent; color: rgba(255,255,255,0.85);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+.cta-btn-secondary:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.4); }
+.cta-metricas {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+  padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.1);
+}
+.cta-met-num {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 700;
+  color: #fff; line-height: 1;
+}
+.cta-met-label {
+  font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55); margin-top: 8px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #0a1c1f; padding: 36px 48px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-brand {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700;
+  color: rgba(255,255,255,0.78);
+}
+.footer-brand span {
+  font-size: 0.7rem; font-weight: 400; color: var(--tl);
+  text-transform: uppercase; letter-spacing: 0.14em; margin-left: 4px;
+}
+.footer-date {
+  font-size: 0.7rem; color: rgba(255,255,255,0.4); line-height: 1.7;
+  text-align: right;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  section { padding: 70px 24px; }
+  .navbar { padding: 14px 24px; }
+  .navbar-tag { display: none; }
+  .hero { padding: 80px 24px; }
+  .context-inner, .demo-grid, .dash-grid, .roi-check, .garantia-block, .ad-grid, .invest-pay {
+    grid-template-columns: 1fr; gap: 32px;
+  }
+  .intro-stats { grid-template-columns: 1fr 1fr; }
+  .dores-grid, .metodologia-grid, .fundadores-grid {
+    grid-template-columns: 1fr;
+  }
+  .invest-mod-card-top { flex-direction: column; gap: 20px; }
+  .invest-mod-list { grid-template-columns: 1fr; }
+  .roi-num-block { border-left: none; border-top: 1px solid rgba(255,255,255,0.1); padding-left: 0; padding-top: 24px; }
+  .footer { flex-direction: column; gap: 16px; text-align: center; }
+  .footer-date { text-align: center; }
+  .quote-block, .garantia-block, .cta-fechamento-inner { padding: 36px 28px; }
+  .cta-metricas { grid-template-columns: 1fr; gap: 22px; }
+  .fundador-card { flex-direction: column; }
+  .fundador-photo { width: 100%; height: 200px; }
+  .diag-row { grid-template-columns: 1fr; }
+  .diag-row > div { border-right: none; border-bottom: 1px solid rgba(20,55,60,0.07); }
+  .diag-row > div:last-child { border-bottom: none; }
+  .diag-row--header { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-logos">
+    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting">
+    <span class="navbar-x">×</span>
+    <span class="logo-koru-circle">KORU</span>
+  </div>
+  <div class="navbar-tag">Proposta Executiva · KORU · Maio 2026</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="topo-lines">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,300 Q300,220 500,290 T900,260 T1200,300" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,500 Q300,440 500,490 T900,460 T1200,500" fill="none" stroke="white" stroke-width="0.3"/>
+      <path d="M0,250 Q250,180 450,240 T850,210 T1200,250" fill="none" stroke="white" stroke-width="0.3"/>
+      <path d="M0,550 Q250,500 450,540 T850,510 T1200,550" fill="none" stroke="white" stroke-width="0.25"/>
+    </svg>
+  </div>
+  <div class="grain-overlay"></div>
+
+  <div class="hero-badge">Proposta Executiva · Maio 2026 · Para Laura</div>
+  <div class="hero-eyebrow">NewScale Consulting × KORU</div>
+  <h1>Elevar a jornada de formação a um <em>novo patamar de valor.</em></h1>
+  <p class="hero-desc">Laura, esta proposta responde direto ao briefing que você trouxe na reunião de 7 de maio: um agente avaliador de proficiência que lê o conteúdo da trilha direto da KFLIX e devolve, ao final de cada jornada, uma leitura clara de quanto cada participante aprendeu, aplicou e propagou.</p>
+
+  <a class="hero-cta" href="#contexto">
+    <span>Ver proposta</span>
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M10 4v12M4 10l6 6 6-6" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+</section>
+
+<!-- CONTEXTO -->
+<section class="context-section" id="contexto">
+  <div class="context-inner">
+    <div class="context-text reveal">
+      <span class="section-label">O Contexto</span>
+      <h2 class="section-title">A KORU tem o ativo certo —<br>agora é o momento de <em>fazer cada jornada falar por si.</em></h2>
+      <p>Laura, na conversa ficou claro o tamanho da oportunidade: a KORU já tem uma plataforma proprietária (KFLIX) com conteúdo estruturado, uma metodologia de assessment com prompts e rubricas, e uma máquina que fecha quase uma jornada por dia. Tudo o que é preciso para construir o próximo capítulo da entrega já existe internamente.</p>
+      <p>O que a próxima evolução natural pede é um instrumento que transforme cada jornada em um dado novo — comparável, contável, e que devolva ao sponsor uma leitura concreta de proficiência, não só de satisfação.</p>
+      <p>O agente avaliador de proficiência é exatamente esse instrumento. Lê o conteúdo da trilha direto da KFLIX, faz 1 a 3 perguntas no momento certo, avalia em três dimensões — aprendi, apliquei, propaguei — e devolve um retrato instantâneo do participante e da turma.</p>
+    </div>
+    <div class="intro-stats reveal reveal-delay-2">
+      <div class="stat-card"><div class="stat-number">~1</div><div class="stat-label">Jornada fechando por dia</div></div>
+      <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Dimensões avaliadas</div></div>
+      <div class="stat-card"><div class="stat-number">30</div><div class="stat-label">Dias até o go-live</div></div>
+      <div class="stat-card"><div class="stat-number">KFLIX</div><div class="stat-label">Plataforma integrada</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DORES -->
+<section class="dores-section">
+  <div class="dores-inner">
+    <div class="dores-header reveal">
+      <span class="section-label">As oportunidades que enxergamos</span>
+      <h2 class="section-title-light">Três frentes concretas que a KORU pode <em>destravar com este projeto.</em></h2>
+      <p>Três frentes onde a entrega da KORU pode ganhar uma camada nova — e que orientaram diretamente o desenho da solução apresentada a seguir.</p>
+    </div>
+    <div class="dores-grid">
+      <div class="dore-card reveal">
+        <div class="dore-num">01</div>
+        <div class="dore-tag">Diferenciação</div>
+        <div class="dore-title">Transformar cada jornada em case com dados</div>
+        <div class="dore-text">Construir o repertório de evidências que sustenta a próxima venda — indicadores próprios, comparáveis e contáveis, gerados pela operação que já roda.</div>
+      </div>
+      <div class="dore-card reveal reveal-delay-1">
+        <div class="dore-num">02</div>
+        <div class="dore-tag">Evidência</div>
+        <div class="dore-title">Substituir percepção por leitura de proficiência</div>
+        <div class="dore-text">Sair do CSAT/NPS — que mede sentimento — para uma leitura concreta nas três dimensões que a KORU acredita: aprendi, apliquei, propaguei.</div>
+      </div>
+      <div class="dore-card reveal reveal-delay-2">
+        <div class="dore-num">03</div>
+        <div class="dore-tag">Velocidade</div>
+        <div class="dore-title">Avaliação no ritmo da operação</div>
+        <div class="dore-text">Com quase uma jornada fechando por dia, ganhar uma ferramenta auto-serviço que a equipe gera em minutos — sem fila técnica, sem dependência de ciclos longos.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULO -->
+<section class="modulo-section">
+  <div class="modulo-inner">
+    <div class="modulo-header reveal">
+      <span class="section-label">A solução</span>
+      <h2 class="section-title">Uma ferramenta plugada à KFLIX —<br>quatro entregas, <em>uma única finalidade.</em></h2>
+      <p>O agente é uma ferramenta única, hospedada na infra da KORU, com código-fonte 100% acessível pelo time da KORU. Quatro frentes funcionais consolidadas em um só produto. Clique para abrir e ver o detalhe.</p>
+    </div>
+
+    <div class="reveal">
+      <div class="fase-header">
+        <div>
+          <div class="fase-tag">Módulo Único · 30 dias</div>
+          <div class="fase-name">Agente Avaliador de Proficiência</div>
+          <div class="fase-duration">Backoffice + Agente conversacional + Devolutiva + Painel sponsor · Go-live em 30 dias</div>
+        </div>
+        <div class="fase-num-badge">01</div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-card-header">
+          <div class="modulo-card-left">
+            <div class="modulo-icon">🎯</div>
+            <div>
+              <div class="modulo-label">Setup pela equipe KORU</div>
+              <div class="modulo-name">Backoffice de geração de perguntas</div>
+              <div class="modulo-chips">
+                <span class="chip">API KFLIX</span>
+                <span class="chip">Aprovação humana</span>
+                <span class="chip">Auto-serviço</span>
+              </div>
+            </div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <div class="value-box-icon">⚡</div>
+            <div>
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">A gerente de projeto gera a avaliação em minutos, sem depender de ninguém técnico — no ritmo da KORU.</div>
+            </div>
+          </div>
+          <p class="modulo-desc">Tela enxuta onde a gerente seleciona a trilha na KFLIX, opcionalmente cola um contexto curto da empresa-cliente, e clica em "gerar". A IA puxa o conteúdo JSON da trilha (ementa, módulos, objetivos, materiais), combina com o contexto e propõe 1 a 3 perguntas baseadas no framework "aprendi / apliquei / propaguei". A gerente revisa, edita, aprova. Aprovação registrada em log.</p>
+          <ul class="modulo-items">
+            <li><strong>Integração KFLIX:</strong> consumo direto via API do conteúdo estruturado em JSON — cursos, módulos, trilhas e torres.</li>
+            <li><strong>Geração assistida por IA:</strong> 1 a 3 perguntas por trilha, calibradas no framework "aprendi / apliquei / propaguei".</li>
+            <li><strong>Gate de aprovação humana:</strong> nada vai ao ar sem revisão da equipe — log de quem aprovou, quando e o que foi editado.</li>
+            <li><strong>Pergunta-padrão por trilha:</strong> aprovou uma vez, todas as próximas turmas daquela trilha usam as mesmas perguntas — comparabilidade estatística garantida.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top: 32px;">
+      <div class="fase-header" style="background: var(--terra);">
+        <div>
+          <div class="fase-tag" style="color: rgba(255,255,255,0.85);">Frente do Participante</div>
+          <div class="fase-name">Agente Conversacional</div>
+          <div class="fase-duration" style="color: rgba(255,255,255,0.7);">Link com token · Conversa por texto · Resposta em segundos</div>
+        </div>
+        <div class="fase-num-badge" style="color: rgba(255,255,255,0.18);">02</div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-card-header">
+          <div class="modulo-card-left">
+            <div class="modulo-icon">💬</div>
+            <div>
+              <div class="modulo-label">Interface do participante</div>
+              <div class="modulo-name">Conversa avaliativa por texto</div>
+              <div class="modulo-chips">
+                <span class="chip">Link único + token</span>
+                <span class="chip">3 dimensões</span>
+                <span class="chip">Calor da emoção</span>
+              </div>
+            </div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <div class="value-box-icon">🌡️</div>
+            <div>
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">Captura a percepção do participante no calor da emoção — logo após a jornada, quando o aprendizado está vivo.</div>
+            </div>
+          </div>
+          <p class="modulo-desc">O participante recebe um link (a KORU dispara pelos canais que já usa: e-mail, Zendesk WhatsApp, dentro da própria KFLIX). Ao clicar, encontra um agente que faz 1 a 3 perguntas em formato de conversa por texto. Tempo de resposta entre perguntas: poucos segundos. Cada resposta é avaliada nas três dimensões com nota 0–10 e um comentário descritivo curto.</p>
+          <ul class="modulo-items">
+            <li><strong>Link com token:</strong> proteção contra acesso indevido — cada participante tem o seu, com expiração configurável.</li>
+            <li><strong>Conversa por texto:</strong> formato leve, sem fricção — o participante não baixa app, não cria conta, não entra na KFLIX se não quiser.</li>
+            <li><strong>Avaliação nas 3 dimensões:</strong> nota 0–10 + comentário descritivo gerado pela IA para cada uma de "aprendi", "apliquei" e "propaguei".</li>
+            <li><strong>Persistência completa:</strong> pergunta, resposta, nota, comentário e metadados de turma/trilha/cliente vão para o banco da solução.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top: 32px;">
+      <div class="fase-header" style="background: var(--sage);">
+        <div>
+          <div class="fase-tag" style="color: rgba(255,255,255,0.85);">Devolutiva imediata</div>
+          <div class="fase-name">Retorno para o participante</div>
+          <div class="fase-duration" style="color: rgba(255,255,255,0.7);">Tela de aderência logo após responder</div>
+        </div>
+        <div class="fase-num-badge" style="color: rgba(255,255,255,0.18);">03</div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-card-header">
+          <div class="modulo-card-left">
+            <div class="modulo-icon">📊</div>
+            <div>
+              <div class="modulo-label">Tela final do participante</div>
+              <div class="modulo-name">Percepção de aderência nas 3 dimensões</div>
+              <div class="modulo-chips">
+                <span class="chip">Instantâneo</span>
+                <span class="chip">Nota + comentário</span>
+              </div>
+            </div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <div class="value-box-icon">🪞</div>
+            <div>
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">Encerra a jornada com sentido — o participante sai sabendo onde ele se posicionou, não só "respondendo um formulário".</div>
+            </div>
+          </div>
+          <p class="modulo-desc">Logo após a última resposta, o participante vê uma tela com sua leitura nas três dimensões: nota, comentário descritivo e uma síntese curta da percepção do agente. É o momento que fecha a jornada com uma camada de aprendizado adicional — e que diferencia a entrega da KORU dos formulários autodeclarativos.</p>
+          <ul class="modulo-items">
+            <li><strong>Aderência por dimensão:</strong> visualização clara das três notas — aprendi, apliquei, propaguei.</li>
+            <li><strong>Comentário gerado pela IA:</strong> texto curto destacando o que mais se sobressaiu na resposta do participante.</li>
+            <li><strong>Tom propositivo:</strong> a devolutiva é construtiva, não "corretiva" — alinhada ao espírito de jornada de formação.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top: 32px;">
+      <div class="fase-header" style="background: var(--ink2);">
+        <div>
+          <div class="fase-tag">Visão do sponsor</div>
+          <div class="fase-name">Painel da turma</div>
+          <div class="fase-duration">Quem entregou mais e menos em cada dimensão</div>
+        </div>
+        <div class="fase-num-badge">04</div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-card-header">
+          <div class="modulo-card-left">
+            <div class="modulo-icon">📈</div>
+            <div>
+              <div class="modulo-label">Painel do sponsor</div>
+              <div class="modulo-name">Leitura comparativa por turma</div>
+              <div class="modulo-chips">
+                <span class="chip">Por participante</span>
+                <span class="chip">Por dimensão</span>
+                <span class="chip">Web responsivo</span>
+              </div>
+            </div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <div class="value-box-icon">🎯</div>
+            <div>
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">Devolve ao sponsor o dado que ele queria saber desde o início — quem da equipe dele aprendeu, aplicou e propagou.</div>
+            </div>
+          </div>
+          <p class="modulo-desc">Painel web responsivo onde o sponsor da jornada (ou a equipe KORU) consulta, por turma: cada participante e seu desempenho nas três dimensões, com nota e o comentário descritivo. Permite ordenar por dimensão, identificar quem se destacou e quem ficou para trás. Acessível por link com autenticação.</p>
+          <ul class="modulo-items">
+            <li><strong>Tabela de turma:</strong> linha por participante, colunas para "aprendi", "apliquei" e "propaguei".</li>
+            <li><strong>Ordenação por dimensão:</strong> filtro rápido para ver quem entregou mais ou menos em cada uma.</li>
+            <li><strong>Detalhe da resposta:</strong> ao clicar no participante, abre a transcrição completa da conversa e o comentário do agente.</li>
+            <li><strong>Acesso seguro:</strong> link com autenticação para o sponsor — apenas a turma dele.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="como-section">
+  <div class="como-inner">
+    <div class="como-header reveal">
+      <span class="section-label">Como funciona no dia a dia</span>
+      <h2 class="section-title">Da pergunta à devolutiva —<br>em <em>menos de 5 minutos</em> por participante.</h2>
+      <p>Três cenas para entender o produto: o participante na conversa com o agente, a equipe KORU vendo a turma e a comparação com o jeito atual de avaliar.</p>
+    </div>
+
+    <!-- Mockup celular -->
+    <div class="demo-grid">
+      <div class="reveal">
+        <div class="mock-phone">
+          <div class="mock-screen">
+            <div class="mock-header">
+              <div class="mock-avatar">A</div>
+              <div>
+                <div class="mock-info-name">Agente KORU</div>
+                <div class="mock-info-status">Avaliação · ao final da jornada</div>
+              </div>
+            </div>
+
+            <div class="wa-msg received">
+              Olá, Marina. Você acabou de concluir a jornada <b>Engenharia de Prompt para Times Comerciais</b>. Posso fazer 2 perguntas rápidas para entender o que ficou? <span class="wa-time">14:02</span>
+            </div>
+            <div class="wa-msg sent">
+              Pode mandar <span class="wa-time">14:02</span>
+            </div>
+            <div class="wa-msg received">
+              Pensa em uma situação real do seu trabalho onde você poderia aplicar prompt-as-instruction. Conta como você faria. <span class="wa-time">14:03</span>
+            </div>
+            <div class="wa-msg sent">
+              No follow-up de leads frios. Em vez de pedir "gere um e-mail", eu daria a persona, o histórico do lead e a regra de objeção mais comum dele. <span class="wa-time">14:05</span>
+            </div>
+
+            <div class="wa-card">
+              <div class="wa-card-title">Sua leitura na jornada</div>
+              <div class="wa-card-row">Aprendi · <b>9</b></div>
+              <div class="wa-card-row">Apliquei · <b>8</b></div>
+              <div class="wa-card-row">Propaguei · <b>6</b></div>
+            </div>
+            <div class="wa-msg received">
+              Conexão sólida entre conceito e operação. Próximo passo natural é levar pro time. Obrigado, Marina. <span class="wa-time">14:06</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-text-block reveal reveal-delay-1">
+        <div class="demo-eyebrow">Frente do participante</div>
+        <h3 class="demo-title">Conversa direta, sem formulário, sem fricção — <em>logo após a jornada acabar.</em></h3>
+        <p class="demo-text">O link chega pelo canal que a KORU já usa. O participante clica, conversa por 3 a 5 minutos, recebe sua leitura nas três dimensões e fecha a jornada com uma camada de aprendizado adicional.</p>
+        <p class="demo-text">Sem app para baixar, sem login complicado. O agente faz a triagem da resposta, atribui nota e gera o comentário em segundos — não em minutos.</p>
+      </div>
+    </div>
+
+    <!-- Tela final do participante: devolutiva nas 3 dimensões -->
+    <div class="dash-grid">
+      <div class="reveal">
+        <div class="result-screen">
+          <div class="result-header">
+            <div class="result-eyebrow">Sua leitura na jornada</div>
+            <div class="result-jornada">Engenharia de Prompt para Times Comerciais</div>
+          </div>
+
+          <div class="result-rings">
+            <div class="ring-item">
+              <div class="ring-svg-wrap">
+                <svg viewBox="0 0 100 100" class="ring-svg">
+                  <circle cx="50" cy="50" r="42" class="ring-bg"/>
+                  <circle cx="50" cy="50" r="42" class="ring-fill terra"
+                    style="stroke-dasharray: 263.9; stroke-dashoffset: 26.4;"/>
+                </svg>
+                <div class="ring-center">9.0</div>
+              </div>
+              <div class="ring-label">Aprendi</div>
+            </div>
+            <div class="ring-item">
+              <div class="ring-svg-wrap">
+                <svg viewBox="0 0 100 100" class="ring-svg">
+                  <circle cx="50" cy="50" r="42" class="ring-bg"/>
+                  <circle cx="50" cy="50" r="42" class="ring-fill sage"
+                    style="stroke-dasharray: 263.9; stroke-dashoffset: 52.8;"/>
+                </svg>
+                <div class="ring-center">8.0</div>
+              </div>
+              <div class="ring-label">Apliquei</div>
+            </div>
+            <div class="ring-item">
+              <div class="ring-svg-wrap">
+                <svg viewBox="0 0 100 100" class="ring-svg">
+                  <circle cx="50" cy="50" r="42" class="ring-bg"/>
+                  <circle cx="50" cy="50" r="42" class="ring-fill ink2"
+                    style="stroke-dasharray: 263.9; stroke-dashoffset: 105.6;"/>
+                </svg>
+                <div class="ring-center">6.0</div>
+              </div>
+              <div class="ring-label">Propaguei</div>
+            </div>
+          </div>
+
+          <div class="result-comment">
+            <div class="result-comment-icon">💬</div>
+            <div>
+              <div class="result-comment-label">Comentário do agente</div>
+              <div class="result-comment-text">Conexão sólida entre conceito e operação — você já sabe usar prompt-as-instruction no seu fluxo. O próximo salto está em levar o aprendizado pro time: documentar, replicar, treinar quem está ao lado.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-text-block reveal reveal-delay-1">
+        <div class="demo-eyebrow">Devolutiva imediata</div>
+        <h3 class="demo-title">A jornada termina com uma <em>leitura honesta</em> nas três dimensões.</h3>
+        <p class="demo-text">Logo após a última resposta, o participante vê na tela sua aderência em "aprendi", "apliquei" e "propaguei" — com nota visual e um comentário curto gerado pelo agente.</p>
+        <p class="demo-text">É o que fecha a jornada com sentido — diferente do CSAT que só captura "gostei muito". O participante sai com clareza de onde se posicionou e com uma sugestão concreta de próximo passo.</p>
+      </div>
+    </div>
+
+    <!-- Dashboard sponsor -->
+    <div class="dash-grid">
+      <div class="reveal">
+        <div class="dash-mock">
+          <div class="dash-mock-header">
+            <div class="dash-mock-title">Turma · Engenharia de Prompt · Cliente X</div>
+            <div class="dash-mock-tag">12 participantes</div>
+          </div>
+          <div class="dash-row dash-head">
+            <div>Participante</div>
+            <div>Aprendi</div>
+            <div>Apliquei</div>
+            <div>Propaguei</div>
+          </div>
+          <div class="dash-row">
+            <div class="dash-name">Marina Silva</div>
+            <div class="dash-bar-wrap"><div class="dash-bar"><div class="dash-bar-fill" style="width:90%"></div></div><div class="dash-bar-num">9</div></div>
+            <div class="dash-bar-wrap"><div class="dash-bar"><div class="dash-bar-fill s" style="width:80%"></div></div><div class="dash-bar-num">8</div></div>
+            <div class="dash-bar-wrap"><div class="dash-bar"><div class="dash-bar-fill i" style="width:60%"></div></div><div class="dash-bar-num">6</div></div>
+          </div>
+          <div class="dash-row">
+            <div class="dash-name">Rafael Costa</div>
+            <div class="dash-bar-wrap"><div class="dash-bar"><div class="dash-bar-fill" style="width:80%"></div></div><div class="dash-bar-num">8</div></div>
+            <div class="dash-bar-wrap"><div class="dash-bar"><div class="dash-bar-fill s" style="width:90%"></div></div><div class="dash-bar-num">9</div></div>
+            <div class="dash-bar-wrap"><div class="dash-bar"><div class="dash-bar-fill i" style="width:80%"></div></div><div class="dash-bar-num">8</div></div>
+          </div>
+          <div class="dash-row">
+            <div class="dash-name">Júlia Mendonça</div>
+            <div class="dash-bar-wrap"><div class="dash-bar"><div class="dash-bar-fill" style="width:70%"></div></div><div class="dash-bar-num">7</div></div>
+            <div class="dash-bar-wrap"><div class="dash-bar"><div class="dash-bar-fill s" style="width:60%"></div></div><div class="dash-bar-num">6</div></div>
+            <div class="dash-bar-wrap"><div class="dash-bar"><div class="dash-bar-fill i" style="width:50%"></div></div><div class="dash-bar-num">5</div></div>
+          </div>
+          <div class="dash-row">
+            <div class="dash-name">Pedro Almeida</div>
+            <div class="dash-bar-wrap"><div class="dash-bar"><div class="dash-bar-fill" style="width:85%"></div></div><div class="dash-bar-num">8.5</div></div>
+            <div class="dash-bar-wrap"><div class="dash-bar"><div class="dash-bar-fill s" style="width:75%"></div></div><div class="dash-bar-num">7.5</div></div>
+            <div class="dash-bar-wrap"><div class="dash-bar"><div class="dash-bar-fill i" style="width:70%"></div></div><div class="dash-bar-num">7</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-text-block reveal reveal-delay-1">
+        <div class="demo-eyebrow">Frente do sponsor / KORU</div>
+        <h3 class="demo-title">Painel comparativo —<br>quem entregou e <em>onde sobrou ou faltou.</em></h3>
+        <p class="demo-text">A equipe KORU e o sponsor que comprou a jornada veem, em uma tela só, o desempenho da turma nas três dimensões. Permite ordenar por participante, ordenar por dimensão e abrir o detalhe da conversa de cada pessoa.</p>
+        <p class="demo-text">É a base concreta do case que a KORU passa a ter para a próxima venda — e o instrumento que devolve ao cliente o ROI da jornada.</p>
+      </div>
+    </div>
+
+    <!-- Antes / Depois -->
+    <div class="ad-section reveal">
+      <div class="ad-header">
+        <div class="demo-eyebrow">A diferença concreta</div>
+        <h3 class="demo-title">Como avaliar a turma <em>antes e depois</em> do agente.</h3>
+      </div>
+      <div class="ad-grid">
+        <div class="ad-col ad-col-antes">
+          <div class="ad-col-tag">Hoje</div>
+          <div class="ad-col-title">Formulário autodeclarativo</div>
+          <div class="ad-step">
+            <div class="ad-step-time">D+0</div>
+            <div class="ad-step-text">Equipe KORU monta formulário CSAT/NPS na ferramenta de pesquisa. Setup de 30–60 min por turma.</div>
+          </div>
+          <div class="ad-step">
+            <div class="ad-step-time">D+1</div>
+            <div class="ad-step-text">Disparo manual por e-mail. Espera 3–5 dias para acumular respostas. Adesão fica em torno de 40–50%.</div>
+          </div>
+          <div class="ad-step">
+            <div class="ad-step-time">D+7</div>
+            <div class="ad-step-text">Tabulação manual ou em planilha. Dado é sentimento — "gostei", "achei útil" — não proficiência.</div>
+          </div>
+          <div class="ad-step">
+            <div class="ad-step-time">D+14</div>
+            <div class="ad-step-text">Sponsor recebe um relatório de NPS. Não tem como dizer quem da equipe efetivamente avançou.</div>
+          </div>
+          <div class="ad-total">
+            <div class="ad-total-label">Tempo até dado consolidado</div>
+            <div class="ad-total-num">14 dias</div>
+          </div>
+        </div>
+
+        <div class="ad-col ad-col-depois">
+          <div class="ad-col-tag">Com o agente</div>
+          <div class="ad-col-title">Avaliação conversacional automatizada</div>
+          <div class="ad-step">
+            <div class="ad-step-time">D+0</div>
+            <div class="ad-step-text">Gerente KORU seleciona a trilha na KFLIX, clica em "gerar", revisa as 1–3 perguntas. Setup em 5 min.</div>
+          </div>
+          <div class="ad-step">
+            <div class="ad-step-time">D+0</div>
+            <div class="ad-step-text">Link disparado pelo canal que a KORU já usa (e-mail, Zendesk, KFLIX). Participante responde no calor da emoção.</div>
+          </div>
+          <div class="ad-step">
+            <div class="ad-step-time">+5min</div>
+            <div class="ad-step-text">Cada participante recebe sua devolutiva em três dimensões logo após responder. Adesão sobe pela conversa ser curta e com retorno.</div>
+          </div>
+          <div class="ad-step">
+            <div class="ad-step-time">D+1</div>
+            <div class="ad-step-text">Sponsor abre o painel e vê a turma inteira: quem aprendeu, quem aplicou, quem propagou.</div>
+          </div>
+          <div class="ad-total">
+            <div class="ad-total-label">Tempo até dado consolidado</div>
+            <div class="ad-total-num">24 horas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="mock-disclaimer reveal">* Todos os mockups apresentados nesta seção são ilustrativos. O design final da interface — cores, tipografia, organização dos elementos — será definido em conjunto com o time da KORU durante a implementação.</p>
+  </div>
+</section>
+
+<!-- INVESTIMENTO -->
+<section class="invest-section">
+  <div class="invest-inner">
+    <div class="invest-header reveal">
+      <span class="section-label">Investimento</span>
+      <h2 class="section-title-light">Um valor único, escopo fechado, <em>sem surpresa.</em></h2>
+      <p>O preço cobre a solução completa, desde a descoberta até o go-live. Sem fases ocultas, sem cobrança por entrega adicional. O que não está aqui não está no escopo.</p>
+    </div>
+
+    <div class="invest-mod-card reveal">
+      <div class="invest-mod-card-top">
+        <div>
+          <div class="invest-mod-tag">Módulo Único · 30 dias</div>
+          <div class="invest-mod-name">Agente Avaliador de Proficiência</div>
+          <div class="invest-mod-meta">Backoffice de setup + Agente conversacional + Devolutiva imediata + Painel do sponsor. Solução hospedada na infra da KORU, integrada à KFLIX via API. Código-fonte 100% acessível.</div>
+        </div>
+        <div style="text-align: right;">
+          <div class="invest-mod-price">R$ 10.900</div>
+          <div class="invest-mod-price-label">Implementação · pagamento único</div>
+        </div>
+      </div>
+
+      <div class="invest-mod-list-title">O que está incluso</div>
+      <ul class="invest-mod-list">
+        <li>Descoberta e arquitetura</li>
+        <li>Integração via API com a KFLIX</li>
+        <li>Geração de perguntas com IA</li>
+        <li>Gate de aprovação humana e log</li>
+        <li>Agente conversacional por texto</li>
+        <li>Tela de devolutiva ao participante</li>
+        <li>Painel do sponsor por turma</li>
+        <li>Banco PostgreSQL estruturado</li>
+        <li>Deploy na infra da KORU</li>
+        <li>Testes em uma turma piloto</li>
+        <li>Treinamento da equipe (até 4 pessoas)</li>
+        <li>Documentação técnica entregue</li>
+      </ul>
+    </div>
+
+    <div class="invest-pay reveal">
+      <div>
+        <div class="invest-pay-label">Forma de pagamento</div>
+        <div class="invest-pay-text">50% no kick-off · 50% no go-live</div>
+      </div>
+      <div>
+        <div class="invest-pay-label">Em valores</div>
+        <div class="invest-pay-detail">R$ 5.450 na assinatura para iniciar a semana 1.<br>R$ 5.450 ao final da semana 4, com o agente em produção e a equipe treinada.</div>
+      </div>
+    </div>
+
+    <div class="roi-check reveal">
+      <div>
+        <div class="roi-text-title">Sanity check de retorno</div>
+        <div class="roi-text">Considerando que a KORU fecha próximo de uma jornada por dia, e que cada nova venda apoiada no diferencial "treinamento + dados" já carrega o investimento desta proposta — basta <b>uma jornada</b> em que o agente seja o diferencial percebido para o investimento se pagar.<br><br>O ativo continua rodando depois — sem custo adicional de implementação para as próximas turmas.</div>
+      </div>
+      <div class="roi-num-block">
+        <div class="roi-payback-num">1</div>
+        <div class="roi-payback-label">Jornada para pagar o projeto</div>
+      </div>
+    </div>
+
+    <div class="invest-aviso reveal">
+      <div class="invest-aviso-label">Custos variáveis pagos diretamente pela KORU</div>
+      <div class="invest-aviso-text">Tokens de LLM (Claude ou OpenAI, a definir em conjunto): estimativa de R$ 100 a R$ 300 por mês para o volume atual da KORU, conforme uso real. Sem custo de API de WhatsApp na fase atual — o disparo do link é manual pelos canais que a KORU já usa.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO TÉCNICO -->
+<section class="diag-section" id="sistemas">
+  <div class="diag-inner">
+    <div class="reveal">
+      <span class="section-label">Diagnóstico Técnico</span>
+      <h2 class="section-title">O ecossistema da KORU —<br>e o que <em>cada peça representa</em> para o projeto.</h2>
+      <p class="diag-intro">Mapeamos os sistemas relevantes a partir da reunião com Everson e Érico. Cada um deles entra no projeto com um papel específico — abaixo, o que esperamos de cada peça e a recomendação técnica da NewScale.</p>
+    </div>
+
+    <div class="diag-table reveal">
+      <div class="diag-row diag-row--header">
+        <div>Sistema</div>
+        <div>Papel na operação</div>
+        <div>Situação de integração</div>
+        <div>Recomendação</div>
+      </div>
+      <div class="diag-row">
+        <div>
+          <div class="diag-sys-name-sm">KFLIX <span class="diag-badge diag-badge--good">Alto</span></div>
+          <div class="diag-region-sm">LMS proprietário</div>
+        </div>
+        <div class="diag-cell-text">Plataforma central de jornadas de formação. Conteúdo estruturado em JSON por curso, módulo, trilha e torre. PostgreSQL com mais de 100 tabelas.</div>
+        <div class="diag-cell-text">Roadmap atual de microsserviços já facilita o plug-in de novos serviços externos via API. JSON dos cursos acessível.</div>
+        <div class="diag-cell-text diag-cell-rec">Solução plugada via API (microsserviço, alinhado ao roadmap atual da KFLIX). Banco PostgreSQL próprio. Código-fonte na infra da KORU.</div>
+      </div>
+      <div class="diag-row">
+        <div>
+          <div class="diag-sys-name-sm">Zendesk <span class="diag-badge diag-badge--mid">Médio</span></div>
+          <div class="diag-region-sm">Mensageria WhatsApp</div>
+        </div>
+        <div class="diag-cell-text">Canal de disparo de comunicações ativas para participantes via WhatsApp.</div>
+        <div class="diag-cell-text">Fora do escopo desta proposta — usado para disparo manual do link do agente pelos canais já existentes da KORU.</div>
+        <div class="diag-cell-text diag-cell-rec">Disparo manual nesta fase. Integração automatizada poderá ser avaliada após validação dos primeiros ciclos de uso.</div>
+      </div>
+      <div class="diag-row">
+        <div>
+          <div class="diag-sys-name-sm">Power BI <span class="diag-badge diag-badge--good">Alto</span></div>
+          <div class="diag-region-sm">BI da KORU</div>
+        </div>
+        <div class="diag-cell-text">Stack de BI utilizada pelo time de dados (Érico) para análises gerenciais e visões corporativas.</div>
+        <div class="diag-cell-text">O painel do sponsor entregue nesta fase é nativo do agente. Conexão futura ao Power BI fica em aberto, conforme demanda do BI.</div>
+        <div class="diag-cell-text diag-cell-rec">Esta entrega não conecta ao Power BI. O banco do agente é estruturado e pode ser consumido futuramente, se necessário.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="garantia-section">
+  <div class="garantia-inner">
+    <div class="garantia-block reveal">
+      <div>
+        <div class="garantia-eyebrow">Compromisso NewScale</div>
+        <h2 class="garantia-title">Se o agente subir e não atender ao escopo combinado, a NewScale <em>continua trabalhando.</em></h2>
+        <p class="garantia-text">Nada de "entregamos o que estava no contrato e tchau". Se o agente está rodando mas em algum ponto não atende ao escopo combinado, a NewScale continua trabalhando — sem cobrança adicional — até estar redondo.</p>
+      </div>
+      <div class="garantia-selo">
+        <div class="garantia-selo-num">30</div>
+        <div class="garantia-selo-label">Dias de ajuste pós go-live</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE A NEWSCALE -->
+<section class="why-section">
+  <div class="why-inner">
+    <div class="quote-block reveal">
+      <div class="quote-mark">"</div>
+      <div class="quote-text">Cada projeto começa pela conversa — não pelo contrato. A gente entende como a operação funciona hoje, quais as regras de negócio, o que a equipe precisa. Só depois constrói. E depois que entrega, a gente fica — otimizando, ajustando e evoluindo junto com o seu negócio.</div>
+      <div class="quote-author">— Bruna Santanna, Co-Fundadora NewScale Consulting</div>
+    </div>
+
+    <div class="met-header reveal">
+      <span class="section-label">Metodologia</span>
+      <h2 class="section-title">Seis passos —<br>e <em>nenhum deles</em> opcional.</h2>
+    </div>
+
+    <div class="metodologia-grid">
+      <div class="met-card reveal">
+        <div class="met-num">01</div>
+        <div class="met-title">Consultoria sistêmica</div>
+        <div class="met-text">Visão completa do negócio: atendimento, operação e financeiro. IA como motor de escala — não de cosmética.</div>
+      </div>
+      <div class="met-card reveal reveal-delay-1">
+        <div class="met-num">02</div>
+        <div class="met-title">Roadmap faseado</div>
+        <div class="met-text">Priorizamos os processos com maior potencial de retorno antes de qualquer outra coisa.</div>
+      </div>
+      <div class="met-card reveal reveal-delay-2">
+        <div class="met-num">03</div>
+        <div class="met-title">Implementação integrada</div>
+        <div class="met-text">Conectamos seus sistemas, eliminamos tarefas manuais e construímos fluxos inteligentes nos canais que sua equipe já usa.</div>
+      </div>
+      <div class="met-card reveal">
+        <div class="met-num">04</div>
+        <div class="met-title">Treinamento das equipes</div>
+        <div class="met-text">Cada pessoa aprende o papel no novo fluxo. O humano monitora e decide — a IA faz o operacional.</div>
+      </div>
+      <div class="met-card reveal reveal-delay-1">
+        <div class="met-num">05</div>
+        <div class="met-title">Acompanhamento de KPIs</div>
+        <div class="met-text">Métricas definidas juntos antes de começar. Você sabe o que esperar — e como acompanhar o ganho real.</div>
+      </div>
+      <div class="met-card reveal reveal-delay-2">
+        <div class="met-num">06</div>
+        <div class="met-title">Sustentação contínua</div>
+        <div class="met-text">Monitoramento, otimizações e manutenção para que o sistema evolua junto com o negócio — não fique parado no tempo.</div>
+      </div>
+    </div>
+
+    <div class="fundadores-grid">
+      <div class="fundador-card reveal">
+        <div class="fundador-photo" style="background-image: url('https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG');"></div>
+        <div class="fundador-info">
+          <div class="fundador-name">Bruna Santanna</div>
+          <div class="fundador-role">Co-Fundadora · Estratégia</div>
+          <div class="fundador-bio">ESPM. Empresária há 10+ anos. Mentora de IA no programa Potenc.IA. Professora de IA para equipes corporativas. Implementa IA no próprio negócio todos os dias — só vende o que usa.</div>
+          <div class="fundador-tags">
+            <span class="f-tag">SulAmérica</span>
+            <span class="f-tag">Whirlpool</span>
+            <span class="f-tag">Blackbox AI</span>
+            <span class="f-tag">Potenc.IA</span>
+          </div>
+        </div>
+      </div>
+      <div class="fundador-card reveal reveal-delay-1">
+        <div class="fundador-photo" style="background-image: url('https://raw.githubusercontent.com/brusantannaia/newscale/main/BRUNO-VARELLA-PQ.jpeg');"></div>
+        <div class="fundador-info">
+          <div class="fundador-name">Bruno Varella</div>
+          <div class="fundador-role">Co-Fundador · Arquitetura</div>
+          <div class="fundador-bio">ESPM. 17+ anos em Marketing, Produto e Novos Negócios. Ex-Warner Bros., Ex-Natura & Co. Já implantou Agentes de IA em redes de franquias com 700+ unidades.</div>
+          <div class="fundador-tags">
+            <span class="f-tag">Warner Bros.</span>
+            <span class="f-tag">Natura & Co</span>
+            <span class="f-tag">700+ franquias</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="faq-header reveal">
+      <span class="section-label">Perguntas frequentes</span>
+      <h2 class="section-title">O que <em>provavelmente</em> você quer perguntar.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">O que acontece se a KORU mudar a metodologia das jornadas no meio do projeto?<div class="faq-q-icon">+</div></div>
+        <div class="faq-a">O agente é arquitetado para puxar o conteúdo da trilha da KFLIX a cada nova turma — então mudanças de ementa entram automaticamente. O framework "aprendi/apliquei/propaguei" é desenhado para ser estável independente de tema. Mudanças no framework em si exigem nova rodada de aprovação humana, mas não exigem refatoração do código.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Por que não incluir disparo automatizado por WhatsApp?<div class="faq-q-icon">+</div></div>
+        <div class="faq-a">Para manter o investimento na faixa enxuta deste projeto e respeitar o escopo do que foi pedido na reunião. A KORU já tem Zendesk com WhatsApp — disparar o link manualmente por lá é tranquilo na fase atual. Quando a base estiver rodando e fizer sentido automatizar, conversamos sobre uma evolução pontual.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Como ficam as duas turmas iguais que a KORU rode em clientes diferentes?<div class="faq-q-icon">+</div></div>
+        <div class="faq-a">A pergunta de proficiência é "amarrada" à trilha — uma vez aprovada, vira pergunta-padrão daquela trilha em qualquer cliente. Isso garante comparabilidade estatística entre turmas de diferentes contratantes. Foi exatamente o ponto que o Everson levantou na reunião e que está endereçado no gate de aprovação humana.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Quem é dono do código e dos dados gerados?<div class="faq-q-icon">+</div></div>
+        <div class="faq-a">A KORU. O código fica hospedado na infra de vocês, com acesso integral. Os dados (perguntas, respostas, notas) também ficam no banco da KORU. A NewScale não retém nenhuma cópia operacional após o go-live.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">O que acontece se aparecer uma necessidade não prevista durante a implementação?<div class="faq-q-icon">+</div></div>
+        <div class="faq-a">Pequenos ajustes que orbitam o escopo combinado entram naturalmente — é parte do método. Mudanças que claramente expandem o produto (novos canais, novas dimensões avaliadas, integrações adicionais) viram conversa separada e proposta nova, para preservar a clareza do que foi contratado.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">A KORU consegue customizar prompts e perguntas depois sem depender da NewScale?<div class="faq-q-icon">+</div></div>
+        <div class="faq-a">Sim. O backoffice de setup foi pensado exatamente para isso — a equipe edita as perguntas, ajusta o tom, aprova versões novas. A NewScale fica disponível para evolução de prompt-engineering caso queiram refinar mais profundamente a metodologia.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRÓXIMOS PASSOS -->
+<section class="steps-section">
+  <div class="steps-inner">
+    <div class="steps-header reveal">
+      <span class="section-label" style="color: var(--tl);">Próximos passos</span>
+      <h2 class="section-title-light">Um cronograma <em>sem zona cinzenta.</em></h2>
+    </div>
+
+    <div class="steps-list">
+      <div class="step-item reveal">
+        <div class="step-num">1</div>
+        <div>
+          <div class="step-prazo">Semana 1 · Acessos e arquitetura</div>
+          <div class="step-title">Diagnóstico técnico e definição final do framework</div>
+          <p class="step-desc">Liberação de acessos à API da KFLIX, mapeamento da estrutura de dados com Everson, definição final do framework "aprendi/apliquei/propaguei" com Laura, especificação técnica fechada.</p>
+        </div>
+      </div>
+      <div class="step-item reveal">
+        <div class="step-num">2</div>
+        <div>
+          <div class="step-prazo">Semana 2 · Construção do core</div>
+          <div class="step-title">Backoffice + Integração KFLIX + Geração de perguntas</div>
+          <p class="step-desc">Tela de setup pela equipe KORU, integração via API com a KFLIX, prompt-base de geração de perguntas, gate de aprovação humana, banco PostgreSQL em produção.</p>
+        </div>
+      </div>
+      <div class="step-item reveal">
+        <div class="step-num">3</div>
+        <div>
+          <div class="step-prazo">Semana 3 · Agente conversacional</div>
+          <div class="step-title">Conversa por texto, link com token, devolutiva imediata</div>
+          <p class="step-desc">Construção da interface do participante, fluxo conversacional, tela de devolutiva nas três dimensões. Primeira rodada de validação humana das perguntas geradas com a Laura.</p>
+        </div>
+      </div>
+      <div class="step-item reveal">
+        <div class="step-num">4</div>
+        <div>
+          <div class="step-prazo">Semana 4 · Painel + Go-live</div>
+          <div class="step-title">Painel do sponsor, testes em turma piloto, deploy</div>
+          <p class="step-desc">Painel do sponsor por turma, testes em uma turma piloto real, ajustes finais, deploy em produção, treinamento da equipe KORU (até 4 pessoas) e entrega da documentação técnica.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="steps-closer reveal">"Você não está sozinha no go-live — e também não estará no dia seguinte."</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-fechamento">
+  <div class="cta-fechamento-wrap">
+    <div class="cta-fechamento-inner reveal">
+      <div class="cta-validade"><div class="pulse-dot"></div>Validade da proposta · até 21/05/2026</div>
+      <h2 class="cta-h2">Laura, é hora de transformar a próxima jornada da KORU em <em>case com dados.</em></h2>
+      <p class="cta-p">Trinta dias do kick-off ao agente em produção. R$ 10.900 dividido em duas parcelas. Sem cobrança escondida, sem fase 2 disfarçada — só o que você pediu na reunião, entregue do jeito que foi pedido.</p>
+      <div class="cta-btns">
+        <a class="cta-btn-primary" href="https://wa.me/5511971901020?text=Oi%20Bruna%2C%20li%20a%20proposta%20do%20Projeto%20Agente%20e%20quero%20fechar." target="_blank">Quero fechar agora</a>
+        <a class="cta-btn-secondary" href="https://wa.me/5511971901020?text=Oi%20Bruna%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20a%20proposta%20do%20Projeto%20Agente." target="_blank">Tirar uma dúvida</a>
+      </div>
+      <div class="cta-metricas">
+        <div>
+          <div class="cta-met-num">30 dias</div>
+          <div class="cta-met-label">Do kick-off ao go-live</div>
+        </div>
+        <div>
+          <div class="cta-met-num">R$ 10.900</div>
+          <div class="cta-met-label">Investimento total</div>
+        </div>
+        <div>
+          <div class="cta-met-num">50 / 50</div>
+          <div class="cta-met-label">Forma de pagamento</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">NewScale<span>Consulting</span></div>
+  <div class="footer-date">Proposta exclusiva · KORU · v1<br>07 de maio de 2026 · Validade até 21/05/2026</div>
+</footer>
+
+<script>
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+function toggleModulo(card) {
+  card.classList.toggle('open');
+}
+
+function toggleFaq(item) {
+  document.querySelectorAll('.faq-item.open').forEach(other => {
+    if (other !== item) other.classList.remove('open');
+  });
+  item.classList.toggle('open');
+}
+
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.06 });
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
