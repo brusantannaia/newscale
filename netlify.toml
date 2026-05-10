@@ -17,6 +17,16 @@
   to = "/admin/"
   status = 301
 
+# URL antiga da pagina de captacao do Furlanetti
+[[redirects]]
+  from = "/pesquisa-furlanetti"
+  to = "/rafael-furlanetti"
+  status = 301
+[[redirects]]
+  from = "/pesquisa-furlanetti.html"
+  to = "/rafael-furlanetti"
+  status = 301
+
 # Redirecionamentos de propostas movidas para /propostas/
 [[redirects]]
   from = "/proposta-Alvaro-11082025.html"
