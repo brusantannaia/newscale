@@ -93,18 +93,14 @@
             margin-bottom: 48px;
         }
         .avatar {
-            width: 112px;
-            height: 112px;
+            display: block;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--amarelo) 0%, #FFB800 100%);
-            color: var(--preto);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            font-weight: 800;
+            object-fit: cover;
+            object-position: center 30%;
             margin: 0 auto 24px;
-            letter-spacing: -1px;
+            border: 3px solid var(--amarelo);
             box-shadow: 0 12px 40px rgba(255, 214, 10, 0.25);
         }
         .nome {
@@ -216,6 +212,13 @@
             letter-spacing: 0.2px;
         }
         label .req { color: var(--amarelo); margin-left: 2px; }
+        label .opt {
+            font-style: italic;
+            color: var(--cinza-medio);
+            font-weight: 400;
+            text-transform: none;
+            letter-spacing: 0;
+        }
 
         input, textarea {
             font-family: var(--font);
@@ -347,6 +350,121 @@
             border-bottom: 1px dotted var(--cinza-medio);
         }
         .footer a:hover { color: var(--amarelo); border-color: var(--amarelo); }
+
+        /* Lema ES — referência: bandeira do Espírito Santo */
+        .lema {
+            margin-top: 72px;
+            margin-bottom: 8px;
+            text-align: center;
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .lema-bloco {
+            display: inline-block;
+            padding: 14px 36px;
+            font-family: 'Inter', sans-serif;
+            font-size: 44px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: #0A0A0A;
+            line-height: 1;
+            text-transform: uppercase;
+            border-radius: 4px;
+        }
+        .lema-bloco.azul { background: #5BB0E5; }
+        .lema-bloco.rosa { background: #F58DAE; }
+        .lema-frase {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            color: var(--branco);
+            font-size: 17px;
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: 0.1px;
+            margin: 12px 0 28px;
+        }
+        .lema-frase:last-of-type { margin-bottom: 18px; }
+        .lema-origem {
+            display: block;
+            margin-top: 14px;
+            font-size: 11.5px;
+            color: var(--cinza-medio);
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-style: normal;
+        }
+        @media (max-width: 560px) {
+            .lema-bloco { font-size: 32px; padding: 10px 24px; }
+            .lema-frase { font-size: 15px; }
+        }
+
+        /* Upload */
+        .upload-zone {
+            position: relative;
+            border: 1.5px dashed var(--borda);
+            border-radius: 10px;
+            background: var(--preto-input);
+            padding: 22px 18px;
+            text-align: center;
+            transition: border-color 0.18s, background 0.18s;
+            cursor: pointer;
+        }
+        .upload-zone:hover {
+            border-color: var(--amarelo);
+            background: #1f1f1f;
+        }
+        .upload-zone.dragging {
+            border-color: var(--amarelo);
+            background: rgba(255, 214, 10, 0.05);
+        }
+        .upload-zone input[type=file] {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+        }
+        .upload-text {
+            font-size: 13.5px;
+            color: var(--cinza-claro);
+        }
+        .upload-text strong { color: var(--branco); font-weight: 600; }
+        .upload-hint {
+            font-size: 11.5px;
+            color: var(--cinza-medio);
+            margin-top: 4px;
+        }
+        .upload-list {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .upload-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--preto-input);
+            border: 1px solid var(--borda);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 13px;
+        }
+        .upload-item .name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .upload-item .size { color: var(--cinza-medio); font-size: 12px; flex-shrink: 0; }
+        .upload-item .remove {
+            background: none;
+            border: none;
+            color: var(--cinza-medio);
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 1;
+            padding: 0 4px;
+        }
+        .upload-item .remove:hover { color: var(--erro); }
     </style>
 </head>
 <body>
@@ -355,7 +473,8 @@
 
     <main class="wrap">
         <section class="hero">
-            <div class="avatar" aria-hidden="true">RF</div>
+            <img class="avatar" src="/assets/img/rafael-furlanetti.jpg" alt="Rafael Furlanetti" width="120" height="120">
+
             <h1 class="nome">Rafael Furlanetti</h1>
             <p class="cargo">Sócio-diretor XP · Presidente ANCORD · Hot Market CNN</p>
             <p class="bio">
@@ -381,10 +500,6 @@
                 <a href="https://t.me/furlanews" target="_blank" rel="noopener">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0m5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.022c.242-.213-.054-.334-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.566-4.458c.535-.196 1.006.128.832.938"/></svg>
                     Telegram
-                </a>
-                <a href="https://www.cxdays.com.br/" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                    CX Days
                 </a>
                 <a href="https://linktr.ee/furlanews" target="_blank" rel="noopener">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
@@ -437,21 +552,19 @@
             </div>
 
             <div class="field" data-field="empresa">
-                <label for="empresa">Nome da empresa<span class="req">*</span></label>
-                <input id="empresa" name="empresa" type="text" autocomplete="organization" required placeholder="Razão social ou nome fantasia">
-                <span class="err">Informe a empresa.</span>
+                <label for="empresa">Nome da empresa <span class="opt">(se aplicável)</span></label>
+                <input id="empresa" name="empresa" type="text" autocomplete="organization" placeholder="Razão social ou nome fantasia">
             </div>
 
             <div class="row">
                 <div class="field" data-field="cnpj">
-                    <label for="cnpj">CNPJ<span class="req">*</span></label>
-                    <input id="cnpj" name="cnpj" type="text" inputmode="numeric" required placeholder="00.000.000/0000-00" maxlength="18">
+                    <label for="cnpj">CNPJ <span class="opt">(se aplicável)</span></label>
+                    <input id="cnpj" name="cnpj" type="text" inputmode="numeric" placeholder="00.000.000/0000-00" maxlength="18">
                     <span class="err">CNPJ inválido.</span>
                 </div>
                 <div class="field" data-field="faturamento">
-                    <label for="faturamento">Faturamento anual<span class="req">*</span></label>
-                    <input id="faturamento" name="faturamento" type="text" inputmode="numeric" required placeholder="R$ 0,00">
-                    <span class="err">Informe o faturamento anual.</span>
+                    <label for="faturamento">Faturamento anual <span class="opt">(se aplicável)</span></label>
+                    <input id="faturamento" name="faturamento" type="text" inputmode="numeric" placeholder="R$ 0,00">
                 </div>
             </div>
 
@@ -472,6 +585,17 @@
                 <span class="err">Descreva o motivo do contato.</span>
             </div>
 
+            <div class="field" data-field="arquivos">
+                <label>Anexar apresentação institucional <span class="opt">(se aplicável)</span></label>
+                <div class="upload-zone" id="uploadZone">
+                    <input id="arquivos" type="file" multiple accept=".pdf,.ppt,.pptx,.key,.doc,.docx,.odp,.zip,.rar,image/*">
+                    <div class="upload-text"><strong>Clique aqui</strong> ou arraste os arquivos</div>
+                    <div class="upload-hint">PDF, PPT, DOC, imagens · até 25 MB no total</div>
+                </div>
+                <div class="upload-list" id="uploadList"></div>
+                <span class="err" id="uploadErr">Limite de 25 MB no total. Remova algum arquivo.</span>
+            </div>
+
             <div class="global-err" id="globalErr">Não foi possível enviar agora. Tente novamente em alguns instantes.</div>
 
             <button type="submit" class="btn" id="submitBtn">
@@ -490,6 +614,14 @@
         <p class="footer">
             Página segura · <a href="https://www.newscale.tech" target="_blank" rel="noopener">newscale.tech</a>
         </p>
+
+        <div class="lema">
+            <span class="lema-bloco azul">Trabalha</span>
+            <span class="lema-frase">como se tudo dependesse de ti</span>
+            <span class="lema-bloco rosa">E confia</span>
+            <span class="lema-frase">como se tudo dependesse de Deus</span>
+            <span class="lema-origem">Lema do Espírito Santo · terra natal de Rafael</span>
+        </div>
     </main>
 
     <script>
@@ -595,21 +727,27 @@
 
         function validateForm() {
             let ok = true;
-            const checks = [
+            // Campos obrigatórios
+            const required = [
                 ["nome", v => v.trim().length >= 3],
                 ["cpf", v => validCPF(v)],
                 ["cidade_uf", v => v.trim().length >= 3],
                 ["celular", v => validPhone(v)],
                 ["email", v => validEmail(v)],
-                ["empresa", v => v.trim().length >= 2],
-                ["cnpj", v => validCNPJ(v)],
-                ["faturamento", v => onlyDigits(v).length > 0],
                 ["motivo", v => v.trim().length >= 20]
             ];
-            for (const [name, fn] of checks) {
+            for (const [name, fn] of required) {
                 const valid = fn($(name).value);
                 setInvalid(name, !valid);
                 if (!valid) ok = false;
+            }
+            // Campos opcionais — só validam SE o usuário preencheu
+            const cnpjVal = $("cnpj").value.trim();
+            if (cnpjVal && !validCNPJ(cnpjVal)) {
+                setInvalid("cnpj", true);
+                ok = false;
+            } else {
+                setInvalid("cnpj", false);
             }
             return ok;
         }
@@ -633,24 +771,30 @@
             btn.classList.add("loading");
             btn.disabled = true;
 
-            const payload = {
-                nome: $("nome").value.trim(),
-                cpf: $("cpf").value.trim(),
-                cidade_uf: $("cidade_uf").value.trim(),
-                celular: $("celular").value.trim(),
-                email: $("email").value.trim(),
-                empresa: $("empresa").value.trim(),
-                cnpj: $("cnpj").value.trim(),
-                faturamento: $("faturamento").value.trim(),
-                instagram: $("instagram").value.trim(),
-                linkedin: $("linkedin").value.trim(),
-                motivo: $("motivo").value.trim(),
-                origem: "newscale.tech/rafael-furlanetti",
-                user_agent: navigator.userAgent,
-                timestamp_cliente: new Date().toISOString()
-            };
-
             try {
+                let arquivos = [];
+                if (selectedFiles.length > 0) {
+                    arquivos = await buildFilesPayload();
+                }
+
+                const payload = {
+                    nome: $("nome").value.trim(),
+                    cpf: $("cpf").value.trim(),
+                    cidade_uf: $("cidade_uf").value.trim(),
+                    celular: $("celular").value.trim(),
+                    email: $("email").value.trim(),
+                    empresa: $("empresa").value.trim(),
+                    cnpj: $("cnpj").value.trim(),
+                    faturamento: $("faturamento").value.trim(),
+                    instagram: $("instagram").value.trim(),
+                    linkedin: $("linkedin").value.trim(),
+                    motivo: $("motivo").value.trim(),
+                    arquivos: arquivos,
+                    origem: "newscale.tech/rafael-furlanetti",
+                    user_agent: navigator.userAgent,
+                    timestamp_cliente: new Date().toISOString()
+                };
+
                 if (!ENDPOINT || ENDPOINT.includes("__APPS_SCRIPT_URL__")) {
                     throw new Error("Endpoint não configurado");
                 }
@@ -681,6 +825,108 @@
                 if (f) f.classList.remove("invalid");
             });
         });
+
+        // ===== Upload de arquivos =====
+        const MAX_TOTAL_BYTES = 25 * 1024 * 1024; // 25 MB
+        let selectedFiles = []; // {file, id}
+        let fileSeq = 0;
+
+        const uploadZone = $("uploadZone");
+        const uploadInput = $("arquivos");
+        const uploadList = $("uploadList");
+        const uploadField = document.querySelector('.field[data-field="arquivos"]');
+
+        function formatBytes(b) {
+            if (b < 1024) return b + " B";
+            if (b < 1024 * 1024) return (b / 1024).toFixed(1) + " KB";
+            return (b / (1024 * 1024)).toFixed(1) + " MB";
+        }
+
+        function renderUploadList() {
+            uploadList.innerHTML = "";
+            selectedFiles.forEach(({ file, id }) => {
+                const item = document.createElement("div");
+                item.className = "upload-item";
+                item.innerHTML =
+                    `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>` +
+                    `<span class="name"></span>` +
+                    `<span class="size"></span>` +
+                    `<button type="button" class="remove" aria-label="Remover">&times;</button>`;
+                item.querySelector(".name").textContent = file.name;
+                item.querySelector(".size").textContent = formatBytes(file.size);
+                item.querySelector(".remove").addEventListener("click", () => {
+                    selectedFiles = selectedFiles.filter(f => f.id !== id);
+                    renderUploadList();
+                });
+                uploadList.appendChild(item);
+            });
+        }
+
+        function addFiles(files) {
+            for (const f of files) {
+                selectedFiles.push({ file: f, id: ++fileSeq });
+            }
+            const total = selectedFiles.reduce((s, x) => s + x.file.size, 0);
+            uploadField.classList.toggle("invalid", total > MAX_TOTAL_BYTES);
+            renderUploadList();
+        }
+
+        uploadInput.addEventListener("change", (e) => {
+            if (e.target.files && e.target.files.length) {
+                addFiles(Array.from(e.target.files));
+                e.target.value = "";
+            }
+        });
+
+        // Drag & drop
+        ["dragenter", "dragover"].forEach(evt => {
+            uploadZone.addEventListener(evt, (e) => {
+                e.preventDefault();
+                uploadZone.classList.add("dragging");
+            });
+        });
+        ["dragleave", "drop"].forEach(evt => {
+            uploadZone.addEventListener(evt, (e) => {
+                e.preventDefault();
+                uploadZone.classList.remove("dragging");
+            });
+        });
+        uploadZone.addEventListener("drop", (e) => {
+            if (e.dataTransfer.files && e.dataTransfer.files.length) {
+                addFiles(Array.from(e.dataTransfer.files));
+            }
+        });
+
+        function readAsBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    const result = reader.result; // data:mime;base64,XXX
+                    const idx = result.indexOf(",");
+                    resolve(idx >= 0 ? result.slice(idx + 1) : result);
+                };
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
+
+        async function buildFilesPayload() {
+            const total = selectedFiles.reduce((s, x) => s + x.file.size, 0);
+            if (total > MAX_TOTAL_BYTES) {
+                uploadField.classList.add("invalid");
+                throw new Error("Limite de 25MB excedido");
+            }
+            const out = [];
+            for (const { file } of selectedFiles) {
+                const base64 = await readAsBase64(file);
+                out.push({
+                    name: file.name,
+                    mime: file.type || "application/octet-stream",
+                    base64
+                });
+            }
+            return out;
+        }
     </script>
 </body>
 </html>
