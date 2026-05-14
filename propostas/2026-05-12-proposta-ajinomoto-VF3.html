@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Comercial · Ajinomoto · NewScale Consulting · v2</title>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #14373C;
+  --ink2: #1a4449;
+  --sage: #435D51;
+  --terra: #B06E4A;
+  --tl: #c4835e;
+  --sand: #A38362;
+  --cream: #E8E6E0;
+  --cl: #F4F3EF;
+  --white: #FAFAF8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--ink);-webkit-font-smoothing:antialiased}
+
+/* NAVBAR */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:20px 48px;background:transparent;transition:background 0.4s,backdrop-filter 0.4s}
+.navbar.scrolled{background:rgba(12,36,39,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.navbar-logo img{height:48px;opacity:0.95;display:block}
+.navbar-tag{font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--tl)}
+
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(145deg,#0c2427 0%,#14373C 38%,#1d4840 72%,#435D51 100%);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 40px 80px;overflow:hidden;position:relative}
+.topo-lines{position:absolute;inset:0;opacity:0.08;pointer-events:none}
+.topo-lines svg{width:100%;height:100%}
+.grain-overlay{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:0.03;pointer-events:none}
+.hero-badge{display:inline-block;background:rgba(176,110,74,0.15);color:var(--tl);font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;padding:6px 16px;border-radius:20px;border:1px solid rgba(176,110,74,0.25);margin-bottom:28px;animation:fadeUp 0.6s ease both 0.2s}
+.hero-eyebrow{font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:20px;animation:fadeUp 0.6s ease both 0.3s}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:700;color:#fff;line-height:1.15;max-width:820px;margin-bottom:28px;animation:fadeUp 0.6s ease both 0.4s}
+.hero h1 em{font-style:italic;color:var(--tl)}
+.hero-desc{font-size:0.97rem;font-weight:300;color:rgba(255,255,255,0.65);max-width:600px;line-height:1.75;margin-bottom:52px;animation:fadeUp 0.6s ease both 0.5s}
+.hero-cta{animation:fadeUp 0.6s ease both 0.7s;display:flex;flex-direction:column;align-items:center;gap:10px;color:rgba(255,255,255,0.35);font-size:0.72rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:color 0.3s}
+.hero-cta:hover{color:rgba(255,255,255,0.7)}
+.hero-cta svg{animation:bounce 2s infinite}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+/* SECTION BASE */
+.section-label{font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);display:block;margin-bottom:12px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.85rem,3.2vw,2.6rem);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:24px}
+.section-title em{font-style:italic;color:var(--terra)}
+.section-title-light{color:#fff}
+
+/* CONTEXT */
+.context-section{background:var(--cl);padding:100px 40px}
+.context-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.context-text p{font-size:0.92rem;color:#4a6a6f;line-height:1.78;margin-bottom:14px}
+.intro-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stat-card{background:var(--ink);border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;gap:8px}
+.stat-card:nth-child(2){background:var(--terra)}
+.stat-card:nth-child(3){background:var(--sage)}
+.stat-card:nth-child(4){background:#1a4449}
+.stat-number{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:#fff;line-height:1}
+.stat-label{font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.65)}
+
+/* CUSTO DA INAÇÃO */
+.custo-section{background:#fff;padding:100px 40px}
+.custo-inner{max-width:1100px;margin:0 auto}
+.custo-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.custo-text p{font-size:0.92rem;color:#4a6a6f;line-height:1.78;margin-bottom:14px}
+.custo-list{margin-top:8px}
+.custo-item{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding:16px 0;border-bottom:1px dashed rgba(20,55,60,0.15)}
+.custo-item-label{font-size:0.86rem;font-weight:500;color:var(--ink)}
+.custo-item-sub{font-size:0.74rem;color:#7a9a9f;margin-top:4px;font-weight:300}
+.custo-item-value{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--terra);white-space:nowrap}
+.custo-total{padding-top:22px;margin-top:6px;border-top:2px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+.custo-total-label{font-size:0.8rem;font-weight:700;color:var(--ink);text-transform:uppercase;letter-spacing:0.08em}
+.custo-total-value{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--ink)}
+.custo-aviso{font-size:0.74rem;color:#9aabae;margin-top:16px;line-height:1.6;font-style:italic}
+
+/* DORES */
+.dores-section{background:var(--ink);padding:100px 40px}
+.dores-inner{max-width:1100px;margin:0 auto}
+.dores-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.dore-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:32px 28px;position:relative;overflow:hidden;transition:border-color 0.3s,background 0.3s}
+.dore-card:hover{border-color:rgba(176,110,74,0.3);background:rgba(176,110,74,0.04)}
+.dore-num{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:700;color:rgba(176,110,74,0.08);line-height:1;position:absolute;top:12px;right:20px}
+.dore-tag{font-size:0.62rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl);margin-bottom:10px}
+.dore-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:#fff;line-height:1.25;margin-bottom:14px;position:relative;z-index:1}
+.dore-text{font-size:0.86rem;font-weight:300;color:rgba(255,255,255,0.65);line-height:1.75}
+
+/* MÓDULOS */
+.modulos-section{background:var(--white);padding:100px 40px}
+.modulos-inner{max-width:1100px;margin:0 auto}
+.fase-block{margin-bottom:32px}
+.fase-header{display:flex;justify-content:space-between;align-items:center;padding:22px 28px;border-radius:12px 12px 0 0;margin-bottom:0}
+.fase-header.ink{background:var(--ink)}
+.fase-header.terra{background:var(--terra)}
+.fase-header.sage{background:var(--sage)}
+.fase-tag{font-size:0.62rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:4px}
+.fase-name{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700;color:#fff;line-height:1.2}
+.fase-duration{font-size:0.74rem;color:rgba(255,255,255,0.5);margin-top:4px}
+.fase-num-badge{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:700;color:rgba(255,255,255,0.12);line-height:1}
+.modulo-card{border:1px solid rgba(20,55,60,0.1);border-top:none;background:#fff;cursor:pointer;transition:background 0.2s}
+.modulo-card:last-child{border-radius:0 0 12px 12px}
+.modulo-card:hover{background:var(--cl)}
+.modulo-card-header{display:flex;justify-content:space-between;align-items:center;padding:20px 28px}
+.modulo-card-left{display:flex;align-items:center;gap:16px}
+.modulo-icon{font-size:1.5rem}
+.modulo-label{font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--terra);margin-bottom:3px}
+.modulo-name{font-size:0.95rem;font-weight:600;color:var(--ink)}
+.modulo-chips{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+.chip{background:rgba(20,55,60,0.07);color:var(--ink2);font-size:0.62rem;font-weight:600;padding:3px 8px;border-radius:20px;letter-spacing:0.04em}
+.modulo-toggle{font-size:1.4rem;font-weight:300;color:var(--terra);transition:transform 0.3s;min-width:28px;text-align:center}
+.modulo-card.open .modulo-toggle{transform:rotate(45deg)}
+.modulo-card.open .modulo-chips{display:none}
+.modulo-body{display:none;padding:0 28px 28px}
+.modulo-card.open .modulo-body{display:block}
+.value-box{background:linear-gradient(135deg,var(--ink),var(--ink2));border-radius:10px;padding:20px 22px;display:flex;gap:16px;align-items:flex-start;margin-bottom:18px}
+.value-box-icon{font-size:1.4rem;margin-top:2px}
+.value-box-label{font-size:0.6rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:4px}
+.value-box-text{font-size:0.88rem;font-weight:500;color:#fff;line-height:1.55}
+.modulo-desc{font-size:0.86rem;color:#4a6a6f;line-height:1.75;margin-bottom:16px}
+.modulo-items{list-style:none;display:flex;flex-direction:column;gap:10px}
+.modulo-items li{font-size:0.86rem;color:#4a6a6f;line-height:1.65;padding-left:18px;position:relative}
+.modulo-items li::before{content:'→';position:absolute;left:0;color:var(--terra);font-weight:600}
+.modulo-items li strong{color:var(--ink);font-weight:600}
+.disclaimer-box{background:rgba(163,131,98,0.07);border:1px solid rgba(163,131,98,0.2);border-radius:8px;padding:14px 16px;margin-top:16px;font-size:0.78rem;color:var(--sand);line-height:1.65}
+
+/* FRENTE DIVISOR */
+.frente-divider{display:flex;align-items:center;gap:12px;padding:14px 28px;background:rgba(20,55,60,0.03);border:1px solid rgba(20,55,60,0.08);border-top:none}
+.frente-divider-label{font-size:0.6rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--terra)}
+.frente-divider-line{flex:1;height:1px;background:rgba(20,55,60,0.1)}
+
+/* COMO FUNCIONA */
+.demo-section{background:var(--cl);padding:100px 40px}
+.demo-inner{max-width:1100px;margin:0 auto}
+.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:56px}
+
+/* PHONE MOCKUP — iPhone style com notch e Dynamic Island */
+/* PHONE MOCKUP — iPhone 15 Pro proporção real (~19.5:9) */
+.iphone-outer{position:relative;width:270px;flex-shrink:0;margin:0 auto}
+.iphone-frame{background:linear-gradient(145deg,#1a1a1a,#2d2d2d);border-radius:54px;padding:12px;box-shadow:0 0 0 1.5px #3a3a3a,0 0 0 3px #1a1a1a,0 32px 80px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.08);position:relative}
+.iphone-screen{background:#000;border-radius:44px;overflow:hidden;position:relative;display:flex;flex-direction:column}
+.iphone-notch-bar{background:#000;height:46px;display:flex;justify-content:center;align-items:center;position:relative;z-index:2;flex-shrink:0}
+.iphone-dynamic-island{background:#111;width:108px;height:30px;border-radius:20px;border:1.5px solid #222;display:flex;align-items:center;justify-content:space-between;padding:0 10px}
+.iphone-dynamic-island .di-camera{width:10px;height:10px;background:#1c1c1c;border-radius:50%;border:1px solid #2a2a2a;position:relative}
+.iphone-dynamic-island .di-camera::after{content:'';position:absolute;width:5px;height:5px;background:#0d4f8c;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.8}
+.iphone-status-bar{background:#000;display:flex;justify-content:space-between;align-items:center;padding:0 22px 6px;font-size:0.68rem;color:#fff;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif;font-weight:600;flex-shrink:0}
+.iphone-status-bar .status-time{font-size:0.82rem;letter-spacing:-0.02em}
+.iphone-status-bar .status-icons{display:flex;align-items:center;gap:6px;font-size:0.72rem}
+.phone-header{background:linear-gradient(135deg,var(--ink),var(--ink2));padding:10px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0}
+.phone-avatar{width:34px;height:34px;background:var(--terra);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.85rem;color:#fff;font-weight:700;flex-shrink:0}
+.phone-contact{flex:1}
+.phone-name{font-size:0.8rem;font-weight:600;color:#fff}
+.phone-status{font-size:0.65rem;color:rgba(255,255,255,0.5)}
+.phone-msgs{background:#eae6df;padding:12px 10px;display:flex;flex-direction:column;gap:10px;height:430px;overflow-y:auto;scroll-behavior:smooth;flex-shrink:0}
+.phone-msgs::-webkit-scrollbar{width:3px}
+.phone-msgs::-webkit-scrollbar-track{background:transparent}
+.phone-msgs::-webkit-scrollbar-thumb{background:rgba(20,55,60,0.2);border-radius:2px}
+.iphone-home-bar{background:#000;height:30px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.iphone-home-bar::after{content:'';display:block;width:100px;height:4px;background:rgba(255,255,255,0.22);border-radius:4px}
+/* botões laterais reposicionados para frame mais alto */
+.iphone-side-btn{position:absolute;right:-4px;top:140px;width:4px;height:60px;background:linear-gradient(135deg,#2a2a2a,#1a1a1a);border-radius:0 3px 3px 0;box-shadow:2px 0 4px rgba(0,0,0,0.5)}
+.iphone-side-btn2{position:absolute;right:-4px;top:218px;width:4px;height:38px;background:linear-gradient(135deg,#2a2a2a,#1a1a1a);border-radius:0 3px 3px 0;box-shadow:2px 0 4px rgba(0,0,0,0.5)}
+.iphone-vol-btn{position:absolute;left:-4px;top:120px;width:4px;height:34px;background:linear-gradient(135deg,#2a2a2a,#1a1a1a);border-radius:3px 0 0 3px;box-shadow:-2px 0 4px rgba(0,0,0,0.5)}
+.iphone-vol-btn2{position:absolute;left:-4px;top:168px;width:4px;height:44px;background:linear-gradient(135deg,#2a2a2a,#1a1a1a);border-radius:3px 0 0 3px;box-shadow:-2px 0 4px rgba(0,0,0,0.5)}
+.iphone-vol-btn3{position:absolute;left:-4px;top:224px;width:4px;height:44px;background:linear-gradient(135deg,#2a2a2a,#1a1a1a);border-radius:3px 0 0 3px;box-shadow:-2px 0 4px rgba(0,0,0,0.5)}
+.wa-msg{max-width:82%;padding:8px 12px;border-radius:10px;font-size:0.78rem;line-height:1.55;position:relative}
+.wa-msg.received{background:#fff;align-self:flex-start;border-radius:0 10px 10px 10px;color:#3c3c3c}
+.wa-msg.sent{background:#dcf8c6;align-self:flex-end;border-radius:10px 10px 0 10px;color:#3c3c3c}
+.wa-msg-time{font-size:0.62rem;color:#999;text-align:right;margin-top:3px}
+.wa-status-pill{display:inline-block;background:rgba(67,93,81,0.12);border:1px solid rgba(67,93,81,0.2);color:var(--sage);font-size:0.68rem;font-weight:600;padding:4px 10px;border-radius:20px;margin:4px 0}
+.demo-text h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--ink);margin-bottom:14px;line-height:1.25}
+.demo-text p{font-size:0.9rem;color:#4a6a6f;line-height:1.78;margin-bottom:14px}
+.demo-feat{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}
+.demo-feat-icon{font-size:1.2rem;margin-top:2px;flex-shrink:0}
+.demo-feat-text{font-size:0.86rem;color:#4a6a6f;line-height:1.65}
+.demo-feat-text strong{color:var(--ink)}
+
+/* DASHBOARD MOCKUP AVANÇADO */
+.dash-section{background:var(--white);padding:60px 40px 100px}
+.dash-inner{max-width:1100px;margin:0 auto}
+.dash-mockup{background:var(--ink);border-radius:16px;padding:28px;margin-top:40px;overflow:hidden}
+.dash-topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:10px}
+.dash-title{font-size:0.78rem;font-weight:600;color:rgba(255,255,255,0.6);letter-spacing:0.08em;text-transform:uppercase}
+.dash-filters{display:flex;gap:6px}
+.dash-filter-btn{font-size:0.62rem;font-weight:700;padding:5px 12px;border-radius:20px;border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.45);cursor:pointer;transition:all 0.2s;background:transparent}
+.dash-filter-btn.active{background:var(--terra);border-color:var(--terra);color:#fff}
+.dash-alert-bar{background:rgba(196,131,94,0.12);border:1px solid rgba(196,131,94,0.3);border-radius:8px;padding:10px 14px;margin-bottom:16px;display:flex;align-items:center;gap:10px;font-size:0.75rem;color:var(--tl)}
+.dash-alert-dot{width:7px;height:7px;background:var(--tl);border-radius:50%;flex-shrink:0;animation:pulse 1.5s infinite}
+.dash-kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+.dash-kpi{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:16px 14px}
+.dash-kpi-num{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;color:#fff;line-height:1}
+.dash-kpi-num.green{color:#7dd3a8}
+.dash-kpi-num.terra{color:var(--tl)}
+.dash-kpi-num.warn{color:#f6c26b}
+.dash-kpi-label{font-size:0.62rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.4);margin-top:4px}
+.dash-kpi-delta{font-size:0.66rem;font-weight:600;color:#7dd3a8;margin-top:2px}
+.dash-kpi-delta.neg{color:var(--tl)}
+.dash-mid{display:grid;grid-template-columns:1.4fr 1fr;gap:12px;margin-bottom:16px}
+.dash-panel{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:14px}
+.dash-panel-title{font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.35);margin-bottom:12px}
+.bar-chart{display:flex;align-items:flex-end;gap:5px;height:72px}
+.bar-col{display:flex;flex-direction:column;align-items:center;gap:3px;flex:1}
+.bar{border-radius:3px 3px 0 0;width:100%;background:var(--sage);transition:height 0.3s}
+.bar.terra{background:var(--terra)}
+.bar-day{font-size:0.56rem;color:rgba(255,255,255,0.3)}
+.funil-item{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.funil-bar-bg{flex:1;background:rgba(255,255,255,0.06);border-radius:4px;height:7px;overflow:hidden}
+.funil-bar{height:100%;border-radius:4px;background:var(--sage)}
+.funil-bar.terra{background:var(--terra)}
+.funil-bar.ink{background:#4a8a8f}
+.funil-bar.warn{background:#f6c26b}
+.funil-label{font-size:0.68rem;color:rgba(255,255,255,0.5);min-width:100px}
+.funil-pct{font-size:0.68rem;font-weight:700;color:rgba(255,255,255,0.6);min-width:32px;text-align:right}
+.dash-bottom{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dash-table-wrap{overflow:hidden}
+.dash-table{width:100%;border-collapse:collapse;font-size:0.7rem}
+.dash-table th{font-size:0.58rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.3);text-align:left;padding:6px 8px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.dash-table td{padding:7px 8px;border-bottom:1px solid rgba(255,255,255,0.04);color:rgba(255,255,255,0.6);vertical-align:middle}
+.dash-table tr:last-child td{border-bottom:none}
+.nps-badge{display:inline-block;font-size:0.62rem;font-weight:700;padding:2px 8px;border-radius:10px}
+.nps-good{background:rgba(125,211,168,0.15);color:#7dd3a8}
+.nps-mid{background:rgba(246,194,107,0.15);color:#f6c26b}
+.nps-bad{background:rgba(196,131,94,0.2);color:var(--tl)}
+.alert-row{display:flex;gap:8px;align-items:flex-start;padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+.alert-row:last-child{border-bottom:none}
+.alert-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.alert-dot.red{background:var(--tl)}
+.alert-dot.yellow{background:#f6c26b}
+.alert-text{font-size:0.72rem;color:rgba(255,255,255,0.55);line-height:1.5}
+.alert-time{font-size:0.62rem;color:rgba(255,255,255,0.25);white-space:nowrap}
+
+/* ANTES / DEPOIS */
+.ad-section{background:var(--cl);padding:80px 40px}
+.ad-inner{max-width:1100px;margin:0 auto}
+.ad-label{text-align:center;margin-bottom:40px}
+.ad-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:16px;overflow:hidden;margin-top:40px;border:1px solid rgba(20,55,60,0.1)}
+.ad-col{padding:36px 32px}
+.ad-col-antes{background:var(--cl);border-right:1px solid rgba(20,55,60,0.08)}
+.ad-col-depois{background:linear-gradient(155deg,var(--ink),var(--sage));color:#fff}
+.ad-col-title{font-size:0.68rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:24px}
+.ad-col-antes .ad-col-title{color:var(--sand)}
+.ad-col-depois .ad-col-title{color:rgba(255,255,255,0.45)}
+.ad-step{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+.ad-step-time{font-family:'Cormorant Garamond',serif;font-weight:700;min-width:56px;font-variant-numeric:tabular-nums;font-size:0.88rem}
+.ad-col-antes .ad-step-time{color:var(--ink)}
+.ad-col-depois .ad-step-time{color:var(--tl)}
+.ad-step-label{font-size:0.82rem;font-weight:500;line-height:1.4}
+.ad-col-antes .ad-step-label{color:var(--ink)}
+.ad-col-depois .ad-step-label{color:rgba(255,255,255,0.9)}
+.ad-step-sub{font-size:0.72rem;margin-top:2px;font-weight:300}
+.ad-col-antes .ad-step-sub{color:#7a9a9f}
+.ad-col-depois .ad-step-sub{color:rgba(255,255,255,0.45)}
+.ad-total{display:flex;justify-content:space-between;align-items:center;padding-top:20px;margin-top:8px;border-top:1px solid}
+.ad-col-antes .ad-total{border-color:rgba(20,55,60,0.12)}
+.ad-col-depois .ad-total{border-color:rgba(255,255,255,0.12)}
+.ad-total-label{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em}
+.ad-col-antes .ad-total-label{color:var(--ink)}
+.ad-col-depois .ad-total-label{color:rgba(255,255,255,0.5)}
+.ad-total-num{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700}
+.ad-col-antes .ad-total-num{color:var(--terra)}
+.ad-col-depois .ad-total-num{color:#7dd3a8}
+
+/* INVESTIMENTO */
+.invest-section{background:var(--ink);padding:100px 40px}
+.invest-inner{max-width:1100px;margin:0 auto}
+.invest-modules-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:24px}
+.invest-mod-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:28px 24px}
+.invest-mod-tag{font-size:0.6rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl);margin-bottom:8px}
+.invest-mod-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:16px;line-height:1.25}
+.invest-mod-price{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;color:#fff;line-height:1}
+.invest-mod-price-label{font-size:0.68rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px}
+.invest-mod-items{margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.07)}
+.invest-mod-item{font-size:0.76rem;color:rgba(255,255,255,0.55);padding:4px 0;display:flex;gap:8px}
+.invest-mod-item::before{content:'✓';color:var(--tl);font-weight:700}
+.invest-mod-mens{margin-top:14px;padding-top:14px;border-top:1px dashed rgba(255,255,255,0.07)}
+.invest-mod-mens-label{font-size:0.6rem;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px}
+.invest-mod-mens-price{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:rgba(255,255,255,0.7)}
+.invest-pacote-card{background:rgba(176,110,74,0.07);border:1px solid rgba(176,110,74,0.25);border-radius:16px;padding:36px 32px;display:flex;justify-content:space-between;align-items:flex-start;gap:40px;position:relative;margin-bottom:24px}
+.invest-pacote-card::before{content:'PACOTE COMPLETO';position:absolute;top:-10px;left:24px;background:var(--terra);color:#fff;font-size:0.62rem;font-weight:700;letter-spacing:0.16em;padding:4px 12px;border-radius:20px}
+.invest-pacote-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:8px}
+.invest-pacote-desc{font-size:0.84rem;color:rgba(255,255,255,0.55);line-height:1.65;max-width:480px}
+.invest-pacote-right{text-align:right;flex-shrink:0}
+.invest-pacote-de{font-size:0.8rem;color:rgba(255,255,255,0.3);text-decoration:line-through;margin-bottom:4px}
+.invest-pacote-price{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:700;color:#fff;line-height:1}
+.invest-pacote-sub{font-size:0.74rem;color:rgba(255,255,255,0.4);margin-top:4px}
+.invest-pacote-badge{display:inline-block;background:rgba(176,110,74,0.2);border:1px solid rgba(176,110,74,0.4);color:var(--tl);font-size:0.68rem;font-weight:700;padding:5px 12px;border-radius:20px;margin-top:8px}
+.invest-pacote-validade{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:0.72rem;color:rgba(255,255,255,0.35)}
+.pulse-dot{width:7px;height:7px;background:var(--tl);border-radius:50%;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
+.invest-mens-section{margin-bottom:24px}
+.invest-mens-title{font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:16px}
+.mens-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.mens-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:16px}
+.mens-card-icon{font-size:1.1rem;margin-bottom:8px}
+.mens-card-title{font-size:0.8rem;font-weight:600;color:rgba(255,255,255,0.75);margin-bottom:4px}
+.mens-card-desc{font-size:0.73rem;color:rgba(255,255,255,0.4);line-height:1.55}
+.roi-check{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:36px;margin-bottom:24px}
+.roi-text h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:12px}
+.roi-text p{font-size:0.84rem;color:rgba(255,255,255,0.55);line-height:1.7}
+.roi-right{text-align:center}
+.roi-payback-label{font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,0.35);margin-bottom:8px}
+.roi-payback-num{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-weight:700;color:var(--tl);line-height:1}
+.roi-payback-sub{font-size:0.74rem;color:rgba(255,255,255,0.35);margin-top:6px}
+.apis-aviso{border-left:3px solid var(--terra);padding:16px 20px;background:rgba(176,110,74,0.05);border-radius:0 8px 8px 0}
+.apis-aviso-title{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--tl);margin-bottom:6px}
+.apis-aviso-text{font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.65}
+
+/* DIAGNÓSTICO TÉCNICO */
+.diag-section{background:var(--cl);padding:100px 40px}
+.diag-inner{max-width:1100px;margin:0 auto}
+.diag-intro{font-size:0.92rem;color:#4a6a6f;line-height:1.78;max-width:680px;margin-top:16px;margin-bottom:48px}
+.diag-table{border:1px solid rgba(20,55,60,0.1);border-radius:16px;overflow:hidden}
+.diag-row{display:grid;grid-template-columns:200px 1fr 1fr 1fr;gap:0;border-bottom:1px solid rgba(20,55,60,0.07)}
+.diag-row:last-child,.diag-row--last{border-bottom:none}
+.diag-row>div{padding:18px 20px;font-size:0.82rem;border-right:1px solid rgba(20,55,60,0.07)}
+.diag-row>div:last-child{border-right:none}
+.diag-row--header{background:var(--ink)}
+.diag-row--header>div{font-size:0.6rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.45);border-right-color:rgba(255,255,255,0.07)}
+.diag-sys-name-sm{font-weight:700;color:var(--ink);font-size:0.88rem;margin-bottom:4px}
+.diag-region-sm{font-size:0.68rem;color:var(--terra);font-weight:600}
+.diag-cell-text{color:#5a7a7f;line-height:1.65}
+.diag-cell-rec{background:rgba(20,55,60,0.02);color:var(--ink);font-weight:500}
+.diag-badge{font-size:0.6rem;font-weight:700;padding:3px 10px;border-radius:20px;display:inline-block;margin-top:4px}
+.diag-badge--good{background:rgba(67,93,81,0.1);color:var(--sage)}
+.diag-badge--mid{background:rgba(163,131,98,0.12);color:var(--sand)}
+
+/* ONDA FUTURA */
+.onda-section{background:linear-gradient(155deg,#0c2427,#14373C 60%,#1d4840 100%);padding:100px 40px}
+.onda-inner{max-width:1100px;margin:0 auto}
+.onda-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:start;margin-top:48px}
+.onda-text p{font-size:0.9rem;color:rgba(255,255,255,0.6);line-height:1.78;margin-bottom:14px}
+.onda-card{background:rgba(255,255,255,0.04);border:1px solid rgba(196,131,94,0.25);border-radius:16px;padding:32px 30px}
+.onda-card-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:16px}
+.onda-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:0.84rem;color:rgba(255,255,255,0.55);line-height:1.6}
+.onda-item::before{content:'◆';color:var(--tl);font-size:0.5rem;margin-top:5px;flex-shrink:0}
+
+/* GARANTIA */
+.garantia-section{background:#fff;padding:80px 40px}
+.garantia-inner{max-width:1100px;margin:0 auto}
+.garantia-block{background:linear-gradient(135deg,var(--ink) 0%,#1d4840 55%,var(--sage) 100%);border-radius:20px;padding:52px 60px;display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:center;overflow:hidden;position:relative}
+.garantia-block::before{content:'';position:absolute;width:500px;height:500px;background:rgba(255,255,255,0.015);border-radius:50%;top:-140px;right:-100px}
+.garantia-eyebrow{font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:20px}
+.garantia-text h2{font-family:'Cormorant Garamond',serif;font-size:2.1rem;font-weight:700;color:#fff;line-height:1.2;margin-bottom:0}
+.garantia-text h2 em{font-style:italic;color:rgba(255,255,255,0.35);display:block;font-weight:400}
+.garantia-text p{font-size:0.86rem;color:rgba(255,255,255,0.6);line-height:1.78;margin-top:20px}
+.garantia-right{text-align:center;position:relative;z-index:1}
+.garantia-selo-num{font-family:'Cormorant Garamond',serif;font-size:4.8rem;font-weight:700;color:var(--tl);line-height:1}
+.garantia-selo-label{font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,0.45);margin-top:10px;line-height:1.5}
+
+/* POR QUE NEWSCALE */
+.porque-section{background:var(--cl);padding:100px 40px}
+.porque-inner{max-width:1100px;margin:0 auto}
+.quote-block{background:linear-gradient(135deg,var(--ink),var(--ink2));border-radius:16px;padding:48px 52px;position:relative;margin-bottom:48px;overflow:hidden}
+.quote-mark{font-family:'Cormorant Garamond',serif;font-size:8rem;font-weight:700;color:rgba(255,255,255,0.05);position:absolute;top:-10px;left:28px;line-height:1}
+.quote-text{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;font-style:italic;color:rgba(255,255,255,0.85);line-height:1.7;max-width:720px;position:relative;z-index:1;margin-bottom:24px}
+.quote-author{display:flex;align-items:center;gap:14px}
+.quote-author-line{width:32px;height:1px;background:var(--terra)}
+.quote-author-name{font-size:0.78rem;font-weight:600;color:rgba(255,255,255,0.55);letter-spacing:0.06em}
+.metodologia-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px}
+.met-card{background:#fff;border:1px solid rgba(20,55,60,0.07);border-radius:14px;padding:26px 22px;transition:border-color 0.3s,box-shadow 0.3s}
+.met-card:hover{border-color:rgba(176,110,74,0.2);box-shadow:0 8px 24px rgba(20,55,60,0.06)}
+.met-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:rgba(176,110,74,0.2);margin-bottom:8px}
+.met-title{font-size:0.86rem;font-weight:700;color:var(--ink);margin-bottom:8px}
+.met-desc{font-size:0.78rem;color:#7a9a9f;line-height:1.65}
+.fundadores-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.fundador-card{background:#fff;border:1px solid rgba(20,55,60,0.07);border-radius:14px;overflow:hidden;display:flex}
+.fundador-photo{width:140px;height:180px;flex-shrink:0;object-fit:cover;object-position:top}
+.fundador-info{padding:24px 22px;flex:1}
+.fundador-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:4px}
+.fundador-role{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--terra);margin-bottom:10px}
+.fundador-bio{font-size:0.76rem;color:#7a9a9f;line-height:1.65;margin-bottom:12px}
+.fundador-tags{display:flex;flex-wrap:wrap;gap:6px}
+.ftag{background:rgba(20,55,60,0.06);color:var(--ink2);font-size:0.62rem;font-weight:600;padding:3px 8px;border-radius:20px}
+
+/* FAQ */
+.faq-section{background:#fff;padding:80px 40px}
+.faq-inner{max-width:780px;margin:0 auto}
+.faq-list{margin-top:40px;display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid rgba(20,55,60,0.08);overflow:hidden}
+.faq-question{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;gap:20px;user-select:none}
+.faq-q-text{font-size:0.92rem;font-weight:600;color:var(--ink);line-height:1.4}
+.faq-toggle{font-size:1.4rem;font-weight:300;color:var(--terra);transition:transform 0.3s;flex-shrink:0}
+.faq-item.open .faq-toggle{transform:rotate(45deg)}
+.faq-answer{display:none;padding-bottom:20px}
+.faq-item.open .faq-answer{display:block}
+.faq-answer p{font-size:0.86rem;color:#4a6a6f;line-height:1.75}
+
+/* PRÓXIMOS PASSOS */
+.steps-section{background:linear-gradient(155deg,#0c2427,#14373C 60%,#1d4840 100%);padding:100px 40px}
+.steps-inner{max-width:780px;margin:0 auto}
+.steps-list{margin-top:48px;display:flex;flex-direction:column;gap:0}
+.step-item{display:flex;gap:24px;position:relative;padding-bottom:40px}
+.step-item:not(:last-child)::after{content:'';position:absolute;left:20px;top:44px;bottom:0;width:1px;background:rgba(176,110,74,0.2)}
+.step-num{width:40px;height:40px;background:rgba(176,110,74,0.15);border:1px solid rgba(176,110,74,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--tl);flex-shrink:0}
+.step-prazo{font-size:0.62rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl);margin-bottom:4px}
+.step-title{font-size:0.95rem;font-weight:600;color:#fff;margin-bottom:6px}
+.step-desc{font-size:0.84rem;color:rgba(255,255,255,0.5);line-height:1.7}
+.steps-closing{text-align:center;margin-top:24px;font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:rgba(255,255,255,0.5)}
+
+/* CTA FECHAMENTO */
+.cta-section{background:#fff;padding:80px 40px}
+.cta-inner{max-width:900px;margin:0 auto}
+.cta-fechamento-inner{background:linear-gradient(150deg,#0c2427,#14373C 55%,#1d4840 100%);border-radius:24px;padding:64px 56px;text-align:center}
+.cta-validade{display:inline-flex;align-items:center;gap:8px;background:rgba(176,110,74,0.1);border:1px solid rgba(176,110,74,0.2);color:var(--tl);font-size:0.64rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:28px}
+.cta-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;color:#fff;line-height:1.25;margin-bottom:20px}
+.cta-h2 em{font-style:italic;color:var(--tl)}
+.cta-desc{font-size:0.92rem;color:rgba(255,255,255,0.55);line-height:1.7;max-width:560px;margin:0 auto 36px}
+.cta-btns{display:flex;justify-content:center;gap:14px;margin-bottom:44px;flex-wrap:wrap}
+.cta-btn-primary{background:var(--terra);color:#fff;padding:16px 30px;border-radius:40px;font-size:0.84rem;font-weight:600;text-decoration:none;transition:background 0.3s,transform 0.2s;box-shadow:0 8px 28px rgba(176,110,74,0.35)}
+.cta-btn-primary:hover{background:var(--tl);transform:translateY(-2px)}
+.cta-btn-secondary{background:transparent;color:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.25);padding:16px 30px;border-radius:40px;font-size:0.84rem;font-weight:500;text-decoration:none;transition:border-color 0.3s,color 0.3s}
+.cta-btn-secondary:hover{border-color:rgba(255,255,255,0.5);color:#fff}
+.cta-metricas{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.cta-met{text-align:center}
+.cta-met-num{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--tl);line-height:1}
+.cta-met-label{font-size:0.72rem;color:rgba(255,255,255,0.35);margin-top:4px;line-height:1.45}
+
+/* FOOTER */
+.footer{background:var(--ink);padding:28px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-brand{font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:700;color:rgba(255,255,255,0.4);letter-spacing:0.1em;text-transform:uppercase}
+.footer-brand span{color:rgba(255,255,255,0.2)}
+.footer-date{font-size:0.72rem;color:rgba(255,255,255,0.2);text-align:right;line-height:1.6}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:0.1s}
+.reveal-delay-2{transition-delay:0.2s}
+.reveal-delay-3{transition-delay:0.3s}
+.reveal-delay-4{transition-delay:0.4s}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  section,.hero{padding:70px 24px}
+  .navbar{padding:14px 24px}
+  .navbar-tag{display:none}
+  .hero{padding:80px 24px}
+  .context-inner,.custo-grid,.demo-grid,.onda-grid,.roi-check,.garantia-block,.ad-grid{grid-template-columns:1fr;gap:32px}
+  .intro-stats{grid-template-columns:1fr 1fr}
+  .dores-grid,.invest-modules-grid,.mens-grid,.metodologia-grid,.fundadores-grid{grid-template-columns:1fr}
+  .invest-pacote-card{flex-direction:column;gap:28px}
+  .invest-pacote-right{text-align:left}
+  .footer{flex-direction:column;gap:16px;text-align:center}
+  .footer-date{text-align:center}
+  .quote-block,.garantia-block,.cta-fechamento-inner{padding:36px 28px}
+  .cta-metricas{grid-template-columns:1fr;gap:22px}
+  .fundador-card{flex-direction:column}
+  .fundador-photo{width:100%;height:200px}
+  .diag-row{grid-template-columns:1fr}
+  .diag-row>div{border-right:none;border-bottom:1px solid rgba(20,55,60,0.07)}
+  .diag-row>div:last-child{border-bottom:none}
+  .diag-row--header{display:none}
+  .dash-kpi-row{grid-template-columns:1fr 1fr}
+  .dash-mid,.dash-bottom{grid-template-columns:1fr}
+  .phone-mockup,.iphone-outer{width:260px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-logo">
+    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting">
+  </div>
+  <div class="navbar-tag">Proposta Executiva · Ajinomoto · Maio 2026</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="topo-lines">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,300 Q300,220 500,290 T900,260 T1200,300" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,500 Q300,440 500,490 T900,460 T1200,500" fill="none" stroke="white" stroke-width="0.3"/>
+    </svg>
+  </div>
+  <div class="grain-overlay"></div>
+  <div class="hero-badge">Proposta Executiva · Maio 2026 · Para a Ajinomoto</div>
+  <div class="hero-eyebrow">NewScale Consulting × Ajinomoto</div>
+  <h1>O time mais eficiente do SAC não contratou mais gente —<br><em>parou de desperdiçar gente boa em tarefa de robô.</em></h1>
+  <p class="hero-desc">A Ajinomoto chegou com uma dor clara: 70% dos chamados são sobre rastreamento. A gente identificou um caminho para resolver isso — e abriu janela para muito mais. Esta proposta cobre a primeira onda do projeto.</p>
+  <a class="hero-cta" href="#contexto">
+    <span>Ver proposta</span>
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M4 10l6 6 6-6" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</section>
+
+<!-- CONTEXTO -->
+<section class="context-section" id="contexto">
+  <div class="context-inner">
+    <div class="context-text reveal">
+      <span class="section-label">O Contexto</span>
+      <h2 class="section-title">Uma operação internamente estruturada — com <em>oportunidades claras</em> no atendimento ao cliente.</h2>
+      <p>A Ajinomoto internalizou o e-commerce em outubro do ano passado, com operação logística via JP Alimentos, loja própria em Magento Open Source com frontend headless desacoplado, Zendesk para gestão de chamados e Frete Rápido como TMS. Um ecossistema consistente — com uma falha central: o cliente final não sabe o que está acontecendo com o pedido dele.</p>
+      <p>Com dois canais D2C ativos e presença em Shopee e Magalu, o volume de atendimento cresceu mais rápido do que o fluxo de comunicação conseguiu acompanhar. O time de SAC, formado por 8 a 9 pessoas, absorveu a diferença na base da interação manual.</p>
+      <p>O diagnóstico é direto: as informações existem nos sistemas — Magento, Zendesk e Frete Rápido — mas não chegam ao cliente de forma proativa, no canal certo, na hora certa. A proposta a seguir resolve exatamente isso — e adiciona um canal de venda e atendimento que a Ajinomoto ainda não tem: WhatsApp.</p>
+    </div>
+    <div class="intro-stats reveal reveal-delay-2">
+      <div class="stat-card">
+        <div class="stat-number">70%</div>
+        <div class="stat-label">dos chamados são sobre rastreamento</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">8–9</div>
+        <div class="stat-label">pessoas no time de SAC absorvendo demanda manual</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3–5 min</div>
+        <div class="stat-label">por ticket de rastreamento que podia ser automatizado</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2 canais</div>
+        <div class="stat-label">D2C + marketplaces sem atendimento centralizado por WhatsApp</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTO DA INAÇÃO -->
+<section class="custo-section">
+  <div class="custo-inner">
+    <div class="custo-grid">
+      <div class="custo-text reveal">
+        <span class="section-label">O Potencial de Ganho</span>
+        <h2 class="section-title">O que automatizar 70% dos chamados manuais <em>representa por mês</em> para o time de SAC.</h2>
+        <p>Considerando 8 pessoas no time de SAC, salário médio de R$3.500/mês (incluindo encargos, ~R$5.500 custo total), e que 70% do tempo é dedicado a rastreamento com média de 4 min por ticket, o potencial de ganho ao automatizar esse fluxo é expressivo — e imediato.</p>
+        <p>Esses números não contam o impacto positivo no RA (Reclamação e Avaliação), no NPS e na reputação nos marketplaces — que têm retorno em conversão e LTV muito mais alto do que os números de hora-homem indicam.</p>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="custo-list">
+          <div class="custo-item">
+            <div>
+              <div class="custo-item-label">Hora-homem em rastreamento manual</div>
+              <div class="custo-item-sub">70% do tempo × 8 pessoas × custo hora médio R$34</div>
+            </div>
+            <div class="custo-item-value">~R$15.600</div>
+          </div>
+          <div class="custo-item">
+            <div>
+              <div class="custo-item-label">Custo de reputação em marketplaces</div>
+              <div class="custo-item-sub">Penalizações de ranking, queda de buybox, reviews negativos</div>
+            </div>
+            <div class="custo-item-value">não mensurável</div>
+          </div>
+          <div class="custo-item">
+            <div>
+              <div class="custo-item-label">Oportunidade perdida no WhatsApp</div>
+              <div class="custo-item-sub">Canal de conversão e recompra que ainda não existe</div>
+            </div>
+            <div class="custo-item-value">R$0 de receita</div>
+          </div>
+          <div class="custo-item">
+            <div>
+              <div class="custo-item-label">Custo operacional do hub Lexus (em transição)</div>
+              <div class="custo-item-sub">Erros de integração gerando filas e retrabalho</div>
+            </div>
+            <div class="custo-item-value">a eliminar</div>
+          </div>
+          <div class="custo-total">
+            <div class="custo-total-label">Hora-homem que pode ser realocada por mês</div>
+            <div class="custo-total-value">~R$15.600+/mês</div>
+          </div>
+        </div>
+        <p class="custo-aviso">* Estimativa conservadora baseada nos dados compartilhados na reunião de 4 de maio. Não contempla impacto de churn, custo de rescisão ou perda de LTV por insatisfação.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DORES -->
+<section class="dores-section">
+  <div class="dores-inner">
+    <div class="reveal">
+      <span class="section-label" style="color:var(--tl)">Oportunidades Mapeadas</span>
+      <h2 class="section-title section-title-light">O que a reunião de diagnóstico <em>revelou de potencial.</em></h2>
+    </div>
+    <div class="dores-grid">
+      <div class="dore-card reveal">
+        <div class="dore-num">1</div>
+        <div class="dore-tag">Atendimento</div>
+        <div class="dore-title">Rastreamento automático: uma oportunidade de resolver 70% da fila sem intervenção humana</div>
+        <div class="dore-text">O Frete Rápido tem o rastreamento. O Magento tem o pedido. O Zendesk tem o ticket. Conectar esses sistemas automaticamente libera 70% da fila do SAC — e transforma um processo reativo em experiência proativa para o cliente.</div>
+      </div>
+      <div class="dore-card reveal reveal-delay-1">
+        <div class="dore-num">2</div>
+        <div class="dore-tag">Canal</div>
+        <div class="dore-title">WhatsApp como canal de venda e atendimento: potencial imediato ainda não explorado</div>
+        <div class="dore-text">O modelo Magalu de avisos automáticos por WhatsApp é o benchmark declarado do time. A Ajinomoto tem tudo para replicar esse padrão — e ir além, com atendimento receptivo, recomendação de produtos e recompra ativa no canal que o cliente já usa.</div>
+      </div>
+      <div class="dore-card reveal reveal-delay-2">
+        <div class="dore-num">3</div>
+        <div class="dore-tag">Integração</div>
+        <div class="dore-title">Migração para o Anymarket: janela ideal para automatizar notificações de status em alto volume</div>
+        <div class="dore-text">A transição do Lexus para o Anymarket cria o momento certo para estruturar uma camada de comunicação robusta de ponta a ponta — garantindo que qualquer ação de marketing de alto volume seja suportada sem filas ou retrabalho.</div>
+      </div>
+      <div class="dore-card reveal">
+        <div class="dore-num">4</div>
+        <div class="dore-tag">Operação</div>
+        <div class="dore-title">Comunicação entre time interno, JP Alimentos e SAC: oportunidade de escalar sem depender de humanos</div>
+        <div class="dore-text">Quando a transportadora bloqueia um pacote, quando há atraso de expedição ou avaria no caminho, a informação pode chegar ao cliente automaticamente — sem depender de um humano intermediário para cada ocorrência.</div>
+      </div>
+      <div class="dore-card reveal reveal-delay-1">
+        <div class="dore-num">5</div>
+        <div class="dore-tag">Gestão</div>
+        <div class="dore-title">Dashboard de SAC em tempo real: visibilidade gerencial que transforma dados em decisão</div>
+        <div class="dore-text">O BISO já faz análise de dados de vendas. O próximo passo natural é trazer o mesmo nível de visibilidade para o SAC — chamados por tipo, tempo de resolução, NPS e volume por canal — para que a gestão atue antes de sentir a pressão do time.</div>
+      </div>
+      <div class="dore-card reveal reveal-delay-2">
+        <div class="dore-num">6</div>
+        <div class="dore-tag">Recompra</div>
+        <div class="dore-title">CRM rico no MoEngage: base pronta para campanhas preditivas de recompra e upsell</div>
+        <div class="dore-text">O MoEngage tem o histórico completo de comportamento de compra. A base de clientes existe e está bem estruturada — o que abre a oportunidade de ativar campanhas inteligentes de recompra e sugestão de produtos baseadas em padrão de consumo real.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULOS -->
+<section class="modulos-section" id="proposta">
+  <div class="modulos-inner">
+    <div class="reveal">
+      <span class="section-label">A Proposta — Primeira Onda</span>
+      <h2 class="section-title">Dois módulos de <em>resultado imediato.</em><br>Uma base para tudo que vem depois.</h2>
+      <p style="font-size:0.9rem;color:#4a6a6f;line-height:1.75;max-width:680px;margin-top:8px">Começamos pelos dois pontos de maior retorno: automatizar o que está quebrando o SAC hoje e abrir o WhatsApp como canal central de atendimento e venda. O Módulo 1 cria a inteligência do atendimento — com o WhatsApp como interface preferencial. O Módulo 2 coloca essa inteligência na mão da gestão, em tempo real.</p>
+    </div>
+
+    <!-- MÓDULO 1 -->
+    <div class="fase-block reveal" style="margin-top:48px">
+      <div class="fase-header ink">
+        <div>
+          <div class="fase-tag">Módulo 1 · Quick Win</div>
+          <div class="fase-name">Central de Atendimento Inteligente</div>
+          <div class="fase-duration">Zendesk · Magento · Frete Rápido · WhatsApp Business API · Prazo: semanas 1–7</div>
+        </div>
+        <div class="fase-num-badge">1</div>
+      </div>
+
+      <!-- FRENTE 1 -->
+      <div class="frente-divider">
+        <div class="frente-divider-label">Frente 1 — Automação dos tickets existentes no Zendesk</div>
+        <div class="frente-divider-line"></div>
+      </div>
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-card-header">
+          <div class="modulo-card-left">
+            <div class="modulo-icon">🤖</div>
+            <div>
+              <div class="modulo-label">Inteligência sobre tickets já abertos</div>
+              <div class="modulo-name">Triagem automática, rastreamento e resolução dos chamados que já chegam ao SAC</div>
+              <div class="modulo-chips"><span class="chip">Zendesk API</span><span class="chip">Magento REST</span><span class="chip">Frete Rápido API</span></div>
+            </div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <div class="value-box-icon">📉</div>
+            <div>
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">O cliente já abriu o ticket — por e-mail, formulário ou marketplace. A Frente 1 garante que ele seja respondido, classificado e resolvido automaticamente, sem o time precisar tocar. O humano só entra nos casos que realmente precisam de julgamento.</div>
+            </div>
+          </div>
+          <p class="modulo-desc">Independente de como o chamado chegou ao Zendesk — via e-mail, formulário do site, Shopee, Magalu ou WhatsApp roteado — ele existe como um ticket formal. A Frente 1 atua <em>dentro do Zendesk</em>: lê o ticket, identifica o tipo de solicitação, consulta Magento e Frete Rápido em tempo real, responde ao cliente com o status do pedido e fecha o chamado. Para casos de exceção, coleta contexto e faz o transbordo ao time com tudo documentado. O resultado: a fila do SAC para de crescer sem precisar aumentar o time.</p>
+          <ul class="modulo-items">
+            <li><strong>Agente de triagem no Zendesk:</strong> lê o tipo de chamado, identifica se é rastreamento, defeito, cancelamento ou dúvida de produto — e roteia cada um corretamente.</li>
+            <li><strong>Consulta ao Magento em tempo real:</strong> verifica status do pedido (faturado, despachado, cancelado) antes de qualquer resposta ao cliente.</li>
+            <li><strong>Consulta ao Frete Rápido em tempo real:</strong> integração via API de ocorrências do TMS — status de separação, em rota, entregue, bloqueado em agência, extravio.</li>
+            <li><strong>Resposta automática ao cliente:</strong> mensagem clara, com linguagem da Ajinomoto, diretamente no Zendesk — sem fila de espera para casos de rastreamento.</li>
+            <li><strong>Decisão autônoma por regras de negócio:</strong> o agente pode aprovar troca dentro do prazo, emitir cupom de compensação ou sugerir a solução ao atendente para acate ou recusa — reduzindo ao máximo o que vai para o humano.</li>
+            <li><strong>Alertas automáticos para responsáveis:</strong> toda vez que um chamado exigir ação humana, o responsável correto é notificado — sem depender de filas passivas no Zendesk.</li>
+            <li><strong>Transbordo contextualizado:</strong> quando o agente escala para humano, o atendente recebe o histórico completo, diagnóstico e dados do pedido — sem o cliente repetir nada.</li>
+            <li><strong>Base de conhecimento da Ajinomoto:</strong> construída e treinada com os produtos, políticas de troca, regras de devolução e fluxos aprovados pelo time.</li>
+          </ul>
+          <div class="disclaimer-box">⚠️ Este módulo depende do acesso às APIs do Zendesk (via token de API), Magento REST API (credenciais de integração) e Frete Rápido (token de integração via painel do TMS). A troca do hub Lexus → Anymarket não bloqueia este módulo — mas pode antecipar melhorias de status disponíveis após a migração.</div>
+        </div>
+      </div>
+
+      <!-- FRENTE 2 -->
+      <div class="frente-divider">
+        <div class="frente-divider-label">Frente 2 — Canal novo: WhatsApp como interface central de atendimento e venda</div>
+        <div class="frente-divider-line"></div>
+      </div>
+      <div class="modulo-card" onclick="toggleModulo(this)" style="border-radius:0 0 12px 12px">
+        <div class="modulo-card-header">
+          <div class="modulo-card-left">
+            <div class="modulo-icon">📱</div>
+            <div>
+              <div class="modulo-label">WhatsApp como Canal Central</div>
+              <div class="modulo-name">Assistente virtual Ajinomoto no WhatsApp — do rastreamento à venda, sem abrir ticket</div>
+              <div class="modulo-chips"><span class="chip">WhatsApp Business API</span><span class="chip">Magento</span><span class="chip">MoEngage CRM</span></div>
+            </div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <div class="value-box-icon">💬</div>
+            <div>
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">A Frente 2 atua <em>antes</em> da Frente 1: resolve o atendimento diretamente no WhatsApp, sem que o cliente precise abrir um ticket. O cliente não sai do canal que já usa — e a Ajinomoto ganha um canal de venda ativa que hoje não existe.</div>
+            </div>
+          </div>
+          <p class="modulo-desc">Enquanto a Frente 1 trata tickets que já existem no Zendesk, a Frente 2 cria um canal próprio onde o atendimento acontece inteiramente no WhatsApp. O agente opera tanto de forma reativa (cliente manda mensagem) quanto proativa (Ajinomoto dispara notificações de status de pedido). A maioria dos casos se resolve aqui sem gerar ticket. Quando há exceção — avaria, produto errado, reclamação — o agente registra o ocorrido no Zendesk e aciona o time, já com contexto completo. O mesmo agente também atua dentro do site como plugin de apoio à venda.</p>
+          <ul class="modulo-items">
+            <li><strong>Notificações proativas de pedido via WhatsApp e e-mail:</strong> mensagens automáticas em cada mudança de status — confirmação, faturamento, despacho, em rota, entregue, ocorrência de transportadora — reduzindo o volume de chamados antes que eles cheguem ao SAC.</li>
+            <li><strong>Atendimento receptivo direto no WhatsApp:</strong> o cliente manda mensagem e recebe resposta imediata — sem precisar abrir ticket ou aguardar horário comercial.</li>
+            <li><strong>Consulta de status pelo WhatsApp:</strong> o cliente digita "meu pedido" e recebe o status atualizado em segundos, direto do Frete Rápido via API.</li>
+            <li><strong>Cupons de compensação automáticos:</strong> quando o cliente registra uma reclamação, o agente pode emitir um cupom de desconto na hora — atenuando a insatisfação sem esperar intervenção humana.</li>
+            <li><strong>Apoio à venda e recomendação:</strong> treinado com o catálogo Ajinomoto, o agente responde dúvidas sobre produtos, sugere receitas e indica produtos com base no que o cliente está buscando.</li>
+            <li><strong>Plugin de WhatsApp na loja virtual:</strong> o mesmo agente opera como assistente de apoio à venda dentro do site — sanando dúvidas e quebrando objeções sem o cliente sair da página.</li>
+            <li><strong>CSAT automatizado no fechamento:</strong> ao encerrar a conversa, o agente envia pesquisa de satisfação e registra o resultado automaticamente.</li>
+            <li><strong>Alertas de NPS/CSAT baixo para a gestão:</strong> notas abaixo de 4 disparam alerta automático para o gestor responsável — permitindo reverter a experiência antes que o cliente escale.</li>
+            <li><strong>Abertura automática de ticket no Zendesk:</strong> quando a situação exige registro formal (avaria, não entrega, produto errado), o agente cria o ticket com contexto e foto (se enviada) — conectando as duas frentes sem duplicar trabalho.</li>
+          </ul>
+          <div class="disclaimer-box">⚠️ <strong>Custos da API do WhatsApp Business (Meta):</strong> a Meta migrou para modelo por mensagem em julho de 2025. <strong>Mensagens receptivas</strong> (quando o cliente inicia a conversa) são <strong>gratuitas</strong> dentro da janela de 24h de atendimento — sem custo para respostas do agente nesse período. <strong>Notificações proativas</strong> (status de pedido enviados pela Ajinomoto) são cobradas como "mensagens de utilidade" — em média entre R$0,04 e R$0,08 por envio no Brasil. Esse custo variável é faturado diretamente pela Meta e não está incluso na mensalidade da NewScale. Dimensionamos o volume de envios proativos juntos antes do go-live.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MÓDULO 2 -->
+    <div class="fase-block reveal" style="margin-top:24px">
+      <div class="fase-header sage">
+        <div>
+          <div class="fase-tag">Módulo 2 · Visibilidade e Gestão</div>
+          <div class="fase-name">Dashboard de SAC — O que a Ajinomoto e a gestão veem</div>
+          <div class="fase-duration">Painel gerencial em tempo real · Integrado ao Módulo 1 · Prazo: semanas 3–8</div>
+        </div>
+        <div class="fase-num-badge">2</div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)" style="border-radius:0 0 12px 12px">
+        <div class="modulo-card-header">
+          <div class="modulo-card-left">
+            <div class="modulo-icon">📊</div>
+            <div>
+              <div class="modulo-label">Inteligência Gerencial</div>
+              <div class="modulo-name">Painel de SAC em tempo real com indicadores de operação, time e qualidade</div>
+              <div class="modulo-chips"><span class="chip">Zendesk</span><span class="chip">WhatsApp</span><span class="chip">NPS / CSAT</span><span class="chip">Remuneração variável</span></div>
+            </div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <div class="value-box-icon">🎯</div>
+            <div>
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">Transforma o SAC em fonte de dados para decisão. A Ajinomoto e a gestão deixam de depender do Zendesk manual e passam a ter visibilidade de operação, qualidade e pessoas — em tempo real, por dia ou período.</div>
+            </div>
+          </div>
+          <p class="modulo-desc">Um painel gerencial integrado aos agentes do Módulo 1, alimentado automaticamente por cada atendimento processado. Não é uma planilha — é uma tela viva. Vai além do operacional: os dados do dashboard podem ser usados para gestão de time, processos de incentivo (remuneração variável) e plano de carreira — quem promover com base em números reais de desempenho.</p>
+          <ul class="modulo-items">
+            <li><strong>Volume de chamados em valor absoluto:</strong> quantidade total de atendimentos no período com filtro por dia, semana ou mês — para dimensionar carga e planejar escala.</li>
+            <li><strong>Taxa de resolutividade do agente:</strong> % de chamados resolvidos pelo agente sem intervenção humana — o indicador mais direto do ROI do projeto.</li>
+            <li><strong>Prazo médio de resolução por tipo de chamado:</strong> rastreamento, defeito, cancelamento e outros — para identificar onde o processo ainda tem gargalo.</li>
+            <li><strong>NPS e CSAT por atendente:</strong> ranking individual de satisfação do cliente por atendente humano — dado essencial para gestão de desempenho e plano de carreira.</li>
+            <li><strong>Alertas do dia de NPS abaixo de 4:</strong> notificação em tempo real sempre que um cliente atribui nota baixa — permitindo acionamento imediato para reverter a experiência.</li>
+            <li><strong>Chamados por tipo e canal:</strong> distribuição entre rastreamento, defeito, dúvida de produto e outros, separados por canal de origem (WhatsApp, Zendesk, marketplaces).</li>
+            <li><strong>Indicadores para remuneração variável:</strong> taxa de resolução autônoma, tempo médio de atendimento, NPS e CSAT por atendente — base para programas de incentivo e bonificação baseados em dados reais.</li>
+            <li><strong>Painel de plano de carreira:</strong> evolução histórica dos indicadores por atendente — para embasar decisões de promoção com critérios objetivos, não subjetivos.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA NO DIA A DIA -->
+<section class="demo-section">
+  <div class="demo-inner">
+    <div class="reveal">
+      <span class="section-label">Como Funciona no Dia a Dia</span>
+      <h2 class="section-title">Na prática, <em>o que o cliente vê</em> — e o que o time deixa de fazer.</h2>
+    </div>
+
+    <div class="demo-grid">
+      <div class="reveal" style="display:flex;justify-content:center">
+        <div class="iphone-outer">
+          <div class="iphone-frame">
+            <div class="iphone-screen">
+              <div class="iphone-notch-bar">
+                <div class="iphone-dynamic-island">
+                  <div class="di-camera"></div>
+                  <div style="width:8px;height:8px;background:#1c1c1c;border-radius:50%;border:1px solid #2a2a2a"></div>
+                </div>
+              </div>
+              <div class="iphone-status-bar">
+                <span class="status-time">9:41</span>
+                <div class="status-icons">
+                  <svg width="16" height="10" viewBox="0 0 16 10"><rect x="0" y="2" width="3" height="6" rx="0.5" fill="white" opacity="0.4"/><rect x="4" y="1.5" width="3" height="6.5" rx="0.5" fill="white" opacity="0.6"/><rect x="8" y="1" width="3" height="7" rx="0.5" fill="white" opacity="0.8"/><rect x="12" y="0" width="3" height="8" rx="0.5" fill="white"/></svg>
+                  <svg width="15" height="10" viewBox="0 0 15 10"><path d="M7.5 2C10 2 12.2 3.1 13.7 4.8L15 3.2C13.1 1.2 10.4 0 7.5 0S1.9 1.2 0 3.2L1.3 4.8C2.8 3.1 5 2 7.5 2Z" fill="white"/><path d="M7.5 5C9 5 10.3 5.7 11.2 6.8L12.5 5.2C11.2 3.8 9.4 3 7.5 3S3.8 3.8 2.5 5.2L3.8 6.8C4.7 5.7 6 5 7.5 5Z" fill="white"/><circle cx="7.5" cy="8.5" r="1.5" fill="white"/></svg>
+                  <svg width="25" height="12" viewBox="0 0 25 12"><rect x="0" y="1" width="21" height="10" rx="2" stroke="white" stroke-width="1.2" fill="none" opacity="0.6"/><rect x="1.5" y="2.5" width="15" height="7" rx="1" fill="white"/><path d="M22 4v4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </div>
+              </div>
+              <div class="phone-header">
+                <div class="phone-avatar">🐼</div>
+                <div class="phone-contact">
+                  <div class="phone-name">Ajinomoto — Atendimento</div>
+                  <div class="phone-status">online agora</div>
+                </div>
+              </div>
+              <div class="phone-msgs" id="phoneScroll">
+            <div class="wa-msg received">
+              ✅ Seu pedido #AJ48221 foi despachado! Previsão de entrega: <strong>quarta-feira, 14/05</strong>. Acompanhe aqui: [link de rastreamento]
+              <div class="wa-msg-time">09:14</div>
+            </div>
+            <div class="wa-msg sent">Oi! Tô preocupado, meu pedido ainda não chegou. Já passou do prazo
+              <div class="wa-msg-time">14:32</div>
+            </div>
+            <div class="wa-msg received">Entendido! Consultei agora o rastreamento do seu pedido. 🔍
+              <div class="wa-status-pill">📦 Em rota de entrega — saiu do CD Guarulhos às 08h</div>
+              A previsão atualizada é hoje até as 20h. Deseja receber um alerta quando o entregador estiver próximo?
+              <div class="wa-msg-time">14:32</div>
+            </div>
+            <div class="wa-msg sent">Sim por favor! E vc tem receita com molho teriyaki?
+              <div class="wa-msg-time">14:33</div>
+            </div>
+            <div class="wa-msg received">Anotei! Você vai receber um aviso quando o pedido estiver a caminho. 🔔
+              Sobre a receita — temos um frango teriyaki incrível com nosso Molho Shoyu Tradicional. Quer que eu mande o modo de preparo?
+              <div class="wa-msg-time">14:33</div>
+            </div>
+            <div class="wa-msg sent">Manda sim! E a entrega veio errada, veio sabor diferente
+              <div class="wa-msg-time">14:34</div>
+            </div>
+            <div class="wa-msg received">Entendido — sinto muito pelo inconveniente! 😔 Vou registrar a ocorrência agora. Pode me enviar uma foto do produto recebido?
+              <div class="wa-msg-time">14:34</div>
+            </div>
+            <div class="wa-msg sent">📷 [foto do produto]
+              <div class="wa-msg-time">14:35</div>
+            </div>
+            <div class="wa-msg received">Foto recebida, obrigado! Já abri o protocolo #SAC88341 e acionei o time responsável. Como gesto de compensação, aqui vai um cupom para sua próxima compra: <strong>AJINOMOTO10</strong> — 10% de desconto, válido por 15 dias. 🎁
+              <div class="wa-msg-time">14:35</div>
+            </div>
+          </div>
+              <div class="iphone-home-bar"></div>
+            </div>
+          </div>
+          <div class="iphone-side-btn"></div>
+          <div class="iphone-side-btn2"></div>
+          <div class="iphone-vol-btn"></div>
+          <div class="iphone-vol-btn2"></div>
+          <div class="iphone-vol-btn3"></div>
+        </div>
+      </div>
+      <div class="demo-text reveal reveal-delay-2">
+        <h3>O cliente resolve em 30 segundos o que antes levava 4 minutos de SAC.</h3>
+        <p>O agente consulta o Frete Rápido e o Magento em tempo real, responde com linguagem da Ajinomoto e ainda aproveita o contato para engajar o cliente com o portfólio — e para compensar uma experiência ruim com ação imediata.</p>
+        <div class="demo-feat">
+          <div class="demo-feat-icon">📍</div>
+          <div class="demo-feat-text"><strong>Status em tempo real:</strong> integrado ao TMS Frete Rápido — separação, em rota, entregue, bloqueado, extravio.</div>
+        </div>
+        <div class="demo-feat">
+          <div class="demo-feat-icon">🐼</div>
+          <div class="demo-feat-text"><strong>Identidade da Ajinomoto:</strong> o Panda pode ser o avatar do canal, com tom de voz treinado para a marca.</div>
+        </div>
+        <div class="demo-feat">
+          <div class="demo-feat-icon">🎁</div>
+          <div class="demo-feat-text"><strong>Compensação automática:</strong> cupom de desconto emitido na hora da reclamação — sem precisar de humano para atenuar a insatisfação.</div>
+        </div>
+        <div class="demo-feat">
+          <div class="demo-feat-icon">📋</div>
+          <div class="demo-feat-text"><strong>Tudo registrado:</strong> cada conversa alimenta o Zendesk e o CRM automaticamente.</div>
+        </div>
+        <div class="demo-feat">
+          <div class="demo-feat-icon">🔔</div>
+          <div class="demo-feat-text"><strong>Alerta para o time:</strong> quando precisa de humano, chega com todo o contexto — sem o cliente repetir a história.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARD MOCKUP ROBUSTO -->
+<section class="dash-section">
+  <div class="dash-inner">
+    <div class="reveal">
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--ink);margin-bottom:6px">O que a Ajinomoto e a gestão veem — em tempo real.</h3>
+      <p style="font-size:0.86rem;color:#7a9a9f;line-height:1.65;margin-bottom:0">Painel de SAC com indicadores de operação, qualidade de atendimento, gestão de time e alertas automáticos.</p>
+    </div>
+    <div class="dash-mockup reveal reveal-delay-1">
+      <div class="dash-topbar">
+        <div class="dash-title">Painel de Atendimento · Ajinomoto — Tempo Real</div>
+        <div class="dash-filters">
+          <div class="dash-filter-btn active">Hoje</div>
+          <div class="dash-filter-btn">7 dias</div>
+          <div class="dash-filter-btn">30 dias</div>
+          <div class="dash-filter-btn">Mês</div>
+        </div>
+      </div>
+
+      <!-- ALERTA NPS BAIXO -->
+      <div class="dash-alert-bar">
+        <div class="dash-alert-dot"></div>
+        <strong>2 alertas de NPS baixo hoje</strong>&nbsp;· Cliente #AJ71204 — nota 2 (14:35) &nbsp;·&nbsp; Cliente #AJ69881 — nota 3 (11:02) &nbsp;·&nbsp; <span style="text-decoration:underline;cursor:pointer">Ver todos →</span>
+      </div>
+
+      <!-- KPIs PRINCIPAIS -->
+      <div class="dash-kpi-row">
+        <div class="dash-kpi">
+          <div class="dash-kpi-num green">312</div>
+          <div class="dash-kpi-label">Chamados hoje (total)</div>
+          <div class="dash-kpi-delta">↑ +18% vs. ontem</div>
+        </div>
+        <div class="dash-kpi">
+          <div class="dash-kpi-num green">89%</div>
+          <div class="dash-kpi-label">Resolvido pelo agente</div>
+          <div class="dash-kpi-delta">↑ +4pp vs. semana passada</div>
+        </div>
+        <div class="dash-kpi">
+          <div class="dash-kpi-num terra">4.6</div>
+          <div class="dash-kpi-label">NPS médio do dia</div>
+          <div class="dash-kpi-delta neg">↓ -0.2 vs. ontem</div>
+        </div>
+        <div class="dash-kpi">
+          <div class="dash-kpi-num">1min 12s</div>
+          <div class="dash-kpi-label">Tempo médio de resposta</div>
+          <div class="dash-kpi-delta">↓ -23s vs. semana passada</div>
+        </div>
+      </div>
+
+      <!-- MID: VOLUME + TIPOS -->
+      <div class="dash-mid">
+        <div class="dash-panel">
+          <div class="dash-panel-title">Volume de chamados — últimos 7 dias</div>
+          <div class="bar-chart">
+            <div class="bar-col"><div class="bar" style="height:45px"></div><div class="bar-day">Seg</div></div>
+            <div class="bar-col"><div class="bar" style="height:60px"></div><div class="bar-day">Ter</div></div>
+            <div class="bar-col"><div class="bar terra" style="height:72px"></div><div class="bar-day">Qua</div></div>
+            <div class="bar-col"><div class="bar" style="height:55px"></div><div class="bar-day">Qui</div></div>
+            <div class="bar-col"><div class="bar" style="height:50px"></div><div class="bar-day">Sex</div></div>
+            <div class="bar-col"><div class="bar" style="height:30px"></div><div class="bar-day">Sáb</div></div>
+            <div class="bar-col"><div class="bar terra" style="height:65px"></div><div class="bar-day">Dom</div></div>
+          </div>
+        </div>
+        <div class="dash-panel">
+          <div class="dash-panel-title">Prazo médio de resolução por tipo</div>
+          <div class="funil-item"><div class="funil-label">Rastreamento</div><div class="funil-bar-bg"><div class="funil-bar" style="width:8%"></div></div><div class="funil-pct" style="color:#7dd3a8">48s</div></div>
+          <div class="funil-item"><div class="funil-label">Dúvida de produto</div><div class="funil-bar-bg"><div class="funil-bar ink" style="width:25%"></div></div><div class="funil-pct">3m12s</div></div>
+          <div class="funil-item"><div class="funil-label">Defeito / Avaria</div><div class="funil-bar-bg"><div class="funil-bar warn" style="width:65%"></div></div><div class="funil-pct" style="color:#f6c26b">8m40s</div></div>
+          <div class="funil-item"><div class="funil-label">Cancelamento</div><div class="funil-bar-bg"><div class="funil-bar terra" style="width:80%"></div></div><div class="funil-pct" style="color:var(--tl)">12m05s</div></div>
+          <div class="funil-item"><div class="funil-label">Outros</div><div class="funil-bar-bg"><div class="funil-bar" style="width:45%;background:#4a6a6f"></div></div><div class="funil-pct">6m18s</div></div>
+        </div>
+      </div>
+
+      <!-- BOTTOM: ATENDENTES + ALERTAS -->
+      <div class="dash-bottom">
+        <div class="dash-panel dash-table-wrap">
+          <div class="dash-panel-title">NPS e CSAT por atendente — hoje</div>
+          <table class="dash-table">
+            <thead>
+              <tr>
+                <th>Atendente</th>
+                <th>Tickets</th>
+                <th>NPS Médio</th>
+                <th>CSAT</th>
+                <th>Resol.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ana P.</td>
+                <td>14</td>
+                <td><span class="nps-badge nps-good">4.9</span></td>
+                <td><span class="nps-badge nps-good">98%</span></td>
+                <td>100%</td>
+              </tr>
+              <tr>
+                <td>Juliana M.</td>
+                <td>11</td>
+                <td><span class="nps-badge nps-good">4.7</span></td>
+                <td><span class="nps-badge nps-good">95%</span></td>
+                <td>91%</td>
+              </tr>
+              <tr>
+                <td>Carla R.</td>
+                <td>9</td>
+                <td><span class="nps-badge nps-mid">4.1</span></td>
+                <td><span class="nps-badge nps-mid">82%</span></td>
+                <td>88%</td>
+              </tr>
+              <tr>
+                <td>Fernanda S.</td>
+                <td>8</td>
+                <td><span class="nps-badge nps-bad">3.6</span></td>
+                <td><span class="nps-badge nps-bad">71%</span></td>
+                <td>75%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="dash-panel">
+          <div class="dash-panel-title">Alertas do dia</div>
+          <div class="alert-row">
+            <div class="alert-dot red"></div>
+            <div class="alert-text">NPS 2 · Cliente #AJ71204 · Produto errado entregue. Cupom emitido automaticamente.</div>
+            <div class="alert-time">14:35</div>
+          </div>
+          <div class="alert-row">
+            <div class="alert-dot red"></div>
+            <div class="alert-text">NPS 3 · Cliente #AJ69881 · Atraso de entrega (+3 dias). Aguarda ação da gestão.</div>
+            <div class="alert-time">11:02</div>
+          </div>
+          <div class="alert-row">
+            <div class="alert-dot yellow"></div>
+            <div class="alert-text">Pico de volume detectado: +34% acima da média desta hora. Monitorar capacidade do time.</div>
+            <div class="alert-time">10:15</div>
+          </div>
+          <div class="alert-row">
+            <div class="alert-dot yellow"></div>
+            <div class="alert-text">Fernanda S. com CSAT abaixo de 75% pelo 3º dia consecutivo. Recomenda-se 1:1 com gestora.</div>
+            <div class="alert-time">09:00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANTES / DEPOIS -->
+<section class="ad-section">
+  <div class="ad-inner">
+    <div class="ad-label reveal">
+      <span class="section-label">A Diferença Concreta</span>
+      <h2 class="section-title">O mesmo ticket de rastreamento — <em>antes e depois.</em></h2>
+    </div>
+    <div class="ad-grid reveal reveal-delay-1">
+      <div class="ad-col ad-col-antes">
+        <div class="ad-col-title">Hoje — Processo Manual</div>
+        <div class="ad-step">
+          <div class="ad-step-time">09:00</div>
+          <div class="ad-step-content"><div class="ad-step-label">Cliente abre ticket no Zendesk</div><div class="ad-step-sub">"Cadê meu pedido?"</div></div>
+        </div>
+        <div class="ad-step">
+          <div class="ad-step-time">09:45</div>
+          <div class="ad-step-content"><div class="ad-step-label">Atendente recebe o chamado na fila</div><div class="ad-step-sub">Espera disponibilidade do time</div></div>
+        </div>
+        <div class="ad-step">
+          <div class="ad-step-time">09:48</div>
+          <div class="ad-step-content"><div class="ad-step-label">Atendente abre o painel do Frete Rápido</div><div class="ad-step-sub">Busca manualmente pelo número do pedido</div></div>
+        </div>
+        <div class="ad-step">
+          <div class="ad-step-time">09:51</div>
+          <div class="ad-step-content"><div class="ad-step-label">Copia o status e digita a resposta</div><div class="ad-step-sub">Formata a mensagem e manda pelo Zendesk</div></div>
+        </div>
+        <div class="ad-step">
+          <div class="ad-step-time">09:52</div>
+          <div class="ad-step-content"><div class="ad-step-label">Fecha o ticket manualmente</div><div class="ad-step-sub">Repete para o próximo da fila</div></div>
+        </div>
+        <div class="ad-total">
+          <div class="ad-total-label">Tempo total do processo</div>
+          <div class="ad-total-num">~52 min</div>
+        </div>
+      </div>
+      <div class="ad-col ad-col-depois">
+        <div class="ad-col-title">Com a NewScale — Automatizado</div>
+        <div class="ad-step">
+          <div class="ad-step-time">09:00</div>
+          <div class="ad-step-content"><div class="ad-step-label">Cliente envia mensagem no WhatsApp</div><div class="ad-step-sub">"Cadê meu pedido?"</div></div>
+        </div>
+        <div class="ad-step">
+          <div class="ad-step-time">09:00</div>
+          <div class="ad-step-content"><div class="ad-step-label">Agente identifica o cliente pelo número</div><div class="ad-step-sub">Consulta pedido via Magento REST API</div></div>
+        </div>
+        <div class="ad-step">
+          <div class="ad-step-time">09:01</div>
+          <div class="ad-step-content"><div class="ad-step-label">Consulta o rastreamento em tempo real</div><div class="ad-step-sub">Frete Rápido API — status e previsão atualizados</div></div>
+        </div>
+        <div class="ad-step">
+          <div class="ad-step-time">09:01</div>
+          <div class="ad-step-content"><div class="ad-step-label">Responde ao cliente com status + link</div><div class="ad-step-sub">Registra a conversa no Zendesk automaticamente</div></div>
+        </div>
+        <div class="ad-total">
+          <div class="ad-total-label">Tempo total do processo</div>
+          <div class="ad-total-num" style="color:#7dd3a8">~60 seg</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTIMENTO -->
+<section class="invest-section" id="investimento">
+  <div class="invest-inner">
+    <div class="reveal">
+      <span class="section-label" style="color:var(--tl)">Investimento</span>
+      <h2 class="section-title section-title-light">O que cada módulo custa — <em>e o que está incluso.</em></h2>
+    </div>
+
+    <div class="invest-modules-grid" style="margin-top:40px">
+      <div class="invest-mod-card reveal">
+        <div class="invest-mod-tag">Módulo 1 · Frente 1</div>
+        <div class="invest-mod-name">Agente de SAC + Automação de Rastreamento</div>
+        <div class="invest-mod-price-label">Implementação</div>
+        <div class="invest-mod-price">R$ 18.500</div>
+        <div class="invest-mod-items">
+          <div class="invest-mod-item">Agente de triagem no Zendesk</div>
+          <div class="invest-mod-item">Integração Magento REST API</div>
+          <div class="invest-mod-item">Integração Frete Rápido API</div>
+          <div class="invest-mod-item">Base de conhecimento da Ajinomoto</div>
+          <div class="invest-mod-item">Alertas automáticos para responsáveis</div>
+          <div class="invest-mod-item">Treinamento do time de SAC</div>
+          <div class="invest-mod-item">Playbook de transbordo aprovado</div>
+        </div>
+        <div class="invest-mod-mens">
+          <div class="invest-mod-mens-label">Mensalidade avulso</div>
+          <div class="invest-mod-mens-price">R$ 890/mês</div>
+        </div>
+      </div>
+      <div class="invest-mod-card reveal reveal-delay-1">
+        <div class="invest-mod-tag">Módulo 1 · Frente 2</div>
+        <div class="invest-mod-name">Agente WhatsApp — Atendimento + Apoio à Venda</div>
+        <div class="invest-mod-price-label">Implementação</div>
+        <div class="invest-mod-price">R$ 22.500</div>
+        <div class="invest-mod-items">
+          <div class="invest-mod-item">WhatsApp Business API (número oficial)</div>
+          <div class="invest-mod-item">Notificações proativas via WhatsApp e e-mail</div>
+          <div class="invest-mod-item">Atendimento receptivo 24h</div>
+          <div class="invest-mod-item">Plugin de WhatsApp na loja virtual</div>
+          <div class="invest-mod-item">Fluxo de recomendação e apoio à venda</div>
+          <div class="invest-mod-item">Cupons de compensação automatizados</div>
+          <div class="invest-mod-item">Integração Zendesk + CRM MoEngage</div>
+        </div>
+        <div class="invest-mod-mens">
+          <div class="invest-mod-mens-label">Mensalidade avulso</div>
+          <div class="invest-mod-mens-price">R$ 990/mês</div>
+        </div>
+      </div>
+      <div class="invest-mod-card reveal reveal-delay-2">
+        <div class="invest-mod-tag">Módulo 2</div>
+        <div class="invest-mod-name">Dashboard de SAC — Visibilidade e Gestão</div>
+        <div class="invest-mod-price-label">Implementação</div>
+        <div class="invest-mod-price" style="font-size:1.4rem;color:rgba(255,255,255,0.6)">Incluso no pacote</div>
+        <div class="invest-mod-items">
+          <div class="invest-mod-item">Painel gerencial em tempo real</div>
+          <div class="invest-mod-item">Volume, resolutividade e prazo por tipo</div>
+          <div class="invest-mod-item">NPS e CSAT por atendente</div>
+          <div class="invest-mod-item">Alertas automáticos de NPS baixo</div>
+          <div class="invest-mod-item">Indicadores para remuneração variável</div>
+          <div class="invest-mod-item">Painel de evolução por atendente</div>
+          <div class="invest-mod-item">Filtros por data e canal</div>
+        </div>
+        <div class="invest-mod-mens">
+          <div class="invest-mod-mens-label">Mensalidade avulso</div>
+          <div class="invest-mod-mens-price">R$ 610/mês</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="invest-pacote-card reveal">
+      <div class="invest-pacote-left">
+        <div class="invest-pacote-title">Contrate os três módulos juntos e economize R$4.100 na implementação.</div>
+        <div class="invest-pacote-desc">A Ajinomoto já mapeou as três frentes com clareza — SAC automatizado, WhatsApp como canal central e dashboard gerencial. Contratar em pacote garante sinergia técnica entre os módulos, economia no investimento inicial e mensalidade unificada com desconto.</div>
+        <div class="invest-pacote-validade"><div class="pulse-dot"></div>Oferta válida até 30 de maio de 2026</div>
+      </div>
+      <div class="invest-pacote-right">
+        <div class="invest-pacote-de">De R$ 41.000</div>
+        <div class="invest-pacote-price">R$ 36.900</div>
+        <div class="invest-pacote-sub">implementação · pagamento em até 2x</div>
+        <div class="invest-pacote-sub" style="margin-top:6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">Mensalidade unificada: <span style="color:rgba(255,255,255,0.4);text-decoration:line-through;font-size:0.8rem">R$ 2.490/mês</span> <strong style="color:#fff;font-size:1rem">R$ 1.990/mês</strong> <span style="background:rgba(125,211,168,0.15);color:#7dd3a8;font-size:0.62rem;font-weight:700;padding:2px 8px;border-radius:12px">economia de R$500/mês</span></div>
+        <div class="invest-pacote-badge">Economia de R$ 4.100 na implementação</div>
+      </div>
+    </div>
+
+    <div class="invest-mens-section reveal">
+      <div class="invest-mens-title">O que a mensalidade cobre</div>
+      <div class="mens-grid">
+        <div class="mens-card">
+          <div class="mens-card-icon">🔧</div>
+          <div class="mens-card-title">Manutenção do agente</div>
+          <div class="mens-card-desc">Ajustes de fluxo, atualização de playbook, correções de comportamento</div>
+        </div>
+        <div class="mens-card">
+          <div class="mens-card-icon">📊</div>
+          <div class="mens-card-title">Monitoramento de KPIs</div>
+          <div class="mens-card-desc">Acompanhamento mensal de % automatizado, NPS, tempo de resposta</div>
+        </div>
+        <div class="mens-card">
+          <div class="mens-card-icon">🆕</div>
+          <div class="mens-card-title">Atualizações de catálogo</div>
+          <div class="mens-card-desc">Novos produtos, campanhas sazonais, atualização de políticas</div>
+        </div>
+        <div class="mens-card">
+          <div class="mens-card-icon">🔗</div>
+          <div class="mens-card-title">Suporte a integrações</div>
+          <div class="mens-card-desc">Suporte técnico em caso de mudança de API ou comportamento inesperado</div>
+        </div>
+        <div class="mens-card">
+          <div class="mens-card-icon">📋</div>
+          <div class="mens-card-title">Relatório mensal</div>
+          <div class="mens-card-desc">Relatório consolidado enviado por e-mail com indicadores do período</div>
+        </div>
+        <div class="mens-card">
+          <div class="mens-card-icon">💡</div>
+          <div class="mens-card-title">Otimizações contínuas</div>
+          <div class="mens-card-desc">Melhorias de prompt, ajuste de regras e evolução do agente no tempo</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="roi-check reveal">
+      <div class="roi-text">
+        <h3>O payback é simples de calcular.</h3>
+        <p>O time de SAC tem 8 pessoas. 70% do tempo delas vai para rastreamento manual. Com custo hora médio de R$34, isso representa ~R$15.600/mês em hora-homem dedicada a um processo que pode ser automatizado. O investimento do pacote completo, de R$36.900, se paga em cerca de 2 meses de custo evitado — e a partir daí, gera economia recorrente todo mês. Esse cálculo ainda não inclui o impacto de churn evitado, melhora no RA e receita incremental do canal WhatsApp.</p>
+      </div>
+      <div class="roi-right">
+        <div class="roi-payback-label">Payback estimado</div>
+        <div class="roi-payback-num">2</div>
+        <div class="roi-payback-sub">meses de operação</div>
+      </div>
+    </div>
+
+    <div class="apis-aviso reveal">
+      <div class="apis-aviso-title">⚠️ Sobre custos de plataforma</div>
+      <div class="apis-aviso-text"><strong>Os custos de APIs e ferramentas externas não estão inclusos nesta proposta e são pagos diretamente pela Ajinomoto.</strong> Isso inclui os modelos de linguagem utilizados nos agentes (OpenAI / Anthropic), a infraestrutura de orquestração dos fluxos (N8N dedicado) e a API do WhatsApp Business (Meta). A mensalidade NewScale cobre a gestão, monitoramento e manutenção técnica de todo o ecossistema — não o custo dos planos e consumos em si. <strong>Estimativa de custo operacional mensal: R$ 1.600–2.000</strong> dependendo do volume de atendimentos processados pelos agentes e do volume de notificações proativas disparadas — custo variável e proporcional ao uso.<br><br>Sobre o WhatsApp especificamente: as <strong>mensagens receptivas</strong> (quando o cliente inicia a conversa) são <strong>gratuitas</strong> dentro da janela de 24h de atendimento. As <strong>notificações proativas</strong> de status de pedido — confirmação, despacho, entrega, ocorrência de transportadora — são cobradas pela Meta como "mensagens de utilidade", em média R$0,04 a R$0,08 por envio no Brasil. Dimensionamos o volume de disparos juntos antes do go-live para que não haja surpresas no faturamento.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO TÉCNICO -->
+<section class="diag-section" id="sistemas">
+  <div class="diag-inner">
+    <div class="reveal">
+      <span class="section-label">Diagnóstico Técnico</span>
+      <h2 class="section-title">Os sistemas da Ajinomoto —<br>e o que <em>cada um representa</em> para o projeto.</h2>
+      <p class="diag-intro">Cada dor identificada tem um sistema por trás. Mapeamos o ecossistema atual, avaliamos a viabilidade de integração de cada ferramenta e indicamos o caminho técnico para cada módulo proposto.</p>
+    </div>
+
+    <div class="diag-table reveal">
+      <div class="diag-row diag-row--header">
+        <div>Sistema</div>
+        <div>Papel na operação</div>
+        <div>Situação de integração</div>
+        <div>Recomendação</div>
+      </div>
+      <div class="diag-row">
+        <div><div class="diag-sys-name-sm">Zendesk <span class="diag-badge diag-badge--good">🟢 Alto</span></div><div class="diag-region-sm">CRM de Atendimento</div></div>
+        <div class="diag-cell-text">Central de tickets do SAC — recebe chamados de todos os canais e é onde o time interno opera o atendimento ao cliente.</div>
+        <div class="diag-cell-text">API REST bem documentada, webhooks nativos, suporte a triggers e automações. Permite leitura e escrita de tickets, criação de respostas automáticas e gestão de status. Acesso via token de API — sem dependência de parceiro.</div>
+        <div class="diag-cell-text diag-cell-rec">Integração direta via API REST. Agente de triagem lê tickets, classifica por tipo, consulta sistemas externos e posta resposta automática — ou escala para agente humano com histórico completo. Alta viabilidade, baixa complexidade.</div>
+      </div>
+      <div class="diag-row">
+        <div><div class="diag-sys-name-sm">Magento Open Source <span class="diag-badge diag-badge--good">🟢 Alto</span></div><div class="diag-region-sm">Plataforma de E-commerce</div></div>
+        <div class="diag-cell-text">Backend do e-commerce Ajinomoto — gestão de pedidos, catálogo, clientes, histórico de compras. Front desacoplado via storefront headless (arquitetura API-first).</div>
+        <div class="diag-cell-text">Magento Open Source oferece REST API completa (v1) com endpoints para pedidos, produtos, clientes e status. Autenticação via OAuth 1.0a ou token Bearer. Sem limitação de acesso por ser open source.</div>
+        <div class="diag-cell-text diag-cell-rec">Consulta de status de pedido e dados do cliente via REST API. Integração estabelecida nas Frentes 1 e 2 do Módulo 1. Dependência: credenciais de integração Admin — a equipe de TI precisa criar uma integration no painel Admin.</div>
+      </div>
+      <div class="diag-row">
+        <div><div class="diag-sys-name-sm">Frete Rápido (TMS) <span class="diag-badge diag-badge--good">🟢 Alto</span></div><div class="diag-region-sm">TMS de Transportes</div></div>
+        <div class="diag-cell-text">Sistema de gestão de transporte da operação — responsável por rastreamento de pedidos, ocorrências de entrega, comunicação com transportadoras.</div>
+        <div class="diag-cell-text">API pública documentada com endpoint de rastreamento de ocorrências por identificador ou número de pedido. Retorna status em tempo real com timestamp. Autenticação via token de integração gerado no painel.</div>
+        <div class="diag-cell-text diag-cell-rec">Fonte principal de status de rastreamento para ambas as frentes. O agente consulta este endpoint ao receber qualquer chamado de "onde está meu pedido". Token pode ser gerado pelo próprio Victor Serra no painel do Frete Rápido.</div>
+      </div>
+      <div class="diag-row">
+        <div><div class="diag-sys-name-sm">Storefront Headless <span class="diag-badge diag-badge--good">🟢 Alto</span></div><div class="diag-region-sm">Frontend / Storefront</div></div>
+        <div class="diag-cell-text">Camada de frontend desacoplada do Magento — responsável por vitrines, buscas, páginas de produto e experiência de navegação do cliente na loja.</div>
+        <div class="diag-cell-text">Arquitetura headless API-first por natureza — toda comunicação entre front e back é via API. Permite customizações no frontend sem afetar o backend Magento. Extremamente flexível para injeção de widgets.</div>
+        <div class="diag-cell-text diag-cell-rec">Relevante para o plugin de WhatsApp na loja virtual (Frente 2). A natureza API-first facilita significativamente a injeção do widget de atendimento nas páginas de produto e checkout.</div>
+      </div>
+      <div class="diag-row">
+        <div><div class="diag-sys-name-sm">MoEngage (CRM) <span class="diag-badge diag-badge--mid">🟡 Médio</span></div><div class="diag-region-sm">CRM / Automação de Marketing</div></div>
+        <div class="diag-cell-text">CRM da operação de marketing — histórico de compras, segmentação de base, automações de e-mail e SMS, fluxos de jornada do cliente.</div>
+        <div class="diag-cell-text">Possui API para consulta e escrita de dados de clientes. Viabilidade depende do plano contratado e das permissões de integração disponibilizadas pelo MoEngage.</div>
+        <div class="diag-cell-text diag-cell-rec">Integração relevante na Frente 2 (CRM e jornadas) e na Onda Futura (campanhas de recompra). Recomendamos mapear a documentação da API MoEngage e os endpoints disponíveis com o time de marketing ainda nesta semana.</div>
+      </div>
+      <div class="diag-row diag-row--last">
+        <div><div class="diag-sys-name-sm">Anymarket (Hub — em migração) <span class="diag-badge diag-badge--mid">🟡 A confirmar</span></div><div class="diag-region-sm">Hub Integrador / Marketplace</div></div>
+        <div class="diag-cell-text">Substituto do Lexus — responsável por orquestrar pedidos entre o ERP (Winthor/JP Alimentos), o Magento e os marketplaces (Shopee, Magalu). Migração em andamento.</div>
+        <div class="diag-cell-text">Por ser um hub integrador, deve expor webhooks ou APIs para notificação de mudança de status de pedido. Viabilidade específica depende da documentação do Anymarket.</div>
+        <div class="diag-cell-text diag-cell-rec">Não é bloqueante para os Módulos 1 e 2 — a integração direta com Magento e Frete Rápido já cobre o necessário. Após a migração estar estável, o Anymarket pode ser adicionado como fonte de status adicional para pedidos de marketplace.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ONDA FUTURA -->
+<section class="onda-section">
+  <div class="onda-inner">
+    <div class="reveal">
+      <span class="section-label" style="color:var(--tl)">Onda Futura</span>
+      <h2 class="section-title section-title-light">O que podemos construir <em>depois que a base estiver rodando.</em></h2>
+    </div>
+    <div class="onda-grid">
+      <div class="onda-text reveal">
+        <p>Na nossa conversa, a Ajinomoto foi além da dor inicial — e abriu várias frentes de oportunidade que a NewScale já sabe como endereçar. A primeira onda resolve o que está sangrando hoje. A segunda wave usa os ativos que a Ajinomoto já tem — CRM rico, catálogo estruturado, base de clientes recorrentes — para gerar crescimento real.</p>
+        <p>O BISO já conecta dados de marketing e vendas. Com o que a gente vai construir na primeira onda, o dado de atendimento entra nesse ecossistema também. A partir daí, a visão 360 do cliente começa a virar ferramenta de crescimento — não só de gestão.</p>
+        <p>Cada item abaixo pode ser um módulo independente. Priorizamos juntos conforme os resultados da Onda 1 forem se consolidando.</p>
+      </div>
+      <div class="onda-card reveal reveal-delay-2">
+        <div class="onda-card-title">Módulos mapeados para a segunda onda</div>
+        <div class="onda-item">Agente de Recompra e CRM Preditivo — campanhas de reativação e upsell baseadas no histórico MoEngage</div>
+        <div class="onda-item">Vitrine Personalizada por Perfil — integração com o frontend headless para exibir produtos diferentes por segmento de cliente</div>
+        <div class="onda-item">Agente de Precificação e Monitoramento de Canais — automação do trabalho manual de Victor Serra com tabelas e margens por marketplace</div>
+        <div class="onda-item">Agente Pós-Venda Proativo — CSAT, cupom de desconto, convite de avaliação e NPS automatizados no fechamento de cada pedido</div>
+        <div class="onda-item">Conciliação de Adquirência — cruzamento automático de faturamento vs. repasse de adquirentes com alertas de inconsistência</div>
+        <div class="onda-item">Integração com BISO — dados de SAC alimentando o painel de inteligência de negócios já utilizado pela Ajinomoto</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="garantia-section">
+  <div class="garantia-inner">
+    <div class="garantia-block reveal">
+      <div class="garantia-text">
+        <div class="garantia-eyebrow">Nossa Garantia</div>
+        <h2>Entregamos o que foi <em>combinado — e ficamos até estar redondo.</em></h2>
+        <p>Nada de "entregamos o que estava no contrato e tchau". Se o agente está rodando mas em algum ponto não atende ao escopo combinado, a NewScale continua trabalhando — sem cobrança adicional — até estar redondo.</p>
+      </div>
+      <div class="garantia-right">
+        <div class="garantia-selo-num">100%</div>
+        <div class="garantia-selo-label">de comprometimento<br>com o escopo acordado</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE A NEWSCALE -->
+<section class="porque-section">
+  <div class="porque-inner">
+    <div class="reveal">
+      <span class="section-label">Por que a NewScale</span>
+      <h2 class="section-title">Não entregamos e sumimos. <em>O go-live é só o começo.</em></h2>
+    </div>
+
+    <div class="quote-block reveal" style="margin-top:40px">
+      <div class="quote-mark">"</div>
+      <div class="quote-text">"Cada projeto começa pela conversa — não pelo contrato. A gente entende como a operação funciona hoje, quais as regras de negócio, o que a equipe precisa. Só depois constrói. E depois que entrega, a gente fica — otimizando, ajustando e evoluindo junto com o seu negócio."</div>
+      <div class="quote-author">
+        <div class="quote-author-line"></div>
+        <div class="quote-author-name">Bruna Santanna, Co-Fundadora NewScale Consulting</div>
+      </div>
+    </div>
+
+    <div class="metodologia-grid reveal" style="margin-top:40px">
+      <div class="met-card"><div class="met-num">01</div><div class="met-title">Consultoria sistêmica</div><div class="met-desc">Visão completa do negócio: atendimento, operação e financeiro. IA como motor de escala — não de cosmética.</div></div>
+      <div class="met-card"><div class="met-num">02</div><div class="met-title">Roadmap faseado</div><div class="met-desc">Priorizamos os processos com maior potencial de retorno antes de qualquer outra coisa.</div></div>
+      <div class="met-card"><div class="met-num">03</div><div class="met-title">Implementação integrada</div><div class="met-desc">Conectamos seus sistemas, eliminamos tarefas manuais e construímos fluxos inteligentes nos canais que sua equipe já usa.</div></div>
+      <div class="met-card"><div class="met-num">04</div><div class="met-title">Treinamento das equipes</div><div class="met-desc">Cada pessoa aprende o papel no novo fluxo. O humano monitora e decide — a IA faz o operacional.</div></div>
+      <div class="met-card"><div class="met-num">05</div><div class="met-title">Acompanhamento de KPIs</div><div class="met-desc">Métricas definidas juntos antes de começar. Você sabe o que esperar — e como acompanhar o ganho real.</div></div>
+      <div class="met-card"><div class="met-num">06</div><div class="met-title">Sustentação contínua</div><div class="met-desc">Monitoramento, otimizações e manutenção para que o sistema evolua junto com o negócio.</div></div>
+    </div>
+
+    <div class="fundadores-grid reveal" style="margin-top:40px">
+      <div class="fundador-card">
+        <img class="fundador-photo" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG" alt="Bruna Santanna">
+        <div class="fundador-info">
+          <div class="fundador-name">Bruna Santanna</div>
+          <div class="fundador-role">Co-Fundadora</div>
+          <div class="fundador-bio">ESPM. Empresária há 10+ anos. Mentora de IA no programa Potenc.IA. Professora de IA para equipes corporativas. Implementa IA no próprio negócio todos os dias — só vende o que usa.</div>
+          <div class="fundador-tags"><span class="ftag">SulAmérica</span><span class="ftag">Whirlpool</span><span class="ftag">Blackbox AI</span><span class="ftag">Potenc.IA</span></div>
+        </div>
+      </div>
+      <div class="fundador-card">
+        <img class="fundador-photo" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/BRUNO-VARELLA-PQ.jpeg" alt="Bruno Varella">
+        <div class="fundador-info">
+          <div class="fundador-name">Bruno Varella</div>
+          <div class="fundador-role">Co-Fundador</div>
+          <div class="fundador-bio">ESPM. 17+ anos em Marketing, Produto e Novos Negócios. Ex-Warner Bros., Ex-Natura & Co. Já implantou Agentes de IA em redes de franquias com 700+ unidades.</div>
+          <div class="fundador-tags"><span class="ftag">Warner Bros.</span><span class="ftag">Natura & Co</span><span class="ftag">700+ franquias</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="reveal">
+      <span class="section-label">Perguntas Frequentes</span>
+      <h2 class="section-title">O que a Ajinomoto e o time <em>provavelmente querem saber.</em></h2>
+    </div>
+    <div class="faq-list reveal" style="margin-top:40px">
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question"><div class="faq-q-text">A troca do Lexus pelo Anymarket bloqueia o início do projeto?</div><div class="faq-toggle">+</div></div>
+        <div class="faq-answer"><p>Não. Os Módulos 1 e 2 se integram diretamente com Magento e Frete Rápido — independente do hub integrador de marketplace. A migração para o Anymarket pode acontecer em paralelo sem impactar o desenvolvimento ou o go-live dos agentes. Quando o Anymarket estiver estável, podemos adicioná-lo como fonte de status adicional para pedidos de marketplace — isso seria uma expansão futura, não um requisito inicial.</p></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question"><div class="faq-q-text">O que o time de SAC vai fazer depois que o agente estiver rodando?</div><div class="faq-toggle">+</div></div>
+        <div class="faq-answer"><p>O time não some — ele sobe de nível. 70% do tempo que hoje vai para rastreamento manual é realocado para atendimentos de exceção, pós-venda ativo, retenção de clientes insatisfeitos e resolução de casos complexos. As meninas do SAC passam a ser gestoras do processo — não executoras de tarefas repetitivas. O agente faz o trabalho chato. O time cuida do relacionamento.</p></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question"><div class="faq-q-text">O cliente vai saber que está falando com uma IA?</div><div class="faq-toggle">+</div></div>
+        <div class="faq-answer"><p>Isso é uma decisão da Ajinomoto, não nossa. Vocês podem apresentar o agente como "Assistente Virtual da Ajinomoto", usar o avatar do Panda 🐼 ou dar um nome personalizado — sem mencionar que é IA. Na prática, quando a IA resolve bem e rápido, os clientes raramente perguntam ou se importam. O que incomoda as pessoas não é ser atendido por IA — é ser atendido mal por ela.</p></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question"><div class="faq-q-text">O que acontece se o agente não sabe responder algo?</div><div class="faq-toggle">+</div></div>
+        <div class="faq-answer"><p>O agente é treinado para reconhecer os limites do próprio conhecimento. Quando uma pergunta está fora do escopo da base de conhecimento ou requer julgamento humano, ele informa ao cliente que está transferindo para um especialista e escala o ticket no Zendesk com o contexto completo da conversa. Nunca inventa uma resposta — preferimos admitir a limitação do que passar uma informação errada.</p></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question"><div class="faq-q-text">O Japão pediu redução de custos. Como justificar esse investimento?</div><div class="faq-toggle">+</div></div>
+        <div class="faq-answer"><p>Com os números que o time compartilhou: 8 pessoas, 70% do tempo em rastreamento, ~4 min por ticket. Esse tempo representa ~R$15.600/mês em hora-homem. O investimento do pacote completo é R$36.900 — que se paga em cerca de 2 meses de custo evitado. Depois disso, a economia é recorrente todo mês. Além disso, a melhora do RA e da reputação nos marketplaces tem impacto direto em conversão — difícil de colocar um número, mas real e mensurável.</p></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question"><div class="faq-q-text">Quanto tempo até o go-live?</div><div class="faq-toggle">+</div></div>
+        <div class="faq-answer"><p>O projeto completo tem prazo de 60 a 90 dias corridos do kickoff ao go-live. A Frente 1 (SAC + Zendesk) entra em produção nas primeiras 4 semanas. A Frente 2 (WhatsApp) e o Dashboard gerencial completam o projeto nas semanas seguintes. O prazo depende principalmente da agilidade no fornecimento de credenciais de API e na validação do playbook de atendimento pela equipe da Ajinomoto.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRÓXIMOS PASSOS -->
+<section class="steps-section">
+  <div class="steps-inner">
+    <div class="reveal">
+      <span class="section-label" style="color:var(--tl)">Próximos Passos</span>
+      <h2 class="section-title section-title-light">Do aceite ao <em>primeiro cliente atendido</em> pelo agente.</h2>
+    </div>
+    <div class="steps-list" style="margin-top:48px">
+      <div class="step-item reveal">
+        <div class="step-num">1</div>
+        <div>
+          <div class="step-prazo">Dias 1–7</div>
+          <div class="step-title">Kickoff e imersão</div>
+          <p class="step-desc">Reunião com o time da Ajinomoto e equipe de SAC para validar escopo, definir métricas de sucesso, mapear playbook de atendimento e coletar credenciais de API (Zendesk, Magento, Frete Rápido, WhatsApp Business). Saímos com tudo que precisamos para construir — sem chute, sem genérico.</p>
+        </div>
+      </div>
+      <div class="step-item reveal reveal-delay-1">
+        <div class="step-num">2</div>
+        <div>
+          <div class="step-prazo">Dias 7–21</div>
+          <div class="step-title">Arquitetura e base de conhecimento</div>
+          <p class="step-desc">Construção da arquitetura do agente, configuração das integrações com Zendesk, Magento REST e Frete Rápido, e início do treinamento da base de conhecimento com produtos Ajinomoto, políticas de SAC, regras de devolução e tom de voz da marca. Essa base é revisada e aprovada pelo time antes de ir para produção.</p>
+        </div>
+      </div>
+      <div class="step-item reveal reveal-delay-2">
+        <div class="step-num">3</div>
+        <div>
+          <div class="step-prazo">Dias 14–42</div>
+          <div class="step-title">Desenvolvimento, integrações e WhatsApp</div>
+          <p class="step-desc">Desenvolvimento dos fluxos de SAC (Frente 1) e WhatsApp (Frente 2), integração com WhatsApp Business API, montagem do Dashboard gerencial (Módulo 2) e configuração do plugin de apoio à venda no site. Entregas parciais para validação do time a cada etapa.</p>
+        </div>
+      </div>
+      <div class="step-item reveal">
+        <div class="step-num">4</div>
+        <div>
+          <div class="step-prazo">Dias 42–70</div>
+          <div class="step-title">Testes, validação e treinamento do time</div>
+          <p class="step-desc">Ambiente de homologação com casos reais do SAC. Treinamento das meninas do time de atendimento para monitorar o dashboard, ajustar critérios de transbordo e operar o novo fluxo. Validação do comportamento do agente em cenários de exceção.</p>
+        </div>
+      </div>
+      <div class="step-item reveal reveal-delay-1">
+        <div class="step-num">5</div>
+        <div>
+          <div class="step-prazo">Dias 70–90</div>
+          <div class="step-title">Go-live e acompanhamento</div>
+          <p class="step-desc">Ativação dos agentes em produção com acompanhamento intensivo nas primeiras 72h pela NewScale. Ajustes de comportamento baseados nos primeiros atendimentos reais. Relatório de primeiros resultados com a Ajinomoto na semana seguinte ao go-live.</p>
+        </div>
+      </div>
+    </div>
+    <div class="steps-closing reveal">"Você não está sozinho no go-live — e também não estará no dia seguinte."</div>
+  </div>
+</section>
+
+<!-- CTA FECHAMENTO -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-fechamento-inner reveal">
+      <div class="cta-validade"><div class="pulse-dot"></div>Proposta válida até 30 de maio de 2026</div>
+      <div class="cta-h2">Ajinomoto, o próximo passo é <em>simples.</em></div>
+      <p class="cta-desc">Vocês já sabem onde dói, já sabem o que querem e já conhecem o caminho. Falta só dar o verde. A gente começa na semana que vem.</p>
+      <div class="cta-btns">
+        <a class="cta-btn-primary" href="https://wa.me/5511971901020?text=Ol%C3%A1%2C%20Bruna%21%20Somos%20da%20Ajinomoto%20e%20queremos%20fechar%20a%20proposta." target="_blank">Quero fechar os módulos</a>
+        <a class="cta-btn-secondary" href="https://wa.me/5511971901020?text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20a%20proposta%20Ajinomoto." target="_blank">Tenho uma dúvida antes</a>
+      </div>
+      <div class="cta-metricas">
+        <div class="cta-met">
+          <div class="cta-met-num">~2 meses</div>
+          <div class="cta-met-label">estimativa de payback do investimento</div>
+        </div>
+        <div class="cta-met">
+          <div class="cta-met-num">60–90 dias</div>
+          <div class="cta-met-label">do kickoff ao go-live completo</div>
+        </div>
+        <div class="cta-met">
+          <div class="cta-met-num">70%</div>
+          <div class="cta-met-label">dos chamados que o time deixa de tratar manualmente</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">NewScale<span>Consulting</span></div>
+  <div class="footer-date">Proposta exclusiva · Ajinomoto · v2<br>11 de maio de 2026 · Validade até 30/05/2026</div>
+</footer>
+
+<script>
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+function toggleModulo(card) {
+  card.classList.toggle('open');
+}
+
+function toggleFaq(item) {
+  document.querySelectorAll('.faq-item.open').forEach(other => {
+    if (other !== item) other.classList.remove('open');
+  });
+  item.classList.toggle('open');
+}
+
+// Filtros do dashboard (visual)
+document.querySelectorAll('.dash-filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.dash-filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// Scroll do telefone até o final das mensagens
+window.addEventListener('load', () => {
+  const ps = document.getElementById('phoneScroll');
+  if (ps) ps.scrollTop = ps.scrollHeight;
+});
+
+// SCROLL REVEAL
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.06 });
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
