@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PROJETO 5000 — Motor Mensal de Análise Clínica · NewScale × Colo Saúde</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #14373C;
+  --ink2: #1a4449;
+  --sage: #435D51;
+  --terra: #B06E4A;
+  --tl: #c4835e;
+  --sand: #A38362;
+  --cream: #E8E6E0;
+  --cl: #F4F3EF;
+  --white: #FAFAF8;
+  --colo-bg: #4A3640;
+  --colo-cream: #F4DDC3;
+  --colo-coral: #D86C5A;
+  --ok: #5a8a5e;
+  --pending: #c4835e;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--cl);
+  -webkit-font-smoothing: antialiased;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ============ HERO ============ */
+.hero {
+  position: relative;
+  background: linear-gradient(145deg, #0c2427 0%, #14373C 38%, #1d4840 72%, #435D51 100%);
+  color: var(--white);
+  padding: 70px 0 90px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(176,110,74,0.15) 0%, transparent 60%);
+  border-radius: 50%;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -300px;
+  left: -150px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(67,93,81,0.25) 0%, transparent 60%);
+  border-radius: 50%;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.brand-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.logo-newscale-img {
+  height: 64px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+}
+
+.logo-newscale-img.dark {
+  filter: none;
+  opacity: 1;
+}
+
+.partnership {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.partnership::before, .partnership::after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+}
+
+.logo-colo-img {
+  height: 64px;
+  width: 64px;
+  border-radius: 12px;
+  display: block;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+}
+
+.tag {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 18px;
+}
+
+h1.title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: clamp(2.3rem, 4.8vw, 4rem);
+  line-height: 1.05;
+  margin-bottom: 22px;
+  color: var(--white);
+  max-width: 850px;
+  letter-spacing: -0.01em;
+}
+
+h1.title em {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--terra);
+}
+
+.subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.78);
+  max-width: 700px;
+  margin-bottom: 40px;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 28px;
+  margin-top: 50px;
+  padding-top: 36px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta-label {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 8px;
+}
+
+.meta-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  color: var(--white);
+  line-height: 1.3;
+}
+
+/* ============ CONTENT ============ */
+.content {
+  background: var(--cl);
+  padding: 90px 0 100px;
+  position: relative;
+  z-index: 2;
+}
+
+section {
+  margin-bottom: 70px;
+}
+
+.section-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--terra);
+  font-weight: 400;
+  margin-right: 16px;
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: clamp(1.85rem, 3.2vw, 2.6rem);
+  color: var(--ink);
+  margin-bottom: 24px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--ink);
+  margin-top: 32px;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--sage);
+  margin-top: 22px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+p {
+  font-size: 0.97rem;
+  line-height: 1.78;
+  margin-bottom: 16px;
+  color: #2a4a4f;
+}
+
+p strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+ul {
+  margin-bottom: 18px;
+  padding-left: 0;
+  list-style: none;
+}
+
+li {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 10px;
+  padding-left: 22px;
+  position: relative;
+  color: #2a4a4f;
+}
+
+li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 8px;
+  height: 1px;
+  background: var(--terra);
+}
+
+li strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+code {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  font-size: 0.85em;
+  background: rgba(176,110,74,0.08);
+  color: var(--terra);
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+/* ============ DUO CARDS (Frente A vs B) ============ */
+.duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.duo-card {
+  background: var(--white);
+  border: 1px solid rgba(20,55,60,0.08);
+  border-radius: 16px;
+  padding: 32px 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.duo-card.frente-a {
+  border-top: 3px solid var(--sage);
+}
+
+.duo-card.frente-b {
+  border-top: 3px solid var(--terra);
+}
+
+.duo-card-label {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.duo-card.frente-a .duo-card-label { color: var(--sage); }
+.duo-card.frente-b .duo-card-label { color: var(--terra); }
+
+.duo-card h3 {
+  margin-top: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.55rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+
+.duo-card p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* ============ TABLES ============ */
+.table-wrap {
+  overflow-x: auto;
+  margin: 24px 0;
+  border-radius: 12px;
+  border: 1px solid rgba(20,55,60,0.08);
+  background: var(--white);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+th {
+  background: var(--ink);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  text-align: left;
+  padding: 16px 20px;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+td {
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(20,55,60,0.06);
+  vertical-align: top;
+  line-height: 1.6;
+  color: #2a4a4f;
+}
+
+tr:last-child td { border-bottom: none; }
+
+tr:hover td { background: rgba(176,110,74,0.03); }
+
+td strong { color: var(--ink); }
+
+.frente-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-right: 6px;
+}
+
+.frente-tag.a {
+  background: rgba(67,93,81,0.12);
+  color: var(--sage);
+}
+
+.frente-tag.b {
+  background: rgba(176,110,74,0.12);
+  color: var(--terra);
+}
+
+.frente-tag.both {
+  background: rgba(20,55,60,0.1);
+  color: var(--ink);
+}
+
+/* ============ STATUS BADGES ============ */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.status.done {
+  background: rgba(90,138,94,0.12);
+  color: var(--ok);
+}
+
+.status.pending {
+  background: rgba(196,131,94,0.15);
+  color: #a05c2f;
+}
+
+/* ============ INTERACTIVE PENDENCIES ============ */
+.pendencies-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.progress-counter {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  color: var(--sage);
+}
+
+.progress-counter strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.progress-counter .of {
+  color: var(--sand);
+}
+
+.progress-bar {
+  width: 160px;
+  height: 6px;
+  background: rgba(20,55,60,0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--sage), var(--terra));
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.reset-btn {
+  background: transparent;
+  border: 1px solid rgba(20,55,60,0.15);
+  color: var(--sage);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+}
+
+.reset-btn:hover {
+  border-color: var(--terra);
+  color: var(--terra);
+  background: rgba(176,110,74,0.05);
+}
+
+.interactive-hint {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--sand);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.interactive-hint::before {
+  content: '↳';
+  font-style: normal;
+  color: var(--terra);
+  font-size: 1.1rem;
+}
+
+tr.pendency-row { cursor: pointer; transition: background 0.2s; }
+tr.pendency-row:hover td { background: rgba(176,110,74,0.06); }
+
+tr.pendency-row.resolved td {
+  background: rgba(90,138,94,0.04);
+  color: var(--sage);
+}
+
+tr.pendency-row.resolved td:nth-child(2) {
+  text-decoration: line-through;
+  text-decoration-color: rgba(90,138,94,0.4);
+  opacity: 0.75;
+}
+
+.status-cell { user-select: none; }
+
+.status.done.toggleable, .status.pending.toggleable {
+  transition: all 0.2s ease;
+}
+
+/* ============ CALLOUT ============ */
+.callout {
+  background: var(--white);
+  border-left: 3px solid var(--terra);
+  border-radius: 0 8px 8px 0;
+  padding: 22px 28px;
+  margin: 28px 0;
+  font-size: 0.92rem;
+  line-height: 1.75;
+}
+
+.callout strong {
+  color: var(--terra);
+}
+
+.callout.dark {
+  background: var(--ink);
+  color: var(--cream);
+  border-left-color: var(--terra);
+}
+
+.callout.dark strong {
+  color: var(--terra);
+}
+
+/* ============ INVESTMENT CARD ============ */
+.highlight-card {
+  background: linear-gradient(135deg, #14373C, #435D51);
+  color: var(--white);
+  border-radius: 18px;
+  padding: 40px;
+  margin: 32px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.highlight-card::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(176,110,74,0.2) 0%, transparent 60%);
+  border-radius: 50%;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.highlight-item .label {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 10px;
+}
+
+.highlight-item .value {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  line-height: 1.1;
+  margin-bottom: 6px;
+  color: var(--white);
+}
+
+.highlight-item .sub {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.65);
+}
+
+/* ============ DELIVERY GROUP ============ */
+.delivery-group {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 26px 28px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(20,55,60,0.07);
+  position: relative;
+}
+
+.delivery-group::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--terra);
+  border-radius: 14px 0 0 0;
+}
+
+.delivery-group.shared::before { background: var(--ink); width: 100%; }
+.delivery-group.a::before { background: var(--sage); }
+.delivery-group.b::before { background: var(--terra); }
+.delivery-group.common::before { background: var(--sand); }
+
+.delivery-group h3 { margin-top: 0; }
+
+/* ============ FOOTER ============ */
+footer {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 50px 0 40px;
+  text-align: center;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  position: relative;
+}
+
+footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+footer .logo-newscale-img {
+  height: 50px;
+}
+
+footer a {
+  color: var(--terra);
+  text-decoration: none;
+}
+
+footer .small {
+  color: rgba(232,230,224,0.5);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 760px) {
+  .container { padding: 0 24px; }
+  .hero { padding: 50px 0 70px; }
+  .brand-bar { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .partnership::before, .partnership::after { width: 24px; }
+  .duo { grid-template-columns: 1fr; }
+  th, td { padding: 12px 14px; font-size: 0.85rem; }
+  .highlight-card { padding: 28px 24px; }
+  .highlight-item .value { font-size: 1.7rem; }
+}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="container">
+    <div class="brand-bar">
+      <img src="../logo-newscale.png" alt="NewScale Consulting" class="logo-newscale-img">
+      <div class="partnership">para</div>
+      <img src="../logo-colo.jpeg" alt="Colo Saúde" class="logo-colo-img">
+    </div>
+
+    <div class="tag">Escopo Técnico · Maio 2026</div>
+    <h1 class="title">PROJETO 5000<br/><em>Motor de Análise Clínica</em> em Escala</h1>
+    <p class="subtitle">Atualização do fluxo manual existente e criação de um motor automático em escala — com a mesma camada técnica compartilhada.</p>
+
+    <div class="meta-grid">
+      <div class="meta-item">
+        <span class="meta-label">Cliente</span>
+        <span class="meta-value">Colo Saúde</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Contato</span>
+        <span class="meta-value">Amir Z. Charruf</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Responsável</span>
+        <span class="meta-value">Bruna Santanna<br/>NewScale Consulting</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Última revisão</span>
+        <span class="meta-value">15/05/2026<br/><span style="font-size:0.78rem;color:rgba(255,255,255,0.55);">Pós-reunião 14/05</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ CONTENT ============ -->
+<main class="content">
+  <div class="container">
+
+    <!-- 1. OBJETIVO -->
+    <section>
+      <h2><span class="section-num">01</span>Objetivo</h2>
+      <p>O projeto entrega <strong>duas frentes integradas</strong> sobre a geração de planos de ação por IA, compartilhando a mesma camada técnica (novas tabelas, prompt revisado, análise de adesão, chave CPF/carteirinha).</p>
+
+      <div class="duo">
+        <div class="duo-card frente-a">
+          <div class="duo-card-label">Frente A</div>
+          <h3>Fluxo existente atualizado</h3>
+          <p>O fluxo atual em n8n — acionado quando a enfermeira clica no botão do prontuário — recebe todas as melhorias acordadas na reunião de 14/05.</p>
+        </div>
+        <div class="duo-card frente-b">
+          <div class="duo-card-label">Frente B</div>
+          <h3>Motor automático em escala</h3>
+          <p>Novo fluxo paralelo, com geração diluída ao longo do mês, cobrindo toda a carteira elegível (~4.500 pacientes/mês). Já nasce com as melhorias da Frente A mais a orquestração automática.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. VISÃO GERAL -->
+    <section>
+      <h2><span class="section-num">02</span>Visão geral</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Frente A</th>
+              <th>Frente B</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Acionamento</strong></td><td>Manual — botão da enfermeira</td><td>Automático — agendado diariamente</td></tr>
+            <tr><td><strong>Volume</strong></td><td>1 paciente por clique</td><td>~150/dia · ~4.500/mês</td></tr>
+            <tr><td><strong>Trigger</strong></td><td>Webhook do Bubble</td><td>Schedule no n8n + filtro de elegibilidade</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Camada técnica compartilhada</h4>
+      <ul>
+        <li>Leitura das novas tabelas: SID, risco cardiovascular, plano de cuidado, linhas de cuidado, pressão/glicemia</li>
+        <li>Regras de contexto temporal no prompt do Assistant</li>
+        <li>Análise de adesão à linha de cuidado, com sinalização ao enfermeiro</li>
+        <li>Chave de identificação por CPF / carteirinha</li>
+        <li>POPs atualizados na base de conhecimento</li>
+      </ul>
+
+      <h4>Stack</h4>
+      <p>n8n (orquestração) · Bubble API (leitura + escrita no prontuário) · Supabase/PostgreSQL (exames laboratoriais, novas tabelas, banco analítico) · Google Gemini 2.5 Flash (PDFs de exame) · OpenAI Assistants (geração do plano).</p>
+    </section>
+
+    <!-- 3. CARTEIRA -->
+    <section>
+      <h2><span class="section-num">03</span>Carteira elegível</h2>
+      <p>Empresa contratante <strong>Life Empresarial</strong>, complexidade <strong>3, 4 ou 5</strong>, somente pacientes <strong>ativos</strong>. Volume estimado: ~4.500 pacientes/mês (recorte sobre base ativa de ~13–14k). Chave de cruzamento: <strong>CPF e/ou carteirinha</strong> — não ID do Bubble.</p>
+    </section>
+
+    <!-- 4. ARQUITETURA -->
+    <section>
+      <h2><span class="section-num">04</span>Arquitetura</h2>
+
+      <h3>Pipeline por paciente <span class="frente-tag both">A + B</span></h3>
+      <p>O mesmo pipeline roda nos dois fluxos. A Frente A processa um paciente por clique; a Frente B itera sobre a fatia diária da carteira em lotes paralelos. Em cada execução, o sistema busca: dados do usuário, condições de saúde, tarefas e follow-ups, nível de complexidade com histórico, intercorrências, medicamentos, programa, grupo, convênio, exames (Bubble + Supabase) e — novidades desta entrega — <strong>SID, risco cardiovascular, plano de cuidado, linhas de cuidado e pressão/glicemia</strong>. Os PDFs de exame são interpretados pelo Gemini, os dados unificados em payload textual e enviados ao Assistant da OpenAI.</p>
+
+      <h3>Trigger</h3>
+      <p><strong>Frente A:</strong> mantém o webhook existente, acionado pelo botão no prontuário. <strong>Frente B:</strong> novo trigger agendado diluído ao longo do mês, com marcador por paciente (sugestão: aniversário). Diluir evita pico de APIs e suaviza a carga no Bubble.</p>
+
+      <h3>Regras de contexto temporal no prompt</h3>
+      <p>Eventos com <strong>mais de 1 ano</strong>: somente registro informativo, sem conduta ativa. Eventos com <strong>até 1 ano</strong>: podem gerar orientação. Tarefas e programas: leitura limitada ao último ano. A IA compara a data atual com a do evento antes de orientar.</p>
+
+      <h3>Análise de adesão à linha de cuidado</h3>
+      <p>A IA identifica baixa adesão às tarefas protocolares e sinaliza ao enfermeiro no plano gerado.</p>
+
+      <h3>Gravação no prontuário</h3>
+      <p>O plano é gravado em um novo registro na tabela <code>plano_de_acao</code> do prontuário no Bubble, via API. A Frente A também passa a gravar nessa tabela (antes o retorno só voltava para a tela), unificando o destino dos planos independentemente da origem.</p>
+
+      <h3>Exportação e analítico <span class="frente-tag b">só B</span></h3>
+      <p>O motor automático gera um <strong>CSV</strong> com os planos do período no formato do convênio Life Empresarial (cadência a definir) e grava em paralelo numa tabela analítica no Supabase, com chave CPF/carteirinha, ciclo, timestamp, status e plano.</p>
+    </section>
+
+    <!-- 5. RESILIÊNCIA -->
+    <section>
+      <h2><span class="section-num">05</span>Resiliência operacional</h2>
+      <p>Falhas individuais não interrompem o ciclo: são capturadas, registradas em tabela de log no Supabase (paciente, status, erro, tempo, timestamp) e reprocessadas automaticamente ao final, com até 2 retentativas por paciente. O status agregado do ciclo fica consultável durante e após a execução.</p>
+    </section>
+
+    <!-- 6+7. CAPACIDADE E CUSTO -->
+    <section>
+      <h2><span class="section-num">06</span>Capacidade e custo operacional</h2>
+      <div class="highlight-card">
+        <div class="highlight-grid">
+          <div class="highlight-item">
+            <div class="label">Volume mensal</div>
+            <div class="value">~4.500</div>
+            <div class="sub">pacientes processados<br/>(complexidade 3, 4 e 5)</div>
+          </div>
+          <div class="highlight-item">
+            <div class="label">Cadência diária</div>
+            <div class="value">~150</div>
+            <div class="sub">pacientes/dia<br/>em lotes paralelos</div>
+          </div>
+          <div class="highlight-item">
+            <div class="label">Custo por geração</div>
+            <div class="value">R$ 0,09</div>
+            <div class="sub">consumo OpenAI + Gemini<br/>por plano de ação</div>
+          </div>
+          <div class="highlight-item">
+            <div class="label">Estimativa mensal</div>
+            <div class="value">~R$ 405</div>
+            <div class="sub">custo total de API<br/>(responsabilidade Colo)</div>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:0.88rem;color:var(--sage);font-style:italic;">Os custos de consumo das APIs (OpenAI e Gemini) são de responsabilidade da Colo Saúde e não estão incluídos no setup. A NewScale auxilia na otimização desse custo.</p>
+    </section>
+
+    <!-- 7. PREMISSAS + FORA -->
+    <section>
+      <h2><span class="section-num">07</span>Premissas e fora do escopo</h2>
+
+      <h4>Premissas</h4>
+      <ul>
+        <li>Documentação completa dos endpoints de leitura <strong>e escrita</strong> da API do Bubble.</li>
+        <li>Estrutura da tabela <code>plano_de_acao</code> definida em conjunto antes do desenvolvimento.</li>
+        <li>Sessão de mapeamento do banco do Bubble realizada (já em andamento com João e Davi).</li>
+        <li>Definição do marcador de gatilho diário, do formato/cadência do CSV e da fonte de pressão/glicemia (Bubble × Supabase).</li>
+        <li>POPs atualizados reenviados pelo Amir.</li>
+      </ul>
+
+      <h4>Fora do escopo</h4>
+      <ul>
+        <li>Alterações no Bubble além da tabela <code>plano_de_acao</code>.</li>
+        <li>Migração de dados históricos e migração de funcionalidades pro Vercel.</li>
+        <li>Dashboard de visualização e custos de API.</li>
+      </ul>
+    </section>
+
+    <!-- 8. ENTREGÁVEIS -->
+    <section>
+      <h2><span class="section-num">08</span>Entregáveis</h2>
+
+      <div class="delivery-group shared">
+        <h3>Camada compartilhada <span class="frente-tag both">A + B</span></h3>
+        <p>Prompt do Assistant revisado (contexto temporal + análise de adesão), integração com as 5 novas tabelas, CPF/carteirinha como chave de cruzamento, POPs atualizados na base de conhecimento.</p>
+      </div>
+
+      <div class="delivery-group a">
+        <h3>Frente A — Fluxo do botão da enfermeira <span class="frente-tag a">manual</span></h3>
+        <p>Fluxo n8n atual refatorado sobre a camada compartilhada, conector de escrita no Bubble (tabela <code>plano_de_acao</code>) e validação em produção com a equipe assistencial.</p>
+      </div>
+
+      <div class="delivery-group b">
+        <h3>Frente B — Motor automático <span class="frente-tag b">geração diluída mensal</span></h3>
+        <p>Novo fluxo n8n agendado com gatilho diário por paciente, loop de processamento em lotes paralelos, log de execução, reprocessamento automático, exportação CSV pro convênio Life Empresarial e tabela analítica no Supabase.</p>
+      </div>
+
+      <div class="delivery-group common">
+        <h3>Comum aos dois</h3>
+        <p>Documentação técnica dos fluxos e do schema analítico, validação conjunta com a Colo e até duas rodadas de ajustes.</p>
+      </div>
+    </section>
+
+    <!-- 9. PRAZO + RESPONSABILIDADES -->
+    <section>
+      <h2><span class="section-num">09</span>Prazo e responsabilidades</h2>
+      <div class="callout dark">
+        <strong>Prazo: 3 a 4 semanas</strong> a partir da liberação de acessos e documentação completa.
+      </div>
+
+      <div class="duo">
+        <div class="duo-card frente-a">
+          <div class="duo-card-label">NewScale</div>
+          <p>Arquitetura e desenvolvimento das duas frentes, integração de leitura e escrita com a API do Bubble, construção do banco analítico, log e retentativa, e até duas rodadas de ajustes.</p>
+        </div>
+        <div class="duo-card frente-b">
+          <div class="duo-card-label">Colo Saúde</div>
+          <p>Documentação da API do Bubble (leitura e escrita), estrutura da tabela <code>plano_de_acao</code>, acesso aos ambientes de produção e testes, POPs atualizados e custos operacionais de API.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. PENDÊNCIAS -->
+    <section>
+      <h2><span class="section-num">10</span>Pendências para destravar o desenvolvimento</h2>
+
+      <div class="pendencies-header">
+        <div class="progress-counter">
+          <strong id="resolved-count">0</strong>
+          <span class="of">de</span>
+          <span><strong id="total-count">15</strong> resolvidas</span>
+          <div class="progress-bar"><div class="progress-bar-fill" id="progress-fill"></div></div>
+        </div>
+        <button class="reset-btn" id="reset-btn">Resetar marcações</button>
+      </div>
+
+      <p class="interactive-hint">Clique em qualquer linha para alternar entre <em>pendente</em> e <em>resolvido</em>. O estado é salvo no seu navegador.</p>
+
+      <div class="table-wrap">
+        <table id="pendencies-table">
+          <thead>
+            <tr><th style="width:40px;">#</th><th>Item</th><th>Status</th><th>Responsável</th></tr>
+          </thead>
+          <tbody>
+            <tr class="pendency-row" data-id="1" data-default="done"><td>1</td><td>Definição da carteira elegível</td><td class="status-cell"></td><td>Amir</td></tr>
+            <tr class="pendency-row" data-id="2" data-default="done"><td>2</td><td>Confirmação de que WeKnow está fora</td><td class="status-cell"></td><td>Amir</td></tr>
+            <tr class="pendency-row" data-id="3" data-default="done"><td>3</td><td>Destino do output (prontuário + CSV convênio)</td><td class="status-cell"></td><td>Amir</td></tr>
+            <tr class="pendency-row" data-id="4" data-default="done"><td>4</td><td>Volume e custo estimado de API</td><td class="status-cell"></td><td>Amir</td></tr>
+            <tr class="pendency-row" data-id="5" data-default="done"><td>5</td><td>Estratégia de execução (diluída por aniversário)</td><td class="status-cell"></td><td>Amir</td></tr>
+            <tr class="pendency-row" data-id="6" data-default="done"><td>6</td><td>Sessão para mapear banco de dados do Bubble</td><td class="status-cell"></td><td>Amir + João</td></tr>
+            <tr class="pendency-row" data-id="7" data-default="pending"><td>7</td><td>Documentação dos endpoints de <strong>escrita</strong> da API Bubble</td><td class="status-cell"></td><td>Amir / João</td></tr>
+            <tr class="pendency-row" data-id="8" data-default="pending"><td>8</td><td>Estrutura da tabela <code>plano_de_acao</code></td><td class="status-cell"></td><td>Amir</td></tr>
+            <tr class="pendency-row" data-id="9" data-default="pending"><td>9</td><td>Formato do CSV exigido pelo convênio Life Empresarial</td><td class="status-cell"></td><td>Amir</td></tr>
+            <tr class="pendency-row" data-id="10" data-default="pending"><td>10</td><td>Fonte autoritativa de pressão e glicemia (Bubble × Supabase)</td><td class="status-cell"></td><td>Davi + Amir</td></tr>
+            <tr class="pendency-row" data-id="11" data-default="pending"><td>11</td><td>Reenvio dos POPs atualizados</td><td class="status-cell"></td><td>Amir</td></tr>
+            <tr class="pendency-row" data-id="12" data-default="pending"><td>12</td><td>Marcador de gatilho diário (aniversário ou outro)</td><td class="status-cell"></td><td>Bruna + Amir</td></tr>
+            <tr class="pendency-row" data-id="13" data-default="pending"><td>13</td><td>Revisão do prompt do Assistant (contexto temporal)</td><td class="status-cell"></td><td>Bruna</td></tr>
+            <tr class="pendency-row" data-id="14" data-default="pending"><td>14</td><td>Output estruturado do Assistant (campos para dashboard)</td><td class="status-cell"></td><td>Bruna + Amir</td></tr>
+            <tr class="pendency-row" data-id="15" data-default="pending"><td>15</td><td>Política de retentativa (quantas, intervalo)</td><td class="status-cell"></td><td>Bruna</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 11. PRÓXIMOS PASSOS -->
+    <section>
+      <h2><span class="section-num">11</span>Próximos passos</h2>
+      <ul>
+        <li>Validação técnica deste escopo pela Colo</li>
+        <li>Definição da estrutura da tabela <code>plano_de_acao</code> e do CSV do convênio</li>
+        <li>Reenvio dos POPs atualizados</li>
+        <li>Revisão do prompt da IA (Bruna) com as regras de contexto temporal</li>
+        <li>Kickoff técnico e início do desenvolvimento</li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <img src="../logo-newscale.png" alt="NewScale Consulting" class="logo-newscale-img">
+    <div>
+      bruna@newscale.tech · (11) 97190-1020 · <a href="https://www.newscale.tech">www.newscale.tech</a>
+    </div>
+    <div class="small">PROJETO 5000 · Escopo técnico · 15/05/2026</div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  const STORAGE_KEY = 'colo_projeto5000_pendencias_v1';
+  const rows = document.querySelectorAll('tr.pendency-row');
+  const resolvedCount = document.getElementById('resolved-count');
+  const totalCount = document.getElementById('total-count');
+  const progressFill = document.getElementById('progress-fill');
+  const resetBtn = document.getElementById('reset-btn');
+
+  function getState() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) { return {}; }
+  }
+
+  function saveState(state) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
+  }
+
+  function statusHTML(status) {
+    if (status === 'done') {
+      return '<span class="status done toggleable">✓ Resolvido</span>';
+    }
+    return '<span class="status pending toggleable">⏳ Pendente</span>';
+  }
+
+  function render() {
+    const state = getState();
+    let done = 0;
+    rows.forEach(row => {
+      const id = row.dataset.id;
+      const def = row.dataset.default;
+      const current = state[id] !== undefined ? state[id] : def;
+      const cell = row.querySelector('.status-cell');
+      cell.innerHTML = statusHTML(current);
+      if (current === 'done') {
+        row.classList.add('resolved');
+        done++;
+      } else {
+        row.classList.remove('resolved');
+      }
+    });
+    resolvedCount.textContent = done;
+    totalCount.textContent = rows.length;
+    const pct = (done / rows.length) * 100;
+    progressFill.style.width = pct + '%';
+  }
+
+  rows.forEach(row => {
+    row.addEventListener('click', () => {
+      const id = row.dataset.id;
+      const state = getState();
+      const def = row.dataset.default;
+      const current = state[id] !== undefined ? state[id] : def;
+      state[id] = current === 'done' ? 'pending' : 'done';
+      saveState(state);
+      render();
+    });
+  });
+
+  resetBtn.addEventListener('click', () => {
+    if (confirm('Tem certeza que quer resetar todas as marcações para o estado original?')) {
+      localStorage.removeItem(STORAGE_KEY);
+      render();
+    }
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>
