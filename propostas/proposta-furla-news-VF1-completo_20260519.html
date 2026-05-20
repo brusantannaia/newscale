@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta · Rafael Furlanetti · Furla News · NewScale · v6</title>
+
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="bingbot" content="noindex, nofollow">
+
+<!-- Open Graph / WhatsApp preview -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Proposta Comercial: Rafael Furlanetti & NewScale">
+<meta property="og:description" content="Furla News · Onda 1 · Maio 2026">
+<meta property="og:image" content="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Proposta Comercial: Rafael Furlanetti & NewScale">
+<meta name="twitter:description" content="Furla News · Onda 1 · Maio 2026">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #14373C;
+  --ink2: #1a4449;
+  --sage: #435D51;
+  --terra: #B06E4A;
+  --tl: #c4835e;
+  --sand: #A38362;
+  --cream: #E8E6E0;
+  --cl: #F4F3EF;
+  --white: #FAFAF8;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.65; color: #1d2d30; background: var(--white); -webkit-font-smoothing: antialiased; }
+
+.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 20px 48px; background: transparent; transition: background 0.4s, backdrop-filter 0.4s; }
+.navbar.scrolled { background: rgba(12, 36, 39, 0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.navbar-logo img { height: 68px; opacity: 0.95; display: block; }
+.navbar-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tl); }
+
+.hero { min-height: 100vh; background: linear-gradient(145deg, #0c2427 0%, #14373C 38%, #1d4840 72%, #435D51 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 120px 40px 80px; overflow: hidden; position: relative; }
+.topo-lines { position: absolute; inset: 0; opacity: 0.08; pointer-events: none; }
+.topo-lines svg { width: 100%; height: 100%; }
+.grain-overlay { position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); opacity: 0.03; pointer-events: none; }
+.hero-badge { display: inline-block; background: rgba(176,110,74,0.15); color: var(--tl); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(176,110,74,0.25); margin-bottom: 28px; position: relative; z-index: 2; animation: fadeUp 0.6s ease both 0.2s; }
+.hero-eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 20px; position: relative; z-index: 2; animation: fadeUp 0.6s ease both 0.3s; }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 4.8vw, 4rem); font-weight: 700; color: #fff; line-height: 1.12; max-width: 880px; margin-bottom: 28px; position: relative; z-index: 2; animation: fadeUp 0.6s ease both 0.4s; }
+.hero h1 em { font-style: italic; color: var(--tl); }
+.hero-desc { font-size: 0.97rem; font-weight: 300; color: rgba(255,255,255,0.65); max-width: 600px; line-height: 1.75; margin-bottom: 52px; position: relative; z-index: 2; animation: fadeUp 0.6s ease both 0.5s; }
+.hero-cta { position: relative; z-index: 2; animation: fadeUp 0.6s ease both 0.7s; display: flex; flex-direction: column; align-items: center; gap: 10px; color: rgba(255,255,255,0.35); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: color 0.3s; }
+.hero-cta:hover { color: rgba(255,255,255,0.7); }
+.hero-cta svg { animation: bounce 2s infinite; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+
+section { padding: 100px 40px; }
+.section-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--terra); margin-bottom: 18px; display: block; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.4vw, 2.8rem); font-weight: 700; color: var(--ink); line-height: 1.18; margin-bottom: 20px; }
+.section-title em { font-style: italic; color: var(--terra); }
+.section-sub { font-size: 0.95rem; color: #4a6a6f; line-height: 1.78; max-width: 680px; }
+
+/* PRINCÍPIO */
+.principio-section { background: var(--white); padding-top: 120px; }
+.principio-inner { max-width: 1000px; margin: 0 auto; text-align: center; }
+.principio-frase { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 400; font-style: italic; line-height: 1.32; color: var(--ink); max-width: 880px; margin: 28px auto 0; }
+.principio-frase em { color: var(--terra); font-weight: 700; font-style: normal; }
+.principio-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 0; max-width: 760px; margin: 56px auto 0; border-top: 1px solid rgba(20,55,60,0.08); }
+.principio-meta-block { padding: 28px 24px; border-bottom: 1px solid rgba(20,55,60,0.08); text-align: left; }
+.principio-meta-block:nth-child(2n+1) { border-right: 1px solid rgba(20,55,60,0.08); }
+.principio-meta-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--terra); margin-bottom: 8px; }
+.principio-meta-text { font-size: 0.86rem; color: #4a6a6f; line-height: 1.7; }
+
+/* O QUE ENTREGO — LAYOUT EM 3 COLUNAS-BLOCO */
+.entrego-section { background: var(--cl); }
+.entrego-inner { max-width: 1200px; margin: 0 auto; }
+.entrego-header { margin-bottom: 64px; max-width: 720px; }
+
+.entrego-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+
+.entrego-col { border-radius: 18px; overflow: hidden; background: #fff; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; }
+.entrego-col:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(20,55,60,0.08); }
+
+.entrego-col-header { padding: 32px 28px 28px; color: #fff; position: relative; overflow: hidden; }
+.entrego-col-header::before { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); opacity: 0.04; pointer-events: none; }
+.entrego-col-1 .entrego-col-header { background: linear-gradient(150deg, var(--ink) 0%, var(--ink2) 100%); }
+.entrego-col-2 .entrego-col-header { background: linear-gradient(150deg, var(--terra) 0%, #9a5e3e 100%); }
+.entrego-col-3 .entrego-col-header { background: linear-gradient(150deg, var(--sage) 0%, #36504a 100%); }
+
+.entrego-col-tag { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.7; margin-bottom: 10px; position: relative; z-index: 1; }
+.entrego-col-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; line-height: 1.2; margin-bottom: 8px; position: relative; z-index: 1; }
+.entrego-col-count { font-size: 0.72rem; opacity: 0.7; font-weight: 500; position: relative; z-index: 1; }
+
+.entrego-col-body { padding: 24px 28px 32px; flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.entrego-mod { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid rgba(20,55,60,0.06); }
+.entrego-mod:last-child { border-bottom: none; }
+.entrego-mod-num { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--terra); line-height: 1; min-width: 30px; }
+.entrego-mod-content { flex: 1; }
+.entrego-mod-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 700; color: var(--ink); line-height: 1.25; margin-bottom: 6px; }
+.entrego-mod-text { font-size: 0.78rem; color: #4a6a6f; line-height: 1.6; }
+
+/* FLUXO */
+.fluxo-section { background: var(--ink); color: #fff; padding: 120px 40px; }
+.fluxo-inner { max-width: 1100px; margin: 0 auto; }
+.fluxo-header { text-align: center; margin-bottom: 72px; max-width: 720px; margin-left: auto; margin-right: auto; }
+.fluxo-header .section-label { color: var(--tl); }
+.fluxo-header .section-title { color: #fff; }
+.fluxo-header .section-title em { color: var(--tl); }
+.fluxo-header .section-sub { color: rgba(255,255,255,0.65); margin: 0 auto; }
+
+.fluxo-timeline { position: relative; padding-left: 80px; }
+.fluxo-timeline::before { content: ''; position: absolute; left: 28px; top: 18px; bottom: 18px; width: 2px; background: linear-gradient(180deg, var(--terra), rgba(176,110,74,0.2)); }
+
+.fluxo-step { position: relative; padding: 22px 0 34px; }
+.fluxo-step::before {
+  content: attr(data-step);
+  position: absolute;
+  left: -80px;
+  top: 18px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--terra);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #fff;
+  letter-spacing: 0.04em;
+  box-shadow: 0 0 0 6px var(--ink), 0 0 0 8px rgba(176,110,74,0.2);
+  white-space: nowrap;
+  padding: 0 4px;
+  text-align: center;
+}
+.fluxo-step.actor-rafael::before { background: var(--tl); color: var(--ink); box-shadow: 0 0 0 6px var(--ink), 0 0 0 8px rgba(196,131,94,0.3); }
+
+.fluxo-actor { display: inline-block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; padding: 3px 10px; border-radius: 12px; margin-bottom: 12px; }
+.fluxo-actor.ia { background: rgba(176,110,74,0.15); color: var(--tl); }
+.fluxo-actor.rafael { background: rgba(196,131,94,0.18); color: var(--tl); border: 1px solid rgba(196,131,94,0.3); }
+
+.fluxo-step-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 700; color: #fff; line-height: 1.25; margin-bottom: 8px; }
+.fluxo-step-title em { font-style: italic; color: var(--tl); }
+.fluxo-step-desc { font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.7; max-width: 660px; }
+.fluxo-step-extra { display: inline-block; margin-top: 10px; font-size: 0.72rem; color: var(--tl); padding: 4px 10px; background: rgba(176,110,74,0.08); border-radius: 12px; border: 1px solid rgba(176,110,74,0.2); }
+
+.fluxo-divider { padding: 14px 0; }
+.fluxo-divider-text { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35); padding: 6px 14px; background: rgba(255,255,255,0.04); border-radius: 12px; }
+
+/* DIFERENCIAIS */
+.dif-section { background: var(--white); }
+.dif-inner { max-width: 1100px; margin: 0 auto; }
+.dif-header { text-align: center; margin-bottom: 56px; }
+.dif-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.dif-card { background: var(--cl); border-radius: 14px; padding: 32px 28px; border-left: 4px solid var(--terra); }
+.dif-card-num { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; font-weight: 700; color: var(--terra); letter-spacing: 0.08em; margin-bottom: 8px; }
+.dif-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: var(--ink); margin-bottom: 12px; line-height: 1.3; }
+.dif-card-text { font-size: 0.86rem; color: #4a6a6f; line-height: 1.7; }
+
+/* INVESTIMENTO */
+.invest-section { background: linear-gradient(155deg, #0c2427, #14373C 60%, #1d4840 100%); padding: 120px 40px; color: #fff; }
+.invest-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+.invest-header { margin-bottom: 48px; }
+.invest-header .section-label { color: var(--tl); }
+.invest-header .section-title { color: #fff; }
+.invest-header .section-title em { color: var(--tl); }
+
+.invest-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(176,110,74,0.3); border-radius: 24px; padding: 56px 48px; position: relative; margin-bottom: 28px; }
+.invest-card::before { content: 'ONDA 1 COMPLETA'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--terra); color: #fff; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; padding: 5px 16px; border-radius: 20px; }
+.invest-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 14px; }
+.invest-value { font-family: 'Cormorant Garamond', serif; font-size: clamp(4rem, 7vw, 5.5rem); font-weight: 700; color: var(--tl); line-height: 1; margin: 30px 0 14px; }
+.invest-pagamento { font-size: 0.92rem; color: rgba(255,255,255,0.78); margin-bottom: 18px; }
+.invest-pagamento strong { color: #fff; font-weight: 600; }
+.invest-validade { display: inline-flex; align-items: center; gap: 8px; font-size: 0.72rem; color: rgba(255,255,255,0.6); margin-top: 6px; }
+.pulse-dot { width: 8px; height: 8px; background: var(--terra); border-radius: 50%; animation: pulse 1.8s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.3); } }
+
+.invest-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 36px; }
+.invest-meta-num { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 700; color: var(--tl); line-height: 1; }
+.invest-meta-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-top: 6px; }
+
+.invest-aviso { font-size: 0.78rem; color: rgba(255,255,255,0.55); margin-top: 36px; line-height: 1.7; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+/* PRÓXIMOS PASSOS */
+.steps-section { background: var(--cl); padding: 100px 40px; }
+.steps-inner { max-width: 1000px; margin: 0 auto; }
+.steps-header { text-align: center; margin-bottom: 56px; }
+.steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.steps-card { background: #fff; border-radius: 14px; padding: 26px 22px; border-top: 3px solid var(--terra); position: relative; }
+.steps-num { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 700; color: var(--terra); line-height: 1; margin-bottom: 12px; opacity: 0.5; }
+.steps-prazo { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--terra); margin-bottom: 6px; }
+.steps-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; line-height: 1.3; }
+.steps-text { font-size: 0.8rem; color: #4a6a6f; line-height: 1.6; }
+
+/* CTA */
+.cta-section { background: var(--white); padding: 100px 40px; }
+.cta-inner { max-width: 880px; margin: 0 auto; background: linear-gradient(150deg, #0c2427, #14373C 55%, #1d4840 100%); border-radius: 24px; padding: 64px 56px; text-align: center; color: #fff; }
+.cta-validade { display: inline-flex; align-items: center; gap: 8px; background: rgba(176,110,74,0.15); border: 1px solid rgba(176,110,74,0.3); padding: 8px 18px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tl); margin-bottom: 26px; }
+.cta-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.4vw, 2.6rem); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 20px; }
+.cta-title em { color: var(--tl); font-style: italic; }
+.cta-desc { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.75; max-width: 560px; margin: 0 auto 36px; }
+.cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.cta-btn { font-size: 0.86rem; font-weight: 600; text-decoration: none; padding: 16px 30px; border-radius: 40px; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
+.cta-btn-primary { background: var(--terra); color: #fff; box-shadow: 0 8px 28px rgba(176,110,74,0.35); }
+.cta-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(176,110,74,0.45); }
+.cta-btn-secondary { background: transparent; color: rgba(255,255,255,0.85); border: 1px solid rgba(255,255,255,0.25); }
+.cta-btn-secondary:hover { background: rgba(255,255,255,0.05); }
+
+.footer { background: var(--ink); padding: 36px 48px; display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,0.6); }
+.footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: #fff; }
+.footer-brand span { color: var(--tl); font-weight: 400; margin-left: 4px; }
+.footer-date { font-size: 0.78rem; text-align: right; line-height: 1.6; }
+
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+
+@media (max-width: 900px) {
+  section { padding: 70px 24px; }
+  .navbar { padding: 14px 24px; }
+  .navbar-tag { display: none; }
+  .hero { padding: 80px 24px; }
+  .principio-meta { grid-template-columns: 1fr; }
+  .principio-meta-block:nth-child(2n+1) { border-right: none; }
+  .entrego-cols { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr 1fr; }
+  .dif-grid, .invest-meta { grid-template-columns: 1fr; }
+  .invest-card { padding: 48px 28px; }
+  .fluxo-section { padding: 80px 24px; }
+  .fluxo-timeline { padding-left: 62px; }
+  .fluxo-timeline::before { left: 22px; }
+  .fluxo-step::before { left: -62px; width: 46px; height: 46px; font-size: 0.74rem; box-shadow: 0 0 0 4px var(--ink), 0 0 0 6px rgba(176,110,74,0.2); }
+  .cta-inner { padding: 40px 26px; }
+  .footer { flex-direction: column; gap: 16px; text-align: center; }
+  .footer-date { text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="navbar-logo">
+    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting">
+  </div>
+  <div class="navbar-tag">Proposta · Rafael Furlanetti · Maio 2026 · v6</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="topo-lines">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,300 Q300,220 500,290 T900,260 T1200,300" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,500 Q300,440 500,490 T900,460 T1200,500" fill="none" stroke="white" stroke-width="0.3"/>
+    </svg>
+  </div>
+  <div class="grain-overlay"></div>
+  <div class="hero-badge">Furla News · Onda 1 · Maio 2026</div>
+  <div class="hero-eyebrow">NewScale × Rafael Furlanetti</div>
+  <h1>Você cura, aprova e dispara.<br><em>A IA pesquisa, captura e monta.</em></h1>
+  <p class="hero-desc">Uma camada de IA por baixo do que você já faz bem — sem mudar o seu jeito de trabalhar.</p>
+  <a class="hero-cta" href="#principio">
+    <span>Ver proposta</span>
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M10 4v12M4 10l6 6 6-6" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+</section>
+
+<!-- PRINCÍPIO -->
+<section class="principio-section" id="principio">
+  <div class="principio-inner reveal">
+    <span class="section-label" style="text-align:center;">O princípio do desenho</span>
+    <div class="principio-frase">A IA <em>pesquisa, captura, processa e monta.</em><br>Você <em>cura, aprova e dispara.</em></div>
+    <div class="principio-meta">
+      <div class="principio-meta-block">
+        <div class="principio-meta-title">Você é o curador</div>
+        <div class="principio-meta-text">O crivo editorial não muda. A IA entrega insumo. Você decide o que entra.</div>
+      </div>
+      <div class="principio-meta-block">
+        <div class="principio-meta-title">Aprovação antes de cada disparo</div>
+        <div class="principio-meta-text">Nenhuma newsletter ou conteúdo sai sem o seu OK. A IA gera e mostra — você aprova.</div>
+      </div>
+      <div class="principio-meta-block">
+        <div class="principio-meta-title">A IA respeita seu material</div>
+        <div class="principio-meta-text">Posts, programa CNN, WhatsApp — tudo vira insumo. Ela conecta, não inventa.</div>
+      </div>
+      <div class="principio-meta-block">
+        <div class="principio-meta-title">A IA não decide. Executa.</div>
+        <div class="principio-meta-text">Sem aprovação automática. Sem publicação sem você ver.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE ENTREGO — 3 COLUNAS-BLOCO -->
+<section class="entrego-section">
+  <div class="entrego-inner">
+    <div class="entrego-header reveal">
+      <span class="section-label">O que entrego</span>
+      <h2 class="section-title">Nove módulos integrados, <em>três blocos, uma operação só.</em></h2>
+      <p class="section-sub">Tudo construído em sistemas personalizados — feitos sob medida pra sua rotina, não em ferramenta de prateleira.</p>
+    </div>
+
+    <div class="entrego-cols">
+
+      <!-- BLOCO 1 -->
+      <div class="entrego-col entrego-col-1 reveal">
+        <div class="entrego-col-header">
+          <div class="entrego-col-tag">Bloco 1</div>
+          <div class="entrego-col-title">Captação inteligente</div>
+          <div class="entrego-col-count">3 módulos · Dias 20–45</div>
+        </div>
+        <div class="entrego-col-body">
+          <div class="entrego-mod">
+            <div class="entrego-mod-num">01</div>
+            <div class="entrego-mod-content">
+              <div class="entrego-mod-title">Captação multicanal</div>
+              <div class="entrego-mod-text">Links rastreáveis com UTM em todos os pontos de contato do Rafael — bio, stories, LinkedIn, WhatsApp, QR Code, ads. Inclui automações de redes sociais: boas-vindas automáticas para novos seguidores apresentando o Furla News e automação de comentários no feed conduzindo o lead à inscrição. A implementação dessas automações poderá utilizar plataforma terceira especializada (como ManyChat), cujo eventual custo de licença fica sob conta do Rafael — definição no kickoff.</div>
+            </div>
+          </div>
+          <div class="entrego-mod">
+            <div class="entrego-mod-num">02</div>
+            <div class="entrego-mod-content">
+              <div class="entrego-mod-title">Agente de captação e pré-qualificação</div>
+              <div class="entrego-mod-text">Opera no WhatsApp e no Instagram DM. Conversa natural com o lead, treinado com base de conhecimento do projeto — quem é o Rafael, o que é o Furla News, o Clube de Networking. Coleta dados estruturados, registra no banco com rastreio de origem e adiciona o contato ao fluxo de aprovação para entrar no mailing. <em style="font-size:0.74rem;color:#7a9a9f;font-style:normal;">A ativação no Instagram DM depende de aprovação da Meta — processo iniciado no Dia 1, com prazo fora do nosso controle. Caso não seja liberado dentro do prazo do projeto, o agente opera no WhatsApp na Onda 1 e migra para o Instagram DM na Onda 2.</em></div>
+            </div>
+          </div>
+          <div class="entrego-mod">
+            <div class="entrego-mod-num">03</div>
+            <div class="entrego-mod-content">
+              <div class="entrego-mod-title">Funil de captação e onboarding</div>
+              <div class="entrego-mod-text">Visão gerencial das etapas entre "novo lead" e "ativo no mailing" — kanban customizado com todas as fases do funil de aprovação, feito sob medida pra sua rotina, não em ferramenta de prateleira.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCO 2 -->
+      <div class="entrego-col entrego-col-2 reveal reveal-delay-1">
+        <div class="entrego-col-header">
+          <div class="entrego-col-tag">Bloco 2 · Prioridade</div>
+          <div class="entrego-col-title">Conteúdo automatizado</div>
+          <div class="entrego-col-count">4 módulos · Dias 1–20</div>
+        </div>
+        <div class="entrego-col-body">
+          <div class="entrego-mod">
+            <div class="entrego-mod-num">04</div>
+            <div class="entrego-mod-content">
+              <div class="entrego-mod-title">Pesquisa diária às 4h</div>
+              <div class="entrego-mod-text">A IA varre os veículos definidos e entrega, antes das 5h30, as prioridades de pauta com sugestões de texto já formatadas para o disparo nas comunidades — uma por uma, com botão de aprovar, reprovar ou editar. Treinada com o racional que o Rafael já usa na curadoria. Após as aprovações, monta o texto final consolidado e segue para disparo automático em todas as comunidades.</div>
+            </div>
+          </div>
+          <div class="entrego-mod">
+            <div class="entrego-mod-num">05</div>
+            <div class="entrego-mod-content">
+              <div class="entrego-mod-title">Captura WhatsApp + newsletter</div>
+              <div class="entrego-mod-text">A IA captura o material disparado nas comunidades de WhatsApp, adapta para o template HTML do Furla News, solicita aprovação antes do envio — e segue com o disparo automático para todo o mailing cadastrado.</div>
+            </div>
+          </div>
+          <div class="entrego-mod">
+            <div class="entrego-mod-num">06</div>
+            <div class="entrego-mod-content">
+              <div class="entrego-mod-title">Mapeamento de posts + CNN</div>
+              <div class="entrego-mod-text">Rotina diária ao final do dia: a IA consolida os posts do Instagram e do LinkedIn do Rafael, mais novos episódios do programa CNN no YouTube — e apresenta tudo para ele decidir o que entra no disparo das comunidades e na newsletter como bloco dedicado. <em style="font-size:0.74rem;color:#7a9a9f;font-style:normal;">Instagram e YouTube via API oficial. LinkedIn sujeito a limitações técnicas da plataforma — monitorado via RSS ou método equivalente, com estabilidade condicionada a eventuais atualizações da rede.</em></div>
+            </div>
+          </div>
+          <div class="entrego-mod">
+            <div class="entrego-mod-num">07</div>
+            <div class="entrego-mod-content">
+              <div class="entrego-mod-title">Newsletter de sexta</div>
+              <div class="entrego-mod-text">Apanhadão semanal pronto, com espaço pro seu comentário antes do disparo.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCO 3 -->
+      <div class="entrego-col entrego-col-3 reveal reveal-delay-2">
+        <div class="entrego-col-header">
+          <div class="entrego-col-tag">Bloco 3</div>
+          <div class="entrego-col-title">Dados e indicadores</div>
+          <div class="entrego-col-count">2 módulos · Dias 20–45</div>
+        </div>
+        <div class="entrego-col-body">
+          <div class="entrego-mod">
+            <div class="entrego-mod-num">08</div>
+            <div class="entrego-mod-content">
+              <div class="entrego-mod-title">Banco de dados estruturado</div>
+              <div class="entrego-mod-text">Sistema próprio com toda a base de contatos — dados demográficos, origem de captação, etapa no funil, canal ativo (WhatsApp vs. newsletter). Alimentado pelo agente e pelos formulários, estruturado para crescer com o projeto.</div>
+            </div>
+          </div>
+          <div class="entrego-mod">
+            <div class="entrego-mod-num">09</div>
+            <div class="entrego-mod-content">
+              <div class="entrego-mod-title">Dashboard de métricas</div>
+              <div class="entrego-mod-text">Painel próprio com visão completa da operação: contatos por etapa do funil, base ativa por canal, disparos realizados, taxa de abertura e clique das newsletters, engajamento nas comunidades de WhatsApp — com filtros de data e comparativos entre períodos.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FLUXO -->
+<section class="fluxo-section">
+  <div class="fluxo-inner">
+    <div class="fluxo-header reveal">
+      <span class="section-label">O fluxo do dia</span>
+      <h2 class="section-title">Como vai funcionar a sua <em>rotina diária.</em></h2>
+      <p class="section-sub">Passo a passo do que acontece, quem faz cada coisa e em que horário. Sua rotina permanece — a IA roda por baixo, sempre com sua aprovação antes do disparo.</p>
+    </div>
+
+    <div class="fluxo-timeline">
+
+      <div class="fluxo-step reveal" data-step="04h">
+        <span class="fluxo-actor ia">IA</span>
+        <div class="fluxo-step-title">Pesquisa silenciosa nos veículos</div>
+        <div class="fluxo-step-desc">A IA varre os jornais definidos, extrai as capas, elege as prioridades de pauta com base no racional que o Rafael já usa — e gera as versões sugeridas de texto para o disparo nas comunidades, uma por pauta, com botão de aprovar, reprovar ou editar.</div>
+      </div>
+
+      <div class="fluxo-step actor-rafael reveal" data-step="5h30">
+        <span class="fluxo-actor rafael">Rafael</span>
+        <div class="fluxo-step-title">Você acorda, revisa e aprova pauta a pauta</div>
+        <div class="fluxo-step-desc">Você abre o material, mistura com o que tem de fora, ajusta onde quiser. Aprova cada pauta individualmente — a IA consolida tudo que foi aprovado/editado em um único texto e pede sua aprovação final.</div>
+        <div class="fluxo-step-extra">Velocidade no processo sem perder o crivo editorial</div>
+      </div>
+
+      <div class="fluxo-step actor-rafael reveal" data-step="7h">
+        <span class="fluxo-actor rafael">Rafael</span>
+        <div class="fluxo-step-title">Você dispara no WhatsApp <em>como sempre fez</em></div>
+        <div class="fluxo-step-desc">Com o texto consolidado em mãos, a IA te pergunta em quais comunidades quer disparar. Você confirma — ela executa o disparo grupo por grupo, automaticamente. Nada muda no seu ritual, só o esforço manual desaparece.</div>
+      </div>
+
+      <div class="fluxo-step reveal" data-step="7h15">
+        <span class="fluxo-actor ia">IA</span>
+        <div class="fluxo-step-title">Captura + newsletter pronta <em>pra sua aprovação</em></div>
+        <div class="fluxo-step-desc">A IA identifica seu disparo, captura o conteúdo, transcreve áudio, lê PDF — e gera a newsletter HTML. Te manda pra revisar antes do envio.</div>
+        <div class="fluxo-step-extra">Você aprova com um clique — a IA dispara pra base de email</div>
+      </div>
+
+      <div class="fluxo-step actor-rafael reveal" data-step="15h">
+        <span class="fluxo-actor rafael">Rafael</span>
+        <div class="fluxo-step-title">Outros conteúdos ao longo do dia</div>
+        <div class="fluxo-step-desc">Você posta outros conteúdos no grupo do WhatsApp — atualizações, comentários, notícias quentes. A IA segue capturando tudo.</div>
+      </div>
+
+      <div class="fluxo-step reveal" data-step="19h">
+        <span class="fluxo-actor ia">IA</span>
+        <div class="fluxo-step-title">Newsletter noturna gerada e <em>enviada pra sua aprovação</em></div>
+        <div class="fluxo-step-desc">A IA pega tudo que você mandou ao longo do dia e gera a newsletter noturna. Você aprova — a IA dispara pra base de email + WhatsApp.</div>
+        <div class="fluxo-step-extra">Pode virar uma única newsletter (manhã consolidada) — decisão no kickoff</div>
+      </div>
+
+      <div class="fluxo-divider">
+        <span class="fluxo-divider-text">— durante a semana —</span>
+      </div>
+
+      <div class="fluxo-step reveal" data-step="∞">
+        <span class="fluxo-actor ia">IA</span>
+        <div class="fluxo-step-title">Mapeamento contínuo: posts + CNN</div>
+        <div class="fluxo-step-desc">A IA monitora as redes do Rafael e os veículos de comunicação. Lista todas as publicações do dia anterior — posts no Instagram e LinkedIn, novos episódios do programa CNN — e apresenta pra ele decidir o que entra no disparo das comunidades e, consequentemente, na newsletter como bloco dedicado.</div>
+      </div>
+
+      <div class="fluxo-step reveal" data-step="Sex">
+        <span class="fluxo-actor ia">IA</span>
+        <div class="fluxo-step-title">Apanhadão semanal <em>pronto pra sua aprovação</em></div>
+        <div class="fluxo-step-desc">Sexta-feira, a IA consolida a semana: WhatsApp + posts + CNN. Gera peça com 5 a 8 pontos mais importantes. Você revisa, adiciona comentário se quiser, aprova — a IA dispara.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="dif-section">
+  <div class="dif-inner">
+    <div class="dif-header reveal">
+      <span class="section-label">Diferenciais</span>
+      <h2 class="section-title">Por que esse desenho <em>funciona pra você.</em></h2>
+    </div>
+    <div class="dif-grid">
+      <div class="dif-card reveal">
+        <div class="dif-card-num">01</div>
+        <div class="dif-card-title">Sua rotina não muda</div>
+        <div class="dif-card-text">A IA não troca o seu jeito de trabalhar. Ela entra como camada por baixo — você continua curando, disparando e decidindo.</div>
+      </div>
+      <div class="dif-card reveal reveal-delay-1">
+        <div class="dif-card-num">02</div>
+        <div class="dif-card-title">Newsletter sem retrabalho</div>
+        <div class="dif-card-text">O que você dispara no WhatsApp vira newsletter automática. Sem refazer material em outra ferramenta.</div>
+      </div>
+      <div class="dif-card reveal reveal-delay-2">
+        <div class="dif-card-num">03</div>
+        <div class="dif-card-title">Aprovação antes de cada envio</div>
+        <div class="dif-card-text">Nada sai sem você ver. A IA gera, mostra pra você, espera o OK — depois dispara. Você no controle, sempre.</div>
+      </div>
+      <div class="dif-card reveal">
+        <div class="dif-card-num">04</div>
+        <div class="dif-card-title">Tudo conectado</div>
+        <div class="dif-card-text">Posts seus, programa CNN, WhatsApp — viram parte de um produto editorial só, costurado pela IA.</div>
+      </div>
+      <div class="dif-card reveal reveal-delay-1">
+        <div class="dif-card-num">05</div>
+        <div class="dif-card-title">Sistemas personalizados</div>
+        <div class="dif-card-text">Nada de ferramenta genérica de prateleira. Banco, dashboard e interface feitos sob medida pra sua rotina.</div>
+      </div>
+      <div class="dif-card reveal reveal-delay-2">
+        <div class="dif-card-num">06</div>
+        <div class="dif-card-title">Garantia de redondez</div>
+        <div class="dif-card-text">Se algo não atende ao escopo combinado após o go-live, a NewScale continua trabalhando — sem cobrar mais — até estar redondo.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTIMENTO -->
+<section class="invest-section">
+  <div class="invest-inner">
+    <div class="invest-header reveal">
+      <span class="section-label">O Investimento</span>
+      <h2 class="section-title">Transparente, fechado e <em>de entrada.</em></h2>
+    </div>
+
+    <div class="invest-card reveal">
+      <div class="invest-name">Furla News · Onda 1</div>
+      <div class="invest-value">R$ 14.500</div>
+      <div class="invest-pagamento"><strong>50% no aceite</strong> · <strong>50% na entrega final</strong> · PIX, boleto ou transferência</div>
+      <div class="invest-validade"><span class="pulse-dot"></span>Validade da condição: até 02 de junho de 2026</div>
+
+      <div class="invest-meta">
+        <div>
+          <div class="invest-meta-num">9</div>
+          <div class="invest-meta-label">Módulos integrados</div>
+        </div>
+        <div>
+          <div class="invest-meta-num">20 dias</div>
+          <div class="invest-meta-label">Bloco 2 no ar</div>
+        </div>
+        <div>
+          <div class="invest-meta-num">45 dias</div>
+          <div class="invest-meta-label">Projeto completo</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="invest-aviso">Custos de APIs e plataformas de terceiros (WhatsApp Business, Claude/GPT, Resend, Whisper, YouTube, e eventual licença de plataforma de automação de redes sociais) ficam sob conta do Rafael, repassados sem markup. Estimativa: R$ 300–600/mês conforme volume e ferramentas escolhidas no kickoff.</p>
+  </div>
+</section>
+
+<!-- PRÓXIMOS PASSOS -->
+<section class="steps-section">
+  <div class="steps-inner">
+    <div class="steps-header reveal">
+      <span class="section-label">Próximos passos</span>
+      <h2 class="section-title">Bloco 2 no ar em 20 dias. <em>Projeto completo em 45.</em></h2>
+    </div>
+    <div class="steps-grid">
+      <div class="steps-card reveal">
+        <div class="steps-num">1</div>
+        <div class="steps-prazo">Dias 1–5</div>
+        <div class="steps-title">Fundação</div>
+        <div class="steps-text">Kickoff, decisões de setup, WhatsApp Business API, acesso às contas e sistemas base.</div>
+      </div>
+      <div class="steps-card reveal reveal-delay-1">
+        <div class="steps-num">2</div>
+        <div class="steps-prazo">Dias 6–20</div>
+        <div class="steps-title">Bloco 2 completo</div>
+        <div class="steps-text">Pesquisa diária + aprovação por pauta, captura WhatsApp, newsletter com template, mapeamento de posts e CNN. Prioridade máxima.</div>
+      </div>
+      <div class="steps-card reveal reveal-delay-2">
+        <div class="steps-num">3</div>
+        <div class="steps-prazo">Dias 21–35</div>
+        <div class="steps-title">Bloco 1 — Captação</div>
+        <div class="steps-text">Agente de pré-qualificação, automações de redes sociais, links rastreáveis e funil de onboarding.</div>
+      </div>
+      <div class="steps-card reveal reveal-delay-3">
+        <div class="steps-num">4</div>
+        <div class="steps-prazo">Dias 36–45</div>
+        <div class="steps-title">Bloco 3 — Dados</div>
+        <div class="steps-text">Banco de dados estruturado, dashboard de métricas com comparativos de período e treinamento final.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner reveal">
+    <div class="cta-validade"><span class="pulse-dot"></span>Proposta válida até 02 de junho de 2026</div>
+    <h2 class="cta-title">Você cuida da curadoria.<br><em>A gente cuida do resto.</em> Falta só o aceite.</h2>
+    <p class="cta-desc">A Onda 1 do Furla News mantém você no comando do que importa: a curadoria, a aprovação e o disparo. O resto a IA faz.</p>
+    <div class="cta-buttons">
+      <a class="cta-btn cta-btn-primary" href="https://wa.me/5511971901020?text=Bruna,%20aceito%20a%20proposta%20do%20Furla%20News%20Onda%201%20—%20vamos%20iniciar." target="_blank">Aceito — vamos começar</a>
+      <a class="cta-btn cta-btn-secondary" href="https://wa.me/5511971901020?text=Bruna,%20tenho%20uma%20dúvida%20sobre%20a%20proposta%20do%20Furla%20News" target="_blank">Tirar uma dúvida antes</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-brand">NewScale<span>Consulting</span></div>
+  <div class="footer-date">Proposta exclusiva · Rafael Furlanetti · Furla News · v6<br>19 de maio de 2026 · Validade até 02/06/2026</div>
+</footer>
+
+<script>
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.06 });
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
