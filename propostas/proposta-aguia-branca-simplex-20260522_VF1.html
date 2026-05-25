@@ -1247,7 +1247,8 @@ function toggleFaq(item) {
 </script>
 <script>
 (function(){
-  var ALLOWED=['simplex.live','newscale.tech','gab.com.br'];
+  var ALLOWED_DOMAINS=['simplex.live','newscale.tech'];
+  var ALLOWED_EMAILS=['marilia@aguiabranca.com.br'];
   var gate=document.getElementById('ns-gate');
 
   if(sessionStorage.getItem('ns_auth_passed')==='1'){
@@ -1268,8 +1269,10 @@ function toggleFaq(item) {
       err.textContent='Por favor, insira um e-mail válido.';
       return;
     }
-    if(ALLOWED.indexOf(domain)===-1){
-      err.textContent='E-mail não autorizado. Acesso restrito a domínios NewScale, Simplex e GAB.';
+    var domainOk=ALLOWED_DOMAINS.indexOf(domain)!==-1;
+    var emailOk=ALLOWED_EMAILS.indexOf(email)!==-1;
+    if(!domainOk&&!emailOk){
+      err.textContent='E-mail não autorizado. Acesso restrito a convidados da NewScale e Simplex.';
       document.getElementById('ns-gate-email').focus();
       return;
     }
