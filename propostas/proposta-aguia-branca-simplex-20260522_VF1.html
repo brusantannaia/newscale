@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -475,8 +475,41 @@ body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--ink);-
   .stat-number{font-size:2rem;}
 }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── AUTH GATE ── */
+#ns-gate{position:fixed;inset:0;z-index:99999;background:#0A0A0A;display:flex;align-items:center;justify-content:center;font-family:'Inter','DM Sans',sans-serif;}
+#ns-gate.ns-hidden{display:none;}
+.ns-gate-box{width:100%;max-width:400px;padding:0 28px;display:flex;flex-direction:column;align-items:center;}
+.ns-gate-logo{height:38px;margin-bottom:44px;opacity:.92;}
+.ns-gate-title{font-size:1.05rem;font-weight:500;color:#fff;letter-spacing:-.01em;margin-bottom:8px;text-align:center;}
+.ns-gate-sub{font-size:.82rem;color:rgba(255,255,255,.38);text-align:center;line-height:1.65;margin-bottom:36px;}
+.ns-gate-form{width:100%;display:flex;flex-direction:column;gap:12px;}
+.ns-gate-input{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 18px;font-family:inherit;font-size:.92rem;color:#fff;outline:none;transition:border-color .2s;}
+.ns-gate-input::placeholder{color:rgba(255,255,255,.25);}
+.ns-gate-input:focus{border-color:rgba(255,255,255,.28);}
+.ns-gate-btn{width:100%;padding:14px 18px;border:none;border-radius:10px;background:linear-gradient(135deg,#B06E4A 0%,#c4835e 100%);color:#fff;font-family:inherit;font-size:.92rem;font-weight:600;letter-spacing:.02em;cursor:pointer;transition:opacity .2s,transform .1s;}
+.ns-gate-btn:hover{opacity:.88;}
+.ns-gate-btn:active{transform:scale(.98);}
+.ns-gate-error{font-size:.78rem;color:#e07070;text-align:center;min-height:20px;margin-top:2px;}
+.ns-gate-footer{margin-top:52px;font-size:.68rem;color:rgba(255,255,255,.16);text-align:center;letter-spacing:.04em;}
+</style>
 </head>
 <body>
+<!-- AUTH GATE -->
+<div id="ns-gate">
+  <div class="ns-gate-box">
+    <img class="ns-gate-logo" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/newscale-logo-branca.png" alt="NewScale Consulting">
+    <p class="ns-gate-title">Acesso Restrito</p>
+    <p class="ns-gate-sub">Esta proposta é confidencial.<br>Insira seu e-mail corporativo para acessar o conteúdo.</p>
+    <form class="ns-gate-form" id="ns-gate-form" onsubmit="return false;">
+      <input class="ns-gate-input" type="email" id="ns-gate-email" placeholder="seu@email.com" autocomplete="email" autofocus>
+      <button class="ns-gate-btn" type="button" onclick="nsGateValidate()">Acessar proposta</button>
+      <div class="ns-gate-error" id="ns-gate-err"></div>
+    </form>
+    <p class="ns-gate-footer">NewScale Consulting &nbsp;·&nbsp; Documento Confidencial</p>
+  </div>
+</div>
 
 <!-- NAVBAR -->
 <nav class="navbar" id="navbar">
@@ -1206,5 +1239,49 @@ function toggleFaq(item) {
   item.classList.toggle('open');
 }
 </script>
+<script>
+(function(){
+  var ALLOWED=['simplex.live','newscale.tech','gab.com.br'];
+  var gate=document.getElementById('ns-gate');
+
+  if(sessionStorage.getItem('ns_auth_passed')==='1'){
+    gate.classList.add('ns-hidden');
+    return;
+  }
+
+  document.body.style.overflow='hidden';
+
+  window.nsGateValidate=function(){
+    var email=document.getElementById('ns-gate-email').value.trim().toLowerCase();
+    var err=document.getElementById('ns-gate-err');
+    err.textContent='';
+    var parts=email.split('@');
+    var domain=parts.length===2?parts[1]:'';
+
+    if(!email||!domain){
+      err.textContent='Por favor, insira um e-mail válido.';
+      return;
+    }
+    if(ALLOWED.indexOf(domain)===-1){
+      err.textContent='E-mail não autorizado. Acesso restrito a domínios NewScale, Simplex e GAB.';
+      document.getElementById('ns-gate-email').focus();
+      return;
+    }
+
+    sessionStorage.setItem('ns_auth_passed','1');
+    gate.style.transition='opacity .45s ease';
+    gate.style.opacity='0';
+    setTimeout(function(){
+      gate.classList.add('ns-hidden');
+      document.body.style.overflow='';
+    },450);
+  };
+
+  document.getElementById('ns-gate-form').addEventListener('keydown',function(e){
+    if(e.key==='Enter')nsGateValidate();
+  });
+})();
+</script>
 </body>
 </html>
+
