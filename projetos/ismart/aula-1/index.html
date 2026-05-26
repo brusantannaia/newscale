@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Aula 1 · Virada IA: Claude com Profundidade — Ismart</title>
+<title>Aula 1 · Virada IA: Claude com Profundidade · Ismart</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lato:wght@300;400;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -224,7 +224,7 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
   max-width:680px;margin-bottom:48px;line-height:1.6;
 }
 
-/* ===== ATOS — TIMELINE ===== */
+/* ===== ATOS · TIMELINE ===== */
 .atos{
   display:grid;gap:18px;
   grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
@@ -786,6 +786,82 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
 /* animação on view */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease, transform .7s ease}
 .reveal.in{opacity:1;transform:translateY(0)}
+
+/* ===== ABAS DAS AULAS ===== */
+.tabs-bar{
+  background:var(--branco);
+  border-bottom:1px solid var(--linha);
+  position:sticky;top:54px;z-index:90;
+  box-shadow:0 2px 20px rgba(0,37,97,0.05);
+}
+.tabs-inner{
+  max-width:1200px;margin:0 auto;padding:0 32px;
+  display:flex;gap:8px;
+}
+.tab-btn{
+  background:none;border:none;cursor:pointer;
+  font-family:'Montserrat',sans-serif;font-weight:700;
+  font-size:15px;color:var(--tinta-suave);
+  padding:20px 24px 17px;
+  border-bottom:3px solid transparent;
+  display:flex;align-items:center;gap:10px;
+  transition:all .2s;
+}
+.tab-btn:hover{color:var(--navy)}
+.tab-btn.active{color:var(--navy);border-bottom-color:var(--azul-principal)}
+.tab-btn .tab-num{
+  width:26px;height:26px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--azul-bebe);color:var(--navy);
+  font-size:13px;font-weight:800;
+  transition:all .2s;
+}
+.tab-btn.active .tab-num{background:var(--azul-principal);color:var(--branco)}
+.tab-btn .tab-status{
+  font-family:'Lato',sans-serif;font-weight:400;font-size:11px;
+  color:var(--tinta-suave);opacity:.7;
+}
+.tab-panel{display:none}
+.tab-panel.active{display:block;animation:tabFade .45s ease}
+@keyframes tabFade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media (max-width:540px){
+  .tabs-inner{padding:0 16px;gap:2px}
+  .tab-btn{padding:16px 14px 13px;font-size:13.5px}
+  .tab-btn .tab-status{display:none}
+}
+
+/* ===== PESQUISA · pergunta de humor ===== */
+.ff-row-mood{
+  background:linear-gradient(135deg, var(--azul-bebe), var(--branco));
+  border:1.5px solid var(--azul-principal);
+  border-radius:16px;padding:22px 24px;
+  margin-bottom:24px;
+}
+.ff-row-mood .ff-label{color:var(--navy)}
+.ff-mood-stars .ff-star{font-size:34px}
+
+/* ===== PERGUNTAS DA TURMA ===== */
+.turma-card{
+  background:var(--branco);
+  border:1px solid var(--linha);
+  border-radius:18px;
+  padding:26px;
+  transition:all .2s;
+}
+.turma-card:hover{border-color:var(--azul-principal);box-shadow:0 8px 24px rgba(0,37,97,0.08)}
+.turma-quem{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Montserrat',sans-serif;font-weight:700;font-size:11.5px;
+  letter-spacing:0.06em;text-transform:uppercase;
+  color:var(--navy);background:var(--azul-bebe);
+  padding:6px 13px;border-radius:999px;margin-bottom:14px;
+}
+.turma-q{
+  font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;
+  color:var(--navy);line-height:1.35;margin-bottom:10px;
+}
+.turma-a{font-size:14px;color:var(--tinta-suave);line-height:1.6}
+.turma-a strong{color:var(--navy);font-weight:700}
 </style>
 </head>
 <body>
@@ -799,14 +875,9 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
       <img src="logo-newscale.png" alt="NewScale" class="logo-newscale" />
     </div>
     <div class="nav-links">
-      <a href="#feedback">Feedback</a>
-      <a href="#recap">O que rolou</a>
-      <a href="#pilares">Os 3 pilares</a>
-      <a href="#formas">As 5 formas</a>
-      <a href="#quickwins">Sacadas</a>
-      <a href="#missao">Sua missão</a>
-      <a href="#prompts">Prompts</a>
-      <a href="#links">Materiais</a>
+      <a href="#feedback">Pesquisa</a>
+      <a href="#aulas" onclick="openTab('aula1');return false;">Aula 1</a>
+      <a href="#aulas" onclick="openTab('aula2');return false;">Aula 2</a>
     </div>
   </div>
 </nav>
@@ -816,10 +887,10 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
   <div class="hero-inner">
     <span class="hero-eyebrow">
       <span style="width:6px;height:6px;border-radius:50%;background:var(--azul-principal)"></span>
-      Aula 1 de 3 · 15 de maio de 2026
+      Virada IA · Claude com Profundidade · Ismart
     </span>
-    <h1>Resumo · <span class="azul">Aula 1</span></h1>
-    <p class="hero-sub">O que rolou na aula, sua missão até a próxima sexta e todos os prompts prontos pra copiar.</p>
+    <h1>Formação Ismart: <span class="azul">Claude com Profundidade</span></h1>
+    <p class="hero-sub">O espaço da turma entre as aulas. Aqui ficam os resumos de cada aula, sua missão, os prompts prontos pra copiar e todos os materiais. Use as abas abaixo pra navegar entre a Aula 1 e a Aula 2.</p>
     <div class="hero-meta">
       <div class="hero-meta-item">
         <div class="label">Turma</div>
@@ -830,8 +901,12 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
         <div class="val">Bruna Santanna · NewScale</div>
       </div>
       <div class="hero-meta-item">
-        <div class="label">Próxima aula</div>
-        <div class="val">22/mai · 14h</div>
+        <div class="label">Aulas</div>
+        <div class="val">1 e 2 de 3 · disponíveis</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="label">Próxima</div>
+        <div class="val">Aula 3 · última do curso</div>
       </div>
     </div>
   </div>
@@ -841,45 +916,39 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
 <section class="section bg-suave" id="feedback">
   <div class="section-inner">
     <div class="section-eyebrow">Nosso espaço entre as aulas</div>
-    <h2 class="section-title">Continua a <span class="azul">conversa</span> comigo.</h2>
-    <p class="section-lead">Antes de mergulhar no resumo: me manda tudo que ficou na cabeça depois da Aula 1 — dúvidas que não couberam ao vivo, casos seus que você quer ver na Aula 2, ideias que teve testando o Claude esta semana. Leio cada uma e a Aula 2 chega ajustada pra você.</p>
+    <h2 class="section-title">Continue a <span class="azul">conversa</span> comigo.</h2>
+    <p class="section-lead">Antes de mergulhar nos resumos: me manda tudo que ficou na cabeça depois da Aula 2: dúvidas que não couberam ao vivo, casos seus que você quer ver na Aula 3, ideias que teve testando o Claude esta semana. Leio cada uma e a Aula 3 chega ajustada pra você.</p>
 
     <form class="feedback-wrap reveal" id="feedbackForm">
       <div class="ff-row">
         <label for="ff-nome" class="ff-label">Seu nome <span class="ff-req">*</span></label>
-        <input type="text" id="ff-nome" name="entry.659955540" required placeholder="Como você quer ser chamada(o)" />
+        <input type="text" id="ff-nome" name="entry.659955540" required placeholder="Como prefere que eu te chame" />
       </div>
 
-      <div class="ff-row">
-        <label for="ff-duvidas" class="ff-label">
-          O que ficou no ar da Aula 1?
-          <span class="ff-help">Dúvidas, coisas que não ficaram claras, perguntas que você não fez ao vivo.</span>
-        </label>
-        <textarea id="ff-duvidas" name="entry.983024275" rows="4" placeholder="Pode escrever à vontade — sem filtro..."></textarea>
-      </div>
-
-      <div class="ff-row">
-        <label for="ff-sugestoes" class="ff-label">
-          O que você quer ver na Aula 2?
-          <span class="ff-help">Um caso real seu, uma situação do dia a dia, um exemplo específico que você quer ver resolvido com o Claude.</span>
-        </label>
-        <textarea id="ff-sugestoes" name="entry.1714753085" rows="4" placeholder="Conta o que faria a Aula 2 ser ainda mais útil pra você..."></textarea>
-      </div>
-
-      <div class="ff-row ff-row-rating">
+      <div class="ff-row-mood">
         <span class="ff-label">
-          Quer dar uma nota pra Aula 1? <span class="ff-opt">(opcional)</span>
-          <span class="ff-help">Só se você quiser. Sem nota também tá ótimo.</span>
+          Você está gostando da formação até aqui?
+          <span class="ff-help">Me ajuda a sentir como a turma está. Pode responder sem filtro, é só clicar nas estrelas.</span>
         </span>
-        <div class="ff-stars" id="ffStars">
+        <div class="ff-stars ff-mood-stars" id="ffMoodStars">
           <button type="button" class="ff-star" data-value="1" aria-label="1 estrela">★</button>
           <button type="button" class="ff-star" data-value="2" aria-label="2 estrelas">★</button>
           <button type="button" class="ff-star" data-value="3" aria-label="3 estrelas">★</button>
           <button type="button" class="ff-star" data-value="4" aria-label="4 estrelas">★</button>
           <button type="button" class="ff-star" data-value="5" aria-label="5 estrelas">★</button>
-          <span class="ff-stars-label" id="ffStarsLabel">Toque pra avaliar</span>
+          <span class="ff-stars-label" id="ffMoodLabel">Toque pra responder</span>
         </div>
-        <input type="hidden" name="entry.843579968" id="ff-rating" />
+        <input type="hidden" id="ff-mood" />
+      </div>
+
+      <div class="ff-row">
+        <label for="ff-duvidas" class="ff-label">O que ficou no ar da Aula 2?</label>
+        <textarea id="ff-duvidas" name="entry.983024275" rows="4" placeholder="Pode escrever à vontade, sem filtro..."></textarea>
+      </div>
+
+      <div class="ff-row">
+        <label for="ff-sugestoes" class="ff-label">O que você quer ver na Aula 3?</label>
+        <textarea id="ff-sugestoes" name="entry.1714753085" rows="4" placeholder="Conta o que faria a Aula 3 ser ainda mais útil pra você..."></textarea>
       </div>
 
       <button type="submit" class="ff-submit" id="ffSubmit">
@@ -888,33 +957,54 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
       </button>
 
       <div class="ff-error" id="ffError">Algo deu errado ao enviar. Tente novamente ou me chame no Instagram <strong>@brusantanna.ai</strong>.</div>
-      <div class="ff-success" id="ffSuccess">Recebi, <span id="ffSuccessName">obrigada</span>! Vou ler com calma e levar pra Aula 2.</div>
+      <div class="ff-success" id="ffSuccess">Recebi, <span id="ffSuccessName">obrigada</span>! Vou ler com calma e levar pra Aula 3.</div>
     </form>
   </div>
 </section>
+
+<!-- ===== BARRA DE ABAS ===== -->
+<div class="tabs-bar" id="aulas">
+  <div class="tabs-inner">
+    <button class="tab-btn active" id="btn-aula1" onclick="openTab('aula1')">
+      <span class="tab-num">1</span>
+      Aula 1
+      <span class="tab-status">· Como o Claude pensa</span>
+    </button>
+    <button class="tab-btn" id="btn-aula2" onclick="openTab('aula2')">
+      <span class="tab-num">2</span>
+      Aula 2
+      <span class="tab-status">· Criar e personalizar</span>
+    </button>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ===================== ABA · AULA 1 ========================= -->
+<!-- ============================================================ -->
+<div class="tab-panel active" id="tab-aula1">
 
 <!-- RECAP / O QUE ROLOU -->
 <section class="section" id="recap">
   <div class="section-inner">
     <div class="section-eyebrow">O que rolou na Aula 1</div>
     <h2 class="section-title">Um passeio pelas <span class="azul">6 partes</span> da aula.</h2>
-    <p class="section-lead">A aula foi desenhada como uma jornada. Comecei pelo "porquê" — o trabalho de vocês é humano — e fui aprofundando até a parte prática, ao vivo no Claude.</p>
+    <p class="section-lead">A aula foi desenhada como uma jornada. Comecei pelo "porquê", o trabalho de vocês é humano, e fui aprofundando até a parte prática, ao vivo no Claude.</p>
 
     <div class="atos">
       <div class="ato reveal">
         <div class="ato-num">01</div>
         <div class="ato-title">Por que isso importa</div>
-        <div class="ato-body">O trabalho da Ismart é <strong>profundamente humano</strong>. Trocamos a pergunta errada (<em>"a IA vai me substituir?"</em>) pela certa (<em>"como o Claude me multiplica?"</em>) e abrimos os <strong>3 pilares</strong> — Mais Rápido, Melhor, Novo.</div>
+        <div class="ato-body">O trabalho da Ismart é <strong>profundamente humano</strong>. Trocamos a pergunta errada (<em>"a IA vai me substituir?"</em>) pela certa (<em>"como o Claude me multiplica?"</em>) e abrimos os <strong>3 pilares</strong>: Mais Rápido, Melhor, Novo.</div>
       </div>
       <div class="ato reveal">
         <div class="ato-num">02</div>
         <div class="ato-title">Como a IA pensa + os limites</div>
-        <div class="ato-body">O Claude não "sabe" — ele <strong>prevê a próxima palavra</strong>. Quem entende isso para de brigar com ele e começa a dirigir. Vimos os 3 limites: <strong>alucinação, vieses, segurança</strong> em dados sensíveis — e como usar bem.</div>
+        <div class="ato-body">O Claude não "sabe", ele <strong>prevê a próxima palavra</strong>. Quem entende isso para de brigar com ele e começa a dirigir. Vimos os 3 limites: <strong>alucinação, vieses, segurança</strong> em dados sensíveis, e como usar bem.</div>
       </div>
       <div class="ato reveal">
         <div class="ato-num">03</div>
-        <div class="ato-title">O mapa — 5 formas</div>
-        <div class="ato-body">Chat, Projeto, Cowork e Code — com <strong>Skill permeando todos</strong>. Mais o fluxo de decisão: "o que você quer que o Claude faça?". Hoje aprofundamos Chat e Projeto. Cowork e Code chegam nas próximas aulas.</div>
+        <div class="ato-title">O mapa das 5 formas</div>
+        <div class="ato-body">Chat, Projeto, Cowork e Code, com <strong>Skill permeando todos</strong>. Mais o fluxo de decisão: "o que você quer que o Claude faça?". Hoje aprofundamos Chat e Projeto. Cowork e Code chegam nas próximas aulas.</div>
       </div>
       <div class="ato reveal">
         <div class="ato-num">04</div>
@@ -924,7 +1014,7 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
       <div class="ato reveal">
         <div class="ato-num">05</div>
         <div class="ato-title">Use sem travar</div>
-        <div class="ato-body">O que são <strong>tokens</strong>, por que conversas longas ficam caras (98,5% só relendo histórico) e <strong>7 regras de ouro</strong> pra usar com inteligência — editar em vez de mandar follow-up, conversa nova a cada 15-20 mensagens, modelo certo pra cada tarefa.</div>
+        <div class="ato-body">O que são <strong>tokens</strong>, por que conversas longas ficam caras (98,5% só relendo histórico) e <strong>7 regras de ouro</strong> pra usar com inteligência: editar em vez de mandar follow-up, conversa nova a cada 15-20 mensagens, modelo certo pra cada tarefa.</div>
       </div>
       <div class="ato reveal">
         <div class="ato-num">06</div>
@@ -940,7 +1030,7 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
   <div class="section-inner">
     <div class="section-eyebrow">Conceito-chave nº 1</div>
     <h2 class="section-title">Tudo que o Claude faz pelo seu trabalho cai em <span class="azul">3 caixas</span>.</h2>
-    <p class="section-lead">Esse é o fio condutor da aula. Quando alguém te mostrar um caso de Claude, faça o exercício silencioso: <em>que pilar é este?</em> O pilar 2 é o que quase ninguém usa — e é o que mais muda o jogo.</p>
+    <p class="section-lead">Esse é o fio condutor da aula. Quando alguém te mostrar um caso de Claude, faça o exercício silencioso: <em>que pilar é este?</em> O pilar 2 é o que quase ninguém usa, e é o que mais muda o jogo.</p>
 
     <div class="pilares">
       <div class="pilar pilar-1 reveal">
@@ -984,7 +1074,7 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
     <div class="quote reveal">
       <span class="quote-mark">"</span>
       <div class="quote-text">A IA não substitui o humano do trabalho de vocês.<br>Ela <strong style="color:var(--coral)">amplia o que só você</strong> sabe fazer.</div>
-      <div class="quote-by">— moldura da Aula 1</div>
+      <div class="quote-by">moldura da Aula 1</div>
     </div>
   </div>
 </section>
@@ -994,7 +1084,7 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
   <div class="section-inner">
     <div class="section-eyebrow">Conceito-chave nº 2</div>
     <h2 class="section-title">As <span class="azul">5 formas</span> de usar o Claude.</h2>
-    <p class="section-lead">Decorar não adianta. Esse mapa é pra você consultar nas primeiras semanas até virar instinto. Skill permeia todos os modos — cria uma vez, usa em qualquer lugar.</p>
+    <p class="section-lead">Decorar não adianta. Esse mapa é pra você consultar nas primeiras semanas até virar instinto. Skill permeia todos os modos: cria uma vez, usa em qualquer lugar.</p>
 
     <div class="formas-wrap reveal">
       <div class="formas">
@@ -1039,14 +1129,14 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
         <div class="qw-num">1</div>
         <div class="qw-body">
           <h4>Os 3 pilares como mapa</h4>
-          <p>Quando alguém te mostrar um caso de Claude, encaixe nos pilares — <em>Mais Rápido, Melhor ou Novo?</em> Ajuda a enxergar onde aplicar no seu dia.</p>
+          <p>Quando alguém te mostrar um caso de Claude, encaixe nos pilares: <em>Mais Rápido, Melhor ou Novo?</em> Ajuda a enxergar onde aplicar no seu dia.</p>
         </div>
       </div>
       <div class="qw reveal">
         <div class="qw-num">2</div>
         <div class="qw-body">
           <h4>Cuidado com a alucinação</h4>
-          <p>O Claude prevê a próxima palavra — e quando não sabe, ele inventa com muita confiança. Em qualquer análise sensível: <strong>peça a fonte, confira dado por dado e valide com alguém da área</strong> antes de usar.</p>
+          <p>O Claude prevê a próxima palavra, e quando não sabe, ele inventa com muita confiança. Em qualquer análise sensível: <strong>peça a fonte, confira dado por dado e valide com alguém da área</strong> antes de usar.</p>
         </div>
       </div>
       <div class="qw reveal">
@@ -1060,7 +1150,7 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
         <div class="qw-num">4</div>
         <div class="qw-body">
           <h4>Áudio no celular + organizar</h4>
-          <p>Na próxima ideia, abra o Claude no celular e fale até 10 minutos contando tudo. Depois peça pra organizar. Você não precisa ser boa em escrever prompt — precisa ser boa em falar o que quer.</p>
+          <p>Na próxima ideia, abra o Claude no celular e fale até 10 minutos contando tudo. Depois peça pra organizar. Você não precisa escrever um prompt perfeito, precisa saber falar o que quer.</p>
         </div>
       </div>
       <div class="qw reveal">
@@ -1093,7 +1183,7 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
   <div class="section-inner">
     <div class="section-eyebrow">Sua missão antes da Aula 2</div>
     <h2 class="section-title">5 tarefas pra fazer <span class="azul">nesta semana</span>.</h2>
-    <p class="section-lead">Clique para marcar como feito. Não precisa ser muito — precisa ser feito. A Aula 2 já chega com você equipada.</p>
+    <p class="section-lead">Clique para marcar como feito. Não precisa ser muito, precisa ser feito. Assim a Aula 2 já começa rendendo.</p>
 
     <div class="missao">
       <div class="tarefa" onclick="toggleTask(this)">
@@ -1119,7 +1209,7 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
         <div>
           <div class="tarefa-num">TAREFA 03</div>
           <div class="tarefa-title">Usar Papel + Contexto + Tarefa + Formato 3 vezes</div>
-          <div class="tarefa-desc">Em qualquer pedido real desta semana: um e-mail, um post, um resumo, uma análise. Não precisa ser bonito — precisa ser usado. Os 4 elementos são o suficiente.</div>
+          <div class="tarefa-desc">Em qualquer pedido real desta semana: um e-mail, um post, um resumo, uma análise. Não precisa ser bonito, precisa ser usado. Os 4 elementos são o suficiente.</div>
         </div>
       </div>
 
@@ -1149,7 +1239,7 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
   <div class="section-inner">
     <div class="section-eyebrow">Prompts pra copiar e usar</div>
     <h2 class="section-title">Os <span class="azul">prompts</span> base da aula.</h2>
-    <p class="section-lead">São <strong>exemplos pra te tirar do zero</strong> — clique em "Copiar", cole no Claude e adapte. Mas a sacada de verdade é essa: <strong>o próprio Claude pode criar um prompt do jeito que você quiser</strong>. Descreve em voz alta o que precisa, pede pra ele montar, e cola numa conversa nova. Os prompts abaixo são pontos de partida, não regras.</p>
+    <p class="section-lead">São <strong>exemplos pra te tirar do zero</strong>: clique em "Copiar", cole no Claude e adapte. Mas a sacada de verdade é essa: <strong>o próprio Claude pode criar um prompt do jeito que você quiser</strong>. Descreve em voz alta o que precisa, pede pra ele montar, e cola numa conversa nova. Os prompts abaixo são pontos de partida, não regras.</p>
 
     <div class="prompts">
       <div class="prompt-card reveal">
@@ -1235,23 +1325,23 @@ ARQUIVOS DE REFERÊNCIA
           <div class="prompt-title">O método dos 4 passos (planejar)</div>
           <span class="prompt-tag">Use quando estiver travado</span>
         </div>
-<pre class="prompt-body" data-copy="PASSO 1 — Grave um áudio (2-5 min) falando tudo: contexto, objetivo, restrições, pra quem é.
+<pre class="prompt-body" data-copy="PASSO 1: Grave um áudio (2-5 min) falando tudo: contexto, objetivo, restrições, pra quem é.
 
-PASSO 2 — Cole a transcrição e mande:
+PASSO 2: Cole a transcrição e mande:
 'Organize meu pensamento: o que eu quero, o contexto, para quem é, restrições.'
 
-PASSO 3 — Em seguida:
+PASSO 3: Em seguida
 'Crie um prompt com Papel, Contexto, Tarefa e Formato baseado no que descrevi.'
 
-PASSO 4 — Abra uma conversa nova, cole o prompt criado, rode.">PASSO 1 — Grave um áudio (2-5 min) falando tudo: contexto, objetivo, restrições, pra quem é.
+PASSO 4: Abra uma conversa nova, cole o prompt criado, rode.">PASSO 1: Grave um áudio (2-5 min) falando tudo: contexto, objetivo, restrições, pra quem é.
 
-PASSO 2 — Cole a transcrição e mande:
+PASSO 2: Cole a transcrição e mande:
 <span class="var">'Organize meu pensamento: o que eu quero, o contexto, para quem é, restrições.'</span>
 
-PASSO 3 — Em seguida:
+PASSO 3: Em seguida
 <span class="var">'Crie um prompt com Papel, Contexto, Tarefa e Formato baseado no que descrevi.'</span>
 
-PASSO 4 — Abra uma conversa nova, cole o prompt criado, rode.</pre>
+PASSO 4: Abra uma conversa nova, cole o prompt criado, rode.</pre>
         <button class="copy-btn" onclick="copyPrompt(this)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
           Copiar prompt
@@ -1267,13 +1357,13 @@ PASSO 4 — Abra uma conversa nova, cole o prompt criado, rode.</pre>
   <div class="section-inner">
     <div class="section-eyebrow">Tudo num só lugar</div>
     <h2 class="section-title">Materiais e <span class="azul">links</span> da Aula 1.</h2>
-    <p class="section-lead">A gravação, a apresentação e o download do Claude Desktop. Salva esse link nos favoritos — vou atualizar antes de cada aula.</p>
+    <p class="section-lead">A gravação, a apresentação e o download do Claude Desktop. Salva esse link nos favoritos, vou atualizar antes de cada aula.</p>
 
     <div class="links">
       <a class="link-card reveal" href="https://us06web.zoom.us/rec/share/ll9EJcKG1T2OfQfrzqIH14pCzxqgbUAfFsZc3eEuFXrI905h8JwUFuNgHyzmh8iS.yVv3ZbseE2BfWh76?startTime=1778864411000" target="_blank" rel="noopener">
         <div class="link-icon">🎥</div>
         <div class="link-title">Gravação da Aula 1</div>
-        <div class="link-desc">2h completas no Zoom. Bom pra rever um trecho específico — usa a aba "transcrição" pra navegar mais rápido.</div>
+        <div class="link-desc">2h completas no Zoom. Bom pra rever um trecho específico, usa a aba "transcrição" pra navegar mais rápido.</div>
         <div class="link-cta">Abrir no Zoom →</div>
         <div class="link-pwd">
           <span><strong>SENHA</strong><br><span class="mono-code" id="pwd">+$kZY8N!</span></span>
@@ -1284,7 +1374,7 @@ PASSO 4 — Abra uma conversa nova, cole o prompt criado, rode.</pre>
       <a class="link-card reveal" href="http://newscale.tech/projetos/ismart/apresentacao-aula-01" target="_blank" rel="noopener">
         <div class="link-icon">🖥️</div>
         <div class="link-title">Apresentação da Aula 1</div>
-        <div class="link-desc">Os 20 slides em HTML interativo — navega com setas do teclado. Ideal pra rever um conceito específico sem precisar voltar na gravação.</div>
+        <div class="link-desc">Os 20 slides em HTML interativo, navega com setas do teclado. Ideal pra rever um conceito específico sem precisar voltar na gravação.</div>
         <div class="link-cta">Abrir apresentação →</div>
       </a>
 
@@ -1298,39 +1388,637 @@ PASSO 4 — Abra uma conversa nova, cole o prompt criado, rode.</pre>
       <a class="link-card reveal" href="https://claude.ai" target="_blank" rel="noopener">
         <div class="link-icon">💬</div>
         <div class="link-title">Claude no navegador</div>
-        <div class="link-desc">Para abrir um Projeto, configurar Preferências e Memória — tudo o que aprendemos no ATO 4.</div>
+        <div class="link-desc">Para abrir um Projeto, configurar Preferências e Memória, tudo o que aprendemos no ATO 4.</div>
         <div class="link-cta">Abrir claude.ai →</div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- PRÓXIMA AULA -->
+<!-- AULA 2 JÁ ESTÁ NO AR -->
 <section class="section">
   <div class="section-inner">
     <div class="proxima reveal">
       <div>
-        <div class="proxima-eyebrow">Próxima aula · 22 de maio</div>
-        <h3>Aula 2 · Skills, Conectores e seus primeiros passos no Cowork.</h3>
-        <p>Você vai parar de pedir e começar a <strong>delegar</strong>. O Claude trabalhando direto nos seus arquivos, no seu computador, conectado aos seus sistemas. E a sua primeira Skill — feita a partir da tarefa semanal que você está pensando agora.</p>
-        <div class="proxima-meta">
-          <div><strong>Data</strong>22 de maio · sexta</div>
-          <div><strong>Horário</strong>14h às 16h (online)</div>
-          <div><strong>Formato</strong>Mais prática que a Aula 1</div>
-        </div>
+        <div class="proxima-eyebrow">Aula 2 · já aconteceu</div>
+        <h3>A Aula 2 já está no ar.</h3>
+        <p>Skills, Artifacts, Conectores e os primeiros passos no Cowork. O resumo completo, a missão pra Aula 3 e os prompts da Aula 2 estão na outra aba.</p>
+        <button class="ff-submit" style="background:var(--branco);color:var(--rosa)" onclick="openTab('aula2')">
+          Ver o resumo da Aula 2
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
       </div>
       <div class="proxima-card">
-        <h4>O que você precisa ter pronto</h4>
+        <h4>O que a Aula 2 trouxe</h4>
         <ul>
-          <li>1 Projeto montado no Claude</li>
-          <li>Preferências de Usuário configuradas</li>
-          <li>Claude Desktop instalado</li>
-          <li>1 tarefa semanal repetitiva em mente</li>
+          <li>A regra das 3 vezes: fez 2×, na 3ª você cria</li>
+          <li>Skills: ensinar processos ao Claude</li>
+          <li>Artifacts: criar painéis e páginas</li>
+          <li>Conectores + Cowork na prática</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
+
+</div><!-- /tab-aula1 -->
+
+<!-- ============================================================ -->
+<!-- ===================== ABA · AULA 2 ========================= -->
+<!-- ============================================================ -->
+<div class="tab-panel" id="tab-aula2">
+
+<!-- RECAP AULA 2 -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-eyebrow">O que rolou na Aula 2</div>
+    <h2 class="section-title">O caminho da aula, em <span class="azul">5 blocos</span>.</h2>
+    <p class="section-lead">Se a Aula 1 foi sobre <em>pedir bem</em>, a Aula 2 foi sobre <strong>parar de pedir a mesma coisa toda vez</strong>, ensinar o Claude a repetir e criar coisas que antes você não conseguiria criar por conta própria.</p>
+
+    <div class="atos">
+      <div class="ato reveal">
+        <div class="ato-num">01</div>
+        <div class="ato-title">De pedir a criar</div>
+        <div class="ato-body">A virada mental da aula: sair de <em>"peço uma resposta"</em> para <strong>"construo um ativo que me serve várias vezes"</strong>. E o fio condutor: todo material útil segue o caminho <strong>documento parado → fonte de verdade → ativos</strong>.</div>
+      </div>
+      <div class="ato reveal">
+        <div class="ato-num">02</div>
+        <div class="ato-title">Skills, o coração da aula</div>
+        <div class="ato-body">O que é uma Skill (do zero), a diferença entre <strong>Skill e Projeto</strong>, a anatomia de uma boa Skill, e a criação ao vivo: o brandbook da Ismart virou um modelo de apresentação, e o modelo virou a Skill <strong>"Apresentações Ismart"</strong>.</div>
+      </div>
+      <div class="ato reveal">
+        <div class="ato-num">03</div>
+        <div class="ato-title">Criar de verdade, em HTML</div>
+        <div class="ato-body">Apresentações, sites e painéis nascendo prontos. A dica forte da aula: peça em <strong>HTML</strong> no lugar de PowerPoint, que o visual e os gráficos ficam bem mais bonitos. Foi assim que nasceu o site da pesquisa do piloto.</div>
+      </div>
+      <div class="ato reveal">
+        <div class="ato-num">04</div>
+        <div class="ato-title">Conectores</div>
+        <div class="ato-body">Trazer pra dentro do Claude as ferramentas que você já usa: <strong>Drive, Gmail, Notion, Microsoft 365</strong>. Em vez de baixar e subir arquivo, o Claude acessa direto. E o cuidado com dados sensíveis.</div>
+      </div>
+      <div class="ato reveal">
+        <div class="ato-num">05</div>
+        <div class="ato-title">Cowork, mão na massa</div>
+        <div class="ato-body">O Claude criando e salvando os arquivos <strong>direto nas suas pastas</strong>, sem vai-e-volta de copiar e colar. A regra de ouro: <strong>peça sempre o plano antes</strong> de soltar ele pra executar.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCEITO 1 · REGRA DAS 3 VEZES -->
+<section class="section bg-suave">
+  <div class="section-inner">
+    <div class="section-eyebrow">Conceito-chave nº 1</div>
+    <h2 class="section-title">A regra das <span class="azul">3 vezes</span>.</h2>
+    <p class="section-lead">A pergunta que abriu a aula: <em>quantas vezes essa semana você pediu pro Claude basicamente a MESMA coisa, só com dados diferentes?</em> Esse é o desperdício invisível, e a Aula 2 inteira é sobre eliminar ele.</p>
+
+    <div class="quote reveal">
+      <span class="quote-mark">"</span>
+      <div class="quote-text">Fez algo no Claude <strong style="color:var(--coral)">duas vezes</strong>? Na terceira, você não pede de novo, <strong style="color:var(--coral)">você cria.</strong></div>
+      <div class="quote-by">a regra de ouro da Aula 2</div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTO -> FONTE -> ATIVO -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-eyebrow">O fio condutor</div>
+    <h2 class="section-title">De documento parado a <span class="azul">fonte de verdade</span>.</h2>
+    <p class="section-lead">Quase tudo que vale a pena criar segue o mesmo caminho de 3 passos. Esse princípio costura a aula inteira, voltamos a ele em cada bloco.</p>
+
+    <div class="pilares">
+      <div class="pilar pilar-1 reveal">
+        <div class="pilar-num">01</div>
+        <div class="pilar-tag">O ponto de partida</div>
+        <div class="pilar-title">Documento parado</div>
+        <div class="pilar-desc">Um PDF, uma planilha, um material denso. Rico, mas estático. Ninguém consulta, ninguém reusa.</div>
+        <div class="pilar-exemplo">
+          <span class="ex-label">Exemplo Ismart</span>
+          O brandbook da Ismart, lindo, mas parado numa pasta.
+        </div>
+      </div>
+      <div class="pilar pilar-2 reveal">
+        <span class="pilar-badge">O pulo do gato</span>
+        <div class="pilar-num">02</div>
+        <div class="pilar-tag">O que muda o jogo</div>
+        <div class="pilar-title">Fonte de verdade</div>
+        <div class="pilar-desc">Você transforma o documento num arquivo organizado (geralmente um <span class="mono-code">.md</span>) que o Claude entende e consulta sempre.</div>
+        <div class="pilar-exemplo">
+          <span class="ex-label">Exemplo Ismart</span>
+          O brandbook virou um <span class="mono-code">ismart-brand.md</span> estruturado.
+        </div>
+      </div>
+      <div class="pilar pilar-3 reveal">
+        <div class="pilar-num">03</div>
+        <div class="pilar-tag">O resultado</div>
+        <div class="pilar-title">Ativos</div>
+        <div class="pilar-desc">Dessa fonte, o Claude gera coisas: apresentações, Skills, e-mails, painéis, checklists, todas coerentes entre si.</div>
+        <div class="pilar-exemplo">
+          <span class="ex-label">Exemplo Ismart</span>
+          Do <span class="mono-code">.md</span> saiu um modelo de apresentação e uma Skill.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCEITO 2 · AS 3 FORMAS DE CRIAR -->
+<section class="section bg-suave">
+  <div class="section-inner">
+    <div class="section-eyebrow">Conceito-chave nº 2</div>
+    <h2 class="section-title">As <span class="azul">3 formas</span> de criar.</h2>
+    <p class="section-lead">A Aula 1 mostrou as 5 formas de <em>usar</em> o Claude. A Aula 2 mostra as 3 formas de <em>criar</em> com ele, e tudo pode acontecer dentro do Cowork.</p>
+
+    <div class="formas-wrap reveal">
+      <div class="formas" style="grid-template-columns:repeat(3, 1fr)">
+        <div class="forma forma-1">
+          <div class="forma-icon">Sk</div>
+          <div class="forma-name">Skill</div>
+          <div class="forma-when">Ensinar ao Claude um processo que você repete. Ele passa a fazer do seu jeito, sempre.</div>
+        </div>
+        <div class="forma forma-3">
+          <div class="forma-icon">Ar</div>
+          <div class="forma-name">Artifact</div>
+          <div class="forma-when">Criar um objeto pronto pra usar: uma página, um painel, uma calculadora. Não só texto.</div>
+        </div>
+        <div class="forma forma-4">
+          <div class="forma-icon">Cx</div>
+          <div class="forma-name">Conector</div>
+          <div class="forma-when">Trazer pra dentro do Claude as ferramentas que você já usa: Drive, Gmail, Notion.</div>
+        </div>
+      </div>
+      <div class="skill-band">
+        <span class="skill-band-tag">COWORK</span>
+        <span class="skill-band-text">Embaixo de tudo: o Claude criando e salvando esses ativos direto nas suas pastas, sem copiar e colar.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COWORK A FUNDO -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-eyebrow">O lugar de criar</div>
+    <h2 class="section-title">Cowork: o Claude <span class="azul">dentro do seu computador</span>.</h2>
+    <p class="section-lead">Boa parte da aula ficou aqui. O Cowork é o Claude trabalhando dentro de uma pasta do seu computador, e depois que você pega a mão, é o jeito mais simples e poderoso de usar.</p>
+
+    <div class="qw-grid">
+      <div class="qw reveal">
+        <div class="qw-num">1</div>
+        <div class="qw-body">
+          <h4>O Claude trabalha na sua pasta</h4>
+          <p>Em vez de você subir arquivo por arquivo, o Claude acessa uma pasta inteira do seu computador e mexe nos arquivos direto. Você aponta onde as coisas estão e ele vai buscar sozinho. Precisa explicar cada vez menos.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">2</div>
+        <div class="qw-body">
+          <h4>Ele lê e escreve na pasta</h4>
+          <p>Essa é a diferença do chat. No chat, quando o Claude cria um arquivo, você tem que baixar e recolocar pra ele usar de novo. No Cowork ele lê o que está na pasta e também salva ali o que cria, e passa a beber até do que ele mesmo fez.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">3</div>
+        <div class="qw-body">
+          <h4>Você decide o que ele enxerga</h4>
+          <p>Toda tarefa começa com você dando uma pasta de acesso. Ele lê tudo dela, inclusive as subpastas, mas não sai dali: não acessa a pasta de cima a não ser que você peça. O contexto fica no seu controle.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">4</div>
+        <div class="qw-body">
+          <h4>Duas pastas ao mesmo tempo</h4>
+          <p>O pulo do gato: dá pra dar acesso a duas pastas de uma vez, pra ele beber de duas fontes ao mesmo tempo. Por exemplo, a pasta de um projeto específico mais a pasta geral da Ismart, o macro e o micro juntos.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">5</div>
+        <div class="qw-body">
+          <h4>Ele organiza pra você</h4>
+          <p>O Cowork não só cria, ele arruma. Você joga material solto e ele monta as pastas, separa os arquivos e nomeia tudo. Exemplo da aula: demos as transcrições de três reuniões e ele criou uma pasta por pessoa, separou os arquivos e deixou os e-mails de boas-vindas prontos no rascunho do Gmail.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">6</div>
+        <div class="qw-body">
+          <h4>Uma pasta de contexto fixa</h4>
+          <p>Vale ter uma pasta fixa com quem você é, sua área e seu tom de voz. O Claude lê ela sempre e já começa toda tarefa sabendo com quem está falando. Quanto mais material você coloca na pasta, melhor ele trabalha.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-band" style="margin-top:20px">
+      <span class="skill-band-tag">ATENÇÃO</span>
+      <span class="skill-band-text">O logo é o ponto chato: se o arquivo do logo não estiver na pasta, o Claude desenha um logo parecido no lugar do certo. Suba sempre o arquivo do logo junto, e dê a pasta de exemplo de outro projeto pra ele se inspirar no layout.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ANATOMIA DA SKILL -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-eyebrow">O coração da aula</div>
+    <h2 class="section-title">A anatomia de uma <span class="azul">boa Skill</span>.</h2>
+    <p class="section-lead">Skill é um manual que você escreve uma vez e o Claude segue toda vez, como uma receita de bolo: o processo é fixo, o recheio muda. Uma Skill bem-feita tem 4 partes. Esse é o checklist pra levar pra casa.</p>
+
+    <div class="qw-grid">
+      <div class="qw reveal">
+        <div class="qw-num">1</div>
+        <div class="qw-body">
+          <h4>Nome + descrição (o gatilho)</h4>
+          <p>O nome diz o que ela faz; a descrição diz <strong>quando</strong> o Claude deve usá-la. Descrição clara = Skill que dispara sozinha na hora certa. Descrição vaga = Skill que nunca é usada.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">2</div>
+        <div class="qw-body">
+          <h4>O processo (o passo a passo)</h4>
+          <p>As instruções de como executar, na ordem. Aqui entra <em>como você raciocina</em> sobre a tarefa, não só o formato final.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">3</div>
+        <div class="qw-body">
+          <h4>Exemplos</h4>
+          <p>Um exemplo de entrada e de saída vale mais que 10 linhas de instrução. Mostra ao Claude o padrão exato que você espera.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">4</div>
+        <div class="qw-body">
+          <h4>O que evitar</h4>
+          <p>As restrições: o que NÃO fazer, erros comuns, tom a evitar. Tão importante quanto o que fazer.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-band" style="margin-top:20px">
+      <span class="skill-band-tag">SACADA</span>
+      <span class="skill-band-text">Você não precisa escrever a Skill na mão. Descreva seu processo solto (ou grave um áudio) e peça: "transforme isso numa Skill estruturada". O Claude monta, e é ótimo nisso.</span>
+    </div>
+  </div>
+</section>
+
+<!-- CITAÇÃO AULA 2 -->
+<section class="section bg-suave">
+  <div class="section-inner">
+    <div class="quote reveal">
+      <span class="quote-mark">"</span>
+      <div class="quote-text">Na Aula 1 você aprendeu a <strong style="color:var(--coral)">falar</strong> com o Claude.<br>Hoje você ensina o Claude a <strong style="color:var(--coral)">trabalhar do seu jeito.</strong></div>
+      <div class="quote-by">moldura da Aula 2</div>
+    </div>
+  </div>
+</section>
+
+<!-- SACADAS AULA 2 -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-eyebrow">As 8 sacadas da aula</div>
+    <h2 class="section-title">Coisas que <span class="azul">você ainda não sabia</span> que o Claude faz.</h2>
+    <p class="section-lead">Cada uma destas você pode aplicar amanhã de manhã. Não precisa esperar a próxima aula.</p>
+
+    <div class="qw-grid">
+      <div class="qw reveal">
+        <div class="qw-num">1</div>
+        <div class="qw-body">
+          <h4>A regra das 3 vezes</h4>
+          <p>Fez algo 2×? Na 3ª, não peça de novo, vira Skill. Você ensina uma vez e o Claude repete pra sempre.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">2</div>
+        <div class="qw-body">
+          <h4>Faça a tarefa primeiro, depois crie a Skill</h4>
+          <p>A melhor forma de criar uma Skill: faça a tarefa de verdade primeiro (um contrato, uma análise, uma apresentação). Quando ficar boa, na <strong>mesma conversa</strong> peça "transforme isso numa Skill". Ela já nasce com o que funcionou, sem erro pra corrigir depois.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">3</div>
+        <div class="qw-body">
+          <h4>Teste a Skill na hora</h4>
+          <p>Logo depois de criar, aciona ela com um caso real e diferente. Skill não testada é Skill que você não confia.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">4</div>
+        <div class="qw-body">
+          <h4>Capriche na descrição/gatilho</h4>
+          <p>É a descrição que faz a Skill disparar sozinha na hora certa. Vale mais atenção do que parece.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">5</div>
+        <div class="qw-body">
+          <h4>Planilha parada vira painel</h4>
+          <p>Todo mundo tem uma planilha que ninguém olha. Pega ela e pede: "me transforma isso num painel visual". Em minutos você tem algo apresentável.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">6</div>
+        <div class="qw-body">
+          <h4>Itere, não recomece</h4>
+          <p>Não gostou do resultado? Não joga fora. Fala o ajuste em linguagem natural: "mais clean", "troca a cor", "aumenta isso". Iterar é mais rápido e barato que recriar.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">7</div>
+        <div class="qw-body">
+          <h4>Conecte 1 ferramenta hoje</h4>
+          <p>Antes de fechar o dia, conecta uma ferramenta que você já usa, provavelmente o Drive ou o e-mail. Sente como é não precisar mais baixar e subir arquivo.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">8</div>
+        <div class="qw-body">
+          <h4>No Cowork, peça o plano antes</h4>
+          <p>Antes de soltar o Claude pra executar, peça: "me apresente o plano antes de fazer qualquer coisa". Você lê, aprova, aí ele executa. Você no comando, sempre.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERGUNTAS E IDEIAS DA TURMA -->
+<section class="section bg-suave">
+  <div class="section-inner">
+    <div class="section-eyebrow">O que a turma trouxe</div>
+    <h2 class="section-title">As <span class="azul">perguntas e ideias</span> da turma.</h2>
+    <p class="section-lead">A melhor parte da aula foi o que apareceu ao vivo. Reuni aqui as dúvidas e ideias que a turma trouxe, porque cada uma delas vale pra todo mundo.</p>
+
+    <div class="qw-grid">
+      <div class="turma-card reveal">
+        <span class="turma-quem">Projetos e organização</span>
+        <div class="turma-q">"Em que nível eu divido os Projetos: um por área de recrutamento, ou um por vaga?"</div>
+        <div class="turma-a">No Cowork você não precisa escolher. Dá pra ter uma pasta "recrutamento" com uma subpasta para cada vaga, uma consultando a outra, e decidir a cada tarefa o quanto de contexto o Claude enxerga. E o ponto que mais rendeu: a melhor forma de criar uma Skill é <strong>fazer a tarefa de verdade primeiro</strong> e, quando o resultado ficar bom, pedir na mesma conversa para transformar aquilo numa Skill.</div>
+      </div>
+
+      <div class="turma-card reveal">
+        <span class="turma-quem">Skill por cliente ou por tarefa?</span>
+        <div class="turma-q">"Faço uma Skill para cada cliente, ou uma para cada produto?"</div>
+        <div class="turma-a">Nem um nem outro: a Skill é <strong>por tarefa</strong>. Se você atualiza uma apresentação institucional para cada doador, isso é uma Skill só. O template é a parte fixa; o que muda é o "recheio do bolo", as informações daquele doador. Uma Skill atende todos os doadores.</div>
+      </div>
+
+      <div class="turma-card reveal">
+        <span class="turma-quem">Reunião de Resultado</span>
+        <div class="turma-q">"Dá para fazer uma Skill da Reunião de Resultado mensal?"</div>
+        <div class="turma-a">É um caso ideal de Skill. O template da reunião é o mesmo todo mês; só mudam os indicadores da área. A Skill guarda o formato e o raciocínio por trás dele, e você só entrega os números do mês.</div>
+      </div>
+
+      <div class="turma-card reveal">
+        <span class="turma-quem">Triagem de candidatos</span>
+        <div class="turma-q">"Já uso um chat que analisa candidatos por critérios. Dá para levar isso para o Cowork?"</div>
+        <div class="turma-a">Dá, e é exatamente o salto que vale a pena. Um chat com o perfil da vaga e os critérios já mede a aderência de cada candidato. Virando uma <strong>Skill no Cowork</strong>, o Claude lê a pasta do processo seletivo direto (os currículos, o formulário, a planilha de respostas), sem você colar candidato por candidato no chat.</div>
+      </div>
+
+      <div class="turma-card reveal">
+        <span class="turma-quem">Base de dúvidas do time</span>
+        <div class="turma-q">"Dá para ter um assistente de dúvidas para o time, com os nossos fluxos já mapeados?"</div>
+        <div class="turma-a">Dá, e é uma ótima ideia. Uma <strong>Skill compartilhada</strong>, alimentada com os documentos de fluxo que vocês já têm (intervenção, desligamento, reembolso, onde fica cada pasta), funciona como um colega que responde tanto quem está chegando quanto quem já é veterano. A conexão direta com o Teams a gente aprofunda na Aula 3.</div>
+      </div>
+
+      <div class="turma-card reveal">
+        <span class="turma-quem">Conectores e automação</span>
+        <div class="turma-q">"Dá para conectar pastas do SharePoint e ter a Skill rodando sozinha por um gatilho?"</div>
+        <div class="turma-a">Dá. A integração com a Microsoft melhorou bastante numa atualização recente, e o Google Drive já funciona muito bem. Os gatilhos e as tarefas agendadas (a Skill rodando sozinha quando chega um arquivo novo, ou todo mês) são o tema da Aula 3.</div>
+      </div>
+
+      <div class="turma-card reveal">
+        <span class="turma-quem">Apresentações em HTML</span>
+        <div class="turma-q">"HTML rende um visual mais bonito, mas dá para editar e trabalhar em conjunto?"</div>
+        <div class="turma-a">O HTML rende gráficos e layout bem mais bonitos que o PowerPoint, e vale muito a pena para apresentações. O lado B: ele não é colaborativo como o Canva. Para editar, você pede ao Claude; para várias pessoas mexendo ao mesmo tempo, o PowerPoint online ainda é o melhor caminho.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSÃO AULA 3 -->
+<section class="section bg-navy">
+  <div class="section-inner">
+    <div class="section-eyebrow">Sua missão antes da Aula 3</div>
+    <h2 class="section-title">5 tarefas pra fazer <span class="azul">nesta semana</span>.</h2>
+    <p class="section-lead">Clique para marcar como feito. A Aula 3 é a última, ela vai render muito mais se você chegar com essas coisas testadas.</p>
+
+    <div class="missao">
+      <div class="tarefa" onclick="toggleTask(this)">
+        <div class="tarefa-check"></div>
+        <div>
+          <div class="tarefa-num">TAREFA 01</div>
+          <div class="tarefa-title">Criar 1 Skill própria</div>
+          <div class="tarefa-desc">Pegue aquela tarefa repetitiva que você escolheu na missão da Aula 1. Descreve o processo, pede pro Claude estruturar a Skill, e <strong>testa na hora</strong> com um caso real.</div>
+        </div>
+      </div>
+
+      <div class="tarefa" onclick="toggleTask(this)">
+        <div class="tarefa-check"></div>
+        <div>
+          <div class="tarefa-num">TAREFA 02</div>
+          <div class="tarefa-title">Criar 1 Artifact</div>
+          <div class="tarefa-desc">Pegue uma planilha sua que vive parada e peça um painel visual. Depois itere: "mais clean", "cores da Ismart", "número grande em destaque".</div>
+        </div>
+      </div>
+
+      <div class="tarefa" onclick="toggleTask(this)">
+        <div class="tarefa-check"></div>
+        <div>
+          <div class="tarefa-num">TAREFA 03</div>
+          <div class="tarefa-title">Conectar 1 ferramenta</div>
+          <div class="tarefa-desc">Em <strong>mais → navegar conectores</strong>, conecte uma ferramenta que você já usa, o Drive ou o e-mail. Confira a política de privacidade antes de conectar algo com dados sensíveis.</div>
+        </div>
+      </div>
+
+      <div class="tarefa" onclick="toggleTask(this)">
+        <div class="tarefa-check"></div>
+        <div>
+          <div class="tarefa-num">TAREFA 04</div>
+          <div class="tarefa-title">Rodar 1 tarefa de criação no Cowork</div>
+          <div class="tarefa-desc">Qualquer coisa: uma apresentação, uma planilha-resumo, organizar uma pasta. Sempre <strong>peça o plano antes</strong> e aprove antes de ele executar.</div>
+        </div>
+      </div>
+
+      <div class="tarefa" onclick="toggleTask(this)">
+        <div class="tarefa-check"></div>
+        <div>
+          <div class="tarefa-num">TAREFA 05</div>
+          <div class="tarefa-title">Trazer 1 dúvida ou 1 caso pra Aula 3</div>
+          <div class="tarefa-desc">A Aula 3 é a última e quanto mais avançada melhor. Me manda pela pesquisa lá em cima um caso seu que você quer ver resolvido, eu trabalho ele antes da aula.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMPTS AULA 2 -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-eyebrow">Prompts pra copiar e usar</div>
+    <h2 class="section-title">Os <span class="azul">prompts</span> base da Aula 2.</h2>
+    <p class="section-lead">Pontos de partida pra te tirar do zero, clique em "Copiar", cole no Claude e adapte. Lembre da sacada da Aula 1: o próprio Claude pode montar o prompt do jeito que você quiser.</p>
+
+    <div class="prompts">
+      <div class="prompt-card reveal">
+        <div class="prompt-header">
+          <div class="prompt-title">Transforme seu processo numa Skill</div>
+          <span class="prompt-tag">Habilidades → criar Skill</span>
+        </div>
+<pre class="prompt-body" data-copy="Quero criar uma Skill no Claude. Vou te descrever um processo que eu repito no meu trabalho.
+
+PROCESSO: [descreva solto como você faz hoje, ou grave um áudio e cole a transcrição].
+
+Transforme isso numa Skill bem estruturada, com:
+- nome e descrição de gatilho (quando a Skill deve ser usada)
+- o passo a passo do processo, na ordem
+- um exemplo de entrada e um de saída
+- o que evitar (erros comuns, tom a não usar)">Quero criar uma Skill no Claude. Vou te descrever um processo que eu repito no meu trabalho.
+
+PROCESSO: <span class="var">[descreva solto como você faz hoje, ou grave um áudio e cole a transcrição]</span>.
+
+Transforme isso numa Skill bem estruturada, com:
+- nome e descrição de gatilho (quando a Skill deve ser usada)
+- o passo a passo do processo, na ordem
+- um exemplo de entrada e um de saída
+- o que evitar (erros comuns, tom a não usar)</pre>
+        <button class="copy-btn" onclick="copyPrompt(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copiar prompt
+        </button>
+      </div>
+
+      <div class="prompt-card reveal">
+        <div class="prompt-header">
+          <div class="prompt-title">De documento parado a fonte de verdade</div>
+          <span class="prompt-tag">Passo 1 do fio condutor</span>
+        </div>
+<pre class="prompt-body" data-copy="Anexei o [documento / PDF]. Quero transformar isso numa fonte de verdade estruturada.
+
+Leia o arquivo e gere um arquivo .md organizado, com seções claras, que você possa consultar sempre que eu pedir algo relacionado a este tema.
+
+Mantenha tudo que for essencial e descarte o que for só decoração.">Anexei o <span class="var">[documento / PDF]</span>. Quero transformar isso numa fonte de verdade estruturada.
+
+Leia o arquivo e gere um arquivo .md organizado, com seções claras, que você possa consultar sempre que eu pedir algo relacionado a este tema.
+
+Mantenha tudo que for essencial e descarte o que for só decoração.</pre>
+        <button class="copy-btn" onclick="copyPrompt(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copiar prompt
+        </button>
+      </div>
+
+      <div class="prompt-card reveal">
+        <div class="prompt-header">
+          <div class="prompt-title">Planilha parada vira painel</div>
+          <span class="prompt-tag">Criar um Artifact</span>
+        </div>
+<pre class="prompt-body" data-copy="Você é analista de dados. Anexei uma planilha com [tipo de dado].
+
+Crie um painel visual em HTML, numa página só, que mostre os números principais de um jeito bonito e fácil de apresentar para a liderança.
+
+Use cores sóbrias e destaque o que muda a decisão, não só os números.
+
+Depois eu vou te pedir ajustes, pode ir iterando comigo.">Você é analista de dados. Anexei uma planilha com <span class="var">[tipo de dado]</span>.
+
+Crie um painel visual em HTML, numa página só, que mostre os números principais de um jeito bonito e fácil de apresentar para a liderança.
+
+Use cores sóbrias e destaque o que muda a decisão, não só os números.
+
+Depois eu vou te pedir ajustes, pode ir iterando comigo.</pre>
+        <button class="copy-btn" onclick="copyPrompt(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copiar prompt
+        </button>
+      </div>
+
+      <div class="prompt-card reveal">
+        <div class="prompt-header">
+          <div class="prompt-title">A regra de ouro do Cowork</div>
+          <span class="prompt-tag">Use sempre antes de executar</span>
+        </div>
+<pre class="prompt-body" data-copy="Antes de executar qualquer coisa, me apresente o plano do que você pretende fazer: os arquivos que vai criar ou alterar, e em que ordem.
+
+Não faça nada até eu aprovar o plano.">Antes de executar qualquer coisa, me apresente o plano do que você pretende fazer: os arquivos que vai criar ou alterar, e em que ordem.
+
+Não faça nada até eu aprovar o plano.</pre>
+        <button class="copy-btn" onclick="copyPrompt(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copiar prompt
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LINKS AULA 2 -->
+<section class="section bg-suave">
+  <div class="section-inner">
+    <div class="section-eyebrow">Tudo num só lugar</div>
+    <h2 class="section-title">Materiais e <span class="azul">links</span> da Aula 2.</h2>
+    <p class="section-lead">A gravação, a apresentação e o Claude Desktop, que é onde o Cowork vive. Salva esse link nos favoritos, atualizo antes de cada aula.</p>
+
+    <div class="links">
+      <a class="link-card reveal" href="https://us06web.zoom.us/rec/share/H1QjbKqF7PTSQ3egiNXIH49bC0CKaIau2ZiJp2Hf5nW5WV8gSNVO3Yx2JJ5wvt4Y.ow3DFCG4m1LlYAi4?startTime=1779469158000" target="_blank" rel="noopener">
+        <div class="link-icon">🎥</div>
+        <div class="link-title">Gravação da Aula 2</div>
+        <div class="link-desc">A aula completa no Zoom. Bom pra rever um trecho específico, use a aba "transcrição" pra navegar mais rápido.</div>
+        <div class="link-cta">Abrir no Zoom →</div>
+        <div class="link-pwd">
+          <span><strong>SENHA</strong><br><span class="mono-code" id="pwd2">CD!#kS4m</span></span>
+          <button class="copy-btn" style="padding:6px 12px;font-size:11px" onclick="copyText('CD!#kS4m', this); event.preventDefault();">Copiar</button>
+        </div>
+      </a>
+
+      <a class="link-card reveal" href="http://newscale.tech/projetos/ismart/apresentacao-aula-02" target="_blank" rel="noopener">
+        <div class="link-icon">🖥️</div>
+        <div class="link-title">Apresentação da Aula 2</div>
+        <div class="link-desc">O deck em HTML interativo, navega com as setas do teclado. Curtinho de propósito: a Aula 2 foi mão na massa.</div>
+        <div class="link-cta">Abrir apresentação →</div>
+      </a>
+
+      <a class="link-card reveal" href="https://claude.com/download" target="_blank" rel="noopener">
+        <div class="link-icon">⬇️</div>
+        <div class="link-title">Claude Desktop (Cowork)</div>
+        <div class="link-desc">Gratuito · Mac/Windows · 2 minutos. É no Desktop que o Cowork roda, o Claude criando direto nas suas pastas.</div>
+        <div class="link-cta">Ir para o download →</div>
+      </a>
+
+      <a class="link-card reveal" href="https://claude.ai" target="_blank" rel="noopener">
+        <div class="link-icon">💬</div>
+        <div class="link-title">Claude no navegador</div>
+        <div class="link-desc">Para criar e guardar suas Skills (em "Habilidades"), abrir Projetos e navegar conectores.</div>
+        <div class="link-cta">Abrir claude.ai →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRÓXIMA AULA 3 -->
+<section class="section">
+  <div class="section-inner">
+    <div class="proxima reveal">
+      <div>
+        <div class="proxima-eyebrow">Próxima aula · a última do curso</div>
+        <h3>Aula 3 · O Claude trabalhando por você.</h3>
+        <p>Cowork avançado, <strong>tarefas agendadas</strong>, o Claude fazendo o relatório antes de você chegar, encadeamento de tarefas, conectores a fundo e o <strong>Claude Code</strong>, pra construir ferramentas de verdade. É o Claude trabalhando enquanto você dorme.</p>
+        <div class="proxima-meta">
+          <div><strong>Aula</strong>3 de 3 · última</div>
+          <div><strong>Formato</strong>Avançada e prática</div>
+          <div><strong>Traga</strong>1 caso seu pra resolvermos ao vivo</div>
+        </div>
+      </div>
+      <div class="proxima-card">
+        <h4>O que você precisa ter pronto</h4>
+        <ul>
+          <li>1 Skill própria criada e testada</li>
+          <li>1 Artifact feito de uma planilha sua</li>
+          <li>1 ferramenta conectada</li>
+          <li>1 dúvida ou caso pra trazer pra aula</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /tab-aula2 -->
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -1345,7 +2033,7 @@ PASSO 4 — Abra uma conversa nova, cole o prompt criado, rode.</pre>
     </div>
     <div class="footer-meta">
       Facilitação: Bruna Santanna · <a href="mailto:bruna@newscale.tech">bruna@newscale.tech</a> · <a href="https://instagram.com/brusantanna.ai" target="_blank" rel="noopener">@brusantanna.ai</a><br>
-      Curso "Claude com Profundidade" — adaptado para a Ismart, maio de 2026.
+      Curso "Claude com Profundidade", adaptado para a Ismart, maio de 2026.
     </div>
   </div>
 </footer>
@@ -1363,6 +2051,21 @@ const io = new IntersectionObserver((entries) => {
 }, {threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+// ===== ABAS DAS AULAS =====
+function openTab(which){
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  const panel = document.getElementById('tab-' + which);
+  const btn = document.getElementById('btn-' + which);
+  if(panel){
+    panel.classList.add('active');
+    panel.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  }
+  if(btn) btn.classList.add('active');
+  const bar = document.getElementById('aulas');
+  if(bar) window.scrollTo({top: bar.offsetTop - 60, behavior:'smooth'});
+}
+
 // toggle de tarefa
 function toggleTask(el){ el.classList.toggle('done'); }
 
@@ -1379,7 +2082,6 @@ function copyText(text, btn){
     btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Copiado!';
     setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = original; }, 1800);
   }).catch(() => {
-    // fallback
     const ta = document.createElement('textarea');
     ta.value = text; document.body.appendChild(ta); ta.select();
     document.execCommand('copy'); document.body.removeChild(ta);
@@ -1388,20 +2090,24 @@ function copyText(text, btn){
   });
 }
 
-// ===== FEEDBACK FORM (Google Forms -> Sheets) =====
+// ===== PESQUISA (Google Forms -> Sheets) =====
 const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScPYjXPRhr-2gtVo-IYco7jXMFUE_HApM09zq4fGoWEpHvgzA/formResponse';
 
-const ratingLabels = {1:'Nao foi bom',2:'Foi ok',3:'Foi bom',4:'Foi otimo',5:'Foi incrivel'};
-document.querySelectorAll('.ff-star').forEach(star => {
-  star.addEventListener('click', function(){
-    const value = parseInt(this.dataset.value);
-    document.getElementById('ff-rating').value = value;
-    document.querySelectorAll('.ff-star').forEach(s => {
-      s.classList.toggle('active', parseInt(s.dataset.value) <= value);
+// estrelas · escopo por container (a pesquisa tem dois grupos de estrelas)
+function setupStars(containerId, labelId, hiddenId, labels){
+  const container = document.getElementById(containerId);
+  if(!container) return;
+  const stars = container.querySelectorAll('.ff-star');
+  stars.forEach(star => {
+    star.addEventListener('click', function(){
+      const value = parseInt(this.dataset.value);
+      document.getElementById(hiddenId).value = value;
+      stars.forEach(s => s.classList.toggle('active', parseInt(s.dataset.value) <= value));
+      document.getElementById(labelId).textContent = labels[value];
     });
-    document.getElementById('ffStarsLabel').textContent = ratingLabels[value];
   });
-});
+}
+setupStars('ffMoodStars', 'ffMoodLabel', 'ff-mood', {1:'Ainda nao',2:'Mais ou menos',3:'Ta boa',4:'To gostando',5:'To amando'});
 
 document.getElementById('feedbackForm').addEventListener('submit', function(e){
   e.preventDefault();
@@ -1416,13 +2122,17 @@ document.getElementById('feedbackForm').addEventListener('submit', function(e){
   const data = new FormData(form);
   const nome = data.get('entry.659955540');
 
-  // Google Forms aceita POST via no-cors. Resposta e opaca mas a submissao vai.
-  fetch(GOOGLE_FORM_URL, {
-    method: 'POST',
-    mode: 'no-cors',
-    body: data
-  }).then(() => {
-    form.querySelectorAll('.ff-row, .ff-submit').forEach(el => el.style.display='none');
+  // a resposta "esta gostando da formacao" viaja junto do campo de duvidas,
+  // pra cair na mesma planilha sem precisar criar coluna nova no formulario
+  const mood = document.getElementById('ff-mood').value;
+  if(mood){
+    const moodLine = '[Gostando da formacao: ' + mood + '/5 estrelas]';
+    const duvidasAtual = data.get('entry.983024275') || '';
+    data.set('entry.983024275', moodLine + (duvidasAtual ? '\n\n' + duvidasAtual : ''));
+  }
+
+  fetch(GOOGLE_FORM_URL, { method:'POST', mode:'no-cors', body:data }).then(() => {
+    form.querySelectorAll('.ff-row, .ff-row-mood, .ff-submit').forEach(el => el.style.display='none');
     document.getElementById('ffSuccessName').textContent = nome || 'obrigada';
     successBox.classList.add('show');
     successBox.scrollIntoView({behavior:'smooth', block:'center'});
