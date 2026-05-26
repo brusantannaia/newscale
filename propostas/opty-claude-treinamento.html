@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Comercial · Opty · NewScale Consulting · v1</title>
+
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="bingbot" content="noindex, nofollow">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #14373C;
+  --ink2: #1a4449;
+  --sage: #435D51;
+  --terra: #B06E4A;
+  --tl: #c4835e;
+  --sand: #A38362;
+  --cream: #E8E6E0;
+  --cl: #F4F3EF;
+  --white: #FAFAF8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+section { padding: 100px 40px; }
+
+.section-label {
+  display: inline-block;
+  font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--terra); margin-bottom: 16px;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+  font-weight: 700; line-height: 1.18;
+  color: var(--ink); margin-bottom: 22px;
+}
+.section-title em { font-style: italic; color: var(--terra); }
+p { font-size: 0.94rem; line-height: 1.75; color: #4a6a6f; margin-bottom: 14px; font-weight: 300; }
+
+/* Navbar */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 48px;
+  background: transparent;
+  transition: background 0.4s, backdrop-filter 0.4s;
+}
+.navbar.scrolled {
+  background: rgba(12, 36, 39, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.navbar-logo img { height: 52px; opacity: 0.95; display: block; }
+.navbar-tag {
+  font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--tl);
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #0c2427 0%, #14373C 38%, #1d4840 72%, #435D51 100%);
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center; padding: 120px 40px 80px; overflow: hidden; position: relative;
+}
+.topo-lines { position: absolute; inset: 0; opacity: 0.08; pointer-events: none; }
+.topo-lines svg { width: 100%; height: 100%; }
+.grain-overlay {
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.03; pointer-events: none;
+}
+.hero-badge {
+  display: inline-block; background: rgba(176,110,74,0.15); color: var(--tl);
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(176,110,74,0.25);
+  margin-bottom: 28px; animation: fadeUp 0.6s ease both 0.2s; position: relative; z-index: 2;
+}
+.hero-eyebrow {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.45); margin-bottom: 20px; animation: fadeUp 0.6s ease both 0.3s;
+  position: relative; z-index: 2;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem); font-weight: 700; color: #fff;
+  line-height: 1.15; max-width: 820px; margin-bottom: 28px;
+  animation: fadeUp 0.6s ease both 0.4s; position: relative; z-index: 2;
+}
+.hero h1 em { font-style: italic; color: var(--tl); }
+.hero-desc {
+  font-size: 0.97rem; font-weight: 300; color: rgba(255,255,255,0.65);
+  max-width: 600px; line-height: 1.75; margin-bottom: 52px;
+  animation: fadeUp 0.6s ease both 0.5s; position: relative; z-index: 2;
+}
+.hero-cta {
+  animation: fadeUp 0.6s ease both 0.7s; position: relative; z-index: 2;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  color: rgba(255,255,255,0.35); font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  cursor: pointer; text-decoration: none; transition: color 0.3s;
+}
+.hero-cta:hover { color: rgba(255,255,255,0.7); }
+.hero-cta svg { animation: bounce 2s infinite; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* Contexto */
+.context-section { background: var(--cl); }
+.context-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.intro-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.stat-card {
+  background: var(--ink); border-radius: 14px; padding: 28px 24px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.stat-card:nth-child(2) { background: var(--terra); }
+.stat-card:nth-child(3) { background: var(--sage); }
+.stat-card:nth-child(4) { background: #1a4449; }
+.stat-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem; font-weight: 700; color: #fff; line-height: 1;
+}
+.stat-label {
+  font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.65);
+}
+
+/* Oportunidades */
+.dores-section { background: var(--ink); }
+.dores-inner { max-width: 1100px; margin: 0 auto; }
+.dores-head { text-align: center; margin-bottom: 56px; }
+.dores-head .section-label { color: var(--tl); }
+.dores-head .section-title { color: #fff; }
+.dores-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.dore-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px; padding: 32px 28px; position: relative; overflow: hidden;
+  transition: border-color 0.3s, background 0.3s;
+}
+.dore-card:hover { border-color: rgba(176,110,74,0.3); background: rgba(176,110,74,0.04); }
+.dore-num {
+  font-family: 'Cormorant Garamond', serif; font-size: 5rem; font-weight: 700;
+  color: rgba(176,110,74,0.08); line-height: 1; position: absolute; top: 12px; right: 20px;
+}
+.dore-tag {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--tl); margin-bottom: 10px; position: relative; z-index: 1;
+}
+.dore-title {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700;
+  color: #fff; line-height: 1.25; margin-bottom: 14px; position: relative; z-index: 1;
+}
+.dore-text { font-size: 0.86rem; font-weight: 300; color: rgba(255,255,255,0.65); line-height: 1.7; position: relative; z-index: 1; }
+
+/* Módulos */
+.modulos-section { background: var(--white); }
+.modulos-inner { max-width: 1100px; margin: 0 auto; }
+.modulos-head { text-align: center; margin-bottom: 48px; }
+.fase-header {
+  display: flex; justify-content: space-between; align-items: center;
+  background: var(--ink); border-radius: 14px 14px 0 0;
+  padding: 22px 28px; color: #fff;
+}
+.fase-header.terra { background: var(--terra); }
+.fase-header.sage { background: var(--sage); }
+.fase-tag {
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(255,255,255,0.6); margin-bottom: 6px;
+}
+.fase-name {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; line-height: 1.1;
+}
+.fase-duration { font-size: 0.78rem; color: rgba(255,255,255,0.7); margin-top: 4px; font-weight: 400; }
+.fase-num-badge {
+  font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700;
+  color: rgba(255,255,255,0.3);
+}
+.modulo-card {
+  background: #fff; border: 1px solid rgba(20,55,60,0.1); border-top: none;
+  border-radius: 0 0 14px 14px; padding: 28px 32px; margin-bottom: 28px;
+  cursor: pointer; transition: box-shadow 0.3s;
+}
+.modulo-card:hover { box-shadow: 0 10px 30px rgba(20,55,60,0.08); }
+.modulo-card-header {
+  display: flex; justify-content: space-between; align-items: center; gap: 24px;
+}
+.modulo-card-left { display: flex; align-items: center; gap: 18px; }
+.modulo-icon {
+  font-size: 1.8rem; width: 48px; height: 48px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--cl); border-radius: 12px;
+}
+.modulo-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--terra); margin-bottom: 4px; }
+.modulo-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); line-height: 1.2; }
+.modulo-chips { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+.chip {
+  font-size: 0.65rem; font-weight: 600; padding: 3px 10px;
+  background: var(--cl); color: #4a6a6f; border-radius: 20px;
+}
+.modulo-card.open .modulo-chips { display: none; }
+.modulo-toggle {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--cl); display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; font-weight: 300; color: var(--ink);
+  transition: transform 0.3s, background 0.3s;
+  flex-shrink: 0;
+}
+.modulo-card.open .modulo-toggle { transform: rotate(45deg); background: var(--terra); color: #fff; }
+.modulo-body {
+  max-height: 0; overflow: hidden; transition: max-height 0.5s ease;
+}
+.modulo-card.open .modulo-body { max-height: 1500px; padding-top: 24px; }
+.value-box {
+  display: flex; gap: 16px; align-items: flex-start;
+  background: rgba(176,110,74,0.07); border-left: 3px solid var(--terra);
+  padding: 18px 20px; border-radius: 8px; margin-bottom: 20px;
+}
+.value-box-icon { font-size: 1.4rem; }
+.value-box-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--terra); margin-bottom: 4px; }
+.value-box-text { font-size: 0.92rem; color: var(--ink); line-height: 1.5; font-weight: 500; }
+.modulo-desc { font-size: 0.9rem; color: #4a6a6f; margin-bottom: 16px; }
+.modulo-items { list-style: none; padding: 0; }
+.modulo-items li {
+  font-size: 0.88rem; padding: 8px 0 8px 20px; color: #4a6a6f; line-height: 1.65;
+  position: relative;
+}
+.modulo-items li::before {
+  content: '→'; position: absolute; left: 0; color: var(--terra); font-weight: 700;
+}
+.modulo-items strong { color: var(--ink); font-weight: 600; }
+
+/* Investimento */
+.invest-section { background: var(--ink); color: #fff; }
+.invest-inner { max-width: 1100px; margin: 0 auto; }
+.invest-head { text-align: center; margin-bottom: 48px; }
+.invest-head .section-label { color: var(--tl); }
+.invest-head .section-title { color: #fff; }
+.invest-head .section-title em { color: var(--tl); }
+.invest-modules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 24px; }
+.invest-mod-card {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 14px; padding: 28px 24px;
+}
+.invest-mod-tag { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tl); margin-bottom: 8px; }
+.invest-mod-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; line-height: 1.2; }
+.invest-mod-price { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 6px; }
+.invest-mod-cond { font-size: 0.74rem; color: rgba(255,255,255,0.55); margin-bottom: 16px; }
+.invest-mod-list { list-style: none; padding: 0; }
+.invest-mod-list li { font-size: 0.8rem; color: rgba(255,255,255,0.72); padding: 5px 0 5px 18px; position: relative; line-height: 1.5; }
+.invest-mod-list li::before { content: '✓'; position: absolute; left: 0; color: var(--tl); font-weight: 700; }
+
+.invest-pacote-card {
+  background: rgba(176,110,74,0.07); border: 1px solid rgba(176,110,74,0.25);
+  border-radius: 16px; padding: 40px 36px;
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 40px; position: relative; margin-bottom: 32px;
+}
+.invest-pacote-card::before {
+  content: 'PACOTE COMPLETO'; position: absolute; top: -10px; left: 24px;
+  background: var(--terra); color: #fff; font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.16em; padding: 4px 12px; border-radius: 20px;
+}
+.invest-pacote-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.invest-pacote-desc { font-size: 0.88rem; color: rgba(255,255,255,0.7); max-width: 480px; line-height: 1.65; }
+.invest-pacote-right { text-align: right; }
+.invest-pacote-from { font-size: 0.78rem; color: rgba(255,255,255,0.5); text-decoration: line-through; margin-bottom: 4px; }
+.invest-pacote-price { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 700; color: var(--tl); line-height: 1; margin-bottom: 8px; }
+.invest-pacote-cond { font-size: 0.78rem; color: rgba(255,255,255,0.7); margin-bottom: 12px; }
+.invest-pacote-econ {
+  display: inline-block; background: rgba(176,110,74,0.2); color: var(--tl);
+  font-size: 0.7rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.06em;
+}
+.invest-validade {
+  display: flex; align-items: center; gap: 10px; justify-content: center;
+  margin-top: 16px; font-size: 0.78rem; color: rgba(255,255,255,0.65);
+}
+.pulse-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--tl);
+  animation: pulse 1.6s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.4); }
+}
+
+.invest-extras {
+  background: rgba(255,255,255,0.04); border-left: 3px solid var(--tl);
+  padding: 22px 28px; border-radius: 8px; font-size: 0.86rem;
+  color: rgba(255,255,255,0.78); line-height: 1.7;
+}
+.invest-extras strong { color: var(--tl); font-weight: 600; }
+
+/* Garantia */
+.garantia-section { background: #fff; }
+.garantia-inner { max-width: 1100px; margin: 0 auto; }
+.garantia-block {
+  background: linear-gradient(135deg, var(--ink), var(--sage));
+  border-radius: 20px; padding: 48px 56px;
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center;
+  overflow: hidden; position: relative;
+}
+.garantia-block .section-label { color: var(--tl); }
+.garantia-block h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 16px; }
+.garantia-block h2 em { color: var(--tl); font-style: italic; }
+.garantia-block p { color: rgba(255,255,255,0.78); font-size: 0.92rem; }
+.garantia-selo {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px; padding: 32px; text-align: center;
+}
+.garantia-selo-num { font-family: 'Cormorant Garamond', serif; font-size: 3.6rem; font-weight: 700; color: var(--tl); line-height: 1; margin-bottom: 6px; }
+.garantia-selo-lbl { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+
+/* Por que NewScale */
+.porque-section { background: var(--cl); }
+.porque-inner { max-width: 1100px; margin: 0 auto; }
+.porque-head { text-align: center; margin-bottom: 48px; }
+.quote-block {
+  background: linear-gradient(155deg, var(--ink), var(--ink2));
+  border-radius: 16px; padding: 40px 44px; color: #fff;
+  position: relative; margin-bottom: 56px;
+}
+.quote-mark { font-family: 'Cormorant Garamond', serif; font-size: 6rem; line-height: 1; color: var(--tl); opacity: 0.4; position: absolute; top: 8px; left: 28px; }
+.quote-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; line-height: 1.6; color: #fff; margin-left: 44px; margin-bottom: 16px; }
+.quote-sign { font-size: 0.78rem; color: var(--tl); font-weight: 600; margin-left: 44px; letter-spacing: 0.04em; }
+.fundadores-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.fundador-card { display: flex; gap: 22px; background: #fff; border-radius: 14px; padding: 24px; }
+.fundador-photo {
+  width: 110px; height: 130px; border-radius: 10px; object-fit: cover; flex-shrink: 0;
+  background: var(--cl);
+}
+.fundador-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.fundador-role { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-bottom: 10px; }
+.fundador-bio { font-size: 0.78rem; color: #4a6a6f; line-height: 1.55; margin-bottom: 10px; }
+.fundador-tags { font-size: 0.7rem; color: var(--sage); font-weight: 600; }
+
+/* FAQ */
+.faq-section { background: #fff; }
+.faq-inner { max-width: 800px; margin: 0 auto; }
+.faq-head { text-align: center; margin-bottom: 40px; }
+.faq-item {
+  border-bottom: 1px solid rgba(20,55,60,0.1); padding: 18px 0; cursor: pointer;
+}
+.faq-q { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.faq-q-text { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--ink); }
+.faq-toggle {
+  width: 26px; height: 26px; border-radius: 50%; background: var(--cl);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  font-size: 1rem; color: var(--ink); transition: transform 0.3s, background 0.3s;
+}
+.faq-item.open .faq-toggle { transform: rotate(45deg); background: var(--terra); color: #fff; }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; }
+.faq-item.open .faq-a { max-height: 400px; padding-top: 12px; }
+.faq-a p { font-size: 0.9rem; color: #4a6a6f; }
+
+/* Próximos passos */
+.steps-section {
+  background: linear-gradient(155deg, #0c2427, #14373C 60%, #1d4840 100%);
+  color: #fff;
+}
+.steps-inner { max-width: 800px; margin: 0 auto; }
+.steps-head { text-align: center; margin-bottom: 48px; }
+.steps-head .section-label { color: var(--tl); }
+.steps-head .section-title { color: #fff; }
+.steps-head .section-title em { color: var(--tl); }
+.step-item { display: flex; gap: 22px; padding: 18px 0; position: relative; }
+.step-item:not(:last-child)::after {
+  content: ''; position: absolute; left: 20px; top: 56px; bottom: 0;
+  width: 1px; background: rgba(176,110,74,0.25);
+}
+.step-num {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(176,110,74,0.15); border: 1px solid var(--terra);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: var(--tl);
+  flex-shrink: 0;
+}
+.step-prazo { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tl); margin-bottom: 6px; }
+.step-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.step-desc { font-size: 0.86rem; color: rgba(255,255,255,0.7); line-height: 1.65; }
+.steps-closer { margin-top: 40px; text-align: center; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; color: var(--tl); }
+
+/* CTA */
+.cta-section { background: #fff; }
+.cta-inner { max-width: 900px; margin: 0 auto; }
+.cta-fechamento-inner {
+  background: linear-gradient(150deg, #0c2427, #14373C 55%, #1d4840 100%);
+  border-radius: 24px; padding: 64px 56px; text-align: center; color: #fff;
+}
+.cta-validade {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(176,110,74,0.15); color: var(--tl);
+  padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(176,110,74,0.3);
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.cta-fechamento-inner h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.4vw, 2.7rem); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 18px; }
+.cta-fechamento-inner h2 em { color: var(--tl); font-style: italic; }
+.cta-fechamento-inner p { color: rgba(255,255,255,0.75); font-size: 0.95rem; max-width: 560px; margin: 0 auto 32px; }
+.cta-buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
+.cta-btn { font-size: 0.86rem; font-weight: 600; padding: 16px 30px; border-radius: 40px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: transform 0.2s, box-shadow 0.2s; }
+.cta-btn-primary { background: var(--terra); color: #fff; box-shadow: 0 8px 28px rgba(176,110,74,0.35); }
+.cta-btn-primary:hover { transform: translateY(-2px); }
+.cta-btn-secondary { background: transparent; color: rgba(255,255,255,0.85); border: 1px solid rgba(255,255,255,0.25); }
+.cta-btn-secondary:hover { background: rgba(255,255,255,0.05); }
+.cta-metricas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 600px; margin: 0 auto; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); }
+.cta-met-num { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--tl); line-height: 1; margin-bottom: 4px; }
+.cta-met-lbl { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+
+/* Footer */
+.footer {
+  background: var(--ink); color: rgba(255,255,255,0.6);
+  padding: 36px 48px; display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.78rem;
+}
+.footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: #fff; }
+.footer-brand span { color: var(--tl); font-style: italic; font-weight: 400; margin-left: 4px; }
+.footer-date { text-align: right; line-height: 1.6; }
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  section { padding: 70px 24px; }
+  .navbar { padding: 14px 24px; }
+  .navbar-tag { display: none; }
+  .hero { padding: 80px 24px; }
+  .context-inner, .garantia-block { grid-template-columns: 1fr; gap: 32px; }
+  .intro-stats { grid-template-columns: 1fr 1fr; }
+  .dores-grid, .invest-modules-grid, .fundadores-grid { grid-template-columns: 1fr; }
+  .invest-pacote-card { flex-direction: column; gap: 28px; }
+  .invest-pacote-right { text-align: left; }
+  .footer { flex-direction: column; gap: 16px; text-align: center; }
+  .footer-date { text-align: center; }
+  .quote-block, .garantia-block, .cta-fechamento-inner { padding: 36px 28px; }
+  .cta-metricas { grid-template-columns: 1fr; gap: 22px; }
+  .fundador-card { flex-direction: column; }
+  .fundador-photo { width: 100%; height: 200px; }
+}
+</style>
+</head>
+<body>
+
+<!-- 1. NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-logo">
+    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting">
+  </div>
+  <div class="navbar-tag">Proposta Executiva · Opty · Maio 2026 · v1</div>
+</nav>
+
+<!-- 2. HERO -->
+<section class="hero" id="topo">
+  <div class="topo-lines">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,300 Q300,220 500,290 T900,260 T1200,300" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,500 Q300,440 500,490 T900,460 T1200,500" fill="none" stroke="white" stroke-width="0.3"/>
+    </svg>
+  </div>
+  <div class="grain-overlay"></div>
+
+  <div class="hero-badge">Proposta Executiva · Maio 2026 · Para Vanessa</div>
+  <div class="hero-eyebrow">NewScale Consulting × Opty</div>
+  <h1>Claude para o jurídico<br><em>com profundidade.</em></h1>
+  <p class="hero-desc">Manhã presencial mão na massa pra destravar o time jurídico e regulatório da Opty no Claude — do chat ao Cowork. Conteúdo 100% customizado pela rotina de M&A, regulatório e societário em grupo de saúde.</p>
+
+  <a class="hero-cta" href="#contexto">
+    <span>Ver proposta</span>
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M10 4v12M4 10l6 6 6-6" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+</section>
+
+<!-- 3. CONTEXTO -->
+<section class="context-section" id="contexto">
+  <div class="context-inner">
+    <div class="context-text reveal">
+      <span class="section-label">O Contexto</span>
+      <h2 class="section-title">A equipe jurídica já usa Claude. <em>Falta destravar a profundidade.</em></h2>
+      <p>O time da Opty já recorre ao Claude para apresentações executivas, análise de contratos e estudos de risco. Falta ir além do chat e aprender o que o Claude realmente faz pelo trabalho jurídico em escala.</p>
+      <p>Este treinamento é desenhado sob medida pela rotina da Opty: M&A em consolidação, controle regulatório de unidades, atos societários e procurações. Tudo presencial, mão na massa, com pesquisa prévia para customizar os exemplos da aula.</p>
+    </div>
+    <div class="intro-stats reveal reveal-delay-2">
+      <div class="stat-card"><div class="stat-number">10</div><div class="stat-label">pessoas treinadas</div></div>
+      <div class="stat-card"><div class="stat-number">4h</div><div class="stat-label">presencial mão na massa</div></div>
+      <div class="stat-card"><div class="stat-number" style="font-size: 1.7rem;">Claude</div><div class="stat-label">profundidade real</div></div>
+      <div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">conteúdo personalizado</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. OPORTUNIDADES -->
+<section class="dores-section">
+  <div class="dores-inner">
+    <div class="dores-head reveal">
+      <span class="section-label">O que está em jogo</span>
+      <h2 class="section-title">Três frentes que esse treinamento <em>destrava direto.</em></h2>
+    </div>
+    <div class="dores-grid">
+      <div class="dore-card reveal">
+        <div class="dore-num">01</div>
+        <div class="dore-tag">Padronização</div>
+        <div class="dore-title">Mesma receita pra todo mundo do jurídico</div>
+        <div class="dore-text">Skills compartilhadas no Claude. Toda a equipe analisando contrato, montando ato societário e gerando apresentação executiva com o mesmo padrão Opty.</div>
+      </div>
+      <div class="dore-card reveal reveal-delay-1">
+        <div class="dore-num">02</div>
+        <div class="dore-tag">Escala documental</div>
+        <div class="dore-title">Cowork lendo pastas inteiras de contrato</div>
+        <div class="dore-text">Mapeamento de cláusulas em todos os contratos de M&A. Controle de licenças, atos societários e procurações sem ter que abrir documento por documento.</div>
+      </div>
+      <div class="dore-card reveal reveal-delay-2">
+        <div class="dore-num">03</div>
+        <div class="dore-tag">Aplicação</div>
+        <div class="dore-title">Sai do dia já rodando, não como teoria</div>
+        <div class="dore-text">Os 4h presenciais são desenhados pra cada pessoa sair com pelo menos um caso de uso testado e prompt pronto pra entrar na rotina da semana seguinte.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. MÓDULOS -->
+<section class="modulos-section">
+  <div class="modulos-inner">
+    <div class="modulos-head reveal">
+      <span class="section-label">A Proposta</span>
+      <h2 class="section-title">Treinamento <em>desenhado pra Opty.</em></h2>
+    </div>
+
+    <!-- Etapa 0 - Pesquisa e Imersão -->
+    <div class="fase-header sage">
+      <div>
+        <div class="fase-tag">Etapa 0 · Antes do dia presencial</div>
+        <div class="fase-name">Pesquisa e Imersão</div>
+        <div class="fase-duration">Pesquisa com participantes · Mapeamento de casos reais · Customização do conteúdo</div>
+      </div>
+      <div class="fase-num-badge">0</div>
+    </div>
+    <div class="modulo-card" onclick="toggleModulo(this)">
+      <div class="modulo-card-header">
+        <div class="modulo-card-left">
+          <div class="modulo-icon">🔍</div>
+          <div>
+            <div class="modulo-label">Inclusa no pacote</div>
+            <div class="modulo-name">Pesquisa prévia + imersão na rotina jurídica</div>
+            <div class="modulo-chips">
+              <span class="chip">Customização total</span>
+              <span class="chip">Casos reais</span>
+            </div>
+          </div>
+        </div>
+        <div class="modulo-toggle">+</div>
+      </div>
+      <div class="modulo-body">
+        <div class="value-box">
+          <div class="value-box-icon">🎯</div>
+          <div>
+            <div class="value-box-label">Por que isso importa</div>
+            <div class="value-box-text">A aula não é genérica. Cada exemplo, prompt e exercício é construído com base na rotina real do jurídico e regulatório da Opty: M&A com cláusulas put option, licenças por unidade, atos societários, procurações, apresentações executivas.</div>
+          </div>
+        </div>
+        <ul class="modulo-items">
+          <li><strong>Pesquisa com os 10 participantes:</strong> mapeamento de usos atuais do Claude, dores específicas, frustrações, casos vivos que cada pessoa quer resolver.</li>
+          <li><strong>Alinhamento com a Vanessa:</strong> entender prioridades estratégicas do jurídico e do regulatório antes de montar o conteúdo.</li>
+          <li><strong>Banco de exemplos da Opty:</strong> casos reais da rotina (mapeamento de put option em contratos de aquisição, controle de licenças por unidade, atos societários, controle de procurações, apresentações para diretoria) viram demonstrações ao vivo no dia.</li>
+          <li><strong>Material customizado:</strong> prompts, skills e templates feitos com base na própria operação da Opty — não slides reciclados de curso de IA.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Etapa 1 - Manhã Presencial -->
+    <div class="fase-header">
+      <div>
+        <div class="fase-tag">Etapa 1 · Sexta, 12 de junho · Manhã</div>
+        <div class="fase-name">Virada IA: Claude com Profundidade</div>
+        <div class="fase-duration">Manhã presencial de 4h · Turma de 10 pessoas · Na sede da Opty</div>
+      </div>
+      <div class="fase-num-badge">1</div>
+    </div>
+    <div class="modulo-card" onclick="toggleModulo(this)">
+      <div class="modulo-card-header">
+        <div class="modulo-card-left">
+          <div class="modulo-icon">🎯</div>
+          <div>
+            <div class="modulo-label">4h presencial · Conteúdo personalizado pra Opty</div>
+            <div class="modulo-name">Treinamento "Virada IA: Claude com Profundidade"</div>
+            <div class="modulo-chips">
+              <span class="chip">Chat → Projeto → Cowork</span>
+              <span class="chip">Expositiva + mão na massa</span>
+              <span class="chip">Casos da Opty</span>
+            </div>
+          </div>
+        </div>
+        <div class="modulo-toggle">+</div>
+      </div>
+      <div class="modulo-body">
+        <div class="value-box">
+          <div class="value-box-icon">⚡</div>
+          <div>
+            <div class="value-box-label">O que isso entrega</div>
+            <div class="value-box-text">10 pessoas do jurídico e regulatório saindo com Claude rodando de verdade. Entendem como o Claude pensa, como pedir bem, como organizar contexto em Projetos e como sair do chat pra Cowork — lendo pastas inteiras de contratos, atos societários e licenças.</div>
+          </div>
+        </div>
+        <ul class="modulo-items">
+          <li><strong>Bloco 1 — Como o Claude pensa e como falar com ele:</strong> como a IA realmente funciona, os limites (alucinação, viés, segurança de dados sensíveis no jurídico), as 4 formas de usar (Chat, Projeto, Cowork, Code), e o que muda na forma de pedir. Demonstração ao vivo das diferenças.</li>
+          <li><strong>Bloco 2 — Mão na massa: Projetos, Memória e Preferências:</strong> cada participante monta seu próprio Projeto Claude no notebook — pra contratos, pra regulatório ou pro fluxo que ela escolher. Memória, Preferências e Skills personalizadas pra padronizar a "receita" entre todo o time.</li>
+          <li><strong>Bloco 3 — Cowork na rotina jurídica:</strong> Claude lendo a pasta de contratos da Opty pra mapear cláusulas (put option, exclusividade, não-compete) em escala. Migração da planilha de licenças regulatórias para um controle ativo. Skills compartilhadas pra atos societários no padrão Opty.</li>
+          <li><strong>Bloco 4 — Cada um sai com um caso rodando:</strong> os últimos 45 minutos são pra cada participante testar o próprio caso de uso com a Bruna por perto. Sai do dia com prompt pronto, projeto montado e plano pra entrar na rotina já na segunda.</li>
+          <li><strong>Formato:</strong> presencial mão na massa. Bruna mexe ao vivo, cada participante acompanha no próprio notebook. Pausas estratégicas pra tirar dúvida.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Material de apoio -->
+    <div class="fase-header sage">
+      <div>
+        <div class="fase-tag">Incluso · Tudo do treinamento</div>
+        <div class="fase-name">Biblioteca de Material</div>
+        <div class="fase-duration">Prompts · Skills · Templates · Gravação do dia</div>
+      </div>
+      <div class="fase-num-badge">★</div>
+    </div>
+    <div class="modulo-card" onclick="toggleModulo(this)">
+      <div class="modulo-card-header">
+        <div class="modulo-card-left">
+          <div class="modulo-icon">📚</div>
+          <div>
+            <div class="modulo-label">Material de apoio</div>
+            <div class="modulo-name">Tudo que rolou no dia, organizado</div>
+            <div class="modulo-chips">
+              <span class="chip">Prompts prontos</span>
+              <span class="chip">Skills Opty</span>
+              <span class="chip">Gravação</span>
+            </div>
+          </div>
+        </div>
+        <div class="modulo-toggle">+</div>
+      </div>
+      <div class="modulo-body">
+        <div class="value-box">
+          <div class="value-box-icon">📦</div>
+          <div>
+            <div class="value-box-label">O que isso entrega</div>
+            <div class="value-box-text">O time não depende de memória nem de anotação. Tudo o que foi construído fica organizado e disponível pra consulta, reuso e onboarding de novos integrantes do jurídico.</div>
+          </div>
+        </div>
+        <ul class="modulo-items">
+          <li><strong>Biblioteca de prompts:</strong> todos os prompts construídos no dia, prontos pra usar, organizados por frente (M&A, regulatório, societário, procurações, apresentações executivas).</li>
+          <li><strong>Skills compartilhadas:</strong> as Skills criadas no dia ficam exportadas pra todo o time usar — mesmo padrão, mesma "receita" entre os 10 participantes.</li>
+          <li><strong>Templates Opty:</strong> análise de contrato de aquisição, checklist regulatório, padrão de ato societário, brief executivo pra diretoria — tudo customizado pra rotina da Opty.</li>
+          <li><strong>Gravação do dia:</strong> a aula é gravada e disponibilizada sem limite de tempo. Quem não estiver pode assistir depois, e o time pode revisitar sempre que precisar.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 8. INVESTIMENTO -->
+<section class="invest-section" id="investimento">
+  <div class="invest-inner">
+    <div class="invest-head reveal">
+      <span class="section-label">Investimento</span>
+      <h2 class="section-title">Pacote único e <em>plantão sob demanda.</em></h2>
+    </div>
+
+    <div class="invest-pacote-card reveal">
+      <div>
+        <div class="invest-pacote-title">Treinamento Completo</div>
+        <div class="invest-pacote-desc">Pesquisa prévia com os 10 participantes + imersão na rotina jurídica/regulatória da Opty + manhã presencial mão na massa (4h, sexta 12/jun) + biblioteca de material (prompts, Skills Opty, templates, gravação sem limite). Tudo customizado pra Opty.</div>
+      </div>
+      <div class="invest-pacote-right">
+        <div class="invest-pacote-price">R$ 6.500</div>
+        <div class="invest-pacote-cond">Pagamento: 50% na contratação + 50% antes do dia presencial</div>
+      </div>
+    </div>
+
+    <div class="invest-modules-grid" style="grid-template-columns: 1fr;">
+      <div class="invest-mod-card reveal" style="display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 280px;">
+          <div class="invest-mod-tag">Add-on opcional · Sob demanda</div>
+          <div class="invest-mod-name" style="margin-bottom: 8px;">Plantão On-Demand</div>
+          <p style="font-size: 0.86rem; color: rgba(255,255,255,0.72); line-height: 1.65; margin: 0;">Pós-treinamento, qualquer pessoa do time agenda quando precisar — pra revisar um prompt, ajustar uma Skill ou validar um caso novo. Cobrado por hora utilizada, sem pacote mínimo, sem mensalidade. Validade 90 dias após o treinamento.</p>
+        </div>
+        <div style="text-align: right;">
+          <div class="invest-mod-price">R$ 500</div>
+          <div class="invest-mod-cond" style="margin-bottom: 0;">por hora · individual ou em grupo</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="invest-extras reveal" style="margin-top: 24px;">
+      <strong>Importante:</strong> as licenças de Claude (planos Pro, Team ou Enterprise) não estão inclusas — ficam por conta da Opty. No dia usamos as contas individuais que cada participante já tem, e ajudamos a Vanessa a definir o plano ideal pro time conforme os casos de uso evoluem (especialmente em volume de documentos e tratamento de dados sensíveis do jurídico).
+    </div>
+
+    <div class="invest-validade">
+      <span class="pulse-dot"></span>
+      <span>Validade da proposta · 10 de junho de 2026</span>
+    </div>
+  </div>
+</section>
+
+<!-- 11. GARANTIA -->
+<section class="garantia-section">
+  <div class="garantia-inner">
+    <div class="garantia-block reveal">
+      <div>
+        <span class="section-label">Garantia NewScale</span>
+        <h2>Se o time não engajou, <em>a gente volta.</em></h2>
+        <p>Se ao final do dia presencial menos da metade do time tiver saído com um caso de uso testado e prompt pronto, a NewScale faz uma sessão online complementar de 1h30 sem custo adicional. A pesquisa prévia existe pra que isso simplesmente não aconteça — mas a garantia fica registrada.</p>
+      </div>
+      <div class="garantia-selo">
+        <div class="garantia-selo-num">90</div>
+        <div class="garantia-selo-lbl">Dias de suporte</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. POR QUE A NEWSCALE -->
+<section class="porque-section">
+  <div class="porque-inner">
+    <div class="porque-head reveal">
+      <span class="section-label">Por que a NewScale</span>
+      <h2 class="section-title">Quem ensina IA <em>usa IA todo dia.</em></h2>
+    </div>
+
+    <div class="quote-block reveal">
+      <div class="quote-mark">"</div>
+      <p class="quote-text">Vanessa, treinamento de IA pra jurídico só funciona se sair do genérico. A pesquisa prévia e a imersão na rotina da Opty são o que faz cada exemplo ser sobre o trabalho real de vocês — M&A, regulatório, societário. Sem isso, é só mais um curso de IA.</p>
+      <div class="quote-sign">— Bruna Santanna, Co-Fundadora NewScale</div>
+    </div>
+
+    <div class="fundadores-grid">
+      <div class="fundador-card reveal">
+        <img class="fundador-photo" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG" alt="Bruna Santanna">
+        <div>
+          <div class="fundador-name">Bruna Santanna</div>
+          <div class="fundador-role">Co-Fundadora · Quem dá as aulas</div>
+          <div class="fundador-bio">ESPM + MBA USP. Mentora de IA no Potenc.IA (OLX, Magalu, B3, CI&T). Professora de IA pra equipes corporativas. Implementa IA no próprio negócio todo dia.</div>
+          <div class="fundador-tags">SulAmérica · Whirlpool · Blackbox AI · Potenc.IA</div>
+        </div>
+      </div>
+      <div class="fundador-card reveal reveal-delay-1">
+        <img class="fundador-photo" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/BRUNO-VARELLA-PQ.jpeg" alt="Bruno Varella">
+        <div>
+          <div class="fundador-name">Bruno Varella</div>
+          <div class="fundador-role">Co-Fundador · Estratégia e produto</div>
+          <div class="fundador-bio">ESPM. 17+ anos em Marketing, Produto e Novos Negócios. Ex-Warner Bros., Ex-Natura & Co. Já implantou Agentes de IA em redes de franquias com 700+ unidades — experiência aplicável direto pro modelo de unidades distribuídas da Opty.</div>
+          <div class="fundador-tags">Warner Bros. · Natura & Co · 700+ franquias</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13. FAQ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="faq-head reveal">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title">As dúvidas que <em>provavelmente surgem.</em></h2>
+    </div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <div class="faq-q-text">Por que só uma sessão presencial e não híbrido com aulas online antes?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-a"><p>Foi a sua escolha — e faz sentido. Sexta é o único dia em que todo o time está no escritório, e o presencial absorve melhor o "como fazer" do que aula online com 10 pessoas. Como o time já usa Claude no dia a dia, a pesquisa prévia substitui o nivelamento teórico e a manhã inteira fica pra profundidade.</p></div>
+    </div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <div class="faq-q-text">E se alguém do time não puder estar no dia?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-a"><p>O dia é gravado e a gravação fica disponível sem limite de tempo. Os materiais (prompts, Skills, templates) também ficam organizados. Quem não puder ir consegue se atualizar — e pode usar o plantão on-demand pra tirar dúvida específica depois.</p></div>
+    </div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <div class="faq-q-text">Como funciona a pesquisa prévia?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-a"><p>Mando um formulário curto pros 10 participantes antes do dia. Pergunto como cada um usa Claude hoje, quais são as 2-3 tarefas que mais consomem tempo no jurídico, onde já tentou Claude e travou, e que caso específico gostaria de resolver no dia. As respostas viram a base dos exemplos, demos e exercícios da manhã. É isso que torna a aula da Opty — não um pacote genérico.</p></div>
+    </div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <div class="faq-q-text">A Opty fica com material pra usar depois?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-a"><p>Sim. Biblioteca completa: prompts construídos no dia organizados por frente (M&A, regulatório, societário, procurações, apresentações), Skills exportadas pra todo mundo do time poder importar e usar o mesmo padrão, templates customizados pra rotina da Opty e gravação completa do dia. Tudo pra reuso e pra onboarding de novos integrantes do jurídico.</p></div>
+    </div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <div class="faq-q-text">E se uma pessoa do time quiser mentoria individual depois?</div>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-a"><p>O plantão on-demand cobre isso. Sob demanda, sem pacote fechado. Quem do time precisar agenda — pra revisar um prompt específico, ajustar uma Skill, validar um caso novo. R$ 500 por hora, individual ou em grupo. Cobramos só o que for usado, com validade de 90 dias após o treinamento.</p></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 14. PRÓXIMOS PASSOS -->
+<section class="steps-section">
+  <div class="steps-inner">
+    <div class="steps-head reveal">
+      <span class="section-label">Próximos passos</span>
+      <h2 class="section-title">Do aceite ao primeiro <em>agente rodando.</em></h2>
+    </div>
+
+    <div class="step-item reveal">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-prazo">Esta semana</div>
+        <div class="step-title">Aprovação da proposta</div>
+        <p class="step-desc">Vanessa aprova internamente. Ajustes finos (escopo, valor, formato) são incorporados em até 2 dias úteis se necessário.</p>
+      </div>
+    </div>
+    <div class="step-item reveal">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-prazo">Até 30 de maio</div>
+        <div class="step-title">Assinatura, entrada e pesquisa prévia</div>
+        <p class="step-desc">Contrato assinado, 50% da entrada, e envio da pesquisa pros 10 participantes. Alinhamento curto com a Vanessa pra calibrar prioridades.</p>
+      </div>
+    </div>
+    <div class="step-item reveal">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-prazo">1 a 5 de junho</div>
+        <div class="step-title">Análise das respostas + customização do conteúdo</div>
+        <p class="step-desc">A NewScale recebe as respostas da pesquisa e monta o banco de exemplos da Opty: casos reais de M&A, regulatório, societário e procurações que vão virar as demos do dia.</p>
+      </div>
+    </div>
+    <div class="step-item reveal">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-prazo">Sexta, 12 de junho · manhã</div>
+        <div class="step-title">Manhã presencial mão na massa</div>
+        <p class="step-desc">4h presenciais na sede da Opty. 10 pessoas do jurídico e regulatório. Cada participante sai com pelo menos um caso de uso testado e prompt pronto pra rotina da semana seguinte.</p>
+      </div>
+    </div>
+    <div class="step-item reveal">
+      <div class="step-num">5</div>
+      <div>
+        <div class="step-prazo">Pós-treinamento · sob demanda</div>
+        <div class="step-title">Plantões quando precisar</div>
+        <p class="step-desc">Qualquer pessoa do time agenda quando precisar — R$ 500/h, sem pacote mínimo. Validade de 90 dias após o dia presencial.</p>
+      </div>
+    </div>
+
+    <div class="steps-closer">"Vocês já usam Claude. Sexta, vocês descobrem o que ele ainda não mostrou."</div>
+  </div>
+</section>
+
+<!-- 15. CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-fechamento-inner">
+      <div class="cta-validade">
+        <span class="pulse-dot"></span>
+        Validade · 10 de junho de 2026
+      </div>
+      <h2>Vanessa, vamos<br><em>destravar o jurídico?</em></h2>
+      <p>Treinamento desenhado pra Opty, R$ 6.500 fechado, conteúdo 100% customizado pela pesquisa prévia. Plantão só se precisar — quando precisar.</p>
+      <div class="cta-buttons">
+        <a class="cta-btn cta-btn-primary" href="https://wa.me/5511971901020?text=Bruna%2C%20Vanessa%20da%20Opty%20%E2%80%94%20quero%20fechar%20o%20treinamento" target="_blank">Fechar treinamento</a>
+        <a class="cta-btn cta-btn-secondary" href="https://wa.me/5511971901020?text=Bruna%2C%20uma%20d%C3%BAvida%20sobre%20a%20proposta%20da%20Opty" target="_blank">Tirar uma dúvida</a>
+      </div>
+      <div class="cta-metricas">
+        <div>
+          <div class="cta-met-num">10</div>
+          <div class="cta-met-lbl">Pessoas treinadas</div>
+        </div>
+        <div>
+          <div class="cta-met-num">100%</div>
+          <div class="cta-met-lbl">Conteúdo personalizado</div>
+        </div>
+        <div>
+          <div class="cta-met-num" style="font-size: 1.2rem;">Claude</div>
+          <div class="cta-met-lbl">Profundidade real</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 16. FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">NewScale<span>Consulting</span></div>
+  <div class="footer-date">Proposta exclusiva · Opty · v1<br>26 de maio de 2026 · Validade até 10/06/2026</div>
+</footer>
+
+<script>
+// Navbar blur
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Módulos accordion
+function toggleModulo(card) { card.classList.toggle('open'); }
+
+// FAQ accordion (one open at a time)
+function toggleFaq(item) {
+  document.querySelectorAll('.faq-item.open').forEach(other => {
+    if (other !== item) other.classList.remove('open');
+  });
+  item.classList.toggle('open');
+}
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.06 });
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
+                            
