@@ -913,5 +913,56 @@ p { font-size: 0.94rem; line-height: 1.75; color: #4a6a6f; margin-bottom: 14px; 
       <p>Treinamento desenhado pra Opty, R$ 6.500 fechado, conteúdo 100% customizado pela pesquisa prévia. Plantão só se precisar — quando precisar.</p>
       <div class="cta-buttons">
         <a class="cta-btn cta-btn-primary" href="https://wa.me/5511971901020?text=Bruna%2C%20Opty%20%E2%80%94%20quero%20fechar%20o%20treinamento" target="_blank">Fechar treinamento</a>
-        <a class="cta-btn cta-btn-secondary" href="https://wa.me/5511971901020?text=Bruna%2C%20uma%20d%C3%BAvida%20sobre%20a%20proposta%20da%20Opty" target="_blank">Tirar uma dúvida</a>
-      </di
+      </div>
+      <div class="cta-metricas">
+        <div>
+          <div class="cta-met-num">10</div>
+          <div class="cta-met-lbl">Pessoas treinadas</div>
+        </div>
+        <div>
+          <div class="cta-met-num">100%</div>
+          <div class="cta-met-lbl">Conteúdo personalizado</div>
+        </div>
+        <div>
+          <div class="cta-met-num" style="font-size: 1.2rem;">Claude</div>
+          <div class="cta-met-lbl">Profundidade real</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 16. FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">NewScale<span>Consulting</span></div>
+  <div class="footer-date">Proposta exclusiva · Opty · v1<br>26 de maio de 2026 · Validade até 10/06/2026</div>
+</footer>
+
+<script>
+// Navbar blur
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Módulos accordion
+function toggleModulo(card) { card.classList.toggle('open'); }
+
+// FAQ accordion (one open at a time)
+function toggleFaq(item) {
+  document.querySelectorAll('.faq-item.open').forEach(other => {
+    if (other !== item) other.classList.remove('open');
+  });
+  item.classList.toggle('open');
+}
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.06 });
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
