@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Comercial · Cartec · NewScale Consulting · v1</title>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="bingbot" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#FAFAF8;color:#14373C}
+:root{
+  --ink:#14373C;--ink2:#1a4449;--sage:#435D51;
+  --terra:#B06E4A;--tl:#c4835e;--sand:#A38362;
+  --cream:#E8E6E0;--cl:#F4F3EF;--white:#FAFAF8
+}
+
+/* NAVBAR */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:16px 48px;background:transparent;transition:background .4s,backdrop-filter .4s}
+.navbar.scrolled{background:rgba(12,36,39,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.navbar-logo img{height:72px;opacity:.95;display:block}
+.navbar-tag{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--tl)}
+
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(145deg,#0c2427 0%,#14373C 38%,#1d4840 72%,#435D51 100%);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 40px 80px;overflow:hidden;position:relative}
+.topo-lines{position:absolute;inset:0;opacity:.08;pointer-events:none}
+.topo-lines svg{width:100%;height:100%}
+.grain-overlay{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.03;pointer-events:none}
+.hero-badge{display:inline-block;background:rgba(176,110,74,.15);color:var(--tl);font-size:.65rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:6px 16px;border-radius:20px;border:1px solid rgba(176,110,74,.25);margin-bottom:28px;animation:fadeUp .6s ease both .2s}
+.hero-eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:20px;animation:fadeUp .6s ease both .3s}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:700;color:#fff;line-height:1.15;max-width:820px;margin-bottom:28px;animation:fadeUp .6s ease both .4s}
+.hero h1 em{font-style:italic;color:var(--tl)}
+.hero-desc{font-size:.97rem;font-weight:300;color:rgba(255,255,255,.65);max-width:620px;line-height:1.75;margin-bottom:52px;animation:fadeUp .6s ease both .5s}
+.hero-cta{animation:fadeUp .6s ease both .7s;display:flex;flex-direction:column;align-items:center;gap:10px;color:rgba(255,255,255,.35);font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:color .3s}
+.hero-cta:hover{color:rgba(255,255,255,.7)}
+.hero-cta svg{animation:bounce 2s infinite}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+
+/* LABELS GERAIS */
+.section-label{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);margin-bottom:12px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.85rem,3.2vw,2.6rem);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:24px}
+.section-title em{font-style:italic;color:var(--terra)}
+.section-title--white{color:#fff}
+.section-title--white em{color:var(--tl)}
+
+/* CONTEXTO */
+.context-section{background:var(--cl);padding:100px 40px}
+.context-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.context-text p{font-size:.92rem;font-weight:300;color:#4a6a6f;line-height:1.78;margin-bottom:16px}
+.intro-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stat-card{background:var(--ink);border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;gap:8px}
+.stat-card:nth-child(2){background:var(--terra)}
+.stat-card:nth-child(3){background:var(--sage)}
+.stat-card:nth-child(4){background:#1a4449}
+.stat-number{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:#fff;line-height:1}
+.stat-label{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+
+/* CUSTO DA INAÇÃO */
+.custo-section{background:#fff;padding:100px 40px}
+.custo-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.custo-intro{font-size:.92rem;font-weight:300;color:#4a6a6f;line-height:1.78;margin-top:16px}
+.custo-list{margin-top:8px}
+.custo-item{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding:18px 0;border-bottom:1px dashed rgba(20,55,60,.15)}
+.custo-item-label{font-size:.87rem;font-weight:500;color:var(--ink)}
+.custo-item-sub{font-size:.75rem;color:#7a9a9f;margin-top:3px}
+.custo-item-value{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--terra);white-space:nowrap}
+.custo-total{padding-top:22px;margin-top:6px;border-top:2px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+.custo-total-label{font-size:.82rem;font-weight:600;color:var(--ink);text-transform:uppercase;letter-spacing:.08em}
+.custo-total-value{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--ink)}
+.custo-aviso{font-size:.72rem;color:#8aa0a5;margin-top:14px;line-height:1.6;font-style:italic}
+
+/* DORES */
+.dores-section{background:var(--ink);padding:100px 40px}
+.dores-inner{max-width:1100px;margin:0 auto}
+.dores-header{margin-bottom:48px}
+.dores-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.dore-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:32px 28px;position:relative;overflow:hidden;transition:border-color .3s,background .3s}
+.dore-card:hover{border-color:rgba(176,110,74,.3);background:rgba(176,110,74,.04)}
+.dore-num{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:700;color:rgba(176,110,74,.08);line-height:1;position:absolute;top:12px;right:20px}
+.dore-tag{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tl);margin-bottom:10px}
+.dore-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:#fff;line-height:1.25;margin-bottom:14px;position:relative;z-index:1}
+.dore-text{font-size:.86rem;font-weight:300;color:rgba(255,255,255,.65);line-height:1.75}
+
+/* MÓDULOS */
+.modulos-section{background:var(--white);padding:100px 40px}
+.modulos-inner{max-width:1100px;margin:0 auto}
+.modulos-header{margin-bottom:52px}
+.fase-block{margin-bottom:36px}
+.fase-header{display:flex;justify-content:space-between;align-items:center;background:var(--ink);border-radius:14px 14px 0 0;padding:24px 28px}
+.fase-header--terra{background:var(--terra)}
+.fase-header--sage{background:var(--sage)}
+.fase-tag{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:4px}
+.fase-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:#fff}
+.fase-duration{font-size:.75rem;color:rgba(255,255,255,.6);margin-top:4px}
+.fase-num-badge{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:rgba(255,255,255,.12);line-height:1}
+.modulo-card{background:#fff;border:1px solid rgba(20,55,60,.08);border-top:none;cursor:pointer;transition:background .2s}
+.modulo-card:last-child{border-radius:0 0 14px 14px}
+.modulo-card:hover{background:rgba(20,55,60,.02)}
+.modulo-card-header{display:flex;justify-content:space-between;align-items:center;padding:22px 28px}
+.modulo-card-left{display:flex;align-items:center;gap:16px}
+.modulo-icon{font-size:1.4rem}
+.modulo-label{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);margin-bottom:3px}
+.modulo-name{font-size:.97rem;font-weight:600;color:var(--ink)}
+.modulo-chips{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+.chip{background:rgba(20,55,60,.06);color:#5a7a7f;font-size:.65rem;font-weight:600;padding:2px 9px;border-radius:20px}
+.chip--future{background:rgba(163,131,98,.12);color:var(--sand)}
+.modulo-toggle{font-size:1.4rem;font-weight:300;color:var(--terra);transition:transform .3s;line-height:1;user-select:none}
+.modulo-card.open .modulo-toggle{transform:rotate(45deg)}
+.modulo-card.open .modulo-chips{display:none}
+.modulo-body{display:none;padding:0 28px 28px;border-top:1px solid rgba(20,55,60,.06)}
+.modulo-card.open .modulo-body{display:block;padding-top:24px}
+.value-box{display:flex;gap:16px;align-items:flex-start;background:var(--cl);border-radius:12px;padding:18px 20px;margin-bottom:20px}
+.value-box-icon{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+.value-box-label{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);margin-bottom:4px}
+.value-box-text{font-size:.9rem;color:var(--ink);font-weight:500;line-height:1.55}
+.modulo-desc{font-size:.88rem;font-weight:300;color:#5a7a7f;line-height:1.78;margin-bottom:18px}
+.modulo-items{list-style:none;display:flex;flex-direction:column;gap:10px}
+.modulo-items li{font-size:.86rem;color:#4a6a6f;line-height:1.65;padding-left:18px;position:relative}
+.modulo-items li::before{content:'→';position:absolute;left:0;color:var(--terra);font-size:.8rem;top:2px}
+.disclaimer-box{background:rgba(163,131,98,.08);border-left:3px solid var(--sand);border-radius:0 8px 8px 0;padding:14px 16px;margin-top:18px;font-size:.78rem;color:#6a8a8f;line-height:1.65}
+.future-badge-box{display:flex;align-items:center;gap:12px;background:rgba(163,131,98,.07);border:1px solid rgba(163,131,98,.2);border-radius:10px;padding:14px 18px;margin-top:18px}
+.future-badge-box-icon{font-size:1.1rem}
+.future-badge-box-text{font-size:.82rem;color:var(--sand);font-weight:500;line-height:1.5}
+
+/* COMO FUNCIONA */
+.demo-section{background:var(--cl);padding:100px 40px}
+.demo-inner{max-width:1100px;margin:0 auto}
+.demo-header{margin-bottom:52px}
+
+/* Mockup PPAP */
+.ppap-mockup{background:#fff;border:1px solid rgba(20,55,60,.08);border-radius:16px;overflow:hidden;box-shadow:0 12px 40px rgba(20,55,60,.08);margin-bottom:60px}
+.ppap-mockup-header{background:var(--ink);padding:16px 24px;display:flex;align-items:center;gap:12px}
+.ppap-mockup-dot{width:10px;height:10px;border-radius:50%}
+.ppap-mockup-dot:nth-child(1){background:#ff5f57}
+.ppap-mockup-dot:nth-child(2){background:#ffbd2e}
+.ppap-mockup-dot:nth-child(3){background:#28c840}
+.ppap-mockup-title{font-size:.68rem;font-weight:600;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase;margin-left:8px}
+.ppap-mockup-body{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.ppap-col{padding:28px 28px}
+.ppap-col:first-child{border-right:1px solid rgba(20,55,60,.06)}
+.ppap-col-label{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:14px}
+.ppap-doc-icon{font-size:2rem;margin-bottom:10px}
+.ppap-doc-name{font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:4px}
+.ppap-doc-sub{font-size:.75rem;color:#8aa0a5}
+.ppap-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(20,55,60,.06);gap:12px}
+.ppap-row:last-child{border-bottom:none}
+.ppap-row-num{font-size:.68rem;font-weight:700;color:var(--terra);min-width:32px}
+.ppap-row-desc{font-size:.78rem;color:#4a6a6f;flex:1}
+.ppap-row-val{font-size:.78rem;font-weight:600;color:var(--ink);white-space:nowrap}
+.ppap-row-val.found{color:var(--sage)}
+.ppap-row-val.pending{color:var(--sand)}
+.ppap-status-bar{background:var(--cl);padding:14px 28px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(20,55,60,.06)}
+.ppap-status-text{font-size:.75rem;color:#5a7a7f}
+.ppap-status-btn{background:var(--terra);color:#fff;font-size:.72rem;font-weight:600;padding:7px 16px;border-radius:20px;border:none;cursor:pointer}
+
+/* ANTES/DEPOIS */
+.ad-section{margin-top:0}
+.ad-header{margin-bottom:32px}
+.ad-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ad-col{border-radius:16px;padding:36px 32px;overflow:hidden}
+.ad-col-antes{background:var(--cl);border:1px solid rgba(20,55,60,.08)}
+.ad-col-depois{background:linear-gradient(155deg,var(--ink),var(--sage));color:#fff}
+.ad-col-title{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:20px}
+.ad-col-antes .ad-col-title{color:var(--terra)}
+.ad-col-depois .ad-col-title{color:rgba(255,255,255,.5)}
+.ad-timeline{display:flex;flex-direction:column;gap:0}
+.ad-step{display:flex;gap:16px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(20,55,60,.07)}
+.ad-col-depois .ad-step{border-bottom-color:rgba(255,255,255,.07)}
+.ad-step:last-of-type{border-bottom:none}
+.ad-step-time{font-family:'Cormorant Garamond',serif;font-weight:700;min-width:56px;font-variant-numeric:tabular-nums;font-size:.97rem}
+.ad-col-antes .ad-step-time{color:var(--ink)}
+.ad-col-depois .ad-step-time{color:var(--tl)}
+.ad-step-desc{font-size:.82rem;line-height:1.6}
+.ad-col-antes .ad-step-desc{color:#5a7a7f}
+.ad-col-depois .ad-step-desc{color:rgba(255,255,255,.75)}
+.ad-step-desc strong{font-weight:600}
+.ad-col-antes .ad-step-desc strong{color:var(--ink)}
+.ad-col-depois .ad-step-desc strong{color:#fff}
+.ad-total{margin-top:20px;padding-top:18px;border-top:2px solid rgba(20,55,60,.1);display:flex;justify-content:space-between;align-items:center}
+.ad-col-depois .ad-total{border-top-color:rgba(255,255,255,.15)}
+.ad-total-label{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.ad-col-antes .ad-total-label{color:#8aa0a5}
+.ad-col-depois .ad-total-label{color:rgba(255,255,255,.45)}
+.ad-total-num{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700}
+.ad-col-antes .ad-total-num{color:var(--terra)}
+.ad-col-depois .ad-total-num{color:var(--tl)}
+
+/* INVESTIMENTO */
+.invest-section{background:var(--ink);padding:100px 40px}
+.invest-inner{max-width:1100px;margin:0 auto}
+.invest-header{margin-bottom:52px}
+.invest-single-wrap{max-width:560px;margin-bottom:32px}
+.invest-mod-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:36px 32px}
+.invest-mod-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px}
+.invest-mod-tag{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tl);margin-bottom:6px}
+.invest-mod-name{font-size:1.1rem;font-weight:600;color:#fff;line-height:1.3}
+.invest-mod-price{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:700;color:#fff;line-height:1}
+.invest-mod-price-label{font-size:.65rem;color:rgba(255,255,255,.4);margin-top:4px;text-align:right}
+.invest-mod-items{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+.invest-mod-items li{font-size:.82rem;color:rgba(255,255,255,.6);padding-left:16px;position:relative;line-height:1.55}
+.invest-mod-items li::before{content:'✓';position:absolute;left:0;color:var(--sage);font-size:.75rem}
+.invest-mod-divider{height:1px;background:rgba(255,255,255,.08);margin:20px 0}
+.invest-mod-mens{display:flex;justify-content:space-between;align-items:center}
+.invest-mod-mens-label{font-size:.72rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.08em}
+.invest-mod-mens-val{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--tl)}
+.invest-mod-mens-sub{font-size:.65rem;color:rgba(255,255,255,.35);text-align:right;margin-top:2px}
+
+/* Módulos futuros no card de investimento */
+.invest-future-note{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:28px 32px;margin-bottom:32px}
+.invest-future-note-title{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.75);margin-bottom:8px}
+.invest-future-note-text{font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.65}
+
+/* Cobertura mensalidade */
+.mens-section-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:20px;margin-top:48px}
+.mens-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:48px}
+.mens-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:20px 18px}
+.mens-card-icon{font-size:1.2rem;margin-bottom:10px}
+.mens-card-title{font-size:.8rem;font-weight:600;color:#fff;margin-bottom:6px}
+.mens-card-text{font-size:.75rem;color:rgba(255,255,255,.5);line-height:1.6}
+
+/* ROI */
+.roi-check{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;margin-bottom:36px}
+.roi-text p{font-size:.9rem;font-weight:300;color:rgba(255,255,255,.65);line-height:1.78;margin-bottom:12px}
+.roi-num-box{text-align:center;background:rgba(255,255,255,.04);border:1px solid rgba(196,131,94,.2);border-radius:16px;padding:36px 28px}
+.roi-payback-label{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:12px}
+.roi-payback-num{font-family:'Cormorant Garamond',serif;font-size:3.6rem;font-weight:700;color:var(--tl);line-height:1}
+.roi-payback-sub{font-size:.75rem;color:rgba(255,255,255,.4);margin-top:8px;line-height:1.5}
+
+/* APIs aviso */
+.apis-aviso{border-left:3px solid var(--terra);background:rgba(176,110,74,.07);border-radius:0 10px 10px 0;padding:16px 20px;font-size:.78rem;color:rgba(255,255,255,.55);line-height:1.65}
+
+/* DIAGNÓSTICO TÉCNICO */
+.diag-section{background:var(--cl);padding:100px 40px}
+.diag-inner{max-width:1100px;margin:0 auto}
+.diag-intro{font-size:.92rem;color:#4a6a6f;line-height:1.78;max-width:680px;margin-top:16px;margin-bottom:48px}
+.diag-table{border:1px solid rgba(20,55,60,.1);border-radius:16px;overflow:hidden}
+.diag-row{display:grid;grid-template-columns:200px 1fr 1fr 1fr;gap:0;border-bottom:1px solid rgba(20,55,60,.07)}
+.diag-row:last-child{border-bottom:none}
+.diag-row>div{padding:18px 20px;font-size:.82rem;border-right:1px solid rgba(20,55,60,.07)}
+.diag-row>div:last-child{border-right:none}
+.diag-row--header{background:var(--ink)}
+.diag-row--header>div{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);border-right-color:rgba(255,255,255,.07)}
+.diag-sys-name-sm{font-weight:700;color:var(--ink);font-size:.88rem;margin-bottom:4px}
+.diag-region-sm{font-size:.68rem;color:var(--terra);font-weight:600}
+.diag-cell-text{color:#5a7a7f;line-height:1.65}
+.diag-cell-rec{background:rgba(20,55,60,.02);color:var(--ink);font-weight:500}
+.diag-badge{font-size:.6rem;font-weight:700;padding:3px 10px;border-radius:20px;display:inline-block;margin-top:4px}
+.diag-badge--good{background:rgba(67,93,81,.1);color:var(--sage)}
+.diag-badge--mid{background:rgba(163,131,98,.12);color:var(--sand)}
+
+/* ONDA FUTURA */
+.onda-section{background:linear-gradient(155deg,#0c2427,#14373C 60%,#1d4840 100%);padding:100px 40px}
+.onda-inner{max-width:1100px;margin:0 auto}
+.onda-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:start}
+.onda-text p{font-size:.92rem;font-weight:300;color:rgba(255,255,255,.6);line-height:1.78;margin-bottom:16px;margin-top:16px}
+.onda-card{background:rgba(255,255,255,.04);border:1px solid rgba(196,131,94,.25);border-radius:16px;padding:32px 30px}
+.onda-card-title{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tl);margin-bottom:20px}
+.onda-item{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.onda-item:last-child{border-bottom:none}
+.onda-item-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px}
+.onda-item-name{font-size:.85rem;font-weight:600;color:#fff;margin-bottom:3px}
+.onda-item-desc{font-size:.77rem;color:rgba(255,255,255,.5);line-height:1.55}
+
+/* GARANTIA */
+.garantia-section{background:#fff;padding:100px 40px}
+.garantia-inner{max-width:1100px;margin:0 auto}
+.garantia-block{background:linear-gradient(135deg,var(--ink),var(--sage));border-radius:20px;padding:48px 56px;display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center;overflow:hidden;position:relative}
+.garantia-block::before{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,.03);top:-100px;right:-80px;pointer-events:none}
+.garantia-text p{font-size:.92rem;font-weight:300;color:rgba(255,255,255,.7);line-height:1.78;margin-top:16px}
+.garantia-right{text-align:center}
+.garantia-selo-num{font-family:'Cormorant Garamond',serif;font-size:3.6rem;font-weight:700;color:var(--tl);line-height:1}
+.garantia-selo-label{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:8px}
+.garantia-selos{display:flex;flex-direction:column;gap:10px;margin-top:24px}
+.garantia-selo-item{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.05);border-radius:8px;padding:10px 14px}
+.garantia-selo-item span{font-size:.78rem;color:rgba(255,255,255,.65)}
+
+/* POR QUE NEWSCALE */
+.porque-section{background:var(--cl);padding:100px 40px}
+.porque-inner{max-width:1100px;margin:0 auto}
+.quote-block{background:linear-gradient(135deg,var(--ink),var(--ink2));border-radius:16px;padding:48px 52px;margin-bottom:52px;position:relative;overflow:hidden}
+.quote-block::before{content:'"';font-family:'Cormorant Garamond',serif;font-size:12rem;font-weight:700;color:rgba(255,255,255,.04);position:absolute;top:-20px;left:20px;line-height:1;pointer-events:none}
+.quote-text{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;font-style:italic;color:rgba(255,255,255,.85);line-height:1.7;max-width:680px;position:relative;z-index:1}
+.quote-author{margin-top:20px;font-size:.75rem;font-weight:600;color:var(--tl);letter-spacing:.08em;text-transform:uppercase}
+.metodologia-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--ink);margin-bottom:28px;margin-top:52px}
+.metodologia-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:52px}
+.met-card{background:#fff;border:1px solid rgba(20,55,60,.07);border-radius:14px;padding:26px 24px}
+.met-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:rgba(176,110,74,.25);line-height:1;margin-bottom:8px}
+.met-title{font-size:.85rem;font-weight:700;color:var(--ink);margin-bottom:8px}
+.met-text{font-size:.8rem;font-weight:300;color:#5a7a7f;line-height:1.65}
+.fundadores-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--ink);margin-bottom:28px}
+.fundadores-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.fundador-card{background:#fff;border:1px solid rgba(20,55,60,.07);border-radius:14px;overflow:hidden;display:flex}
+.fundador-photo{width:140px;min-width:140px;object-fit:cover;object-position:top center}
+.fundador-info{padding:24px 22px}
+.fundador-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:3px}
+.fundador-role{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra);margin-bottom:10px}
+.fundador-bio{font-size:.78rem;font-weight:300;color:#5a7a7f;line-height:1.65;margin-bottom:12px}
+.fundador-tags{display:flex;flex-wrap:wrap;gap:5px}
+.fundador-tag{background:rgba(20,55,60,.06);color:#5a7a7f;font-size:.62rem;font-weight:600;padding:2px 8px;border-radius:20px}
+
+/* FAQ */
+.faq-section{background:#fff;padding:100px 40px}
+.faq-inner{max-width:760px;margin:0 auto}
+.faq-header{margin-bottom:40px}
+.faq-list{display:flex;flex-direction:column;gap:12px}
+.faq-item{border:1px solid rgba(20,55,60,.08);border-radius:12px;overflow:hidden;cursor:pointer;transition:border-color .3s}
+.faq-item:hover,.faq-item.open{border-color:rgba(176,110,74,.25)}
+.faq-question{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;gap:16px}
+.faq-q-text{font-size:.9rem;font-weight:500;color:var(--ink);line-height:1.4}
+.faq-toggle{font-size:1.3rem;color:var(--terra);transition:transform .3s;flex-shrink:0;line-height:1;user-select:none}
+.faq-item.open .faq-toggle{transform:rotate(45deg)}
+.faq-answer{display:none;padding:0 24px 20px;font-size:.85rem;font-weight:300;color:#5a7a7f;line-height:1.75;border-top:1px solid rgba(20,55,60,.06)}
+.faq-item.open .faq-answer{display:block;padding-top:16px}
+
+/* PRÓXIMOS PASSOS */
+.steps-section{background:linear-gradient(165deg,#14373C,#194040 55%,#435D51 100%);padding:100px 40px}
+.steps-inner{max-width:760px;margin:0 auto}
+.steps-header{margin-bottom:52px}
+.steps-list{display:flex;flex-direction:column;gap:0}
+.step-item{display:flex;gap:24px;align-items:flex-start;padding:0 0 36px;position:relative}
+.step-item:not(:last-child)::after{content:'';position:absolute;left:20px;top:44px;bottom:0;width:1px;background:rgba(176,110,74,.2)}
+.step-num{width:42px;height:42px;min-width:42px;border-radius:50%;background:rgba(176,110,74,.15);border:1px solid rgba(176,110,74,.35);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--tl)}
+.step-prazo{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--tl);margin-bottom:5px}
+.step-title{font-size:.97rem;font-weight:600;color:#fff;margin-bottom:6px}
+.step-desc{font-size:.84rem;font-weight:300;color:rgba(255,255,255,.6);line-height:1.7}
+.steps-fechamento{font-size:.92rem;font-style:italic;color:rgba(255,255,255,.5);margin-top:12px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08)}
+
+/* CTA FECHAMENTO */
+.cta-section{background:#fff;padding:80px 40px}
+.cta-inner{max-width:900px;margin:0 auto}
+.cta-fechamento-inner{background:linear-gradient(150deg,#0c2427,#14373C 55%,#1d4840 100%);border-radius:24px;padding:64px 56px;text-align:center;position:relative;overflow:hidden}
+.cta-fechamento-inner::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(67,93,81,.15);bottom:-200px;left:50%;transform:translateX(-50%);pointer-events:none}
+.cta-validade-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(176,110,74,.12);border:1px solid rgba(176,110,74,.2);border-radius:20px;padding:6px 14px;margin-bottom:32px;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--tl)}
+.cta-pulse{width:7px;height:7px;border-radius:50%;background:var(--tl);animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.cta-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:#fff;line-height:1.2;margin-bottom:20px;position:relative;z-index:1}
+.cta-h2 em{font-style:italic;color:var(--tl)}
+.cta-desc{font-size:.92rem;font-weight:300;color:rgba(255,255,255,.6);line-height:1.75;max-width:580px;margin:0 auto 40px;position:relative;z-index:1}
+.cta-buttons{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:48px;position:relative;z-index:1}
+.cta-btn-primary{background:var(--terra);color:#fff;box-shadow:0 8px 28px rgba(176,110,74,.35);padding:16px 30px;border-radius:40px;font-size:.87rem;font-weight:600;text-decoration:none;transition:background .3s,transform .2s}
+.cta-btn-primary:hover{background:var(--tl);transform:translateY(-2px)}
+.cta-btn-secondary{background:transparent;color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.25);padding:16px 30px;border-radius:40px;font-size:.87rem;font-weight:500;text-decoration:none;transition:border-color .3s,color .3s}
+.cta-btn-secondary:hover{border-color:rgba(255,255,255,.5);color:#fff}
+.cta-metricas{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative;z-index:1}
+.cta-metrica{padding:20px;border:1px solid rgba(255,255,255,.08);border-radius:12px}
+.cta-metrica-num{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--tl);line-height:1;margin-bottom:6px}
+.cta-metrica-label{font-size:.7rem;font-weight:500;color:rgba(255,255,255,.5);line-height:1.4;text-transform:uppercase;letter-spacing:.06em}
+
+/* FOOTER */
+.footer{background:var(--ink);padding:28px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-brand{font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.06em}
+.footer-brand span{font-weight:300;margin-left:3px;color:rgba(255,255,255,.35)}
+.footer-date{font-size:.7rem;color:rgba(255,255,255,.3);text-align:right;line-height:1.6}
+
+/* RESPONSIVO */
+@media(max-width:900px){
+  section,.hero,.context-section,.custo-section,.dores-section,.modulos-section,.demo-section,.invest-section,.diag-section,.onda-section,.garantia-section,.porque-section,.faq-section,.steps-section,.cta-section{padding:70px 24px}
+  .navbar{padding:14px 24px}
+  .navbar-tag{display:none}
+  .hero{padding:80px 24px}
+  .context-inner,.custo-grid,.onda-grid,.roi-check,.garantia-block,.ad-grid{grid-template-columns:1fr;gap:32px}
+  .intro-stats{grid-template-columns:1fr 1fr}
+  .dores-grid,.metodologia-grid{grid-template-columns:1fr 1fr}
+  .invest-modules-grid,.fundadores-grid{grid-template-columns:1fr}
+  .mens-grid{grid-template-columns:1fr 1fr}
+  .ppap-mockup-body{grid-template-columns:1fr}
+  .ppap-col:first-child{border-right:none;border-bottom:1px solid rgba(20,55,60,.06)}
+  .fundador-card{flex-direction:column}
+  .fundador-photo{width:100%;height:200px}
+  .garantia-block,.cta-fechamento-inner{padding:36px 28px}
+  .cta-metricas{grid-template-columns:1fr}
+  .footer{flex-direction:column;gap:16px;text-align:center}
+  .footer-date{text-align:center}
+  .diag-row{grid-template-columns:1fr}
+  .diag-row>div{border-right:none;border-bottom:1px solid rgba(20,55,60,.07)}
+  .diag-row>div:last-child{border-bottom:none}
+  .diag-row--header{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-logo">
+    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting">
+  </div>
+  <div class="navbar-tag">Proposta Executiva · Cartec · Maio 2026</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="topo-lines">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,300 Q300,220 500,290 T900,260 T1200,300" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,500 Q300,440 500,490 T900,460 T1200,500" fill="none" stroke="white" stroke-width="0.3"/>
+      <path d="M0,250 Q250,180 450,240 T850,210 T1200,250" fill="none" stroke="white" stroke-width="0.3"/>
+      <path d="M0,550 Q250,500 450,540 T850,510 T1200,550" fill="none" stroke="white" stroke-width="0.25"/>
+    </svg>
+  </div>
+  <div class="grain-overlay"></div>
+  <div class="hero-badge">Proposta Executiva · Maio 2026 · Para Ricardo e Daniela</div>
+  <div class="hero-eyebrow">NewScale Consulting × Metalúrgica Cartec</div>
+  <h1>60 anos de precisão na produção —<br><em>agora com inteligência na documentação.</em></h1>
+  <p class="hero-desc">A Cartec domina o processo de fabricar. O gargalo está em documentar: horas de boletamento manual, relatórios preenchidos um a um, e uma equipe especializada consumida por trabalho que a IA já sabe fazer.</p>
+  <a class="hero-cta" href="#contexto">
+    <span>Ver proposta</span>
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M10 4v12M4 10l6 6 6-6" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+</section>
+
+<!-- CONTEXTO -->
+<section class="context-section" id="contexto">
+  <div class="context-inner">
+    <div class="context-text reveal">
+      <span class="section-label">O Contexto</span>
+      <h2 class="section-title">Uma operação sólida, certificada e em crescimento — com <em>documentação ainda travada no manual.</em></h2>
+      <p>A Cartec tem 60 anos de história, certificação IATF 16949 e uma posição consolidada como fornecedora de peças tubulares para montadoras como Scania, atendendo os setores automotivo, agrícola e naval com rigor técnico reconhecido. É uma empresa que sabe fazer — e faz bem.</p>
+      <p>O desafio que Ricardo trouxe na nossa conversa não é de qualidade nem de capacidade produtiva. É de velocidade e escala na documentação PPAP: com ~80 peças em desenvolvimento simultâneo só para a Scania, o processo de boletamento e preenchimento de relatórios dimensionais e materiais consome um tempo desproporcional de profissionais altamente qualificados — e qualquer erro ou gargalo repercute direto na aprovação da peça pela montadora.</p>
+      <p>É exatamente aqui que a IA entra: não para substituir o engenheiro, mas para fazer o trabalho braçal que consome o tempo dele — para que ele possa focar no que só ele sabe fazer.</p>
+    </div>
+    <div class="intro-stats reveal reveal-delay-2">
+      <div class="stat-card">
+        <div class="stat-number">60</div>
+        <div class="stat-label">anos de operação e histórico técnico</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">~80</div>
+        <div class="stat-label">peças Scania em desenvolvimento simultâneo</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2–3h</div>
+        <div class="stat-label">por peça em boletamento e preenchimento manual</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">IATF</div>
+        <div class="stat-label">16949 — certificação automotiva de maior rigor</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTO DA INAÇÃO -->
+<section class="custo-section">
+  <div class="custo-grid">
+    <div class="reveal">
+      <span class="section-label">O Custo de Seguir Como Está</span>
+      <h2 class="section-title">Cada peça documentada à mão<br>tem um <em>custo que não aparece na NF.</em></h2>
+      <p class="custo-intro">Considerando uma estimativa conservadora de 2,5 horas por peça no processo de boletamento e preenchimento de relatório (dimensional + material), e uma equipe de 2 profissionais dedicados a isso, o custo mensal de manter esse processo manual é mais alto do que parece — e cresce proporcionalmente com cada novo pacote de desenvolvimento.</p>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="custo-list">
+        <div class="custo-item">
+          <div>
+            <div class="custo-item-label">Boletamento e preenchimento de relatórios PPAP</div>
+            <div class="custo-item-sub">2 profissionais × ~62h/mês × R$ 44/h de custo real (salário + encargos CLT)</div>
+          </div>
+          <div class="custo-item-value">R$ 5.500/mês</div>
+        </div>
+        <div class="custo-item">
+          <div>
+            <div class="custo-item-label">Retrabalho por erro de preenchimento</div>
+            <div class="custo-item-sub">~30% das peças exigem reprocessamento parcial — olho viciado após 10+ documentos no dia</div>
+          </div>
+          <div class="custo-item-value">R$ 246/mês</div>
+        </div>
+        <div class="custo-item">
+          <div>
+            <div class="custo-item-label">Turnover e requalificação na função</div>
+            <div class="custo-item-sub">3–4 meses de onboarding a cada ciclo de substituição — risco documentado e recorrente</div>
+          </div>
+          <div class="custo-item-value">R$ 722/mês</div>
+        </div>
+        <div class="custo-item">
+          <div>
+            <div class="custo-item-label">Capacidade de escala travada</div>
+            <div class="custo-item-sub">Novos pacotes de montadoras exigem mais headcount — não mais inteligência</div>
+          </div>
+          <div class="custo-item-value">Não contabilizado</div>
+        </div>
+      </div>
+      <div class="custo-total">
+        <div class="custo-total-label">Custo mensal estimado</div>
+        <div class="custo-total-value">R$ 6.468/mês</div>
+      </div>
+      <div style="margin-top:10px;display:flex;justify-content:flex-end">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:#8aa0a5">→ R$ 77.600 por ano</div>
+      </div>
+      <p class="custo-aviso">* Estimativa conservadora baseada no salário mediano de Técnico de Garantia da Qualidade Pleno em São Paulo (Fonte: Portal Salário/CAGED 2026: R$ 5.195/mês nacional + ajuste SP), com encargos CLT de ~72%, resultando em custo real de R$ 9.632/mês por profissional e R$ 44/h. Não estão contabilizados: impacto de PPAP reprovado pela montadora, atraso em nomeação e risco de perda de oportunidade comercial.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DORES -->
+<section class="dores-section">
+  <div class="dores-inner">
+    <div class="dores-header reveal">
+      <span class="section-label" style="color:var(--tl)">O que identificamos</span>
+      <h2 class="section-title section-title--white">Os pontos onde <em>a operação perde velocidade</em> todos os dias.</h2>
+    </div>
+    <div class="dores-grid">
+      <div class="dore-card reveal">
+        <div class="dore-num">1</div>
+        <div class="dore-tag">Documentação</div>
+        <div class="dore-title">Boletamento de desenhos feito 100% à mão</div>
+        <p class="dore-text">Cada cota, nota de processo e característica de material precisa ser identificada e codificada manualmente no PDF — um a um, para cada subdesenho de cada peça. Com 80 peças em andamento, isso representa centenas de horas de trabalho repetitivo por ciclo.</p>
+      </div>
+      <div class="dore-card reveal reveal-delay-1">
+        <div class="dore-num">2</div>
+        <div class="dore-tag">PPAP</div>
+        <div class="dore-title">Relatórios dimensionais e materiais preenchidos manualmente</div>
+        <p class="dore-text">O que já está escrito no desenho técnico precisa ser copiado, campo a campo, para dentro dos relatórios de aprovação. Uma tarefa que é essencialmente ctrl+C, ctrl+V — e que ainda assim consome horas de um profissional que deveria estar analisando, não transcrevendo.</p>
+      </div>
+      <div class="dore-card reveal reveal-delay-2">
+        <div class="dore-num">3</div>
+        <div class="dore-tag">Qualidade</div>
+        <div class="dore-title">Erro humano inevitável em volume alto</div>
+        <p class="dore-text">Depois do décimo documento no dia, o olhar fica viciado. Itens são esquecidos, tolerâncias são lidas errado, subdesenhos não são abertos. O problema não é falta de competência — é a natureza da tarefa, que penaliza qualquer profissional em volume alto.</p>
+      </div>
+      <div class="dore-card reveal reveal-delay-3">
+        <div class="dore-num">4</div>
+        <div class="dore-tag">Pessoas</div>
+        <div class="dore-title">Difícil reter e requalificar para a função</div>
+        <p class="dore-text">A natureza repetitiva do processo torna a retenção difícil. Quando uma pessoa sai, o tempo de treinamento de uma substituta é longo — e a qualidade do output durante esse período é imprevisível. A Cartec viveu isso recentemente com os pacotes da Scania em aberto.</p>
+      </div>
+      <div class="dore-card reveal reveal-delay-4">
+        <div class="dore-num">5</div>
+        <div class="dore-tag">Escala</div>
+        <div class="dore-title">Crescimento de carteira exige crescimento de headcount</div>
+        <p class="dore-text">Hoje, aceitar mais um pacote de montadora significa contratar mais gente para documentação — não para engenharia. A proporção entre volume de peças e horas de trabalho administrativo é linear quando deveria ser logarítmica.</p>
+      </div>
+      <div class="dore-card reveal">
+        <div class="dore-num">6</div>
+        <div class="dore-tag">Gestão</div>
+        <div class="dore-title">Sem visibilidade do status de cada peça em desenvolvimento</div>
+        <p class="dore-text">Com dezenas de itens em fases diferentes (cotação, amostra, PPAP, produção piloto), não há um painel centralizado que mostre onde cada peça está, quem é o responsável pela próxima etapa e o que está travado. A gestão depende de perguntar às pessoas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULOS -->
+<section class="modulos-section" id="proposta">
+  <div class="modulos-inner">
+    <div class="modulos-header reveal">
+      <span class="section-label">A Proposta</span>
+      <h2 class="section-title">Uma primeira onda focada,<br><em>onde o impacto é imediato.</em></h2>
+      <p style="font-size:.92rem;color:#5a7a7f;line-height:1.78;max-width:680px;margin-top:4px">Começamos pelo núcleo do problema: automatizar o que consome mais tempo e gera mais risco. Os módulos 2 e 3 estão mapeados e detalhados abaixo — serão orçados e priorizados em onda futura, conforme a Cartec valida os resultados da primeira entrega.</p>
+    </div>
+
+    <!-- MÓDULO 1 -->
+    <div class="fase-block reveal">
+      <div class="fase-header">
+        <div>
+          <div class="fase-tag">Módulo 1 · Onda 1 — Prioridade Imediata</div>
+          <div class="fase-name">Agente de Leitura de Desenhos Técnicos e Preenchimento de PPAP</div>
+          <div class="fase-duration">IA multimodal · Leitura de PDF · Geração de relatórios PPAP · Prazo: ~45 dias do kickoff ao go-live</div>
+        </div>
+        <div class="fase-num-badge">1</div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-card-header">
+          <div class="modulo-card-left">
+            <div class="modulo-icon">📐</div>
+            <div>
+              <div class="modulo-label">Extração de Dados</div>
+              <div class="modulo-name">Leitura inteligente de desenhos técnicos</div>
+              <div class="modulo-chips">
+                <span class="chip">PDF complexo</span>
+                <span class="chip">Subdesenhos</span>
+                <span class="chip">Cotas e tolerâncias</span>
+              </div>
+            </div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <div class="value-box-icon">⏱️</div>
+            <div>
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">O agente lê o desenho técnico completo — incluindo subdesenhos aninhados — e identifica automaticamente todas as cotas dimensionais, notas de processo, especificações de material e normas aplicáveis. O que hoje leva horas de leitura manual passa a ser feito em segundos.</div>
+            </div>
+          </div>
+          <p class="modulo-desc">Desenhamos o agente para reconhecer o padrão visual e estrutural de cada montadora (Scania, MAN/VW, Mercedes-Benz, etc.). Assim como um inspetor experiente aprende a "ler" o layout de cada cliente, o agente aprende os padrões específicos de cada fabricante — sabendo onde buscar cotas, como interpretar notas e como navegar por subdesenhos referenciados dentro do documento principal.</p>
+          <ul class="modulo-items">
+            <li><strong>Leitura de PDFs de engenharia:</strong> extração de todas as características controláveis do desenho técnico, incluindo cotas, tolerâncias, notas de processo e especificações de material</li>
+            <li><strong>Navegação por subdesenhos:</strong> o agente reconhece referências a componentes filhos e busca as informações complementares nos arquivos correspondentes</li>
+            <li><strong>Identificação por padrão de montadora:</strong> o agente aprende o layout visual e estrutural de cada fabricante (Scania, MAN/VW, Mercedes-Benz, etc.) — treinado incrementalmente com os desenhos reais da Cartec, sem limite fixo de clientes</li>
+            <li><strong>Classificação automática:</strong> cada característica extraída é classificada como dimensional (vai para o Relatório Dimensional) ou de material (vai para o Relatório de Material)</li>
+          </ul>
+          <div class="disclaimer-box">⚠️ <strong>Ponto de atenção:</strong> a qualidade da extração depende da resolução e camadas do PDF recebido da montadora. Desenhos escaneados com baixa resolução ou com proteção de edição podem exigir uma etapa adicional de pré-processamento. Mapeamos isso no kickoff com base nos arquivos reais da Scania.</div>
+        </div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-card-header">
+          <div class="modulo-card-left">
+            <div class="modulo-icon">📋</div>
+            <div>
+              <div class="modulo-label">Preenchimento PPAP</div>
+              <div class="modulo-name">Geração automática de Relatórios Dimensional e Material</div>
+              <div class="modulo-chips">
+                <span class="chip">Relatório Dimensional</span>
+                <span class="chip">Relatório de Material</span>
+                <span class="chip">Gate de validação</span>
+              </div>
+            </div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <div class="value-box-icon">✅</div>
+            <div>
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">Tudo que está no desenho e precisa ir para o relatório é preenchido automaticamente — no padrão da Cartec, com codificação correta e campos na ordem certa. O profissional entra só para validar e inserir os resultados de medição, que dependem da peça física em mãos.</div>
+            </div>
+          </div>
+          <p class="modulo-desc">O agente transpõe as características extraídas do desenho diretamente para os templates de Relatório Dimensional e Relatório de Material da Cartec. Cada item recebe seu código sequencial, descrição conforme o desenho, especificação técnica (com valor nominal e tolerância) e coluna de resultado em branco — pronta para o inspetor preencher com o que foi medido na peça.</p>
+          <ul class="modulo-items">
+            <li><strong>Preenchimento automático dos campos "especificado":</strong> nominal, tolerância superior e inferior, unidade de medida, referência normativa — tudo extraído direto do desenho, sem digitação</li>
+            <li><strong>Codificação sequencial automática:</strong> o agente numera os itens em ordem e mantém a correspondência com o boletamento do desenho</li>
+            <li><strong>Gate de validação humana obrigatório:</strong> antes de qualquer uso oficial, o responsável recebe o relatório gerado e o desenho original lado a lado para conferência — o agente não avança sem aprovação</li>
+            <li><strong>Log de auditoria:</strong> registro de data, hora e responsável por cada validação, mantendo rastreabilidade compatível com os requisitos IATF 16949</li>
+            <li><strong>Alerta de campos incompletos:</strong> quando o agente não encontra uma informação no desenho, sinaliza explicitamente o campo como "não encontrado" — ao invés de deixar em branco silenciosamente</li>
+          </ul>
+          <div class="disclaimer-box">📌 <strong>Nota importante:</strong> a coluna de <em>resultados</em> (o que foi medido na peça física) não é preenchida pelo agente — essa etapa requer medição real e continua sendo responsabilidade do inspetor. O agente cuida de tudo que é lógica documental; o humano cuida do que exige julgamento físico e técnico.</div>
+        </div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-card-header">
+          <div class="modulo-card-left">
+            <div class="modulo-icon">🔔</div>
+            <div>
+              <div class="modulo-label">Notificação e Entrega</div>
+              <div class="modulo-name">Validação, alerta e entrega do pacote ao responsável</div>
+              <div class="modulo-chips">
+                <span class="chip">WhatsApp ou e-mail</span>
+                <span class="chip">Pasta no Drive</span>
+              </div>
+            </div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <div class="value-box-icon">📲</div>
+            <div>
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">Quando o agente termina o processamento de uma peça, ele avisa o responsável automaticamente — por WhatsApp ou e-mail, no canal que a Cartec preferir — com o relatório gerado disponível para revisão. Sem ninguém precisar perguntar "como está aquela documentação?".</div>
+            </div>
+          </div>
+          <p class="modulo-desc">O loop de trabalho se torna: desenho recebido → agente processa → responsável é avisado → responsável valida em minutos → fluxo segue. A interface de entrega é definida no kickoff conforme a preferência da equipe.</p>
+          <ul class="modulo-items">
+            <li><strong>Notificação automática ao responsável:</strong> aviso por WhatsApp ou e-mail quando o relatório está pronto para revisão, com link direto ao arquivo</li>
+            <li><strong>Organização em pasta do Drive:</strong> relatório gerado + desenho original depositados numa pasta estruturada por cliente e número de peça</li>
+            <li><strong>Resumo de itens pendentes:</strong> o agente destaca na notificação quais campos precisam de atenção humana antes da aprovação final</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- MÓDULO 2 -->
+    <div class="fase-block reveal">
+      <div class="fase-header fase-header--terra">
+        <div>
+          <div class="fase-tag">Módulo 2 · Onda Futura — Mapeado e Detalhado</div>
+          <div class="fase-name">Workflow de Desenvolvimento de Peças</div>
+          <div class="fase-duration">Kanban digital · Checklists por fase · Notificações automáticas · A orçar</div>
+        </div>
+        <div class="fase-num-badge">2</div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-card-header">
+          <div class="modulo-card-left">
+            <div class="modulo-icon">🗂️</div>
+            <div>
+              <div class="modulo-label">Gestão de Desenvolvimento</div>
+              <div class="modulo-name">Kanban com checklists, status e notificações por fase</div>
+              <div class="modulo-chips">
+                <span class="chip chip--future">A orçar em onda futura</span>
+              </div>
+            </div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <div class="value-box-icon">🎯</div>
+            <div>
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">Cada peça em desenvolvimento passa por etapas bem definidas — cotação, nomeação, boletamento, prototipagem, amostras, PPAP, produção. Hoje não há um painel centralizado de status. Com esse módulo, Ricardo e Daniela enxergam em tempo real onde cada item está, quem é o responsável da próxima etapa e o que está travado.</div>
+            </div>
+          </div>
+          <p class="modulo-desc">Um workflow digital por peça, com checklist específico para cada fase do desenvolvimento automotivo. Quando uma etapa é concluída, o agente notifica automaticamente o próximo responsável — sem ninguém precisar lembrar de acionar o colega.</p>
+          <ul class="modulo-items">
+            <li><strong>Kanban por peça e fase:</strong> visão consolidada de todos os itens em desenvolvimento, agrupados por etapa (cotação → nomeação → PPAP → produção piloto)</li>
+            <li><strong>Checklists de entrada e saída por fase:</strong> o que precisa estar pronto para a peça avançar — incluindo documentos recebidos da montadora</li>
+            <li><strong>Notificação automática ao próximo responsável:</strong> quando uma fase é marcada como concluída, o agente avisa o responsável da etapa seguinte por WhatsApp ou e-mail</li>
+            <li><strong>Alerta de documentação incompleta na entrada:</strong> ao receber um desenho novo, o agente verifica se todos os subdesenhos e documentos necessários estão disponíveis antes de avançar</li>
+          </ul>
+          <div class="future-badge-box">
+            <div class="future-badge-box-icon">📅</div>
+            <div class="future-badge-box-text">Este módulo será orçado e detalhado após a validação da Onda 1. O escopo acima já está mapeado e pode ser implementado em continuidade natural ao Módulo 1.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MÓDULO 3 -->
+    <div class="fase-block reveal">
+      <div class="fase-header fase-header--sage">
+        <div>
+          <div class="fase-tag">Módulo 3 · Onda Futura — Mapeado e Detalhado</div>
+          <div class="fase-name">Relatórios Automáticos de Produtividade</div>
+          <div class="fase-duration">Integração ERP · Análise por colaborador · Entrega via WhatsApp ou e-mail · A orçar</div>
+        </div>
+        <div class="fase-num-badge">3</div>
+      </div>
+
+      <div class="modulo-card" onclick="toggleModulo(this)">
+        <div class="modulo-card-header">
+          <div class="modulo-card-left">
+            <div class="modulo-icon">📊</div>
+            <div>
+              <div class="modulo-label">Inteligência Operacional</div>
+              <div class="modulo-name">Relatório diário de produtividade do chão de fábrica</div>
+              <div class="modulo-chips">
+                <span class="chip chip--future">A orçar em onda futura</span>
+              </div>
+            </div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <div class="value-box-icon">📬</div>
+            <div>
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">Os dados de produção já existem no ERP. O problema é que alguém precisa entrar, filtrar, gerar e interpretar. Com esse módulo, Daniela recebe automaticamente todo dia de manhã um relatório pronto com produtividade por colaborador — sem abrir nenhum sistema.</div>
+            </div>
+          </div>
+          <p class="modulo-desc">O agente conecta ao ERP da Cartec (via API ou exportação agendada, a confirmar no kickoff técnico), processa os apontamentos do dia anterior e monta um relatório estruturado com os indicadores que a gestão definir. Entrega automática por e-mail ou WhatsApp no horário que a equipe preferir.</p>
+          <ul class="modulo-items">
+            <li><strong>Relatório diário por colaborador:</strong> tempo produtivo, improdutivo, em setup e sem apontamento — gerado automaticamente a partir dos registros do ERP</li>
+            <li><strong>Alertas condicionais de desvio:</strong> colaborador sem nenhum apontamento no dia, tempo improdutivo acima do limite configurado, etc.</li>
+            <li><strong>Fechamento semanal e mensal:</strong> consolidado automático ao final da semana e do mês, entregue à gestão sem necessidade de nenhuma ação manual</li>
+            <li><strong>Análise de não conformidades:</strong> quais tipos se repetem mais, por colaborador e por setor — identificando padrões que hoje se perdem no volume de dados</li>
+          </ul>
+          <div class="future-badge-box">
+            <div class="future-badge-box-icon">📅</div>
+            <div class="future-badge-box-text">Este módulo será orçado após confirmação do ERP utilizado pela Cartec — informação necessária para avaliar a viabilidade de integração direta. Já temos alternativas mapeadas para os principais ERPs industriais do mercado brasileiro.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA NO DIA A DIA -->
+<section class="demo-section" id="como-funciona">
+  <div class="demo-inner">
+    <div class="demo-header reveal">
+      <span class="section-label">Como Funciona na Prática</span>
+      <h2 class="section-title">Do desenho recebido <em>ao relatório PPAP pronto</em> — sem ninguém digitar uma cota.</h2>
+    </div>
+
+    <!-- MOCKUP 1: PIPELINE DO AGENTE -->
+    <div class="reveal" style="margin-bottom:48px">
+      <div style="margin-bottom:20px">
+        <span class="section-label">Mockup 1 de 3</span>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--ink);margin-top:4px">O agente em ação — <em style="color:var(--terra)">painel de processamento em tempo real</em></h3>
+        <p style="font-size:.85rem;color:#7a9a9f;margin-top:6px">O que o responsável vê na tela enquanto o agente trabalha</p>
+      </div>
+      <div class="ppap-mockup">
+        <div class="ppap-mockup-header">
+          <div class="ppap-mockup-dot"></div>
+          <div class="ppap-mockup-dot"></div>
+          <div class="ppap-mockup-dot"></div>
+          <div class="ppap-mockup-title">Agente PPAP Cartec — Processando: SCN-2026-0471 (Scania)</div>
+        </div>
+        <div class="ppap-mockup-body">
+          <div class="ppap-col">
+            <div class="ppap-col-label">📄 Desenho recebido</div>
+            <div class="ppap-doc-icon">📐</div>
+            <div class="ppap-doc-name">SCN-2026-0471_REV_C.pdf</div>
+            <div class="ppap-doc-sub">Scania · Tubo de Alta Pressão · 3 subdesenhos identificados</div>
+            <br>
+            <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--terra);margin-bottom:10px">Características extraídas automaticamente:</div>
+            <div class="ppap-row">
+              <div class="ppap-row-num">1.1</div>
+              <div class="ppap-row-desc">Diâmetro externo do tubo</div>
+              <div class="ppap-row-val found">∅ 12 ± 0,2 mm</div>
+            </div>
+            <div class="ppap-row">
+              <div class="ppap-row-num">1.2</div>
+              <div class="ppap-row-desc">Espessura de parede</div>
+              <div class="ppap-row-val found">1,5 ± 0,1 mm</div>
+            </div>
+            <div class="ppap-row">
+              <div class="ppap-row-num">2.1</div>
+              <div class="ppap-row-desc">Comprimento total</div>
+              <div class="ppap-row-val found">385 ± 1,0 mm</div>
+            </div>
+            <div class="ppap-row">
+              <div class="ppap-row-num">3.1</div>
+              <div class="ppap-row-desc">Norma de limpeza interna</div>
+              <div class="ppap-row-val found">STD 4162-B</div>
+            </div>
+            <div class="ppap-row">
+              <div class="ppap-row-num">5.1</div>
+              <div class="ppap-row-desc">Nota: proteção extremidades pós-limpeza</div>
+              <div class="ppap-row-val found">✓ Identificado</div>
+            </div>
+            <div class="ppap-row">
+              <div class="ppap-row-num">6.0</div>
+              <div class="ppap-row-desc">Especificação da porca (subdesenho)</div>
+              <div class="ppap-row-val pending">⏳ Navegando subdesenho...</div>
+            </div>
+          </div>
+          <div class="ppap-col">
+            <div class="ppap-col-label">📋 Relatório Dimensional — gerado automaticamente</div>
+            <div style="font-size:.72rem;color:#8aa0a5;margin-bottom:14px">Campos "especificado" preenchidos · Coluna de resultado aguarda inspeção física</div>
+            <div class="ppap-row">
+              <div class="ppap-row-num" style="font-size:.65rem">Cód.</div>
+              <div class="ppap-row-desc" style="font-weight:600;color:var(--ink);font-size:.72rem">Característica</div>
+              <div class="ppap-row-val" style="font-size:.68rem;color:#8aa0a5">Especificado</div>
+            </div>
+            <div class="ppap-row">
+              <div class="ppap-row-num">1.1</div>
+              <div class="ppap-row-desc">Ø externo</div>
+              <div class="ppap-row-val">12,00 ±0,2</div>
+            </div>
+            <div class="ppap-row">
+              <div class="ppap-row-num">1.2</div>
+              <div class="ppap-row-desc">Esp. parede</div>
+              <div class="ppap-row-val">1,50 ±0,1</div>
+            </div>
+            <div class="ppap-row">
+              <div class="ppap-row-num">2.1</div>
+              <div class="ppap-row-desc">Compr. total</div>
+              <div class="ppap-row-val">385 ±1,0</div>
+            </div>
+            <div class="ppap-row">
+              <div class="ppap-row-num">3.1</div>
+              <div class="ppap-row-desc">Norma limpeza</div>
+              <div class="ppap-row-val">STD 4162-B</div>
+            </div>
+            <div class="ppap-row" style="background:rgba(176,110,74,.05)">
+              <div class="ppap-row-num" style="color:var(--sand)">6.0</div>
+              <div class="ppap-row-desc" style="color:var(--sand)">Porca — dim.</div>
+              <div class="ppap-row-val pending">⚠️ Verificar</div>
+            </div>
+          </div>
+        </div>
+        <div class="ppap-status-bar">
+          <div class="ppap-status-text">✅ 31 de 32 características extraídas · 1 item sinalizado para revisão · Aguardando validação do responsável</div>
+          <button class="ppap-status-btn">Validar e aprovar →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOCKUP 2: NOTIFICAÇÃO WHATSAPP -->
+    <div class="reveal" style="margin-bottom:48px">
+      <div style="margin-bottom:20px">
+        <span class="section-label">Mockup 2 de 3</span>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--ink);margin-top:4px">A notificação que chega no WhatsApp do Ricardo — <em style="color:var(--terra)">3 minutos depois de receber o PDF</em></h3>
+        <p style="font-size:.85rem;color:#7a9a9f;margin-top:6px">Nenhum sistema para abrir. Nenhum e-mail para checar. A informação chega onde o time já está.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:320px 1fr;gap:40px;align-items:flex-start">
+        <!-- Phone mockup -->
+        <div style="background:#e5ddd5;border-radius:28px;overflow:hidden;box-shadow:0 24px 64px rgba(20,55,60,.18);max-width:320px">
+          <!-- Status bar -->
+          <div style="background:#075e54;padding:10px 16px 6px;display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:.65rem;color:rgba(255,255,255,.7);font-weight:600">09:47</span>
+            <div style="display:flex;gap:6px;align-items:center">
+              <span style="font-size:.55rem;color:rgba(255,255,255,.6)">●●●</span>
+              <span style="font-size:.55rem;color:rgba(255,255,255,.6)">WiFi</span>
+            </div>
+          </div>
+          <!-- Header conversa -->
+          <div style="background:#075e54;padding:10px 16px 14px;display:flex;align-items:center;gap:10px">
+            <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--ink),var(--sage));display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">🤖</div>
+            <div>
+              <div style="font-size:.82rem;font-weight:600;color:#fff">Agente PPAP · Cartec</div>
+              <div style="font-size:.65rem;color:rgba(255,255,255,.6)">online agora</div>
+            </div>
+          </div>
+          <!-- Mensagens -->
+          <div style="padding:14px 10px;display:flex;flex-direction:column;gap:8px;background:#e5ddd5;min-height:380px">
+            <!-- Msg recebida 1 -->
+            <div style="background:#fff;border-radius:0 10px 10px 10px;padding:10px 13px;max-width:88%;box-shadow:0 1px 2px rgba(0,0,0,.1)">
+              <div style="font-size:.75rem;color:#075e54;font-weight:700;margin-bottom:4px">📐 Novo desenho processado</div>
+              <div style="font-size:.78rem;color:#303030;line-height:1.5;margin-bottom:6px"><strong>SCN-2026-0471_REV_C</strong><br>Scania · Tubo Alta Pressão<br>3 subdesenhos lidos ✓</div>
+              <div style="background:#f0f0f0;border-radius:6px;padding:7px 9px;margin-bottom:6px">
+                <div style="font-size:.68rem;color:#555;line-height:1.6">
+                  ✅ 31 características extraídas<br>
+                  📋 Rel. Dimensional: pronto<br>
+                  📋 Rel. Material: pronto<br>
+                  ⚠️ 1 item para verificar (item 6.0)
+                </div>
+              </div>
+              <div style="font-size:.65rem;color:#999;text-align:right">09:43 ✓✓</div>
+            </div>
+            <!-- Msg recebida 2 -->
+            <div style="background:#fff;border-radius:0 10px 10px 10px;padding:10px 13px;max-width:88%;box-shadow:0 1px 2px rgba(0,0,0,.1)">
+              <div style="font-size:.75rem;color:#555;line-height:1.5;margin-bottom:6px">📁 Arquivos disponíveis em:<br><span style="color:#128c7e;text-decoration:underline;font-size:.72rem">Drive → Scania → 2026 → 0471</span></div>
+              <div style="background:#dcf8c6;border-radius:6px;padding:7px 9px;margin-bottom:6px">
+                <div style="font-size:.7rem;color:#303030;line-height:1.6">
+                  🔗 Rel_Dimensional_0471.xlsx<br>
+                  🔗 Rel_Material_0471.xlsx<br>
+                  🔗 SCN-2026-0471_BOLETADO.pdf
+                </div>
+              </div>
+              <div style="font-size:.65rem;color:#999;text-align:right">09:43 ✓✓</div>
+            </div>
+            <!-- Msg recebida 3 - alerta -->
+            <div style="background:#fff;border-radius:0 10px 10px 10px;padding:10px 13px;max-width:88%;box-shadow:0 1px 2px rgba(0,0,0,.1);border-left:3px solid #f0a500">
+              <div style="font-size:.75rem;color:#b07800;font-weight:700;margin-bottom:4px">⚠️ Item 6.0 — verificação necessária</div>
+              <div style="font-size:.73rem;color:#555;line-height:1.5">Porca (subdesenho ref. DWG-0471-C) · dimensão não confirmada no PDF principal.<br><span style="color:#888;font-size:.68rem">Subdesenho disponível na pasta para conferência.</span></div>
+              <div style="font-size:.65rem;color:#999;text-align:right;margin-top:4px">09:44 ✓✓</div>
+            </div>
+            <!-- Msg enviada pelo Ricardo -->
+            <div style="background:#dcf8c6;border-radius:10px 0 10px 10px;padding:10px 13px;max-width:75%;align-self:flex-end;box-shadow:0 1px 2px rgba(0,0,0,.1)">
+              <div style="font-size:.78rem;color:#303030">Ok, vejo agora e aprovo ✓</div>
+              <div style="font-size:.65rem;color:#999;text-align:right;margin-top:4px">09:46 ✓✓</div>
+            </div>
+            <!-- Msg de confirmação -->
+            <div style="background:#fff;border-radius:0 10px 10px 10px;padding:10px 13px;max-width:88%;box-shadow:0 1px 2px rgba(0,0,0,.1)">
+              <div style="font-size:.75rem;color:#075e54;font-weight:700;margin-bottom:4px">✅ Aprovação registrada</div>
+              <div style="font-size:.73rem;color:#555;line-height:1.5">Log de auditoria salvo.<br>Ricardo Yazbek · 09:46 · 19/05/2026</div>
+              <div style="font-size:.65rem;color:#999;text-align:right;margin-top:4px">09:47 ✓✓</div>
+            </div>
+          </div>
+          <!-- Input bar -->
+          <div style="background:#f0f0f0;padding:8px 10px;display:flex;gap:8px;align-items:center">
+            <div style="flex:1;background:#fff;border-radius:20px;padding:8px 14px;font-size:.72rem;color:#aaa">Mensagem</div>
+            <div style="width:32px;height:32px;background:#075e54;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem">🎤</div>
+          </div>
+        </div>
+        <!-- Legenda ao lado -->
+        <div style="padding-top:8px">
+          <div style="display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;gap:16px;align-items:flex-start">
+              <div style="width:36px;height:36px;min-width:36px;border-radius:50%;background:rgba(67,93,81,.1);display:flex;align-items:center;justify-content:center;font-size:1rem">⚡</div>
+              <div>
+                <div style="font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:3px">3 minutos do recebimento ao aviso</div>
+                <div style="font-size:.8rem;font-weight:300;color:#5a7a7f;line-height:1.6">Desde o momento em que o PDF entra na pasta monitorada até o Ricardo receber a notificação completa no WhatsApp — com links diretos para os arquivos gerados.</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start">
+              <div style="width:36px;height:36px;min-width:36px;border-radius:50%;background:rgba(176,110,74,.1);display:flex;align-items:center;justify-content:center;font-size:1rem">⚠️</div>
+              <div>
+                <div style="font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:3px">Alertas cirúrgicos — só o que precisa de atenção</div>
+                <div style="font-size:.8rem;font-weight:300;color:#5a7a7f;line-height:1.6">Quando o agente não confirma algo com 100% de certeza, ele avisa exatamente qual item precisa de conferência — sem deixar o campo em branco silenciosamente.</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start">
+              <div style="width:36px;height:36px;min-width:36px;border-radius:50%;background:rgba(20,55,60,.07);display:flex;align-items:center;justify-content:center;font-size:1rem">🗂️</div>
+              <div>
+                <div style="font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:3px">Arquivos organizados automaticamente no Drive</div>
+                <div style="font-size:.8rem;font-weight:300;color:#5a7a7f;line-height:1.6">Relatório Dimensional, Relatório de Material e o PDF boletado são depositados na pasta certa — por cliente, ano e número de peça. Nenhum arquivo perdido em e-mail ou área de trabalho.</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start">
+              <div style="width:36px;height:36px;min-width:36px;border-radius:50%;background:rgba(67,93,81,.1);display:flex;align-items:center;justify-content:center;font-size:1rem">📝</div>
+              <div>
+                <div style="font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:3px">Aprovação com 2 palavras — log gerado automaticamente</div>
+                <div style="font-size:.8rem;font-weight:300;color:#5a7a7f;line-height:1.6">Ricardo responde no WhatsApp. O agente registra quem aprovou, quando e qual versão do relatório foi validada — rastreabilidade IATF completa, sem abrir nenhum sistema.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOCKUP 3: PAINEL DE STATUS DO LOTE -->
+    <div class="reveal" style="margin-bottom:56px">
+      <div style="margin-bottom:20px">
+        <span class="section-label">Mockup 3 de 3</span>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--ink);margin-top:4px">Visão gerencial do lote Scania — <em style="color:var(--terra)">80 peças, tudo em uma tela</em></h3>
+        <p style="font-size:.85rem;color:#7a9a9f;margin-top:6px">O que Daniela e Ricardo enxergam no painel de acompanhamento do agente</p>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(20,55,60,.08);border-radius:16px;overflow:hidden;box-shadow:0 12px 40px rgba(20,55,60,.07)">
+        <!-- Painel header -->
+        <div style="background:var(--ink);padding:18px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:gap">
+          <div>
+            <div style="font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:4px">Painel de Acompanhamento</div>
+            <div style="font-size:1rem;font-weight:600;color:#fff">Lote Scania 2026 — 80 itens</div>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 14px;text-align:center">
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:#fff;line-height:1">47</div>
+              <div style="font-size:.6rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.08em;margin-top:2px">Concluídos</div>
+            </div>
+            <div style="background:rgba(176,110,74,.12);border:1px solid rgba(176,110,74,.25);border-radius:8px;padding:8px 14px;text-align:center">
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--tl);line-height:1">8</div>
+              <div style="font-size:.6rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.08em;margin-top:2px">Aguardando validação</div>
+            </div>
+            <div style="background:rgba(67,93,81,.15);border:1px solid rgba(67,93,81,.3);border-radius:8px;padding:8px 14px;text-align:center">
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:#7ec8a0;line-height:1">25</div>
+              <div style="font-size:.6rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.08em;margin-top:2px">Na fila</div>
+            </div>
+          </div>
+        </div>
+        <!-- Barra de progresso -->
+        <div style="background:rgba(20,55,60,.04);padding:12px 28px;border-bottom:1px solid rgba(20,55,60,.06)">
+          <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+            <span style="font-size:.72rem;font-weight:600;color:var(--ink)">Progresso geral do lote</span>
+            <span style="font-size:.72rem;font-weight:700;color:var(--terra)">58,75%</span>
+          </div>
+          <div style="height:6px;background:rgba(20,55,60,.08);border-radius:4px;overflow:hidden">
+            <div style="height:100%;width:58.75%;background:linear-gradient(90deg,var(--sage),var(--terra));border-radius:4px;transition:width 1s ease"></div>
+          </div>
+        </div>
+        <!-- Tabela de itens -->
+        <div>
+          <!-- Header tabela -->
+          <div style="display:grid;grid-template-columns:120px 1fr 140px 110px 90px;padding:10px 28px;background:rgba(20,55,60,.02);border-bottom:1px solid rgba(20,55,60,.06)">
+            <div style="font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8aa0a5">Código</div>
+            <div style="font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8aa0a5">Descrição</div>
+            <div style="font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8aa0a5">Status</div>
+            <div style="font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8aa0a5">Processado em</div>
+            <div style="font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8aa0a5">Itens</div>
+          </div>
+          <!-- Linha 1 - concluído -->
+          <div style="display:grid;grid-template-columns:120px 1fr 140px 110px 90px;padding:13px 28px;border-bottom:1px solid rgba(20,55,60,.05);align-items:center">
+            <div style="font-size:.78rem;font-weight:700;color:var(--ink)">SCN-0471</div>
+            <div style="font-size:.78rem;color:#5a7a7f">Tubo Alta Pressão · Diesel</div>
+            <div><span style="background:rgba(67,93,81,.1);color:var(--sage);font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.06em">✓ Aprovado</span></div>
+            <div style="font-size:.72rem;color:#8aa0a5">19/05 · 08:04</div>
+            <div style="font-size:.78rem;color:var(--ink);font-weight:600">32 itens</div>
+          </div>
+          <!-- Linha 2 - aguardando validação -->
+          <div style="display:grid;grid-template-columns:120px 1fr 140px 110px 90px;padding:13px 28px;border-bottom:1px solid rgba(20,55,60,.05);align-items:center;background:rgba(176,110,74,.03)">
+            <div style="font-size:.78rem;font-weight:700;color:var(--ink)">SCN-0489</div>
+            <div style="font-size:.78rem;color:#5a7a7f">Tubo Retorno Óleo · Motor</div>
+            <div><span style="background:rgba(176,110,74,.12);color:var(--terra);font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.06em">⏳ Validar (2)</span></div>
+            <div style="font-size:.72rem;color:#8aa0a5">19/05 · 09:51</div>
+            <div style="font-size:.78rem;color:var(--ink);font-weight:600">28 itens</div>
+          </div>
+          <!-- Linha 3 - concluído -->
+          <div style="display:grid;grid-template-columns:120px 1fr 140px 110px 90px;padding:13px 28px;border-bottom:1px solid rgba(20,55,60,.05);align-items:center">
+            <div style="font-size:.78rem;font-weight:700;color:var(--ink)">SCN-0503</div>
+            <div style="font-size:.78rem;color:#5a7a7f">Tubo GNV · Alta Pressão</div>
+            <div><span style="background:rgba(67,93,81,.1);color:var(--sage);font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.06em">✓ Aprovado</span></div>
+            <div style="font-size:.72rem;color:#8aa0a5">18/05 · 14:22</div>
+            <div style="font-size:.78rem;color:var(--ink);font-weight:600">41 itens</div>
+          </div>
+          <!-- Linha 4 - processando -->
+          <div style="display:grid;grid-template-columns:120px 1fr 140px 110px 90px;padding:13px 28px;border-bottom:1px solid rgba(20,55,60,.05);align-items:center;background:rgba(20,55,60,.02)">
+            <div style="font-size:.78rem;font-weight:700;color:var(--ink)">SCN-0517</div>
+            <div style="font-size:.78rem;color:#5a7a7f">Tubo Estrutural · Chassi</div>
+            <div style="display:flex;align-items:center;gap:6px">
+              <div style="width:7px;height:7px;border-radius:50%;background:var(--terra);animation:pulse 1.4s infinite"></div>
+              <span style="font-size:.62rem;font-weight:700;color:var(--terra);text-transform:uppercase;letter-spacing:.06em">Processando...</span>
+            </div>
+            <div style="font-size:.72rem;color:#8aa0a5">agora</div>
+            <div style="font-size:.72rem;color:#8aa0a5">—</div>
+          </div>
+          <!-- Linha 5 - na fila -->
+          <div style="display:grid;grid-template-columns:120px 1fr 140px 110px 90px;padding:13px 28px;align-items:center;opacity:.55">
+            <div style="font-size:.78rem;font-weight:700;color:var(--ink)">SCN-0521</div>
+            <div style="font-size:.78rem;color:#5a7a7f">Tubo Resfriamento · Turbo</div>
+            <div><span style="background:rgba(20,55,60,.06);color:#8aa0a5;font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.06em">Na fila</span></div>
+            <div style="font-size:.72rem;color:#8aa0a5">—</div>
+            <div style="font-size:.72rem;color:#8aa0a5">—</div>
+          </div>
+        </div>
+        <!-- Footer painel -->
+        <div style="background:rgba(20,55,60,.03);padding:12px 28px;border-top:1px solid rgba(20,55,60,.06);display:flex;justify-content:space-between;align-items:center">
+          <div style="font-size:.72rem;color:#8aa0a5">Atualizado em tempo real · Último processamento: 19/05/2026 às 09:51</div>
+          <div style="font-size:.72rem;font-weight:600;color:var(--terra)">→ Ver todos os 80 itens</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANTES / DEPOIS -->
+    <div class="ad-section reveal">
+      <div class="ad-header" style="margin-bottom:28px">
+        <span class="section-label">A diferença concreta</span>
+        <h2 class="section-title">O mesmo trabalho —<br><em>em tempos completamente diferentes.</em></h2>
+      </div>
+      <div class="ad-grid">
+        <div class="ad-col ad-col-antes">
+          <div class="ad-col-title">Hoje — processo manual</div>
+          <div class="ad-timeline">
+            <div class="ad-step">
+              <div class="ad-step-time">08:00</div>
+              <div class="ad-step-desc"><strong>Recebe o PDF da Scania.</strong> Abre o arquivo, identifica quantos subdesenhos existem. Começa a leitura do desenho principal.</div>
+            </div>
+            <div class="ad-step">
+              <div class="ad-step-time">08:45</div>
+              <div class="ad-step-desc"><strong>Inicia o boletamento manual.</strong> Numera cada cota diretamente no PDF, abre anotações, começa a codificar. Precisa abrir subdesenhos separadamente para completar as informações.</div>
+            </div>
+            <div class="ad-step">
+              <div class="ad-step-time">10:00</div>
+              <div class="ad-step-desc"><strong>Começa a preencher o Relatório Dimensional.</strong> Copia cota por cota do PDF para a planilha. Uma a uma. Tolerância, unidade, norma referenciada.</div>
+            </div>
+            <div class="ad-step">
+              <div class="ad-step-time">11:15</div>
+              <div class="ad-step-desc"><strong>Relatório Dimensional concluído.</strong> Inicia o Relatório de Material — repete o processo para especificações de norma e tratamento superficial.</div>
+            </div>
+            <div class="ad-step">
+              <div class="ad-step-time">12:00</div>
+              <div class="ad-step-desc"><strong>Entrega para revisão.</strong> O revisor percebe que um item do subdesenho 3 foi omitido. Volta para correção.</div>
+            </div>
+          </div>
+          <div class="ad-total">
+            <div class="ad-total-label">Tempo total por peça</div>
+            <div class="ad-total-num">2–3h</div>
+          </div>
+        </div>
+        <div class="ad-col ad-col-depois">
+          <div class="ad-col-title">Com o agente NewScale</div>
+          <div class="ad-timeline">
+            <div class="ad-step">
+              <div class="ad-step-time">08:00</div>
+              <div class="ad-step-desc"><strong>PDF da Scania recebido.</strong> O agente inicia o processamento automaticamente — leitura do desenho principal e navegação pelos subdesenhos referenciados.</div>
+            </div>
+            <div class="ad-step">
+              <div class="ad-step-time">08:03</div>
+              <div class="ad-step-desc"><strong>Extração concluída.</strong> 32 características identificadas, classificadas e distribuídas entre Relatório Dimensional e Relatório de Material. 1 item sinalizado para atenção humana.</div>
+            </div>
+            <div class="ad-step">
+              <div class="ad-step-time">08:04</div>
+              <div class="ad-step-desc"><strong>Notificação enviada ao responsável</strong> via WhatsApp: "Peça SCN-0471 processada. Relatório disponível para revisão. 1 item a verificar."</div>
+            </div>
+            <div class="ad-step">
+              <div class="ad-step-time">08:15</div>
+              <div class="ad-step-desc"><strong>Responsável revisa e valida.</strong> Confere a 1 divergência sinalizada, aprova o relatório. Log de auditoria registrado com data, hora e usuário.</div>
+            </div>
+          </div>
+          <div class="ad-total">
+            <div class="ad-total-label">Tempo total por peça</div>
+            <div class="ad-total-num">~15min</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTIMENTO -->
+<section class="invest-section" id="investimento">
+  <div class="invest-inner">
+    <div class="invest-header reveal">
+      <span class="section-label" style="color:var(--tl)">Investimento</span>
+      <h2 class="section-title section-title--white">Uma primeira onda com retorno <em>mensurável em semanas.</em></h2>
+    </div>
+
+    <div class="invest-single-wrap reveal">
+      <div class="invest-mod-card">
+        <div class="invest-mod-card-top">
+          <div>
+            <div class="invest-mod-tag">Módulo 1 · Onda 1</div>
+            <div class="invest-mod-name">Agente de Leitura de Desenhos e Preenchimento de PPAP</div>
+          </div>
+          <div>
+            <div class="invest-mod-price">R$ 11.900</div>
+            <div class="invest-mod-price-label">implementação</div>
+          </div>
+        </div>
+        <ul class="invest-mod-items">
+          <li>Desenvolvimento e treinamento do agente de leitura de PDFs de engenharia</li>
+          <li>Treinamento do agente com padrões de desenho das montadoras da Cartec (Scania + demais clientes ativos)</li>
+          <li>Geração automática de Relatório Dimensional e Relatório de Material</li>
+          <li>Gate de validação humana com log de auditoria rastreável</li>
+          <li>Notificação automática ao responsável por WhatsApp ou e-mail</li>
+          <li>Organização de arquivos em pasta Drive estruturada por peça</li>
+          <li>Treinamento da equipe e documentação do fluxo</li>
+          <li>Acompanhamento de 30 dias pós go-live incluso</li>
+        </ul>
+        <div class="invest-mod-divider"></div>
+        <div class="invest-mod-mens">
+          <div>
+            <div class="invest-mod-mens-label">Mensalidade de manutenção</div>
+            <div class="invest-mod-mens-sub">Suporte, monitoramento e otimizações contínuas</div>
+          </div>
+          <div style="text-align:right">
+            <div class="invest-mod-mens-val">R$ 690</div>
+            <div class="invest-mod-mens-sub">/mês</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="invest-future-note reveal">
+      <div class="invest-future-note-title">📅 Módulos 2 e 3 — a orçar em onda futura</div>
+      <div class="invest-future-note-text">O Workflow de Desenvolvimento de Peças (Módulo 2) e os Relatórios Automáticos de Produtividade (Módulo 3) já estão mapeados e detalhados nesta proposta. Os valores serão definidos após a validação da primeira onda e confirmação do ERP utilizado pela Cartec — informação necessária para viabilizar a integração do Módulo 3.</div>
+    </div>
+
+    <!-- COBERTURA MENSALIDADE -->
+    <div class="reveal">
+      <div class="mens-section-title">O que a mensalidade cobre</div>
+      <div class="mens-grid">
+        <div class="mens-card">
+          <div class="mens-card-icon">🔧</div>
+          <div class="mens-card-title">Manutenção do agente</div>
+          <div class="mens-card-text">Ajustes no comportamento do agente conforme a equipe usa e identifica pontos de melhoria</div>
+        </div>
+        <div class="mens-card">
+          <div class="mens-card-icon">📐</div>
+          <div class="mens-card-title">Novos padrões de cliente</div>
+          <div class="mens-card-text">Treinamento incremental para novos layouts de montadora (MAN, Mercedes, etc.) dentro do escopo contratado</div>
+        </div>
+        <div class="mens-card">
+          <div class="mens-card-icon">🚨</div>
+          <div class="mens-card-title">Monitoramento de erros</div>
+          <div class="mens-card-text">Acompanhamento ativo de falhas de processamento e correção antes que afetem a equipe</div>
+        </div>
+        <div class="mens-card">
+          <div class="mens-card-icon">⬆️</div>
+          <div class="mens-card-title">Atualizações de modelo de IA</div>
+          <div class="mens-card-text">Quando modelos de linguagem são atualizados, a NewScale garante compatibilidade e performance sem custo adicional</div>
+        </div>
+        <div class="mens-card">
+          <div class="mens-card-icon">📞</div>
+          <div class="mens-card-title">Suporte prioritário</div>
+          <div class="mens-card-text">Canal direto com a equipe técnica da NewScale para dúvidas e ajustes operacionais</div>
+        </div>
+        <div class="mens-card">
+          <div class="mens-card-icon">📈</div>
+          <div class="mens-card-title">Revisão periódica de performance</div>
+          <div class="mens-card-text">Check-in mensal para avaliar taxa de acerto, volume processado e identificar oportunidades de otimização</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROI -->
+    <div class="roi-check reveal">
+      <div class="roi-text">
+        <span class="section-label" style="color:var(--tl)">Sanity Check</span>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:#fff;margin-bottom:16px;line-height:1.25">O investimento se paga com <em style="color:var(--tl)">poucas semanas de operação.</em></h3>
+        <p>Considerando 2,5 horas economizadas por peça e um volume de apenas 20 peças por mês processadas pelo agente (bem abaixo dos 80 em andamento), são 50 horas/mês devolvidas ao time técnico. Ao custo médio de um profissional sênior de qualidade, o payback da implementação ocorre em menos de 2 meses de uso pleno.</p>
+        <p style="margin-top:12px">E isso sem considerar a redução de erros, o ganho de velocidade na aprovação da montadora e a capacidade de absorver novos pacotes sem contratar.</p>
+      </div>
+      <div class="roi-num-box reveal reveal-delay-2">
+        <div class="roi-payback-label">Payback estimado</div>
+        <div class="roi-payback-num">&lt; 2</div>
+        <div class="roi-payback-sub">meses de uso pleno<br>para recuperar o investimento</div>
+      </div>
+    </div>
+
+    <!-- AVISO APIs -->
+    <div class="apis-aviso reveal">
+      <strong style="color:rgba(255,255,255,.7)">Sobre custos de APIs:</strong> o agente utiliza modelos de linguagem de terceiros (OpenAI / Anthropic) para processamento dos documentos. Esses custos são cobrados proporcionalmente ao volume de documentos processados e são de responsabilidade da Cartec — a NewScale os estima e informa antes do go-live, com base nos volumes reais. Para o volume estimado de uso da Onda 1, esse custo adicional tende a ser marginal (tipicamente entre R$ 100–300/mês).
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO TÉCNICO -->
+<section class="diag-section" id="sistemas">
+  <div class="diag-inner">
+    <div class="reveal">
+      <span class="section-label">Diagnóstico Técnico</span>
+      <h2 class="section-title">Os sistemas da Cartec —<br>e o que <em>cada um representa</em> para o projeto.</h2>
+      <p class="diag-intro">Cada dor identificada tem um sistema por trás. Mapeamos o ecossistema atual e o caminho técnico que recomendamos para cada frente — sem necessidade de mudança de sistema ou desenvolvimento adicional na Cartec.</p>
+    </div>
+
+    <div class="diag-table reveal">
+      <div class="diag-row diag-row--header">
+        <div>Sistema</div>
+        <div>Papel na operação</div>
+        <div>Situação de integração</div>
+        <div>Recomendação</div>
+      </div>
+
+      <div class="diag-row">
+        <div>
+          <div class="diag-sys-name-sm">PDFs de Engenharia (Montadoras) <span class="diag-badge diag-badge--good">🟢 Alto</span></div>
+          <div class="diag-region-sm">Documentação técnica</div>
+        </div>
+        <div class="diag-cell-text">Desenhos técnicos recebidos de OEMs (Scania, MAN, etc.) com cotas, subdesenhos e normas. Ponto de entrada de todo o processo de desenvolvimento de peça.</div>
+        <div class="diag-cell-text">Sem necessidade de API. O agente processa os arquivos PDF diretamente — basta recebê-los por e-mail ou depositá-los em uma pasta monitorada do Drive.</div>
+        <div class="diag-cell-text diag-cell-rec">Configurar pasta monitorada no Google Drive (ou caixa de e-mail dedicada) como ponto de entrada. Agente treinado com os padrões reais da Scania e demais montadoras ativas — sem limite de fabricantes.</div>
+      </div>
+
+      <div class="diag-row">
+        <div>
+          <div class="diag-sys-name-sm">Google Drive / e-mail <span class="diag-badge diag-badge--good">🟢 Alto</span></div>
+          <div class="diag-region-sm">Armazenamento e comunicação</div>
+        </div>
+        <div class="diag-cell-text">Ferramenta de armazenamento de arquivos e comunicação interna. Ponto de entrega dos relatórios gerados e canal de notificação ao responsável.</div>
+        <div class="diag-cell-text">API aberta e documentada. Integração direta e simples. Já utilizamos no dia a dia de outros clientes sem nenhuma restrição.</div>
+        <div class="diag-cell-text diag-cell-rec">Usar Drive como repositório organizado por peça e montadora. Notificações por e-mail + WhatsApp ao responsável quando o relatório estiver pronto para revisão.</div>
+      </div>
+
+      <div class="diag-row">
+        <div>
+          <div class="diag-sys-name-sm">ERP (a confirmar) <span class="diag-badge diag-badge--mid">🟡 Médio</span></div>
+          <div class="diag-region-sm">Gestão de produção</div>
+        </div>
+        <div class="diag-cell-text">Registra apontamentos de produção (início, fim, quantidade, conformidade). Fonte dos dados de produtividade do chão de fábrica — central para o Módulo 3 da onda futura.</div>
+        <div class="diag-cell-text">Não confirmado ainda qual ERP a Cartec utiliza. ERPs comuns no setor (Totvs Protheus, Sankhya, Nomus, Cigam) têm APIs abertas ou exportação agendada disponível. A confirmar no kickoff.</div>
+        <div class="diag-cell-text diag-cell-rec">Mapear o ERP na próxima reunião. Se houver API: integração direta para o Módulo 3. Se não houver: exportação agendada para arquivo funciona como alternativa sem perda de resultado.</div>
+      </div>
+
+      <div class="diag-row">
+        <div>
+          <div class="diag-sys-name-sm">Portais OEM (Scania, etc.) <span class="diag-badge diag-badge--mid">🟡 Médio</span></div>
+          <div class="diag-region-sm">Portal de fornecedor</div>
+        </div>
+        <div class="diag-cell-text">Portais externos das montadoras onde a Cartec consulta indicadores, confirmações de programação e KPIs de fornecedor exigidos pela IATF. Hoje, acesso manual e periódico.</div>
+        <div class="diag-cell-text">OEMs de grande porte geralmente têm medidas anti-bot em seus portais. Viabilidade depende de cada portal específico — alguns grandes fornecedores (Scania) podem ter EDI ou acesso API para fornecedores homologados.</div>
+        <div class="diag-cell-text diag-cell-rec">Levantar se a Scania disponibiliza EDI ou API para a Cartec — isso muda completamente a abordagem. Se não houver, avaliar RPA com sessão supervisionada. Escopo de onda futura.</div>
+      </div>
+
+      <div class="diag-row diag-row--last">
+        <div>
+          <div class="diag-sys-name-sm">Ferramenta de PPAP atual <span class="diag-badge diag-badge--good">🟢 Alto</span></div>
+          <div class="diag-region-sm">Documentação / planilha</div>
+        </div>
+        <div class="diag-cell-text">Aparentemente o processo atual é feito com anotações em PDF (Acrobat) e preenchimento em planilhas Excel ou templates próprios. Sem sistema dedicado de PPAP identificado na conversa.</div>
+        <div class="diag-cell-text">Não há sistema para integrar — o agente gera diretamente o output no formato que a equipe já usa (Excel / PDF). Nenhuma mudança de ferramenta necessária na Onda 1.</div>
+        <div class="diag-cell-text diag-cell-rec">O agente entrega o relatório no mesmo template que a Cartec já usa hoje. Zero atrito para a equipe — o processo muda por dentro, a forma de entrega continua a mesma.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ONDA FUTURA -->
+<section class="onda-section">
+  <div class="onda-inner">
+    <div class="onda-grid">
+      <div class="onda-text reveal">
+        <span class="section-label" style="color:var(--tl)">Onda Futura</span>
+        <h2 class="section-title section-title--white">O alicerce que a gente constrói agora <em>abre caminho para muito mais.</em></h2>
+        <p>Uma vez que o agente PPAP estiver rodando, a Cartec terá estabelecido a infraestrutura técnica e a confiança interna necessárias para ampliar a automação para outras áreas da operação. Os módulos abaixo já estão mapeados e prontos para serem priorizados em onda seguinte.</p>
+        <p>O ritmo de avanço é da Cartec — a NewScale entrega cada fase e espera a validação antes de propor a próxima.</p>
+      </div>
+      <div class="onda-card reveal reveal-delay-2">
+        <div class="onda-card-title">Próximas frentes mapeadas</div>
+        <div class="onda-item">
+          <div class="onda-item-icon">🗂️</div>
+          <div>
+            <div class="onda-item-name">Workflow de Desenvolvimento de Peças</div>
+            <div class="onda-item-desc">Kanban por fase, checklists, notificação automática ao responsável seguinte. Gestão centralizada de todos os itens em desenvolvimento.</div>
+          </div>
+        </div>
+        <div class="onda-item">
+          <div class="onda-item-icon">📊</div>
+          <div>
+            <div class="onda-item-name">Relatórios de Produtividade do Chão de Fábrica</div>
+            <div class="onda-item-desc">Conexão com ERP, relatório diário por colaborador, alertas de desvio e fechamento semanal/mensal automático para a gestão.</div>
+          </div>
+        </div>
+        <div class="onda-item">
+          <div class="onda-item-icon">🧾</div>
+          <div>
+            <div class="onda-item-name">Checagem Automática de Notas Fiscais</div>
+            <div class="onda-item-desc">Agente que confere NFs recebidas por e-mail, valida contra pedidos de compra e alerta divergências antes de chegar no inspetor.</div>
+          </div>
+        </div>
+        <div class="onda-item">
+          <div class="onda-item-icon">📋</div>
+          <div>
+            <div class="onda-item-name">Agente de Auditoria de Fornecedores</div>
+            <div class="onda-item-desc">Conduz o auditor pelo checklist in loco via WhatsApp, transcreve respostas em áudio e gera o relatório de auditoria automaticamente ao final.</div>
+          </div>
+        </div>
+        <div class="onda-item">
+          <div class="onda-item-icon">🌐</div>
+          <div>
+            <div class="onda-item-name">Coleta Automática em Portais de Clientes</div>
+            <div class="onda-item-desc">Acesso automatizado a portais de montadoras para extração de indicadores, programação e KPIs de fornecedor — entregues consolidados sem acesso manual.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="garantia-section">
+  <div class="garantia-inner">
+    <div class="garantia-block reveal">
+      <div class="garantia-text">
+        <span class="section-label" style="color:var(--tl)">Nossa Garantia</span>
+        <h2 class="section-title section-title--white" style="margin-top:8px">Entregamos o que prometemos —<br><em>e ficamos até estar redondo.</em></h2>
+        <p>"Nada de 'entregamos o que estava no contrato e tchau'. Se o agente está rodando mas em algum ponto não atende ao escopo combinado, a NewScale continua trabalhando — sem cobrança adicional — até estar redondo."</p>
+      </div>
+      <div class="garantia-right reveal reveal-delay-2">
+        <div class="garantia-selo-num">100%</div>
+        <div class="garantia-selo-label">comprometidos com o resultado</div>
+        <div class="garantia-selos">
+          <div class="garantia-selo-item">
+            <span>✅</span><span>Escopo entregue ou continuamos trabalhando</span>
+          </div>
+          <div class="garantia-selo-item">
+            <span>✅</span><span>30 dias de acompanhamento pós go-live incluso</span>
+          </div>
+          <div class="garantia-selo-item">
+            <span>✅</span><span>Treinamento da equipe incluso na implementação</span>
+          </div>
+          <div class="garantia-selo-item">
+            <span>✅</span><span>Prazo: ~45 dias do kickoff ao go-live</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE NEWSCALE -->
+<section class="porque-section">
+  <div class="porque-inner">
+    <div class="reveal">
+      <span class="section-label">Por que a NewScale</span>
+      <h2 class="section-title">Não vendemos pacotes —<br><em>mergulhamos na sua operação.</em></h2>
+    </div>
+
+    <div class="quote-block reveal">
+      <p class="quote-text">"Cada projeto começa pela conversa — não pelo contrato. A gente entende como a operação funciona hoje, quais as regras de negócio, o que a equipe precisa. Só depois constrói. E depois que entrega, a gente fica — otimizando, ajustando e evoluindo junto com o seu negócio."</p>
+      <div class="quote-author">— Bruna Santanna, Co-Fundadora NewScale Consulting</div>
+    </div>
+
+    <div class="metodologia-title reveal">Nossa metodologia</div>
+    <div class="metodologia-grid">
+      <div class="met-card reveal">
+        <div class="met-num">01</div>
+        <div class="met-title">Consultoria sistêmica</div>
+        <p class="met-text">Visão completa do negócio: atendimento, operação e financeiro. IA como motor de escala — não de cosmética.</p>
+      </div>
+      <div class="met-card reveal reveal-delay-1">
+        <div class="met-num">02</div>
+        <div class="met-title">Roadmap faseado</div>
+        <p class="met-text">Priorizamos os processos com maior potencial de retorno antes de qualquer outra coisa.</p>
+      </div>
+      <div class="met-card reveal reveal-delay-2">
+        <div class="met-num">03</div>
+        <div class="met-title">Implementação integrada</div>
+        <p class="met-text">Conectamos seus sistemas, eliminamos tarefas manuais e construímos fluxos inteligentes nos canais que sua equipe já usa.</p>
+      </div>
+      <div class="met-card reveal reveal-delay-3">
+        <div class="met-num">04</div>
+        <div class="met-title">Treinamento das equipes</div>
+        <p class="met-text">Cada pessoa aprende o papel no novo fluxo. O humano monitora e decide — a IA faz o operacional.</p>
+      </div>
+      <div class="met-card reveal">
+        <div class="met-num">05</div>
+        <div class="met-title">Acompanhamento de KPIs</div>
+        <p class="met-text">Métricas definidas juntos antes de começar. Você sabe o que esperar — e como acompanhar o ganho real.</p>
+      </div>
+      <div class="met-card reveal reveal-delay-1">
+        <div class="met-num">06</div>
+        <div class="met-title">Sustentação contínua</div>
+        <p class="met-text">Monitoramento, otimizações e manutenção para que o sistema evolua junto com o negócio — não fique parado no tempo.</p>
+      </div>
+    </div>
+
+    <div class="fundadores-title reveal">Quem vai fazer isso acontecer</div>
+    <div class="fundadores-grid">
+      <div class="fundador-card reveal">
+        <img class="fundador-photo" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG" alt="Bruna Santanna">
+        <div class="fundador-info">
+          <div class="fundador-name">Bruna Santanna</div>
+          <div class="fundador-role">Co-Fundadora · NewScale Consulting</div>
+          <p class="fundador-bio">ESPM. Empresária há 10+ anos. Mentora de IA no programa Potenc.IA. Professora de IA para equipes corporativas. Implementa IA no próprio negócio todos os dias — só vende o que usa.</p>
+          <div class="fundador-tags">
+            <span class="fundador-tag">SulAmérica</span>
+            <span class="fundador-tag">Whirlpool</span>
+            <span class="fundador-tag">Blackbox AI</span>
+            <span class="fundador-tag">Potenc.IA</span>
+          </div>
+        </div>
+      </div>
+      <div class="fundador-card reveal reveal-delay-2">
+        <img class="fundador-photo" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/BRUNO-VARELLA-PQ.jpeg" alt="Bruno Varella">
+        <div class="fundador-info">
+          <div class="fundador-name">Bruno Varella</div>
+          <div class="fundador-role">Co-Fundador · NewScale Consulting</div>
+          <p class="fundador-bio">ESPM. 17+ anos em Marketing, Produto e Novos Negócios. Ex-Warner Bros., Ex-Natura & Co. Já implantou Agentes de IA em redes de franquias com 700+ unidades.</p>
+          <div class="fundador-tags">
+            <span class="fundador-tag">Warner Bros.</span>
+            <span class="fundador-tag">Natura & Co</span>
+            <span class="fundador-tag">700+ franquias</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="faq-header reveal">
+      <span class="section-label">Dúvidas frequentes</span>
+      <h2 class="section-title">As perguntas que<br><em>provavelmente estão na cabeça de vocês.</em></h2>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <div class="faq-q-text">O agente pode errar na leitura do desenho? O que acontece se ele errar?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Sim, pode — e é exatamente por isso que o gate de validação humana é obrigatório antes de qualquer uso oficial do relatório gerado. O agente faz o trabalho braçal (extrair, classificar, preencher) e sinaliza explicitamente qualquer campo que não conseguiu preencher com confiança. O inspetor revisa com o desenho original ao lado — o que ele faz hoje por 2–3 horas, passa a fazer em 10–15 minutos. Nenhum relatório é aprovado sem a confirmação humana.</div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-1" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <div class="faq-q-text">A IATF 16949 aceita um processo com participação de IA? Isso não invalida a certificação?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">A IATF 16949 exige rastreabilidade e responsabilidade humana nas aprovações — e o processo que implementamos atende a isso. O agente é uma ferramenta de suporte, não o aprovador. Cada validação é registrada em log com data, hora e usuário responsável pela aprovação. O fluxo é documentado e auditável — o que, inclusive, fortalece a conformidade, não a enfraquece. Recomendamos validar com o time de qualidade da Cartec antes do go-live, como faremos em qualquer cliente com certificação automotiva.</div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-2" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <div class="faq-q-text">E se os desenhos chegarem de uma montadora nova, com um layout diferente?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">O agente é treinado por padrão de cliente — e não há limite fixo de montadoras. Começamos pela Scania (maior volume imediato) e adicionamos os demais fabricantes de forma incremental conforme os desenhos chegam. Treinar um novo padrão é uma questão de alimentar o agente com exemplos reais daquele cliente — não exige nova arquitetura. Quanto mais documentos ele processa, mais preciso ele fica. Isso já está coberto pela mensalidade de manutenção.</div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-3" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <div class="faq-q-text">Precisamos mudar algum sistema que a Cartec já usa?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Não. Na Onda 1, o agente trabalha com os arquivos que já chegam hoje — PDFs de desenho técnico — e entrega os relatórios no mesmo formato que a equipe já usa (Excel/PDF). Não há nenhuma mudança de sistema, nenhuma migração de dados e nenhuma adaptação na rotina de recebimento de documentos das montadoras. O processo muda por dentro; a forma de entrega continua a mesma.</div>
+      </div>
+
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <div class="faq-q-text">Quanto tempo leva para implementar e quando a equipe começa a ver resultado?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">O prazo estimado é de ~45 dias do kickoff ao go-live. Nas primeiras semanas, o foco é no mapeamento dos padrões de desenho e no treinamento do agente com documentos reais da Cartec. A partir do go-live, a equipe já processa os primeiros desenhos pelo agente — com acompanhamento próximo da NewScale durante os 30 dias iniciais.</div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-1" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <div class="faq-q-text">Os Módulos 2 e 3 dependem do Módulo 1 para ser implementados?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Tecnicamente não — os três módulos podem ser implementados de forma independente. A decisão de começar pelo Módulo 1 é estratégica: é a maior dor imediata da Cartec, tem o retorno mais rápido e visível, e cria a confiança interna necessária para avançar com mais segurança nas próximas ondas. Quando chegar a hora dos Módulos 2 e 3, a equipe já vai conhecer a forma de trabalho da NewScale e o processo de go-live será mais ágil.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRÓXIMOS PASSOS -->
+<section class="steps-section">
+  <div class="steps-inner">
+    <div class="steps-header reveal">
+      <span class="section-label" style="color:var(--tl)">Próximos Passos</span>
+      <h2 class="section-title section-title--white">De hoje <em>ao go-live</em> — o que acontece em cada etapa.</h2>
+    </div>
+    <div class="steps-list">
+      <div class="step-item reveal">
+        <div class="step-num">1</div>
+        <div>
+          <div class="step-prazo">Esta semana</div>
+          <div class="step-title">Validação da proposta e alinhamento comercial</div>
+          <p class="step-desc">Ricardo e Daniela revisam a proposta, tiram dúvidas e confirmam o escopo da Onda 1. Bruno está disponível para uma call rápida se algum ponto precisar de ajuste antes da assinatura.</p>
+        </div>
+      </div>
+      <div class="step-item reveal reveal-delay-1">
+        <div class="step-num">2</div>
+        <div>
+          <div class="step-prazo">Semana 1 — após assinatura</div>
+          <div class="step-title">Kickoff e recebimento dos primeiros desenhos reais</div>
+          <p class="step-desc">Reunião de kickoff com a equipe técnica. Recebemos os primeiros PDFs de desenho técnico da Scania (inclusive os que o Ricardo já mencionou enviar como teste), confirmamos o padrão de entrega dos relatórios e mapeamos quaisquer peculiaridades do processo atual.</p>
+        </div>
+      </div>
+      <div class="step-item reveal reveal-delay-2">
+        <div class="step-num">3</div>
+        <div>
+          <div class="step-prazo">Semanas 2–4</div>
+          <div class="step-title">Desenvolvimento e treinamento do agente</div>
+          <p class="step-desc">Construção do agente com base nos documentos reais da Cartec. Testes iterativos com o time de Ricardo para garantir acurácia na extração e no preenchimento dos relatórios. Ajustes finos conforme feedback.</p>
+        </div>
+      </div>
+      <div class="step-item reveal reveal-delay-3">
+        <div class="step-num">4</div>
+        <div>
+          <div class="step-prazo">Semanas 5–6</div>
+          <div class="step-title">Testes em paralelo e validação do gate humano</div>
+          <p class="step-desc">A equipe usa o agente em paralelo ao processo atual — processando os mesmos desenhos pelos dois caminhos e comparando os resultados. Só avançamos para o go-live quando a taxa de acerto for aprovada pelo time de qualidade.</p>
+        </div>
+      </div>
+      <div class="step-item reveal">
+        <div class="step-num">5</div>
+        <div>
+          <div class="step-prazo">~Dia 45</div>
+          <div class="step-title">Go-live e acompanhamento inicial</div>
+          <p class="step-desc">O agente entra em operação plena. A NewScale acompanha de perto os primeiros 30 dias — monitorando erros, ajustando comportamentos e garantindo que a equipe esteja confortável com o novo fluxo.</p>
+        </div>
+      </div>
+    </div>
+    <p class="steps-fechamento reveal">"Você não está sozinho no go-live — e também não estará no dia seguinte."</p>
+  </div>
+</section>
+
+<!-- CTA DE FECHAMENTO -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-fechamento-inner reveal">
+      <div class="cta-validade-badge">
+        <div class="cta-pulse"></div>
+        Proposta válida até 03 de junho de 2026
+      </div>
+      <h2 class="cta-h2">Ricardo, Daniela —<br><em>a hora de começar é essa.</em></h2>
+      <p class="cta-desc">A prova de conceito já está quase feita: o Ricardo vai enviar os desenhos, a gente testa e mostra o resultado antes mesmo de assinar. O risco de entrada é mínimo — e o impacto de continuar como está, vocês já conhecem.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/5511981982254?text=Ol%C3%A1%2C%20Bruno!%20Quero%20avan%C3%A7ar%20com%20a%20proposta%20da%20Cartec." class="cta-btn-primary" target="_blank">Quero avançar com a proposta →</a>
+        <a href="https://wa.me/5511981982254?text=Ol%C3%A1%2C%20Bruno!%20Tenho%20algumas%20d%C3%BAvidas%20sobre%20a%20proposta%20da%20Cartec." class="cta-btn-secondary" target="_blank">Tenho dúvidas antes de decidir</a>
+      </div>
+      <div class="cta-metricas">
+        <div class="cta-metrica">
+          <div class="cta-metrica-num">~45</div>
+          <div class="cta-metrica-label">dias do kickoff ao go-live</div>
+        </div>
+        <div class="cta-metrica">
+          <div class="cta-metrica-num">&lt; 2</div>
+          <div class="cta-metrica-label">meses estimados de payback</div>
+        </div>
+        <div class="cta-metrica">
+          <div class="cta-metrica-num">0</div>
+          <div class="cta-metrica-label">mudanças de sistema necessárias</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">NewScale<span>Consulting</span></div>
+  <div class="footer-date">Proposta exclusiva · Metalúrgica Cartec · v1<br>19 de maio de 2026 · Válida até 03/junho/2026</div>
+</footer>
+
+<script>
+// NAVBAR SCROLL
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// SCROLL REVEAL
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.06 });
+reveals.forEach(el => observer.observe(el));
+
+// MÓDULOS ACCORDION
+function toggleModulo(card) { card.classList.toggle('open'); }
+
+// FAQ ACCORDION
+function toggleFaq(item) {
+  document.querySelectorAll('.faq-item.open').forEach(other => {
+    if (other !== item) other.classList.remove('open');
+  });
+  item.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
