@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reunião · CBS Stoller · 11 jun 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #14373C;
+    --sage: #435D51;
+    --terra: #B06E4A;
+    --tl: #c4835e;
+    --sand: #A38362;
+    --cream: #E8E6E0;
+    --cl: #F4F3EF;
+    --white: #FAFAF8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-weight: 400;
+    color: var(--ink);
+    background: var(--white);
+    line-height: 1.55;
+    font-size: 17px;
+  }
+  .container { max-width: 1040px; margin: 0 auto; padding: 0 40px; }
+
+  /* HEADER */
+  header.top {
+    background: var(--ink);
+    color: var(--white);
+    padding: 56px 0 48px;
+    border-bottom: 4px solid var(--terra);
+  }
+  .top-stag {
+    font-weight: 700;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--tl);
+    margin-bottom: 18px;
+    display: block;
+  }
+  .top h1 {
+    font-weight: 700;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    line-height: 1.2;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .top-objective {
+    font-size: 1.05rem;
+    color: rgba(250,250,248,0.78);
+    max-width: 720px;
+    font-weight: 400;
+  }
+  .nav-pills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+  }
+  .nav-pills a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(176,110,74,0.18);
+    border: 1px solid rgba(176,110,74,0.35);
+    color: var(--white);
+    text-decoration: none;
+    padding: 9px 16px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    transition: all .15s ease;
+  }
+  .nav-pills a:hover {
+    background: var(--terra);
+    border-color: var(--terra);
+  }
+  .nav-pills a::before {
+    content: '↓';
+    color: var(--tl);
+    font-weight: 700;
+  }
+  .nav-pills a:hover::before { color: var(--white); }
+  .meta-row {
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+  .meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .meta-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--tl);
+    font-weight: 700;
+  }
+  .meta-value { font-size: 0.94rem; color: var(--white); font-weight: 500; }
+
+  /* SECTION */
+  section { padding: 60px 0; scroll-margin-top: 20px; }
+  section.alt { background: var(--cl); }
+  .section-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 12px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--ink);
+    display: inline-block;
+  }
+  .section-lead {
+    font-size: 1rem;
+    color: var(--sage);
+    margin-bottom: 32px;
+    max-width: 720px;
+  }
+
+  /* PESQUISA — números grandes */
+  .pesquisa-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 32px;
+    font-size: 0.92rem;
+    color: var(--sage);
+  }
+  .pesquisa-summary strong { color: var(--ink); font-weight: 700; }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .stat-card {
+    background: var(--white);
+    border: 1px solid rgba(20,55,60,0.12);
+    border-radius: 6px;
+    padding: 22px 22px 20px;
+  }
+  .stat-num {
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--terra);
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+  .stat-label {
+    font-size: 0.9rem;
+    color: var(--ink);
+    line-height: 1.4;
+    font-weight: 500;
+  }
+  .insight-list {
+    list-style: none;
+    padding: 0;
+    background: var(--white);
+    border: 1px solid rgba(20,55,60,0.12);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .insight-list li {
+    padding: 16px 24px;
+    font-size: 0.96rem;
+    color: var(--ink);
+    border-bottom: 1px solid rgba(20,55,60,0.08);
+    line-height: 1.5;
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 18px;
+    align-items: baseline;
+  }
+  .insight-list li:last-child { border-bottom: none; }
+  .insight-tag {
+    font-weight: 700;
+    color: var(--terra);
+    font-size: 0.95rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* BLOCOS */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .bloco {
+    background: var(--white);
+    border: 1px solid rgba(20,55,60,0.12);
+    border-radius: 6px;
+    padding: 26px 28px;
+  }
+  .bloco-num {
+    font-weight: 700;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--terra);
+    margin-bottom: 4px;
+  }
+  .bloco h3 {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--ink);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(20,55,60,0.1);
+  }
+  .bloco ul { list-style: none; padding: 0; }
+  .bloco li {
+    position: relative;
+    padding: 6px 0 6px 18px;
+    font-size: 0.96rem;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .bloco li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 14px;
+    width: 6px; height: 6px;
+    background: var(--terra);
+    border-radius: 50%;
+  }
+  .bloco li.priority {
+    font-weight: 600;
+  }
+  .bloco li.priority::before {
+    background: var(--ink);
+    width: 8px; height: 8px;
+    top: 13px;
+  }
+
+  /* DECISÕES */
+  .lista-decisao {
+    list-style: none;
+    padding: 0;
+    background: var(--white);
+    border: 1px solid rgba(20,55,60,0.12);
+    border-radius: 6px;
+    overflow: hidden;
+    counter-reset: item;
+  }
+  .lista-decisao li {
+    padding: 16px 28px;
+    font-size: 1rem;
+    color: var(--ink);
+    border-bottom: 1px solid rgba(20,55,60,0.08);
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 18px;
+    align-items: baseline;
+  }
+  .lista-decisao li:last-child { border-bottom: none; }
+  .lista-decisao li::before {
+    content: counter(item, decimal-leading-zero);
+    counter-increment: item;
+    font-weight: 700;
+    font-size: 0.78rem;
+    color: var(--terra);
+    letter-spacing: 0.08em;
+  }
+
+  /* TIMELINE */
+  table.timeline {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border: 1px solid rgba(20,55,60,0.12);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  table.timeline th {
+    text-align: left;
+    padding: 14px 24px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--white);
+    background: var(--ink);
+  }
+  table.timeline td {
+    padding: 16px 24px;
+    font-size: 0.96rem;
+    border-bottom: 1px solid rgba(20,55,60,0.08);
+    color: var(--ink);
+    line-height: 1.5;
+    vertical-align: top;
+  }
+  table.timeline tr:last-child td { border-bottom: none; }
+  table.timeline td:first-child {
+    width: 180px;
+    font-weight: 600;
+    color: var(--terra);
+    white-space: nowrap;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: rgba(250,250,248,0.6);
+    padding: 28px 0;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-align: center;
+  }
+  footer strong { color: var(--white); font-weight: 700; letter-spacing: 0.1em; }
+
+  /* PLANNER — fluxo dos 3 caminhos */
+  .caminho-bloco {
+    background: var(--white);
+    border: 1px solid rgba(20,55,60,0.12);
+    border-radius: 6px;
+    padding: 22px 26px;
+    margin-bottom: 14px;
+  }
+  .caminho-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 4px;
+  }
+  .caminho-letra {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--white);
+    background: var(--terra);
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .caminho-nome {
+    font-weight: 700;
+    font-size: 1.02rem;
+    color: var(--ink);
+  }
+  .caminho-tag {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    color: var(--sage);
+    margin-left: auto;
+  }
+  .fluxo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin: 14px 0 10px 48px;
+    font-size: 0.92rem;
+    color: var(--ink);
+  }
+  .fluxo span.passo {
+    background: var(--cl);
+    border: 1px solid rgba(20,55,60,0.1);
+    padding: 7px 12px;
+    border-radius: 4px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  .fluxo span.passo.final {
+    background: var(--ink);
+    color: var(--white);
+    border-color: var(--ink);
+    font-weight: 700;
+  }
+  .fluxo span.seta {
+    color: var(--terra);
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  .caminho-nota {
+    font-size: 0.86rem;
+    color: var(--sage);
+    margin-left: 48px;
+    font-style: italic;
+  }
+
+  /* Perguntas — bloco escuro, sério */
+  .perguntas {
+    background: var(--ink);
+    color: var(--white);
+    border-radius: 6px;
+    padding: 36px 40px;
+    margin-top: 36px;
+  }
+  .perguntas h3 {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.15rem;
+    line-height: 1.3;
+    margin-bottom: 22px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  .perguntas ol {
+    list-style: none;
+    counter-reset: q;
+    padding: 0;
+    margin: 0;
+  }
+  .perguntas li {
+    counter-increment: q;
+    position: relative;
+    padding: 14px 0 14px 52px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.98rem;
+    line-height: 1.5;
+    color: var(--white);
+  }
+  .perguntas li:last-child { border-bottom: none; }
+  .perguntas li::before {
+    content: counter(q, decimal-leading-zero);
+    color: var(--tl);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    position: absolute;
+    left: 0;
+    top: 17px;
+  }
+  .perguntas li strong { color: var(--tl); font-weight: 700; }
+
+  @media (max-width: 760px) {
+    .grid-2 { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    section { padding: 44px 0; }
+    .container { padding: 0 24px; }
+    .insight-list li { grid-template-columns: 56px 1fr; gap: 12px; }
+    .fluxo { margin-left: 0; }
+    .caminho-nota { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="container">
+    <span class="top-stag">NewScale · Stoller / Corteva · 27 maio 2026</span>
+    <h1>Reunião de alinhamento para o CBS de 11 de junho.</h1>
+    <p class="top-objective">A pesquisa com os RTVs mostrou onde dói. Esta reunião define o que está liberado no ambiente Corteva para responder essas dores na palestra do dia 11.</p>
+    <nav class="nav-pills">
+      <a href="#pesquisa">O que a pesquisa mostrou</a>
+      <a href="#ti">O que precisamos confirmar</a>
+      <a href="#planner">Planner · 3 caminhos</a>
+      <a href="#decisoes">Decisões da reunião</a>
+      <a href="#proximos">Próximos passos</a>
+    </nav>
+    <div class="meta-row">
+      <div class="meta-item">
+        <span class="meta-label">Evento</span>
+        <span class="meta-value">CBS · 11 jun · Atibaia</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Audiência</span>
+        <span class="meta-value">240 RTVs Stoller</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Bloco da palestra</span>
+        <span class="meta-value">2 horas</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Condução</span>
+        <span class="meta-value">Bruna Santanna</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- PESQUISA -->
+<section id="pesquisa">
+  <div class="container">
+    <h2 class="section-title">O que a pesquisa mostrou</h2>
+    <p class="section-lead">48 respostas até agora. 50% RTVs, 25% RDCs, 16,7% DSMs, mais DM e RSL. Espalhados em 15 regionais — MT Sul, Goiás, MG Cerrado e Brasília concentram quase metade.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">81%</div>
+        <div class="stat-label">querem demonstrações práticas com casos do agro</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">67%</div>
+        <div class="stat-label">querem aprender IA para análise de vendas e mapa da mina</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">52%</div>
+        <div class="stat-label">apontam o Microsoft Planner como a atividade que mais incomoda</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">48%</div>
+        <div class="stat-label">não sabem como verificar se têm licença Copilot ativa</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">71%</div>
+        <div class="stat-label">odeiam ficar muito no conceito antes de ver a coisa funcionando</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">94%</div>
+        <div class="stat-label">já tocaram em alguma IA · apenas 6% nunca usou</div>
+      </div>
+    </div>
+
+    <ul class="insight-list">
+      <li>
+        <span class="insight-tag">48%</span>
+        <span>marcam a <strong>construção do PED</strong> (análise + papel em branco) como a etapa que mais precisa de ajuda</span>
+      </li>
+      <li>
+        <span class="insight-tag">40%</span>
+        <span>dizem literalmente: <em>"saio com a discussão boa, mas perco muito tempo transformando em apresentação"</em></span>
+      </li>
+      <li>
+        <span class="insight-tag">92%</span>
+        <span>já usaram <strong>ChatGPT</strong> · 27% Gemini · 21% Copilot · NotebookLM e Claude praticamente desconhecidos</span>
+      </li>
+      <li>
+        <span class="insight-tag">37,5%</span>
+        <span>têm <strong>dúvida sobre o que conta como dado confidencial</strong> · 35% nunca pensou no assunto</span>
+      </li>
+      <li>
+        <span class="insight-tag">58%</span>
+        <span>já se frustraram com ferramenta que <em>"promete simples mas dá erro"</em> · valida abrir com demo gravada, não ao vivo</span>
+      </li>
+      <li>
+        <span class="insight-tag">15%</span>
+        <span>usa IA com frequência no trabalho · há uma lacuna grande entre quem testou e quem incorporou</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- TI -->
+<section id="ti" class="alt">
+  <div class="container">
+    <h2 class="section-title">O que precisamos para começar a construir</h2>
+    <p class="section-lead">Cada bloco abaixo está amarrado a uma dor real da pesquisa. Sem esses inputs, não dá para fechar o conteúdo da palestra.</p>
+
+    <div class="grid-2">
+
+      <div class="bloco">
+        <div class="bloco-num">Bloco 1</div>
+        <h3>Stack de IA oficial</h3>
+        <ul>
+          <li class="priority">Lista nominal de RTVs com licença Copilot ativa (48% não sabe)</li>
+          <li>Ferramentas homologadas hoje · Copilot, chat interno, NotebookLM, Gemini</li>
+          <li>Como funciona o chat interno com seletor de LLM</li>
+          <li>Caminho e fila de solicitação de licença</li>
+          <li>Roadmap de novas ferramentas (Claude, Bedrock)</li>
+        </ul>
+      </div>
+
+      <div class="bloco">
+        <div class="bloco-num">Bloco 2</div>
+        <h3>Governança e dados</h3>
+        <ul>
+          <li class="priority">Política oficial escrita · 37,5% têm dúvida sobre dado confidencial</li>
+          <li>Lista clara do que pode e não pode subir (carteira, preço, plano, ata)</li>
+          <li>Consequência de instalar ferramenta fora do padrão</li>
+          <li>Canal de exceção para piloto</li>
+          <li>Chancela do TI no slide de segurança</li>
+        </ul>
+      </div>
+
+      <div class="bloco">
+        <div class="bloco-num">Bloco 3</div>
+        <h3>Acesso real do RTV</h3>
+        <ul>
+          <li class="priority">Acesso de teste à máquina virtual para Bruna gravar as demos</li>
+          <li>Máquina Corteva ou Stoller · caminho do clique</li>
+          <li>Atritos da máquina virtual · tempo de login</li>
+          <li>Reclamações mais comuns no uso atual</li>
+          <li>RTV piloto disponível antes do dia 11 para validar</li>
+        </ul>
+      </div>
+
+      <div class="bloco">
+        <div class="bloco-num">Bloco 4</div>
+        <h3>Integração com o PED</h3>
+        <ul>
+          <li class="priority">Copilot conectado ao Power BI · pivô do mapa da mina (67% querem isso)</li>
+          <li>Copilot no Microsoft Planner por voz ou transcrição (52% sofre com Planner)</li>
+          <li>Agente que monta a apresentação do PED a partir do template</li>
+          <li>RTVs que já criaram agente próprio · viram caso na palestra</li>
+          <li>Manual interativo via Copilot pós-palestra</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PLANNER · 3 CAMINHOS -->
+<section id="planner">
+  <div class="container">
+    <h2 class="section-title">Automação do Planner · 3 caminhos possíveis</h2>
+    <p class="section-lead">52% dos RTVs apontaram o Planner como a dor #1. A Microsoft entregou em 2026 três caminhos pra automatizar via Copilot. O que muda entre eles é licença e setup. Validar com o Luiz qual está liberado na Corteva.</p>
+
+    <div class="caminho-bloco">
+      <div class="caminho-head">
+        <span class="caminho-letra">A</span>
+        <span class="caminho-nome">Facilitator agent no Teams</span>
+        <span class="caminho-tag">aposta principal</span>
+      </div>
+      <div class="fluxo">
+        <span class="passo">Reunião Teams</span>
+        <span class="seta">→</span>
+        <span class="passo">Transcrição on</span>
+        <span class="seta">→</span>
+        <span class="passo">Facilitator captura ações</span>
+        <span class="seta">→</span>
+        <span class="passo">Clique "Accept to sync"</span>
+        <span class="seta">→</span>
+        <span class="passo final">Planner preenchido</span>
+      </div>
+      <p class="caminho-nota">Precisa: licença M365 Copilot paga (não a gratuita) + Facilitator habilitado no tenant.</p>
+    </div>
+
+    <div class="caminho-bloco">
+      <div class="caminho-head">
+        <span class="caminho-letra">B</span>
+        <span class="caminho-nome">Planner Agent no Copilot Chat</span>
+        <span class="caminho-tag">plano B robusto</span>
+      </div>
+      <div class="fluxo">
+        <span class="passo">Áudio do celular ou lista</span>
+        <span class="seta">→</span>
+        <span class="passo">Cola no Copilot Chat</span>
+        <span class="seta">→</span>
+        <span class="passo">"Cria essas tasks no plano X"</span>
+        <span class="seta">→</span>
+        <span class="passo final">Planner preenchido</span>
+      </div>
+      <p class="caminho-nota">Funciona até com reunião presencial na fazenda. Cobre tasks pessoais e planos compartilhados básicos.</p>
+    </div>
+
+    <div class="caminho-bloco">
+      <div class="caminho-head">
+        <span class="caminho-letra">C</span>
+        <span class="caminho-nome">Agente custom no Copilot Studio</span>
+        <span class="caminho-tag">bônus pós-palestra</span>
+      </div>
+      <div class="fluxo">
+        <span class="passo">Voz do RTV</span>
+        <span class="seta">→</span>
+        <span class="passo">"Assistente Stoller" (agente sob medida)</span>
+        <span class="seta">→</span>
+        <span class="passo">Tasks com responsável + prazo + bucket</span>
+        <span class="seta">→</span>
+        <span class="passo final">Planner preenchido</span>
+      </div>
+      <p class="caminho-nota">Precisa: licença extra Copilot Studio (~US$ 200/tenant/mês). Vira o "manual interativo" entregue pós-CBS.</p>
+    </div>
+
+    <div class="perguntas">
+      <h3>Pontos a confirmar nesta reunião</h3>
+      <ol>
+        <li>Dos 240 RTVs, quantos têm <strong>M365 Copilot pago</strong> (US$ 30/mês), não o Copilot Chat gratuito?</li>
+        <li>O <strong>Facilitator agent</strong> está habilitado no tenant da Corteva ou bloqueado por política?</li>
+        <li>A <strong>transcrição de reunião do Teams</strong> está liberada pros RTVs?</li>
+        <li>A Corteva tem <strong>Copilot Studio</strong> na assinatura? (Destrava o agente custom pós-palestra.)</li>
+        <li>O Planner usado pelos RTVs é <strong>básico ou Premium</strong> (Plan 1/3/5)? Premium destrava recursos a mais.</li>
+        <li>Posso ter <strong>acesso de teste ao tenant</strong> até sexta pra gravar os vídeos das demos?</li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+
+<!-- DECISÕES -->
+<section id="decisoes">
+  <div class="container">
+    <h2 class="section-title">Decisões da reunião</h2>
+    <ol class="lista-decisao">
+      <li>Lista de ferramentas oficiais que vão para o palco</li>
+      <li>Política de dados validada e citável em apresentação</li>
+      <li>Plano de licença Copilot para os 240 RTVs até 11/06</li>
+      <li>Caso de uso destaque · mapa da mina, Planner ou PPT do PED</li>
+      <li>Entrega de agente pós-palestra · onde roda e quem aprova</li>
+      <li>Presença do TI no dia 11 · ao vivo ou em vídeo gravado</li>
+    </ol>
+  </div>
+</section>
+
+<!-- PROXIMOS PASSOS -->
+<section id="proximos" class="alt">
+  <div class="container">
+    <h2 class="section-title">Próximos passos</h2>
+    <table class="timeline">
+      <thead>
+        <tr><th>Janela</th><th>Entrega</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Até sex · 29/05</td>
+          <td>TI envia política oficial, lista de ferramentas homologadas e relação de licenças. Bruna recebe acesso de teste à máquina virtual.</td>
+        </tr>
+        <tr>
+          <td>Semana de 02/06</td>
+          <td>Workshop com Daorto e Luiz. Construção e teste das demos no ambiente Corteva. Validação com 1 RTV piloto.</td>
+        </tr>
+        <tr>
+          <td>Até 09/06</td>
+          <td>Ensaio presencial com Flávia. Slide de segurança aprovado. Manual pós-palestra fechado.</td>
+        </tr>
+        <tr>
+          <td>11/06 · CBS</td>
+          <td>Palestra em Atibaia. 240 RTVs. Dupla no palco.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <strong>NEWSCALE</strong> &nbsp;·&nbsp; Reunião Corteva &nbsp;·&nbsp; 27 maio 2026
+  </div>
+</footer>
+
+</body>
+</html>
