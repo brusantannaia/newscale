@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encontro 1 — Mentoria de IA · João & Neila | NewScale</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #14373C;
+    --ink2: #1a4449;
+    --sage: #435D51;
+    --terra: #B06E4A;
+    --tl: #c4835e;
+    --sand: #A38362;
+    --cream: #E8E6E0;
+    --cl: #F4F3EF;
+    --white: #FAFAF8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cl);
+    color: var(--ink);
+    line-height: 1.7;
+    font-weight: 400;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    background: linear-gradient(145deg, #0c2427 0%, #14373C 38%, #1d4840 72%, #435D51 100%);
+    color: var(--white);
+    padding: 56px 24px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.03; pointer-events: none;
+  }
+  .hero-inner { max-width: 920px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero img.logo { height: 38px; margin-bottom: 36px; }
+  .hero .tag {
+    display: inline-block; font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--tl);
+    margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 700;
+    font-size: clamp(2.3rem, 5vw, 3.5rem); line-height: 1.1; margin-bottom: 16px;
+  }
+  .hero h1 em { font-style: italic; color: var(--tl); font-weight: 600; }
+  .hero p.lead {
+    font-size: 1.05rem; font-weight: 300; color: rgba(255,255,255,0.86);
+    max-width: 620px; line-height: 1.7;
+  }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 28px;
+    font-size: 0.82rem; color: rgba(255,255,255,0.7);
+  }
+  .hero-meta span strong { color: var(--white); font-weight: 600; }
+
+  /* ---------- NAV ---------- */
+  nav.toc {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(244,243,239,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(20,55,60,0.08);
+  }
+  nav.toc .wrap { display: flex; gap: 6px; overflow-x: auto; padding: 10px 24px; }
+  nav.toc a {
+    flex: 0 0 auto; text-decoration: none; color: var(--sage);
+    font-size: 0.74rem; font-weight: 600; letter-spacing: 0.03em;
+    padding: 7px 14px; border-radius: 20px; white-space: nowrap;
+    transition: all 0.15s;
+  }
+  nav.toc a:hover { background: rgba(176,110,74,0.1); color: var(--terra); }
+
+  /* ---------- SECTIONS ---------- */
+  section { padding: 52px 0 8px; }
+  .stag {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--terra); margin-bottom: 10px;
+  }
+  h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 700;
+    font-size: clamp(1.85rem, 3.4vw, 2.6rem); line-height: 1.15;
+    color: var(--ink); margin-bottom: 18px;
+  }
+  h2 em { font-style: italic; color: var(--terra); }
+  h3 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 700;
+    font-size: 1.4rem; color: var(--ink); margin: 26px 0 8px;
+  }
+  p { margin-bottom: 14px; font-size: 0.97rem; color: #2a4448; }
+  p.intro { font-size: 1.05rem; color: var(--sage); max-width: 680px; }
+  strong { font-weight: 600; color: var(--ink); }
+  em.cur { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--terra); font-size: 1.05em; }
+
+  /* cards light */
+  .card {
+    background: var(--white); border: 1px solid rgba(20,55,60,0.07);
+    border-radius: 14px; padding: 26px 28px; margin: 16px 0;
+    box-shadow: 0 6px 22px rgba(20,55,60,0.05); position: relative; overflow: hidden;
+  }
+  .card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--terra);
+  }
+  .card.plain::before { display: none; }
+  .card h3 { margin-top: 0; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 720px) { .grid2 { grid-template-columns: 1fr; } }
+
+  /* concept blocks */
+  .concept { display: flex; gap: 18px; padding: 20px 0; border-bottom: 1px solid rgba(20,55,60,0.08); }
+  .concept:last-child { border-bottom: none; }
+  .concept .num {
+    flex: 0 0 auto; font-family: 'Cormorant Garamond', serif; font-size: 2.1rem;
+    font-weight: 600; color: var(--terra); line-height: 1; width: 42px;
+  }
+  .concept .body h3 { margin: 0 0 4px; font-size: 1.3rem; }
+  .concept .body p { margin-bottom: 6px; }
+
+  .analogy {
+    background: rgba(176,110,74,0.06); border-left: 3px solid var(--terra);
+    padding: 10px 16px; border-radius: 0 8px 8px 0; margin-top: 8px;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 1.05rem; color: var(--ink); line-height: 1.45;
+  }
+
+  /* ---------- DIAGRAMA / VISAO GERAL ---------- */
+  .dg-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:16px; }
+  @media(max-width:820px){ .dg-cards{ grid-template-columns:1fr 1fr; } }
+  @media(max-width:520px){ .dg-cards{ grid-template-columns:1fr; } }
+  .dg-card { display:flex; flex-direction:column; background:var(--white); border:1px solid rgba(20,55,60,0.07); border-radius:14px; overflow:hidden; box-shadow:0 6px 22px rgba(20,55,60,0.05); }
+  .dg-top { padding:14px 18px 16px; }
+  .dg-name { font-family:'Cormorant Garamond', serif; font-weight:700; font-size:1.55rem; color:var(--white); letter-spacing:0.06em; line-height:1; }
+  .dg-role { font-size:0.72rem; font-weight:600; letter-spacing:0.05em; color:rgba(255,255,255,0.9); margin-top:4px; }
+  .dg-body { padding:14px 18px 18px; flex:1; display:flex; flex-direction:column; gap:10px; }
+  .dg-desc { font-size:0.88rem; color:#2a4448; line-height:1.45; }
+  .dg-an { font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.02rem; color:var(--ink); line-height:1.3; border-top:1px solid rgba(20,55,60,0.08); padding-top:10px; margin-top:auto; }
+  .dg-t1{ background:var(--terra); } .dg-t2{ background:var(--ink); } .dg-t3{ background:var(--sage); } .dg-t4{ background:var(--sand); }
+  .dg-sublabel { font-size:0.65rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--sage); margin:26px 0 12px; }
+  .dg-flow { display:grid; grid-template-columns:1fr 34px 1fr 34px 1fr 34px 1fr; align-items:stretch; }
+  @media(max-width:820px){ .dg-flow{ grid-template-columns:1fr; gap:12px; } .dg-arrow{ transform:rotate(90deg); justify-self:center; } }
+  .dg-step { background:var(--white); border:1px solid rgba(20,55,60,0.08); border-radius:12px; padding:16px 14px; text-align:center; display:flex; flex-direction:column; justify-content:center; gap:5px; }
+  .dg-tag { font-size:0.62rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; }
+  .dg-h { font-family:'Cormorant Garamond', serif; font-weight:700; font-size:1.15rem; color:var(--ink); line-height:1.12; }
+  .dg-s { font-size:0.76rem; color:var(--sage); line-height:1.35; }
+  .dg-step.acc { background:rgba(176,110,74,0.08); border-color:rgba(176,110,74,0.35); }
+  .dg-step.pet { background:rgba(20,55,60,0.06); border-color:rgba(20,55,60,0.25); }
+  .dg-arrow { display:flex; align-items:center; justify-content:center; font-size:1.3rem; color:var(--sand); }
+
+  /* checklist / tarefas */
+  .task {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: var(--white); border: 1px solid rgba(20,55,60,0.07);
+    border-radius: 12px; padding: 16px 18px; margin: 10px 0;
+    box-shadow: 0 3px 14px rgba(20,55,60,0.04);
+  }
+  .task .chk {
+    flex: 0 0 auto; width: 24px; height: 24px; border-radius: 6px;
+    border: 2px solid var(--terra); margin-top: 2px;
+  }
+  .task .t-body { flex: 1; }
+  .task .t-body strong { display: block; margin-bottom: 2px; font-size: 1rem; }
+  .task .t-body p { margin: 0; font-size: 0.9rem; color: #3a5358; }
+  .task .pill {
+    display: inline-block; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; background: rgba(67,93,81,0.12); color: var(--sage);
+    padding: 2px 9px; border-radius: 12px; margin-top: 7px;
+  }
+
+  /* prompts */
+  .prompt {
+    background: #102e32; border-radius: 14px; margin: 16px 0; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .prompt-head {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 18px; border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .prompt-head .pt {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--tl);
+  }
+  .prompt-head .when { font-size: 0.74rem; color: rgba(255,255,255,0.55); font-weight: 400; }
+  .copy-btn {
+    background: var(--terra); color: #fff; border: none; cursor: pointer;
+    font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 600;
+    padding: 7px 16px; border-radius: 7px; letter-spacing: 0.03em; transition: all 0.15s;
+  }
+  .copy-btn:hover { background: var(--tl); }
+  .copy-btn.done { background: var(--sage); }
+  .prompt pre {
+    margin: 0; padding: 18px; color: #e7ece9; font-family: 'DM Sans', monospace;
+    font-size: 0.86rem; line-height: 1.6; white-space: pre-wrap; word-wrap: break-word;
+    font-weight: 300;
+  }
+  .prompt .desc { padding: 0 18px 14px; font-size: 0.82rem; color: rgba(255,255,255,0.6); }
+
+  /* materials */
+  .mat {
+    display: flex; gap: 14px; align-items: flex-start; padding: 16px 0;
+    border-bottom: 1px solid rgba(20,55,60,0.08);
+  }
+  .mat:last-child { border-bottom: none; }
+  .mat .dot {
+    flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%; background: var(--terra); margin-top: 7px;
+  }
+  .mat .m-body strong { font-size: 1rem; }
+  .mat .m-body p { margin: 2px 0 0; font-size: 0.9rem; color: #3a5358; }
+
+  .callout {
+    background: linear-gradient(135deg, rgba(20,55,60,0.04), rgba(67,93,81,0.06));
+    border: 1px solid rgba(20,55,60,0.1); border-radius: 14px; padding: 22px 26px; margin: 18px 0;
+  }
+  .callout p:last-child { margin-bottom: 0; }
+
+  /* next steps */
+  .next-item { display: flex; gap: 14px; padding: 12px 0; }
+  .next-item .arr { color: var(--terra); font-weight: 700; flex: 0 0 auto; }
+
+  /* footer */
+  footer {
+    background: linear-gradient(165deg, #14373C, #194040 55%, #435D51 100%);
+    color: var(--white); margin-top: 60px; padding: 50px 24px;
+  }
+  footer .wrap { text-align: center; }
+  footer img { height: 34px; margin-bottom: 22px; }
+  footer .quote {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 1.5rem; line-height: 1.4; max-width: 600px; margin: 0 auto 26px; color: rgba(255,255,255,0.92);
+  }
+  footer .quote strong { font-style: normal; color: var(--tl); font-weight: 700; }
+  footer .contact { font-size: 0.86rem; color: rgba(255,255,255,0.7); line-height: 1.9; }
+  footer .contact a { color: var(--tl); text-decoration: none; }
+  .sig { font-size: 0.95rem; color: rgba(255,255,255,0.85); margin-top: 18px; }
+  .sig strong { color: #fff; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <img class="logo" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting">
+    <span class="tag">Mentoria de IA · Encontro 01</span>
+    <h1>O primeiro encontro, <em>organizado</em> pra você voltar quando quiser</h1>
+    <p class="lead">João e Neila, aqui está o resumo da nossa primeira aula — com o passo a passo, os materiais e todos os prompts prontos pra copiar. Salvem este arquivo: ele é o seu mapa da semana.</p>
+    <div class="hero-meta">
+      <span><strong>Data:</strong> 28/05/2026</span>
+      <span><strong>Tema:</strong> Fundamentos + Claude, Projetos, Cowork e Skills</span>
+      <span><strong>Próximo passo:</strong> organizar a estação e usar na prática</span>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="toc">
+  <div class="wrap">
+    <a href="#resumo">Resumo</a>
+    <a href="#diagrama">Visão geral</a>
+    <a href="#conceitos">O que ensinei</a>
+    <a href="#modelos">Os 3 modelos</a>
+    <a href="#tarefas">Tarefas da semana</a>
+    <a href="#prompts">Prompts pra copiar</a>
+    <a href="#materiais">Materiais</a>
+    <a href="#proximo">Próximo encontro</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- RESUMO -->
+  <section id="resumo">
+    <p class="stag">O que rolou</p>
+    <h2>Resumo do nosso <em>primeiro encontro</em></h2>
+    <p class="intro">Esta primeira aula foi a de assentar conceito. É normal sair com a cabeça cheia — a partir do próximo encontro a gente vai direto pra mão na massa, no computador de vocês.</p>
+
+    <div class="card">
+      <h3>A parte inicial (que não ficou gravada)</h3>
+      <p>Antes de eu começar a gravar, a gente passou pelos fundamentos. Recapitulando pra ficar registrado:</p>
+      <p><strong>Visão geral do Claude.</strong> O que é a ferramenta, por que ela é diferente de um chat comum e onde ela entra no trabalho de vocês: não é pra substituir o advogado, é pra ser um sócio rápido que lê tudo, organiza e adianta o trabalho braçal — quem decide é sempre vocês.</p>
+      <p><strong>Os 3 pilares de uso da IA.</strong> Toda demanda que aparecer cabe em uma destas três caixas: <strong>(1) fazer melhor</strong> o que vocês já fazem — uma peça com um cérebro extra do lado; <strong>(2) fazer mais rápido</strong> o que é repetitivo — leitura de publicações, procurações, contratos; e <strong>(3) criar o novo</strong> — algo que hoje não existe na operação. Antes de pedir qualquer coisa pra IA, classifique a demanda: é melhorar, acelerar ou criar?</p>
+      <p><strong>Segurança e privacidade.</strong> Como tratar dado sensível de cliente, por que a gente trabalha sempre em cópia das pastas (e não no original) e o cuidado com sigilo profissional.</p>
+      <p><strong>Como a IA "pensa" e os vieses.</strong> A IA não tem certeza de nada — ela infere a partir do que você dá. Por isso o resultado é tão bom quanto o contexto que você fornece, e por isso vocês precisam sempre revisar: ela pode inventar (alucinação) e pode carregar vieses. O advogado continua sendo o dono da decisão.</p>
+    </div>
+
+    <div class="card plain">
+      <h3>E na parte gravada</h3>
+      <p>A partir daí entramos na anatomia do Claude na prática: a diferença entre <strong>chat avulso</strong> e <strong>projeto com contexto</strong>, o que é o <strong>Cowork</strong> (as pastas no seu computador que o Claude lê direto), como organizar tudo por cliente, o que são <strong>skills</strong>, como funcionam os <strong>tokens</strong> e o limite de páginas, e a diferença entre os <strong>três modelos</strong> (Opus, Sonnet e Haiku). Está tudo detalhado abaixo.</p>
+      <p style="margin-bottom:0;">Vale lembrar: a internet caiu algumas vezes durante a call 😅 — então se algum trecho ficou confuso, este resumo (e a transcrição completa que já te enviei) cobre tudo com calma.</p>
+    </div>
+  </section>
+
+  <!-- DIAGRAMA / VISAO GERAL -->
+  <section id="diagrama">
+    <p class="stag">O mapa numa olhada</p>
+    <h2>O Claude <em>por dentro</em></h2>
+    <p class="intro">Antes do detalhe, o modelo mental que montamos juntos: onde cada coisa vive e como uma peça nasce.</p>
+
+    <p class="dg-sublabel">As 4 peças</p>
+    <div class="dg-cards">
+      <div class="dg-card">
+        <div class="dg-top dg-t1"><div class="dg-name">Chat</div><div class="dg-role">Conversa avulsa</div></div>
+        <div class="dg-body"><div class="dg-desc">Começa do zero toda vez. Você reexplica tudo a cada conversa.</div><div class="dg-an">"O estagiário com amnésia."</div></div>
+      </div>
+      <div class="dg-card">
+        <div class="dg-top dg-t2"><div class="dg-name">Projeto</div><div class="dg-role">Espaço com contexto</div></div>
+        <div class="dg-body"><div class="dg-desc">Um cliente, um espaço. A documentação fica fixa e ele já sabe quem é.</div><div class="dg-an">"O estagiário com memória."</div></div>
+      </div>
+      <div class="dg-card">
+        <div class="dg-top dg-t3"><div class="dg-name">Cowork</div><div class="dg-role">Pastas no computador</div></div>
+        <div class="dg-body"><div class="dg-desc">Lê e salva direto nas suas pastas. Sempre numa cópia, nunca no original.</div><div class="dg-an">"A memória externa, na sua máquina."</div></div>
+      </div>
+      <div class="dg-card">
+        <div class="dg-top dg-t4"><div class="dg-name">Skill</div><div class="dg-role">Tarefa automatizada</div></div>
+        <div class="dg-body"><div class="dg-desc">Você ensina uma vez o seu padrão e ele repete sempre igual. (Próxima aula.)</div><div class="dg-an">"O especialista que não esquece."</div></div>
+      </div>
+    </div>
+
+    <p class="dg-sublabel">Como uma peça nasce</p>
+    <div class="dg-flow">
+      <div class="dg-step">
+        <span class="dg-tag" style="color:var(--sage);">Insumo</span>
+        <span class="dg-h">Pasta do cliente + Modelos</span>
+        <span class="dg-s">Documentação + as 10 peças campeãs</span>
+      </div>
+      <div class="dg-arrow">&#8594;</div>
+      <div class="dg-step acc">
+        <span class="dg-tag" style="color:var(--terra);">Opus</span>
+        <span class="dg-h">Planejar</span>
+        <span class="dg-s">Estratégia, antes de redigir</span>
+      </div>
+      <div class="dg-arrow">&#8594;</div>
+      <div class="dg-step pet">
+        <span class="dg-tag" style="color:var(--ink);">Sonnet</span>
+        <span class="dg-h">Executar</span>
+        <span class="dg-s">A peça no seu padrão</span>
+      </div>
+      <div class="dg-arrow">&#8594;</div>
+      <div class="dg-step">
+        <span class="dg-tag" style="color:var(--sand);">Saída</span>
+        <span class="dg-h">Peça pronta</span>
+        <span class="dg-s">Salva na pasta, pra você revisar</span>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:24px;">
+      <p style="margin-bottom:0;"><strong>Regra de ouro:</strong> planeje antes de pedir · dê só o contexto necessário (tokens) · uma tarefa, uma conversa · você decide, sempre.</p>
+    </div>
+  </section>
+
+  <!-- CONCEITOS -->
+  <section id="conceitos">
+    <p class="stag">Passo a passo</p>
+    <h2>O que eu <em>ensinei</em>, em ordem</h2>
+    <p class="intro">Os conceitos que sustentam tudo o que vamos construir nas próximas semanas. Não precisa decorar — só entender a lógica.</p>
+
+    <div class="card plain" style="padding-top:6px;">
+      <div class="concept">
+        <div class="num">1</div>
+        <div class="body">
+          <h3>Chat avulso × Projeto</h3>
+          <p>O <strong>chat avulso</strong> começa do zero toda vez — você tem que reexplicar tudo. O <strong>projeto</strong> é um espaço dedicado com contexto fixo: você joga ali a documentação de um cliente e o Claude passa a "saber quem é" sem você repetir nada.</p>
+          <div class="analogy">"Chat é o estagiário com amnésia. Projeto é o estagiário com memória."</div>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="num">2</div>
+        <div class="body">
+          <h3>Como organizar os projetos</h3>
+          <p>Não existe regra única — cada um se organiza do jeito que faz sentido. O <strong>fio condutor</strong> é: <em class="cur">quantos documentos em comum eu preciso pra fazer esta tarefa?</em> No caso de vocês, faz sentido <strong>uma pasta por cliente</strong> (como vocês já fazem hoje no servidor), e dá pra agrupar por tema também (trabalhista, consumidor) quando quiser que o Claude olhe o contexto macro de vários clientes parecidos.</p>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="num">3</div>
+        <div class="body">
+          <h3>Cowork: as pastas do seu computador</h3>
+          <p>O Cowork deixa o Claude ler pastas direto no seu computador — sem você ficar arrastando arquivo. Tudo que ele cria, ele mesmo salva de volta na pasta. É específico de cada máquina (só funciona no computador que tem o acesso). Eu costumo dizer que é <strong>viciante</strong>: depois que começa, não quer mais usar de outro jeito.</p>
+          <div class="analogy">Regra de ouro de segurança: trabalhe sempre em uma <strong>cópia</strong> da pasta (Ctrl+C / Ctrl+V) dentro da estação do Cowork. Nunca dê acesso direto à pasta original do servidor — assim o Claude nunca mexe no que você não quer.</div>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="num">4</div>
+        <div class="body">
+          <h3>Modelos (a pasta de "campeãs")</h3>
+          <p>Separe numa pasta à parte de <strong>5 a 10 peças vencedoras</strong> de cada tipo (petições, contestações, recursos, procurações, contratos). É dessa fonte que o Claude vai "beber" pra escrever no padrão de vocês. Essa pasta funciona pra todos os clientes — ela é única e serve pra qualquer projeto.</p>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="num">5</div>
+        <div class="body">
+          <h3>Skills (na próxima aula)</h3>
+          <p>Skill é ensinar o Claude a fazer uma tarefa repetitiva sempre do mesmo jeito — tipo "criar contrato", "criar procuração", "montar petição no meu padrão". Mas primeiro o Claude precisa acertar o padrão de vocês com você revisando. Quando ele acertar e você disser "é exatamente isso", aí a gente transforma em skill. <strong>Isso a gente faz no próximo encontro</strong>, no computador de vocês.</p>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="num">6</div>
+        <div class="body">
+          <h3>Tokens e o limite de páginas</h3>
+          <p>Token é tudo que <strong>entra e sai</strong> da IA — quanto mais material você dá, mais ela gasta pra ler. Por isso não vale jogar uma pasta gigante com 100 clientes: dê só o que ele precisa pra aquela tarefa. E atenção: o Claude trabalha muito bem até cerca de <strong>500 páginas por documento</strong>. Acima disso ele pode "se perder" — aí a gente quebra o arquivo em dois ou usa as ferramentas de apoio (Notebook LM / Gemini), que eu trago no próximo encontro.</p>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="num">7</div>
+        <div class="body">
+          <h3>Boas práticas que valem ouro</h3>
+          <p><strong>Planeje antes de executar:</strong> peça a estratégia / o planejamento da peça antes de mandar redigir. <strong>Fale por áudio</strong> com bastante contexto (você fala 4x mais do que escreve). <strong>Uma tarefa = uma conversa</strong> (economiza token). <strong>Junte tudo numa pergunta só</strong> em vez de mandar frase por frase. E converse com ele como se fosse um <strong>sócio</strong>, não um comando seco.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODELOS -->
+  <section id="modelos">
+    <p class="stag">Qual cérebro usar</p>
+    <h2>Os <em>três modelos</em> do Claude</h2>
+    <p class="intro">No topo da tela você escolhe o modelo. A regra é simples: Opus pra pensar, Sonnet pra executar.</p>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>Opus</h3>
+        <p><strong>O sócio / PhD.</strong> O mais inteligente — usa pra estratégia, analisar uma sentença, discutir o caminho de um recurso, desafiar seu raciocínio. Consome o limite mais rápido, então use nos momentos que exigem cabeça.</p>
+        <span class="task pill" style="display:inline-block;margin-top:4px;">Estratégia e análise</span>
+      </div>
+      <div class="card">
+        <h3>Sonnet</h3>
+        <p><strong>O pleno executor.</strong> Resolve 90% das tarefas e é mais inteligente que o ChatGPT. Use pra executar: gerar a peça, o contrato, a procuração depois que a estratégia já está definida.</p>
+        <span class="task pill" style="display:inline-block;margin-top:4px;">Execução do dia a dia</span>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Haiku</h3>
+      <p style="margin-bottom:0;">O mais rápido e básico — o "estagiário" pra coisas muito simples. No geral vocês vão viver entre Opus (pensar) e Sonnet (fazer).</p>
+    </div>
+    <div class="callout">
+      <p style="margin-bottom:0;"><strong>Fluxo na prática:</strong> abra uma conversa no <strong>Opus</strong> pra definir a estratégia do caso → ele salva o documento de estratégia na pasta → abra uma <strong>nova conversa</strong>, troque pro <strong>Sonnet</strong> e mande executar a peça. Fechar a conversa antiga e abrir uma nova pra cada tarefa também economiza token.</p>
+    </div>
+  </section>
+
+  <!-- TAREFAS -->
+  <section id="tarefas">
+    <p class="stag">Pra fazer até o próximo encontro</p>
+    <h2>As suas <em>tarefas da semana</em></h2>
+    <p class="intro">O objetivo da semana é simples: montar a estação e começar a usar de verdade. Quanto mais vocês mexerem, mais fácil fica o próximo encontro.</p>
+
+    <div class="task">
+      <div class="chk"></div>
+      <div class="t-body">
+        <strong>1. Crie a pasta "Claude Cowork Station" no desktop</strong>
+        <p>É a estação de trabalho do Claude. Se o Cowork não abrir no computador de vocês, me avisa no WhatsApp — às vezes precisa instalar o Git, eu passo o passo a passo.</p>
+      </div>
+    </div>
+
+    <div class="task">
+      <div class="chk"></div>
+      <div class="t-body">
+        <strong>2. Crie uma pasta por cliente (em cópia)</strong>
+        <p>Pegue a pasta de um cliente do servidor, dê Ctrl+C / Ctrl+V pra dentro da estação. Nunca o original — sempre cópia, por segurança. Dentro dela, toda a documentação do cliente (procuração, contrato, peças, decisões).</p>
+        <span class="pill">Segurança</span>
+      </div>
+    </div>
+
+    <div class="task">
+      <div class="chk"></div>
+      <div class="t-body">
+        <strong>3. Monte a pasta "Modelos"</strong>
+        <p>Crie subpastas (petições, contestações, recursos, procurações, contratos) e coloque de <strong>5 a 10 peças campeãs</strong> de cada — as que vocês ganharam e consideram bem escritas. É daqui que o Claude vai aprender o padrão de vocês.</p>
+      </div>
+    </div>
+
+    <div class="task">
+      <div class="chk"></div>
+      <div class="t-body">
+        <strong>4. Conecte a pasta ao Cowork</strong>
+        <p>Ao criar o projeto no Cowork, escolha "usar uma pasta existente" e aponte pra estação. A partir daí o Claude lê tudo que está ali dentro.</p>
+      </div>
+    </div>
+
+    <div class="task">
+      <div class="chk"></div>
+      <div class="t-body">
+        <strong>5. Use de verdade num caso real</strong>
+        <p>Escolha uma peça que vocês precisam fazer essa semana (um recurso, uma réplica). Mande o Claude planejar a estratégia primeiro, revise, e só então peça pra redigir usando os modelos. Use os prompts da próxima seção.</p>
+        <span class="pill">Mão na massa</span>
+      </div>
+    </div>
+
+    <div class="task">
+      <div class="chk"></div>
+      <div class="t-body">
+        <strong>6. Rode o prompt de contexto permanente</strong>
+        <p>É o prompt que faz o Claude conhecer vocês (quem são, como trabalham, como gostam das coisas). Ele vai fazer várias perguntas e montar a pasta de contexto sozinho. Quanto mais completo vocês responderem, melhor. Está logo abaixo.</p>
+      </div>
+    </div>
+
+    <div class="task">
+      <div class="chk"></div>
+      <div class="t-body">
+        <strong>7. (Sugestão) Comece a gravar e transcrever as reuniões com clientes</strong>
+        <p>Salve a transcrição na pasta do cliente. Faz uma diferença enorme — fica cristalino tudo que o cliente trouxe de dor e necessidade.</p>
+      </div>
+    </div>
+
+    <div class="task">
+      <div class="chk"></div>
+      <div class="t-body">
+        <strong>8. Anote tudo que der vontade de automatizar</strong>
+        <p>Durante a semana, toda vez que pensar "isso aqui dava pra automatizar", anote. Vira combustível pras skills que a gente cria no próximo encontro.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMPTS -->
+  <section id="prompts">
+    <p class="stag">É só copiar e colar</p>
+    <h2>Os <em>prompts</em> prontos</h2>
+    <p class="intro">Estes são os prompts que prometi. Clique em "Copiar", cole no Claude e ajuste os trechos entre [colchetes]. Lembrem: falar por áudio com bastante contexto funciona ainda melhor que escrever.</p>
+
+    <!-- 1 contexto permanente -->
+    <div class="prompt">
+      <div class="prompt-head">
+        <div><span class="pt">1 · Contexto permanente</span></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>
+      </div>
+      <div class="desc">Rode uma vez, com calma. Ele vai te entrevistar e montar a pasta de contexto sozinho.</div>
+      <pre>Estou organizando a minha Claude Cowork Station e quero que você me conheça em profundidade para trabalhar comigo daqui pra frente.
+
+Faça me perguntas, uma camada de cada vez, sobre:
+- Quem eu sou e quem é a minha sócia (somos advogados).
+- As áreas em que atuamos e os tipos de processo mais comuns.
+- Como é o fluxo de trabalho de um caso, do primeiro contato com o cliente até o recurso.
+- Os tipos de documento que mais produzimos e que seguem um padrão.
+- Como eu gosto que os arquivos sejam nomeados e organizados.
+- Meu tom de escrita nas peças e o nível de formalidade.
+- Regras que você nunca deve quebrar (ex: nunca apagar arquivo original, sigilo total dos dados do cliente).
+
+Depois de me entrevistar, crie dentro desta estação uma pasta chamada "contexto" e gere ali os arquivos .md com tudo o que aprendeu sobre mim, meu escritório e como devemos trabalhar juntos. Não invente nada: se faltar informação, pergunte.</pre>
+    </div>
+
+    <!-- 2 planejamento -->
+    <div class="prompt">
+      <div class="prompt-head">
+        <div><span class="pt">2 · Planejar antes de redigir</span></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>
+      </div>
+      <div class="desc">Use o Opus aqui. Planeje a peça antes de mandar escrever — esse passo muda tudo.</div>
+      <pre>Acesse a pasta do cliente [NOME] — toda a documentação do processo está ali. Leia com atenção e entenda todas as etapas do caso até aqui.
+
+Hoje eu preciso fazer [uma réplica / um recurso / uma manifestação], porque o retorno foi: [explique o que aconteceu].
+
+Antes de redigir qualquer coisa, quero definir a estratégia com você. Me devolva:
+1. Um resumo do que cada parte sustentou até agora.
+2. O que a decisão acolheu e o que rejeitou.
+3. Os pontos fortes que eu posso explorar nesta peça.
+4. Os pontos de atenção que o outro lado levantou e merecem resposta cuidadosa.
+5. O que é específico deste cliente que vale a pena destacar.
+
+Não invente fatos, datas, valores ou jurisprudência. Se algum documento estiver incompleto, sinalize. Quando a estratégia estiver fechada, salve um documento de estratégia na pasta do cliente.</pre>
+    </div>
+
+    <!-- 3 redigir a peça -->
+    <div class="prompt">
+      <div class="prompt-head">
+        <div><span class="pt">3 · Redigir a peça no seu padrão</span></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>
+      </div>
+      <div class="desc">Numa conversa nova, no Sonnet, depois que a estratégia já está definida.</div>
+      <pre>Com base na estratégia que definimos e na documentação que está na pasta do cliente [NOME], redija a [petição / recurso / réplica].
+
+Antes de escrever, entre na pasta "Modelos" e estude o meu padrão de [tipo de peça]: a estrutura, a ordem dos argumentos, o tom e como eu costumo fechar o pedido. Use esse padrão como base.
+
+Estilo: jurídico, direto, sem floreios. Cite jurisprudência apenas se houver no material que eu te dei — não invente. Sinalize onde você está inferindo e onde precisa de informação minha.
+
+Quando terminar, gere o documento em Word e salve na pasta do cliente.</pre>
+    </div>
+
+    <!-- 4 email cliente -->
+    <div class="prompt">
+      <div class="prompt-head">
+        <div><span class="pt">4 · E-mail pro cliente</span></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>
+      </div>
+      <div class="desc">Pra mandar procuração/contrato pro cliente assinar. Tarefa simples — pode ser Sonnet.</div>
+      <pre>Escreva um e-mail para o cliente [NOME] enviando a procuração e o contrato de honorários para assinatura.
+
+Tom cordial e profissional. Informe que ele tem até o dia [DATA] para devolver assinado e que, em caso de dúvida, pode ligar para o escritório. Deixe o texto pronto para eu copiar e enviar.</pre>
+    </div>
+
+    <!-- 5 identificar padrao -->
+    <div class="prompt">
+      <div class="prompt-head">
+        <div><span class="pt">5 · Aprender o seu estilo (prep da skill)</span></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>
+      </div>
+      <div class="desc">Rode sobre a pasta "Modelos". O resultado vira a base da skill no próximo encontro.</div>
+      <pre>Na pasta "Modelos" estão várias peças que eu já redigi e considero as melhores. Leia todas e me devolva:
+1. O padrão de estrutura que eu uso (o que vem primeiro, depois, por último).
+2. As expressões e frases que eu uso com mais frequência.
+3. O tom e o nível de formalidade que eu adoto.
+4. Como eu costumo refutar os argumentos da parte contrária.
+5. Como eu fecho a peça (o pedido final).
+
+Output em tópicos. Quero usar isso para criar uma skill que escreva no meu estilo.</pre>
+    </div>
+
+    <!-- 6 documento grande -->
+    <div class="prompt">
+      <div class="prompt-head">
+        <div><span class="pt">6 · Quando o documento é gigante</span></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>
+      </div>
+      <div class="desc">Pra processos de 500+ páginas. Lembrete do truque até a gente ver Notebook LM juntos.</div>
+      <pre>Este processo tem mais de 500 páginas, então pode passar do limite que você lê bem de uma vez.
+
+Antes de trabalhar, leia o documento em partes e me devolva um resumo estruturado de cada peça relevante (inicial, defesa, documentos juntados, perícia, sentença), com os pontos que importam para a próxima manifestação. Se sentir que está perdendo informação por causa do tamanho, me avise para eu quebrar o arquivo em partes menores.</pre>
+    </div>
+
+    <!-- 7 escrever quem sou -->
+    <div class="prompt">
+      <div class="prompt-head">
+        <div><span class="pt">7 · O truque do "quem sou eu"</span></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>
+      </div>
+      <div class="desc">Aquela sacada do João no fim da aula: peça pro próprio Claude escrever a sua descrição.</div>
+      <pre>Estou configurando minha estação do Claude e preciso descrever quem eu sou para o sistema usar como contexto.
+
+Sou advogado(a), atuo em [áreas], com foco em [tipo de processo]. Meu jeito de trabalhar é [descreva].
+
+Escreva, da melhor forma possível, um texto de apresentação meu — claro, completo e bem estruturado — para eu colar na configuração de contexto. Faça perguntas se precisar de mais detalhes para deixar perfeito.</pre>
+    </div>
+  </section>
+
+  <!-- MATERIAIS -->
+  <section id="materiais">
+    <p class="stag">Pra consultar</p>
+    <h2>Materiais e <em>ferramentas</em></h2>
+    <p class="intro">O que citei na aula e vale ter no radar — algumas a gente aprofunda nos próximos encontros.</p>
+
+    <div class="card plain">
+      <div class="mat">
+        <div class="dot"></div>
+        <div class="m-body">
+          <strong>Transcrição completa da aula</strong>
+          <p>Já está na pasta de vocês — caso queiram reler algum trecho com calma. Este resumo é o atalho; a transcrição é o detalhe.</p>
+        </div>
+      </div>
+      <div class="mat">
+        <div class="dot"></div>
+        <div class="m-body">
+          <strong>Notebook LM (Google)</strong>
+          <p>Ferramenta que trabalha com contexto enorme — aguenta até ~10.000 páginas. A gente conecta ela ao Claude pros processos gigantes. Trago no próximo encontro.</p>
+        </div>
+      </div>
+      <div class="mat">
+        <div class="dot"></div>
+        <div class="m-body">
+          <strong>Gemini → arquivo .md</strong>
+          <p>Pra transformar um processo de 500+ páginas num arquivo leve (.md) que o Claude lê rápido. É o "atalho" pros documentos pesados de vocês.</p>
+        </div>
+      </div>
+      <div class="mat">
+        <div class="dot"></div>
+        <div class="m-body">
+          <strong>Plano Max</strong>
+          <p>Se o volume de trabalho crescer e o limite começar a atrapalhar, o plano superior libera muito mais uso (e mais Opus). A conta sempre fecha quando o retorno justifica.</p>
+        </div>
+      </div>
+      <div class="mat">
+        <div class="dot"></div>
+        <div class="m-body">
+          <strong>Plugins para advocacia</strong>
+          <p>O Claude está lançando plugins específicos por área, inclusive jurídico, com tratamento melhor pra documentos longos. Vamos explorar mais pra frente — sem pressa.</p>
+        </div>
+      </div>
+      <div class="mat">
+        <div class="dot"></div>
+        <div class="m-body">
+          <strong>Git (se o Cowork não abrir)</strong>
+          <p>Em alguns computadores o Cowork precisa do Git instalado. Se não funcionar aí, me chama no WhatsApp que eu te passo o passo a passo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROXIMO -->
+  <section id="proximo">
+    <p class="stag">O que vem aí</p>
+    <h2>No <em>próximo encontro</em></h2>
+    <div class="card">
+      <div class="next-item"><span class="arr">→</span><p style="margin:0;">Configurar as <strong>instruções globais do Cowork</strong> (aquela regra de "ao iniciar a sessão, leia a pasta de contexto") junto com vocês, personalizada do jeito de vocês.</p></div>
+      <div class="next-item"><span class="arr">→</span><p style="margin:0;">Criar as primeiras <strong>skills no computador de vocês</strong> — a partir das peças que ficaram boas durante a semana.</p></div>
+      <div class="next-item"><span class="arr">→</span><p style="margin:0;">Apresentar o <strong>Notebook LM</strong> e o fluxo pros processos de mil páginas.</p></div>
+      <div class="next-item"><span class="arr">→</span><p style="margin:0;">Mão na massa de verdade, ao vivo, no ritmo de vocês.</p></div>
+    </div>
+    <div class="callout">
+      <p style="margin-bottom:0;">Qualquer dúvida no caminho — uma pasta que não abriu, um prompt que travou, uma ideia que surgiu — me chamem no WhatsApp <strong>(11) 97190-1020</strong>. Pode ser à vontade.</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting">
+    <p class="quote">"Não é pra eu entregar um sistema pronto e genérico. É pra deixar <strong>vocês autônomos</strong> pra construir o próprio sistema dentro do Claude."</p>
+    <p class="sig">Um abraço,<br><strong>Bruna Santanna</strong> · Co-fundadora, NewScale Consulting</p>
+    <p class="contact">
+      <a href="https://wa.me/5511971901020">(11) 97190-1020</a> · <a href="mailto:bruna@newscale.tech">bruna@newscale.tech</a><br>
+      IA hiper-personalizada para o seu negócio
+    </p>
+  </div>
+</footer>
+
+<script>
+  function copyPrompt(btn) {
+    var pre = btn.closest('.prompt').querySelector('pre');
+    var text = pre.innerText;
+    navigator.clipboard.writeText(text).then(function () {
+      var original = btn.textContent;
+      btn.textContent = 'Copiado ✓';
+      btn.classList.add('done');
+      setTimeout(function () { btn.textContent = original; btn.classList.remove('done'); }, 1800);
+    });
+  }
+</script>
+</body>
+</html>

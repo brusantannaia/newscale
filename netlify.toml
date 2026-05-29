@@ -11,6 +11,12 @@
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
 
+# Headers de segurança para mentorias (material privado de cliente)
+[[headers]]
+  for = "/mentorias/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
 # Redirecionamento /admin para /admin/ com barra no final
 [[redirects]]
   from = "/admin"
