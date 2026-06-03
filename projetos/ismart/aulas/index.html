@@ -709,6 +709,21 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
   font-family:'Montserrat',sans-serif;font-weight:600;font-size:13px;
   color:var(--tinta-suave);
 }
+.ff-nps{display:flex;gap:7px;flex-wrap:wrap;margin-top:4px}
+.ff-nps-btn{
+  width:42px;height:42px;
+  display:flex;align-items:center;justify-content:center;
+  background:#fff;border:1.5px solid #d4dbe8;border-radius:10px;
+  color:var(--navy);
+  font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;
+  cursor:pointer;transition:all .15s;
+}
+.ff-nps-btn:hover{border-color:var(--coral);color:var(--coral);transform:translateY(-2px)}
+.ff-nps-btn.active{background:linear-gradient(135deg, var(--coral), var(--rosa));border-color:transparent;color:#fff}
+@media (max-width:560px){
+  .ff-nps-btn{width:38px;height:38px;font-size:14px}
+  .ff-stars-label{margin-left:0;display:block;margin-top:10px}
+}
 .ff-submit{
   background:linear-gradient(135deg, var(--coral), var(--rosa));
   color:var(--branco);
@@ -878,6 +893,7 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
       <a href="#feedback">Pesquisa</a>
       <a href="#aulas" onclick="openTab('aula1');return false;">Aula 1</a>
       <a href="#aulas" onclick="openTab('aula2');return false;">Aula 2</a>
+      <a href="#aulas" onclick="openTab('aula3');return false;">Aula 3</a>
     </div>
   </div>
 </nav>
@@ -890,7 +906,7 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
       Virada IA · Claude com Profundidade · Ismart
     </span>
     <h1>Formação Ismart: <span class="azul">Claude com Profundidade</span></h1>
-    <p class="hero-sub">O espaço da turma entre as aulas. Aqui ficam os resumos de cada aula, sua missão, os prompts prontos pra copiar e todos os materiais. Use as abas abaixo pra navegar entre a Aula 1 e a Aula 2.</p>
+    <p class="hero-sub">O espaço da turma. O curso chegou ao fim: aqui ficam os resumos das três aulas, os prompts prontos pra copiar e todos os materiais, pra você consultar sempre que precisar. Use as abas abaixo pra navegar entre a Aula 1, a 2 e a 3.</p>
     <div class="hero-meta">
       <div class="hero-meta-item">
         <div class="label">Turma</div>
@@ -902,11 +918,11 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
       </div>
       <div class="hero-meta-item">
         <div class="label">Aulas</div>
-        <div class="val">1 e 2 de 3 · disponíveis</div>
+        <div class="val">3 de 3 · curso completo</div>
       </div>
       <div class="hero-meta-item">
-        <div class="label">Próxima</div>
-        <div class="val">Aula 3 · última do curso</div>
+        <div class="label">Status</div>
+        <div class="val">Curso concluído · maio 2026</div>
       </div>
     </div>
   </div>
@@ -915,9 +931,9 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
 <!-- FEEDBACK -->
 <section class="section bg-suave" id="feedback">
   <div class="section-inner">
-    <div class="section-eyebrow">Nosso espaço entre as aulas</div>
-    <h2 class="section-title">Continue a <span class="azul">conversa</span> comigo.</h2>
-    <p class="section-lead">Antes de mergulhar nos resumos: me manda tudo que ficou na cabeça depois da Aula 2: dúvidas que não couberam ao vivo, casos seus que você quer ver na Aula 3, ideias que teve testando o Claude esta semana. Leio cada uma e a Aula 3 chega ajustada pra você.</p>
+    <div class="section-eyebrow">Pesquisa de satisfação final</div>
+    <h2 class="section-title">Como foi o curso <span class="azul">pra você</span>?</h2>
+    <p class="section-lead">Chegamos ao fim das três aulas. Sua resposta aqui me ajuda demais a melhorar as próximas turmas, e leva 30 segundos. Pode responder sem filtro.</p>
 
     <form class="feedback-wrap reveal" id="feedbackForm">
       <div class="ff-row">
@@ -927,28 +943,29 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
 
       <div class="ff-row-mood">
         <span class="ff-label">
-          Você está gostando da formação até aqui?
-          <span class="ff-help">Me ajuda a sentir como a turma está. Pode responder sem filtro, é só clicar nas estrelas.</span>
+          De 0 a 10, o quanto você recomendaria essa formação a um colega?
+          <span class="ff-help">Clique no número. 0 = de jeito nenhum · 10 = com certeza.</span>
         </span>
-        <div class="ff-stars ff-mood-stars" id="ffMoodStars">
-          <button type="button" class="ff-star" data-value="1" aria-label="1 estrela">★</button>
-          <button type="button" class="ff-star" data-value="2" aria-label="2 estrelas">★</button>
-          <button type="button" class="ff-star" data-value="3" aria-label="3 estrelas">★</button>
-          <button type="button" class="ff-star" data-value="4" aria-label="4 estrelas">★</button>
-          <button type="button" class="ff-star" data-value="5" aria-label="5 estrelas">★</button>
-          <span class="ff-stars-label" id="ffMoodLabel">Toque pra responder</span>
+        <div class="ff-nps" id="ffNps">
+          <button type="button" class="ff-nps-btn" data-value="0">0</button>
+          <button type="button" class="ff-nps-btn" data-value="1">1</button>
+          <button type="button" class="ff-nps-btn" data-value="2">2</button>
+          <button type="button" class="ff-nps-btn" data-value="3">3</button>
+          <button type="button" class="ff-nps-btn" data-value="4">4</button>
+          <button type="button" class="ff-nps-btn" data-value="5">5</button>
+          <button type="button" class="ff-nps-btn" data-value="6">6</button>
+          <button type="button" class="ff-nps-btn" data-value="7">7</button>
+          <button type="button" class="ff-nps-btn" data-value="8">8</button>
+          <button type="button" class="ff-nps-btn" data-value="9">9</button>
+          <button type="button" class="ff-nps-btn" data-value="10">10</button>
         </div>
-        <input type="hidden" id="ff-mood" />
+        <span class="ff-stars-label" id="ffNpsLabel">Toque num número pra responder</span>
+        <input type="hidden" id="ff-nps" />
       </div>
 
       <div class="ff-row">
-        <label for="ff-duvidas" class="ff-label">O que ficou no ar da Aula 2?</label>
-        <textarea id="ff-duvidas" name="entry.983024275" rows="4" placeholder="Pode escrever à vontade, sem filtro..."></textarea>
-      </div>
-
-      <div class="ff-row">
-        <label for="ff-sugestoes" class="ff-label">O que você quer ver na Aula 3?</label>
-        <textarea id="ff-sugestoes" name="entry.1714753085" rows="4" placeholder="Conta o que faria a Aula 3 ser ainda mais útil pra você..."></textarea>
+        <label for="ff-justificativa" class="ff-label">Por quê? O que mais te marcou ou o que faltou?</label>
+        <textarea id="ff-justificativa" name="entry.1714753085" rows="5" placeholder="O que você leva do curso, o que vai usar no dia a dia, o que poderia melhorar... escreve à vontade."></textarea>
       </div>
 
       <button type="submit" class="ff-submit" id="ffSubmit">
@@ -957,7 +974,7 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
       </button>
 
       <div class="ff-error" id="ffError">Algo deu errado ao enviar. Tente novamente ou me chame no Instagram <strong>@brusantanna.ai</strong>.</div>
-      <div class="ff-success" id="ffSuccess">Recebi, <span id="ffSuccessName">obrigada</span>! Vou ler com calma e levar pra Aula 3.</div>
+      <div class="ff-success" id="ffSuccess">Recebi, <span id="ffSuccessName">obrigada</span>! Muito obrigada por ter feito o curso comigo. 💙</div>
     </form>
   </div>
 </section>
@@ -974,6 +991,11 @@ h1,h2,h3,h4,.mono{font-family:'Montserrat', system-ui, sans-serif;letter-spacing
       <span class="tab-num">2</span>
       Aula 2
       <span class="tab-status">· Criar e personalizar</span>
+    </button>
+    <button class="tab-btn" id="btn-aula3" onclick="openTab('aula3')">
+      <span class="tab-num">3</span>
+      Aula 3
+      <span class="tab-status">· O Claude trabalha por você</span>
     </button>
   </div>
 </div>
@@ -1996,22 +2018,21 @@ Não faça nada até eu aprovar o plano.</pre>
   <div class="section-inner">
     <div class="proxima reveal">
       <div>
-        <div class="proxima-eyebrow">Próxima aula · a última do curso</div>
-        <h3>Aula 3 · O Claude trabalhando por você.</h3>
-        <p>Cowork avançado, <strong>tarefas agendadas</strong>, o Claude fazendo o relatório antes de você chegar, encadeamento de tarefas, conectores a fundo e o <strong>Claude Code</strong>, pra construir ferramentas de verdade. É o Claude trabalhando enquanto você dorme.</p>
-        <div class="proxima-meta">
-          <div><strong>Aula</strong>3 de 3 · última</div>
-          <div><strong>Formato</strong>Avançada e prática</div>
-          <div><strong>Traga</strong>1 caso seu pra resolvermos ao vivo</div>
-        </div>
+        <div class="proxima-eyebrow">Aula 3 · já aconteceu</div>
+        <h3>A Aula 3 fechou o curso.</h3>
+        <p>Processo de ponta a ponta, <strong>tarefas agendadas</strong>, o Claude no Chrome e o <strong>Claude Code</strong>, pra construir ferramentas de verdade. O resumo completo, as 8 sacadas, os prompts e a gravação estão na aba da Aula 3.</p>
+        <button class="ff-submit" style="background:var(--branco);color:var(--rosa)" onclick="openTab('aula3')">
+          Ver o resumo da Aula 3
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
       </div>
       <div class="proxima-card">
-        <h4>O que você precisa ter pronto</h4>
+        <h4>O que a Aula 3 trouxe</h4>
         <ul>
-          <li>1 Skill própria criada e testada</li>
-          <li>1 Artifact feito de uma planilha sua</li>
-          <li>1 ferramenta conectada</li>
-          <li>1 dúvida ou caso pra trazer pra aula</li>
+          <li>A virada agêntica: dar missões, não perguntas</li>
+          <li>Tarefas agendadas: o Claude rodando sozinho</li>
+          <li>Claude no Chrome: o que não tem conector</li>
+          <li>Claude Code: criar o que sai da máquina</li>
         </ul>
       </div>
     </div>
@@ -2019,6 +2040,490 @@ Não faça nada até eu aprovar o plano.</pre>
 </section>
 
 </div><!-- /tab-aula2 -->
+
+<!-- ============================================================ -->
+<!-- ===================== ABA · AULA 3 ========================= -->
+<!-- ============================================================ -->
+<div class="tab-panel" id="tab-aula3">
+
+<!-- RECAP AULA 3 -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-eyebrow">O que rolou na Aula 3</div>
+    <h2 class="section-title">O caminho da aula, em <span class="azul">6 blocos</span>.</h2>
+    <p class="section-lead">A última aula foi a virada de chave: se a Aula 1 foi <em>pedir bem</em> e a Aula 2 foi <em>parar de pedir a mesma coisa</em>, a Aula 3 foi <strong>delegar de ponta a ponta</strong>. Pegamos o caso real da newsletter, trazido pela turma, e fomos da dor até o Claude rodando sozinho.</p>
+
+    <div class="atos">
+      <div class="ato reveal">
+        <div class="ato-num">01</div>
+        <div class="ato-title">A virada agêntica</div>
+        <div class="ato-body">Saímos do <em>"faço uma pergunta, recebo uma resposta, tomo uma ação"</em> para <strong>"dou a missão e aprovo o que ele faz"</strong>. Hoje o Claude não é só pra perguntar, é uma ferramenta de execução. Seu papel é ter uma boa ideia.</div>
+      </div>
+      <div class="ato reveal">
+        <div class="ato-num">02</div>
+        <div class="ato-title">Um processo de ponta a ponta</div>
+        <div class="ato-body">Montamos a newsletter inteira ao vivo: <strong>dor → objetivo → planejamento → Skill → conteúdo em HTML → agendamento</strong>. O mesmo passo a passo serve pra qualquer automação sua.</div>
+      </div>
+      <div class="ato reveal">
+        <div class="ato-num">03</div>
+        <div class="ato-title">A Skill que também é curadora</div>
+        <div class="ato-body">Criamos a Skill da newsletter ao vivo. Mais que montar o HTML, ela <strong>varre a pasta, classifica o material e checa a prontidão</strong> ("tem foto pra cada história? as imagens têm qualidade?") antes de gerar.</div>
+      </div>
+      <div class="ato reveal">
+        <div class="ato-num">04</div>
+        <div class="ato-title">Tarefas agendadas</div>
+        <div class="ato-body">O Claude rodando <strong>sozinho</strong>: o guia do dia montado de manhã, a busca semanal de notícias pra newsletter, a varredura de e-mails. Só roda com o computador ligado, dentro do Cowork ou do Code.</div>
+      </div>
+      <div class="ato reveal">
+        <div class="ato-num">05</div>
+        <div class="ato-title">Claude no Chrome</div>
+        <div class="ato-body">O Claude operando o navegador como um humano: ler o grupo do WhatsApp Web, preencher formulários gigantes, garimpar no LinkedIn. <strong>Destrava tudo que não tem conector</strong>, com cuidado de segurança.</div>
+      </div>
+      <div class="ato reveal">
+        <div class="ato-num">06</div>
+        <div class="ato-title">Claude Code, quando vale</div>
+        <div class="ato-body">Pra quando você vai criar algo que <strong>sai da sua máquina</strong>: um app pro time, um site no ar, deploy no GitHub. Construímos ao vivo um gerador de newsletter. O dia a dia fica no Cowork.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCEITO 1 · A VIRADA AGÊNTICA -->
+<section class="section bg-suave">
+  <div class="section-inner">
+    <div class="section-eyebrow">Conceito-chave nº 1</div>
+    <h2 class="section-title">De fazer perguntas a <span class="azul">dar missões</span>.</h2>
+    <p class="section-lead">Essa é a moldura da aula inteira. Antes, a gente perguntava e agia. Hoje, na era da IA agêntica, o Claude executa e te chama só quando precisa de você, pra aprovar uma ação.</p>
+
+    <div class="quote reveal">
+      <span class="quote-mark">"</span>
+      <div class="quote-text">Seu trabalho não é mais escrever o prompt perfeito. É <strong style="color:var(--coral)">ter uma boa ideia</strong>, dar a missão e <strong style="color:var(--coral)">aprovar</strong> o que ele faz.</div>
+      <div class="quote-by">a moldura da Aula 3</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCEITO 2 · COWORK vs CODE -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-eyebrow">Conceito-chave nº 2</div>
+    <h2 class="section-title">Cowork ou <span class="azul">Claude Code</span>?</h2>
+    <p class="section-lead">Os dois moram no mesmo app desktop e usam o mesmo modelo. O que muda é o jeito de trabalhar, e quando vale a pena usar cada um. O guia completo está nos materiais lá embaixo.</p>
+
+    <div class="formas-wrap reveal">
+      <div class="formas" style="grid-template-columns:repeat(2, 1fr)">
+        <div class="forma forma-1">
+          <div class="forma-icon">Co</div>
+          <div class="forma-name">Cowork</div>
+          <div class="forma-when">Trabalha por você, no visual. Pastas, apps, conectores, Skills, automações do dia a dia. Roda numa salinha isolada (sandbox). Mais simples e mais seguro: você acompanha e aprova.</div>
+        </div>
+        <div class="forma forma-4">
+          <div class="forma-icon">&lt;/&gt;</div>
+          <div class="forma-name">Claude Code</div>
+          <div class="forma-when">Trabalha como dev, no texto. Código, GitHub, deploy, rodar sozinho até concluir (<span class="mono-code">/goal</span>) e conexões via MCP. Mais poder, pede um pouco de noção técnica.</div>
+        </div>
+      </div>
+      <div class="skill-band">
+        <span class="skill-band-tag">REGRA</span>
+        <span class="skill-band-text">Comece sempre pelo Cowork. Vá pro Code quando aparecer código, GitHub ou autonomia total. Pro dia a dia, o Cowork hoje faz quase tudo.</span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- TAREFAS AGENDADAS + CHROME A FUNDO -->
+<section class="section bg-suave">
+  <div class="section-inner">
+    <div class="section-eyebrow">O Claude rodando sozinho</div>
+    <h2 class="section-title">Tarefas agendadas e <span class="azul">Claude no Chrome</span>.</h2>
+    <p class="section-lead">As duas formas de deixar o Claude trabalhando por você. Uma roda no relógio; a outra pega no que não tem conector. Juntas, cobrem quase tudo.</p>
+
+    <div class="qw-grid">
+      <div class="qw reveal">
+        <div class="qw-num">1</div>
+        <div class="qw-body">
+          <h4>Ele trabalha enquanto você dorme</h4>
+          <p>Uma tarefa agendada é uma instrução que roda no horário que você marcar, sozinha. O guia do meu dia, por exemplo: ele lê minha agenda e meus e-mails e monta o resumo antes de eu chegar. Ou uma busca semanal de notícias pra alimentar a newsletter.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">2</div>
+        <div class="qw-body">
+          <h4>Só roda com o computador ligado</h4>
+          <p>O detalhe importante: tarefa agendada só funciona com o Cowork (ou o Code) aberto na sua máquina. Não é nuvem. Por isso pense na cadência: pra newsletter trimestral, uma busca por semana já basta. E lembre que cada execução gasta token.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">3</div>
+        <div class="qw-body">
+          <h4>Você cria pelo painel ou conversando</h4>
+          <p>Dá pra montar a tarefa no painel de tarefas agendadas (nome, prompt, cadência, modelo) ou simplesmente falar com o Claude: "crie uma tarefa agendada que toda segunda às 10h busca notícias sobre X e salva na pasta Y". Pra rodar sozinha, deixe no "agir sem perguntar".</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">4</div>
+        <div class="qw-body">
+          <h4>Chrome: o Claude como um humano na tela</h4>
+          <p>Quando não existe conector, o Claude no Chrome opera o navegador por você: abre o WhatsApp Web e resume o grupo, preenche um formulário enorme página por página, garimpa perfis no LinkedIn. Ele funciona por print de tela, então gasta um pouco mais de token, mas faz quase tudo.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">5</div>
+        <div class="qw-body">
+          <h4>Ele sempre pede acesso e confirma</h4>
+          <p>Dar acesso ao Chrome é abrir muita coisa (suas conexões, a internet inteira), então o Claude confirma antes de agir. Tem que estar logado no site, ele não loga por você. E os modelos novos são mais seguros contra <span class="mono-code">prompt injection</span>, mas a atenção continua sua.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">6</div>
+        <div class="qw-body">
+          <h4>Rode várias coisas ao mesmo tempo</h4>
+          <p>Uma das melhores partes: você não precisa esperar. Deixa a Skill sendo criada numa conversa, abre outra pra criar a tarefa agendada, e ainda uma terceira pra tirar uma dúvida. Vários "cérebros" rodando em paralelo.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-band" style="margin-top:20px">
+      <span class="skill-band-tag">SEGURANÇA</span>
+      <span class="skill-band-text">Sites maliciosos podem esconder instruções pro seu agente (prompt injection). O Claude é treinado pra não cair nisso, mas só dê acesso ao Chrome quando souber que a tarefa é segura, e confirme as ações sensíveis.</span>
+    </div>
+  </div>
+</section>
+
+<!-- SACADAS AULA 3 -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-eyebrow">As 8 sacadas da aula</div>
+    <h2 class="section-title">Coisas que <span class="azul">você ainda não sabia</span> que o Claude faz.</h2>
+    <p class="section-lead">Cada uma destas você pode aplicar amanhã de manhã. Agora que o curso acabou, são elas que mantêm a prática viva.</p>
+
+    <div class="qw-grid">
+      <div class="qw reveal">
+        <div class="qw-num">1</div>
+        <div class="qw-body">
+          <h4>Planeje antes (Plan mode)</h4>
+          <p>Antes de criar uma Skill ou automação grande, peça só o plano. Ele pensa melhor, você aprova, e não gasta token executando do jeito errado. É a etapa que 90% das pessoas pulam, e a que mais evita retrabalho.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">2</div>
+        <div class="qw-body">
+          <h4>Conte como você ENTREGA o material</h4>
+          <p>O segredo de uma Skill inteligente: diga ao Claude como você costuma passar o material. São textos soltos? Links? Fotos? Prints? PDFs? Quanto mais claro o "formato de entrada", melhor a Skill trabalha.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">3</div>
+        <div class="qw-body">
+          <h4>Faça o Claude virar curador</h4>
+          <p>A Skill não precisa só montar. Peça pra ela varrer a pasta, classificar o que achou e te perguntar o que entra. "Achei 14 materiais, sugiro estes." Vira um colega que organiza antes de produzir.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">4</div>
+        <div class="qw-body">
+          <h4>Agende e esqueça</h4>
+          <p>Pegue uma tarefa que se repete (resumo do dia, busca de notícias, varredura de e-mail) e transforme numa tarefa agendada. Deixe no "agir sem perguntar" pra ela rodar sozinha, lembrando: só com o computador ligado.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">5</div>
+        <div class="qw-body">
+          <h4>O Chrome destrava o que não tem conector</h4>
+          <p>WhatsApp Web, formulários intermináveis, um sistema sem integração: peça pra ele acessar "pelo Google Chrome". Custa mais token (ele tira print da tela), mas resolve quase qualquer coisa dentro de um site.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">6</div>
+        <div class="qw-body">
+          <h4>Pergunte o que você não sabe</h4>
+          <p>"O que é chave de API? O que é PowerShell? Onde encontro isso?" Ele te guia passo a passo, e até navega no seu Google pra te mostrar onde clicar. A melhor forma de aprender IA é usando a própria IA.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">7</div>
+        <div class="qw-body">
+          <h4>Trabalhe primeiro, agende depois</h4>
+          <p>Vale pra Skill e pra app: faça a tarefa de verdade primeiro, na mesma conversa. Quando ficar boa, peça pra virar Skill ou pra agendar. Nasce com o que funcionou, e você corrige menos depois.</p>
+        </div>
+      </div>
+      <div class="qw reveal">
+        <div class="qw-num">8</div>
+        <div class="qw-body">
+          <h4>Cowork pro dia a dia, Code pra criar</h4>
+          <p>Coisa do dia a dia que fica dentro do Claude? Cowork. Algo que vai sair da sua máquina, um app pro time, um site no ar? Claude Code, com <span class="mono-code">/goal</span> pra ele só parar quando concluir.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE A TURMA TROUXE -->
+<section class="section bg-suave">
+  <div class="section-inner">
+    <div class="section-eyebrow">O que a turma trouxe</div>
+    <h2 class="section-title">As <span class="azul">ideias e casos</span> da turma.</h2>
+    <p class="section-lead">Como sempre, o melhor apareceu ao vivo. Reuni aqui o que a turma trouxe na última aula, porque cada caso vale pra todo mundo.</p>
+
+    <div class="qw-grid">
+      <div class="turma-card reveal">
+        <span class="turma-quem">Acumular material ao longo do mês</span>
+        <div class="turma-q">"Posso ir salvando as notícias legais que chegam durante o mês e depois pedir pro Claude montar?"</div>
+        <div class="turma-a">Exatamente o jeito certo. Ao longo do trimestre você joga tudo numa pasta de newsletter, sem se preocupar em selecionar. Quando chega a hora de fechar, o Claude faz a <strong>curadoria</strong>: varre a pasta, classifica e te mostra o que tem. Foi essa ideia da turma que transformou a Skill em montadora <em>e</em> curadora.</div>
+      </div>
+
+      <div class="turma-card reveal">
+        <span class="turma-quem">As mensagens vêm do WhatsApp</span>
+        <div class="turma-q">"As novidades da news vêm do nosso grupo de WhatsApp. Dá pra ele olhar e montar um relatório do mês?"</div>
+        <div class="turma-a">Dá, pelo Claude no Chrome. Você deixa o WhatsApp Web aberto e pede pra ele abrir o grupo, ler as novidades e salvar um resumo na pasta da newsletter. Pelo WhatsApp direto não rola, mas pelo navegador ele faz, e faz bem. Pode até virar uma rotina mensal.</div>
+      </div>
+
+      <div class="turma-card reveal">
+        <span class="turma-quem">"Tudo que eu penso, dá pra fazer?"</span>
+        <div class="turma-q">"Tudo que eu falo que quero fazer, você diz que dá. Dá mesmo?"</div>
+        <div class="turma-a">Dá. Pode ser mais fácil ou mais difícil, não é que tudo virou simples. Mas coisas que antes pediam equipes enormes e sistemas caríssimos, hoje você consegue mapear e construir com tranquilidade. O limite virou a sua ideia, e o token.</div>
+      </div>
+
+      <div class="turma-card reveal">
+        <span class="turma-quem">Quando o token acaba rápido</span>
+        <div class="turma-q">"E quando o token começa a acabar muito rápido?"</div>
+        <div class="turma-a">Combine ferramentas. Use o Claude pras etapas que mais importam (planejar fundo, criar o app, te dar ideias) e apoie nas mais simples com algo gratuito, como o Gemini. E lembre do guia de economia de token, lá no resumo da Aula 1.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- O QUE FAZER AGORA -->
+<section class="section bg-navy">
+  <div class="section-inner">
+    <div class="section-eyebrow">O curso acabou. Agora começa o seu.</div>
+    <h2 class="section-title">5 jeitos de <span class="azul">manter a prática viva</span>.</h2>
+    <p class="section-lead">Clique para marcar como feito. Você já tem a base inteira: chat, projetos, Skills, Cowork, automações e Code. O que mantém isso vivo é o uso de todo dia.</p>
+
+    <div class="missao">
+      <div class="tarefa" onclick="toggleTask(this)">
+        <div class="tarefa-check"></div>
+        <div>
+          <div class="tarefa-num">PASSO 01</div>
+          <div class="tarefa-title">Use todos os dias</div>
+          <div class="tarefa-desc">A virada não vem de uma aula, vem do hábito. Leve toda dor do seu dia pro Claude e pergunte como ele pode ajudar. É assim que vira instinto.</div>
+        </div>
+      </div>
+
+      <div class="tarefa" onclick="toggleTask(this)">
+        <div class="tarefa-check"></div>
+        <div>
+          <div class="tarefa-num">PASSO 02</div>
+          <div class="tarefa-title">10 minutos por dia pra tirar uma ideia do papel</div>
+          <div class="tarefa-desc">Reserve um tempinho diário pra construir algo que você queria. Em poucas semanas você vai ter criado coisas que pareciam impossíveis.</div>
+        </div>
+      </div>
+
+      <div class="tarefa" onclick="toggleTask(this)">
+        <div class="tarefa-check"></div>
+        <div>
+          <div class="tarefa-num">PASSO 03</div>
+          <div class="tarefa-title">Automatize 1 processo de ponta a ponta</div>
+          <div class="tarefa-desc">Escolha um processo grande e repetitivo (relatório mensal, triagem, newsletter) e faça igual à aula: dor → plano → Skill → agendamento. Invista o tempo uma vez, colha pra sempre.</div>
+        </div>
+      </div>
+
+      <div class="tarefa" onclick="toggleTask(this)">
+        <div class="tarefa-check"></div>
+        <div>
+          <div class="tarefa-num">PASSO 04</div>
+          <div class="tarefa-title">Conecte suas ferramentas</div>
+          <div class="tarefa-desc">Ligue o Microsoft 365 (SharePoint, Outlook, Teams) ou o Google Drive, e o que mais você usar. Quanto menos vai-e-volta de arquivo, mais o Claude rende.</div>
+        </div>
+      </div>
+
+      <div class="tarefa" onclick="toggleTask(this)">
+        <div class="tarefa-check"></div>
+        <div>
+          <div class="tarefa-num">PASSO 05</div>
+          <div class="tarefa-title">Me chame quando travar</div>
+          <div class="tarefa-desc">O curso acabou, mas eu continuo por aqui. Travou numa ideia, quer validar uma automação? Me chama no Instagram <strong>@brusantanna.ai</strong> ou no <strong>bruna@newscale.tech</strong>.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMPTS AULA 3 -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-eyebrow">Prompts pra copiar e usar</div>
+    <h2 class="section-title">Os <span class="azul">prompts</span> base da Aula 3.</h2>
+    <p class="section-lead">Pontos de partida pra delegar de verdade, clique em "Copiar", cole no Claude e adapte. Lembre da sacada da Aula 1: o próprio Claude pode montar o prompt do jeito que você quiser.</p>
+
+    <div class="prompts">
+      <div class="prompt-card reveal">
+        <div class="prompt-header">
+          <div class="prompt-title">Planejar uma automação de ponta a ponta</div>
+          <span class="prompt-tag">Sempre antes de criar</span>
+        </div>
+<pre class="prompt-body" data-copy="Quero criar uma automação no Claude: [descreva a dor e o objetivo].
+
+Antes de executar qualquer coisa, entre em modo planejamento:
+- leia os arquivos de contexto da pasta
+- me diga o passo a passo que você pretende seguir
+- me diga como devo te entregar o material a cada vez (textos, links, fotos, prints)
+
+Não crie nada até eu aprovar o plano.">Quero criar uma automação no Claude: <span class="var">[descreva a dor e o objetivo]</span>.
+
+Antes de executar qualquer coisa, entre em modo planejamento:
+- leia os arquivos de contexto da pasta
+- me diga o passo a passo que você pretende seguir
+- me diga como devo te entregar o material a cada vez (textos, links, fotos, prints)
+
+Não crie nada até eu aprovar o plano.</pre>
+        <button class="copy-btn" onclick="copyPrompt(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copiar prompt
+        </button>
+      </div>
+
+      <div class="prompt-card reveal">
+        <div class="prompt-header">
+          <div class="prompt-title">Criar uma tarefa agendada</div>
+          <span class="prompt-tag">O Claude rodando sozinho</span>
+        </div>
+<pre class="prompt-body" data-copy="Crie uma tarefa agendada que rode toda segunda-feira às 10h.
+
+O que ela faz: buscar na internet notícias sobre [seus temas], e varrer meus e-mails da semana atrás de novidades que sirvam pra [objetivo].
+
+Salve tudo organizado na pasta: [caminho da pasta].
+
+Deixe no modo 'agir sem perguntar' pra rodar sozinha. Se faltar algum contexto, me pergunte antes de criar.">Crie uma tarefa agendada que rode toda segunda-feira às 10h.
+
+O que ela faz: buscar na internet notícias sobre <span class="var">[seus temas]</span>, e varrer meus e-mails da semana atrás de novidades que sirvam pra <span class="var">[objetivo]</span>.
+
+Salve tudo organizado na pasta: <span class="var">[caminho da pasta]</span>.
+
+Deixe no modo 'agir sem perguntar' pra rodar sozinha. Se faltar algum contexto, me pergunte antes de criar.</pre>
+        <button class="copy-btn" onclick="copyPrompt(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copiar prompt
+        </button>
+      </div>
+
+      <div class="prompt-card reveal">
+        <div class="prompt-header">
+          <div class="prompt-title">Claude no Chrome</div>
+          <span class="prompt-tag">Pro que não tem conector</span>
+        </div>
+<pre class="prompt-body" data-copy="Acesse [site / WhatsApp Web / sistema] pelo Google Chrome.
+
+Tarefa: [o que ele deve ler, preencher ou coletar].
+
+Salve o resultado em [caminho da pasta] e me mostre um resumo antes de salvar.
+
+Obs: vou deixar o site já aberto e logado pra você.">Acesse <span class="var">[site / WhatsApp Web / sistema]</span> pelo Google Chrome.
+
+Tarefa: <span class="var">[o que ele deve ler, preencher ou coletar]</span>.
+
+Salve o resultado em <span class="var">[caminho da pasta]</span> e me mostre um resumo antes de salvar.
+
+Obs: vou deixar o site já aberto e logado pra você.</pre>
+        <button class="copy-btn" onclick="copyPrompt(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copiar prompt
+        </button>
+      </div>
+
+      <div class="prompt-card reveal">
+        <div class="prompt-header">
+          <div class="prompt-title">Criar um app no Claude Code</div>
+          <span class="prompt-tag">Quando vai sair da sua máquina</span>
+        </div>
+<pre class="prompt-body" data-copy="Sou da Ismart. Quero um app interno simples que [objetivo do app].
+
+Nesta pasta estão o template e o arquivo da marca (cores, fontes e tom de voz).
+
+Antes de programar, entre em Plan mode: leia os dois arquivos, recomende a stack e me apresente o plano. Não comece até eu aprovar.">Sou da Ismart. Quero um app interno simples que <span class="var">[objetivo do app]</span>.
+
+Nesta pasta estão o template e o arquivo da marca (cores, fontes e tom de voz).
+
+Antes de programar, entre em Plan mode: leia os dois arquivos, recomende a stack e me apresente o plano. Não comece até eu aprovar.</pre>
+        <button class="copy-btn" onclick="copyPrompt(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copiar prompt
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LINKS AULA 3 -->
+<section class="section bg-suave">
+  <div class="section-inner">
+    <div class="section-eyebrow">Tudo num só lugar</div>
+    <h2 class="section-title">Materiais e <span class="azul">links</span> da Aula 3.</h2>
+    <p class="section-lead">A gravação da última aula, o guia rápido Cowork vs Code e as ferramentas. Salva esse link nos favoritos: a página fica no ar pra você consultar sempre.</p>
+
+    <div class="links">
+      <a class="link-card reveal" href="https://us06web.zoom.us/rec/share/Oi-VeIETMiUWM_OXSkZOWzhqBmmNrIxVx_SZ_bpJ_901-AiTKxtG0sZ35JQgS6Zx.U7jSPsfE6kbSRUfi?startTime=1780074072000" target="_blank" rel="noopener">
+        <div class="link-icon">🎥</div>
+        <div class="link-title">Gravação da Aula 3</div>
+        <div class="link-desc">A última aula completa no Zoom: processo de ponta a ponta, tarefas agendadas, Chrome e Claude Code. Use a aba "transcrição" pra navegar mais rápido.</div>
+        <div class="link-cta">Abrir no Zoom →</div>
+        <div class="link-pwd">
+          <span><strong>SENHA</strong><br><span class="mono-code" id="pwd3">iVIc$T01</span></span>
+          <button class="copy-btn" style="padding:6px 12px;font-size:11px" onclick="copyText('iVIc$T01', this); event.preventDefault();">Copiar</button>
+        </div>
+      </a>
+
+      <a class="link-card reveal" href="http://newscale.tech/projetos/ismart/guia-cowork-vs-code" target="_blank" rel="noopener">
+        <div class="link-icon">🧭</div>
+        <div class="link-title">Guia: Cowork vs Claude Code</div>
+        <div class="link-desc">O guia rápido pra decidir qual usar em cada situação: como cada um trabalha, quando vale a pena e a regra de ouro pra não errar.</div>
+        <div class="link-cta">Abrir o guia →</div>
+      </a>
+
+      <a class="link-card reveal" href="https://claude.com/download" target="_blank" rel="noopener">
+        <div class="link-icon">⬇️</div>
+        <div class="link-title">Claude Desktop</div>
+        <div class="link-desc">Gratuito · Mac/Windows · 2 minutos. É no Desktop que o Cowork, o Code e as tarefas agendadas rodam, direto nas suas pastas.</div>
+        <div class="link-cta">Ir para o download →</div>
+      </a>
+
+      <a class="link-card reveal" href="https://claude.ai" target="_blank" rel="noopener">
+        <div class="link-icon">💬</div>
+        <div class="link-title">Claude no navegador</div>
+        <div class="link-desc">Pra guardar suas Skills, abrir Projetos, navegar conectores e criar tarefas agendadas. Tudo o que você aprendeu, num lugar só.</div>
+        <div class="link-cta">Abrir claude.ai →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ENCERRAMENTO -->
+<section class="section">
+  <div class="section-inner">
+    <div class="proxima reveal">
+      <div>
+        <div class="proxima-eyebrow">Fim do curso · obrigada</div>
+        <h3>Foi um prazer fazer essa virada com vocês.</h3>
+        <p>Três aulas, do "como o Claude pensa" até o Claude trabalhando sozinho por você. Vocês já estão muito à frente. Agora é usar, abusar e tirar as ideias do papel, a tendência é ficar cada dia mais fácil. Qualquer dúvida, me chama.</p>
+        <div class="proxima-meta">
+          <div><strong>Instagram</strong>@brusantanna.ai</div>
+          <div><strong>E-mail</strong>bruna@newscale.tech</div>
+          <div><strong>Curso</strong>Claude com Profundidade · Ismart × NewScale</div>
+        </div>
+      </div>
+      <div class="proxima-card">
+        <h4>O que você leva do curso</h4>
+        <ul>
+          <li>As 5 formas de usar o Claude</li>
+          <li>Projeto + Memória + Preferências</li>
+          <li>Skills, Artifacts e Conectores</li>
+          <li>Cowork, tarefas agendadas e Code</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /tab-aula3 -->
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -2032,7 +2537,18 @@ Não faça nada até eu aprovar o plano.</pre>
       <span>Virada IA · Ismart × NewScale</span>
     </div>
     <div class="footer-meta">
-      Facilitação: Bruna Santanna · <a href="mailto:bruna@newscale.tech">bruna@newscale.tech</a> · <a href="https://instagram.com/brusantanna.ai" target="_blank" rel="noopener">@brusantanna.ai</a><br>
+      <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;opacity:.7;margin-bottom:10px">O curso acabou, mas seguimos em contato</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px">
+        <a href="https://instagram.com/brusantanna.ai" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border-radius:999px;background:rgba(255,255,255,.12);color:#fff;text-decoration:none;font-weight:600;font-size:14px;border:1px solid rgba(255,255,255,.18)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          @brusantanna.ai
+        </a>
+        <a href="mailto:bruna@newscale.tech" style="display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border-radius:999px;background:rgba(255,255,255,.12);color:#fff;text-decoration:none;font-weight:600;font-size:14px;border:1px solid rgba(255,255,255,.18)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          bruna@newscale.tech
+        </a>
+      </div>
+      Facilitação: Bruna Santanna · NewScale<br>
       Curso "Claude com Profundidade", adaptado para a Ismart, maio de 2026.
     </div>
   </div>
@@ -2093,21 +2609,26 @@ function copyText(text, btn){
 // ===== PESQUISA (Google Forms -> Sheets) =====
 const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScPYjXPRhr-2gtVo-IYco7jXMFUE_HApM09zq4fGoWEpHvgzA/formResponse';
 
-// estrelas · escopo por container (a pesquisa tem dois grupos de estrelas)
-function setupStars(containerId, labelId, hiddenId, labels){
-  const container = document.getElementById(containerId);
+// NPS · nota 0-10 de recomendacao
+(function setupNps(){
+  const container = document.getElementById('ffNps');
   if(!container) return;
-  const stars = container.querySelectorAll('.ff-star');
-  stars.forEach(star => {
-    star.addEventListener('click', function(){
+  const btns = container.querySelectorAll('.ff-nps-btn');
+  const label = document.getElementById('ffNpsLabel');
+  const labels = {
+    0:'0 · de jeito nenhum', 1:'1', 2:'2', 3:'3 · pouco provavel',
+    4:'4', 5:'5', 6:'6', 7:'7 · provavel', 8:'8 · bem provavel',
+    9:'9 · quase certo', 10:'10 · com certeza!'
+  };
+  btns.forEach(btn => {
+    btn.addEventListener('click', function(){
       const value = parseInt(this.dataset.value);
-      document.getElementById(hiddenId).value = value;
-      stars.forEach(s => s.classList.toggle('active', parseInt(s.dataset.value) <= value));
-      document.getElementById(labelId).textContent = labels[value];
+      document.getElementById('ff-nps').value = value;
+      btns.forEach(b => b.classList.toggle('active', parseInt(b.dataset.value) === value));
+      label.textContent = labels[value];
     });
   });
-}
-setupStars('ffMoodStars', 'ffMoodLabel', 'ff-mood', {1:'Ainda nao',2:'Mais ou menos',3:'Ta boa',4:'To gostando',5:'To amando'});
+})();
 
 document.getElementById('feedbackForm').addEventListener('submit', function(e){
   e.preventDefault();
@@ -2122,14 +2643,10 @@ document.getElementById('feedbackForm').addEventListener('submit', function(e){
   const data = new FormData(form);
   const nome = data.get('entry.659955540');
 
-  // a resposta "esta gostando da formacao" viaja junto do campo de duvidas,
-  // pra cair na mesma planilha sem precisar criar coluna nova no formulario
-  const mood = document.getElementById('ff-mood').value;
-  if(mood){
-    const moodLine = '[Gostando da formacao: ' + mood + '/5 estrelas]';
-    const duvidasAtual = data.get('entry.983024275') || '';
-    data.set('entry.983024275', moodLine + (duvidasAtual ? '\n\n' + duvidasAtual : ''));
-  }
+  // a nota NPS viaja no campo que sobrou do formulario (entry.983024275),
+  // pra cair na mesma planilha sem precisar criar coluna nova
+  const nps = document.getElementById('ff-nps').value;
+  data.set('entry.983024275', nps !== '' ? '[NPS recomendaria: ' + nps + '/10]' : '[NPS: nao respondeu]');
 
   fetch(GOOGLE_FORM_URL, { method:'POST', mode:'no-cors', body:data }).then(() => {
     form.querySelectorAll('.ff-row, .ff-row-mood, .ff-submit').forEach(el => el.style.display='none');
