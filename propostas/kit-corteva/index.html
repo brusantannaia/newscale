@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit de Prompts · A IA me Multiplica — CBS Corteva</title>
+<style>
+  :root{
+    --azul:#015FA1; --azul-esc:#003e74; --noite:#0E2841; --verde:#46B149;
+    --tinta:#10161c; --cinza:#5b6660; --linha:#e4e8ec; --fundo:#f4f7f9; --card:#fff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--fundo);color:var(--tinta);line-height:1.55;-webkit-font-smoothing:antialiased}
+
+  /* HEADER */
+  header{background:linear-gradient(135deg,var(--noite) 0%,var(--azul) 100%);color:#fff;
+    padding:46px 24px 40px;position:relative;overflow:hidden}
+  header::after{content:"";position:absolute;right:-60px;top:-60px;width:320px;height:320px;border-radius:50%;
+    background:radial-gradient(circle,rgba(70,177,73,.22),transparent 65%);pointer-events:none}
+  header .wrap{max-width:960px;margin:0 auto;position:relative;z-index:1}
+  .eyebrow{font-size:12.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#9fd0a3;margin:0 0 12px}
+  header h1{margin:0 0 10px;font-size:34px;line-height:1.12;letter-spacing:-.4px}
+  header h1 .g{color:var(--verde)}
+  header p{margin:0;opacity:.92;font-size:15.5px;max-width:640px}
+  .meta-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+  .tag{font-size:11.5px;font-weight:700;letter-spacing:.3px;background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.22);padding:6px 12px;border-radius:20px}
+
+  /* RESUMO */
+  .resumo{max-width:960px;margin:-22px auto 0;padding:0 24px;position:relative;z-index:2}
+  .resumo .panel{background:#fff;border:1px solid var(--linha);border-radius:16px;
+    box-shadow:0 10px 30px rgba(14,40,65,.10);padding:24px 24px 8px}
+  .resumo h2{margin:0 0 4px;font-size:18px;display:flex;align-items:center;gap:9px}
+  .resumo h2 .bar{width:5px;height:20px;border-radius:3px;background:var(--verde)}
+  .resumo .sub{margin:0 0 16px;font-size:13.5px;color:var(--cinza)}
+  .ideas{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:18px}
+  .idea{border:1px solid var(--linha);border-radius:12px;padding:13px 15px;background:#fbfdff}
+  .idea b{display:block;font-size:14px;color:var(--azul-esc);margin-bottom:3px}
+  .idea span{font-size:13px;color:var(--cinza)}
+  .pilares{display:flex;gap:10px;flex-wrap:wrap;border-top:1px dashed var(--linha);padding:14px 0 16px}
+  .pil{flex:1 1 160px;border-radius:10px;padding:11px 13px;color:#fff;font-size:13px}
+  .pil b{display:block;font-size:13.5px;margin-bottom:2px;letter-spacing:.3px}
+  .pil.p1{background:var(--azul)} .pil.p2{background:var(--azul-esc)} .pil.p3{background:var(--verde)}
+
+  /* COMO USAR */
+  .como{max-width:960px;margin:20px auto 0;padding:0 24px}
+  .como .box{background:#fff;border:1px solid var(--linha);border-left:4px solid var(--verde);
+    border-radius:12px;padding:16px 18px;font-size:13.5px;color:var(--cinza)}
+  .como .box b{color:var(--tinta)}
+  .como ul{margin:8px 0 0;padding-left:19px} .como li{margin:4px 0}
+
+  /* QUAL IA USAR */
+  .ias{max-width:960px;margin:20px auto 0;padding:0 24px}
+  .ias .panel{background:#fff;border:1px solid var(--linha);border-radius:16px;padding:22px 22px 20px;
+    box-shadow:0 1px 2px rgba(14,40,65,.04)}
+  .ias h2{margin:0 0 4px;font-size:18px;display:flex;align-items:center;gap:9px}
+  .ias h2 .bar{width:5px;height:20px;border-radius:3px;background:var(--azul)}
+  .ias .sub{margin:0 0 14px;font-size:13.5px;color:var(--cinza)}
+  .ias .sub b{color:var(--tinta)}
+  .regra{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .regra .r{border:1px solid var(--linha);border-radius:12px;padding:14px;background:#fbfdff;
+    display:flex;flex-direction:column;gap:9px}
+  .regra .ic{font-size:24px;line-height:1}
+  .regra .r b{display:block;font-size:14px;color:var(--noite)}
+  .regra .r .d{font-size:12px;color:var(--cinza);margin-top:2px}
+  .regra .rec{margin-top:auto;background:var(--azul);color:#fff;font-weight:800;font-size:13.5px;
+    text-align:center;padding:9px;border-radius:9px}
+  .regra .r.img .rec{background:var(--verde)}
+
+  .ia-fam{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
+  .fam{border:1px solid var(--linha);border-radius:12px;padding:13px 15px;background:#fff}
+  .fam .ft{font-size:13.5px;font-weight:800;color:var(--azul-esc);margin-bottom:7px;
+    display:flex;align-items:center;gap:7px}
+  .fam .ft .pt{width:9px;height:9px;border-radius:50%;flex:0 0 auto}
+  .mrow{display:flex;align-items:center;flex-wrap:wrap;gap:7px;padding:6px 0;border-top:1px dashed var(--linha)}
+  .mrow .mn{font-weight:700;font-size:13px;color:var(--tinta);flex:0 0 auto}
+  .mrow .md{font-size:12px;color:var(--cinza);flex:1 1 auto;min-width:0}
+  .mtag{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.3px;
+    padding:2px 7px;border-radius:10px;flex:0 0 auto}
+  .t-txt{background:#eaf2f9;color:var(--azul-esc)} .t-fast{background:#fff3e0;color:#b06a00}
+  .t-img{background:#eef6f0;color:#2e7d32} .t-think{background:#efeaf7;color:#5b3aa6}
+  .star{color:#f4a900}
+  .ia-dica{margin-top:14px;background:#f3f9ff;border:1px solid rgba(1,95,161,.2);border-radius:10px;
+    padding:12px 14px;font-size:13px;color:var(--azul-esc);line-height:1.55}
+  .ia-dica b{color:var(--noite)}
+
+  /* NAV de secoes */
+  nav.jump{max-width:960px;margin:18px auto 0;padding:0 24px;display:flex;gap:8px;flex-wrap:wrap}
+  nav.jump a{font-size:12.5px;font-weight:700;text-decoration:none;color:var(--azul-esc);
+    background:#fff;border:1px solid var(--linha);padding:7px 13px;border-radius:20px;transition:.15s}
+  nav.jump a:hover{background:var(--azul);color:#fff;border-color:var(--azul)}
+
+  /* MAIN */
+  main{max-width:960px;margin:26px auto 60px;padding:0 24px}
+  .fala{display:flex;align-items:center;gap:11px;margin:34px 2px 8px}
+  .fala .n{width:26px;height:26px;border-radius:8px;background:var(--noite);color:#fff;font-size:13px;
+    font-weight:800;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .fala h3{margin:0;font-size:13px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--azul-esc)}
+  .fala .line{flex:1;height:1px;background:var(--linha)}
+
+  .card{background:var(--card);border:1px solid var(--linha);border-radius:14px;padding:18px;margin:13px 0;
+    box-shadow:0 1px 2px rgba(14,40,65,.04)}
+  .top{display:flex;align-items:flex-start;gap:11px;margin-bottom:6px}
+  .num{background:var(--azul);color:#fff;width:30px;height:30px;border-radius:9px;display:flex;
+    align-items:center;justify-content:center;font-weight:800;font-size:14px;flex:0 0 auto;margin-top:1px}
+  .titwrap{flex:1 1 auto;min-width:0}
+  .titulo{font-weight:700;font-size:16.5px}
+  .quando{font-size:13px;color:var(--cinza);margin-top:2px}
+  .badges{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 4px 41px}
+  .badge{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;padding:4px 9px;border-radius:20px}
+  .b-tool{background:#eaf2f9;color:var(--azul-esc)} .b-anexo{background:#eef6f0;color:#2e7d32}
+  .b-copilot{background:#efeaf7;color:#5b3aa6}
+
+  .promptbox{position:relative;margin-top:10px}
+  pre{background:#0f2438;color:#dbe7f2;border-radius:11px;padding:16px 15px;margin:0;
+    white-space:pre-wrap;word-wrap:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:13px;line-height:1.62}
+  pre .ph{color:var(--verde);font-weight:600}
+  .copy{position:absolute;top:11px;right:11px;background:var(--verde);color:#fff;border:none;border-radius:8px;
+    padding:7px 14px;font-size:12.5px;font-weight:800;cursor:pointer;transition:.15s;box-shadow:0 2px 8px rgba(70,177,73,.35)}
+  .copy:hover{background:#3a9a3d} .copy.ok{background:var(--azul)}
+  .nota{font-size:12.5px;color:var(--cinza);margin:10px 2px 0;padding-left:41px}
+  .nota b{color:var(--tinta)}
+  .menu{margin:8px 2px 0;padding-left:41px}
+  .menu ul{margin:4px 0 0;padding-left:18px;columns:2;column-gap:26px;font-size:12.5px;color:var(--cinza)}
+  .menu li{margin:3px 0;break-inside:avoid}
+
+  /* FOOTER */
+  footer{background:var(--noite);color:#cfe0ee;padding:40px 24px 46px;margin-top:10px}
+  footer .wrap{max-width:960px;margin:0 auto;text-align:center}
+  footer .nome{font-size:22px;font-weight:800;color:#fff;letter-spacing:-.2px}
+  footer .papel{font-size:13.5px;color:#9fd0a3;margin:4px 0 18px}
+  .contatos{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+  .contatos a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:#fff;
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:10px 16px;border-radius:24px;
+    font-size:13.5px;font-weight:600;transition:.15s}
+  .contatos a:hover{background:rgba(70,177,73,.22);border-color:rgba(70,177,73,.5)}
+  .contatos svg{width:17px;height:17px;flex:0 0 auto}
+  footer .fim{margin-top:24px;font-size:12px;color:#7f9bb3;line-height:1.6}
+  footer .fim b{color:#cfe0ee}
+
+  @media (max-width:640px){
+    header h1{font-size:27px} .ideas{grid-template-columns:1fr} .ia-grid{grid-template-columns:1fr}
+    .menu ul{columns:1} .badges,.nota,.menu{margin-left:0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">6º Congresso Brasileiro Stoller · Corteva</p>
+    <h1>Kit de Prompts<br><span class="g">A IA me Multiplica.</span></h1>
+    <p>Tudo que você viu na palestra, pronto pra copiar e colar. Escolha o momento, troque o que está <span style="color:#9fd0a3;font-weight:700">em verde</span> pelas suas informações e cole na ferramenta de IA da Corteva ou no Copilot.</p>
+    <div class="meta-tags">
+      <span class="tag">✓ Funciona na IA da Corteva e no Copilot</span>
+      <span class="tag">✓ Feito pra rotina de RTV</span>
+      <span class="tag">✓ É só copiar e colar</span>
+    </div>
+  </div>
+</header>
+
+<!-- RESUMO DA PALESTRA -->
+<section class="resumo">
+  <div class="panel">
+    <h2><span class="bar"></span>O resumo da palestra, em 1 minuto</h2>
+    <p class="sub">Os atalhos mentais pra usar a IA bem — vale mais que qualquer prompt decorado.</p>
+    <div class="ideas">
+      <div class="idea"><b>Multiplicar, não substituir</b><span>A IA faz o braçal. Você faz o que só você faz: relação, julgamento, decisão.</span></div>
+      <div class="idea"><b>Ela é um autocompletar gigante</b><span>Sem contexto, ela chuta o mais provável. O seu comando é que guia o palpite.</span></div>
+      <div class="idea"><b>Os 4 elementos de um bom prompt</b><span><b style="color:var(--azul)">Papel</b> · <b style="color:var(--azul)">Contexto</b> · <b style="color:var(--azul)">Tarefa</b> · <b style="color:var(--azul)">Formato</b>. Quanto mais completo, melhor a resposta.</span></div>
+      <div class="idea"><b>Você é o copiloto</b><span>A IA pilota, mas antes de usar valide: <b>número · nome · prazo · fonte</b>. Ela erra com confiança.</span></div>
+    </div>
+    <div class="pilares">
+      <div class="pil p1"><b>+ RÁPIDO</b>O que você já faz, em menos tempo.</div>
+      <div class="pil p2"><b>+ MELHOR</b>Qualidade que sozinho você não alcançaria.</div>
+      <div class="pil p3"><b>NOVO</b>Coisas que você nem tentaria sem ela.</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUAL IA USAR PRA QUE -->
+<section class="ias">
+  <div class="panel">
+    <h2><span class="bar"></span>Qual IA usar? (sem complicar)</h2>
+    <p class="sub">O app da Corteva tem várias IAs e parece confuso — mas a regra é simples. Decore só estes três:</p>
+
+    <div class="regra">
+      <div class="r">
+        <span class="ic">🧠</span>
+        <div><b>Pra pensar e escrever</b><div class="d">análise, planejamento, e-mail, planilha, resumo</div></div>
+        <div class="rec">Claude Opus 4.8</div>
+      </div>
+      <div class="r">
+        <span class="ic">⚡</span>
+        <div><b>Pra ir rápido</b><div class="d">pergunta simples, rascunho na correria</div></div>
+        <div class="rec">Claude Sonnet 4.6</div>
+      </div>
+      <div class="r img">
+        <span class="ic">🎨</span>
+        <div><b>Pra criar imagem</b><div class="d">arte, foto, fundo de slide</div></div>
+        <div class="rec">Nano Banana Pro</div>
+      </div>
+    </div>
+
+    <p class="sub" style="margin:18px 0 0"><b>E todas as outras?</b> Fazem o mesmo tipo de coisa — são alternativas. Quer uma 2ª opinião? Cole o mesmo pedido em outra e compare. Mapa completo do app:</p>
+
+    <div class="ia-fam">
+      <div class="fam">
+        <div class="ft"><span class="pt" style="background:var(--azul)"></span>Claude · pensar e escrever</div>
+        <div class="mrow"><span class="mn">Opus 4.8 <span class="star">★</span></span><span class="mtag t-txt">Padrão</span><span class="md">A mais inteligente. Use no que importa.</span></div>
+        <div class="mrow"><span class="mn">Sonnet 4.6</span><span class="mtag t-fast">Rápido</span><span class="md">Quase tão boa e mais ágil. Dia a dia.</span></div>
+      </div>
+
+      <div class="fam">
+        <div class="ft"><span class="pt" style="background:var(--verde)"></span>Nano Banana · imagem</div>
+        <div class="mrow"><span class="mn">Nano Banana Pro <span class="star">★</span></span><span class="mtag t-img">Imagem</span><span class="md">Melhor qualidade de imagem.</span></div>
+        <div class="mrow"><span class="mn">Nano Banana</span><span class="mtag t-img">Imagem</span><span class="md">Geração de imagem padrão.</span></div>
+      </div>
+
+      <div class="fam">
+        <div class="ft"><span class="pt" style="background:#4285F4"></span>Gemini (Google) · texto</div>
+        <div class="mrow"><span class="mn">3.1</span><span class="mtag t-txt">Texto</span><span class="md">A mais nova e avançada do Google.</span></div>
+        <div class="mrow"><span class="mn">2.5 Pro</span><span class="mtag t-txt">Texto</span><span class="md">Forte e robusta.</span></div>
+        <div class="mrow"><span class="mn">3.5 Flash</span><span class="mtag t-fast">Rápido</span><span class="md">Leve e veloz pra tarefa simples.</span></div>
+      </div>
+
+      <div class="fam">
+        <div class="ft"><span class="pt" style="background:#10a37f"></span>GPT (OpenAI) · texto</div>
+        <div class="mrow"><span class="mn">5.4</span><span class="mtag t-txt">Texto</span><span class="md">A mais avançada da OpenAI.</span></div>
+        <div class="mrow"><span class="mn">4.1</span><span class="mtag t-txt">Texto</span><span class="md">Generalista sólida.</span></div>
+        <div class="mrow"><span class="mn">5.4 mini / nano</span><span class="mtag t-fast">Rápido</span><span class="md">Versões leves e rápidas.</span></div>
+        <div class="mrow"><span class="mn">o3</span><span class="mtag t-think">Raciocínio</span><span class="md">"Pensa passo a passo": contas e lógica.</span></div>
+      </div>
+    </div>
+
+    <div class="ia-dica"><b>Na dúvida, faça assim:</b> comece pela <b>Claude Opus 4.8</b>. Se quiser uma segunda opinião, cole o mesmo pedido na <b>GPT-5.4</b> ou na <b>Gemini 3.1</b> e fique com a resposta que você mais gostou. Pra imagem, sempre <b>Nano Banana Pro</b>.</div>
+  </div>
+</section>
+
+<!-- COMO USAR -->
+<div class="como">
+  <div class="box">
+    <b>Como usar este kit</b>
+    <ul>
+      <li>Comece pelo <b>nº 1 (Contexto fixo)</b>: ensine a IA quem você é uma vez só — depois é só pedir.</li>
+      <li>O texto <span style="color:var(--verde);font-weight:700">em verde [entre colchetes]</span> é onde você troca pelas suas informações.</li>
+      <li>Toque em <b>Copiar</b>, cole na IA e ajuste o que quiser. Se a resposta vier torta, peça pra refazer mais curto.</li>
+      <li>Sempre <b>confira os números e nomes</b> antes de levar pro cliente.</li>
+    </ul>
+  </div>
+</div>
+
+<nav class="jump">
+  <a href="#planejar">1 · Planejar</a>
+  <a href="#diagnostico">2 · Diagnóstico com dados</a>
+  <a href="#executar">3 · Construir & executar</a>
+  <a href="#extras">4 · Extras do dia a dia</a>
+</nav>
+
+<main>
+
+<!-- ============ PLANEJAR ============ -->
+<div class="fala" id="planejar"><div class="n">1</div><h3>Planejar — antes de qualquer reunião</h3><div class="line"></div></div>
+
+<div class="card">
+  <div class="top">
+    <div class="num">1</div>
+    <div class="titwrap">
+      <div class="titulo">Contexto fixo — ensine a IA quem você é</div>
+      <div class="quando">Cole UMA vez no início da conversa (ou salve nas instruções/perfil). Depois todo pedido já sai no seu mundo.</div>
+    </div>
+  </div>
+  <div class="badges"><span class="badge b-tool">IA Corteva / Copilot</span></div>
+  <div class="promptbox">
+    <button class="copy">Copiar</button>
+<pre>A partir de agora, considere sempre este contexto sobre mim nas suas respostas:
+Sou RTV (Representante Técnico de Vendas) da Corteva e atendo revendas parceiras (canais). Minha rotina é planejar a safra com os canais, analisar carteira de clientes, recuperar quem parou de comprar e ampliar a venda de especialidades e biológicos.
+Trabalho com as culturas <span class="ph">[ex.: soja, milho, café]</span> na região <span class="ph">[ex.: sudoeste de Goiás / cerrado]</span>.
+Quero respostas práticas, em português claro, prontas pra usar no dia a dia comercial. Quando faltar informação importante, me pergunte antes de assumir.</pre>
+  </div>
+  <div class="nota"><b>Por quê:</b> é o atalho dos "4 elementos" — você dá o <b>Papel</b> e o <b>Contexto</b> uma vez e economiza em todos os próximos prompts.</div>
+</div>
+
+<div class="card">
+  <div class="top">
+    <div class="num">2</div>
+    <div class="titwrap">
+      <div class="titulo">Roteiro da reunião de "papel em branco"</div>
+      <div class="quando">Quando você vai construir o plano do ano com um canal e quer conduzir a conversa com método.</div>
+    </div>
+  </div>
+  <div class="badges"><span class="badge b-tool">IA Corteva / Copilot</span></div>
+  <div class="promptbox">
+    <button class="copy">Copiar</button>
+<pre>Vou ter uma reunião de "papel em branco" com um canal para construir o plano estratégico da safra.
+Contexto do canal: <span class="ph">[nome da revenda]</span>, em <span class="ph">[região/cultura]</span>, faturamento ~R$ <span class="ph">[valor]</span>/ano, perfil <span class="ph">[tradicional / aberto a tecnologia]</span>. Na mesa vão estar <span class="ph">[quem decide e demais participantes]</span>. A reunião dura <span class="ph">[ex.: 4 horas]</span>. Metas: <span class="ph">[ex.: crescer 18%, recuperar inativos, ampliar biológicos]</span>.
+Monte um roteiro pra eu CONDUZIR a reunião: blocos de tempo (do aquecimento ao fechamento); perguntas-chave pra extrair dores e expectativas; momentos pra eu apresentar dados; e como fechar em um plano de ação claro. É um guia pra me orientar, não um script rígido.</pre>
+  </div>
+</div>
+
+<div class="card">
+  <div class="top">
+    <div class="num">3</div>
+    <div class="titwrap">
+      <div class="titulo">Chegar preparado numa visita específica</div>
+      <div class="quando">15 minutos antes de entrar no cliente: um briefing rápido com o que perguntar e o que oferecer.</div>
+    </div>
+  </div>
+  <div class="badges"><span class="badge b-tool">IA Corteva / Copilot</span></div>
+  <div class="promptbox">
+    <button class="copy">Copiar</button>
+<pre>Vou visitar o canal <span class="ph">[nome]</span> hoje. Objetivo da visita: <span class="ph">[ex.: apresentar plano de recuperação e oferecer biológicos]</span>. Histórico recente: <span class="ph">[ex.: caiu 20% em 2025, comprava muito herbicida]</span>.
+Me prepare um briefing de 1 página: 3 perguntas pra abrir a conversa, 2 dores prováveis desse perfil, 3 argumentos de valor (não só preço) e uma sugestão de próximo passo pra eu propor no fim.</pre>
+  </div>
+</div>
+
+<div class="card">
+  <div class="top">
+    <div class="num">4</div>
+    <div class="titwrap">
+      <div class="titulo">Roteirização da semana — onde seu tempo rende mais</div>
+      <div class="quando">Segunda de manhã: a IA prioriza quais canais visitar pela carteira, em vez de ir no automático.</div>
+    </div>
+  </div>
+  <div class="badges"><span class="badge b-tool">IA Corteva / Copilot</span><span class="badge b-anexo">Anexe a planilha (opcional)</span></div>
+  <div class="promptbox">
+    <button class="copy">Copiar</button>
+<pre>Me ajude a montar a agenda de visitas da semana. Tenho <span class="ph">[nº]</span> canais na carteira e consigo visitar <span class="ph">[ex.: 8]</span> por semana.
+Priorize por: 1) R$ em risco (clientes grandes que caíram ou pararam de comprar); 2) oportunidade de cross-sell (compram commodity mas não biológicos/especialidades); 3) momento da safra/renovação.
+<span class="ph">[Se eu anexar a planilha da carteira, use os dados reais.]</span> Me devolva a lista da semana em ordem de prioridade, com o motivo de cada visita e o objetivo dela em 1 linha.</pre>
+  </div>
+</div>
+
+<!-- ============ DIAGNOSTICO ============ -->
+<div class="fala" id="diagnostico"><div class="n">2</div><h3>Diagnóstico com dados — o "mapa da mina"</h3><div class="line"></div></div>
+
+<div class="card">
+  <div class="top">
+    <div class="num">5</div>
+    <div class="titwrap">
+      <div class="titulo">Mapa da mina — onde está o dinheiro na carteira</div>
+      <div class="quando">Pegue a planilha de faturamento por cliente e descubra quem priorizar, quem sumiu e quanto está em risco.</div>
+    </div>
+  </div>
+  <div class="badges"><span class="badge b-tool">IA Corteva / Copilot</span><span class="badge b-anexo">Anexe a planilha</span></div>
+  <div class="promptbox">
+    <button class="copy">Copiar</button>
+<pre>Atue como analista de vendas. Vou anexar a planilha de uma revenda com faturamento por cliente e por vendedor (a coluna <span class="ph">[ÁREA]</span> = vendedor), de <span class="ph">[2022 a 2026]</span>.
+Gere um "mapa da mina":
+1) Ranking de clientes por R$ e curva de Pareto (quantos clientes fazem 80% do faturamento);
+2) Churn: quem comprou em <span class="ph">[2024]</span> e NÃO em <span class="ph">[2025]</span>, com valor perdido, do maior pro menor;
+3) Recuperados/novos no último período;
+4) Ranking de vendedores: quem cresceu e quem caiu;
+5) Lista de ligações priorizada por R$ em risco, com uma sugestão de abordagem por cliente.
+ATENÇÃO: <span class="ph">[2026 está parcial — só até junho]</span>. Não compare ano parcial com ano cheio. Me devolva um resumo executivo + uma tabela pronta pra colar no Excel.</pre>
+  </div>
+</div>
+
+<div class="card">
+  <div class="top">
+    <div class="num">6</div>
+    <div class="titwrap">
+      <div class="titulo">Do dado bruto ao gráfico bonito</div>
+      <div class="quando">Transformar a planilha numa página visual de impacto pra mostrar na reunião — sem saber fazer gráfico.</div>
+    </div>
+  </div>
+  <div class="badges"><span class="badge b-tool">IA Corteva / Copilot</span><span class="badge b-anexo">Anexe a planilha</span></div>
+  <div class="promptbox">
+    <button class="copy">Copiar</button>
+<pre>Com base nesta planilha (faturamento <span class="ph">[2022–2026]</span>), crie uma página HTML visual e bonita — um único arquivo, pronto pra abrir no navegador.
+Mostre: a evolução do faturamento ano a ano, destacando <span class="ph">[a queda em 2023 e a retomada após o plano (+34%)]</span>; o ranking dos principais vendedores; e os clientes em churn.
+Use gráficos claros e destaque o crescimento. Cores da Corteva: Azul #015FA1 como cor principal e preto nos textos, fundo claro e sóbrio. Não inclua o ano parcial nas comparações de ano cheio.</pre>
+  </div>
+  <div class="nota"><b>Dica:</b> peça "agora me explique em 3 frases o que esse gráfico conta" — vira o seu texto de abertura na reunião.</div>
+</div>
+
+<div class="card">
+  <div class="top">
+    <div class="num">7</div>
+    <div class="titwrap">
+      <div class="titulo">Outras análises que a planilha esconde</div>
+      <div class="quando">Já tem a planilha aberta na IA? Vá além do mapa da mina — peça qualquer um destes recortes.</div>
+    </div>
+  </div>
+  <div class="badges"><span class="badge b-tool">IA Corteva / Copilot</span><span class="badge b-anexo">Anexe a planilha</span></div>
+  <div class="promptbox">
+    <button class="copy">Copiar</button>
+<pre>Com base nesta planilha, faça a seguinte análise: <span class="ph">[escolha uma da lista abaixo]</span>.
+Me devolva um resumo executivo em tópicos + uma tabela pronta pro Excel, e aponte 2 ações práticas que esse dado sugere.</pre>
+  </div>
+  <div class="menu"><b style="font-size:12px;color:var(--cinza)">Menu de análises pra pedir:</b>
+    <ul>
+      <li>Mix de produtos por canal (commodity × especialidades × biológicos)</li>
+      <li>Sazonalidade: em que mês cada cliente costuma comprar</li>
+      <li>Share of wallet: quem compra pouco perto do potencial da área</li>
+      <li>Concentração de risco: quantos clientes seguram sua meta</li>
+      <li>Comparar desempenho entre vendedores ou regiões</li>
+      <li>Ticket médio e frequência de compra por cliente</li>
+      <li>Projeção de fechamento da safra com base no parcial</li>
+      <li>Clientes que cresceram em volume mas caíram em margem</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ EXECUTAR ============ -->
+<div class="fala" id="executar"><div class="n">3</div><h3>Construir &amp; executar — da conversa ao plano que roda</h3><div class="line"></div></div>
+
+<div class="card">
+  <div class="top">
+    <div class="num">8</div>
+    <div class="titwrap">
+      <div class="titulo">Da conversa ao deck — planejar antes de gerar</div>
+      <div class="quando">Pra montar uma apresentação pro canal. O segredo é o "Passo 0": planeje o roteiro e aprove ANTES de gerar slide.</div>
+    </div>
+  </div>
+  <div class="badges"><span class="badge b-tool">IA Corteva / Copilot</span></div>
+  <div class="promptbox">
+    <button class="copy">Copiar</button>
+<pre>Vou criar uma apresentação pra revenda <span class="ph">[nome]</span> sobre o plano da próxima safra (<span class="ph">[recuperar inativos, ampliar biológicos, capacitar equipe; meta +18%]</span>). Público: <span class="ph">[dono conservador, que decide, e gerente comercial]</span>. Vai em tela grande: poucos textos, fonte grande.
+Antes de gerar qualquer slide, me ajude a PLANEJAR: devolva SÓ o roteiro dos slides pra eu aprovar e, pra cada slide: título, objetivo, mensagem-chave em tópicos curtos, e quais dados/gráficos mostrar.
+Sequência: contexto → diagnóstico com dados → estratégia → plano de ação → próximos passos. Se faltar informação, me pergunte. Não gere os slides ainda — só o roteiro.</pre>
+  </div>
+  <div class="nota"><b>Depois de aprovar o roteiro:</b> "Agora gere o conteúdo desses slides, prontos pra eu colar — fonte grande, cores da Corteva (Azul #015FA1 e Verde #46B149)."</div>
+</div>
+
+<div class="card">
+  <div class="top">
+    <div class="num">9</div>
+    <div class="titwrap">
+      <div class="titulo">Da reunião ao plano de ação — sem digitar</div>
+      <div class="quando">Gravou a reunião? Transforme a transcrição em pontos, dores, plano e um e-mail pronto.</div>
+    </div>
+  </div>
+  <div class="badges"><span class="badge b-tool">IA Corteva / Copilot</span><span class="badge b-anexo">Cole a transcrição</span></div>
+  <div class="promptbox">
+    <button class="copy">Copiar</button>
+<pre>Aqui está a transcrição de uma reunião de papel em branco com o canal (colada abaixo). Extraia:
+1) principais pontos e decisões;
+2) dores e expectativas do cliente;
+3) um plano de ação estruturado (o quê, responsável, prazo).
+No final, escreva um e-mail pronto pra eu enviar à equipe, com o resumo e os próximos passos.
+--- TRANSCRIÇÃO ---
+<span class="ph">[cole aqui a transcrição da reunião]</span></pre>
+  </div>
+</div>
+
+<div class="card">
+  <div class="top">
+    <div class="num">10</div>
+    <div class="titwrap">
+      <div class="titulo">O Planner se preenchendo sozinho</div>
+      <div class="quando">Transforme o plano de ação em tarefas no Planner, com responsável e prazo, sem cadastrar uma a uma.</div>
+    </div>
+  </div>
+  <div class="badges"><span class="badge b-copilot">Copilot + Planner</span></div>
+  <div class="promptbox">
+    <button class="copy">Copiar</button>
+<pre>Crie as tarefas deste plano de ação no meu Planner. Pra cada uma defina título, responsável e prazo, e organize por etapa:
+- <span class="ph">[Recuperar 15 clientes inativos prioritários — gerente comercial — 60 dias]</span>
+- <span class="ph">[Treinar a equipe em biológicos e especialidades — RTV + gerente — 30 dias]</span>
+- <span class="ph">[Campanha de pré-venda pros 20 maiores clientes — equipe de vendas — 45 dias]</span>
+- <span class="ph">[Revisão mensal do plano com indicadores por vendedor — dono + gerente — recorrente]</span></pre>
+  </div>
+  <div class="nota"><b>Observação:</b> a criação automática de tarefas é um recurso do <b>Copilot</b> integrado ao Planner. Na IA interna, peça a mesma lista organizada e cole no Planner.</div>
+</div>
+
+<div class="card">
+  <div class="top">
+    <div class="num">11</div>
+    <div class="titwrap">
+      <div class="titulo">Bônus — foto da anotação vira resumo digitado</div>
+      <div class="quando">Anotou no caderno ou no quadro? Tire uma foto e a IA transcreve e organiza.</div>
+    </div>
+  </div>
+  <div class="badges"><span class="badge b-tool">IA Corteva / Copilot</span><span class="badge b-anexo">Anexe a foto</span></div>
+  <div class="promptbox">
+    <button class="copy">Copiar</button>
+<pre>Anexei a foto das minhas anotações de uma reunião. Transcreva o que está escrito e organize em:
+1) resumo dos pontos principais;
+2) decisões tomadas;
+3) tarefas (o quê, quem, quando).
+Mantenha fiel ao que escrevi; se algo estiver ilegível, marque como <span class="ph">[ilegível]</span> em vez de inventar.</pre>
+  </div>
+</div>
+
+<!-- ============ EXTRAS ============ -->
+<div class="fala" id="extras"><div class="n">4</div><h3>Extras pro dia a dia — além da palestra</h3><div class="line"></div></div>
+
+<div class="card">
+  <div class="top">
+    <div class="num">12</div>
+    <div class="titwrap">
+      <div class="titulo">Mensagem de WhatsApp pro cliente</div>
+      <div class="quando">Pra mandar rápido no zap, no tom de campo — sem parecer copiado de robô.</div>
+    </div>
+  </div>
+  <div class="badges"><span class="badge b-tool">IA Corteva / Copilot</span></div>
+  <div class="promptbox">
+    <button class="copy">Copiar</button>
+<pre>Escreva uma mensagem de WhatsApp pra <span class="ph">[cliente/canal]</span> sobre <span class="ph">[ex.: a campanha de biológicos / lembrar da reunião / retomar contato]</span>.
+Tom: próximo, de campo, direto — como eu falaria, sem formalidade de e-mail. No máximo 4 linhas, com uma chamada pra ação no fim (ex.: "posso passar aí quinta?"). Me dê 2 versões pra eu escolher.</pre>
+  </div>
+</div>
+
+<div class="card">
+  <div class="top">
+    <div class="num">13</div>
+    <div class="titwrap">
+      <div class="titulo">E-mail de follow-up pós-visita</div>
+      <div class="quando">Logo depois da visita, enquanto está fresco: um e-mail profissional em 30 segundos.</div>
+    </div>
+  </div>
+  <div class="badges"><span class="badge b-tool">IA Corteva / Copilot</span></div>
+  <div class="promptbox">
+    <button class="copy">Copiar</button>
+<pre>Escreva um e-mail de follow-up pro canal <span class="ph">[nome]</span> depois da nossa visita de hoje.
+Pontos conversados: <span class="ph">[liste em tópicos curtos]</span>. O que ficou combinado: <span class="ph">[próximos passos e prazos]</span>.
+Tom: cordial e profissional, objetivo, no máximo 3 parágrafos. Termine reforçando o próximo passo e me colocando à disposição.</pre>
+  </div>
+</div>
+
+<div class="card">
+  <div class="top">
+    <div class="num">14</div>
+    <div class="titwrap">
+      <div class="titulo">Preparar resposta pra uma objeção</div>
+      <div class="quando">O cliente sempre vem com a mesma objeção? Ensaie a melhor resposta antes.</div>
+    </div>
+  </div>
+  <div class="badges"><span class="badge b-tool">IA Corteva / Copilot</span></div>
+  <div class="promptbox">
+    <button class="copy">Copiar</button>
+<pre>Um cliente me disse: "<span class="ph">[ex.: seu biológico é caro e eu não vejo resultado]</span>".
+Me dê 3 formas diferentes de responder, focando em valor e não em desconto: uma com dado/argumento técnico, uma com prova social (caso de outro produtor), e uma com uma pergunta que me devolve o controle da conversa. Linguagem de campo, direta, sem ser arrogante.</pre>
+  </div>
+</div>
+
+<div class="card">
+  <div class="top">
+    <div class="num">15</div>
+    <div class="titwrap">
+      <div class="titulo">Explicar o técnico em linguagem de cliente</div>
+      <div class="quando">Pra traduzir um produto ou recomendação técnica em algo que o produtor entende e compra.</div>
+    </div>
+  </div>
+  <div class="badges"><span class="badge b-tool">IA Corteva / Copilot</span></div>
+  <div class="promptbox">
+    <button class="copy">Copiar</button>
+<pre>Explique <span class="ph">[produto / tecnologia / recomendação]</span> pra um produtor que decide pelo bolso e pela praticidade.
+Quero: 1 frase do que é; 3 benefícios concretos pra lavoura dele (em R$, produtividade ou tempo); e uma analogia simples do dia a dia do campo. Sem jargão técnico, sem enrolação.</pre>
+  </div>
+</div>
+
+</main>
+
+<!-- FOOTER / CONTATOS -->
+<footer>
+  <div class="wrap">
+    <div class="nome">Bruna Santanna</div>
+    <div class="papel">Estrategista de IA · NewScale Consulting</div>
+    <div class="contatos">
+      <a href="https://instagram.com/brusantanna.ai" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
+        @brusantanna.ai
+      </a>
+      <a href="mailto:bruna@newscale.tech">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6 9-6"/></svg>
+        bruna@newscale.tech
+      </a>
+    </div>
+    <div class="fim">
+      <b>A IA me Multiplica</b> · 6º Congresso Brasileiro Stoller — Corteva · 2026<br>
+      Guarde este link. Os prompts são ponto de partida — adapte ao seu canal e confira sempre os números antes de levar pro cliente.
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var pre = btn.parentElement.querySelector('pre');
+      navigator.clipboard.writeText(pre.innerText).then(function(){
+        var original = btn.textContent;
+        btn.textContent = '✓ Copiado';
+        btn.classList.add('ok');
+        setTimeout(function(){ btn.textContent = original; btn.classList.remove('ok'); }, 1400);
+      });
+    });
+  });
+</script>
+</body>
+</html>
