@@ -1,10 +1,10 @@
-/* Step-reveal engine for the CBS deck.
- * - Elements with class "seq" and data-step="N" reveal progressively.
- * - Step 0 shows on slide arrival; forward (→ / click) reveals next step.
- * - Max data-step per slide is 2 (≤2 clicks). On the last step, forward
- *   falls through to deck-stage so it advances to the next slide.
- * - Going backward lands on the previous slide fully revealed.
- * - On reveal: [data-count-to] counts up, .bar fills, .draw lines grow.
+/* Motor do deck CBS — SEM CLIQUE, SEM FLASH.
+ * - Ao chegar em cada slide, revela TODO o conteudo de uma vez, COM a animacao.
+ * - Sem flash: o conteudo fica escondido (html.deck-booting, definido no <head>)
+ *   ate o motor assumir; o esconder e instantaneo (transition:none) e so a
+ *   entrada e animada.
+ * - Avancar (seta -> / clique) passa direto para o proximo slide.
+ * - Imprimir/PDF: revela tudo instantaneamente.
  */
 (function () {
   function ready(fn) {
@@ -14,24 +14,19 @@
 
   ready(function () {
     var deck = document.querySelector('deck-stage');
-    if (!deck) return;
-
-    var FWD = { 'ArrowRight': 1, 'PageDown': 1, ' ': 1, 'Spacebar': 1 };
+    if (!deck) { document.documentElement.classList.remove('deck-booting'); return; }
 
     function seqEls(slide) {
-      return Array.prototype.slice.call(slide.querySelectorAll('.seq[data-step]'));
+      return Array.prototype.slice.call(slide.querySelectorAll('.seq'));
     }
-    function maxStep(slide) {
-      var m = 0;
-      seqEls(slide).forEach(function (e) { m = Math.max(m, +e.dataset.step || 0); });
-      return m;
+    function counters(el) {
+      var c = el.matches('[data-count-to]') ? [el] : [];
+      return c.concat(Array.prototype.slice.call(el.querySelectorAll('[data-count-to]')));
     }
-
     function fmt(n, sep) {
       var s = String(Math.round(n));
       return sep ? s.replace(/\B(?=(\d{3})+(?!\d))/g, sep) : s;
     }
-
     function runCount(el, instant) {
       if (el._counted) return;
       el._counted = true;
@@ -39,12 +34,11 @@
       var suffix = el.dataset.countSuffix || '';
       var sep = el.dataset.countSep || '';
       if (instant) { el.textContent = fmt(to, sep) + suffix; return; }
-      var dur = +el.dataset.countDur || 1100;
-      var start = null;
+      var dur = +el.dataset.countDur || 1100, start = null;
       function tick(t) {
         if (start === null) start = t;
         var p = Math.min(1, (t - start) / dur);
-        var e = 1 - Math.pow(1 - p, 3); // easeOutCubic
+        var e = 1 - Math.pow(1 - p, 3);
         el.textContent = fmt(to * e, sep) + suffix;
         if (p < 1) requestAnimationFrame(tick);
         else el.textContent = fmt(to, sep) + suffix;
@@ -52,94 +46,70 @@
       requestAnimationFrame(tick);
     }
 
-    function reveal(el, instant) {
-      el.classList.add('in');
-      // counters inside (or self)
-      var counters = el.matches('[data-count-to]') ? [el] : [];
-      counters = counters.concat(Array.prototype.slice.call(el.querySelectorAll('[data-count-to]')));
-      counters.forEach(function (c) { runCount(c, instant); });
+    // esconde instantaneo (sem animacao de saida -> sem flicker)
+    function hideAll(slide) {
+      var els = seqEls(slide);
+      els.forEach(function (e) {
+        e.style.transition = 'none';
+        e.classList.remove('in');
+        counters(e).forEach(function (c) { c._counted = false; });
+      });
+      void slide.offsetWidth; // forca reflow p/ o estado escondido valer antes de animar
     }
-
-    function applyStep(slide, step, instant) {
-      slide._step = step;
+    // revela tudo (restaura a transicao do CSS -> a entrada anima)
+    function revealAll(slide, instant) {
       seqEls(slide).forEach(function (e) {
-        var s = +e.dataset.step || 0;
-        if (s <= step) reveal(e, instant);
-        else e.classList.remove('in');
+        e.style.transition = instant ? 'none' : '';
+        e.classList.add('in');
+        counters(e).forEach(function (c) { runCount(c, instant); });
       });
     }
 
-    var cur = null;
+    function enter(slide, instant) {
+      if (!slide) return;
+      if (instant) { revealAll(slide, true); return; }
+      hideAll(slide);
+      // dois frames: garante que o "escondido" pintou antes de disparar a animacao
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { revealAll(slide, false); });
+      });
+    }
+
     function firstSection() {
       return Array.prototype.slice.call(deck.children)
         .filter(function (n) { return n.tagName === 'SECTION'; })[0] || null;
     }
-    function currentSlide() {
-      return cur || deck.querySelector('section[data-deck-active]') || firstSection();
-    }
 
+    // troca de slide -> revela tudo do novo, com animacao
     deck.addEventListener('slidechange', function (ev) {
-      var d = ev.detail;
-      cur = d.slide;
-      var back = d.previousIndex > d.index && d.previousIndex !== -1;
-      // reset counters that belong to this slide so they can replay if revisited
-      if (!back) {
-        seqEls(cur).forEach(function (e) {
-          var cs = e.matches('[data-count-to]') ? [e] : [];
-          cs.concat(Array.prototype.slice.call(e.querySelectorAll('[data-count-to]')))
-            .forEach(function (c) { c._counted = false; });
-        });
-      }
-      applyStep(cur, back ? maxStep(cur) : 0, back);
+      enter(ev.detail.slide, false);
     });
 
-    // Initialize the slide that's already active. Runs SYNCHRONOUSLY (not in
-    // rAF) because rAF callbacks are paused while the tab is hidden, and the
-    // component's init slidechange may have fired during upgrade before this
-    // listener attached.
-    function initActive() {
-      var active = deck.querySelector('section[data-deck-active]') || firstSection();
-      if (active && active._step == null) { cur = active; applyStep(active, 0, false); }
-      else if (active) { cur = active; }
+    // estado inicial (sincrono): esconde por classe, libera o boot, depois anima
+    var active = deck.querySelector('section[data-deck-active]') || firstSection();
+    if (active) hideAll(active);
+    document.documentElement.classList.remove('deck-booting');
+    if (active) {
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { revealAll(active, false); });
+      });
     }
-    initActive();
-    setTimeout(initActive, 0);
 
-    // Forward keys: consume to step within slide; let deck-stage advance when done.
-    window.addEventListener('keydown', function (e) {
-      var t = e.target;
-      if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
-      if (e.metaKey || e.ctrlKey || e.altKey) return;
-      if (!FWD[e.key]) return;
-      var slide = currentSlide();
-      if (slide) {
-        var st = slide._step == null ? 0 : slide._step;
-        if (st < maxStep(slide)) {
-          applyStep(slide, st + 1, false);
-          e.preventDefault();
-          e.stopImmediatePropagation();
-        }
-      }
-    }, true);
-
-    // Click on slide body: step or advance. Works desktop + touch; we
-    // preventDefault so deck-stage's touch _onTap (which checks
-    // defaultPrevented) doesn't double-advance.
+    // clique no corpo do slide avanca (exceto em links/botoes)
     Array.prototype.slice.call(deck.children).forEach(function (node) {
       if (node.tagName !== 'SECTION') return;
       node.addEventListener('click', function (e) {
         if (e.target.closest && e.target.closest('a,button,input,textarea,select,[data-interactive]')) return;
         e.preventDefault();
-        var st = node._step == null ? 0 : node._step;
-        if (st < maxStep(node)) applyStep(node, st + 1, false);
-        else deck.next();
+        deck.next();
       });
     });
 
-    // Print / PDF: reveal everything.
+    // imprimir / PDF: tudo visivel
     window.addEventListener('beforeprint', function () {
-      Array.prototype.slice.call(deck.children).forEach(function (node) {
-        if (node.tagName === 'SECTION') applyStep(node, maxStep(node), true);
+      document.documentElement.classList.remove('deck-booting');
+      Array.prototype.slice.call(deck.children).forEach(function (n) {
+        if (n.tagName === 'SECTION') revealAll(n, true);
       });
     });
   });
