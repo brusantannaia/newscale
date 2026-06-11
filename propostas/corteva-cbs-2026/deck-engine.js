@@ -95,15 +95,9 @@
       });
     }
 
-    // clique no corpo do slide avanca (exceto em links/botoes)
-    Array.prototype.slice.call(deck.children).forEach(function (node) {
-      if (node.tagName !== 'SECTION') return;
-      node.addEventListener('click', function (e) {
-        if (e.target.closest && e.target.closest('a,button,input,textarea,select,[data-interactive]')) return;
-        e.preventDefault();
-        deck.next();
-      });
-    });
+    // Avancar com clique/tap fica por conta do deck-stage (_onTap), que ja
+    // exclui video[controls]/audio[controls] e demais elementos interativos —
+    // assim tocar no video NAO troca de slide (importante no celular).
 
     // imprimir / PDF: tudo visivel
     window.addEventListener('beforeprint', function () {
