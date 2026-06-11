@@ -82,6 +82,7 @@
 
     // troca de slide -> revela tudo do novo, com animacao
     deck.addEventListener('slidechange', function (ev) {
+      if (ev.detail.slide) ev.detail.slide._vidArmed = false; // permite tocar o video de novo ao revisitar
       enter(ev.detail.slide, false);
     });
 
@@ -95,9 +96,35 @@
       });
     }
 
-    // Avancar com clique/tap fica por conta do deck-stage (_onTap), que ja
-    // exclui video[controls]/audio[controls] e demais elementos interativos —
-    // assim tocar no video NAO troca de slide (importante no celular).
+    // ----- Tocar o video com o controle remoto / clique em qualquer lugar -----
+    // Em slides com video: a 1a "tecla pra frente" (seta ->, PageDown, espaco) OU
+    // um clique/toque em qualquer lugar TOCA o video, sem trocar de slide. Ao
+    // avancar de novo, passa para o proximo slide normalmente.
+    var FWD = { 'ArrowRight': 1, 'PageDown': 1, ' ': 1, 'Spacebar': 1 };
+    function activeSlide() { return deck.querySelector('section[data-deck-active]') || firstSection(); }
+    function armVideo() {
+      var slide = activeSlide();
+      if (!slide) return false;
+      var vid = slide.querySelector('video');
+      if (!vid || slide._vidArmed) return false; // sem video, ou ja acionado -> deixa avancar
+      slide._vidArmed = true;
+      vid.style.display = 'block';
+      try { var p = vid.play(); if (p && p.catch) p.catch(function () {}); } catch (e) {}
+      return true; // consumiu a acao (nao avanca o slide)
+    }
+    // teclado (o controle remoto envia teclas) — captura ANTES do deck-stage
+    window.addEventListener('keydown', function (e) {
+      var t = e.target;
+      if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (!FWD[e.key]) return;
+      if (armVideo()) { e.preventDefault(); e.stopImmediatePropagation(); }
+    }, true);
+    // clique/toque em qualquer lugar do slide (menos no proprio player)
+    deck.addEventListener('click', function (e) {
+      if (e.target.closest && e.target.closest('video,audio,a,button,input,textarea,select,[data-interactive]')) return;
+      if (armVideo()) { e.preventDefault(); e.stopImmediatePropagation(); }
+    }, true);
 
     // imprimir / PDF: tudo visivel
     window.addEventListener('beforeprint', function () {
