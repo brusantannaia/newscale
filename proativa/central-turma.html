@@ -399,7 +399,6 @@ h1,h2,h3,h4{font-family:'Cormorant Garamond', Georgia, serif;letter-spacing:0}
         <div class="link-title">Apresentação da Aula 1</div>
         <div class="link-desc">As 20 telas dos 5 atos — a virada, os 3 pilares, como a IA pensa, os 4 elementos do prompt e a demonstração ao vivo. Navegável, slide a slide.</div>
         <div class="link-cta">Abrir apresentação →</div>
-        <div class="todo-note" id="slidesTodo">⚠️ Bruna: cole o link da apresentação publicada no GitHub (variável <b>APRESENTACAO_URL</b> no topo do script).</div>
       </a>
     </div>
   </div>
@@ -775,8 +774,6 @@ Pode me perguntar se algo ficou confuso.</div>
       <div class="ff-error" id="dError">Não consegui enviar agora. Tente de novo, ou me chame no Instagram <strong>@brusantanna.ai</strong>.</div>
       <div class="ff-success" id="dSuccess">Recebi, <span id="dSuccessName">obrigada</span>! Sua dúvida chegou aqui. Respondo em breve. 💚</div>
     </form>
-
-    <div class="duvida-aside" id="duvidaAside">⚙️ <strong>Bruna:</strong> pra ativar o envio, publique o <em>apps-script-duvidas-proativa.gs</em> como App da Web e cole a URL na variável <b>GOOGLE_SCRIPT_URL</b> no topo do script desta página. Enquanto não colar, o formulário mostra um aviso amigável em vez de enviar.</div>
   </div>
 </section>
 
@@ -799,9 +796,9 @@ Pode me perguntar se algo ficou confuso.</div>
 </footer>
 
 <script>
-/* ===== CONFIG — Bruna edita aqui ===== */
-const APRESENTACAO_URL = "";      // cole o link da apresentação publicada no GitHub
-const GOOGLE_SCRIPT_URL = "";     // cole a URL do App da Web (apps-script-duvidas-proativa.gs)
+/* ===== CONFIG ===== */
+const APRESENTACAO_URL = "/proativa/aula01/";   // apresentação da Aula 1 publicada no GitHub
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxarDiYXYuqbAKNpqjni-QpVe0tJsId8agqDx1hp8E8jUUZwInYKo9Xi5zsis-Hc81a/exec";  // App da Web — planilha (aba Duvidas)
 
 /* ===== Link da apresentação ===== */
 (function(){
@@ -882,5 +879,3 @@ document.getElementById('duvidaForm').addEventListener('submit',function(ev){
 </script>
 </body>
 </html>
-
-<!-- redeploy 31ce7b10debb5aefe67b1a8c7760e37c6e41e61b -->
