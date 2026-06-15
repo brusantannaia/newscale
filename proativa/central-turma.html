@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Central da Turma · Formação Claude · Proativa (Oneglobal)</title>
+<meta name="description" content="O espaço da turma da Proativa: resumo das aulas, slides, dúvidas respondidas, missão e prompts prontos para a Formação Claude com a NewScale." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Paleta Oneglobal / Proativa */
+  --og-green:#005847;
+  --og-green-light:#007a63;
+  --og-green-dark:#003d31;
+  --og-green-deep:#002822;
+  --og-charcoal:#3D3936;
+  --og-cream:#f7f5ef;
+  --og-cream-2:#efece3;
+  --og-white:#ffffff;
+  --og-grey:#6b6b6b;
+  --og-line:#e4e1d8;
+  --terra:#B06E4A;
+  --terra-light:#c4835e;
+  --sand:#A38362;
+  --gold:#d8a657;
+  --tinta:#23302c;
+  --tinta-suave:#566661;
+  --shadow:0 4px 24px rgba(0,0,0,0.05);
+  --shadow-card:0 12px 40px rgba(0,88,71,0.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background:var(--og-cream);
+  color:var(--tinta);
+  line-height:1.65;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Cormorant Garamond', Georgia, serif;letter-spacing:0}
+.mono-code{font-family:'JetBrains Mono', monospace}
+
+/* ===== NAV ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;transition:all .3s ease}
+.nav.scrolled{background:rgba(247,245,239,0.96);backdrop-filter:blur(12px);box-shadow:0 2px 24px rgba(0,61,49,0.07);padding:10px 0}
+.nav-inner{max-width:1180px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav-logos{display:flex;align-items:center;gap:14px;padding:7px 16px;background:var(--og-green-dark);border-radius:999px;box-shadow:0 2px 10px rgba(0,61,49,0.18)}
+.nav.scrolled .nav-logos{box-shadow:0 2px 10px rgba(0,61,49,0.14)}
+.nav-logos img{height:24px;width:auto;display:block}
+.nav-logos .logo-sep{width:1px;height:18px;background:rgba(255,255,255,0.3)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:#fff;text-decoration:none;font-family:'Inter',sans-serif;font-weight:600;font-size:13px;padding:8px 14px;border-radius:999px;transition:all .2s;opacity:.9}
+.nav.scrolled .nav-links a{color:var(--og-green-dark)}
+.nav-links a:hover{background:rgba(255,255,255,0.14);opacity:1}
+.nav.scrolled .nav-links a:hover{background:var(--og-green);color:#fff}
+
+/* ===== HERO ===== */
+.hero{
+  background:linear-gradient(135deg,#002822 0%,var(--og-green-dark) 35%,var(--og-green) 78%,#006e58 100%);
+  color:#fff;padding:128px 32px 84px;position:relative;overflow:hidden;isolation:isolate;
+}
+.hero::before{content:'';position:absolute;inset:0;background-image:url("topographic-pattern.svg");background-size:cover;background-position:center;opacity:.5;pointer-events:none;z-index:-1}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(900px 480px at 82% -10%, rgba(216,166,87,0.16) 0%, transparent 60%);pointer-events:none;z-index:-1}
+.hero-inner{max-width:1080px;margin:0 auto;position:relative;z-index:2}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:999px;background:rgba(216,166,87,0.16);border:1px solid rgba(216,166,87,0.4);font-family:'Inter',sans-serif;font-weight:600;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#e6c98a;margin-bottom:22px}
+.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.05;font-weight:700;margin-bottom:18px}
+.hero h1 .it{font-style:italic;color:#e6c98a;font-weight:600}
+.hero-sub{font-size:17px;line-height:1.65;color:rgba(255,255,255,0.82);max-width:680px;margin-bottom:34px;font-family:'Inter',sans-serif}
+.hero-meta{display:flex;gap:38px;flex-wrap:wrap;padding-top:26px;border-top:1px solid rgba(255,255,255,0.14)}
+.hero-meta-item .label{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);font-family:'Inter',sans-serif;font-weight:600;margin-bottom:5px}
+.hero-meta-item .val{font-family:'Inter',sans-serif;font-weight:600;font-size:15px;color:#fff}
+
+/* ===== SEÇÕES ===== */
+.section{padding:80px 32px;position:relative}
+.section-inner{max-width:1180px;margin:0 auto}
+.section-eyebrow{display:inline-block;font-family:'Inter',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--terra);margin-bottom:14px;padding-bottom:7px;border-bottom:2px solid var(--terra)}
+.section-title{font-size:clamp(30px,4vw,46px);font-weight:700;line-height:1.08;color:var(--og-green-dark);margin-bottom:16px;max-width:820px}
+.section-title .green{color:var(--og-green)}
+.section-lead{font-size:18px;color:var(--tinta-suave);max-width:720px;margin-bottom:42px;line-height:1.6;font-family:'Inter',sans-serif}
+.bg-cream2{background:linear-gradient(180deg,var(--og-cream-2) 0%,var(--og-cream) 100%)}
+
+/* ===== ABAS DAS AULAS ===== */
+.tabs-bar{background:var(--og-white);border-bottom:1px solid var(--og-line);position:sticky;top:52px;z-index:90;box-shadow:0 2px 20px rgba(0,61,49,0.05)}
+.tabs-inner{max-width:1180px;margin:0 auto;padding:0 32px;display:flex;gap:6px}
+.tab-btn{background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-weight:700;font-size:15px;color:var(--tinta-suave);padding:19px 22px 16px;border-bottom:3px solid transparent;display:flex;align-items:center;gap:10px;transition:all .2s}
+.tab-btn:hover{color:var(--og-green-dark)}
+.tab-btn.active{color:var(--og-green-dark);border-bottom-color:var(--og-green)}
+.tab-btn[disabled]{cursor:not-allowed;opacity:.5}
+.tab-btn .tab-num{width:25px;height:25px;border-radius:7px;display:flex;align-items:center;justify-content:center;background:var(--og-green-soft,rgba(0,88,71,0.1));color:var(--og-green-dark);font-size:13px;font-weight:800;transition:all .2s}
+.tab-btn.active .tab-num{background:var(--og-green);color:#fff}
+.tab-btn .tab-status{font-family:'Inter',sans-serif;font-weight:400;font-size:11px;color:var(--tinta-suave);opacity:.75}
+.tab-panel{display:none}
+.tab-panel.active{display:block;animation:tabFade .45s ease}
+@keyframes tabFade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== ATOS / TIMELINE ===== */
+.atos{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+.ato{background:var(--og-white);border:1px solid var(--og-line);border-radius:18px;padding:26px;position:relative;transition:all .3s ease}
+.ato:hover{transform:translateY(-4px);box-shadow:var(--shadow-card);border-color:var(--og-green)}
+.ato-num{font-family:'Inter',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.1em;color:var(--terra);margin-bottom:8px;text-transform:uppercase}
+.ato-time{float:right;font-family:'Inter',sans-serif;font-weight:600;font-size:10.5px;color:var(--tinta-suave);background:var(--og-cream-2);padding:2px 9px;border-radius:20px}
+.ato-title{font-size:22px;font-weight:700;color:var(--og-green-dark);margin-bottom:10px;line-height:1.15;font-family:'Cormorant Garamond',serif}
+.ato-body{font-size:14.5px;color:var(--tinta-suave);line-height:1.55;font-family:'Inter',sans-serif}
+.ato-body strong{color:var(--og-green-dark);font-weight:600}
+
+/* ===== PROSA / RECAP ===== */
+.prose-card{background:var(--og-white);border:1px solid var(--og-line);border-radius:22px;padding:42px;box-shadow:var(--shadow)}
+.prose-card h3{font-size:27px;color:var(--og-green-dark);margin:32px 0 10px;font-weight:700}
+.prose-card h3:first-child{margin-top:0}
+.prose-card p{font-family:'Inter',sans-serif;font-size:15.5px;color:#3a4642;line-height:1.72;margin-bottom:14px}
+.prose-card p strong{color:var(--og-green-dark);font-weight:600}
+.prose-card .pull{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--og-green);line-height:1.35;border-left:3px solid var(--terra);padding:6px 0 6px 20px;margin:20px 0}
+
+/* ===== PILARES ===== */
+.pilares{display:grid;gap:20px;grid-template-columns:repeat(3,1fr)}
+.pilar{background:var(--og-white);border-radius:20px;padding:32px 28px;border-top:5px solid;box-shadow:var(--shadow);transition:transform .3s ease,box-shadow .3s ease}
+.pilar:hover{transform:translateY(-5px);box-shadow:var(--shadow-card)}
+.pilar-1{border-top-color:var(--og-green)}
+.pilar-2{border-top-color:var(--terra)}
+.pilar-3{border-top-color:var(--gold)}
+.pilar-num{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:40px;line-height:1;color:var(--og-green);margin-bottom:6px}
+.pilar-2 .pilar-num{color:var(--terra)}
+.pilar-3 .pilar-num{color:var(--gold)}
+.pilar-tag{display:inline-block;font-family:'Inter',sans-serif;font-weight:700;font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--tinta-suave);margin-bottom:6px}
+.pilar-title{font-size:24px;font-weight:700;color:var(--og-green-dark);margin-bottom:12px;line-height:1.15}
+.pilar-desc{font-family:'Inter',sans-serif;font-size:14.5px;color:var(--tinta-suave);margin-bottom:18px;line-height:1.55}
+.pilar-ex{padding:13px 16px;border-radius:12px;background:rgba(0,88,71,0.06);font-family:'Inter',sans-serif;font-size:13.5px;color:var(--og-green-dark);line-height:1.5}
+.pilar-2 .pilar-ex{background:rgba(176,110,74,0.10)}
+.pilar-3 .pilar-ex{background:rgba(216,166,87,0.14)}
+.pilar-ex .ex-label{font-family:'Inter',sans-serif;font-weight:700;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--og-green);display:block;margin-bottom:4px}
+.pilar-2 .ex-label{color:var(--terra)}
+.pilar-3 .ex-label{color:#b88a2e}
+.pilar-badge{display:inline-block;font-family:'Inter',sans-serif;font-weight:700;font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:var(--terra);color:#fff;margin-left:8px;vertical-align:middle}
+
+/* ===== DIAGRAMAS ===== */
+.diagram{background:var(--og-white);border:1px solid var(--og-line);border-radius:22px;padding:36px;box-shadow:var(--shadow);margin-bottom:22px}
+.diagram-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.diagram-head h3{font-size:25px;color:var(--og-green-dark);font-weight:700}
+.diagram-head .tag{font-family:'Inter',sans-serif;font-weight:700;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--terra);background:rgba(176,110,74,0.12);padding:4px 10px;border-radius:999px}
+.diagram-sub{font-family:'Inter',sans-serif;font-size:14.5px;color:var(--tinta-suave);margin-bottom:24px;max-width:760px}
+/* modelos */
+.models{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.model{border:1.5px solid var(--og-line);border-radius:16px;padding:24px 22px;position:relative;transition:all .25s;background:var(--og-cream)}
+.model:hover{border-color:var(--og-green);box-shadow:var(--shadow-card);transform:translateY(-3px)}
+.model-bar{height:6px;border-radius:4px;margin-bottom:16px}
+.model-opus .model-bar{background:linear-gradient(90deg,var(--og-green-dark),var(--og-green))}
+.model-sonnet .model-bar{background:linear-gradient(90deg,var(--terra),var(--terra-light))}
+.model-haiku .model-bar{background:linear-gradient(90deg,var(--gold),#e6c98a)}
+.model-name{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:700;color:var(--og-green-dark);line-height:1}
+.model-role{font-family:'Inter',sans-serif;font-weight:600;font-size:12px;color:var(--terra);text-transform:uppercase;letter-spacing:0.08em;margin:4px 0 14px}
+.model ul{list-style:none;padding:0;margin:0 0 14px}
+.model li{font-family:'Inter',sans-serif;font-size:13.5px;color:#3a4642;padding:5px 0 5px 18px;position:relative;line-height:1.45}
+.model li::before{content:'';position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--og-green)}
+.model-sonnet li::before{background:var(--terra)}
+.model-haiku li::before{background:var(--gold)}
+.model-when{font-family:'Inter',sans-serif;font-size:13px;background:rgba(0,88,71,0.06);border-radius:10px;padding:11px 13px;color:var(--og-green-dark);line-height:1.45}
+.model-when b{display:block;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--og-green);margin-bottom:3px}
+.model-sonnet .model-when{background:rgba(176,110,74,0.10)}
+.model-sonnet .model-when b{color:var(--terra)}
+.model-haiku .model-when{background:rgba(216,166,87,0.14)}
+.model-haiku .model-when b{color:#b88a2e}
+.models-note{margin-top:18px;font-family:'Inter',sans-serif;font-size:13.5px;color:var(--tinta-suave);background:var(--og-cream);border-left:3px solid var(--terra);border-radius:0 10px 10px 0;padding:13px 18px}
+/* camadas */
+.layers{display:flex;flex-direction:column;gap:12px;max-width:620px}
+.layer{display:flex;align-items:center;gap:18px;background:var(--og-cream);border:1px solid var(--og-line);border-radius:14px;padding:16px 20px}
+.layer-ic{flex:0 0 46px;height:46px;border-radius:12px;background:var(--og-green);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700}
+.layer:nth-child(2) .layer-ic{background:var(--terra)}
+.layer:nth-child(3) .layer-ic{background:var(--gold)}
+.layer-tx h4{font-family:'Inter',sans-serif;font-size:15px;font-weight:700;color:var(--og-green-dark);margin-bottom:2px}
+.layer-tx p{font-family:'Inter',sans-serif;font-size:13.5px;color:var(--tinta-suave);line-height:1.45}
+.layer-eq{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--og-green);margin-top:6px}
+/* superficies */
+.surfaces{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:18px}
+.surface{border:1.5px solid var(--og-line);border-radius:16px;padding:22px;background:var(--og-cream);transition:.25s}
+.surface:hover{border-color:var(--og-green);transform:translateY(-3px);box-shadow:var(--shadow-card)}
+.surface-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--og-green-dark)}
+.surface-tag{font-family:'Inter',sans-serif;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--terra);margin:2px 0 12px}
+.surface p{font-family:'Inter',sans-serif;font-size:13.5px;color:#3a4642;line-height:1.5}
+.surface .aula-pin{display:inline-block;margin-top:10px;font-family:'Inter',sans-serif;font-weight:700;font-size:11px;color:var(--og-green);background:rgba(0,88,71,0.08);padding:3px 10px;border-radius:999px}
+.spectrum{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;background:linear-gradient(90deg,rgba(0,88,71,0.06),rgba(216,166,87,0.12));border-radius:12px;padding:14px;font-family:'Inter',sans-serif;font-weight:700;font-size:13px;color:var(--og-green-dark)}
+.spectrum .ar{color:var(--terra)}
+
+/* ===== DÚVIDAS DA TURMA ===== */
+.faq{display:grid;gap:14px}
+.faq-item{background:var(--og-white);border:1px solid var(--og-line);border-radius:16px;overflow:hidden;transition:border-color .2s}
+.faq-item:hover{border-color:var(--og-green)}
+.faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 26px;display:flex;align-items:flex-start;gap:16px;font-family:'Inter',sans-serif}
+.faq-q .who{flex:0 0 auto;font-family:'Inter',sans-serif;font-weight:700;font-size:10.5px;letter-spacing:0.04em;text-transform:uppercase;color:var(--og-green-dark);background:rgba(0,88,71,0.08);padding:5px 11px;border-radius:999px;white-space:nowrap;margin-top:1px}
+.faq-q .qt{flex:1;font-size:16px;font-weight:600;color:var(--og-green-dark);line-height:1.35}
+.faq-q .chev{flex:0 0 auto;color:var(--terra);font-size:20px;transition:transform .25s;line-height:1}
+.faq-item.open .faq-q .chev{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 26px}
+.faq-item.open .faq-a{max-height:900px}
+.faq-a-inner{padding:0 0 24px 0;font-family:'Inter',sans-serif;font-size:14.5px;color:#3a4642;line-height:1.68;border-top:1px dashed var(--og-line);padding-top:16px}
+.faq-a-inner strong{color:var(--og-green-dark);font-weight:600}
+.faq-a-inner .step{display:block;padding:3px 0 3px 18px;position:relative}
+.faq-a-inner .step::before{content:'›';position:absolute;left:0;color:var(--terra);font-weight:700}
+
+/* ===== MISSÃO ===== */
+.bg-green{background:linear-gradient(135deg,#002822 0%,var(--og-green-dark) 45%,var(--og-green) 100%);color:#fff;position:relative;overflow:hidden}
+.bg-green::before{content:'';position:absolute;inset:0;background-image:url("topographic-pattern.svg");background-size:cover;opacity:.35;pointer-events:none}
+.bg-green .section-title{color:#fff}
+.bg-green .section-title .green{color:#e6c98a}
+.bg-green .section-lead{color:rgba(255,255,255,0.82)}
+.bg-green .section-eyebrow{color:#e6c98a;border-bottom-color:#e6c98a}
+.missao{display:grid;gap:14px;position:relative;z-index:2;max-width:880px}
+.tarefa{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);border-radius:16px;padding:22px 24px;display:flex;gap:18px;align-items:flex-start;cursor:pointer;transition:all .25s;user-select:none}
+.tarefa:hover{background:rgba(255,255,255,0.10);border-color:#e6c98a}
+.tarefa.done{background:rgba(216,166,87,0.12);border-color:#e6c98a}
+.tarefa.done .tarefa-title{text-decoration:line-through;opacity:.6}
+.tarefa.done .tarefa-check{background:#e6c98a;border-color:#e6c98a}
+.tarefa.done .tarefa-check::after{content:"✓";color:var(--og-green-dark);font-weight:900;font-size:15px}
+.tarefa-check{flex-shrink:0;width:26px;height:26px;border-radius:8px;border:2px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;margin-top:2px;transition:all .2s}
+.tarefa-num{font-family:'Inter',sans-serif;font-weight:800;font-size:12px;color:#e6c98a;letter-spacing:0.1em;margin-bottom:4px}
+.tarefa-title{font-family:'Inter',sans-serif;font-weight:700;font-size:17px;color:#fff;margin-bottom:5px}
+.tarefa-desc{font-family:'Inter',sans-serif;font-size:14px;color:rgba(255,255,255,0.8);line-height:1.55}
+
+/* ===== PROMPTS ===== */
+.prompts{display:grid;gap:18px;grid-template-columns:repeat(2,1fr)}
+.prompt-card{background:var(--og-white);border:1px solid var(--og-line);border-radius:18px;padding:24px;display:flex;flex-direction:column;transition:all .25s}
+.prompt-card:hover{border-color:var(--og-green);box-shadow:var(--shadow-card)}
+.prompt-card.full{grid-column:1/-1}
+.prompt-group{grid-column:1/-1;margin:14px 0 -2px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.prompt-group:first-child{margin-top:0}
+.prompt-group h3{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:700;color:var(--og-green-dark)}
+.prompt-group span{font-family:'Inter',sans-serif;font-size:13px;color:var(--tinta-suave)}
+.prompt-what{font-family:'Inter',sans-serif;font-size:13px;color:#516159;line-height:1.5;margin:-2px 0 14px;padding:9px 13px;background:rgba(0,88,71,0.05);border-left:3px solid var(--terra);border-radius:0 8px 8px 0}
+.prompt-what b{color:var(--og-green-dark);font-weight:700}
+.prompt-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;gap:14px}
+.prompt-title{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:22px;color:var(--og-green-dark);line-height:1.15}
+.prompt-tag{font-family:'Inter',sans-serif;font-weight:700;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:rgba(0,88,71,0.08);color:var(--og-green-dark);flex-shrink:0;white-space:nowrap}
+.prompt-body{background:var(--og-green-deep);color:#dbe9e3;border-radius:12px;padding:18px;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.65;white-space:pre-wrap;margin-bottom:14px;flex:1;overflow:auto;position:relative}
+.prompt-body .var{color:#e6c98a;font-style:italic}
+.copy-btn{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;background:var(--og-green);color:#fff;border:none;border-radius:10px;padding:10px 18px;font-family:'Inter',sans-serif;font-weight:700;font-size:13px;cursor:pointer;transition:all .2s}
+.copy-btn:hover{background:var(--og-green-light)}
+.copy-btn.copied{background:var(--terra)}
+
+/* ===== LINKS / MATERIAIS ===== */
+.links{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+.link-card{background:var(--og-white);border:1px solid var(--og-line);border-radius:18px;padding:28px;display:flex;flex-direction:column;transition:all .25s;text-decoration:none;color:inherit;position:relative;overflow:hidden}
+.link-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--og-green),var(--terra));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.link-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-card);border-color:var(--og-green)}
+.link-card:hover::before{transform:scaleX(1)}
+.link-icon{width:46px;height:46px;border-radius:12px;background:rgba(0,88,71,0.08);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:22px}
+.link-title{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:22px;color:var(--og-green-dark);margin-bottom:7px;line-height:1.1}
+.link-desc{font-family:'Inter',sans-serif;font-size:13.5px;color:var(--tinta-suave);line-height:1.5;margin-bottom:16px;flex:1}
+.link-cta{font-family:'Inter',sans-serif;font-weight:700;font-size:13px;color:var(--og-green);display:inline-flex;align-items:center;gap:8px}
+.link-card.soon{opacity:.62}
+.link-card.soon::before{background:var(--sand)}
+.todo-note{font-family:'Inter',sans-serif;font-size:11.5px;color:var(--terra);background:rgba(176,110,74,0.10);border-radius:8px;padding:6px 10px;margin-top:10px;line-height:1.4}
+
+/* ===== FORM DÚVIDAS ===== */
+.feedback-wrap{background:var(--og-white);border:1px solid var(--og-line);border-radius:22px;padding:42px;box-shadow:var(--shadow);max-width:820px}
+.ff-row{margin-bottom:22px}
+.ff-label{font-family:'Inter',sans-serif;font-weight:700;font-size:13px;color:var(--og-green-dark);display:block;margin-bottom:9px}
+.ff-label .ff-req{color:var(--terra);font-weight:800}
+.ff-help{display:block;font-size:12.5px;color:var(--tinta-suave);margin-top:5px;font-weight:400}
+.feedback-wrap input[type="text"],.feedback-wrap select,.feedback-wrap textarea{width:100%;padding:13px 16px;border:1.5px solid var(--og-line);border-radius:12px;font-family:'Inter',sans-serif;font-size:15px;color:var(--tinta);background:var(--og-cream);transition:all .2s;resize:vertical;line-height:1.55}
+.feedback-wrap input:focus,.feedback-wrap select:focus,.feedback-wrap textarea:focus{outline:none;border-color:var(--og-green);background:#fff;box-shadow:0 0 0 4px rgba(0,88,71,0.1)}
+.ff-submit{background:var(--og-green);color:#fff;border:none;border-radius:12px;padding:15px 34px;font-family:'Inter',sans-serif;font-weight:700;font-size:15px;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:10px}
+.ff-submit:hover{transform:translateY(-2px);background:var(--og-green-light);box-shadow:0 14px 32px rgba(0,88,71,0.25)}
+.ff-submit:disabled{opacity:.6;cursor:not-allowed;transform:none;box-shadow:none}
+.ff-success{display:none;margin-top:24px;padding:20px 24px;background:rgba(0,88,71,0.07);border:1.5px solid var(--og-green);border-radius:14px;color:var(--og-green-dark);font-family:'Inter',sans-serif;font-weight:600;font-size:15px;line-height:1.5}
+.ff-success.show{display:block;animation:tabFade .4s ease}
+.ff-error{display:none;margin-top:14px;padding:13px 17px;background:rgba(176,110,74,0.1);border:1px solid var(--terra);border-radius:10px;color:var(--terra);font-size:14px;font-family:'Inter',sans-serif}
+.ff-error.show{display:block}
+.duvida-aside{background:rgba(0,88,71,0.05);border:1px dashed var(--og-green);border-radius:14px;padding:18px 22px;margin-top:22px;font-family:'Inter',sans-serif;font-size:13.5px;color:var(--og-green-dark);line-height:1.55;max-width:820px}
+
+/* ===== PRÓXIMA AULA ===== */
+.proxima{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;background:linear-gradient(135deg,var(--terra) 0%,#9a5d3c 100%);border-radius:24px;padding:46px;color:#fff;position:relative;overflow:hidden}
+.proxima::before{content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,0.1)}
+.proxima-eyebrow{font-family:'Inter',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:12px;opacity:.92}
+.proxima h3{font-size:clamp(28px,3.5vw,40px);font-weight:700;line-height:1.05;margin-bottom:12px;font-family:'Cormorant Garamond',serif}
+.proxima p{font-family:'Inter',sans-serif;font-size:15px;line-height:1.55;opacity:.94;margin-bottom:16px}
+.proxima-card{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:18px;padding:28px;backdrop-filter:blur(8px);position:relative;z-index:2}
+.proxima-card h4{font-family:'Inter',sans-serif;font-weight:700;font-size:15px;margin-bottom:12px}
+.proxima-card ul{list-style:none;padding:0}
+.proxima-card li{display:flex;gap:10px;align-items:flex-start;padding:8px 0;font-family:'Inter',sans-serif;font-size:14px;border-bottom:1px dashed rgba(255,255,255,0.18)}
+.proxima-card li:last-child{border-bottom:none}
+.proxima-card li::before{content:'';flex-shrink:0;width:6px;height:6px;border-radius:50%;background:#fff;margin-top:8px}
+
+/* ===== FOOTER ===== */
+.footer{background:var(--og-green-deep);color:rgba(255,255,255,0.72);padding:46px 32px}
+.footer-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:26px;align-items:center}
+.footer-brand{display:flex;align-items:center;gap:16px;color:#fff;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:18px}
+.footer-logos{display:flex;align-items:center;gap:14px;padding:8px 16px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.16);border-radius:999px}
+.footer-logos img{height:24px;width:auto;display:block}
+.footer-logos .logo-sep{width:1px;height:18px;background:rgba(255,255,255,0.25)}
+.footer-meta{font-family:'Inter',sans-serif;font-size:13px;line-height:1.6}
+.footer-meta a{color:#e6c98a;text-decoration:none}
+
+/* ===== RESPONSIVO ===== */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+@media (max-width:900px){
+  .nav-links{display:none}
+  .pilares,.models,.surfaces{grid-template-columns:1fr}
+  .prompts{grid-template-columns:1fr}
+  .proxima{grid-template-columns:1fr;padding:32px}
+  .section{padding:60px 22px}
+  .hero{padding:120px 22px 64px}
+  .prose-card,.feedback-wrap,.diagram{padding:26px}
+}
+@media (max-width:540px){
+  .tabs-inner{padding:0 14px;gap:2px}
+  .tab-btn{padding:15px 12px 12px;font-size:13.5px}
+  .tab-btn .tab-status{display:none}
+  .hero-meta{gap:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-logos">
+      <img src="oneglobal-logo-white.png" alt="Oneglobal / Proativa" style="filter:none" id="navLogoOg" />
+      <span class="logo-sep"></span>
+      <img src="newscale-logo-white.png" alt="NewScale" id="navLogoNs" />
+    </div>
+    <div class="nav-links">
+      <a href="#resumo" onclick="openTab('aula1');return false;">Resumo</a>
+      <a href="#slides" onclick="openTab('aula1');return false;">Apresentação</a>
+      <a href="#diagramas" onclick="openTab('aula1');return false;">Diagramas</a>
+      <a href="#duvidas-turma" onclick="openTab('aula1');return false;">Dúvidas</a>
+      <a href="#missao" onclick="openTab('aula1');return false;">Missão</a>
+      <a href="#duvidas-online">Tirar dúvida</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">
+      <span style="width:6px;height:6px;border-radius:50%;background:#e6c98a"></span>
+      Virada IA · Claude com Profundidade · Proativa
+    </span>
+    <h1>Central da Turma:<br><span class="it">Formação Claude</span></h1>
+    <p class="hero-sub">O espaço de vocês. Aqui ficam o resumo de cada aula, os slides, os diagramas, as dúvidas da turma respondidas com calma, a missão da semana e os prompts prontos pra copiar. Volte sempre que precisar — e use o espaço de dúvidas lá embaixo a qualquer momento.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><div class="label">Turma</div><div class="val">Proativa · Oneglobal</div></div>
+      <div class="hero-meta-item"><div class="label">Facilitação</div><div class="val">Bruna Santanna · NewScale</div></div>
+      <div class="hero-meta-item"><div class="label">Aulas</div><div class="val">1 de 3 · em andamento</div></div>
+      <div class="hero-meta-item"><div class="label">Aula 1</div><div class="val">Como o Claude pensa · jun/2026</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ABAS -->
+<div class="tabs-bar" id="aulas">
+  <div class="tabs-inner">
+    <button class="tab-btn active" id="btn-aula1" onclick="openTab('aula1')">
+      <span class="tab-num">1</span>Aula 1
+    </button>
+    <button class="tab-btn" id="btn-aula2" onclick="openTab('aula2')">
+      <span class="tab-num">2</span>Aula 2
+    </button>
+    <button class="tab-btn" id="btn-aula3" onclick="openTab('aula3')">
+      <span class="tab-num">3</span>Aula 3
+    </button>
+  </div>
+</div>
+
+<!-- ===================== AULA 1 ===================== -->
+<div class="tab-panel active" id="tab-aula1">
+
+<!-- RESUMO / O QUE ROLOU -->
+<section class="section" id="resumo">
+  <div class="section-inner">
+    <div class="section-eyebrow">O que rolou na Aula 1</div>
+    <h2 class="section-title">Um passeio pelos <span class="green">7 blocos</span> da aula.</h2>
+    <p class="section-lead">A aula foi desenhada como uma jornada: começamos pelo "porquê" — o trabalho de vocês é humano — e fomos aprofundando até a demonstração ao vivo no Claude. Aqui está o mapa do que vimos, na ordem.</p>
+    <div class="atos">
+      <div class="ato reveal"><div class="ato-time">~10 min</div><div class="ato-num">Bloco 0</div><div class="ato-title">Abertura e promessa</div><div class="ato-body">Vocês já usam IA. A partir de hoje, vão usar <strong>com profundidade</strong>. O cérebro é de vocês; a IA destrava o trabalho braçal pra esse cérebro pensar mais.</div></div>
+      <div class="ato reveal"><div class="ato-time">~11 min</div><div class="ato-num">Bloco 1</div><div class="ato-title">A virada + os 3 pilares</div><div class="ato-body">A pergunta deixa de ser "a IA vai me substituir?" e vira <strong>"como a IA me multiplica?"</strong>. Tudo que o Claude faz cai em 3 pilares: mais rápido, melhor, novo.</div></div>
+      <div class="ato reveal"><div class="ato-time">~16 min</div><div class="ato-num">Bloco 2</div><div class="ato-title">Como a IA pensa + limites e segurança</div><div class="ato-body">Não é mágica: é <strong>previsão da próxima palavra</strong>. Daí vêm alucinação, viés e o cuidado com dados sensíveis dos segurados.</div></div>
+      <div class="ato reveal"><div class="ato-time">~12 min</div><div class="ato-num">Bloco 3</div><div class="ato-title">As formas de usar o Claude</div><div class="ato-body">Mesma inteligência, superfícies diferentes: <strong>Chat, Cowork e Code</strong> — mais Projetos e Skills como camadas que turbinam qualquer um.</div></div>
+      <div class="ato reveal"><div class="ato-time">~17 min</div><div class="ato-num">Bloco 4</div><div class="ato-title">Como falar com o Claude</div><div class="ato-body">Não é escrever prompt bonito, é <strong>planejar</strong>: decidir o resultado, dar contexto e usar os 4 elementos — Papel, Contexto, Tarefa, Formato.</div></div>
+      <div class="ato reveal"><div class="ato-time">~13 min</div><div class="ato-num">Bloco 5</div><div class="ato-title">Demonstração ao vivo</div><div class="ato-body">O arco Dor → Insumo → Momento uau → Prompt, no mundo da corretora: mapa da carteira, leitura crítica de proposta e o Projeto que te conhece.</div></div>
+      <div class="ato reveal"><div class="ato-time">~11 min</div><div class="ato-num">Blocos 6 e 7</div><div class="ato-title">Tokens + missão</div><div class="ato-body">Use sem travar (token = pedaço de palavra) e saia com a <strong>missão da semana</strong> rumo ao Cowork da Aula 2.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDES -->
+<section class="section bg-cream2" id="slides">
+  <div class="section-inner">
+    <div class="section-eyebrow">Material da aula</div>
+    <h2 class="section-title">Acesse a <span class="green">apresentação.</span></h2>
+    <p class="section-lead">A apresentação completa da Aula 1, pra você revisitar no seu tempo.</p>
+    <div class="links">
+      <a class="link-card" id="slidesLink" href="#" target="_blank" rel="noopener">
+        <div class="link-icon">🖥️</div>
+        <div class="link-title">Apresentação da Aula 1</div>
+        <div class="link-desc">As 20 telas dos 5 atos — a virada, os 3 pilares, como a IA pensa, os 4 elementos do prompt e a demonstração ao vivo. Navegável, slide a slide.</div>
+        <div class="link-cta">Abrir apresentação →</div>
+        <div class="todo-note" id="slidesTodo">⚠️ Bruna: cole o link da apresentação publicada no GitHub (variável <b>APRESENTACAO_URL</b> no topo do script).</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- RESUMO DO QUE FOI FALADO (PROSA) -->
+<section class="section" id="recap-prosa">
+  <div class="section-inner">
+    <div class="section-eyebrow">Resumo do que foi falado</div>
+    <h2 class="section-title">A aula em texto, <span class="green">pra ler com calma.</span></h2>
+    <p class="section-lead">Mesmo que repita os slides de propósito — aqui você relê tudo sem precisar reabrir a apresentação.</p>
+
+    <div class="prose-card reveal">
+      <h3>A virada: de "vai me substituir?" para "como me multiplica?"</h3>
+      <p>O ponto de partida da aula é uma troca de pergunta. Em vez de "a IA vai me substituir?", a pergunta certa é <strong>"como a IA me multiplica?"</strong> — e multiplica justamente no que só você faz. Na corretora, a IA não fecha a relação com o cliente, não assume o risco e não assina a apólice. Ela tira de você o trabalho braçal que rouba o tempo de fazer exatamente isso.</p>
+
+      <h3>Os 3 pilares: mais rápido, melhor, novo</h3>
+      <p>Tudo que o Claude faz cai em um destes três pilares. <strong>Mais rápido</strong>: o que você já faz, em menos tempo (o e-mail de renovação, o resumo de uma reunião). <strong>Melhor</strong>: decisões com mais critério — comparar condições entre operadoras, ler uma cláusula com olhar afiado. <strong>Novo</strong>: coisas que você não fazia por falta de tempo ou de braço, como um relatório de sinistralidade redondo toda semana. O pilar 2 é o que quase ninguém usa — e é o que separa quem só economiza tempo de quem passa a decidir melhor.</p>
+
+      <h3>Como a IA pensa — e por que isso importa</h3>
+      <p>Sem complicar: a IA <strong>não busca a resposta certa, ela prevê a próxima palavra mais provável</strong> com base em tudo que já leu. Por isso o resultado é proporcional ao contexto que você dá. E por isso ela tem dois limites que você precisa conhecer de cor: <strong>alucinação</strong> (quando não tem o dado, ela inventa com confiança total) e <strong>viés</strong> (ela reflete os dados que recebeu, não é neutra). A regra de ouro: número, nome, prazo, valor e cláusula você <strong>sempre</strong> confere. A IA é ponto de partida, nunca palavra final — ainda mais em análise de risco.</p>
+      <p class="pull">"Ela não sabe a resposta certa para a SUA carteira. Ela prevê o mais provável. Por isso alucina, tem viés, e o resultado é proporcional ao contexto que você dá."</p>
+
+      <h3>Por que o Claude</h3>
+      <p>O Claude se destaca em quatro frentes que importam pro trabalho de vocês: <strong>Projetos com memória</strong> (ele guarda o contexto do seu trabalho), as <strong>superfícies Chat, Cowork e Code</strong>, é melhor em <strong>escrita</strong> (sai mais natural, menos "robô"), e lida bem com <strong>código e dados sem você precisar programar</strong> — colar planilhas e pedir análise, por exemplo.</p>
+
+      <h3>Segurança: dados de segurado não são detalhe</h3>
+      <p>A Proativa lida com dados sensíveis — CPF, valores, apólices e, em saúde, dados clínicos. O cuidado central: use sempre o <strong>plano pago/empresarial</strong> e lembre que, no ambiente empresarial, o que vocês sobem <strong>não vira treino do modelo</strong> e fica restrito ao ambiente da empresa. (Mais detalhes na seção de dúvidas.)</p>
+
+      <h3>Como falar com o Claude: planejar, não decorar prompt</h3>
+      <p>O segredo não é escrever um prompt elegante, é <strong>planejar antes</strong>. Duas perguntas vêm primeiro: (1) como é o resultado pronto? (2) o que vou fazer com ele? Um caminho que funciona muito bem: <strong>grave um áudio</strong> falando contexto, objetivo e restrições; peça pro Claude organizar; transforme num prompt com os 4 elementos; execute numa conversa nova. Você não precisa ser bom em escrever — precisa ser bom em dizer o que precisa.</p>
+      <p>Os <strong>4 elementos do prompt</strong>: <strong>Papel</strong> (quem o Claude deve ser), <strong>Contexto</strong> (quem é você, pra quem é, o que já existe), <strong>Tarefa</strong> (o que fazer) e <strong>Formato</strong> (como entregar). Nem todos são obrigatórios, mas quanto mais você dá, melhor ele responde. Some a isso quatro técnicas: dar exemplos do que você quer, dizer o que <strong>não</strong> quer, pedir alternativas ("me dê 3 versões") e pedir pro próprio Claude melhorar o seu prompt.</p>
+
+      <h3>Projetos: configura uma vez, colhe pra sempre</h3>
+      <p>O Projeto é o Claude que te conhece. Você cola o seu contexto fixo nas instruções uma vez, sobe um arquivo de referência (que fica em cache e não custa token toda vez), e toda conversa dentro dele já começa sabendo quem você é e como você gosta das respostas. A prova ao vivo: a mesma pergunta fora do Projeto faz ele pedir "me conta mais"; dentro do Projeto, ele já responde no mundo da Proativa.</p>
+
+      <h3>Use sem travar: o básico de tokens</h3>
+      <p>Token é um pedaço de palavra — a IA conta tokens, não mensagens, e relê a conversa toda a cada nova mensagem. Três regras práticas: <strong>edite o prompt</strong> em vez de mandar follow-up em cima; comece <strong>conversa nova a cada 15–20 mensagens</strong> (peça um resumo antes); e lembre que <strong>arquivos no Projeto ficam em cache</strong>, não consomem a cada vez.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGRAMAS -->
+<section class="section bg-cream2" id="diagramas">
+  <div class="section-inner">
+    <div class="section-eyebrow">Diagramas que ficaram de fora dos slides</div>
+    <h2 class="section-title">Três mapas pra <span class="green">fixar o que confunde.</span></h2>
+    <p class="section-lead">Coisas que surgiram na conversa e merecem um quadro próprio — principalmente a diferença entre os modelos, que gerou bastante dúvida.</p>
+
+    <!-- MODELOS -->
+    <div class="diagram reveal">
+      <div class="diagram-head"><h3>A diferença entre os modelos</h3><span class="tag">Opus · Sonnet · Haiku</span></div>
+      <p class="diagram-sub">Mesmo Claude, "motores" diferentes. Você escolhe no seletor de modelo, dentro do chat. A regra simples: tarefa pesada → Opus; dia a dia → Sonnet; coisa rápida e curta → Haiku.</p>
+      <div class="models">
+        <div class="model model-opus">
+          <div class="model-bar"></div>
+          <div class="model-name">Opus</div>
+          <div class="model-role">O mais potente</div>
+          <ul>
+            <li>Raciocínio profundo e tarefas complexas</li>
+            <li>Analisar planilhas, cruzar muitos dados</li>
+            <li>Montar apresentação, encadear etapas</li>
+            <li>Mais "caro" em uso — vale a pena no que é difícil</li>
+          </ul>
+          <div class="model-when"><b>Use quando</b>Trabalho complexo: analisar uma carteira inteira, comparar apólices, criar do zero um relatório ou prompt grande.</div>
+        </div>
+        <div class="model model-sonnet">
+          <div class="model-bar"></div>
+          <div class="model-name">Sonnet</div>
+          <div class="model-role">O do dia a dia</div>
+          <ul>
+            <li>Equilíbrio entre inteligência e velocidade</li>
+            <li>Já muito mais capaz que o uso comum de outras IAs</li>
+            <li>Ótimo dentro de Projetos já configurados</li>
+            <li>O "padrão" pra maior parte das tarefas</li>
+          </ul>
+          <div class="model-when"><b>Use quando</b>Perguntas, dúvidas, escrever e-mails, tirar uma dúvida pontual, trabalhar dentro de um Projeto que já tem suas instruções.</div>
+        </div>
+        <div class="model model-haiku">
+          <div class="model-bar"></div>
+          <div class="model-name">Haiku</div>
+          <div class="model-role">O mais rápido</div>
+          <ul>
+            <li>Respostas curtas e quase instantâneas</li>
+            <li>Mais leve e econômico</li>
+            <li>Menos indicado pra raciocínio longo</li>
+            <li>Bom pra volume e tarefas simples</li>
+          </ul>
+          <div class="model-when"><b>Use quando</b>Coisa rápida e objetiva: reescrever uma frase, classificar, resumir um trecho curto, respostas diretas.</div>
+        </div>
+      </div>
+      <div class="models-note"><strong>Um fluxo comum:</strong> dá pra usar o Opus pra <em>criar</em> um Projeto e um bom prompt (a parte difícil) e depois rodar o dia a dia no Sonnet, que já pega o contexto pronto e responde mais rápido. Não existe regra rígida — com o uso vocês sentem qual encaixa em cada tarefa.</div>
+    </div>
+
+    <!-- CAMADAS -->
+    <div class="diagram reveal">
+      <div class="diagram-head"><h3>O que faz "o Claude te conhecer"</h3><span class="tag">3 camadas</span></div>
+      <p class="diagram-sub">Personalização não é uma coisa só — são três camadas que se somam. Juntas, o Claude já sabe quem é você antes de você abrir a boca.</p>
+      <div class="layers">
+        <div class="layer"><div class="layer-ic">P</div><div class="layer-tx"><h4>Preferências (global)</h4><p>Valem pra toda conversa, em qualquer Projeto. Seu nome, cargo, tom, o que você nunca quer nas respostas.</p></div></div>
+        <div class="layer"><div class="layer-ic">M</div><div class="layer-tx"><h4>Memória</h4><p>O Claude lembra de coisas entre conversas. Vem em Configurações → Capacidades (em alguns casos precisa ativar).</p></div></div>
+        <div class="layer"><div class="layer-ic">Pr</div><div class="layer-tx"><h4>Projeto (por contexto)</h4><p>Instruções fixas + arquivos de referência de um trabalho específico, ex.: "Proativa · Renovações da Carteira".</p></div></div>
+      </div>
+      <p class="layer-eq">Preferências + Memória + Projeto = o Claude que te conhece.</p>
+    </div>
+
+    <!-- SUPERFICIES -->
+    <div class="diagram reveal">
+      <div class="diagram-head"><h3>Chat × Cowork × Code</h3><span class="tag">3 superfícies</span></div>
+      <p class="diagram-sub">A mesma inteligência em lugares diferentes. Você escolhe pela tarefa — pelo lugar onde o trabalho acontece.</p>
+      <div class="surfaces">
+        <div class="surface"><div class="surface-name">Chat</div><div class="surface-tag">Pensar e escrever</div><p>Perguntar, resumir, redigir, analisar. Não mexe nos seus arquivos. É o que vocês já conhecem de outras IAs.</p><span class="aula-pin">Aula 1 · hoje</span></div>
+        <div class="surface"><div class="surface-name">Cowork</div><div class="surface-tag">Agente no seu PC</div><p>Trabalha de fato em docs, planilhas, e-mail e pesquisa no seu computador. Feito pra time não-técnico.</p><span class="aula-pin">Aula 2</span></div>
+        <div class="surface"><div class="surface-name">Code</div><div class="surface-tag">Agente de construção</div><p>Constrói sistemas e automações maiores. A gente pincela pra vocês entenderem as diferenças.</p><span class="aula-pin">Aula 3</span></div>
+      </div>
+      <div class="spectrum"><span>💡 IDEIA</span><span class="ar">→</span><span>📄 ENTREGÁVEL</span><span class="ar">→</span><span>⚙️ SISTEMA NO AR</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DÚVIDAS DA TURMA -->
+<section class="section" id="duvidas-turma">
+  <div class="section-inner">
+    <div class="section-eyebrow">As dúvidas que surgiram na aula</div>
+    <h2 class="section-title">Perguntas da turma, <span class="green">respondidas com calma.</span></h2>
+    <p class="section-lead">Tudo que apareceu ao vivo — agora com a resposta completa, sem a correria do tempo de aula. Clique pra abrir cada uma.</p>
+    <div class="faq">
+
+      <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)"><span class="who">Acesso e login</span><span class="qt">Onde eu baixo, qual link eu uso, e por que o código de validação não chega?</span><span class="chev">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">
+        Chegou muito e-mail ao mesmo tempo — calma, é um fluxo só. <span class="step">O convite vem da <strong>Anthropic</strong> (não é spam): se não achou, <strong>procure na caixa de spam/lixo eletrônico</strong> — no domínio da Oneglobal ele tende a cair lá direto.</span><span class="step">Ao entrar com a conta <strong>@oneglobal</strong>, em vez de pedir um código, ele costuma <strong>entrar direto</strong> pelo login da empresa. Se pedir código e ele não chegar, confira o spam e o e-mail certo (o do trabalho).</span><span class="step">Dá pra usar pelo <strong>navegador (web)</strong> ou pelo <strong>app de computador (desktop)</strong>. O desktop é leve e baixa rápido; é ele que vamos usar mais no Cowork (Aula 2). Se baixou só o web, instale o desktop também.</span><span class="step">Travou? A <strong>equipe interna de TI</strong> pode conectar individualmente e configurar com quem tiver dificuldade.</span>
+      </div></div></div>
+
+      <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)"><span class="who">Modelos</span><span class="qt">Quando uso o Opus e quando uso o Sonnet? Crio no Opus e passo pro Sonnet?</span><span class="chev">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">
+        Pensa nos modelos como motores diferentes do mesmo Claude. <strong>Opus</strong> pro trabalho pesado: analisar uma planilha, cruzar dados, montar uma apresentação, criar do zero um Projeto ou um prompt grande. <strong>Sonnet</strong> pro dia a dia: perguntas, dúvidas pontuais, escrever e-mails — e dentro de um Projeto já configurado ele brilha, porque já pega o contexto pronto. <strong>Haiku</strong> pra coisa rápida e curta. <span class="step">Sobre criar e depois usar: <strong>sim</strong>, faz todo sentido usar o Opus pra <em>criar</em> (a parte que exige raciocínio) e depois rodar o dia a dia no Sonnet. Não é regra fixa — com o uso vocês sentem o ponto. Veja o quadro comparativo na seção de Diagramas.</span>
+      </div></div></div>
+
+      <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)"><span class="who">Segurança de dados</span><span class="qt">A gente lida com dados sensíveis. Tem orientação sobre o que pode subir?</span><span class="chev">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">
+        Tem, e é importante. <span class="step">No <strong>ambiente empresarial</strong> da Oneglobal/Proativa, os dados que vocês sobem <strong>não viram treino</strong> da inteligência do Claude. Se você subir uma apólice, ela não "ensina" o modelo — fica no ambiente restrito da empresa.</span><span class="step">Mesmo o <strong>administrador</strong> <strong>não vê</strong> o conteúdo do que cada um faz — só o consumo agregado de tokens da empresa, nunca dado individual.</span><span class="step">Ainda assim, bom senso continua valendo: use sempre o <strong>plano empresarial/pago</strong>, nunca uma conta gratuita pessoal pra dado de cliente.</span>
+      </div></div></div>
+
+      <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)"><span class="who">Plano e limites</span><span class="qt">O plano é limitado? A cota é individual ou da empresa? Fica lento? Limita tamanho de arquivo?</span><span class="chev">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">
+        <span class="step"><strong>Cada um tem seu login</strong> e seu limite de uso individual — dá pra ver em Configurações. O consumo de tokens é acompanhado pela empresa de forma agregada.</span><span class="step">Tem, sim, um <strong>limite de uso</strong> por janela de tempo (como em todo plano). Se você usar muito de uma vez, pode atingir o teto e esperar um pouco — não é "ficar lento", é pausar e voltar.</span><span class="step">Há <strong>limite por tamanho de arquivo</strong> (em MB), não necessariamente por número de páginas. Se um arquivo grande não subir, tente reduzi-lo ou subir por partes. Dica: dentro de um <strong>Projeto</strong> os arquivos ficam em cache e rendem melhor do que jogar tudo solto no chat.</span>
+      </div></div></div>
+
+      <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)"><span class="who">Memória</span><span class="qt">Meu Claude veio sem memória. Como ativo?</span><span class="chev">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">
+        Em alguns casos a memória vem desligada por padrão. <span class="step">Vá em <strong>Configurações → Capacidades</strong> e ative a opção que permite o Claude lembrar do contexto entre conversas.</span><span class="step">Com a memória ligada, ela se soma às Preferências e ao Projeto — são as três camadas que fazem o Claude te conhecer (veja o diagrama "3 camadas").</span>
+      </div></div></div>
+
+      <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)"><span class="who">Conectores</span><span class="qt">Dá pra conectar WhatsApp e gravar reunião do Teams? Precisa de API? E o Office 365?</span><span class="chev">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">
+        Conectores ligam o Claude a outras ferramentas — esse é o tema da <strong>Aula 2</strong>, então aqui vai o panorama. <span class="step">Cada conector novo passa por <strong>revisão do administrador</strong> antes de liberar, por segurança. Vão pedindo o que faz sentido pra rotina de vocês.</span><span class="step">O <strong>Office 365</strong> ainda depende de <strong>liberação interna</strong> — assim que sair, a gente conecta.</span><span class="step">Gravar/escutar uma reunião do Teams e integrar WhatsApp envolvem ferramentas específicas (algumas via Cowork, outras via API/serviços). Vamos mostrar na prática na Aula 2 — anota a dúvida pra retomarmos lá.</span>
+      </div></div></div>
+
+      <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)"><span class="who">Material da aula</span><span class="qt">Você compartilha a apresentação com a gente?</span><span class="chev">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">
+        Sim! Está tudo nesta página, na seção <strong>"Acesse a apresentação"</strong> aqui em cima. Esta central fica de pé pra vocês voltarem quando quiserem.
+      </div></div></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MISSÃO -->
+<section class="section bg-green" id="missao">
+  <div class="section-inner">
+    <div class="section-eyebrow">Sua missão até a Aula 2</div>
+    <h2 class="section-title">O <span class="green">dever de casa.</span></h2>
+    <p class="section-lead">Marque conforme for fazendo. O essencial é sair com o SEU Claude configurado — o resto a gente aprofunda no Cowork.</p>
+    <div class="missao">
+      <div class="tarefa reveal" onclick="this.classList.toggle('done')"><div class="tarefa-check"></div><div><div class="tarefa-num">MISSÃO 01</div><div class="tarefa-title">Peça pro Claude te entrevistar e gere seu contexto fixo</div><div class="tarefa-desc">Use o prompt da entrevista (logo abaixo). Em 5 minutos você sai com um texto pronto sobre o seu trabalho, sem precisar escrever do zero.</div></div></div>
+      <div class="tarefa reveal" onclick="this.classList.toggle('done')"><div class="tarefa-check"></div><div><div class="tarefa-num">MISSÃO 02</div><div class="tarefa-title">Crie seu primeiro Projeto e cole o contexto nas instruções</div><div class="tarefa-desc">Ex.: "Proativa · Renovações da Carteira". Cole o texto da entrevista nas instruções do Projeto.</div></div></div>
+      <div class="tarefa reveal" onclick="this.classList.toggle('done')"><div class="tarefa-check"></div><div><div class="tarefa-num">MISSÃO 03</div><div class="tarefa-title">Configure suas Preferências e ative a Memória</div><div class="tarefa-desc">Configurações → Preferências (use o modelo abaixo) e Configurações → Capacidades pra ligar a Memória.</div></div></div>
+      <div class="tarefa reveal" onclick="this.classList.toggle('done')"><div class="tarefa-check"></div><div><div class="tarefa-num">MISSÃO 04</div><div class="tarefa-title">Instale o Claude Desktop</div><div class="tarefa-desc">É o app que vamos usar no Cowork, na Aula 2. Deixa instalado e logado no plano da empresa.</div></div></div>
+      <div class="tarefa reveal" onclick="this.classList.toggle('done')"><div class="tarefa-check"></div><div><div class="tarefa-num">MISSÃO 05</div><div class="tarefa-title">Pense em 1 tarefa repetitiva pra automatizar</div><div class="tarefa-desc">Renovação, relatório de sinistralidade, triagem de sinistro... traga uma ideia sua pra Aula 2.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BIBLIOTECA DE PROMPTS -->
+<section class="section" id="prompts">
+  <div class="section-inner">
+    <div class="section-eyebrow">Biblioteca de Prompts</div>
+    <h2 class="section-title">Prompts prontos <span class="green">pra copiar e usar.</span></h2>
+    <p class="section-lead">Dois grupos. Primeiro os de <strong>configuração</strong> — você usa uma vez pra deixar o Claude te conhecendo. Depois os do <strong>dia a dia</strong> — copia, troca o que está entre colchetes e usa. Cada cartão diz, em uma linha, o que aquele prompt faz.</p>
+    <div class="prompts">
+
+      <!-- GRUPO A -->
+      <div class="prompt-group"><h3>1 · Configuração — pra o Claude te conhecer</h3><span>Faça uma vez. É o que faz toda conversa já começar sabendo quem é você.</span></div>
+
+      <div class="prompt-card full reveal">
+        <div class="prompt-header"><div class="prompt-title">⭐ A entrevista — comece por aqui</div><span class="prompt-tag">Primeiro uso</span></div>
+        <div class="prompt-what"><b>O que faz:</b> o Claude te entrevista, uma pergunta de cada vez, e no fim escreve um texto pronto com o seu contexto — quem você é e como gosta das respostas. Você não precisa redigir nada; é só responder.</div>
+        <div class="prompt-body" id="p1">Quero criar as instruções fixas do meu trabalho na Proativa (corretora de
+seguros do grupo Oneglobal), pra colar nas instruções de um Projeto e nas
+minhas Preferências.
+
+Em vez de eu escrever, quero que VOCÊ me entreviste. Faça uma pergunta de
+cada vez sobre: meu cargo e o que faço no dia a dia, com quem eu trabalho,
+meu tipo de cliente ou minha área, meu tom de comunicação e o que eu NÃO
+quero nas respostas.
+
+Quando tiver o suficiente (umas 6 a 8 perguntas), pare e gere um texto
+pronto, em primeira pessoa, pra eu colar nas instruções do meu Projeto.
+Não invente nada sobre mim: use só o que eu responder.</div>
+        <button class="copy-btn" onclick="copyPrompt('p1',this)">Copiar prompt</button>
+      </div>
+
+      <div class="prompt-card reveal">
+        <div class="prompt-header"><div class="prompt-title">Seu contexto fixo</div><span class="prompt-tag">Instruções do Projeto</span></div>
+        <div class="prompt-what"><b>O que faz:</b> é o seu "cartão de visita" pro Claude. Cole nas instruções de um Projeto e ele passa a responder já no seu mundo. Use este modelo se preferir preencher na mão, em vez da entrevista.</div>
+        <div class="prompt-body" id="p2">Trabalho na Proativa, corretora de seguros do grupo Oneglobal.
+Meu cargo é <span class="var">[seu cargo]</span> e no dia a dia eu <span class="var">[suas principais
+atividades: ex. analiso apólices e propostas, acompanho renovações,
+atendo clientes, faço relatórios...]</span>.
+Atendo <span class="var">[empresas / pessoas físicas / área interna]</span> na região <span class="var">[sua região]</span>.
+
+Responda em português, de forma prática e pronta pra usar. Quando faltar
+informação, me pergunte antes de supor. Nunca invente números, valores,
+prazos, coberturas ou cláusulas: se não tem o dado, diga que não tem.</div>
+        <button class="copy-btn" onclick="copyPrompt('p2',this)">Copiar prompt</button>
+      </div>
+
+      <div class="prompt-card reveal">
+        <div class="prompt-header"><div class="prompt-title">Suas Preferências</div><span class="prompt-tag">Configurações → Preferências</span></div>
+        <div class="prompt-what"><b>O que faz:</b> vale pra toda conversa, em qualquer Projeto. Define seu nome, seu tom e o que você nunca quer nas respostas. Cole em Configurações → Preferências.</div>
+        <div class="prompt-body" id="p3">Meu nome é <span class="var">[nome]</span>. Trabalho na Proativa, corretora de seguros
+do grupo Oneglobal.
+Responda sempre em português brasileiro, tom cordial e profissional.
+Parágrafos curtos e diretos, linguagem simples.
+Não comece com "Claro!", "Com certeza!" ou "Ótima pergunta!".
+Quando eu pedir análise, destaque o que muda a decisão, não só os números.
+Se não tiver certeza de um número, prazo ou cláusula, diga que não sabe
+em vez de inventar.</div>
+        <button class="copy-btn" onclick="copyPrompt('p3',this)">Copiar prompt</button>
+      </div>
+
+      <!-- GRUPO B -->
+      <div class="prompt-group"><h3>2 · Do dia a dia — copie e adapte</h3><span>Troque o que está entre [colchetes] e mande. Funcionam melhor ainda dentro do seu Projeto.</span></div>
+
+      <div class="prompt-card reveal">
+        <div class="prompt-header"><div class="prompt-title">Ler e resumir um documento</div><span class="prompt-tag">Apólice · proposta · contrato</span></div>
+        <div class="prompt-what"><b>O que faz:</b> transforma um documento longo nos pontos que importam, sem você ler tudo — e marca o que pode passar despercebido.</div>
+        <div class="prompt-body" id="p4">Você é um especialista em seguros. Vou te enviar <span class="var">[uma apólice /
+proposta / contrato]</span>.
+
+Leia e me devolva: (1) um resumo em até 5 linhas; (2) os principais pontos
+de cobertura; (3) os pontos de atenção e exclusões; (4) qualquer prazo ou
+valor relevante.
+
+Se algo não estiver no documento, diga "não consta" — não suponha.</div>
+        <button class="copy-btn" onclick="copyPrompt('p4',this)">Copiar prompt</button>
+      </div>
+
+      <div class="prompt-card reveal">
+        <div class="prompt-header"><div class="prompt-title">Comparar duas opções</div><span class="prompt-tag">Decisão</span></div>
+        <div class="prompt-what"><b>O que faz:</b> coloca duas propostas ou condições lado a lado e aponta a diferença que realmente pesa na hora de decidir.</div>
+        <div class="prompt-body" id="p5">Vou te enviar duas <span class="var">[propostas / condições / apólices]</span>. Compare lado
+a lado numa tabela: coberturas, valores, carências, exclusões e prazos.
+
+No fim, me diga em 3 linhas qual é a diferença que mais pesa na decisão —
+e o que eu deveria confirmar antes de escolher.</div>
+        <button class="copy-btn" onclick="copyPrompt('p5',this)">Copiar prompt</button>
+      </div>
+
+      <div class="prompt-card reveal">
+        <div class="prompt-header"><div class="prompt-title">Escrever um e-mail no seu tom</div><span class="prompt-tag">Comunicação</span></div>
+        <div class="prompt-what"><b>O que faz:</b> entrega um e-mail pronto pra enviar, no tom da Proativa, a partir de um contexto curto que você dá.</div>
+        <div class="prompt-body" id="p6">Escreva um e-mail para <span class="var">[quem]</span>.
+Contexto: <span class="var">[explique a situação em 1-2 frases]</span>.
+Objetivo: <span class="var">[o que você quer que aconteça]</span>.
+
+Tom cordial e profissional, linguagem simples, máximo 150 palavras, com um
+próximo passo claro no fim.</div>
+        <button class="copy-btn" onclick="copyPrompt('p6',this)">Copiar prompt</button>
+      </div>
+
+      <div class="prompt-card reveal">
+        <div class="prompt-header"><div class="prompt-title">Organizar uma bagunça</div><span class="prompt-tag">Áudio · anotações</span></div>
+        <div class="prompt-what"><b>O que faz:</b> você fala ou cola anotações soltas e o Claude devolve organizado — resumo, decisões e próximos passos. Ótimo depois de uma reunião.</div>
+        <div class="prompt-body" id="p7">Vou te passar minhas anotações soltas (ou um áudio) de <span class="var">[uma reunião /
+um caso / uma ideia]</span>.
+
+Organize em: (1) resumo, (2) decisões tomadas, (3) próximos passos com
+responsável, quando houver.
+
+Pode me perguntar se algo ficou confuso.</div>
+        <button class="copy-btn" onclick="copyPrompt('p7',this)">Copiar prompt</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRÓXIMA AULA -->
+<section class="section bg-cream2" id="proxima">
+  <div class="section-inner">
+    <div class="proxima reveal">
+      <div>
+        <div class="proxima-eyebrow">Próxima · Aula 2 de 3</div>
+        <h3>O Claude trabalha por você</h3>
+        <p>Hoje foi Chat: você pergunta, ele responde, você copia e move na mão. Na Aula 2 entra o <strong>Cowork</strong> — o Claude trabalha nos seus arquivos e você delega. Chat é pedir conselho a um colega; Cowork é delegar e ir tomar um café.</p>
+      </div>
+      <div class="proxima-card">
+        <h4>O que vem por aí</h4>
+        <ul>
+          <li>Cowork: o agente que mexe em docs, planilhas e e-mail</li>
+          <li>Skills: ensinar o Claude uma vez, ele repete sempre</li>
+          <li>Conectores: ligar o Claude às ferramentas da Proativa</li>
+          <li>Sua tarefa repetitiva virando automação</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /tab-aula1 -->
+
+<!-- ===================== AULA 2 (em breve) ===================== -->
+<div class="tab-panel" id="tab-aula2">
+  <section class="section"><div class="section-inner" style="text-align:center;padding:40px 0">
+    <div class="section-eyebrow" style="display:inline-block">Aula 2 · Skills, Conectores e Cowork</div>
+    <h2 class="section-title" style="margin:0 auto 16px">Em breve, <span class="green">depois do nosso 2º encontro.</span></h2>
+    <p class="section-lead" style="margin:0 auto">Assim que rolar a Aula 2, esta aba ganha o mesmo tratamento: resumo, slides, diagramas, dúvidas da turma, missão e prompts. Esta central é reaproveitável pra todas as aulas.</p>
+  </div></section>
+</div>
+
+<!-- ===================== AULA 3 (em breve) ===================== -->
+<div class="tab-panel" id="tab-aula3">
+  <section class="section"><div class="section-inner" style="text-align:center;padding:40px 0">
+    <div class="section-eyebrow" style="display:inline-block">Aula 3 · Cowork avançado e Claude Code</div>
+    <h2 class="section-title" style="margin:0 auto 16px">Em breve, <span class="green">no fechamento da formação.</span></h2>
+    <p class="section-lead" style="margin:0 auto">O conteúdo da última aula aparece aqui quando chegarmos nela. Por ora, foque na missão da Aula 1.</p>
+  </div></section>
+</div>
+
+<!-- ===================== ESPAÇO DE DÚVIDAS (todas as aulas) ===================== -->
+<section class="section bg-green" id="duvidas-online">
+  <div class="section-inner">
+    <div class="section-eyebrow">Espaço de dúvidas da turma</div>
+    <h2 class="section-title">Ficou com <span class="green">uma dúvida?</span> Manda aqui.</h2>
+    <p class="section-lead">Não precisa esperar a próxima aula. Escreva sua dúvida — ela chega direto pra Bruna, que responde e, quando for útil pra todos, traz a resposta no nosso encontro ou aqui na página.</p>
+
+    <form class="feedback-wrap reveal" id="duvidaForm">
+      <div class="ff-row">
+        <label for="d-nome" class="ff-label">Seu nome <span class="ff-req">*</span></label>
+        <input type="text" id="d-nome" required placeholder="Como prefere que eu te chame" />
+      </div>
+      <div class="ff-row">
+        <label for="d-aula" class="ff-label">Sobre qual aula é a dúvida?</label>
+        <select id="d-aula">
+          <option value="Aula 1 — Como o Claude pensa">Aula 1 — Como o Claude pensa</option>
+          <option value="Aula 2 — Skills, Conectores e Cowork">Aula 2 — Skills, Conectores e Cowork</option>
+          <option value="Aula 3 — Cowork avançado e Code">Aula 3 — Cowork avançado e Code</option>
+          <option value="Geral / outra">Geral / outra</option>
+        </select>
+      </div>
+      <div class="ff-row">
+        <label for="d-duvida" class="ff-label">Sua dúvida <span class="ff-req">*</span><span class="ff-help">Pode ser sobre acesso, modelos, segurança de dados, um caso da sua carteira... escreva à vontade.</span></label>
+        <textarea id="d-duvida" rows="5" required placeholder="Escreve aqui sua dúvida ou o que você quer que eu mostre na prática."></textarea>
+      </div>
+      <div class="ff-row">
+        <label for="d-email" class="ff-label">E-mail <span class="ff-help" style="display:inline">(opcional, se quiser resposta direta)</span></label>
+        <input type="text" id="d-email" placeholder="seu.email@oneglobal.com" />
+      </div>
+      <button type="submit" class="ff-submit" id="dSubmit">Enviar dúvida pra Bruna
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+      <div class="ff-error" id="dError">Não consegui enviar agora. Tente de novo, ou me chame no Instagram <strong>@brusantanna.ai</strong>.</div>
+      <div class="ff-success" id="dSuccess">Recebi, <span id="dSuccessName">obrigada</span>! Sua dúvida chegou aqui. Respondo em breve. 💚</div>
+    </form>
+
+    <div class="duvida-aside" id="duvidaAside">⚙️ <strong>Bruna:</strong> pra ativar o envio, publique o <em>apps-script-duvidas-proativa.gs</em> como App da Web e cole a URL na variável <b>GOOGLE_SCRIPT_URL</b> no topo do script desta página. Enquanto não colar, o formulário mostra um aviso amigável em vez de enviar.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logos">
+        <img src="oneglobal-logo-white.png" alt="Oneglobal" />
+        <span class="logo-sep"></span>
+        <img src="newscale-logo-white.png" alt="NewScale" />
+      </div>
+      Formação Claude · Proativa
+    </div>
+    <div class="footer-meta">
+      Facilitação: Bruna Santanna · <a href="https://instagram.com/brusantanna.ai" target="_blank" rel="noopener">@brusantanna.ai</a><br>
+      Central da turma · Aula 1 de 3 · junho de 2026
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== CONFIG — Bruna edita aqui ===== */
+const APRESENTACAO_URL = "";      // cole o link da apresentação publicada no GitHub
+const GOOGLE_SCRIPT_URL = "";     // cole a URL do App da Web (apps-script-duvidas-proativa.gs)
+
+/* ===== Link da apresentação ===== */
+(function(){
+  const a=document.getElementById('slidesLink');
+  const todo=document.getElementById('slidesTodo');
+  if(APRESENTACAO_URL){ a.href=APRESENTACAO_URL; if(todo) todo.style.display='none'; }
+  else { a.href='deck-aula01-proativa/index.html'; } // fallback: apresentação local
+})();
+
+/* ===== Nav scroll ===== */
+const nav=document.getElementById('nav');
+const navOg=document.getElementById('navLogoOg');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40)});
+
+/* ===== Abas ===== */
+function openTab(id){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  const panel=document.getElementById('tab-'+id);
+  const btn=document.getElementById('btn-'+id);
+  if(panel) panel.classList.add('active');
+  if(btn) btn.classList.add('active');
+  window.scrollTo({top:document.getElementById('aulas').offsetTop-60,behavior:'smooth'});
+}
+
+/* ===== FAQ ===== */
+function toggleFaq(btn){ btn.parentNode.classList.toggle('open'); }
+
+/* ===== Copiar prompt ===== */
+function copyPrompt(id,btn){
+  const txt=document.getElementById(id).innerText;
+  navigator.clipboard.writeText(txt.trim()).then(()=>{
+    const o=btn.textContent;btn.textContent='✓ Copiado!';btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent=o;btn.classList.remove('copied')},1500);
+  });
+}
+
+/* ===== Reveal on scroll ===== */
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ===== Form dúvidas ===== */
+document.getElementById('duvidaForm').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  const nome=document.getElementById('d-nome').value.trim();
+  const aula=document.getElementById('d-aula').value;
+  const duvida=document.getElementById('d-duvida').value.trim();
+  const email=document.getElementById('d-email').value.trim();
+  const err=document.getElementById('dError');
+  const ok=document.getElementById('dSuccess');
+  const btn=document.getElementById('dSubmit');
+  err.classList.remove('show');
+  if(!nome||!duvida){err.textContent='Preencha pelo menos o nome e a dúvida.';err.classList.add('show');return;}
+
+  if(!GOOGLE_SCRIPT_URL){
+    // Sem backend configurado ainda: confirma localmente pra não travar a turma.
+    document.getElementById('dSuccessName').textContent=nome;
+    ok.classList.add('show');
+    this.querySelectorAll('input,textarea,select,button').forEach(e=>e.disabled=true);
+    return;
+  }
+
+  btn.disabled=true;btn.textContent='Enviando...';
+  fetch(GOOGLE_SCRIPT_URL,{
+    method:'POST',
+    mode:'no-cors',
+    headers:{'Content-Type':'text/plain;charset=utf-8'},
+    body:JSON.stringify({timestamp:new Date().toISOString(),nome,aula,duvida,email})
+  }).then(()=>{
+    document.getElementById('dSuccessName').textContent=nome;
+    ok.classList.add('show');
+    this.querySelectorAll('input,textarea,select,button').forEach(e=>e.disabled=true);
+  }).catch(()=>{
+    err.textContent='Não consegui enviar agora. Tente de novo, ou me chame no Instagram @brusantanna.ai.';
+    err.classList.add('show');btn.disabled=false;btn.textContent='Enviar dúvida pra Bruna';
+  });
+});
+</script>
+</body>
+</html>
