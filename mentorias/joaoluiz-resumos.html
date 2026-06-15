@@ -316,6 +316,7 @@
     <div class="hero-meta">
       <span><strong>Aula 01 — 28/05/2026:</strong> Fundamentos, Claude, Projetos, Cowork e Skills</span>
       <span><strong>Aula 02 — 02/06/2026:</strong> Setup real, Skills, Cloud in Chrome e Agendamento</span>
+      <span><strong>Aula 03 — 10/06/2026:</strong> Skill de formatação, NotebookLM + MCP e padronização de peças</span>
     </div>
   </div>
 </header>
@@ -324,7 +325,8 @@
 <div class="aula-tabs-wrap" id="topo">
   <div class="aula-tabs-inner">
     <button class="aula-tab" data-aula="1">Aula 01 — Fundamentos</button>
-    <button class="aula-tab active" data-aula="2">Aula 02 — Setup na prática <span class="novo">Novo</span></button>
+    <button class="aula-tab" data-aula="2">Aula 02 — Setup na prática</button>
+    <button class="aula-tab active" data-aula="3">Aula 03 — Skills &amp; NotebookLM <span class="novo">Novo</span></button>
   </div>
 </div>
 
@@ -659,7 +661,7 @@ Antes de trabalhar, leia o documento em partes e me devolva um resumo estruturad
 <!-- ===================================================
      AULA 02
      =================================================== -->
-<div id="aula-2" class="aula active">
+<div id="aula-2" class="aula">
   <nav class="toc">
     <div class="wrap">
       <a href="#a2-resumo">Resumo</a>
@@ -1106,6 +1108,248 @@ Para eu poder chamar com /[nome] nas próximas vezes.</pre>
 
   </div><!-- /wrap -->
 </div><!-- /aula-2 -->
+
+
+<!-- ===================================================
+     AULA 03
+     =================================================== -->
+<div id="aula-3" class="aula active">
+  <nav class="toc">
+    <div class="wrap">
+      <a href="#a3-resumo">Resumo</a>
+      <a href="#a3-skill">Skill de formatação</a>
+      <a href="#a3-modelo">Modelo e esforço</a>
+      <a href="#a3-notebook">NotebookLM + MCP</a>
+      <a href="#a3-pecas">Skills de peças</a>
+      <a href="#a3-seguranca">Segurança</a>
+      <a href="#a3-tarefas">Tarefas da semana</a>
+      <a href="#a3-prompts">Prompts pra copiar</a>
+      <a href="#a3-proximo">Próximo encontro</a>
+    </div>
+  </nav>
+
+  <div class="wrap">
+
+    <section id="a3-resumo">
+      <p class="stag">O que rolou</p>
+      <h2>Resumo do nosso <em>terceiro encontro</em></h2>
+      <p class="intro">Esta aula foi de refinamento: pegamos a skill de formatação que vocês começaram, ajustamos o que estava saindo errado e abrimos a frente dos processos gigantes com o NotebookLM. O foco da semana é qualidade na produção das peças.</p>
+
+      <div class="card">
+        <h3>O que cobrimos hoje</h3>
+        <p><strong>Skill de formatação.</strong> O João relatou que a skill não estava puxando cabeçalho e rodapé direito, mesmo salva. Vimos como corrigir: apontar o documento certo como referência, mandar print da tela e pedir o ajuste da skill na mesma conversa, pra ela aprender o layout correto (logo, marca d'água, nomes das sócias).</p>
+        <p><strong>Modelo e nível de esforço.</strong> Recapitulamos quando usar Opus (planejar e criar skills) e Sonnet (executar o dia a dia), e o ajuste de esforço alto vs. baixo — esforço alto faz o Claude validar e corrigir o próprio trabalho.</p>
+        <p style="margin-bottom:0;"><strong>Processos gigantes e padronização.</strong> Apresentei o NotebookLM pros processos de milhares de páginas e a conexão MCP com o Claude. E desenhamos o caminho pra padronizar as peças: uma skill por tipo de documento, treinada com 12 a 15 das melhores peças de vocês.</p>
+      </div>
+    </section>
+
+    <section id="a3-skill">
+      <p class="stag">Ajuste fino</p>
+      <h2>Consertando a <em>skill de formatação</em></h2>
+      <p class="intro">A skill estava salva, mas não aplicava o cabeçalho e o rodapé como esperado. O problema não é refazer do zero — é ensinar ela a partir de um documento que ficou certo.</p>
+
+      <div class="card plain" style="padding-top:6px;">
+        <div class="concept">
+          <div class="num">1</div>
+          <div class="body">
+            <h3>Use um documento correto como referência</h3>
+            <p>Pegue uma peça que ficou bem formatada (cabeçalho, rodapé, logo, marca d'água, nomes das sócias) e mande ela como modelo. Peça pro Claude comparar com o que a skill está gerando e identificar onde difere.</p>
+          </div>
+        </div>
+        <div class="concept">
+          <div class="num">2</div>
+          <div class="body">
+            <h3>Aponte a falha com print</h3>
+            <p>Quando o erro for visual — espaçamento entre parágrafos, cor do texto, posição do logo — tire um <strong>print da tela</strong> e mande pro Claude. Ele analisa a imagem e corrige conforme a referência visual, que é mais preciso do que descrever só por texto.</p>
+          </div>
+        </div>
+        <div class="concept">
+          <div class="num">3</div>
+          <div class="body">
+            <h3>Ajuste a skill na mesma conversa</h3>
+            <p>Faça a correção <strong>dentro da mesma conversa ou projeto</strong> em que a skill está sendo usada — assim o Claude mantém o contexto completo e atualiza a habilidade pra que as próximas saídas já saiam certas. Peça explicitamente: "atualize a skill com base neste documento e neste print".</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="a3-modelo">
+      <p class="stag">Qual cérebro e quanto esforço</p>
+      <h2>Modelo certo <em>e nível de esforço</em></h2>
+      <p class="intro">Além de escolher entre Opus e Sonnet, dá pra regular o quanto o Claude se dedica à tarefa.</p>
+
+      <div class="grid2">
+        <div class="card">
+          <h3>Opus pra pensar</h3>
+          <p>Mais inteligente, ideal pra <strong>planejar a estratégia</strong> de um caso e pra <strong>criar e treinar skills</strong>. Consome o limite mais rápido — use nos momentos que exigem cabeça.</p>
+        </div>
+        <div class="card">
+          <h3>Sonnet pra executar</h3>
+          <p>Resolve a maior parte do dia a dia: gerar a peça, o contrato, a procuração depois que a estratégia já está definida. É o executor padrão.</p>
+        </div>
+      </div>
+      <div class="callout">
+        <p style="margin-bottom:0;"><strong>Nível de esforço (alto × baixo):</strong> o esforço regula velocidade vs. precisão. Para peças e tarefas que precisam sair certas, use <strong>esforço alto</strong> — o Claude valida e corrige o próprio trabalho antes de entregar. O esforço baixo é pra coisas simples e rápidas.</p>
+      </div>
+    </section>
+
+    <section id="a3-notebook">
+      <p class="stag">Os processos de mil páginas</p>
+      <h2>NotebookLM <em>conectado ao Claude</em></h2>
+      <p class="intro">Para os processos que chegam a gigabytes — fruto de imprimir, assinar e digitalizar tudo — o Claude sozinho esbarra no limite de tokens. O NotebookLM entra como a ferramenta de apoio que aguenta esse volume.</p>
+
+      <div class="card">
+        <h3>O que o NotebookLM resolve</h3>
+        <p>Ele organiza grandes volumes — processos de centenas de páginas, vídeos de audiência, áudios — pra consulta. Lê arquivos grandes, faz comparativos e transcreve multimídia, respondendo <strong>estritamente com base no que foi carregado</strong>, o que reduz alucinação.</p>
+        <p style="margin-bottom:0;"><strong>Os limites técnicos:</strong> até <strong>200 MB por arquivo</strong>, cerca de <strong>500.000 palavras</strong> (≈ 1.600 páginas) e no máximo <strong>50 fontes</strong> no total.</p>
+      </div>
+
+      <div class="card plain">
+        <h3>Como ele se liga ao Claude</h3>
+        <p>A ponte é uma conexão <strong>MCP (Model Context Protocol)</strong>: ela permite que o Claude acesse os dados que o NotebookLM leu. A configuração passa pelo terminal do computador — parece técnico, mas é exequível, e o próprio Claude te dá o passo a passo durante a instalação. Vou te mandar o guia, o prompt e o código pelo WhatsApp.</p>
+        <div class="analogy">Dica de token: pra um processo no site do Tribunal, fazer o upload do PDF completo costuma ser mais eficiente do que mandar o Claude ler documento por documento dentro do site.</div>
+      </div>
+    </section>
+
+    <section id="a3-pecas">
+      <p class="stag">Padronização</p>
+      <h2>Uma <em>skill por tipo</em> de peça</h2>
+      <p class="intro">Em vez de uma skill genérica que faz tudo mais ou menos, o caminho é uma skill dedicada pra cada tipo de documento — petição inicial, contestação, recurso. Mais precisão no estilo e na formatação.</p>
+
+      <div class="card">
+        <h3>Como treinar a skill de petição</h3>
+        <p>Junte numa pasta de <strong>12 a 15 das melhores petições iniciais</strong> de vocês. Mande o Claude lê-las e identificar o padrão de escrita e as divergências entre elas. O objetivo é ele replicar a metodologia e o design que vocês já usam.</p>
+        <p style="margin-bottom:0;">Trate o Claude como um <strong>colaborador em treinamento</strong>: os dados variáveis de cada caso (cliente, fatos) entram como input, e dá pra configurar a skill pra <strong>pedir esclarecimento</strong> quando faltar informação, em vez de inventar.</p>
+      </div>
+    </section>
+
+    <section id="a3-seguranca">
+      <p class="stag">Os limites que protegem</p>
+      <h2>Automação com <em>freio de mão</em></h2>
+      <p class="intro">Automação boa é a que sabe onde parar. Antes de liberar o Claude pra agir sozinho, deixe claras as ações que ele nunca pode tomar.</p>
+
+      <div class="card plain" style="padding-top:6px;">
+        <div class="concept">
+          <div class="num">1</div>
+          <div class="body">
+            <h3>"Agir sem perguntar" — com critério</h3>
+            <p>Pra automações rodarem sozinhas (como a verificação diária no site do Tribunal), habilite <strong>"agir sem perguntar"</strong> nas configurações. Mas mantenha bloqueio de segurança nas ações sensíveis — como o envio real de e-mail ou o protocolo de uma peça.</p>
+          </div>
+        </div>
+        <div class="concept">
+          <div class="num">2</div>
+          <div class="body">
+            <h3>Nunca peticione automaticamente</h3>
+            <p>Defina limites direto nas <strong>instruções globais</strong> ou em cada tarefa: ordens como "nunca peticione automaticamente" e "nunca altere prazos". Em automações no site do Tribunal, configure pra <strong>apenas baixar</strong> — qualquer envio ou protocolo exige aprovação humana.</p>
+          </div>
+        </div>
+        <div class="concept">
+          <div class="num">3</div>
+          <div class="body">
+            <h3>Certificado digital e 2 etapas: barreira real</h3>
+            <p>Em sites que exigem <strong>certificado digital</strong> ou <strong>verificação em duas etapas</strong>, o Claude não consegue (e não deve) furar a autenticação. Essas barreiras de segurança permanecem com você — a automação cobre até o ponto do login seguro.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="a3-tarefas">
+      <p class="stag">Pra fazer até o próximo encontro</p>
+      <h2>As suas <em>tarefas da semana</em></h2>
+      <p class="intro">O foco principal até o retorno é a qualidade na produção das peças. O resto vem somando.</p>
+
+      <div class="task"><div class="chk"></div><div class="t-body"><strong>1. Corrigir a formatação da peça de teste</strong><p>Envie o documento e peça o ajuste dos elementos de layout — logo, marca d'água e rodapé. Use print da tela pra apontar as falhas visuais.</p><span class="pill">Skill</span></div></div>
+      <div class="task"><div class="chk"></div><div class="t-body"><strong>2. Atualizar a skill de formatação</strong><p>Peça pra modificar a skill pra que os próximos documentos já saiam com as correções de estilo e o espaçamento entre parágrafos certos.</p></div></div>
+      <div class="task"><div class="chk"></div><div class="t-body"><strong>3. Criar a skill de petição inicial</strong><p>Compile de 12 a 15 modelos de petições iniciais numa pasta e instrua o Claude a identificar o padrão pra criar uma skill dedicada a esse tipo de peça.</p><span class="pill">Principal da semana</span></div></div>
+      <div class="task"><div class="chk"></div><div class="t-body"><strong>4. Agendar a automação do Tribunal</strong><p>Configure a verificação automática no site do TJ pra rodar <strong>todo dia de manhã</strong> — apenas baixando os documentos, sem protocolar nada.</p><span class="pill">Automação</span></div></div>
+      <div class="task"><div class="chk"></div><div class="t-body"><strong>5. Configurar a conexão MCP com o NotebookLM</strong><p>Vou te enviar o guia, o prompt e o código pelo WhatsApp. Siga o passo a passo pra ligar o NotebookLM ao Claude e destravar os processos gigantes.</p></div></div>
+      <div class="task"><div class="chk"></div><div class="t-body"><strong>6. Ativar os conectores nas instruções globais</strong><p>Ligue o conector do Microsoft 365 e o plugin de conector jurídico nas configurações globais — eles otimizam a análise de documentos e contratos dentro do Claude.</p></div></div>
+      <div class="task"><div class="chk"></div><div class="t-body"><strong>7. Listar novas ideias de skills</strong><p>Anote possibilidades de automação ao longo da semana e traga sugestões pontuais de novas skills pra discutirmos no próximo encontro.</p></div></div>
+    </section>
+
+    <section id="a3-prompts">
+      <p class="stag">É só copiar e colar</p>
+      <h2>Os <em>prompts</em> desta aula</h2>
+      <p class="intro">Clique em "Copiar", cole no Claude e ajuste os trechos entre [colchetes].</p>
+
+      <div class="prompt">
+        <div class="prompt-head">
+          <div><span class="pt">1 · Ajustar a skill de formatação com referência visual</span></div>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>
+        </div>
+        <div class="desc">Use na mesma conversa da skill. Anexe o documento certo e um print da tela apontando o erro.</div>
+        <pre>A skill de formatação está saindo com erro: o cabeçalho e o rodapé não estão sendo aplicados como deveriam.
+
+Estou te enviando dois materiais:
+1. Um documento que ficou CORRETO, com o nosso padrão de cabeçalho, rodapé, logo, marca d'água e os nomes das sócias.
+2. Um print da tela mostrando onde a formatação atual está errada (espaçamento, cor, posição do logo).
+
+Compare os dois, identifique exatamente o que difere e atualize a skill de formatação para que os próximos documentos saiam iguais ao modelo correto. Faça isso nesta mesma conversa para manter o contexto.</pre>
+      </div>
+
+      <div class="prompt">
+        <div class="prompt-head">
+          <div><span class="pt">2 · Criar a skill de petição inicial</span></div>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>
+        </div>
+        <div class="desc">Rode sobre a pasta com 12 a 15 das melhores petições. Use o Opus pra criar a skill.</div>
+        <pre>Na pasta [nome da pasta] estão de 12 a 15 das nossas melhores petições iniciais.
+
+Leia todas com atenção e me devolva:
+1. O padrão de estrutura que seguimos (a ordem das partes da peça).
+2. As expressões e frases que mais se repetem.
+3. O tom e o nível de formalidade.
+4. Como costumamos refutar a parte contrária e fechar o pedido.
+5. As divergências entre os modelos — o que varia de uma peça pra outra.
+
+Depois disso, crie uma skill dedicada à elaboração de petições iniciais no nosso padrão. Trate os dados de cada caso (cliente, fatos) como input que eu vou fornecer, e configure a skill para me PERGUNTAR quando faltar alguma informação, em vez de inventar.</pre>
+      </div>
+
+      <div class="prompt">
+        <div class="prompt-head">
+          <div><span class="pt">3 · Automação diária no site do Tribunal (só download)</span></div>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>
+        </div>
+        <div class="desc">Rode num projeto separado pra rotinas. Repare no limite de segurança: ele só baixa, nunca protocola.</div>
+        <pre>Quero criar uma tarefa agendada que roda todo dia de manhã.
+
+Objetivo: acessar o site do Tribunal de Justiça, verificar as publicações e movimentações dos nossos processos e baixar os documentos novos para a pasta [nome da pasta].
+
+Regras de segurança que você nunca pode quebrar:
+- APENAS baixe os documentos. Nunca protocole, nunca peticione e nunca altere prazos automaticamente.
+- Qualquer ação de envio exige a minha aprovação manual.
+
+Antes de agendar, me mostre o plano completo e o horário para eu confirmar.</pre>
+      </div>
+
+      <div class="prompt">
+        <div class="prompt-head">
+          <div><span class="pt">4 · Conectar o NotebookLM via MCP</span></div>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>
+        </div>
+        <div class="desc">Pra ligar o NotebookLM ao Claude e destravar os processos gigantes. Ele te guia pelo terminal.</div>
+        <pre>Quero conectar o NotebookLM ao Claude usando uma conexão MCP (Model Context Protocol), para que você acesse os processos grandes que eu já carreguei lá.
+
+Me dê um passo a passo detalhado e seguro para configurar essa conexão pelo terminal do meu computador. Explique cada comando antes de eu rodar, em linguagem simples, e me avise se em algum momento precisar da minha confirmação. Se algo der errado, me ajude a diagnosticar.</pre>
+      </div>
+    </section>
+
+    <section id="a3-proximo" style="padding-bottom:60px;">
+      <p class="stag">O que vem aí</p>
+      <h2>No <em>próximo encontro</em></h2>
+      <div class="card">
+        <div class="next-item"><span class="arr">→</span><p style="margin:0;">Aprofundar o <strong>NotebookLM</strong> na prática — com a conexão MCP já feita, trabalhar um processo pesado de verdade de ponta a ponta.</p></div>
+        <div class="next-item"><span class="arr">→</span><p style="margin:0;">Revisar as <strong>skills de peças</strong> que vocês criaram na semana e refinar o que precisar.</p></div>
+        <div class="next-item"><span class="arr">→</span><p style="margin:0;">Discutir as <strong>novas ideias de automação</strong> que vocês anotarem e priorizar as próximas skills.</p></div>
+        <div class="next-item"><span class="arr">→</span><p style="margin:0;">Como vocês viajam após o dia 26, nosso próximo encontro fica para a <strong>última semana de julho</strong>.</p></div>
+      </div>
+      <div class="callout">
+        <p style="margin-bottom:0;">Até lá, foco na <strong>qualidade das peças</strong>. Qualquer dúvida — uma skill que não ficou certa, a conexão MCP que travou — me chamem no WhatsApp <strong>(11) 97190-1020</strong>.</p>
+      </div>
+    </section>
+
+  </div><!-- /wrap -->
+</div><!-- /aula-3 -->
 
 
 <!-- FOOTER -->
