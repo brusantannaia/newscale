@@ -297,7 +297,8 @@
 <!-- ABA SWITCHER -->
 <div class="aula-switch">
   <button class="aula-tab" data-aula="1" onclick="showAula(1)">Aula 01 <span class="dt">· 28/05</span></button>
-  <button class="aula-tab active" data-aula="2" onclick="showAula(2)">Aula 02 <span class="dt">· 03/06</span></button>
+  <button class="aula-tab" data-aula="2" onclick="showAula(2)">Aula 02 <span class="dt">· 03/06</span></button>
+  <button class="aula-tab active" data-aula="3" onclick="showAula(3)">Aula 03 <span class="dt">· 12/06</span></button>
 </div>
 
 <!-- ============================================================= -->
@@ -739,7 +740,7 @@ Organize por semana, indicando o tema, o formato (post simples, carrossel) e o o
 <!-- ============================================================= -->
 <!-- ======================== AULA 02 ============================ -->
 <!-- ============================================================= -->
-<div class="aula-panel" data-aula="2">
+<div class="aula-panel hidden" data-aula="2">
 
 <header class="hero">
   <div class="hero-inner">
@@ -1179,6 +1180,332 @@ Use como base o material que está em [aponte a pasta / a URL do Notion]. Quero 
 
 </div>
 </div><!-- /aula 2 -->
+
+<!-- ============================================================= -->
+<!-- ======================== AULA 03 ============================ -->
+<!-- ============================================================= -->
+<div class="aula-panel" data-aula="3">
+
+<header class="hero">
+  <div class="hero-inner">
+    <img class="logo" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting">
+    <span class="tag">Mentoria de IA · Encontro 03</span>
+    <h1>Da automação à <em>prospecção ativa</em> no LinkedIn</h1>
+    <p class="lead">Érico, no terceiro encontro a gente viu as suas automações já rodando, criou a skill de prospecção e colocou o Claude pra buscar leads no LinkedIn ao vivo. Tudo organizado aqui embaixo.</p>
+    <div class="hero-meta">
+      <span><strong>Data:</strong> 12/06/2026</span>
+      <span><strong>Tema:</strong> Skill de prospecção, refinamento de prompts e busca de leads no LinkedIn</span>
+      <span><strong>Próximo passo:</strong> estratégia para o Instagram</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#a3-resumo">Resumo</a>
+    <a href="#a3-conceitos">O que vimos</a>
+    <a href="#a3-skill">Skill de prospecção</a>
+    <a href="#a3-linkedin">Leads no LinkedIn</a>
+    <a href="#a3-perfil">Perfil otimizado</a>
+    <a href="#a3-tarefas">Tarefas da semana</a>
+    <a href="#a3-prompts">Prompts pra copiar</a>
+    <a href="#a3-proximo">Próximo encontro</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <section id="a3-resumo">
+    <p class="stag">O que rolou</p>
+    <h2>Resumo do nosso <em>terceiro encontro</em></h2>
+    <p class="intro">Se a aula 2 foi ligar a casa na rua, a aula 3 foi colocar a casa pra produzir: suas automações já estão rodando, nasceu a sua primeira skill de prospecção e o Claude foi pra cima do LinkedIn buscar leads de verdade.</p>
+
+    <div class="card">
+      <h3>O que cobrimos hoje</h3>
+      <p>Começamos pelo <strong>check-in das automações</strong>: você já tem dois agendamentos no ar — um que monitora a legislação ambiental todo dia às 9h e outro que acompanha um periódico de direito ambiental pra te manter de olho nos advogados e oportunidades da área.</p>
+      <p>Depois criamos a <strong>skill de prospecção</strong> — a persona de "consultor ambiental sênior" — puxando seus modelos de mensagem do Notion e do WhatsApp, e refinamos o prompt pra ela não "viajar" e soar natural (inclusive cortando os travessões).</p>
+      <p style="margin-bottom:0;">E fechamos com o <strong>Claude operando o LinkedIn</strong>: buscou leads do agro no Centro-Oeste, gerou uma planilha com 10 contatos e ainda auditou o seu perfil como um consultor sênior faria. Está tudo detalhado abaixo.</p>
+    </div>
+  </section>
+
+  <section id="a3-conceitos">
+    <p class="stag">Passo a passo</p>
+    <h2>O que eu <em>reforcei</em>, em ordem</h2>
+    <p class="intro">Os aprendizados da aula, na sequência em que apareceram. A maioria é refinamento do que você já vinha fazendo.</p>
+
+    <div class="card plain" style="padding-top:6px;">
+      <div class="concept">
+        <div class="num">1</div>
+        <div class="body">
+          <h3>Skill se aciona por voz, não por comando</h3>
+          <p>Depois de instalada, a skill pode ser <strong>acionada falando</strong> em qualquer conversa — você não precisa do comando de barra. É só descrever o que quer que ela entra em ação sozinha.</p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">2</div>
+        <div class="body">
+          <h3>Notion como fonte de modelos</h3>
+          <p>A gente vinculou o Claude ao seu <strong>Notion</strong> pra recuperar os modelos de mensagem de prospecção (WhatsApp e e-mail). Esses modelos viram a matéria-prima da skill — é deles que ela bebe pra padronizar e personalizar a comunicação.</p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">3</div>
+        <div class="body">
+          <h3>Prompt preciso, senão ele supõe</h3>
+          <p>Quando o prompt é vago, o Claude tende a <strong>supor</strong> e às vezes "viaja" na resposta. A solução é explicitar objetivo, persona e onde estão os dados — e pedir que ele <strong>apresente um plano antes de executar</strong>. Você revisa o plano e evita desperdício de token com resultado errado.</p>
+          <div class="analogy">"Combinar antes de fazer." O plano no papel custa segundos; o retrabalho custa tokens e tempo.</div>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">4</div>
+        <div class="body">
+          <h3>Um assunto, uma conversa</h3>
+          <p>Misturar tópicos diferentes — organização do Notion e plano de prospecção, por exemplo — <strong>confunde o contexto</strong> e gasta token à toa. Separe cada frente numa conversa nova, conectada à pasta certa do projeto.</p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">5</div>
+        <div class="body">
+          <h3>Sem travessões</h3>
+          <p>No teste, a IA usou travessões nas mensagens e ficou com cara de robô. A gente editou a skill pra <strong>nunca usar travessão</strong> — comunicação mais natural converte melhor na hora da abordagem.</p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">6</div>
+        <div class="body">
+          <h3>Notebook aberto, senão ele para</h3>
+          <p>Detalhe técnico que vale lembrar: <strong>fechar a tampa do notebook interrompe</strong> o processamento do Claude. Pra tarefas longas (como uma busca de leads), deixe o aparelho aberto até concluir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="a3-skill">
+    <p class="stag">A sua primeira skill de venda</p>
+    <h2>A skill de <em>prospecção</em></h2>
+    <p class="intro">A ideia: ensinar o Claude a escrever as suas abordagens sempre no seu tom, focando na dor do cliente. A persona que definimos foi a de um consultor ambiental sênior.</p>
+
+    <div class="card">
+      <h3>Como ela foi montada</h3>
+      <p>Partimos do <strong>modelo padrão</strong> (pra economizar token) e demos a ela três pilares: o <strong>objetivo</strong> claro, a <strong>persona</strong> de consultor ambiental sênior e o <strong>banco de mensagens</strong> (WhatsApp e e-mail) como base de estilo. A personalização sai do perfil do advogado e da área de atuação dele.</p>
+      <p style="margin-bottom:0;">No teste com uma advogada fictícia da área agrária, o resultado foi certeiro: a IA focou nos problemas do cliente e ofereceu soluções técnicas. Depois, o único ajuste foi remover os travessões.</p>
+    </div>
+
+    <div class="callout">
+      <p style="margin-bottom:0;"><strong>Regra de ouro:</strong> a skill é tão boa quanto os exemplos que você dá. Quanto mais ricos os seus modelos de mensagem reais, mais natural e eficaz fica a abordagem que ela gera.</p>
+    </div>
+  </section>
+
+  <section id="a3-linkedin">
+    <p class="stag">O Claude operando o navegador</p>
+    <h2>Buscando <em>leads</em> ao vivo</h2>
+    <p class="intro">O ponto alto da aula: o Claude assumiu o Chrome e foi atrás de potenciais clientes no LinkedIn, usando o documento de contexto da prospecção como guia.</p>
+
+    <div class="cflow">
+      <div class="cstep">
+        <span class="tg" style="color:var(--sage);">Critério</span>
+        <span class="hh">Quem buscar</span>
+        <span class="ss">Setor agro, Centro-Oeste, foco em Goiânia</span>
+      </div>
+      <div class="cstep acc">
+        <span class="tg" style="color:var(--terra);">Volume</span>
+        <span class="hh">10 leads</span>
+        <span class="ss">Primeira rodada, canal LinkedIn</span>
+      </div>
+      <div class="cstep pet">
+        <span class="tg" style="color:var(--ink);">Autonomia</span>
+        <span class="hh">Buscou no Google</span>
+        <span class="ss">Quando o LinkedIn limitou, contornou sozinho</span>
+      </div>
+      <div class="cstep win">
+        <span class="tg" style="color:var(--tl);">Saída</span>
+        <span class="hh">Planilha pronta</span>
+        <span class="ss">10 leads salvos na pasta de contexto</span>
+      </div>
+    </div>
+
+    <div class="cnote">
+      <div class="card plain" style="margin:0;padding:18px 20px;">
+        <h3 style="font-size:1.15rem;">Por que ele foi pro Google?</h3>
+        <p style="margin-bottom:0;font-size:0.9rem;">O LinkedIn esconde nomes quando faltam conexões diretas. Sem conseguir os detalhes lá, o Claude buscou os dados em fontes públicas por conta própria — autonomia na prática.</p>
+      </div>
+      <div class="card plain" style="margin:0;padding:18px 20px;">
+        <h3 style="font-size:1.15rem;">Conectar ≠ seguir</h3>
+        <p style="margin-bottom:0;font-size:0.9rem;">Pra abrir mais leads, expanda a rede: adicione contatos conhecidos e profissionais da área. "Conectar" cria vínculo (e visibilidade); "seguir" é só acompanhar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="a3-perfil">
+    <p class="stag">Autoridade antes da abordagem</p>
+    <h2>O Claude <em>auditou</em> o seu perfil</h2>
+    <p class="intro">Antes de prospectar forte, o perfil precisa passar autoridade. Você pediu pro Claude agir como um consultor sênior de LinkedIn e analisar o seu — e veio recomendação afiada.</p>
+
+    <div class="card">
+      <h3>O que ele apontou</h3>
+      <p><strong>Tirar a etiqueta de "buscando emprego".</strong> Pra um perito que quer atrair advogados como clientes, ela joga contra a autoridade. Esse foi o ajuste mais crítico.</p>
+      <p style="margin-bottom:0;">Além disso, sugestões de reescrita para a <strong>Headline</strong>, a seção <strong>"Sobre"</strong>, a estrutura de <strong>serviços</strong> e as experiências profissionais — com textos prontos pra você colar e modelos de mensagem de convite pra prospecção ativa.</p>
+    </div>
+
+    <div class="callout warn">
+      <p style="margin-bottom:0;"><strong>Atenção na abordagem:</strong> personalize cada convite individualmente. O Claude monta os modelos; o toque pessoal em cada contato é o que protege a sua conta e converte melhor.</p>
+    </div>
+  </section>
+
+  <section id="a3-tarefas">
+    <p class="stag">Pra fazer até o próximo encontro</p>
+    <h2>As suas <em>tarefas da semana</em></h2>
+    <p class="intro">O foco agora é deixar a skill de prospecção redonda e fortalecer o perfil pra começar a abordar com autoridade.</p>
+
+    <div class="task">
+      <div class="chk"></div>
+      <div class="t-body">
+        <strong>1. Finalize a skill de prospecção</strong>
+        <p>Acesse o banco de mensagens de WhatsApp e e-mail, identifique os padrões de comunicação e consolide a skill personalizada para a consultoria ambiental. Lembre de manter a instrução de não usar travessões.</p>
+        <span class="pill">Principal da semana</span>
+      </div>
+    </div>
+
+    <div class="task">
+      <div class="chk"></div>
+      <div class="t-body">
+        <strong>2. Adapte os materiais de prospecção</strong>
+        <p>Ajuste o funil de mensagens, a matriz e o diagnóstico de prospecção com base no seu banco de dados e nos modelos de e-mail identificados.</p>
+      </div>
+    </div>
+
+    <div class="task">
+      <div class="chk"></div>
+      <div class="t-body">
+        <strong>3. Peça sempre o plano antes</strong>
+        <p>Antes de iniciar a execução de qualquer tarefa nova, solicite ao Claude o planejamento. Garante clareza e economiza token.</p>
+        <span class="pill">Hábito</span>
+      </div>
+    </div>
+
+    <div class="task">
+      <div class="chk"></div>
+      <div class="t-body">
+        <strong>4. Otimize o perfil do LinkedIn</strong>
+        <p>Aplique os ajustes sugeridos (remover a etiqueta de "buscando emprego", reescrever Headline, Sobre e serviços) e peça ao Claude pra validar o resultado e propor melhorias.</p>
+        <span class="pill">Autoridade</span>
+      </div>
+    </div>
+
+    <div class="task">
+      <div class="chk"></div>
+      <div class="t-body">
+        <strong>5. Adicione contatos todo dia</strong>
+        <p>Faça uma rodada diária de novas conexões no LinkedIn pra expandir a rede e destravar a visibilidade de mais leads.</p>
+      </div>
+    </div>
+
+    <div class="task">
+      <div class="chk"></div>
+      <div class="t-body">
+        <strong>6. Envie o material do curso de LinkedIn</strong>
+        <p>Localize o conteúdo do curso de LinkedIn que você adquiriu e mande pro Claude analisar — ele extrai o que for útil pra sua estratégia.</p>
+      </div>
+    </div>
+
+    <div class="task">
+      <div class="chk"></div>
+      <div class="t-body">
+        <strong>7. Valide os ajustes da consultoria</strong>
+        <p>Avalie a qualidade dos ajustes feitos na automação da consultoria e confirme se os resultados estão bons antes de seguir.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="a3-prompts">
+    <p class="stag">É só copiar e colar</p>
+    <h2>Os <em>prompts</em> desta aula</h2>
+    <p class="intro">Clique em "Copiar", cole no Claude e ajuste os trechos entre [colchetes].</p>
+
+    <div class="prompt">
+      <div class="prompt-head">
+        <div><span class="pt">1 · Criar a skill de prospecção</span></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>
+      </div>
+      <div class="desc">Rode dentro do projeto de prospecção, com o Notion conectado e o banco de mensagens à mão.</div>
+      <pre>Quero criar uma skill para escrever minhas mensagens de prospecção de clientes.
+
+Persona: você é um consultor ambiental sênior, que fala com autoridade técnica mas de forma acessível.
+Objetivo: atrair advogados que precisam de um perito ambiental.
+Base de estilo: leia os meus modelos de mensagem de WhatsApp e e-mail que estão em [aponte a pasta / a URL do Notion] e aprenda o meu tom.
+
+A skill deve, a cada uso, personalizar a mensagem com base no perfil do advogado e na área de atuação dele, sempre focando na dor do cliente e oferecendo solução técnica.
+
+Regra fixa: NUNCA use travessões nas mensagens — quero um texto natural.
+
+Primeiro me mostre como você pretende estruturar a skill. Quando eu aprovar, crie a skill.</pre>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt-head">
+        <div><span class="pt">2 · Buscar leads no LinkedIn</span></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>
+      </div>
+      <div class="desc">Pra usar a extensão do Chrome. Tenha o documento de contexto da prospecção salvo na pasta.</div>
+      <pre>Quero que você me ajude a encontrar leads para a minha consultoria ambiental, pesquisando pelo navegador.
+
+Critérios da busca:
+- Setor: agropecuário.
+- Região: Centro-Oeste, com foco em Goiânia.
+- Quantidade: 10 leads nesta primeira rodada.
+- Canal principal: LinkedIn (mas pode complementar com busca pública no Google se faltar dado).
+
+O contexto da minha consultoria está na pasta [nome da pasta] — leia antes de começar. Primeiro me apresente a estratégia de busca; quando eu aprovar, execute e salve os 10 leads numa planilha nesta mesma pasta.</pre>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt-head">
+        <div><span class="pt">3 · Auditar e otimizar o perfil do LinkedIn</span></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>
+      </div>
+      <div class="desc">Deixe o seu perfil aberto no Chrome e rode com a extensão ativa.</div>
+      <pre>Aja como um consultor sênior de LinkedIn especializado em autoridade para profissionais técnicos.
+
+Estou com o meu perfil aberto no Chrome. Analise-o do ponto de vista de um perito ambiental que quer atrair advogados como clientes.
+
+Me devolva:
+1. O que está prejudicando a minha autoridade hoje (seja crítico).
+2. Uma nova Headline.
+3. Uma nova seção "Sobre".
+4. Como estruturar a seção de serviços e as experiências.
+5. Um modelo de mensagem de convite para prospecção ativa.
+
+Entregue os textos prontos para eu colar.</pre>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt-head">
+        <div><span class="pt">4 · Adaptar o funil de mensagens</span></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>
+      </div>
+      <div class="desc">Pra transformar seus modelos num funil organizado por etapa de abordagem.</div>
+      <pre>Com base no meu banco de mensagens (WhatsApp e e-mail) que está em [aponte a pasta / a URL do Notion], monte o meu funil de prospecção organizado por etapa: primeiro contato, follow-up, proposta e reativação.
+
+Para cada etapa, gere o modelo de mensagem e deixe claro quais trechos eu devo personalizar em cada envio. Salve tudo num arquivo nesta pasta para virar a minha referência permanente. Não use travessões.</pre>
+    </div>
+  </section>
+
+  <section id="a3-proximo">
+    <p class="stag">O que vem aí</p>
+    <h2>No <em>próximo encontro</em></h2>
+    <div class="card">
+      <div class="next-item"><span class="arr">→</span><p style="margin:0;">Montar a sua <strong>estratégia para o Instagram</strong> — o canal que combinamos abordar na sequência.</p></div>
+      <div class="next-item"><span class="arr">→</span><p style="margin:0;">Revisar a <strong>skill de prospecção</strong> rodando em casos reais e refinar o que precisar.</p></div>
+      <div class="next-item"><span class="arr">→</span><p style="margin:0;">Acompanhar os <strong>primeiros leads</strong> da planilha e ajustar a abordagem com base no retorno.</p></div>
+      <div class="next-item"><span class="arr">→</span><p style="margin:0;">Avançar com o perfil já otimizado e a rede mais forte no <strong>LinkedIn</strong>.</p></div>
+    </div>
+    <div class="callout">
+      <p style="margin-bottom:0;">Você saiu desta aula com automação rodando, uma skill de venda nascida e o Claude buscando leads sozinho. Qualquer dúvida no caminho — a skill que precisa de ajuste, um lead que não apareceu — me chama no WhatsApp <strong>(11) 97190-1020</strong>. Pode ser à vontade.</p>
+    </div>
+  </section>
+
+</div>
+</div><!-- /aula 3 -->
 
 <!-- FOOTER -->
 <footer>
