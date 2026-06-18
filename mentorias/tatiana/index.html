@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel da Mentoria de IA · Tatiana | NewScale</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #14373C; --ink2: #1a4449; --sage: #435D51; --terra: #B06E4A;
+    --tl: #c4835e; --sand: #A38362; --cream: #E8E6E0; --cl: #F4F3EF; --white: #FAFAF8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cl); color: var(--ink); line-height: 1.7; font-weight: 400; }
+  .wrap { max-width: 940px; margin: 0 auto; padding: 0 24px; }
+
+  /* HERO */
+  .hero { background: linear-gradient(145deg, #0c2427 0%, #14373C 38%, #1d4840 72%, #435D51 100%); color: var(--white); padding: 52px 24px 30px; position: relative; overflow: hidden; }
+  .hero::after { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); opacity: 0.03; pointer-events: none; }
+  .hero-inner { max-width: 940px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero img.logo { height: 36px; margin-bottom: 30px; }
+  .hero .tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tl); margin-bottom: 14px; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: clamp(2.2rem, 5vw, 3.3rem); line-height: 1.08; margin-bottom: 14px; }
+  .hero h1 em { font-style: italic; color: var(--tl); font-weight: 600; }
+  .hero p.lead { font-size: 1.02rem; font-weight: 300; color: rgba(255,255,255,0.86); max-width: 640px; line-height: 1.7; }
+  .hero .slogan { margin-top: 18px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; color: rgba(255,255,255,0.9); }
+
+  /* TABS */
+  .tabs { position: sticky; top: 0; z-index: 30; background: rgba(12,36,39,0.97); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .tabs .wrap { display: flex; gap: 6px; overflow-x: auto; padding: 0 24px; }
+  .tab-btn { flex: 0 0 auto; background: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; color: rgba(255,255,255,0.7); font-size: 0.82rem; font-weight: 600; padding: 15px 16px; border-bottom: 3px solid transparent; white-space: nowrap; transition: all 0.15s; display: flex; align-items: center; gap: 8px; }
+  .tab-btn:hover { color: #fff; }
+  .tab-btn.active { color: var(--tl); border-bottom-color: var(--terra); }
+  .tab-btn .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .dot.done { background: #6fa888; } .dot.next { background: var(--terra); } .dot.plan { background: rgba(255,255,255,0.35); }
+
+  /* PANELS */
+  .panel { display: none; animation: fade 0.25s ease; }
+  .panel.active { display: block; }
+  @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  section.pad { padding: 40px 0 8px; }
+
+  .phead { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 6px; }
+  .stag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--terra); }
+  .status { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 11px; border-radius: 20px; }
+  .status.done { background: rgba(111,168,136,0.16); color: #3f7a58; }
+  .status.next { background: rgba(176,110,74,0.14); color: var(--terra); }
+  .status.plan { background: rgba(67,93,81,0.12); color: var(--sage); }
+  h2 { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: clamp(1.8rem, 3.4vw, 2.5rem); line-height: 1.15; color: var(--ink); margin: 6px 0 16px; }
+  h2 em { font-style: italic; color: var(--terra); }
+  h3 { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 1.35rem; color: var(--ink); margin: 24px 0 8px; }
+  p { margin-bottom: 14px; font-size: 0.97rem; color: #2a4448; }
+  p.intro { font-size: 1.04rem; color: var(--sage); max-width: 700px; }
+  strong { font-weight: 600; color: var(--ink); }
+
+  .card { background: var(--white); border: 1px solid rgba(20,55,60,0.07); border-radius: 14px; padding: 24px 26px; margin: 16px 0; box-shadow: 0 6px 22px rgba(20,55,60,0.05); position: relative; overflow: hidden; }
+  .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--terra); }
+  .card.plain::before { display: none; }
+  .card h3 { margin-top: 0; }
+  .card ul { list-style: none; margin-top: 6px; }
+  .card ul li { font-size: 0.92rem; padding: 5px 0 5px 20px; position: relative; color: #3c4a48; }
+  .card ul li::before { content: ""; position: absolute; left: 0; top: 13px; width: 7px; height: 7px; border-radius: 50%; background: var(--terra); }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 720px) { .grid2 { grid-template-columns: 1fr; } }
+
+  .analogy { background: rgba(176,110,74,0.06); border-left: 3px solid var(--terra); padding: 10px 16px; border-radius: 0 8px 8px 0; margin-top: 10px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.04rem; color: var(--ink); line-height: 1.45; }
+
+  /* VS */
+  .vs { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; margin: 12px 0; }
+  .vs .side { background: var(--white); border-radius: 14px; padding: 20px; border: 1px solid rgba(20,55,60,.08); }
+  .vs .side.b { border: 1px solid rgba(176,110,74,.3); box-shadow: 0 8px 24px rgba(176,110,74,.1); }
+  .vs .side h4 { font-family:'Cormorant Garamond',serif; font-size: 1.25rem; font-weight: 700; margin-bottom: 6px; }
+  .vs .side p { font-size: .88rem; color: #3c4a48; margin-bottom: 10px; }
+  .vs .arrow { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--terra); font-weight: 700; }
+  .vs .pchain { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+  .vs .pchain .pill { background: rgba(176,110,74,.12); color: var(--terra); font-size: .72rem; font-weight: 600; padding: 5px 11px; border-radius: 20px; white-space: nowrap; }
+  .vs .pchain .pill.s { background: rgba(67,93,81,.1); color: var(--sage); }
+  .vs .pchain .ar { color: var(--terra); font-weight: 700; }
+  @media (max-width: 720px) { .vs { grid-template-columns: 1fr; } .vs .arrow { transform: rotate(90deg); text-align: center; } }
+
+  /* concept */
+  .concept { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid rgba(20,55,60,0.08); }
+  .concept:last-child { border-bottom: none; }
+  .concept .num { flex: 0 0 auto; font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: var(--terra); line-height: 1; width: 38px; }
+  .concept .body h3 { margin: 0 0 4px; font-size: 1.22rem; }
+  .concept .body p { margin-bottom: 4px; }
+
+  /* tasks */
+  .task { display: flex; gap: 14px; align-items: flex-start; background: var(--white); border: 1px solid rgba(20,55,60,0.07); border-radius: 12px; padding: 15px 18px; margin: 10px 0; box-shadow: 0 3px 14px rgba(20,55,60,0.04); }
+  .task .chk { flex: 0 0 auto; width: 22px; height: 22px; border-radius: 6px; border: 2px solid var(--terra); margin-top: 2px; }
+  .task .t-body { flex: 1; }
+  .task .t-body strong { display: block; margin-bottom: 2px; font-size: 0.98rem; }
+  .task .t-body p { margin: 0; font-size: 0.89rem; color: #3a5358; }
+  .pill { display: inline-block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: rgba(67,93,81,0.12); color: var(--sage); padding: 2px 9px; border-radius: 12px; margin-top: 7px; }
+  .pill.alert { background: rgba(176,110,74,0.14); color: var(--terra); }
+
+  /* prompts */
+  .prompt { background: #102e32; border-radius: 14px; margin: 14px 0; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
+  .prompt-head { display: flex; justify-content: space-between; align-items: center; padding: 13px 18px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .prompt-head .pt { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tl); }
+  .copy-btn { background: var(--terra); color: #fff; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 600; padding: 7px 16px; border-radius: 7px; letter-spacing: 0.03em; transition: all 0.15s; }
+  .copy-btn:hover { background: var(--tl); }
+  .copy-btn.done { background: var(--sage); }
+  .prompt pre { margin: 0; padding: 16px 18px; color: #e7ece9; font-family: 'DM Sans', monospace; font-size: 0.84rem; line-height: 1.6; white-space: pre-wrap; word-wrap: break-word; font-weight: 300; }
+  .prompt .desc { padding: 0 18px 13px; font-size: 0.8rem; color: rgba(255,255,255,0.6); }
+
+  .callout { background: linear-gradient(135deg, rgba(20,55,60,0.04), rgba(67,93,81,0.06)); border: 1px solid rgba(20,55,60,0.1); border-radius: 14px; padding: 20px 24px; margin: 18px 0; }
+  .callout p:last-child { margin-bottom: 0; }
+  .note { background: rgba(176,110,74,0.08); border: 1px solid rgba(176,110,74,0.2); border-radius: 12px; padding: 15px 18px; font-size: 0.9rem; color: var(--ink); margin: 14px 0; }
+  .note b { color: var(--terra); }
+
+  /* placeholder (a preencher) */
+  .ph-empty { border: 1.5px dashed rgba(67,93,81,0.3); border-radius: 14px; padding: 22px 24px; background: rgba(67,93,81,0.03); color: var(--sage); font-size: 0.92rem; margin: 14px 0; }
+  .ph-empty strong { color: var(--sage); }
+
+  .next-item { display: flex; gap: 12px; padding: 10px 0; }
+  .next-item .arr { color: var(--terra); font-weight: 700; flex: 0 0 auto; }
+
+  /* frentes chips */
+  .frentes { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+  .frente { background: var(--white); border: 1px solid rgba(20,55,60,0.08); border-radius: 12px; padding: 12px 16px; font-size: 0.88rem; flex: 1 1 calc(33% - 10px); min-width: 200px; }
+  .frente b { color: var(--terra); display: block; font-size: 0.92rem; margin-bottom: 2px; }
+
+  /* trilha mini */
+  .tline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 8px; }
+  @media (max-width: 720px) { .tline { grid-template-columns: 1fr 1fr; } }
+  .tnode { background: var(--white); border: 1px solid rgba(20,55,60,0.08); border-radius: 12px; padding: 16px 14px; text-align: center; }
+  .tnode .n { width: 34px; height: 34px; border-radius: 50%; background: var(--terra); color: #fff; display: grid; place-items: center; font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 1.1rem; margin: 0 auto 8px; }
+  .tnode.l4 .n { background: var(--ink); }
+  .tnode h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--ink); margin-bottom: 2px; }
+  .tnode span { font-size: 0.72rem; color: var(--sage); }
+
+  footer { background: linear-gradient(165deg, #14373C, #194040 55%, #435D51 100%); color: var(--white); margin-top: 50px; padding: 46px 24px; }
+  footer .wrap { text-align: center; }
+  footer img { height: 32px; margin-bottom: 20px; }
+  footer .quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.45rem; line-height: 1.4; max-width: 600px; margin: 0 auto 24px; color: rgba(255,255,255,0.92); }
+  footer .quote strong { font-style: normal; color: var(--tl); font-weight: 700; }
+  footer .contact { font-size: 0.86rem; color: rgba(255,255,255,0.7); line-height: 1.9; }
+  footer .contact a { color: var(--tl); text-decoration: none; }
+  .sig { font-size: 0.95rem; color: rgba(255,255,255,0.85); margin-top: 16px; }
+  .sig strong { color: #fff; }
+
+  @media print { .tabs { display: none; } .copy-btn { display: none; } .panel { display: block !important; } * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <img class="logo" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting">
+    <span class="tag">Mentoria de IA · Painel da jornada</span>
+    <h1>A sua jornada de IA, <em>Tatiana</em></h1>
+    <p class="lead">Este é o nosso painel vivo: o diagnóstico inicial, o que já fizemos e o que vem por aí. Vou atualizando a cada encontro — a trilha é flexível e se molda ao que acontece no caminho. Navegue pelas abas.</p>
+    <p class="slogan">"A mudança é inevitável; evoluir é uma escolha."</p>
+  </div>
+</header>
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="wrap">
+    <button class="tab-btn active" data-tab="diag">Diagnóstico</button>
+    <button class="tab-btn" data-tab="a1"><span class="dot done"></span>Aula 1</button>
+    <button class="tab-btn" data-tab="a2"><span class="dot next"></span>Aula 2</button>
+    <button class="tab-btn" data-tab="a3"><span class="dot plan"></span>Aula 3</button>
+    <button class="tab-btn" data-tab="a4"><span class="dot plan"></span>Aula 4</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ===================== DIAGNÓSTICO ===================== -->
+  <div class="panel active" id="diag">
+    <section class="pad">
+      <div class="phead"><span class="stag">Reunião de diagnóstico · 12/06/2026</span><span class="status plan">Planejamento inicial</span></div>
+      <h2>Por onde <em>começamos</em></h2>
+      <p class="intro">Nosso primeiro papo foi para entender quem é você, o que você quer da IA e desenhar a trilha. Tudo aqui é a espinha dorsal — mutável conforme as suas prioridades mudam.</p>
+
+      <div class="card">
+        <h3>Quem é a Tati — a leitura</h3>
+        <p>Você não é iniciante no mundo digital: é uma <strong>comunicadora e estrategista sênior</strong> em um momento de virada. O ganho com a IA vem de uma camada técnica forte sobre uma base humana que já é potente.</p>
+        <ul>
+          <li>10 anos como cantora, atriz e bailarina (musical Miss Saigon) — oratória e leitura de público de palco</li>
+          <li>Evangelista e advisor no Google e no Indeed — engajamento de clientes, palco e mensagem de marca</li>
+          <li>Fundadora da ChangeMaker — palestras, treinamentos e mentoria em desenvolvimento humano</li>
+          <li>Certificação em liderança feminina (Oxford)</li>
+        </ul>
+      </div>
+
+      <h3>O que você quer da IA — 6 frentes</h3>
+      <div class="frentes">
+        <div class="frente"><b>Vagas</b>Adaptar o currículo e vencer a triagem por IA</div>
+        <div class="frente"><b>Leads / hunter</b>Cruzar a base de seguidores e gerar abordagens</div>
+        <div class="frente"><b>Apresentações</b>Palestras com a sua identidade</div>
+        <div class="frente"><b>Planilhas & dados</b>Transformar informação em insight</div>
+        <div class="frente"><b>Conteúdo ChangeMaker</b>No tom de voz da marca</div>
+        <div class="frente"><b>Livro</b>Estudo assistido, sem escrever por você</div>
+      </div>
+
+      <h3>A trilha proposta — 4 encontros</h3>
+      <p>Agrupamos por afinidade para entregar uma vitória concreta por aula, sem virar um Frankenstein de 6 frentes ao mesmo tempo.</p>
+      <div class="tline">
+        <div class="tnode"><div class="n">1</div><h4>Fundamentos & Setup</h4><span>+ 1ª vitória</span></div>
+        <div class="tnode"><div class="n">2</div><h4>Marca & Slides</h4><span>+ vagas</span></div>
+        <div class="tnode"><div class="n">3</div><h4>Leads & Dados</h4><span>prospecção</span></div>
+        <div class="tnode l4"><div class="n">4</div><h4>Livro & Autonomia</h4><span>estudo assistido</span></div>
+      </div>
+      <div class="note"><b>Ponto de partida:</b> você vinha só do ChatGPT grátis — então a Aula 1 foi pensada para fazer a virada de chave e montar a sua estação no Claude. <b>Esta ordem é flexível:</b> se uma frente ficar urgente, a gente reorganiza.</div>
+    </section>
+  </div>
+
+  <!-- ===================== AULA 1 ===================== -->
+  <div class="panel" id="a1">
+    <section class="pad">
+      <div class="phead"><span class="stag">Encontro 01 · 16/06/2026</span><span class="status done">Concluída</span></div>
+      <h2>O que <em>fizemos</em> no primeiro encontro</h2>
+      <p class="intro">Esta aula foi a de assentar a base e começar a montar a sua estação. Foi bastante conceito — normal sair com a cabeça cheia. A partir daqui, a gente vai cada vez mais pro mão na massa.</p>
+
+      <div class="card">
+        <h3>O caminho que percorremos</h3>
+        <p>Começamos pela <strong>visão geral</strong>: o que é o Claude, por que ele é diferente do ChatGPT grátis e onde ele entra no seu momento — uma camada técnica que turbina o que você já faz de melhor.</p>
+        <p>Vimos os <strong>três modos do Claude</strong> (Chat, Cowork e Code), entendemos por que o <strong>Cowork</strong> é o seu lugar, e conversamos sobre <strong>segurança, contexto e Skills</strong>. Na prática, começamos a <strong>configurar o Cowork</strong> — criamos a pasta de trabalho principal e a estrutura de projetos. Também alinhamos <strong>plano e ritmo</strong>: o de US$ 20/mês já basta pra começar.</p>
+      </div>
+
+      <h3>A virada de chave (o conceito central da aula)</h3>
+      <div class="vs">
+        <div class="side">
+          <h4>Antes, no ChatGPT</h4>
+          <p>Uma pergunta, uma resposta. Sempre puxado por você.</p>
+          <div class="pchain"><span class="pill s">Pergunta</span><span class="ar">→</span><span class="pill s">Resposta</span></div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="side b">
+          <h4>Agora, no Claude</h4>
+          <p>Você dá a missão; ele encadeia tudo e entrega — inclusive agindo no navegador e nos seus arquivos.</p>
+          <div class="pchain"><span class="pill">Pesquisa</span><span class="ar">→</span><span class="pill">Estratégia</span><span class="ar">→</span><span class="pill">Entrega</span></div>
+        </div>
+      </div>
+
+      <h3>Os conceitos, em ordem</h3>
+      <div class="card plain" style="padding-top:4px;">
+        <div class="concept"><div class="num">1</div><div class="body"><h3>Os três modos</h3><p><strong>Chat</strong> é online, na caixinha. <strong>Cowork</strong> acessa as suas pastas e o navegador — é ele que faz o Claude agir. <strong>Code</strong> é para desenvolvimento. O seu lugar é o Cowork.</p></div></div>
+        <div class="concept"><div class="num">2</div><div class="body"><h3>Contexto é tudo</h3><p>Quanto mais o Claude conhece de você, mais personalizado fica o trabalho. Por isso o primeiro grande passo é montar o seu material de contexto.</p></div></div>
+        <div class="concept"><div class="num">3</div><div class="body"><h3>Estudo assistido</h3><p>A IA não escreve por você nem terceiriza a sua autoria. Ela ensina, organiza e acelera — a sua voz continua sua.</p></div></div>
+        <div class="concept"><div class="num">4</div><div class="body"><h3>Segurança</h3><p>No Cowork você dá acesso só às pastas que quiser. Evite dados sensíveis em planos gratuitos. No plano pago, os seus dados não treinam a plataforma.</p></div></div>
+        <div class="concept"><div class="num">5</div><div class="body"><h3>Skills</h3><p>Ensinar o Claude a repetir uma tarefa sempre do mesmo jeito — ex.: falar no tom da ChangeMaker. A gente cria nas próximas aulas.</p></div></div>
+      </div>
+
+      <div class="note"><b>O que ficou pendente:</b> o setup esbarrou na <strong>atualização do sistema do seu Mac</strong> (precisa do macOS 14+ para o Cowork rodar 100%) e, em alguns casos, na instalação do Git. Por isso <strong>não chegamos à 1ª vitória</strong> (LinkedIn + vaga real) — ela migrou para a Aula 2, com a estação já pronta.</div>
+
+      <h3>A sua lição de casa da semana</h3>
+      <div class="task"><div class="chk"></div><div class="t-body"><strong>1. Atualizar o sistema do Mac (macOS 14+)</strong><p>É o que destrava o Cowork. Se travar ou pedir o Git, me chama no WhatsApp que eu te passo o passo a passo.</p><span class="pill alert">Destrava o Cowork</span></div></div>
+      <div class="task"><div class="chk"></div><div class="t-body"><strong>2. Instalar e logar no app do Claude (plano pago)</strong><p>Assim a gente já abre tudo prontinho na próxima.</p></div></div>
+      <div class="task"><div class="chk"></div><div class="t-body"><strong>3. Separar os seus materiais numa pasta</strong><p>Currículo atual, branding da ChangeMaker (tom de voz, manifesto, slogan, boas apresentações), uma vaga real de olho e, se tiver, o esqueleto do livro. Sem dados sensíveis.</p><span class="pill">Contexto</span></div></div>
+      <div class="task"><div class="chk"></div><div class="t-body"><strong>4. Definir o seu foco principal agora</strong><p>Qual frente é prioridade (recolocação / consultora / ChangeMaker) — isso direciona a personalização e a trilha.</p></div></div>
+
+      <h3>Prompts pra já começar</h3>
+      <p>Assim que o Cowork abrir, comece por este — ele te entrevista e monta os seus arquivos de contexto sozinho.</p>
+
+      <div class="prompt">
+        <div class="prompt-head"><div><span class="pt">Comece por aqui · material de contexto (.md)</span></div><button class="copy-btn" onclick="copyPrompt(this)">Copiar</button></div>
+        <div class="desc">Rode no Cowork para ele salvar os arquivos numa pasta sua. Vira a base de todas as próximas tarefas.</div>
+        <pre>Você vai me entrevistar para construir o meu material de contexto: um conjunto de arquivos em Markdown (.md) que ficarão salvos no meu computador para você consultar sempre que a gente trabalhar junto.
+
+Como conduzir a entrevista:
+- Me faça as perguntas UMA DE CADA VEZ, agrupadas nestes blocos, nesta ordem:
+  1. Quem eu sou e minha trajetória profissional.
+  2. Minhas forças e o meu estilo de comunicação.
+  3. Meus objetivos de recolocação e as posições-alvo.
+  4. A ChangeMaker: marca, temas, público e tom de voz.
+  5. O meu livro: tema, mensagem e estrutura.
+- Não avance de bloco sem fechar o anterior. Se eu ficar vaga, aprofunde com um follow-up.
+- Fale sempre em português brasileiro e em tom de conversa.
+
+Ao final, gere e salve estes arquivos .md: perfil.md, objetivos.md, changemaker.md, livro.md e preferencias.md (como eu gosto de trabalhar com você).
+
+Confirme que entendeu, me diga quantas perguntas serão mais ou menos, e comece pela primeira.</pre>
+      </div>
+
+      <div class="prompt">
+        <div class="prompt-head"><div><span class="pt">Coringa · modo estudo assistido</span></div><button class="copy-btn" onclick="copyPrompt(this)">Copiar</button></div>
+        <div class="desc">Use sempre que quiser aprender, não só receber pronto. Combina com o seu jeito.</div>
+        <pre>A partir de agora, entre em modo estudo assistido comigo: o seu papel é me ensinar e me guiar, não fazer por mim. Quando eu pedir algo, explique o raciocínio, me faça perguntas e me deixe construir. Pode começar confirmando.</pre>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===================== AULA 2 ===================== -->
+  <div class="panel" id="a2">
+    <section class="pad">
+      <div class="phead"><span class="stag">Encontro 02 · a agendar</span><span class="status next">Próxima · planejado</span></div>
+      <h2>Setup final + 1ª vitória + <em>Marca</em></h2>
+      <p class="intro">Como a Aula 1 ficou nos fundamentos, a Aula 2 fecha o setup e já entrega resultado: o LinkedIn e uma vaga real. Se sobrar fôlego, começamos a marca ChangeMaker. Plano sujeito a ajuste conforme o ritmo.</p>
+
+      <div class="grid2">
+        <div class="card"><h3>O que vamos fazer</h3><ul>
+          <li>Finalizar o setup do Cowork (sistema atualizado + Chrome conectado)</li>
+          <li>Rodar o prompt de contexto e montar os seus arquivos .md juntas</li>
+          <li><strong>1ª vitória:</strong> ajustar o LinkedIn e trabalhar uma vaga real (currículo adaptado + mensagem de abordagem)</li>
+          <li>Iniciar a <strong>skill de tom de voz</strong> da ChangeMaker e estruturar uma apresentação</li>
+        </ul></div>
+        <div class="card plain" style="background:var(--cl);"><h3>Exercício da semana</h3><p>Aplicar sozinha em 1 a 2 vagas reais: adaptar o currículo e gerar a mensagem de abordagem. Anotar as dúvidas para a gente revisar.</p></div>
+      </div>
+
+      <h3>Prompts que vamos usar</h3>
+      <div class="prompt">
+        <div class="prompt-head"><div><span class="pt">LinkedIn · analisar e melhorar o perfil</span></div><button class="copy-btn" onclick="copyPrompt(this)">Copiar</button></div>
+        <div class="desc">Precisa do Cowork com o Chrome conectado e você logada no LinkedIn.</div>
+        <pre>Acesse o meu perfil do LinkedIn pelo navegador e faça uma análise crítica, como se você fosse ao mesmo tempo um recrutador sênior e um headhunter de posições de business development e executivo de contas.
+
+Avalie: headline, seção "sobre", experiências, palavras-chave e prova social. Me diga o que está bom, o que está fraco e reescreva o headline e o "sobre" em 2 versões — uma mais corporativa e uma mais consultiva. Mantenha a minha voz e não invente experiências.</pre>
+      </div>
+      <div class="prompt">
+        <div class="prompt-head"><div><span class="pt">Vagas · buscar as mais aderentes</span></div><button class="copy-btn" onclick="copyPrompt(this)">Copiar</button></div>
+        <div class="desc">Troque os [colchetes] pelos seus filtros reais.</div>
+        <pre>Pesquise vagas abertas compatíveis com o meu perfil (business development, executivo de contas / hunter, evangelista, advisor), com foco em [setores, empresas e formato].
+
+Para cada vaga, traga: empresa, título, link, principais requisitos e uma nota de aderência minha de 0 a 100, com a justificativa. Organize em uma tabela e me entregue as 10 mais aderentes.</pre>
+      </div>
+      <div class="prompt">
+        <div class="prompt-head"><div><span class="pt">Currículo · vencer a triagem por IA</span></div><button class="copy-btn" onclick="copyPrompt(this)">Copiar</button></div>
+        <div class="desc">O "o que mudou e por quê" te ensina a fazer sozinha nas próximas.</div>
+        <pre>Vou te passar a descrição de uma vaga e o meu currículo atual. Adapte o currículo para essa vaga de forma que passe na triagem automatizada (ATS / IA): incorpore as palavras-chave da vaga de forma natural, reordene os bullets para evidenciar resultados aderentes e ajuste o resumo profissional.
+
+Não invente nada: use só o que é verdade sobre mim. Me entregue o currículo adaptado e, depois, uma lista do que mudou e por quê.
+
+[Cole a descrição da vaga]
+[Cole ou anexe o seu currículo]</pre>
+      </div>
+      <div class="prompt">
+        <div class="prompt-head"><div><span class="pt">Marca · extrair o tom de voz da ChangeMaker</span></div><button class="copy-btn" onclick="copyPrompt(this)">Copiar</button></div>
+        <div class="desc">Vira a base da sua skill de marca.</div>
+        <pre>Vou te dar materiais da minha marca, a ChangeMaker (textos, posts e apresentações). Analise tudo e me devolva um guia de tom de voz: vocabulário recorrente, estrutura típica de frases, o que eu costumo evitar, os valores que transparecem e exemplos reais.
+
+Esse guia vai virar uma skill para você sempre falar como a ChangeMaker.</pre>
+      </div>
+
+      <div class="ph-empty"><strong>📝 O que de fato fizermos aqui eu atualizo depois do encontro.</strong> Este bloco fica reservado para o "o que fizemos" da Aula 2 — assim o painel registra o real, não só o planejado.</div>
+    </section>
+  </div>
+
+  <!-- ===================== AULA 3 ===================== -->
+  <div class="panel" id="a3">
+    <section class="pad">
+      <div class="phead"><span class="stag">Encontro 03 · a agendar</span><span class="status plan">Planejado · sujeito a ajuste</span></div>
+      <h2>Prospecção (hunter) + <em>Dados</em></h2>
+      <p class="intro">A mesma lógica das vagas, agora aplicada a leads. E o primeiro contato com dados em planilha. Os temas podem mudar conforme o que avançarmos antes.</p>
+
+      <div class="grid2">
+        <div class="card"><h3>O que está planejado</h3><ul>
+          <li>Definir o seu perfil de cliente ideal (ICP) e mapear leads</li>
+          <li>Cruzar a sua base de seguidores e gerar uma planilha de abordagem</li>
+          <li>Ler dados em planilha e transformar em insight</li>
+        </ul></div>
+        <div class="card plain" style="background:var(--cl);"><h3>Exercício da semana</h3><p>Montar uma planilha com 10 leads aderentes e a mensagem personalizada de cada um — pronta para enviar.</p></div>
+      </div>
+
+      <h3>Prompts previstos</h3>
+      <div class="prompt">
+        <div class="prompt-head"><div><span class="pt">Leads · mapear e gerar abordagens</span></div><button class="copy-btn" onclick="copyPrompt(this)">Copiar</button></div>
+        <div class="desc">Mesma lógica das vagas — só muda o objetivo.</div>
+        <pre>Quero mapear potenciais leads entre os meus seguidores e conexões do LinkedIn, pensando em uma atuação como hunter / business development.
+
+Primeiro, defina comigo o meu perfil de cliente ideal (ICP). Depois, identifique perfis aderentes e monte uma planilha com: nome, cargo, empresa, motivo da aderência e uma mensagem de abordagem personalizada para cada um.</pre>
+      </div>
+      <div class="prompt">
+        <div class="prompt-head"><div><span class="pt">Dados · tirar insight de uma planilha</span></div><button class="copy-btn" onclick="copyPrompt(this)">Copiar</button></div>
+        <div class="desc">Anexe qualquer planilha de números que você tenha.</div>
+        <pre>Vou te anexar uma planilha. Entenda os dados, me diga o que dá para extrair dela e gere os principais insights, com gráficos quando fizer sentido. Depois, me sugira 3 decisões ou ações práticas baseadas nesses dados.</pre>
+      </div>
+
+      <div class="ph-empty"><strong>📝 A preencher depois do encontro.</strong> Espaço reservado para o que realmente fizermos na Aula 3.</div>
+    </section>
+  </div>
+
+  <!-- ===================== AULA 4 ===================== -->
+  <div class="panel" id="a4">
+    <section class="pad">
+      <div class="phead"><span class="stag">Encontro 04 · a agendar</span><span class="status plan">Planejado · sujeito a ajuste</span></div>
+      <h2>Livro (estudo assistido) + <em>Autonomia</em></h2>
+      <p class="intro">O encontro mais reflexivo, e por isso fecha a trilha: você já dominando a ferramenta, a gente estrutura o livro e consolida o seu sistema no Claude para seguir sozinha.</p>
+
+      <div class="grid2">
+        <div class="card"><h3>O que está planejado</h3><ul>
+          <li>Estruturar o esqueleto do livro em modo estudo assistido</li>
+          <li>Analisar o seu tom de voz e organizar os capítulos</li>
+          <li>Consolidar o "seu sistema" no Claude para seguir com autonomia</li>
+        </ul></div>
+        <div class="card plain" style="background:var(--cl);"><h3>Exercício da semana</h3><p>Desenvolver um capítulo do livro com o Claude te guiando (sem ele escrever por você) e revisar o resultado.</p></div>
+      </div>
+
+      <h3>Prompt previsto</h3>
+      <div class="prompt">
+        <div class="prompt-head"><div><span class="pt">Livro · desenvolver em estudo assistido</span></div><button class="copy-btn" onclick="copyPrompt(this)">Copiar</button></div>
+        <div class="desc">Ele te guia e provoca — a autoria continua sua.</div>
+        <pre>Vou te passar o esqueleto e os rascunhos do meu livro. Entre em modo estudo assistido: não escreva por mim.
+
+Analise o meu tom de voz e a estrutura, aponte as lacunas, me faça perguntas que me ajudem a desenvolver cada capítulo e sugira temas que talvez eu não tenha considerado.</pre>
+      </div>
+
+      <div class="callout"><p style="margin-bottom:0;">Ao fim desta aula, o objetivo é que você consiga <strong>construir sozinha</strong> dentro do Claude — o sistema é seu, não um pacote pronto e genérico.</p></div>
+
+      <div class="ph-empty"><strong>📝 A preencher depois do encontro.</strong> Espaço reservado para o que realmente fizermos na Aula 4.</div>
+    </section>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting">
+    <p class="quote">"A IA é a camada técnica que turbina o que você já faz de melhor. A voz, a estratégia e o palco continuam <strong>sendo seus</strong>."</p>
+    <p class="sig">Um abraço,<br><strong>Bruna Santanna</strong> · Co-fundadora, NewScale Consulting</p>
+    <p class="contact">
+      <a href="https://wa.me/5511971901020">(11) 97190-1020</a> · <a href="mailto:bruna@newscale.tech">bruna@newscale.tech</a><br>
+      IA hiper-personalizada para o seu negócio · Cresça além da média.
+    </p>
+  </div>
+</footer>
+
+<script>
+  // Tabs
+  var btns = document.querySelectorAll('.tab-btn');
+  var panels = document.querySelectorAll('.panel');
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      btns.forEach(function (x) { x.classList.remove('active'); });
+      panels.forEach(function (p) { p.classList.remove('active'); });
+      b.classList.add('active');
+      document.getElementById(b.dataset.tab).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+  // Copiar prompts
+  function copyPrompt(btn) {
+    var pre = btn.closest('.prompt').querySelector('pre');
+    navigator.clipboard.writeText(pre.innerText).then(function () {
+      var o = btn.textContent;
+      btn.textContent = 'Copiado ✓';
+      btn.classList.add('done');
+      setTimeout(function () { btn.textContent = o; btn.classList.remove('done'); }, 1800);
+    });
+  }
+</script>
+</body>
+</html>
