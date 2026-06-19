@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resumos da Mentoria de IA · Karina | NewScale</title>
+<meta name="description" content="Os resumos da mentoria de IA da Karina (Sólides) com a NewScale — anatomia do Claude, skills, automação e plano de autonomia.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+
+  :root {
+    --bg:        #F3EEE3;
+    --bg-2:      #ECE5D6;
+    --card:      #FBF9F3;
+    --ink:       #14373C;
+    --ink-2:     #2C4F54;
+    --green:     #435D51;
+    --terra:     #B06E4A;
+    --terra-d:   #985A3B;
+    --tl:        #C4835E;
+    --sand:      #A38362;
+    --cream:     #F4F3EF;
+    --text:      #233133;
+    --muted:     #6E7A75;
+    --line:      rgba(20,55,60,0.16);
+    --shadow:    rgba(20,55,60,0.16);
+  }
+
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'Hanken Grotesk', sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection { background:var(--terra); color:#fff; }
+  .hidden { display:none !important; }
+  .wrap { max-width:1000px; margin:0 auto; padding:0 26px; }
+
+  /* ---------- SWITCHER ---------- */
+  .aula-switch {
+    position:sticky; top:0; z-index:50;
+    background:rgba(243,238,227,0.93); backdrop-filter:blur(9px);
+    border-bottom:2px solid var(--ink);
+  }
+  .switch-inner {
+    max-width:1000px; margin:0 auto; padding:13px 26px;
+    display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;
+  }
+  .brand {
+    font-family:'Anton', sans-serif; font-size:1.35rem; letter-spacing:0.01em;
+    text-transform:uppercase; color:var(--ink); white-space:nowrap; line-height:1;
+  }
+  .brand small {
+    display:block; font-family:'Hanken Grotesk',sans-serif; font-weight:700;
+    font-size:0.56rem; letter-spacing:0.18em; color:var(--terra); margin-top:3px;
+  }
+  .tabs { display:flex; gap:7px; flex-wrap:wrap; }
+  .aula-tab {
+    background:var(--card); border:1.5px solid var(--line); color:var(--ink-2);
+    cursor:pointer; font-family:'Hanken Grotesk',sans-serif; font-size:0.8rem; font-weight:700;
+    letter-spacing:0.02em; padding:8px 15px; border-radius:100px; transition:all .16s; white-space:nowrap;
+  }
+  .aula-tab:hover { border-color:var(--ink); }
+  .aula-tab.active { background:var(--ink); border-color:var(--ink); color:#fff; }
+  .aula-tab .dt { font-weight:400; opacity:0.7; font-size:0.74rem; }
+  .aula-tab.active .dt { opacity:0.85; }
+
+  /* ---------- HERO ---------- */
+  .hero { padding:60px 0 30px; }
+  .hero .eyebrow {
+    display:inline-flex; align-items:center; gap:9px;
+    font-size:0.72rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--terra); margin-bottom:22px;
+  }
+  .hero .eyebrow::before { content:''; width:26px; height:2px; background:var(--terra); }
+  h1 {
+    font-family:'Anton', sans-serif; font-weight:400;
+    font-size:clamp(2.5rem, 6.4vw, 4.6rem); line-height:0.94; letter-spacing:-0.005em;
+    text-transform:uppercase; color:var(--ink); margin-bottom:20px;
+  }
+  .hl { color:var(--terra); }
+  .hero .lead {
+    font-size:1.16rem; font-weight:400; color:var(--ink-2); max-width:660px; line-height:1.55;
+  }
+  .hero .lead strong { font-weight:700; color:var(--ink); }
+  .hero-meta {
+    display:flex; flex-wrap:wrap; gap:10px 30px; margin-top:24px;
+    padding-top:22px; border-top:1.5px solid var(--line); font-size:0.9rem; color:var(--ink-2);
+  }
+  .hero-meta strong { color:var(--terra); font-weight:700; }
+
+  /* ---------- TOC ---------- */
+  .toc {
+    border:1.5px solid var(--line); border-radius:14px; background:var(--card);
+    padding:14px 20px; margin:30px 0 4px;
+    display:flex; flex-wrap:wrap; gap:7px 18px;
+  }
+  .toc a {
+    font-size:0.82rem; font-weight:600; color:var(--ink-2); text-decoration:none; transition:color .16s;
+  }
+  .toc a:hover { color:var(--terra); }
+
+  /* ---------- SECTIONS ---------- */
+  section { padding:46px 0 8px; }
+  .stag {
+    display:inline-flex; align-items:center; gap:9px;
+    font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase;
+    color:var(--terra); margin-bottom:12px;
+  }
+  .stag::before { content:''; width:22px; height:2px; background:var(--terra); }
+  h2 {
+    font-family:'Anton', sans-serif; font-weight:400;
+    font-size:clamp(1.8rem, 4vw, 2.9rem); line-height:1; letter-spacing:0;
+    text-transform:uppercase; color:var(--ink); margin-bottom:14px;
+  }
+  .intro { font-size:1.04rem; color:var(--text); max-width:680px; margin-bottom:26px; }
+  .intro strong { color:var(--ink); font-weight:700; }
+
+  /* ---------- CARDS ---------- */
+  .card {
+    background:var(--card); border:1.5px solid var(--line); border-radius:16px;
+    padding:26px 28px; margin-bottom:16px;
+  }
+  .card.plain { background:transparent; border:none; padding:0; margin-bottom:0; }
+  .card h3 { font-size:1.18rem; font-weight:700; color:var(--ink); margin-bottom:10px; letter-spacing:-0.01em; }
+  .card p { font-size:0.96rem; color:var(--text); margin-bottom:12px; }
+  .card p:last-child { margin-bottom:0; }
+  .card p strong { color:var(--ink); font-weight:700; }
+
+  .cur {
+    font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:0.86em;
+    background:var(--bg-2); color:var(--terra-d); padding:1px 7px; border-radius:6px;
+  }
+
+  /* concept list */
+  .concept { display:flex; gap:18px; padding:22px 0; border-top:1px solid var(--line); }
+  .card.plain .concept:first-child { border-top:none; padding-top:6px; }
+  .num {
+    flex-shrink:0; width:46px; height:46px; border-radius:11px;
+    background:var(--ink); color:#fff; font-family:'Anton',sans-serif; font-size:1.45rem;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .concept .body h3 { font-size:1.1rem; font-weight:700; color:var(--ink); margin-bottom:7px; }
+  .concept .body p { font-size:0.95rem; color:var(--text); margin:0; }
+  .concept .body p strong { color:var(--ink); font-weight:700; }
+  .analogy {
+    margin-top:12px; background:var(--bg-2); border-left:3px solid var(--terra);
+    padding:12px 16px; border-radius:0 10px 10px 0; font-style:italic; color:var(--ink-2); font-size:0.92rem;
+  }
+
+  /* callout */
+  .callout { background:var(--ink); color:var(--cream); border-radius:16px; padding:24px 28px; margin:24px 0 8px; }
+  .callout p { font-size:0.96rem; color:rgba(244,243,239,0.82); margin-bottom:12px; }
+  .callout p:last-child { margin-bottom:0; }
+  .callout strong { color:#fff; font-weight:700; }
+  .callout.warn { background:var(--bg-2); color:var(--text); border-left:4px solid var(--terra); }
+  .callout.warn p { color:var(--text); }
+  .callout.warn strong { color:var(--ink); }
+
+  /* diagram cards */
+  .dg-sublabel { font-size:0.72rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--sand); margin:18px 0 12px; }
+  .dg-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  .dg-cards.three { grid-template-columns:repeat(3,1fr); }
+  .dg-card { background:var(--card); border:1.5px solid var(--line); border-radius:14px; overflow:hidden; }
+  .dg-top { padding:14px 16px; color:#fff; }
+  .dg-t1 { background:var(--ink); }
+  .dg-t2 { background:var(--green); }
+  .dg-t3 { background:var(--terra); }
+  .dg-t4 { background:var(--sand); }
+  .dg-name { font-family:'Anton',sans-serif; font-size:1.12rem; letter-spacing:0.01em; text-transform:uppercase; line-height:1; }
+  .dg-role { font-size:0.7rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; opacity:0.88; margin-top:5px; }
+  .dg-body { padding:15px 16px; }
+  .dg-desc { font-size:0.87rem; color:var(--text); }
+  .dg-an { font-size:0.82rem; font-style:italic; color:var(--terra-d); margin-top:9px; }
+
+  .cnote { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:14px; }
+  .cnote .card { margin:0; padding:18px 20px; }
+
+  /* flow steps */
+  .cflow { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; }
+  .cflow.four { grid-template-columns:repeat(4,1fr); }
+  .cstep {
+    background:var(--card); border:1.5px solid var(--line); border-top:3px solid var(--green);
+    border-radius:12px; padding:15px 14px; display:flex; flex-direction:column; gap:3px;
+  }
+  .cstep.acc { border-top-color:var(--terra); }
+  .cstep.pet { border-top-color:var(--ink); }
+  .cstep.win { border-top-color:var(--tl); }
+  .cstep .tg { font-size:0.68rem; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; }
+  .cstep .hh { font-weight:700; font-size:1.02rem; color:var(--ink); }
+  .cstep .ss { font-size:0.79rem; color:var(--muted); }
+
+  /* table */
+  .tbl { width:100%; border-collapse:collapse; font-size:0.92rem; background:var(--card); border:1.5px solid var(--line); border-radius:14px; overflow:hidden; }
+  .tbl th { font-weight:700; color:#fff; background:var(--ink); text-align:left; padding:13px 16px; font-size:0.86rem; }
+  .tbl td { padding:13px 16px; border-top:1px solid var(--line); vertical-align:top; }
+  .tbl td strong { color:var(--ink); }
+  .em { font-style:italic; color:var(--terra-d); font-weight:600; }
+
+  /* tasks */
+  .task { display:flex; gap:15px; padding:18px 0; border-top:1px solid var(--line); }
+  .task:first-of-type { border-top:none; }
+  .chk { flex-shrink:0; width:26px; height:26px; border:2px solid var(--ink); border-radius:7px; margin-top:2px; }
+  .t-body strong { display:block; font-weight:700; color:var(--ink); font-size:1.02rem; margin-bottom:4px; }
+  .t-body p { font-size:0.93rem; color:var(--text); margin:0; }
+  .pill {
+    display:inline-block; margin-top:9px; background:rgba(176,110,74,0.14); color:var(--terra);
+    font-size:0.68rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; padding:4px 11px; border-radius:100px;
+  }
+
+  /* prompts */
+  .prompt { background:var(--card); border:1.5px solid var(--line); border-radius:14px; overflow:hidden; margin-bottom:16px; }
+  .prompt-head { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:15px 20px; background:var(--bg-2); border-bottom:1px solid var(--line); }
+  .pt { font-weight:700; color:var(--ink); font-size:0.95rem; }
+  .copy-btn {
+    flex-shrink:0; background:var(--terra); color:#fff; border:none; border-radius:8px;
+    padding:9px 16px; font-family:'Hanken Grotesk',sans-serif; font-size:0.74rem; font-weight:700;
+    letter-spacing:0.05em; text-transform:uppercase; cursor:pointer; transition:background .18s, transform .15s;
+  }
+  .copy-btn:hover { background:var(--terra-d); transform:translateY(-1px); }
+  .copy-btn.done { background:var(--green); }
+  .prompt .desc { padding:13px 20px 0; font-size:0.86rem; color:var(--muted); }
+  .prompt pre {
+    margin:13px 20px 20px; background:var(--ink); color:var(--cream);
+    padding:18px 20px; border-radius:10px; font-family:ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size:0.82rem; line-height:1.62; white-space:pre-wrap; word-break:break-word; overflow-x:auto;
+  }
+
+  /* materials */
+  .mat { display:flex; gap:14px; padding:16px 0; border-top:1px solid var(--line); }
+  .card.plain .mat:first-child { border-top:none; }
+  .dot { flex-shrink:0; width:10px; height:10px; border-radius:50%; background:var(--terra); margin-top:7px; }
+  .m-body strong { display:block; font-weight:700; color:var(--ink); margin-bottom:3px; }
+  .m-body p { font-size:0.9rem; color:var(--text); margin:0; }
+
+  /* folder tree */
+  .xtree { background:var(--card); border:1.5px solid var(--line); border-radius:14px; padding:22px 24px; }
+  .xrow { display:flex; gap:12px; padding:7px 0; align-items:flex-start; }
+  .xico { width:20px; flex-shrink:0; text-align:center; color:var(--terra); font-size:0.9rem; line-height:1.5; }
+  .xico.root { color:var(--ink); }
+  .xico.ctx { color:var(--green); }
+  .xico.file { color:var(--sand); }
+  .xnm { font-weight:700; color:var(--ink); font-size:0.95rem; }
+  .xnm.rt { font-size:1.1rem; }
+  .xds { font-size:0.82rem; color:var(--muted); }
+  .xl1 { margin-left:16px; border-left:1.5px solid var(--line); padding-left:16px; }
+  .xl2 { margin-left:16px; border-left:1.5px solid var(--line); padding-left:16px; }
+  .xaside { display:flex; gap:12px; margin-top:12px; padding-top:12px; border-top:1px dashed var(--line); }
+
+  .grid2 { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+
+  /* quick wins */
+  .qw { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  .qwc { background:var(--card); border:1.5px solid var(--line); border-radius:12px; padding:18px; }
+  .qh { font-weight:700; color:var(--ink); font-size:1.02rem; margin-bottom:6px; }
+  .qwc p { font-size:0.87rem; color:var(--text); margin:0; }
+  .qwc p strong { color:var(--ink); }
+
+  /* next */
+  .next-item { display:flex; gap:13px; padding:11px 0; border-top:1px solid var(--line); }
+  .next-item:first-child { border-top:none; }
+  .arr { color:var(--terra); font-weight:800; flex-shrink:0; }
+  .next-item p { font-size:0.96rem; color:var(--text); }
+  .next-item p strong { color:var(--ink); }
+
+  /* footer */
+  footer { border-top:2px solid var(--ink); margin-top:64px; padding:48px 0 64px; text-align:center; }
+  footer .fbrand { font-family:'Anton',sans-serif; font-size:2rem; text-transform:uppercase; color:var(--ink); letter-spacing:0.01em; }
+  footer .quote {
+    font-size:clamp(1.3rem, 3vw, 1.9rem); font-weight:300; font-style:italic; color:var(--ink);
+    max-width:720px; margin:26px auto; line-height:1.4;
+  }
+  footer .quote strong { font-weight:700; font-style:normal; color:var(--terra); }
+  footer .sig { font-size:0.98rem; color:var(--ink-2); margin-bottom:18px; }
+  footer .sig strong { color:var(--ink); }
+  footer .contact { font-size:0.9rem; color:var(--muted); line-height:1.7; }
+  footer .contact a { color:var(--terra); text-decoration:none; font-weight:600; }
+  footer .contact a:hover { color:var(--terra-d); }
+
+  @media (max-width:860px) {
+    .dg-cards, .dg-cards.three { grid-template-columns:repeat(2,1fr); }
+    .cflow, .cflow.four { grid-template-columns:repeat(2,1fr); }
+    .qw { grid-template-columns:repeat(2,1fr); }
+  }
+  @media (max-width:560px) {
+    .dg-cards, .dg-cards.three, .cnote, .grid2, .qw { grid-template-columns:1fr; }
+    .switch-inner { padding:12px 18px; }
+    .wrap { padding:0 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== SWITCHER ===================== -->
+<div class="aula-switch">
+  <div class="switch-inner">
+    <div class="brand">NEWSCALE<small>MENTORIA DE IA</small></div>
+    <div class="tabs">
+      <button class="aula-tab" data-aula="1" onclick="showAula(1)">Encontro 01 <span class="dt">· 11/05</span></button>
+      <button class="aula-tab" data-aula="2" onclick="showAula(2)">Encontro 02 <span class="dt">· 25/05</span></button>
+      <button class="aula-tab" data-aula="3" onclick="showAula(3)">Encontro 03 <span class="dt">· 01/06</span></button>
+      <button class="aula-tab active" data-aula="4" onclick="showAula(4)">Encontro 04 <span class="dt">· 15/06</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================= -->
+<!-- ======================== ENCONTRO 01 ======================== -->
+<!-- ============================================================= -->
+<div class="aula-panel hidden" data-aula="1">
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Mentoria de IA · Encontro 01</span>
+    <h1>A base mental + a sua <span class="hl">estação montada</span></h1>
+    <p class="lead">Karina, aqui está o resumo do nosso primeiro encontro — a anatomia do Claude, os 3 pilares pra classificar qualquer demanda, e a sua estrutura de pastas organizada. Salve este arquivo: ele é o seu mapa pra voltar quando quiser.</p>
+    <div class="hero-meta">
+      <span><strong>Data:</strong> 11/05/2026</span>
+      <span><strong>Tema:</strong> Fundamentos, anatomia do Claude, 3 pilares e organização</span>
+      <span><strong>Próximo passo:</strong> montar a sua Cloud Station</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <a href="#a1-resumo">Resumo</a>
+    <a href="#a1-diagrama">Visão geral</a>
+    <a href="#a1-pilares">Os 3 pilares</a>
+    <a href="#a1-conceitos">O que vimos</a>
+    <a href="#a1-pastas">Mapa das pastas</a>
+    <a href="#a1-tarefas">Tarefas da semana</a>
+    <a href="#a1-prompts">Prompts pra copiar</a>
+    <a href="#a1-materiais">Materiais</a>
+    <a href="#a1-proximo">Próximo encontro</a>
+  </nav>
+
+  <section id="a1-resumo">
+    <p class="stag">O que rolou</p>
+    <h2>Resumo do nosso <span class="hl">primeiro encontro</span></h2>
+    <p class="intro">É normal sair da primeira aula com a cabeça cheia — ela é a de assentar conceito. A partir daqui a gente vai cada vez mais pra mão na massa em cima do mid year. Abaixo, tudo o que vimos, organizado pra você voltar quando quiser.</p>
+
+    <div class="card">
+      <h3>O que cobrimos hoje</h3>
+      <p>Eu te dei um tour pela anatomia do Claude: a diferença entre <strong>Chat, Cowork e Code</strong> e por que o Cowork é o ideal pra quem é gestora e não programadora — ele lê e salva direto nas suas pastas. Vimos também os <strong>modelos</strong> (Opus pra estratégia, Sonnet pra execução, Haiku pra tarefas leves) e o conceito de <strong>tokens e janela de contexto</strong>.</p>
+      <p>O coração do encontro foram os <strong>3 pilares</strong> — a régua mental pra você classificar qualquer demanda de IA daqui pra frente: melhorar o que já faço, acelerar o que já faço, ou criar algo novo.</p>
+      <p>E fechamos com a <strong>organização</strong>: a anatomia de Claude, Projeto, Skill e Pasta, e a estrutura de pastas da sua estação. Está tudo detalhado abaixo.</p>
+    </div>
+  </section>
+
+  <section id="a1-diagrama">
+    <p class="stag">O mapa numa olhada</p>
+    <h2>O Claude <span class="hl">por dentro</span></h2>
+    <p class="intro">Antes do detalhe, o modelo mental que montamos juntas: onde cada coisa vive e como você organiza o seu trabalho.</p>
+
+    <p class="dg-sublabel">As 4 peças</p>
+    <div class="dg-cards">
+      <div class="dg-card">
+        <div class="dg-top dg-t1"><div class="dg-name">Claude</div><div class="dg-role">O cérebro</div></div>
+        <div class="dg-body"><div class="dg-desc">A IA em si. No Cowork, ele lê e salva direto nas pastas do seu computador (ou drive).</div><div class="dg-an">"O sócio que trabalha do seu lado."</div></div>
+      </div>
+      <div class="dg-card">
+        <div class="dg-top dg-t2"><div class="dg-name">Projeto</div><div class="dg-role">Espaço dedicado</div></div>
+        <div class="dg-body"><div class="dg-desc">Um tema com contexto fixo: instruções, arquivos e histórico. Um projeto por grande assunto.</div><div class="dg-an">"Onde o Claude lembra de você."</div></div>
+      </div>
+      <div class="dg-card">
+        <div class="dg-top dg-t3"><div class="dg-name">Skill</div><div class="dg-role">Especialista temporário</div></div>
+        <div class="dg-body"><div class="dg-desc">Uma habilidade padronizada: "modo SWOT", "modo plano de ação". (A gente cria nos próximos encontros.)</div><div class="dg-an">"O jeito dele virar especialista na hora."</div></div>
+      </div>
+      <div class="dg-card">
+        <div class="dg-top dg-t4"><div class="dg-name">Pasta</div><div class="dg-role">Memória externa</div></div>
+        <div class="dg-body"><div class="dg-desc">Onde os arquivos vivem, no seu computador. O Claude lê de lá quando você pede.</div><div class="dg-an">"A sua biblioteca, sempre à mão."</div></div>
+      </div>
+    </div>
+
+    <p class="dg-sublabel">Chat × Cowork × Code — qual usar</p>
+    <div class="cnote">
+      <div class="card">
+        <h3 style="font-size:1.1rem;">Cowork é o seu lugar</h3>
+        <p style="font-size:0.9rem;">O Cowork é o "Claude para quem não é desenvolvedor" e atende 99% do que você precisa. O diferencial: ele mexe nas suas pastas — lê o que você colocou e salva o que produziu.</p>
+      </div>
+      <div class="card">
+        <h3 style="font-size:1.1rem;">Modelos: Opus, Sonnet, Haiku</h3>
+        <p style="font-size:0.9rem;">Opus pra raciocínio estratégico denso. Sonnet pro dia a dia de execução. Haiku pra tarefas leves e rápidas. Você escolhe pelo peso da tarefa.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>Regra de ouro:</strong> tenha uma missão clara · dê só o contexto necessário (cuidado com tokens) · delegue, não só pergunte · um tema, um projeto · você decide, sempre.</p>
+    </div>
+  </section>
+
+  <section id="a1-pilares">
+    <p class="stag">A régua que você leva pra vida</p>
+    <h2>Os <span class="hl">3 pilares</span> de uso da IA</h2>
+    <p class="intro">Toda vez que aparecer uma demanda na sua cabeça daqui pra frente, classifica nessa régua. Isso já te ajuda a saber o que pedir ao Claude.</p>
+
+    <div class="dg-cards three">
+      <div class="dg-card">
+        <div class="dg-top dg-t1"><div class="dg-name">1 · Melhorar</div><div class="dg-role">Fazer o que já faço, melhor</div></div>
+        <div class="dg-body"><div class="dg-desc">A SWOT que você já faz, mas com o Claude cruzando os pontos, achando padrões e trazendo perspectivas que você sozinha não veria.</div><div class="dg-an">"Um cérebro extra do seu lado."</div></div>
+      </div>
+      <div class="dg-card">
+        <div class="dg-top dg-t3"><div class="dg-name">2 · Acelerar</div><div class="dg-role">Fazer o que já faço, mais rápido</div></div>
+        <div class="dg-body"><div class="dg-desc">Ler uma transcrição de reunião e já cuspir o plano de ação. Ler 10 e-mails do time e sintetizar o status em minutos.</div><div class="dg-an">"O que tem formato repetido vira automático."</div></div>
+      </div>
+      <div class="dg-card">
+        <div class="dg-top dg-t2"><div class="dg-name">3 · Criar</div><div class="dg-role">Construir coisas novas</div></div>
+        <div class="dg-body"><div class="dg-desc">Um diagnóstico de maturidade da operação que ainda não existe. Uma trilha de governança estruturada do zero.</div><div class="dg-an">"O que você sempre quis, mas faltou braço."</div></div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>O caso que ilustra (real).</strong> Uma mentorada veterinária perdia 3h por dia montando receita. Hoje o Claude monta o bulário, lê o exame e sugere a receita — ela revisa em minutos. É o pilar 2 na prática.</p>
+      <p>A conexão com você: a sua rotina também tem tarefas de formato repetido. Nos próximos encontros a gente vai caçar elas e transformar em skills.</p>
+    </div>
+  </section>
+
+  <section id="a1-conceitos">
+    <p class="stag">Passo a passo</p>
+    <h2>O que a gente <span class="hl">viu</span>, em ordem</h2>
+    <p class="intro">Os conceitos que sustentam tudo o que vamos construir nas próximas semanas. Não precisa decorar — só entender a lógica.</p>
+
+    <div class="card plain">
+      <div class="concept">
+        <div class="num">1</div>
+        <div class="body">
+          <h3>Chat × Cowork × Code</h3>
+          <p>O <strong>Chat</strong> entrega o texto dentro da conversa e some. O <strong>Cowork</strong> é o "Claude para quem não programa" — ele mexe nas suas pastas, lê o que você colocou e salva o que criou. O <strong>Code</strong> é pra coisas mais técnicas (HTML, scripts). Pro seu mundo de gestão, o <strong>Cowork é a casa</strong>.</p>
+          <div class="analogy">"O Chat entrega e some. O Cowork é uma pessoa trabalhando do seu lado, vendo tudo o que está nas suas pastas."</div>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">2</div>
+        <div class="body">
+          <h3>Projeto × Skill × Pasta</h3>
+          <p><strong>Projeto</strong> é onde o Claude lembra de você (um tema, com contexto fixo). <strong>Skill</strong> é o jeito dele virar especialista temporário numa tarefa repetida. <strong>Pasta</strong> é a memória externa, no seu computador. Essa distinção é a que mais confunde no começo — a gente aprofunda no encontro 2.</p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">3</div>
+        <div class="body">
+          <h3>Modelos: Opus, Sonnet, Haiku</h3>
+          <p>São "níveis de cérebro". <strong>Opus</strong> pra raciocínio estratégico denso (uma análise de SWOT profunda). <strong>Sonnet</strong> pro dia a dia de execução. <strong>Haiku</strong> pra tarefas leves e rápidas. Escolha pelo peso da tarefa — não precisa do mais pesado pra tudo.</p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">4</div>
+        <div class="body">
+          <h3>Tokens e a janela de contexto</h3>
+          <p>Token é tudo que <strong>entra e sai</strong> da IA. Quanto mais material pesado você joga, mais ela gasta pra ler — e a "janela" (a memória da conversa) vai enchendo. Por isso: dê só o contexto necessário, e quando a conversa ficar longa, peça pra ele <strong>resumir antes de mudar de assunto</strong>. Isso mantém o raciocínio afiado.</p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">5</div>
+        <div class="body">
+          <h3>O Projeto Solids — Direção de Operações</h3>
+          <p>Criamos o seu projeto-âncora no Claude, com uma <strong>instrução</strong> que ensina quem você é antes mesmo de você falar: diretora de operações da Sólides, visão estratégica, que precisa de análise com padrões e contradições — não só resumo. É essa instrução que faz o Claude "te conhecer".</p>
+          <div class="analogy">"Pra ele me ajudar, ele precisa me conhecer." — você fechou o encontro com a chave certa.</div>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">6</div>
+        <div class="body">
+          <h3>Organização: pastas que se ordenam sozinhas</h3>
+          <p>Numere as pastas (01, 02, 99) pro sistema ordenar por você. Nomes sem acento e em <code class="cur">kebab-case</code> (<strong>mid-year-2026</strong>, não "Mid Year 2026"). Hierarquia rasa, no máximo 3-4 níveis. E a regra de ouro: <strong>nunca apague</strong> — mova pra <strong>99-Arquivo</strong>.</p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">7</div>
+        <div class="body">
+          <h3>Delegar, não só perguntar</h3>
+          <p>Quem vem do ChatGPT fica viciado no "pergunta e resposta". A virada é parar de só perguntar e começar a <strong>delegar</strong>: em vez de "me diga como fazer", peça "faça você, e me traz pra revisar". O Claude não é oráculo — é parceiro de pensamento. Lê o output longo e <strong>volta</strong>: não aceita a primeira versão.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="a1-pastas">
+    <p class="stag">Pra você replicar sozinha</p>
+    <h2>O mapa das suas <span class="hl">pastas</span></h2>
+    <p class="intro">A estrutura que desenhamos pra sua estação — pensada pra você não se perder na hora de organizar o material do mid year e o resto dos seus "pratinhos".</p>
+
+    <div class="xtree">
+      <div class="xrow">
+        <div class="xico root">&#9632;</div>
+        <div><div class="xnm rt">Karina-IA</div><div class="xds">A pasta-base. Tudo do Claude vive aqui dentro.</div></div>
+      </div>
+      <div class="xl1">
+        <div class="xrow">
+          <div class="xico">&#9656;</div>
+          <div><div class="xnm">01-Solids</div><div class="xds">O mundo principal. Planejamento, reuniões, operação, time e governança de IA.</div></div>
+        </div>
+        <div class="xl2">
+          <div class="xrow">
+            <div class="xico">&#9656;</div>
+            <div><div class="xnm">planejamento-estrategico</div><div class="xds">SWOT, mapa estratégico e o <strong>mid-year-2026</strong> (materiais-entrada · analises-claude · entregaveis).</div></div>
+          </div>
+          <div class="xrow">
+            <div class="xico file">&#9671;</div>
+            <div><div class="xnm" style="font-weight:500;font-size:0.9rem;">reunioes · operacao · time · governanca-ia</div></div>
+          </div>
+        </div>
+        <div class="xrow">
+          <div class="xico ctx">&#9635;</div>
+          <div><div class="xnm">02-Fundacao</div><div class="xds">O projeto-bônus que a gente combinou olhar mais pra frente.</div></div>
+        </div>
+        <div class="xrow">
+          <div class="xico ctx">&#9635;</div>
+          <div><div class="xnm">03-Pessoal</div><div class="xds">Desenvolvimento e agenda pessoal.</div></div>
+        </div>
+      </div>
+      <div class="xaside">
+        <div class="xico">&#9650;</div>
+        <div><div class="xnm">99-Arquivo</div><div class="xds">Tudo que sai de uso vem pra cá — <strong>nunca apaga</strong>. Reduz o medo de mexer.</div></div>
+      </div>
+    </div>
+
+    <div class="grid2" style="margin-top:16px;">
+      <div class="card"><h3>Subpastas que organizam o projeto</h3><p>Dentro de cada projeto ativo: <strong>materiais-entrada</strong> (o que entra), <strong>analises-claude</strong> (o que ele produz) e <strong>entregaveis</strong> (o que vai pro mundo).</p></div>
+      <div class="card"><h3>Convenção de nome</h3><p><strong>AAAA-MM-DD-tipo-descricao</strong>. Ex.: <code class="cur">2026-05-11-analise-claude-cruzamento-swot-mapa.md</code>. Ordena no tempo e facilita a busca.</p></div>
+    </div>
+  </section>
+
+  <section id="a1-tarefas">
+    <p class="stag">Pra fazer até o próximo encontro</p>
+    <h2>As suas <span class="hl">tarefas da semana</span></h2>
+    <p class="intro">O objetivo da semana é deixar a sua estação viva e o Claude te conhecendo de verdade — pra na próxima a gente já partir pra mão na massa do mid year.</p>
+
+    <div class="card">
+      <div class="task">
+        <div class="chk"></div>
+        <div class="t-body">
+          <strong>1. Monte a sua Cloud Station no drive</strong>
+          <p>Como o seu time todo usa drive, a estação vai viver lá. Crie a estrutura de pastas (01-Solids, 02-Fundacao, 03-Pessoal, 99-Arquivo) e a pasta <strong>/context</strong>, que é onde o Claude aprende quem você é. O prompt pronto está logo abaixo.</p>
+          <span class="pill">Principal da semana</span>
+        </div>
+      </div>
+      <div class="task">
+        <div class="chk"></div>
+        <div class="t-body">
+          <strong>2. Alimente a /context com o seu material</strong>
+          <p>Joga na pasta de contexto o que conta quem você é: currículo, LinkedIn, alguma apresentação sua. O Claude vai usar isso pra montar o <strong>sobre-mim.md</strong>, o <strong>tom-de-voz.md</strong> e as <strong>regras-de-uso.md</strong>.</p>
+        </div>
+      </div>
+      <div class="task">
+        <div class="chk"></div>
+        <div class="t-body">
+          <strong>3. Comece a subir o material do mid year</strong>
+          <p>No projeto <strong>Solids — Direção de Operações</strong>, suba o que tiver na mão (mesmo bagunçado): SWOT do ano passado, mapa estratégico, acompanhamentos do 1º semestre, transcrições de diretoria. O Claude precisa do contexto antes de pensar.</p>
+          <span class="pill">Alimenta a memória</span>
+        </div>
+      </div>
+      <div class="task">
+        <div class="chk"></div>
+        <div class="t-body">
+          <strong>4. Caderno de observação</strong>
+          <p>Durante a semana, anote toda vez que fizer uma tarefa repetitiva de +15min, ou pensar "tinha que ter um jeito mais rápido". Uma frase por observação, pelo menos 5. Isso vira combustível pras skills do encontro 2.</p>
+        </div>
+      </div>
+      <div class="task">
+        <div class="chk"></div>
+        <div class="t-body">
+          <strong>5. Use o microfone</strong>
+          <p>Em vez de digitar, dite. Você fala 4x mais do que escreve, e com mais contexto. Aperta o microfone e conta pro Claude o que quer como se estivesse falando com uma pessoa do time.</p>
+          <span class="pill">Truque</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="a1-prompts">
+    <p class="stag">É só copiar e colar</p>
+    <h2>Os <span class="hl">prompts</span> da semana</h2>
+    <p class="intro">Clique em "Copiar", cole no Claude e ajuste os trechos entre [colchetes]. Lembre: ditar por áudio com bastante contexto funciona ainda melhor que escrever.</p>
+
+    <div class="prompt">
+      <div class="prompt-head"><span class="pt">1 · Criar a Cloud Station</span><button class="copy-btn" onclick="copyPrompt(this)">Copiar</button></div>
+      <div class="desc">O principal da semana. Rode no Cowork, com a pasta /context já acessível e o seu material dentro dela.</div>
+      <pre>Olá, Claude! Sou Karina de Oliveira Gonzaga, Diretora de Operações na Sólides.
+
+Estou criando minha Claude Cowork Station — um espaço personalizado para que você me conheça bem e consiga me ajudar de forma cada vez mais rápida e precisa.
+
+Veja os materiais que coloquei na pasta /context e me faça perguntas até ter material suficiente para criar:
+1. sobre-mim.md — quem sou, cargo, empresa, público, e-mail, contexto profissional
+2. tom-de-voz.md — como me comunico, estilo de escrita, o que evito
+3. regras-de-uso.md — nomenclatura de arquivos, idioma, formato de outputs preferidos
+4. Estrutura de pastas sugerida — organização ideal dos meus projetos dentro da Station
+
+Regras permanentes:
+- Sempre responda em português brasileiro
+- Use parágrafos curtos
+- Nunca delete arquivos originais — mova para /archive
+- Nomeie arquivos no formato AAAA-MM-DD-tipo-descricao (sem acentos)
+- Não invente dados — se não souber, me pergunte
+
+Faça as perguntas uma de cada vez, espere minha resposta e vá construindo os arquivos progressivamente. Quando achar que tem o suficiente, me mostre o que criou e peça minha aprovação antes de salvar.
+
+Vamos começar!</pre>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt-head"><span class="pt">2 · Diagnóstico de partida do mid year</span><button class="copy-btn" onclick="copyPrompt(this)">Copiar</button></div>
+      <div class="desc">Depois de subir o material no projeto Solids. É o primeiro raciocínio sério em cima do mid year.</div>
+      <pre>Considerando tudo que subi no projeto até agora, me devolve um diagnóstico de partida para a revisão mid year:
+
+1. O que ficou claro pra você sobre a Sólides a partir dos materiais (3-5 bullets).
+2. As 3 contradições ou pontos de tensão entre o que a SWOT projetou e o que o mapa estratégico priorizou.
+3. As 5 perguntas mais críticas que eu deveria responder antes da reunião de revisão com a diretoria.
+4. O que está faltando no material que subi — me diz o que ainda não tenho como analisar e por quê.
+
+Não invente nada. Onde faltar contexto, sinaliza. Output em bullets, direto.</pre>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt-head"><span class="pt">3 · Ler quem você é a partir da /context</span><button class="copy-btn" onclick="copyPrompt(this)">Copiar</button></div>
+      <div class="desc">Pra testar se a Cloud Station ficou boa. Ele lê a pasta e te devolve a leitura — você ajusta o que faltou.</div>
+      <pre>Leia tudo que está na minha pasta /context e me devolva, em 5 frases, o que você entendeu sobre mim e sobre o meu trabalho.
+
+Em seguida, me diga: o que ainda falta nessa pasta pra você me ajudar com mais precisão? Seja específico.</pre>
+    </div>
+  </section>
+
+  <section id="a1-materiais">
+    <p class="stag">Pra consultar</p>
+    <h2>Materiais e <span class="hl">ferramentas</span></h2>
+    <p class="intro">O que citei na aula e vale ter no radar — algumas a gente aprofunda nos próximos encontros.</p>
+
+    <div class="card plain">
+      <div class="mat">
+        <div class="dot"></div>
+        <div class="m-body"><strong>Instrução do projeto Solids</strong><p>O texto que ensina o Claude quem você é (diretora de operações, visão estratégica, análise com padrões e não só resumo). Está colado no projeto — é o que faz ele "te conhecer".</p></div>
+      </div>
+      <div class="mat">
+        <div class="dot"></div>
+        <div class="m-body"><strong>Estrutura de pastas Karina-IA</strong><p>O mapa que desenhamos juntas. Numeração, kebab-case, hierarquia rasa e a 99-Arquivo. Replique no seu drive.</p></div>
+      </div>
+      <div class="mat">
+        <div class="dot"></div>
+        <div class="m-body"><strong>Transcrição da reunião inicial</strong><p>A nossa primeira conversa (06/05). Vira matéria-prima: o Claude transforma a sua fala em diagnóstico, sempre que faltar material formal.</p></div>
+      </div>
+      <div class="mat">
+        <div class="dot"></div>
+        <div class="m-body"><strong>O microfone do Claude</strong><p>Ditar em vez de digitar. O truque que mais muda a sua produtividade no dia a dia. Use desde já.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="a1-proximo">
+    <p class="stag">O que vem aí</p>
+    <h2>No <span class="hl">próximo encontro</span></h2>
+    <div class="card">
+      <div class="next-item"><span class="arr">→</span><p>Conferir a sua <strong>Cloud Station</strong> rodando e ajustar o que faltou no contexto.</p></div>
+      <div class="next-item"><span class="arr">→</span><p>Entrar de cabeça em <strong>Skills</strong> — o conceito que multiplica o seu jeito de pensar.</p></div>
+      <div class="next-item"><span class="arr">→</span><p>Criar a sua <strong>primeira skill</strong>, focada numa rotina real sua (provavelmente a análise SWOT × mapa).</p></div>
+      <div class="next-item"><span class="arr">→</span><p>Aplicar essa skill no <strong>mid year</strong> — a primeira entrega concreta do projeto-âncora.</p></div>
+    </div>
+    <div class="callout">
+      <p>A primeira aula é sempre a mais densa — e olha o quanto você já avançou: sua estação está desenhada e o Claude já começou a te conhecer. Qualquer dúvida no caminho — um prompt que travou, uma pasta que se perdeu — me chama no WhatsApp <strong>(11) 97190-1020</strong>. Pode ser à vontade.</p>
+    </div>
+  </section>
+
+</div>
+</div><!-- /encontro 1 -->
+
+<!-- ============================================================= -->
+<!-- ======================== ENCONTRO 02 ======================== -->
+<!-- ============================================================= -->
+<div class="aula-panel hidden" data-aula="2">
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Mentoria de IA · Encontro 02</span>
+    <h1>Skills: o seu jeito de pensar, <span class="hl">codificado</span></h1>
+    <p class="lead">Karina, no segundo encontro a gente deu o segundo passo: depois do Claude te conhecer, você ensinou ele a executar por você. Conferimos a Cloud Station, matamos a confusão entre contexto, projeto e skill, e você saiu com a sua primeira skill rodando. Tudo organizado aqui embaixo.</p>
+    <div class="hero-meta">
+      <span><strong>Data:</strong> 25/05/2026</span>
+      <span><strong>Tema:</strong> Cloud Station, conceito de Skills e a primeira skill do mid year</span>
+      <span><strong>Próximo passo:</strong> aplicar a skill em material real</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <a href="#a2-resumo">Resumo</a>
+    <a href="#a2-diagrama">Contexto × Projeto × Skill</a>
+    <a href="#a2-conceitos">O que vimos</a>
+    <a href="#a2-skill">A sua primeira skill</a>
+    <a href="#a2-tarefas">Tarefas da semana</a>
+    <a href="#a2-prompts">Prompts pra copiar</a>
+    <a href="#a2-materiais">Materiais</a>
+    <a href="#a2-proximo">Próximo encontro</a>
+  </nav>
+
+  <section id="a2-resumo">
+    <p class="stag">O que rolou</p>
+    <h2>Resumo do nosso <span class="hl">segundo encontro</span></h2>
+    <p class="intro">Se o encontro 1 foi te dar a base mental e montar a estação, o encontro 2 foi te dar a alavanca: a skill. Saímos do "o Claude me conhece" pro "o Claude executa do meu jeito, toda vez igual".</p>
+
+    <div class="card">
+      <h3>O que cobrimos hoje</h3>
+      <p>Conferimos a sua <strong>Cloud Station</strong> no drive — a pasta <strong>/context</strong> viva, lida pelo Claude, com o sobre-mim, o tom de voz e as regras de uso. Sem essa fundação, a skill não brilha.</p>
+      <p>Aí veio a virada do dia: o conceito de <strong>Skill</strong>. Matamos de vez a confusão entre <strong>contexto, projeto e skill</strong> (com a analogia da culinária) e eu te mostrei duas skills minhas rodando, pra você ver a prova de conceito.</p>
+      <p>E você saiu com a sua <strong>primeira skill criada</strong> — a <code class="cur">solids-analise-swot-mapa</code> — testada em material real do mid year. Está tudo detalhado abaixo.</p>
+    </div>
+  </section>
+
+  <section id="a2-diagrama">
+    <p class="stag">A confusão que a gente matou</p>
+    <h2>Contexto × Projeto × <span class="hl">Skill</span></h2>
+    <p class="intro">Essa distinção é a que mais confunde no começo — e você voltou nela algumas vezes pra clarificar, com razão. A analogia da culinária resolve de uma vez.</p>
+
+    <table class="tbl">
+      <thead><tr><th>Elemento</th><th>O que é</th><th>Na cozinha</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Contexto</strong><br><span style="font-size:0.8rem;color:var(--green);">pasta /context</span></td>
+          <td>Quem você é, seu tom de voz, suas regras. O Claude lê sempre.</td>
+          <td><span class="em">O sabor</span> — cebola, cenoura, chocolate. O que dá identidade a tudo.</td>
+        </tr>
+        <tr>
+          <td><strong>Projeto</strong></td>
+          <td>Um assunto, cliente ou tema específico, com material próprio.</td>
+          <td><span class="em">O prato</span> — a lasanha, o bolo de cenoura. Cada um o seu.</td>
+        </tr>
+        <tr>
+          <td><strong>Skill</strong></td>
+          <td>A receita de como executar uma tarefa padronizada, sempre igual.</td>
+          <td><span class="em">A técnica</span> — o jeito de fazer o bolo. Aprendeu uma vez, repete sempre.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <p><strong>A regra prática pra você:</strong> projeto = cada iniciativa (mid year, fundação, RH) · skill = como você faz cada coisa repetitiva (analisar SWOT, sintetizar reunião, montar plano de ação). Não confunda "um projeto pra cada tipo de tarefa" — é o contrário: o projeto é o cliente/tema, a skill é a tarefa.</p>
+    </div>
+  </section>
+
+  <section id="a2-conceitos">
+    <p class="stag">Passo a passo</p>
+    <h2>O que a gente <span class="hl">viu</span>, em ordem</h2>
+    <p class="intro">Os conceitos do encontro, na sequência. O foco aqui é um só: entender skill de verdade, pra ela virar parte do seu dia.</p>
+
+    <div class="card plain">
+      <div class="concept">
+        <div class="num">1</div>
+        <div class="body">
+          <h3>A Cloud Station é a fundação</h3>
+          <p>Você decidiu (rápido, como sempre) pelo <strong>drive</strong>, porque o time todo usa. A pasta <strong>/context</strong> com sobre-mim, tom-de-voz e regras-de-uso é o que garante que toda skill, todo projeto, saia com a sua cara. Sem ela, o Claude "chuta" o seu tom.</p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">2</div>
+        <div class="body">
+          <h3>O que é uma Skill</h3>
+          <p>Skill é pegar um funcionário e ensinar ele a fazer algo uma vez — depois ele sai fazendo sozinho, do mesmo jeito, toda vez. Não é automação burra: é o <strong>seu jeito de pensar codificado</strong>. Cada skill que você cria é uma versão multiplicada de você.</p>
+          <div class="analogy">"Cada skill é uma versão multiplicada de você. Não é robô — é o seu raciocínio, codificado pra rodar quantas vezes você quiser."</div>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">3</div>
+        <div class="body">
+          <h3>Por que skill, e não só projeto</h3>
+          <p>O erro comum é criar um projeto pra cada tipo de tarefa. O certo: <strong>projeto = cada cliente/tema</strong>; <strong>skill = cada tarefa repetida</strong>. No seu caso, mid year é projeto; "analisar SWOT × mapa" é skill — e esse raciocínio se repete em toda decisão de diretoria, não só em julho.</p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">4</div>
+        <div class="body">
+          <h3>O segredo é o <code class="cur">description</code></h3>
+          <p>Toda skill tem um cabeçalho com <strong>name</strong> e <strong>description</strong>. O <strong>description</strong> é o que faz o Claude <strong>saber quando acionar a skill sozinho</strong>. Se você escreve bem ("use sempre que eu pedir analise a SWOT, compara SWOT com mapa, como estamos no mid year"), ele aciona na hora certa. Se escreve mal, você fica chamando na mão.</p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">5</div>
+        <div class="body">
+          <h3>Skill é iterativa</h3>
+          <p>Não é set-and-forget. Você vai usar a skill 3 vezes e já vai querer melhorar — e isso é o certo. Toda vez que ela pedir um contexto que poderia já estar embutido, você ajusta o arquivo da skill. Ela amadurece com o uso.</p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">6</div>
+        <div class="body">
+          <h3>Menos é mais</h3>
+          <p>Você é executiva e vai querer escala — criar 5 skills de uma vez. Segura: <strong>uma skill bem feita rodando vale mais que cinco pela metade</strong>. Excesso de skills (ou skills redundantes) atrapalha a execução. Faz uma funcionar perfeito, depois expande.</p>
+          <div class="analogy">"Uma skill bem feita já muda o seu dia. Cinco meia-boca só atrapalham."</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="a2-skill">
+    <p class="stag">A que você criou ao vivo</p>
+    <h2>Skill <span class="hl">solids-analise-swot-mapa</span></h2>
+    <p class="intro">A escolha não foi por acaso: é o seu projeto-âncora, é o seu jeito de pensar, e o raciocínio se repete em cada decisão de diretoria. Multiplica o seu cérebro na coisa que você faz melhor.</p>
+
+    <div class="card">
+      <h3>O que ela faz, em 5 passos</h3>
+      <div class="cflow">
+        <div class="cstep"><span class="tg" style="color:var(--green);">Lê</span><span class="hh">SWOT + Mapa</span><span class="ss">Atual e histórico, quando tiver</span></div>
+        <div class="cstep acc"><span class="tg" style="color:var(--terra);">Cruza</span><span class="hh">Eixo a eixo</span><span class="ss">Que ponto da SWOT cada eixo ataca</span></div>
+        <div class="cstep pet"><span class="tg" style="color:var(--ink);">Avalia</span><span class="hh">Avançou ou não</span><span class="ss">Status no período + o que faltou</span></div>
+        <div class="cstep"><span class="tg" style="color:var(--sand);">Aponta</span><span class="hh">Padrões</span><span class="ss">3 contradições internas</span></div>
+        <div class="cstep win"><span class="tg" style="color:var(--tl);">Entrega</span><span class="hh">Perguntas</span><span class="ss">3 pra levar pra diretoria</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>O output que ela devolve</h3>
+      <p>Resumo executivo (5 linhas) · tabela <code class="cur">eixo do mapa × ponto SWOT × status × gap</code> · 3 padrões críticos · 3 perguntas pra reunião de diretoria. Tom executivo e direto, do jeito que os seus diretores precisam: sem enrolação, pra decisão. E a regra fixa: <strong>não inventa nada</strong> — se faltar contexto, ela pergunta.</p>
+    </div>
+
+    <div class="callout warn">
+      <p><strong>Onde ela mora:</strong> dentro da sua estação, na pasta de skills, num arquivo <strong>SKILL.md</strong> com o cabeçalho (name, description, type) e o passo a passo. O <strong>description</strong> bem escrito é o que faz o Claude acionar ela sozinho quando você diz "analisa a SWOT".</p>
+    </div>
+  </section>
+
+  <section id="a2-tarefas">
+    <p class="stag">Pra fazer até o próximo encontro</p>
+    <h2>As suas <span class="hl">tarefas da semana</span></h2>
+    <p class="intro">A semana é pra fazer a skill virar hábito, não pra aprender coisa nova. Quanto mais você rodar, mais ela amadurece — e mais o mid year anda.</p>
+
+    <div class="card">
+      <div class="task">
+        <div class="chk"></div>
+        <div class="t-body">
+          <strong>1. Aplique a skill em 2 inputs reais</strong>
+          <p>Rode a <strong>solids-analise-swot-mapa</strong> em pelo menos 2 materiais do mid year, mesmo que estejam incompletos. O objetivo é ver o fluxo funcionando na sua mão.</p>
+          <span class="pill">Principal da semana</span>
+        </div>
+      </div>
+      <div class="task">
+        <div class="chk"></div>
+        <div class="t-body">
+          <strong>2. Itere a skill</strong>
+          <p>Anote toda vez que ela pedir um contexto que poderia já estar embutido — e ajuste o SKILL.md. É assim que ela fica cada vez mais "sua".</p>
+          <span class="pill">Iterativa</span>
+        </div>
+      </div>
+      <div class="task">
+        <div class="chk"></div>
+        <div class="t-body">
+          <strong>3. Reúna os inputs do mid year</strong>
+          <p>Junte pra próxima semana: SWOT do ano passado e atualizada, mapa estratégico do ano, atas/acompanhamentos da diretoria do 1º semestre, KPIs e acompanhamento das máquinas de venda.</p>
+        </div>
+      </div>
+      <div class="task">
+        <div class="chk"></div>
+        <div class="t-body">
+          <strong>4. (Bônus) Pense na 2ª skill</strong>
+          <p>Qual seria a próxima? A candidata natural é a <strong>síntese de reunião de diretoria</strong> (transcrição → ata + plano de ação) — uma dor que você já declarou. Só anote a ideia, a gente cria no encontro 3.</p>
+        </div>
+      </div>
+      <div class="task">
+        <div class="chk"></div>
+        <div class="t-body">
+          <strong>5. Me chame quando travar</strong>
+          <p>De verdade: WhatsApp, a qualquer hora. Não fique travada no meio da semana. Um output estranho do Claude, cola por e-mail que eu olho com calma.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="a2-prompts">
+    <p class="stag">É só copiar e colar</p>
+    <h2>Os <span class="hl">prompts</span> desta semana</h2>
+    <p class="intro">Clique em "Copiar", cole no Claude e ajuste os trechos entre [colchetes]. Pode ditar tudo por áudio também.</p>
+
+    <div class="prompt">
+      <div class="prompt-head"><span class="pt">1 · Acionar a skill com material novo</span><button class="copy-btn" onclick="copyPrompt(this)">Copiar</button></div>
+      <div class="desc">Sobe o material no projeto Solids e chama a skill. Se o description estiver bom, ela aciona sozinha.</div>
+      <pre>Acabei de subir [a SWOT e o mapa estratégico / o material que você tiver] no projeto.
+
+Roda a análise SWOT × mapa estratégico em cima desse material. Quero o output completo: resumo executivo, a tabela eixo × ponto SWOT × status × gap, os 3 padrões críticos e as 3 perguntas pra eu levar pra diretoria.
+
+Onde faltar contexto, me pergunta antes de concluir. Não inventa nada.</pre>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt-head"><span class="pt">2 · Cruzamento SWOT × Mapa (detalhado)</span><button class="copy-btn" onclick="copyPrompt(this)">Copiar</button></div>
+      <div class="desc">Quando quiser a tabela completa, eixo por eixo, com nível de confiança.</div>
+      <pre>Faz o cruzamento sistemático:
+
+Para cada eixo do mapa estratégico 2026, me responde:
+- Qual ponto da SWOT esse eixo deveria endereçar?
+- Olhando os acompanhamentos do primeiro semestre, esse eixo avançou, estagnou ou regrediu?
+- O que precisa virar prioridade no segundo semestre?
+
+Formato: tabela. Colunas: Eixo do Mapa | Ponto da SWOT relacionado | Status H1 | Prioridade H2.
+Sinaliza o nível de confiança em cada linha (alto/médio/baixo) baseado no material que tem.</pre>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt-head"><span class="pt">3 · Documento de 1 página pra diretoria</span><button class="copy-btn" onclick="copyPrompt(this)">Copiar</button></div>
+      <div class="desc">Pega a análise e empacota num formato executivo, pra diretores que não têm tempo.</div>
+      <pre>Com base na análise que você acabou de fazer, monta um documento de 1 página pra eu levar pra reunião de revisão mid year com os outros diretores.
+
+Estrutura:
+1. Síntese da Sólides no primeiro semestre (3 frases).
+2. Top 3 conquistas (com evidência do material).
+3. Top 3 alertas (com evidência do material).
+4. 5 perguntas que eu quero que cada diretor responda sobre a área dele antes da próxima reunião.
+5. Proposta de pauta para a reunião (60 min, com tempo por bloco).
+
+Tom: executivo, direto, sem enrolação.</pre>
+    </div>
+  </section>
+
+  <section id="a2-materiais">
+    <p class="stag">Pra consultar</p>
+    <h2>Materiais e <span class="hl">ferramentas</span></h2>
+    <p class="intro">O que ficou desta aula pra você ter à mão.</p>
+
+    <div class="card plain">
+      <div class="mat">
+        <div class="dot"></div>
+        <div class="m-body"><strong>O SKILL.md da solids-analise-swot-mapa</strong><p>O arquivo da sua primeira skill, com o cabeçalho e o passo a passo. É a sua referência — e a base pra você criar as próximas, replicando o formato.</p></div>
+      </div>
+      <div class="mat">
+        <div class="dot"></div>
+        <div class="m-body"><strong>A sua Cloud Station no drive</strong><p>A pasta /context viva, com sobre-mim, tom-de-voz e regras-de-uso. A fundação de tudo. Mantenha atualizada conforme novos contextos aparecerem.</p></div>
+      </div>
+      <div class="mat">
+        <div class="dot"></div>
+        <div class="m-body"><strong>A analogia sabor / prato / técnica</strong><p>Contexto = sabor · Projeto = prato · Skill = técnica. Sempre que a confusão voltar, é só lembrar da cozinha.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="a2-proximo">
+    <p class="stag">O que vem aí</p>
+    <h2>No <span class="hl">próximo encontro</span></h2>
+    <div class="card">
+      <div class="next-item"><span class="arr">→</span><p>Reuniões com a <strong>diretoria</strong>: como capturar a transcrição, gerar a ata e disparar o plano de ação.</p></div>
+      <div class="next-item"><span class="arr">→</span><p>Criar a 2ª skill: <strong>síntese de reunião</strong> (transcrição → ata + plano de ação).</p></div>
+      <div class="next-item"><span class="arr">→</span><p>Aprofundar o <strong>mid year</strong> com os outputs que você gerou durante a semana.</p></div>
+      <div class="next-item"><span class="arr">→</span><p>Começar a falar de <strong>automação</strong>: tarefas que rodam sozinhas, sem você pedir.</p></div>
+    </div>
+    <div class="callout">
+      <p>Você saiu desta aula com a sua primeira skill rodando — o seu jeito de pensar, agora multiplicável. Roda ela algumas vezes na semana: é no uso que ela vira sua de verdade. Qualquer coisa, me chama no WhatsApp <strong>(11) 97190-1020</strong>.</p>
+    </div>
+  </section>
+
+</div>
+</div><!-- /encontro 2 -->
+
+<!-- ============================================================= -->
+<!-- ======================== ENCONTRO 03 ======================== -->
+<!-- ============================================================= -->
+<div class="aula-panel hidden" data-aula="3">
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Mentoria de IA · Encontro 03</span>
+    <h1>Reuniões viram <span class="hl">ação</span> — e o Claude começa a rodar sozinho</h1>
+    <p class="lead">Karina, no terceiro encontro a gente atacou a sua rotina com a diretoria: transformar transcrição em ata e plano de ação, e dar o primeiro passo na automação — uma tarefa que roda sozinha e te entrega a pauta. Tudo organizado aqui embaixo.</p>
+    <div class="hero-meta">
+      <span><strong>Data:</strong> 01/06/2026</span>
+      <span><strong>Tema:</strong> Reunião para ação, automação da pauta, Markdown e organização do drive</span>
+      <span><strong>Próximo passo:</strong> deixar a automação e a skill rodando sozinhas</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <a href="#a3-resumo">Resumo</a>
+    <a href="#a3-diagrama">Visão geral</a>
+    <a href="#a3-conceitos">O que vimos</a>
+    <a href="#a3-fluxo">Reunião para ação</a>
+    <a href="#a3-tarefas">Tarefas da semana</a>
+    <a href="#a3-prompts">Prompts pra copiar</a>
+    <a href="#a3-materiais">Materiais</a>
+    <a href="#a3-proximo">Próximo encontro</a>
+  </nav>
+
+  <section id="a3-resumo">
+    <p class="stag">O que rolou</p>
+    <h2>Resumo do nosso <span class="hl">terceiro encontro</span></h2>
+    <p class="intro">Depois de montar a estação (enc.1) e criar a primeira skill (enc.2), aqui a gente colocou a IA pra trabalhar na sua rotina mais cara: a gestão com a diretoria. E demos o passo que muda o jogo — a primeira automação.</p>
+
+    <div class="card">
+      <h3>O que cobrimos hoje</h3>
+      <p>Atacamos a dor que você declarou desde o diagnóstico: <strong>reunião que vira ação</strong>. O Claude lê a transcrição da reunião de diretoria e devolve <strong>ata + plano de ação</strong> no seu formato — a base da 2ª skill, a <code class="cur">solids-sintese-reuniao-diretoria</code>.</p>
+      <p>Demos o primeiro passo em <strong>automação</strong>: uma <strong>tarefa agendada</strong> que roda sozinha, usa o Claude no Chrome pra montar a pauta e te entrega o resultado — caminho pro WhatsApp Web. Falamos também da <strong>skill de apresentação</strong>, pra padronizar os seus decks.</p>
+      <p>E cuidamos da casa: converter arquivos pesados pra <strong>Markdown</strong> (economia de tokens) e organizar a <strong>pasta de reuniões da diretoria</strong> no drive. Está tudo detalhado abaixo.</p>
+    </div>
+  </section>
+
+  <section id="a3-diagrama">
+    <p class="stag">O mapa numa olhada</p>
+    <h2>O que <span class="hl">entra em cena</span> nesta aula</h2>
+    <p class="intro">As quatro peças novas. Na aula 2 você ensinou o Claude a executar uma tarefa; agora ele começa a executar <strong>sem você pedir</strong>.</p>
+
+    <p class="dg-sublabel">As 4 peças novas</p>
+    <div class="dg-cards">
+      <div class="dg-card">
+        <div class="dg-top dg-t1"><div class="dg-name">Reunião → Ação</div><div class="dg-role">Transcrição vira plano</div></div>
+        <div class="dg-body"><div class="dg-desc">O Claude lê a transcrição da reunião e devolve ata + plano de ação no seu formato. Vira a 2ª skill.</div><div class="dg-an">"A reunião que termina já com os próximos passos prontos."</div></div>
+      </div>
+      <div class="dg-card">
+        <div class="dg-top dg-t4"><div class="dg-name">Tarefa agendada</div><div class="dg-role">Roda sozinha</div></div>
+        <div class="dg-body"><div class="dg-desc">Uma rotina que se repete sem você pedir — ex.: ele monta a pauta da diretoria e te entrega.</div><div class="dg-an">"O funcionário que bate o ponto antes de você."</div></div>
+      </div>
+      <div class="dg-card">
+        <div class="dg-top dg-t3"><div class="dg-name">Claude no Chrome</div><div class="dg-role">Ele age no navegador</div></div>
+        <div class="dg-body"><div class="dg-desc">A extensão deixa o Claude abrir abas, buscar e operar sites por você — e levar o resultado pro WhatsApp Web.</div><div class="dg-an">"As mãos dele dentro do navegador."</div></div>
+      </div>
+      <div class="dg-card">
+        <div class="dg-top dg-t2"><div class="dg-name">Markdown</div><div class="dg-role">Arquivo leve</div></div>
+        <div class="dg-body"><div class="dg-desc">Converter PPT e PDFs pesados pra MD: o Claude lê rápido e barato, sem gastar token à toa.</div><div class="dg-an">"A sua informação no formato que ele lê num piscar."</div></div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>Regra de ouro da aula 3:</strong> a automação roda no <strong>Chrome</strong> (não no Safari) · arquivo de referência estático vira <strong>MD</strong> · peça o plano antes de executar · comece com "perguntar antes de agir" e só libere autonomia quando confiar · uma automação funcionando vale mais que três meio-quebradas.</p>
+    </div>
+  </section>
+
+  <section id="a3-conceitos">
+    <p class="stag">Passo a passo</p>
+    <h2>O que a gente <span class="hl">viu</span>, em ordem</h2>
+    <p class="intro">Os conceitos da aula, na sequência em que vimos. Aqui a IA deixa de só responder e começa a operar por você.</p>
+
+    <div class="card plain">
+      <div class="concept">
+        <div class="num">1</div>
+        <div class="body">
+          <h3>Reunião para ação</h3>
+          <p>A dor que você trouxe: "qual o melhor formato de transcrição, mas também de já trazer as ações, de disparar planos de ação". O Claude lê a transcrição e devolve <strong>ata + plano de ação estruturado</strong> (o quê · por quê · quem · prazo · indicador). Isso vira a 2ª skill.</p>
+          <div class="analogy">"A reunião não termina quando todo mundo desliga — termina quando o plano de ação já está na mesa."</div>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">2</div>
+        <div class="body">
+          <h3>Tarefa agendada</h3>
+          <p>É a sua primeira <strong>automação</strong>: uma rotina que se repete sozinha, num horário definido, sem você pedir. No seu caso, a automação da <strong>pauta da diretoria</strong> — o Claude monta a pauta e te entrega pronta. É o pulo do "ele executa quando peço" pro "ele já fez quando eu cheguei".</p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">3</div>
+        <div class="body">
+          <h3>Claude no Chrome → WhatsApp</h3>
+          <p>A extensão do Chrome dá <strong>mãos</strong> ao Claude no navegador: abrir abas, buscar, montar a pauta e levar o resultado pro <strong>WhatsApp Web</strong>. Detalhe que importa: a automação tem que rodar no <strong>Chrome</strong>, não no Safari — foi aí que travou, e a gente mapeou.</p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">4</div>
+        <div class="body">
+          <h3>Markdown e a economia de tokens</h3>
+          <p>Arquivos pesados (PPT, PDF) custam caro pro Claude ler toda hora. A solução: converter o que é <strong>referência estática</strong> pra <strong>MD</strong> leve. O que é arquivo vivo (que você edita) fica em formato editável, mas em pasta granular. Isso também resolve o bug do Claude não "enxergar" o PPT dentro do drive.</p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">5</div>
+        <div class="body">
+          <h3>Skill de apresentação</h3>
+          <p>Pra padronizar os seus decks: uma skill que monta a apresentação no seu formato, sem você ter que lembrar "usa esse layout, essa cor, essa estrutura". Você ia testar na semana — a gente revisa o resultado no encontro 4.</p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">6</div>
+        <div class="body">
+          <h3>Organização da pasta de reuniões</h3>
+          <p>Dentro de <strong>Solids/reunioes/diretoria</strong>, cada reunião com a sua transcrição e a sua ata nomeadas no padrão <code class="cur">AAAA-MM-DD-reuniao-diretoria-...</code>. Pasta organizada = o Claude acha o material sozinho e a skill roda sem atrito.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="a3-fluxo">
+    <p class="stag">O fluxo que a gente montou</p>
+    <h2>Da <span class="hl">reunião</span> ao plano de ação</h2>
+    <p class="intro">O caminho que a 2ª skill percorre — pra você ver onde cada peça entra.</p>
+
+    <div class="cflow">
+      <div class="cstep"><span class="tg" style="color:var(--green);">Captura</span><span class="hh">Transcrição</span><span class="ss">A reunião gravada vira texto</span></div>
+      <div class="cstep acc"><span class="tg" style="color:var(--terra);">Lê</span><span class="hh">Claude</span><span class="ss">Identifica decisões e pendências</span></div>
+      <div class="cstep pet"><span class="tg" style="color:var(--ink);">Estrutura</span><span class="hh">Ata</span><span class="ss">Resumo + decisões + responsáveis</span></div>
+      <div class="cstep"><span class="tg" style="color:var(--sand);">Gera</span><span class="hh">Plano de ação</span><span class="ss">O quê · quem · prazo · indicador</span></div>
+      <div class="cstep win"><span class="tg" style="color:var(--tl);">Dispara</span><span class="hh">Próximos passos</span><span class="ss">Pronto pra mandar pro time</span></div>
+    </div>
+
+    <div class="cnote">
+      <div class="card">
+        <h3 style="font-size:1.1rem;">Por que isso poupa tanto tempo?</h3>
+        <p style="font-size:0.9rem;">Você sai da reunião e o trabalho braçal de transformar uma hora de conversa em decisões e tarefas — que tomava o seu fim de tarde — já está feito. Você só revisa.</p>
+      </div>
+      <div class="card">
+        <h3 style="font-size:1.1rem;">Por que virar skill?</h3>
+        <p style="font-size:0.9rem;">Porque toda reunião de diretoria tem o mesmo formato de saída. Ensinou uma vez, ela roda igual em toda reunião — esse é o pilar 2 (acelerar) na sua rotina mais nobre.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="a3-tarefas">
+    <p class="stag">Pra fazer até o próximo encontro</p>
+    <h2>As suas <span class="hl">tarefas da semana</span></h2>
+    <p class="intro">A semana é pra testar a automação e a skill no mundo real — e anotar onde travar, pra a gente destravar junto no encontro 4.</p>
+
+    <div class="card">
+      <div class="task">
+        <div class="chk"></div>
+        <div class="t-body">
+          <strong>1. Teste a automação da pauta</strong>
+          <p>Deixe a tarefa agendada rodar e veja se a pauta chega. Se travar, anote onde — provavelmente é Safari em vez de Chrome, ou o Claude não acessando o material no drive.</p>
+          <span class="pill">Principal da semana</span>
+        </div>
+      </div>
+      <div class="task">
+        <div class="chk"></div>
+        <div class="t-body">
+          <strong>2. Teste a skill de apresentação</strong>
+          <p>Rode num material real e veja se sai no padrão que você quer. Anote o que ajustaria.</p>
+        </div>
+      </div>
+      <div class="task">
+        <div class="chk"></div>
+        <div class="t-body">
+          <strong>3. Converta os pesados pra Markdown</strong>
+          <p>Pega os PPT e PDFs de referência estática e peça pro Claude converter pra MD. Economiza token e resolve o bug do PPT invisível no drive.</p>
+          <span class="pill">Economia de token</span>
+        </div>
+      </div>
+      <div class="task">
+        <div class="chk"></div>
+        <div class="t-body">
+          <strong>4. Organize a pasta de reuniões da diretoria</strong>
+          <p>Dentro de Solids/reunioes/diretoria, deixe cada reunião com transcrição e ata nomeadas no padrão. Pasta limpa = skill sem atrito.</p>
+        </div>
+      </div>
+      <div class="task">
+        <div class="chk"></div>
+        <div class="t-body">
+          <strong>5. Crie a 2ª skill com uma transcrição real</strong>
+          <p>Use a <strong>solids-sintese-reuniao-diretoria</strong> numa reunião de verdade (ou na transcrição de uma recente). Veja se a ata e o plano de ação saem do seu jeito.</p>
+          <span class="pill">Mão na massa</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="a3-prompts">
+    <p class="stag">É só copiar e colar</p>
+    <h2>Os <span class="hl">prompts</span> desta semana</h2>
+    <p class="intro">Clique em "Copiar", cole no Claude e ajuste os trechos entre [colchetes].</p>
+
+    <div class="prompt">
+      <div class="prompt-head"><span class="pt">1 · Transcrição → ata + plano de ação</span><button class="copy-btn" onclick="copyPrompt(this)">Copiar</button></div>
+      <div class="desc">O coração da 2ª skill. Sobe a transcrição da reunião e roda. Ajuste o formato do plano ao que você já usa.</div>
+      <pre>Subi a transcrição da reunião de diretoria de [data] na pasta Solids/reunioes/diretoria.
+
+Lê com atenção e me devolve duas coisas:
+
+1. ATA — resumo executivo (5 linhas), decisões tomadas, e quem ficou responsável por quê.
+2. PLANO DE AÇÃO — em tabela, com as colunas: o quê | por quê | quem | prazo | indicador de sucesso.
+
+Tom executivo e direto. Não inventa nada: se algo ficou ambíguo na reunião, marca como "a confirmar" em vez de chutar.</pre>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt-head"><span class="pt">2 · Criar a skill de síntese de reunião</span><button class="copy-btn" onclick="copyPrompt(this)">Copiar</button></div>
+      <div class="desc">Pra transformar o prompt acima em skill. Rode depois de já ter testado o formato 1 ou 2 vezes.</div>
+      <pre>Quero criar uma skill chamada solids-sintese-reuniao-diretoria.
+
+Função: ler a transcrição de uma reunião de diretoria e devolver uma ata + um plano de ação no meu formato (ata: resumo, decisões, responsáveis; plano: o quê | por quê | quem | prazo | indicador).
+
+O description precisa fazer você acionar a skill sozinho quando eu disser "sintetiza essa reunião", "gera a ata", "tira o plano de ação dessa transcrição".
+
+Primeiro me mostra como vai estruturar o SKILL.md. Quando eu aprovar, cria a skill.</pre>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt-head"><span class="pt">3 · Converter pesados pra Markdown</span><button class="copy-btn" onclick="copyPrompt(this)">Copiar</button></div>
+      <div class="desc">Resolve a economia de token e o bug do PPT que o Claude não enxergava no drive.</div>
+      <pre>Tenho arquivos de referência pesados (PPT e PDF) na pasta [nome da pasta] que você precisa ler com frequência.
+
+Converte os que são referência estática para arquivos .md leves, salvos na mesma pasta, mantendo o conteúdo essencial. Nunca apague os originais — move pra /archive.
+
+Me lista o que converteu e o que deixou em formato editável (porque eu ainda edito).</pre>
+    </div>
+  </section>
+
+  <section id="a3-materiais">
+    <p class="stag">Pra consultar</p>
+    <h2>Materiais e <span class="hl">ferramentas</span></h2>
+    <p class="intro">O que ficou desta aula pra você ter à mão.</p>
+
+    <div class="card plain">
+      <div class="mat">
+        <div class="dot"></div>
+        <div class="m-body"><strong>A tarefa agendada da pauta</strong><p>A sua primeira automação. Roda no Chrome, monta a pauta e leva pro WhatsApp Web. No encontro 4 a gente blinda ela pra rodar redonda.</p></div>
+      </div>
+      <div class="mat">
+        <div class="dot"></div>
+        <div class="m-body"><strong>A extensão do Claude no Chrome</strong><p>O que dá mãos ao Claude no navegador. Lembre: as automações precisam do Chrome, não do Safari.</p></div>
+      </div>
+      <div class="mat">
+        <div class="dot"></div>
+        <div class="m-body"><strong>Deep Research de mercado HR Tech</strong><p>A pesquisa de mercado que rodamos — está no seu drive. Boa base pra revisão estratégica e pra contexto de diretoria.</p></div>
+      </div>
+      <div class="mat">
+        <div class="dot"></div>
+        <div class="m-body"><strong>O padrão de Markdown</strong><p>Referência estática vira MD; arquivo vivo fica editável em pasta granular. A regra que mantém a sua estação leve.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="a3-proximo">
+    <p class="stag">O que vem aí</p>
+    <h2>No <span class="hl">próximo encontro</span></h2>
+    <div class="card">
+      <div class="next-item"><span class="arr">→</span><p>Fazer um <strong>raio-x</strong> do que rodou e <strong>destravar</strong> a automação da pauta de vez.</p></div>
+      <div class="next-item"><span class="arr">→</span><p>Blindar a skill do <strong>mid year</strong> pra ela rodar com você no comando, sem eu do lado.</p></div>
+      <div class="next-item"><span class="arr">→</span><p>Montar o seu <strong>plano de autonomia</strong> até a entrega de julho.</p></div>
+      <div class="next-item"><span class="arr">→</span><p>Fechar o ciclo: você seguindo <strong>sozinha</strong>, com a IA do seu lado.</p></div>
+    </div>
+    <div class="callout">
+      <p>Esta foi a aula em que a IA deixou de só responder e começou a trabalhar por você. Testa a automação na semana, mesmo que trave — o que travar a gente resolve junto no encontro 4. Qualquer coisa, WhatsApp <strong>(11) 97190-1020</strong>.</p>
+    </div>
+  </section>
+
+</div>
+</div><!-- /encontro 3 -->
+
+<!-- ============================================================= -->
+<!-- ======================== ENCONTRO 04 ======================== -->
+<!-- ============================================================= -->
+<div class="aula-panel" data-aula="4">
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Mentoria de IA · Encontro 04 · Fechamento</span>
+    <h1>Agora você <span class="hl">segue sozinha</span> — com a IA do seu lado</h1>
+    <p class="lead">Karina, este é o nosso último encontro do pacote. O foco não foi abrir frente nova: foi amarrar tudo pra você seguir voando sem mim ao lado. Aqui está o resumo de tudo — e o seu plano de autonomia até a entrega do mid year em julho.</p>
+    <div class="hero-meta">
+      <span><strong>Data:</strong> 15/06/2026</span>
+      <span><strong>Tema:</strong> Raio-x, destravar a automação, handoff do mid year e plano de autonomia</span>
+      <span><strong>Próximo passo:</strong> rodar o mid year sozinha até julho</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <a href="#a4-resumo">Resumo</a>
+    <a href="#a4-raiox">Raio-x da jornada</a>
+    <a href="#a4-conceitos">O que amarramos</a>
+    <a href="#a4-autonomia">Plano de autonomia</a>
+    <a href="#a4-tarefas">Até julho</a>
+    <a href="#a4-prompts">Prompts pra copiar</a>
+    <a href="#a4-materiais">Sua caixa de ferramentas</a>
+    <a href="#a4-proximo">O caminho daqui</a>
+  </nav>
+
+  <section id="a4-resumo">
+    <p class="stag">O que rolou</p>
+    <h2>Resumo do nosso <span class="hl">último encontro</span></h2>
+    <p class="intro">Como é a última, o sentimento de fechamento importa mais que conteúdo novo. A gente destravou o que tinha quebrado, colocou a skill do mid year na sua mão e desenhou o caminho pra você seguir autônoma.</p>
+
+    <div class="card">
+      <h3>O que cobrimos hoje</h3>
+      <p>Começamos com um <strong>raio-x honesto</strong> das semanas: o que rodou, o que travou e por quê — sem julgamento. Escolhemos o bloqueio de maior impacto e <strong>destravamos ao vivo</strong> (a automação da pauta e os bugs do drive).</p>
+      <p>O coração da aula foi o <strong>handoff do mid year</strong>: você acionou a skill <code class="cur">solids-analise-swot-mapa</code> sozinha, ditando, sem eu tocar no teclado. Esse é o ponto — quando eu saio, isso continua funcionando porque é o <strong>seu</strong> jeito de pensar que está codificado.</p>
+      <p>E fechamos com o seu <strong>plano de autonomia</strong>: o que rodar até julho, a 2ª skill natural, e como transformar qualquer tarefa repetida em skill — sozinha. Está tudo abaixo.</p>
+    </div>
+  </section>
+
+  <section id="a4-raiox">
+    <p class="stag">Onde você chegou</p>
+    <h2>O <span class="hl">raio-x</span> da sua jornada</h2>
+    <p class="intro">Quatro semanas atrás você usava IA "tipo Google". Olha a distância percorrida — isto é o que você leva pra sempre.</p>
+
+    <div class="cflow four">
+      <div class="cstep"><span class="tg" style="color:var(--green);">Encontro 1</span><span class="hh">Base + Estação</span><span class="ss">Anatomia, 3 pilares, pastas, projeto Solids</span></div>
+      <div class="cstep acc"><span class="tg" style="color:var(--terra);">Encontro 2</span><span class="hh">1ª Skill</span><span class="ss">Cloud Station + skill do SWOT × mapa</span></div>
+      <div class="cstep pet"><span class="tg" style="color:var(--ink);">Encontro 3</span><span class="hh">Automação</span><span class="ss">Reunião → ação + pauta rodando sozinha</span></div>
+      <div class="cstep win"><span class="tg" style="color:var(--tl);">Encontro 4</span><span class="hh">Autonomia</span><span class="ss">Você no comando, mid year blindado</span></div>
+    </div>
+
+    <div class="card" style="margin-top:20px;">
+      <h3>O que você conquistou de concreto</h3>
+      <p>Uma <strong>Cloud Station</strong> viva no drive, com o Claude te conhecendo. <strong>Duas skills</strong> que codificam o seu raciocínio (análise estratégica e síntese de reunião). Uma <strong>automação</strong> trabalhando por você. E o mais importante: a <strong>receita</strong> pra criar quantas skills quiser, sozinha.</p>
+      <p>Se em algum momento bater o "não usei direito" — olha esta lista. Você não voltou pro ponto de partida. Você mudou o seu jeito de trabalhar.</p>
+    </div>
+  </section>
+
+  <section id="a4-conceitos">
+    <p class="stag">O que destravamos e amarramos</p>
+    <h2>Os <span class="hl">nós</span> que a gente desatou</h2>
+    <p class="intro">Os pontos práticos que resolvemos hoje, pra nada ficar pendurado quando eu sair de cena.</p>
+
+    <div class="card plain">
+      <div class="concept">
+        <div class="num">1</div>
+        <div class="body">
+          <h3>A automação da pauta, destravada</h3>
+          <p>O que travava: estava rodando no <strong>Safari</strong> (tem que ser <strong>Chrome</strong>) e o Claude não acessava o material no drive. Conserto: forçar o Chrome e, onde o drive der atrito, apontar a automação pra um <strong>material-fonte em MD/planilha local</strong>. Uma automação funcionando vale mais que três meio-quebradas.</p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">2</div>
+        <div class="body">
+          <h3>O bug do PPT invisível no drive</h3>
+          <p>Por que acontecia: leitura pesada e formato. A solução-padrão que você leva: <strong>referência estática vira MD</strong>; arquivo vivo fica editável, mas em pasta granular. Resolve a leitura e ainda economiza token.</p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">3</div>
+        <div class="body">
+          <h3>O handoff do mid year — você no comando</h3>
+          <p>O ponto alto: <strong>você</strong> acionou a skill, ditando, sem eu tocar no teclado. Refinamos o SKILL.md onde ela pedia contexto que já podia estar embutido, e confirmamos o output que você usa de verdade. Agora ela roda na sua mão.</p>
+          <div class="analogy">"Quem rodou foi você. Quando eu sair, isso continua funcionando porque é o seu jeito de pensar que está codificado aqui."</div>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">4</div>
+        <div class="body">
+          <h3>Organização automática do Gmail</h3>
+          <p>Fechei o loop que ficou em aberto: o comando pra <strong>organizar as pastas do Gmail automaticamente</strong>. Está nos prompts abaixo, pronto pra você aplicar e deixar a caixa de entrada se arrumar sozinha.</p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="num">5</div>
+        <div class="body">
+          <h3>A receita pra criar skills sozinha</h3>
+          <p>O mapeamento de tarefas que ficou pendente vira, agora, um exercício seu: liste as suas tarefas recorrentes, marque as que têm <strong>formato repetido</strong> — essas são skills esperando pra nascer. Você não precisa de mim pra isso, só do mesmo passo a passo de hoje.</p>
+          <div class="analogy">"Toda tarefa que se repete com formato fixo é uma skill esperando pra nascer."</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="a4-autonomia">
+    <p class="stag">O seu caminho até julho</p>
+    <h2>Plano de <span class="hl">autonomia</span></h2>
+    <p class="intro">A entrega do mid year é a âncora. Aqui está o que rodar sozinha, semana a semana, com a skill do seu lado.</p>
+
+    <div class="qw">
+      <div class="qwc"><div class="qh">1 · Reúna os inputs</div><p>SWOT atual, mapa estratégico, atas da diretoria do 1º semestre, KPIs e máquinas de venda. A skill é tão boa quanto o material que você dá.</p></div>
+      <div class="qwc"><div class="qh">2 · Rode a skill do SWOT</div><p>Aplique a <strong>solids-analise-swot-mapa</strong> nos inputs reais. Gere o documento de 1 página pra diretoria a partir do output.</p></div>
+      <div class="qwc"><div class="qh">3 · Crie a 2ª skill sozinha</div><p>A <strong>solids-sintese-reuniao-diretoria</strong> (transcrição → ata + plano). Replique o passo a passo de hoje — você já tem a receita.</p></div>
+      <div class="qwc"><div class="qh">4 · Mapeie suas tarefas</div><p>Liste as recorrentes, marque as de formato repetido. Cada uma é uma skill futura. Esse é o seu motor de expansão.</p></div>
+    </div>
+
+    <div class="callout warn" style="margin-top:20px;">
+      <p><strong>A conta regressiva:</strong> calcule as semanas que faltam até a entrega de julho e distribua: uma para reunir inputs, uma para rodar a análise e revisar, uma para montar o material da diretoria. Com a skill, o que tomava dias vira horas.</p>
+    </div>
+  </section>
+
+  <section id="a4-tarefas">
+    <p class="stag">Pra rodar sozinha</p>
+    <h2>As suas <span class="hl">tarefas até julho</span></h2>
+    <p class="intro">Não é mais "tarefa da semana" — é o seu roteiro de autonomia. No seu ritmo, com a IA fazendo o peso.</p>
+
+    <div class="card">
+      <div class="task">
+        <div class="chk"></div>
+        <div class="t-body">
+          <strong>1. Feche os inputs do mid year</strong>
+          <p>Reúna SWOT atual, mapa estratégico, atas de diretoria do 1º semestre e KPIs/máquinas de venda na pasta do projeto.</p>
+          <span class="pill">Âncora</span>
+        </div>
+      </div>
+      <div class="task">
+        <div class="chk"></div>
+        <div class="t-body">
+          <strong>2. Rode a skill do SWOT nos inputs reais</strong>
+          <p>Acione a solids-analise-swot-mapa e gere a análise completa. Depois, o documento de 1 página pra diretoria.</p>
+        </div>
+      </div>
+      <div class="task">
+        <div class="chk"></div>
+        <div class="t-body">
+          <strong>3. Crie a 2ª skill</strong>
+          <p>A síntese de reunião de diretoria. Use o prompt abaixo e replique o que aprendeu — você consegue sozinha.</p>
+          <span class="pill">Expansão</span>
+        </div>
+      </div>
+      <div class="task">
+        <div class="chk"></div>
+        <div class="t-body">
+          <strong>4. Aplique o comando do Gmail</strong>
+          <p>Deixe a sua caixa de entrada se organizar em pastas automaticamente. Prompt pronto abaixo.</p>
+        </div>
+      </div>
+      <div class="task">
+        <div class="chk"></div>
+        <div class="t-body">
+          <strong>5. Faça o mapeamento de tarefas</strong>
+          <p>Liste suas tarefas recorrentes e marque as de formato repetido. É a sua lista de skills futuras.</p>
+          <span class="pill">Motor de skills</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="a4-prompts">
+    <p class="stag">É só copiar e colar</p>
+    <h2>Os <span class="hl">prompts</span> de fechamento</h2>
+    <p class="intro">Os últimos da mentoria — e os que te deixam autônoma. Clique em "Copiar", cole no Claude e ajuste o que estiver entre [colchetes].</p>
+
+    <div class="prompt">
+      <div class="prompt-head"><span class="pt">1 · Mid year com material real</span><button class="copy-btn" onclick="copyPrompt(this)">Copiar</button></div>
+      <div class="desc">O prompt-âncora até julho. Sobe os inputs reais e roda a skill que você criou.</div>
+      <pre>Subi todos os inputs do mid year no projeto: SWOT atual, mapa estratégico, atas da diretoria do 1º semestre e os KPIs das máquinas de venda.
+
+Roda a análise SWOT × mapa estratégico completa. Quero: resumo executivo, a tabela eixo × ponto SWOT × status H1 × prioridade H2, os 3 padrões críticos e as 3 perguntas pra diretoria.
+
+Em seguida, monta o documento de 1 página pra reunião de revisão. Tom executivo, direto. Onde faltar contexto, me pergunta. Não inventa nada.</pre>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt-head"><span class="pt">2 · Criar a 2ª skill sozinha</span><button class="copy-btn" onclick="copyPrompt(this)">Copiar</button></div>
+      <div class="desc">A síntese de reunião. Replica o caminho da 1ª skill — você já sabe fazer.</div>
+      <pre>Quero criar a skill solids-sintese-reuniao-diretoria.
+
+Função: ler a transcrição de uma reunião de diretoria e devolver uma ata (resumo, decisões, responsáveis) + um plano de ação (o quê | por quê | quem | prazo | indicador), no meu tom executivo.
+
+O description tem que fazer você acionar a skill sozinho quando eu disser "sintetiza essa reunião", "gera a ata" ou "tira o plano de ação dessa transcrição".
+
+Me mostra a estrutura do SKILL.md primeiro. Quando eu aprovar, cria.</pre>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt-head"><span class="pt">3 · Organizar o Gmail automaticamente</span><button class="copy-btn" onclick="copyPrompt(this)">Copiar</button></div>
+      <div class="desc">Fecha o loop que ficou aberto. Deixe a sua caixa de entrada se arrumar em pastas sozinha.</div>
+      <pre>Quero organizar minha caixa de entrada do Gmail automaticamente em pastas (marcadores).
+
+Primeiro, me ajuda a definir as categorias que fazem sentido pro meu fluxo (ex.: Diretoria, Time, Fornecedores, Financeiro, Pessoal).
+
+Depois, me mostra como criar os filtros e marcadores pra que e-mails novos caiam na pasta certa sozinhos — e me dá um passo a passo pra aplicar nas mensagens que já estão acumuladas. Não apaga nada: só organiza.</pre>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt-head"><span class="pt">4 · Mapeamento de tarefas → skills</span><button class="copy-btn" onclick="copyPrompt(this)">Copiar</button></div>
+      <div class="desc">O seu motor de expansão. Roda quando quiser descobrir a próxima skill.</div>
+      <pre>Quero mapear minhas tarefas recorrentes pra descobrir o que vale virar skill.
+
+Vou te ditar as tarefas que faço de forma repetida na semana. Pra cada uma, me ajuda a classificar:
+- Tem formato de saída repetido? (sim/não)
+- Em qual dos 3 pilares se encaixa? (melhorar / acelerar / criar)
+- Vale virar skill agora, depois, ou não vale?
+
+No fim, me devolve uma lista priorizada das skills que eu deveria criar primeiro, e por quê.</pre>
+    </div>
+  </section>
+
+  <section id="a4-materiais">
+    <p class="stag">Tudo num lugar</p>
+    <h2>A sua <span class="hl">caixa de ferramentas</span></h2>
+    <p class="intro">O que você construiu na mentoria e leva pra sempre. Esta é a sua base — volte aqui sempre que precisar.</p>
+
+    <div class="card plain">
+      <div class="mat">
+        <div class="dot"></div>
+        <div class="m-body"><strong>Cloud Station no drive (/context)</strong><p>Sobre-mim, tom-de-voz e regras-de-uso. A fundação que faz tudo sair com a sua cara. Mantenha viva.</p></div>
+      </div>
+      <div class="mat">
+        <div class="dot"></div>
+        <div class="m-body"><strong>Skill solids-analise-swot-mapa</strong><p>A análise estratégica que multiplica o seu raciocínio. A âncora do mid year.</p></div>
+      </div>
+      <div class="mat">
+        <div class="dot"></div>
+        <div class="m-body"><strong>Skill solids-sintese-reuniao-diretoria</strong><p>Transcrição → ata + plano de ação. A 2ª skill, que você cria/refina sozinha.</p></div>
+      </div>
+      <div class="mat">
+        <div class="dot"></div>
+        <div class="m-body"><strong>Automação da pauta da diretoria</strong><p>A tarefa agendada que trabalha por você. Rodando no Chrome, com material-fonte acessível.</p></div>
+      </div>
+      <div class="mat">
+        <div class="dot"></div>
+        <div class="m-body"><strong>Os 3 pilares + a receita de skills</strong><p>A régua mental (melhorar / acelerar / criar) e o passo a passo pra criar skills. O que te deixa autônoma de verdade.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="a4-proximo">
+    <p class="stag">O caminho daqui</p>
+    <h2>A mentoria <span class="hl">acaba</span>, o uso continua</h2>
+    <div class="card">
+      <div class="next-item"><span class="arr">→</span><p>Entregar o <strong>mid year</strong> de julho com a IA do seu lado — a prova real de tudo que a gente construiu.</p></div>
+      <div class="next-item"><span class="arr">→</span><p>Expandir pras outras frentes no seu ritmo: <strong>reuniões, operação e a fundação</strong>, cada uma virando projeto e skill.</p></div>
+      <div class="next-item"><span class="arr">→</span><p>Transformar cada tarefa repetida numa <strong>skill</strong> — você já tem a receita e não precisa de mim pra isso.</p></div>
+      <div class="next-item"><span class="arr">→</span><p>Quando fizer sentido, levar isso pro seu <strong>time de hiperautomação</strong> — a gente conversa sobre estruturar IA na operação inteira.</p></div>
+    </div>
+    <div class="callout">
+      <p>Karina, você saiu do "uso tipo Google" pra ter Cloud Station, skills rodando e uma automação trabalhando por você. O mais bonito é que nada disso depende de mim — você tem a receita, e a maturidade estratégica pra usar bem. Esse era o objetivo desde o começo: te deixar autônoma.</p>
+      <p>O canal segue aberto: qualquer dúvida, uma skill nova que você quer criar, um resultado pra comemorar — me chama no WhatsApp <strong>(11) 97190-1020</strong>. Foi um prazer construir isso com você.</p>
+    </div>
+  </section>
+
+</div>
+</div><!-- /encontro 4 -->
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="fbrand">NEWSCALE</div>
+    <p class="quote">"A IA muda de patamar quando ela para de te responder e começa a <strong>trabalhar por você</strong>. A gente fez essa virada juntas."</p>
+    <p class="sig">Um abraço,<br><strong>Bruna Santanna</strong> · Co-fundadora, NewScale Consulting</p>
+    <p class="contact">
+      <a href="https://wa.me/5511971901020">(11) 97190-1020</a> · <a href="mailto:bruna@newscale.tech">bruna@newscale.tech</a><br>
+      IA hiper-personalizada para o seu negócio
+    </p>
+  </div>
+</footer>
+
+<script>
+  function copyPrompt(btn) {
+    var pre = btn.closest('.prompt').querySelector('pre');
+    var text = pre.innerText;
+    navigator.clipboard.writeText(text).then(function () {
+      var original = btn.textContent;
+      btn.textContent = 'Copiado ✓';
+      btn.classList.add('done');
+      setTimeout(function () { btn.textContent = original; btn.classList.remove('done'); }, 1800);
+    });
+  }
+  function showAula(n) {
+    document.querySelectorAll('.aula-panel').forEach(function (p) {
+      p.classList.toggle('hidden', p.dataset.aula !== String(n));
+    });
+    document.querySelectorAll('.aula-tab').forEach(function (b) {
+      b.classList.toggle('active', b.dataset.aula === String(n));
+    });
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }
+</script>
+</body>
+</html>
