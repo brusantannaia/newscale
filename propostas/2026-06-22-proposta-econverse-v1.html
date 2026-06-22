@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Comercial · Econverse · NewScale Consulting · v1</title>
+
+<!-- Nao indexar -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="bingbot" content="noindex, nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root{
+  --bg:#F3EEE3; --bg-2:#ECE5D6; --card:#FBF9F3;
+  --ink:#14373C; --ink-2:#2C4F54; --green:#435D51;
+  --terra:#B06E4A; --terra-l:#C4835E; --terra-d:#985A3B; --sand:#A38362;
+  --text:#233133; --muted:#6E7A75; --line:rgba(20,55,60,0.16);
+  --cream:#F4F3EF; --line-d:rgba(244,243,239,.12);
+}
+html{ scroll-behavior:smooth; }
+body{ font-family:'Hanken Grotesk',sans-serif; background:var(--bg); color:var(--text); line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+::selection{ background:var(--terra); color:#fff; }
+.wrap{ max-width:1100px; margin:0 auto; padding:0 30px; }
+.kick{ font-size:0.72rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--terra); }
+
+/* HEADER */
+.site-header{ position:sticky; top:0; z-index:50; background:rgba(243,238,227,0.92); backdrop-filter:blur(8px); border-bottom:2px solid var(--ink); }
+.header-inner{ display:flex; align-items:center; justify-content:space-between; padding:15px 0; }
+.logo{ display:inline-flex; align-items:center; white-space:nowrap; font-family:'Anton',sans-serif; font-size:1.25rem; letter-spacing:0.02em; text-transform:uppercase; color:var(--ink); }
+.logo .brand-tag{ font-family:'Hanken Grotesk',sans-serif; font-weight:700; font-size:0.6rem; letter-spacing:0.12em; color:var(--terra); border:1.5px solid var(--terra); padding:3px 9px; border-radius:100px; margin-left:11px; }
+.logo-img{ height:50px; width:auto; display:block; }
+.footer-logo{ height:53px; width:auto; display:block; }
+.header-tag{ font-size:0.64rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-2); }
+@media (max-width:720px){ .header-tag{ display:none; } }
+
+/* BOTOES */
+.btn{ display:inline-flex; align-items:center; gap:9px; justify-content:center; font-family:'Hanken Grotesk',sans-serif; font-weight:700; font-size:0.85rem; letter-spacing:0.04em; text-transform:uppercase; padding:15px 28px; border-radius:100px; border:none; cursor:pointer; transition:transform .15s, box-shadow .15s, background .2s; }
+.btn-terra{ background:var(--terra); color:#fff; }
+.btn-terra:hover{ background:var(--terra-d); transform:translateY(-2px); box-shadow:0 10px 26px rgba(176,110,74,.35); }
+.btn-ghost{ background:transparent; color:#fff; border:1.5px solid rgba(244,243,239,.3); }
+.btn-ghost:hover{ border-color:var(--terra-l); background:rgba(255,255,255,.05); }
+.btn-ink{ background:var(--ink); color:#fff; }
+.btn-ink:hover{ background:var(--ink-2); transform:translateY(-2px); }
+
+/* PLACEHOLDER FOTO */
+.ph{ position:relative; overflow:hidden; border-radius:16px; background:linear-gradient(135deg,#1d4a4f,#14373C 55%,#0e2a2e); }
+.ph>img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:2; }
+.ph-tag{ position:absolute; inset:0; z-index:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; text-align:center; padding:18px; }
+.ph-tag b{ font-family:'Anton',sans-serif; font-size:1rem; letter-spacing:.01em; text-transform:uppercase; color:rgba(245,243,239,.92); }
+.ph-tag span{ font-size:.58rem; letter-spacing:.06em; color:rgba(208,208,202,.4); }
+
+/* HERO */
+.hero{ background:var(--bg); position:relative; overflow:hidden; }
+.hero-glow{ position:absolute; width:620px; height:620px; border-radius:50%; top:-220px; right:-180px; background:radial-gradient(circle,rgba(176,110,74,.13),transparent 62%); pointer-events:none; }
+.hero .wrap{ position:relative; z-index:2; padding:78px 30px 74px; }
+.hero-grid{ display:grid; grid-template-columns:1.15fr .85fr; gap:50px; align-items:center; }
+.hero-single{ grid-template-columns:1fr; max-width:820px; }
+.hero-badge{ display:inline-block; background:rgba(176,110,74,.12); color:var(--terra-d); font-size:0.64rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; padding:6px 15px; border-radius:100px; border:1px solid rgba(176,110,74,.3); margin-bottom:20px; }
+.hero-eyebrow{ display:inline-flex; align-items:center; gap:9px; margin-bottom:18px; }
+.hero-eyebrow .dot{ width:7px; height:7px; border-radius:50%; background:var(--terra); box-shadow:0 0 0 4px rgba(176,110,74,.18); }
+h1{ font-family:'Anton',sans-serif; font-weight:400; font-size:clamp(3rem,8vw,5.6rem); line-height:0.92; letter-spacing:-0.01em; text-transform:uppercase; color:var(--ink); }
+h1 .terra{ color:var(--terra); }
+.hero-sub{ font-size:1.12rem; color:var(--ink-2); font-weight:300; max-width:44ch; margin:24px 0 32px; }
+.hero-sub b{ color:var(--ink); font-weight:600; }
+.hero-actions{ display:flex; gap:13px; flex-wrap:wrap; }
+.hero-meta{ margin-top:24px; font-size:0.74rem; letter-spacing:.04em; color:var(--muted); }
+.hero-meta b{ color:var(--terra-d); font-weight:700; }
+.hero-photo .ph{ aspect-ratio:4/5; box-shadow:0 40px 80px -34px rgba(0,0,0,.55); }
+@media (max-width:880px){ .hero-grid{ grid-template-columns:1fr; gap:36px; } .hero .wrap{ padding:54px 30px 58px; } .hero-photo .ph{ aspect-ratio:3/2; } }
+
+/* MARQUEE */
+.marq{ background:var(--ink); border-top:1px solid var(--line-d); border-bottom:1px solid var(--line-d); padding:18px 0; overflow:hidden; }
+.marq-track{ display:flex; gap:46px; width:max-content; animation:slide 30s linear infinite; align-items:center; }
+.marq span{ font-family:'Anton',sans-serif; font-size:1.35rem; text-transform:uppercase; color:rgba(244,243,239,.48); white-space:nowrap; }
+.marq span.s{ font-family:'Hanken Grotesk',sans-serif; font-size:.6rem; font-weight:700; letter-spacing:.2em; color:var(--terra-l); }
+@keyframes slide{ to{ transform:translateX(-50%); } }
+
+/* SECOES */
+.sec{ padding:84px 0; }
+.sec-head{ max-width:700px; margin-bottom:46px; }
+.sec-head .kick{ display:block; margin-bottom:14px; }
+.sec-head h2{ font-family:'Anton',sans-serif; font-weight:400; font-size:clamp(2.1rem,5.6vw,3.3rem); text-transform:uppercase; color:var(--ink); line-height:1; letter-spacing:-0.01em; }
+.sec-head h2 .terra{ color:var(--terra); }
+.sec-head p{ margin-top:15px; color:var(--ink-2); font-size:1.02rem; font-weight:300; max-width:56ch; }
+
+/* DARK premium */
+.dark{ background:linear-gradient(160deg,#0E2A2E,#14373C 55%,#1d4840 100%); position:relative; }
+.dark .sec-head h2{ color:#fff; }
+.dark .sec-head h2 .terra{ color:var(--terra-l); }
+.dark .sec-head p{ color:rgba(244,243,239,.66); }
+.dark .kick{ color:var(--terra-l); }
+
+/* CONTEXTO */
+.ctx-grid{ display:grid; grid-template-columns:1.05fr .95fr; gap:60px; align-items:center; }
+@media (max-width:880px){ .ctx-grid{ grid-template-columns:1fr; gap:40px; } }
+.ctx-text p{ color:var(--ink-2); font-weight:300; font-size:1.03rem; line-height:1.74; margin-top:14px; }
+.ctx-text p b{ color:var(--ink); font-weight:600; }
+.stats-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.stat-card{ background:var(--ink); border-radius:16px; padding:26px 22px; }
+.stat-card:nth-child(2){ background:var(--terra); }
+.stat-card:nth-child(3){ background:var(--green); }
+.stat-card:nth-child(4){ background:var(--ink-2); }
+.stat-card .v{ font-family:'Anton',sans-serif; font-size:2.5rem; color:#fff; line-height:0.95; }
+.stat-card .l{ font-size:0.72rem; font-weight:600; letter-spacing:.04em; color:rgba(255,255,255,.72); margin-top:8px; line-height:1.4; }
+
+/* GANHOS (lista) */
+.ganhos-grid{ display:grid; grid-template-columns:1fr 1.2fr; gap:54px; align-items:start; }
+@media (max-width:880px){ .ganhos-grid{ grid-template-columns:1fr; gap:34px; } }
+.ganhos-lead p{ color:rgba(244,243,239,.74); font-weight:300; font-size:1.03rem; line-height:1.74; margin-top:14px; }
+.ganhos-lead p b{ color:#fff; font-weight:600; }
+.ganho-item{ display:flex; justify-content:space-between; align-items:flex-start; gap:20px; padding:18px 0; border-bottom:1px dashed var(--line-d); }
+.ganho-item:last-child{ border-bottom:none; }
+.ganho-l b{ display:block; color:#fff; font-weight:600; font-size:1rem; margin-bottom:3px; }
+.ganho-l span{ color:rgba(244,243,239,.55); font-size:0.84rem; font-weight:300; }
+.ganho-v{ font-family:'Anton',sans-serif; font-size:1.45rem; color:var(--terra-l); white-space:nowrap; line-height:1; }
+.ganho-note{ margin-top:22px; font-size:0.8rem; color:rgba(244,243,239,.45); font-weight:300; line-height:1.6; }
+
+/* OPORTUNIDADES */
+.op-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+@media (max-width:860px){ .op-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .op-grid{ grid-template-columns:1fr; } }
+.op-card{ background:var(--card); border:1.5px solid var(--line); border-radius:16px; padding:26px 24px; position:relative; overflow:hidden; transition:transform .18s, border-color .18s, box-shadow .18s; }
+.op-card:hover{ transform:translateY(-4px); border-color:var(--ink); box-shadow:6px 6px 0 var(--line); }
+.op-tag{ font-size:0.62rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--terra); margin-bottom:9px; }
+.op-card h3{ font-family:'Anton',sans-serif; font-weight:400; font-size:1.18rem; text-transform:uppercase; color:var(--ink); line-height:1.05; margin-bottom:9px; }
+.op-card p{ font-size:0.88rem; color:var(--text); line-height:1.55; }
+
+/* FRENTES / MODULOS (accordion) */
+.fase-header{ display:flex; justify-content:space-between; align-items:center; gap:16px; background:var(--ink); border-radius:16px 16px 0 0; padding:22px 26px; margin-top:30px; }
+.fase-header.t2{ background:var(--terra); }
+.fase-tag{ font-size:0.62rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.6); }
+.fase-name{ font-family:'Anton',sans-serif; font-weight:400; font-size:1.5rem; text-transform:uppercase; color:#fff; line-height:1; margin:5px 0 4px; }
+.fase-dur{ font-size:0.8rem; color:rgba(255,255,255,.72); font-weight:300; }
+.fase-num{ font-family:'Anton',sans-serif; font-size:2.6rem; color:rgba(255,255,255,.32); line-height:1; }
+.mod-card{ background:var(--card); border:1.5px solid var(--line); border-top:none; cursor:pointer; }
+.mod-card:last-of-type{ border-radius:0 0 16px 16px; }
+.mod-head{ display:flex; justify-content:space-between; align-items:center; gap:16px; padding:24px 26px; }
+.mod-left{ display:flex; gap:16px; align-items:flex-start; }
+.mod-icon{ font-size:1.5rem; line-height:1; margin-top:2px; }
+.mod-label{ font-size:0.62rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--terra); }
+.mod-name{ font-family:'Anton',sans-serif; font-weight:400; font-size:1.3rem; text-transform:uppercase; color:var(--ink); line-height:1.05; margin-top:3px; }
+.mod-chips{ display:flex; flex-wrap:wrap; gap:7px; margin-top:10px; }
+.mod-chips .chip{ font-size:0.66rem; font-weight:600; color:var(--ink-2); background:var(--bg-2); border:1px solid var(--line); padding:5px 11px; border-radius:100px; }
+.mod-toggle{ width:36px; height:36px; flex-shrink:0; border-radius:50%; border:1.5px solid var(--line); display:flex; align-items:center; justify-content:center; font-size:1.4rem; color:var(--ink); transition:transform .25s, background .2s, color .2s; }
+.mod-card.open .mod-toggle{ transform:rotate(45deg); background:var(--terra); color:#fff; border-color:var(--terra); }
+.mod-card.open .mod-chips{ display:none; }
+.mod-body{ max-height:0; overflow:hidden; transition:max-height .35s ease; }
+.mod-body-inner{ padding:0 26px 28px; }
+.value-box{ display:flex; gap:14px; align-items:flex-start; background:var(--bg-2); border-left:3px solid var(--terra); border-radius:0 12px 12px 0; padding:18px 20px; margin-bottom:20px; }
+.value-box .vi{ font-size:1.3rem; line-height:1; }
+.value-box .vl{ font-size:0.64rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--terra); margin-bottom:5px; }
+.value-box .vt{ font-size:0.94rem; color:var(--ink); font-weight:500; line-height:1.5; }
+.mod-desc{ font-size:0.95rem; color:var(--ink-2); font-weight:300; line-height:1.7; margin-bottom:16px; }
+.mod-items{ list-style:none; }
+.mod-items li{ font-size:0.92rem; color:var(--text); line-height:1.6; padding:9px 0 9px 26px; position:relative; border-top:1px solid var(--line); }
+.mod-items li:first-child{ border-top:none; }
+.mod-items li::before{ content:'›'; position:absolute; left:6px; top:8px; color:var(--terra); font-weight:700; font-size:1.1rem; }
+.mod-items li b{ color:var(--ink); font-weight:600; }
+
+/* COMO FUNCIONA / antes-depois */
+.ad-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:8px; }
+@media (max-width:780px){ .ad-grid{ grid-template-columns:1fr; } }
+.ad-col{ border-radius:18px; padding:30px 28px; }
+.ad-antes{ background:var(--card); border:1.5px solid var(--line); }
+.ad-depois{ background:linear-gradient(155deg,var(--ink),var(--green)); color:#fff; }
+.ad-cap{ font-size:0.64rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:16px; }
+.ad-antes .ad-cap{ color:var(--terra); }
+.ad-depois .ad-cap{ color:var(--terra-l); }
+.ad-step{ display:flex; gap:14px; padding:11px 0; border-bottom:1px solid var(--line); font-size:0.9rem; }
+.ad-depois .ad-step{ border-bottom:1px solid var(--line-d); }
+.ad-step:last-of-type{ border-bottom:none; }
+.ad-time{ font-family:'Anton',sans-serif; min-width:64px; font-weight:400; font-variant-numeric:tabular-nums; }
+.ad-antes .ad-time{ color:var(--ink); }
+.ad-depois .ad-time{ color:var(--terra-l); }
+.ad-antes .ad-step{ color:var(--ink-2); }
+.ad-depois .ad-step{ color:rgba(244,243,239,.82); }
+.ad-total{ margin-top:18px; padding-top:16px; border-top:2px solid; display:flex; justify-content:space-between; align-items:center; }
+.ad-antes .ad-total{ border-color:var(--ink); }
+.ad-depois .ad-total{ border-color:var(--terra-l); }
+.ad-total .lab{ font-size:0.72rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+.ad-total .num{ font-family:'Anton',sans-serif; font-size:1.7rem; }
+.ad-antes .ad-total .num{ color:var(--ink); }
+.ad-depois .ad-total .num{ color:var(--terra-l); }
+
+/* INVESTIMENTO */
+.inv-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+@media (max-width:780px){ .inv-grid{ grid-template-columns:1fr; } }
+.inv-card{ background:var(--card); border:1.5px solid var(--line); border-radius:18px; padding:32px 30px; }
+.inv-card .it{ font-size:0.64rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--terra); margin-bottom:8px; }
+.inv-card h3{ font-family:'Anton',sans-serif; font-weight:400; font-size:1.4rem; text-transform:uppercase; color:var(--ink); line-height:1.05; margin-bottom:14px; }
+.inv-price{ font-family:'Anton',sans-serif; font-size:2.4rem; color:var(--ink); line-height:1; }
+.inv-price small{ font-family:'Hanken Grotesk',sans-serif; font-size:0.86rem; font-weight:500; color:var(--muted); }
+.inv-card p.sub{ font-size:0.9rem; color:var(--ink-2); font-weight:300; line-height:1.6; margin-top:12px; }
+.tiers{ margin-top:16px; border-top:1px solid var(--line); }
+.tier{ display:flex; justify-content:space-between; padding:9px 0; font-size:0.9rem; border-bottom:1px solid var(--line); }
+.tier:last-child{ border-bottom:none; }
+.tier span{ color:var(--ink-2); }
+.tier b{ font-family:'Anton',sans-serif; font-weight:400; color:var(--terra-d); font-size:1.05rem; }
+.inv-items{ list-style:none; margin-top:14px; }
+.inv-items li{ font-size:0.88rem; color:var(--text); padding:6px 0 6px 22px; position:relative; }
+.inv-items li::before{ content:'✓'; position:absolute; left:0; color:var(--green); font-weight:700; }
+
+.pacote{ margin-top:18px; background:linear-gradient(155deg,#0E2A2E,#14373C 60%,#1d4840 100%); border:1px solid rgba(196,131,94,.3); border-radius:20px; padding:40px 36px; position:relative; display:grid; grid-template-columns:1.3fr 1fr; gap:36px; align-items:center; }
+@media (max-width:780px){ .pacote{ grid-template-columns:1fr; gap:26px; } }
+.pacote::before{ content:'PACOTE FECHADO'; position:absolute; top:-11px; left:28px; background:var(--terra); color:#fff; font-size:0.6rem; font-weight:700; letter-spacing:.14em; padding:5px 13px; border-radius:100px; }
+.pacote .pl b{ font-family:'Anton',sans-serif; font-weight:400; font-size:1.5rem; text-transform:uppercase; color:#fff; display:block; line-height:1.05; margin-bottom:10px; }
+.pacote .pl p{ color:rgba(244,243,239,.7); font-weight:300; font-size:0.92rem; line-height:1.6; }
+.pacote-right{ text-align:right; }
+@media (max-width:780px){ .pacote-right{ text-align:left; } }
+.pacote .de{ font-size:0.95rem; color:rgba(244,243,239,.5); text-decoration:line-through; }
+.pacote .por{ font-family:'Anton',sans-serif; font-size:3rem; color:#fff; line-height:1; margin:4px 0 6px; }
+.pacote .eco{ display:inline-block; background:rgba(196,131,94,.18); color:var(--terra-l); font-size:0.68rem; font-weight:700; letter-spacing:.05em; padding:5px 12px; border-radius:100px; }
+.pacote .cond{ margin-top:12px; font-size:0.78rem; color:rgba(244,243,239,.6); }
+
+.cob{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:18px; }
+@media (max-width:780px){ .cob{ grid-template-columns:1fr; } }
+.cob-card{ background:var(--card); border:1.5px solid var(--line); border-radius:14px; padding:22px 20px; }
+.cob-card .ci{ font-size:1.2rem; margin-bottom:8px; }
+.cob-card b{ display:block; color:var(--ink); font-size:0.92rem; margin-bottom:5px; }
+.cob-card p{ font-size:0.82rem; color:var(--ink-2); font-weight:300; line-height:1.5; }
+
+.aviso{ margin-top:18px; background:var(--bg-2); border-left:3px solid var(--terra); border-radius:0 12px 12px 0; padding:18px 22px; font-size:0.86rem; color:var(--ink-2); font-weight:300; line-height:1.65; }
+.aviso b{ color:var(--ink); font-weight:600; }
+
+/* ONDA FUTURA */
+.onda-grid{ display:grid; grid-template-columns:1.1fr 1fr; gap:46px; align-items:start; }
+@media (max-width:880px){ .onda-grid{ grid-template-columns:1fr; gap:30px; } }
+.onda-text p{ color:rgba(244,243,239,.74); font-weight:300; font-size:1.03rem; line-height:1.74; margin-top:14px; }
+.onda-text p b{ color:#fff; font-weight:600; }
+.onda-card{ background:rgba(255,255,255,.04); border:1px solid rgba(196,131,94,.25); border-radius:18px; padding:30px 28px; }
+.onda-card .oc-t{ font-size:0.64rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--terra-l); margin-bottom:16px; }
+.onda-card ul{ list-style:none; }
+.onda-card li{ font-size:0.92rem; color:rgba(244,243,239,.82); padding:10px 0 10px 24px; position:relative; border-top:1px solid var(--line-d); }
+.onda-card li:first-child{ border-top:none; }
+.onda-card li::before{ content:'→'; position:absolute; left:0; color:var(--terra-l); }
+
+/* GARANTIA */
+.gar-block{ background:linear-gradient(135deg,var(--ink),var(--green)); border-radius:22px; padding:48px 50px; display:grid; grid-template-columns:1.4fr 1fr; gap:44px; align-items:center; }
+@media (max-width:780px){ .gar-block{ grid-template-columns:1fr; gap:28px; padding:36px 30px; } }
+.gar-block .kick{ color:var(--terra-l); }
+.gar-block h2{ font-family:'Anton',sans-serif; font-weight:400; font-size:clamp(1.8rem,4vw,2.6rem); text-transform:uppercase; color:#fff; line-height:1; margin:12px 0 14px; }
+.gar-block p{ color:rgba(244,243,239,.78); font-weight:300; line-height:1.7; font-size:0.98rem; }
+.gar-selo{ text-align:center; }
+.gar-selo .n{ font-family:'Anton',sans-serif; font-size:4rem; color:var(--terra-l); line-height:1; }
+.gar-selo .t{ font-size:0.74rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:rgba(244,243,239,.7); margin-top:6px; }
+
+/* QUOTE + METODO + FUNDADORES */
+.quote-block{ background:var(--ink); border-radius:20px; padding:44px 46px; position:relative; }
+.quote-block::before{ content:'"'; font-family:'Anton',sans-serif; font-size:6rem; color:rgba(196,131,94,.25); position:absolute; top:6px; left:28px; line-height:1; }
+.quote-block p{ color:var(--cream); font-weight:300; font-size:1.18rem; line-height:1.6; position:relative; max-width:62ch; }
+.quote-block .sig{ margin-top:18px; font-size:0.8rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--terra-l); }
+.met-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:24px; }
+@media (max-width:860px){ .met-grid{ grid-template-columns:1fr; } }
+.met-card{ background:var(--card); border:1.5px solid var(--line); border-radius:16px; padding:26px 24px; }
+.met-num{ font-family:'Anton',sans-serif; font-size:1.8rem; color:var(--terra); line-height:1; }
+.met-card b{ display:block; font-family:'Anton',sans-serif; font-weight:400; font-size:1.1rem; text-transform:uppercase; color:var(--ink); margin:8px 0 7px; line-height:1.1; }
+.met-card p{ font-size:0.86rem; color:var(--ink-2); font-weight:300; line-height:1.55; }
+.fund-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:24px; }
+@media (max-width:780px){ .fund-grid{ grid-template-columns:1fr; } }
+.fund-card{ background:var(--card); border:1.5px solid var(--line); border-radius:18px; padding:26px; display:flex; gap:22px; }
+@media (max-width:520px){ .fund-card{ flex-direction:column; } }
+.fund-photo{ width:110px; flex-shrink:0; }
+.fund-photo .ph{ aspect-ratio:3/4; border-radius:14px; }
+@media (max-width:520px){ .fund-photo{ width:100%; } .fund-photo .ph{ aspect-ratio:3/2; } }
+.fund-card h3{ font-family:'Anton',sans-serif; font-weight:400; font-size:1.3rem; text-transform:uppercase; color:var(--ink); line-height:1; }
+.fund-card .fr{ font-size:0.68rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--terra); margin:5px 0 10px; }
+.fund-card p{ font-size:0.85rem; color:var(--ink-2); font-weight:300; line-height:1.55; }
+.fund-tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
+.fund-tags span{ font-size:0.62rem; font-weight:600; color:var(--ink-2); background:var(--bg-2); border:1px solid var(--line); padding:4px 9px; border-radius:100px; }
+
+/* FAQ */
+.faq-item{ border-bottom:1.5px solid var(--line); cursor:pointer; }
+.faq-q{ display:flex; justify-content:space-between; align-items:center; gap:16px; padding:24px 4px; }
+.faq-q b{ font-size:1.05rem; color:var(--ink); font-weight:600; }
+.faq-ic{ width:30px; height:30px; flex-shrink:0; border-radius:50%; border:1.5px solid var(--line); display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:var(--terra); transition:transform .25s, background .2s, color .2s; }
+.faq-item.open .faq-ic{ transform:rotate(45deg); background:var(--terra); color:#fff; border-color:var(--terra); }
+.faq-a{ max-height:0; overflow:hidden; transition:max-height .35s ease; }
+.faq-a p{ padding:0 4px 24px; color:var(--ink-2); font-weight:300; line-height:1.7; font-size:0.96rem; max-width:70ch; }
+
+/* PROXIMOS PASSOS */
+.steps{ max-width:760px; }
+.step{ display:flex; gap:22px; padding-bottom:34px; position:relative; }
+.step:not(:last-child)::after{ content:''; position:absolute; left:21px; top:48px; bottom:0; width:1px; background:rgba(196,131,94,.3); }
+.step-n{ width:44px; height:44px; flex-shrink:0; border-radius:50%; background:rgba(196,131,94,.14); border:1.5px solid rgba(196,131,94,.4); display:flex; align-items:center; justify-content:center; font-family:'Anton',sans-serif; font-size:1.2rem; color:var(--terra-l); }
+.step-prazo{ font-size:0.66rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--terra-l); }
+.step h3{ font-family:'Anton',sans-serif; font-weight:400; font-size:1.3rem; text-transform:uppercase; color:#fff; line-height:1.05; margin:4px 0 7px; }
+.step p{ color:rgba(244,243,239,.7); font-weight:300; font-size:0.95rem; line-height:1.6; }
+.steps-close{ margin-top:10px; padding:22px 26px; background:rgba(255,255,255,.04); border:1px solid var(--line-d); border-radius:14px; color:#fff; font-weight:300; font-size:1.05rem; }
+.steps-close b{ font-weight:600; }
+
+/* CTA */
+.cta-final{ background:var(--bg); padding:52px 0 74px; }
+.cta-inner{ background:linear-gradient(150deg,#0E2A2E,#14373C 55%,#1d4840 100%); border-radius:26px; padding:86px 64px; text-align:center; position:relative; overflow:hidden; }
+@media (max-width:680px){ .cta-inner{ padding:52px 26px; } }
+.cta-badge{ display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.06); border:1px solid var(--line-d); color:rgba(244,243,239,.8); font-size:0.66rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:7px 15px; border-radius:100px; margin-bottom:30px; }
+.cta-badge .pulse{ width:8px; height:8px; border-radius:50%; background:var(--terra-l); animation:pulse 1.8s infinite; }
+@keyframes pulse{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+.cta-inner h2{ font-family:'Anton',sans-serif; font-weight:400; font-size:clamp(2rem,5.5vw,3.4rem); text-transform:uppercase; color:#fff; line-height:0.98; max-width:18ch; margin:0 auto 22px; }
+.cta-inner h2 .terra{ color:var(--terra-l); }
+.cta-inner p{ color:rgba(244,243,239,.72); font-weight:300; max-width:50ch; margin:0 auto 42px; font-size:1.05rem; line-height:1.65; }
+.cta-actions{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+.cta-metrics{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; max-width:640px; margin:56px auto 0; padding-top:40px; border-top:1px solid var(--line-d); }
+@media (max-width:680px){ .cta-metrics{ grid-template-columns:1fr; gap:22px; } }
+.cta-metrics .v{ font-family:'Anton',sans-serif; font-size:1.7rem; color:var(--terra-l); line-height:1; }
+.cta-metrics .l{ font-size:0.74rem; color:rgba(244,243,239,.6); margin-top:6px; }
+
+/* FOOTER */
+footer{ background:var(--ink); color:rgba(244,243,239,.6); padding:42px 0 48px; }
+.footer-row{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+.footer-brand{ font-family:'Anton',sans-serif; font-size:1.2rem; text-transform:uppercase; color:#fff; }
+.footer-brand span{ color:var(--terra-l); }
+.footer-date{ font-size:0.78rem; color:rgba(244,243,239,.55); text-align:right; line-height:1.6; }
+@media (max-width:680px){ .footer-date{ text-align:left; } }
+
+/* reveal */
+.rv{ opacity:0; transform:translateY(22px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+.rv.in{ opacity:1; transform:none; }
+@media (prefers-reduced-motion:reduce){ .rv{ opacity:1; transform:none; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#topo" class="logo"><img class="logo-img" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2005%403x.png" alt="NewScale Consulting" onerror="this.outerHTML='NewScale<span class=&quot;brand-tag&quot;>Consulting</span>'"></a>
+    <span class="header-tag">Proposta Executiva · Econverse · Junho 2026</span>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-grid hero-single">
+      <div class="rv">
+        <div class="hero-badge">Proposta Executiva · Junho 2026 · Para a Econverse</div>
+        <div class="hero-eyebrow"><span class="dot"></span><span class="kick">NewScale Consulting × Econverse</span></div>
+        <h1>Uma pessoa<br>rendendo por <span class="terra">dez.</span></h1>
+        <p class="hero-sub"><b>O time da Econverse já usa IA. Agora vai usar de verdade.</b> Tirar o repetitivo do caminho de quem faz SEO, mídia, comercial e operação, e fazer a IA trabalhar pelo time, sem precisar contratar a cada nova demanda.</p>
+        <div class="hero-actions">
+          <a href="#contexto" class="btn btn-terra">Entender a proposta</a>
+          <a href="https://wa.me/5511971901020" class="btn btn-ink" target="_blank" rel="noopener">Falar com a Bruna</a>
+        </div>
+        <div class="hero-meta">Baseada na nossa conversa de <b>17 de junho</b> · Aula magna A Virada IA + turmas de solução</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marq" aria-label="Temas">
+  <div class="marq-track">
+    <span class="s">O que o time vai dominar</span><span>Claude</span><span>4 modelos</span><span>Projetos</span><span>Memória</span><span>Skills</span><span>Cowork</span><span>Schedule</span><span>n8n</span><span>Automação</span>
+    <span class="s">O que o time vai dominar</span><span>Claude</span><span>4 modelos</span><span>Projetos</span><span>Memória</span><span>Skills</span><span>Cowork</span><span>Schedule</span><span>n8n</span><span>Automação</span>
+  </div>
+</div>
+
+<!-- CONTEXTO -->
+<section class="sec" id="contexto">
+  <div class="wrap">
+    <div class="ctx-grid">
+      <div class="ctx-text rv">
+        <span class="kick" style="display:block; margin-bottom:14px;">O contexto</span>
+        <h2 class="sec-head" style="margin:0; font-family:'Anton',sans-serif; font-weight:400; font-size:clamp(2.1rem,5.6vw,3.3rem); text-transform:uppercase; color:var(--ink); line-height:1;">Dez anos de mercado,<br>e o melhor <span style="color:var(--terra)">ainda por vir.</span></h2>
+        <p>A Econverse implanta e sustenta e-commerce em VTEX, Shopify e outras plataformas há dez anos, com clientes de peso. Nos últimos dois anos a casa abriu as frentes de Marketing, SEO, Mídia Paga, CRM e CRO, e cresce rápido.</p>
+        <p>Com esse crescimento veio a cobrança da diretoria: <b>ser mais eficiente sem contratar a cada nova demanda.</b> O time é pequeno por squad e boa parte do dia é consumida por tarefas repetitivas que se repetem cliente a cliente.</p>
+        <p>Hoje a IA é usada como se fosse um buscador. O salto é deixar o time de executor para virar quem orquestra: a pessoa decide, a IA faz o operacional. É exatamente isso que esta proposta entrega.</p>
+      </div>
+      <div class="stats-grid rv">
+        <div class="stat-card"><div class="v">10</div><div class="l">anos de mercado em e-commerce</div></div>
+        <div class="stat-card"><div class="v">~100</div><div class="l">colaboradores na operação</div></div>
+        <div class="stat-card"><div class="v">8</div><div class="l">áreas que ganham com IA</div></div>
+        <div class="stat-card"><div class="v">4</div><div class="l">squads dentro do Marketing</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAPEAMENTO DE GANHOS (dark) -->
+<section class="sec dark">
+  <div class="wrap">
+    <div class="ganhos-grid">
+      <div class="ganhos-lead rv">
+        <span class="kick" style="display:block; margin-bottom:14px;">Mapeamento de ganhos</span>
+        <h2 class="sec-head" style="margin:0; color:#fff; font-family:'Anton',sans-serif; font-weight:400; font-size:clamp(2.1rem,5.6vw,3.3rem); text-transform:uppercase; line-height:1;">Onde estão as horas<br>que dá pra <span style="color:var(--terra-l)">recuperar.</span></h2>
+        <p>São horas que hoje vão embora em tarefa manual e repetitiva, e que dá pra devolver pro time. Todos esses processos você mesma citou na nossa conversa.</p>
+        <p class="ganho-note">Estimativas conservadoras, por equipe, do tempo recorrente que dá pra reduzir com IA. O número exato a gente mapeia junto nas turmas de mentoria.</p>
+      </div>
+      <div class="rv">
+        <div class="ganho-item">
+          <div class="ganho-l"><b>SEO de catálogo, SKU a SKU</b><span>Correção massiva de title e description, como o caso dos 10 mil SKUs feito na mão</span></div>
+          <div class="ganho-v">semanas → horas</div>
+        </div>
+        <div class="ganho-item">
+          <div class="ganho-l"><b>Subida de criativos na mídia paga</b><span>Peça por peça, manualmente, todo dia, em vez de fluxo</span></div>
+          <div class="ganho-v">~6h/sem</div>
+        </div>
+        <div class="ganho-item">
+          <div class="ganho-l"><b>Propostas comerciais montadas na mão</b><span>Comercial repetindo estrutura e texto a cada nova proposta</span></div>
+          <div class="ganho-v">~5h/sem</div>
+        </div>
+        <div class="ganho-item">
+          <div class="ganho-l"><b>Leitura de dados no Customer Success</b><span>Tempo perdido pra extrair e interpretar métricas de e-commerce</span></div>
+          <div class="ganho-v">~4h/sem</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMERSAO / DIAGNOSTICO -->
+<section class="sec" style="background:var(--bg-2);">
+  <div class="wrap">
+    <div class="ctx-grid">
+      <div class="ctx-text rv">
+        <span class="kick" style="display:block; margin-bottom:14px;">Feito sob medida</span>
+        <h2 style="font-family:'Anton',sans-serif; font-weight:400; font-size:clamp(2.1rem,5.6vw,3.3rem); text-transform:uppercase; color:var(--ink); line-height:1;">A gente entra na<br>Econverse <span style="color:var(--terra)">antes de ensinar.</span></h2>
+        <p>O nosso método, A Virada IA, não vem pronto de prateleira. Antes de montar qualquer aula, a gente mergulha na operação de vocês: uma pesquisa de diagnóstico com a turma e reuniões com as lideranças das áreas.</p>
+        <p>É com isso que o conteúdo das duas frentes abaixo é desenhado. <b>O workshop e as turmas falam da rotina real da Econverse</b>, e-commerce, VTEX, Shopify, catálogo, mídia e comercial, e trazem as ferramentas e exemplos focados em vocês, não casos de outro setor.</p>
+      </div>
+      <div class="inv-card rv">
+        <div class="it">Como mapeamos</div>
+        <h3 style="font-family:'Anton',sans-serif; font-weight:400; font-size:1.3rem; text-transform:uppercase; color:var(--ink); margin-bottom:16px; line-height:1.05;">Diagnóstico antes da aula</h3>
+        <ul class="inv-items">
+          <li>Pesquisa de diagnóstico com a turma</li>
+          <li>Reuniões com as lideranças das áreas</li>
+          <li>Mergulho na operação e nos processos reais</li>
+          <li>Conteúdo das frentes desenhado sob medida</li>
+          <li>Ferramentas e exemplos focados na Econverse</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FRENTES / MODULOS -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">A proposta</span>
+      <h2>Duas frentes,<br>uma <span class="terra">virada de chave.</span></h2>
+      <p>Primeiro todo mundo nivela e abre a cabeça pro que é possível. Depois, em turmas, as pessoas que puxam colocam a mão na massa num projeto real. As duas são desenhadas a partir do diagnóstico feito com a equipe.</p>
+    </div>
+
+    <!-- FRENTE 1 -->
+    <div class="rv">
+      <div class="fase-header">
+        <div>
+          <div class="fase-tag">Frente 1 · A largada</div>
+          <div class="fase-name">A Virada IA</div>
+          <div class="fase-dur">Aula magna de IA e Claude · presencial em São Paulo · até 100 pessoas · 2h30 a 3h</div>
+        </div>
+        <div class="fase-num">01</div>
+      </div>
+      <div class="mod-card" onclick="toggleMod(this)">
+        <div class="mod-head">
+          <div class="mod-left">
+            <div class="mod-icon">⚡</div>
+            <div>
+              <div class="mod-label">Para a empresa toda</div>
+              <div class="mod-name">De usuário de buscador a quem orquestra</div>
+              <div class="mod-chips"><span class="chip">Os 4 modelos do Claude</span><span class="chip">Projetos e Skills</span><span class="chip">Cowork e Schedule</span><span class="chip">Claude vs ChatGPT</span></div>
+            </div>
+          </div>
+          <div class="mod-toggle">+</div>
+        </div>
+        <div class="mod-body">
+          <div class="mod-body-inner">
+            <div class="value-box">
+              <div class="vi">💡</div>
+              <div><div class="vl">O que isso resolve</div><div class="vt">A empresa toda acorda pro que a IA já faz, e para de usar Claude como buscador. É a mesma base que a gente aprofunda depois, área por área.</div></div>
+            </div>
+            <p class="mod-desc">Uma aula magna prática, no auditório de vocês, pra até 100 pessoas. Sai da teoria rápido e mostra na tela, com exemplos de e-commerce, a IA montando em minutos o que hoje leva dias.</p>
+            <ul class="mod-items">
+              <li><b>O Claude e os 4 modelos:</b> Opus, Sonnet, Haiku e Fable, o que cada um faz melhor e quando usar.</li>
+              <li><b>Claude vs ChatGPT vs Gemini:</b> por que o Claude entrega mais profundidade pra análise e automação, e onde o ChatGPT ainda ganha (imagem).</li>
+              <li><b>Como a IA pensa e como pedir:</b> sair do uso tipo buscador e chegar no resultado, com os elementos de um bom pedido.</li>
+              <li><b>Os recursos que viram jogo:</b> Projetos, Memória, Skills, Cowork lendo suas pastas e Schedule agendando tarefas que rodam sozinhas.</li>
+              <li><b>A jornada ao vivo:</b> um dado bagunçado, como chega de um e-mail, vira planilha, vira dashboard e vira uma skill que repete o processo sozinha.</li>
+              <li><b>Segurança e limites:</b> o que uma agência precisa cuidar com dados de cliente ao usar IA.</li>
+              <li><b>Vocês saem com material:</b> uma página-guia com o resumo da aula e uma biblioteca de prompts sob medida, pra usar no dia a dia.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRENTE 2 -->
+    <div class="rv" style="margin-top:14px;">
+      <div class="fase-header t2">
+        <div>
+          <div class="fase-tag">Frente 2 · Mão na massa</div>
+          <div class="fase-name">Turmas de solução</div>
+          <div class="fase-dur">Trilha de 3 encontros de 1h30 · espaçados · cada um sai com uma solução rodando</div>
+        </div>
+        <div class="fase-num">02</div>
+      </div>
+      <div class="mod-card" onclick="toggleMod(this)">
+        <div class="mod-head">
+          <div class="mod-left">
+            <div class="mod-icon">🛠️</div>
+            <div>
+              <div class="mod-label">Em grupo · solução por participante</div>
+              <div class="mod-name">Cada um sai com a sua solução no ar</div>
+              <div class="mod-chips"><span class="chip">3 encontros de 1h30</span><span class="chip">Solução real por pessoa</span><span class="chip">Por área ou turma mista</span></div>
+            </div>
+          </div>
+          <div class="mod-toggle">+</div>
+        </div>
+        <div class="mod-body">
+          <div class="mod-body-inner">
+            <div class="value-box">
+              <div class="vi">🚀</div>
+              <div><div class="vl">O que isso resolve</div><div class="vt">Ninguém sai com uma aula. Cada participante sai com uma skill ou automação da sua rotina rodando de verdade. Quem puxa vira multiplicador e leva pro resto do time.</div></div>
+            </div>
+            <p class="mod-desc">Mentoria espaçada e mão na massa, em grupo. Cada participante traz um processo repetitivo da sua área e a gente constrói a solução ao vivo, na frente de todos, porque todo mundo aprende junto. Pode ser turma por área, que aprofunda numa dor específica, ou turma mista de multiplicadores, que cruza áreas. A Econverse decide.</p>
+            <ul class="mod-items">
+              <li><b>Encontro 1, enquadrar:</b> cada um escolhe o processo certo, a gente entende a dor e desenha a solução com IA.</li>
+              <li><b>Encontro 2, construir:</b> mão na massa de verdade, skill, prompt e fluxo no Cowork ou n8n, com Schedule pra rodar sozinho.</li>
+              <li><b>Encontro 3, rodar e ajustar:</b> colocar no ar, medir o ganho e refinar até ficar redondo.</li>
+              <li><b>Exemplos de solução por área:</b> SEO de catálogo em lote, agente de criativos e relatório de mídia, proposta comercial montada da reunião, conciliação e relatório financeiro.</li>
+              <li><b>Formato aberto:</b> por área ou turma mista de multiplicadores, até cerca de 8 pessoas por turma. A Econverse define quantas turmas.</li>
+              <li><b>Vira biblioteca:</b> as skills e prompts construídos viram uma biblioteca sob medida que fica com a turma.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMO FUNCIONA (dark) -->
+<section class="sec dark">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">A diferença concreta</span>
+      <h2 style="color:#fff;">SEO de catálogo,<br><span style="color:var(--terra-l)">antes e depois.</span></h2>
+      <p>Um exemplo real do que muda. O mesmo trabalho, do jeito manual de hoje e do jeito com IA depois da mentoria.</p>
+    </div>
+    <div class="ad-grid rv">
+      <div class="ad-col ad-antes">
+        <div class="ad-cap">Hoje · na mão</div>
+        <div class="ad-step"><span class="ad-time">Dia 1</span><span>Abrir produto a produto e escrever title e description um por um.</span></div>
+        <div class="ad-step"><span class="ad-time">Dia 2-5</span><span>Repetir pra centenas ou milhares de SKUs, sem padrão garantido.</span></div>
+        <div class="ad-step"><span class="ad-time">Semana 2</span><span>Revisar, corrigir duplicidade e tentar manter o SEO consistente.</span></div>
+        <div class="ad-total"><span class="lab">Tempo total</span><span class="num">Semanas</span></div>
+      </div>
+      <div class="ad-col ad-depois">
+        <div class="ad-cap">Depois · com IA</div>
+        <div class="ad-step"><span class="ad-time">10 min</span><span>Definir regras da marca, padrão de SEO e o que cada campo precisa.</span></div>
+        <div class="ad-step"><span class="ad-time">Fluxo</span><span>A IA gera title e description em lote, no padrão, ligada ao catálogo.</span></div>
+        <div class="ad-step"><span class="ad-time">Revisão</span><span>O time revisa e aprova, em vez de escrever do zero.</span></div>
+        <div class="ad-total"><span class="lab">Tempo total</span><span class="num">Horas</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTIMENTO -->
+<section class="sec" id="investimento">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">Investimento</span>
+      <h2>Transparente,<br>sem surpresa.</h2>
+      <p>O workshop é valor fechado. As mentorias são por área, e a Econverse monta o pacote do tamanho que fizer sentido.</p>
+    </div>
+
+    <div class="inv-grid rv">
+      <div class="inv-card">
+        <div class="it">Frente 1</div>
+        <h3>A Virada IA · aula magna</h3>
+        <div class="inv-price">R$ 8.500 <small>turma única · até 100 pessoas</small></div>
+        <p class="sub">Empresa toda em uma sessão presencial de 2h30 a 3h. Valor fechado, independente do número de participantes.</p>
+        <ul class="inv-items">
+          <li>Conteúdo de nivelamento completo</li>
+          <li>Página-guia com o resumo da aula</li>
+          <li>Biblioteca de prompts sob medida</li>
+          <li>Casos adaptados ao e-commerce</li>
+        </ul>
+      </div>
+      <div class="inv-card">
+        <div class="it">Frente 2</div>
+        <h3>Turma de solução</h3>
+        <div class="inv-price">R$ 6.000 <small>por turma · trilha de 3 encontros</small></div>
+        <p class="sub">Grupo de até cerca de 8 pessoas, cada uma saindo com uma solução rodando. Pode ser por área ou turma mista de multiplicadores. A Econverse define quantas turmas.</p>
+        <ul class="inv-items">
+          <li>3 encontros de 1h30, espaçados</li>
+          <li>Uma solução real no ar por participante</li>
+          <li>Biblioteca de prompts e skills da turma</li>
+          <li>Aprendizado compartilhado no grupo</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CONDICOES -->
+    <div class="pacote rv">
+      <div class="pl">
+        <b>Você monta o pacote</b>
+        <p>O workshop nivela a empresa toda. Depois, a Econverse fecha quantas turmas de mentoria fizerem sentido, por área ou mistas. Começa pelo que tem ganho mais rápido e expande quando quiser.</p>
+      </div>
+      <div class="pacote-right">
+        <span class="eco">Pagamento 50% / 50%</span>
+        <div class="cond" style="margin-top:14px;">50% na assinatura e 50% na entrega · 30 dias de suporte inclusos em todas as frentes</div>
+      </div>
+    </div>
+
+    <!-- COBERTURA -->
+    <div class="cob rv">
+      <div class="cob-card"><div class="ci">💬</div><b>Suporte de 30 dias</b><p>Dúvidas e ajustes nos fluxos e skills criados durante a mentoria.</p></div>
+      <div class="cob-card"><div class="ci">📚</div><b>Página-guia + biblioteca</b><p>Um site sob medida com o resumo da aula e uma biblioteca de prompts, skills e templates da rotina de vocês, pra consultar sempre.</p></div>
+      <div class="cob-card"><div class="ci">🎯</div><b>Projeto por área</b><p>Cada trilha sai com um processo real escolhido pela área já rodando.</p></div>
+    </div>
+
+    <div class="aviso rv">
+      <b>Sobre custos de terceiros:</b> licenças de IA (Claude, ChatGPT e afins) e ferramentas de automação (n8n e similares) são contratadas e pagas pela Econverse, conforme o uso. A NewScale não se responsabiliza por custos de plataformas de terceiros. Sugerimos disponibilizar o Claude para o time, pra que o treinamento já seja focado na ferramenta.
+    </div>
+  </div>
+</section>
+
+<!-- ONDA FUTURA (dark) -->
+<section class="sec dark">
+  <div class="wrap">
+    <div class="onda-grid">
+      <div class="onda-text rv">
+        <span class="kick" style="display:block; margin-bottom:14px;">Onda futura</span>
+        <h2 class="sec-head" style="margin:0; color:#fff; font-family:'Anton',sans-serif; font-weight:400; font-size:clamp(2.1rem,5.6vw,3.3rem); text-transform:uppercase; line-height:1;">Depois da educação,<br>a <span style="color:var(--terra-l)">implementação.</span></h2>
+        <p>Quando o time já pensa com IA, o passo seguinte é construir as automações e agentes que rodam sozinhos dentro da operação. A gente mapeia as dores, prioriza por quick wins e entrega por ondas.</p>
+        <p>Aqui entra o que mais aproxima a Econverse: ligar o Claude às plataformas que vocês já usam, <b>Shopify e VTEX</b>, e orquestrar com n8n. Esta frente é precificada por onda, depois do mapeamento, e não faz parte do investimento acima.</p>
+      </div>
+      <div class="onda-card rv">
+        <div class="oc-t">Exemplos do que vem nas ondas</div>
+        <ul>
+          <li>Fluxo de SEO de catálogo ligado a Shopify e VTEX</li>
+          <li>Agente que gera e analisa criativos de mídia</li>
+          <li>Automação de propostas comerciais do comercial</li>
+          <li>Relatórios e conciliação financeira automatizados</li>
+          <li>Agente de atendimento e triagem para o CS</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE NEWSCALE -->
+<section class="sec" style="background:var(--bg-2);">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">Por que a NewScale</span>
+      <h2>Método, não<br>só ferramenta.</h2>
+    </div>
+
+    <div class="quote-block rv">
+      <p>Cada projeto começa pela conversa, não pelo contrato. A gente entende como a operação funciona hoje, quais as regras de negócio, o que a equipe precisa. Só depois constrói. E depois que entrega, a gente fica, otimizando, ajustando e evoluindo junto com o seu negócio.</p>
+      <div class="sig">Bruna Santanna · Co-Fundadora NewScale</div>
+    </div>
+
+    <div class="met-grid rv">
+      <div class="met-card"><div class="met-num">01</div><b>Consultoria sistêmica</b><p>Visão completa do negócio: marketing, vendas e operação. IA como motor de escala, não de cosmética.</p></div>
+      <div class="met-card"><div class="met-num">02</div><b>Roadmap faseado</b><p>Priorizamos os processos com maior potencial de retorno antes de qualquer outra coisa.</p></div>
+      <div class="met-card"><div class="met-num">03</div><b>Mão na massa</b><p>Construímos os fluxos nos canais e ferramentas que a equipe já usa, junto com ela.</p></div>
+      <div class="met-card"><div class="met-num">04</div><b>Treinamento do time</b><p>Cada pessoa aprende o papel no novo fluxo. O humano decide, a IA faz o operacional.</p></div>
+      <div class="met-card"><div class="met-num">05</div><b>Acompanhamento de KPIs</b><p>Métricas definidas juntos antes de começar. Você sabe o que esperar e como medir o ganho.</p></div>
+      <div class="met-card"><div class="met-num">06</div><b>Sustentação contínua</b><p>Monitoramento e otimização pra que o sistema evolua junto com o negócio.</p></div>
+    </div>
+
+    <div class="fund-grid rv">
+      <div class="fund-card">
+        <div class="fund-photo"><div class="ph"><img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG" alt="Bruna Santanna" onerror="this.remove()"><div class="ph-tag"><b>Bruna</b><span>retrato</span></div></div></div>
+        <div>
+          <h3>Bruna Santanna</h3>
+          <div class="fr">Co-Fundadora</div>
+          <p>ESPM. Empresária há 10+ anos, com e-commerce próprio por 8 anos. Mentora de IA no Potenc.IA. Implementa IA no próprio negócio todo dia, só vende o que usa.</p>
+          <div class="fund-tags"><span>Ex-SulAmérica</span><span>Ex-Whirlpool</span><span>Potenc.IA</span></div>
+        </div>
+      </div>
+      <div class="fund-card">
+        <div class="fund-photo"><div class="ph"><img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/BRUNO-VARELLA-PQ.jpeg" alt="Bruno Varella" onerror="this.remove()"><div class="ph-tag"><b>Bruno</b><span>retrato</span></div></div></div>
+        <div>
+          <h3>Bruno Varella</h3>
+          <div class="fr">Co-Fundador</div>
+          <p>ESPM. 17+ anos em Marketing, Produto e Novos Negócios. Ex-Warner Bros., Ex-Natura & Co. Já implantou agentes de IA em redes de franquias com 700+ unidades.</p>
+          <div class="fund-tags"><span>Warner Bros.</span><span>Natura & Co</span><span>700+ franquias</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">Perguntas frequentes</span>
+      <h2>O que a diretoria<br>vai querer saber.</h2>
+    </div>
+    <div class="rv">
+      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><b>Por que Claude e não o ChatGPT que o time já usa?</b><div class="faq-ic">+</div></div><div class="faq-a"><p>Pra automação e análise profunda de processo, o Claude entrega mais que o ChatGPT e o Gemini hoje, pelo mesmo custo de assinatura. O ChatGPT segue útil para criação e edição de imagem, então o treinamento foca no Claude e indica o ChatGPT só onde ele ainda ganha.</p></div></div>
+      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><b>Precisa de equipe técnica ou saber programar?</b><div class="faq-ic">+</div></div><div class="faq-a"><p>Não. A proposta é justamente pra quem não é desenvolvedor. Quem tem conhecimento técnico da própria área pede melhor pra IA, mas todo mundo consegue resultado. O foco é a lógica de fazer a IA trabalhar por você.</p></div></div>
+      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><b>Quantas pessoas cabem no workshop?</b><div class="faq-ic">+</div></div><div class="faq-a"><p>O workshop é em turma única, valor fechado, independente do número de participantes. Pode rodar no auditório de vocês. Se a diretoria preferir dividir em turmas por conforto, a gente conversa o formato.</p></div></div>
+      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><b>Como funcionam as turmas de mentoria?</b><div class="faq-ic">+</div></div><div class="faq-a"><p>Cada turma faz uma trilha de 3 encontros de 1h30, espaçados, em grupo. Cada participante traz um projeto real e a gente resolve na frente de todos, porque todo mundo aprende junto. O formato é aberto: pode ser uma turma por área ou turmas mistas juntando os multiplicadores de várias áreas. A Econverse define quantas turmas e por onde começar.</p></div></div>
+      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><b>O que acontece depois do workshop e das mentorias?</b><div class="faq-ic">+</div></div><div class="faq-a"><p>Você fica com 30 dias de suporte pra ajustar o que foi criado. E abre a onda futura: a NewScale implementa as automações e agentes que rodam sozinhos, ligados a Shopify e VTEX, precificados por onda depois do mapeamento.</p></div></div>
+      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><b>Quem paga as licenças de IA e ferramentas?</b><div class="faq-ic">+</div></div><div class="faq-a"><p>As licenças (Claude, ChatGPT) e ferramentas de automação são contratadas pela Econverse, conforme o uso. A NewScale entrega o conhecimento e a construção, e não se responsabiliza por custos de terceiros.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROXIMOS PASSOS (dark) -->
+<section class="sec dark">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">Próximos passos</span>
+      <h2 style="color:#fff;">Do aceite à<br><span style="color:var(--terra-l)">primeira aula.</span></h2>
+    </div>
+    <div class="steps rv">
+      <div class="step"><div class="step-n">1</div><div><div class="step-prazo">Agora</div><h3>Aceite e alinhamento</h3><p>A Econverse valida a proposta com a diretoria. A gente define as datas e quantas turmas de solução entram.</p></div></div>
+      <div class="step"><div class="step-n">2</div><div><div class="step-prazo">Imersão</div><h3>Diagnóstico na Econverse</h3><p>Pesquisa com a turma e reuniões com as lideranças pra mapear os processos reais e desenhar o conteúdo das frentes.</p></div></div>
+      <div class="step"><div class="step-n">3</div><div><div class="step-prazo">Semana 1</div><h3>A Virada IA · aula magna</h3><p>A empresa toda numa sessão, abrindo a cabeça pro que é possível e saindo pronta pra mão na massa.</p></div></div>
+      <div class="step"><div class="step-n">4</div><div><div class="step-prazo">Semanas seguintes</div><h3>Turmas de solução</h3><p>Trilha de 3 encontros por turma, cada participante construindo a própria solução até rodar de verdade.</p></div></div>
+    </div>
+    <div class="steps-close rv"><b>A Econverse não está sozinha no go-live, e também não estará no dia seguinte.</b></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-final">
+  <div class="wrap rv">
+    <div class="cta-inner">
+      <div class="cta-badge"><span class="pulse"></span>Proposta válida até 07/07/2026</div>
+      <h2>Econverse, bora virar<br>essa <span class="terra">chave?</span></h2>
+      <p>Workshop pra empresa toda mais as turmas de mentoria que a Econverse montar, tudo desenhado em cima da rotina de vocês. É só dizer sim que a gente marca a imersão.</p>
+      <div class="cta-actions">
+        <a href="https://wa.me/5511971901020" class="btn btn-terra" target="_blank" rel="noopener">Aceitar e marcar o workshop</a>
+        <a href="https://wa.me/5511971901020" class="btn btn-ghost" target="_blank" rel="noopener">Tirar uma dúvida</a>
+      </div>
+      <div class="cta-metrics">
+        <div><div class="v">R$ 8.500</div><div class="l">aula magna · turma única</div></div>
+        <div><div class="v">R$ 6.000</div><div class="l">por turma · trilha de 3 encontros</div></div>
+        <div><div class="v">50 / 50</div><div class="l">pagamento · 30 dias de suporte</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <div class="footer-brand"><img class="footer-logo" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting" onerror="this.outerHTML='NewScale<span>&nbsp;Consulting</span>'"></div>
+      <div class="footer-date">Proposta exclusiva · Econverse · v1<br>22 de junho de 2026 · Validade até 07/07/2026</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMod(card){
+  card.classList.toggle('open');
+  const body = card.querySelector('.mod-body');
+  body.style.maxHeight = card.classList.contains('open') ? body.scrollHeight + 'px' : null;
+}
+function toggleFaq(item){
+  document.querySelectorAll('.faq-item.open').forEach(o => { if(o!==item){ o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight=null; } });
+  item.classList.toggle('open');
+  const a = item.querySelector('.faq-a');
+  a.style.maxHeight = item.classList.contains('open') ? a.scrollHeight + 'px' : null;
+}
+const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold:.10, rootMargin:'0px 0px -40px 0px' });
+document.querySelectorAll('.rv').forEach((el,i) => { el.style.transitionDelay = (i%3*70)+'ms'; io.observe(el); });
+</script>
+
+</body>
+</html>
