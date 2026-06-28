@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apuracao do Juri - Hackathon de IA - Ismart x NewScale</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<script>
+  /* ============================================================
+     CONFIGURACAO: cole a URL /exec do Apps Script entre as aspas
+     (a MESMA usada em votacao.html).
+     Vazio = MODO DEMO (le os votos de teste salvos neste navegador).
+     ============================================================ */
+  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxuVYMkv76_l3iacWbA8JQGG6jGSeS9BgEZTXsMbEFKulNZ5QqL5meh4qlQnNYMNLZv/exec"; // URL /exec do Apps Script (implantado 28/06/2026)
+</script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --azul:#002561; --azul2:#008ED3; --ciano:#00BCF2;
+  --magenta:#ED2D67; --coral:#F1655D; --verde:#8EC5B1;
+  --ouro:#E0A93B;
+  --tinta:#13233f; --cinza:#5b6b85; --linha:#cfd9e8;
+  --bg:#f4f7fb; --card:#ffffff;
+}
+body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tinta);line-height:1.5;-webkit-font-smoothing:antialiased}
+::selection{background:var(--azul2);color:#fff}
+.wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+.mont{font-family:'Montserrat',sans-serif}
+
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:3px solid var(--azul)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;flex-wrap:wrap}
+.lock{font-family:'Montserrat';font-weight:900;color:var(--azul);font-size:14px;letter-spacing:.02em}
+.lock span{color:var(--magenta)}
+.head-right{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.upd-info{font-size:.74rem;color:var(--cinza);font-family:'Montserrat';font-weight:700}
+.btn-upd{display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat';font-weight:800;font-size:.82rem;letter-spacing:.03em;text-transform:uppercase;background:var(--azul2);color:#fff;border:none;border-radius:100px;padding:11px 20px;cursor:pointer;transition:transform .15s,box-shadow .15s,background .2s}
+.btn-upd:hover{background:var(--azul);transform:translateY(-1px);box-shadow:0 8px 20px rgba(0,37,97,.25)}
+.btn-upd:disabled{opacity:.6;cursor:not-allowed}
+.btn-upd svg{transition:transform .6s}
+.btn-upd.loading svg{transform:rotate(360deg)}
+
+.hero{padding:26px 0 4px}
+.kicker{font-family:'Montserrat';font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--magenta)}
+h1{font-family:'Montserrat';font-weight:900;color:var(--azul);font-size:clamp(1.7rem,4.5vw,2.3rem);line-height:1.05;margin:6px 0 6px;letter-spacing:-.4px}
+.hero p{color:var(--cinza);font-size:.96rem}
+.demo-banner{display:none;margin:14px 0 0;background:#fff7ec;border:1.5px solid var(--coral);border-radius:12px;padding:10px 14px;font-size:.84rem;color:#8a4b1e}
+.demo-banner.show{display:block}
+.demo-banner b{font-family:'Montserrat';font-weight:800}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+@media (max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--card);border:1.5px solid var(--linha);border-radius:14px;padding:16px 18px}
+.stat .n{font-family:'Montserrat';font-weight:900;color:var(--azul);font-size:1.9rem;line-height:1}
+.stat .l{font-size:.74rem;color:var(--cinza);font-family:'Montserrat';font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-top:6px}
+
+/* top3 */
+.section-title{font-family:'Montserrat';font-weight:900;color:var(--azul);font-size:1.25rem;margin:30px 0 12px;display:flex;align-items:center;gap:10px}
+.section-title .bar{width:26px;height:4px;border-radius:4px;background:var(--magenta)}
+.podium{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:640px){.podium{grid-template-columns:1fr}}
+.pod{background:var(--card);border:2px solid var(--linha);border-radius:16px;padding:18px;text-align:center;position:relative;overflow:hidden}
+.pod .rank{font-family:'Montserrat';font-weight:900;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:#fff;display:inline-block;padding:4px 14px;border-radius:100px}
+.pod.p1{border-color:var(--ouro);box-shadow:0 10px 30px rgba(224,169,59,.22)}
+.pod.p1 .rank{background:var(--ouro)}
+.pod.p2{border-color:#9aa8bf}
+.pod.p2 .rank{background:#9aa8bf}
+.pod.p3{border-color:var(--coral)}
+.pod.p3 .rank{background:var(--coral)}
+.pod .gname{font-family:'Montserrat';font-weight:900;color:var(--azul);font-size:1.35rem;margin:12px 0 4px}
+.pod .score{font-family:'Montserrat';font-weight:900;font-size:2.6rem;color:var(--magenta);line-height:1}
+.pod .score small{font-size:1rem;color:var(--cinza);font-weight:700}
+.pod .crits{font-size:.76rem;color:var(--cinza);margin-top:8px}
+.pod .jcount{font-size:.72rem;color:var(--cinza);margin-top:6px;font-family:'Montserrat';font-weight:700}
+
+/* tabela */
+.table-card{background:var(--card);border:1.5px solid var(--linha);border-radius:16px;overflow:hidden;margin-top:4px}
+table{border-collapse:collapse;width:100%}
+th,td{padding:12px 12px;text-align:center;font-size:.9rem;border-bottom:1px solid var(--linha)}
+th{background:var(--azul);color:#fff;font-family:'Montserrat';font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+td.grp{text-align:left;font-family:'Montserrat';font-weight:800;color:var(--azul)}
+td.final{font-family:'Montserrat';font-weight:900;color:var(--magenta);font-size:1.05rem}
+tbody tr:hover{background:#f7fafd}
+tbody tr.r1 td.grp::before{content:"1 ";color:var(--ouro);font-weight:900}
+tbody tr.r2 td.grp::before{content:"2 ";color:#9aa8bf;font-weight:900}
+tbody tr.r3 td.grp::before{content:"3 ";color:var(--coral);font-weight:900}
+.pos-pill{display:inline-block;font-family:'Montserrat';font-weight:800;font-size:.78rem;color:var(--cinza)}
+.jv{display:inline-block;min-width:22px;font-family:'Montserrat';font-weight:800;color:var(--azul2)}
+.empty{padding:40px 20px;text-align:center;color:var(--cinza)}
+
+footer{margin-top:40px;background:var(--azul);color:rgba(255,255,255,.7);padding:22px 0 30px}
+.footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.footer-brand{font-family:'Montserrat';font-weight:800;color:#fff;font-size:.92rem}
+.footer-copy{font-size:.72rem;color:rgba(255,255,255,.55)}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <span class="lock">ISMART <span>x</span> NEWSCALE</span>
+    <div class="head-right">
+      <span class="upd-info" id="updInfo">Ainda nao atualizado</span>
+      <button class="btn-upd" id="btnUpd">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+        Atualizar
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Apuracao - Organizacao</div>
+    <h1>Resultado ao vivo do juri</h1>
+    <p>Media por criterio e nota final de cada grupo, ranking e top 3. A nota final e a media dos 3 criterios de cada jurado, depois a media entre jurados.</p>
+    <div class="demo-banner" id="demoBanner"><b>Modo demo:</b> a URL do Apps Script ainda nao foi configurada. Mostrando os votos de teste salvos neste navegador (feitos na votacao.html em modo demo).</div>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <div class="stats">
+    <div class="stat"><div class="n" id="stTotal">0</div><div class="l">Avaliacoes recebidas</div></div>
+    <div class="stat"><div class="n" id="stJurados">0</div><div class="l">Jurados ativos</div></div>
+    <div class="stat"><div class="n" id="stGrupos">0/10</div><div class="l">Grupos avaliados</div></div>
+    <div class="stat"><div class="n" id="stLider">-</div><div class="l">Lider atual</div></div>
+  </div>
+
+  <div class="section-title"><span class="bar"></span>Top 3</div>
+  <div class="podium" id="podium"></div>
+
+  <div class="section-title"><span class="bar"></span>Ranking completo</div>
+  <div class="table-card">
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align:left">Grupo</th>
+          <th>Impacto</th>
+          <th>Viabilidade</th>
+          <th>Criatividade</th>
+          <th>Nota final</th>
+          <th>Jurados</th>
+          <th>Posicao</th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+        <tr><td colspan="7" class="empty">Clique em Atualizar para carregar os dados.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap footer-row">
+    <span class="footer-brand">Ismart x NewScale</span>
+    <span class="footer-copy">Hackathon de IA - 2026 - Apuracao do juri</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var TOTAL_GRUPOS = 10;
+  var DEMO = !APPS_SCRIPT_URL;
+  if (DEMO) document.getElementById("demoBanner").classList.add("show");
+
+  var btn = document.getElementById("btnUpd");
+  var updInfo = document.getElementById("updInfo");
+
+  btn.addEventListener("click", atualizar);
+
+  function atualizar(){
+    btn.disabled = true; btn.classList.add("loading");
+    fetchAvaliacoes().then(function(avals){
+      render(avals);
+      var now = new Date();
+      updInfo.textContent = "Atualizado " + now.toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit",second:"2-digit"});
+    }).catch(function(err){
+      console.error(err);
+      updInfo.textContent = "Erro ao carregar";
+      document.getElementById("tbody").innerHTML = '<tr><td colspan="7" class="empty">Nao consegui carregar agora. Confira a URL do Apps Script e tente de novo.</td></tr>';
+    }).then(function(){
+      btn.disabled = false; btn.classList.remove("loading");
+    });
+  }
+
+  function fetchAvaliacoes(){
+    if (DEMO){
+      var demo = [];
+      try { demo = JSON.parse(localStorage.getItem("ismart_juri_demo") || "[]"); } catch(e){}
+      return Promise.resolve(demo);
+    }
+    return fetch(APPS_SCRIPT_URL, { method:"GET" })
+      .then(function(r){ return r.json(); })
+      .then(function(j){ return (j && j.avaliacoes) ? j.avaliacoes : []; });
+  }
+
+  function num(v){ var n = parseFloat(v); return isNaN(n) ? 0 : n; }
+
+  function render(avals){
+    // agrupa por grupo
+    var porGrupo = {};
+    var jurados = {};
+    for (var g=1; g<=TOTAL_GRUPOS; g++){ porGrupo["Grupo "+g] = []; }
+
+    avals.forEach(function(a){
+      var grupo = (a.grupo||"").toString().trim();
+      if (!porGrupo[grupo]) porGrupo[grupo] = [];
+      porGrupo[grupo].push(a);
+      if (a.jurado) jurados[(a.jurado||"").toString().trim().toLowerCase()] = true;
+    });
+
+    // calcula medias por grupo
+    var linhas = [];
+    Object.keys(porGrupo).forEach(function(grupo){
+      var lista = porGrupo[grupo];
+      var n = lista.length;
+      var somaImp=0, somaVia=0, somaCri=0, somaFinal=0;
+      lista.forEach(function(a){
+        var imp=num(a.impacto), via=num(a.viabilidade), cri=num(a.criatividade);
+        somaImp+=imp; somaVia+=via; somaCri+=cri;
+        // media dos 3 criterios deste jurado (usa 'media' gravada se houver, senao calcula)
+        var m = (a.media !== undefined && a.media !== "") ? num(a.media) : (imp+via+cri)/3;
+        somaFinal += m;
+      });
+      linhas.push({
+        grupo: grupo,
+        n: n,
+        impacto: n ? somaImp/n : 0,
+        viabilidade: n ? somaVia/n : 0,
+        criatividade: n ? somaCri/n : 0,
+        final: n ? somaFinal/n : 0
+      });
+    });
+
+    // ordena por nota final (desc); grupos sem voto vao pro fim
+    linhas.sort(function(a,b){
+      if (b.final !== a.final) return b.final - a.final;
+      return a.grupo.localeCompare(b.grupo, "pt", {numeric:true});
+    });
+
+    // posicao (com empate -> mesma posicao)
+    var posAtual = 0, ultFinal = null, contados = 0;
+    linhas.forEach(function(l){
+      contados++;
+      if (l.n === 0){ l.pos = null; return; }
+      if (ultFinal === null || l.final !== ultFinal){ posAtual = contados; ultFinal = l.final; }
+      l.pos = posAtual;
+    });
+
+    // ---- stats ----
+    document.getElementById("stTotal").textContent = avals.length;
+    document.getElementById("stJurados").textContent = Object.keys(jurados).length;
+    var gruposComVoto = linhas.filter(function(l){ return l.n>0; }).length;
+    document.getElementById("stGrupos").textContent = gruposComVoto + "/" + TOTAL_GRUPOS;
+    var lider = linhas.find(function(l){ return l.n>0; });
+    document.getElementById("stLider").textContent = lider ? lider.grupo.replace("Grupo ","G") : "-";
+
+    // ---- top 3 ----
+    var pod = document.getElementById("podium");
+    pod.innerHTML = "";
+    var top3 = linhas.filter(function(l){ return l.n>0; }).slice(0,3);
+    if (!top3.length){
+      pod.innerHTML = '<div class="empty" style="grid-column:1/-1">Sem avaliacoes ainda.</div>';
+    } else {
+      var labels = ["1o lugar","2o lugar","3o lugar"];
+      top3.forEach(function(l, i){
+        var card = document.createElement("div");
+        card.className = "pod p" + (i+1);
+        card.innerHTML =
+          '<span class="rank">' + labels[i] + '</span>' +
+          '<div class="gname">' + l.grupo + '</div>' +
+          '<div class="score">' + l.final.toFixed(2) + '<small> /10</small></div>' +
+          '<div class="crits">I ' + l.impacto.toFixed(1) + ' - V ' + l.viabilidade.toFixed(1) + ' - C ' + l.criatividade.toFixed(1) + '</div>' +
+          '<div class="jcount">' + l.n + ' jurado(s)</div>';
+        pod.appendChild(card);
+      });
+    }
+
+    // ---- tabela ----
+    var tb = document.getElementById("tbody");
+    tb.innerHTML = "";
+    linhas.forEach(function(l){
+      var tr = document.createElement("tr");
+      if (l.pos === 1) tr.className = "r1";
+      else if (l.pos === 2) tr.className = "r2";
+      else if (l.pos === 3) tr.className = "r3";
+      if (l.n === 0){
+        tr.innerHTML =
+          '<td class="grp">' + l.grupo + '</td>' +
+          '<td>-</td><td>-</td><td>-</td>' +
+          '<td class="final" style="color:#aab6c8">-</td>' +
+          '<td><span class="jv" style="color:#aab6c8">0</span></td>' +
+          '<td><span class="pos-pill">sem voto</span></td>';
+      } else {
+        tr.innerHTML =
+          '<td class="grp">' + l.grupo + '</td>' +
+          '<td>' + l.impacto.toFixed(2) + '</td>' +
+          '<td>' + l.viabilidade.toFixed(2) + '</td>' +
+          '<td>' + l.criatividade.toFixed(2) + '</td>' +
+          '<td class="final">' + l.final.toFixed(2) + '</td>' +
+          '<td><span class="jv">' + l.n + '</span></td>' +
+          '<td><span class="pos-pill">' + l.pos + 'o</span></td>';
+      }
+      tb.appendChild(tr);
+    });
+  }
+
+  // primeira carga automatica
+  atualizar();
+})();
+</script>
+</body>
+</html>

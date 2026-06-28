@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Votacao do Juri - Hackathon de IA - Ismart x NewScale</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   CONFIGURACAO: cole a URL /exec do Apps Script entre as aspas.
+   Vazio = MODO DEMO (grava so no navegador, nao manda pra planilha).
+   ============================================================ */
+</style>
+<script>
+  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxuVYMkv76_l3iacWbA8JQGG6jGSeS9BgEZTXsMbEFKulNZ5QqL5meh4qlQnNYMNLZv/exec"; // URL /exec do Apps Script (implantado 28/06/2026)
+</script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --azul:#002561; --azul2:#008ED3; --ciano:#00BCF2;
+  --magenta:#ED2D67; --coral:#F1655D; --verde:#8EC5B1;
+  --tinta:#13233f; --cinza:#5b6b85; --linha:#cfd9e8;
+  --bg:#f4f7fb; --card:#ffffff;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tinta);line-height:1.55;-webkit-font-smoothing:antialiased}
+::selection{background:var(--azul2);color:#fff}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+.mont{font-family:'Montserrat',sans-serif}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:3px solid var(--azul)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+.lock{font-family:'Montserrat';font-weight:900;color:var(--azul);font-size:14px;letter-spacing:.02em}
+.lock span{color:var(--magenta)}
+.tag{font-family:'Montserrat';font-weight:700;font-size:10px;letter-spacing:.10em;text-transform:uppercase;color:var(--cinza)}
+
+/* hero */
+.hero{padding:30px 0 8px}
+.kicker{font-family:'Montserrat';font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--magenta)}
+h1{font-family:'Montserrat';font-weight:900;color:var(--azul);font-size:clamp(1.7rem,5vw,2.3rem);line-height:1.05;margin:6px 0 8px;letter-spacing:-.4px}
+.hero p{color:var(--cinza);font-size:.98rem;max-width:60ch}
+
+.demo-banner{display:none;margin:14px 0 0;background:#fff7ec;border:1.5px solid var(--coral);border-radius:12px;padding:10px 14px;font-size:.84rem;color:#8a4b1e}
+.demo-banner.show{display:block}
+.demo-banner b{font-family:'Montserrat';font-weight:800}
+
+/* cartoes */
+.card{background:var(--card);border:1.5px solid var(--linha);border-radius:16px;padding:22px 22px;margin-top:18px}
+.label{display:block;font-family:'Montserrat';font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--azul);margin-bottom:8px}
+input[type=text],select{width:100%;font-family:'Lato';font-size:1rem;color:var(--tinta);background:var(--bg);border:1.5px solid var(--linha);border-radius:11px;padding:13px 15px;transition:border-color .15s,box-shadow .15s}
+input:focus,select:focus{outline:none;border-color:var(--azul2);box-shadow:0 0 0 3px rgba(0,142,211,.18)}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23002561' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:40px}
+.row2{display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
+@media (max-width:520px){.row2{grid-template-columns:1fr}}
+
+/* criterio / slider */
+.crit{margin-top:18px;padding:16px 16px 14px;border:1.5px solid var(--linha);border-radius:13px;background:#fbfdff}
+.crit-head{display:flex;align-items:center;gap:10px}
+.crit-num{width:26px;height:26px;border-radius:8px;background:var(--azul);color:#fff;font-family:'Montserrat';font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px}
+.crit-name{font-family:'Montserrat';font-weight:800;color:var(--azul);font-size:1rem}
+.crit-val{margin-left:auto;font-family:'Montserrat';font-weight:900;color:var(--magenta);font-size:1.5rem;min-width:46px;text-align:right}
+.crit-desc{font-size:.84rem;color:var(--cinza);margin:7px 0 12px}
+.slider-row{display:flex;align-items:center;gap:12px}
+input[type=range]{-webkit-appearance:none;appearance:none;flex:1;height:7px;border-radius:7px;background:linear-gradient(90deg,var(--azul2),var(--ciano));outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:#fff;border:3px solid var(--azul);cursor:pointer;box-shadow:0 2px 6px rgba(0,37,97,.3)}
+input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#fff;border:3px solid var(--azul);cursor:pointer}
+.num-in{width:64px;text-align:center;font-family:'Montserrat';font-weight:800;font-size:1rem;padding:9px 6px}
+.scale-ends{display:flex;justify-content:space-between;font-size:.72rem;color:var(--cinza);margin-top:6px}
+
+textarea{width:100%;font-family:'Lato';font-size:.96rem;color:var(--tinta);background:var(--bg);border:1.5px solid var(--linha);border-radius:11px;padding:12px 14px;resize:vertical;min-height:80px;line-height:1.5;transition:border-color .15s,box-shadow .15s}
+textarea:focus{outline:none;border-color:var(--azul2);box-shadow:0 0 0 3px rgba(0,142,211,.18)}
+
+.media-box{margin-top:16px;display:flex;align-items:center;justify-content:space-between;background:var(--azul);color:#fff;border-radius:13px;padding:14px 18px}
+.media-box .l{font-family:'Montserrat';font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.06em;opacity:.9}
+.media-box .v{font-family:'Montserrat';font-weight:900;font-size:1.9rem}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;font-family:'Montserrat';font-weight:800;font-size:.95rem;letter-spacing:.03em;text-transform:uppercase;padding:16px 24px;border-radius:100px;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s,background .2s;margin-top:18px}
+.btn-mag{background:var(--magenta);color:#fff}
+.btn-mag:hover{background:#d11e54;transform:translateY(-2px);box-shadow:0 10px 26px rgba(237,45,103,.34)}
+.btn:disabled{opacity:.6;cursor:not-allowed;transform:none;box-shadow:none}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--azul);color:#fff;font-family:'Montserrat';font-weight:700;font-size:.9rem;padding:14px 22px;border-radius:100px;box-shadow:0 10px 30px rgba(0,37,97,.4);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:80}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.err{background:var(--coral)}
+
+/* status grupos */
+.status-card{margin-top:18px}
+.status-title{font-family:'Montserrat';font-weight:800;color:var(--azul);font-size:.92rem;margin-bottom:12px}
+.grid-groups{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
+@media (max-width:520px){.grid-groups{grid-template-columns:repeat(5,1fr)}}
+.gchip{position:relative;text-align:center;border:1.5px solid var(--linha);border-radius:11px;padding:11px 4px;font-family:'Montserrat';font-weight:800;font-size:.86rem;color:var(--cinza);background:#fbfdff}
+.gchip .gl{font-size:.62rem;font-weight:700;letter-spacing:.04em;display:block;text-transform:uppercase;color:#9aa8bf}
+.gchip.done{border-color:var(--verde);background:#eef9f4;color:var(--azul)}
+.gchip.done::after{content:"OK";position:absolute;top:-7px;right:-5px;background:var(--verde);color:#fff;font-size:.56rem;font-weight:800;padding:2px 6px;border-radius:100px}
+.gchip.pending-send{border-color:var(--coral);background:#fff3ee}
+.gchip.pending-send::after{content:"!";position:absolute;top:-7px;right:-5px;background:var(--coral);color:#fff;font-size:.58rem;font-weight:800;width:16px;height:16px;line-height:13px;border-radius:50%}
+.resend-row{margin-top:12px;font-size:.82rem;color:var(--coral);display:none;align-items:center;gap:10px}
+.resend-row.show{display:flex}
+.resend-row button{font-family:'Montserrat';font-weight:700;font-size:.74rem;text-transform:uppercase;letter-spacing:.04em;border:1.5px solid var(--coral);color:var(--coral);background:#fff;border-radius:100px;padding:7px 14px;cursor:pointer}
+
+footer{margin-top:34px;background:var(--azul);color:rgba(255,255,255,.7);padding:22px 0 30px}
+.footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.footer-brand{font-family:'Montserrat';font-weight:800;color:#fff;font-size:.92rem}
+.footer-copy{font-size:.72rem;color:rgba(255,255,255,.55)}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <span class="lock">ISMART <span>x</span> NEWSCALE</span>
+    <span class="tag">Hackathon de IA - 01/07/2026</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Votacao - Juri</div>
+    <h1>Avaliacao dos projetos</h1>
+    <p>Avalie um grupo por vez. De uma nota de 0 a 10 em cada criterio (os tres tem o mesmo peso). Ao enviar, a ficha limpa e mostra quais grupos voce ja avaliou.</p>
+    <div class="demo-banner" id="demoBanner"><b>Modo demo:</b> a URL do Apps Script ainda nao foi configurada. Suas notas ficam salvas so neste navegador, para teste visual.</div>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <!-- Identificacao -->
+  <div class="card">
+    <div class="row2">
+      <div>
+        <label class="label" for="jurado">Nome do jurado</label>
+        <input type="text" id="jurado" placeholder="Seu nome">
+      </div>
+      <div>
+        <label class="label" for="grupo">Grupo</label>
+        <select id="grupo">
+          <option value="">Selecione...</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Criterios -->
+  <div class="card">
+    <div class="crit">
+      <div class="crit-head">
+        <div class="crit-num">1</div>
+        <div class="crit-name">Impacto</div>
+        <div class="crit-val" id="vImpacto">5</div>
+      </div>
+      <p class="crit-desc">O quanto a solucao move uma meta global do Ismart. Quanto mais central a dor que ela resolve, mais pontos.</p>
+      <div class="slider-row">
+        <input type="range" id="impacto" min="0" max="10" step="1" value="5">
+        <input type="text" inputmode="numeric" class="num-in" id="impactoNum" value="5">
+      </div>
+      <div class="scale-ends"><span>0 - baixo</span><span>10 - altissimo</span></div>
+    </div>
+
+    <div class="crit">
+      <div class="crit-head">
+        <div class="crit-num">2</div>
+        <div class="crit-name">Viabilidade</div>
+        <div class="crit-val" id="vViabilidade">5</div>
+      </div>
+      <p class="crit-desc">Pronto para rodar amanha pontua mais. Solucao simples e factivel no curto prazo vale mais que solucao grandiosa e distante.</p>
+      <div class="slider-row">
+        <input type="range" id="viabilidade" min="0" max="10" step="1" value="5">
+        <input type="text" inputmode="numeric" class="num-in" id="viabilidadeNum" value="5">
+      </div>
+      <div class="scale-ends"><span>0 - baixo</span><span>10 - altissimo</span></div>
+    </div>
+
+    <div class="crit">
+      <div class="crit-head">
+        <div class="crit-num">3</div>
+        <div class="crit-name">Criatividade</div>
+        <div class="crit-val" id="vCriatividade">5</div>
+      </div>
+      <p class="crit-desc">Originalidade da abordagem e bom uso das capacidades do Claude (agentes, automacoes, pesquisa, prototipo).</p>
+      <div class="slider-row">
+        <input type="range" id="criatividade" min="0" max="10" step="1" value="5">
+        <input type="text" inputmode="numeric" class="num-in" id="criatividadeNum" value="5">
+      </div>
+      <div class="scale-ends"><span>0 - baixo</span><span>10 - altissimo</span></div>
+    </div>
+
+    <div class="media-box">
+      <span class="l">Media deste grupo (dos 3 criterios)</span>
+      <span class="v" id="mediaView">5.00</span>
+    </div>
+
+    <div style="margin-top:18px">
+      <label class="label" for="anotacoes">Anotacoes (o que mais te chamou atencao)</label>
+      <textarea id="anotacoes" placeholder="Opcional - observacoes rapidas sobre este grupo"></textarea>
+    </div>
+
+    <button class="btn btn-mag" id="enviarBtn">Enviar avaliacao deste grupo</button>
+  </div>
+
+  <!-- Status dos grupos -->
+  <div class="card status-card">
+    <div class="status-title">Grupos que voce ja avaliou</div>
+    <div class="grid-groups" id="gridGroups"></div>
+    <div class="resend-row" id="resendRow">
+      <span id="resendMsg"></span>
+      <button id="resendBtn">Reenviar pendentes</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<footer>
+  <div class="wrap footer-row">
+    <span class="footer-brand">Ismart x NewScale</span>
+    <span class="footer-copy">Hackathon de IA - 2026</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var TOTAL_GRUPOS = 10;
+  var CRITERIOS = ["impacto","viabilidade","criatividade"];
+
+  // ---- chaves de localStorage ----
+  var LS_JURADO   = "ismart_juri_nome";
+  function lsVotos(jurado){ return "ismart_juri_votos_" + slug(jurado); }   // grupos enviados com sucesso
+  function lsFila(jurado){ return "ismart_juri_fila_" + slug(jurado); }     // pendentes de reenvio (offline-first)
+  function slug(s){ return (s||"").trim().toLowerCase().replace(/\s+/g,"_").replace(/[^a-z0-9_]/g,""); }
+
+  // ---- elementos ----
+  var elJurado = document.getElementById("jurado");
+  var elGrupo  = document.getElementById("grupo");
+  var elAnot   = document.getElementById("anotacoes");
+  var elMedia  = document.getElementById("mediaView");
+  var elBtn    = document.getElementById("enviarBtn");
+  var elGrid   = document.getElementById("gridGroups");
+  var elToast  = document.getElementById("toast");
+  var elResendRow = document.getElementById("resendRow");
+  var elResendMsg = document.getElementById("resendMsg");
+  var elResendBtn = document.getElementById("resendBtn");
+
+  // modo demo?
+  var DEMO = !APPS_SCRIPT_URL;
+  if (DEMO) document.getElementById("demoBanner").classList.add("show");
+
+  // ---- popular seletor de grupos ----
+  for (var i=1; i<=TOTAL_GRUPOS; i++){
+    var o = document.createElement("option");
+    o.value = "Grupo " + i;
+    o.textContent = "Grupo " + i;
+    elGrupo.appendChild(o);
+  }
+
+  // ---- sliders <-> numero <-> media ----
+  function clamp(n){ n = parseInt(n,10); if(isNaN(n)) n=0; return Math.max(0, Math.min(10, n)); }
+  function recalc(){
+    var soma = 0;
+    CRITERIOS.forEach(function(c){
+      var v = clamp(document.getElementById(c).value);
+      document.getElementById("v"+cap(c)).textContent = v;
+      soma += v;
+    });
+    elMedia.textContent = (soma/3).toFixed(2);
+  }
+  function cap(s){ return s.charAt(0).toUpperCase()+s.slice(1); }
+
+  CRITERIOS.forEach(function(c){
+    var range = document.getElementById(c);
+    var num   = document.getElementById(c+"Num");
+    range.addEventListener("input", function(){ num.value = range.value; recalc(); });
+    num.addEventListener("input", function(){
+      var v = clamp(num.value);
+      range.value = v;
+      recalc();
+    });
+    num.addEventListener("blur", function(){ var v = clamp(num.value); num.value = v; range.value = v; recalc(); });
+  });
+  recalc();
+
+  // ---- nome do jurado salvo ----
+  var savedNome = localStorage.getItem(LS_JURADO);
+  if (savedNome){ elJurado.value = savedNome; }
+  elJurado.addEventListener("input", function(){
+    localStorage.setItem(LS_JURADO, elJurado.value.trim());
+    renderStatus();
+  });
+
+  // ---- status dos grupos ----
+  function getVotos(){
+    try { return JSON.parse(localStorage.getItem(lsVotos(elJurado.value)) || "[]"); }
+    catch(e){ return []; }
+  }
+  function setVotos(arr){ localStorage.setItem(lsVotos(elJurado.value), JSON.stringify(arr)); }
+  function getFila(){
+    try { return JSON.parse(localStorage.getItem(lsFila(elJurado.value)) || "[]"); }
+    catch(e){ return []; }
+  }
+  function setFila(arr){ localStorage.setItem(lsFila(elJurado.value), JSON.stringify(arr)); }
+
+  function renderStatus(){
+    var votos = getVotos();
+    var fila  = getFila();
+    var filaGrupos = fila.map(function(x){ return x.grupo; });
+    elGrid.innerHTML = "";
+    for (var g=1; g<=TOTAL_GRUPOS; g++){
+      var nome = "Grupo " + g;
+      var chip = document.createElement("div");
+      chip.className = "gchip";
+      if (votos.indexOf(nome) !== -1) chip.className += " done";
+      else if (filaGrupos.indexOf(nome) !== -1) chip.className += " pending-send";
+      chip.innerHTML = '<span class="gl">Grupo</span>' + g;
+      elGrid.appendChild(chip);
+    }
+    if (fila.length){
+      elResendRow.classList.add("show");
+      elResendMsg.textContent = fila.length + " avaliacao(oes) aguardando envio (ficaram salvas offline).";
+    } else {
+      elResendRow.classList.remove("show");
+    }
+  }
+
+  // ---- envio ----
+  function montaPayload(){
+    var imp = clamp(document.getElementById("impacto").value);
+    var via = clamp(document.getElementById("viabilidade").value);
+    var cri = clamp(document.getElementById("criatividade").value);
+    return {
+      timestamp: new Date().toISOString(),
+      jurado: elJurado.value.trim(),
+      grupo: elGrupo.value,
+      impacto: imp,
+      viabilidade: via,
+      criatividade: cri,
+      media: Math.round(((imp+via+cri)/3)*100)/100,
+      anotacoes: elAnot.value.trim()
+    };
+  }
+
+  function enviarPayload(payload){
+    // padrao da Bruna: POST no-cors, content-type text/plain. Nao da pra ler a resposta,
+    // entao tratamos o catch (rede) como falha e guardamos offline.
+    if (DEMO){
+      // modo demo: simula sucesso, guarda localmente
+      var demo = JSON.parse(localStorage.getItem("ismart_juri_demo") || "[]");
+      demo.push(payload); localStorage.setItem("ismart_juri_demo", JSON.stringify(demo));
+      return Promise.resolve(true);
+    }
+    return fetch(APPS_SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload)
+    }).then(function(){ return true; });
+  }
+
+  function marcarEnviado(grupo){
+    var votos = getVotos();
+    if (votos.indexOf(grupo) === -1){ votos.push(grupo); setVotos(votos); }
+  }
+  function limparFormParaProximo(){
+    elAnot.value = "";
+    CRITERIOS.forEach(function(c){
+      document.getElementById(c).value = 5;
+      document.getElementById(c+"Num").value = 5;
+    });
+    recalc();
+    // sugere o proximo grupo nao avaliado
+    var votos = getVotos();
+    for (var g=1; g<=TOTAL_GRUPOS; g++){
+      if (votos.indexOf("Grupo "+g) === -1){ elGrupo.value = "Grupo "+g; break; }
+    }
+  }
+
+  elBtn.addEventListener("click", function(){
+    var nome = elJurado.value.trim();
+    var grupo = elGrupo.value;
+    if (!nome){ toast("Preencha o nome do jurado.", true); elJurado.focus(); return; }
+    if (!grupo){ toast("Selecione um grupo.", true); elGrupo.focus(); return; }
+
+    var votos = getVotos();
+    if (votos.indexOf(grupo) !== -1){
+      if (!confirm("Voce ja enviou a avaliacao do " + grupo + ". Enviar de novo (vai gravar uma nova linha)?")) return;
+    }
+
+    var payload = montaPayload();
+    elBtn.disabled = true; elBtn.textContent = "Enviando...";
+
+    enviarPayload(payload).then(function(){
+      marcarEnviado(grupo);
+      toast("Avaliacao do " + grupo + " enviada!");
+      elBtn.disabled = false; elBtn.textContent = "Enviar avaliacao deste grupo";
+      limparFormParaProximo();
+      renderStatus();
+    }).catch(function(){
+      // offline-first: guarda na fila para reenvio
+      var fila = getFila(); fila.push(payload); setFila(fila);
+      toast("Sem conexao agora. Salvei offline, da pra reenviar.", true);
+      elBtn.disabled = false; elBtn.textContent = "Enviar avaliacao deste grupo";
+      limparFormParaProximo();
+      renderStatus();
+    });
+  });
+
+  // ---- reenviar pendentes ----
+  elResendBtn.addEventListener("click", function(){
+    var fila = getFila();
+    if (!fila.length) return;
+    elResendBtn.disabled = true; elResendBtn.textContent = "Reenviando...";
+    var restantes = [];
+    var chain = Promise.resolve();
+    fila.forEach(function(item){
+      chain = chain.then(function(){
+        return enviarPayload(item).then(function(){
+          marcarEnviado(item.grupo);
+        }).catch(function(){
+          restantes.push(item);
+        });
+      });
+    });
+    chain.then(function(){
+      setFila(restantes);
+      elResendBtn.disabled = false; elResendBtn.textContent = "Reenviar pendentes";
+      if (restantes.length){ toast(restantes.length + " ainda nao foram. Tenta de novo.", true); }
+      else { toast("Pendentes reenviadas!"); }
+      renderStatus();
+    });
+  });
+
+  // ---- toast ----
+  var toastTimer = null;
+  function toast(msg, isErr){
+    elToast.textContent = msg;
+    elToast.className = "toast show" + (isErr ? " err" : "");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ elToast.className = "toast" + (isErr ? " err" : ""); }, 2800);
+  }
+
+  // ---- init ----
+  renderStatus();
+})();
+</script>
+</body>
+</html>
