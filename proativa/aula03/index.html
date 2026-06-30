@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 3 · Os 3 cases da casa · Proativa · Oneglobal</title>
+<style>
+  :root{
+    --og-azul:#002657;   --og-azul-60:#667D9A;   --og-azul-40:#99A8BC;
+    --og-teal:#004853;   --og-teal-60:#669198;   --og-teal-40:#99B6BA;
+    --og-roxo:#3D0F58;   --og-verde:#005847;     --og-verde-60:#669B91;
+    --og-carvao:#3D3936; --og-marrom:#4B432C;    --og-vermelho:#402022;
+    --og-branco:#FFFFFF; --og-claro:#F4F4F2;     --og-neutro:#E9E9E6;
+    --serif:Georgia,'Times New Roman',serif;
+    --cond:'Arial Narrow','Helvetica Neue',Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--og-claro);color:var(--og-carvao);
+       font-family:var(--serif);line-height:1.65;padding:40px 18px}
+  .wrap{max-width:880px;margin:0 auto}
+
+  header{position:relative;overflow:hidden;color:var(--og-branco);border-radius:18px;
+         padding:40px 34px;margin-bottom:10px;
+         background:linear-gradient(145deg,#001A3D 0%,#002657 45%,#004853 100%)}
+  header .topo{position:absolute;inset:0;width:100%;height:100%;opacity:.9;pointer-events:none}
+  header .inner{position:relative;z-index:1}
+  .olho{font-family:var(--cond);font-weight:700;text-transform:uppercase;
+        letter-spacing:.16em;font-size:.72rem;color:var(--og-verde-60)}
+  h1{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,4.4vw,3.1rem);
+     line-height:1.08;margin:.2em 0 .15em;color:#fff}
+  header .sub{color:#cdd6df;font-size:1.02rem;max-width:680px}
+  .logo{position:absolute;top:30px;right:30px;height:26px;z-index:1;opacity:.95}
+
+  h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.5rem,3vw,2.1rem);
+     color:var(--og-azul);margin:42px 0 6px}
+  h3{font-family:var(--serif);font-weight:700;color:var(--og-teal);font-size:1.18rem;margin:18px 0 4px}
+  .label{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.1em;
+         font-size:.74rem;color:var(--og-verde)}
+  .chip{display:inline-block;font-family:var(--cond);font-weight:700;text-transform:uppercase;
+        letter-spacing:.08em;font-size:.7rem;color:#fff;background:var(--og-roxo);
+        padding:4px 12px;border-radius:30px;margin-bottom:6px}
+  .chip.fin{background:var(--og-verde)} .chip.gar{background:var(--og-roxo)} .chip.com{background:var(--og-teal)}
+  .block{background:#fff;border:1px solid var(--og-neutro);border-radius:14px;
+         padding:22px 24px;margin:14px 0;box-shadow:0 1px 3px rgba(0,38,87,.06)}
+  .calm{background:rgba(0,72,83,.08);border-left:4px solid var(--og-teal);
+        border-radius:0 10px 10px 0;padding:14px 18px;margin:16px 0;color:var(--og-teal)}
+  .uau{background:linear-gradient(135deg,#002657,#3D0F58);color:#fff;border-radius:10px;
+       padding:12px 16px;margin:12px 0}
+  .uau b{color:var(--og-verde-60)}
+  .rule{background:rgba(61,15,88,.06);border-left:4px solid var(--og-roxo);
+        border-radius:0 10px 10px 0;padding:14px 18px;margin:16px 0}
+  em{color:var(--og-teal);font-style:italic}
+  pre{position:relative;white-space:pre-wrap;word-wrap:break-word;background:#001A3D;
+      color:#e6edf3;border-radius:10px;padding:34px 16px 14px;font-family:var(--serif);
+      font-size:.9rem;line-height:1.55;margin:10px 0}
+  .copy{position:absolute;top:8px;right:8px;background:var(--og-verde);color:#fff;border:none;
+        border-radius:7px;padding:5px 12px;font-family:var(--cond);font-weight:700;
+        text-transform:uppercase;letter-spacing:.05em;font-size:.72rem;cursor:pointer}
+  .copy.ok{background:var(--og-teal)}
+  ul{margin:6px 0 6px 2px;padding-left:20px} li{margin:6px 0}
+  /* tabela de tempo */
+  .tempo{width:100%;border-collapse:collapse;margin:12px 0;background:#fff;border-radius:12px;overflow:hidden;
+         box-shadow:0 1px 3px rgba(0,38,87,.06)}
+  .tempo th{background:var(--og-azul);color:#fff;font-family:var(--cond);text-transform:uppercase;
+            letter-spacing:.06em;font-size:.74rem;padding:10px 12px;text-align:left}
+  .tempo td{padding:10px 12px;border-top:1px solid var(--og-neutro);font-size:.94rem}
+  .tempo td:first-child{font-family:var(--cond);font-weight:700;color:var(--og-roxo);white-space:nowrap}
+  footer{display:flex;align-items:center;justify-content:space-between;gap:12px;
+         color:#fff;font-size:.8rem;margin-top:40px;padding:16px 22px;border-radius:12px;
+         background:var(--og-azul)}
+  footer img{height:18px;opacity:.95}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:620px){.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <svg class="topo" viewBox="0 0 1600 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 90 Q200 60 400 95 Q600 130 800 90 Q1000 50 1200 95 Q1400 130 1600 90" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="1.1"/>
+      <path d="M0 150 Q200 120 400 155 Q600 190 800 150 Q1000 110 1200 155 Q1400 190 1600 150" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+      <path d="M0 220 Q200 185 400 225 Q600 265 800 220 Q1000 175 1200 225 Q1400 265 1600 220" fill="none" stroke="rgba(255,255,255,.05)" stroke-width=".9"/>
+      <path d="M0 300 Q200 265 400 305 Q600 345 800 300 Q1000 255 1200 305 Q1400 345 1600 300" fill="none" stroke="rgba(255,255,255,.04)" stroke-width=".8"/>
+    </svg>
+    <img class="logo" src="/proativa/oneglobal-logo-white.png" alt="Oneglobal">
+    <div class="inner">
+      <div class="olho">Proativa · Oneglobal · Aula 3 de 3</div>
+      <h1>Os 3 cases da casa</h1>
+      <div class="sub">Do operacional ao estratégico. Hoje sai a teoria e entra a sua mesa — três trabalhos reais, do zero ao pronto, na sua frente.</div>
+    </div>
+  </header>
+
+  <div class="calm"><b>O combinado de hoje.</b> Eu mostro cada case do começo ao fim, sem parar no meio. Toda dúvida fica pra <em>pausa pra dúvidas</em> — escreve no chat da reunião — e eu respondo tudo de uma vez no fim de cada case. Assim ninguém perde o fio e todo mundo é respondido.</div>
+
+  <h2>Mapa de 90 minutos</h2>
+  <table class="tempo">
+    <tr><th>Tempo</th><th>Bloco</th><th>O que entrega</th></tr>
+    <tr><td>0:00–0:05</td><td>Abertura + regra do estacionamento</td><td>O combinado e a promessa da aula.</td></tr>
+    <tr><td>0:05–0:20</td><td>Recap nivelador</td><td>Chat × Projetos × Cowork × Skills.</td></tr>
+    <tr><td>0:20–0:45</td><td>Case 1 · Nota Fiscal → TOTVS</td><td>PDFs viram planilha pronta pro lançamento.</td></tr>
+    <tr><td>0:45–1:10</td><td>Case 2 · Análise de crédito (Light)</td><td>Pesquisa + relatório em PDF pra seguradora.</td></tr>
+    <tr><td>1:10–1:23</td><td>Case 3 · Leads no LinkedIn</td><td>Lista de prospects + mensagens.</td></tr>
+    <tr><td>1:23–1:30</td><td>Bônus Fabiana + dúvidas + próximos passos</td><td>Prova social e o que vem depois.</td></tr>
+  </table>
+
+  <h2>Recap nivelador</h2>
+  <p class="label">15 minutos pra ninguém ficar pra trás</p>
+  <div class="block">
+    <div class="grid2">
+      <div><h3>Chat</h3><p>O conselho rápido. Pensa, rascunha, tira dúvida. Não mexe nos seus arquivos.</p></div>
+      <div><h3>Projeto</h3><p>A sala com memória. Guarda contexto e arquivos fixos — tudo já nasce sabendo do seu mundo.</p></div>
+      <div><h3>Cowork</h3><p>O estagiário na sua máquina. Lê PDFs, gera planilha e documento, usa conectores. É onde a gente mora hoje.</p></div>
+      <div><h3>Skill</h3><p>A receita salva. Ensina uma vez, repete sempre — pro entregável que você faz toda semana, igual.</p></div>
+    </div>
+    <div class="uau"><b>O mapa:</b> Chat pensa · Projeto lembra · Cowork faz · Skill repete.</div>
+  </div>
+
+  <!-- CASE 1 -->
+  <h2><span class="chip fin">Case 1 · Financeiro</span><br>Nota Fiscal → TOTVS</h2>
+  <p class="label">A dor</p>
+  <p>Chega a NF e o boleto, e você abre o TOTVS e digita campo a campo, nota a nota. Repetitivo, demorado e fácil de errar.</p>
+  <div class="block">
+    <p><b>O que o Claude faz:</b> lê os PDFs, extrai os campos certos e devolve uma planilha na ordem do lançamento do TOTVS — pronta pra conferir e lançar.</p>
+    <p class="label">Passo 1 · extrai 1 NF</p>
+    <pre><button class="copy" onclick="cp(this)">copiar</button>Você é assistente do time financeiro da Oneglobal. Vou te enviar uma Nota Fiscal e o boleto correspondente em PDF.
+
+Extraia e devolva numa tabela os campos que eu lanço no TOTVS:
+- Fornecedor / Razão social   - CNPJ   - Nº da NF
+- Histórico (resuma o serviço/produto em 1 linha)
+- Valor (R$)   - Vencimento   - Dt. Pagto CNAB
+- Portador   - Linha digitável (do boleto)   - Forma de pagamento
+- Centro de custo (se não der pra inferir, deixe "VERIFICAR")
+
+Regras: não invente nada; o que não estiver no documento, marque "VERIFICAR". Valores em 0.000,00 e datas em DD/MM/AAAA.</pre>
+    <p class="label">Passo 2 · 10 NFs viram uma planilha</p>
+    <pre><button class="copy" onclick="cp(this)">copiar</button>Vou te enviar 10 Notas Fiscais com seus boletos. Para cada par, extraia os mesmos campos e gere UMA planilha .xlsx — uma linha por NF, colunas nesta ordem: Fornecedor | CNPJ | Nº NF | Histórico | Valor | Vencimento | Dt Pagto CNAB | Portador | Linha digitável | Forma de pagto | Centro de custo.
+
+No fim, liste quais campos ficaram como "VERIFICAR" para eu conferir antes de lançar.</pre>
+    <p class="label">Passo 3 · vira Skill</p>
+    <pre><button class="copy" onclick="cp(this)">copiar</button>Transforme esse processo numa skill chamada "Lançar NF no TOTVS - OGB". Toda vez que eu jogar NFs e boletos na pasta e pedir, ela deve extrair os campos combinados, gerar a planilha no formato do TOTVS e sempre sinalizar os campos faltantes. Guarde as regras que combinamos.</pre>
+    <div class="uau"><b>Momento uau:</b> 10 PDFs bagunçados viram uma planilha pronta em segundos — e o Claude ainda avisa onde NF e boleto divergem.</div>
+  </div>
+
+  <!-- CASE 2 -->
+  <h2><span class="chip gar">Case 2 · Garantia &amp; Crédito</span><br>Análise de crédito (Light) → relatório pra seguradora</h2>
+  <p class="label">A dor</p>
+  <p>Pra aprovar o crédito do cliente nas seguradoras, o time analisa a saúde financeira da empresa — junta balanços, notícias e perspectiva e manda "mais mastigado" pra seguradora. É a defesa de crédito do cliente, hoje feita na mão.</p>
+  <div class="block">
+    <p><b>O que o Claude faz:</b> a maioria são empresas de capital aberto (Azul, WEG, Light…) com balanços públicos. O Claude busca sozinho, compila os indicadores e gera o relatório no padrão Oneglobal — igual ao modelo da Azul.</p>
+    <p class="label">Passo 1 · pesquisa + conteúdo</p>
+    <pre><button class="copy" onclick="cp(this)">copiar</button>Você é analista do time de Surety & Credit da Oneglobal. Vou te dar o modelo do nosso Credit Report (PDF da Azul) como padrão de formato e seções.
+
+Tarefa: montar o Credit Report da empresa "Light S.A." (energia, RJ), no MESMO formato e ordem de seções do modelo.
+
+Pesquise em fontes públicas e traga, com fonte e data em cada item:
+- perfil da empresa (setor, porte, controlador)
+- faturamento e EBITDA dos últimos exercícios
+- endividamento / alavancagem (dívida líquida/EBITDA)
+- rating de crédito e agência (se houver)
+- situação societária / eventos relevantes / recuperação judicial
+- notícias materiais dos últimos 12 meses
+- riscos e pontos de atenção para fins de seguro garantia
+
+Regra de ouro: não invente. Cada número precisa de fonte e data. O que não encontrar, liste como "não disponível em fontes públicas".</pre>
+    <p class="label">Passo 2 · gera o PDF no padrão Oneglobal</p>
+    <pre><button class="copy" onclick="cp(this)">copiar</button>Agora gere o Credit Report da Light em PDF, no mesmo layout e ordem do modelo Azul (capa Oneglobal, sumário executivo, perfil, indicadores financeiros, rating, riscos, parecer/outlook de crédito). Use a identidade Oneglobal. Acrescente uma página final de "Fontes e data de consulta". Tom técnico e objetivo; marque o que é dado público e o que é estimativa.</pre>
+    <p class="label">Passo 3 · vira Skill</p>
+    <pre><button class="copy" onclick="cp(this)">copiar</button>Crie a skill "Credit Report OGB". Entrada: nome ou CNPJ da empresa. Saída: relatório de crédito em PDF no formato do modelo Azul — pesquisa de fontes públicas, indicadores, rating, notícias, riscos e página de fontes. Sempre citar fonte e data e nunca inventar números.</pre>
+    <div class="uau"><b>Momento uau:</b> o Claude busca sozinho na internet, monta um relatório com cara de Oneglobal e diz "não disponível" em vez de inventar — mata o medo da alucinação.</div>
+  </div>
+
+  <!-- CASE 3 -->
+  <h2><span class="chip com">Case 3 · Comercial &amp; RH</span><br>Busca ativa de leads no LinkedIn</h2>
+  <p class="label">A dor</p>
+  <p>Achar decisores qualificados (Comercial) e triar candidatos (RH) é garimpo manual e lento.</p>
+  <div class="block">
+    <p><b>O que o Claude faz (Cowork + Chrome):</b> busca no LinkedIn por cargo, setor e região, qualifica os perfis e devolve uma planilha de prospects + mensagens de abordagem no tom da Oneglobal.</p>
+    <pre><button class="copy" onclick="cp(this)">copiar</button>No LinkedIn, busque gerentes e diretores de RH / Benefícios em empresas de médio e grande porte na região de São Paulo. Para cada um, traga: nome, cargo, empresa, porte e um gancho de abordagem. Monte uma planilha e sugira 3 versões de mensagem de conexão no tom consultivo da Oneglobal.</pre>
+    <div class="uau"><b>Um case, duas áreas:</b> a mesma mecânica serve pra prospecção (Comercial) e triagem de candidatos (RH).</div>
+  </div>
+
+  <!-- FECHO -->
+  <h2>Fechamento</h2>
+  <div class="rule">
+    <p><b>Prova social — o case da Fabiana.</b> A Fabiana (Diretora P&amp;C) pegou sozinha o esqueleto da proposta + a cotação da seguradora e pediu pro Claude preencher. O que levava <em>2 horas</em> saiu em <em>5 minutos</em>. Não é coisa de outro mundo — é gente da casa fazendo.</p>
+  </div>
+  <div class="block">
+    <h3>Próximos passos</h3>
+    <ul>
+      <li><b>Treinamento por líder de área:</b> cada área leva o seu case e a sua skill.</li>
+      <li><b>Aula extra hands-on:</b> agora que viram, eles fazem.</li>
+      <li><b>Turmas niveladas</b> nas próximas (iniciante × intermediário).</li>
+    </ul>
+  </div>
+
+  <footer>
+    <span>Proativa · formação Claude — Aula 3 · identidade Oneglobal</span>
+    <img src="/proativa/newscale-logo-white.png" alt="NewScale">
+  </footer>
+</div>
+
+<script>
+function cp(btn){
+  const pre=btn.parentNode, txt=pre.innerText.replace(/^copiar\n?/,'');
+  navigator.clipboard.writeText(txt).then(()=>{btn.textContent='copiado';btn.classList.add('ok');
+    setTimeout(()=>{btn.textContent='copiar';btn.classList.remove('ok')},1600)});
+}
+</script>
+</body>
+</html>
