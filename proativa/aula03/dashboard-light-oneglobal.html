@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Light S.A. — Painel de Crédito · Oneglobal</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root{
+    --azul:#002657; --azul60:#667D9A; --azul40:#99A8BC;
+    --teal:#004853; --teal60:#669198; --roxo:#3D0F58;
+    --verde:#005847; --verde60:#669B91; --carvao:#3D3936;
+    --vermelho:#7a2730; --amarelo:#9a6b16;
+    --claro:#F4F4F2; --neutro:#E9E9E6; --branco:#fff;
+    --serif:Georgia,'Times New Roman',serif;
+    --cond:'Arial Narrow','Helvetica Neue',Arial,sans-serif;
+    --g-verde:#1f7a5e; --g-amarelo:#c9a227; --g-vermelho:#a23b46;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--claro);color:var(--carvao);font-family:var(--serif);line-height:1.6}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px 60px}
+  .cond{font-family:var(--cond)}
+  .olho{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;color:var(--verde60)}
+
+  /* HERO */
+  header.hero{position:relative;overflow:hidden;color:#fff;
+    background:linear-gradient(145deg,#001A3D 0%,#002657 45%,#004853 100%);
+    padding:34px 40px 30px;margin-bottom:26px}
+  header .topo{position:absolute;inset:0;opacity:.55;pointer-events:none}
+  header .inner{position:relative;z-index:1;max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+  header .logo{height:30px;opacity:.97}
+  h1{font-family:var(--serif);font-weight:700;font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.1;margin:.25em 0 .1em}
+  header .sub{color:#cdd6df;font-size:1rem;max-width:640px}
+  header .strap{font-family:var(--cond);text-transform:uppercase;letter-spacing:.2em;font-size:.66rem;color:var(--azul40);margin-top:10px}
+  header .meta{font-family:var(--cond);font-size:.72rem;letter-spacing:.05em;color:#aebccd;text-align:right;text-transform:uppercase}
+
+  /* section titles */
+  h2{font-family:var(--serif);font-weight:700;font-size:1.5rem;color:var(--azul);margin:38px 0 4px}
+  .lead{color:#5f5b57;margin:0 0 14px;max-width:820px}
+
+  /* KPI grid */
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:880px){.kpis{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.kpis{grid-template-columns:1fr}}
+  .kpi{background:#fff;border:1px solid var(--neutro);border-radius:14px;padding:18px 20px;
+    box-shadow:0 1px 3px rgba(0,38,87,.06);position:relative;overflow:hidden}
+  .kpi .lab{font-family:var(--cond);text-transform:uppercase;letter-spacing:.09em;font-size:.72rem;color:#6f6b67}
+  .kpi .val{font-size:2rem;font-weight:700;color:var(--azul);line-height:1.05;margin:7px 0 3px}
+  .kpi .delta{font-family:var(--cond);font-weight:700;font-size:.82rem;display:inline-flex;align-items:center;gap:5px}
+  .kpi .note{font-size:.76rem;color:#8a8682;font-style:italic;margin-top:5px}
+  .up{color:var(--g-verde)} .down{color:var(--g-vermelho)} .flat{color:var(--amarelo)}
+  .kpi .dot{position:absolute;top:16px;right:16px;width:11px;height:11px;border-radius:50%}
+  .d-verde{background:var(--g-verde)} .d-amarelo{background:var(--g-amarelo)} .d-vermelho{background:var(--g-vermelho)}
+
+  /* highlight banner */
+  .banner{background:linear-gradient(135deg,#002657,#3D0F58);color:#fff;border-radius:14px;
+    padding:18px 24px;margin:18px 0 0;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .banner .big{font-size:1.5rem;font-weight:700}
+  .banner b{color:var(--verde60)}
+
+  /* alerts */
+  .alerts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media(max-width:880px){.alerts{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.alerts{grid-template-columns:1fr}}
+  .alert{background:#fff;border:1px solid var(--neutro);border-radius:12px;padding:14px 16px;border-top:4px solid #ccc}
+  .alert.v{border-top-color:var(--g-verde)} .alert.a{border-top-color:var(--g-amarelo)} .alert.r{border-top-color:var(--g-vermelho)}
+  .alert .tag{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.07em;font-size:.66rem;padding:2px 8px;border-radius:20px;color:#fff}
+  .alert.v .tag{background:var(--g-verde)} .alert.a .tag{background:var(--g-amarelo)} .alert.r .tag{background:var(--g-vermelho)}
+  .alert h4{margin:9px 0 3px;font-size:.98rem;color:var(--azul)}
+  .alert p{margin:0;font-size:.82rem;color:#5f5b57}
+
+  /* charts */
+  .charts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:820px){.charts{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--neutro);border-radius:14px;padding:18px 20px 14px;box-shadow:0 1px 3px rgba(0,38,87,.06)}
+  .card h3{margin:0 0 2px;font-size:1.05rem;color:var(--azul)}
+  .card .cap{font-size:.76rem;color:#8a8682;margin:0 0 10px}
+  .chart-box{position:relative;height:240px}
+
+  /* insights */
+  .insight{background:#fff;border:1px solid var(--neutro);border-left:4px solid var(--teal);border-radius:0 12px 12px 0;
+    padding:14px 20px;margin:12px 0}
+  .insight h4{margin:0 0 4px;color:var(--teal);font-size:1.02rem}
+  .insight p{margin:0;color:#4a4744}
+  .insight .deco{font-family:var(--cond);text-transform:uppercase;letter-spacing:.1em;font-size:.66rem;color:var(--verde);font-weight:700}
+
+  /* table */
+  .toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:6px 0 12px}
+  .toolbar input{font-family:var(--serif);padding:8px 12px;border:1px solid var(--neutro);border-radius:9px;min-width:220px;flex:1}
+  .fbtn{font-family:var(--cond);text-transform:uppercase;letter-spacing:.06em;font-size:.74rem;font-weight:700;
+    padding:7px 14px;border:1px solid var(--neutro);background:#fff;border-radius:20px;cursor:pointer;color:var(--carvao)}
+  .fbtn.active{background:var(--azul);color:#fff;border-color:var(--azul)}
+  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--neutro);border-radius:12px;overflow:hidden}
+  thead th{background:var(--verde);color:#fff;text-align:left;padding:11px 14px;font-family:var(--cond);
+    text-transform:uppercase;letter-spacing:.04em;font-size:.76rem}
+  tbody td{padding:10px 14px;border-bottom:1px solid var(--neutro);font-size:.88rem;vertical-align:top}
+  tbody tr:nth-child(even){background:var(--claro)}
+  .pill{font-family:var(--cond);font-weight:700;text-transform:uppercase;font-size:.66rem;letter-spacing:.05em;padding:2px 9px;border-radius:20px;color:#fff;white-space:nowrap}
+  .p-r{background:var(--g-vermelho)} .p-a{background:var(--g-amarelo)} .p-v{background:var(--g-verde)} .p-n{background:#8a8682}
+
+  footer{margin-top:42px;background:var(--azul);color:#fff;border-radius:14px;padding:18px 24px;
+    display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;font-size:.8rem}
+  footer .cond{color:#aebccd}
+
+  /* animations */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  .kpi,.alert{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+  .kpi.in,.alert.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="topo" viewBox="0 0 1600 360" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 80 Q200 50 400 85 Q600 120 800 80 Q1000 40 1200 85 Q1400 120 1600 80" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="1.1"/>
+    <path d="M0 140 Q200 110 400 145 Q600 180 800 140 Q1000 100 1200 145 Q1400 180 1600 140" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+    <path d="M0 210 Q200 175 400 215 Q600 255 800 210 Q1000 165 1200 215 Q1400 255 1600 210" fill="none" stroke="rgba(255,255,255,.05)" stroke-width=".9"/>
+    <path d="M0 290 Q200 255 400 295 Q600 335 800 290 Q1000 245 1200 295 Q1400 335 1600 290" fill="none" stroke="rgba(255,255,255,.04)" stroke-width=".8"/>
+  </svg>
+  <div class="inner">
+    <div>
+      <div class="olho">Surety &amp; Credit Specialty · Painel de Crédito</div>
+      <h1>Light S.A. — Leitura de Crédito para o Board</h1>
+      <div class="sub">Distribuidora de energia do Rio de Janeiro, em recuperação judicial, com concessão renovada e capitalização em curso. O retrato em uma tela.</div>
+      <div class="strap">We revolve around you · giramos em torno de você</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:14px">
+      <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZQAAABnCAYAAAAntLSjAAATNklEQVR4nO2d+9cdVXnHPyeAEhG5FMvFgpSCsIq4KlJEqFBUQMALlnIpWGzrqoiwFCq0/AlgSSCsJJBUAaNQLhaTBYSLKCFtCSgQLCiXRKCVNkVFEsolkJDpD3sO7+S8Z2aePbP3zJxzvp+1zjrvO/PMs585c3n25dnP7iVJghBCCJHhYuBMYLsh+54E9ht2UE8ORQghRIasU7gP50BeBXYADgH2SvetAA7NHiiHIoQQok/fIdwInFIgtwrYG3gFeGd/oxyKEEIImHImPaP8jcBJwDOkrZYZEYwSQggxWjyefmedyXyck7kWuBV4Ddcy6XMy8DDw+/0NW8a1UQghxAiwH7BmYFvfP5ye2ZYANzDVHfahdFsC9NRCEUKIyea69Hu3ge2vDZFdBew+sO2R/h9yKEIIMdkcmrN9w5Bt+wyRvzf9niOHIoQQk817S/bfA/w78DNg1pD956bfO2gMRQghJpsNwFYF+48kHSMp0bNJLRQhhJhsnjbI3M7mEx6zLEi/n5dDEUKIyeae9Puige3bZv4+Lv1+eMjxx6bf/yCHIoQQk81Z6fcFA9sHu7h6wAdx81Oy7A6sA82UF8LCfGB/XJqJYbwN+A1wamMWdYc5uMiftUzvEtke9xI6DhGbFbiX+qac/duTH80FLlLrcOA7wBmZ7Q8DB2b+vxI4DDgg/X8d8C5S5yOHIkQ5a4BdDHLWlBXjxKvAzBKZWcD5DdgyyVhe5GX3Z1/HPOAcg77HcRMi7wKOAc1DEUII4eg7nLOBX5TIJjhn8gipMwE5FCEsbGzbACEaogc8hEv2mACvA/8GLAVWMpVmBWAhbkzlLTQPRYhy8sZOhBhHDkq/++Mqh2X2bQK+D/z5sAPlUIQQQgzjCN8D1OUlhBAiCHIoQoRhWGZWISYKORQhRB3ebNsA0R3kUIQoZ1gab+F4uW0DRHeQQxGiHEV5CWFADkUIIUQQ5FCECENeDiUhJgY5FCHC8H9tGyBE28ihCCGECIIcihDlKJeXEAbkUIQoR1Fe+bzetgGiO8ihCCHqsL5tA0R3kEMRQggRBDkUIcKgKC8x8cihCBEGzUMRE48cihBCiCDIoQhRjjLqCmFADkWIcjQ+IoQBORQhRB00diTeIsaa8guB7YBt0//XAb8Fzo5QlihmIfBu4O24WvZv0HUYF+YBO+KeNXDXdx3wpYbteKnh8rrIVcDOQA+3PsyzwN+3aVBb1HUoVwPHALsaZL+S+ftZ4DbgnJrlN8mtwEeBd+XsXw0sAc5vzKLp3Ad8pEQmex1WA0uBr0WzyM7dwIeBdxbIPAp8oBlzvIm5CNdc4FhgL4Ps32b+/hVwJ3BGDKMCcjlwPMXn9xqwDDiuCYMKmA18lvJrcUH6/b/ATcBXYxrVFXpJklQ57le4mm8Ingb+IJCuLCsMMmUvX4AqP9AC4MsVjqvCHMLcrCuBAwPo8eE2qr8gFgFfGLL9u5TfT5brnuUG4OQSmQeAQzz1lvEEsG8gXS8AOwXSleV+XEWgiFkMr2j9lOoVhOXAERWPrYLlPMv4PvBnAWwZhuU91YtU9lQBng5lI7BFwf4Xcd74zIHt1wIn4rpe8lgD7OZjTAmWE8u70cHVOOu04BLij1EVneMK4NAh21cCf1RwXCwHn2UJ8JlAugYfkhgPVtMO5TngPQX7NwL/Apw6sP0K4HO47pc8Qt+XVRzKYlwtPwSxHcujwPsD64zxYu+EQ7HeWHfiDM5zJutxxu7IdGcCcDqwNcUntGtaxo1Gm2KxLLWjbndgj2qtGwuPF+h+IC17mDMB+GC6/wc5+/dKdV9Rx8ACEsI5k76+6wPqa5OFuPMpciY9YCumOxOAs4BdUpm1BccnuPukDV4inDMBOJw4z9nNqd48Z/IC1aP/ElxLeuywOJQEOLpg/xJgpkeZPeChgv0n4Qbx22AD4Ws7oW/2BNgvZ9+l2GvJR1Ps4L+M65IIxQLsv8VPcLYN+1yJ60/PcgrtvSBD8Qybj38M8hR+NcwdgH8u2H8w8So8eSRMBev0uZ38a/0jT91F5+tDgmvpZVnM5rbthBtPzW77uUcZp+NavmNFmUMpu+GWACdUKPcg4McF+3cwlB2CbDO8qFWyGlejX46LlPIl1IBt0W/SA/6ugs6il9QHcIOKdbkRW/RRktpzcIHMWcA7mG73wbiX0yjyJrBnwf5nqDaWchrw7RKZJp6zmUPKWY67hkVjaB9PZe4zlnMqcJe3dVPMY7qds1MbBh3MMPZPZVcbyzsZ+IbZuhGgyKGU3Wj/TTVn0ufDlMewN1WDGlZO/4bvAfvgavRH4IIRerioLytbAt+MYGOf22rqXlSwb2fc4HBVrsa1Ost4Fv++/R7wSOb/T3oebyXmffgm5edtie7K46+AJ0tkYj9nXxn4v4dfT8Bh2FtnR1G92zxr5/VpmV+voGcf4DtG2QvKRUaHvEH5Jgd4ysqqOlhvOYfLmR4h9RhwQOBy+lT9zcrKCHEtyspYjK2W5qsXXDDHjhV097kbV5u14vt7LaS4OwqqDcqvAvYukWnqOatalm/0U93zsT5vVcpJcJXcosAjH34EHGmQCxFY0NlB+eWG464KaMPSkv274iJaYjDoTHr4OROAiwPZkkcTzsSi54QKOq0Pfx1nAvAJymvhXeMKyp1JUbewL3MMMv8RsLxhhLhXrzXKVWl19QjnTAA+ZpQ7PGCZrTLMoXzUcNwXA9pwvEEmVux2lqo3+4W47j8Lvv27FufeJD4PqXUGdSiHmBeoEIKiyZZVscxTqjvvIcu5BhnfypQPCwPp+Tz2oJ1HA5VZh2uMcnNjGtEUgw7F8sKo218/jMcMMs9FKLdP3Zfa7xnlfCfUlTn3JZ76yrCMC1lqujA9mmcYa426rMRq0oestYLr6irjl4HLBFtUUYzxlPUMn05Qld8xyoWeP1KFvzbKWSrWnafKBKdPBbfCVjMqis2vQ/R+xQw+NV1LLeyEinbk8WmDjGVWvvWltINRbtwo6+oC2CNCucPmrgxjduByrQPUPjxtlAsRpdgEe7ZtQAiyDuWN1qyw81RgfSGdiSXViw+T+rIddx5sufwXDTLnRbeiPtZsDkVZA5oi9Hurs2QdylYG+bzZ1SGwdHvtE7H8utwfUJel73ddwPKyWMY+iiacWefp3GyUGzc+ZJD5r4jl3xFRd1f5XsvlW5z4WNB3KNa47aIZ83WxTl6y9uFvrGpIRapMKszD0vdblG2gDpbZvkWhkNb+7RONcpNIrGsLbrKjBZ9Z6m2xzCjX5r02j7DBFZ2m71AsfeexsQ7afcIoFzOdeBeIVYv9dY1jLwtlxAjyNoOMNT1ME1GNZVjmT7RNV228BTeOmDB9UudY0081snWrVvjxh20bEBlraHGsLq86zXPr5EJrmPUo8Q6DTFFKmVElxiJ9o0idVPxjg5YA7h7W5vG5kcp/3Sg3LAeRNUyz7YHpSeeVgLpizNGJwXURdD7IVEtk0Jk8xFTqplFPXGpmBnCJUTbmPBAxRd6KkIMkkT5lKUb67GKUG8bERL10FOsclwVRrQiD1TnuH6i8q5h6VoYFWFyFcyIHBSpvpNgS+F2j7NqIdvR5mdGp8Uw6RYullTFq621bIiBHCetM8zqVhqb4H2zRn9b3XB7LKM631eR8ts4yA/sPXXUxGR9eNsqNQs1JjA/bBNBhTVMesjsqD+tzNgqVO2s053YV9V+La43kOZNFyJm8xZbYBhOhGYdiRRdQv8GoYX05d+k5C+FIY2PNGVeFphKzjg0alBdCjDI+q8VauY5iZ7IWOZOhzABeNcpakv01RdNLl3aRkEsIiPqUjSlZu5m69JxZut/absVYx/IGl43OYxXwFwX7E5QWKZcZ2FNlNHGjW7sFQmYuHVUsCQZFc5TN5bIGIjTxgrY+ZxaH0vY8FGvSWItDf4Py50q9OgXMwJ6Nc/uIdvQZhUHArjDKEzyt6XNEHKwLmq2JakUYrO+MsuzEz1EezXe5sayJZQZwvlHWuuaHqId15UFrzqwusmfbBkw4uxvlxqknoOi5WoStpfO1QLaMLWq+dY9RnkVunfw6aq2rLo1rhCBkt9qoDE4XrZD5l4bjfVdbnUj6DmV9q1b4YcmGO8p83kPWssJik/zUKDdq4z+hKl4h14jvCtbMDjGwri9fhDW45ZgAZY09/QflllatcFgnK95tlKszk3tU6NqyoTFW8xwnrHnaurBWzD1tG2DAer8VZdDu2jM00vQdyslG+ZjNvkONctZ+zFHuzhuFh7ku4zYwHzKgxLIIV1WsSRI/FtGGUFhbR0XrPdVNySIyZF+6lvVDjoplCLZMtasilt8lfB5ma3bgprCsvAnj15rZwihnWTwrxnryfT4ZUXeTXOkhe040K8RmZB2KZYGgtnlf2wY0iHWAu2vX7QCj3F5RregubWehtUzKuzS6FfX5olHOWsERAajSLRRjINiyhro15fa4YA3thNHNHOBTy2yT0E7bElgSY0XO641yPstZW1KfWNfJ8cE6odJawREBGHQolhDAGINYlhsuZjdAV/GJCno+mhWOWdgd12yjXOh5Dm8G1tfHmkDVimVtDp8KhZVTDDIxwoA/ElifNY1KyIjQWTWO3TmYFR1nWAvlXw3HfTugDZaB/i5EvbSBNSoI3ODi/ZHsuJqpWqulNfl1D93z/c0Zyn2MViCGpXX2cMDy5hlkLNe2KqFa0ZdhX7Lc4rit47InGuWGsWeNY0eKXpIMvc6Wix+qJlNW1hpgtwh6IXxtLFaZPg/jY4Rt5j8LvDfzv4/9VrvrXodrgC94yPuW9wSwb4nMG/iHqq+ifE5OU89Z1bJ87s1XqB8NZy3vUmxdd5diX0479u9T51q38b6bRl6NzlJwiCWBLT9CFWdixbr8cdtc5iH7fsLUBhemeqo6E3AtGwt1JtYuxs+ZxKLKOMs+wKYSmRDX8gmDTBMz3rehXn4w629xF/ZxoPM8yrdmZu/je+2+5SnfOYq6CMpusPdQb16Kpak5KmkdYnMeti6LLAn2lOlZljB9bflNVLsWfwM8YJB7O8WTz/J4Dvhs5n9rHrQusQXlod/WBK7DuJny1lWTz9kuVHOS1mOexH9W+x1GuZnAfxrk+qs89unhWrBlWFLAdJqyPucexS+lo4B7K5T7NMVN/adp5iZvO/W2D+fg/5tsg7uxE+AFXJaBa4G56Wc+sBR4JiP3mQEdK7HPsRjGIdhe9Dthf2nckMpmE/qtBvbzM81M7Htxa4rHS3amWtDFUuBzJTJNPGcPMD0bR4K7jmVchv2+eIZq98CxHrJ74Oy5bci+H6b7Tsts64dgX2HQvRUuUeXokiSJ5XN9Uo5Fz0UGPQuNuso+FkKV5VNmU+WE4JJA9pIkyV0e5b6cJMk1A8dfmSTJUznydyR+v42v7Wsi6R38XGIo4yKjrjLuDGCv9fe+P5VdULB/8LzuMOrus7ihc/Ghqv6NSZLcnSTJPSX62nj3FH7yBuXz+DWuJlnETUxP5bKU8lrAz7FFZVixnNg/AV9quMxQNcLrKF5Zrg63A8dF0h16zszFwIWe+n2vwRpcV01ovXk8Snko/V1M79q5HtciKRrP+S1hlz6w/N4P4FqqPsf4ELKVFcK2X5DfA1NV/zLgyIL9nR6Uz+PdOKOeKpA5ianuk/6nyJn8JNUZ0plYGaUw00FOw/1uywPqvC3VGcuZkOpfHEDPPamuC8sER5ADcOe2okDmaKY/Z6eQ70xWpzq7sI5OD/hBAD0LCP+S7OG6zqqwMT2+qDu/ir09ip1JZ/BtoQwyG1dL8l3f4mHiJsADN1awDpejbDCh5FxcYrkzApe5CHgp/bufP+gSXB/5DGA74PTAZWb5GX7XYgOu5nN0FGvKmYVzjJbaP7gW8k3A2QUysWpq38JNqNvIVJjp5bjrOhN33X0ihnz5MfDHnsc8CdxJ3IWh5uDG6tYzPWfWXNxaMkVReFfh7gFryPVK4EBPG6vyILb31ArsyW373EJxPjvf8P/vAmvTv9t49wD1HUoec5gayN1A3AdNFDM3/d4EfLVNQ4xcxNRchSpJ/TrR9G+I2Uy1SN5kfFYU/AYuO0HXzqn/LOmdlkMshyJEW0ySQxGiU4zyGIIQVehaun8hxgY5FDFpPNi2AUKMK3IoYpz4pkHmT6JbIcSEIocixolYM+WFEAY0KC/GiTdw6SvyeB57iLIQwhO1UERMEtxM9qYociYgZyJEVNRCEbG4jKk5BE2F6ZbdzAoXFiIicigiFtkb60nij288y+ZrtwwiZyJEZNTlJZpgX2xL3tahyJn8MnLZQgjkUEQc7h6y7Uz8Vp704f6S/XtEKlcIkUFdXiIWeTfWIsIv2Vt0E6urS4iGUAtFxCLvRX4G8FDAcoqcyZyA5QghSlALRcQmZuuhSPd8itPcCyECoxaKiE0PWJWzL2Fq/RgfFlDuqORMhGgYORTRBO8D/jFn37ZMrTh4b4meH6Zyecs2P4bGTIRoDXV5iaa5FTg+sM71uFUThRAtohaKaJpP4VoRC4GXa+p6PNUlZyJEB1ALRXSB2cCfAnvjusDyeBG3nsnRDdgkhPDk/wHmTcheiIF4DAAAAABJRU5ErkJggg==" alt="Oneglobal">
+      <div class="meta">Ref. jun/2026 · fontes públicas<br>consulta 25/06/2026</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- KPIs -->
+  <h2 class="reveal">Os números que importam</h2>
+  <p class="lead reveal">Seis indicadores definem a tese hoje. Cor à direita do cartão: verde segue saudável, amarelo pede atenção, vermelho exige decisão.</p>
+  <div class="kpis" id="kpis"></div>
+
+  <div class="banner reveal">
+    <div class="big">Concessão renovada até <b>2056</b></div>
+    <div style="flex:1;min-width:240px">Contrato assinado pelo MME em 08/05/2026 (+30 anos). Sai de cena o maior risco existencial da empresa e abre-se um ciclo de <b>R$ 10 bi</b> de investimentos em 5 anos.</div>
+  </div>
+
+  <!-- ALERTAS -->
+  <h2 class="reveal">Semáforo de atenção</h2>
+  <p class="lead reveal">O que está no rumo, o que vigiar e o que decidir — em um relance.</p>
+  <div class="alerts" id="alerts"></div>
+
+  <!-- GRÁFICOS -->
+  <h2 class="reveal">Evolução e composição</h2>
+  <p class="lead reveal">Receita estável e de grande porte; dívida e alavancagem subiram em 2025 e recuam no pró-forma pós-capitalização.</p>
+  <div class="charts">
+    <div class="card reveal"><h3>Receita líquida e EBITDA</h3><p class="cap">R$ bilhões · 2024–2025 (EBITDA: barra reportado, linha ajustado)</p><div class="chart-box"><canvas id="cRev"></canvas></div></div>
+    <div class="card reveal"><h3>Dívida líquida</h3><p class="cap">R$ bilhões · 2023 → pró-forma 2026</p><div class="chart-box"><canvas id="cDebt"></canvas></div></div>
+    <div class="card reveal"><h3>Alavancagem (Dívida líq./EBITDA)</h3><p class="cap">vezes · meta de conforto setorial ≈ 3,0x–3,5x</p><div class="chart-box"><canvas id="cLev"></canvas></div></div>
+    <div class="card reveal"><h3>Composição acionária</h3><p class="cap">% do capital · leitura pública (out/2025)</p><div class="chart-box"><canvas id="cShare"></canvas></div></div>
+  </div>
+
+  <!-- INSIGHTS -->
+  <h2 class="reveal">Leitura para a decisão</h2>
+  <p class="lead reveal">Ligando os números à escolha que está na mesa do board.</p>
+  <div id="insights"></div>
+
+  <!-- TABELA -->
+  <h2 class="reveal">Dados de apoio</h2>
+  <p class="lead reveal">Filtre por categoria ou busque um item. Cada linha tem grau de atenção e fonte.</p>
+  <div class="toolbar reveal">
+    <input id="search" placeholder="Buscar item, valor ou fonte...">
+    <button class="fbtn active" data-f="all">Tudo</button>
+    <button class="fbtn" data-f="Financeiro">Financeiro</button>
+    <button class="fbtn" data-f="Societário">Societário</button>
+    <button class="fbtn" data-f="Operacional">Operacional</button>
+    <button class="fbtn" data-f="Risco">Risco</button>
+  </div>
+  <table>
+    <thead><tr><th>Categoria</th><th>Item</th><th>Valor / Status</th><th>Grau</th><th>Fonte · data</th></tr></thead>
+    <tbody id="tbody"></tbody>
+  </table>
+
+  <footer>
+    <span><b>Oneglobal</b> · Surety &amp; Credit Specialty — painel interno, fontes públicas</span>
+    <span class="cond">Não é recomendação de investimento · dados marcados como estimativa devem ser confirmados</span>
+  </footer>
+</div>
+
+<script>
+const C={azul:'#002657',teal:'#004853',roxo:'#3D0F58',verde:'#005847',azul60:'#667D9A',teal60:'#669198',verde60:'#669B91',azul40:'#99A8BC',marrom:'#4B432C'};
+
+/* ---- KPIs ---- */
+const kpis=[
+ {lab:'Receita líquida 2025',val:'R$ 15,0 bi',delta:'+0,8% a/a',dir:'flat',dot:'verde',note:'Grande porte e estável · público'},
+ {lab:'EBITDA ajustado 2025',val:'R$ 1,83 bi',delta:'−11,5% a/a',dir:'down',dot:'amarelo',note:'Operação sob pressão · público'},
+ {lab:'Dívida líquida dez/25',val:'R$ 6,24 bi',delta:'+38,7% vs 2024',dir:'down',dot:'amarelo',note:'Sobe no ano; recua no pró-forma · público'},
+ {lab:'Alavancagem dez/25',val:'3,13x',delta:'+0,22x vs 2024',dir:'down',dot:'amarelo',note:'Pró-forma < 3,0x · público'},
+ {lab:'Lucro líquido 2025',val:'R$ 213 mi',delta:'−87% a/a',dir:'down',dot:'amarelo',note:'Base de 2024 tinha ganho não recorrente · público'},
+ {lab:'Capitalização 2026',val:'R$ 1,24 bi',delta:'última condição p/ sair da RJ',dir:'up',dot:'verde',note:'Captado em jun/2026 · público'}
+];
+document.getElementById('kpis').innerHTML=kpis.map(k=>`
+ <div class="kpi"><span class="dot d-${k.dot}"></span>
+   <div class="lab">${k.lab}</div>
+   <div class="val">${k.val}</div>
+   <div class="delta ${k.dir}">${k.dir==='up'?'▲':k.dir==='down'?'▼':'▪'} ${k.delta}</div>
+   <div class="note">${k.note}</div>
+ </div>`).join('');
+
+/* ---- ALERTS ---- */
+const alerts=[
+ {c:'v',t:'No rumo',h:'Concessão até 2056',p:'Maior risco existencial removido. Outorga assinada em 08/05/2026.'},
+ {c:'v',t:'No rumo',h:'Capitalização R$ 1,24 bi',p:'Última condição relevante para sair da recuperação judicial.'},
+ {c:'a',t:'Vigiar',h:'Alavancagem 3,13x',p:'Subiu em 2025; pró-forma volta a <3x após capital e conversão de dívida.'},
+ {c:'a',t:'Vigiar',h:'EBITDA ajustado −11,5%',p:'Lucro contábil alto, mas a operação de distribuição está pressionada.'},
+ {c:'a',t:'Vigiar',h:'Caixa R$ 0,96 bi (1T26)',p:'Queda de 32% a/a. Liquidez mais apertada, reforçada pela capitalização.'},
+ {c:'r',t:'Decidir',h:'RJ não encerrada',p:'Saída esperada em 2026, ainda não consumada. Condiciona contratação e garantias.'},
+ {c:'r',t:'Decidir',h:'Perdas não técnicas ~30%',p:'Cerca de 2x a média do setor. Pressão estrutural sobre margem e caixa.'},
+ {c:'r',t:'Decidir',h:'Rating Fitch D/D(bra)',p:'Reflete o default da RJ. Revisão só após reestruturação completa.'}
+];
+document.getElementById('alerts').innerHTML=alerts.map(a=>`
+ <div class="alert ${a.c}"><span class="tag">${a.t}</span><h4>${a.h}</h4><p>${a.p}</p></div>`).join('');
+
+/* ---- INSIGHTS ---- */
+const insights=[
+ {h:'A tese mudou de patamar — mas ainda é condicional',p:'Com a concessão garantida até 2056 e R$ 1,24 bi capitalizados, o risco existencial saiu da mesa. A aprovação de crédito deixa de ser “sim ou não” e passa a ser “quanto e com quais gatilhos”.'},
+ {h:'Cuidado com o lucro de manchete',p:'O lucro de R$ 2,8 bi no 1T26 e a base alta de 2024 vêm de itens não recorrentes (créditos tributários e ganhos da reestruturação). O EBITDA ajustado, que mede a operação, caiu. Decida pelo recorrente, não pelo contábil.'},
+ {h:'O calcanhar de Aquiles é operacional, não financeiro',p:'Perder ~30% da energia para furto e inadimplência é o que mais drena caixa. O novo contrato traz tratamento regulatório diferenciado — é a variável a monitorar trimestre a trimestre.'},
+ {h:'Recomendação: aprovar de forma seletiva e escalonada',p:'Dimensionar exposição à conclusão formal da RJ e à efetivação do capital; preferir prazos compatíveis com a concessão; reavaliar limites quando as agências reclassificarem o rating pós-RJ.'}
+];
+document.getElementById('insights').innerHTML=insights.map(i=>`
+ <div class="insight reveal"><div class="deco">Insight</div><h4>${i.h}</h4><p>${i.p}</p></div>`).join('');
+
+/* ---- TABLE ---- */
+const rows=[
+ ['Financeiro','Receita líquida 2025','R$ 14.996 mi (+0,8%)','v','Releases · mar/2026'],
+ ['Financeiro','Receita líquida 2024','R$ 14.876 mi (+5,4%)','v','Releases · mar/2025'],
+ ['Financeiro','EBITDA 2025 (reportado)','R$ 2.184 mi (+5,5%)','v','Releases · mar/2026'],
+ ['Financeiro','EBITDA ajustado 2025','R$ 1.834 mi (−11,5%)','a','Releases · mar/2026'],
+ ['Financeiro','EBITDA ajustado 1T26','R$ 423 mi (−27% a/a)','a','Releases · mai/2026'],
+ ['Financeiro','Lucro líquido 2025','R$ 213 mi (−87%)','a','CNN/InfoMoney · mar/2026'],
+ ['Financeiro','Lucro líquido 1T26','R$ 2.821 mi (créditos tributários)','n','ADVFN · mai/2026'],
+ ['Financeiro','Dívida líquida dez/2023','R$ 9,08 bi','a','Releases · 2024'],
+ ['Financeiro','Dívida líquida dez/2024','R$ 4,5 bi (alav. 2,91x)','v','Releases · mar/2025'],
+ ['Financeiro','Dívida líquida dez/2025','R$ 6,24 bi (alav. 3,13x)','a','CNN/InfoMoney · mar/2026'],
+ ['Financeiro','Dívida líquida pró-forma 2026','< R$ 6 bi (alav. <3x)','v','Brazil Journal · jun/2026'],
+ ['Financeiro','Caixa 1T26','R$ 0,96 bi (−32% a/a)','a','Releases · mai/2026'],
+ ['Societário','Maior acionista','Fundo Samambaia (R. Cezar Coelho) ~20%','n','Revista Poder · out/2025'],
+ ['Societário','Demais relevantes','WNT/Tanure ~18,9%; BTG ~14,8%; Santander ~10,2%','n','Suno · out/2025'],
+ ['Societário','Controle','Pulverizado, sem controlador definido; free float ~54%','a','Revista Poder · out/2025'],
+ ['Societário','Capitalização','R$ 1,24 bi captados + conversão ~R$ 2,2 bi de dívida','v','Brazil Journal · jun/2026'],
+ ['Societário','Recuperação judicial','Homologada jun/2024; saída esperada em 2026','r','Agência Brasil · 2024'],
+ ['Operacional','Concessão','Renovada por 30 anos, até 04/06/2056','v','ANEEL/MME · mai/2026'],
+ ['Operacional','Área de atuação','31 municípios do RJ; ~4–4,5 mi de clientes','v','RI Light · 2025'],
+ ['Operacional','Geração','5 hidrelétricas, ~855 MW (Light Energia)','v','RI Light · 2025'],
+ ['Operacional','Investimentos','~R$ 10 bi em 5 anos (2026–2030)','n','MME/RI · mai/2026'],
+ ['Operacional','Perdas não técnicas','~30% da energia injetada (~2x a média)','r','InfoMoney/MegaWhat · 2025–2026'],
+ ['Risco','RJ não encerrada','Saída esperada 2026 — ainda não consumada','r','Imprensa · 2026'],
+ ['Risco','Qualidade do resultado','Lucros inflados por itens não recorrentes','a','Releases · 2026'],
+ ['Risco','Liquidez','Caixa em queda; depende da capitalização','a','Releases · mai/2026'],
+ ['Risco','Governança','Controle pulverizado; disputas entre acionistas','a','Imprensa · 2025–2026'],
+ ['Risco','Rating','Fitch D/D(bra) (default da RJ)','r','Monitor Mercantil · 2023–2026'],
+ ['Risco','Regulatório/tarifário','Resultado depende de revisões e tratamento de perdas','a','ANEEL · 2026']
+];
+const pmap={r:'p-r',a:'p-a',v:'p-v',n:'p-n'};
+const pname={r:'Alto',a:'Atenção',v:'Saudável',n:'Neutro'};
+const tb=document.getElementById('tbody');
+function render(list){tb.innerHTML=list.map(r=>`<tr>
+  <td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td>
+  <td><span class="pill ${pmap[r[3]]}">${pname[r[3]]}</span></td><td>${r[4]}</td></tr>`).join('');}
+render(rows);
+let curF='all';
+function apply(){const q=document.getElementById('search').value.toLowerCase();
+  render(rows.filter(r=>(curF==='all'||r[0]===curF)&&r.join(' ').toLowerCase().includes(q)));}
+document.querySelectorAll('.fbtn').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');curF=b.dataset.f;apply();});
+document.getElementById('search').oninput=apply;
+
+/* ---- CHARTS ---- */
+Chart.defaults.font.family='Georgia, serif';
+Chart.defaults.color='#5f5b57';
+const grid={color:'#E9E9E6'};
+new Chart(cRev,{data:{labels:['2024','2025'],datasets:[
+  {type:'bar',label:'Receita líquida',data:[14.88,15.00],backgroundColor:C.azul60,borderRadius:5,yAxisID:'y'},
+  {type:'bar',label:'EBITDA reportado',data:[1.89,2.18],backgroundColor:C.verde60,borderRadius:5,yAxisID:'y'},
+  {type:'line',label:'EBITDA ajustado',data:[null,1.83],borderColor:C.roxo,backgroundColor:C.roxo,borderWidth:3,tension:.3,pointRadius:4,yAxisID:'y'}
+]},options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:10}}}},scales:{y:{grid,title:{display:true,text:'R$ bi'}},x:{grid:{display:false}}}}});
+
+new Chart(cDebt,{type:'bar',data:{labels:['2023','2024','2025','Pró-forma 2026'],datasets:[
+  {label:'Dívida líquida (R$ bi)',data:[9.08,4.5,6.24,5.9],
+   backgroundColor:[C.marrom,C.verde60,'#b07d33',C.teal60],borderRadius:5}
+]},options:{maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{grid,title:{display:true,text:'R$ bi'}},x:{grid:{display:false}}}}});
+
+new Chart(cLev,{type:'line',data:{labels:['2024','2025','Pró-forma 2026'],datasets:[
+  {label:'Dívida líq./EBITDA',data:[2.91,3.13,2.9],borderColor:C.azul,backgroundColor:'rgba(0,38,87,.08)',
+   borderWidth:3,fill:true,tension:.3,pointRadius:5,pointBackgroundColor:C.azul}
+]},options:{maintainAspectRatio:false,plugins:{legend:{display:false},
+  annotation:false},scales:{y:{grid,suggestedMin:2.5,suggestedMax:3.6,title:{display:true,text:'x (vezes)'}},x:{grid:{display:false}}}}});
+
+new Chart(cShare,{type:'doughnut',data:{labels:['Samambaia (R. Cezar Coelho)','WNT (Tanure)','BTG Pactual','Santander','Demais / free float'],
+  datasets:[{data:[20,18.9,14.8,10.2,36.1],backgroundColor:[C.azul,C.teal,C.roxo,C.verde,C.azul40],borderColor:'#fff',borderWidth:2}]},
+  options:{maintainAspectRatio:false,cutout:'58%',plugins:{legend:{position:'right',labels:{boxWidth:12,font:{size:10}}}}}});
+
+/* ---- reveal on scroll ---- */
+const io=new IntersectionObserver((es)=>{es.forEach((e,i)=>{if(e.isIntersecting){
+  setTimeout(()=>e.target.classList.add('in'),(i%6)*70);io.unobserve(e.target);}})},{threshold:.12});
+document.querySelectorAll('.reveal,.kpi,.alert').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
