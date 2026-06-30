@@ -23,6 +23,16 @@
   to = "/admin/"
   status = 301
 
+# Slug antigo do site de apoio do hackathon -> renomeado para /hackathon-ismart
+[[redirects]]
+  from = "/hackathon"
+  to = "/hackathon-ismart"
+  status = 301
+[[redirects]]
+  from = "/hackathon/*"
+  to = "/hackathon-ismart/:splat"
+  status = 301
+
 # URL antiga da pagina de captacao do Furlanetti
 [[redirects]]
   from = "/pesquisa-furlanetti"
