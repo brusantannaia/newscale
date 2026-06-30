@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Material de Apoio · Hackathon de IA · Ismart</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--azul:#002561;--azul2:#008ED3;--ciano:#00BCF2;--ciano-cl:#9CDCF8;--ciano-bg:#D4EEFC;--magenta:#ED2D67;--coral:#F1655D;--roxo:#924A7C;--verde:#1f9d72;--amarelo:#EBEA70;--tinta:#13233f;--cinza:#5b6b85;--linha:#e3e9f2;--papel:#eef2f8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Lato',sans-serif;background:var(--papel);color:var(--tinta)}
+h1,h2,h3,h4,.mont{font-family:'Montserrat',sans-serif}
+
+.hero{position:relative;overflow:hidden;color:#fff;padding:42px 24px 30px;
+  background:radial-gradient(120% 130% at 82% -10%, #0a4a96 0%, #002561 55%, #001637 100%);}
+.hero::before{content:"";position:absolute;inset:0;opacity:.5;
+  background:radial-gradient(circle at 88% 30%, rgba(0,188,242,.30), transparent 42%);}
+.hero-in{position:relative;z-index:2;max-width:1000px;margin:0 auto;display:flex;gap:26px;align-items:center}
+.owlwrap{flex:0 0 auto;width:118px;height:118px;background:#fff;border-radius:22px;padding:9px;box-shadow:0 12px 28px rgba(0,0,0,.30)}
+.owlwrap img{width:100%;height:100%;object-fit:contain;display:block}
+.hero h1{font-size:clamp(28px,4.6vw,44px);font-weight:900;line-height:1.04;letter-spacing:-.5px}
+.hero h1 .ac{color:var(--ciano)}
+.hero .sub{font-size:clamp(14px,1.7vw,17px);opacity:.92;margin-top:12px;max-width:620px}
+@media(max-width:680px){.hero-in{flex-direction:column;text-align:center}.owlwrap{width:92px;height:92px}}
+
+.toolwrap{position:relative;z-index:2;max-width:1000px;margin:18px auto 0}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.toolbar button{font-family:'Montserrat';font-weight:700;font-size:12.5px;border:none;border-radius:10px;padding:9px 14px;cursor:pointer;background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.28);transition:.15s}
+.toolbar button:hover{background:rgba(255,255,255,.3)}
+.toolbar .prim{background:var(--magenta);border-color:transparent}
+.toolbar .prim:hover{background:#ff3f78}
+.toolbar .save-ind{font-family:'Montserrat';font-weight:700;font-size:12px;color:#9be8bf;margin-left:auto;display:flex;align-items:center;gap:6px}
+.dotok{width:8px;height:8px;border-radius:50%;background:#7BE0A8;display:inline-block;box-shadow:0 0 0 3px rgba(123,224,168,.25)}
+
+.tabs{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;padding:14px 18px;background:#fff;border-bottom:1px solid var(--linha);position:sticky;top:0;z-index:10}
+.tab{white-space:nowrap;font-family:'Montserrat';font-weight:700;font-size:13px;color:var(--cinza);padding:9px 15px;border-radius:999px;cursor:pointer;border:1.5px solid var(--linha);background:#fff;transition:.12s;user-select:none}
+.tab:hover{background:var(--ciano-bg);color:var(--azul);border-color:var(--ciano-cl)}
+.tab.active{background:var(--azul);color:#fff;border-color:var(--azul)}
+.tab .d{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;vertical-align:middle;pointer-events:none}
+.d-ref{background:var(--azul2)} .d-fill{background:var(--magenta)}
+.tab.active .d{background:#fff}
+
+.wrap{max-width:1000px;margin:0 auto;padding:20px}
+.panel{display:none}
+.panel.active{display:block;animation:fade .25s ease both}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.card{background:#fff;border:1px solid var(--linha);border-radius:16px;padding:22px;box-shadow:0 8px 26px rgba(0,37,97,.07);margin-bottom:16px}
+.kick{font-family:'Montserrat';font-weight:700;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--magenta)}
+h2.t{font-size:24px;color:var(--azul);margin:5px 0 4px}
+.lead{color:var(--cinza);font-size:14.5px;margin-bottom:6px}
+label.f{display:block;font-family:'Montserrat';font-weight:700;font-size:12.5px;color:var(--azul);margin:12px 0 4px}
+input.f,textarea.f{width:100%;border:1.5px solid var(--linha);border-radius:9px;padding:9px 11px;font-family:'Lato';font-size:14px;color:var(--tinta);background:#fafcff;resize:vertical}
+input.f:focus,textarea.f:focus{outline:none;border-color:var(--azul2);background:#fff}
+textarea.f{min-height:60px}
+.cols3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+@media(max-width:760px){.cols3{grid-template-columns:1fr}}
+.colbox{border:1.5px solid var(--linha);border-radius:11px;overflow:hidden}
+.colbox .top{padding:9px;color:#fff;text-align:center;font-family:'Montserrat';font-weight:800;font-size:13px}
+.cb1 .top{background:var(--azul2)} .cb2 .top{background:var(--roxo)} .cb3 .top{background:var(--azul)}
+.colbox .body{padding:10px}
+.timebox{display:flex;align-items:center;gap:10px;background:var(--ciano-bg);border-radius:10px;padding:9px 13px;margin:8px 0}
+.timebox .big{font-family:'Montserrat';font-weight:900;color:var(--azul);font-size:18px;white-space:nowrap}
+.timebox p{font-size:12.5px;color:var(--azul)}
+table.ice{width:100%;border-collapse:collapse;margin-top:8px}
+table.ice th,table.ice td{border:1px solid var(--linha);padding:6px;text-align:center}
+table.ice th{background:var(--azul);color:#fff;font-family:'Montserrat';font-weight:700;font-size:11px;text-transform:uppercase}
+table.ice th.dc{text-align:left;width:40%}
+table.ice input{width:100%;border:none;background:transparent;text-align:center;font-family:'Lato';font-size:14px;padding:6px 4px}
+table.ice input.dn{text-align:left}
+table.ice input:focus{outline:2px solid var(--ciano);border-radius:6px}
+table.ice td.tot{background:#eef3fa;font-family:'Montserrat';font-weight:800;color:var(--azul)}
+table.ice tr.win td{background:#eaf8f1}
+table.ice tr.win td.tot{background:#cdeede}
+.icehead{display:flex;gap:8px;margin:8px 0}
+.icehead .c{flex:1;border:1.5px solid var(--linha);border-radius:10px;padding:8px 10px;font-size:11.5px;color:var(--cinza)}
+.icehead .c b{display:block;font-family:'Montserrat';font-size:16px}
+.icehead .c1 b{color:var(--azul2)} .icehead .c2 b{color:var(--roxo)} .icehead .c3 b{color:var(--verde)}
+
+.timeline{position:relative;margin-top:10px;padding-left:8px}
+.timeline::before{content:"";position:absolute;left:30px;top:8px;bottom:8px;width:3px;background:linear-gradient(var(--azul2),var(--magenta))}
+.tl{display:flex;align-items:center;gap:16px;padding:8px 0;position:relative}
+.tl .ic{flex:0 0 46px;height:46px;border-radius:14px;background:#fff;border:2.5px solid var(--azul2);display:flex;align-items:center;justify-content:center;font-size:22px;z-index:2;box-shadow:0 4px 12px rgba(0,37,97,.10)}
+.tl.big .ic{border-color:var(--magenta)}
+.tl .h{font-family:'Montserrat';font-weight:800;color:var(--azul);font-size:15px;flex:0 0 58px}
+.tl .w{font-size:15px;color:var(--tinta);font-weight:700;font-family:'Montserrat'}
+
+.metacard{border:1.5px solid var(--linha);border-radius:14px;overflow:hidden;margin-bottom:13px}
+.metacard .mh{display:flex;align-items:center;gap:10px;padding:11px 15px;color:#fff}
+.m1 .mh{background:var(--azul2)} .m2 .mh{background:var(--azul)} .m3 .mh{background:var(--roxo)} .m4 .mh{background:var(--verde)}
+.metacard .mh .mn{font-family:'Montserrat';font-weight:800;font-size:15px}
+.metacard .mh .pw{margin-left:auto;font-family:'Montserrat';font-weight:800;font-size:12px;background:rgba(255,255,255,.22);padding:3px 10px;border-radius:20px}
+.metacard .mb{padding:6px 15px 12px}
+.mrow{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;padding:9px 0;border-bottom:1px dashed var(--linha)}
+.mrow:last-child{border:none}
+.mrow .sub{font-family:'Montserrat';font-weight:700;color:var(--azul);font-size:12.5px;flex:0 0 150px}
+.mrow .goal{font-size:13.5px;color:var(--tinta);flex:1;min-width:160px}
+.mrow .goal b{color:var(--magenta);font-family:'Montserrat'}
+.mrow .y25{font-size:11.5px;color:var(--cinza);background:#f4f7fb;border-radius:7px;padding:3px 9px;white-space:nowrap}
+.mrow .pp{font-family:'Montserrat';font-weight:700;font-size:11px;color:#fff;background:var(--cinza);border-radius:20px;padding:2px 8px}
+.note-y{background:#fff7e9;border:1.3px solid #f3dcab;border-radius:10px;padding:10px 13px;font-size:12.5px;color:#8a5a00;margin-top:10px}
+
+.prompt{border:1.5px solid var(--linha);border-radius:12px;padding:14px 16px;margin-bottom:11px;background:#fafcff}
+.prompt .ph{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.prompt .ph b{font-family:'Montserrat';color:var(--azul);font-size:14px}
+.prompt .ph .when{font-size:10.5px;font-family:'Montserrat';font-weight:700;color:#fff;background:var(--roxo);padding:2px 8px;border-radius:20px;margin-left:auto}
+.prompt .tx{font-size:13px;color:var(--tinta);line-height:1.5;background:#fff;border:1px dashed var(--linha);border-radius:8px;padding:11px 13px;white-space:pre-wrap}
+.prompt button{margin-top:8px;font-family:'Montserrat';font-weight:700;font-size:11.5px;border:none;border-radius:7px;padding:7px 13px;background:var(--azul2);color:#fff;cursor:pointer}
+.prompt button:hover{background:#0a72a8}
+.ptcf{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.ptcf .s{flex:1;min-width:130px;border:1.5px solid var(--linha);border-radius:10px;padding:10px 12px}
+.ptcf .s .k{font-family:'Montserrat';font-weight:900;font-size:18px}
+.ptcf .s1 .k{color:var(--azul)} .ptcf .s2 .k{color:var(--azul2)} .ptcf .s3 .k{color:var(--roxo)} .ptcf .s4 .k{color:var(--magenta)}
+.ptcf .s .nm{font-family:'Montserrat';font-weight:800;color:var(--azul);font-size:13px}
+.ptcf .s p{font-size:11.5px;color:var(--cinza);margin-top:2px}
+.hl{background:#eef9f3;border:1.3px solid #bfe9d6;border-radius:10px;padding:10px 13px;font-size:12.5px;color:#0c6b46;margin-top:8px}
+footer{text-align:center;color:var(--cinza);font-size:12.5px;font-family:'Montserrat';font-weight:700;padding:26px 20px 34px}
+footer span{color:var(--magenta)}
+@media print{.hero .toolwrap,.tabs,footer{display:none}body.printing .panel{display:block!important}.card{box-shadow:none;break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-in">
+    <div class="owlwrap"><img alt="Ismart" src="logo-ismart.jpeg"></div>
+    <div>
+      <h1>Material de Apoio<br>do <span class="ac">Hackathon de IA</span></h1>
+      <p class="sub">Seu kit do dia, num lugar só.</p>
+    </div>
+  </div>
+  <div class="toolwrap">
+    <div class="toolbar">
+      <button class="prim" onclick="exportData()">💾 Baixar uma cópia</button>
+      <button onclick="document.getElementById('imp').click()">📂 Recuperar uma cópia</button>
+      <input type="file" id="imp" accept="application/json" style="display:none" onchange="importData(event)">
+      <button onclick="printAll()">🖨 Imprimir / PDF</button>
+      <button onclick="limpar()" style="background:rgba(255,90,90,.22);border-color:rgba(255,170,170,.5)">Limpar tudo</button>
+      <span class="save-ind"><span class="dotok"></span><span id="saveTxt">salvo automaticamente</span></span>
+    </div>
+  </div>
+</div>
+
+<div class="tabs" id="tabs">
+  <div class="tab active" data-t="p1"><span class="d d-ref"></span>Agenda</div>
+  <div class="tab" data-t="p2"><span class="d d-ref"></span>Metas do Ismart</div>
+  <div class="tab" data-t="p3"><span class="d d-ref"></span>Como pedir pro Claude</div>
+  <div class="tab" data-t="p4"><span class="d d-ref"></span>Guia de Prompts</div>
+  <div class="tab" data-t="p5"><span class="d d-fill"></span>Visão Pessoal</div>
+  <div class="tab" data-t="p6"><span class="d d-fill"></span>Matriz ICE</div>
+  <div class="tab" data-t="p7"><span class="d d-fill"></span>Ideação sem IA</div>
+  <div class="tab" data-t="p8"><span class="d d-fill"></span>1-pager da Solução</div>
+  <div class="tab" data-t="p9"><span class="d d-fill"></span>Pitch</div>
+</div>
+
+<div class="wrap">
+
+  <div class="panel active" id="p1"><div class="card">
+    <div class="kick">Visão geral</div><h2 class="t">Agenda do dia</h2>
+    <p class="lead">O fio do dia. As surpresas ficam pra hora.</p>
+    <div class="timeline">
+      <div class="tl"><div class="ic">☕</div><div class="h">08h30</div><div class="w">Chegada e café</div></div>
+      <div class="tl big"><div class="ic">🎤</div><div class="h">09h00</div><div class="w">Abertura</div></div>
+      <div class="tl"><div class="ic">🤝</div><div class="h">09h20</div><div class="w">Dinâmica de times</div></div>
+      <div class="tl"><div class="ic">🎯</div><div class="h">09h35</div><div class="w">Contexto estratégico</div></div>
+      <div class="tl"><div class="ic">💡</div><div class="h">09h50</div><div class="w">Atividade em grupo</div></div>
+      <div class="tl big"><div class="ic">🛠️</div><div class="h">10h50</div><div class="w">Mão na massa</div></div>
+      <div class="tl"><div class="ic">🍽️</div><div class="h">12h30</div><div class="w">Almoço</div></div>
+      <div class="tl"><div class="ic">🔥</div><div class="h">14h00</div><div class="w">Reaquecimento</div></div>
+      <div class="tl big"><div class="ic">🛠️</div><div class="h">14h15</div><div class="w">Mão na massa</div></div>
+      <div class="tl"><div class="ic">☕</div><div class="h">15h45</div><div class="w">Café</div></div>
+      <div class="tl"><div class="ic">✨</div><div class="h">16h05</div><div class="w">Preparação final</div></div>
+      <div class="tl big"><div class="ic">🎬</div><div class="h">16h35</div><div class="w">Apresentações</div></div>
+      <div class="tl"><div class="ic">🏁</div><div class="h">17h30</div><div class="w">Encerramento</div></div>
+      <div class="tl big"><div class="ic">🎉</div><div class="h">18h30</div><div class="w">Confraternização</div></div>
+    </div>
+  </div></div>
+
+  <div class="panel" id="p2"><div class="card">
+    <div class="kick">Pra onde o Ismart quer ir</div><h2 class="t">Metas do Ismart 2026</h2>
+    <p class="lead">As metas globais do ano. Quando você for avaliar o impacto de uma ideia, é nelas que ela precisa mexer. (Meta = alvo de 100%; ao lado, o resultado de 2025.)</p>
+    <div class="metacard m1">
+      <div class="mh"><span class="mn">Seleção de Jovens</span><span class="pw">peso 30%</span></div>
+      <div class="mb">
+        <div class="mrow"><span class="sub">Seleção Presencial <span class="pp">15%</span></span><span class="goal">Meta: <b>160 entrantes</b> e <b>137 Top Estrelas</b></span><span class="y25">2025: 186 entrantes · 96 Top Estrelas</span></div>
+        <div class="mrow"><span class="sub">Seleção Online <span class="pp">7,5%</span></span><span class="goal">Meta: <b>300 aprovados</b> no critério presencial (MAT ≥ 80)</span><span class="y25">2025: 621 entrantes</span></div>
+        <div class="mrow"><span class="sub">Academia Digital <span class="pp">7,5%</span></span><span class="goal">Meta: <b>700 aprovados</b>, sendo <b>350 fora das praças</b></span><span class="y25">2025: 300 aprovados · 150 fora</span></div>
+      </div>
+    </div>
+    <div class="metacard m2">
+      <div class="mh"><span class="mn">Matriculados no Ensino Superior Ismart</span><span class="pw">peso 50%</span></div>
+      <div class="mb">
+        <div class="mrow"><span class="sub">Vestibular Presencial <span class="pp">20%</span></span><span class="goal">Meta: <b>72% matriculados</b></span><span class="y25">2025: 63%</span></div>
+        <div class="mrow"><span class="sub">Vestibular Online <span class="pp">20%</span></span><span class="goal">Meta: <b>62% matriculados</b></span><span class="y25">2025: 50%</span></div>
+        <div class="mrow"><span class="sub">Vestibular Exterior <span class="pp">10%</span></span><span class="goal">Meta: <b>10 alunos matriculados</b></span><span class="y25">2025: 6 alunos</span></div>
+      </div>
+    </div>
+    <div class="metacard m3">
+      <div class="mh"><span class="mn">Empregabilidade</span><span class="pw">peso 20%</span></div>
+      <div class="mb">
+        <div class="mrow"><span class="sub">Ensino Superior <span class="pp">20%</span></span><span class="goal">Meta: <b>398 alunos</b> empregados (<b>76,5%</b>)</span><span class="y25">2025: 300 alunos · 71,9%</span></div>
+      </div>
+    </div>
+    <div class="metacard m4">
+      <div class="mh"><span class="mn">Orçamento</span><span class="pw">eliminatório</span></div>
+      <div class="mb">
+        <div class="mrow"><span class="sub">Execução</span><span class="goal">Meta: <b>90% a 100%</b></span><span class="y25">2025: 99%</span></div>
+      </div>
+    </div>
+    <p class="note-y">Fonte: Abertura das Metas 2026 do Ismart. Os percentuais entre parênteses são o peso de cada meta.</p>
+  </div></div>
+
+  <div class="panel" id="p3"><div class="card">
+    <div class="kick">A ferramenta-chave</div><h2 class="t">Como pedir pro Claude</h2>
+    <p class="lead">Todo bom pedido tem 4 partes. Monte o seu nesta ordem e não pare no primeiro resultado: vá refinando.</p>
+    <div class="ptcf">
+      <div class="s s1"><div class="k">P</div><div class="nm">Persona</div><p>Quem o Claude deve ser. “Aja como um analista de seleção.”</p></div>
+      <div class="s s2"><div class="k">T</div><div class="nm">Tarefa</div><p>O que fazer. “Liste 10 formas de reduzir a triagem.”</p></div>
+      <div class="s s3"><div class="k">C</div><div class="nm">Contexto</div><p>O de fundo e a meta. “Hoje é manual e leva 3 dias.”</p></div>
+      <div class="s s4"><div class="k">F</div><div class="nm">Formato</div><p>Como quer a resposta. “Em tabela: ideia, esforço, impacto.”</p></div>
+    </div>
+    <div class="hl"><b>O pulo do gato:</b> leve o que vocês já pensaram, sozinhos e em grupo, e peça: “Claude, avalie esses caminhos com sinceridade e nos dê novas ideias.” A IA turbina o que já é de vocês.</div>
+  </div></div>
+
+  <div class="panel" id="p4"><div class="card">
+    <div class="kick">Copia e cola</div><h2 class="t">Guia de Prompts</h2>
+    <p class="lead">Prompts completos pros momentos do dia. Clique em “Copiar”, cole no Claude e troque o que estiver entre colchetes pelo seu caso.</p>
+    <div id="prompts"></div>
+  </div></div>
+
+  <div class="panel" id="p5"><div class="card">
+    <div class="kick">1º diamante · abrir</div><h2 class="t">Visão Pessoal</h2>
+    <p class="lead">Sozinho, anote os desafios que você enxerga em cada nível. O que vem de bate-pronto, sem filtrar.</p>
+    <div class="timebox"><div class="big">10 min</div><p>Até 3 por bloco. Depois o grupo escolhe um pra atacar.</p></div>
+    <div class="cols3">
+      <div class="colbox cb1"><div class="top">Meus desafios</div><div class="body">
+        <textarea class="f" id="vp_meu_1" data-save placeholder="1"></textarea>
+        <textarea class="f" id="vp_meu_2" data-save placeholder="2"></textarea>
+        <textarea class="f" id="vp_meu_3" data-save placeholder="3"></textarea></div></div>
+      <div class="colbox cb2"><div class="top">Da minha área</div><div class="body">
+        <textarea class="f" id="vp_area_1" data-save placeholder="1"></textarea>
+        <textarea class="f" id="vp_area_2" data-save placeholder="2"></textarea>
+        <textarea class="f" id="vp_area_3" data-save placeholder="3"></textarea></div></div>
+      <div class="colbox cb3"><div class="top">Da empresa</div><div class="body">
+        <textarea class="f" id="vp_emp_1" data-save placeholder="1"></textarea>
+        <textarea class="f" id="vp_emp_2" data-save placeholder="2"></textarea>
+        <textarea class="f" id="vp_emp_3" data-save placeholder="3"></textarea></div></div>
+    </div>
+  </div></div>
+
+  <div class="panel" id="p6"><div class="card">
+    <div class="kick">1º diamante · fechar</div><h2 class="t">Matriz ICE</h2>
+    <p class="lead">Escolham UM desafio pra atacar. Nota de 1 a 10 em cada coluna. A linha de maior total fica em verde.</p>
+    <div class="icehead">
+      <div class="c c1"><b>I</b> Impacto · o quanto mexe nas metas do Ismart</div>
+      <div class="c c2"><b>C</b> Confiança · o quanto cremos que dá pra resolver bem</div>
+      <div class="c c3"><b>E</b> Facilidade · cabe num protótipo até o fim do dia</div>
+    </div>
+    <table class="ice" id="iceTable">
+      <tr><th class="dc">Desafio</th><th>Impacto</th><th>Confiança</th><th>Facilidade</th><th>Total</th></tr>
+    </table>
+    <label class="f">★ Desafio escolhido pelo grupo</label>
+    <input class="f" id="ice_escolhido" data-save placeholder="É esse que vira ideia, protótipo e pitch.">
+  </div></div>
+
+  <div class="panel" id="p7"><div class="card">
+    <div class="kick">2º diamante · abrir (a cabeça primeiro)</div><h2 class="t">Ideação sem IA</h2>
+    <p class="lead">Com o desafio escolhido, rascunhe soluções. Sem Claude ainda. Quantidade, não perfeição.</p>
+    <div class="timebox"><div class="big">5 a 6 min</div><p>De 3 a 4 soluções, uma por caixa. Depois levam as melhores pro Claude.</p></div>
+    <div class="cols3" style="grid-template-columns:1fr 1fr">
+      <div><label class="f">Solução 1</label><textarea class="f" id="id_1" data-save></textarea></div>
+      <div><label class="f">Solução 2</label><textarea class="f" id="id_2" data-save></textarea></div>
+      <div><label class="f">Solução 3</label><textarea class="f" id="id_3" data-save></textarea></div>
+      <div><label class="f">Solução 4</label><textarea class="f" id="id_4" data-save></textarea></div>
+    </div>
+  </div></div>
+
+  <div class="panel" id="p8"><div class="card">
+    <div class="kick">2º diamante · aterrissar</div><h2 class="t">1-pager da Solução</h2>
+    <p class="lead">Organize a ideia do grupo. Vira a base do seu pitch.</p>
+    <label class="f">Nome da solução</label><input class="f" id="op_nome" data-save>
+    <label class="f">O problema / a dor (quem sofre e por quê)</label><textarea class="f" id="op_problema" data-save></textarea>
+    <label class="f">A solução (o que ela faz, em uma frase)</label><textarea class="f" id="op_solucao" data-save></textarea>
+    <label class="f">Que meta do Ismart isso move</label><input class="f" id="op_meta" data-save>
+    <div class="cols3" style="grid-template-columns:1fr 1fr">
+      <div><label class="f">Como o Claude ajudou</label><textarea class="f" id="op_claude" data-save></textarea></div>
+      <div><label class="f">Próximos passos (pra virar real)</label><textarea class="f" id="op_proximos" data-save></textarea></div>
+      <div><label class="f">Antes</label><textarea class="f" id="op_antes" data-save></textarea></div>
+      <div><label class="f">Depois</label><textarea class="f" id="op_depois" data-save></textarea></div>
+    </div>
+  </div></div>
+
+  <div class="panel" id="p9"><div class="card">
+    <div class="kick">Reta final · 3 minutos</div><h2 class="t">Roteiro do Pitch</h2>
+    <p class="lead">Estrutura simples. Preencha e ensaie uma vez. 3 minutos é 3 minutos.</p>
+    <label class="f">Gancho (um dado, pergunta ou cena que prende)</label><textarea class="f" id="pi_gancho" data-save></textarea>
+    <label class="f">Problema (a dor, quem sofre)</label><textarea class="f" id="pi_problema" data-save></textarea>
+    <label class="f">Solução (o que criaram e o diferencial)</label><textarea class="f" id="pi_solucao" data-save></textarea>
+    <label class="f">Que meta do Ismart isso move</label><input class="f" id="pi_meta" data-save>
+    <label class="f">Como funciona / próximo passo (1 frase)</label><textarea class="f" id="pi_funciona" data-save></textarea>
+  </div></div>
+
+</div>
+
+<footer>ismart <span>×</span> NewScale · Hackathon de IA · 01/07/2026</footer>
+
+<script>
+var KEY='apoio_hackathon_v1';
+
+document.getElementById('tabs').addEventListener('click',function(e){
+  var t=e.target.closest('.tab'); if(!t) return;
+  document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('active')});
+  document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active')});
+  t.classList.add('active');
+  var pan=document.getElementById(t.getAttribute('data-t'));
+  if(pan)pan.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+var iceT=document.getElementById('iceTable');
+for(var r=1;r<=5;r++){
+  var tr=document.createElement('tr');
+  tr.innerHTML='<td><input class="dn" id="ice_d'+r+'" data-save placeholder="Desafio '+r+'"></td>'+
+    '<td><input type="number" min="1" max="10" class="ice-cell" id="ice_i'+r+'" data-save></td>'+
+    '<td><input type="number" min="1" max="10" class="ice-cell" id="ice_c'+r+'" data-save></td>'+
+    '<td><input type="number" min="1" max="10" class="ice-cell" id="ice_e'+r+'" data-save></td>'+
+    '<td class="tot" id="ice_t'+r+'"></td>';
+  iceT.appendChild(tr);
+}
+function calcICE(){
+  var max=-1,totals=[];
+  for(var r=1;r<=5;r++){
+    var i=parseFloat(document.getElementById('ice_i'+r).value)||0;
+    var c=parseFloat(document.getElementById('ice_c'+r).value)||0;
+    var e=parseFloat(document.getElementById('ice_e'+r).value)||0;
+    var t=(i||c||e)?(i+c+e):'';
+    document.getElementById('ice_t'+r).textContent=t;
+    totals[r]=t===''?-1:t; if(totals[r]>max)max=totals[r];
+  }
+  for(var r=1;r<=5;r++){iceT.rows[r].classList.toggle('win', max>0 && totals[r]===max);}
+}
+function fields(){return document.querySelectorAll('[data-save]');}
+function saveAll(){var o={};fields().forEach(function(el){o[el.id]=el.value;});try{localStorage.setItem(KEY,JSON.stringify(o));}catch(e){}flashSaved();}
+var st;function flashSaved(){var s=document.getElementById('saveTxt');s.textContent='salvando...';clearTimeout(st);st=setTimeout(function(){s.textContent='salvo automaticamente';},500);}
+function restore(){var raw=null;try{raw=localStorage.getItem(KEY);}catch(e){}if(raw){var o=JSON.parse(raw);fields().forEach(function(el){if(o[el.id]!==undefined)el.value=o[el.id];});}calcICE();}
+document.addEventListener('input',function(e){if(e.target.matches('[data-save]')){if(e.target.classList.contains('ice-cell'))calcICE();saveAll();}});
+function exportData(){var o={};fields().forEach(function(el){o[el.id]=el.value;});o.__meta={app:'apoio-hackathon-ismart',data:new Date().toISOString()};var blob=new Blob([JSON.stringify(o,null,2)],{type:'application/json'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='meu-preenchimento-hackathon.json';a.click();}
+function importData(ev){var f=ev.target.files[0];if(!f)return;var rd=new FileReader();rd.onload=function(){try{var o=JSON.parse(rd.result);fields().forEach(function(el){if(o[el.id]!==undefined)el.value=o[el.id];});calcICE();saveAll();alert('Pronto! Seu preenchimento foi recuperado.');}catch(e){alert('Arquivo inválido.');}};rd.readAsText(f);ev.target.value='';}
+function limpar(){if(!confirm('Apagar tudo que você preencheu neste navegador?'))return;fields().forEach(function(el){el.value='';});try{localStorage.removeItem(KEY);}catch(e){}calcICE();}
+function printAll(){document.body.classList.add('printing');window.print();setTimeout(function(){document.body.classList.remove('printing');},400);}
+
+var PROMPTS=[
+  {w:'Esquenta',b:'Nome e bandeira do time',t:'Estamos começando um hackathon de IA e nosso time precisa de identidade. Crie 5 opções de nome de time: curtos, marcantes e com um toque de humor ligado a inovação ou educação. Para a melhor opção, descreva também uma bandeira ou emblema (cores, símbolo e o que ele representa). No fim, recomende uma e explique por quê.'},
+  {w:'Entender',b:'Entender o desafio antes de resolver',t:'Meu grupo vai atacar um desafio num hackathon de IA no Ismart (instituto que forma jovens talentos de baixa renda). Desafio: [DESCREVA]. Antes de qualquer solução, me ajude a entender o problema a fundo: quem mais sofre com ele, em que momentos acontece, quais as causas prováveis e que sinais mostram que ele é real e importante. Termine com 5 perguntas que a gente deveria responder pra deixar o problema mais claro.'},
+  {w:'Ideação',b:'Gerar muitas soluções',t:'Contexto: hackathon de IA no Ismart. Desafio escolhido: [DESCREVA]. Meta do Ismart que queremos mover: [META]. Já pensamos nestas ideias: [LISTE AS SUAS]. Agora me dê 15 soluções possíveis, das mais simples e rápidas às mais ousadas, numeradas. Para cada uma, escreva 1 linha de como a IA entraria. Não repita as nossas ideias, traga novas.'},
+  {w:'Decisão',b:'Avaliar caminhos com sinceridade',t:'Estes são os caminhos de solução que pensamos para o desafio [DESAFIO]: [LISTE]. Avalie cada um com total sinceridade, sem puxar saco. Para cada caminho diga: a força principal, o maior risco, o quanto é viável virar um protótipo até o fim do dia (alto, médio ou baixo) e uma melhoria concreta. No final, recomende qual seguir e por quê, e proponha 2 ideias novas que talvez sejam melhores que as nossas.'},
+  {w:'Pesquisa',b:'Buscar referências do mundo real',t:'Pesquise como o problema [DESCREVA] já foi resolvido por outras empresas, escolas ou ONGs, no Brasil e no mundo. Me traga 5 exemplos reais, o que cada um fez de inteligente e o que dá pra adaptar à realidade do Ismart. Aponte também armadilhas comuns que essas soluções costumam ter.'},
+  {w:'Protótipo',b:'Construir o protótipo do dia',t:'Quero construir um protótipo da solução [DESCREVA] para mostrar num pitch hoje. Regras: nada que dependa de licença paga, de banco de dados real ou de integração complexa. O objetivo é demonstrar a ideia de forma clara e bonita. Me proponha o formato mais rápido de protótipo (telas navegáveis, um fluxo, um agente que responde) e já comece a construir a primeira versão, me perguntando o que precisar.'},
+  {w:'Protótipo',b:'Refinar e iterar',t:'Esse resultado ficou assim: [O QUE FICOU BOM E O QUE FICOU FRACO]. Ajuste do seguinte jeito: [O QUE QUER MUDAR]. Deixe mais [simples / visual / curto / profissional]. Antes de refazer tudo, me diga em 2 linhas o que você vai mudar e por quê.'},
+  {w:'Pitch',b:'Montar o pitch de 3 minutos',t:'Ajude meu grupo a montar um pitch de 3 minutos para a solução [DESCREVA], que ataca o desafio [DESAFIO] e move a meta [META] do Ismart. Estruture em: (1) gancho de abertura forte, (2) o problema e quem sofre, (3) a solução e o diferencial, (4) qual meta do Ismart isso move e o impacto esperado, (5) como funciona em 1 frase. Texto curto, em tom de fala, e sugira o que mostrar na tela em cada parte.'},
+  {w:'Reaquecimento',b:'Hino do time (depois use no Suno)',t:'Crie a letra de um hino curto, animado e engraçado para o time [NOME], que está disputando um hackathon de IA no Ismart. De 8 a 12 versos, com um refrão grudento, citando inovação, união e vontade de ganhar. Depois é só colar a letra no Suno (suno.com) e gerar a música.'},
+  {w:'SOS',b:'Destravar quando o grupo empacar',t:'Meu grupo travou. Nosso desafio é [DESAFIO] e estamos presos em [ONDE TRAVAMOS]. Faça 5 perguntas rápidas pra destravar nosso raciocínio e sugira o menor próximo passo possível pra gente voltar a andar agora.'}
+];
+var pc=document.getElementById('prompts');
+PROMPTS.forEach(function(p,i){var d=document.createElement('div');d.className='prompt';d.innerHTML='<div class="ph"><b>'+p.b+'</b><span class="when">'+p.w+'</span></div><div class="tx" id="pr'+i+'"></div><button onclick="copyP('+i+',this)">Copiar prompt</button>';d.querySelector('.tx').textContent=p.t;pc.appendChild(d);});
+function copyP(i,btn){var tx=document.getElementById('pr'+i).textContent;navigator.clipboard.writeText(tx).then(function(){var o=btn.textContent;btn.textContent='Copiado!';setTimeout(function(){btn.textContent=o;},1200);});}
+
+restore();
+</script>
+</body>
+</html>
