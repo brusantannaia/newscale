@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 02 · Cowork, Conectores e Skills — Proativa · Oneglobal</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+/* ===== Tokens oficiais Oneglobal (Style Guide V04) ===== */
+:root{
+  --og-azul:#002657;   --og-azul-60:#667D9A;   --og-azul-40:#99A8BC;
+  --og-teal:#004853;   --og-teal-60:#669198;   --og-teal-40:#99B6BA;
+  --og-roxo:#3D0F58;   --og-roxo-60:#8B6F9B;   --og-roxo-40:#B19FBC;
+  --og-verde:#005847;  --og-verde-60:#669B91;  --og-verde-40:#99BCB5;
+  --og-carvao:#3D3936; --og-marrom:#4B432C;    --og-vermelho:#402022;
+  --og-branco:#FFFFFF; --og-claro:#F4F4F2;     --og-neutro:#E9E9E6;
+  --serif:Georgia,'Times New Roman',serif;
+  --cond:'Arial Narrow','Helvetica Neue',Arial,sans-serif;
+  /* papéis funcionais (mapeados pra paleta oficial) */
+  --bg:var(--og-claro); --bg-2:var(--og-neutro); --card:#FFFFFF;
+  --ink:var(--og-azul); --ink-2:var(--og-teal);
+  --accent:var(--og-verde); --accent-l:var(--og-verde-60); --accent-d:var(--og-teal);
+  --text:var(--og-carvao); --muted:#6B6864;
+  --line:rgba(0,38,87,.12);
+  --hero-grad:linear-gradient(145deg,#001A3D 0%,#002657 45%,#004853 100%);
+}
+html{scroll-behavior:smooth;}
+body{font-family:var(--serif);background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+::selection{background:var(--accent);color:#fff;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+.kick{font-family:var(--cond);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:700;letter-spacing:-.01em;line-height:1.1;}
+
+/* progress bar */
+#bar{position:fixed;top:0;left:0;height:4px;width:0;background:var(--accent);z-index:99;transition:width .1s linear;}
+
+/* sticky nav */
+.snav{position:sticky;top:0;z-index:50;background:rgba(244,244,242,.94);backdrop-filter:blur(8px);border-bottom:2px solid var(--ink);}
+.snav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 32px;max-width:1180px;margin:0 auto;}
+.snav .logo{font-family:var(--serif);font-weight:700;font-size:1.05rem;color:var(--ink);letter-spacing:.01em;white-space:nowrap;}
+.snav .logo b{color:var(--accent);font-weight:700;}
+.snav-links{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;}
+.snav-links a{font-family:var(--cond);font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);padding:5px 11px;border-radius:100px;transition:.18s;text-decoration:none;}
+.snav-links a:hover{background:var(--accent);color:#fff;}
+@media(max-width:780px){.snav-links{display:none;}}
+
+/* sections */
+section{padding:74px 0;position:relative;}
+.tag-step{display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;}
+.tag-step .n{font-family:var(--serif);font-weight:700;font-size:1.3rem;color:var(--accent);}
+.tag-step .t{font-family:var(--cond);font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+.lead{font-size:1.22rem;color:var(--ink-2);max-width:62ch;margin-top:18px;}
+.lead b{color:var(--ink);font-weight:700;}
+.time{font-family:var(--cond);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border:1.5px solid rgba(0,88,71,.4);border-radius:100px;padding:4px 12px;}
+
+/* HERO */
+.hero{background:var(--hero-grad);color:#fff;padding:96px 0 90px;overflow:hidden;}
+.hero .topo{position:absolute;inset:0;width:100%;height:100%;opacity:.9;pointer-events:none;}
+.hero-logo{position:absolute;top:30px;right:32px;height:30px;z-index:2;opacity:.96;}
+.hero .wrap{position:relative;z-index:1;}
+.hero .kick{color:var(--og-verde-60);}
+.hero h1{font-size:clamp(2.6rem,7vw,4.6rem);color:#fff;margin:20px 0 0;line-height:1.06;}
+.hero h1 .terra{color:var(--og-verde-60);font-style:italic;}
+.hero-sub{font-size:1.28rem;color:rgba(255,255,255,.86);max-width:48ch;margin:26px 0 0;}
+.hero-sub b{color:#fff;font-weight:700;}
+.hero-meta{display:flex;gap:26px;flex-wrap:wrap;margin-top:34px;font-family:var(--cond);font-size:.84rem;letter-spacing:.08em;color:rgba(255,255,255,.65);text-transform:uppercase;font-weight:700;}
+.hero-meta b{color:var(--og-verde-60);}
+
+/* frase virada — full band */
+.virada{background:var(--og-teal);color:#fff;text-align:center;padding:84px 0;}
+.virada p{font-family:var(--serif);font-weight:700;font-size:clamp(1.7rem,4.4vw,3rem);line-height:1.12;max-width:24ch;margin:0 auto;}
+.virada .small{font-family:var(--cond);font-weight:700;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-bottom:22px;}
+
+/* ponte chat -> cowork */
+.bridge{display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:stretch;margin-top:36px;}
+@media(max-width:720px){.bridge{grid-template-columns:1fr;}.bridge .arrow{transform:rotate(90deg);}}
+.bcard{border:2px solid var(--line);border-radius:18px;padding:30px;background:var(--card);}
+.bcard.on{border-color:var(--ink);box-shadow:6px 6px 0 var(--accent);}
+.bcard .l{font-family:var(--cond);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
+.bcard h3{font-size:1.5rem;color:var(--ink);}
+.bcard p{margin-top:10px;color:var(--ink-2);}
+.arrow{display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:2rem;color:var(--accent);}
+
+/* spectrum */
+.spec{display:flex;gap:8px;margin-top:30px;flex-wrap:wrap;}
+.spec .s{flex:1;min-width:150px;border:1.5px solid var(--line);border-radius:14px;padding:16px 18px;background:var(--card);}
+.spec .s.hot{background:var(--ink);color:#fff;border-color:var(--ink);}
+.spec .s .a{font-family:var(--serif);font-weight:700;font-size:1.2rem;color:var(--accent);}
+.spec .s.hot .a{color:var(--og-verde-60);}
+.spec .s small{display:block;margin-top:4px;color:var(--muted);font-size:.84rem;}
+.spec .s.hot small{color:rgba(255,255,255,.78);}
+
+/* lists */
+.points{margin-top:26px;display:grid;gap:14px;}
+.pt{display:flex;gap:14px;align-items:flex-start;}
+.pt .b{flex-shrink:0;width:30px;height:30px;border-radius:8px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:.95rem;}
+.pt p{font-size:1.05rem;color:var(--ink-2);}
+.pt p b{color:var(--ink);}
+
+/* marquee conectores */
+.marq{background:var(--ink);padding:22px 0;overflow:hidden;margin-top:8px;}
+.marq-track{display:flex;gap:54px;width:max-content;animation:slide 26s linear infinite;align-items:center;}
+@keyframes slide{to{transform:translateX(-50%);}}
+.marq span{font-family:var(--serif);font-weight:700;font-size:1.45rem;color:rgba(255,255,255,.55);white-space:nowrap;}
+.marq span.s{font-family:var(--cond);font-size:.66rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--og-verde-60);}
+
+/* skill band (varredura) */
+.skillband{margin-top:30px;border-radius:18px;padding:30px 38px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  background:linear-gradient(135deg,var(--og-azul) 0%,var(--og-roxo) 100%);box-shadow:0 16px 40px rgba(0,38,87,.28);}
+.skillband .x{font-family:var(--serif);font-weight:700;font-size:clamp(1.5rem,3.6vw,2.4rem);color:#fff;line-height:1.1;}
+.skillband .y{font-size:.98rem;color:rgba(255,255,255,.9);max-width:34ch;}
+
+/* o que vocês pediram */
+.pedido{margin-top:38px;}
+.pedido .eye{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px;}
+.pedido .src{font-family:var(--cond);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;}
+.pedido-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px;}
+@media(max-width:720px){.pedido-grid{grid-template-columns:1fr;}}
+.pcard{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:24px 26px;}
+.pcard h4{font-size:1.25rem;color:var(--ink);margin-bottom:16px;}
+.pcard ul{list-style:none;display:grid;gap:11px;}
+.pcard li{display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:1rem;color:var(--ink-2);border-bottom:1px solid var(--line);padding-bottom:9px;}
+.pcard li:last-child{border-bottom:none;padding-bottom:0;}
+.pcard li b{color:var(--ink);font-weight:700;}
+.pbadge{flex-shrink:0;font-family:var(--cond);font-weight:700;font-size:.82rem;letter-spacing:.04em;color:#fff;background:var(--accent);border-radius:100px;padding:3px 12px;}
+.pcard.cases li{justify-content:flex-start;gap:11px;}
+.pcard.cases li::before{content:"";width:7px;height:7px;border-radius:2px;background:var(--accent);flex-shrink:0;}
+.traducao{margin-top:18px;background:var(--ink);color:#fff;border-radius:16px;padding:24px 28px;}
+.traducao .l{font-family:var(--cond);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--og-verde-60);margin-bottom:8px;}
+.traducao p{color:rgba(255,255,255,.92);font-size:1.05rem;max-width:62ch;}
+.traducao p b{color:#fff;font-weight:700;}
+
+/* numbers */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:34px;}
+@media(max-width:680px){.stats{grid-template-columns:1fr;}}
+.stat{background:var(--ink);padding:34px 20px;text-align:center;}
+.stat .v{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,6vw,3rem);color:var(--og-verde-60);line-height:1.05;}
+.stat .l{color:rgba(255,255,255,.72);font-size:.84rem;margin-top:8px;}
+
+/* demo card */
+.demo{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:30px 32px;margin-top:24px;}
+.demo .h{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+.demo h3{font-size:1.45rem;color:var(--ink);}
+.demo .desc{margin-top:10px;color:var(--ink-2);}
+.demo .desc b{color:var(--ink);font-weight:700;}
+.gold{margin-top:14px;background:rgba(0,88,71,.09);border-left:4px solid var(--og-verde);border-radius:0 12px 12px 0;padding:14px 18px;font-size:.98rem;color:var(--ink-2);}
+.gold b{color:var(--og-verde);}
+
+/* prompt block */
+.prompt{margin-top:18px;background:#fff;border:1.5px solid var(--og-neutro);border-left:7px solid var(--accent);border-radius:0 14px 14px 0;overflow:hidden;box-shadow:0 1px 3px rgba(0,38,87,.06);}
+.prompt .pl{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px;background:rgba(0,88,71,.08);}
+.prompt .pl span{font-family:var(--cond);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--og-teal);}
+.copy{font-family:var(--cond);font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--accent);border:none;border-radius:100px;padding:7px 16px;cursor:pointer;transition:.18s;white-space:nowrap;}
+.copy:hover{background:var(--accent-d);}
+.copy.done{background:var(--og-teal);}
+.prompt pre{font-family:var(--serif);font-size:.95rem;line-height:1.6;color:#33403C;padding:18px 20px;white-space:pre-wrap;word-break:break-word;}
+
+/* mission */
+.mission{background:var(--hero-grad);color:#fff;overflow:hidden;}
+.mission .topo{position:absolute;inset:0;width:100%;height:100%;opacity:.85;pointer-events:none;}
+.mission .wrap{position:relative;z-index:1;}
+.mission h2{color:#fff;font-size:clamp(1.9rem,5vw,3rem);}
+.check{margin-top:26px;display:grid;gap:12px;}
+.ck{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:14px 18px;}
+.ck .bx{flex-shrink:0;width:24px;height:24px;border-radius:6px;border:2px solid var(--og-verde-60);}
+.ck p{color:rgba(255,255,255,.88);}
+.ck p b{color:#fff;font-weight:700;}
+
+/* teaser */
+.teaser{background:var(--bg-2);}
+.teaser .pill{display:inline-block;font-family:var(--cond);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);border:1.5px solid rgba(0,88,71,.4);border-radius:100px;padding:5px 14px;margin-bottom:18px;}
+.teaser h2{font-size:clamp(1.9rem,5vw,3rem);color:var(--ink);max-width:22ch;}
+.teaser h2 .terra{color:var(--accent);font-style:italic;}
+.teaser p{margin-top:16px;color:var(--ink-2);max-width:56ch;font-size:1.08rem;}
+
+/* close */
+.close{background:var(--hero-grad);color:#fff;text-align:center;overflow:hidden;}
+.close .topo{position:absolute;inset:0;width:100%;height:100%;opacity:.85;pointer-events:none;}
+.close .wrap{position:relative;z-index:1;}
+.close h2{font-size:clamp(2rem,6vw,3.6rem);color:#fff;max-width:20ch;margin:0 auto;}
+.close h2 .terra{color:var(--og-verde-60);font-style:italic;}
+.close .sig{margin-top:22px;font-family:var(--cond);font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--og-verde-60);}
+
+/* jornada */
+.jstep{position:relative;background:var(--card);border:2px solid var(--line);border-radius:20px;padding:28px 30px 26px;margin-top:18px;}
+.jstep .jn{position:absolute;top:-16px;left:26px;width:42px;height:42px;border-radius:12px;background:var(--accent);color:#fff;font-family:var(--serif);font-weight:700;font-size:1.3rem;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(0,88,71,.3);}
+.jstep h3{font-size:1.4rem;color:var(--ink);margin:8px 0 4px;}
+.jstep .jd{color:var(--ink-2);font-size:1.05rem;}
+.jstep .jd b{color:var(--ink);font-weight:700;}
+.jarrow{text-align:center;font-family:var(--serif);font-weight:700;font-size:1.7rem;color:var(--accent);margin:4px 0;}
+.secret{margin-top:14px;background:var(--ink);color:#fff;border-radius:14px;padding:16px 20px;display:flex;gap:13px;align-items:flex-start;}
+.secret .k{flex-shrink:0;font-size:1.3rem;line-height:1.3;}
+.secret .tt{font-family:var(--cond);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--og-verde-60);}
+.secret p{color:rgba(255,255,255,.92);font-size:.98rem;margin-top:3px;}
+.secret p b{color:#fff;font-weight:700;}
+.insightbox{margin-top:12px;background:rgba(0,88,71,.1);border-left:4px solid var(--og-verde);border-radius:0 12px 12px 0;padding:13px 18px;font-size:.96rem;color:var(--ink-2);}
+.insightbox b{color:var(--og-verde);}
+.dashbtn{display:inline-flex;align-items:center;gap:8px;margin-top:15px;background:var(--ink);color:#fff;font-family:var(--cond);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;padding:12px 20px;border-radius:100px;text-decoration:none;transition:background .2s;}
+.dashbtn:hover{background:var(--ink-2);}
+/* outros caminhos */
+.outros{margin-top:38px;}
+.outros-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px;}
+@media(max-width:720px){.outros-grid{grid-template-columns:1fr;}}
+.ocard{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:18px 20px;}
+.ocard .ot{font-family:var(--serif);font-weight:700;font-size:1.1rem;color:var(--ink);}
+.ocard p{color:var(--ink-2);font-size:.94rem;margin-top:4px;}
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+.rv.in{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;}}
+.sec-head h2{font-size:clamp(1.9rem,5vw,3rem);color:var(--ink);}
+
+/* footer assinatura */
+.sign{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#fff;font-family:var(--cond);font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:20px 32px;background:var(--og-azul);}
+.sign img{height:18px;opacity:.95;}
+.sign .l{display:flex;align-items:center;gap:14px;}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+
+<header class="snav">
+  <div class="snav-in">
+    <span class="logo">Proativa · <b>Aula 02</b></span>
+    <nav class="snav-links">
+      <a href="#virada">A virada</a>
+      <a href="#agente">O agente</a>
+      <a href="#conectores">Conectores</a>
+      <a href="#skill">Skill</a>
+      <a href="#acao">Mão na massa</a>
+      <a href="#missao">Missão</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <svg class="topo" viewBox="0 0 1600 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M0 90 Q200 60 400 95 Q600 130 800 90 Q1000 50 1200 95 Q1400 130 1600 90" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="1.1"/>
+    <path d="M0 150 Q200 120 400 155 Q600 190 800 150 Q1000 110 1200 155 Q1400 190 1600 150" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+    <path d="M0 220 Q200 185 400 225 Q600 265 800 220 Q1000 175 1200 225 Q1400 265 1600 220" fill="none" stroke="rgba(255,255,255,.05)" stroke-width=".9"/>
+    <path d="M0 300 Q200 265 400 305 Q600 345 800 300 Q1000 255 1200 305 Q1400 345 1600 300" fill="none" stroke="rgba(255,255,255,.04)" stroke-width=".8"/>
+  </svg>
+  <img class="hero-logo" src="/proativa/oneglobal-logo-white.png" alt="Oneglobal">
+  <div class="wrap rv">
+    <span class="kick">Formação Claude · Proativa (Oneglobal) · Aula 2 de 3</span>
+    <h1>Pare de pedir.<br><span class="terra">Comece a delegar.</span></h1>
+    <p class="hero-sub"><b>Aula 02 — Cowork, Conectores e Skills.</b> Na Aula 1 você viu o Claude pensar. Hoje ele trabalha por você.</p>
+    <div class="hero-meta"><span>90 min</span><span>Demo guiada</span><span>Bruna Santanna · <b>NewScale</b></span></div>
+  </div>
+</section>
+
+<!-- FRASE VIRADA -->
+<section class="virada" id="virada">
+  <div class="wrap rv">
+    <div class="small">O ponto de virada</div>
+    <p>Quem aprende isso agora vai olhar pra trás e ver este momento como o ponto de virada.</p>
+  </div>
+</section>
+
+<!-- ONDE PARAMOS -->
+<section id="ponte">
+  <div class="wrap">
+    <div class="rv">
+      <div class="tag-step"><span class="n">00</span><span class="t">Onde paramos</span><span class="time">0:00 – 0:08</span></div>
+      <h2 class="sec-head" style="font-size:clamp(1.9rem,5vw,3rem);color:var(--ink);">Do Chat para o Cowork.</h2>
+      <p class="lead"><b>Chat</b> é pedir conselho a um colega. <b>Cowork</b> é delegar e ir tomar um café.</p>
+    </div>
+    <div class="bridge rv">
+      <div class="bcard"><div class="l">Aula 01 · Chat</div><h3>Você na mão</h3><p>Pergunta, ele responde, você copia e move o resultado você mesma.</p></div>
+      <div class="arrow">→</div>
+      <div class="bcard on"><div class="l">Aula 02 · Cowork</div><h3>Você delega</h3><p>Ele trabalha nos seus arquivos, e-mail e pesquisa — e te entrega pronto.</p></div>
+    </div>
+    <div class="spec rv">
+      <div class="s"><div class="a">Chat</div><small>Pensar, escrever, resumir</small></div>
+      <div class="s hot"><div class="a">Cowork</div><small>O agente no seu computador — é aqui que a gente mora hoje</small></div>
+      <div class="s"><div class="a">Code</div><small>Construir sistemas — Aula 03</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEORIA: O AGENTE -->
+<section id="agente" style="background:var(--bg-2);">
+  <div class="wrap">
+    <div class="rv">
+      <div class="tag-step"><span class="n">01</span><span class="t">Teoria leve · O agente</span><span class="time">0:08 – 0:24</span></div>
+      <h2 class="sec-head">Um agente dentro do seu computador.</h2>
+      <p class="lead">O Cowork mexe em <b>docs, planilhas, e-mail e pesquisa</b>. Por isso pede acesso. Parece muito — é o que deixa ele trabalhar por você. E é seguro quando se faz com critério.</p>
+    </div>
+    <div class="points rv">
+      <div class="pt"><div class="b">1</div><p><b>Pasta dedicada.</b> Trabalhe numa pasta organizada por cliente e por ramo. É o território do agente.</p></div>
+      <div class="pt"><div class="b">2</div><p><b>Instruções globais do Cowork.</b> O contexto que ele lê em toda tarefa. Configurar isso é o que faz ele “acertar de primeira”.</p></div>
+      <div class="pt"><div class="b">3</div><p><b>Dados de segurado.</b> Plano pago, anonimize CPF e valores quando der, e confira tudo antes de usar. Nunca invente — “não consta” é resposta válida.</p></div>
+    </div>
+    <div class="prompt rv">
+      <div class="pl"><span>Instrução global · contexto fixo do corretor</span><button class="copy">Copiar</button></div>
+      <pre>Você é meu copiloto na Proativa, uma corretora de seguros. Atuo como [cargo]. Trabalho com [ramos: saúde, vida, patrimonial, frota]. Meu público são [segurados / empresas clientes]. Tom: profissional, claro, sem juridiquês. Nunca invente número, valor, prazo ou cláusula — se não estiver no material, escreva "não consta". Dados sensíveis (CPF, valores, dados clínicos) trate com cuidado e me avise antes de usar.</pre>
+    </div>
+  </div>
+</section>
+
+<!-- TEORIA: CONECTORES -->
+<section id="conectores">
+  <div class="wrap rv">
+    <div class="tag-step"><span class="n">02</span><span class="t">Teoria leve · Conectores</span><span class="time">0:24 – 0:36</span></div>
+    <h2 class="sec-head">Seu mundo, plugado.</h2>
+    <p class="lead">Conector é a <b>ponte</b> entre o Claude e o que você já usa. Em vez de baixar e subir arquivo, ele acessa direto. Dentro de um Projeto, cada cliente tem o seu mundo.</p>
+  </div>
+</section>
+<div class="marq" aria-label="Conectores">
+  <div class="marq-track">
+    <span class="s">Conecte</span><span>Google Drive</span><span>Gmail</span><span>Agenda</span><span>Notion</span><span>Canva</span><span>WhatsApp Web</span>
+    <span class="s">Conecte</span><span>Google Drive</span><span>Gmail</span><span>Agenda</span><span>Notion</span><span>Canva</span><span>WhatsApp Web</span>
+  </div>
+</div>
+<section style="padding-top:46px;">
+  <div class="wrap">
+    <div class="prompt rv">
+      <div class="pl"><span>Prompt · usar conector ao vivo (Google Drive)</span><button class="copy">Copiar</button></div>
+      <pre>Olhe minha pasta "Proativa" no Google Drive. Liste as planilhas de carteira que estão lá e me diga, de cada uma, o ramo e o mês de referência. Não altere nada — só me mostre o índice.</pre>
+    </div>
+  </div>
+</section>
+
+<!-- TEORIA: SKILL -->
+<section id="skill" style="background:var(--bg-2);">
+  <div class="wrap rv">
+    <div class="tag-step"><span class="n">03</span><span class="t">Teoria leve · Skill</span></div>
+    <h2 class="sec-head">O que é uma Skill.</h2>
+    <p class="lead">Uma habilidade que você ensina <b>uma vez</b> e o Claude repete <b>sempre</b> no seu padrão. Como dar a um especialista o manual da sua casa.</p>
+    <div class="skillband">
+      <div class="x">Ensina uma vez.<br>Repete sempre.</div>
+      <div class="y">A regra prática: tudo que você faz 3 vezes, vira skill — e dá pra compartilhar com a equipe inteira.</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="v">3×</div><div class="l">fez 3 vezes? vira skill</div></div>
+      <div class="stat"><div class="v">2h → 5min</div><div class="l">relatório de sinistralidade</div></div>
+      <div class="stat"><div class="v">1 clique</div><div class="l">compartilha com o time</div></div>
+    </div>
+
+    <div class="pedido rv">
+      <div class="eye"><span class="kick">Isso aqui é o que vocês pediram</span><span class="src">Pesquisa de nivelamento · 18 respostas</span></div>
+      <div class="pedido-grid">
+        <div class="pcard">
+          <h4>Onde querem aplicar</h4>
+          <ul>
+            <li><span><b>Automação do operacional</b></span><span class="pbadge">nº 1</span></li>
+            <li><span>Análise de dados e relatórios</span><span class="pbadge">100%</span></li>
+            <li><span>Apoio a reuniões e documentação</span><span class="pbadge">76%</span></li>
+            <li><span>Comunicação interna e externa</span><span class="pbadge">71%</span></li>
+          </ul>
+        </div>
+        <div class="pcard cases">
+          <h4>Casos que vocês citaram</h4>
+          <ul>
+            <li>Reanálise de negativas de sinistro</li>
+            <li>Confronto de cláusulas</li>
+            <li>Revisão de propostas e extração de valores</li>
+            <li>Análise de risco e gestão</li>
+          </ul>
+        </div>
+      </div>
+      <div class="traducao">
+        <div class="l">Tradução do pedido</div>
+        <p>Vocês pediram pra <b>automatizar as tarefas repetitivas</b> de relatório e documento da corretora. Hoje eu mostro UMA funcionando ao vivo — as outras viram o seu cardápio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AÇÃO -->
+<section id="acao">
+  <div class="wrap">
+    <div class="rv" style="text-align:center;margin-bottom:6px;">
+      <span class="kick">Agora é mão na massa</span>
+      <h2 class="sec-head" style="margin-top:12px;">Uma tarefa, do início ao fim.</h2>
+      <p class="lead" style="margin:14px auto 0;">Um dado solto vira planilha, vira dashboard, vira skill. A mesma jornada — e cada degrau impressiona mais.</p>
+    </div>
+
+    <div class="jstep rv"><div class="jn">1</div>
+      <h3>Um dado solto</h3>
+      <p class="jd">Você joga os sinistros do mês como vierem — colados de um e-mail, de um sistema, bagunçados. <b>Sem formatar nada.</b></p>
+    </div>
+    <div class="jarrow rv">↓</div>
+
+    <div class="jstep rv"><div class="jn">2</div>
+      <h3>Vira planilha organizada</h3>
+      <p class="jd">O Claude estrutura tudo numa <b>planilha Excel limpa</b> — uma linha por sinistro, colunas certas.</p>
+      <div class="prompt">
+        <div class="pl"><span>Prompt · dado solto → Excel</span><button class="copy">Copiar</button></div>
+        <pre>Pega esses dados de sinistro que colei e organiza numa planilha Excel limpa: uma linha por sinistro, com colunas de apólice, segurado, ramo, data, valor do sinistro e mês.</pre>
+      </div>
+    </div>
+    <div class="jarrow rv">↓</div>
+
+    <div class="jstep rv"><div class="jn">3</div>
+      <h3>Vira um dashboard lindo</h3>
+      <p class="jd">Da planilha crua para um <b>painel visual</b> com KPIs, gráfico de evolução e top 5 — em segundos.</p>
+      <div class="prompt">
+        <div class="pl"><span>Prompt · Excel → dashboard</span><button class="copy">Copiar</button></div>
+        <pre>Com essa planilha, crie um dashboard em HTML, bonito e visual: KPIs de prêmio, sinistro e índice de sinistralidade, gráfico de evolução mensal e top 5 maiores sinistros. Depois me diga os 3 insights mais importantes que esses números mostram.</pre>
+      </div>
+      <div class="secret"><div class="k">&#128273;</div><div><div class="tt">O segredo do HTML</div><p>Peça o resultado <b>em HTML</b>. A IA entende HTML muito bem e ganha liberdade pra criar algo realmente bonito — em vez de uma tabela sem graça.</p></div></div>
+      <div class="insightbox"><b>E não para na arte:</b> ele lê os números e te entrega os insights — qual ramo concentra o risco, qual mês foi o pico, onde rever a precificação.</div>
+      <a class="dashbtn" href="/proativa/aula02/exemplos/02-dashboard-sinistralidade.html" target="_blank">&#9654; Abrir o dashboard de exemplo</a>
+    </div>
+    <div class="jarrow rv">↓</div>
+
+    <div class="jstep rv" style="border-color:var(--accent);box-shadow:6px 6px 0 rgba(0,88,71,.18);"><div class="jn">4</div>
+      <h3>Vira uma skill</h3>
+      <p class="jd">Você ensina uma vez. Da próxima, é só jogar a planilha e pedir — <b>o dashboard sai pronto, sozinho.</b> E dá pra compartilhar com a equipe.</p>
+      <div class="prompt">
+        <div class="pl"><span>Prompt · dashboard → Skill</span><button class="copy">Copiar</button></div>
+        <pre>Transforme isso numa skill: toda vez que eu jogar uma planilha de sinistros nesta pasta e pedir "dashboard de sinistralidade", gere esse mesmo painel no padrão que criamos. Crie a skill e me explique como compartilhar com minha equipe.</pre>
+      </div>
+    </div>
+
+    <div class="outros rv">
+      <h2 class="sec-head" style="font-size:clamp(1.6rem,4vw,2.4rem);">Outros caminhos que vocês pediram</h2>
+      <p class="lead" style="margin-top:10px;">A mesma lógica vale pra tudo que é repetitivo na corretora. Aqui é só citar:</p>
+      <div class="outros-grid">
+        <div class="ocard"><div class="ot">Confronto de cláusulas</div><p>Condições gerais × proposta → pontos de atenção e divergências. (E o “não consta” contra a alucinação.)</p></div>
+        <div class="ocard"><div class="ot">Revisão de proposta</div><p>Extração de coberturas e valores num resumo padronizado.</p></div>
+        <div class="ocard"><div class="ot">Reanálise de negativa</div><p>Leitura crítica do sinistro frente à apólice.</p></div>
+        <div class="ocard"><div class="ot">Resumo de reunião → ata</div><p>Da transcrição para a ata e os próximos passos, no seu padrão.</p></div>
+      </div>
+    </div>
+
+    <div class="demo rv">
+      <div class="h"><h3>Demo rápida · confronto de cláusulas</h3><span class="time">se sobrar tempo</span></div>
+      <p class="desc">Suba as duas PDFs de exemplo e mostre o confronto — e o momento “não consta”.</p>
+      <div class="prompt">
+        <div class="pl"><span>Prompt · confronto proposta x condições gerais</span><button class="copy">Copiar</button></div>
+        <pre>Leia o PDF de condições gerais em anexo e confronte com a proposta também anexa. Aponte: cláusulas de exclusão relevantes, carências, e qualquer divergência entre o que foi proposto e o que a condição cobre. Se algo que eu perguntar não estiver no documento, responda "não consta".</pre>
+      </div>
+      <div class="gold"><b>Momento de ouro:</b> pergunte de propósito algo que NÃO está no PDF e mostre o “não consta”.</div>
+    </div>
+
+    <div class="demo rv">
+      <div class="h"><h3>Claude em Chrome</h3><span class="time">1:20 – 1:26</span></div>
+      <p class="desc">Aquilo que você prometeu. O Claude também trabalha no navegador. <b>Só leitura ao vivo</b> — nada de disparar mensagem.</p>
+      <div class="prompt">
+        <div class="pl"><span>Prompt · WhatsApp Web (só leitura)</span><button class="copy">Copiar</button></div>
+        <pre>Abra o WhatsApp Web e veja minhas conversas das últimas 24h. Liste quem está esperando resposta minha e o assunto de cada um. Não responda nada — só me traga a lista para eu decidir.</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSÃO -->
+<section class="mission" id="missao">
+  <svg class="topo" viewBox="0 0 1600 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M0 90 Q200 60 400 95 Q600 130 800 90 Q1000 50 1200 95 Q1400 130 1600 90" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1.1"/>
+    <path d="M0 180 Q200 145 400 185 Q600 225 800 180 Q1000 135 1200 185 Q1400 225 1600 180" fill="none" stroke="rgba(255,255,255,.05)" stroke-width=".9"/>
+    <path d="M0 290 Q200 255 400 295 Q600 335 800 290 Q1000 245 1200 295 Q1400 335 1600 290" fill="none" stroke="rgba(255,255,255,.04)" stroke-width=".8"/>
+  </svg>
+  <div class="wrap rv">
+    <div class="tag-step"><span class="n" style="color:var(--og-verde-60);">→</span><span class="t" style="color:var(--og-verde-60);">Sua missão antes da Aula 3</span></div>
+    <h2>Configura uma vez.<br>Colhe pra sempre.</h2>
+    <div class="check">
+      <div class="ck"><div class="bx"></div><p><b>Crie a pasta organizada</b> no computador (por cliente / por ramo).</p></div>
+      <div class="ck"><div class="bx"></div><p><b>Rode 1 tarefa real no Cowork</b> — organizar uma pasta OU gerar um relatório.</p></div>
+      <div class="ck"><div class="bx"></div><p><b>Conecte o Google Drive</b> (ou Gmail / Agenda).</p></div>
+      <div class="ck"><div class="bx"></div><p><b>Configure as instruções globais</b> do Cowork (o contexto fixo do corretor).</p></div>
+      <div class="ck"><div class="bx"></div><p><b>Pense em 1 entregável repetitivo</b> que viraria skill — e traga pra Aula 3.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEASER -->
+<section class="teaser">
+  <div class="wrap rv">
+    <span class="pill">Aula 03</span>
+    <h2>A gente sobe <span class="terra">o nível.</span></h2>
+    <p>Cowork avançado — vários agentes trabalhando ao mesmo tempo e tarefas agendadas. Claude Code. E cada um de vocês cria a <b>sua primeira skill</b>.</p>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="close">
+  <svg class="topo" viewBox="0 0 1600 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M0 110 Q200 80 400 115 Q600 150 800 110 Q1000 70 1200 115 Q1400 150 1600 110" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1.1"/>
+    <path d="M0 210 Q200 175 400 215 Q600 255 800 210 Q1000 165 1200 215 Q1400 255 1600 210" fill="none" stroke="rgba(255,255,255,.05)" stroke-width=".9"/>
+  </svg>
+  <div class="wrap rv">
+    <h2>Hoje você parou de pedir e começou a <span class="terra">delegar.</span></h2>
+    <div class="sig">NewScale — você, multiplicada.</div>
+  </div>
+</section>
+
+<!-- ASSINATURA -->
+<div class="sign">
+  <span class="l">Proativa · formação Claude — identidade Oneglobal</span>
+  <img src="/proativa/newscale-logo-white.png" alt="NewScale">
+</div>
+
+<script>
+const bar=document.getElementById('bar');
+addEventListener('scroll',()=>{const h=document.documentElement;const p=h.scrollTop/(h.scrollHeight-h.clientHeight);bar.style.width=(p*100)+'%';},{passive:true});
+document.querySelectorAll('.prompt').forEach(box=>{
+  const btn=box.querySelector('.copy'), pre=box.querySelector('pre');
+  btn.addEventListener('click',async()=>{
+    try{await navigator.clipboard.writeText(pre.innerText.trim());}
+    catch(e){const r=document.createRange();r.selectNode(pre);getSelection().removeAllRanges();getSelection().addRange(r);document.execCommand('copy');getSelection().removeAllRanges();}
+    const o=btn.textContent;btn.textContent='Copiado ✓';btn.classList.add('done');
+    setTimeout(()=>{btn.textContent=o;btn.classList.remove('done');},1600);
+  });
+});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
