@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Votacao do Juri - Hackathon de IA - Ismart x NewScale</title>
+<title>Votação do Júri · Hackathon de IA · Ismart × NewScale</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,6 +37,12 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tinta);line-
 .lock{font-family:'Montserrat';font-weight:900;color:var(--azul);font-size:14px;letter-spacing:.02em}
 .lock span{color:var(--magenta)}
 .tag{font-family:'Montserrat';font-weight:700;font-size:10px;letter-spacing:.10em;text-transform:uppercase;color:var(--cinza)}
+.brand-logos{display:flex;align-items:center;gap:11px}
+.brand-logos img{display:block;width:auto}
+.logo-ismart{height:40px;border-radius:7px}
+.logo-newscale{height:46px}
+.brand-x{font-family:'Montserrat';font-weight:800;color:var(--cinza);font-size:15px}
+@media (max-width:520px){.logo-ismart{height:34px}.logo-newscale{height:40px}.tag{display:none}}
 
 /* hero */
 .hero{padding:30px 0 8px}
@@ -70,6 +76,22 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;heigh
 input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#fff;border:3px solid var(--azul);cursor:pointer}
 .num-in{width:64px;text-align:center;font-family:'Montserrat';font-weight:800;font-size:1rem;padding:9px 6px}
 .scale-ends{display:flex;justify-content:space-between;font-size:.72rem;color:var(--cinza);margin-top:6px}
+
+/* guia: o que avaliar em cada criterio */
+.guide{background:linear-gradient(180deg,#ffffff,#f6fbff);border:1.5px solid var(--linha);border-radius:16px;padding:20px 22px;margin-top:18px}
+.guide h2{font-family:'Montserrat';font-weight:900;color:var(--azul);font-size:1.12rem;margin-bottom:3px}
+.guide .gintro{font-size:.9rem;color:var(--cinza);margin-bottom:8px}
+.gcrit{display:flex;gap:13px;padding:14px 0;border-top:1px dashed var(--linha)}
+.gcrit .gnum{flex:0 0 30px;height:30px;border-radius:9px;background:var(--azul);color:#fff;font-family:'Montserrat';font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px}
+.gcrit .gbody{flex:1}
+.gcrit .gname{font-family:'Montserrat';font-weight:800;color:var(--azul);font-size:1rem}
+.gcrit .gq{font-size:.92rem;color:var(--tinta);margin:3px 0 8px}
+.gcrit .gq b{color:var(--magenta);font-family:'Montserrat'}
+.gpts{display:flex;gap:8px;flex-wrap:wrap}
+.gpts span{font-size:.79rem;border-radius:9px;padding:6px 11px;line-height:1.35;flex:1;min-width:150px}
+.galta{background:#eef9f3;border:1px solid #bfe9d6;color:#0c6b46}
+.gbaixa{background:#fdeef0;border:1px solid #f6c9d3;color:#a32747}
+.galta b,.gbaixa b{font-family:'Montserrat'}
 
 textarea{width:100%;font-family:'Lato';font-size:.96rem;color:var(--tinta);background:var(--bg);border:1.5px solid var(--linha);border-radius:11px;padding:12px 14px;resize:vertical;min-height:80px;line-height:1.5;transition:border-color .15s,box-shadow .15s}
 textarea:focus{outline:none;border-color:var(--azul2);box-shadow:0 0 0 3px rgba(0,142,211,.18)}
@@ -112,28 +134,79 @@ footer{margin-top:34px;background:var(--azul);color:rgba(255,255,255,.7);padding
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <span class="lock">ISMART <span>x</span> NEWSCALE</span>
-    <span class="tag">Hackathon de IA - 01/07/2026</span>
+    <span class="brand-logos">
+      <img class="logo-ismart" src="logo-ismart.jpeg" alt="Ismart">
+      <span class="brand-x">×</span>
+      <img class="logo-newscale" src="logo-newscale.png" alt="NewScale Consulting">
+    </span>
+    <span class="tag">Hackathon de IA · 01/07/2026</span>
   </div>
 </header>
 
 <section class="hero">
   <div class="wrap">
-    <div class="kicker">Votacao - Juri</div>
-    <h1>Avaliacao dos projetos</h1>
-    <p>Avalie um grupo por vez. De uma nota de 0 a 10 em cada criterio (os tres tem o mesmo peso). Ao enviar, a ficha limpa e mostra quais grupos voce ja avaliou.</p>
+    <div class="kicker">Júri · Avaliação</div>
+    <h1>Avaliação dos projetos</h1>
+    <p>Cada grupo recebe uma nota de 0 a 10 em três critérios de peso igual. Veja abaixo o que olhar em cada um antes de pontuar.</p>
     <div class="demo-banner" id="demoBanner"><b>Modo demo:</b> a URL do Apps Script ainda nao foi configurada. Suas notas ficam salvas so neste navegador, para teste visual.</div>
   </div>
 </section>
 
 <div class="wrap">
 
+  <!-- Guia: o que avaliar em cada criterio -->
+  <div class="guide">
+    <h2>O que avaliar em cada critério</h2>
+    <p class="gintro">Os três têm o mesmo peso. Antes de mover os sliders, use estas perguntas como régua.</p>
+
+    <div class="gcrit">
+      <div class="gnum">1</div>
+      <div class="gbody">
+        <div class="gname">Impacto</div>
+        <p class="gq"><b>Se isso funcionar, mexe numa meta do Ismart?</b> O quanto a solução move uma meta global — seleção de jovens, matrícula em carreiras recomendadas, empregabilidade.</p>
+        <div class="gpts">
+          <span class="galta"><b>Nota alta:</b> ataca uma dor central e move um número que o Ismart persegue.</span>
+          <span class="gbaixa"><b>Nota baixa:</b> melhoria pontual, sem ligação clara com as metas.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gcrit">
+      <div class="gnum">2</div>
+      <div class="gbody">
+        <div class="gname">Viabilidade</div>
+        <p class="gq"><b>Dá pra sair do papel logo?</b> O quanto a solução é simples e factível no curto prazo, sem depender de algo caro ou complexo.</p>
+        <div class="gpts">
+          <span class="galta"><b>Nota alta:</b> pronta pra começar a usar amanhã, com o que já existe.</span>
+          <span class="gbaixa"><b>Nota baixa:</b> grandiosa, mas distante e cheia de dependências.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gcrit">
+      <div class="gnum">3</div>
+      <div class="gbody">
+        <div class="gname">Criatividade</div>
+        <p class="gq"><b>A ideia surpreende e usa bem o Claude?</b> Originalidade da abordagem e bom uso das capacidades da IA — agentes, automação, pesquisa, protótipo.</p>
+        <div class="gpts">
+          <span class="galta"><b>Nota alta:</b> solução não óbvia e uso esperto da IA como peça central.</span>
+          <span class="gbaixa"><b>Nota baixa:</b> ideia óbvia ou a IA entra só como enfeite.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Identificacao -->
   <div class="card">
     <div class="row2">
       <div>
-        <label class="label" for="jurado">Nome do jurado</label>
-        <input type="text" id="jurado" placeholder="Seu nome">
+        <label class="label" for="jurado">Jurado</label>
+        <select id="jurado">
+          <option value="">Selecione seu nome...</option>
+          <option value="Bárbara">Bárbara</option>
+          <option value="Mari">Mari</option>
+          <option value="Daniel">Daniel</option>
+        </select>
       </div>
       <div>
         <label class="label" for="grupo">Grupo</label>
@@ -152,12 +225,12 @@ footer{margin-top:34px;background:var(--azul);color:rgba(255,255,255,.7);padding
         <div class="crit-name">Impacto</div>
         <div class="crit-val" id="vImpacto">5</div>
       </div>
-      <p class="crit-desc">O quanto a solucao move uma meta global do Ismart. Quanto mais central a dor que ela resolve, mais pontos.</p>
+      <p class="crit-desc">O quanto move uma meta global do Ismart.</p>
       <div class="slider-row">
         <input type="range" id="impacto" min="0" max="10" step="1" value="5">
         <input type="text" inputmode="numeric" class="num-in" id="impactoNum" value="5">
       </div>
-      <div class="scale-ends"><span>0 - baixo</span><span>10 - altissimo</span></div>
+      <div class="scale-ends"><span>0 · baixo</span><span>10 · altíssimo</span></div>
     </div>
 
     <div class="crit">
@@ -166,12 +239,12 @@ footer{margin-top:34px;background:var(--azul);color:rgba(255,255,255,.7);padding
         <div class="crit-name">Viabilidade</div>
         <div class="crit-val" id="vViabilidade">5</div>
       </div>
-      <p class="crit-desc">Pronto para rodar amanha pontua mais. Solucao simples e factivel no curto prazo vale mais que solucao grandiosa e distante.</p>
+      <p class="crit-desc">O quanto dá pra sair do papel no curto prazo.</p>
       <div class="slider-row">
         <input type="range" id="viabilidade" min="0" max="10" step="1" value="5">
         <input type="text" inputmode="numeric" class="num-in" id="viabilidadeNum" value="5">
       </div>
-      <div class="scale-ends"><span>0 - baixo</span><span>10 - altissimo</span></div>
+      <div class="scale-ends"><span>0 · baixo</span><span>10 · altíssimo</span></div>
     </div>
 
     <div class="crit">
@@ -180,30 +253,30 @@ footer{margin-top:34px;background:var(--azul);color:rgba(255,255,255,.7);padding
         <div class="crit-name">Criatividade</div>
         <div class="crit-val" id="vCriatividade">5</div>
       </div>
-      <p class="crit-desc">Originalidade da abordagem e bom uso das capacidades do Claude (agentes, automacoes, pesquisa, prototipo).</p>
+      <p class="crit-desc">Originalidade e bom uso das capacidades do Claude.</p>
       <div class="slider-row">
         <input type="range" id="criatividade" min="0" max="10" step="1" value="5">
         <input type="text" inputmode="numeric" class="num-in" id="criatividadeNum" value="5">
       </div>
-      <div class="scale-ends"><span>0 - baixo</span><span>10 - altissimo</span></div>
+      <div class="scale-ends"><span>0 · baixo</span><span>10 · altíssimo</span></div>
     </div>
 
     <div class="media-box">
-      <span class="l">Media deste grupo (dos 3 criterios)</span>
+      <span class="l">Média deste grupo (dos 3 critérios)</span>
       <span class="v" id="mediaView">5.00</span>
     </div>
 
     <div style="margin-top:18px">
-      <label class="label" for="anotacoes">Anotacoes (o que mais te chamou atencao)</label>
-      <textarea id="anotacoes" placeholder="Opcional - observacoes rapidas sobre este grupo"></textarea>
+      <label class="label" for="anotacoes">Anotações (o que mais te chamou atenção)</label>
+      <textarea id="anotacoes" placeholder="Opcional · observações rápidas sobre este grupo"></textarea>
     </div>
 
-    <button class="btn btn-mag" id="enviarBtn">Enviar avaliacao deste grupo</button>
+    <button class="btn btn-mag" id="enviarBtn">Enviar avaliação deste grupo</button>
   </div>
 
   <!-- Status dos grupos -->
   <div class="card status-card">
-    <div class="status-title">Grupos que voce ja avaliou</div>
+    <div class="status-title">Grupos que você já avaliou</div>
     <div class="grid-groups" id="gridGroups"></div>
     <div class="resend-row" id="resendRow">
       <span id="resendMsg"></span>
@@ -288,7 +361,7 @@ footer{margin-top:34px;background:var(--azul);color:rgba(255,255,255,.7);padding
   // ---- nome do jurado salvo ----
   var savedNome = localStorage.getItem(LS_JURADO);
   if (savedNome){ elJurado.value = savedNome; }
-  elJurado.addEventListener("input", function(){
+  elJurado.addEventListener("change", function(){
     localStorage.setItem(LS_JURADO, elJurado.value.trim());
     renderStatus();
   });
@@ -382,12 +455,12 @@ footer{margin-top:34px;background:var(--azul);color:rgba(255,255,255,.7);padding
   elBtn.addEventListener("click", function(){
     var nome = elJurado.value.trim();
     var grupo = elGrupo.value;
-    if (!nome){ toast("Preencha o nome do jurado.", true); elJurado.focus(); return; }
+    if (!nome){ toast("Selecione seu nome.", true); elJurado.focus(); return; }
     if (!grupo){ toast("Selecione um grupo.", true); elGrupo.focus(); return; }
 
     var votos = getVotos();
     if (votos.indexOf(grupo) !== -1){
-      if (!confirm("Voce ja enviou a avaliacao do " + grupo + ". Enviar de novo (vai gravar uma nova linha)?")) return;
+      if (!confirm("Você já enviou a avaliação do " + grupo + ". Enviar de novo (vai gravar uma nova linha)?")) return;
     }
 
     var payload = montaPayload();
@@ -395,15 +468,15 @@ footer{margin-top:34px;background:var(--azul);color:rgba(255,255,255,.7);padding
 
     enviarPayload(payload).then(function(){
       marcarEnviado(grupo);
-      toast("Avaliacao do " + grupo + " enviada!");
-      elBtn.disabled = false; elBtn.textContent = "Enviar avaliacao deste grupo";
+      toast("Avaliação do " + grupo + " enviada!");
+      elBtn.disabled = false; elBtn.textContent = "Enviar avaliação deste grupo";
       limparFormParaProximo();
       renderStatus();
     }).catch(function(){
       // offline-first: guarda na fila para reenvio
       var fila = getFila(); fila.push(payload); setFila(fila);
       toast("Sem conexao agora. Salvei offline, da pra reenviar.", true);
-      elBtn.disabled = false; elBtn.textContent = "Enviar avaliacao deste grupo";
+      elBtn.disabled = false; elBtn.textContent = "Enviar avaliação deste grupo";
       limparFormParaProximo();
       renderStatus();
     });

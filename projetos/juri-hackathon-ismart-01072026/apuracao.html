@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apuracao do Juri - Hackathon de IA - Ismart x NewScale</title>
+<title>Apuração do Júri · Hackathon de IA · Ismart × NewScale</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,6 +34,12 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tinta);line-
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;flex-wrap:wrap}
 .lock{font-family:'Montserrat';font-weight:900;color:var(--azul);font-size:14px;letter-spacing:.02em}
 .lock span{color:var(--magenta)}
+.brand-logos{display:flex;align-items:center;gap:11px}
+.brand-logos img{display:block;width:auto}
+.logo-ismart{height:38px;border-radius:7px}
+.logo-newscale{height:44px}
+.brand-x{font-family:'Montserrat';font-weight:800;color:var(--cinza);font-size:15px}
+@media (max-width:520px){.logo-ismart{height:32px}.logo-newscale{height:38px}}
 .head-right{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .upd-info{font-size:.74rem;color:var(--cinza);font-family:'Montserrat';font-weight:700}
 .btn-upd{display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat';font-weight:800;font-size:.82rem;letter-spacing:.03em;text-transform:uppercase;background:var(--azul2);color:#fff;border:none;border-radius:100px;padding:11px 20px;cursor:pointer;transition:transform .15s,box-shadow .15s,background .2s}
@@ -101,9 +107,13 @@ footer{margin-top:40px;background:var(--azul);color:rgba(255,255,255,.7);padding
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <span class="lock">ISMART <span>x</span> NEWSCALE</span>
+    <span class="brand-logos">
+      <img class="logo-ismart" src="logo-ismart.jpeg" alt="Ismart">
+      <span class="brand-x">×</span>
+      <img class="logo-newscale" src="logo-newscale.png" alt="NewScale Consulting">
+    </span>
     <div class="head-right">
-      <span class="upd-info" id="updInfo">Ainda nao atualizado</span>
+      <span class="upd-info" id="updInfo">Ainda não atualizado</span>
       <button class="btn-upd" id="btnUpd">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
         Atualizar
@@ -114,9 +124,9 @@ footer{margin-top:40px;background:var(--azul);color:rgba(255,255,255,.7);padding
 
 <section class="hero">
   <div class="wrap">
-    <div class="kicker">Apuracao - Organizacao</div>
-    <h1>Resultado ao vivo do juri</h1>
-    <p>Media por criterio e nota final de cada grupo, ranking e top 3. A nota final e a media dos 3 criterios de cada jurado, depois a media entre jurados.</p>
+    <div class="kicker">Apuração · Organização</div>
+    <h1>Resultado ao vivo do júri</h1>
+    <p>Média por critério e nota final de cada grupo, ranking e top 3. A nota final é a média dos 3 critérios de cada jurado, depois a média entre jurados.</p>
     <div class="demo-banner" id="demoBanner"><b>Modo demo:</b> a URL do Apps Script ainda nao foi configurada. Mostrando os votos de teste salvos neste navegador (feitos na votacao.html em modo demo).</div>
   </div>
 </section>
@@ -124,10 +134,10 @@ footer{margin-top:40px;background:var(--azul);color:rgba(255,255,255,.7);padding
 <div class="wrap">
 
   <div class="stats">
-    <div class="stat"><div class="n" id="stTotal">0</div><div class="l">Avaliacoes recebidas</div></div>
+    <div class="stat"><div class="n" id="stTotal">0</div><div class="l">Avaliações recebidas</div></div>
     <div class="stat"><div class="n" id="stJurados">0</div><div class="l">Jurados ativos</div></div>
     <div class="stat"><div class="n" id="stGrupos">0/10</div><div class="l">Grupos avaliados</div></div>
-    <div class="stat"><div class="n" id="stLider">-</div><div class="l">Lider atual</div></div>
+    <div class="stat"><div class="n" id="stLider">-</div><div class="l">Líder atual</div></div>
   </div>
 
   <div class="section-title"><span class="bar"></span>Top 3</div>
@@ -144,7 +154,7 @@ footer{margin-top:40px;background:var(--azul);color:rgba(255,255,255,.7);padding
           <th>Criatividade</th>
           <th>Nota final</th>
           <th>Jurados</th>
-          <th>Posicao</th>
+          <th>Posição</th>
         </tr>
       </thead>
       <tbody id="tbody">
@@ -158,7 +168,7 @@ footer{margin-top:40px;background:var(--azul);color:rgba(255,255,255,.7);padding
 <footer>
   <div class="wrap footer-row">
     <span class="footer-brand">Ismart x NewScale</span>
-    <span class="footer-copy">Hackathon de IA - 2026 - Apuracao do juri</span>
+    <span class="footer-copy">Hackathon de IA · 2026 · Apuração do júri</span>
   </div>
 </footer>
 
@@ -267,7 +277,7 @@ footer{margin-top:40px;background:var(--azul);color:rgba(255,255,255,.7);padding
     pod.innerHTML = "";
     var top3 = linhas.filter(function(l){ return l.n>0; }).slice(0,3);
     if (!top3.length){
-      pod.innerHTML = '<div class="empty" style="grid-column:1/-1">Sem avaliacoes ainda.</div>';
+      pod.innerHTML = '<div class="empty" style="grid-column:1/-1">Sem avaliações ainda.</div>';
     } else {
       var labels = ["1o lugar","2o lugar","3o lugar"];
       top3.forEach(function(l, i){
