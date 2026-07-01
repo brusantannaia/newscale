@@ -123,6 +123,9 @@ textarea:focus{outline:none;border-color:var(--azul2);box-shadow:0 0 0 3px rgba(
 .resend-row{margin-top:12px;font-size:.82rem;color:var(--coral);display:none;align-items:center;gap:10px}
 .resend-row.show{display:flex}
 .resend-row button{font-family:'Montserrat';font-weight:700;font-size:.74rem;text-transform:uppercase;letter-spacing:.04em;border:1.5px solid var(--coral);color:var(--coral);background:#fff;border-radius:100px;padding:7px 14px;cursor:pointer}
+.reset-wrap{margin-top:14px;padding-top:12px;border-top:1px solid var(--linha);text-align:right}
+.reset-link{font-family:'Montserrat';font-weight:700;font-size:.74rem;color:var(--cinza);background:none;border:none;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.reset-link:hover{color:var(--coral)}
 
 footer{margin-top:34px;background:var(--azul);color:rgba(255,255,255,.7);padding:22px 0 30px}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
@@ -281,6 +284,9 @@ footer{margin-top:34px;background:var(--azul);color:rgba(255,255,255,.7);padding
     <div class="resend-row" id="resendRow">
       <span id="resendMsg"></span>
       <button id="resendBtn">Reenviar pendentes</button>
+    </div>
+    <div class="reset-wrap">
+      <button id="resetBtn" class="reset-link">Limpar votos deste navegador</button>
     </div>
   </div>
 
@@ -505,6 +511,20 @@ footer{margin-top:34px;background:var(--azul);color:rgba(255,255,255,.7);padding
       else { toast("Pendentes reenviadas!"); }
       renderStatus();
     });
+  });
+
+  // ---- limpar votos salvos neste navegador (nao mexe na planilha) ----
+  document.getElementById("resetBtn").addEventListener("click", function(){
+    if (!confirm("Isso apaga os “OK” de avaliacao salvos NESTE navegador (de todos os jurados deste aparelho). Nao mexe na planilha. Continuar?")) return;
+    var apagar = [];
+    for (var i=0; i<localStorage.length; i++){
+      var k = localStorage.key(i);
+      if (k && k.indexOf("ismart_juri_") === 0) apagar.push(k);
+    }
+    apagar.forEach(function(k){ localStorage.removeItem(k); });
+    elJurado.value = "";
+    renderStatus();
+    toast("Votos deste navegador limpos.");
   });
 
   // ---- toast ----
