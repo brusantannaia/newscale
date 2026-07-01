@@ -116,6 +116,8 @@ table.ice tr.win td.tot{background:#cdeede}
 .horizon .hb p{padding:4px 0}.horizon .hb b{color:var(--azul);font-family:'Montserrat'}
 .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
 .chips span{font-size:11.5px;font-family:'Montserrat';font-weight:700;color:#fff;background:var(--roxo);border-radius:20px;padding:4px 11px}
+.slideimg{display:block;width:100%;height:auto;border:1px solid var(--linha);border-radius:12px;box-shadow:0 6px 20px rgba(0,37,97,.09);margin-top:10px}
+.imgcap{font-family:'Montserrat';font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--azul2);margin-top:20px}
 /* criterios de avaliacao */
 .acrit{display:flex;gap:13px;padding:14px 0;border-top:1px dashed var(--linha)}
 .acrit:first-of-type{border-top:none}
@@ -168,8 +170,7 @@ footer span{color:var(--magenta)}
 
 <div class="tabs" id="tabs">
   <div class="tab active" data-t="p1"><span class="d d-ref"></span>Agenda</div>
-  <div class="tab" data-t="p2"><span class="d d-ref"></span>Metas do Ismart</div>
-  <div class="tab" data-t="pamb"><span class="d d-ref"></span>Ambição 2035</div>
+  <div class="tab" data-t="p2"><span class="d d-ref"></span>Metas e Ambição</div>
   <div class="tab" data-t="p3"><span class="d d-ref"></span>Como pedir pro Claude</div>
   <div class="tab" data-t="p4"><span class="d d-ref"></span>Guia de Prompts</div>
   <div class="tab" data-t="paval"><span class="d d-ref"></span>Como vão te avaliar</div>
@@ -204,79 +205,19 @@ footer span{color:var(--magenta)}
   </div></div>
 
   <div class="panel" id="p2"><div class="card">
-    <div class="kick">Pra onde o Ismart quer ir</div><h2 class="t">Metas do Ismart 2026</h2>
-    <p class="lead">As metas globais do ano. Quando você for avaliar o impacto de uma ideia, é nelas que ela precisa mexer. (Meta = alvo de 100%; ao lado, o resultado de 2025.)</p>
-    <div class="metacard m1">
-      <div class="mh"><span class="mn">Seleção de Jovens</span><span class="pw">peso 30%</span></div>
-      <div class="mb">
-        <div class="mrow"><span class="sub">Seleção Presencial <span class="pp">15%</span></span><span class="goal">Meta: <b>160 entrantes</b> e <b>137 Top Estrelas</b></span><span class="y25">2025: 186 entrantes · 96 Top Estrelas</span></div>
-        <div class="mrow"><span class="sub">Seleção Online <span class="pp">7,5%</span></span><span class="goal">Meta: <b>300 aprovados</b> no critério presencial (MAT ≥ 80)</span><span class="y25">2025: 621 entrantes</span></div>
-        <div class="mrow"><span class="sub">Academia Digital <span class="pp">7,5%</span></span><span class="goal">Meta: <b>700 aprovados</b>, sendo <b>350 fora das praças</b></span><span class="y25">2025: 300 aprovados · 150 fora</span></div>
-      </div>
-    </div>
-    <div class="metacard m2">
-      <div class="mh"><span class="mn">Matriculados no Ensino Superior Ismart</span><span class="pw">peso 50%</span></div>
-      <div class="mb">
-        <div class="mrow"><span class="sub">Vestibular Presencial <span class="pp">20%</span></span><span class="goal">Meta: <b>72% matriculados</b></span><span class="y25">2025: 63%</span></div>
-        <div class="mrow"><span class="sub">Vestibular Online <span class="pp">20%</span></span><span class="goal">Meta: <b>62% matriculados</b></span><span class="y25">2025: 50%</span></div>
-        <div class="mrow"><span class="sub">Vestibular Exterior <span class="pp">10%</span></span><span class="goal">Meta: <b>10 alunos matriculados</b></span><span class="y25">2025: 6 alunos</span></div>
-      </div>
-    </div>
-    <div class="metacard m3">
-      <div class="mh"><span class="mn">Empregabilidade</span><span class="pw">peso 20%</span></div>
-      <div class="mb">
-        <div class="mrow"><span class="sub">Ensino Superior <span class="pp">20%</span></span><span class="goal">Meta: <b>398 alunos</b> empregados (<b>76,5%</b>)</span><span class="y25">2025: 300 alunos · 71,9%</span></div>
-      </div>
-    </div>
-    <div class="metacard m4">
-      <div class="mh"><span class="mn">Orçamento</span><span class="pw">eliminatório</span></div>
-      <div class="mb">
-        <div class="mrow"><span class="sub">Execução</span><span class="goal">Meta: <b>90% a 100%</b></span><span class="y25">2025: 99%</span></div>
-      </div>
-    </div>
-    <p class="note-y">Fonte: Abertura das Metas 2026 do Ismart. Os percentuais entre parênteses são o peso de cada meta.</p>
-  </div></div>
+    <div class="kick">Pra onde o Ismart quer ir</div><h2 class="t">Metas e Ambição do Ismart</h2>
+    <p class="lead">As metas oficiais do Ismart, direto da apresentação. Quando for avaliar o impacto de uma ideia, é nelas que ela precisa mexer. Toque em uma imagem para ampliar.</p>
 
-  <div class="panel" id="pamb"><div class="card">
-    <div class="kick">Visão de longo prazo</div><h2 class="t">Ambição Ismart 2035</h2>
-    <p class="lead">Para onde o Ismart caminha no ciclo 2025–2035. As Metas 2026 (aba ao lado) são o primeiro passo desta jornada — por isso, quanto mais a sua solução ajudar a chegar lá, maior o impacto.</p>
+    <div class="imgcap">Metas Globais 2026</div>
+    <a href="metas-globais-2026.png" target="_blank" rel="noopener"><img class="slideimg" src="metas-globais-2026.png" alt="Metas Globais 2026 do Ismart"></a>
 
-    <h3 style="font-family:'Montserrat';color:var(--azul);font-size:15px;margin:16px 0 9px">Framework de três horizontes</h3>
-    <div class="horizon hz1">
-      <div class="hh">Horizonte 1 — Presencial de excelência</div>
-      <div class="hb">
-        <p><b>Ismart Presencial:</b> maximizar excelência e matrículas em carreiras recomendadas.</p>
-        <p><b>Universitários e Alumni:</b> Centro de Carreiras e <i>give back</i>.</p>
-      </div>
-    </div>
-    <div class="horizon hz2">
-      <div class="hh">Horizonte 2 — Expansão da Academia Digital</div>
-      <div class="hb">
-        <p><b>Academia Digital:</b> funil de excelência nacional e matrículas em carreiras recomendadas.</p>
-        <p><b>Expansão do Presencial</b> para novas praças.</p>
-      </div>
-    </div>
-    <div class="horizon hz3">
-      <div class="hh">Horizonte 3 — Habilidades digitais e expansão</div>
-      <div class="hb">
-        <p><b>IA para educação:</b> tutor individual (Khanmigo) e solução para desenvolvimento de habilidades digitais (Kira).</p>
-      </div>
-    </div>
+    <div class="imgcap">Ambição Ismart 2035 · framework de três horizontes</div>
+    <a href="ambicao-framework.png" target="_blank" rel="noopener"><img class="slideimg" src="ambicao-framework.png" alt="Ambição Ismart 2035 — framework de três horizontes"></a>
 
-    <h3 style="font-family:'Montserrat';color:var(--azul);font-size:15px;margin:18px 0 4px">Métricas de sucesso</h3>
-    <table class="amb-table">
-      <tr><th style="text-align:left">Métrica de sucesso</th><th>2026</th><th>2030</th><th class="y35">2035</th></tr>
-      <tr><td class="grp" colspan="4">Métrica global</td></tr>
-      <tr><td class="metric"># formados Ensino Superior (Alumni)</td><td>818</td><td>1.850</td><td class="y35">3.000</td></tr>
-      <tr><td class="grp" colspan="4">Carreiras recomendadas</td></tr>
-      <tr><td class="metric">% matrícula <span style="color:var(--cinza);font-weight:400">(Presencial)</span></td><td>63%</td><td>85%</td><td class="y35">90%</td></tr>
-      <tr><td class="metric"># matriculados <span style="color:var(--cinza);font-weight:400">(Academia Digital)</span></td><td>46</td><td>110</td><td class="y35">200</td></tr>
-      <tr><td class="grp" colspan="4">Aprovações de excelência</td></tr>
-      <tr><td class="metric"># aprovados Fundação Estudar</td><td>3</td><td>6</td><td class="y35">10</td></tr>
-      <tr><td class="metric"># matriculados Estudar Fora</td><td>6</td><td>15</td><td class="y35">20</td></tr>
-    </table>
-    <div class="chips"><span>Ecossistema (aluno, família e escola)</span><span>Competências de Sucesso</span><span>Give Back</span><span>Outliers (0,01%)</span></div>
-    <p class="note-y">O Ismart deverá ser capaz de <b>identificar, medir e desenvolver</b> esses pilares. Fonte: Ambição Ismart 2035 (Ismart; Análise BCG).</p>
+    <div class="imgcap">Ambição Ismart 2035 · métricas de sucesso (2026 · 2030 · 2035)</div>
+    <a href="ambicao-metricas.png" target="_blank" rel="noopener"><img class="slideimg" src="ambicao-metricas.png" alt="Ambição Ismart 2035 — métricas de sucesso"></a>
+
+    <p class="note-y">Fonte: apresentação do Ismart — Metas Globais 2026 e Ambição Ismart 2035.</p>
   </div></div>
 
   <div class="panel" id="p3"><div class="card">
