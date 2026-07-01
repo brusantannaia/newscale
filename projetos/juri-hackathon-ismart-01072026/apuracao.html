@@ -136,7 +136,7 @@ footer{margin-top:40px;background:var(--azul);color:rgba(255,255,255,.7);padding
   <div class="stats">
     <div class="stat"><div class="n" id="stTotal">0</div><div class="l">Avaliações recebidas</div></div>
     <div class="stat"><div class="n" id="stJurados">0</div><div class="l">Jurados ativos</div></div>
-    <div class="stat"><div class="n" id="stGrupos">0/10</div><div class="l">Grupos avaliados</div></div>
+    <div class="stat"><div class="n" id="stGrupos">0/12</div><div class="l">Grupos avaliados</div></div>
     <div class="stat"><div class="n" id="stLider">-</div><div class="l">Líder atual</div></div>
   </div>
 
@@ -176,7 +176,7 @@ footer{margin-top:40px;background:var(--azul);color:rgba(255,255,255,.7);padding
 (function(){
   "use strict";
 
-  var TOTAL_GRUPOS = 10;
+  var TOTAL_GRUPOS = 12;
   var DEMO = !APPS_SCRIPT_URL;
   if (DEMO) document.getElementById("demoBanner").classList.add("show");
 
