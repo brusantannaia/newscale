@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Case de automação de IA em RH: +42% de conversão de candidatos | NewScale</title>
+<meta name="description" content="Uma consultoria de RH elevou a conversão de candidatos em 42% e reduziu em 33% o tempo de preenchimento de vagas com um agente de IA orquestrador no WhatsApp, ativo 24/7.">
+<link rel="canonical" href="https://newscale.tech/cases/consultoria-rh">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://newscale.tech/cases/consultoria-rh">
+<meta property="og:title" content="Case de automação de IA em RH: +42% de conversão de candidatos — NewScale">
+<meta property="og:description" content="+42% de conversão de candidatos e -33% no tempo de preenchimento de vagas com agente de IA no WhatsApp.">
+<meta property="og:image" content="https://newscale.tech/newscale-og-cover.png">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="NewScale Consulting">
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JJ9X1LXN4L"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JJ9X1LXN4L');</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Design system -->
+<link rel="stylesheet" href="/assets/css/redesign.css">
+
+<!-- Schema JSON-LD — Article + Organization em @graph -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://newscale.tech/#org",
+      "name": "NewScale Consulting",
+      "url": "https://newscale.tech",
+      "logo": "https://newscale.tech/logo-newscale.png",
+      "description": "Consultoria de IA e agentes de automação para operações reais, em São Paulo."
+    },
+    {
+      "@type": "Article",
+      "@id": "https://newscale.tech/cases/consultoria-rh",
+      "headline": "Consultoria de RH: +42% de conversão de candidatos com agente de IA no WhatsApp",
+      "description": "Agente de IA orquestrador centralizou o atendimento de uma consultoria de RH, cruzou candidatos com vagas via API e automatizou cadastros no CRM, elevando a conversão de candidatos em 42% e reduzindo em 33% o tempo de preenchimento de vagas.",
+      "articleSection": "RH",
+      "inLanguage": "pt-BR",
+      "author": { "@id": "https://newscale.tech/#org" },
+      "publisher": { "@id": "https://newscale.tech/#org" },
+      "about": { "@id": "https://newscale.tech/#org" },
+      "datePublished": "2025-02-01"
+    }
+  ]
+}
+</script>
+
+<style>
+/* page-local: layout de case individual */
+.case-hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#0a2023 0%,#0C2427 40%,#102f33 100%);}
+.case-hero .wrap{position:relative;z-index:2;padding:60px 30px 54px;}
+.back-link{display:inline-flex;align-items:center;gap:7px;font-size:.8rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--tl);margin-bottom:26px;}
+.back-link:hover{color:var(--cream);}
+.hero-num{font-family:'Anton',sans-serif;font-size:clamp(4rem,15vw,7rem);color:var(--terra);line-height:.86;margin:14px 0 6px;}
+.hero-num-lbl{font-size:1.05rem;color:var(--text);font-weight:300;max-width:44ch;}
+/* barra de progresso decorativa sutil no hero */
+.hero-bar{margin-top:26px;max-width:320px;height:6px;border-radius:100px;background:rgba(244,243,239,.08);overflow:hidden;}
+.hero-bar span{display:block;height:100%;width:0;border-radius:100px;background:linear-gradient(90deg,var(--terra-d),var(--tl));animation:herofill 1.6s cubic-bezier(.3,.7,.2,1) .3s forwards;}
+@keyframes herofill{to{width:78%;}}
+.ps{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px;}
+@media(max-width:680px){.ps{grid-template-columns:1fr;}}
+.psb{background:var(--ink);border:1px solid var(--line);border-radius:16px;padding:26px 28px;}
+.psb .l{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tl);margin-bottom:8px;}
+.psb p{font-size:1.05rem;color:var(--cream);font-weight:400;line-height:1.5;}
+.metgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+@media(max-width:760px){.metgrid{grid-template-columns:1fr 1fr;}}
+@media(max-width:460px){.metgrid{grid-template-columns:1fr;}}
+/* mockup: conversa estilo WhatsApp */
+.chat{background:linear-gradient(150deg,#0e2e33,#0a2023);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 30px 70px -30px rgba(0,0,0,.7);max-width:420px;}
+.chat-head{display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:14px;}
+.chat-av{width:38px;height:38px;border-radius:50%;background:rgba(176,110,74,.2);display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;color:var(--tl);font-size:.9rem;}
+.chat-head .n{font-size:.88rem;font-weight:700;color:var(--cream);line-height:1.2;}
+.chat-head .s{font-size:.68rem;color:var(--muted);}
+.chat-head .s::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:#7dbf8e;margin-right:5px;}
+.msg{max-width:85%;padding:10px 14px;border-radius:12px;font-size:.84rem;line-height:1.45;margin-bottom:9px;color:var(--text);}
+.msg.in{background:rgba(255,255,255,.05);border:1px solid var(--line);border-bottom-left-radius:3px;}
+.msg.out{background:rgba(176,110,74,.16);border:1px solid rgba(176,110,74,.28);border-bottom-right-radius:3px;margin-left:auto;}
+.msg .t{display:block;font-size:.6rem;color:var(--muted);margin-top:4px;text-align:right;}
+.msg .doc{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin-top:6px;font-size:.76rem;color:var(--cream);}
+/* dot "online" pulsante */
+.chat-head .s::before{animation:onpulse 1.8s ease-in-out infinite;}
+@keyframes onpulse{0%,100%{box-shadow:0 0 0 0 rgba(125,191,142,.5);}50%{box-shadow:0 0 0 5px rgba(125,191,142,0);}}
+/* bolhas entram em sequência quando o mockup revela (.rv.in) */
+.chat .msg{opacity:0;transform:translateY(8px);}
+.rv.in .chat .msg{animation:msgin .45s ease forwards;}
+.rv.in .chat .msg:nth-child(2){animation-delay:.15s;}
+.rv.in .chat .msg:nth-child(3){animation-delay:.5s;}
+.rv.in .chat .msg:nth-child(4){animation-delay:.9s;}
+.rv.in .chat .msg:nth-child(5){animation-delay:1.3s;}
+@keyframes msgin{to{opacity:1;transform:none;}}
+@media(prefers-reduced-motion:reduce){
+  .hero-bar span{width:78%;animation:none;}
+  .chat-head .s::before{animation:none;}
+  .chat .msg{opacity:1;transform:none;}
+  .rv.in .chat .msg{animation:none;}
+}
+.casecta{background:var(--ink);border:1px solid var(--line);border-top:2px solid rgba(163,131,98,.45);border-radius:20px;padding:40px 38px;text-align:center;}
+.casecta h2{margin-bottom:12px;}
+.casecta p{color:var(--text);font-weight:300;max-width:46ch;margin:0 auto 26px;font-size:1.05rem;}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="/" class="logo" aria-label="NewScale"><img src="/assets/img/logo-branco.png" alt="NewScale Consulting"></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="/metodologia">Metodologia</a>
+      <a href="/agentes">Agentes</a>
+      <a href="/educacao/">Educação</a>
+      <a href="/cases" class="active">Cases</a>
+      <a href="/sobre">Sobre</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://wa.me/5511971901020?text=Ol%C3%A1%21+Gostaria+de+agendar+um+diagn%C3%B3stico+gratuito+com+a+NewScale." class="nav-cta" target="_blank" rel="noopener">Diagnóstico gratuito</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- HERO do case -->
+<section class="case-hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="rv">
+      <a href="/cases" class="back-link"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Todos os cases</a>
+      <span class="cbadge">RH &middot; Recrutamento e Seleção</span>
+      <div class="hero-num"><span data-count="42" data-prefix="+" data-suffix="%">+42%</span></div>
+      <p class="hero-num-lbl">de conversão de candidatos com um agente de IA orquestrador no WhatsApp, ativo 24h por dia, 7 dias por semana.</p>
+      <div class="hero-bar" aria-hidden="true"><span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA + SOLUÇÃO -->
+<section class="sec-sm">
+  <div class="wrap">
+    <div class="ps rv">
+      <div class="psb">
+        <div class="l">Problema</div>
+        <p>Alto volume no WhatsApp, cruzamento manual entre candidato e vaga e cadastro manual no CRM geravam perda de dados, sobretudo fora do horário.</p>
+      </div>
+      <div class="psb">
+        <div class="l">Solução</div>
+        <p>Agente de IA orquestrador identifica o perfil, consulta vagas via API, extrai dados do currículo e cadastra tudo no CRM automaticamente, 24/7.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÉTRICAS -->
+<section class="sec" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head rv" style="margin-bottom:28px">
+      <span class="kick">Os números</span>
+      <h2>O resultado, número a número</h2>
+    </div>
+    <div class="metgrid rv">
+      <div class="cmetric"><div class="v">+42%</div><div class="d">conversão de candidatos</div></div>
+      <div class="cmetric"><div class="v">-33%</div><div class="d">tempo de preenchimento de vagas</div></div>
+      <div class="cmetric"><div class="v">-48%</div><div class="d">dispensas no período de experiência</div></div>
+      <div class="cmetric"><div class="v">+27%</div><div class="d">satisfação dos candidatos</div></div>
+      <div class="cmetric"><div class="v">24/7</div><div class="d">atendimento sem pausa</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MOCKUP + STACK -->
+<section class="sec bg-2" style="padding-top:56px">
+  <div class="wrap">
+    <div class="media-row">
+      <div class="rv">
+        <div class="chat" aria-hidden="true">
+          <div class="chat-head">
+            <div class="chat-av">IA</div>
+            <div>
+              <div class="n">Triagem de candidatos</div>
+              <div class="s">online agora</div>
+            </div>
+          </div>
+          <div class="msg in">Oi! Vi a vaga de analista financeiro. Ainda tá aberta?<span class="t">22:47</span></div>
+          <div class="msg out">Está sim! Me conta rapidinho: qual sua experiência na área? Se preferir, pode mandar seu currículo aqui mesmo.<span class="t">22:47</span></div>
+          <div class="msg in">Trabalho há 4 anos com contas a pagar.
+            <span class="doc"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg> curriculo.pdf</span>
+            <span class="t">22:49</span></div>
+          <div class="msg out">Perfeito! Achei 2 vagas com o seu perfil. Já cadastrei seus dados e a recrutadora te chama amanhã cedo. Boa noite!<span class="t">22:49</span></div>
+        </div>
+      </div>
+      <div class="prose rv">
+        <span class="kick" style="display:block;margin-bottom:12px">Como funciona</span>
+        <h2>Nenhum candidato no vácuo</h2>
+        <p>O agente atende no WhatsApp a qualquer hora, cruza o candidato com as vagas abertas via API Selecty, extrai os dados do currículo em PDF ou Word e cadastra tudo no CRM. O cliente é uma consultoria de RH que preferiu não ser nominada.</p>
+        <div class="cchips" style="margin-top:20px">
+          <span class="tagpill">WhatsApp API</span>
+          <span class="tagpill">Selecty API</span>
+          <span class="tagpill">Google Sheets</span>
+          <span class="tagpill">Agentes de IA</span>
+          <span class="tagpill">Extração de Currículos</span>
+        </div>
+        <div class="ph" style="aspect-ratio:16/6;margin-top:24px">
+          <div class="ph-tag">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.3"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <b>Consultoria de RH</b><span>cliente sob confidencialidade</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec" style="padding-top:40px">
+  <div class="wrap narrow">
+    <div class="casecta rv">
+      <span class="kick" style="display:block;margin-bottom:12px">Diagnóstico gratuito</span>
+      <h2>Sua operação tem um gargalo assim?</h2>
+      <p>30 minutos, sem compromisso. A gente mapeia onde a IA gera o mesmo tipo de impacto no seu negócio.</p>
+      <a href="/contato" class="btn btn-terra">Agendar diagnóstico gratuito <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <p style="margin-top:22px"><a href="/cases" class="back-link" style="margin-bottom:0"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Todos os cases</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <a href="/" class="footer-brand" aria-label="NewScale"><img src="/assets/img/logo-branco.png" alt="NewScale Consulting"></a>
+      <nav class="footer-links">
+        <a href="/metodologia">Metodologia</a>
+        <a href="/agentes">Agentes</a>
+        <a href="/educacao/">Educação</a>
+        <a href="/cases">Cases</a>
+        <a href="/sobre">Sobre</a>
+        <a href="/blog/">Blog</a>
+        <a href="/trabalhe-conosco">Trabalhe Conosco</a>
+        <a href="https://brunasantanna.com" target="_blank" rel="noopener">Virada IA (educação)</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:contato@newscale.tech">contato@newscale.tech</a>
+        <a href="https://wa.me/5511971901020" target="_blank" rel="noopener">(11) 97190-1020</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 NewScale Consulting. Todos os direitos reservados.</p>
+      <p>Consultoria de IA &middot; Agentes de Automação &middot; São Paulo, SP</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/redesign.js" defer></script>
+</body>
+</html>

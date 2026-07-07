@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Case de automação de IA no agro: 1,5 dia de trabalho virou 10 minutos | NewScale</title>
+<meta name="description" content="Na Fazenda Ranchão, uma rotina de dados que consumia 1,5 dia de trabalho manual passou a rodar em 10 minutos com automação de IA implementada pela NewScale. Veja como o processo foi redesenhado de ponta a ponta.">
+<link rel="canonical" href="https://newscale.tech/cases/de-1-5-dia-para-10-min">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://newscale.tech/cases/de-1-5-dia-para-10-min">
+<meta property="og:title" content="Fazenda Ranchão: 1,5 dia de trabalho virou 10 minutos — NewScale">
+<meta property="og:description" content="Na Fazenda Ranchão, uma rotina de dados que consumia 1,5 dia de trabalho manual passou a rodar em 10 minutos com automação de IA.">
+<meta property="og:image" content="https://newscale.tech/newscale-og-cover.png">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="NewScale Consulting">
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JJ9X1LXN4L"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JJ9X1LXN4L');</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Design system -->
+<link rel="stylesheet" href="/assets/css/redesign.css">
+
+<!-- Schema JSON-LD — Article + Organization em @graph -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://newscale.tech/#org",
+      "name": "NewScale Consulting",
+      "url": "https://newscale.tech",
+      "logo": "https://newscale.tech/logo-newscale.png",
+      "description": "Consultoria de IA e agentes de automação para operações reais, em São Paulo."
+    },
+    {
+      "@type": "Article",
+      "@id": "https://newscale.tech/cases/de-1-5-dia-para-10-min",
+      "headline": "Fazenda Ranchão: de 1,5 dia para 10 minutos com automação de IA",
+      "description": "Na Fazenda Ranchão, uma rotina de dados que consumia 1,5 dia de trabalho manual passou a rodar em 10 minutos com automação de IA implementada pela NewScale.",
+      "articleSection": "Automação de Dados",
+      "inLanguage": "pt-BR",
+      "author": { "@id": "https://newscale.tech/#org" },
+      "publisher": { "@id": "https://newscale.tech/#org" },
+      "about": { "@id": "https://newscale.tech/#org" },
+      "datePublished": "2025-06-01"
+    }
+  ]
+}
+</script>
+
+<style>
+/* page-local: layout de case individual */
+.case-hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#0a2023 0%,#0C2427 40%,#102f33 100%);}
+.case-hero .wrap{position:relative;z-index:2;padding:60px 30px 54px;}
+.back-link{display:inline-flex;align-items:center;gap:7px;font-size:.8rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--tl);margin-bottom:26px;}
+.back-link:hover{color:var(--cream);}
+.hero-num{font-family:'Anton',sans-serif;font-size:clamp(4rem,15vw,7rem);color:var(--terra);line-height:.86;margin:14px 0 6px;}
+.hero-num-lbl{font-size:1.05rem;color:var(--text);font-weight:300;max-width:44ch;}
+/* barra decorativa: colapso de tempo (quase cheia → sobra um traço) */
+.hero-bar{margin-top:26px;max-width:320px;height:6px;border-radius:100px;background:rgba(244,243,239,.08);overflow:hidden;}
+.hero-bar span{display:block;height:100%;width:96%;border-radius:100px;background:linear-gradient(90deg,var(--terra-d),var(--tl));animation:herocollapse 1.8s cubic-bezier(.4,.7,.2,1) .4s forwards;}
+@keyframes herocollapse{to{width:7%;}}
+.ps{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px;}
+@media(max-width:680px){.ps{grid-template-columns:1fr;}}
+.psb{background:var(--ink);border:1px solid var(--line);border-radius:16px;padding:26px 28px;}
+.psb .l{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tl);margin-bottom:8px;}
+.psb p{font-size:1.05rem;color:var(--cream);font-weight:400;line-height:1.5;}
+/* mockup ANTES × DEPOIS */
+.bfaf{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch;max-width:860px;margin:0 auto;}
+@media(max-width:720px){.bfaf{grid-template-columns:1fr;}.bfaf-arrow{transform:rotate(90deg);margin:0 auto;}}
+.bfaf-col{background:var(--ink);border:1px solid var(--line);border-radius:18px;padding:30px 28px;text-align:center;}
+.bfaf-col.dep{border-color:rgba(176,110,74,.45);box-shadow:0 0 0 1px rgba(196,131,94,.3),0 20px 50px -20px rgba(176,110,74,.3);}
+.bfaf-col .l{font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+.bfaf-col.dep .l{color:var(--tl);}
+.bfaf-col .v{font-family:'Anton',sans-serif;font-size:clamp(2.6rem,8vw,4rem);line-height:.9;color:var(--cream);}
+.bfaf-col.dep .v{color:var(--terra);}
+.bfaf-col .d{font-size:.86rem;color:var(--muted);margin-top:12px;line-height:1.5;}
+.bfaf-arrow{display:flex;align-items:center;justify-content:center;color:var(--terra);}
+/* seta pulsa sugerindo o "vira"; colunas e passos entram em sequência (.rv.in) */
+.bfaf-arrow svg{animation:arrowpulse 1.8s ease-in-out infinite;}
+@keyframes arrowpulse{0%,100%{transform:translateX(0);opacity:.85;}50%{transform:translateX(5px);opacity:1;}}
+.bfaf-col{opacity:0;transform:translateY(12px);}
+.rv.in .bfaf-col{animation:bfin .55s ease forwards;}
+.rv.in .bfaf-col.dep{animation-delay:.35s;}
+@keyframes bfin{to{opacity:1;transform:none;}}
+.bfaf-step{opacity:0;}
+.rv.in .bfaf-col .bfaf-step{animation:stepin .4s ease forwards;}
+.rv.in .bfaf-col .bfaf-step:nth-child(1){animation-delay:.25s;}
+.rv.in .bfaf-col .bfaf-step:nth-child(2){animation-delay:.4s;}
+.rv.in .bfaf-col .bfaf-step:nth-child(3){animation-delay:.55s;}
+.rv.in .bfaf-col.dep .bfaf-step:nth-child(1){animation-delay:.6s;}
+.rv.in .bfaf-col.dep .bfaf-step:nth-child(2){animation-delay:.75s;}
+.rv.in .bfaf-col.dep .bfaf-step:nth-child(3){animation-delay:.9s;}
+@keyframes stepin{to{opacity:1;}}
+@media(prefers-reduced-motion:reduce){
+  .hero-bar span{width:7%;animation:none;}
+  .bfaf-arrow svg{animation:none;}
+  .bfaf-col,.bfaf-step{opacity:1;transform:none;}
+  .rv.in .bfaf-col,.rv.in .bfaf-col .bfaf-step{animation:none;}
+}
+.bfaf-steps{margin-top:16px;text-align:left;}
+.bfaf-step{display:flex;gap:9px;font-size:.78rem;color:var(--muted);padding:7px 0;border-top:1px solid var(--line);}
+.bfaf-step svg{flex-shrink:0;margin-top:1px;}
+.casecta{background:var(--ink);border:1px solid var(--line);border-top:2px solid rgba(163,131,98,.45);border-radius:20px;padding:40px 38px;text-align:center;}
+.casecta h2{margin-bottom:12px;}
+.casecta p{color:var(--text);font-weight:300;max-width:46ch;margin:0 auto 26px;font-size:1.05rem;}
+.ponte{background:var(--light);border-radius:20px;padding:36px 34px;color:#233133;}
+.ponte .kick{color:var(--terra-d);}
+.ponte h3{font-family:'Anton',sans-serif;font-weight:400;font-size:1.5rem;text-transform:uppercase;color:var(--ink);margin:10px 0 10px;line-height:1;}
+.ponte p{color:#4a5a55;font-size:.98rem;margin-bottom:18px;}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="/" class="logo" aria-label="NewScale"><img src="/assets/img/logo-branco.png" alt="NewScale Consulting"></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="/metodologia">Metodologia</a>
+      <a href="/agentes">Agentes</a>
+      <a href="/educacao/">Educação</a>
+      <a href="/cases" class="active">Cases</a>
+      <a href="/sobre">Sobre</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://wa.me/5511971901020?text=Ol%C3%A1%21+Gostaria+de+agendar+um+diagn%C3%B3stico+gratuito+com+a+NewScale." class="nav-cta" target="_blank" rel="noopener">Diagnóstico gratuito</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- HERO do case -->
+<section class="case-hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="rv">
+      <a href="/cases" class="back-link"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Todos os cases</a>
+      <span class="cbadge">Automação de Dados &middot; Fazenda Ranchão &middot; Agro e Educação</span>
+      <div class="hero-num">10 min</div>
+      <p class="hero-num-lbl">é o que passou a levar uma rotina de dados que consumia 1,5 dia de trabalho manual, toda semana.</p>
+      <div class="hero-bar" aria-hidden="true"><span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA + SOLUÇÃO -->
+<section class="sec-sm">
+  <div class="wrap">
+    <div class="ps rv">
+      <div class="psb">
+        <div class="l">Problema</div>
+        <p>Uma rotina de consolidação de dados tomava 1,5 dia de trabalho manual de uma pessoa, toda vez que precisava rodar.</p>
+      </div>
+      <div class="psb">
+        <div class="l">Solução</div>
+        <p>Automação de IA redesenhou o processo de ponta a ponta: coleta, tratamento e consolidação passaram a rodar sozinhos em 10 minutos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOCKUP ANTES × DEPOIS -->
+<section class="sec" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head center rv" style="margin-bottom:34px">
+      <span class="kick">Antes e depois</span>
+      <h2>O mesmo trabalho, em outra escala de tempo</h2>
+    </div>
+    <div class="bfaf rv">
+      <div class="bfaf-col">
+        <div class="l">Antes</div>
+        <div class="v">1,5 dia</div>
+        <div class="d">de trabalho manual por rodada</div>
+        <div class="bfaf-steps">
+          <div class="bfaf-step"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Exportar dados de cada fonte, um a um</div>
+          <div class="bfaf-step"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Conferir, limpar e cruzar planilhas na mão</div>
+          <div class="bfaf-step"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Montar o consolidado e revisar erros</div>
+        </div>
+      </div>
+      <div class="bfaf-arrow" aria-hidden="true">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+      <div class="bfaf-col dep">
+        <div class="l">Depois</div>
+        <div class="v">10 min</div>
+        <div class="d">com a automação rodando sozinha</div>
+        <div class="bfaf-steps">
+          <div class="bfaf-step"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Coleta automática em todas as fontes</div>
+          <div class="bfaf-step"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> IA trata, cruza e valida os dados</div>
+          <div class="bfaf-step"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Consolidado pronto para decisão</div>
+        </div>
+      </div>
+    </div>
+    <div class="cchips rv" style="justify-content:center;margin-top:26px">
+      <span class="tagpill">Automação de IA</span>
+      <span class="tagpill">Planilhas</span>
+      <span class="tagpill">Integração de Dados</span>
+    </div>
+  </div>
+</section>
+
+<!-- PONTE VIRADA IA -->
+<section class="sec bg-2" style="padding-top:48px">
+  <div class="wrap narrow">
+    <div class="ponte rv">
+      <span class="kick">Educação + automação</span>
+      <h3>Esse projeto nasceu perto de um treinamento</h3>
+      <p>A Virada IA, frente de educação fundada pela Bruna Santanna, capacita times para usar IA no dia a dia. Quando o time aprende e a automação entra junto, o resultado aparece em semanas.</p>
+      <a href="https://brunasantanna.com/treinamentos" target="_blank" rel="noopener" class="btn btn-ghost">Conhecer os treinamentos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec" style="padding-top:40px">
+  <div class="wrap narrow">
+    <div class="casecta rv">
+      <span class="kick" style="display:block;margin-bottom:12px">Diagnóstico gratuito</span>
+      <h2>Quanto tempo a sua operação perde por semana?</h2>
+      <p>30 minutos, sem compromisso. A gente mapeia onde a IA gera o mesmo tipo de impacto no seu negócio.</p>
+      <a href="/contato" class="btn btn-terra">Agendar diagnóstico gratuito <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <p style="margin-top:22px"><a href="/cases" class="back-link" style="margin-bottom:0"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Todos os cases</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <a href="/" class="footer-brand" aria-label="NewScale"><img src="/assets/img/logo-branco.png" alt="NewScale Consulting"></a>
+      <nav class="footer-links">
+        <a href="/metodologia">Metodologia</a>
+        <a href="/agentes">Agentes</a>
+        <a href="/educacao/">Educação</a>
+        <a href="/cases">Cases</a>
+        <a href="/sobre">Sobre</a>
+        <a href="/blog/">Blog</a>
+        <a href="/trabalhe-conosco">Trabalhe Conosco</a>
+        <a href="https://brunasantanna.com" target="_blank" rel="noopener">Virada IA (educação)</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:contato@newscale.tech">contato@newscale.tech</a>
+        <a href="https://wa.me/5511971901020" target="_blank" rel="noopener">(11) 97190-1020</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 NewScale Consulting. Todos os direitos reservados.</p>
+      <p>Consultoria de IA &middot; Agentes de Automação &middot; São Paulo, SP</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/redesign.js" defer></script>
+</body>
+</html>

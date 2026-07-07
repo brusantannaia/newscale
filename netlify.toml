@@ -5,6 +5,12 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Backups do site anterior nao devem ser indexados
+[[headers]]
+  for = "/*-antigo.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
 # Headers de segurança para propostas (proteção extra)
 [[headers]]
   for = "/propostas/*"

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Case de automação de IA em Saúde: R$0,09 por relatório clínico | NewScale</title>
+<meta name="description" content="A COLO Saúde gera relatórios clínicos por R$0,09 cada, contra 30+ min de trabalho manual, e ganhou +26% de capacidade de atendimento com dois agentes de IA orquestrados.">
+<link rel="canonical" href="https://newscale.tech/cases/colo-saude">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://newscale.tech/cases/colo-saude">
+<meta property="og:title" content="Case de automação de IA em Saúde: R$0,09 por relatório clínico — NewScale">
+<meta property="og:description" content="+26% de capacidade de atendimento na COLO Saúde, com relatórios clínicos a R$0,09 cada.">
+<meta property="og:image" content="https://newscale.tech/newscale-og-cover.png">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="NewScale Consulting">
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JJ9X1LXN4L"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JJ9X1LXN4L');</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Design system -->
+<link rel="stylesheet" href="/assets/css/redesign.css">
+
+<!-- Schema JSON-LD — Article + Organization em @graph -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://newscale.tech/#org",
+      "name": "NewScale Consulting",
+      "url": "https://newscale.tech",
+      "logo": "https://newscale.tech/logo-newscale.png",
+      "description": "Consultoria de IA e agentes de automação para operações reais, em São Paulo."
+    },
+    {
+      "@type": "Article",
+      "@id": "https://newscale.tech/cases/colo-saude",
+      "headline": "COLO Saúde: +26% de capacidade de atendimento com IA a R$0,09 por relatório clínico",
+      "description": "Dois agentes de IA orquestrados automatizaram a análise de prontuários e a geração de relatórios clínicos na COLO Saúde, com relatórios a R$0,09 cada e +26% de capacidade de atendimento.",
+      "articleSection": "Saúde",
+      "inLanguage": "pt-BR",
+      "author": { "@id": "https://newscale.tech/#org" },
+      "publisher": { "@id": "https://newscale.tech/#org" },
+      "about": { "@id": "https://newscale.tech/#org" },
+      "datePublished": "2025-01-01"
+    }
+  ]
+}
+</script>
+
+<style>
+/* page-local: layout de case individual */
+.case-hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#0a2023 0%,#0C2427 40%,#102f33 100%);}
+.case-hero .wrap{position:relative;z-index:2;padding:60px 30px 54px;}
+.back-link{display:inline-flex;align-items:center;gap:7px;font-size:.8rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--tl);margin-bottom:26px;}
+.back-link:hover{color:var(--cream);}
+.hero-num{font-family:'Anton',sans-serif;font-size:clamp(4rem,15vw,7rem);color:var(--terra);line-height:.86;margin:14px 0 6px;}
+.hero-num-lbl{font-size:1.05rem;color:var(--text);font-weight:300;max-width:44ch;}
+/* sparkline decorativa sutil no hero */
+.hero-spark{margin-top:26px;max-width:320px;opacity:.9;}
+.hero-spark svg{width:100%;height:auto;display:block;}
+.hero-spark path.line{stroke:var(--tl);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:340;stroke-dashoffset:340;animation:sparkdraw 2s cubic-bezier(.4,.7,.3,1) .3s forwards;}
+.hero-spark .dotend{fill:var(--terra);opacity:0;animation:sparkdot .4s ease 2.1s forwards;}
+@keyframes sparkdraw{to{stroke-dashoffset:0;}}
+@keyframes sparkdot{to{opacity:1;}}
+.ps{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px;}
+@media(max-width:680px){.ps{grid-template-columns:1fr;}}
+.psb{background:var(--ink);border:1px solid var(--line);border-radius:16px;padding:26px 28px;}
+.psb .l{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tl);margin-bottom:8px;}
+.psb p{font-size:1.05rem;color:var(--cream);font-weight:400;line-height:1.5;}
+.metgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+@media(max-width:760px){.metgrid{grid-template-columns:1fr 1fr;}}
+@media(max-width:460px){.metgrid{grid-template-columns:1fr;}}
+/* mini dashboard mockup */
+.mock{background:linear-gradient(150deg,#0e2e33,#0a2023);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 30px 70px -30px rgba(0,0,0,.7);}
+.mock-bar{display:flex;align-items:center;gap:7px;margin-bottom:18px;}
+.mock-dot{width:10px;height:10px;border-radius:50%;background:rgba(244,243,239,.2);}
+.mock-title{margin-left:10px;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+.mock-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px;}
+@media(max-width:520px){.mock-row{grid-template-columns:1fr;}}
+.mock-kpi{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:12px;padding:16px;}
+.mock-kpi .v{font-family:'Anton',sans-serif;font-size:1.9rem;color:var(--tl);line-height:1;}
+.mock-kpi .d{font-size:.68rem;color:var(--muted);margin-top:6px;text-transform:uppercase;letter-spacing:.05em;}
+.mock-doc{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:12px;padding:18px 20px;}
+.mock-doc .h{font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--tl);margin-bottom:12px;}
+.mock-line{height:8px;border-radius:100px;background:rgba(244,243,239,.12);margin-bottom:9px;}
+.mock-line.w1{width:92%;}.mock-line.w2{width:78%;}.mock-line.w3{width:85%;}.mock-line.w4{width:60%;}
+.mock-cost{display:inline-flex;align-items:baseline;gap:8px;margin-top:8px;}
+.mock-cost .c{font-family:'Anton',sans-serif;font-size:1.6rem;color:var(--terra);}
+.mock-cost .t{font-size:.72rem;color:var(--muted);}
+/* micro-animações do mockup */
+.mock-dot.pulse{background:#7dbf8e;animation:mdpulse 1.8s ease-in-out infinite;}
+@keyframes mdpulse{0%,100%{box-shadow:0 0 0 0 rgba(125,191,142,.5);}50%{box-shadow:0 0 0 5px rgba(125,191,142,0);}}
+/* barras do relatório crescem quando o bloco entra na tela (via .rv.in) */
+.mock-line{width:0;transition:width 1s cubic-bezier(.3,.7,.2,1);}
+.rv.in .mock-line.w1{width:92%;transition-delay:.15s;}
+.rv.in .mock-line.w2{width:78%;transition-delay:.3s;}
+.rv.in .mock-line.w3{width:85%;transition-delay:.45s;}
+.rv.in .mock-line.w4{width:60%;transition-delay:.6s;}
+@media(prefers-reduced-motion:reduce){
+  .hero-spark path.line{stroke-dashoffset:0;animation:none;}
+  .hero-spark .dotend{opacity:1;animation:none;}
+  .mock-dot.pulse{animation:none;}
+  .mock-line{transition:none;}
+  .rv.in .mock-line.w1{width:92%;}.rv.in .mock-line.w2{width:78%;}.rv.in .mock-line.w3{width:85%;}.rv.in .mock-line.w4{width:60%;}
+}
+.casecta{background:var(--ink);border:1px solid var(--line);border-top:2px solid rgba(163,131,98,.45);border-radius:20px;padding:40px 38px;text-align:center;}
+.casecta h2{margin-bottom:12px;}
+.casecta p{color:var(--text);font-weight:300;max-width:46ch;margin:0 auto 26px;font-size:1.05rem;}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="/" class="logo" aria-label="NewScale"><img src="/assets/img/logo-branco.png" alt="NewScale Consulting"></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="/metodologia">Metodologia</a>
+      <a href="/agentes">Agentes</a>
+      <a href="/educacao/">Educação</a>
+      <a href="/cases" class="active">Cases</a>
+      <a href="/sobre">Sobre</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://wa.me/5511971901020?text=Ol%C3%A1%21+Gostaria+de+agendar+um+diagn%C3%B3stico+gratuito+com+a+NewScale." class="nav-cta" target="_blank" rel="noopener">Diagnóstico gratuito</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- HERO do case -->
+<section class="case-hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="rv">
+      <a href="/cases" class="back-link"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Todos os cases</a>
+      <span class="cbadge">Saúde &middot; Cuidados Paliativos e Homecare</span>
+      <div class="hero-num"><span data-count="0,09" data-prefix="R$">R$0,09</span></div>
+      <p class="hero-num-lbl">por relatório clínico gerado pela IA, contra 30+ min de trabalho manual por atendimento.</p>
+      <div class="hero-spark" aria-hidden="true">
+        <svg viewBox="0 0 320 60" preserveAspectRatio="none">
+          <path class="line" d="M4 52 L54 46 L104 48 L154 34 L204 30 L254 16 L304 8"/>
+          <circle class="dotend" cx="304" cy="8" r="4"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA + SOLUÇÃO -->
+<section class="sec-sm">
+  <div class="wrap">
+    <div class="ps rv">
+      <div class="psb">
+        <div class="l">Problema</div>
+        <p>Enfermagem gastava 30+ min por atendimento gerando relatórios manualmente, travando a escala de pacientes por dia.</p>
+      </div>
+      <div class="psb">
+        <div class="l">Solução</div>
+        <p>Dois agentes orquestrados padronizam o prontuário e aplicam o protocolo clínico, gerando o relatório em segundos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÉTRICAS -->
+<section class="sec" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head rv" style="margin-bottom:28px">
+      <span class="kick">Os números</span>
+      <h2>O resultado, número a número</h2>
+    </div>
+    <div class="metgrid rv">
+      <div class="cmetric"><div class="v">R$0,09</div><div class="d">por relatório clínico gerado pela IA</div></div>
+      <div class="cmetric"><div class="v">+26%</div><div class="d">capacidade de atendimento</div></div>
+      <div class="cmetric"><div class="v">30+ min</div><div class="d">economizados por atendimento</div></div>
+      <div class="cmetric"><div class="v">30 dias</div><div class="d">do briefing ao go-live</div></div>
+      <div class="cmetric"><div class="v">&uarr; NPS</div><div class="d">melhora na satisfação de pacientes e equipe</div></div>
+      <div class="cmetric"><div class="v">&darr; Turnover</div><div class="d">queda com a equipe menos sobrecarregada</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MOCKUP + STACK -->
+<section class="sec bg-2" style="padding-top:56px">
+  <div class="wrap">
+    <div class="media-row">
+      <div class="rv">
+        <div class="mock" aria-hidden="true">
+          <div class="mock-bar">
+            <span class="mock-dot pulse"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+            <span class="mock-title">Relatório clínico &middot; IA</span>
+          </div>
+          <div class="mock-row">
+            <div class="mock-kpi"><div class="v">R$0,09</div><div class="d">custo / relatório</div></div>
+            <div class="mock-kpi"><div class="v">+26%</div><div class="d">capacidade</div></div>
+            <div class="mock-kpi"><div class="v">~8s</div><div class="d">geração</div></div>
+          </div>
+          <div class="mock-doc">
+            <div class="h">Relatório gerado</div>
+            <div class="mock-line w1"></div>
+            <div class="mock-line w2"></div>
+            <div class="mock-line w3"></div>
+            <div class="mock-line w4"></div>
+            <div class="mock-cost"><span class="c">R$0,09</span><span class="t">custo total desta geração</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="prose rv">
+        <span class="kick" style="display:block;margin-bottom:12px">Como funciona</span>
+        <h2>IA em dois estágios</h2>
+        <p>O primeiro agente padroniza os dados do prontuário. O segundo aplica o protocolo clínico e gera diagnóstico, plano e orientações. O que era meia hora de trabalho manual vira segundos, a nove centavos.</p>
+        <div class="cchips" style="margin-top:20px">
+          <span class="tagpill">N8N</span>
+          <span class="tagpill">Bubble</span>
+          <span class="tagpill">Google Drive</span>
+          <span class="tagpill">IA 2 Estágios</span>
+          <span class="tagpill">Protocolo Clínico</span>
+        </div>
+        <div class="ph" style="aspect-ratio:16/6;margin-top:24px">
+          <img src="/logo-colo.jpeg" alt="COLO Saúde" onerror="this.remove()">
+          <div class="ph-tag">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.3"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8"/></svg>
+            <b>COLO Saúde</b><span>logo do cliente</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec" style="padding-top:40px">
+  <div class="wrap narrow">
+    <div class="casecta rv">
+      <span class="kick" style="display:block;margin-bottom:12px">Diagnóstico gratuito</span>
+      <h2>Sua operação tem um gargalo assim?</h2>
+      <p>30 minutos, sem compromisso. A gente mapeia onde a IA gera o mesmo tipo de impacto no seu negócio.</p>
+      <a href="/contato" class="btn btn-terra">Agendar diagnóstico gratuito <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <p style="margin-top:22px"><a href="/cases" class="back-link" style="margin-bottom:0"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Todos os cases</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <a href="/" class="footer-brand" aria-label="NewScale"><img src="/assets/img/logo-branco.png" alt="NewScale Consulting"></a>
+      <nav class="footer-links">
+        <a href="/metodologia">Metodologia</a>
+        <a href="/agentes">Agentes</a>
+        <a href="/educacao/">Educação</a>
+        <a href="/cases">Cases</a>
+        <a href="/sobre">Sobre</a>
+        <a href="/blog/">Blog</a>
+        <a href="/trabalhe-conosco">Trabalhe Conosco</a>
+        <a href="https://brunasantanna.com" target="_blank" rel="noopener">Virada IA (educação)</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:contato@newscale.tech">contato@newscale.tech</a>
+        <a href="https://wa.me/5511971901020" target="_blank" rel="noopener">(11) 97190-1020</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 NewScale Consulting. Todos os direitos reservados.</p>
+      <p>Consultoria de IA &middot; Agentes de Automação &middot; São Paulo, SP</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/redesign.js" defer></script>
+</body>
+</html>

@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<title>Blog | NewScale Consulting — IA aplicada a negócios</title>
-<meta name="description" content="Insights práticos sobre inteligência artificial para empresários que querem resultados reais. Automação, agentes de IA, ROI e casos de uso reais.">
+<title>Blog | NewScale — Automação e Agentes de IA aplicados a negócios</title>
+<meta name="description" content="O blog da NewScale sobre automação de IA e agentes de IA aplicados a negócios: como funciona, quanto custa, quanto tempo leva o retorno e como implementar sem equipe técnica interna.">
 <link rel="canonical" href="https://newscale.tech/blog/">
 
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
@@ -15,8 +15,8 @@
 <link rel="manifest" href="/site.webmanifest">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Blog NewScale — IA aplicada a negócios">
-<meta property="og:description" content="Insights práticos sobre inteligência artificial para empresários que querem resultados reais.">
+<meta property="og:title" content="Blog NewScale — Automação e Agentes de IA para negócios">
+<meta property="og:description" content="Automação de IA e agentes de IA aplicados a negócios: sem jargão técnico, com resposta direta para quem decide.">
 <meta property="og:url" content="https://newscale.tech/blog/">
 <meta property="og:image" content="https://newscale.tech/assets/img/og-image.jpg">
 <meta property="og:type" content="website">
@@ -25,8 +25,8 @@
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Blog NewScale — IA aplicada a negócios">
-<meta name="twitter:description" content="Insights práticos sobre inteligência artificial para empresários que querem resultados reais.">
+<meta name="twitter:title" content="Blog NewScale — Automação e Agentes de IA para negócios">
+<meta name="twitter:description" content="Automação de IA e agentes de IA aplicados a negócios: sem jargão técnico, com resposta direta para quem decide.">
 <meta name="twitter:image" content="https://newscale.tech/assets/img/og-image.jpg">
 
 <!-- GA4 -->
@@ -36,9 +36,68 @@
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="stylesheet" href="/assets/css/redesign.css">
+
+<!-- Capas dos artigos (CSS puro, dark + Anton) -->
+<style>
+  .cover{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:flex-end;padding:24px 24px 22px;overflow:hidden;}
+  /* padrão topográfico/linhas sutis em SVG — assinatura visual das capas */
+  .cover-topo{position:absolute;inset:0;z-index:1;opacity:.5;mix-blend-mode:soft-light;pointer-events:none;transition:transform .5s cubic-bezier(.2,.7,.2,1),opacity .4s;}
+  .cover-topo svg{width:100%;height:100%;}
+  .cover::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 85% 12%,rgba(196,131,94,.3),transparent 60%);pointer-events:none;z-index:1;}
+  .cover-ico{position:absolute;top:18px;right:18px;z-index:3;opacity:.9;width:38px;height:38px;border-radius:10px;background:rgba(176,110,74,.14);border:1px solid rgba(176,110,74,.22);display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s;}
+  .cover-ico svg{width:20px;height:20px;}
+  .cover-kw{position:relative;z-index:3;font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:-.01em;line-height:.9;color:var(--cream);font-size:clamp(1.7rem,4.6vw,2.15rem);text-shadow:0 4px 22px rgba(0,0,0,.5);}
+  .cover-sub{position:relative;z-index:3;display:inline-flex;align-items:center;gap:7px;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tl);margin-top:10px;}
+  .cover-sub::before{content:"";width:16px;height:1px;background:var(--tl);opacity:.7;}
+  .cv-ia{background:linear-gradient(140deg,#123a3f 0%,#0a2023 55%,#16332b 100%);}
+  .cv-roi{background:linear-gradient(140deg,#1c3b34 0%,#0a2023 58%,#0e2a2e 100%);}
+  .cv-estrategia{background:linear-gradient(140deg,#102f33 0%,#0a2023 50%,#241a12 100%);}
+  .cv-guia{background:linear-gradient(140deg,#0e2a2e 0%,#0a2023 52%,#1d4a4f 100%);}
+  .cv-auto{background:linear-gradient(140deg,#241a12 0%,#0a2023 55%,#123a3f 100%);}
+  /* hover premium na capa */
+  .blog-card:hover .cover-topo{transform:scale(1.08) translateY(-6px);opacity:.7;}
+  .blog-card:hover .cover-kw{transform:translateY(-2px);}
+  .blog-card:hover .cover-ico{background:rgba(176,110,74,.24);border-color:rgba(196,131,94,.5);}
+  .cover-kw{transition:transform .4s cubic-bezier(.2,.7,.2,1);}
+  .blog-card{transition:transform .22s,border-color .22s,box-shadow .22s;}
+  .blog-card:not([aria-disabled]):hover{box-shadow:0 0 0 1px rgba(196,131,94,.28),0 26px 60px -28px rgba(0,0,0,.8);}
+  .blog-card[aria-disabled="true"]{cursor:default;}
+  .blog-card[aria-disabled="true"]:hover{transform:none;border-color:var(--line);box-shadow:none;}
+  .blog-card[aria-disabled="true"]:hover .cover-topo{transform:none;opacity:.5;}
+  .blog-card[aria-disabled="true"]:hover .cover-kw{transform:none;}
+  .soon{display:inline-block;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tl);background:rgba(176,110,74,.1);border:1px solid rgba(176,110,74,.28);padding:4px 11px;border-radius:100px;margin-bottom:10px;}
+  .blog-cat-tag{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--tl);background:rgba(176,110,74,.1);border:1px solid rgba(176,110,74,.22);padding:4px 11px;border-radius:100px;margin-bottom:12px;}
+  /* Destaque cases — número-herói */
+  .cases-cta{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:32px;background:linear-gradient(150deg,#14373C,#0a2023 70%);border:1px solid rgba(163,131,98,.3);border-top:2px solid rgba(163,131,98,.5);border-radius:20px;padding:32px 36px;margin-bottom:34px;position:relative;overflow:hidden;}
+  .cases-cta::after{content:"";position:absolute;inset:0;background:radial-gradient(90% 120% at 12% 20%,rgba(176,110,74,.16),transparent 58%);pointer-events:none;}
+  .cases-hero{position:relative;z-index:2;text-align:center;padding-right:30px;border-right:1px solid var(--line);}
+  .cases-hero .ch-num{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(3rem,8vw,4.4rem);line-height:.85;color:var(--tl);letter-spacing:-.01em;}
+  .cases-hero .ch-lbl{font-size:.64rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:8px;}
+  .cases-cta .cc-txt{position:relative;z-index:2;}
+  .cases-cta .cc-txt h3{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(1.5rem,4vw,2rem);text-transform:uppercase;color:var(--cream);line-height:1;}
+  .cases-cta .cc-txt p{font-size:.95rem;color:var(--text);font-weight:300;margin-top:8px;max-width:46ch;}
+  .cases-cta .cc-txt p b{color:var(--tl);font-weight:600;}
+  .cases-cta .btn{position:relative;z-index:2;}
+  @media(max-width:720px){
+    .cases-cta{grid-template-columns:auto 1fr;gap:22px;padding:26px 24px;}
+    .cases-hero{padding-right:20px;}
+    .cases-cta .btn{grid-column:1 / -1;justify-self:start;}
+  }
+  @media(max-width:400px){
+    .cases-cta{grid-template-columns:1fr;gap:16px;text-align:center;}
+    .cases-hero{border-right:none;border-bottom:1px solid var(--line);padding-right:0;padding-bottom:16px;}
+    .cases-cta .cc-txt p{margin-left:auto;margin-right:auto;}
+    .cases-cta .btn{justify-self:center;}
+  }
+  .lead-direct{font-size:1.05rem;color:var(--text);font-weight:300;max-width:60ch;margin-top:16px;}
+  .lead-direct b{color:var(--cream);font-weight:600;}
+  @media(prefers-reduced-motion:reduce){
+    .cover-topo,.cover-kw{transition:none !important;transform:none !important;}
+  }
+</style>
 
 <!-- Schema JSON-LD — Blog -->
 <script type="application/ld+json">
@@ -46,238 +105,217 @@
   "@context": "https://schema.org",
   "@type": "Blog",
   "name": "Blog NewScale Consulting",
-  "description": "Insights práticos sobre inteligência artificial aplicada a negócios para empresários que querem resultados reais.",
+  "description": "Blog sobre automação de IA e agentes de IA aplicados a negócios. Conteúdo prático para empresários que querem resultados reais, sem jargão técnico.",
   "url": "https://newscale.tech/blog/",
+  "inLanguage": "pt-BR",
+  "about": ["Automação de IA", "Agentes de IA", "Inteligência artificial aplicada a negócios"],
   "publisher": {
     "@type": "Organization",
     "name": "NewScale Consulting",
     "url": "https://newscale.tech",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png"
+      "url": "https://raw.githubusercontent.com/brusantannaia/newscale/main/assets/img/logo-branco.png"
     }
   },
-  "inLanguage": "pt-BR"
+  "blogPost": [{
+    "@type": "BlogPosting",
+    "headline": "Agentes de IA vs. Chatbots: qual a diferença real?",
+    "url": "https://newscale.tech/blog/agentes-ia-vs-chatbots",
+    "datePublished": "2026-04-17",
+    "author": {"@type": "Organization", "name": "NewScale Consulting"}
+  }]
 }
 </script>
-
-<style>
-.blog-coming { padding: 80px 0 96px; background: var(--white); }
-.bc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
-.bc-card { background: var(--cl); border: 1px solid rgba(20,55,60,.07); border-radius: 16px; padding: 28px; position: relative; overflow: hidden; transition: all .28s; }
-.bc-card:hover { border-color: rgba(176,110,74,.18); transform: translateY(-3px); box-shadow: 0 10px 32px rgba(20,55,60,.06); }
-.bc-thumb { height: 120px; border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; }
-.bc-badge { position: absolute; top: 20px; right: 20px; font-size: .6rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding: 4px 10px; border-radius: 20px; background: rgba(176,110,74,.12); color: var(--terra); border: 1px solid rgba(176,110,74,.2); }
-.bc-cat { font-size: .62rem; font-weight: 700; color: var(--terra); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 10px; }
-.bc-card h3 { font-family: var(--fd); font-size: 1.15rem; font-weight: 700; color: var(--ink); line-height: 1.32; margin-bottom: 12px; }
-.bc-meta { font-size: .68rem; color: var(--sand); display: flex; gap: 12px; align-items: center; }
-.bc-nl { margin-top: 56px; background: linear-gradient(135deg, var(--ink) 0%, #0d2e34 100%); border-radius: 20px; padding: 48px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
-.bc-nl-body h3 { font-family: var(--fd); font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
-.bc-nl-body p { font-size: .88rem; color: rgba(255,255,255,.5); }
-.bc-nl-form { display: flex; gap: 12px; flex-shrink: 0; }
-.bc-nl-form input { padding: 0 18px; height: 48px; border: 1px solid rgba(255,255,255,.12); border-radius: 10px; background: rgba(255,255,255,.06); color: #fff; font-size: .9rem; width: 240px; font-family: var(--fb); }
-.bc-nl-form input::placeholder { color: rgba(255,255,255,.3); }
-.bc-nl-form input:focus { outline: none; border-color: rgba(176,110,74,.5); }
-.bc-nl-msg { font-size: .82rem; color: rgba(255,255,255,.6); margin-top: 12px; display: none; }
-@media (max-width: 900px) { .bc-grid { grid-template-columns: 1fr 1fr; } .bc-nl { flex-direction: column; padding: 36px 28px; } .bc-nl-form { flex-direction: column; width: 100%; } .bc-nl-form input { width: 100%; } }
-@media (max-width: 600px) { .bc-grid { grid-template-columns: 1fr; } }
-</style>
 </head>
 <body>
+<div class="grain" aria-hidden="true"></div>
 
-<!-- NAV -->
-<nav class="nav" id="nav">
-  <div class="c ni">
-    <a href="/" class="nlogo" aria-label="NewScale — página inicial">
-      <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting" loading="eager">
-    </a>
-    <ul class="nlinks">
-      <li><a href="/metodologia.html">Metodologia</a></li>
-      <li><a href="/agentes.html">Agentes</a></li>
-      <li><a href="/cases.html">Cases</a></li>
-      <li><a href="/sobre.html">Sobre</a></li>
-      <li><a href="/blog/" class="active">Blog</a></li>
-    </ul>
-    <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito%20com%20a%20NewScale." target="_blank" rel="noopener" class="ncta">Diagnóstico gratuito</a>
-    <button class="nhbg" id="menu-open" aria-label="Abrir menu">
+<!-- HEADER -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="/" class="logo" aria-label="NewScale"><img src="/assets/img/logo-branco.png" alt="NewScale Consulting"></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="/metodologia">Metodologia</a>
+      <a href="/agentes">Agentes</a>
+      <a href="/educacao">Educação</a>
+      <a href="/cases">Cases</a>
+      <a href="/sobre">Sobre</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="https://wa.me/5511971901020?text=Ol%C3%A1%21+Gostaria+de+agendar+um+diagn%C3%B3stico+gratuito+com+a+NewScale." class="nav-cta" target="_blank" rel="noopener">Diagnóstico gratuito</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
   </div>
-</nav>
+</header>
 
-<div class="mob" id="mn">
-  <button class="xb" id="menu-close" aria-label="Fechar menu">&times;</button>
-  <a href="/metodologia.html">Metodologia</a>
-  <a href="/agentes.html">Agentes</a>
-  <a href="/cases.html">Cases</a>
-  <a href="/sobre.html">Sobre</a>
-  <a href="/blog/">Blog</a>
-  <a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito%20com%20a%20NewScale." target="_blank" rel="noopener" class="ncta" style="margin-top:8px">Diagnóstico gratuito</a>
-</div>
-
-<!-- ═══════════════════════════════
-     HERO
-═══════════════════════════════ -->
-<section class="page-hero" aria-label="Blog NewScale">
-  <div class="hbg"></div>
-  <div class="hgrain"></div>
-  <div class="hglow"></div>
-  <div class="c page-hero-in rv">
-    <div class="hpill"><span class="dot"></span>Blog</div>
-    <h1>Inteligência Artificial <em>aplicada a negócios</em></h1>
-    <p>Insights práticos para empresários que querem resultados reais — sem jargão, sem hype, sem teoria inútil.</p>
+<!-- HERO -->
+<section class="hero hero-sm">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="rv">
+      <div class="hero-eyebrow"><span class="dot"></span><span class="kick">Conteúdo gratuito</span></div>
+      <h1>IA aplicada<br>a <span class="terra">negócios</span></h1>
+      <p class="lead-direct">O blog da NewScale fala de <b>automação de IA e agentes de IA aplicados a negócios</b>. Explicamos como essa tecnologia funciona na prática, quanto custa, quanto tempo leva o retorno e como implementar sem equipe técnica interna. Direto ao ponto, para quem decide.</p>
+    </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════
-     ARTIGOS EM BREVE
-═══════════════════════════════ -->
-<section class="blog-coming" aria-label="Artigos em breve">
-  <div class="c">
-    <div class="mhdr rv">
-      <span class="stag">Conteúdo</span>
-      <h2 class="h2">Artigos sobre IA aplicada a negócios</h2>
-      <p class="sub" style="color:var(--sage);margin:0 auto;max-width:480px">Cada artigo nasce de uma conversa real com empresários — dúvidas concretas, sem resposta genérica.</p>
+<!-- ARTIGOS -->
+<section class="sec">
+  <div class="wrap">
+
+    <!-- DESTAQUE CASES -->
+    <div class="cases-cta rv">
+      <div class="cases-hero">
+        <div class="ch-num">+42%</div>
+        <div class="ch-lbl">de conversão</div>
+      </div>
+      <div class="cc-txt">
+        <h3>Procurando resultados reais?</h3>
+        <p><b>Veja os cases com números.</b> Conversão, recompra e capacidade em operações reais.</p>
+      </div>
+      <a href="/cases" class="btn btn-terra" style="padding:16px 30px">Ver cases <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
 
-    <div class="bc-grid rv" style="transition-delay:.1s">
+    <div class="sec-head rv">
+      <span class="kick">Todos os artigos</span>
+      <h2>Conteúdo que nasce<br>de conversa real</h2>
+    </div>
 
-      <!-- Card 1 -->
-      <a href="/blog/agentes-ia-vs-chatbots" class="bc-card">
-        <div class="bc-thumb" style="background:linear-gradient(135deg,rgba(176,110,74,.12) 0%,rgba(67,93,81,.08) 100%)">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.4" stroke-linecap="round" opacity=".6"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="9" cy="10" r="1.5"/><path d="M14 10h3M14 13h2"/></svg>
+    <div class="blog-grid rv">
+
+      <!-- Artigo 1 — publicado -->
+      <a href="/blog/agentes-ia-vs-chatbots" class="blog-card">
+        <div class="ph">
+          <div class="cover cv-ia">
+            <span class="cover-topo" aria-hidden="true"><svg viewBox="0 0 300 180" fill="none" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><g stroke="var(--tl)" stroke-width="1" opacity=".55"><path d="M-20 40 C60 10 120 70 180 40 240 12 300 60 340 34"/><path d="M-20 70 C60 40 120 100 180 70 240 42 300 90 340 64"/><path d="M-20 100 C60 70 120 130 180 100 240 72 300 120 340 94"/><path d="M-20 130 C60 100 120 160 180 130 240 102 300 150 340 124"/></g></svg></span>
+            <span class="cover-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.4"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M12 7V3M8 3h8M9 12h.01M15 12h.01M9 16h6"/></svg></span>
+            <span class="cover-kw">Agentes<br>vs. Chatbots</span>
+            <span class="cover-sub">Inteligência Artificial</span>
+          </div>
         </div>
-        <div class="bc-cat">Inteligência Artificial</div>
-        <h3>Agentes de IA vs. Chatbots: qual a diferença real?</h3>
-        <div class="bc-meta">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          8 min de leitura &nbsp;·&nbsp; 17 abr 2026
+        <div class="blog-body">
+          <span class="blog-cat-tag">Inteligência Artificial</span>
+          <h3>Agentes de IA vs. Chatbots: qual a diferença real?</h3>
+          <p>Chatbot responde script. Agente decide, consulta sistemas e age. Entenda o que separa os dois na prática.</p>
+          <div class="blog-meta"><span>8 min de leitura</span><span>17 abr 2026</span></div>
         </div>
       </a>
 
-      <!-- Card 2 -->
-      <div class="bc-card">
-        <span class="bc-badge">Em breve</span>
-        <div class="bc-thumb" style="background:linear-gradient(135deg,rgba(67,93,81,.1) 0%,rgba(163,131,98,.08) 100%)">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.4" stroke-linecap="round" opacity=".7"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      <!-- Artigo 2 — em breve -->
+      <a class="blog-card" aria-disabled="true">
+        <div class="ph">
+          <div class="cover cv-roi">
+            <span class="cover-topo" aria-hidden="true"><svg viewBox="0 0 300 180" fill="none" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><g stroke="var(--tl)" stroke-width="1" opacity=".5"><path d="M-10 150 L40 150 40 118 90 118 90 90 140 90 140 62 190 62 190 40 240 40 240 18 320 18"/><path d="M-10 168 L40 168 40 140 90 140 90 116 140 116 140 92 190 92 190 72 240 72 240 52 320 52"/></g></svg></span>
+            <span class="cover-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.4"><path d="M3 17l6-6 4 4 7-8"/><path d="M14 7h6v6"/></svg></span>
+            <span class="cover-kw">Quando a IA<br>paga a conta</span>
+            <span class="cover-sub">ROI &amp; Resultados</span>
+          </div>
         </div>
-        <div class="bc-cat">ROI & Resultados</div>
-        <h3>ROI de IA: quanto tempo para ter retorno real?</h3>
-        <div class="bc-meta">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          8 min de leitura
+        <div class="blog-body">
+          <span class="soon">Em breve</span>
+          <span class="blog-cat-tag">ROI &amp; Resultados</span>
+          <h3>ROI de IA: quanto tempo para ter retorno real?</h3>
+          <p>Os prazos reais de retorno por tipo de processo, sem promessa de milagre.</p>
+          <div class="blog-meta"><span>8 min de leitura</span><span>Em breve</span></div>
         </div>
-      </div>
+      </a>
 
-      <!-- Card 3 -->
-      <div class="bc-card">
-        <span class="bc-badge">Em breve</span>
-        <div class="bc-thumb" style="background:linear-gradient(135deg,rgba(20,55,60,.07) 0%,rgba(176,110,74,.1) 100%)">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.4" stroke-linecap="round" opacity=".45"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      <!-- Artigo 3 — em breve -->
+      <a class="blog-card" aria-disabled="true">
+        <div class="ph">
+          <div class="cover cv-estrategia">
+            <span class="cover-topo" aria-hidden="true"><svg viewBox="0 0 300 180" fill="none" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><g stroke="var(--tl)" stroke-width="1" opacity=".5"><circle cx="150" cy="80" r="30"/><circle cx="150" cy="80" r="58"/><circle cx="150" cy="80" r="86"/><circle cx="150" cy="80" r="114"/><path d="M150 80 L150-40M150 80 L254 140M150 80 L46 140"/></g></svg></span>
+            <span class="cover-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M12 12l5-5"/></svg></span>
+            <span class="cover-kw">IA sem<br>time técnico</span>
+            <span class="cover-sub">Estratégia</span>
+          </div>
         </div>
-        <div class="bc-cat">Estratégia</div>
-        <h3>IA sem equipe técnica interna: mito ou realidade?</h3>
-        <div class="bc-meta">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          7 min de leitura
+        <div class="blog-body">
+          <span class="soon">Em breve</span>
+          <span class="blog-cat-tag">Estratégia</span>
+          <h3>IA sem equipe técnica interna: mito ou realidade?</h3>
+          <p>O que dá para terceirizar e o que precisa ficar com você.</p>
+          <div class="blog-meta"><span>7 min de leitura</span><span>Em breve</span></div>
         </div>
-      </div>
+      </a>
 
-      <!-- Card 4 -->
-      <div class="bc-card">
-        <span class="bc-badge">Em breve</span>
-        <div class="bc-thumb" style="background:linear-gradient(135deg,rgba(176,110,74,.08) 0%,rgba(163,131,98,.1) 100%)">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--sand)" stroke-width="1.4" stroke-linecap="round" opacity=".7"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      <!-- Artigo 4 — em breve -->
+      <a class="blog-card" aria-disabled="true">
+        <div class="ph">
+          <div class="cover cv-guia">
+            <span class="cover-topo" aria-hidden="true"><svg viewBox="0 0 300 180" fill="none" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><g stroke="var(--tl)" stroke-width="1" opacity=".5"><path d="M-20 30 C60 60 120 0 180 30 240 60 300 10 340 40"/><path d="M-20 65 C60 95 120 35 180 65 240 95 300 45 340 75"/><path d="M-20 100 C60 130 120 70 180 100 240 130 300 80 340 110"/><path d="M-20 135 C60 165 120 105 180 135 240 165 300 115 340 145"/></g></svg></span>
+            <span class="cover-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.4"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></span>
+            <span class="cover-kw">Escolher a<br>consultoria</span>
+            <span class="cover-sub">Guia prático</span>
+          </div>
         </div>
-        <div class="bc-cat">Guia prático</div>
-        <h3>Como escolher uma consultoria de IA (5 perguntas essenciais)</h3>
-        <div class="bc-meta">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          5 min de leitura
+        <div class="blog-body">
+          <span class="soon">Em breve</span>
+          <span class="blog-cat-tag">Guia prático</span>
+          <h3>Como escolher uma consultoria de IA (5 perguntas)</h3>
+          <p>As 5 perguntas que separam quem entrega resultado de quem só vende ferramenta.</p>
+          <div class="blog-meta"><span>5 min de leitura</span><span>Em breve</span></div>
         </div>
-      </div>
+      </a>
 
-      <!-- Card 5 -->
-      <div class="bc-card">
-        <span class="bc-badge">Em breve</span>
-        <div class="bc-thumb" style="background:linear-gradient(135deg,rgba(67,93,81,.1) 0%,rgba(20,55,60,.07) 100%)">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.4" stroke-linecap="round" opacity=".7"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      <!-- Artigo 5 — em breve -->
+      <a class="blog-card" aria-disabled="true">
+        <div class="ph">
+          <div class="cover cv-auto">
+            <span class="cover-topo" aria-hidden="true"><svg viewBox="0 0 300 180" fill="none" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><g stroke="var(--tl)" stroke-width="1" opacity=".5"><path d="M40 30 V70 M40 110 V150 M40 70 H150 V110 M150 70 H260 V30 M150 110 H260 V150"/><circle cx="40" cy="30" r="5"/><circle cx="40" cy="150" r="5"/><circle cx="150" cy="90" r="6"/><circle cx="260" cy="30" r="5"/><circle cx="260" cy="150" r="5"/></g></svg></span>
+            <span class="cover-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.4"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></span>
+            <span class="cover-kw">5 processos<br>para automatizar</span>
+            <span class="cover-sub">Automação</span>
+          </div>
         </div>
-        <div class="bc-cat">Automação</div>
-        <h3>5 processos que toda empresa pode automatizar com IA hoje</h3>
-        <div class="bc-meta">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          9 min de leitura
+        <div class="blog-body">
+          <span class="soon">Em breve</span>
+          <span class="blog-cat-tag">Automação</span>
+          <h3>5 processos que toda empresa pode automatizar com IA</h3>
+          <p>Atendimento, follow-up, relatórios, triagem e cadastro: os de retorno mais rápido.</p>
+          <div class="blog-meta"><span>9 min de leitura</span><span>Em breve</span></div>
         </div>
-      </div>
+      </a>
 
     </div>
+  </div>
+</section>
 
-    <!-- Newsletter CTA -->
-    <div class="bc-nl rv" style="transition-delay:.2s">
-      <div class="bc-nl-body">
-        <h3>Avise-me quando publicar</h3>
-        <p>Sem spam. Só conteúdo que vale o seu tempo.</p>
-        <div class="bc-nl-msg" id="nl-msg">Recebemos seu e-mail. Até breve!</div>
-      </div>
-      <div>
-        <form class="bc-nl-form" name="blog-newsletter" method="POST" data-netlify="true" onsubmit="handleNl(event)">
-          <input type="hidden" name="form-name" value="blog-newsletter">
-          <input type="email" name="email" placeholder="seu@email.com" required aria-label="Seu e-mail">
-          <button type="submit" style="height:48px;white-space:nowrap;display:inline-flex;align-items:center;gap:8px;padding:0 22px;background:var(--terra);color:#fff;border:none;border-radius:8px;font-size:.84rem;font-weight:600;cursor:pointer;transition:opacity .2s;font-family:var(--fb)" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Me avise quando publicar
-          </button>
-        </form>
-      </div>
-    </div>
-
+<!-- CTA FINAL -->
+<section class="ctaf">
+  <div class="ctaf-glow" aria-hidden="true"></div>
+  <div class="wrap rv">
+    <h2>Entender é o começo.<br><span class="terra">Implementar</span> é o resultado.</h2>
+    <p>30 minutos. Sem compromisso. Mapeamos onde a IA gera impacto real no seu negócio, gratuitamente.</p>
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1%21+Gostaria+de+agendar+um+diagn%C3%B3stico+gratuito+com+a+NewScale." target="_blank" rel="noopener" class="btn btn-terra" style="padding:18px 38px;font-size:.95rem">Agendar diagnóstico gratuito <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <div class="ctaf-tags"><span>Saúde &amp; Homecare</span><span>RH &amp; Recrutamento</span><span>Varejo &amp; E-commerce</span><span>Franquias</span><span>Eventos</span><span>Serviços</span></div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="c">
-    <div class="footer-in">
-      <div class="footer-logo">
-        <a href="/"><img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting" loading="lazy"></a>
-      </div>
-      <nav class="footer-links" aria-label="Links do rodapé">
-        <a href="/metodologia.html">Metodologia</a>
-        <a href="/agentes.html">Agentes de IA</a>
-        <a href="/cases.html">Cases</a>
-        <a href="/sobre.html">Sobre</a>
-        <a href="/blog/">Blog</a>
-        <a href="/trabalhe-conosco.html">Trabalhe Conosco</a>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand"><a href="/"><img src="/assets/img/logo-branco.png" alt="NewScale Consulting"></a></div>
+      <nav class="footer-links">
+        <a href="/metodologia">Metodologia</a><a href="/agentes">Agentes</a><a href="/cases">Cases</a><a href="/sobre">Sobre</a><a href="/blog/">Blog</a><a href="/trabalhe-conosco">Trabalhe Conosco</a><a href="https://brunasantanna.com" target="_blank" rel="noopener">Virada IA (educação)</a>
       </nav>
       <div class="footer-contact">
         <a href="mailto:contato@newscale.tech">contato@newscale.tech</a>
         <a href="https://wa.me/5511971901020" target="_blank" rel="noopener">(11) 97190-1020</a>
-        <div class="footer-social">
-          <a href="https://www.linkedin.com/in/bruno-varella-dominguez/" target="_blank" rel="noopener">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>Bruno
-          </a>
-          <a href="https://www.linkedin.com/in/brusantanna/" target="_blank" rel="noopener">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>Bruna
-          </a>
-        </div>
+        <a href="https://www.instagram.com/newscaleai/" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 NewScale Consulting. Todos os direitos reservados.</p>
-      <p>Consultoria de IA &middot; Agentes de Automação &middot; São Paulo, SP</p>
+      <p>© 2026 NewScale Consulting. Todos os direitos reservados.</p>
+      <p>Consultoria de IA · Agentes de Automação · São Paulo, SP</p>
     </div>
   </div>
 </footer>
 
-<script src="/assets/js/main.js"></script>
-<script>
-function handleNl(e) {
-  e.preventDefault();
-  var msg = document.getElementById('nl-msg');
-  if (msg) { msg.style.display = 'block'; }
-  e.target.style.display = 'none';
-}
-</script>
+<script src="/assets/js/redesign.js"></script>
 </body>
 </html>
