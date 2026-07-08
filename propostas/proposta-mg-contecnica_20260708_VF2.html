@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Comercial: MG Contécnica & NewScale Consulting</title>
+
+<!-- Não indexar — não remover em nenhuma proposta -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="bingbot" content="noindex, nofollow">
+
+<!-- Preview (WhatsApp / redes) -->
+<meta property="og:title" content="Proposta Comercial: MG Contécnica & NewScale Consulting">
+<meta property="og:description" content="PoC de IA aplicada à operação contábil da MG Contécnica: conferência assistida que cruza os documentos e aponta divergências — o primeiro passo rumo à conciliação assistida.">
+<meta property="og:image" content="https://raw.githubusercontent.com/brusantannaia/newscale/main/newscale-og-cover.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Proposta Comercial: MG Contécnica & NewScale Consulting">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/brusantannaia/newscale/main/newscale-og-cover.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  /* Fundos escuros (petróleo profundo) */
+  --bg:#0C2427; --bg-2:#0E2A2E; --ink:#14373C; --ink-2:#1A4449; --green:#435D51;
+  /* Terracota (cor de ação) */
+  --terra:#B06E4A; --tl:#C4835E; --terra-d:#985A3B; --sand:#A38362;
+  /* Claros premium — gelo frio */
+  --cream:#F4F3EF; --ice:#F4F3EF; --ice-2:#FAFAF8; --greige:#E8E6E0;
+  /* Texto */
+  --text:rgba(244,243,239,.82); --muted:rgba(244,243,239,.56); --line:rgba(244,243,239,.10);
+  --ink-text:#3f4f51;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Hanken Grotesk',sans-serif;color:var(--ink-text);background:var(--ice-2);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+section{position:relative;}
+em{font-style:normal;color:var(--terra);}
+::selection{background:var(--terra);color:#fff;}
+.section-label{font-family:'Hanken Grotesk',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--terra-d);display:block;margin-bottom:18px;}
+.section-title{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(2.1rem,5.4vw,3.4rem);line-height:0.94;letter-spacing:-0.01em;color:var(--ink);margin-bottom:24px;}
+.section-title em{color:var(--terra);}
+p{font-weight:400;color:var(--ink-text);line-height:1.65;margin-bottom:16px;font-size:0.98rem;}
+
+/* NAVBAR */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:16px 48px;background:transparent;transition:background .4s,backdrop-filter .4s;border-bottom:1px solid transparent;}
+.navbar.scrolled{background:rgba(12,36,39,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+.navbar-logo img{height:66px;opacity:0.97;display:block;}
+.navbar-tag{font-family:'Hanken Grotesk',sans-serif;font-size:0.66rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--tl);}
+
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(160deg,#0a2023 0%,#0C2427 40%,#102f33 100%);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 40px 80px;overflow:hidden;position:relative;}
+.hero::after{content:'';position:absolute;top:-140px;right:-120px;width:640px;height:640px;background:radial-gradient(circle,rgba(176,110,74,0.18),transparent 62%);pointer-events:none;z-index:1;}
+.topo-lines{position:absolute;inset:0;opacity:0.08;pointer-events:none;}
+.topo-lines svg{width:100%;height:100%;}
+.grain-overlay{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:0.035;pointer-events:none;}
+.hero-badge{position:relative;z-index:2;display:inline-block;background:rgba(176,110,74,0.15);color:var(--tl);font-size:0.66rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:7px 16px;border-radius:100px;border:1px solid rgba(176,110,74,0.28);margin-bottom:28px;animation:fadeUp .6s ease both .2s;}
+.hero-eyebrow{position:relative;z-index:2;font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:22px;animation:fadeUp .6s ease both .3s;}
+.hero h1{position:relative;z-index:2;font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(2.6rem,6.4vw,5rem);line-height:0.94;letter-spacing:-0.01em;color:var(--cream);max-width:940px;margin-bottom:26px;animation:fadeUp .6s ease both .4s;}
+.hero h1 em{color:var(--tl);}
+.hero-desc{position:relative;z-index:2;font-size:1rem;font-weight:400;color:var(--text);max-width:660px;line-height:1.7;margin-bottom:52px;animation:fadeUp .6s ease both .5s;}
+.hero-cta{position:relative;z-index:2;animation:fadeUp .6s ease both .7s;display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--muted);font-size:0.7rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:color .3s;}
+.hero-cta:hover{color:var(--cream);}
+.hero-cta svg{animation:bounce 2s infinite;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
+
+/* CONTEXTO — GELO */
+.context-section{background:var(--ice);padding:100px 40px;}
+.context-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.intro-stats{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line);border-radius:14px;overflow:hidden;}
+.stat-card{background:var(--ink);padding:30px 26px;display:flex;flex-direction:column;gap:8px;}
+.stat-card:nth-child(2){background:var(--terra);}
+.stat-card:nth-child(3){background:var(--green);}
+.stat-card:nth-child(4){background:var(--ink-2);}
+.stat-number{font-family:'Anton',sans-serif;font-weight:400;font-size:2.6rem;color:#fff;line-height:1;letter-spacing:-0.01em;}
+.stat-label{font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.7);}
+
+/* CUSTO DA INAÇÃO — GELO-2 */
+.custo-section{background:var(--ice-2);padding:100px 40px;}
+.custo-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+.custo-list{margin-top:6px;}
+.custo-item{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding:16px 0;border-bottom:1px dashed rgba(20,55,60,0.15);}
+.custo-item-label{font-weight:600;color:var(--ink);font-size:0.9rem;}
+.custo-item-sub{font-size:0.78rem;color:#6a8085;font-weight:400;margin-top:3px;}
+.custo-item-value{font-family:'Anton',sans-serif;font-weight:400;font-size:1.35rem;color:var(--terra);white-space:nowrap;letter-spacing:0;}
+.custo-total{padding-top:22px;margin-top:6px;border-top:2px solid var(--ink);display:flex;justify-content:space-between;align-items:center;}
+.custo-total-label{font-weight:700;color:var(--ink);}
+.custo-total-value{font-family:'Anton',sans-serif;font-weight:400;font-size:2rem;color:var(--ink);}
+.custo-note{font-size:0.76rem;color:#6a8085;font-weight:400;margin-top:18px;line-height:1.6;border-left:2px solid var(--terra);padding-left:12px;}
+
+/* DORES / OPORTUNIDADES — ESCURO */
+.dores-section{background:var(--bg);padding:100px 40px;}
+.dores-inner{max-width:1100px;margin:0 auto;}
+.dores-section .section-label{color:var(--tl);}
+.dores-section .section-title{color:#fff;}
+.dores-section .section-title em{color:var(--tl);}
+.dores-head-desc{color:var(--text);max-width:640px;margin-bottom:48px;font-weight:400;}
+.dores-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.dore-card{background:var(--ink);border:1px solid var(--line);border-radius:16px;padding:32px 28px;position:relative;overflow:hidden;transition:border-color .3s,transform .3s;}
+.dore-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--terra);opacity:0;transition:opacity .2s;}
+.dore-card:hover{border-color:rgba(176,110,74,0.4);transform:translateY(-3px);}
+.dore-card:hover::before{opacity:1;}
+.dore-num{font-family:'Anton',sans-serif;font-weight:400;font-size:5rem;color:rgba(196,131,94,0.1);line-height:1;position:absolute;top:10px;right:20px;}
+.dore-tag{font-size:0.62rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl);margin-bottom:10px;position:relative;z-index:1;}
+.dore-title{font-family:'Hanken Grotesk',sans-serif;font-size:1.08rem;font-weight:700;color:#fff;line-height:1.25;margin-bottom:14px;position:relative;z-index:1;}
+.dore-text{font-size:0.86rem;font-weight:400;color:var(--text);line-height:1.7;position:relative;z-index:1;}
+
+/* MÓDULOS — GELO-2 */
+.modulos-section{background:var(--ice-2);padding:100px 40px;}
+.modulos-inner{max-width:1000px;margin:0 auto;}
+.fase-header{display:flex;justify-content:space-between;align-items:center;background:var(--ink);border-radius:16px 16px 0 0;padding:28px 32px;margin-top:8px;}
+.fase-tag{font-size:0.62rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl);margin-bottom:6px;}
+.fase-name{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:1.35rem;letter-spacing:-0.005em;color:#fff;line-height:1;}
+.fase-duration{font-size:0.8rem;color:var(--muted);margin-top:6px;}
+.fase-num-badge{font-family:'Anton',sans-serif;font-weight:400;font-size:2.6rem;color:rgba(255,255,255,0.18);}
+.modulo-card{background:#fff;border:1px solid rgba(20,55,60,0.1);border-top:none;border-radius:0 0 16px 16px;padding:0;cursor:pointer;box-shadow:0 6px 26px rgba(20,55,60,0.05);transition:box-shadow .3s;}
+.modulo-card:hover{box-shadow:0 16px 42px rgba(20,55,60,0.1);}
+.modulo-card-header{display:flex;justify-content:space-between;align-items:center;padding:28px 32px;}
+.modulo-card-left{display:flex;gap:18px;align-items:flex-start;}
+.modulo-icon{color:var(--terra);line-height:1;flex-shrink:0;margin-top:2px;}
+.modulo-icon svg{display:block;}
+.modulo-label{font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--terra);margin-bottom:4px;}
+.modulo-name{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:1.2rem;letter-spacing:-0.005em;color:var(--ink);}
+.modulo-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+.chip{font-size:0.65rem;font-weight:600;background:rgba(20,55,60,0.06);color:var(--green);padding:4px 11px;border-radius:100px;}
+.modulo-card.open .modulo-chips{display:none;}
+.modulo-toggle{font-size:1.6rem;color:var(--terra);font-weight:300;transition:transform .3s;flex-shrink:0;}
+.modulo-card.open .modulo-toggle{transform:rotate(45deg);}
+.modulo-body{max-height:0;overflow:hidden;transition:max-height .45s ease;padding:0 32px;}
+.modulo-card.open .modulo-body{max-height:1400px;padding-bottom:32px;}
+.value-box{display:flex;gap:14px;align-items:flex-start;background:rgba(176,110,74,0.06);border:1px solid rgba(176,110,74,0.18);border-radius:12px;padding:18px 20px;margin-bottom:20px;}
+.value-box-icon{color:var(--terra);flex-shrink:0;margin-top:2px;}
+.value-box-icon svg{display:block;}
+.value-box-label{font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--terra);margin-bottom:4px;}
+.value-box-text{font-size:0.9rem;color:var(--ink);font-weight:500;line-height:1.55;}
+.modulo-desc{font-size:0.9rem;color:var(--ink-text);margin-bottom:18px;}
+.modulo-items{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.modulo-items li{font-size:0.88rem;color:var(--ink-text);font-weight:400;padding-left:22px;position:relative;line-height:1.6;}
+.modulo-items li::before{content:'';position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:50%;background:var(--terra);}
+.modulo-items li strong{color:var(--ink);font-weight:700;}
+.disclaimer-box{margin-top:18px;font-size:0.78rem;color:#6a8085;font-weight:400;background:rgba(20,55,60,0.03);border-left:2px solid var(--sand);padding:12px 16px;border-radius:0 8px 8px 0;line-height:1.6;}
+
+/* COMO FUNCIONA — GELO */
+.demo-section{background:var(--ice);padding:100px 40px;}
+.demo-inner{max-width:1100px;margin:0 auto;}
+.demo-block-title{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:1.3rem;letter-spacing:-0.005em;color:var(--ink);margin:48px 0 8px;}
+.demo-block-sub{font-size:0.85rem;color:#6a8085;font-weight:400;margin-bottom:28px;max-width:620px;}
+.demo-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center;}
+
+/* Dashboard mockup */
+.dash-frame{background:linear-gradient(165deg,#0c2427,#14373C 60%,#173b3a);border-radius:18px;padding:26px;box-shadow:0 30px 70px rgba(12,36,39,0.35);width:100%;}
+.dash-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
+.dash-title{font-size:0.82rem;font-weight:600;color:#fff;}
+.dash-live{font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#7fd1a8;display:flex;align-items:center;gap:6px;}
+.dash-live::before{content:'';width:7px;height:7px;border-radius:50%;background:#7fd1a8;animation:pulse 1.6s infinite;}
+.dash-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px;}
+.dash-kpi{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:12px;}
+.dash-kpi-num{font-family:'Anton',sans-serif;font-weight:400;font-size:1.5rem;color:#fff;line-height:1;}
+.dash-kpi-label{font-size:0.56rem;text-transform:uppercase;letter-spacing:0.06em;color:rgba(255,255,255,0.5);margin-top:5px;}
+.dash-kpi-delta{font-size:0.62rem;font-weight:700;margin-top:4px;}
+.delta-up{color:#7fd1a8;}
+.delta-down{color:#e3a08a;}
+.dash-cols{display:grid;grid-template-columns:1.1fr 1fr;gap:14px;}
+.dash-panel{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:14px;}
+.dash-panel-title{font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.55);margin-bottom:12px;}
+.dash-bars{display:flex;align-items:flex-end;gap:8px;height:90px;}
+.dash-bar{flex:1;background:linear-gradient(180deg,var(--tl),var(--terra));border-radius:4px 4px 0 0;position:relative;}
+.dash-bar span{position:absolute;bottom:-16px;left:0;right:0;text-align:center;font-size:0.52rem;color:rgba(255,255,255,0.4);}
+.dash-funnel{display:flex;flex-direction:column;gap:7px;}
+.funnel-row{display:flex;justify-content:space-between;align-items:center;font-size:0.66rem;color:#fff;background:rgba(176,110,74,0.18);border-radius:6px;padding:6px 10px;}
+.funnel-row:nth-child(2){background:rgba(176,110,74,0.3);}
+.funnel-row:nth-child(3){background:rgba(127,209,168,0.18);}
+.funnel-row:nth-child(4){background:rgba(127,209,168,0.3);}
+.funnel-val{font-weight:700;}
+.dash-feed{margin-top:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:14px;}
+.feed-item{font-size:0.68rem;color:rgba(255,255,255,0.7);padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;gap:8px;}
+.feed-item:last-child{border-bottom:none;}
+.feed-dot{color:#7fd1a8;}
+.dash-alert{margin-top:14px;background:rgba(227,160,138,0.12);border:1px solid rgba(227,160,138,0.3);border-radius:8px;padding:10px 12px;font-size:0.68rem;color:#f0c4b5;}
+
+/* Painel do agente (terminal) */
+.agent-frame{background:linear-gradient(168deg,#0c2024,#102e30 65%,#143a38);border-radius:16px;box-shadow:0 30px 70px rgba(12,36,39,0.4);overflow:hidden;border:1px solid rgba(255,255,255,0.06);}
+.agent-bar{display:flex;align-items:center;gap:14px;padding:14px 20px;background:rgba(0,0,0,0.25);border-bottom:1px solid rgba(255,255,255,0.06);}
+.agent-dots{display:flex;gap:7px;}
+.agent-dot{width:11px;height:11px;border-radius:50%;}
+.agent-dot.r{background:#ec6a5e;}.agent-dot.y{background:#f4bf4f;}.agent-dot.g{background:#61c554;}
+.agent-bar-title{font-size:0.72rem;font-weight:600;letter-spacing:0.06em;color:rgba(255,255,255,0.5);text-transform:uppercase;}
+.agent-bar-status{margin-left:auto;font-size:0.66rem;font-weight:600;color:#7fd1a8;display:flex;align-items:center;gap:7px;}
+.agent-bar-status::before{content:'';width:7px;height:7px;border-radius:50%;background:#7fd1a8;animation:pulse 1.6s infinite;}
+.agent-body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:11px;}
+.agent-step{background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:15px 18px;position:relative;}
+.agent-step.active{background:rgba(176,110,74,0.09);border-color:rgba(176,110,74,0.35);}
+.agent-step-head{font-size:0.6rem;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;margin-bottom:7px;display:flex;align-items:center;gap:8px;}
+.agent-step.done .agent-step-head{color:rgba(127,209,168,0.85);}
+.agent-step.active .agent-step-head{color:var(--tl);}
+.agent-step.wait .agent-step-head{color:rgba(255,255,255,0.4);}
+.agent-step-ico{font-size:0.95rem;}
+.agent-step-text{font-size:0.8rem;font-weight:400;color:rgba(255,255,255,0.82);line-height:1.5;}
+.agent-step-text strong{font-weight:600;color:#fff;}
+.agent-total{margin-top:3px;background:rgba(127,209,168,0.08);border:1px solid rgba(127,209,168,0.18);border-radius:10px;padding:13px 18px;}
+.agent-total-head{font-size:0.58rem;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:rgba(127,209,168,0.8);margin-bottom:5px;display:flex;align-items:center;gap:7px;}
+.agent-total-text{font-size:0.8rem;font-weight:400;color:rgba(255,255,255,0.82);}
+.agent-total-text strong{font-weight:600;color:#fff;}
+
+/* Mockup de e-mail */
+.mail-frame{background:#fff;border-radius:16px;box-shadow:0 30px 70px rgba(12,36,39,0.25);overflow:hidden;border:1px solid rgba(20,55,60,0.08);}
+.mail-bar{display:flex;align-items:center;gap:14px;padding:14px 20px;background:#0c2024;}
+.mail-dots{display:flex;gap:7px;}
+.mail-bar-title{font-size:0.72rem;font-weight:500;letter-spacing:0.04em;color:rgba(255,255,255,0.55);}
+.mail-head{padding:18px 22px 14px;border-bottom:1px solid rgba(20,55,60,0.08);}
+.mail-from{font-size:0.74rem;color:var(--terra);font-weight:600;margin-bottom:6px;}
+.mail-subject{font-size:0.92rem;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px;}
+.mail-body{padding:18px 22px 22px;}
+.mail-p{font-size:0.82rem;color:var(--ink-text);font-weight:400;line-height:1.6;margin-bottom:16px;}
+.mail-p strong{font-weight:600;color:var(--ink);}
+.mail-sec-label{font-size:0.6rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--terra);margin-bottom:10px;}
+.mail-note{border:1px solid rgba(20,55,60,0.1);border-radius:10px;padding:11px 14px;margin-bottom:9px;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.mail-note-name{font-size:0.8rem;font-weight:600;color:var(--ink);}
+.mail-note-meta{font-size:0.72rem;color:#6a8085;font-weight:400;margin-top:2px;}
+.mail-ok{font-size:0.66rem;font-weight:700;color:var(--green);border:1px solid rgba(67,93,81,0.35);border-radius:6px;padding:4px 9px;white-space:nowrap;}
+.mail-diverg{margin-top:14px;background:rgba(176,110,74,0.06);border:1px solid rgba(176,110,74,0.22);border-radius:10px;padding:14px 16px;}
+.mail-diverg-label{font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--terra);margin-bottom:10px;}
+.mail-diverg-item{font-size:0.78rem;color:var(--ink-text);font-weight:400;line-height:1.55;margin-bottom:9px;}
+.mail-diverg-item:last-child{margin-bottom:0;}
+.mail-diverg-item strong{font-weight:600;color:var(--ink);}
+.mail-actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;}
+.mail-btn-primary{background:var(--ink);color:#fff;font-size:0.78rem;font-weight:600;border-radius:8px;padding:11px 18px;flex:1;text-align:center;min-width:160px;}
+.mail-btn-secondary{background:#fff;color:var(--terra);border:1px solid rgba(176,110,74,0.4);font-size:0.78rem;font-weight:600;border-radius:8px;padding:11px 18px;flex:1;text-align:center;min-width:140px;}
+.mail-foot{font-size:0.68rem;color:#8a9a9c;font-weight:400;line-height:1.5;margin-top:16px;padding-top:14px;border-top:1px solid rgba(20,55,60,0.08);}
+
+/* Antes/Depois */
+.ad-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;}
+.ad-col{border-radius:16px;padding:30px 28px;}
+.ad-col-antes{background:#fff;border:1px solid rgba(20,55,60,0.08);box-shadow:0 6px 26px rgba(20,55,60,0.05);}
+.ad-col-depois{background:linear-gradient(155deg,var(--ink),var(--green));color:#fff;}
+.ad-col-head{font-size:0.66rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:20px;}
+.ad-col-antes .ad-col-head{color:var(--sand);}
+.ad-col-depois .ad-col-head{color:var(--tl);}
+.ad-step{display:flex;gap:14px;padding:10px 0;border-bottom:1px dashed rgba(20,55,60,0.12);}
+.ad-col-depois .ad-step{border-bottom-color:rgba(255,255,255,0.12);}
+.ad-step-time{font-family:'Anton',sans-serif;font-weight:400;min-width:60px;font-variant-numeric:tabular-nums;font-size:0.9rem;padding-top:2px;}
+.ad-col-antes .ad-step-time{color:var(--ink);}
+.ad-col-depois .ad-step-time{color:var(--tl);}
+.ad-step-text{font-size:0.82rem;font-weight:400;}
+.ad-col-antes .ad-step-text{color:var(--ink-text);}
+.ad-col-depois .ad-step-text{color:rgba(255,255,255,0.8);}
+.ad-total{margin-top:18px;padding-top:16px;border-top:2px solid;display:flex;justify-content:space-between;align-items:center;}
+.ad-col-antes .ad-total{border-color:var(--ink);}
+.ad-col-depois .ad-total{border-color:var(--tl);}
+.ad-total-label{font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;}
+.ad-total-num{font-family:'Anton',sans-serif;font-weight:400;font-size:1.7rem;}
+
+/* INVESTIMENTO — ESCURO */
+.invest-section{background:var(--bg);padding:100px 40px;}
+.invest-inner{max-width:1000px;margin:0 auto;}
+.invest-section .section-label{color:var(--tl);}
+.invest-section .section-title{color:#fff;}
+.invest-section .section-title em{color:var(--tl);}
+.invest-mod-card{background:var(--ink);border:1px solid var(--line);border-radius:16px;padding:36px 34px;margin-top:8px;}
+.invest-mod-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:20px;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:24px;margin-bottom:24px;}
+.invest-mod-tag{font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--tl);margin-bottom:8px;}
+.invest-mod-name{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:1.5rem;letter-spacing:-0.005em;color:#fff;line-height:1.05;}
+.invest-mod-prices{text-align:right;}
+.invest-mod-price{font-family:'Anton',sans-serif;font-weight:400;font-size:2.5rem;color:#fff;line-height:1;letter-spacing:-0.01em;}
+.invest-mod-price-label{font-size:0.66rem;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.5);margin-top:6px;}
+.invest-mod-mens{font-size:0.95rem;color:var(--tl);font-weight:600;margin-top:10px;}
+.invest-mod-cols{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+.invest-mod-col h4{font-size:0.66rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:14px;}
+.invest-mod-col ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.invest-mod-col li{font-size:0.84rem;color:rgba(255,255,255,0.78);font-weight:400;padding-left:20px;position:relative;line-height:1.55;}
+.invest-mod-col li::before{content:'';position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--tl);}
+.invest-pay{margin-top:20px;background:rgba(176,110,74,0.08);border:1px solid rgba(176,110,74,0.25);border-radius:14px;padding:24px 28px;display:flex;gap:30px;flex-wrap:wrap;align-items:center;}
+.invest-pay-block{flex:1;min-width:200px;}
+.invest-pay-label{font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--tl);margin-bottom:6px;}
+.invest-pay-text{font-size:0.86rem;color:rgba(255,255,255,0.85);font-weight:400;line-height:1.5;}
+.invest-pay-validade{display:flex;align-items:center;gap:8px;font-size:0.8rem;color:#fff;font-weight:600;}
+.invest-pay-validade::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--tl);animation:pulse 1.6s infinite;}
+.cobertura-head{margin-top:56px;margin-bottom:22px;}
+.cobertura-head h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:1.35rem;letter-spacing:-0.005em;color:#fff;}
+.cobertura-head p{color:rgba(255,255,255,0.55);font-size:0.86rem;margin-top:6px;}
+.mens-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.mens-card{background:var(--ink);border:1px solid var(--line);border-radius:12px;padding:22px 20px;transition:border-color .3s,transform .3s;}
+.mens-card:hover{border-color:rgba(176,110,74,0.4);transform:translateY(-3px);}
+.mens-card-icon{color:var(--tl);margin-bottom:12px;height:24px;}
+.mens-card-icon svg{display:block;}
+.mens-card-title{font-size:0.88rem;font-weight:600;color:#fff;margin-bottom:6px;}
+.mens-card-text{font-size:0.78rem;color:rgba(255,255,255,0.6);font-weight:400;line-height:1.55;}
+.mens-card-text strong{color:rgba(255,255,255,0.85);font-weight:600;}
+.roi-block{margin-top:48px;background:var(--ink);border:1px solid var(--line);border-radius:16px;padding:36px 34px;display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center;}
+.roi-text h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:1.35rem;letter-spacing:-0.005em;color:#fff;margin-bottom:12px;}
+.roi-text p{color:rgba(255,255,255,0.7);font-size:0.86rem;}
+.roi-text p strong{color:#fff;font-weight:600;}
+.roi-formula{font-size:0.8rem;color:var(--tl);font-weight:500;background:rgba(176,110,74,0.1);border-radius:8px;padding:10px 14px;margin-top:8px;display:inline-block;}
+.roi-payback{text-align:center;}
+.roi-payback-num{font-family:'Anton',sans-serif;font-weight:400;font-size:3.6rem;color:var(--tl);line-height:1;}
+.roi-payback-label{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.55);margin-top:6px;}
+.api-aviso{margin-top:28px;border-left:3px solid var(--terra);background:rgba(176,110,74,0.06);padding:16px 20px;font-size:0.8rem;color:rgba(255,255,255,0.7);font-weight:400;line-height:1.6;border-radius:0 8px 8px 0;}
+.api-aviso strong{color:#fff;font-weight:600;}
+.invest-future-note{margin-top:18px;font-size:0.82rem;color:rgba(255,255,255,0.55);font-weight:400;text-align:center;}
+
+/* DIAGNÓSTICO — GELO-2 */
+.diag-section{background:var(--ice-2);padding:100px 40px;}
+.diag-inner{max-width:1100px;margin:0 auto;}
+.diag-intro{font-size:0.92rem;color:#4a6a6f;line-height:1.7;max-width:680px;margin-top:16px;margin-bottom:48px;}
+.diag-table{border:1px solid rgba(20,55,60,0.1);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 6px 26px rgba(20,55,60,0.05);}
+.diag-row{display:grid;grid-template-columns:210px 1fr 1fr 1fr;gap:0;border-bottom:1px solid rgba(20,55,60,0.07);}
+.diag-row:last-child,.diag-row--last{border-bottom:none;}
+.diag-row>div{padding:18px 20px;font-size:0.82rem;border-right:1px solid rgba(20,55,60,0.07);}
+.diag-row>div:last-child{border-right:none;}
+.diag-row--header{background:var(--ink);}
+.diag-row--header>div{font-size:0.6rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.45);border-right-color:rgba(255,255,255,0.07);}
+.diag-sys-name-sm{font-weight:700;color:var(--ink);font-size:0.88rem;margin-bottom:6px;}
+.diag-region-sm{font-size:0.68rem;color:var(--terra);font-weight:600;}
+.diag-cell-text{color:#5a7a7f;line-height:1.65;}
+.diag-cell-rec{background:rgba(20,55,60,0.02);color:var(--ink);font-weight:500;}
+.diag-badge{font-size:0.6rem;font-weight:700;padding:3px 10px;border-radius:100px;display:inline-block;margin-top:4px;}
+.diag-badge::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;vertical-align:middle;}
+.diag-badge--good{background:rgba(67,93,81,0.1);color:var(--green);}
+.diag-badge--good::before{background:var(--green);}
+.diag-badge--mid{background:rgba(163,131,98,0.14);color:var(--sand);}
+.diag-badge--mid::before{background:#c99a3b;}
+
+/* ONDA FUTURA — ESCURO */
+.onda-section{background:linear-gradient(155deg,#0a2023,#0C2427 55%,#102f33 100%);padding:100px 40px;}
+.onda-inner{max-width:1100px;margin:0 auto;}
+.onda-section .section-label{color:var(--tl);}
+.onda-section .section-title{color:#fff;}
+.onda-section .section-title em{color:var(--tl);}
+.onda-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:start;}
+.onda-text p{color:var(--text);}
+.onda-card{background:var(--ink);border:1px solid rgba(196,131,94,0.25);border-radius:16px;padding:32px 30px;}
+.onda-card-title{font-size:0.66rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--tl);margin-bottom:18px;}
+.onda-step{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08);}
+.onda-step:last-child{border-bottom:none;}
+.onda-step-num{font-family:'Anton',sans-serif;font-weight:400;font-size:1.3rem;color:var(--tl);min-width:54px;}
+.onda-step-name{font-size:0.9rem;font-weight:600;color:#fff;margin-bottom:3px;}
+.onda-step-desc{font-size:0.78rem;color:rgba(255,255,255,0.6);font-weight:400;line-height:1.5;}
+.onda-prize{display:inline-block;font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;background:rgba(176,110,74,0.2);color:var(--tl);padding:4px 12px;border-radius:100px;margin-left:8px;}
+
+/* GARANTIA — GELO */
+.garantia-section{background:var(--ice);padding:100px 40px;}
+.garantia-inner{max-width:1000px;margin:0 auto;}
+.garantia-block{background:linear-gradient(135deg,var(--ink),var(--green));border-radius:20px;padding:48px 56px;display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center;overflow:hidden;position:relative;box-shadow:0 30px 70px -30px rgba(12,36,39,0.6);}
+.garantia-block h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:1.85rem;letter-spacing:-0.005em;color:#fff;margin-bottom:16px;line-height:1.05;}
+.garantia-block h2 em{color:var(--tl);}
+.garantia-block p{color:rgba(255,255,255,0.78);font-size:0.92rem;}
+.garantia-selo{text-align:center;}
+.garantia-selo-num{font-family:'Anton',sans-serif;font-weight:400;font-size:3.6rem;color:var(--tl);line-height:1;}
+.garantia-selo-label{font-size:0.66rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.6);margin-top:6px;}
+
+/* POR QUE NEWSCALE — GELO-2 */
+.porque-section{background:var(--ice-2);padding:100px 40px;}
+.porque-inner{max-width:1100px;margin:0 auto;}
+.quote-block{background:linear-gradient(135deg,var(--ink),var(--green));border-radius:20px;padding:48px 56px;position:relative;margin-bottom:56px;box-shadow:0 30px 70px -30px rgba(12,36,39,0.6);}
+.quote-mark{font-family:'Anton',sans-serif;font-weight:400;font-size:4.5rem;color:rgba(196,131,94,0.35);line-height:0.6;}
+.quote-text{font-family:'Hanken Grotesk',sans-serif;font-size:1.35rem;font-weight:400;font-style:normal;color:var(--cream);line-height:1.5;margin-bottom:20px;}
+.quote-author{font-size:0.78rem;font-weight:600;color:var(--tl);letter-spacing:0.04em;}
+.porque-headline{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(1.7rem,3.4vw,2.4rem);letter-spacing:-0.01em;color:var(--ink);text-align:center;margin-bottom:40px;line-height:1;}
+.porque-headline em{color:var(--terra);}
+.metodologia-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:56px;}
+.metodo-card{background:#fff;border:1px solid rgba(20,55,60,0.07);border-radius:14px;padding:26px 24px;box-shadow:0 6px 26px rgba(20,55,60,0.05);transition:box-shadow .3s,transform .3s;}
+.metodo-card:hover{box-shadow:0 16px 42px rgba(20,55,60,0.1);transform:translateY(-3px);}
+.metodo-num{font-family:'Anton',sans-serif;font-weight:400;font-size:1.7rem;color:var(--terra);margin-bottom:8px;}
+.metodo-title{font-size:0.95rem;font-weight:600;color:var(--ink);margin-bottom:8px;}
+.metodo-text{font-size:0.82rem;color:#5a7a7f;font-weight:400;line-height:1.6;}
+.fundadores-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.fundador-card{background:#fff;border:1px solid rgba(20,55,60,0.07);border-radius:16px;overflow:hidden;display:flex;box-shadow:0 6px 26px rgba(20,55,60,0.05);}
+.fundador-photo{width:140px;flex-shrink:0;object-fit:cover;filter:sepia(0.15) saturate(0.85);}
+.fundador-info{padding:24px;}
+.fundador-name{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:1.25rem;letter-spacing:-0.005em;color:var(--ink);}
+.fundador-role{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--terra);margin-bottom:12px;margin-top:2px;}
+.fundador-bio{font-size:0.8rem;color:#5a7a7f;font-weight:400;line-height:1.6;margin-bottom:12px;}
+.fundador-tags{display:flex;gap:6px;flex-wrap:wrap;}
+.fundador-tag{font-size:0.6rem;background:rgba(20,55,60,0.06);color:var(--green);padding:3px 9px;border-radius:100px;font-weight:600;}
+
+/* FAQ — GELO */
+.faq-section{background:var(--ice);padding:100px 40px;}
+.faq-inner{max-width:820px;margin:0 auto;}
+.faq-item{border-bottom:1px solid rgba(20,55,60,0.1);cursor:pointer;}
+.faq-q{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;font-size:0.98rem;font-weight:600;color:var(--ink);}
+.faq-toggle{font-size:1.4rem;color:var(--terra);font-weight:300;transition:transform .3s;flex-shrink:0;}
+.faq-item.open .faq-toggle{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.faq-item.open .faq-a{max-height:500px;}
+.faq-a p{font-size:0.88rem;color:#5a7a7f;font-weight:400;padding-bottom:24px;line-height:1.7;}
+
+/* PRÓXIMOS PASSOS — ESCURO */
+.steps-section{background:linear-gradient(155deg,#0a2023,#0C2427 55%,#102f33 100%);padding:100px 40px;}
+.steps-inner{max-width:760px;margin:0 auto;}
+.steps-section .section-label{color:var(--tl);}
+.steps-section .section-title{color:#fff;}
+.steps-section .section-title em{color:var(--tl);}
+.step-item{display:flex;gap:22px;padding-bottom:34px;position:relative;}
+.step-item:not(:last-child)::after{content:'';position:absolute;left:20px;top:44px;bottom:0;width:1px;background:rgba(176,110,74,0.2);}
+.step-num{width:40px;height:40px;border-radius:50%;background:rgba(176,110,74,0.15);border:1px solid rgba(176,110,74,0.4);color:var(--tl);display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-weight:400;font-size:1.1rem;flex-shrink:0;z-index:1;}
+.step-prazo{font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--tl);margin-bottom:4px;}
+.step-title{font-size:1rem;font-weight:600;color:#fff;margin-bottom:6px;}
+.step-desc{font-size:0.85rem;color:rgba(255,255,255,0.6);font-weight:400;line-height:1.6;}
+.steps-close{text-align:center;font-family:'Hanken Grotesk',sans-serif;font-style:normal;font-size:1.15rem;font-weight:500;color:var(--tl);margin-top:20px;line-height:1.5;}
+
+/* CTA — GELO-2 (card escuro flutuante) */
+.cta-section{background:var(--ice-2);padding:100px 40px;}
+.cta-inner{max-width:920px;margin:0 auto;}
+.cta-fechamento-inner{background:linear-gradient(165deg,#0a2023,#14373C 55%,#1d4840 100%);border-radius:24px;padding:64px 56px;text-align:center;position:relative;overflow:hidden;box-shadow:0 40px 90px -30px rgba(0,0,0,0.6);}
+.cta-fechamento-inner::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:520px;height:520px;background:radial-gradient(circle,rgba(176,110,74,0.16),transparent 62%);pointer-events:none;}
+.cta-validade{position:relative;z-index:1;display:inline-flex;align-items:center;gap:8px;font-size:0.66rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--tl);background:rgba(176,110,74,0.12);border:1px solid rgba(176,110,74,0.3);padding:6px 16px;border-radius:100px;margin-bottom:24px;}
+.cta-validade::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--tl);animation:pulse 1.6s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.8);}}
+.cta-fechamento-inner h2{position:relative;z-index:1;font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(2rem,4.6vw,3.4rem);letter-spacing:-0.01em;color:#fff;line-height:0.98;margin-bottom:18px;}
+.cta-fechamento-inner h2 em{color:var(--tl);}
+.cta-fechamento-inner>p{position:relative;z-index:1;color:rgba(255,255,255,0.7);font-size:0.95rem;max-width:560px;margin:0 auto 36px;}
+.cta-btns{position:relative;z-index:1;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:44px;}
+.cta-btn-primary{background:var(--terra);color:#fff;box-shadow:0 8px 28px rgba(176,110,74,0.35);padding:15px 30px;border-radius:100px;text-decoration:none;font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.04em;transition:transform .25s,background .25s,box-shadow .25s;}
+.cta-btn-primary:hover{background:var(--terra-d);transform:translateY(-2px);box-shadow:0 12px 30px rgba(176,110,74,0.4);}
+.cta-btn-secondary{background:transparent;color:var(--cream);border:1.5px solid var(--line);padding:15px 30px;border-radius:100px;text-decoration:none;font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.04em;transition:border-color .25s,background .25s;}
+.cta-btn-secondary:hover{border-color:var(--tl);background:rgba(255,255,255,0.04);}
+.cta-metricas{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;border-top:1px solid rgba(255,255,255,0.12);padding-top:36px;}
+.cta-metrica-num{font-family:'Anton',sans-serif;font-weight:400;font-size:2rem;color:var(--tl);}
+.cta-metrica-label{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;color:rgba(255,255,255,0.55);margin-top:4px;}
+
+/* FOOTER */
+.footer{background:var(--ink);padding:40px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);}
+.footer-brand{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:1.35rem;letter-spacing:0.01em;color:#fff;}
+.footer-brand span{color:var(--tl);font-weight:400;margin-left:4px;}
+.footer-date{font-size:0.74rem;color:rgba(255,255,255,0.5);text-align:right;line-height:1.6;}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:.1s;}
+.reveal-delay-2{transition-delay:.2s;}
+.reveal-delay-3{transition-delay:.3s;}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  section{padding:70px 24px;}
+  .navbar{padding:14px 24px;}
+  .navbar-tag{display:none;}
+  .navbar-logo img{height:52px;}
+  .hero{padding:90px 24px 70px;}
+  .context-inner,.custo-inner,.demo-grid,.onda-grid,.roi-block,.garantia-block{grid-template-columns:1fr;gap:36px;}
+  .intro-stats{grid-template-columns:1fr 1fr;}
+  .dores-grid,.invest-mod-cols,.mens-grid,.metodologia-grid,.fundadores-grid,.ad-grid{grid-template-columns:1fr;}
+  .dash-kpis{grid-template-columns:1fr 1fr;}
+  .dash-cols{grid-template-columns:1fr;}
+  .mail-btn-primary,.mail-btn-secondary{flex:1 1 100%;}
+  .footer{flex-direction:column;gap:16px;text-align:center;}
+  .footer-date{text-align:center;}
+  .quote-block,.garantia-block,.cta-fechamento-inner,.invest-mod-card{padding:36px 28px;}
+  .cta-metricas{grid-template-columns:1fr;gap:22px;}
+  .fundador-card{flex-direction:column;}
+  .fundador-photo{width:100%;height:200px;}
+  .diag-row{grid-template-columns:1fr;}
+  .diag-row>div{border-right:none;border-bottom:1px solid rgba(20,55,60,0.07);}
+  .diag-row>div:last-child{border-bottom:none;}
+  .diag-row--header{display:none;}
+  .invest-mod-top{flex-direction:column;}
+  .invest-mod-prices{text-align:left;}
+}
+/* ACESSO RESTRITO (GATE) */
+.gate{position:fixed;inset:0;z-index:9999;background:#0a2023;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;text-align:center;height:100vh;height:100dvh;overflow:hidden;}
+.gate.hidden{display:none;}
+.gate-grain{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:0.03;pointer-events:none;}
+.gate-inner{position:relative;z-index:2;width:100%;max-width:520px;display:flex;flex-direction:column;align-items:center;}
+.gate-logo{width:190px;max-width:52vw;margin-bottom:44px;opacity:0.97;}
+.gate-title{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:1.6rem;letter-spacing:-0.005em;color:#fff;margin-bottom:14px;}
+.gate-desc{font-size:0.9rem;font-weight:400;color:var(--muted);line-height:1.65;margin-bottom:34px;max-width:400px;}
+.gate-form{width:100%;max-width:420px;display:flex;flex-direction:column;gap:13px;}
+.gate-input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:16px 20px;font-family:'Hanken Grotesk',sans-serif;font-size:0.95rem;color:#fff;transition:border-color .3s,background .3s;}
+.gate-input::placeholder{color:rgba(255,255,255,0.35);}
+.gate-input:focus{outline:none;border-color:var(--terra);background:rgba(255,255,255,0.07);}
+.gate-btn{width:100%;background:var(--terra);color:#fff;border:none;border-radius:100px;padding:16px 20px;font-family:'Hanken Grotesk',sans-serif;font-size:0.9rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;cursor:pointer;transition:background .3s,transform .2s;box-shadow:0 4px 24px rgba(176,110,74,0.28);}
+.gate-btn:hover{background:var(--terra-d);transform:translateY(-2px);}
+.gate-error{min-height:18px;font-size:0.8rem;color:#e3a08a;font-weight:400;margin-top:2px;opacity:0;transition:opacity .3s;}
+.gate-error.show{opacity:1;}
+.gate-foot{position:absolute;bottom:28px;left:0;right:0;z-index:2;font-size:0.72rem;color:rgba(255,255,255,0.3);letter-spacing:0.04em;}
+body.gate-locked{overflow:hidden;height:100vh;}
+@media (max-width:600px){
+  .gate-logo{width:160px;max-width:48vw;margin-bottom:34px;}
+  .gate-title{font-size:1.4rem;}
+}
+
+</style>
+</head>
+<body class="gate-locked">
+
+<!-- ACESSO RESTRITO -->
+<div class="gate" id="gate">
+  <div class="gate-grain"></div>
+  <div class="gate-inner">
+    <img class="gate-logo" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting">
+    <div class="gate-title">Acesso Restrito</div>
+    <div class="gate-desc">Esta proposta é confidencial.<br>Insira seu e-mail corporativo para acessar o conteúdo.</div>
+    <form class="gate-form" id="gateForm" autocomplete="off">
+      <input class="gate-input" type="email" id="gateEmail" placeholder="seu@email.com" required>
+      <button class="gate-btn" type="submit">Acessar proposta</button>
+      <div class="gate-error" id="gateError">E-mail não autorizado. Use seu e-mail corporativo MG Contécnica ou NewScale.</div>
+    </form>
+  </div>
+  <div class="gate-foot">NewScale Consulting · Documento Confidencial</div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-logo">
+    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting">
+  </div>
+  <div class="navbar-tag">Proposta Executiva · MG Contécnica · Julho 2026</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="topo-lines">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,300 Q300,220 500,290 T900,260 T1200,300" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,500 Q300,440 500,490 T900,460 T1200,500" fill="none" stroke="white" stroke-width="0.3"/>
+      <path d="M0,250 Q250,180 450,240 T850,210 T1200,250" fill="none" stroke="white" stroke-width="0.3"/>
+    </svg>
+  </div>
+  <div class="grain-overlay"></div>
+
+  <div class="hero-badge">Proposta Executiva · Julho 2026 · Para a diretoria da MG Contécnica</div>
+  <div class="hero-eyebrow">NewScale Consulting × MG Contécnica</div>
+  <h1>Quem caça erro agora <em>é a IA.</em></h1>
+  <p class="hero-desc">Depois de descer na operação e acompanhar o fechamento de perto, estruturamos uma PoC enxuta para a operação da maior contabilidade de supermercados: um copiloto que cruza os documentos que a MG já recebe e aponta as divergências antes do olho humano — o primeiro passo, validável em 45 dias, rumo à conciliação assistida.</p>
+
+  <a class="hero-cta" href="#contexto">
+    <span>Ver proposta</span>
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M10 4v12M4 10l6 6 6-6" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+</section>
+
+<!-- CONTEXTO -->
+<section class="context-section" id="contexto">
+  <div class="context-inner">
+    <div class="context-text reveal">
+      <span class="section-label">O Contexto</span>
+      <h2 class="section-title">40 anos de varejo. A próxima escala é <em>com IA.</em></h2>
+      <p>A MG Contécnica não é uma contabilidade qualquer. São cerca de 40 anos de especialização em supermercados e varejo, mais de 5.000 CNPJs ativos, mais de 500 especialistas e 15 unidades no Brasil, além da operação em Portugal. Poucas casas no país processam o volume e a complexidade fiscal que a MG processa todo mês.</p>
+      <p>Esse porte tem um efeito conhecido: quanto maior a operação, mais horas de gente qualificada acabam consumidas em conferência manual — abrir um documento, abrir outro, bater linha a linha, achar no olho a divergência que não fecha. É um trabalho que cansa a vista, escala mal e está sujeito a erro justamente por exaustão. É exatamente nessa camada que a IA gera retorno mais rápido, sem tocar no julgamento técnico que é o diferencial da MG.</p>
+      <p>Com a Reforma Tributária (CBS/IBS) chegando e o quadro em expansão, o momento de testar essa camada é agora — com escopo controlado, baixo risco e ganho mensurável.</p>
+    </div>
+    <div class="intro-stats reveal reveal-delay-2">
+      <div class="stat-card"><div class="stat-number">+5.000</div><div class="stat-label">CNPJs ativos</div></div>
+      <div class="stat-card"><div class="stat-number">+500</div><div class="stat-label">Especialistas</div></div>
+      <div class="stat-card"><div class="stat-number">15+1</div><div class="stat-label">Unidades · Brasil + Portugal</div></div>
+      <div class="stat-card"><div class="stat-number">~40</div><div class="stat-label">Anos no varejo</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTO DA INAÇÃO -->
+<section class="custo-section">
+  <div class="custo-inner">
+    <div class="reveal">
+      <span class="section-label">O custo de seguir como está</span>
+      <h2 class="section-title">A conferência manual, linha a linha, tem <em>um preço silencioso.</em></h2>
+      <p>Hoje o fechamento depende de um especialista abrindo o balancete e batendo conta por conta no olho: extrato contra faturamento, despesa contra lançamento, conferindo se tudo fecha. São muitas telas, muitos PDFs convertidos à mão e uma atenção que nenhum profissional sustenta o dia inteiro sem escapar de um detalhe. O resultado é tempo de gente cara gasto em conferência e retrabalho quando um erro passa.</p>
+      <p>Os números abaixo são uma estimativa conservadora para o cliente-piloto da PoC — não a operação inteira. Servem para dimensionar a ordem de grandeza; serão substituídos pelo baseline real medido nas primeiras semanas do projeto.</p>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="custo-list">
+        <div class="custo-item">
+          <div><div class="custo-item-label">Horas de equipe em conferência manual</div><div class="custo-item-sub">Analistas e seniores batendo conta a conta nas várias frentes e CNPJs do cliente-piloto ao longo do mês</div></div>
+          <div class="custo-item-value">~R$ 11.500</div>
+        </div>
+        <div class="custo-item">
+          <div><div class="custo-item-label">Conversão e preparo de arquivos</div><div class="custo-item-sub">PDF → Excel → TXT e organização antes de conseguir conciliar</div></div>
+          <div class="custo-item-value">~R$ 4.000</div>
+        </div>
+        <div class="custo-item">
+          <div><div class="custo-item-label">Retrabalho por erro de fadiga</div><div class="custo-item-sub">Divergências que passam batido e reabrem o fechamento</div></div>
+          <div class="custo-item-value">~R$ 4.000</div>
+        </div>
+        <div class="custo-item">
+          <div><div class="custo-item-label">Risco de atraso em obrigações</div><div class="custo-item-sub">Conferência que não fecha a tempo e pressiona prazos</div></div>
+          <div class="custo-item-value">~R$ 2.000</div>
+        </div>
+        <div class="custo-total">
+          <div class="custo-total-label">Estimativa mensal · cliente-piloto</div>
+          <div class="custo-total-value">~R$ 21.500</div>
+        </div>
+      </div>
+      <p class="custo-note">Estimativa conservadora e ilustrativa, restrita ao cliente-piloto. Não considera o impacto reputacional de atrasos, nem o custo de oportunidade da equipe sênior presa em conferência operacional. Os valores reais serão apurados como baseline na Semana 1 da PoC.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DORES / OPORTUNIDADES -->
+<section class="dores-section">
+  <div class="dores-inner">
+    <div class="reveal">
+      <span class="section-label">Onde está a oportunidade</span>
+      <h2 class="section-title">Seis frentes onde a IA <em>libera a operação.</em></h2>
+      <p class="dores-head-desc">Nenhuma delas substitui o contador. Todas devolvem horas qualificadas para o que realmente exige cabeça humana — análise, estratégia e relacionamento com o cliente.</p>
+    </div>
+    <div class="dores-grid">
+      <div class="dore-card reveal">
+        <div class="dore-num">01</div>
+        <div class="dore-tag">Conferência manual</div>
+        <div class="dore-title">Bater conta a conta no olho</div>
+        <div class="dore-text">O fechamento depende de abrir um documento, abrir outro e achar na mão a divergência que não fecha. Um copiloto cruza os arquivos e aponta o que merece atenção — a pessoa decide.</div>
+      </div>
+      <div class="dore-card reveal reveal-delay-1">
+        <div class="dore-num">02</div>
+        <div class="dore-tag">Reforma tributária</div>
+        <div class="dore-title">Onda de novos dados a caminho</div>
+        <div class="dore-text">CBS/IBS vão exigir cadastro de produtos, ajuste de sistemas e mais documentação por cliente. Uma camada de captura organizada absorve esse aumento de carga.</div>
+      </div>
+      <div class="dore-card reveal reveal-delay-2">
+        <div class="dore-num">03</div>
+        <div class="dore-tag">Crescimento</div>
+        <div class="dore-title">Escalar volume sem escalar custo</div>
+        <div class="dore-text">Com o quadro em expansão, automatizar o operacional repetitivo permite crescer a carteira sem aumentar headcount na mesma proporção.</div>
+      </div>
+      <div class="dore-card reveal">
+        <div class="dore-num">04</div>
+        <div class="dore-tag">Erro de fadiga</div>
+        <div class="dore-title">A vista cansa, o erro passa</div>
+        <div class="dore-text">Telas e telas o dia inteiro: é humanamente impossível não escapar um detalhe. A IA não cansa — varre tudo e devolve só os candidatos a divergência para o humano conferir.</div>
+      </div>
+      <div class="dore-card reveal reveal-delay-1">
+        <div class="dore-num">05</div>
+        <div class="dore-tag">Adquirência · onda futura</div>
+        <div class="dore-title">Cartões e splits — "a desgraça"</div>
+        <div class="dore-text">Cielo, Rede, Stone: cada uma com regra, taxa e prazo próprios, que mudam por cliente. É o maior gargalo — e, por isso mesmo, fica para depois do piloto, quando o dado já estiver organizado e o motor provado.</div>
+      </div>
+      <div class="dore-card reveal reveal-delay-2">
+        <div class="dore-num">06</div>
+        <div class="dore-tag">Equipe sênior</div>
+        <div class="dore-title">Talento em tarefa operacional</div>
+        <div class="dore-text">Profissionais qualificados gastam horas conferindo e organizando arquivo. Tirar isso do colo deles é ganho imediato de capacidade analítica.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULOS -->
+<section class="modulos-section">
+  <div class="modulos-inner">
+    <div class="reveal">
+      <span class="section-label">A Proposta · PoC</span>
+      <h2 class="section-title">Módulo 1 — a prova de valor que <em>roda em 45 dias.</em></h2>
+      <p>Começamos pelo ponto de maior dor e menor risco técnico: a conferência das informações que a MG já recebe. Partimos de onde os documentos já estão organizados na pasta da MG e cruzamos extrato, faturamento e despesa para apontar as divergências — sem entrar no sistema do cliente, sem credencial bancária, sem decisão fiscal automatizada. O copiloto sinaliza; a equipe decide.</p>
+    </div>
+
+    <div class="reveal reveal-delay-1">
+      <div class="fase-header">
+        <div>
+          <div class="fase-tag">Módulo 1 · PoC · Imediato</div>
+          <div class="fase-name">Copiloto MG de Conferência e Alertas de Divergência</div>
+          <div class="fase-duration">Cruzamento documental + painel de inconsistências · 45 dias até go-live</div>
+        </div>
+        <div class="fase-num-badge">1</div>
+      </div>
+
+      <div class="modulo-card open" onclick="toggleModulo(this)">
+        <div class="modulo-card-header">
+          <div class="modulo-card-left">
+            <div class="modulo-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+            <div>
+              <div class="modulo-label">Cruzamento · Conferência · Alertas</div>
+              <div class="modulo-name">Conferência assistida por IA</div>
+              <div class="modulo-chips">
+                <span class="chip">Lê a pasta que já existe</span>
+                <span class="chip">Cruza extrato × faturamento × despesa</span>
+                <span class="chip">Painel de inconsistências</span>
+                <span class="chip">Cliente-piloto</span>
+              </div>
+            </div>
+          </div>
+          <div class="modulo-toggle">+</div>
+        </div>
+        <div class="modulo-body">
+          <div class="value-box">
+            <div class="value-box-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.4"/></svg></div>
+            <div>
+              <div class="value-box-label">O que isso resolve</div>
+              <div class="value-box-text">Tira do especialista o trabalho de varrer linha a linha à procura do que não fecha. A IA cruza os documentos da competência e devolve uma lista curta de divergências classificadas — o humano confere só o que foi sinalizado, em vez de tudo.</div>
+            </div>
+          </div>
+          <p class="modulo-desc">Um copiloto de IA lê os documentos de um cliente-piloto direto da pasta organizada que a MG já mantém, parte dos arquivos já normalizados (Excel/TXT/XML) e cruza extrato bancário, faturamento e despesas de uma competência. Em vez de cravar "está errado", ele aponta candidatos a divergência com grau de confiança e link para o documento — deixando a palavra final com a equipe.</p>
+          <ul class="modulo-items">
+            <li><strong>Leitura da pasta padronizada:</strong> o copiloto consome os arquivos do destino que a MG já usa — sem entrar no sistema do cliente e sem depender de API.</li>
+            <li><strong>Cruzamento de 1ª camada:</strong> compara valor, data e contraparte entre extrato, faturamento e despesa para encontrar o que não bate.</li>
+            <li><strong>Classificação da divergência:</strong> cada apontamento vem rotulado — faltante, não encontrado no extrato, duplicado ou valor divergente — com nível de confiança.</li>
+            <li><strong>Painel de inconsistências ao vivo:</strong> a gestão e o operador veem a lista priorizada do que precisa de olho humano, com link direto para o documento.</li>
+            <li><strong>Baseline de KPIs + treinamento:</strong> medimos o antes/depois (tempo de conferência, erros pegos) e capacitamos a equipe para trabalhar com o copiloto.</li>
+          </ul>
+          <div class="disclaimer-box">Escopo da PoC restrito a um cliente-piloto representativo (perfil que envia a documentação completa), em uma competência. A leitura parte de arquivos já normalizados — não de PDF cru de qualquer banco. Conciliação por aproximação/média, adquirência e escrita no ERP (SCI/ÚNICO) não fazem parte deste módulo — são as ondas seguintes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="demo-section">
+  <div class="demo-inner">
+    <div class="reveal">
+      <span class="section-label">Como funciona no dia a dia</span>
+      <h2 class="section-title">A IA varre. <em>O especialista decide.</em></h2>
+    </div>
+
+    <div class="demo-block-title reveal">O copiloto em ação — painel de processamento</div>
+    <div class="demo-block-sub reveal">O que o responsável vê na tela enquanto o copiloto trabalha: cada etapa da conferência de uma competência, em tempo real, até a lista final do que precisa de olho humano. <span style="color:var(--terra);font-weight:600;">· Simulação ilustrativa.</span></div>
+
+    <div class="demo-grid reveal reveal-delay-1">
+      <div class="agent-frame">
+        <div class="agent-bar">
+          <div class="agent-dots"><span class="agent-dot r"></span><span class="agent-dot y"></span><span class="agent-dot g"></span></div>
+          <div class="agent-bar-title">Copiloto MG · Conferência: Supermercado Caçula · 06/2026</div>
+          <div class="agent-bar-status">Processando</div>
+        </div>
+        <div class="agent-body">
+          <div class="agent-step done">
+            <div class="agent-step-head"><span class="agent-step-ico">📥</span> Etapa 1 — concluído</div>
+            <div class="agent-step-text">Arquivos lidos da pasta: <strong>extrato Banco X</strong>, faturamento, despesas e folha · 4 de 4 identificados</div>
+          </div>
+          <div class="agent-step done">
+            <div class="agent-step-head"><span class="agent-step-ico">🧾</span> Etapa 2 — concluído</div>
+            <div class="agent-step-text">Estruturação: 1.284 lançamentos estruturados a partir dos arquivos Excel/TXT · período <strong>01–30/06</strong></div>
+          </div>
+          <div class="agent-step done">
+            <div class="agent-step-head"><span class="agent-step-ico">🔗</span> Etapa 3 — concluído</div>
+            <div class="agent-step-text">Cruzamento: faturamento × extrato × despesa · <strong>99,6% conciliou automaticamente</strong></div>
+          </div>
+          <div class="agent-step active">
+            <div class="agent-step-head"><span class="agent-step-ico">⚙️</span> Etapa 4 — em execução</div>
+            <div class="agent-step-text">Classificando divergências por tipo e confiança · <strong>5 candidatos</strong> separados para revisão…</div>
+          </div>
+          <div class="agent-step wait">
+            <div class="agent-step-head"><span class="agent-step-ico">📤</span> Etapa 5 — aguardando</div>
+            <div class="agent-step-text">Gerar e-mail consolidado para o responsável · registrar log no SharePoint</div>
+          </div>
+          <div class="agent-total">
+            <div class="agent-total-head"><span>⏱</span> Tempo total estimado</div>
+            <div class="agent-total-text">~12 min por competência · <strong>conferência que levava ~4h, sem varredura manual</strong></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p style="color:#3c5358;">O copiloto trabalha sozinho na parte mecânica: lê os arquivos que já estão na pasta, estrutura os lançamentos, cruza extrato, faturamento e despesa e separa o que não fechou. Cada etapa fica visível — nada acontece numa caixa-preta.</p>
+        <p style="color:#3c5358;">Quando termina, ele não lança nada no sistema nem decide: entrega ao responsável uma lista curta de candidatos a divergência, classificados por tipo e confiança. O julgamento continua 100% humano — só que agora aplicado a 5 pontos, não a 1.284 linhas.</p>
+      </div>
+    </div>
+
+    <div class="demo-block-title reveal">O alerta que chega ao responsável — por e-mail</div>
+    <div class="demo-block-sub reveal">No fim do processamento, o copiloto envia um e-mail consolidado: o que fechou e está pronto, e o que ficou sinalizado como divergência e precisa de decisão antes do lançamento. <span style="color:var(--terra);font-weight:600;">· Simulação ilustrativa.</span></div>
+
+    <div class="reveal reveal-delay-1">
+      <div class="mail-frame">
+        <div class="mail-bar">
+          <div class="mail-dots"><span class="agent-dot r"></span><span class="agent-dot y"></span><span class="agent-dot g"></span></div>
+          <div class="mail-bar-title">Outlook — Caixa de Entrada</div>
+        </div>
+        <div class="mail-head">
+          <div class="mail-from">Copiloto MG &lt;conferencia@mgcontecnica.com.br&gt;</div>
+          <div class="mail-subject">✅ Conferência 06/2026 — Supermercado Caçula · 5 pontos para revisão</div>
+        </div>
+        <div class="mail-body">
+          <p class="mail-p">Bom dia. O copiloto conferiu a competência <strong>06/2026</strong> e cruzou 1.284 lançamentos. <strong>99,6% conciliou automaticamente.</strong> Abaixo, o que ficou separado para sua decisão antes do fechamento.</p>
+          <div class="mail-sec-label">Conciliado — nenhuma ação necessária</div>
+          <div class="mail-note">
+            <div><div class="mail-note-name">Faturamento × Extrato Banco X</div><div class="mail-note-meta">R$ 1.842.300,00 · 1.176 lançamentos · tudo batendo</div></div>
+            <div class="mail-ok">✓ OK</div>
+          </div>
+          <div class="mail-note">
+            <div><div class="mail-note-name">Folha de pagamento</div><div class="mail-note-meta">R$ 318.500,00 · integrada e conferida</div></div>
+            <div class="mail-ok">✓ OK</div>
+          </div>
+          <div class="mail-diverg">
+            <div class="mail-diverg-label">⚠ Divergências — requer decisão</div>
+            <div class="mail-diverg-item"><strong>3 lançamentos de faturamento sem correspondência no extrato</strong> · R$ 14.200,00 no total · podem ser recebimentos de cartão ainda não liquidados — verificar timing.</div>
+            <div class="mail-diverg-item"><strong>Despesa duplicada</strong> · R$ 3.100,00 lançada em 12/06 e 13/06 com mesmo fornecedor e valor — possível duplicidade.</div>
+            <div class="mail-diverg-item"><strong>Valor divergente</strong> · extrato R$ 5.000,00 acima do faturamento reconhecido — conferir origem antes de fechar.</div>
+          </div>
+          <div class="mail-actions">
+            <div class="mail-btn-primary">Abrir painel de revisão</div>
+            <div class="mail-btn-secondary">Ver conferência completa</div>
+          </div>
+          <div class="mail-foot">Conferência registrada com data, hora e usuário · Log completo no SharePoint · As 3 divergências só seguem para lançamento após resolução manual pela equipe.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-block-title reveal">A frente da gestão — o painel de inconsistências</div>
+    <div class="demo-block-sub reveal">Enquanto o copiloto cruza os documentos, a coordenação acompanha tudo: o que já foi conferido, quantas divergências surgiram e onde está o que ainda precisa de decisão humana. <span style="color:var(--terra);font-weight:600;">· Simulação ilustrativa.</span></div>
+
+    <div class="reveal reveal-delay-1">
+      <div class="dash-frame">
+        <div class="dash-top">
+          <div class="dash-title">Painel de Conferência · Cliente-piloto · 06/2026</div>
+          <div class="dash-live">ao vivo</div>
+        </div>
+        <div class="dash-kpis">
+          <div class="dash-kpi"><div class="dash-kpi-num">99,6%</div><div class="dash-kpi-label">Contas que fecham</div><div class="dash-kpi-delta delta-up">▲ auto</div></div>
+          <div class="dash-kpi"><div class="dash-kpi-num">12 min</div><div class="dash-kpi-label">P/ conferir</div><div class="dash-kpi-delta delta-down">▼ de ~4h</div></div>
+          <div class="dash-kpi"><div class="dash-kpi-num">5</div><div class="dash-kpi-label">Divergências</div><div class="dash-kpi-delta delta-up">p/ revisar</div></div>
+          <div class="dash-kpi"><div class="dash-kpi-num">2</div><div class="dash-kpi-label">Erros pegos</div><div class="dash-kpi-delta delta-up">▲ no mês</div></div>
+        </div>
+        <div class="dash-cols">
+          <div class="dash-panel">
+            <div class="dash-panel-title">Itens conferidos × divergências por dia</div>
+            <div class="dash-bars">
+              <div class="dash-bar" style="height:40%"><span>02</span></div>
+              <div class="dash-bar" style="height:62%"><span>03</span></div>
+              <div class="dash-bar" style="height:55%"><span>04</span></div>
+              <div class="dash-bar" style="height:85%"><span>05</span></div>
+              <div class="dash-bar" style="height:70%"><span>06</span></div>
+              <div class="dash-bar" style="height:95%"><span>09</span></div>
+              <div class="dash-bar" style="height:48%"><span>10</span></div>
+            </div>
+          </div>
+          <div class="dash-panel">
+            <div class="dash-panel-title">Fluxo da conferência</div>
+            <div class="dash-funnel">
+              <div class="funnel-row"><span>Documentos lidos</span><span class="funnel-val">100%</span></div>
+              <div class="funnel-row"><span>Linhas cruzadas</span><span class="funnel-val">100%</span></div>
+              <div class="funnel-row"><span>Fecharam sozinhas</span><span class="funnel-val">99,6%</span></div>
+              <div class="funnel-row"><span>Para olho humano</span><span class="funnel-val">0,4%</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="dash-feed">
+          <div class="dash-panel-title">Divergências apontadas</div>
+          <div class="feed-item"><span class="feed-dot">●</span> Faturamento — 3 lançamentos sem correspondência no extrato Banco X</div>
+          <div class="feed-item"><span class="feed-dot">●</span> Despesa — lançamento duplicado (mesmo valor, mesmo dia)</div>
+          <div class="feed-item"><span class="feed-dot">●</span> Extrato — R$ 5.000 acima do faturamento (a verificar)</div>
+        </div>
+        <div class="dash-alert">⚠️ 2 itens de alta confiança ainda não revisados — aguardando decisão do especialista.</div>
+      </div>
+    </div>
+
+    <div class="demo-block-title reveal">A diferença concreta</div>
+    <div class="ad-grid reveal reveal-delay-1">
+      <div class="ad-col ad-col-antes">
+        <div class="ad-col-head">Hoje · conferência manual</div>
+        <div class="ad-step"><div class="ad-step-time">Passo 1</div><div class="ad-step-text">Baixa os documentos, converte PDF → Excel → TXT na mão</div></div>
+        <div class="ad-step"><div class="ad-step-time">Passo 2</div><div class="ad-step-text">Abre o balancete e bate conta a conta, do ativo ao passivo</div></div>
+        <div class="ad-step"><div class="ad-step-time">Passo 3</div><div class="ad-step-text">Procura no olho o que não fecha — entre dezenas de telas</div></div>
+        <div class="ad-step"><div class="ad-step-time">Passo 4</div><div class="ad-step-text">Risco: a vista cansa e uma divergência passa batido</div></div>
+        <div class="ad-total"><div class="ad-total-label">Conferência</div><div class="ad-total-num">~4 horas</div></div>
+      </div>
+      <div class="ad-col ad-col-depois">
+        <div class="ad-col-head">Com a NewScale</div>
+        <div class="ad-step"><div class="ad-step-time">Passo 1</div><div class="ad-step-text">O copiloto lê a pasta e cruza extrato × faturamento × despesa</div></div>
+        <div class="ad-step"><div class="ad-step-time">Passo 2</div><div class="ad-step-text">Devolve a lista curta do que não fechou, já classificada</div></div>
+        <div class="ad-step"><div class="ad-step-time">Passo 3</div><div class="ad-step-text">Especialista abre cada apontamento na linha exata do documento</div></div>
+        <div class="ad-step"><div class="ad-step-time">Passo 4</div><div class="ad-step-text">Confirma e decide — só sobre o que importa</div></div>
+        <div class="ad-total"><div class="ad-total-label">Conferência</div><div class="ad-total-num">~15 min</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTIMENTO -->
+<section class="invest-section">
+  <div class="invest-inner">
+    <div class="reveal">
+      <span class="section-label">Investimento</span>
+      <h2 class="section-title">Uma PoC com escopo fechado, valor claro e <em>retorno rápido.</em></h2>
+    </div>
+
+    <div class="invest-mod-card reveal reveal-delay-1">
+      <div class="invest-mod-top">
+        <div>
+          <div class="invest-mod-tag">Módulo 1 · PoC · 45 dias</div>
+          <div class="invest-mod-name">Copiloto de Conferência e Alertas de Divergência</div>
+        </div>
+        <div class="invest-mod-prices">
+          <div class="invest-mod-price">R$ 42.900</div>
+          <div class="invest-mod-price-label">Implementação · valor único</div>
+          <div class="invest-mod-mens">+ R$ 2.900 / mês de sustentação</div>
+        </div>
+      </div>
+      <div class="invest-mod-cols">
+        <div class="invest-mod-col">
+          <h4>Incluso na implementação</h4>
+          <ul>
+            <li>Diagnóstico e baseline do cliente-piloto</li>
+            <li>Motor de cruzamento de 1ª camada (extrato × faturamento × despesa)</li>
+            <li>Leitura dos arquivos já normalizados na pasta da MG</li>
+            <li>Classificação de divergências por tipo e confiança</li>
+            <li>Painel de inconsistências ao vivo</li>
+            <li>Treinamento da equipe e go-live acompanhado</li>
+          </ul>
+        </div>
+        <div class="invest-mod-col">
+          <h4>Forma de pagamento</h4>
+          <ul>
+            <li>50% na assinatura do contrato</li>
+            <li>50% na entrega e aprovação formal do cliente</li>
+          </ul>
+          <h4 style="margin-top:20px;">Prazo</h4>
+          <ul>
+            <li>45 dias da assinatura ao go-live do piloto</li>
+          </ul>
+        </div>
+      </div>
+      <div class="invest-pay">
+        <div class="invest-pay-block">
+          <div class="invest-pay-label">Por que começar pela PoC</div>
+          <div class="invest-pay-text">Valida a tese de IA na operação com risco controlado antes de investir nas ondas de maior porte. Você prova o ganho com números reais — não com promessa.</div>
+        </div>
+        <div class="invest-pay-block">
+          <div class="invest-pay-validade">Validade da proposta: 22 de julho de 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cobertura-head reveal">
+      <h3>O que a mensalidade de sustentação cobre</h3>
+      <p>Sustentação não é só "manter no ar" — é garantir que o copiloto siga preciso e evolua junto com a operação da MG.</p>
+    </div>
+    <div class="mens-grid reveal reveal-delay-1">
+      <div class="mens-card"><div class="mens-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a7 7 0 0 1 7-7"/><path d="M8.2 12a3.8 3.8 0 0 1 3.8-3.8"/><circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none"/></svg></div><div class="mens-card-title">Monitoramento contínuo</div><div class="mens-card-text">Acompanhamento da disponibilidade e do desempenho do copiloto, com identificação proativa de falhas antes que afetem a conferência.</div></div>
+      <div class="mens-card"><div class="mens-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.1 5.1l2.1 2.1M16.8 16.8l2.1 2.1M18.9 5.1L16.8 7.2M7.2 16.8l-2.1 2.1"/></svg></div><div class="mens-card-title">Ajustes e evolução de regras</div><div class="mens-card-text">Refinamento das regras de cruzamento, dos critérios de divergência e dos limiares de confiança — até <strong>4 horas técnicas por mês</strong> inclusas. Demandas acima disso são orçadas à parte, à taxa vigente.</div></div>
+      <div class="mens-card"><div class="mens-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 15l6-6"/><path d="M11.5 6.5l1-1a4 4 0 0 1 5.7 5.7l-1 1"/><path d="M12.5 17.5l-1 1a4 4 0 0 1-5.7-5.7l1-1"/></svg></div><div class="mens-card-title">Manutenção das integrações</div><div class="mens-card-text">Garantia de funcionamento das conexões ativas do módulo (pasta de documentos, e-mail, painel) — inclusive após atualizações dos próprios sistemas.</div></div>
+      <div class="mens-card"><div class="mens-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div><div class="mens-card-title">Atualização das bases</div><div class="mens-card-text">Inclusão de novos padrões de arquivo, layouts de extrato e regras de classificação que o copiloto passa a reconhecer ao longo do uso.</div></div>
+      <div class="mens-card"><div class="mens-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.5 7.2L4 20.5l1.3-4.4A8 8 0 1 1 21 12z"/></svg></div><div class="mens-card-title">Suporte a incidentes</div><div class="mens-card-text">Canal direto com o time NewScale via WhatsApp para resolução rápida de qualquer falha em produção, com SLA definido em contrato.</div></div>
+      <div class="mens-card"><div class="mens-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M7 15l4-4 3 3 5-6"/></svg></div><div class="mens-card-title">Relatório mensal de KPIs</div><div class="mens-card-text">Revisão dos principais indicadores — volume conferido, taxa de auto-conciliação, divergências por tipo — com recomendações baseadas no uso real.</div></div>
+    </div>
+    <div class="api-aviso reveal" style="margin-top:24px;"><strong>Sobre o teto de horas:</strong> a mensalidade inclui até 4 horas técnicas/mês para ajustes e evolução de regras (à taxa de referência de R$ 300/hora). Esse volume cobre a manutenção rotineira de um módulo em produção; melhorias maiores ou novas frentes entram como escopo adicional, sempre acordado antes de qualquer execução.</div>
+
+    <div class="roi-block reveal">
+      <div class="roi-text">
+        <h3>Quando esse investimento se paga</h3>
+        <p>O custo estimado de seguir como está é de ~R$ 21.500/mês no cliente-piloto. Deste total, projetamos capturar cerca de <strong>R$ 12.000/mês</strong> já com o Módulo 1 — de forma conservadora, porque a validação humana das divergências permanece e o preparo de arquivos só é endereçado na onda seguinte. Descontando os custos recorrentes do próprio módulo (sustentação de R$ 2.900/mês e plataforma de R$ 200–400/mês), o ganho líquido fica em <strong>~R$ 8.800/mês</strong> — e mesmo nessa conta conservadora o investimento se paga em cerca de 5 meses. A tendência é encurtar conforme o copiloto cobre mais competências e mais clientes.</p>
+        <div class="roi-formula">Payback = R$ 42.900 ÷ (R$ 12.000 − R$ 3.200/mês recorrentes) ≈ 5 meses</div>
+      </div>
+      <div class="roi-payback">
+        <div class="roi-payback-num">~5</div>
+        <div class="roi-payback-label">Meses de payback</div>
+      </div>
+    </div>
+
+    <div class="api-aviso reveal"><strong>Sobre custos de plataforma:</strong> APIs e ferramentas externas não estão inclusas e são pagas diretamente pela MG. Neste projeto, são essencialmente dois: o <strong>processamento de IA</strong> (modelos de linguagem da Anthropic/OpenAI que leem e cruzam os documentos) e a <strong>hospedagem da automação</strong> (plano do n8n que orquestra o fluxo). A mensalidade NewScale cobre a gestão, o monitoramento e a manutenção dessas ferramentas — não o custo dos planos em si. <strong>Estimativa operacional para o cliente-piloto: R$ 200–400/mês</strong>, proporcional ao volume de documentos processados.</div>
+    <div class="invest-future-note reveal">As ondas futuras (inteligência documental, conciliação, fechamento) são orçadas separadamente, ao final da PoC, com base no aprendizado do piloto.</div>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO TÉCNICO -->
+<section class="diag-section" id="sistemas">
+  <div class="diag-inner">
+    <div class="reveal">
+      <span class="section-label">Diagnóstico Técnico</span>
+      <h2 class="section-title">Os sistemas da MG no <em>mapa do projeto.</em></h2>
+      <p class="diag-intro">Mapeamos o ecossistema atual a partir da pesquisa pública e do que vimos na operação. A PoC foi desenhada para não depender de integrações pesadas: ela lê os arquivos que já estão organizados na pasta da MG. Os sistemas centrais entram em peso nas ondas seguintes — especialmente na conciliação.</p>
+    </div>
+
+    <div class="diag-table reveal">
+      <div class="diag-row diag-row--header">
+        <div>Sistema</div>
+        <div>Papel na operação</div>
+        <div>Situação de integração</div>
+        <div>Recomendação</div>
+      </div>
+      <div class="diag-row">
+        <div><div class="diag-sys-name-sm">Microsoft 365 / SharePoint <span class="diag-badge diag-badge--good">Alto</span></div><div class="diag-region-sm">Armazenamento documental</div></div>
+        <div class="diag-cell-text">Onde os documentos da competência já ficam organizados.</div>
+        <div class="diag-cell-text">Conectores maduros para leitura dos arquivos.</div>
+        <div class="diag-cell-text diag-cell-rec">Fonte do Módulo 1 — o copiloto lê daqui.</div>
+      </div>
+      <div class="diag-row">
+        <div><div class="diag-sys-name-sm">Ferramentas internas de conversão <span class="diag-badge diag-badge--good">Alto</span></div><div class="diag-region-sm">Preparo de arquivos (PDF→Excel→TXT)</div></div>
+        <div class="diag-cell-text">Geram o arquivo já normalizado que a equipe usa hoje.</div>
+        <div class="diag-cell-text">Desenvolvidas pela própria MG — acesso ao código, sem depender de API.</div>
+        <div class="diag-cell-text diag-cell-rec">Ponto de entrada ideal; facilitador das ondas seguintes.</div>
+      </div>
+      <div class="diag-row">
+        <div><div class="diag-sys-name-sm">SCI (Visual / ÚNICO) <span class="diag-badge diag-badge--mid">Médio</span></div><div class="diag-region-sm">Sistema contábil/fiscal</div></div>
+        <div class="diag-cell-text">Núcleo contábil e fiscal da MG.</div>
+        <div class="diag-cell-text">Integração a confirmar — relevante para ondas 2 e 3.</div>
+        <div class="diag-cell-text diag-cell-rec">Fora da PoC; mapear API na Onda 2.</div>
+      </div>
+      <div class="diag-row">
+        <div><div class="diag-sys-name-sm">Retaguarda do cliente <span class="diag-badge diag-badge--mid">Médio</span></div><div class="diag-region-sm">ERP de varejo (lado cliente)</div></div>
+        <div class="diag-cell-text">Onde nasce o dado de venda do supermercado.</div>
+        <div class="diag-cell-text">Fonte estratégica para a conciliação futura.</div>
+        <div class="diag-cell-text diag-cell-rec">Entra na Onda 3 (conciliação).</div>
+      </div>
+      <div class="diag-row diag-row--last">
+        <div><div class="diag-sys-name-sm">Adquirentes (Cielo, Rede, Stone…) <span class="diag-badge diag-badge--mid">Médio</span></div><div class="diag-region-sm">Meios de pagamento</div></div>
+        <div class="diag-cell-text">Liquidações, splits e antecipações dos clientes.</div>
+        <div class="diag-cell-text">Integração por arquivo/portal — complexa, porém viável.</div>
+        <div class="diag-cell-text diag-cell-rec">Núcleo da Onda 3, após dados organizados.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ONDA FUTURA -->
+<section class="onda-section">
+  <div class="onda-inner">
+    <div class="onda-grid">
+      <div class="onda-text reveal">
+        <span class="section-label">A jornada completa</span>
+        <h2 class="section-title">A PoC é o começo. O destino é a <em>conciliação assistida.</em></h2>
+        <p>A MG tem um ativo que poucas contabilidades têm: a inteligência de mais de 3.000 empresas e mais de 5.000 CNPJs do varejo. Provar o cruzamento assistido hoje, num cliente-piloto, é o que torna possível, amanhã, a automação de maior valor — conciliar bancos e adquirência com motor de matching e fila de exceções.</p>
+        <p>Validada a tese no Módulo 1, cada onda seguinte é orçada com base no que aprendemos no piloto. Você avança no ritmo do retorno, não no ritmo da promessa.</p>
+      </div>
+      <div class="onda-card reveal reveal-delay-1">
+        <div class="onda-card-title">Ondas seguintes</div>
+        <div class="onda-step">
+          <div class="onda-step-num">02</div>
+          <div><div class="onda-step-name">Inteligência Documental</div><div class="onda-step-desc">Leitura direta de PDF cru e OCR de notas, XMLs e extratos de qualquer origem — ampliando o cruzamento além dos arquivos já normalizados.</div></div>
+        </div>
+        <div class="onda-step">
+          <div class="onda-step-num">03</div>
+          <div><div class="onda-step-name">Conciliação Assistida <span class="onda-prize">maior valor</span></div><div class="onda-step-desc">Motor de matching bancário e de adquirência (Cielo, Rede, Stone), com fila de exceções priorizada por materialidade.</div></div>
+        </div>
+        <div class="onda-step">
+          <div class="onda-step-num">04</div>
+          <div><div class="onda-step-name">Fechamento & Visibilidade</div><div class="onda-step-desc">Checklist orquestrado, sign-off, trilha de auditoria e painel de dias-para-fechar.</div></div>
+        </div>
+        <div class="onda-step">
+          <div class="onda-step-num">05</div>
+          <div><div class="onda-step-name">Copiloto Interno + Fiscal</div><div class="onda-step-desc">Resumo de divergências, apoio à investigação de exceções e monitoramento de obrigações.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="garantia-section">
+  <div class="garantia-inner">
+    <div class="garantia-block reveal">
+      <div>
+        <h2>Se ficar em pé, mas não <em>redondo</em> — a gente continua.</h2>
+        <p>Nada de "entregamos o que estava no contrato e tchau". Se o copiloto está rodando mas em algum ponto não atende ao escopo combinado, a NewScale continua trabalhando — sem cobrança adicional — até estar redondo.</p>
+      </div>
+      <div class="garantia-selo">
+        <div class="garantia-selo-num">100%</div>
+        <div class="garantia-selo-label">Compromisso com o escopo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE A NEWSCALE -->
+<section class="porque-section">
+  <div class="porque-inner">
+    <div class="quote-block reveal">
+      <div class="quote-mark">"</div>
+      <div class="quote-text">Cada projeto começa pela conversa — não pelo contrato. A gente entende como a operação funciona hoje, quais as regras de negócio, o que a equipe precisa. Só depois constrói. E depois que entrega, a gente fica — otimizando, ajustando e evoluindo junto com o seu negócio.</div>
+      <div class="quote-author">— Bruna Santanna, Co-Fundadora NewScale Consulting</div>
+    </div>
+
+    <h2 class="porque-headline reveal">Método antes de ferramenta. <em>Resultado antes de hype.</em></h2>
+
+    <div class="metodologia-grid">
+      <div class="metodo-card reveal"><div class="metodo-num">1</div><div class="metodo-title">Consultoria sistêmica</div><div class="metodo-text">Visão completa do negócio: atendimento, operação e financeiro. IA como motor de escala — não de cosmética.</div></div>
+      <div class="metodo-card reveal reveal-delay-1"><div class="metodo-num">2</div><div class="metodo-title">Roadmap faseado</div><div class="metodo-text">Priorizamos os processos com maior potencial de retorno antes de qualquer outra coisa.</div></div>
+      <div class="metodo-card reveal reveal-delay-2"><div class="metodo-num">3</div><div class="metodo-title">Implementação integrada</div><div class="metodo-text">Conectamos seus sistemas, eliminamos tarefas manuais e construímos fluxos nos canais que sua equipe já usa.</div></div>
+      <div class="metodo-card reveal"><div class="metodo-num">4</div><div class="metodo-title">Treinamento das equipes</div><div class="metodo-text">Cada pessoa aprende o papel no novo fluxo. O humano monitora e decide — a IA faz o operacional.</div></div>
+      <div class="metodo-card reveal reveal-delay-1"><div class="metodo-num">5</div><div class="metodo-title">Acompanhamento de KPIs</div><div class="metodo-text">Métricas definidas juntos antes de começar. Você sabe o que esperar — e como acompanhar o ganho real.</div></div>
+      <div class="metodo-card reveal reveal-delay-2"><div class="metodo-num">6</div><div class="metodo-title">Sustentação contínua</div><div class="metodo-text">Monitoramento, otimizações e manutenção para que o sistema evolua junto com o negócio.</div></div>
+    </div>
+
+    <div class="fundadores-grid">
+      <div class="fundador-card reveal">
+        <img class="fundador-photo" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG" alt="Bruna Santanna">
+        <div class="fundador-info">
+          <div class="fundador-name">Bruna Santanna</div>
+          <div class="fundador-role">Co-Fundadora</div>
+          <div class="fundador-bio">ESPM. Empresária há 10+ anos. Mentora de IA no programa Potenc.IA. Professora de IA para equipes corporativas. Implementa IA no próprio negócio todos os dias — só vende o que usa.</div>
+          <div class="fundador-tags"><span class="fundador-tag">SulAmérica</span><span class="fundador-tag">Whirlpool</span><span class="fundador-tag">Blackbox AI</span><span class="fundador-tag">Potenc.IA</span></div>
+        </div>
+      </div>
+      <div class="fundador-card reveal reveal-delay-1">
+        <img class="fundador-photo" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/BRUNO-VARELLA-PQ.jpeg" alt="Bruno Varella">
+        <div class="fundador-info">
+          <div class="fundador-name">Bruno Varella</div>
+          <div class="fundador-role">Co-Fundador</div>
+          <div class="fundador-bio">ESPM. 17+ anos em Marketing, Produto e Novos Negócios. Ex-Warner Bros., Ex-Natura & Co. Já implantou Agentes de IA em redes de franquias com 700+ unidades.</div>
+          <div class="fundador-tags"><span class="fundador-tag">Warner Bros.</span><span class="fundador-tag">Natura & Co</span><span class="fundador-tag">700+ franquias</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="reveal">
+      <span class="section-label">Perguntas frequentes</span>
+      <h2 class="section-title">O que a diretoria <em>costuma perguntar.</em></h2>
+    </div>
+    <div class="reveal reveal-delay-1" style="margin-top:20px;">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">A solução acessa dados bancários ou toca em decisão fiscal?<span class="faq-toggle">+</span></div>
+        <div class="faq-a"><p>Não. O Módulo 1 só lê documentos que já estão na pasta da MG e os cruza para apontar divergências. Nenhuma credencial bancária, nenhum acesso ao sistema do cliente, nenhuma decisão fiscal automatizada. O copiloto sinaliza; o julgamento técnico continua 100% com a equipe da MG. Isso mantém o risco baixo e o escopo claro.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">E a segurança dos dados e a LGPD?<span class="faq-toggle">+</span></div>
+        <div class="faq-a"><p>Trabalhamos com minimização de dados, controle de acesso e trilha de logs. Os documentos vão para o ambiente que a MG já usa e controla. A camada de automação não cria um repositório paralelo sem governança — ela respeita o fluxo seguro que a MG já mantém.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Precisamos trocar nossos sistemas?<span class="faq-toggle">+</span></div>
+        <div class="faq-a"><p>Não. A NewScale não substitui ERP nem sistema contábil. O copiloto lê os arquivos do ambiente que a MG já usa e devolve os alertas — sem tocar no SCI/ÚNICO nem nas retaguardas dos clientes, que seguem exatamente como estão.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">E se a IA errar um apontamento?<span class="faq-toggle">+</span></div>
+        <div class="faq-a"><p>O copiloto não crava "está errado" — ele aponta candidatos a divergência com grau de confiança, e a decisão final é sempre do especialista. Se um alerta for falso positivo, o custo é zero: a equipe ia conferir aquele ponto de qualquer forma. A diferença é que agora ela confere uma lista curta em vez de varrer tudo no olho. Os casos de aproximação/média, que exigem julgamento, ficam fora do escopo e seguem com a pessoa.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Por que 45 dias, e não algo "para ontem"?<span class="faq-toggle">+</span></div>
+        <div class="faq-a"><p>45 dias é o prazo que garante diagnóstico, baseline, construção, piloto e treinamento sem atropelo — em um cliente do porte da MG, fazer certo importa mais do que fazer rápido demais. O escopo fechado é justamente o que permite cumprir esse prazo com segurança.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Como isso vira conciliação no futuro?<span class="faq-toggle">+</span></div>
+        <div class="faq-a"><p>A conciliação completa (Onda 3) é o destino de maior valor, mas exige integração com bancos e adquirentes e regras que mudam por cliente. O Módulo 1 prova o cruzamento de 1ª camada num cliente-piloto — é o alicerce. As Ondas 2 a 5 são orçadas separadamente, ao final da PoC, com base no que o piloto provar — sem compromisso antecipado.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">E depois, como expandimos para os demais clientes — e quanto custa?<span class="faq-toggle">+</span></div>
+        <div class="faq-a"><p>O grosso do investimento da PoC é o motor de cruzamento, que é construído uma vez e reaproveitado. Expandir não é refazer — é replicar. O custo por novo cliente cai conforme ele se parece com um perfil já mapeado: clientes do mesmo padrão do piloto entram rápido e barato (só calibragem); um perfil de operação novo exige um trabalho pontual de adaptação das regras. Por isso a PoC é também a forma mais honesta de orçar a expansão: ela mede, com dados reais, quanto custa em média cada novo cliente. Ao final do piloto, levamos um plano de escala em ondas — por exemplo, blocos de clientes por perfil — com preço por cliente decrescente e um incremento previsível na mensalidade de sustentação. Você decide o ritmo da expansão olhando o retorno de cada onda, não uma promessa fechada no início.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRÓXIMOS PASSOS -->
+<section class="steps-section">
+  <div class="steps-inner">
+    <div class="reveal">
+      <span class="section-label">Próximos passos</span>
+      <h2 class="section-title">Da assinatura ao go-live, <em>em 45 dias.</em></h2>
+    </div>
+    <div style="margin-top:40px;">
+      <div class="step-item reveal">
+        <div class="step-num">1</div>
+        <div><div class="step-prazo">Semana 1</div><div class="step-title">Diagnóstico e baseline</div><p class="step-desc">Escolhemos o cliente-piloto com a diretoria, mapeamos os documentos e o padrão da pasta, e medimos o ponto de partida (tempo de conferência, erros que escapam hoje).</p></div>
+      </div>
+      <div class="step-item reveal">
+        <div class="step-num">2</div>
+        <div><div class="step-prazo">Semanas 2 e 3</div><div class="step-title">Construção do copiloto</div><p class="step-desc">Montamos a leitura dos arquivos normalizados, o motor de cruzamento de 1ª camada e a classificação das divergências por tipo e confiança.</p></div>
+      </div>
+      <div class="step-item reveal">
+        <div class="step-num">3</div>
+        <div><div class="step-prazo">Semanas 4 e 5</div><div class="step-title">Piloto acompanhado</div><p class="step-desc">Rodamos sobre competências reais do cliente-piloto, calibramos o que é divergência junto com a equipe e ativamos o painel de inconsistências.</p></div>
+      </div>
+      <div class="step-item reveal">
+        <div class="step-num">4</div>
+        <div><div class="step-prazo">Semanas 6 e 7</div><div class="step-title">Go-live, KPIs e treinamento</div><p class="step-desc">O go-live acontece em 45 dias: comparamos com o baseline, treinamos a equipe para trabalhar com o copiloto e formalizamos a entrega nos dias seguintes — com os números na mesa.</p></div>
+      </div>
+    </div>
+    <div class="steps-close reveal">"Você não está sozinho no go-live — e também não estará no dia seguinte."</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-fechamento-inner reveal">
+      <div class="cta-validade">Validade até 22 de julho de 2026</div>
+      <h2>Provar o valor da IA na MG começa <em>com um passo certo.</em></h2>
+      <p>Um copiloto que cruza os documentos e aponta as divergências, um painel que dá controle à gestão e um caminho claro até a conciliação. Escopo fechado, 45 dias, retorno mensurável.</p>
+      <div class="cta-btns">
+        <a class="cta-btn-primary" href="https://wa.me/5511981982254?text=Ol%C3%A1%21%20Somos%20da%20MG%20Cont%C3%A9cnica%20e%20queremos%20avan%C3%A7ar%20com%20a%20PoC%20de%20confer%C3%AAncia%20assistida." target="_blank">Quero avançar com a PoC</a>
+        <a class="cta-btn-secondary" href="https://wa.me/5511981982254?text=Ol%C3%A1%21%20Somos%20da%20MG%20Cont%C3%A9cnica%20e%20temos%20uma%20d%C3%BAvida%20sobre%20a%20proposta." target="_blank">Tirar uma dúvida</a>
+      </div>
+      <div class="cta-metricas">
+        <div><div class="cta-metrica-num">45 dias</div><div class="cta-metrica-label">Até o go-live</div></div>
+        <div><div class="cta-metrica-num">~4 meses</div><div class="cta-metrica-label">De payback estimado</div></div>
+        <div><div class="cta-metrica-num">R$ 42.900</div><div class="cta-metrica-label">Investimento da PoC</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">NewScale<span>Consulting</span></div>
+  <div class="footer-date">Proposta exclusiva · MG Contécnica<br>8 de julho de 2026 · Validade até 22 de julho de 2026</div>
+</footer>
+
+<script>
+// --- Gate de acesso por domínio de e-mail ---
+(function(){
+  var allowed = ['newscale.tech','mgcontecnica.com.br'];
+  var gate = document.getElementById('gate');
+  var form = document.getElementById('gateForm');
+  var input = document.getElementById('gateEmail');
+  var error = document.getElementById('gateError');
+  function unlock(){
+    gate.classList.add('hidden');
+    document.body.classList.remove('gate-locked');
+  }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var val = (input.value || '').trim().toLowerCase();
+    var domain = val.split('@')[1] || '';
+    if(allowed.indexOf(domain) !== -1){
+      error.classList.remove('show');
+      unlock();
+    } else {
+      error.classList.add('show');
+      input.focus();
+    }
+  });
+})();
+
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+function toggleModulo(card){ card.classList.toggle('open'); }
+function toggleFaq(item){
+  document.querySelectorAll('.faq-item.open').forEach(other => { if(other !== item) other.classList.remove('open'); });
+  item.classList.toggle('open');
+}
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.06 });
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
