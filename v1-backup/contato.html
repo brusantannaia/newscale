@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Contato e diagnóstico gratuito | NewScale, consultoria de inteligência artificial</title>
+<meta name="description" content="Fale com a NewScale e peça um diagnóstico gratuito de automação de IA. Em 30 minutos mapeamos onde a inteligência artificial gera mais impacto na sua operação.">
+<link rel="canonical" href="https://newscale.tech/contato">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NewScale Consulting">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://newscale.tech/contato">
+<meta property="og:title" content="Contato e diagnóstico gratuito | NewScale, consultoria de IA">
+<meta property="og:description" content="Peça o seu diagnóstico gratuito de automação de IA. Em 30 minutos mapeamos onde a inteligência artificial gera mais impacto na sua operação.">
+<meta property="og:image" content="https://newscale.tech/og-cover.png">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contato e diagnóstico gratuito | NewScale">
+<meta name="twitter:description" content="Peça o seu diagnóstico gratuito de automação de IA com a NewScale.">
+<meta name="twitter:image" content="https://newscale.tech/og-cover.png">
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JJ9X1LXN4L"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JJ9X1LXN4L');</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Shared redesign system -->
+<link rel="stylesheet" href="/assets/css/redesign.css">
+
+<!-- Elevações da página de contato -->
+<style>
+  /* dots de progresso com transição suave + preenchimento animado */
+  .diag-dots{align-items:center;}
+  .diag-dot{position:relative;overflow:hidden;transition:background .3s,width .3s;}
+  .diag-dot::after{content:"";position:absolute;inset:0;border-radius:100px;background:var(--terra);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.4,.8,.3,1);}
+  .diag-dot.on::after{transform:scaleX(1);}
+  .diag-dot.on{width:42px;box-shadow:0 0 0 3px rgba(176,110,74,.12);}
+  .diag-step-count{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-left:6px;}
+  /* botão principal caprichado: brilho + seta que desliza */
+  .diag .btn-terra{position:relative;overflow:hidden;}
+  .diag .btn-terra svg{transition:transform .25s;}
+  .diag .btn-terra:hover svg{transform:translateX(4px);}
+  .diag .btn-terra::before{content:"";position:absolute;top:0;left:-120%;width:70%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);transform:skewX(-18deg);transition:left .55s cubic-bezier(.2,.7,.2,1);}
+  .diag .btn-terra:hover::before{left:130%;}
+  /* mini timeline da oferta com números Anton */
+  .offer-tl{list-style:none;margin:18px 0 6px;padding:0;position:relative;}
+  .offer-tl::before{content:"";position:absolute;left:23px;top:14px;bottom:22px;width:2px;background:linear-gradient(to bottom,rgba(176,110,74,.5),var(--line));}
+  .offer-tl li{position:relative;display:flex;gap:18px;padding-bottom:22px;align-items:flex-start;}
+  .offer-tl li:last-child{padding-bottom:0;}
+  .offer-tl .on{width:48px;height:48px;flex-shrink:0;border-radius:14px;background:var(--ink-2);border:1px solid rgba(176,110,74,.28);display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-weight:400;font-size:1.7rem;color:var(--tl);line-height:1;position:relative;z-index:2;transition:border-color .2s,box-shadow .2s,transform .2s;}
+  .offer-tl li:hover .on{border-color:rgba(196,131,94,.6);box-shadow:0 0 0 4px rgba(176,110,74,.1);transform:translateY(-2px);}
+  .offer-tl .ot{padding-top:4px;}
+  .offer-tl .ot h4{font-size:1rem;font-weight:700;color:var(--cream);margin-bottom:3px;}
+  .offer-tl .ot p{font-size:.88rem;color:var(--muted);font-weight:300;line-height:1.5;}
+  /* contact-cards com glow no hover */
+  .contact-card{transition:border-color .2s,transform .2s,box-shadow .2s;}
+  .contact-card:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(196,131,94,.28),0 16px 40px -20px rgba(176,110,74,.4);}
+  .contact-card .contact-ico{transition:background .2s,transform .25s;}
+  .contact-card:hover .contact-ico{background:rgba(176,110,74,.22);transform:scale(1.05);}
+  @media(prefers-reduced-motion:reduce){
+    .diag-dot::after,.diag .btn-terra::before,.diag .btn-terra svg,.contact-card,.contact-ico{transition:none !important;}
+    .offer-tl li:hover .on{transform:none;}
+  }
+</style>
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contato e diagnóstico gratuito | NewScale",
+  "url": "https://newscale.tech/contato",
+  "description": "Fale com a NewScale e peça um diagnóstico gratuito de automação de IA.",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "NewScale Consulting",
+    "url": "https://newscale.tech",
+    "email": "contato@newscale.tech",
+    "description": "Consultoria de inteligência artificial e agentes de automação para empresas.",
+    "areaServed": "BR",
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+55-11-97190-1020",
+      "email": "contato@newscale.tech",
+      "contactType": "customer service",
+      "availableLanguage": ["Portuguese"]
+    }],
+    "sameAs": [
+      "https://www.instagram.com/newscaleai/",
+      "https://www.linkedin.com/in/bruno-varella-dominguez/",
+      "https://www.linkedin.com/in/bruna-araujo-santanna/"
+    ]
+  }
+}
+</script>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="/" class="logo" aria-label="NewScale"><img src="/assets/img/logo-branco.png" alt="NewScale Consulting"></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="/metodologia">Metodologia</a>
+      <a href="/agentes">Agentes</a>
+      <a href="/educacao">Educação</a>
+      <a href="/cases">Cases</a>
+      <a href="/sobre">Sobre</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://wa.me/5511971901020?text=Ol%C3%A1%21+Gostaria+de+agendar+um+diagn%C3%B3stico+gratuito+com+a+NewScale." class="nav-cta" target="_blank" rel="noopener">Diagnóstico gratuito</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero hero-sm">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="rv">
+      <div class="hero-eyebrow"><span class="dot"></span><span class="kick">Fale com a gente</span></div>
+      <h1>FALE COM A <span class="terra">NEWSCALE</span></h1>
+      <p class="hero-sub">A NewScale é uma consultoria de inteligência artificial que ajuda empresas a automatizar processos com IA. Peça o seu diagnóstico gratuito: em uma call de 30 minutos mapeamos os processos com maior potencial de automação e mostramos por onde começar, sem compromisso.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="sec">
+  <div class="wrap">
+    <div class="contact-grid">
+      <!-- LEFT: formulário de diagnóstico multi-etapas -->
+      <div class="rv">
+        <form class="diag" name="diagnostico" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-diag>
+          <input type="hidden" name="form-name" value="diagnostico">
+          <p style="display:none"><input name="bot-field"></p>
+
+          <div class="diag-head">
+            <h3>Diagnóstico gratuito</h3>
+            <p>Você recebe um mapa dos processos com maior potencial de IA na sua empresa, uma estimativa de ROI e um cronograma de implementação.</p>
+          </div>
+
+          <div class="diag-dots">
+            <span class="diag-dot on"></span>
+            <span class="diag-dot"></span>
+            <span class="diag-step-count">Passo 1 de 2</span>
+          </div>
+
+          <div class="diag-step on">
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa" required>
+
+            <label for="gargalo">Principal gargalo</label>
+            <select id="gargalo" name="gargalo" required>
+              <option value="" disabled selected>Selecione uma área</option>
+              <option value="Comercial e Vendas">Comercial e Vendas</option>
+              <option value="Atendimento e SAC">Atendimento e SAC</option>
+              <option value="RH e Recrutamento">RH e Recrutamento</option>
+              <option value="Financeiro">Financeiro</option>
+              <option value="Operações e Backoffice">Operações e Backoffice</option>
+              <option value="Marketing e CRM">Marketing e CRM</option>
+              <option value="Outro">Outro</option>
+            </select>
+
+            <div class="diag-nav">
+              <button type="button" class="btn btn-terra" data-next>Continuar</button>
+            </div>
+          </div>
+
+          <div class="diag-step">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="whatsapp">WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp" required>
+
+            <label for="email">E-mail (opcional)</label>
+            <input type="email" id="email" name="email">
+
+            <div class="diag-nav">
+              <button type="button" class="btn btn-ghost" data-prev>Voltar</button>
+              <button type="submit" class="btn btn-terra">Receber meu diagnóstico</button>
+            </div>
+          </div>
+
+          <p class="diag-note">Resposta em até 1 dia útil. Sem cartão, sem compromisso.</p>
+
+          <div class="diag-done">
+            <div class="dt">Recebido!</div>
+            <p>Em até 1 dia útil entramos em contato pelo WhatsApp para marcar a call de 30 minutos.</p>
+          </div>
+        </form>
+      </div>
+
+      <!-- RIGHT: oferta produtizada + canais -->
+      <div class="rv">
+        <div class="prose">
+          <h2 style="margin-top:0">O que você recebe</h2>
+          <ul>
+            <li>Mapa dos <b>3 processos</b> com maior potencial de IA na sua operação.</li>
+            <li>Estimativa de <b>ROI</b> para cada automação priorizada.</li>
+            <li>Um <b>cronograma</b> claro de implementação.</li>
+          </ul>
+
+          <h2>Como funciona</h2>
+        </div>
+        <ol class="offer-tl">
+          <li>
+            <span class="on">1</span>
+            <span class="ot"><h4>Você preenche</h4><p>O formulário ao lado leva menos de um minuto.</p></span>
+          </li>
+          <li>
+            <span class="on">2</span>
+            <span class="ot"><h4>Call de 30 minutos</h4><p>Entendemos a sua operação e onde a IA rende mais.</p></span>
+          </li>
+          <li>
+            <span class="on">3</span>
+            <span class="ot"><h4>Você recebe o plano</h4><p>Com o passo a passo de implementação, sem compromisso.</p></span>
+          </li>
+        </ol>
+
+        <a class="contact-card" href="https://wa.me/5511971901020" target="_blank" rel="noopener">
+          <span class="contact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <span><span class="cl">WhatsApp (resposta rápida)</span><br><span class="cv">(11) 97190-1020</span></span>
+        </a>
+        <a class="contact-card" href="mailto:contato@newscale.tech">
+          <span class="contact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+          <span><span class="cl">E-mail</span><br><span class="cv">contato@newscale.tech</span></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="ctaf">
+  <div class="ctaf-glow" aria-hidden="true"></div>
+  <div class="wrap rv">
+    <h2>Diagnóstico gratuito de <span class="terra">30 minutos</span></h2>
+    <p>Sem compromisso. Mapeamos onde a IA gera impacto real na sua operação e o que dá para automatizar primeiro.</p>
+    <a href="https://wa.me/5511971901020?text=Ol%C3%A1%21+Gostaria+de+agendar+um+diagn%C3%B3stico+gratuito+com+a+NewScale." target="_blank" rel="noopener" class="btn btn-terra" style="padding:18px 38px;font-size:.95rem">Agendar diagnóstico gratuito <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <p class="hero-note" style="margin-top:24px">Volume limitado de clientes por mês para garantir a qualidade de cada implementação.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand"><a href="/"><img src="/assets/img/logo-branco.png" alt="NewScale Consulting"></a></div>
+      <nav class="footer-links">
+        <a href="/metodologia">Metodologia</a><a href="/agentes">Agentes</a><a href="/cases">Cases</a><a href="/sobre">Sobre</a><a href="/blog/">Blog</a><a href="/trabalhe-conosco">Trabalhe Conosco</a><a href="https://brunasantanna.com" target="_blank" rel="noopener">Virada IA (educação)</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:contato@newscale.tech">contato@newscale.tech</a>
+        <a href="https://wa.me/5511971901020" target="_blank" rel="noopener">(11) 97190-1020</a>
+        <a href="https://www.instagram.com/newscaleai/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 NewScale Consulting. Todos os direitos reservados.</p>
+      <p>Consultoria de IA · Agentes de Automação · São Paulo, SP</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/redesign.js" defer></script>
+</body>
+</html>
