@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<title>Contato e diagnóstico gratuito | NewScale, consultoria de inteligência artificial</title>
-<meta name="description" content="Fale com a NewScale e peça um diagnóstico gratuito de automação de IA. Em 30 minutos mapeamos onde a inteligência artificial gera mais impacto na sua operação.">
+<title>Contato · Diagnóstico Executivo de 30 minutos | NewScale</title>
+<meta name="description" content="Agende o Diagnóstico Executivo da NewScale: 30 minutos, sem custo e sem compromisso. Você sai com o mapa dos 3 processos com maior potencial de IA, estimativa de ROI e cronograma.">
 <link rel="canonical" href="https://newscale.tech/contato">
 
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -13,18 +13,12 @@
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="NewScale Consulting">
-<meta property="og:locale" content="pt_BR">
 <meta property="og:url" content="https://newscale.tech/contato">
-<meta property="og:title" content="Contato e diagnóstico gratuito | NewScale, consultoria de IA">
-<meta property="og:description" content="Peça o seu diagnóstico gratuito de automação de IA. Em 30 minutos mapeamos onde a inteligência artificial gera mais impacto na sua operação.">
-<meta property="og:image" content="https://newscale.tech/og-cover.png">
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Contato e diagnóstico gratuito | NewScale">
-<meta name="twitter:description" content="Peça o seu diagnóstico gratuito de automação de IA com a NewScale.">
-<meta name="twitter:image" content="https://newscale.tech/og-cover.png">
+<meta property="og:title" content="Diagnóstico Executivo, NewScale">
+<meta property="og:description" content="30 minutos que mapeiam sua operação: 3 processos com maior potencial de IA, estimativa de ROI e cronograma. Sem custo.">
+<meta property="og:image" content="https://newscale.tech/assets/img/og-image.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="NewScale Consulting">
 
 <!-- GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JJ9X1LXN4L"></script>
@@ -35,75 +29,135 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Shared redesign system -->
-<link rel="stylesheet" href="/assets/css/redesign.css">
-
-<!-- Elevações da página de contato -->
+<!-- PUBLICAÇÃO: no repo, trocar o bloco de design system por <link rel="stylesheet" href="/assets/css/redesign.css">. -->
 <style>
-  /* dots de progresso com transição suave + preenchimento animado */
-  .diag-dots{align-items:center;}
-  .diag-dot{position:relative;overflow:hidden;transition:background .3s,width .3s;}
-  .diag-dot::after{content:"";position:absolute;inset:0;border-radius:100px;background:var(--terra);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.4,.8,.3,1);}
-  .diag-dot.on::after{transform:scaleX(1);}
-  .diag-dot.on{width:42px;box-shadow:0 0 0 3px rgba(176,110,74,.12);}
-  .diag-step-count{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-left:6px;}
-  /* botão principal caprichado: brilho + seta que desliza */
-  .diag .btn-terra{position:relative;overflow:hidden;}
-  .diag .btn-terra svg{transition:transform .25s;}
-  .diag .btn-terra:hover svg{transform:translateX(4px);}
-  .diag .btn-terra::before{content:"";position:absolute;top:0;left:-120%;width:70%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);transform:skewX(-18deg);transition:left .55s cubic-bezier(.2,.7,.2,1);}
-  .diag .btn-terra:hover::before{left:130%;}
-  /* mini timeline da oferta com números Anton */
-  .offer-tl{list-style:none;margin:18px 0 6px;padding:0;position:relative;}
-  .offer-tl::before{content:"";position:absolute;left:23px;top:14px;bottom:22px;width:2px;background:linear-gradient(to bottom,rgba(176,110,74,.5),var(--line));}
-  .offer-tl li{position:relative;display:flex;gap:18px;padding-bottom:22px;align-items:flex-start;}
-  .offer-tl li:last-child{padding-bottom:0;}
-  .offer-tl .on{width:48px;height:48px;flex-shrink:0;border-radius:14px;background:var(--ink-2);border:1px solid rgba(176,110,74,.28);display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-weight:400;font-size:1.7rem;color:var(--tl);line-height:1;position:relative;z-index:2;transition:border-color .2s,box-shadow .2s,transform .2s;}
-  .offer-tl li:hover .on{border-color:rgba(196,131,94,.6);box-shadow:0 0 0 4px rgba(176,110,74,.1);transform:translateY(-2px);}
-  .offer-tl .ot{padding-top:4px;}
-  .offer-tl .ot h4{font-size:1rem;font-weight:700;color:var(--cream);margin-bottom:3px;}
-  .offer-tl .ot p{font-size:.88rem;color:var(--muted);font-weight:300;line-height:1.5;}
-  /* contact-cards com glow no hover */
-  .contact-card{transition:border-color .2s,transform .2s,box-shadow .2s;}
-  .contact-card:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(196,131,94,.28),0 16px 40px -20px rgba(176,110,74,.4);}
-  .contact-card .contact-ico{transition:background .2s,transform .25s;}
-  .contact-card:hover .contact-ico{background:rgba(176,110,74,.22);transform:scale(1.05);}
-  @media(prefers-reduced-motion:reduce){
-    .diag-dot::after,.diag .btn-terra::before,.diag .btn-terra svg,.contact-card,.contact-ico{transition:none !important;}
-    .offer-tl li:hover .on{transform:none;}
-  }
-</style>
-
-<!-- JSON-LD -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  "name": "Contato e diagnóstico gratuito | NewScale",
-  "url": "https://newscale.tech/contato",
-  "description": "Fale com a NewScale e peça um diagnóstico gratuito de automação de IA.",
-  "mainEntity": {
-    "@type": "Organization",
-    "name": "NewScale Consulting",
-    "url": "https://newscale.tech",
-    "email": "contato@newscale.tech",
-    "description": "Consultoria de inteligência artificial e agentes de automação para empresas.",
-    "areaServed": "BR",
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "telephone": "+55-11-97190-1020",
-      "email": "contato@newscale.tech",
-      "contactType": "customer service",
-      "availableLanguage": ["Portuguese"]
-    }],
-    "sameAs": [
-      "https://www.instagram.com/newscaleai/",
-      "https://www.linkedin.com/in/bruno-varella-dominguez/",
-      "https://www.linkedin.com/in/bruna-araujo-santanna/"
-    ]
-  }
+/* ============================================================
+   NewScale, Premium Dark Design System (redesign.css do repo, inlineado)
+============================================================ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#0C2427; --bg-2:#0E2A2E; --ink:#14373C; --ink-2:#1A4449; --green:#435D51;
+  --terra:#B06E4A; --tl:#C4835E; --terra-d:#985A3B; --sand:#A38362;
+  --cream:#F4F3EF;
+  --ice:#F4F3EF; --ice-2:#FAFAF8; --greige:#E8E6E0;
+  --light:var(--ice); --light-2:var(--greige);
+  --text:rgba(244,243,239,.82); --muted:rgba(244,243,239,.56); --line:rgba(244,243,239,.10);
 }
-</script>
+html{scroll-behavior:smooth;}
+body{font-family:'Hanken Grotesk',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+em{font-style:normal;color:var(--tl);}
+::selection{background:var(--terra);color:#fff;}
+.wrap{max-width:1140px;margin:0 auto;padding:0 30px;}
+.kick{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--tl);}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.035;background-image:url("/assets/img/noise.png");background-repeat:repeat;}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(12,36,39,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px;}
+.logo img{height:46px;width:auto;}
+.main-nav{display:flex;align-items:center;gap:26px;}
+.main-nav a{font-size:.88rem;font-weight:600;color:var(--text);transition:color .18s;}
+.main-nav a:hover,.main-nav a.active{color:var(--tl);}
+.nav-cta{background:var(--terra);color:#fff !important;padding:11px 20px;border-radius:100px;font-size:.82rem !important;font-weight:700 !important;transition:background .2s,transform .15s,box-shadow .2s;}
+.nav-cta:hover{background:var(--terra-d);transform:translateY(-1px);box-shadow:0 8px 22px rgba(176,110,74,.3);}
+.nav-toggle{display:none;background:none;border:none;color:var(--cream);cursor:pointer;line-height:1;padding:4px;}
+.nav-toggle svg{width:26px;height:26px;}
+@media(max-width:880px){
+  .nav-toggle{display:block;}
+  .main-nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 30px 22px;box-shadow:0 28px 46px -20px rgba(0,0,0,.65);max-height:calc(100dvh - 62px);overflow-y:auto;}
+  .main-nav.open{display:flex;}
+  .main-nav a{padding:14px 0;width:100%;border-top:1px solid var(--line);font-size:1.05rem;}
+  .nav-cta{margin-top:14px;text-align:center;border-top:none;width:100%;}
+}
+.btn{display:inline-flex;align-items:center;gap:9px;justify-content:center;font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:.86rem;letter-spacing:.03em;text-transform:uppercase;padding:16px 30px;border-radius:100px;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s,background .2s,border-color .2s;}
+.btn svg{width:15px;height:15px;}
+.btn-terra{background:var(--terra);color:#fff;}
+.btn-terra:hover{background:var(--terra-d);transform:translateY(-2px);box-shadow:0 12px 30px rgba(176,110,74,.4);}
+.btn-ghost{background:transparent;color:var(--cream);border:1.5px solid var(--line);}
+.btn-ghost:hover{border-color:var(--tl);background:rgba(255,255,255,.04);}
+.hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#0a2023 0%,#0C2427 40%,#102f33 100%);}
+.hero-glow{position:absolute;width:640px;height:640px;border-radius:50%;top:-240px;right:-160px;background:radial-gradient(circle,rgba(176,110,74,.18),transparent 62%);pointer-events:none;}
+.hero .wrap{position:relative;z-index:2;padding:84px 30px 78px;}
+.hero-sm .wrap{padding:72px 30px 64px;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:9px;margin-bottom:22px;}
+.hero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--terra);box-shadow:0 0 0 4px rgba(176,110,74,.2);}
+h1{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(2.8rem,7vw,5rem);line-height:.92;letter-spacing:-.01em;text-transform:uppercase;color:var(--cream);}
+h1 .terra,h2 .terra{color:var(--terra);}
+.hero-sub{font-size:1.18rem;color:var(--text);font-weight:300;max-width:48ch;margin:24px 0 32px;}
+.hero-sub b{color:var(--cream);font-weight:600;}
+.hero-note{margin-top:24px;font-size:.74rem;letter-spacing:.03em;color:var(--muted);}
+.sec{padding:88px 0;position:relative;z-index:2;}
+.sec-sm{padding:64px 0;position:relative;z-index:2;}
+h2{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(2.2rem,6vw,3.6rem);text-transform:uppercase;color:var(--cream);line-height:1;letter-spacing:-.01em;}
+h3{line-height:1.2;}
+.bg-2{background:var(--bg-2);}
+.light{background:var(--ice);color:#3f4f51;}
+.light h2{color:var(--ink);}
+.light .kick{color:var(--terra-d);}
+.ctaf{background:linear-gradient(165deg,#0a2023,#14373C 55%,#1d4840 100%);text-align:center;position:relative;overflow:hidden;}
+.ctaf-glow{position:absolute;width:560px;height:560px;border-radius:50%;left:50%;top:-60%;transform:translateX(-50%);background:radial-gradient(circle,rgba(176,110,74,.16),transparent 62%);pointer-events:none;}
+.ctaf .wrap{position:relative;z-index:2;padding:96px 30px;}
+.ctaf h2{font-size:clamp(2.4rem,7vw,4.2rem);line-height:.98;max-width:20ch;margin:0 auto 18px;}
+.ctaf p{color:var(--text);font-weight:300;max-width:48ch;margin:0 auto 32px;font-size:1.08rem;}
+footer{background:#0a2023;color:var(--muted);padding:50px 0 44px;position:relative;z-index:2;}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px;padding-bottom:30px;border-bottom:1px solid var(--line);}
+.footer-brand img{height:44px;}
+.footer-links{display:flex;gap:22px;flex-wrap:wrap;}
+.footer-links a{font-size:.86rem;font-weight:600;color:var(--text);}
+.footer-links a:hover{color:var(--tl);}
+.footer-contact{display:flex;flex-direction:column;gap:6px;font-size:.86rem;}
+.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:24px;font-size:.76rem;color:rgba(244,243,239,.4);}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+.rv.in{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;}}
+@keyframes bl{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+/* FORM DE DIAGNÓSTICO (multi-etapas) */
+.diag{background:var(--ink);border:1px solid var(--line);border-radius:20px;padding:34px;position:relative;}
+.diag-head{margin-bottom:22px;}
+.diag-head h3{font-family:'Anton',sans-serif;font-weight:400;font-size:1.6rem;text-transform:uppercase;color:var(--cream);line-height:1;}
+.diag-head p{font-size:.88rem;color:var(--muted);margin-top:8px;}
+.diag-dots{display:flex;gap:8px;margin-bottom:24px;}
+.diag-dot{width:34px;height:4px;border-radius:100px;background:var(--line);transition:background .25s;}
+.diag-dot.on{background:var(--terra);}
+.diag-step{display:none;}
+.diag-step.on{display:block;}
+.diag label{display:block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--tl);margin:16px 0 7px;}
+.diag input,.diag select,.diag textarea{width:100%;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font-family:'Hanken Grotesk',sans-serif;font-size:.98rem;color:var(--cream);outline:none;transition:border-color .18s,box-shadow .18s;}
+.diag input:focus,.diag select:focus,.diag textarea:focus{border-color:var(--terra);box-shadow:0 0 0 4px rgba(176,110,74,.15);}
+.diag input.err,.diag select.err{border-color:#c0564a;}
+.diag select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23C4835E' stroke-width='2.4'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;}
+.diag-nav{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;}
+.diag-note{font-size:.74rem;color:var(--muted);margin-top:14px;}
+.diag-done{display:none;text-align:center;padding:30px 10px;}
+.diag-done.show{display:block;}
+.diag-done .dt{font-family:'Anton',sans-serif;font-size:1.8rem;text-transform:uppercase;color:var(--tl);line-height:1;margin-bottom:12px;}
+.diag-done p{color:var(--text);font-size:.98rem;}
+
+/* Layout contato */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+@media(max-width:860px){.contact-grid{grid-template-columns:1fr;}}
+.oflist{list-style:none;margin:18px 0 0;display:flex;flex-direction:column;gap:12px;}
+.oflist li{display:flex;gap:12px;font-size:.96rem;color:var(--text);}
+.oflist svg{width:20px;height:20px;flex-shrink:0;color:var(--tl);margin-top:2px;}
+.oflist b{color:var(--cream);font-weight:600;}
+.contact-card{background:var(--ink);border:1px solid var(--line);border-radius:16px;padding:24px 26px;display:flex;align-items:center;gap:16px;margin-top:14px;transition:border-color .18s,transform .18s;}
+.contact-card:hover{border-color:rgba(176,110,74,.4);transform:translateY(-2px);}
+.contact-ico{width:46px;height:46px;border-radius:12px;background:rgba(176,110,74,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.contact-ico svg{width:22px;height:22px;stroke:var(--tl);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.contact-card .cl{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--tl);}
+.contact-card .cv{font-size:1.05rem;font-weight:600;color:var(--cream);}
+
+/* Timeline "como funciona" (fundo gelo) */
+.howl{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:920px;margin:0 auto;}
+@media(max-width:760px){.howl{grid-template-columns:1fr;}}
+.how-step{background:var(--ice-2);border:1px solid rgba(20,55,60,.1);border-radius:16px;padding:26px 24px;position:relative;transition:transform .18s,box-shadow .18s;}
+.how-step:hover{transform:translateY(-3px);box-shadow:0 16px 42px rgba(20,55,60,.12);}
+.how-step .n{font-family:'Anton',sans-serif;font-size:2.4rem;color:var(--terra);line-height:1;}
+.how-step h3{font-size:1.05rem;font-weight:700;color:var(--ink);margin:8px 0 6px;}
+.how-step .t{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra-d);margin-bottom:4px;display:block;}
+.how-step p{font-size:.88rem;color:#4a5a55;line-height:1.5;}
+</style>
 </head>
 <body>
 <div class="grain" aria-hidden="true"></div>
@@ -111,15 +165,15 @@
 <!-- HEADER -->
 <header class="site-header">
   <div class="wrap header-inner">
-    <a href="/" class="logo" aria-label="NewScale"><img src="/assets/img/logo-branco.png" alt="NewScale Consulting"></a>
+    <a href="/" class="logo" aria-label="NewScale"><img src="/assets/img/logo-branco.png" alt="NewScale Consulting" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span style="display:none;font-family:'Anton',sans-serif;font-size:1.5rem;color:var(--cream);letter-spacing:.02em">NEWSCALE</span></a>
     <nav class="main-nav" id="mainNav">
-      <a href="/metodologia">Metodologia</a>
-      <a href="/agentes">Agentes</a>
-      <a href="/educacao">Educação</a>
+      <a href="/metodologia">Método ESCALA</a>
+      <a href="/agentes">Soluções</a>
+      <a href="/educacao/">Educação</a>
       <a href="/cases">Cases</a>
       <a href="/sobre">Sobre</a>
       <a href="/blog/">Blog</a>
-      <a href="https://wa.me/5511971901020?text=Ol%C3%A1%21+Gostaria+de+agendar+um+diagn%C3%B3stico+gratuito+com+a+NewScale." class="nav-cta" target="_blank" rel="noopener">Diagnóstico gratuito</a>
+      <a href="#diagnostico" class="nav-cta">Agendar diagnóstico</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -131,117 +185,106 @@
 <section class="hero hero-sm">
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="rv">
-      <div class="hero-eyebrow"><span class="dot"></span><span class="kick">Fale com a gente</span></div>
-      <h1>FALE COM A <span class="terra">NEWSCALE</span></h1>
-      <p class="hero-sub">A NewScale é uma consultoria de inteligência artificial que ajuda empresas a automatizar processos com IA. Peça o seu diagnóstico gratuito: em uma call de 30 minutos mapeamos os processos com maior potencial de automação e mostramos por onde começar, sem compromisso.</p>
+    <div class="rv" style="max-width:820px">
+      <div class="hero-eyebrow"><span class="dot"></span><span class="kick">Diagnóstico Executivo</span></div>
+      <h1>Fale com a<br><span class="terra">NewScale</span></h1>
+      <p class="hero-sub" style="max-width:60ch">30 minutos que mapeiam sua operação. Você sai com os <b>3 processos de maior potencial</b>, estimativa de ROI e cronograma, sem custo e sem compromisso.</p>
     </div>
   </div>
 </section>
 
-<!-- CONTATO -->
-<section class="sec">
+<!-- FORM + INFO -->
+<section class="sec bg-2" id="diagnostico" style="padding-top:64px">
   <div class="wrap">
     <div class="contact-grid">
-      <!-- LEFT: formulário de diagnóstico multi-etapas -->
+      <div class="rv">
+        <span class="kick" style="display:block;margin-bottom:14px">O que você recebe</span>
+        <h2 style="font-size:clamp(1.8rem,4.5vw,2.6rem)">Clareza, não<br>apresentação de vendas</h2>
+        <ul class="oflist">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span><b>Mapa dos 3 processos</b> com maior potencial de IA na sua operação</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span><b>Estimativa de ROI</b> de cada automação sugerida</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span><b>Cronograma de implementação</b> faseado por impacto</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span><b>A Matriz Risco × Repetição</b> rodando nas tarefas reais da sua empresa</span></li>
+        </ul>
+        <a class="contact-card" href="https://wa.me/5511981982254" target="_blank" rel="noopener">
+          <span class="contact-ico"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></span>
+          <span><span class="cl">WhatsApp</span><br><span class="cv">(11) 98198-2254</span></span>
+        </a>
+        <a class="contact-card" href="mailto:contato@newscale.tech">
+          <span class="contact-ico"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+          <span><span class="cl">E-mail</span><br><span class="cv">contato@newscale.tech</span></span>
+        </a>
+      </div>
       <div class="rv">
         <form class="diag" name="diagnostico" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-diag>
           <input type="hidden" name="form-name" value="diagnostico">
           <p style="display:none"><input name="bot-field"></p>
-
           <div class="diag-head">
-            <h3>Diagnóstico gratuito</h3>
-            <p>Você recebe um mapa dos processos com maior potencial de IA na sua empresa, uma estimativa de ROI e um cronograma de implementação.</p>
+            <h3>Receba seu diagnóstico</h3>
+            <p>2 etapas rápidas. Resposta em até 1 dia útil.</p>
           </div>
-
-          <div class="diag-dots">
-            <span class="diag-dot on"></span>
-            <span class="diag-dot"></span>
-            <span class="diag-step-count">Passo 1 de 2</span>
-          </div>
-
+          <div class="diag-dots"><span class="diag-dot on"></span><span class="diag-dot"></span></div>
           <div class="diag-step on">
-            <label for="empresa">Empresa</label>
-            <input type="text" id="empresa" name="empresa" required>
-
-            <label for="gargalo">Principal gargalo</label>
-            <select id="gargalo" name="gargalo" required>
-              <option value="" disabled selected>Selecione uma área</option>
-              <option value="Comercial e Vendas">Comercial e Vendas</option>
-              <option value="Atendimento e SAC">Atendimento e SAC</option>
-              <option value="RH e Recrutamento">RH e Recrutamento</option>
-              <option value="Financeiro">Financeiro</option>
-              <option value="Operações e Backoffice">Operações e Backoffice</option>
-              <option value="Marketing e CRM">Marketing e CRM</option>
-              <option value="Outro">Outro</option>
+            <label for="diag-empresa">Empresa</label>
+            <input id="diag-empresa" name="empresa" type="text" placeholder="Nome da sua empresa" required>
+            <label for="diag-gargalo">Onde está o maior gargalo hoje?</label>
+            <select id="diag-gargalo" name="gargalo" required>
+              <option value="" selected disabled>Selecione uma área</option>
+              <option>Comercial e Vendas</option>
+              <option>Atendimento e SAC</option>
+              <option>RH e Recrutamento</option>
+              <option>Financeiro</option>
+              <option>Operações e Backoffice</option>
+              <option>Marketing e CRM</option>
+              <option>Outro</option>
             </select>
-
-            <div class="diag-nav">
-              <button type="button" class="btn btn-terra" data-next>Continuar</button>
-            </div>
+            <!-- Perguntas "coffee" de qualificação (Doc 03, workflow de diagnóstico) -->
+            <label for="diag-tentou">O que você já tentou com IA?</label>
+            <select id="diag-tentou" name="ja_tentou" required>
+              <option value="" selected disabled>Selecione</option>
+              <option>Nada ainda, quero começar certo</option>
+              <option>Ferramentas prontas (ChatGPT, etc.)</option>
+              <option>Automação/agente que não deu resultado</option>
+              <option>Já temos IA rodando e queremos escalar</option>
+            </select>
+            <label for="diag-porte">Tamanho da operação</label>
+            <select id="diag-porte" name="porte" required>
+              <option value="" selected disabled>Selecione</option>
+              <option>Até 10 pessoas</option>
+              <option>11 a 50 pessoas</option>
+              <option>51 a 200 pessoas</option>
+              <option>200+ pessoas</option>
+            </select>
+            <div class="diag-nav"><button type="button" class="btn btn-terra" data-next>Continuar</button></div>
           </div>
-
           <div class="diag-step">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" required>
-
-            <label for="whatsapp">WhatsApp</label>
-            <input type="tel" id="whatsapp" name="whatsapp" required>
-
-            <label for="email">E-mail (opcional)</label>
-            <input type="email" id="email" name="email">
-
-            <div class="diag-nav">
-              <button type="button" class="btn btn-ghost" data-prev>Voltar</button>
-              <button type="submit" class="btn btn-terra">Receber meu diagnóstico</button>
-            </div>
+            <label for="diag-nome">Seu nome</label>
+            <input id="diag-nome" name="nome" type="text" placeholder="Como podemos te chamar?" required>
+            <label for="diag-whatsapp">WhatsApp</label>
+            <input id="diag-whatsapp" name="whatsapp" type="tel" placeholder="(11) 99999-9999" required>
+            <label for="diag-email">E-mail (opcional)</label>
+            <input id="diag-email" name="email" type="email" placeholder="voce@empresa.com.br">
+            <div class="diag-nav"><button type="button" class="btn btn-ghost" data-prev>Voltar</button><button type="submit" class="btn btn-terra">Receber meu diagnóstico</button></div>
           </div>
-
-          <p class="diag-note">Resposta em até 1 dia útil. Sem cartão, sem compromisso.</p>
-
-          <div class="diag-done">
-            <div class="dt">Recebido!</div>
-            <p>Em até 1 dia útil entramos em contato pelo WhatsApp para marcar a call de 30 minutos.</p>
-          </div>
+          <p class="diag-note">Resposta em até 1 dia útil.</p>
+          <div class="diag-done"><div class="dt">Recebido!</div><p>Obrigado! Vamos analisar suas respostas e retornar em até 1 dia útil com os próximos passos do seu diagnóstico.</p></div>
         </form>
       </div>
+    </div>
+  </div>
+</section>
 
-      <!-- RIGHT: oferta produtizada + canais -->
-      <div class="rv">
-        <div class="prose">
-          <h2 style="margin-top:0">O que você recebe</h2>
-          <ul>
-            <li>Mapa dos <b>3 processos</b> com maior potencial de IA na sua operação.</li>
-            <li>Estimativa de <b>ROI</b> para cada automação priorizada.</li>
-            <li>Um <b>cronograma</b> claro de implementação.</li>
-          </ul>
-
-          <h2>Como funciona</h2>
-        </div>
-        <ol class="offer-tl">
-          <li>
-            <span class="on">1</span>
-            <span class="ot"><h4>Você preenche</h4><p>O formulário ao lado leva menos de um minuto.</p></span>
-          </li>
-          <li>
-            <span class="on">2</span>
-            <span class="ot"><h4>Call de 30 minutos</h4><p>Entendemos a sua operação e onde a IA rende mais.</p></span>
-          </li>
-          <li>
-            <span class="on">3</span>
-            <span class="ot"><h4>Você recebe o plano</h4><p>Com o passo a passo de implementação, sem compromisso.</p></span>
-          </li>
-        </ol>
-
-        <a class="contact-card" href="https://wa.me/5511971901020" target="_blank" rel="noopener">
-          <span class="contact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-          <span><span class="cl">WhatsApp (resposta rápida)</span><br><span class="cv">(11) 97190-1020</span></span>
-        </a>
-        <a class="contact-card" href="mailto:contato@newscale.tech">
-          <span class="contact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
-          <span><span class="cl">E-mail</span><br><span class="cv">contato@newscale.tech</span></span>
-        </a>
-      </div>
+<!-- COMO FUNCIONA (fundo gelo) -->
+<section class="sec light">
+  <div class="wrap">
+    <div class="rv" style="text-align:center;max-width:720px;margin:0 auto 46px">
+      <span class="kick" style="display:block;margin-bottom:14px">Como funciona</span>
+      <h2>Do formulário<br>ao plano</h2>
+    </div>
+    <div class="howl rv">
+      <div class="how-step"><div class="n">1</div><span class="t">1 minuto</span><h3>Você preenche o formulário</h3><p>Empresa, gargalo e o que já tentou com IA. É o suficiente pra gente chegar preparado.</p></div>
+      <div class="how-step"><div class="n">2</div><span class="t">30 minutos</span><h3>Call de diagnóstico</h3><p>Rodamos a Matriz Risco × Repetição ao vivo nas tarefas reais da sua operação.</p></div>
+      <div class="how-step"><div class="n">3</div><span class="t">Até 5 dias úteis</span><h3>Você recebe o plano</h3><p>Processos priorizados, estimativa de ROI e cronograma. Decidir é com você.</p></div>
     </div>
   </div>
 </section>
@@ -250,9 +293,12 @@
 <section class="ctaf">
   <div class="ctaf-glow" aria-hidden="true"></div>
   <div class="wrap rv">
-    <h2>Diagnóstico gratuito de <span class="terra">30 minutos</span></h2>
-    <p>Sem compromisso. Mapeamos onde a IA gera impacto real na sua operação e o que dá para automatizar primeiro.</p>
-    <a href="https://wa.me/5511971901020?text=Ol%C3%A1%21+Gostaria+de+agendar+um+diagn%C3%B3stico+gratuito+com+a+NewScale." target="_blank" rel="noopener" class="btn btn-terra" style="padding:18px 38px;font-size:.95rem">Agendar diagnóstico gratuito <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <h2>Diagnóstico Executivo<br>de <span class="terra">30 minutos</span></h2>
+    <p>Sem custo e sem compromisso. Só clareza sobre onde a IA gera impacto real no seu negócio.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center">
+      <a href="#diagnostico" class="btn btn-terra" style="padding:18px 38px;font-size:.95rem">Preencher o formulário <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="https://wa.me/5511981982254" target="_blank" rel="noopener" class="btn btn-ghost" style="padding:18px 38px;font-size:.95rem">Prefiro WhatsApp</a>
+    </div>
     <p class="hero-note" style="margin-top:24px">Volume limitado de clientes por mês para garantir a qualidade de cada implementação.</p>
   </div>
 </section>
@@ -261,23 +307,47 @@
 <footer>
   <div class="wrap">
     <div class="footer-top">
-      <div class="footer-brand"><a href="/"><img src="/assets/img/logo-branco.png" alt="NewScale Consulting"></a></div>
+      <div class="footer-brand"><a href="/"><img src="/assets/img/logo-branco.png" alt="NewScale Consulting" onerror="this.style.display='none';this.parentElement.innerHTML='<b style=\'font-family:Anton,sans-serif;font-size:1.4rem;color:var(--cream)\'>NEWSCALE</b>'"></a></div>
       <nav class="footer-links">
-        <a href="/metodologia">Metodologia</a><a href="/agentes">Agentes</a><a href="/cases">Cases</a><a href="/sobre">Sobre</a><a href="/blog/">Blog</a><a href="/trabalhe-conosco">Trabalhe Conosco</a><a href="https://brunasantanna.com" target="_blank" rel="noopener">Virada IA (educação)</a>
+        <a href="/metodologia">Método ESCALA</a><a href="/agentes">Soluções</a><a href="/cases">Cases</a><a href="/sobre">Sobre</a><a href="/educacao/">Educação</a><a href="/blog/">Blog</a><a href="https://brunasantanna.com" target="_blank" rel="noopener">Virada IA (educação)</a>
       </nav>
       <div class="footer-contact">
         <a href="mailto:contato@newscale.tech">contato@newscale.tech</a>
-        <a href="https://wa.me/5511971901020" target="_blank" rel="noopener">(11) 97190-1020</a>
+        <a href="https://wa.me/5511981982254" target="_blank" rel="noopener">(11) 98198-2254</a>
         <a href="https://www.instagram.com/newscaleai/" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
     <div class="footer-bottom">
       <p>© 2026 NewScale Consulting. Todos os direitos reservados.</p>
-      <p>Consultoria de IA · Agentes de Automação · São Paulo, SP</p>
+      <p>Consultoria de transformação AI-first · Método ESCALA · São Paulo, SP</p>
     </div>
   </div>
 </footer>
 
-<script src="/assets/js/redesign.js" defer></script>
+<script>
+/* Nav mobile */
+var navToggle=document.getElementById('navToggle'),mainNav=document.getElementById('mainNav');
+if(navToggle)navToggle.addEventListener('click',function(){mainNav.classList.toggle('open');});
+
+/* Reveal on scroll */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+
+/* Form de diagnóstico multi-etapas (Netlify) */
+document.querySelectorAll('form[data-diag]').forEach(function(f){
+  var steps=f.querySelectorAll('.diag-step'),dots=f.querySelectorAll('.diag-dot'),cur=0;
+  function show(i){steps.forEach(function(s,k){s.classList.toggle('on',k===i);});dots.forEach(function(d,k){d.classList.toggle('on',k<=i);});cur=i;}
+  f.querySelectorAll('[data-next]').forEach(function(b){b.addEventListener('click',function(){
+    var ok=true;steps[cur].querySelectorAll('input[required],select[required]').forEach(function(inp){if(!inp.value){ok=false;inp.classList.add('err');}else inp.classList.remove('err');});
+    if(ok)show(cur+1);});});
+  f.querySelectorAll('[data-prev]').forEach(function(b){b.addEventListener('click',function(){show(cur-1);});});
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var data=new FormData(f);
+    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()})
+      .finally(function(){steps.forEach(function(s){s.classList.remove('on');});f.querySelector('.diag-note').style.display='none';f.querySelector('.diag-dots').style.display='none';f.querySelector('.diag-head').style.display='none';f.querySelector('.diag-done').classList.add('show');});
+  });
+});
+</script>
 </body>
 </html>
