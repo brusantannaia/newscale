@@ -26,6 +26,7 @@
     color: var(--ink);
     line-height: 1.7;
     font-weight: 400;
+    overflow-x: hidden;
   }
   .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; }
 
@@ -73,14 +74,16 @@
   }
   .aula-tabs-inner {
     max-width: 920px; margin: 0 auto;
-    padding: 0 24px; display: flex; gap: 0; overflow-x: auto;
+    padding: 0 16px; display: flex; gap: 0;
+    overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;
   }
+  .aula-tabs-inner::-webkit-scrollbar { display: none; height: 0; }
   .aula-tab {
-    flex: 1; font-family: 'DM Sans', sans-serif;
-    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.07em;
+    flex: 1 0 auto; font-family: 'DM Sans', sans-serif;
+    font-size: 0.76rem; font-weight: 700; letter-spacing: 0.06em;
     text-transform: uppercase; color: rgba(255,255,255,0.45);
     background: transparent; border: none; cursor: pointer;
-    padding: 0 20px; height: var(--tab-h);
+    padding: 0 16px; height: var(--tab-h);
     display: flex; align-items: center; justify-content: center; gap: 8px;
     border-bottom: 3px solid transparent;
     transition: all 0.2s; white-space: nowrap;
@@ -169,6 +172,9 @@
   .dg-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:16px; }
   @media(max-width:820px){ .dg-cards{ grid-template-columns:1fr 1fr; } }
   @media(max-width:520px){ .dg-cards{ grid-template-columns:1fr; } }
+  .dg-cards.cols3 { grid-template-columns:repeat(3,1fr); }
+  @media(max-width:820px){ .dg-cards.cols3{ grid-template-columns:1fr 1fr; } }
+  @media(max-width:520px){ .dg-cards.cols3{ grid-template-columns:1fr; } }
   .dg-card { display:flex; flex-direction:column; background:var(--white); border:1px solid rgba(20,55,60,0.07); border-radius:14px; overflow:hidden; box-shadow:0 6px 22px rgba(20,55,60,0.05); }
   .dg-top { padding:14px 18px 16px; }
   .dg-name { font-family:'Cormorant Garamond', serif; font-weight:700; font-size:1.55rem; color:var(--white); letter-spacing:0.06em; line-height:1; }
@@ -326,10 +332,10 @@
 <div class="aula-tabs-wrap" id="topo">
   <div class="aula-tabs-inner">
     <button class="aula-tab active" data-aula="0">Visão geral</button>
-    <button class="aula-tab" data-aula="1">Aula 01 — Fundamentos</button>
-    <button class="aula-tab" data-aula="2">Aula 02 — Setup na prática</button>
-    <button class="aula-tab" data-aula="3">Aula 03 — Skills &amp; NotebookLM</button>
-    <button class="aula-tab" data-aula="4">Aula 04 — Autonomia &amp; Fechamento <span class="novo">Novo</span></button>
+    <button class="aula-tab" data-aula="1">Aula 01</button>
+    <button class="aula-tab" data-aula="2">Aula 02</button>
+    <button class="aula-tab" data-aula="3">Aula 03</button>
+    <button class="aula-tab" data-aula="4">Aula 04 <span class="novo">Novo</span></button>
   </div>
 </div>
 
@@ -396,7 +402,7 @@
       <h2>O <em>sistema</em> que vocês têm hoje</h2>
       <p class="intro">Estas são as peças que trabalham juntas toda vez que vocês abrem o Claude. Não precisa reconfigurar nada — já está tudo de pé.</p>
 
-      <div class="dg-cards">
+      <div class="dg-cards cols3">
         <div class="dg-card">
           <div class="dg-top dg-t2"><div class="dg-name">Contexto</div><div class="dg-role">Memória permanente</div></div>
           <div class="dg-body"><div class="dg-desc">A pasta /contexto com os .md do escritório. O Claude lê antes de toda sessão e já sabe quem vocês são.</div><div class="dg-an">"A identidade do escritório."</div></div>
@@ -1548,6 +1554,7 @@ Me dê um passo a passo detalhado e seguro para configurar essa conexão pelo te
       <a href="#a4-skills">Skills que resolvem de vez</a>
       <a href="#a4-loop">Loop e orquestração</a>
       <a href="#a4-code">Claude Code</a>
+      <a href="#a4-comandos">Comandos extras</a>
       <a href="#a4-automacoes">Automações e WhatsApp</a>
       <a href="#a4-notebook">NotebookLM</a>
       <a href="#a4-modelos">Modelos e limites</a>
@@ -1752,6 +1759,24 @@ Me dê um passo a passo detalhado e seguro para configurar essa conexão pelo te
       </div>
     </section>
 
+    <section id="a4-comandos">
+      <p class="stag">A lista que prometi</p>
+      <h2>Comandos e <em>atalhos extras</em></h2>
+      <p class="intro">O guia rápido das funções e comandos que aparecem no Cloud e no Claude Code. Deixei tudo aqui pra vocês consultarem quando precisarem, sem depender de eu mandar.</p>
+
+      <div class="card plain">
+        <div class="mat"><div class="dot"></div><div class="m-body"><strong>Comandos de barra ( / )</strong><p>Digite <code>/</code> pra acionar uma skill ou função rápida — ex.: <code>/formata_documento</code>, <code>/procuracao</code>. É o atalho pra tudo que vocês transformaram em skill.</p></div></div>
+        <div class="mat"><div class="dot"></div><div class="m-body"><strong>goal — meta com orquestração</strong><p>Define um objetivo mensurável e deixa o Claude orquestrar os agentes sozinho até bater a meta. É o motor por trás dos prompts grandes de loop.</p></div></div>
+        <div class="mat"><div class="dot"></div><div class="m-body"><strong>Compactar conversa</strong><p>Quando a conversa fica longa, o Claude resume o histórico pra liberar token. Depois de compactar, confira se ele não se perdeu — no ideal, uma tarefa = uma conversa nova.</p></div></div>
+        <div class="mat"><div class="dot"></div><div class="m-body"><strong>Agendar tarefa</strong><p>Cria rotinas que rodam sozinhas com o computador ligado (verificação do Tribunal, briefing matinal, relatório de fechamento). Ele mostra o plano antes de ativar.</p></div></div>
+        <div class="mat"><div class="dot"></div><div class="m-body"><strong>Nível de esforço (alto × baixo)</strong><p>Regula precisão vs. velocidade. Esforço alto faz o Claude validar e corrigir o próprio trabalho — use nas peças que precisam sair certas.</p></div></div>
+        <div class="mat"><div class="dot"></div><div class="m-body"><strong>Mudar de projeto</strong><p>Nos três pontinhos da conversa, dá pra migrar um chat de um projeto pra outro sem perder o histórico. Útil quando você começou no lugar errado.</p></div></div>
+        <div class="mat"><div class="dot"></div><div class="m-body"><strong>Acesso à pasta Downloads</strong><p>Libere o acesso pra o Claude mover e copiar os arquivos que ele baixar (do Tribunal, do WhatsApp). Sem isso, ele baixa mas não organiza.</p></div></div>
+        <div class="mat"><div class="dot"></div><div class="m-body"><strong>"Agir sem perguntar" — com freio</strong><p>Ative só pra rotinas de leitura (verificação diária). Mantenha o bloqueio nas ações sensíveis: nunca protocolar, nunca enviar sem aprovação.</p></div></div>
+        <div class="mat"><div class="dot"></div><div class="m-body"><strong>Insistir quando ele nega</strong><p>Se o Claude disser que "não consegue", peça pra ele pesquisar na documentação da Anthropic ou usar o Chrome pra contornar. Quase sempre tem caminho.</p></div></div>
+      </div>
+    </section>
+
     <section id="a4-automacoes">
       <p class="stag">O dia a dia rodando sozinho</p>
       <h2>Automações e <em>WhatsApp</em></h2>
@@ -1940,6 +1965,39 @@ CHECKPOINT FINAL
 Me entregue o briefing e destaque os 3 itens mais urgentes do dia.</pre>
       </div>
 
+      <div class="prompt">
+        <div class="prompt-head">
+          <div><span class="pt">★ Loop · Orquestração de agentes (pesquisa → validação → entrega)</span></div>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>
+        </div>
+        <div class="desc">O modelo genérico de orquestração: use pra qualquer tarefa que precise pesquisar, validar e produzir num passo só.</div>
+        <pre>Quero que você resolva a tarefa abaixo de ponta a ponta, orquestrando os agentes necessários e trabalhando tudo nesta conversa. Divida o trabalho entre agentes e execute em paralelo quando fizer sentido.
+
+TAREFA
+[descreva o que você quer no fim — ex: um comparativo dos honorários praticados por 5 escritórios da região para ações trabalhistas].
+
+COMO ORQUESTRAR (adapte às etapas da sua tarefa)
+1. PESQUISA: use o Chrome pra buscar as informações necessárias nas fontes certas.
+2. LEITURA: leia os documentos/páginas e extraia os dados que importam.
+3. VALIDAÇÃO: confira se os dados batem entre as fontes; descarte o que estiver duvidoso.
+4. PRODUÇÃO: monte a entrega final no formato que eu pedir.
+
+CONTEXTO E MATERIAL
+- Fontes / pastas / links: [informe].
+- Skill a usar (se houver): [nome].
+
+REGRAS E LIMITES
+- Não invente dados. Cite a fonte de cada informação relevante.
+- Se uma fonte exigir login ou certificado, me avise em vez de tentar furar.
+- Não envie, não publique e não protocole nada sem a minha aprovação.
+
+FORMATO DA ENTREGA
+[tabela / documento em Word na pasta X / resumo em tópicos]. Diga onde salvar e com que nome.
+
+CHECKPOINT FINAL
+Ao terminar, me diga o que cada agente fez, de onde tirou cada dado e o que ficou incerto.</pre>
+      </div>
+
       <h3 style="margin-top:30px;">Prompts pontuais</h3>
       <p style="margin-bottom:18px;color:var(--sage);">Pra tarefas específicas do dia a dia — configurar uma skill, ler o e-mail, montar uma rotina.</p>
 
@@ -2051,9 +2109,10 @@ Transforme esse prompt numa skill reutilizável: extraia as instruções fixas p
       <div class="task"><div class="chk"></div><div class="t-body"><strong>6. Testar o download automático pelo WhatsApp Web</strong><p>Verifique se a IA consegue baixar os documentos que os clientes enviam, via automação no Chrome.</p><span class="pill">João e Neila</span></div></div>
 
       <div class="card" style="margin-top:22px;">
-        <h3>O que fica comigo</h3>
-        <div class="next-item"><span class="arr">→</span><p style="margin:0;">Enviar os <strong>prompts de orquestração de agentes</strong> que montamos.</p></div>
-        <div class="next-item"><span class="arr">→</span><p style="margin:0;">Enviar a <strong>lista de comandos e funcionalidades extras</strong> do Cloud/Code.</p></div>
+        <h3>Já deixei pronto pra vocês aqui</h3>
+        <div class="next-item"><span class="arr">→</span><p style="margin:0;">Os <strong>prompts de orquestração de agentes</strong> — estão na seção <a href="#a4-prompts" style="color:var(--terra);font-weight:600;">Prompts</a> acima, no grupo "Prompts grandes (de loop)".</p></div>
+        <div class="next-item"><span class="arr">→</span><p style="margin:0;">A <strong>lista de comandos e funcionalidades extras</strong> do Cloud/Code — está na seção <a href="#a4-comandos" style="color:var(--terra);font-weight:600;">Comandos extras</a>.</p></div>
+        <div class="next-item"><span class="arr">→</span><p style="margin:0;">Este <strong>material completo</strong>, com o resumo de todas as aulas na aba Visão geral.</p></div>
         <div class="next-item"><span class="arr">→</span><p style="margin:0;">Mandar este <strong>resumo do encontro</strong> — é este material aqui.</p></div>
         <div class="next-item"><span class="arr">→</span><p style="margin:0;">Enviar os <strong>dados do Pix</strong> pra fechar a última parte do investimento.</p></div>
       </div>
