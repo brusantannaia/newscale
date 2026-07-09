@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>NewScale — Consultoria de Inteligência Artificial e Automação de IA</title>
+<meta name="description" content="Consultoria de inteligência artificial que faz o diagnóstico e implementa automação de IA e agentes de IA sob medida, do plano ao resultado em semanas, sem equipe técnica interna.">
+<link rel="canonical" href="https://newscale.tech/">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://newscale.tech/">
+<meta property="og:title" content="NewScale — Consultoria de Inteligência Artificial e Automação de IA">
+<meta property="og:description" content="Consultoria de inteligência artificial que faz o diagnóstico e implementa automação de IA e agentes de IA sob medida, do plano ao resultado em semanas, sem equipe técnica interna.">
+<meta property="og:image" content="https://newscale.tech/assets/img/og-image.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="NewScale Consulting">
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JJ9X1LXN4L"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JJ9X1LXN4L');</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Schema JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org","@type": "ProfessionalService",
+  "name": "NewScale Consulting",
+  "description": "Consultoria de inteligência artificial para empresas brasileiras: diagnóstico, automação de IA e agentes de IA sob medida, integrados aos sistemas existentes.",
+  "url": "https://newscale.tech","telephone": "+55-11-97190-1020","email": "contato@newscale.tech",
+  "address": {"@type": "PostalAddress","addressLocality": "São Paulo","addressRegion": "SP","addressCountry": "BR"},
+  "founder": [
+    {"@type": "Person","name": "Bruno Varella","jobTitle": "Co-Fundador — Marketing, Produto & Escala"},
+    {"@type": "Person","name": "Bruna Santanna","jobTitle": "Co-Fundadora — Empreendedora & Educação em IA"}
+  ],
+  "areaServed": { "@type": "Country", "name": "Brasil" },
+  "priceRange": "Diagnóstico gratuito"
+}
+</script>
+
+<link rel="stylesheet" href="/assets/css/redesign.css">
+<style>
+/* ====== SÓ O QUE É EXCLUSIVO DA HOME (o resto vem de redesign.css) ====== */
+
+/* PROBLEMA grid (4 cards) — não existe no redesign.css */
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+@media(max-width:860px){.pgrid{grid-template-columns:1fr 1fr;}}
+@media(max-width:520px){.pgrid{grid-template-columns:1fr;}}
+
+/* HERO single-stat */
+.hero-metric{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin:26px 0 6px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.hero-metric .hm-v{font-family:'Anton',sans-serif;font-size:clamp(2.6rem,6vw,3.8rem);color:var(--tl);line-height:.9;}
+.hero-metric .hm-v .hm-arrow{color:var(--terra);margin:0 2px;-webkit-text-stroke:0;opacity:.85;}
+.hero-metric .hm-d{font-size:.95rem;color:var(--muted);max-width:24ch;line-height:1.3;}
+.hero-actions .link-sec{display:inline-flex;align-items:center;gap:7px;font-size:.86rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--tl);border-bottom:1px solid rgba(196,131,94,.4);padding-bottom:2px;align-self:center;}
+.hero-actions .link-sec:hover{color:var(--cream);}
+.answer-lede{font-size:1.02rem;color:var(--text);font-weight:300;max-width:60ch;margin-top:18px;}
+.answer-lede b{color:var(--cream);font-weight:600;}
+
+/* COPILOTOS mockup (grid dos 8 módulos) */
+.cpm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.cpm-hdr{padding:28px 36px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.cpm-bar{padding:14px 36px;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+@media(max-width:680px){.cpm-grid{grid-template-columns:repeat(2,1fr);}.cpm-hdr,.cpm-bar{padding-left:20px;padding-right:20px;}.cpm-body{padding-left:20px!important;padding-right:20px!important;}}
+
+/* MOCKUP antes × depois */
+.ba{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:stretch;max-width:860px;margin:0 auto;}
+@media(max-width:680px){.ba{grid-template-columns:1fr;gap:14px;}}
+.ba-card{background:var(--ink);border:1px solid var(--line);border-radius:18px;padding:30px 28px;position:relative;overflow:hidden;}
+.ba-card.after{border-color:rgba(176,110,74,.4);background:linear-gradient(160deg,var(--ink),#1a3d42);}
+.ba-card.after::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--terra);}
+.ba-tag{font-size:.64rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+.ba-card.after .ba-tag{color:var(--tl);}
+.ba-v{font-family:'Anton',sans-serif;font-size:clamp(2.8rem,7vw,4rem);line-height:.9;color:var(--muted);}
+.ba-card.before .ba-v{color:var(--green);text-decoration:line-through;text-decoration-color:rgba(176,110,74,.55);text-decoration-thickness:3px;}
+.ba-card.after .ba-v{color:var(--tl);font-size:clamp(3.4rem,8.5vw,5rem);}
+.ba-l{font-size:.9rem;color:var(--muted);margin-top:10px;line-height:1.4;}
+.ba-mid{display:flex;align-items:center;justify-content:center;}
+.ba-arrow{width:46px;height:46px;border-radius:50%;background:rgba(176,110,74,.12);border:1px solid rgba(176,110,74,.3);display:flex;align-items:center;justify-content:center;color:var(--terra);}
+@media(max-width:680px){.ba-arrow{transform:rotate(90deg);}}
+
+/* DIAGNÓSTICO layout (oferta + form) */
+.diag-wrap{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start;}
+@media(max-width:900px){.diag-wrap{grid-template-columns:1fr;gap:24px;}}
+.diag-offer .oflist{list-style:none;margin:18px 0 0;display:flex;flex-direction:column;gap:12px;}
+.diag-offer .oflist li{display:flex;gap:12px;font-size:.96rem;color:var(--text);}
+.diag-offer .oflist svg{width:20px;height:20px;flex-shrink:0;color:var(--tl);margin-top:2px;}
+.diag-offer .oflist b{color:var(--cream);font-weight:600;}
+.of-steps{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;}
+.of-step{flex:1;min-width:150px;background:var(--ink);border:1px solid var(--line);border-radius:14px;padding:16px 18px;}
+.of-step .n{font-family:'Anton',sans-serif;font-size:1.4rem;color:var(--terra);line-height:1;}
+.of-step p{font-size:.84rem;color:var(--muted);margin-top:6px;}
+.wa-alt{margin-top:16px;text-align:center;}
+.wa-alt a{display:inline-flex;align-items:center;gap:8px;font-size:.86rem;font-weight:700;color:var(--tl);}
+.wa-alt a:hover{color:var(--cream);}
+.wa-alt svg{width:18px;height:18px;}
+
+/* FOTO fundadores com filtro Cocoa + overlay */
+.founder .ph>img{filter:sepia(.35) saturate(.8) contrast(1.05);}
+.founder .ph::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(180deg,rgba(12,36,39,0) 55%,rgba(12,36,39,.45));}
+
+/* mockup de chat do hero */
+.hchat{background:linear-gradient(150deg,#0e2e33,#0a2023);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 40px 90px -30px rgba(0,0,0,.7),0 0 0 1px rgba(196,131,94,.12);max-width:420px;margin-left:auto;}
+.hchat-head{display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:14px;}
+.hchat-av{width:40px;height:40px;border-radius:50%;background:rgba(176,110,74,.22);display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;color:var(--tl);font-size:1rem;flex-shrink:0;}
+.hchat-head .n{font-size:.9rem;font-weight:700;color:var(--cream);line-height:1.2;}
+.hchat-head .s{font-size:.68rem;color:var(--muted);}
+.hchat-head .s::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:#7dbf8e;box-shadow:0 0 0 3px rgba(125,191,142,.2);margin-right:5px;animation:bl 2s ease infinite;}
+.hchat-live{margin-left:auto;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7dbf8e;animation:bl 1.8s infinite;}
+.hmsg{max-width:88%;padding:10px 14px;border-radius:12px;font-size:.83rem;line-height:1.45;margin-bottom:9px;color:var(--text);}
+.hmsg.in{background:rgba(255,255,255,.05);border:1px solid var(--line);border-bottom-left-radius:3px;}
+.hmsg.out{background:rgba(176,110,74,.16);border:1px solid rgba(176,110,74,.28);border-bottom-right-radius:3px;margin-left:auto;}
+.hmsg .t{display:block;font-size:.6rem;color:var(--muted);margin-top:4px;text-align:right;}
+.hevt{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin-top:6px;font-size:.74rem;color:var(--cream);}
+.hchat-foot{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);}
+.hchat-foot b{display:block;font-family:'Anton',sans-serif;font-weight:400;font-size:1.3rem;color:var(--tl);line-height:1;}
+.hchat-foot span{font-size:.64rem;color:var(--muted);line-height:1.35;display:block;margin-top:4px;}
+@media(max-width:880px){.hchat{margin:0 auto;}}
+
+/* ====== ILUSTRAÇÃO DE ÍCONE DOS CARDS DE AGENTE (.ph-ico) ====== */
+.ph-ico{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1d4a4f,#14373C 55%,#0a2023);}
+.frente .ph-ico{aspect-ratio:16/10;border-radius:0;border:none;border-bottom:1px solid var(--line);}
+.ph-ico .ph-topo{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;}
+.ph-ico .ph-topo path,.ph-ico .ph-topo circle,.ph-ico .ph-topo ellipse{fill:none;stroke:rgba(244,243,239,.06);stroke-width:1;}
+.ph-ico .ph-glow{position:absolute;top:50%;left:50%;width:180px;height:180px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(176,110,74,.18),transparent 70%);z-index:1;pointer-events:none;transition:opacity .25s,transform .25s;}
+.ph-ico .ph-chip{position:relative;z-index:3;width:104px;height:104px;border-radius:26px;background:rgba(176,110,74,.12);border:1px solid rgba(176,110,74,.28);display:flex;align-items:center;justify-content:center;transition:transform .25s ease;}
+.ph-ico .ph-chip svg{width:52px;height:52px;stroke:#C4835E;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.ph-ico .ph-dot{position:absolute;border-radius:50%;z-index:2;opacity:.5;}
+.ph-ico .ph-dot.d1{width:9px;height:9px;background:#C4835E;top:22%;left:24%;}
+.ph-ico .ph-dot.d2{width:6px;height:6px;background:#A38362;bottom:26%;right:26%;}
+.ph-ico .ph-dot.d3{width:7px;height:7px;background:#C4835E;bottom:22%;left:30%;animation:phPulse 3s ease-in-out infinite;}
+.frente:hover .ph-ico .ph-chip{transform:scale(1.08);}
+.frente:hover .ph-ico .ph-glow{opacity:1;transform:translate(-50%,-50%) scale(1.25);}
+@keyframes phPulse{0%,100%{opacity:.25;transform:scale(.85);}50%{opacity:.65;transform:scale(1.15);}}
+@media(prefers-reduced-motion:reduce){.ph-ico .ph-dot.d3{animation:none;}}
+
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="/" class="logo" aria-label="NewScale"><img src="/assets/img/logo-branco.png" alt="NewScale Consulting"></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="/metodologia">Metodologia</a>
+      <a href="/agentes">Agentes</a>
+      <a href="/educacao/">Educação</a>
+      <a href="/cases">Cases</a>
+      <a href="/sobre">Sobre</a>
+      <a href="/blog/">Blog</a>
+      <a href="#diagnostico" class="nav-cta">Diagnóstico gratuito</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero hero-home">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="rv">
+        <div class="hero-eyebrow"><span class="dot"></span><span class="kick">Consultoria de inteligência artificial</span></div>
+        <h1>IA que vira <span class="terra">resultado</span> de verdade</h1>
+        <p class="answer-lede">A NewScale é uma <b>consultoria de inteligência artificial</b> que faz o diagnóstico e implementa automação de IA e agentes de IA sob medida para empresas de saúde, RH, varejo e serviços. Do plano ao resultado em semanas, integrado aos seus sistemas, sem equipe técnica interna.</p>
+        <div class="hero-metric">
+          <div class="hm-v">1,5 dia <span class="hm-arrow">→</span> 10 min</div>
+          <div class="hm-d">tempo de uma tarefa recorrente depois da automação de IA</div>
+        </div>
+        <div class="hero-actions">
+          <a href="#diagnostico" class="btn btn-terra">Quero meu diagnóstico gratuito <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="#cases" class="link-sec">Ver cases com números <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="journey">
+          <div class="jstep"><div class="jico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div><div class="jtext">Diagnóstico</div></div>
+          <span class="jarrow">→</span>
+          <div class="jstep"><div class="jico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div><div class="jtext">Implementação</div></div>
+          <span class="jarrow">→</span>
+          <div class="jstep"><div class="jico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="jtext">Resultado</div></div>
+        </div>
+        <p class="hero-note">Diagnóstico de 30 min, sem compromisso · Volume limitado de clientes por mês</p>
+      </div>
+      <figure class="hero-photo rv" aria-hidden="true">
+        <div class="hchat">
+          <div class="hchat-head">
+            <div class="hchat-av">N</div>
+            <div>
+              <div class="n">Agente NewScale</div>
+              <div class="s">responde em segundos</div>
+            </div>
+            <span class="hchat-live">ao vivo</span>
+          </div>
+          <div class="hmsg in">Oi! Vocês atendem no sábado? Queria um orçamento pra 120 pessoas.<span class="t">22:41</span></div>
+          <div class="hmsg out">Atendemos! Te envio o material com valores agora. Prefere receber a proposta por aqui ou agendar uma visita?<span class="t">22:41</span></div>
+          <div class="hmsg in">Pode agendar a visita.<span class="t">22:43</span></div>
+          <div class="hmsg out">Agendado! Confirmação enviada.
+            <span class="hevt"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Visita &middot; sábado &middot; 10h &middot; registrada no CRM</span>
+            <span class="t">22:43</span></div>
+          <div class="hchat-foot">
+            <div><b>3 min</b><span>do primeiro oi ao agendamento</span></div>
+            <div><b>24/7</b><span>sem depender do horário do time</span></div>
+          </div>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA (marquee de clientes reais) -->
+<div class="marq" aria-label="Clientes atendidos pela NewScale">
+  <div class="marq-track">
+    <span class="s">Clientes que confiam</span><span>COLO Saúde</span><span>Ismart</span><span>Stoller</span><span>Sorridents</span><span>Oneglobal</span><span>Grupo Stringhetta</span><span>Casa Tacto</span><span>Casa Kahla</span><span>Belcenter</span><span>Corteva</span>
+  </div>
+</div>
+
+<!-- PROBLEMA -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">O problema real</span>
+      <h2>Por que tanta empresa<br>ainda não tira valor da IA?</h2>
+      <p>Implementar IA com estratégia é diferente de testar ferramentas. Os obstáculos são mais simples do que parecem.</p>
+    </div>
+    <div class="pgrid rv">
+      <div class="pcard"><div class="pcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>Ferramentas demais, nenhuma adaptada</h3><p>Muitas opções parecidas, nenhuma ajustada à operação real.</p></div>
+      <div class="pcard"><div class="pcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></div><h3>Sem clareza de por onde começar</h3><p>A empresa trava sem saber quais processos priorizar.</p></div>
+      <div class="pcard"><div class="pcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h3>Falta de conhecimento técnico interno</h3><p>Sem preparo para adotar IA de forma consistente na rotina.</p></div>
+      <div class="pcard"><div class="pcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><h3>Leads e horas perdidos todo dia</h3><p>Mensagem fora do horário sem resposta e time preso no operacional repetitivo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTO DE NÃO AUTOMATIZAR -->
+<section class="sec bg-2" id="custo-inacao" aria-label="O custo de não automatizar">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">O custo invisível</span>
+      <h2>Quanto está custando <span class="terra">não</span> automatizar?</h2>
+      <p>Não contratar IA também tem um custo. Ele só é menos visível na planilha.</p>
+    </div>
+    <div class="grid-4 rv">
+      <div class="pcard"><div class="pcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><h3>Leads perdidos fora do horário</h3><p>Cada mensagem sem resposta à noite ou no fim de semana vai para o concorrente. Agente de IA não dorme.</p></div>
+      <div class="pcard"><div class="pcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h3>Time preso no operacional</h3><p>Seus melhores profissionais gastam horas com planilha, relatório e cópia de dados entre sistemas.</p></div>
+      <div class="pcard"><div class="pcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><h3>Crescer exige contratar mais</h3><p>Sem automação, escalar a operação significa escalar a folha. Com IA, a mesma equipe atende muito mais volume.</p></div>
+      <div class="pcard"><div class="pcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3>Decisão com dado atrasado</h3><p>Relatório manual chega dias depois. Com IA, o dado chega em tempo real, quando ainda dá para agir.</p></div>
+    </div>
+    <div class="sec-cta rv"><a href="#diagnostico" class="btn btn-terra">Quero meu diagnóstico gratuito <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+  </div>
+</section>
+
+<!-- METODOLOGIA -->
+<section class="sec" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">Metodologia NewScale</span>
+      <h2>Da estratégia à execução:<br>IA funcionando na prática</h2>
+      <p>Não vendemos pacotes. Mergulhamos na sua operação e desenhamos a solução a partir da realidade, não de um template.</p>
+    </div>
+    <div class="steps rv">
+      <div class="step"><div class="n">1</div><h3>Consultoria Sistêmica</h3><p>Visão pró-negócio: marketing, vendas e operação integrados.</p></div>
+      <div class="step"><div class="n">2</div><h3>Roadmap de Automações</h3><p>Cronograma faseado priorizando maior impacto no menor tempo.</p></div>
+      <div class="step"><div class="n">3</div><h3>Implementação</h3><p>Integramos sistemas e criamos fluxos e agentes inteligentes.</p></div>
+      <div class="step"><div class="n">4</div><h3>Treinamento</h3><p>Seu time aprende a monitorar e calibrar os agentes de IA.</p></div>
+      <div class="step"><div class="n">5</div><h3>KPIs</h3><p>Métricas definidas antes para validar cada ganho de escala.</p></div>
+      <div class="step"><div class="n">6</div><h3>Sustentação</h3><p>Monitoramento e otimizações após o go-live. Não sumimos.</p></div>
+    </div>
+    <div class="sec-cta rv"><a href="/metodologia" class="btn btn-ghost">Conhecer a metodologia completa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+  </div>
+</section>
+
+<!-- AGENTES -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">Portfólio de soluções</span>
+      <h2>Soluções construídas<br>para operações reais</h2>
+      <p>Cada solução é desenvolvida do zero para a realidade do cliente: integrações, processos e tom de voz únicos. Não adaptamos templates.</p>
+    </div>
+    <div class="frentes rv">
+      <article class="frente"><div class="ph-ico" aria-hidden="true"><svg class="ph-topo" viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><ellipse cx="160" cy="100" rx="40" ry="26"/><ellipse cx="160" cy="100" rx="72" ry="46"/><ellipse cx="160" cy="100" rx="108" ry="70"/><ellipse cx="160" cy="100" rx="146" ry="96"/><ellipse cx="160" cy="100" rx="186" ry="124"/></svg><span class="ph-glow"></span><span class="ph-dot d1"></span><span class="ph-dot d2"></span><span class="ph-dot d3"></span><span class="ph-chip"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/><path d="M8 13.5l2.5-2.5 2 2L16 9.5"/><path d="M16 9.5h-2.2M16 9.5v2.2"/></svg></span></div><div class="frente-body"><h3>Vendas & SDR</h3><p>Qualificação de leads, follow-ups automáticos e encaminhamento ao vendedor no momento certo.</p><div class="tags"><span class="tagpill">WhatsApp</span><span class="tagpill">CRM</span><span class="tagpill">SDR IA</span></div></div></article>
+      <article class="frente"><div class="ph-ico" aria-hidden="true"><svg class="ph-topo" viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><ellipse cx="160" cy="100" rx="40" ry="26"/><ellipse cx="160" cy="100" rx="72" ry="46"/><ellipse cx="160" cy="100" rx="108" ry="70"/><ellipse cx="160" cy="100" rx="146" ry="96"/><ellipse cx="160" cy="100" rx="186" ry="124"/></svg><span class="ph-glow"></span><span class="ph-dot d1"></span><span class="ph-dot d2"></span><span class="ph-dot d3"></span><span class="ph-chip"><svg viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14v3a2 2 0 0 0 2 2h1v-6H6a2 2 0 0 0-2 1z"/><path d="M20 14v3a2 2 0 0 1-2 2h-3"/><path d="M20 14v-1a2 2 0 0 0-2-1h-1v6h1"/></svg></span></div><div class="frente-body"><h3>SAC & Atendimento</h3><p>Suporte 24/7, triagem inteligente, FAQ e transbordo para humano com histórico completo.</p><div class="tags"><span class="tagpill">24/7</span><span class="tagpill">Transbordo</span><span class="tagpill">FAQ</span></div></div></article>
+      <article class="frente"><div class="ph-ico" aria-hidden="true"><svg class="ph-topo" viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><ellipse cx="160" cy="100" rx="40" ry="26"/><ellipse cx="160" cy="100" rx="72" ry="46"/><ellipse cx="160" cy="100" rx="108" ry="70"/><ellipse cx="160" cy="100" rx="146" ry="96"/><ellipse cx="160" cy="100" rx="186" ry="124"/></svg><span class="ph-glow"></span><span class="ph-dot d1"></span><span class="ph-dot d2"></span><span class="ph-dot d3"></span><span class="ph-chip"><svg viewBox="0 0 24 24"><path d="M3 5h18l-7 8v6l-4 2v-8L3 5z"/></svg></span></div><div class="frente-body"><h3>CRM & Fidelização</h3><p>Campanhas preditivas, cross-sell, upsell e aumento de LTV com base no histórico do cliente.</p><div class="tags"><span class="tagpill">Preditivo</span><span class="tagpill">LTV</span><span class="tagpill">ERP</span></div></div></article>
+      <article class="frente"><div class="ph-ico" aria-hidden="true"><svg class="ph-topo" viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><ellipse cx="160" cy="100" rx="40" ry="26"/><ellipse cx="160" cy="100" rx="72" ry="46"/><ellipse cx="160" cy="100" rx="108" ry="70"/><ellipse cx="160" cy="100" rx="146" ry="96"/><ellipse cx="160" cy="100" rx="186" ry="124"/></svg><span class="ph-glow"></span><span class="ph-dot d1"></span><span class="ph-dot d2"></span><span class="ph-dot d3"></span><span class="ph-chip"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 17v-5M12 17v-9M17 17v-3"/><path d="M6 9l4-4 3 3 5-5"/></svg></span></div><div class="frente-body"><h3>Dados & Operações</h3><p>Relatórios gerenciais automáticos, dashboards de KPIs e alertas em tempo real.</p><div class="tags"><span class="tagpill">Dashboards</span><span class="tagpill">Alertas</span><span class="tagpill">Growth</span></div></div></article>
+      <article class="frente"><div class="ph-ico" aria-hidden="true"><svg class="ph-topo" viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><ellipse cx="160" cy="100" rx="40" ry="26"/><ellipse cx="160" cy="100" rx="72" ry="46"/><ellipse cx="160" cy="100" rx="108" ry="70"/><ellipse cx="160" cy="100" rx="146" ry="96"/><ellipse cx="160" cy="100" rx="186" ry="124"/></svg><span class="ph-glow"></span><span class="ph-dot d1"></span><span class="ph-dot d2"></span><span class="ph-dot d3"></span><span class="ph-chip"><svg viewBox="0 0 24 24"><path d="M16 19v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 19v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span></div><div class="frente-body"><h3>RH & Recrutamento</h3><p>Qualificação de candidatos, leitura de currículos e cadastro automático no CRM via WhatsApp.</p><div class="tags"><span class="tagpill">WhatsApp</span><span class="tagpill">Currículo IA</span><span class="tagpill">CRM RH</span></div></div></article>
+      <article class="frente"><div class="ph-ico" aria-hidden="true"><svg class="ph-topo" viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><ellipse cx="160" cy="100" rx="40" ry="26"/><ellipse cx="160" cy="100" rx="72" ry="46"/><ellipse cx="160" cy="100" rx="108" ry="70"/><ellipse cx="160" cy="100" rx="146" ry="96"/><ellipse cx="160" cy="100" rx="186" ry="124"/></svg><span class="ph-glow"></span><span class="ph-dot d1"></span><span class="ph-dot d2"></span><span class="ph-dot d3"></span><span class="ph-chip"><svg viewBox="0 0 24 24"><path d="M20.4 6a5 5 0 0 0-8.4-1.3l-.5.5-.5-.5A5 5 0 0 0 2 8.5c0 3.6 3.2 6.5 8.1 10.9l.9.8.9-.8c.7-.6 1.4-1.3 2.1-1.9"/><path d="M12.5 12.5h2.3l1.2-2.4 1.8 4.4 1.2-2.4H21"/></svg></span></div><div class="frente-body"><h3>Saúde & Franquias</h3><p>Protocolos clínicos, checklist de campo, monitoramento de conformidade e planos de ação.</p><div class="tags"><span class="tagpill">Saúde</span><span class="tagpill">Franquias</span><span class="tagpill">Compliance</span></div></div></article>
+    </div>
+    <div class="sec-cta rv"><a href="/agentes" class="btn btn-ghost">Ver portfólio completo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+  </div>
+</section>
+
+<!-- COPILOTOS mockup -->
+<section class="sec" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="kick">Novo</span>
+      <h2>Co-pilotos de Marketing</h2>
+      <p>8 módulos integrados que planejam, criam e publicam conteúdo no piloto automático: multicanal, com o tom de voz da sua marca.</p>
+    </div>
+    <div class="rv">
+      <div style="background:linear-gradient(160deg,var(--ink) 0%,#1a3d42 45%,var(--green) 100%);border-radius:20px;overflow:hidden;max-width:940px;margin:0 auto;position:relative;box-shadow:0 30px 80px -30px rgba(0,0,0,.7)">
+        <div style="position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(176,110,74,.14),transparent 70%);top:-60px;right:-60px;pointer-events:none"></div>
+        <div class="cpm-hdr" style="position:relative">
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><div style="width:8px;height:8px;border-radius:50%;background:var(--terra);animation:bl 2s ease infinite"></div><span style="font-size:.6rem;color:var(--tl);font-weight:700;text-transform:uppercase;letter-spacing:.12em">NewScale AI Platform</span></div>
+            <div style="font-family:'Anton',sans-serif;font-size:clamp(1.5rem,2.5vw,2rem);color:#fff;line-height:1.1;text-transform:uppercase">Copilotos de Marketing</div>
+            <div style="font-size:.78rem;color:rgba(255,255,255,.45);margin-top:4px;font-weight:300">8 módulos integrados · publicações automáticas via API</div>
+          </div>
+          <img src="/assets/img/logo-branco.png" alt="NewScale" style="height:26px;filter:brightness(0) invert(1);opacity:.25">
+        </div>
+        <div class="cpm-grid cpm-body" style="padding:24px 36px 32px;position:relative">
+          <div style="background:rgba(176,110,74,.12);border:1px solid rgba(176,110,74,.35);border-radius:12px;padding:20px 16px;position:relative;overflow:hidden"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--tl)"></div><svg style="display:block;width:22px;height:22px;margin-bottom:10px" viewBox="0 0 24 24" fill="none" stroke="var(--tl)" stroke-width="1.5" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><div style="font-size:.76rem;color:#fff;font-weight:600;margin-bottom:3px">Campanhas</div><div style="font-size:.6rem;color:rgba(255,255,255,.4);line-height:1.4">Gestão multicanal</div></div>
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:20px 16px"><svg style="display:block;width:22px;height:22px;margin-bottom:10px" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><div style="font-size:.76rem;color:rgba(255,255,255,.7);font-weight:600;margin-bottom:3px">Calendário Editorial</div><div style="font-size:.6rem;color:rgba(255,255,255,.3);line-height:1.4">Planejamento multicanal</div></div>
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:20px 16px"><svg style="display:block;width:22px;height:22px;margin-bottom:10px" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"/></svg><div style="font-size:.76rem;color:rgba(255,255,255,.7);font-weight:600;margin-bottom:3px">Social Media</div><div style="font-size:.6rem;color:rgba(255,255,255,.3);line-height:1.4">Criação e publicação</div></div>
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:20px 16px"><svg style="display:block;width:22px;height:22px;margin-bottom:10px" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><div style="font-size:.76rem;color:rgba(255,255,255,.7);font-weight:600;margin-bottom:3px">Performance</div><div style="font-size:.6rem;color:rgba(255,255,255,.3);line-height:1.4">Tráfego pago e Google</div></div>
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:20px 16px"><svg style="display:block;width:22px;height:22px;margin-bottom:10px" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><div style="font-size:.76rem;color:rgba(255,255,255,.7);font-weight:600;margin-bottom:3px">Newsletter & Blog</div><div style="font-size:.6rem;color:rgba(255,255,255,.3);line-height:1.4">E-mail automatizado</div></div>
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:20px 16px"><svg style="display:block;width:22px;height:22px;margin-bottom:10px" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><div style="font-size:.76rem;color:rgba(255,255,255,.7);font-weight:600;margin-bottom:3px">WhatsApp & SMS</div><div style="font-size:.6rem;color:rgba(255,255,255,.3);line-height:1.4">Comunicação direta</div></div>
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:20px 16px"><svg style="display:block;width:22px;height:22px;margin-bottom:10px" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg><div style="font-size:.76rem;color:rgba(255,255,255,.7);font-weight:600;margin-bottom:3px">Trade / PDV</div><div style="font-size:.6rem;color:rgba(255,255,255,.3);line-height:1.4">Marketing no ponto de venda</div></div>
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:20px 16px"><svg style="display:block;width:22px;height:22px;margin-bottom:10px" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-linecap="round"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/></svg><div style="font-size:.76rem;color:rgba(255,255,255,.7);font-weight:600;margin-bottom:3px">Landing Pages</div><div style="font-size:.6rem;color:rgba(255,255,255,.3);line-height:1.4">Páginas de conversão</div></div>
+        </div>
+        <div class="cpm-bar"><div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center"><span style="font-size:.6rem;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:6px;font-weight:600"><span style="width:6px;height:6px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 3px rgba(74,222,128,.18);animation:bl 2s ease infinite"></span> Todos os módulos ativos</span><span style="font-size:.6rem;color:rgba(255,255,255,.25)">Publicações via API · Multicanal · IA Generativa</span></div></div>
+      </div>
+    </div>
+    <div class="sec-cta rv"><a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20Co-pilotos%20de%20Marketing%20da%20NewScale." target="_blank" rel="noopener" class="btn btn-ghost">Saber mais sobre os Co-pilotos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+  </div>
+</section>
+
+<!-- ANTES x DEPOIS -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="kick">O que muda na prática</span>
+      <h2>De 1,5 dia de trabalho<br>para 10 minutos</h2>
+      <p>Uma tarefa recorrente que travava o time, refeita por um agente de IA. Mesmo resultado, uma fração do tempo.</p>
+    </div>
+    <div class="ba rv">
+      <div class="ba-card before">
+        <div class="ba-tag">Antes · manual</div>
+        <div class="ba-v">1,5 dia</div>
+        <div class="ba-l">de trabalho por rodada, entre coletar dados, cruzar planilhas e montar o relatório na mão.</div>
+      </div>
+      <div class="ba-mid"><div class="ba-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+      <div class="ba-card after">
+        <div class="ba-tag">Depois · com agente de IA</div>
+        <div class="ba-v">10 min</div>
+        <div class="ba-l">o agente coleta, padroniza e entrega o relatório pronto. O time só revisa e envia.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section class="sec cases" id="cases">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">Resultados reais</span>
+      <h2>Implementados em<br>operações reais</h2>
+      <p>Cases com métricas verificáveis em saúde, RH e varejo.</p>
+    </div>
+    <div class="ctabs rv">
+      <button class="ctab on" onclick="scHome('rh',this)">RH</button>
+      <button class="ctab" onclick="scHome('saude',this)">Saúde</button>
+      <button class="ctab" onclick="scHome('varejo',this)">Varejo</button>
+    </div>
+    <!-- RH -->
+    <div class="cpanel on" id="home-case-rh">
+      <div class="case-wrap rv">
+        <div class="cmain">
+          <div class="case-num" data-count="42" data-prefix="+" data-suffix="%">+42%</div>
+          <div class="case-num-lbl">taxa de conversão de candidatos, com -33% no tempo de preenchimento de vagas</div>
+          <span class="cbadge">RH · Implementado</span>
+          <div class="ctit">Consultoria de RH</div>
+          <div class="csec">Recrutamento e Seleção</div>
+          <div class="cbl"><div class="cbll">Problema</div><div class="cblt">Alto volume no WhatsApp, cruzamento manual entre candidato e vagas, risco de perda de dados.</div></div>
+          <div class="cbl"><div class="cbll">Solução</div><div class="cblt">Agente IA orquestrador: identifica perfil, consulta vagas via API, extrai dados de currículo e cadastra no CRM.</div></div>
+          <div class="cchips"><span class="tagpill">WhatsApp API</span><span class="tagpill">ATS / RH API</span><span class="tagpill">Google Sheets</span></div>
+        </div>
+        <div class="cside">
+          <div class="cmetric"><div class="v" data-count="33" data-prefix="-" data-suffix="%">-33%</div><div class="d">tempo de preenchimento de vagas</div></div>
+          <div class="cmetric"><div class="v" data-count="48" data-prefix="-" data-suffix="%">-48%</div><div class="d">dispensas no período de experiência</div></div>
+          <div class="cmetric"><div class="v" data-count="27" data-prefix="+" data-suffix="%">+27%</div><div class="d">satisfação dos candidatos</div></div>
+          <div class="cmetric"><div class="v">24/7</div><div class="d">atendimento sem pausa</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- Saúde -->
+    <div class="cpanel" id="home-case-saude">
+      <div class="case-wrap rv">
+        <div class="cmain">
+          <div class="case-num" data-count="0,09" data-prefix="R$">R$0,09</div>
+          <div class="case-num-lbl">custo por relatório clínico vs. 30+ min de folha por atendimento</div>
+          <span class="cbadge">Saúde · Implementado</span>
+          <div class="ctit">COLO Saúde</div>
+          <div class="csec">Cuidados Paliativos e Homecare</div>
+          <div class="cbl"><div class="cbll">Problema</div><div class="cblt">Enfermagem gastava 30+ min por atendimento analisando prontuário e gerando relatórios manualmente.</div></div>
+          <div class="cbl"><div class="cbll">Solução</div><div class="cblt">Dois agentes orquestrados: padronização de dados + protocolo médico com diagnóstico e plano gerados automaticamente.</div></div>
+          <div class="cchips"><span class="tagpill">N8N</span><span class="tagpill">Bubble</span><span class="tagpill">Google Drive</span></div>
+        </div>
+        <div class="cside">
+          <div class="cmetric"><div class="v" data-count="26" data-prefix="+" data-suffix="%">+26%</div><div class="d">capacidade de atendimento diária</div></div>
+          <div class="cmetric"><div class="v">30 dias</div><div class="d">do briefing ao go-live</div></div>
+          <div class="cmetric"><div class="v">30+ min</div><div class="d">economizados por atendimento</div></div>
+          <div class="cmetric"><div class="v">↑ NPS</div><div class="d">pacientes e equipe mais satisfeitos</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- Varejo -->
+    <div class="cpanel" id="home-case-varejo">
+      <div class="case-wrap rv">
+        <div class="cmain">
+          <div class="case-num" data-count="34" data-prefix="+" data-suffix="%">+34%</div>
+          <div class="case-num-lbl">taxa de recompra semestral, com +54% de conversão nas ações de CRM</div>
+          <span class="cbadge">Varejo · Implementado</span>
+          <div class="ctit">Belcenter</div>
+          <div class="csec">Perfumaria e Cosméticos</div>
+          <div class="cbl"><div class="cbll">Problema</div><div class="cblt">Queda de fidelidade e recompra pela concorrência com marketplaces: mesmos produtos, guerra de preço.</div></div>
+          <div class="cbl"><div class="cbll">Solução</div><div class="cblt">Fidelidade com IA preditiva: segmentação por histórico, campanhas via WhatsApp e reativação automática de inativos.</div></div>
+          <div class="cchips"><span class="tagpill">WhatsApp API</span><span class="tagpill">ERP Linx</span><span class="tagpill">CRM Preditivo</span></div>
+        </div>
+        <div class="cside">
+          <div class="cmetric"><div class="v" data-count="54" data-prefix="+" data-suffix="%">+54%</div><div class="d">conversão nas ações de CRM</div></div>
+          <div class="cmetric"><div class="v">Auto</div><div class="d">reativação de clientes inativos</div></div>
+          <div class="cmetric"><div class="v">ERP</div><div class="d">integrado ao Linx sem troca de sistema</div></div>
+          <div class="cmetric"><div class="v" data-count="22" data-prefix="+" data-suffix="%">+22%</div><div class="d">faturamento no 2º mês (Casa Kahla)</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="sec-cta rv"><a href="/cases" class="btn btn-terra">Ver todos os cases <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO -->
+<section class="sec" id="diagnostico">
+  <div class="wrap">
+    <div class="diag-wrap">
+      <div class="diag-offer rv">
+        <span class="kick" style="display:block;margin-bottom:14px">Diagnóstico gratuito</span>
+        <h2>O que você recebe<br><span class="terra">sem pagar nada</span></h2>
+        <ul class="oflist">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span><b>Mapa dos 3 processos</b> com maior potencial de IA na sua operação</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span><b>Estimativa de ROI</b> de cada automação sugerida</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span><b>Cronograma de implementação</b> faseado por impacto</span></li>
+        </ul>
+        <div class="of-steps">
+          <div class="of-step"><div class="n">1</div><p>Você preenche o formulário em 1 minuto</p></div>
+          <div class="of-step"><div class="n">2</div><p>Fazemos uma call de 30 min para entender a operação</p></div>
+          <div class="of-step"><div class="n">3</div><p>Você recebe o plano com processos, ROI e cronograma</p></div>
+        </div>
+        <p class="hero-note" style="margin-top:18px">Resposta em até 1 dia útil. Sem cartão. Sem compromisso.</p>
+      </div>
+      <div class="rv">
+        <form class="diag" name="diagnostico" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-diag>
+          <input type="hidden" name="form-name" value="diagnostico">
+          <p style="display:none"><input name="bot-field"></p>
+          <div class="diag-head">
+            <h3>Receba seu diagnóstico</h3>
+            <p>2 etapas rápidas. Resposta em até 1 dia útil.</p>
+          </div>
+          <div class="diag-dots"><span class="diag-dot on"></span><span class="diag-dot"></span></div>
+          <div class="diag-step on">
+            <label for="diag-empresa">Empresa</label>
+            <input id="diag-empresa" name="empresa" type="text" placeholder="Nome da sua empresa" required>
+            <label for="diag-gargalo">Onde está o maior gargalo hoje?</label>
+            <select id="diag-gargalo" name="gargalo" required>
+              <option value="" selected disabled>Selecione uma área</option>
+              <option>Comercial e Vendas</option>
+              <option>Atendimento e SAC</option>
+              <option>RH e Recrutamento</option>
+              <option>Financeiro</option>
+              <option>Operações e Backoffice</option>
+              <option>Marketing e CRM</option>
+              <option>Outro</option>
+            </select>
+            <div class="diag-nav"><button type="button" class="btn btn-terra" data-next>Continuar</button></div>
+          </div>
+          <div class="diag-step">
+            <label for="diag-nome">Seu nome</label>
+            <input id="diag-nome" name="nome" type="text" placeholder="Como podemos te chamar?" required>
+            <label for="diag-whatsapp">WhatsApp</label>
+            <input id="diag-whatsapp" name="whatsapp" type="tel" placeholder="(11) 99999-9999" required>
+            <label for="diag-email">E-mail (opcional)</label>
+            <input id="diag-email" name="email" type="email" placeholder="voce@empresa.com.br">
+            <div class="diag-nav"><button type="button" class="btn btn-ghost" data-prev>Voltar</button><button type="submit" class="btn btn-terra">Receber meu diagnóstico</button></div>
+          </div>
+          <p class="diag-note">Resposta em até 1 dia útil. Sem cartão, sem compromisso.</p>
+          <div class="diag-done"><div class="dt">Recebido!</div><p>Obrigado! Vamos analisar suas respostas e retornar em até 1 dia útil com os próximos passos do seu diagnóstico.</p></div>
+        </form>
+        <div class="wa-alt">
+          <a href="https://wa.me/5511971901020" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>Prefere WhatsApp? Chamar agora</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM (light) -->
+<section class="sec light">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="kick">Por que a NewScale</span>
+      <h2>Consultoria + tecnologia.<br>A gente entrega as duas.</h2>
+      <p>Umas vendem consultoria. Outras, tecnologia. A NewScale faz o diagnóstico e implementa.</p>
+    </div>
+    <div class="quem-grid rv">
+      <div class="quem-card"><div class="quem-label">Diferencial 01</div><h3>Diagnóstico antes de qualquer proposta</h3><p>Entendemos sua operação antes de recomendar. Sem pacote genérico.</p></div>
+      <div class="quem-card"><div class="quem-label">Diferencial 02</div><h3>Nós implementamos, não só orientamos</h3><p>Da estratégia ao agente em produção, sem exigir equipe técnica interna.</p></div>
+      <div class="quem-card"><div class="quem-label">Diferencial 03</div><h3>Foco em impacto mensurável</h3><p>Definimos KPIs antes de começar e medimos depois da entrega. Resultado é resultado.</p></div>
+      <div class="quem-card"><div class="quem-label">Empresário / CEO</div><h3>Quer escalar sem contratar proporcionalmente</h3><p>A operação cresce e exige cada vez mais gente. IA resolve isso.</p></div>
+      <div class="quem-card"><div class="quem-label">Gestor Comercial</div><h3>Perde leads fora do horário comercial</h3><p>Cliente manda mensagem às 22h, ninguém responde. O agente atende, qualifica e agenda 24/7.</p></div>
+      <div class="quem-card"><div class="quem-label">Operações</div><h3>Tem processos repetitivos que roubam horas</h3><p>Formulários, relatórios, cadastros, documentos: tudo automatizável.</p></div>
+    </div>
+    <div class="sec-cta rv"><a href="https://wa.me/5511971901020?text=Ol%C3%A1!%20Me%20identifiquei%20com%20o%20perfil%20no%20site%20e%20quero%20conversar." target="_blank" rel="noopener" class="btn btn-terra">Me identifico, quero conversar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+  </div>
+</section>
+
+<!-- FUNDADORES -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">Quem está por trás</span>
+      <h2>Usamos IA no nosso negócio<br>antes de implementar no seu</h2>
+      <p>Carreiras corporativas em empresas globais + empreendedorismo com IA na prática. Não ensinamos teoria: mostramos o que funciona.</p>
+    </div>
+    <div class="founders rv">
+      <div class="founder">
+        <div class="ph"><img src="/assets/img/fotos/bruno.jpg" alt="Bruno Varella, co-fundador da NewScale" onerror="this.remove()" loading="lazy"><div class="ph-tag"><b>Bruno Varella</b><span>foto tratada (Cocoa)</span></div></div>
+        <div class="fbody">
+          <div class="fn">Bruno Varella</div>
+          <div class="fr">Co-Fundador · Marketing, Produto & Escala</div>
+          <p class="fb">ESPM. 17+ anos em Marketing e Novos Negócios. Já implantou IA em redes com 700+ unidades.</p>
+          <div class="cbll">Trajetória</div>
+          <div class="flogos"><span class="tagpill">Warner Bros.</span><span class="tagpill">Natura & Co</span><span class="tagpill">Sorridents</span></div>
+          <div class="fq">"Já implementei automação em redes com 700 franquias. Na NewScale, fazemos o mesmo, no seu tamanho."</div>
+        </div>
+      </div>
+      <div class="founder">
+        <div class="ph"><img src="/assets/img/fotos/bruna.jpg" alt="Bruna Santanna, co-fundadora da NewScale" onerror="this.remove()" loading="lazy"><div class="ph-tag"><b>Bruna Santanna</b><span>foto tratada (Cocoa)</span></div></div>
+        <div class="fbody">
+          <div class="fn">Bruna Santanna</div>
+          <div class="fr">Co-Fundadora · Empreendedora & Educação em IA</div>
+          <p class="fb">ESPM + MBA USP. Empresária há 10+ anos. Mentora de IA no Potenc.IA (OLX, Magalu, B3, CI&T).</p>
+          <div class="cbll">Trajetória</div>
+          <div class="flogos"><span class="tagpill">SulAmérica</span><span class="tagpill">Whirlpool</span><span class="tagpill">Potenc.IA</span></div>
+          <div class="fq">"Implemento IA no meu próprio negócio todo dia. Só ensino e vendo o que eu mesma uso e vi funcionar."</div>
+        </div>
+      </div>
+    </div>
+    <div class="sec-cta rv"><a href="/sobre" class="btn btn-ghost">Conhecer os fundadores e o time <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+  </div>
+</section>
+
+<!-- INTEGRAÇÕES -->
+<section class="sec" style="background:var(--bg-2);padding-top:64px;padding-bottom:64px">
+  <div class="wrap" style="text-align:center;margin-bottom:30px">
+    <div class="rv">
+      <span class="kick" style="display:block;margin-bottom:12px">Integrações</span>
+      <h2 style="font-size:clamp(1.8rem,4.5vw,2.6rem)">Conecta com o que você já usa</h2>
+      <p style="color:var(--text);font-weight:300;margin-top:12px">Dezenas de conectores, <strong style="color:var(--cream)">sem trocar sistema, sem parar a operação.</strong></p>
+    </div>
+  </div>
+  <div class="tw" aria-hidden="true">
+    <div class="tk">
+      <img class="tki" src="https://cdn.simpleicons.org/whatsapp/25D366" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/instagram/E4405F" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/n8n/EA4B71" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/anthropic/F4F3EF" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/googlegemini/886FBF" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/meta/0081FB" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/gmail/EA4335" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/googledrive/4285F4" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/googlesheets/0F9D58" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/notion/F4F3EF" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/shopify/96BF48" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/supabase/3FCF8E" alt="" loading="lazy">
+      <img class="tki" src="https://cdn.simpleicons.org/whatsapp/25D366" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/instagram/E4405F" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/n8n/EA4B71" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/anthropic/F4F3EF" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/googlegemini/886FBF" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/meta/0081FB" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/gmail/EA4335" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/googledrive/4285F4" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/googlesheets/0F9D58" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/notion/F4F3EF" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/shopify/96BF48" alt="" loading="lazy"><img class="tki" src="https://cdn.simpleicons.org/supabase/3FCF8E" alt="" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="ctaf">
+  <div class="ctaf-glow" aria-hidden="true"></div>
+  <div class="wrap rv">
+    <h2>Quanto sua empresa está<br>deixando de ganhar <span class="terra">sem IA?</span></h2>
+    <p>30 minutos. Sem compromisso. Mapeamos onde a IA gera impacto real no seu negócio, gratuitamente.</p>
+    <a href="#diagnostico" class="btn btn-terra" style="padding:18px 38px;font-size:.95rem">Quero meu diagnóstico gratuito <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <div class="ctaf-tags"><span>Saúde & Homecare</span><span>RH & Recrutamento</span><span>Varejo & E-commerce</span><span>Franquias</span><span>Eventos</span><span>Serviços</span></div>
+    <p class="hero-note" style="margin-top:24px">Volume limitado de clientes por mês para garantir a qualidade de cada implementação.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand"><a href="/"><img src="/assets/img/logo-branco.png" alt="NewScale Consulting"></a></div>
+      <nav class="footer-links">
+        <a href="/metodologia">Metodologia</a><a href="/agentes">Agentes</a><a href="/cases">Cases</a><a href="/sobre">Sobre</a><a href="/educacao/">Educação</a><a href="/blog/">Blog</a><a href="/contato">Contato</a><a href="https://brunasantanna.com" target="_blank" rel="noopener">Virada IA (educação)</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:contato@newscale.tech">contato@newscale.tech</a>
+        <a href="https://wa.me/5511971901020" target="_blank" rel="noopener">(11) 97190-1020</a>
+        <a href="https://www.instagram.com/newscaleai/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 NewScale Consulting. Todos os direitos reservados.</p>
+      <p>Consultoria de IA · Agentes de Automação · São Paulo, SP</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* Tabs de cases (específico da home) */
+  function scHome(id,btn){
+    document.querySelectorAll('#home-case-rh,#home-case-saude,#home-case-varejo').forEach(p=>p.classList.remove('on'));
+    document.querySelectorAll('.ctab').forEach(b=>b.classList.remove('on'));
+    document.getElementById('home-case-'+id).classList.add('on');btn.classList.add('on');
+  }
+  /* Duplicação do marquee de clientes (loop infinito) */
+  document.querySelectorAll('.marq-track').forEach(t=>{t.innerHTML+=t.innerHTML;});
+</script>
+<script src="/assets/js/redesign.js" defer></script>
+</body>
+</html>
