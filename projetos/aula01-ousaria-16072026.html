@@ -542,32 +542,64 @@ footer{background:var(--ink);padding:48px 0;}
   <div class="wrap narrow">
     <div class="kicker rv">Copia e cola</div>
     <h2 class="rv">Os prompts<br>da <span class="terra">aula</span></h2>
-    <p class="lead rv" style="margin:18px 0 34px;">Esses são os prompts que rodaram ao vivo ou que apareceram no meio da conversa. Ajuste pro seu caso — e lembre que quanto mais contexto você colocar, melhor sai.</p>
+    <p class="lead rv" style="margin:18px 0 34px;">Os quatro primeiros são exatamente os que rodaram ao vivo na aula — do jeitinho que a gente usou. Os outros apareceram no meio da conversa. Ajuste pro seu caso: quanto mais contexto você colocar, melhor sai.</p>
 
     <div class="pr rv">
-      <div class="pr-h"><span class="pr-t">01 · Transformar material bruto em contexto</span><button class="copy">Copiar</button></div>
-      <pre>Na pasta dessa conversa está o manual da marca da Ousaria.
+      <div class="pr-h"><span class="pr-t">01 · A marca da Ousaria entra no Claude</span><button class="copy">Copiar</button></div>
+      <pre>Na pasta desta conversa está o "Manual de Marca Ousaria" (PDF).
 
-Primeiro: leia o manual inteiro e crie um arquivo chamado ousaria.md com tudo que importa — quem é a Ousaria, o propósito, os públicos, as cores oficiais, as fontes, as regras de uso do logo e o tom de voz.
+Primeiro, leia o manual inteiro e crie um arquivo chamado ousaria-contexto.md: um documento completo sobre a Ousaria, que serve de contexto permanente pra qualquer projeto daqui pra frente. Inclua:
+1. Quem é a Ousaria: o propósito ("para quem ousa cocriar um mundo melhor"), os públicos e as causas.
+2. As cores oficiais, com os códigos exatos (hex) e quando usar cada uma.
+3. As fontes e a hierarquia de texto.
+4. As versões do logo e as regras de uso (fundo claro, fundo escuro, redução).
+5. O tom de voz: como a Ousaria fala, palavras que usa, o que evita.
+6. Regras do que NUNCA fazer com a marca.
 
-Depois, usando esse contexto, crie dois materiais no padrão da marca:
-1. um one-pager de apresentação em HTML
-2. um card de Instagram</pre>
-      <div class="pr-w">Foi esse que rodou ao vivo. O .md é o pulo do gato: markdown é só tópico, a IA lê rápido e você consegue conferir o que ela entendeu antes de gerar qualquer arte. Comece toda Skill por um .md. E coloque os grafismos e o logo em PNG na pasta antes de rodar.</div>
+Depois, usando esse contexto, crie dois materiais no padrão da Ousaria:
+1. Um card de Instagram (1080x1080, em HTML) anunciando a abertura de inscrições de uma nova turma da Tríade da Empreendedora.
+2. Um one-pager de apresentação (em HTML) do mesmo programa, pra enviar a um parceiro como o Sebrae: o que é, pra quem é e por que fazer parte.
+
+Título forte, o tom de voz da Ousaria, cores e fontes certas. Nada de clipart genérico. No fim, me diga o que ficou ambíguo no manual e que vale confirmar com o time.</pre>
+      <div class="pr-w">Foi esse que rodou ao vivo. O .md é o pulo do gato: markdown é só tópico, a IA lê rápido e você confere o que ela entendeu antes de gerar qualquer arte. Deixe o PDF do manual (e os PNGs de logo/grafismos) na pasta antes de rodar.</div>
     </div>
 
     <div class="pr rv">
-      <div class="pr-h"><span class="pr-t">02 · Empacotar o que já funciona numa Skill</span><button class="copy">Copiar</button></div>
-      <pre>Olha tudo que a gente construiu aqui neste projeto.
+      <div class="pr-h"><span class="pr-t">02 · Quando ficou bom, vira Skill</span><button class="copy">Copiar</button></div>
+      <pre>Ficou ótimo. Agora transforme isso numa Skill de marca da Ousaria, pra que QUALQUER material que eu pedir depois (card, apresentação, proposta, documento) já saia nesse padrão automaticamente.
 
-Quero que você crie uma Skill com todos esses elementos, todas as regras que estão aqui dentro, todas as etapas do processo e todos os assets (logo, grafismos, cores, fontes).
-
-O objetivo é que, daqui pra frente, eu só precise pedir "cria a proposta comercial do cliente X" — e você já entregue no padrão, sem eu precisar explicar nada de novo.</pre>
-      <div class="pr-w">Rode isso dentro do projeto que já está bom — não num projeto qualquer. A Skill só fica boa se o que entrar nela já estiver excelente. Pegue as três ou quatro melhores entregas, não vinte.</div>
+A skill deve usar o ousaria-contexto.md como base e guardar as regras de cor, fonte, logo e tom de voz. Crie a skill e me diga como eu a deixo disponível pra todo o time usar.</pre>
+      <div class="pr-w">Rode só depois que os materiais do prompt 1 ficaram bons — a Skill só fica boa se o que entrar nela já estiver excelente. Ela é compartilhável: no plano corporativo, é só liberar pra todo o time.</div>
     </div>
 
     <div class="pr rv">
-      <div class="pr-h"><span class="pr-t">03 · Orquestrar agentes e economizar token</span><button class="copy">Copiar</button></div>
+      <div class="pr-h"><span class="pr-t">03 · Raio-x do Asana (kit do conector)</span><button class="copy">Copiar</button></div>
+      <pre>Você está conectado ao meu Asana. Antes de responder, leia os meus boards e projetos.
+
+Me entregue um raio-x completo da operação:
+
+1. Um resumo por projeto: o que está rodando, o que está parado e o que está atrasado.
+2. As tarefas sem responsável ou sem data, que costumam ser as que furam.
+3. Uma visão por pessoa: quem está sobrecarregado e quem tem folga.
+4. Os riscos do momento: o que pode estourar prazo nas próximas duas semanas.
+5. As 3 prioridades que merecem a minha atenção primeiro, com o porquê de cada uma.
+
+Formato: tópicos curtos, do jeito que eu levaria pra uma reunião de diretoria. Se algo estiver ambíguo, me pergunte antes de concluir.</pre>
+      <div class="pr-w">Rode depois de conectar o Asana. É o kit pra sentir o conector na prática: ele lê a operação inteira e te devolve o que importa, no formato de reunião de diretoria.</div>
+    </div>
+
+    <div class="pr rv">
+      <div class="pr-h"><span class="pr-t">04 · O Claude te entrevista pra criar o contexto</span><button class="copy">Copiar</button></div>
+      <pre>Quero criar o contexto permanente da Ousaria pra colar nas instruções de um Projeto. Em vez de eu escrever, quero que VOCÊ me entreviste.
+
+Faça uma pergunta de cada vez sobre: (1) quem é a Ousaria e o propósito, (2) as áreas e quem toca cada uma, (3) parceiros recorrentes (Sebrae, Sesc, Fiesc), (4) como a gente trabalha e o que quer automatizar, (5) tom de voz e o que evitar, (6) metas do trimestre, (7) regras e o que nunca fazer.
+
+Quando tiver o suficiente, pare e gere o texto pronto, em primeira pessoa, pra eu colar. Não invente nada: use só o que eu responder.</pre>
+      <div class="pr-w">Perfeito pra quando o contexto está todo na sua cabeça: em vez de escrever uma parede de texto, você responde uma pergunta de cada vez e ele monta o documento no fim.</div>
+    </div>
+
+    <div class="pr rv">
+      <div class="pr-h"><span class="pr-t">05 · Orquestrar agentes e economizar token</span><button class="copy">Copiar</button></div>
       <pre>Orquestra multi agentes pra mim.
 
 Você é o estrategista e a inteligência da tarefa. Em tudo que for execução manual e não exigir estratégia, orquestre o Sonnet para trabalhar por você.
@@ -577,7 +609,7 @@ Roda em paralelo o que der, e me mostra o que cada agente está fazendo.</pre>
     </div>
 
     <div class="pr rv">
-      <div class="pr-h"><span class="pr-t">04 · O áudio que organiza o que está na sua cabeça</span><button class="copy">Copiar</button></div>
+      <div class="pr-h"><span class="pr-t">06 · O áudio que organiza o que está na sua cabeça</span><button class="copy">Copiar</button></div>
       <pre>[abra o microfone e fale por 5 a 10 minutos]
 
 Deixa eu te contar como funciona hoje o meu processo de [X]. Eu faço assim... a informação vem de... o que me trava é... o que eu queria era...
@@ -587,7 +619,7 @@ Tem alguma oportunidade de criar uma automação no Claude que me dê um fluxo m
     </div>
 
     <div class="pr rv">
-      <div class="pr-h"><span class="pr-t">05 · Definir a estratégia da automação com ele</span><button class="copy">Copiar</button></div>
+      <div class="pr-h"><span class="pr-t">07 · Definir a estratégia da automação com ele</span><button class="copy">Copiar</button></div>
       <pre>Atue como meu [papel: consultor de automação / advogado tributarista / analista de dados].
 
 Contexto: [tudo que você tem — reunião, planilha, e-mail, o que está na sua cabeça].
@@ -601,7 +633,7 @@ Como eu posso criar esse fluxo? Qual é a melhor forma de automatizar isso?</pre
     </div>
 
     <div class="pr rv">
-      <div class="pr-h"><span class="pr-t">06 · Design com referência (fugindo do padrão)</span><button class="copy">Copiar</button></div>
+      <div class="pr-h"><span class="pr-t">08 · Design com referência (fugindo do padrão)</span><button class="copy">Copiar</button></div>
       <pre>Adorei esse site/material de referência: [link ou arquivo].
 
 Me ajuda a fazer o meu seguindo esse fluxo e esse jeito de expor a informação — mas nas minhas cores e na minha identidade visual: [cores, fontes, logo].
@@ -611,7 +643,7 @@ Faz em HTML. Quero uma coisa ousada e interessante, com animações leves. Quero
     </div>
 
     <div class="pr rv">
-      <div class="pr-h"><span class="pr-t">07 · Fazer a Skill aprender com a correção</span><button class="copy">Copiar</button></div>
+      <div class="pr-h"><span class="pr-t">09 · Fazer a Skill aprender com a correção</span><button class="copy">Copiar</button></div>
       <pre>Coloca essa alteração dentro da Skill.
 
 Regra nova: [ex.: nunca citar o nome de pessoas que foram criticadas na reunião do cliente. Nunca enquadrar como deficiência — sempre como oportunidade].</pre>
@@ -619,7 +651,7 @@ Regra nova: [ex.: nunca citar o nome de pessoas que foram criticadas na reunião
     </div>
 
     <div class="pr rv">
-      <div class="pr-h"><span class="pr-t">08 · Puxar o próximo passo de dentro do projeto</span><button class="copy">Copiar</button></div>
+      <div class="pr-h"><span class="pr-t">10 · Puxar o próximo passo de dentro do projeto</span><button class="copy">Copiar</button></div>
       <pre>O cliente aprovou a proposta. Agora cria o contrato pra mim, com base nessa proposta e nas reuniões que estão na pasta.</pre>
       <div class="pr-w">Quando você trabalha no Cowork com uma pasta por cliente, não precisa reenviar nada — a proposta e as transcrições já estão lá. É o fluxinho: reunião → proposta → contrato → pesquisa, tudo no mesmo lugar.</div>
     </div>
