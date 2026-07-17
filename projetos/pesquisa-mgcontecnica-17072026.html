@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pesquisa de Nivelamento · MG Contécnica × A Virada IA</title>
+<meta name="description" content="Pesquisa de nivelamento em IA — MG Contécnica × Bruna Santanna · A Virada IA.">
+<meta name="robots" content="noindex, nofollow">
+
+<!--
+  COLETA: ver references/coleta-google-sheets.md. Cole a URL /exec do Apps Script
+  em SHEETS_ENDPOINT (lá no fim). Vazio = modo validação (mostra sucesso, não grava).
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root{
+  --bg:#F3EEE3; --bg-2:#ECE5D6; --card:#FBF9F3;
+  --ink:#14373C; --ink-2:#2C4F54; --green:#435D51;
+  --terra:#B06E4A; --terra-l:#C4835E; --terra-d:#985A3B;
+  --text:#233133; --muted:#6E7A75; --line:rgba(20,55,60,0.16);
+  --cream:#F4F3EF;
+}
+html{ scroll-behavior:smooth; }
+body{ font-family:'Hanken Grotesk',sans-serif; background:var(--bg); color:var(--text); line-height:1.55; -webkit-font-smoothing:antialiased; }
+::selection{ background:var(--terra); color:#fff; }
+.wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+.kick{ font-size:0.72rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--terra); }
+
+.site-header{ position:sticky; top:0; z-index:50; background:rgba(243,238,227,0.94); backdrop-filter:blur(8px); border-bottom:2px solid var(--ink); }
+.header-inner{ display:flex; align-items:center; justify-content:space-between; gap:14px; padding:14px 0; }
+.lock{ display:inline-flex; align-items:center; gap:12px; min-width:0; }
+.lock .bs{ font-family:'Anton',sans-serif; font-size:1.05rem; letter-spacing:0.02em; text-transform:uppercase; color:var(--ink); white-space:nowrap; }
+.lock .x{ color:var(--terra); font-weight:700; font-size:0.9rem; }
+.lock .ous{ font-family:'Anton',sans-serif; font-size:1.05rem; letter-spacing:0.04em; text-transform:uppercase; color:var(--green); white-space:nowrap; }
+.brand-tag{ font-family:'Hanken Grotesk',sans-serif; font-weight:700; font-size:0.58rem; letter-spacing:0.12em; color:var(--terra); border:1.5px solid var(--terra); padding:3px 8px; border-radius:100px; white-space:nowrap; }
+@media (max-width:560px){ .brand-tag{ display:none; } .lock .bs,.lock .ous{ font-size:0.92rem; } }
+
+.hero{ position:relative; overflow:hidden; }
+.hero-glow{ position:absolute; width:520px; height:520px; border-radius:50%; top:-200px; right:-160px; background:radial-gradient(circle,rgba(176,110,74,.14),transparent 62%); pointer-events:none; }
+.hero .wrap{ position:relative; z-index:2; padding:64px 24px 30px; }
+.hero-eyebrow{ display:inline-flex; align-items:center; gap:9px; margin-bottom:20px; }
+.hero-eyebrow .dot{ width:7px; height:7px; border-radius:50%; background:var(--terra); box-shadow:0 0 0 4px rgba(176,110,74,.18); }
+h1{ font-family:'Anton',sans-serif; font-weight:400; font-size:clamp(2.6rem,8vw,4.4rem); line-height:0.92; letter-spacing:-0.01em; text-transform:uppercase; color:var(--ink); }
+h1 .terra{ color:var(--terra); }
+.hero-sub{ font-size:1.08rem; color:var(--ink-2); font-weight:300; max-width:56ch; margin:20px 0 24px; }
+.hero-sub b{ color:var(--ink); font-weight:600; }
+.meta-row{ display:flex; flex-wrap:wrap; gap:10px; }
+.pill{ display:inline-flex; align-items:center; gap:7px; font-size:0.74rem; font-weight:600; letter-spacing:.03em; color:var(--ink-2); background:var(--card); border:1.5px solid var(--line); padding:8px 14px; border-radius:100px; }
+.pill b{ color:var(--terra); }
+
+.progress-bar{ position:sticky; top:54px; z-index:40; height:4px; background:var(--bg-2); }
+.progress-fill{ height:100%; width:0%; background:var(--terra); transition:width .25s ease; }
+
+form{ padding-bottom:90px; }
+.section{ background:var(--card); border:1.5px solid var(--line); border-radius:18px; padding:30px 28px; margin-top:22px; }
+.section:hover{ border-color:rgba(20,55,60,0.28); }
+.sec-num{ font-family:'Anton',sans-serif; font-size:0.9rem; color:var(--terra); letter-spacing:.04em; }
+.sec-title{ font-family:'Anton',sans-serif; font-weight:400; font-size:1.5rem; text-transform:uppercase; color:var(--ink); line-height:1.05; margin:4px 0 6px; }
+.sec-desc{ font-size:0.92rem; color:var(--muted); margin-bottom:20px; }
+
+.field{ margin-bottom:22px; }
+.field:last-child{ margin-bottom:0; }
+label.q{ display:block; font-size:0.96rem; font-weight:600; color:var(--ink); margin-bottom:10px; }
+label.q .req{ color:var(--terra); margin-left:3px; }
+.hint{ font-size:0.8rem; color:var(--muted); font-weight:400; margin-top:-4px; margin-bottom:10px; }
+
+input[type=text], input[type=email], select, textarea{
+  width:100%; font-family:'Hanken Grotesk',sans-serif; font-size:0.95rem; color:var(--text);
+  background:var(--bg); border:1.5px solid var(--line); border-radius:12px; padding:13px 15px; transition:border-color .15s, box-shadow .15s;
+}
+input:focus, select:focus, textarea:focus{ outline:none; border-color:var(--terra); box-shadow:0 0 0 3px rgba(176,110,74,.15); }
+textarea{ resize:vertical; min-height:96px; line-height:1.5; }
+select{ appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23B06E4A' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 15px center; padding-right:40px; }
+
+.choices{ display:grid; gap:9px; }
+.choices.cols2{ grid-template-columns:1fr 1fr; }
+@media (max-width:520px){ .choices.cols2{ grid-template-columns:1fr; } }
+.choice{ position:relative; }
+.choice input{ position:absolute; opacity:0; pointer-events:none; }
+.choice label{ display:flex; align-items:center; gap:11px; cursor:pointer; font-size:0.92rem; color:var(--text); background:var(--bg); border:1.5px solid var(--line); border-radius:12px; padding:12px 15px; transition:all .14s; }
+.choice label::before{ content:""; flex:0 0 18px; height:18px; border:2px solid var(--line); border-radius:50%; transition:all .14s; }
+.choice input[type=checkbox]+label::before{ border-radius:6px; }
+.choice label:hover{ border-color:var(--terra-l); }
+.choice input:checked+label{ border-color:var(--terra); background:rgba(176,110,74,.07); color:var(--ink); font-weight:600; }
+.choice input:checked+label::before{ border-color:var(--terra); background:var(--terra); box-shadow:inset 0 0 0 3px var(--card); }
+
+.scale{ display:grid; grid-template-columns:repeat(5,1fr); gap:8px; }
+.scale .choice label{ flex-direction:column; gap:8px; text-align:center; padding:12px 6px; }
+.scale .choice label::before{ flex:0 0 16px; height:16px; }
+.scale .sv{ font-family:'Anton',sans-serif; font-size:1.15rem; color:var(--ink-2); }
+.scale .choice input:checked+label .sv{ color:var(--terra); }
+.scale-ends{ display:flex; justify-content:space-between; font-size:0.72rem; color:var(--muted); margin-top:8px; }
+@media (max-width:520px){ .scale .sl{ display:none; } }
+
+.matrix-row{ display:grid; grid-template-columns:1.1fr 2fr; gap:14px; align-items:center; padding:12px 0; border-top:1px solid var(--line); }
+.matrix-row:first-of-type{ border-top:none; }
+.matrix-row .mlabel{ font-size:0.9rem; font-weight:600; color:var(--ink); }
+.matrix-opts{ display:grid; grid-template-columns:repeat(4,1fr); gap:6px; }
+.matrix-opts .choice label{ flex-direction:column; gap:0; text-align:center; padding:9px 4px; font-size:0.72rem; }
+.matrix-opts .choice label::before{ display:none; }
+@media (max-width:600px){ .matrix-row{ grid-template-columns:1fr; gap:8px; } }
+
+.submit-row{ margin-top:28px; display:flex; flex-direction:column; align-items:center; gap:14px; }
+.btn{ display:inline-flex; align-items:center; gap:9px; justify-content:center; font-family:'Hanken Grotesk',sans-serif; font-weight:700; font-size:0.9rem; letter-spacing:0.04em; text-transform:uppercase; padding:16px 38px; border-radius:100px; border:none; cursor:pointer; transition:transform .15s, box-shadow .15s, background .2s; }
+.btn-terra{ background:var(--terra); color:#fff; }
+.btn-terra:hover{ background:var(--terra-d); transform:translateY(-2px); box-shadow:0 10px 26px rgba(176,110,74,.35); }
+.btn:disabled{ opacity:.6; cursor:not-allowed; transform:none; box-shadow:none; }
+.submit-note{ font-size:0.78rem; color:var(--muted); text-align:center; }
+
+.success{ display:none; text-align:center; padding:70px 24px; }
+.success.show{ display:block; }
+.success .check{ width:74px; height:74px; border-radius:50%; background:var(--green); display:flex; align-items:center; justify-content:center; margin:0 auto 24px; }
+.success h2{ font-family:'Anton',sans-serif; font-weight:400; font-size:2.2rem; text-transform:uppercase; color:var(--ink); line-height:1; margin-bottom:12px; }
+.success p{ color:var(--ink-2); font-weight:300; max-width:46ch; margin:0 auto; font-size:1.02rem; }
+
+footer{ background:var(--ink); color:rgba(244,243,239,.6); padding:30px 0 38px; }
+.footer-row{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+.footer-brand{ font-family:'Anton',sans-serif; font-size:1rem; text-transform:uppercase; color:#fff; }
+.footer-copy{ font-size:0.74rem; color:rgba(244,243,239,.45); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <span class="lock">
+      <span class="bs">Bruna Santanna</span>
+      <span class="x">×</span>
+      <span class="ous">MG Contécnica</span>
+    </span>
+    <span class="brand-tag">A Virada IA</span>
+  </div>
+</header>
+
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-eyebrow"><span class="dot"></span><span class="kick">Antes da 1ª tarde · 22 de julho</span></div>
+    <h1>Antes da nossa<br><span class="terra">imersão de IA</span></h1>
+    <p class="hero-sub">Oi! Sou a <b>Bruna</b>. Nos dias <b>22/07</b> e <b>05/08</b> vou passar duas tardes aí na MG com vocês, para colocar o Claude para trabalhar de verdade no dia a dia de cada um. Para esse tempo render ao máximo, preciso conhecer você um pouco antes: <b>não tem resposta certa nem errada</b> — quanto mais sincero, melhor eu preparo o treinamento para o seu trabalho.</p>
+    <div class="meta-row">
+      <span class="pill">⏱ <b>~4 minutos</b></span>
+      <span class="pill">🔒 Respostas só pra <b>Bruna</b></span>
+      <span class="pill">🎯 Deixa o treinamento <b>com a sua cara</b></span>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+<form id="diagForm" novalidate>
+
+  <!-- 1. SOBRE VOCÊ -->
+  <div class="section">
+    <span class="sec-num">01</span>
+    <h2 class="sec-title">Sobre você</h2>
+    <p class="sec-desc">Para eu saber de quem é cada resposta.</p>
+    <div class="field">
+      <label class="q" for="nome">Seu nome<span class="req">*</span></label>
+      <input type="text" id="nome" name="nome" required placeholder="Nome e sobrenome">
+    </div>
+    <div class="field">
+      <label class="q" for="area">Sua área na MG Contécnica<span class="req">*</span></label>
+      <select id="area" name="area" required>
+        <option value="">Selecione…</option>
+        <option>Diretoria</option>
+        <option>Gestão / Operações</option>
+        <option>Marketing</option>
+        <option>Comercial</option>
+        <option>TI / Desenvolvimento</option>
+        <option>Financeiro</option>
+        <option>Departamento Pessoal / RH</option>
+        <option>Fiscal / Contábil</option>
+        <option>Outra</option>
+      </select>
+    </div>
+    <div class="field">
+      <label class="q" for="funcao">Em uma frase, o que é o seu trabalho no dia a dia?</label>
+      <input type="text" id="funcao" name="funcao" placeholder="Ex.: cuido dos relatórios da operação e acompanho os indicadores das equipes">
+    </div>
+  </div>
+
+  <!-- 2. SUA RELAÇÃO COM IA HOJE -->
+  <div class="section">
+    <span class="sec-num">02</span>
+    <h2 class="sec-title">Sua relação com IA hoje</h2>
+    <p class="sec-desc">Sem certo ou errado — é só para eu calibrar o ritmo das duas tardes.</p>
+    <div class="field">
+      <label class="q">Como você descreveria seu nível com IA hoje?<span class="req">*</span></label>
+      <div class="scale">
+        <div class="choice"><input type="radio" id="n1" name="nivel" value="1 - Nunca usei" required><label for="n1"><span class="sv">1</span><span class="sl">Nunca usei</span></label></div>
+        <div class="choice"><input type="radio" id="n2" name="nivel" value="2 - Ja testei"><label for="n2"><span class="sv">2</span><span class="sl">Já testei</span></label></div>
+        <div class="choice"><input type="radio" id="n3" name="nivel" value="3 - Uso as vezes"><label for="n3"><span class="sv">3</span><span class="sl">Uso às vezes</span></label></div>
+        <div class="choice"><input type="radio" id="n4" name="nivel" value="4 - Uso bastante"><label for="n4"><span class="sv">4</span><span class="sl">Uso bastante</span></label></div>
+        <div class="choice"><input type="radio" id="n5" name="nivel" value="5 - Uso todo dia com facilidade"><label for="n5"><span class="sv">5</span><span class="sl">Com facilidade</span></label></div>
+      </div>
+      <div class="scale-ends"><span>Mal comecei</span><span>Uso todo dia, puxo o máximo</span></div>
+    </div>
+    <div class="field">
+      <label class="q">Qual é a sua experiência com IA até agora?<span class="req">*</span></label>
+      <div class="choices">
+        <div class="choice"><input type="radio" id="ja1" name="ja_usou_ia" value="Ja usava IA com frequencia antes desse treinamento" required><label for="ja1">Já usava IA com frequência antes desse treinamento</label></div>
+        <div class="choice"><input type="radio" id="ja2" name="ja_usou_ia" value="Testei uma vez ou outra, por curiosidade"><label for="ja2">Testei uma vez ou outra, por curiosidade</label></div>
+        <div class="choice"><input type="radio" id="ja3" name="ja_usou_ia" value="So comecei agora, por causa do treinamento"><label for="ja3">Só comecei agora, por causa do treinamento</label></div>
+        <div class="choice"><input type="radio" id="ja4" name="ja_usou_ia" value="Ainda nao usei quase nada"><label for="ja4">Ainda não usei quase nada</label></div>
+      </div>
+    </div>
+    <div class="field">
+      <label class="q">Quais dessas você já usou ou testou?</label>
+      <p class="hint">Pode marcar quantas quiser.</p>
+      <div class="choices cols2">
+        <div class="choice"><input type="checkbox" id="t1" name="ferramentas" value="Claude"><label for="t1">Claude</label></div>
+        <div class="choice"><input type="checkbox" id="t2" name="ferramentas" value="ChatGPT"><label for="t2">ChatGPT</label></div>
+        <div class="choice"><input type="checkbox" id="t3" name="ferramentas" value="Gemini"><label for="t3">Gemini (Google)</label></div>
+        <div class="choice"><input type="checkbox" id="t4" name="ferramentas" value="Copilot"><label for="t4">Copilot (Microsoft)</label></div>
+        <div class="choice"><input type="checkbox" id="t5" name="ferramentas" value="Meta AI / WhatsApp"><label for="t5">Meta AI (WhatsApp)</label></div>
+        <div class="choice"><input type="checkbox" id="t6" name="ferramentas" value="Canva IA"><label for="t6">Canva IA</label></div>
+        <div class="choice"><input type="checkbox" id="t7" name="ferramentas" value="Nenhuma ainda"><label for="t7">Nenhuma ainda</label></div>
+        <div class="choice"><input type="checkbox" id="t8" name="ferramentas" value="Outras"><label for="t8">Outras</label></div>
+      </div>
+    </div>
+    <div class="field">
+      <label class="q" for="freq">Com que frequência você usa o Claude hoje?</label>
+      <select id="freq" name="frequencia">
+        <option value="">Selecione…</option>
+        <option>Todo dia</option>
+        <option>Algumas vezes por semana</option>
+        <option>De vez em quando</option>
+        <option>Quase não uso ainda</option>
+        <option>Ainda não usei</option>
+      </select>
+    </div>
+    <div class="field">
+      <label class="q">Como você se sente em relação a usar IA no seu trabalho?<span class="req">*</span></label>
+      <p class="hint">Sinceridade aqui me ajuda muito — pode responder com franqueza. 🙂</p>
+      <div class="choices">
+        <div class="choice"><input type="radio" id="s1" name="sentimento" value="Animado e curioso" required><label for="s1">Animado(a) e curioso(a) para aprender</label></div>
+        <div class="choice"><input type="radio" id="s2" name="sentimento" value="Interessado mas inseguro"><label for="s2">Interessado(a), mas ainda inseguro(a)</label></div>
+        <div class="choice"><input type="radio" id="s3" name="sentimento" value="Neutro, tanto faz"><label for="s3">Neutro(a) — uso se precisar</label></div>
+        <div class="choice"><input type="radio" id="s4" name="sentimento" value="Receoso ou desconfiado"><label for="s4">Um pouco receoso(a) ou desconfiado(a)</label></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. O QUE VOCÊ JÁ FEZ COM IA (matriz) -->
+  <div class="section">
+    <span class="sec-num">03</span>
+    <h2 class="sec-title">O que você já fez com IA</h2>
+    <p class="sec-desc">Com qualquer IA (Claude, ChatGPT…), marque o quanto você já usou cada coisa. (Nunca usei · Já ouvi falar · Uma vez ou outra · Uso sempre)</p>
+    <div id="matrix"></div>
+  </div>
+
+  <!-- 4. O QUE VOCÊ JÁ FAZ (matriz 1–5) -->
+  <div class="section">
+    <span class="sec-num">04</span>
+    <h2 class="sec-title">O que você já faz</h2>
+    <p class="sec-desc">Sua confiança em fazer cada coisa sem ajuda. (1 = não sei fazer · 5 = faço com facilidade e até ensino)</p>
+    <div id="conceitos"></div>
+  </div>
+
+  <!-- 5. O SEU DIA A DIA -->
+  <div class="section">
+    <span class="sec-num">05</span>
+    <h2 class="sec-title">O seu dia a dia</h2>
+    <p class="sec-desc">Essa é a parte mais importante — é daqui que eu tiro o que vamos construir juntos nas duas tardes.</p>
+    <div class="field">
+      <label class="q" for="desafio">Qual a tarefa que mais toma o seu tempo hoje e que você queria que a IA te ajudasse?<span class="req">*</span></label>
+      <p class="hint">Pode ser bem específico do seu trabalho. Quanto mais concreto, melhor.</p>
+      <textarea id="desafio" name="desafio" required placeholder="Ex.: montar o mesmo relatório todo mês, conferir lançamento por lançamento, responder o mesmo tipo de e-mail de cliente, caçar informação em três sistemas diferentes…"></textarea>
+    </div>
+    <div class="field">
+      <label class="q" for="repetida">Tem alguma tarefa que você repete toda semana (ou todo dia)? Qual?</label>
+      <p class="hint">Tarefas que se repetem são as que mais ganham tempo com o Claude — e as melhores candidatas a virar uma automação sua.</p>
+      <textarea id="repetida" name="tarefa_repetida" placeholder="Ex.: consolidar a planilha de fechamento, escrever o comunicado da semana, extrair dados de um PDF e digitar no sistema…"></textarea>
+    </div>
+    <div class="field">
+      <label class="q" for="sistemas">Quais sistemas e programas você usa no dia a dia?</label>
+      <p class="hint">Me ajuda a saber onde o Claude entra e onde ele esbarra.</p>
+      <input type="text" id="sistemas" name="sistemas" placeholder="Ex.: Excel, Outlook / Office 365, sistema contábil, portal do cliente, WhatsApp…">
+    </div>
+    <div class="field">
+      <label class="q" for="tempo_perdido">Se você recuperasse 1 hora por dia, o que faria com ela?</label>
+      <p class="hint">Vale responder com o que ficaria melhor no seu trabalho — ou na sua vida.</p>
+      <textarea id="tempo_perdido" name="tempo_perdido" placeholder="Pode ser simples."></textarea>
+    </div>
+    <div class="field">
+      <label class="q">Você já tentou usar o Claude para algo do trabalho e travou?</label>
+      <div class="choices">
+        <div class="choice"><input type="radio" id="tr1" name="travou" value="Sim, e quero resolver na imersao"><label for="tr1">Sim — e quero resolver isso nas tardes</label></div>
+        <div class="choice"><input type="radio" id="tr2" name="travou" value="Tentei, mas nao cheguei la"><label for="tr2">Tentei, mas não cheguei onde queria</label></div>
+        <div class="choice"><input type="radio" id="tr3" name="travou" value="Ainda nao tentei"><label for="tr3">Ainda não tentei</label></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. O QUE VOCÊ ESPERA -->
+  <div class="section">
+    <span class="sec-num">06</span>
+    <h2 class="sec-title">O que você espera</h2>
+    <p class="sec-desc">Para eu não deixar passar nada que é importante para você.</p>
+    <div class="field">
+      <label class="q" for="expectativa">O que faria essas duas tardes valerem muito a pena para você?</label>
+      <textarea id="expectativa" name="expectativa" placeholder="No fim do treinamento, eu queria sair sabendo/fazendo…"></textarea>
+    </div>
+    <div class="field">
+      <label class="q" for="receio">Tem algum medo ou dúvida sobre usar IA que você quer que eu ajude a tirar?</label>
+      <p class="hint">Ex.: "tenho medo de errar", "não sei o que posso colocar lá dentro", "acho que é difícil demais para mim", "será que isso substitui meu trabalho?". Tudo isso é normal e eu prefiro tratar de frente.</p>
+      <textarea id="receio" name="receio" placeholder="Pode falar com sinceridade."></textarea>
+    </div>
+    <div class="field">
+      <label class="q" for="extra">Quer deixar mais algum recado para mim antes do dia 22?</label>
+      <textarea id="extra" name="extra" placeholder="Manda tudo aqui."></textarea>
+    </div>
+  </div>
+
+  <div class="submit-row">
+    <button type="submit" class="btn btn-terra" id="submitBtn">Enviar respostas →</button>
+    <p class="submit-note">Leva menos de 1 minuto para revisar. Qualquer dúvida, é só falar comigo. 💛</p>
+  </div>
+
+</form>
+</div>
+
+<div class="success" id="successBox">
+  <div class="wrap">
+    <div class="check">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <h2>Recebido!</h2>
+    <p>Obrigada por responder com calma. Vou usar isso para preparar as tardes com a cara do seu trabalho. Nos vemos dia 22! ✦</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap footer-row">
+    <span class="footer-brand">Bruna Santanna · A Virada IA</span>
+    <span class="footer-copy">Virada IA: Claude com Profundidade × MG Contécnica · Julho 2026</span>
+  </div>
+</footer>
+
+<script>
+/* ====== COLE A URL /exec DO APPS SCRIPT AQUI (ver references/coleta-google-sheets.md) ====== */
+const SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycbxnzWbLDUz57ZkyOgDe3Pn2Nj7Sr26DLK8V2P4WDwpTtWE-jhAae-0CkNDNZdGguNfM/exec";
+
+/* matriz "O que você já fez com IA" — calibrada para o backoffice da MG */
+const recursos = [
+  ["Fazer perguntas / tirar dúvidas","perguntas"],
+  ["Pedir para escrever ou revisar um texto","texto"],
+  ["Resumir ou interpretar um documento (PDF, contrato, legislação)","documentos"],
+  ["Pedir ajuda com planilha (Excel)","planilha"],
+  ["Analisar números e montar um relatório","relatorio"],
+  ["Guardar arquivos e conversas num Projeto","projetos"]
+];
+const escalaUso = ["Nunca usei","Já ouvi falar","Uma vez ou outra","Uso sempre"];
+const matrixEl = document.getElementById("matrix");
+recursos.forEach(([nome,key])=>{
+  const row = document.createElement("div"); row.className = "matrix-row";
+  let opts = escalaUso.map((op,i)=>`<div class="choice"><input type="radio" id="${key}_${i}" name="uso_${key}" value="${op}"><label for="${key}_${i}">${op}</label></div>`).join("");
+  row.innerHTML = `<div class="mlabel">${nome}</div><div class="matrix-opts">${opts}</div>`;
+  matrixEl.appendChild(row);
+});
+
+/* matriz "O que você já faz" 1–5 — habilidades práticas */
+const conceitos = [
+  ["Escrever um bom pedido para a IA","prompt"],
+  ["Subir um arquivo (planilha, PDF) e trabalhar em cima dele","arquivos"],
+  ["Conferir se a resposta da IA está certa","conferir"],
+  ["Saber o que pode e o que não pode colocar numa IA (dado sigiloso de cliente)","sigilo"],
+  ["Organizar conversas e contexto num Projeto","projetos"]
+];
+const concEl = document.getElementById("conceitos");
+conceitos.forEach(([nome,key])=>{
+  const row = document.createElement("div"); row.className = "matrix-row";
+  let opts = [1,2,3,4,5].map(i=>`<div class="choice"><input type="radio" id="c_${key}_${i}" name="conf_${key}" value="${i}"><label for="c_${key}_${i}">${i}</label></div>`).join("");
+  row.innerHTML = `<div class="mlabel">${nome}</div><div class="matrix-opts" style="grid-template-columns:repeat(5,1fr)">${opts}</div>`;
+  concEl.appendChild(row);
+});
+
+/* barra de progresso */
+const form = document.getElementById("diagForm");
+const fill = document.getElementById("progressFill");
+function updateProgress(){
+  const fields = form.querySelectorAll("input[type=text],input[type=email],select,textarea");
+  const groups = new Set();
+  form.querySelectorAll("input[type=radio],input[type=checkbox]").forEach(i=>groups.add(i.name));
+  let total = fields.length + groups.size, done = 0;
+  fields.forEach(f=>{ if(f.value.trim()) done++; });
+  groups.forEach(name=>{ if(form.querySelector(`input[name="${name}"]:checked`)) done++; });
+  fill.style.width = Math.min(100, Math.round(done/total*100)) + "%";
+}
+form.addEventListener("input", updateProgress);
+form.addEventListener("change", updateProgress);
+
+/* envio */
+const submitBtn = document.getElementById("submitBtn");
+form.addEventListener("submit", async (e)=>{
+  e.preventDefault();
+  if(!form.checkValidity()){ form.reportValidity(); return; }
+  submitBtn.disabled = true; submitBtn.textContent = "Enviando…";
+  const data = {};
+  new FormData(form).forEach((v,k)=>{ if(data[k]){ data[k] = [].concat(data[k], v); } else { data[k] = v; } });
+  data.timestamp = new Date().toISOString();
+  try{
+    if(SHEETS_ENDPOINT){
+      await fetch(SHEETS_ENDPOINT, { method:"POST", mode:"no-cors", headers:{ "Content-Type":"text/plain;charset=utf-8" }, body: JSON.stringify(data) });
+    } else { console.log("[MODO VALIDAÇÃO] SHEETS_ENDPOINT vazio. Respostas:", data); }
+    document.querySelector("form").style.display = "none";
+    document.querySelector(".hero").style.display = "none";
+    document.getElementById("successBox").classList.add("show");
+    window.scrollTo({top:0, behavior:"smooth"});
+  }catch(err){
+    submitBtn.disabled = false; submitBtn.textContent = "Enviar respostas →";
+    alert("Ops, não consegui enviar agora. Tenta de novo em instantes?");
+  }
+});
+</script>
+</body>
+</html>
