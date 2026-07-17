@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Jornada Claude · Ousaria × A Virada IA — Todos os encontros</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3EEE3; --bg-2:#ECE5D6; --card:#FBF9F3; --cream:#F4F3EF;
+  --ink:#14373C; --ink-2:#2C4F54; --green:#435D51;
+  --terra:#B06E4A; --terra-l:#C4835E; --terra-d:#985A3B;
+  --text:#233133; --muted:#6E7A75; --line:rgba(20,55,60,.16);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+::selection{background:var(--terra);color:#fff;}
+html{scroll-behavior:smooth;}
+body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+
+header{position:sticky;top:0;z-index:60;background:rgba(243,238,227,.92);backdrop-filter:blur(8px);border-bottom:2px solid var(--ink);}
+.hwrap{max-width:1080px;margin:0 auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.hlogo{font-family:'Anton',sans-serif;font-size:1rem;text-transform:uppercase;color:var(--ink);letter-spacing:.01em;}
+.hlogo .x{color:var(--terra);}.hlogo .o{color:var(--green);}
+.pill{border:1.5px solid var(--terra);border-radius:100px;font-weight:700;font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:var(--terra-d);padding:5px 11px;white-space:nowrap;}
+@media(max-width:560px){.pill{display:none;}}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px;}
+.hero{position:relative;padding:70px 0 44px;overflow:hidden;}
+.hero::before{content:"";position:absolute;top:-180px;right:-140px;width:600px;height:600px;background:radial-gradient(circle,rgba(176,110,74,.13),transparent 62%);pointer-events:none;}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--terra-d);margin-bottom:20px;}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--terra);}
+h1{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(3rem,10vw,6rem);line-height:.87;text-transform:uppercase;color:var(--ink);}
+h1 .terra{color:var(--terra);}
+.lead{font-size:1.15rem;font-weight:300;color:var(--ink-2);max-width:48ch;margin-top:22px;}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:16px 0 40px;}
+@media(max-width:860px){.grid{grid-template-columns:1fr;max-width:520px;}}
+.enc{display:flex;flex-direction:column;gap:12px;background:var(--card);border:2px solid var(--ink);border-radius:18px;padding:26px 24px;box-shadow:7px 7px 0 var(--green);transition:transform .16s,box-shadow .16s;}
+.enc.live:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 var(--terra);}
+.enc.soon{opacity:.62;box-shadow:7px 7px 0 var(--line);border-style:dashed;}
+.badge{align-self:flex-start;font-weight:800;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;padding:5px 11px;border-radius:100px;}
+.badge.on{background:var(--terra);color:#fff;}
+.badge.off{background:var(--bg-2);color:var(--muted);border:1.5px solid var(--line);}
+.enc .n{font-family:'Anton',sans-serif;font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;color:var(--terra-d);}
+.enc.soon .n{color:var(--muted);}
+.enc .t{font-family:'Anton',sans-serif;font-size:1.7rem;line-height:1;text-transform:uppercase;color:var(--ink);}
+.enc .d{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+.enc .desc{font-size:.92rem;font-weight:300;color:var(--muted);line-height:1.5;flex:1;}
+.enc .go{margin-top:4px;font-weight:800;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--terra-d);display:inline-flex;align-items:center;gap:7px;}
+.enc.soon .go{color:var(--muted);}
+
+.note{background:var(--bg-2);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:34px 0;}
+.note p{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(1.4rem,4vw,2.2rem);line-height:1.05;text-transform:uppercase;color:var(--ink);max-width:24ch;}
+.note p .terra{color:var(--terra);}
+.note .s{font-family:'Hanken Grotesk',sans-serif;font-size:1rem;font-weight:300;text-transform:none;color:var(--ink-2);margin-top:14px;max-width:56ch;line-height:1.55;}
+
+footer{background:var(--ink);padding:40px 0;}
+.fwrap{max-width:1080px;margin:0 auto;padding:0 22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.fb{font-family:'Anton',sans-serif;font-size:1.05rem;text-transform:uppercase;color:var(--cream);}
+.fc{font-size:.78rem;font-weight:300;color:rgba(244,243,239,.5);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hwrap">
+    <span class="hlogo">Jornada Claude <span class="x">·</span> <span class="o">Ousaria</span></span>
+    <span class="pill">A Virada IA</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Ousaria × A Virada IA</div>
+    <h1>Todos os<br><span class="terra">encontros</span><br>num lugar só</h1>
+    <p class="lead">Este é o seu ponto fixo. Cada aula da jornada — gravação, resumo, prompts e missão — entra aqui, na medida em que a gente avança.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="grid">
+
+    <a class="enc live" href="https://newscale.tech/projetos/aula01-ousaria-16072026">
+      <span class="badge on">Disponível</span>
+      <div class="n">Encontro 01</div>
+      <div class="t">Fundamentos</div>
+      <div class="d">16 de julho de 2026</div>
+      <div class="desc">Contexto é tudo, processo antes da IA, projeto × Skill, os modelos, tokens e a matriz. Com a gravação, os prompts da aula e as dicas.</div>
+      <span class="go">Abrir o encontro →</span>
+    </a>
+
+    <div class="enc soon">
+      <span class="badge off">Em breve</span>
+      <div class="n">Encontro 02</div>
+      <div class="t">Mão na massa</div>
+      <div class="d">Data a confirmar</div>
+      <div class="desc">Construção ao vivo: a gente pega os processos que vocês mapearam e transforma em Skill, agendamento ou app — de verdade.</div>
+      <span class="go">Em breve</span>
+    </div>
+
+    <div class="enc soon">
+      <span class="badge off">Em breve</span>
+      <div class="n">Encontro 03</div>
+      <div class="t">No ar</div>
+      <div class="d">Data a confirmar</div>
+      <div class="desc">Fechamento: automações rodando, ajustes finos e o caminho pra vocês seguirem construindo sozinhos depois da jornada.</div>
+      <span class="go">Em breve</span>
+    </div>
+
+  </div>
+</div>
+
+<div class="note">
+  <div class="wrap">
+    <p>Salve <span class="terra">este</span> link.</p>
+    <p class="s">É o mesmo pra sempre. Não precisa guardar um link por aula — quando um novo encontro acontece, ele aparece aqui automaticamente.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="fwrap">
+    <span class="fb">Jornada Claude · Ousaria</span>
+    <span class="fc">Bruna Santanna · A Virada IA</span>
+  </div>
+</footer>
+
+</body>
+</html>
