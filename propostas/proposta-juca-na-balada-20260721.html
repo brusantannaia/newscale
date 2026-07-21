@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Comercial · Juca na Balada · NewScale Consulting</title>
+
+<!-- Nao indexar -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="bingbot" content="noindex, nofollow">
+
+<!-- Preview / WhatsApp -->
+<meta property="og:title" content="Proposta Comercial: Juca na Balada & NewScale Consulting">
+<meta property="og:description" content="A imersao que capacita o time + a NewScale como a cabeca de IA da Juca, mes a mes: gestao do projeto, acompanhamento do Abil Funnels e as frentes de cada area na ordem certa.">
+<meta property="og:image" content="https://raw.githubusercontent.com/brusantannaia/newscale/main/newscale-og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NewScale Consulting">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Proposta Comercial: Juca na Balada & NewScale Consulting">
+<meta name="twitter:description" content="A imersao que capacita o time e a NewScale como a cabeca de IA da Juca, mes a mes.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/brusantannaia/newscale/main/newscale-og-cover.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root{
+  --bg:#0C2427; --bg-2:#0E2A2E; --ink:#14373C; --ink-2:#1A4449;
+  --green:#435D51; --terra:#B06E4A; --tl:#C4835E; --terra-d:#985A3B;
+  --sand:#A38362; --cream:#F4F3EF; --light:#F3EEE3; --light-2:#ECE5D6;
+  --muted:rgba(244,243,239,.60); --text:rgba(244,243,239,.82); --line:rgba(244,243,239,.10);
+  --ice:#F4F3EF; --ice-2:#FAFAF8; --ink-text:#233133; --ice-line:rgba(20,55,60,.10);
+}
+html{ scroll-behavior:smooth; }
+body{ font-family:'Hanken Grotesk',sans-serif; background:var(--bg); color:var(--cream); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+em{ font-style:normal; color:var(--tl); }
+::selection{ background:var(--terra); color:#fff; }
+.wrap{ max-width:1100px; margin:0 auto; padding:0 30px; }
+
+.grain{ position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+/* NAVBAR */
+.navbar{ position:fixed; top:0; left:0; right:0; z-index:100; display:flex; justify-content:space-between; align-items:center; padding:18px 40px; background:transparent; transition:background .4s, padding .3s; }
+.navbar.scrolled{ background:rgba(12,36,39,.85); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); padding:12px 40px; }
+.navbar-logo img{ height:76px; width:auto; opacity:.96; }
+.navbar-cta{ font-size:0.72rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; background:var(--terra); color:#fff; padding:11px 22px; border-radius:100px; transition:background .2s, transform .15s; }
+.navbar-cta:hover{ background:var(--terra-d); transform:translateY(-2px); }
+@media(max-width:640px){ .navbar{ padding:12px 20px; } .navbar-logo img{ height:60px; } .navbar-cta{ padding:9px 16px; font-size:.66rem; } }
+
+/* BOTOES */
+.btn{ display:inline-flex; align-items:center; gap:9px; justify-content:center; font-family:'Hanken Grotesk',sans-serif; font-weight:700; font-size:0.85rem; letter-spacing:.04em; text-transform:uppercase; padding:15px 28px; border-radius:100px; border:none; cursor:pointer; transition:transform .15s, box-shadow .15s, background .2s, border-color .2s; }
+.btn-terra{ background:var(--terra); color:#fff; box-shadow:0 8px 28px rgba(176,110,74,.35); }
+.btn-terra:hover{ background:var(--terra-d); transform:translateY(-2px); }
+.btn-ghost{ background:transparent; color:#fff; border:1.5px solid rgba(244,243,239,.28); }
+.btn-ghost:hover{ border-color:var(--tl); background:rgba(255,255,255,.05); }
+
+/* HERO */
+.hero{ background:linear-gradient(150deg,#0a2023 0%,#0C2427 38%,#12312f 72%,#1d3f38 100%); overflow:hidden; position:relative; padding:118px 0 82px; }
+.hero-glow{ position:absolute; width:660px; height:660px; border-radius:50%; top:-240px; right:-200px; background:radial-gradient(circle,rgba(176,110,74,.17),transparent 62%); pointer-events:none; }
+.hero-inner{ max-width:1100px; margin:0 auto; width:100%; position:relative; z-index:2; }
+.hero-badge{ display:inline-block; background:rgba(176,110,74,.15); color:var(--tl); font-size:0.65rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; padding:7px 16px; border-radius:20px; border:1px solid rgba(176,110,74,.25); margin-bottom:26px; }
+.hero-eyebrow{ font-size:0.72rem; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.45); margin-bottom:22px; }
+.hero h1{ font-family:'Anton',sans-serif; font-weight:400; font-size:clamp(2.9rem,8.2vw,5.8rem); line-height:0.92; letter-spacing:-0.01em; text-transform:uppercase; color:#fff; max-width:15ch; margin-bottom:28px; }
+.hero h1 .terra{ color:var(--tl); }
+.hero-desc{ font-size:1.08rem; font-weight:300; color:rgba(255,255,255,.72); max-width:56ch; line-height:1.7; margin-bottom:40px; }
+.hero-desc b{ color:#fff; font-weight:600; }
+.hero-actions{ display:flex; gap:14px; flex-wrap:wrap; }
+/* HERO grid + painel (dashboard) */
+.hero-grid{ display:grid; grid-template-columns:1.15fr .85fr; gap:50px; align-items:center; position:relative; z-index:2; }
+@media(max-width:900px){ .hero-grid{ grid-template-columns:1fr; gap:34px; } }
+.badge{ display:inline-block; font-size:.76rem; color:var(--text); background:rgba(255,255,255,.05); border:1px solid var(--line); border-radius:100px; padding:8px 16px; margin-bottom:18px; }
+.hero-copy h1{ font-family:'Anton',sans-serif; font-weight:400; text-transform:uppercase; letter-spacing:-.01em; line-height:.96; font-size:clamp(2rem,4.3vw,3.3rem); color:#fff; margin:0 0 18px; max-width:15ch; }
+.hero-copy h1 .terra{ color:var(--tl); }
+.hero-sub{ font-size:1rem; color:var(--text); max-width:50ch; line-height:1.7; margin-bottom:26px; font-weight:300; }
+.hero-sub em{ color:var(--tl); }
+.panel{ background:linear-gradient(160deg,var(--ink) 0%,#1a3d42 60%,var(--green) 130%); border:1px solid var(--line); border-radius:20px; padding:24px; box-shadow:0 40px 90px -30px rgba(0,0,0,.7); }
+.panel-head{ font-weight:700; font-size:.66rem; letter-spacing:.16em; color:var(--tl); display:flex; align-items:center; gap:8px; margin-bottom:18px; text-transform:uppercase; }
+.live{ width:7px; height:7px; border-radius:50%; background:#4ade80; animation:blink 2s infinite; flex-shrink:0; }
+@keyframes blink{ 0%,100%{ opacity:1; } 50%{ opacity:.35; } }
+.panel-kpis{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.kpi{ background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07); border-radius:12px; padding:15px; }
+.kpi .v{ font-family:'Anton',sans-serif; font-size:1.8rem; color:var(--tl); line-height:1; }
+.kpi .l{ font-size:.66rem; color:var(--muted); margin-top:6px; line-height:1.4; }
+.panel-row{ margin-top:10px; padding:11px 14px; border-radius:10px; font-size:.74rem; color:var(--cream); background:rgba(176,110,74,.14); border:1px solid rgba(176,110,74,.3); display:flex; gap:9px; align-items:center; }
+/* CONTEXTO padrão Regina — stats band */
+.stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--line); border:1px solid var(--line); border-radius:18px; overflow:hidden; margin-top:40px; }
+.stat{ background:var(--ink); padding:30px 24px; }
+.stat .v{ font-family:'Anton',sans-serif; font-size:clamp(2.2rem,6vw,3rem); color:var(--tl); line-height:1; }
+.stat .l{ font-size:.76rem; color:var(--muted); margin-top:9px; line-height:1.5; }
+@media(max-width:760px){ .stats{ grid-template-columns:1fr; } }
+/* IDEIAS que surgiram — opp cards */
+.opp-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:34px; }
+@media(max-width:760px){ .opp-grid{ grid-template-columns:1fr; } }
+.opp{ background:rgba(255,255,255,.04); border:1px solid var(--line); border-radius:16px; padding:26px 24px; position:relative; overflow:hidden; transition:.2s; }
+.opp::before{ content:""; position:absolute; top:0; left:0; right:0; height:2px; background:var(--terra); opacity:0; transition:opacity .2s; }
+.opp:hover{ transform:translateY(-3px); border-color:rgba(176,110,74,.4); }
+.opp:hover::before{ opacity:1; }
+.opp h3{ font-family:'Anton',sans-serif; font-weight:400; text-transform:uppercase; font-size:1.2rem; color:#fff; margin-bottom:8px; line-height:1.05; }
+.opp p{ font-size:.88rem; color:var(--muted); font-weight:300; line-height:1.7; }
+.ex-tag{ font-weight:700; font-size:.58rem; letter-spacing:.12em; text-transform:uppercase; color:var(--tl); display:block; margin-bottom:10px; }
+.ideias-nota{ margin-top:26px; font-size:.92rem; font-weight:300; line-height:1.7; }
+
+/* SECOES */
+.sec{ padding:96px 30px; position:relative; z-index:2; }
+.sec-inner{ max-width:1100px; margin:0 auto; }
+.section-label{ display:block; font-size:0.72rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--tl); margin-bottom:16px; }
+.section-title{ font-family:'Anton',sans-serif; font-weight:400; font-size:clamp(2rem,5.4vw,3.3rem); text-transform:uppercase; color:#fff; line-height:1; letter-spacing:-0.01em; }
+.section-title em{ color:var(--tl); }
+.lead{ font-size:1.0rem; font-weight:300; color:var(--muted); line-height:1.8; max-width:60ch; margin-top:18px; }
+.bg-2{ background:var(--bg-2); }
+
+/* BLOCO CLARO */
+.sec-light{ background:var(--light); color:#233133; }
+.sec-light .section-label{ color:var(--terra-d); }
+.sec-light .section-title{ color:var(--ink); }
+.sec-light .lead{ color:#3c4a4c; }
+
+/* CONTEXTO */
+.context-inner{ display:grid; grid-template-columns:1.05fr .95fr; gap:64px; align-items:center; }
+.context-text p{ color:var(--muted); font-weight:300; margin-top:16px; line-height:1.8; }
+.context-text p b{ color:var(--cream); font-weight:600; }
+.intro-stats{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.stat-card{ border-radius:14px; padding:26px 22px; display:flex; flex-direction:column; gap:8px; border-top:2px solid transparent; }
+.stat-card:nth-child(1){ background:rgba(255,255,255,.05); border-top-color:var(--tl); }
+.stat-card:nth-child(2){ background:var(--terra); }
+.stat-card:nth-child(3){ background:var(--green); }
+.stat-card:nth-child(4){ background:var(--ink-2); border-top-color:var(--tl); }
+.stat-number{ font-family:'Anton',sans-serif; font-size:2.5rem; font-weight:400; color:#fff; line-height:1; }
+.stat-label{ font-size:0.68rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:rgba(255,255,255,.75); }
+@media(max-width:860px){ .context-inner{ grid-template-columns:1fr; gap:40px; } }
+
+/* CARDS AREA */
+.dores-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:44px; }
+.dore-card{ background:rgba(255,255,255,.04); border:1px solid var(--line); border-radius:16px; padding:30px 28px; position:relative; overflow:hidden; transition:border-color .3s, background .3s, transform .2s; }
+.dore-card:hover{ border-color:rgba(196,131,94,.4); background:rgba(176,110,74,.05); transform:translateY(-3px); }
+.dore-num{ font-family:'Anton',sans-serif; font-size:4.4rem; color:rgba(196,131,94,.1); line-height:1; position:absolute; top:8px; right:18px; }
+.dore-tag{ font-size:0.62rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--tl); margin-bottom:10px; }
+.dore-title{ font-family:'Anton',sans-serif; font-weight:400; font-size:1.3rem; text-transform:uppercase; color:#fff; line-height:1.05; margin-bottom:12px; position:relative; z-index:1; }
+.dore-text{ font-size:0.9rem; font-weight:300; color:var(--muted); line-height:1.7; position:relative; z-index:1; }
+.dore-text b{ color:var(--cream); font-weight:600; }
+@media(max-width:720px){ .dores-grid{ grid-template-columns:1fr; } }
+
+/* FASES / MODULOS */
+.fase-header{ display:flex; justify-content:space-between; align-items:center; gap:24px; border-radius:16px 16px 0 0; padding:26px 30px; margin-top:36px; }
+.fase-header.f1{ background:var(--ink); }
+.fase-header.f2{ background:var(--terra); }
+.fase-tag{ font-size:0.64rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.7); }
+.fase-name{ font-family:'Anton',sans-serif; font-weight:400; font-size:1.6rem; text-transform:uppercase; color:#fff; line-height:1; margin:6px 0; }
+.fase-duration{ font-size:0.82rem; color:rgba(255,255,255,.82); font-weight:300; }
+.fase-num-badge{ font-family:'Anton',sans-serif; font-size:2.5rem; color:rgba(255,255,255,.35); }
+
+/* ANTES / DEPOIS */
+.ad-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:34px; }
+.ad-col{ border-radius:16px; padding:30px 28px; }
+.ad-col-antes{ background:rgba(255,255,255,.03); border:1px solid var(--line); }
+.ad-col-depois{ background:linear-gradient(155deg,var(--ink),var(--green)); border:1px solid rgba(196,131,94,.3); }
+.ad-col-title{ font-size:0.66rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; margin-bottom:20px; }
+.ad-col-antes .ad-col-title{ color:var(--muted); }
+.ad-col-depois .ad-col-title{ color:var(--tl); }
+.ad-step{ display:flex; gap:14px; padding:9px 0; }
+.ad-step-time{ font-family:'Anton',sans-serif; font-weight:400; min-width:70px; font-variant-numeric:tabular-nums; font-size:0.9rem; }
+.ad-col-antes .ad-step-time{ color:rgba(244,243,239,.55); }
+.ad-col-depois .ad-step-time{ color:var(--tl); }
+.ad-step-text{ font-size:0.86rem; color:var(--muted); font-weight:300; line-height:1.5; }
+.ad-col-depois .ad-step-text{ color:rgba(244,243,239,.82); }
+@media(max-width:720px){ .ad-grid{ grid-template-columns:1fr; } }
+
+/* INVESTIMENTO */
+.invest-two{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:48px; align-items:stretch; }
+@media(max-width:860px){ .invest-two{ grid-template-columns:1fr; } }
+.invest-hero-card{ background:rgba(176,110,74,.08); border:1px solid rgba(176,110,74,.3); border-radius:18px; padding:40px 38px; position:relative; }
+.invest-hero-card.rec::before{ content:'RECOMENDADO'; position:absolute; top:-11px; left:28px; background:var(--terra); color:#fff; font-size:0.62rem; font-weight:700; letter-spacing:.16em; padding:5px 13px; border-radius:20px; }
+.invest-hero-tag{ font-size:0.64rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--tl); margin-bottom:10px; }
+.invest-hero-name{ font-family:'Anton',sans-serif; font-weight:400; font-size:1.7rem; text-transform:uppercase; color:#fff; line-height:1.04; margin-bottom:16px; }
+.invest-hero-price{ font-family:'Anton',sans-serif; font-size:3.1rem; font-weight:400; color:var(--tl); line-height:1; }
+.invest-hero-price small{ font-family:'Hanken Grotesk',sans-serif; font-size:0.82rem; color:var(--muted); font-weight:400; display:block; margin-top:8px; }
+.invest-hero-list{ list-style:none; margin-top:24px; }
+.invest-hero-list li{ position:relative; padding-left:22px; font-size:0.88rem; color:var(--muted); font-weight:300; line-height:1.6; margin-bottom:11px; }
+.invest-hero-list li::before{ content:'✓'; position:absolute; left:0; color:var(--green); font-weight:700; }
+.invest-hero-list li b{ color:var(--cream); font-weight:600; }
+.invest-side{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:20px; }
+@media(max-width:860px){ .invest-side{ grid-template-columns:1fr; } }
+.invest-addon{ background:rgba(255,255,255,.04); border:1px solid var(--line); border-top:2px solid var(--tl); border-radius:16px; padding:28px 26px; }
+.invest-addon-tag{ font-size:0.62rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--tl); margin-bottom:10px; }
+.invest-addon-name{ font-family:'Anton',sans-serif; font-weight:400; font-size:1.25rem; text-transform:uppercase; color:#fff; line-height:1.05; margin-bottom:10px; }
+.invest-addon-price{ font-family:'Anton',sans-serif; font-size:1.8rem; color:var(--tl); line-height:1; margin-bottom:8px; }
+.invest-addon p{ font-size:0.82rem; color:var(--muted); font-weight:300; line-height:1.6; }
+.invest-addon p b{ color:var(--cream); font-weight:600; }
+.pkg-validade{ display:flex; align-items:center; gap:8px; margin-top:22px; font-size:0.76rem; color:var(--muted); }
+.pulse-dot{ width:8px; height:8px; border-radius:50%; background:var(--terra); animation:pulse 1.6s infinite; }
+@keyframes pulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(176,110,74,.5); } 50%{ box-shadow:0 0 0 6px rgba(176,110,74,0); } }
+.incluso-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:44px; }
+.incluso-card{ background:rgba(255,255,255,.04); border:1px solid var(--line); border-radius:14px; padding:24px 22px; }
+.incluso-card h4{ font-size:0.94rem; color:#fff; font-weight:700; margin-bottom:6px; }
+.incluso-card p{ font-size:0.82rem; color:var(--muted); font-weight:300; line-height:1.6; }
+.roi-check{ display:grid; grid-template-columns:1.3fr .7fr; gap:36px; align-items:center; background:rgba(255,255,255,.04); border:1px solid var(--line); border-radius:18px; padding:38px 36px; margin-top:24px; }
+.roi-check p{ font-size:0.94rem; color:var(--muted); font-weight:300; line-height:1.75; }
+.roi-check p b{ color:var(--cream); font-weight:600; }
+.roi-num{ text-align:center; }
+.roi-num .n{ font-family:'Anton',sans-serif; font-size:3.4rem; color:var(--tl); line-height:1; }
+.roi-num .l{ font-size:0.74rem; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; margin-top:6px; }
+.pay-note{ font-size:0.82rem; color:var(--muted); font-weight:300; line-height:1.75; margin-top:26px; }
+.pay-note b{ color:var(--cream); font-weight:600; }
+@media(max-width:860px){ .incluso-grid{ grid-template-columns:1fr; } .roi-check{ grid-template-columns:1fr; gap:24px; } }
+
+/* ONDA FUTURA / MODULOS */
+.future-grid{ display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; margin-top:20px; }
+.future-list{ list-style:none; margin-top:8px; }
+.future-list li{ position:relative; padding-left:24px; font-size:0.92rem; color:var(--muted); font-weight:300; line-height:1.7; margin-bottom:12px; }
+.future-list li::before{ content:'+'; position:absolute; left:0; color:var(--tl); font-weight:700; font-size:1.1rem; }
+.transform-box{ background:rgba(255,255,255,.04); border:1px solid var(--line); border-radius:18px; padding:40px 34px; text-align:center; }
+.transform-from{ font-family:'Anton',sans-serif; font-size:1.6rem; color:var(--green); text-decoration:line-through; text-decoration-color:rgba(176,110,74,.55); }
+.transform-arrow{ color:var(--muted); margin:10px 0; font-size:1.2rem; }
+.transform-to{ font-family:'Anton',sans-serif; font-size:3.2rem; color:var(--tl); line-height:1; }
+.transform-cap{ font-size:0.82rem; color:var(--muted); margin-top:14px; font-weight:300; line-height:1.6; }
+@media(max-width:860px){ .future-grid{ grid-template-columns:1fr; gap:30px; } }
+
+/* MODULOS a parte - cards */
+.mod-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:44px; }
+@media(max-width:720px){ .mod-grid{ grid-template-columns:1fr; } }
+.mod-card{ background:rgba(255,255,255,.04); border:1px solid var(--line); border-radius:16px; padding:28px 26px; transition:.2s; }
+.mod-card:hover{ transform:translateY(-3px); border-color:rgba(176,110,74,.4); background:rgba(176,110,74,.05); }
+.mod-head{ display:flex; justify-content:space-between; align-items:baseline; gap:14px; margin-bottom:12px; }
+.mod-name{ font-family:'Anton',sans-serif; font-weight:400; text-transform:uppercase; font-size:1.2rem; color:#fff; line-height:1.05; }
+.mod-price{ font-size:0.62rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--tl); white-space:nowrap; border:1px solid rgba(196,131,94,.35); padding:5px 11px; border-radius:100px; flex-shrink:0; }
+.mod-card p{ font-size:0.88rem; color:var(--muted); font-weight:300; line-height:1.7; }
+.mod-card p b{ color:var(--cream); font-weight:600; }
+
+/* DIAGNOSTICO TECNICO */
+.diag-wrap{ overflow-x:auto; margin-top:44px; border:1px solid var(--line); border-radius:18px; }
+.diag{ width:100%; border-collapse:collapse; font-size:0.86rem; min-width:660px; }
+.diag th{ font-family:'Hanken Grotesk',sans-serif; font-weight:700; font-size:0.6rem; letter-spacing:.12em; text-transform:uppercase; color:var(--tl); text-align:left; padding:16px 18px; background:rgba(255,255,255,.03); border-bottom:1px solid var(--line); }
+.diag td{ padding:16px 18px; border-bottom:1px solid var(--line); color:var(--text); font-weight:300; vertical-align:top; line-height:1.6; }
+.diag tr:last-child td{ border-bottom:none; }
+.diag td b{ color:var(--cream); font-weight:600; }
+.diag .sys{ font-weight:700; color:var(--cream); }
+.badge-ok, .badge-warn{ font-family:'Hanken Grotesk',sans-serif; font-weight:700; font-size:0.58rem; letter-spacing:.04em; padding:5px 11px; border-radius:100px; white-space:nowrap; display:inline-block; }
+.badge-ok{ color:#4ade80; background:rgba(74,222,128,.1); border:1px solid rgba(74,222,128,.25); }
+.badge-warn{ color:var(--tl); background:rgba(176,110,74,.12); border:1px solid rgba(176,110,74,.3); }
+
+/* METODOLOGIA */
+.metodo-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:44px; }
+.metodo-card{ background:rgba(255,255,255,.04); border:1px solid var(--line); border-radius:14px; padding:26px 24px; }
+.metodo-num{ font-family:'Anton',sans-serif; font-size:1.6rem; color:var(--tl); line-height:1; margin-bottom:12px; }
+.metodo-card h4{ font-size:0.98rem; color:#fff; font-weight:700; margin-bottom:7px; }
+.metodo-card p{ font-size:0.84rem; color:var(--muted); font-weight:300; line-height:1.6; }
+.founders{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:24px; }
+.founder-card{ background:rgba(255,255,255,.04); border:1px solid var(--line); border-radius:16px; padding:30px 28px; }
+.founder-card h4{ font-family:'Anton',sans-serif; font-weight:400; font-size:1.3rem; text-transform:uppercase; color:#fff; }
+.founder-role{ font-size:0.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--tl); margin:4px 0 14px; }
+.founder-card p{ font-size:0.85rem; color:var(--muted); font-weight:300; line-height:1.7; }
+.founder-tags{ display:flex; gap:7px; flex-wrap:wrap; margin-top:14px; }
+.founder-tags span{ font-size:0.6rem; font-weight:600; color:var(--tl); border:1px solid rgba(196,131,94,.35); padding:4px 10px; border-radius:100px; }
+@media(max-width:720px){ .metodo-grid{ grid-template-columns:1fr; } .founders{ grid-template-columns:1fr; } }
+
+/* PROVA SOCIAL */
+.prova-stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--line); border:1px solid var(--line); border-radius:16px; overflow:hidden; margin-top:20px; }
+.prova-stat{ background:var(--ink); padding:34px 26px; text-align:center; }
+.prova-stat .n{ font-family:'Anton',sans-serif; font-size:clamp(2.2rem,6vw,3rem); color:var(--tl); line-height:1; }
+.prova-stat .l{ font-size:0.78rem; color:var(--muted); margin-top:8px; font-weight:300; line-height:1.5; }
+.prova-names{ display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:28px; }
+.prova-names span{ font-size:0.7rem; font-weight:600; letter-spacing:.04em; color:var(--muted); border:1px solid var(--line); padding:8px 16px; border-radius:100px; }
+@media(max-width:720px){ .prova-stats{ grid-template-columns:1fr; } }
+
+/* GALERIA DE TURMAS */
+.case-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:44px; }
+@media(max-width:860px){ .case-grid{ grid-template-columns:1fr 1fr; } }
+@media(max-width:560px){ .case-grid{ grid-template-columns:1fr; } }
+.case{ background:var(--ink); border:1px solid var(--line); border-radius:16px; overflow:hidden; transition:.2s; }
+.case:hover{ transform:translateY(-3px); border-color:rgba(176,110,74,.4); }
+.ph{ position:relative; overflow:hidden; aspect-ratio:4/3; background:linear-gradient(135deg,#1d4a4f,#14373C 55%,#0a2023); }
+.ph>img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:sepia(.12) saturate(.9); }
+.case-body{ padding:18px 20px 22px; }
+.case-body h3{ font-size:1.02rem; color:var(--cream); font-weight:700; margin-bottom:6px; }
+.case-body p{ font-size:.82rem; color:var(--muted); font-weight:300; line-height:1.55; }
+.video-block{ display:grid; grid-template-columns:1.1fr .9fr; gap:30px; align-items:center; margin-top:44px; background:linear-gradient(150deg,var(--ink),#1a3d42); border:1px solid var(--line); border-radius:20px; padding:26px; box-shadow:0 30px 80px -30px rgba(0,0,0,.7); }
+@media(max-width:820px){ .video-block{ grid-template-columns:1fr; gap:20px; } }
+.video-block video{ width:100%; border-radius:14px; border:1px solid var(--line); display:block; background:#000; }
+.video-block h3{ font-family:'Anton',sans-serif; font-weight:400; text-transform:uppercase; font-size:1.6rem; color:var(--cream); line-height:1.05; margin-bottom:12px; }
+.video-block p{ font-size:.92rem; color:var(--text); font-weight:300; max-width:44ch; line-height:1.7; }
+.video-block .who{ margin-top:16px; font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--tl); font-weight:700; }
+
+/* SECAO GELO (claro intercalado) */
+.sec-ice{ background:var(--ice); color:var(--ink-text); }
+.sec-ice .section-label{ color:var(--terra-d); }
+.sec-ice .section-title{ color:var(--ink); }
+.sec-ice .section-title em{ color:var(--terra); }
+.sec-ice .lead{ color:#3c4a4c; }
+.sec-ice .context-text p{ color:#3c4a4c; }
+.sec-ice .context-text p b{ color:var(--ink); }
+.sec-ice .dore-card, .sec-ice .metodo-card, .sec-ice .founder-card, .sec-ice .step-card{ background:#fff; border-color:var(--ice-line); }
+.sec-ice .dore-card:hover, .sec-ice .metodo-card:hover{ background:#fff; border-color:rgba(176,110,74,.4); transform:translateY(-3px); box-shadow:6px 6px 0 rgba(20,55,60,.08); }
+.sec-ice .dore-title{ color:var(--ink); }
+.sec-ice .dore-text{ color:#3c4a4c; }
+.sec-ice .dore-text b{ color:var(--ink); }
+.sec-ice .dore-num{ color:rgba(176,110,74,.13); }
+.sec-ice .metodo-card h4, .sec-ice .founder-card h4, .sec-ice .step-card h4{ color:var(--ink); }
+.sec-ice .metodo-card p, .sec-ice .founder-card p, .sec-ice .step-card p{ color:#3c4a4c; }
+.sec-ice .founder-role{ color:var(--terra-d); }
+.sec-ice .founder-tags span{ color:var(--terra-d); border-color:rgba(176,110,74,.35); }
+.sec-ice .parceria{ color:var(--ink); }
+.sec-ice .parceria em{ color:var(--terra); }
+.sec-ice .opp{ background:#fff; border-color:var(--ice-line); }
+.sec-ice .opp:hover{ box-shadow:6px 6px 0 rgba(20,55,60,.08); }
+.sec-ice .opp h3{ color:var(--ink); }
+.sec-ice .opp p{ color:#3c4a4c; }
+.sec-ice .ideias-nota{ color:#3c4a4c; }
+.sec-ice .ideias-nota b{ color:var(--ink); }
+/* investimento no gelo */
+.sec-ice .invest-hero-card{ background:#fff; border-color:rgba(176,110,74,.35); }
+.sec-ice .invest-hero-name{ color:var(--ink); }
+.sec-ice .invest-hero-price{ color:var(--terra-d); }
+.sec-ice .invest-hero-price small{ color:#5a6a6c; }
+.sec-ice .invest-hero-list li{ color:#3c4a4c; }
+.sec-ice .invest-hero-list li b{ color:var(--ink); }
+.sec-ice .invest-addon, .sec-ice .incluso-card, .sec-ice .roi-check{ background:#fff; border-color:rgba(20,55,60,.10); }
+.sec-ice .invest-addon-name{ color:var(--ink); }
+.sec-ice .invest-addon p, .sec-ice .incluso-card p, .sec-ice .roi-check p{ color:#3c4a4c; }
+.sec-ice .invest-addon p b, .sec-ice .roi-check p b, .sec-ice .incluso-card h4{ color:var(--ink); }
+.sec-ice .pkg-validade{ color:#5a6a6c; }
+.sec-ice .roi-num .l{ color:#5a6a6c; }
+.sec-ice .pay-note{ color:#3c4a4c; }
+.sec-ice .pay-note b{ color:var(--ink); }
+
+/* ESCOPO — fases em box claro (layout Regina) */
+.scope-box{ background:#fff; border:1px solid var(--ice-line); border-radius:22px; padding:14px 38px; margin-top:40px; box-shadow:0 34px 80px -44px rgba(20,55,60,.35); }
+.phase{ display:grid; grid-template-columns:158px 1fr; gap:28px; padding:32px 0; border-top:1px solid rgba(20,55,60,.12); }
+.phase:first-of-type{ border-top:none; }
+.phase-n{ font-family:'Anton',sans-serif; font-size:clamp(2rem,5vw,2.9rem); color:var(--terra); line-height:.9; }
+.phase-n small{ display:block; font-family:'Hanken Grotesk',sans-serif; font-weight:700; font-size:.6rem; letter-spacing:.11em; color:var(--terra-d); margin-top:8px; line-height:1.45; }
+.phase h3{ font-size:1.32rem; color:var(--ink); margin-bottom:10px; font-weight:700; }
+.phase p{ font-size:.92rem; color:#3a4a4c; max-width:64ch; margin-bottom:14px; font-weight:300; line-height:1.7; }
+.phase .out{ display:inline-block; font-size:.82rem; color:#233133; background:rgba(176,110,74,.12); border:1px solid rgba(176,110,74,.3); border-radius:10px; padding:9px 14px; }
+.phase .out b{ color:var(--terra-d); }
+.phase-list{ list-style:none; margin:2px 0 16px; }
+.phase-list li{ position:relative; padding-left:20px; font-size:.88rem; color:#3a4a4c; font-weight:300; line-height:1.6; margin-bottom:8px; }
+.phase-list li::before{ content:'→'; position:absolute; left:0; color:var(--terra); font-weight:700; }
+.phase-list li b{ color:var(--ink); font-weight:700; }
+@media(max-width:640px){ .scope-box{ padding:8px 22px; } .phase{ grid-template-columns:1fr; gap:10px; } }
+
+/* MAPEAMENTO VISUAL */
+.ganhos-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:48px; }
+@media(max-width:820px){ .ganhos-grid{ grid-template-columns:1fr 1fr; } }
+.ganho-tile{ background:rgba(255,255,255,.04); border:1px solid var(--line); border-top:2px solid var(--tl); border-radius:16px; padding:32px 22px; text-align:center; }
+.ganho-tile .n{ font-family:'Anton',sans-serif; font-size:clamp(2rem,4.6vw,2.7rem); color:var(--tl); line-height:1; }
+.ganho-tile .l{ font-size:0.82rem; color:var(--muted); margin-top:12px; font-weight:300; line-height:1.5; }
+.ganhos-total{ display:flex; align-items:center; justify-content:center; gap:26px; flex-wrap:wrap; margin-top:20px; background:rgba(176,110,74,.08); border:1px solid rgba(176,110,74,.3); border-radius:18px; padding:34px 32px; }
+.ganhos-total .big{ font-family:'Anton',sans-serif; font-size:clamp(2.6rem,7vw,3.6rem); color:#fff; line-height:.95; }
+.ganhos-total .big span{ display:block; font-family:'Hanken Grotesk',sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--tl); margin-top:8px; }
+.ganhos-total .cap{ font-size:0.95rem; color:var(--muted); font-weight:300; max-width:38ch; line-height:1.7; }
+.ganhos-total .cap b{ color:var(--cream); font-weight:600; }
+
+/* METODO / FLUXO */
+.fluxo{ margin-top:44px; background:linear-gradient(150deg,var(--ink),#1a3d42); border:1px solid var(--line); border-radius:20px; padding:36px 34px; box-shadow:0 30px 80px -34px rgba(0,0,0,.7); }
+.fluxo-head{ display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:24px; flex-wrap:wrap; }
+.fluxo-head .t{ font-family:'Anton',sans-serif; font-weight:400; text-transform:uppercase; font-size:1.5rem; color:#fff; }
+.fluxo-head .s{ font-size:0.68rem; color:var(--tl); font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+.fluxo-steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+@media(max-width:820px){ .fluxo-steps{ grid-template-columns:1fr 1fr; } }
+.fluxo-step{ border-left:2px solid rgba(196,131,94,.45); padding-left:15px; }
+.fluxo-step .n{ font-family:'Anton',sans-serif; color:var(--tl); font-size:1.05rem; }
+.fluxo-step h5{ color:#fff; font-size:0.92rem; margin:5px 0 7px; font-weight:700; }
+.fluxo-step p{ color:var(--muted); font-size:0.8rem; font-weight:300; line-height:1.55; }
+.fluxo-gold{ margin-top:22px; font-size:0.84rem; color:var(--text); font-weight:300; border-top:1px solid var(--line); padding-top:18px; }
+.fluxo-gold b{ color:var(--tl); font-weight:600; }
+
+/* FAQ */
+.faq-item{ border-bottom:1px solid var(--line); }
+.faq-q{ display:flex; justify-content:space-between; align-items:center; gap:20px; padding:24px 0; cursor:pointer; font-weight:600; font-size:1.0rem; color:#fff; }
+.faq-q .t{ color:var(--tl); font-size:1.5rem; font-weight:300; transition:transform .3s; }
+.faq-item.open .faq-q .t{ transform:rotate(45deg); }
+.faq-a{ max-height:0; overflow:hidden; transition:max-height .4s ease, padding .4s ease; }
+.faq-item.open .faq-a{ max-height:520px; padding-bottom:24px; }
+.faq-a p{ font-size:0.92rem; color:var(--muted); font-weight:300; line-height:1.75; }
+
+/* PROXIMOS PASSOS */
+.steps-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:44px; }
+.step-card{ background:rgba(255,255,255,.04); border:1px solid var(--line); border-top:2px solid var(--tl); border-radius:16px; padding:28px 24px; }
+.step-when{ font-size:0.64rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--tl); margin-bottom:12px; }
+.step-num{ font-family:'Anton',sans-serif; font-size:1.8rem; color:rgba(196,131,94,.35); line-height:1; margin-bottom:8px; }
+.step-card h4{ font-size:0.98rem; color:#fff; font-weight:700; margin-bottom:8px; }
+.step-card p{ font-size:0.83rem; color:var(--muted); font-weight:300; line-height:1.6; }
+.parceria{ text-align:center; font-family:'Anton',sans-serif; font-weight:400; font-size:clamp(1.4rem,3.6vw,2rem); text-transform:uppercase; color:var(--cream); line-height:1.15; margin-top:56px; max-width:26ch; margin-left:auto; margin-right:auto; }
+.parceria em{ color:var(--tl); }
+@media(max-width:860px){ .steps-grid{ grid-template-columns:1fr 1fr; } }
+@media(max-width:520px){ .steps-grid{ grid-template-columns:1fr; } }
+
+/* CTA FINAL */
+.cta-final{ background:linear-gradient(165deg,#0a2023,#14373C 55%,#1d4840 100%); text-align:center; position:relative; overflow:hidden; }
+.cta-glow{ position:absolute; width:600px; height:600px; border-radius:50%; top:50%; left:50%; transform:translate(-50%,-50%); background:radial-gradient(circle,rgba(176,110,74,.18),transparent 62%); pointer-events:none; }
+.cta-final h2{ font-family:'Anton',sans-serif; font-weight:400; font-size:clamp(2.2rem,6.5vw,4rem); text-transform:uppercase; color:#fff; line-height:.98; max-width:20ch; margin:0 auto 24px; position:relative; z-index:2; }
+.cta-final h2 em{ color:var(--tl); }
+.cta-final p{ font-size:1.05rem; color:rgba(255,255,255,.72); font-weight:300; max-width:52ch; margin:0 auto 40px; line-height:1.7; position:relative; z-index:2; }
+.cta-actions{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; position:relative; z-index:2; }
+.cta-stats{ display:flex; gap:44px; justify-content:center; flex-wrap:wrap; margin-top:56px; position:relative; z-index:2; }
+.cta-stat .n{ font-family:'Anton',sans-serif; font-size:2rem; color:var(--tl); }
+.cta-stat .l{ font-size:0.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; margin-top:4px; }
+
+/* FOOTER */
+.footer{ background:#0a1e21; padding:50px 30px; text-align:center; position:relative; z-index:2; border-top:1px solid var(--line); }
+.footer img{ height:40px; margin:0 auto 18px; opacity:.9; }
+.footer-name{ font-family:'Anton',sans-serif; font-size:1.1rem; text-transform:uppercase; color:var(--cream); letter-spacing:.02em; }
+.footer p{ font-size:0.78rem; color:var(--muted); font-weight:300; margin-top:10px; line-height:1.7; }
+
+.rv{ opacity:0; transform:translateY(22px); transition:.7s cubic-bezier(.2,.7,.2,1); }
+.rv.in{ opacity:1; transform:none; }
+@media(prefers-reduced-motion:reduce){ .rv{ opacity:1; transform:none; } .marq-track{ animation:none; } }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<nav class="navbar" id="navbar">
+  <div class="navbar-logo"><img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting"></div>
+  <a class="navbar-cta" href="https://wa.me/5511971901020?text=Oi%20Bruna%2C%20vi%20a%20nova%20proposta%20da%20Juca%20na%20Balada%20e%20quero%20conversar." target="_blank" rel="noopener">Falar com a Bruna</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-glow"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy rv">
+      <span class="badge">Fabio, esta é a proposta que desenhamos a partir dos seus áudios.</span>
+      <h1>O time com IA. E a <span class="terra">NewScale por dentro</span>, todo mês.</h1>
+      <p class="hero-sub">Você pediu um mix, e é isso: <em>dois dias de imersão</em> para cada área operar com IA, e a NewScale assumindo, <em>mês a mês</em>, a gestão do seu projeto de IA — tocando a Abil Funnels, priorizando as automações e sendo a sua cabeça tecnológica.</p>
+      <div class="hero-actions">
+        <a class="btn btn-terra" href="#investimento">Ver investimento</a>
+        <a class="btn btn-ghost" href="#camadas">Como funciona</a>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="panel">
+        <div class="panel-head"><span class="live"></span>Projeto de IA · Juca na Balada</div>
+        <div class="panel-kpis">
+          <div class="kpi"><div class="v">2 dias</div><div class="l">imersão presencial, mão na massa</div></div>
+          <div class="kpi"><div class="v">todo mês</div><div class="l">a NewScale gerindo o projeto de IA</div></div>
+          <div class="kpi"><div class="v">6</div><div class="l">pessoas do time capacitadas</div></div>
+          <div class="kpi"><div class="v" style="font-size:1.05rem; line-height:1.25;">Abil Funnels · Ads<br>WhatsApp · IG</div><div class="l">o ecossistema sob gestão</div></div>
+        </div>
+        <div class="panel-row"><span class="live"></span>Da capacitação do time à condução contínua do projeto de IA</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- CONTEXTO -->
+<section class="sec sec-ice" id="contexto">
+  <div class="sec-inner">
+    <div class="rv">
+      <span class="section-label">O ponto de partida</span>
+      <h2 class="section-title" style="max-width:16ch;">A Juca é <em>máquina de venda sazonal</em>.</h2>
+      <p class="lead">Quase 20 anos vendendo pacotes de festa e festival — Carnaval, Réveillon, Barretos, Rock in Rio. Um negócio movido a <em>tráfego pago</em> e a um <em>volume alto de leads</em> no WhatsApp e no Instagram, que precisam ser qualificados rápido antes de a data passar. É o cenário onde a IA rende mais — e onde faz mais falta ter alguém conduzindo.</p>
+    </div>
+    <div class="stats">
+      <div class="stat rv"><div class="v">~10 mil</div><div class="l">leads por mês passando hoje pelo time de atendimento e vendas</div></div>
+      <div class="stat rv"><div class="v">6</div><div class="l">pessoas em 4 áreas: atendimento, marketing, financeiro e produto</div></div>
+      <div class="stat rv"><div class="v">Sazonal</div><div class="l">picos de demanda concentrados nas grandes datas do ano</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AS DUAS CAMADAS -->
+<section class="sec" id="camadas">
+  <div class="sec-inner">
+    <div class="rv">
+      <span class="section-label">O que você pediu, em duas camadas</span>
+      <h2 class="section-title" style="max-width:20ch;">Capacitar o time <em>e</em> ter uma cabeça de IA cuidando do resto.</h2>
+      <p class="lead">Nos seus áudios ficou claro: não basta aprender a usar, você quer alguém que assuma a transformação de IA da Juca por dentro. Então a proposta tem duas camadas que andam juntas.</p>
+    </div>
+    <div class="dores-grid">
+      <div class="dore-card rv">
+        <div class="dore-num">1</div>
+        <div class="dore-tag">Camada 1 · entrada única</div>
+        <div class="dore-title">A imersão que destrava o time</div>
+        <div class="dore-text">Dois dias presenciais em São Paulo. Cada área — atendimento, marketing, financeiro e produto — aprende a transformar as <b>próprias tarefas</b> em solução com IA. O time para de depender de terceiros para as coisas do dia a dia.</div>
+      </div>
+      <div class="dore-card rv">
+        <div class="dore-num">2</div>
+        <div class="dore-tag">Camada 2 · recorrente</div>
+        <div class="dore-title">A NewScale como sua cabeça de IA</div>
+        <div class="dore-text">Todo mês, eu e o Bruno assumimos a <b>gestão do projeto de IA</b> da Juca: tocamos e negociamos a Abil Funnels por você, decidimos o que fica na plataforma e o que vira dev próprio, priorizamos as automações e mantemos o roadmap andando.</div>
+      </div>
+    </div>
+    <p class="ideias-nota rv"><b>As implementações de ponta a ponta</b> entram como <b>módulos escopados à parte</b>, orçados depois da imersão — quando a gente já sabe o que vale a pena construir primeiro e o que o próprio time consegue tocar. A camada 2 é quem decide essa ordem e conduz.</p>
+  </div>
+</section>
+
+<!-- MAPEAMENTO DE GANHOS -->
+<section class="sec bg-2" id="ganhos">
+  <div class="sec-inner">
+    <div class="rv" style="text-align:center;">
+      <span class="section-label">Mapeamento de ganhos</span>
+      <h2 class="section-title">Onde estão as horas que <em>dá pra recuperar</em>.</h2>
+      <p class="lead" style="margin:18px auto 0;">Trabalho manual que o time transforma em minutos. Estimativa conservadora, pela própria operação.</p>
+    </div>
+    <div class="ganhos-grid rv">
+      <div class="ganho-tile"><div class="n">~12h/sem</div><div class="l">Triagem e resposta de leads</div></div>
+      <div class="ganho-tile"><div class="n">~6h/sem</div><div class="l">Conteúdo, pautas e agenda</div></div>
+      <div class="ganho-tile"><div class="n">~5h/sem</div><div class="l">Notas, contratos e caixa</div></div>
+      <div class="ganho-tile"><div class="n">+ acurácia</div><div class="l">Menos erro e retrabalho nas rotinas de cada área</div></div>
+    </div>
+    <div class="ganhos-total rv">
+      <div class="big">~23h<span>por semana de volta</span></div>
+      <div class="cap">É esse tempo que a virada devolve para a operação: cada área sai sabendo <b>transformar as próprias horas manuais em minutos</b>, e a gestão mensal garante que isso não pare na semana seguinte.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CAMADA 1: A IMERSAO / ESCOPO -->
+<section class="sec sec-ice" id="imersao">
+  <div class="sec-inner">
+    <div class="rv">
+      <span class="section-label">Camada 1 · a imersão</span>
+      <h2 class="section-title">Dois dias, da aula geral à <em>mão na massa</em>.</h2>
+      <p class="lead">Presencial em São Paulo. Antes, uma pesquisa de nivelamento e a escuta por área. Depois, dois dias que vão do fundamento à solução rodando na rotina de cada frente.</p>
+    </div>
+    <div class="scope-box rv">
+      <div class="phase"><div class="phase-n">00<small>ANTES · NIVELAMENTO</small></div><div><h3>Pesquisa de nivelamento e escuta</h3><p>Uma pesquisa curta com os 6 e uma conversa por área: o que é mais repetitivo, mais moroso e onde os dados moram. É o que deixa os dois dias com a cara da Juca.</p><span class="out">O time chega com: <b>os próprios processos mapeados</b></span></div></div>
+      <div class="phase"><div class="phase-n">01<small>DIA 1 · MANHÃ</small></div><div><h3>Aula geral de fundamentos</h3><p>Uma manhã inteira com o núcleo junto, afunilando de "IA no geral" para o Claude e para a rotina de vocês. Não é palestra: é a base densa que faz cada área destravar à tarde, sempre com exemplos da operação de eventos.</p>
+        <ul class="phase-list">
+          <li><b>Como a IA pensa:</b> por que ela prevê a próxima palavra, a metáfora do funcionário brilhante que chegou hoje e o teste do colega, para entender por que o jeito de pedir muda tudo.</li>
+          <li><b>Saber pedir bem:</b> os 4 elementos de um bom prompt (papel, contexto, tarefa e formato), as técnicas que mudam o jogo, o que são tokens e as 7 regras de ouro.</li>
+          <li><b>O Claude na prática:</b> os modelos e os modos (app, Cowork), e as Skills, ensinar uma vez para o Claude repetir sempre no padrão de vocês.</li>
+          <li><b>As 4 portas de entrada:</b> conversar por áudio, mandar foto, subir arquivo e ler e-mail e documentos, com demonstração ao vivo em cima de um caso da Juca.</li>
+          <li><b>Confiança e critério:</b> o que fazer quando a IA erra (sempre pedir a fonte) e a Matriz Risco × Repetição, para decidir o que a IA assume e o que o humano valida.</li>
+        </ul>
+        <span class="out">O time sai sabendo: <b>conversar com a IA para executar, não só responder</b></span></div></div>
+      <div class="phase"><div class="phase-n">02<small>DIA 1 TARDE + DIA 2 MANHÃ</small></div><div><h3>Consultoria mão na massa por área</h3><p>Sento com cada frente (Atendimento, Marketing, Financeiro e Produto) para mapear o processo real e construir junto, com os dados e telas da rotina. Blocos agrupados por afinidade para os dois dias renderem.</p><span class="out">Cada área sai com: <b>1 a 2 soluções reais já rodando</b></span></div></div>
+      <div class="phase"><div class="phase-n">03<small>DIA 2 · TARDE</small></div><div><h3>Consolidação, caderno de receitas e handoff</h3><p>Fechamento com o time todo: cada área mostra o que construiu, ajustamos os detalhes e entrego o material de apoio para o time repetir sozinho na segunda.</p><span class="out">O time fica com: <b>o método documentado + 30 dias de suporte</b></span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CAMADA 2: GESTAO MENSAL -->
+<section class="sec" id="gestao">
+  <div class="sec-inner">
+    <div class="rv">
+      <span class="section-label">Camada 2 · a gestão mensal de IA</span>
+      <h2 class="section-title" style="max-width:20ch;">A cabeça tecnológica que a Juca <em>não precisa contratar</em>.</h2>
+      <p class="lead">Foi o que você descreveu: alguém que entende, que se atualiza, que sabe o que surgiu de novo, e que assume o leme para você não ficar perdido no "por onde começo". Eu e o Bruno entramos como <b style="color:var(--cream)">gestores do seu projeto de IA</b> — no lugar de um head de IA full-time, por uma fração do custo.</p>
+    </div>
+
+    <div class="dores-grid">
+      <div class="dore-card rv"><div class="dore-tag">Entregável central</div><div class="dore-title">Acompanhamento do Abil Funnels</div><div class="dore-text">A gente acompanha a implementação da plataforma com foco no <b>agente de atendimento 24/7</b> (DM do Instagram e WhatsApp) — o primeiro marco vivo do projeto, rodando dentro do próprio Abil Funnels.</div></div>
+      <div class="dore-card rv"><div class="dore-tag">Mapeamento e priorização</div><div class="dore-title">Os sistemas e processos, na ordem certa</div><div class="dore-text">Mapeamos os demais sistemas e processos internos e as <b>melhores alternativas de automação</b>, priorizadas pelo <b>retorno esperado</b> — não pelo hype. Um roadmap vivo, revisado a cada ciclo.</div></div>
+      <div class="dore-card rv"><div class="dore-tag">Acompanhamento das áreas</div><div class="dore-title">Ao lado do time, quinzenalmente</div><div class="dore-text">Reuniões <b>quinzenais</b> (semanais no pico), com direcionamentos e orientações às áreas e os KPIs combinados. Quando a complexidade pedir, a implementação pode entrar via <b>dev NewScale</b>, orçada à parte.</div></div>
+      <div class="dore-card rv"><div class="dore-tag">Decisão + curadoria</div><div class="dore-title">Plataforma × dev, e o que surge de novo</div><div class="dore-text">A cada frente, decidimos junto: fica na Abil Funnels, vira skill do time ou vale um dev próprio. E filtramos o que a IA lançou de aplicável à Juca, com suporte por WhatsApp entre as reuniões.</div></div>
+    </div>
+
+    <div class="fluxo rv">
+      <div class="fluxo-head"><div class="t">Como funciona o mês</div><div class="s">A cadência da gestão de IA</div></div>
+      <div class="fluxo-steps">
+        <div class="fluxo-step"><div class="n">1 · Prioriza</div><h5>O que entra no mês</h5><p>Revisamos o roadmap e definimos as frentes da vez pelo maior retorno para a operação.</p></div>
+        <div class="fluxo-step"><div class="n">2 · Conduz</div><h5>Reuniões e fornecedores</h5><p>Tocamos a Abil Funnels e os demais parceiros, destravamos integrações e acompanhamos a execução.</p></div>
+        <div class="fluxo-step"><div class="n">3 · Decide</div><h5>Plataforma ou dev</h5><p>Cada solução recebe a decisão técnica certa, com você no controle e a gente embasando.</p></div>
+        <div class="fluxo-step"><div class="n">4 · Mede</div><h5>KPIs e ajuste</h5><p>Olhamos os números combinados, ajustamos o que precisa e planejamos o mês seguinte.</p></div>
+      </div>
+      <div class="fluxo-gold">Regra de ouro: <b>a execução das automações é orçada à parte, como módulo.</b> A gestão mensal é quem decide a ordem, conduz os fornecedores e garante que o projeto não pare — a sua cabeça de IA, sem contratar um C-level.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNOSTICO TECNICO -->
+<section class="sec bg-2" id="diagnostico">
+  <div class="sec-inner">
+    <div class="rv">
+      <span class="section-label">O ecossistema · o que vamos mapear juntos</span>
+      <h2 class="section-title" style="max-width:22ch;">"A Abil Funnels aguenta o nosso atendimento?" <em>É o que vamos mapear com vocês.</em></h2>
+      <p class="lead">Você levantou essa dúvida no áudio. Este é o ecossistema que a gestão mensal vai mapear a fundo com o time — para o projeto começar com direção, e não com achismo.</p>
+    </div>
+    <div class="diag-wrap rv">
+      <table class="diag">
+        <tr><th>Sistema</th><th>Papel no projeto</th><th>Leitura inicial</th><th>Situação</th></tr>
+        <tr>
+          <td class="sys">Abil Funnels / GoHighLevel</td>
+          <td>Atendimento omnichannel 24/7 (WhatsApp, Instagram e outros canais), CRM/funil, LPs, rastreamento de origem, relatórios e agentes de IA</td>
+          <td>A plataforma concentra atendimento, CRM e automação num lugar só. O ponto a validar juntos são os <b>picos sazonais</b> (Carnaval, Réveillon, Barretos): o limite de envio é <b>da Meta, não da plataforma</b>, então vale desenhar um plano B de fila para não depender de um ponto único.</td>
+          <td><span class="badge-warn">Validar no pico</span></td>
+        </tr>
+        <tr>
+          <td class="sys">Instagram (API Meta)</td>
+          <td>Canal de atendimento e captação</td>
+          <td>A API da Meta trabalha com limites de volume e janela de 24h para automação. Em campanha grande, vale avaliar uma camada de fila para não perder lead.</td>
+          <td><span class="badge-warn">Camada de fila</span></td>
+        </tr>
+        <tr>
+          <td class="sys">Meta / Google Ads</td>
+          <td>Aquisição — o tráfego pago que move a Juca</td>
+          <td>Frente rica para ganho de eficiência com IA — apoio a criativo e leitura de performance. O quanto faz sentido automatizar entra no mapeamento por retorno.</td>
+          <td><span class="badge-warn">A priorizar</span></td>
+        </tr>
+        <tr>
+          <td class="sys">Claude / ChatGPT</td>
+          <td>Motor de IA na mão do time</td>
+          <td>Já em uso. É a base da imersão — cada área operando direto na ferramenta.</td>
+          <td><span class="badge-ok">Em uso</span></td>
+        </tr>
+      </table>
+    </div>
+    <p class="pay-note rv" style="margin-top:22px;">Este é o ponto de partida, montado a partir do que conversamos e de base pública — <b>sem ainda ter entrado nos seus sistemas</b>. O mapa fino de cada um é justamente parte do trabalho da imersão e da gestão mensal.</p>
+  </div>
+</section>
+
+<!-- MODULOS DE AUTOMACAO (a parte) -->
+<section class="sec" id="modulos">
+  <div class="sec-inner">
+    <div class="rv">
+      <span class="section-label">Frentes por área · exemplos do que dá pra fazer</span>
+      <h2 class="section-title">Onde a IA pode entrar em <em>cada área</em>.</h2>
+      <p class="lead">Exemplos de frentes que podemos mapear em cada departamento. A gestão mensal avalia, caso a caso, se o próprio time roda a solução — e, quando fizer sentido, sugere um pacote de implementação à parte, sempre com a sua aprovação. São <b>possibilidades, não um checklist de entregas</b>.</p>
+    </div>
+    <div class="mod-grid">
+      <div class="mod-card rv">
+        <div class="mod-head"><div class="mod-name">Financeiro</div><div class="mod-price">Exemplos</div></div>
+        <p>Fluxo de caixa, <b>emissão e escrituração de NFs</b>, conciliação bancária e DRE. Ainda: cobrança e follow-up de parcelamentos, controle de repasses a fornecedores e leitura de <b>rentabilidade por pacote</b>.</p>
+      </div>
+      <div class="mod-card rv">
+        <div class="mod-head"><div class="mod-name">Marketing</div><div class="mod-price">Exemplos</div></div>
+        <p><b>Radar de pautas</b>, desdobramento de um conteúdo para vários canais, reports e insights de performance de mídia, criação de <b>landing pages</b> e réguas de reativação da base nas datas-chave.</p>
+      </div>
+      <div class="mod-card rv">
+        <div class="mod-head"><div class="mod-name">Produto</div><div class="mod-price">Exemplos</div></div>
+        <p>Criação de <b>pacotes</b>, apresentações e pesquisas de preço, composição de custo a partir de cotação de fornecedores e a <b>base de conhecimento do pacote</b> que alimenta o atendimento.</p>
+      </div>
+      <div class="mod-card rv">
+        <div class="mod-head"><div class="mod-name">Atendimento / CX</div><div class="mod-price">Exemplos</div></div>
+        <p><b>Copiloto de viagens 24/7</b>: agente com todo o repertório do pacote, que atende e tira dúvidas e — quando você quiser e a performance permitir — <b>conduz a venda do primeiro contato ao fechamento</b>, com transbordo humano. Ainda: triagem, recuperação de leads parados e reativação nos picos.</p>
+      </div>
+    </div>
+
+    <div class="future-grid" style="margin-top:56px;">
+      <div class="rv">
+        <span class="section-label">O caminho de quem já fez</span>
+        <h2 class="section-title" style="font-size:clamp(1.7rem,4vw,2.4rem);">Do "aprender a usar" ao <em>"a IA faz sozinha"</em>.</h2>
+        <p class="lead" style="margin-bottom:8px;">A imersão revela o que é repetitivo o bastante para valer automação; a gestão mensal conduz; a implementação, quando entra, é escopada à parte. É a esteira que outros clientes de evento já percorreram com a gente.</p>
+      </div>
+      <div class="transform-box rv">
+        <div style="font-size:0.66rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--tl); margin-bottom:18px;">Case Casa Tacto · eventos e locação</div>
+        <div class="transform-from">Leads esfriando no WhatsApp</div>
+        <div class="transform-arrow">↓</div>
+        <div class="transform-to">+24%</div>
+        <div class="transform-cap">de conversão de leads e +18% de faturamento no 2º mês, com atendente virtual 24/7 e qualificação automática.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTIMENTO -->
+<section class="sec sec-ice" id="investimento">
+  <div class="sec-inner">
+    <div class="rv">
+      <span class="section-label">Investimento</span>
+      <h2 class="section-title">Transparente, <em>sem surpresa</em>.</h2>
+      <p class="lead">A imersão é uma entrada única. A gestão mensal é o motor que mantém o projeto andando. As implementações de ponta a ponta entram depois, escopadas uma a uma.</p>
+    </div>
+
+    <div class="invest-two">
+      <div class="invest-hero-card rv">
+        <div class="invest-hero-tag">Camada 1 · entrada única</div>
+        <div class="invest-hero-name">Imersão Juca na Balada</div>
+        <div class="invest-hero-price">R$ 11.500<small>6 pessoas · 2 dias presenciais em SP · pagamento em duas parcelas</small></div>
+        <ul class="invest-hero-list">
+          <li><b>Pesquisa de nivelamento</b> e escuta por área antes da imersão</li>
+          <li><b>Aula geral de fundamentos</b> para os 6 do núcleo</li>
+          <li><b>Consultoria mão na massa</b> nas 4 áreas, com processos mapeados</li>
+          <li>Consolidação coletiva + <b>caderno de receitas</b> por frente</li>
+          <li><b>30 dias de suporte</b> por WhatsApp após a imersão</li>
+          <li>Sem custo de viagem (São Paulo capital)</li>
+        </ul>
+      </div>
+      <div class="invest-hero-card rec rv">
+        <div class="invest-hero-tag">Camada 2 · recorrente</div>
+        <div class="invest-hero-name">Gestão mensal de IA</div>
+        <div class="invest-hero-price">R$ 3.900<small>/mês · fidelidade de 3 meses · a sua cabeça de IA, mês a mês</small></div>
+        <ul class="invest-hero-list">
+          <li><b>Eu e o Bruno</b> como gestores do projeto de IA da Juca</li>
+          <li><b>Acompanhamento da implementação do Abil Funnels</b>, com foco no agente 24/7 (DM e WhatsApp)</li>
+          <li><b>Mapeamento dos sistemas e processos</b>, priorizados por retorno esperado</li>
+          <li>Reuniões <b>quinzenais</b> (semanais no pico) e acompanhamento das áreas + dev NewScale conforme a complexidade (à parte)</li>
+          <li><b>Uma "receita" NewScale por ciclo</b>: uma solução de IA documentada e rodando com uma área</li>
+          <li>Decisão <b>plataforma × dev</b>, curadoria do que surge e suporte por WhatsApp</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="invest-side">
+      <div class="invest-addon rv">
+        <div class="invest-addon-tag">Camada 3 · sob demanda</div>
+        <div class="invest-addon-name">Módulos de automação</div>
+        <div class="invest-addon-price">Orçados à parte</div>
+        <p>Implementações de ponta a ponta nas frentes que valerem a pena — de agentes a automações de processo. Cada uma é <b>escopada e aprovada isoladamente</b> após a imersão, quando a gestão mensal já sabe o que dá mais retorno primeiro.</p>
+      </div>
+      <div class="invest-addon rv">
+        <div class="invest-addon-tag">Forma de pagamento</div>
+        <div class="invest-addon-name">Imersão 50 / 50</div>
+        <p><b>Imersão:</b> 50% na assinatura (reserva das datas) e 50% antes do 1º dia. <b>Gestão mensal:</b> mensal, com fidelidade de 3 meses, começando após a imersão.</p>
+        <div class="pkg-validade"><span class="pulse-dot"></span> Proposta válida até 04/ago/2026</div>
+      </div>
+    </div>
+
+    <div class="incluso-grid rv">
+      <div class="incluso-card"><h4>Presencial em SP</h4><p>Dois dias na sua operação, sem custo de deslocamento por ser na capital.</p></div>
+      <div class="incluso-card"><h4>Cabeça de IA fixa</h4><p>Gestão sênior (Bruna + Bruno) por uma fração do custo de um head de IA interno.</p></div>
+      <div class="incluso-card"><h4>Escopo blindado</h4><p>Cada automação é orçada e aprovada à parte. Você aprova antes de qualquer construção.</p></div>
+    </div>
+
+    <div class="roi-check rv">
+      <p>Lembra das <b>~23h por semana</b> de trabalho manual recuperável? Recuperando só uma fração disso, o tempo do time já começa a pagar a virada em poucas semanas — e a gestão mensal existe para esse ganho <b>não parar no mês seguinte</b>.</p>
+      <div class="roi-num"><div class="n">~3</div><div class="l">meses para o tempo recuperado pagar a imersão</div></div>
+    </div>
+
+    <p class="pay-note"><b>Sobre repasses:</b> as assinaturas das ferramentas de IA para o time (Claude, ChatGPT ou equivalente), da plataforma Abil Funnels, da API de WhatsApp e de tokens/APIs de automação não estão inclusas, são pagas direto ao fornecedor. <b>Sobre a Abil Funnels:</b> a NewScale faz a orientação técnica e a cobrança de evolução da plataforma; a execução dentro do sistema é da própria Abil, como fornecedora. <b>Sobre escopo:</b> a imersão foca em capacitação e uso assistido, e a gestão mensal em condução do projeto; a construção de cada automação de ponta a ponta é o módulo escopado à parte descrito acima.</p>
+  </div>
+</section>
+
+<!-- POR QUE A NEWSCALE -->
+<section class="sec sec-ice" id="newscale">
+  <div class="sec-inner">
+    <div class="rv">
+      <span class="section-label">Por que a NewScale</span>
+      <h2 class="section-title">Método antes de ferramenta. <em>Resultado antes de hype.</em></h2>
+      <p class="lead">Cada projeto começa pela conversa, não pelo contrato. A gente entende como a operação funciona hoje, quais as regras de negócio, o que a equipe precisa. Só depois constrói. E depois que entrega, a gente fica, otimizando e evoluindo junto com o seu negócio.</p>
+    </div>
+    <div class="metodo-grid">
+      <div class="metodo-card rv"><div class="metodo-num">01</div><h4>Consultoria sistêmica</h4><p>Visão completa: atendimento, marketing, operação e financeiro. IA como motor de escala, não de cosmética.</p></div>
+      <div class="metodo-card rv"><div class="metodo-num">02</div><h4>Roadmap faseado</h4><p>Priorizamos as rotinas com maior potencial de retorno antes de qualquer outra coisa.</p></div>
+      <div class="metodo-card rv"><div class="metodo-num">03</div><h4>Mão na massa</h4><p>Construímos com o time, nos dados e canais reais que a equipe já usa no dia a dia.</p></div>
+      <div class="metodo-card rv"><div class="metodo-num">04</div><h4>Treinamento das equipes</h4><p>Cada pessoa aprende o próprio papel. O humano decide e monitora, a IA faz o operacional.</p></div>
+      <div class="metodo-card rv"><div class="metodo-num">05</div><h4>KPIs acompanhados</h4><p>Métricas definidas juntos antes de começar. Você sabe o que esperar e como medir o ganho real.</p></div>
+      <div class="metodo-card rv"><div class="metodo-num">06</div><h4>Sustentação contínua</h4><p>Da imersão à automação: a NewScale segue junto para o sistema evoluir com o negócio.</p></div>
+    </div>
+
+    <div class="founders">
+      <div class="founder-card rv">
+        <h4>Bruna Santanna</h4>
+        <div class="founder-role">Co-fundadora NewScale</div>
+        <p>ESPM + MBA USP. Empresária há 10+ anos. Mentora de IA no programa Potenc.IA. Professora de IA para equipes corporativas. Implementa IA no próprio negócio todos os dias. Só ensina e vende o que usa.</p>
+        <div class="founder-tags"><span>Potenc.IA</span><span>SulAmérica</span><span>Whirlpool</span><span>Blackbox AI</span></div>
+      </div>
+      <div class="founder-card rv">
+        <h4>Bruno Varella</h4>
+        <div class="founder-role">Co-fundador NewScale</div>
+        <p>ESPM. 17+ anos em Marketing, Produto e Novos Negócios. Ex-Warner Bros., Ex-Natura &amp; Co. Já implantou agentes de IA em redes de franquias com 700+ unidades.</p>
+        <div class="founder-tags"><span>Warner Bros.</span><span>Natura &amp; Co</span><span>700+ franquias</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="sec" id="prova">
+  <div class="sec-inner">
+    <div class="rv">
+      <span class="section-label">Quem já passou pela virada</span>
+      <h2 class="section-title">Times treinados, <em>resultado real</em>.</h2>
+    </div>
+    <div class="prova-stats rv">
+      <div class="prova-stat"><div class="n">+1.000</div><div class="l">pessoas treinadas em IA aplicada ao trabalho</div></div>
+      <div class="prova-stat"><div class="n">+24%</div><div class="l">conversão de leads no case Casa Tacto (eventos)</div></div>
+      <div class="prova-stat"><div class="n">700+</div><div class="l">franquias com agentes de IA implantados pelo Bruno</div></div>
+    </div>
+    <div class="prova-names rv">
+      <span>Potenc.IA (OLX · Magalu · B3 · CI&amp;T)</span><span>Ismart</span><span>OneGlobal / Proativa</span><span>JB Agro</span><span>Corteva</span><span>Sorridents</span><span>Casa Tacto</span>
+    </div>
+
+    <div class="rv" style="margin-top:72px;">
+      <span class="section-label">Onde estivemos esses dias</span>
+      <h2 class="section-title">Times de todos os <em>tamanhos</em>.</h2>
+      <p class="lead">Palestras, imersões e formações recentes, de convenções com centenas de pessoas a grupos de liderança. Para o Fabio ter segurança de quem vai estar na frente do time da Juca.</p>
+    </div>
+    <div class="case-grid">
+      <article class="case rv"><div class="ph"><img src="https://brunasantanna.com/fotos/nov-stoller-convencao.jpg" alt="Convenção Stoller" onerror="this.remove()"></div><div class="case-body"><h3>Convenção Stoller</h3><p>Mais de 280 pessoas: a IA que multiplica o que o time já sabe fazer.</p></div></article>
+      <article class="case rv"><div class="ph"><img src="https://brunasantanna.com/fotos/one-global-nova.jpeg" alt="OneGlobal Broking" onerror="this.remove()"></div><div class="case-body"><h3>OneGlobal Broking</h3><p>Formação Claude com profundidade para 40 líderes, em 3 encontros.</p></div></article>
+      <article class="case rv"><div class="ph"><img src="https://brunasantanna.com/fotos/nov-ismart.jpg" alt="Imersão Claude Ismart" onerror="this.remove()"></div><div class="case-body"><h3>Imersão Claude · Ismart</h3><p>Imersão de IA com Claude para os 70 colaboradores do Ismart.</p></div></article>
+      <article class="case rv"><div class="ph"><img src="https://brunasantanna.com/fotos/nov-stringhetta.jpg" alt="Grupo Stringhetta" onerror="this.remove()"></div><div class="case-body"><h3>Grupo Stringhetta</h3><p>O fluxo de caixa que levava 2 dias passou a sair em minutos.</p></div></article>
+      <article class="case rv"><div class="ph"><img src="https://brunasantanna.com/fotos/nov-sorridents.jpg" alt="Convenção Sorridents" onerror="this.remove()"></div><div class="case-body"><h3>Convenção Sorridents</h3><p>A Virada IA para uma das maiores redes de odontologia do país.</p></div></article>
+      <article class="case rv"><div class="ph"><img src="https://brunasantanna.com/fotos/hackathon-4.jpg" alt="Hackathon de IA Ismart" onerror="this.remove()"></div><div class="case-body"><h3>Hackathon de IA · Ismart</h3><p>Times construindo soluções reais com IA em um dia, e saindo com projetos rodando.</p></div></article>
+    </div>
+
+    <div class="video-block rv">
+      <video controls preload="none" poster="https://brunasantanna.com/fotos/video-rafael-poster.jpg">
+        <source src="https://brunasantanna.com/fotos/video-rafael-magaldi.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+      <div>
+        <h3>Quem viveu a virada conta</h3>
+        <p>Um depoimento de quem passou pela formação e viu o dia a dia do próprio negócio mudar. Dá o play.</p>
+        <div class="who">Rafael Magaldi · proprietário do Grupo Stringhetta</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec bg-2" id="faq">
+  <div class="sec-inner">
+    <div class="rv" style="margin-bottom:20px;">
+      <span class="section-label">Perguntas frequentes</span>
+      <h2 class="section-title">O que o Fabio <em>provavelmente quer saber</em>.</h2>
+    </div>
+    <div class="faq-item rv" onclick="this.classList.toggle('open')"><div class="faq-q"><span>Como a imersão e a gestão mensal se encaixam?</span><span class="t">+</span></div><div class="faq-a"><p>A imersão capacita o time e revela onde a IA rende mais. A gestão mensal pega esse mapa e conduz o projeto daí pra frente: prioriza, toca os fornecedores, decide o que construir e mantém tudo andando. Uma é a largada, a outra é quem dirige o carro depois.</p></div></div>
+    <div class="faq-item rv" onclick="this.classList.toggle('open')"><div class="faq-q"><span>O que exatamente está incluso nos R$ 3.900/mês?</span><span class="t">+</span></div><div class="faq-a"><p>Eu e o Bruno como gestores do seu projeto de IA: acompanhamento da implementação do Abil Funnels (com o <b>agente 24/7</b> no centro), mapeamento priorizado dos sistemas e processos, reuniões quinzenais (semanais no pico) com acompanhamento das áreas, e <b>uma "receita" NewScale documentada por ciclo</b> já rodando com uma área. Mais decisão plataforma × dev, curadoria e suporte por WhatsApp. A <b>construção</b> de cada automação de ponta a ponta é orçada à parte, como módulo — a mensalidade é a inteligência, a condução e as receitas do mês, não a mão de obra pesada de desenvolvimento.</p></div></div>
+    <div class="faq-item rv" onclick="this.classList.toggle('open')"><div class="faq-q"><span>A Abil Funnels aguenta o nosso volume de atendimento?</span><span class="t">+</span></div><div class="faq-a"><p>Para o dia a dia, sim. O limite de envio no WhatsApp e Instagram é da Meta, não da plataforma. O ponto de atenção são os picos sazonais (Carnaval, Réveillon, Barretos): aí vale ter um plano B de fila para não depender de um só canal. É exatamente esse tipo de decisão que a gestão mensal assume por você, a partir do mapeamento que fazemos logo no início.</p></div></div>
+    <div class="faq-item rv" onclick="this.classList.toggle('open')"><div class="faq-q"><span>Como vocês decidem o que o meu time faz e o que vira implementação de vocês?</span><span class="t">+</span></div><div class="faq-a"><p>A gente mapeia cada frente e avalia, caso a caso, se o próprio time — já capacitado — consegue tocar a solução. Quando dá, fica com vocês, com o nosso acompanhamento. Quando a complexidade pede, sugerimos um pacote de implementação da NewScale, orçado e aprovado à parte antes de qualquer construção. Você decide sempre.</p></div></div>
+    <div class="faq-item rv" onclick="this.classList.toggle('open')"><div class="faq-q"><span>Preciso me comprometer com quanto tempo de gestão?</span><span class="t">+</span></div><div class="faq-a"><p>A gestão mensal tem fidelidade de 3 meses — o tempo mínimo para a transformação de IA sair do papel e os ganhos começarem a compor. A imersão, por outro lado, é uma contratação única e independente, então você pode começar por ela e ativar a gestão quando fizer sentido.</p></div></div>
+    <div class="faq-item rv" onclick="this.classList.toggle('open')"><div class="faq-q"><span>Dois dias dão conta das 4 áreas?</span><span class="t">+</span></div><div class="faq-a"><p>Sim, pelo agrupamento. A manhã do Dia 1 é aula geral para os 6. Depois, as áreas com fluxos parecidos trabalham em bloco. O foco é cada frente sair com solução rodando, não esgotar todos os usos possíveis. E todo mundo fica com 30 dias de suporte depois, além da gestão mensal se você ativá-la.</p></div></div>
+  </div>
+</section>
+
+<!-- PROXIMOS PASSOS -->
+<section class="sec sec-ice" id="passos">
+  <div class="sec-inner">
+    <div class="rv">
+      <span class="section-label">Próximos passos</span>
+      <h2 class="section-title">Do aceite à <em>operação com IA</em>.</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card rv"><div class="step-num">01</div><div class="step-when">Agora</div><h4>Aceite e reserva de datas</h4><p>Você confirma a proposta e a gente trava as duas datas da imersão. 50% na assinatura.</p></div>
+      <div class="step-card rv"><div class="step-num">02</div><div class="step-when">Antes da imersão</div><h4>Nivelamento e escuta</h4><p>Pesquisa com o time e conversa por área para mapear os processos e os sistemas a fundo.</p></div>
+      <div class="step-card rv"><div class="step-num">03</div><div class="step-when">Os 2 dias</div><h4>Imersão presencial</h4><p>Aula geral, sessões por área e consolidação. Cada frente sai com solução rodando.</p></div>
+      <div class="step-card rv"><div class="step-num">04</div><div class="step-when">A partir do mês seguinte</div><h4>Gestão mensal de IA</h4><p>Entramos como sua cabeça de IA: roadmap, Abil Funnels, decisões técnicas e os módulos na ordem certa.</p></div>
+    </div>
+    <p class="parceria">"Você não está sozinho na <em>primeira aula</em>, e também não estará em <em>nenhum mês depois</em>."</p>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="sec cta-final">
+  <div class="cta-glow"></div>
+  <h2 class="rv">Fabio, bora ser a <em>cabeça de IA</em> da Juca?</h2>
+  <p class="rv">O time aprende a operar em dois dias, e a NewScale assume o leme do projeto de IA mês a mês: a Abil Funnels, o agente de atendimento 24/7 e as frentes de cada área, tudo na ordem certa. Do jeito que você desenhou nos áudios.</p>
+  <div class="cta-actions rv">
+    <a class="btn btn-terra" href="https://wa.me/5511971901020?text=Bruna%2C%20a%20Juca%20na%20Balada%20topa%20a%20imers%C3%A3o%20mais%20a%20gest%C3%A3o%20mensal.%20Bora%20fechar." target="_blank" rel="noopener">Aceitar a proposta</a>
+    <a class="btn btn-ghost" href="https://wa.me/5511971901020?text=Bruna%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20a%20nova%20proposta%20da%20Juca%20na%20Balada." target="_blank" rel="noopener">Tirar uma dúvida</a>
+  </div>
+  <div class="cta-stats rv">
+    <div class="cta-stat"><div class="n">6</div><div class="l">pessoas capacitadas</div></div>
+    <div class="cta-stat"><div class="n">todo mês</div><div class="l">de gestão do projeto de IA</div></div>
+    <div class="cta-stat"><div class="n">~23h/sem</div><div class="l">de trabalho recuperável</div></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting">
+  <div class="footer-name">NewScale Consulting</div>
+  <p>Proposta exclusiva · Juca na Balada<br>21 de julho de 2026 · Validade até 04/ago/2026</p>
+</footer>
+
+<script>
+window.addEventListener('scroll', function(){
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+});
+(function(){
+  var els = document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('in'); }); return; }
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(en, i){
+      if(en.isIntersecting){ setTimeout(function(){ en.target.classList.add('in'); }, (i%6)*70); obs.unobserve(en.target); }
+    });
+  }, { threshold:.12 });
+  els.forEach(function(e){ obs.observe(e); });
+  setTimeout(function(){ els.forEach(function(e){ e.classList.add('in'); }); }, 2500);
+})();
+</script>
+</body>
+</html>
