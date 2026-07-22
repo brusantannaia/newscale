@@ -129,8 +129,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(12,36,39,.85);backdrop-f
 @media(max-width:820px){.inv{grid-template-columns:1fr}}
 .inv-card{background:var(--ink);border:1px solid var(--line);border-radius:18px;padding:30px 28px;display:flex;flex-direction:column}
 .inv-card.rec{border-color:rgba(176,110,74,.5);position:relative}
-.inv-card.rec::before{content:"PROGRAMA COMPLETO";position:absolute;top:-11px;left:26px;font-weight:700;font-size:.6rem;letter-spacing:.14em;color:#fff;background:var(--terra);padding:4px 12px;border-radius:100px}
-.inv-card.f2::before{content:"FASE 2 · COLABORADORES";position:absolute;top:-11px;left:26px;font-weight:700;font-size:.6rem;letter-spacing:.14em;color:#233133;background:var(--sand);padding:4px 12px;border-radius:100px}
+.inv-card.rec::before{content:"EQUIPE DE LIDERANÇA";position:absolute;top:-11px;left:26px;font-weight:700;font-size:.6rem;letter-spacing:.14em;color:#fff;background:var(--terra);padding:4px 12px;border-radius:100px}
+.inv-card.f2::before{content:"EQUIPE DE COLABORADORES";position:absolute;top:-11px;left:26px;font-weight:700;font-size:.6rem;letter-spacing:.14em;color:#233133;background:var(--sand);padding:4px 12px;border-radius:100px}
 .inv-card.f2{position:relative}
 .inv-name{font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tl)}
 .inv-price{font-family:'Anton';font-size:2.8rem;color:var(--cream);margin:12px 0 2px;line-height:1}
@@ -338,19 +338,29 @@ footer a{color:var(--tl)}
     <span class="kicker">Investimento</span>
     <h2 style="font-size:clamp(2rem,5.5vw,3.4rem);max-width:20ch">Duas fases, um programa — e o apoio quando vocês quiserem</h2>
     <p class="lead" style="margin-top:18px">Como combinamos, Amanda: começa pela liderança e expande para os times. As mentorias por área e os encontros de acompanhamento entram só quando cada frente pedir — sem recorrência obrigatória.</p>
-    <div class="inv" style="grid-template-columns:1fr;max-width:680px">
+    <div class="inv">
       <div class="inv-card rec rv">
-        <div class="inv-name">Liderança + Colaboradores</div>
+        <div class="inv-name">Imersão de Liderança · híbrido</div>
         <div class="inv-price">R$ 9.800</div>
-        <div class="inv-per">as duas fases fechadas em um só programa · datas a combinar</div>
+        <div class="inv-per">2 encontros de 3h · até 40 líderes · datas a combinar</div>
         <ul>
-          <li><b style="color:var(--cream)">Fase 1 · Liderança</b> — 2 encontros híbridos de 3h, até 40 líderes, no auditório da Agrivalle</li>
           <li>Pesquisa de nivelamento antes do 1º encontro</li>
-          <li>Fundamentos + IA para gestão + segurança de dados</li>
+          <li>Encontro 1: fundamentos + IA para gestão + segurança de dados</li>
           <li>Facilitação do mapeamento dos times entre os encontros</li>
-          <li>Mão na massa nos processos de maior impacto</li>
-          <li><b style="color:var(--cream)">Fase 2 · Colaboradores</b> — aula geral presencial de 4h, direcionada pelo mapa dos líderes</li>
+          <li>Encontro 2: mão na massa nos processos de maior impacto</li>
           <li>Suporte por WhatsApp depois dos encontros</li>
+        </ul>
+      </div>
+      <div class="inv-card f2 rv">
+        <div class="inv-name">Aula geral de colaboradores</div>
+        <div class="inv-price">R$ 5.500</div>
+        <div class="inv-per">turma à parte, dos times — não dos líderes · 4h presencial</div>
+        <ul>
+          <li>Para a equipe de colaboradores, separada da turma de liderança</li>
+          <li>Aula prática de mão na massa nas viradas priorizadas</li>
+          <li>Direcionada pelo mapa que os líderes trouxerem</li>
+          <li>Exemplos das áreas reais (finanças, operações industriais...)</li>
+          <li>Suporte por WhatsApp depois da aula</li>
         </ul>
       </div>
     </div>
