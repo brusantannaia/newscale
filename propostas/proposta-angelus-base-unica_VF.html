@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proposta Comercial · Grupo Angelus · NewScale Consulting</title>
+
+  <!-- Não indexar — não remover em nenhuma proposta -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="bingbot" content="noindex, nofollow">
+
+  <!-- Open Graph / Preview (WhatsApp, LinkedIn, etc.) -->
+  <meta property="og:site_name" content="NewScale Consulting">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Proposta Comercial: Grupo Angelus & NewScale Consulting">
+  <meta property="og:description" content="A base única do associado: o diagnóstico e o plano de ação que antecedem o CRM do Grupo Angelus. Mapa do ecossistema, arquitetura de dados e roteiro faseado, com governança e LGPD.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/brusantannaia/newscale/main/newscale-og-cover.png">
+  <meta property="og:image:secure_url" content="https://raw.githubusercontent.com/brusantannaia/newscale/main/newscale-og-cover.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="NewScale Consulting — Proposta Comercial Grupo Angelus">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Proposta Comercial: Grupo Angelus & NewScale Consulting">
+  <meta name="twitter:description" content="A base única do associado: o diagnóstico e o plano de ação que antecedem o CRM do Grupo Angelus.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/brusantannaia/newscale/main/newscale-og-cover.png">
+  <meta name="twitter:image:alt" content="NewScale Consulting — Proposta Comercial Grupo Angelus">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:    #0C2427;
+      --bg-2:  #0E2A2E;
+      --ink:   #14373C;
+      --ink-2: #1A4449;
+      --green: #435D51;
+      --terra: #B06E4A;  --tl: #C4835E;  --terra-d: #985A3B;
+      --sand:  #A38362;
+      --cream: #F4F3EF;
+      --ice:   #F4F3EF;  --ice-2: #FAFAF8;  --greige: #E8E6E0;
+      --text:  rgba(244,243,239,.82);
+      --muted: rgba(244,243,239,.56);
+      --line:  rgba(244,243,239,.10);
+      --ink-body: #3f4f51;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    img { max-width: 100%; }
+    body {
+      font-family: 'Hanken Grotesk', sans-serif;
+      background: var(--ice-2); color: var(--ink);
+      line-height: 1.6; font-size: 16px; -webkit-font-smoothing: antialiased;
+    }
+    em { font-style: normal; color: var(--terra); }
+    ::selection { background: var(--terra); color: #fff; }
+
+    h1, h2, h3, .display { font-family: 'Anton', sans-serif; font-weight: 400;
+      text-transform: uppercase; letter-spacing: -.01em; line-height: .94; }
+
+    .kicker { font-family: 'Hanken Grotesk'; font-weight: 700; font-size: .72rem;
+      letter-spacing: .16em; text-transform: uppercase; color: var(--terra); display: block; }
+
+    section { padding: 96px 48px; position: relative; }
+    .inner { max-width: 1120px; margin: 0 auto; }
+
+    /* ── NAVBAR ── */
+    .navbar { position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 48px; background: rgba(12,36,39,.85);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line); }
+    .navbar-logo img { height: 80px; width: auto; display: block; }
+    .navbar-tag { font-weight: 700; font-size: .64rem; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--tl); }
+
+    /* ── DARK / ICE SECTION BASES ── */
+    .s-dark { background: var(--bg); color: var(--text); }
+    .s-dark2 { background: var(--bg-2); color: var(--text); }
+    .s-ice { background: var(--ice); color: var(--ink-body); }
+    .s-ice2 { background: var(--ice-2); color: var(--ink-body); }
+    .s-dark h2, .s-dark2 h2 { color: var(--cream); }
+    .s-ice h2, .s-ice2 h2 { color: var(--ink); }
+    .s-ice .kicker, .s-ice2 .kicker { color: var(--terra-d); }
+    .lead { font-size: 1.05rem; line-height: 1.62; max-width: 46ch; }
+    .s-ice .lead, .s-ice2 .lead { color: #4a5c5e; }
+
+    /* ── HERO ── */
+    .hero { background:
+        radial-gradient(620px circle at 82% 8%, rgba(176,110,74,.18), transparent 62%),
+        linear-gradient(160deg, #0a2023 0%, #0C2427 42%, #102f33 100%);
+      color: var(--text); padding: 120px 48px 104px; overflow: hidden; }
+    .hero .inner { max-width: 1000px; }
+    .hero-badge { display: inline-block; font-weight: 700; font-size: .66rem;
+      letter-spacing: .16em; text-transform: uppercase; color: var(--tl);
+      background: rgba(176,110,74,.12); border: 1px solid rgba(176,110,74,.24);
+      padding: 7px 18px; border-radius: 100px; margin-bottom: 26px; }
+    .hero-eyebrow { font-weight: 600; font-size: .74rem; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
+    .hero h1 { font-size: clamp(3rem, 8vw, 5.6rem); color: var(--cream); max-width: 16ch; }
+    .hero h1 em { color: var(--tl); }
+    .hero-desc { font-size: 1.08rem; color: var(--text); line-height: 1.62;
+      max-width: 52ch; margin-top: 26px; }
+    .hero-scroll { display: inline-flex; align-items: center; gap: 8px; margin-top: 44px;
+      color: var(--muted); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase;
+      text-decoration: none; }
+    .hero-scroll svg { animation: bounce 2s infinite; }
+    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(5px)} }
+
+    /* ── SECTION HEAD ── */
+    .s-head { max-width: 760px; margin-bottom: 52px; }
+    .s-head h2 { font-size: clamp(2.2rem, 6vw, 3.5rem); margin-top: 12px; }
+    .s-head .lead { margin-top: 18px; }
+
+    /* ── STATS ── */
+    .context-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 64px; align-items: center; }
+    .context-text p { font-size: .98rem; color: #46585a; line-height: 1.78; margin-bottom: 16px; }
+    .context-text p:last-child { margin-bottom: 0; }
+    .context-text b { color: var(--ink); font-weight: 600; }
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+      background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+    .stat { background: var(--ink); padding: 30px 26px; display: flex; flex-direction: column; gap: 6px; }
+    .stat .n { font-family: 'Anton'; font-size: clamp(2.4rem, 7vw, 3.2rem); color: var(--tl); line-height: 1; }
+    .stat .l { font-size: .72rem; color: var(--muted); letter-spacing: .04em; line-height: 1.4; }
+
+    /* ── OPORTUNIDADE CARDS ── */
+    .opp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .opp { background: rgba(255,255,255,.03); border: 1px solid var(--line);
+      border-left: 3px solid rgba(176,110,74,.35); border-radius: 14px; padding: 28px 26px;
+      transition: border-color .25s, background .25s; }
+    .opp:hover { border-left-color: var(--terra); background: rgba(176,110,74,.05); }
+    .opp .t { font-family: 'Anton'; font-size: 1.15rem; color: var(--cream); letter-spacing: 0;
+      text-transform: none; line-height: 1.1; margin-bottom: 10px; }
+    .opp p { font-size: .9rem; color: var(--text); line-height: 1.66; }
+
+    /* ── FOUNDATION QUOTE-ISH ── */
+    .found { background: var(--ink); border: 1px solid var(--line); border-radius: 20px;
+      padding: 48px 52px; max-width: 900px; margin: 0 auto; text-align: center; }
+    .found p { font-family: 'Anton'; text-transform: uppercase; letter-spacing: -.01em;
+      font-size: clamp(1.6rem, 4vw, 2.4rem); color: var(--cream); line-height: 1.08; }
+    .found p em { color: var(--tl); }
+    .found small { display: block; margin-top: 20px; font-family: 'Hanken Grotesk';
+      font-size: .92rem; color: var(--muted); text-transform: none; letter-spacing: normal; line-height: 1.6; }
+
+    /* ── ESCOPO / DELIVERABLES ── */
+    .deliv-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .waves3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .deliv { background: var(--ice-2); border: 1px solid rgba(20,55,60,.09); border-radius: 16px;
+      padding: 30px 28px; box-shadow: 0 6px 26px rgba(20,55,60,.05); transition: box-shadow .25s, transform .25s; }
+    .deliv:hover { box-shadow: 0 16px 42px rgba(20,55,60,.1); transform: translateY(-3px); }
+    .deliv-num { font-family: 'Anton'; font-size: 1.4rem; color: var(--terra); line-height: 1; }
+    .deliv h3 { font-family: 'Anton'; font-size: 1.35rem; color: var(--ink); text-transform: none;
+      letter-spacing: 0; line-height: 1.05; margin: 12px 0 12px; }
+    .deliv p { font-size: .9rem; color: #55686a; line-height: 1.68; }
+    .deliv ul { list-style: none; margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+    .deliv li { font-size: .85rem; color: #46585a; line-height: 1.55; padding-left: 18px; position: relative; }
+    .deliv li::before { content: '→'; position: absolute; left: 0; color: var(--terra); }
+    .deliv.wide { grid-column: 1 / -1; }
+
+    /* ── ARQUITETURA AS-IS → TO-BE ── */
+    .arch { display: grid; grid-template-columns: 1fr auto 1fr; gap: 28px; align-items: stretch; margin-top: 20px; }
+    .arch-col { background: rgba(255,255,255,.03); border: 1px solid var(--line); border-radius: 18px; padding: 26px 22px; }
+    .arch-col.now { border-style: dashed; border-color: rgba(244,243,239,.18); }
+    .arch-col.future { background: linear-gradient(165deg, var(--ink), #12333a 60%, #163f3a); border-color: rgba(176,110,74,.3); }
+    .arch-tag { font-weight: 700; font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 16px; display: block; }
+    .arch-col.now .arch-tag { color: var(--muted); }
+    .arch-col.future .arch-tag { color: var(--tl); }
+    .sys-chip { display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      background: rgba(255,255,255,.04); border: 1px solid var(--line); border-radius: 10px;
+      padding: 10px 14px; margin-bottom: 8px; font-size: .82rem; color: var(--text); }
+    .sys-chip small { font-size: .6rem; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+    .arch-mid { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; min-width: 150px; }
+    .arch-engine { background: rgba(176,110,74,.12); border: 1px solid rgba(176,110,74,.3);
+      border-radius: 14px; padding: 16px 14px; text-align: center; width: 100%; }
+    .arch-engine b { font-family: 'Anton'; font-size: 1rem; color: var(--tl); display: block; text-transform: uppercase; letter-spacing: 0; }
+    .arch-engine span { font-size: .68rem; color: var(--muted); display: block; margin-top: 4px; line-height: 1.4; }
+    .arch-arrow { color: var(--terra); font-size: 1.5rem; line-height: 1; }
+    .future-node { background: rgba(255,255,255,.05); border: 1px solid rgba(176,110,74,.25);
+      border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; }
+    .future-node b { font-family: 'Anton'; font-size: 1.05rem; color: var(--cream); text-transform: none; letter-spacing: 0; display: block; }
+    .future-node span { font-size: .78rem; color: var(--text); line-height: 1.5; }
+    .future-node.hero-node { background: linear-gradient(135deg, rgba(176,110,74,.25), rgba(176,110,74,.08)); }
+    .future-node.hero-node b { color: var(--tl); }
+    .arch-caption { text-align: center; color: var(--muted); font-size: .82rem; margin-top: 26px; }
+
+    /* ── DIAGNÓSTICO TABLE ── */
+    .diag-note { font-size: .95rem; color: #4a5c5e; line-height: 1.72; max-width: 680px; margin: 16px 0 40px; }
+    .diag { border: 1px solid rgba(20,55,60,.1); border-radius: 16px; overflow: hidden; background: var(--ice-2); }
+    .diag-row { display: grid; grid-template-columns: 210px 1fr 1.1fr; }
+    .diag-row + .diag-row { border-top: 1px solid rgba(20,55,60,.08); }
+    .diag-row > div { padding: 18px 20px; font-size: .85rem; border-right: 1px solid rgba(20,55,60,.07); }
+    .diag-row > div:last-child { border-right: none; }
+    .diag-head { background: var(--ink); }
+    .diag-head > div { color: rgba(244,243,239,.5); font-weight: 700; font-size: .6rem;
+      letter-spacing: .12em; text-transform: uppercase; border-right-color: rgba(255,255,255,.08); }
+    .sys-name { font-weight: 700; color: var(--ink); font-size: .92rem; }
+    .sys-region { font-size: .66rem; color: var(--terra); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; margin-top: 3px; display: block; }
+    .diag-cell { color: #55686a; line-height: 1.6; }
+    .badge { font-weight: 700; font-size: .58rem; letter-spacing: .04em; padding: 3px 10px; border-radius: 100px; display: inline-block; margin-top: 8px; text-transform: uppercase; }
+    .b-good { color: #3c7a54; background: rgba(74,160,110,.12); border: 1px solid rgba(74,160,110,.28); }
+    .b-mid { color: var(--terra-d); background: rgba(176,110,74,.1); border: 1px solid rgba(176,110,74,.26); }
+    .b-map { color: #6a7a55; background: rgba(120,140,80,.12); border: 1px solid rgba(120,140,80,.28); }
+
+    /* ── ROADMAP ── */
+    .road { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 8px; }
+    .road-card { background: rgba(255,255,255,.03); border: 1px solid var(--line); border-radius: 16px; padding: 28px 26px; position: relative; }
+    .road-card.active { background: linear-gradient(165deg, var(--ink), #163f3a); border-color: rgba(176,110,74,.45); }
+    .road-phase { font-weight: 700; font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; color: var(--tl); }
+    .road-card h3 { font-family: 'Anton'; font-size: 1.5rem; color: var(--cream); text-transform: none; letter-spacing: 0; line-height: 1.02; margin: 10px 0 12px; }
+    .road-card p { font-size: .88rem; color: var(--text); line-height: 1.64; }
+    .road-meta { margin-top: 16px; font-size: .74rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 14px; }
+    .road-badge { position: absolute; top: -11px; left: 24px; background: var(--terra); color: #fff;
+      font-weight: 700; font-size: .58rem; letter-spacing: .14em; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; }
+    .gate { text-align: center; margin-top: 28px; font-size: .9rem; color: var(--text); }
+    .gate b { color: var(--tl); font-weight: 700; }
+
+    /* ── INVESTIMENTO ── */
+    .inv-wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 24px; align-items: stretch; }
+    .inv-scope { background: var(--ice-2); border: 1px solid rgba(20,55,60,.1); border-radius: 18px; padding: 34px 32px; box-shadow: 0 6px 26px rgba(20,55,60,.05); }
+    .inv-scope h3 { font-family: 'Anton'; font-size: 1.5rem; color: var(--ink); text-transform: none; letter-spacing: 0; margin-bottom: 6px; }
+    .inv-scope .sub { font-size: .86rem; color: #67797b; margin-bottom: 20px; }
+    .inv-scope ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .inv-scope li { font-size: .88rem; color: #46585a; line-height: 1.55; padding-left: 20px; position: relative; }
+    .inv-scope li::before { content: '✓'; position: absolute; left: 0; color: var(--terra); font-weight: 700; }
+    .inv-price { background: linear-gradient(165deg, var(--ink), #163f3a); border: 1px solid rgba(176,110,74,.3);
+      border-radius: 18px; padding: 34px 30px; color: var(--text); display: flex; flex-direction: column; }
+    .inv-price .tag { font-weight: 700; font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; color: var(--tl); }
+    .inv-price .big { font-family: 'Anton'; font-size: clamp(2rem, 5vw, 2.7rem); color: var(--cream); line-height: 1; margin: 14px 0 6px; }
+    .inv-price .draftline { font-size: .8rem; color: var(--muted); line-height: 1.55; }
+    .inv-price .terms { margin-top: auto; padding-top: 22px; border-top: 1px solid var(--line); font-size: .82rem; color: var(--text); line-height: 1.6; }
+    .inv-price .terms b { color: var(--cream); font-weight: 600; }
+    .inv-note { margin-top: 22px; background: rgba(20,55,60,.045); border-left: 3px solid var(--terra);
+      border-radius: 0 12px 12px 0; padding: 20px 24px; }
+    .inv-note p { font-size: .84rem; color: #55686a; line-height: 1.7; }
+    .inv-note p + p { margin-top: 8px; }
+    .inv-note b { color: var(--ink); font-weight: 600; }
+
+    /* ── GARANTIA ── */
+    .guar { background: linear-gradient(135deg, var(--ink), var(--green)); border-radius: 22px;
+      padding: 48px 52px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 44px; align-items: center; }
+    .guar h2 { color: var(--cream); font-size: clamp(1.9rem,4.5vw,2.8rem); }
+    .guar .kicker { color: var(--tl); }
+    .guar p { color: var(--text); font-size: .96rem; line-height: 1.76; margin-top: 14px; }
+    .guar-right { display: flex; flex-direction: column; gap: 12px; }
+    .guar-item { display: flex; gap: 10px; align-items: flex-start; font-size: .9rem; color: var(--text); line-height: 1.55; }
+    .guar-item::before { content: '✓'; color: var(--tl); font-weight: 700; }
+
+    /* ── PROVA SOCIAL ── */
+    .proof { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--line);
+      border: 1px solid var(--line); border-radius: 18px; overflow: hidden; margin-top: 8px; }
+    .proof-c { background: var(--ink); padding: 34px 26px; text-align: center; }
+    .proof-c .v { font-family: 'Anton'; font-size: clamp(2.2rem,5vw,3rem); color: var(--tl); line-height: 1; }
+    .proof-c .l { font-size: .78rem; color: var(--muted); margin-top: 10px; line-height: 1.5; max-width: 26ch; margin-inline: auto; }
+
+    /* ── POR QUE / QUOTE / METODOLOGIA / FUNDADORES ── */
+    .why-headline { font-family: 'Anton'; font-size: clamp(1.8rem,4.5vw,2.8rem); color: var(--ink); line-height: 1.02; margin-bottom: 40px; max-width: 18ch; }
+    .why-headline em { color: var(--terra); }
+    .quote { background: var(--ink); border-radius: 18px; padding: 40px 44px; position: relative; margin-bottom: 44px; }
+    .quote p { color: var(--text); font-size: 1.02rem; line-height: 1.74; }
+    .quote .who { color: var(--tl); font-weight: 700; font-size: .76rem; margin-top: 16px; letter-spacing: .04em; }
+    .met { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-bottom: 44px; }
+    .met-card { background: var(--ice-2); border: 1px solid rgba(20,55,60,.08); border-radius: 12px; padding: 22px 20px; box-shadow: 0 6px 26px rgba(20,55,60,.05); }
+    .met-card.on { border-color: rgba(176,110,74,.4); background: #fff; }
+    .met-n { font-family: 'Anton'; font-size: 1.3rem; color: var(--terra); }
+    .met-name { font-weight: 700; font-size: .84rem; color: var(--ink); margin: 4px 0 5px; }
+    .met-desc { font-size: .78rem; color: #67797b; line-height: 1.55; }
+    .met-flag { font-size: .58rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--terra); margin-top: 8px; display: inline-block; }
+    .founders { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .founder { display: flex; gap: 22px; align-items: stretch; background: var(--ice-2);
+      border: 1px solid rgba(20,55,60,.08); border-radius: 16px; padding: 22px;
+      box-shadow: 0 6px 26px rgba(20,55,60,.05); transition: box-shadow .25s, transform .25s; }
+    .founder:hover { box-shadow: 0 16px 42px rgba(20,55,60,.1); transform: translateY(-3px); }
+    .founder-photo { position: relative; flex-shrink: 0; width: 120px; align-self: stretch; min-height: 162px;
+      border-radius: 12px; overflow: hidden; border: 1px solid rgba(20,55,60,.1);
+      background: linear-gradient(135deg, #1d4a4f, #14373C 55%, #0a2023); }
+    .founder-photo span { position: absolute; inset: 0; display: grid; place-items: center;
+      font-family: 'Anton'; font-size: 2rem; letter-spacing: .02em; color: var(--tl); }
+    .founder-photo img { position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center 22%; display: block; filter: grayscale(10%) saturate(.92); }
+    .founder-photo::after { content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(to top, rgba(10,28,31,.30), transparent 52%); }
+    .founder-body { display: flex; flex-direction: column; min-width: 0; }
+    .founder .name { font-weight: 800; font-size: 1.02rem; color: var(--ink); margin-bottom: 3px; }
+    .founder .role { font-weight: 700; font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--terra-d); margin-bottom: 12px; }
+    .founder .bio { font-size: .82rem; color: #5a6c6e; line-height: 1.62; margin-bottom: 14px; }
+    .founder .tags { margin-top: auto; display: flex; flex-wrap: wrap; gap: 6px; }
+    .ftag { font-size: .6rem; font-weight: 700; background: rgba(20,55,60,.06); color: var(--green); padding: 3px 10px; border-radius: 100px; }
+
+    /* ── FAQ ── */
+    .faq { max-width: 820px; margin: 8px auto 0; border: 1px solid rgba(20,55,60,.1); border-radius: 14px; overflow: hidden; background: var(--ice-2); }
+    .faq-item { border-bottom: 1px solid rgba(20,55,60,.08); cursor: pointer; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 20px 24px; }
+    .faq-q span { font-weight: 600; font-size: .94rem; color: var(--ink); line-height: 1.4; }
+    .faq-ic { color: rgba(20,55,60,.4); font-size: 1.3rem; transition: transform .3s; flex-shrink: 0; }
+    .faq-item.open .faq-ic { transform: rotate(45deg); }
+    .faq-a { display: none; padding: 0 24px 22px; font-size: .88rem; color: #55686a; line-height: 1.74; }
+    .faq-item.open { background: #fff; }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ── PRÓXIMOS PASSOS ── */
+    .steps { max-width: 840px; margin: 8px auto 0; }
+    .step { display: flex; gap: 26px; padding-bottom: 34px; position: relative; }
+    .step:not(:last-child)::after { content: ''; position: absolute; left: 19px; top: 42px; bottom: 0; width: 1px; background: rgba(176,110,74,.22); }
+    .step-n { width: 40px; height: 40px; border-radius: 50%; background: rgba(176,110,74,.14);
+      border: 1px solid rgba(176,110,74,.3); display: grid; place-items: center;
+      font-family: 'Anton'; font-size: 1rem; color: var(--tl); flex-shrink: 0; }
+    .step-p { font-weight: 700; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .step h3 { font-family: 'Hanken Grotesk'; font-weight: 700; font-size: .98rem; color: var(--cream); text-transform: none; letter-spacing: 0; margin-bottom: 6px; }
+    .step p { font-size: .86rem; color: var(--text); line-height: 1.66; }
+    .steps-close { margin-top: 8px; text-align: center; font-size: 1rem; color: var(--muted); padding-top: 24px; border-top: 1px solid var(--line); }
+
+    /* ── CTA ── */
+    .cta-inner { background: linear-gradient(165deg, #0a2023, #14373C 55%, #1d4840 120%);
+      border-radius: 24px; padding: 64px 52px; text-align: center; max-width: 920px; margin: 0 auto;
+      position: relative; overflow: hidden; }
+    .cta-inner::before { content:''; position: absolute; top: -30%; left: 50%; transform: translateX(-50%);
+      width: 640px; height: 640px; background: radial-gradient(circle, rgba(176,110,74,.18), transparent 62%); pointer-events: none; }
+    .cta-valid { position: relative; display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(176,110,74,.12); border: 1px solid rgba(176,110,74,.26); color: var(--tl);
+      font-weight: 700; font-size: .64rem; letter-spacing: .16em; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 100px; margin-bottom: 28px; }
+    .cta-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--tl); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.4)} }
+    .cta-inner h2 { position: relative; color: var(--cream); font-size: clamp(2.4rem,7vw,4rem); }
+    .cta-inner h2 em { color: var(--tl); }
+    .cta-inner p { position: relative; color: var(--text); font-size: 1rem; line-height: 1.7; max-width: 54ch; margin: 20px auto 38px; }
+    .cta-btns { position: relative; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .btn { text-decoration: none; padding: 15px 30px; border-radius: 100px; font-weight: 700; font-size: .82rem; letter-spacing: .04em; transition: transform .2s, box-shadow .2s, background .2s, border-color .2s; display: inline-block; }
+    .btn-terra { background: var(--terra); color: #fff; box-shadow: 0 10px 28px rgba(176,110,74,.35); }
+    .btn-terra:hover { background: var(--terra-d); transform: translateY(-2px); }
+    .btn-ghost { background: transparent; color: var(--cream); border: 1.5px solid var(--line); }
+    .btn-ghost:hover { border-color: var(--tl); background: rgba(255,255,255,.04); }
+
+    /* ── FOOTER ── */
+    footer { background: #0a1f22; padding: 38px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-brand { font-weight: 700; font-size: .82rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(244,243,239,.4); }
+    .footer-brand span { color: var(--terra); }
+    .footer-date { font-size: .74rem; color: rgba(244,243,239,.28); text-align: right; line-height: 1.6; }
+
+    /* ── REVEAL ── */
+    .rv { opacity: 0; transform: translateY(22px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+    .rv.in { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 920px) {
+      section { padding: 68px 22px; }
+      .navbar { padding: 10px 22px; top: 0; }
+      .navbar-tag { display: none; }
+      .navbar-logo img { height: 62px; }
+      .context-grid, .inv-wrap, .guar { grid-template-columns: 1fr; gap: 32px; }
+      .opp-grid, .deliv-grid, .met, .founders, .waves3 { grid-template-columns: 1fr; }
+      .arch { grid-template-columns: 1fr; }
+      .arch-mid { flex-direction: row; min-width: 0; padding: 6px 0; }
+      .arch-arrow { transform: rotate(90deg); }
+      .road { grid-template-columns: 1fr; }
+      .proof { grid-template-columns: 1fr; }
+      .diag-row { grid-template-columns: 1fr; }
+      .diag-row > div { border-right: none; border-bottom: 1px solid rgba(20,55,60,.07); }
+      .diag-head { display: none; }
+      footer { flex-direction: column; text-align: center; }
+      .footer-date { text-align: center; }
+      .deliv.wide { grid-column: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="nav">
+  <div class="navbar-logo">
+    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span style=\'font-weight:800;font-size:.9rem;letter-spacing:.14em;color:#fff;text-transform:uppercase;\'>NewScale<span style=\'color:#B06E4A;\'> Consulting</span></span>')">
+  </div>
+  <div class="navbar-tag">Proposta Executiva · Grupo Angelus · Julho 2026</div>
+</nav>
+
+<!-- ── HERO ── -->
+<header class="hero" id="topo">
+  <div class="inner">
+    <span class="hero-badge">Para Jeffinho · Julho de 2026</span>
+    <p class="hero-eyebrow">NewScale Consulting × Grupo Angelus · Projeto Base Única do Associado</p>
+    <h1>Um associado.<br>Uma ficha.<br><em>Todas</em> as operações.</h1>
+    <p class="hero-desc">Antes de qualquer CRM, uma fundação: mapear, diagnosticar e desenhar o caminho para unificar os dados do associado que hoje vivem espalhados em cada sistema do Grupo. Esta é a primeira onda — a que torna todo o resto possível.</p>
+    <a class="hero-scroll" href="#contexto">
+      <span>Ver a proposta</span>
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 7l5 5 5-5" stroke="rgba(244,243,239,.5)" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </a>
+  </div>
+</header>
+
+<!-- ── CONTEXTO ── -->
+<section class="s-ice" id="contexto">
+  <div class="inner context-grid">
+    <div class="context-text rv">
+      <span class="kicker">O contexto</span>
+      <h2 style="font-size:clamp(2rem,5.5vw,3.2rem);margin:12px 0 22px;">Uma base rara —<br>e o passo que a <em>destrava</em></h2>
+      <p>Jeffinho, o Grupo Angelus construiu ao longo de 23 anos algo que pouquíssimas operações têm: <b>140 mil associados</b> ativos entre o Vale do Ribeira e Porto Velho, com pontos de contato presenciais recorrentes e um ecossistema completo de plano, clínicas, óticas, farmácias, clube e seguros.</p>
+      <p>Nossa conversa deixou claro qual é o gargalo do momento: essa base ainda não pode virar um programa de relacionamento forte porque os dados do associado estão <b>fragmentados</b> — cada operação roda um sistema próprio, sem integração, padronização ou centralização. Hoje não dá para enxergar, num só lugar, todos os toques que um mesmo associado tem com o Grupo.</p>
+      <p>Esta proposta trata exatamente disso: uma fase de <b>consultoria e diagnóstico</b> que mapeia toda a estrutura sistêmica, desenha a arquitetura de dados unificada e entrega um plano de ação com prazos e investimento — a fundação sobre a qual a monetização e a retenção da base passam a ser possíveis.</p>
+    </div>
+    <div class="stats rv">
+      <div class="stat"><div class="n">140k</div><div class="l">Associados ativos (SP + RO)</div></div>
+      <div class="stat"><div class="n">27k</div><div class="l">Titulares com cadastro completo hoje</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">ERPs distintos, um por região</div></div>
+      <div class="stat"><div class="n">7+</div><div class="l">Sistemas sem integração no ecossistema</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── OPORTUNIDADE ── -->
+<section class="s-dark" id="oportunidade">
+  <div class="inner">
+    <div class="s-head rv">
+      <span class="kicker">O que essa fundação abre</span>
+      <h2>O que o Grupo passa a <em>ter</em></h2>
+      <p class="lead" style="color:var(--text)">O diagnóstico não é um fim — é o que coloca quatro ganhos ao alcance da operação, cada um hoje represado pela fragmentação dos dados.</p>
+    </div>
+    <div class="opp-grid">
+      <div class="opp rv"><div class="t">Visão 360° do associado</div><p>Enxergar num só lugar todos os toques de um mesmo associado — plano, clínica, ótica, farmácia, clube, seguros e app — em vez de fichas soltas em cada sistema.</p></div>
+      <div class="opp rv"><div class="t">Dado padronizado e confiável</div><p>Um cadastro tratado e sem duplicidade, com uma chave única por pessoa, que serve de fonte da verdade para cobrança, atendimento e campanhas.</p></div>
+      <div class="opp rv"><div class="t">Base pronta para monetizar e reter</div><p>Com o dado unificado, cross-sell, clube de benefícios e ações de retenção passam a ser dirigidos por comportamento real — não por listas incompletas.</p></div>
+      <div class="opp rv"><div class="t">Conformidade desde a fundação</div><p>Dados de plano funerário e de saúde são sensíveis. Tratar governança, base legal e LGPD já no desenho da base protege o Grupo e libera a ativação da carteira com respaldo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FUNDAÇÃO ── -->
+<section class="s-ice2">
+  <div class="inner">
+    <div class="found rv">
+      <p>Sem base de dados unificada,<br>não existe <em>CRM</em> que funcione.</p>
+      <small>Por isso essa fase vem primeiro. Ela não compete com o programa de relacionamento — ela é a condição para que ele exista e traga resultado.</small>
+    </div>
+  </div>
+</section>
+
+<!-- ── ESCOPO / ENTREGÁVEIS ── -->
+<section class="s-ice" id="escopo">
+  <div class="inner">
+    <div class="s-head rv">
+      <span class="kicker">Escopo da Fase 1</span>
+      <h2>Cinco entregáveis, um resultado: <em>a decisão informada</em></h2>
+      <p class="lead">Uma frente clara de consultoria, com escopo fechado. Ao final, o Grupo tem em mãos tudo o que precisa para decidir — com prazos e valores — se avança para a implementação.</p>
+    </div>
+    <div class="deliv-grid">
+      <div class="deliv rv">
+        <div class="deliv-num">01</div>
+        <h3>Mapa do ecossistema</h3>
+        <p>O inventário completo de sistemas e dados de todas as operações do Grupo em SP e RO.</p>
+        <ul>
+          <li>Cada sistema, seu fornecedor e seu papel na operação</li>
+          <li>Formas de acesso: API, banco de dados, exportação</li>
+          <li>Quais dados do associado vivem em cada ponto</li>
+        </ul>
+      </div>
+      <div class="deliv rv">
+        <div class="deliv-num">02</div>
+        <h3>Diagnóstico de fragmentação</h3>
+        <p>Onde o dado se despadroniza, se duplica e se perde entre uma operação e outra.</p>
+        <ul>
+          <li>Qualidade e completude por campo, com % de CPF válido por sistema (o gap dos 27k / 140k)</li>
+          <li>Duplicidades e conflitos do mesmo associado entre sistemas</li>
+          <li>Lacunas que hoje travam uma visão única</li>
+        </ul>
+      </div>
+      <div class="deliv rv">
+        <div class="deliv-num">03</div>
+        <h3>Arquitetura-alvo</h3>
+        <p>O desenho técnico de como os dados passam a se integrar e falar a mesma língua.</p>
+        <ul>
+          <li>Chave única do associado (single user ID): decisão entre correspondência <em>determinística</em> e <em>probabilística</em></li>
+          <li>Deduplicação e reconciliação do mesmo associado entre bases</li>
+          <li>Esteira de integração, transformação e padronização (ETL)</li>
+          <li>Carga diária para o datalake, já tratada</li>
+        </ul>
+      </div>
+      <div class="deliv rv">
+        <div class="deliv-num">04</div>
+        <h3>Recomendação de datalake</h3>
+        <p>Qual solução de centralização adotar — com critérios claros, não achismo.</p>
+        <ul>
+          <li>Comparativo de soluções por custo, escala e facilidade</li>
+          <li>Aderência a dados sensíveis e à LGPD</li>
+          <li>Estimativa de custo de infraestrutura</li>
+        </ul>
+      </div>
+      <div class="deliv rv wide">
+        <div class="deliv-num">05</div>
+        <h3>Plano de ação faseado</h3>
+        <p>O roteiro de integração e dados que conecta o diagnóstico às próximas ondas — com prazos, esforço e investimento estimados para cada etapa, além da <b>priorização das ondas</b> (o que integrar primeiro) e de um workstream de governança de dados e LGPD que atravessa todo o projeto. É o documento com o qual o Grupo decide, com números na mão, se e como avança.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ARQUITETURA AS-IS → TO-BE ── -->
+<section class="s-dark" id="arquitetura">
+  <div class="inner">
+    <div class="s-head rv">
+      <span class="kicker">Onde queremos chegar</span>
+      <h2>De sistemas soltos<br>a uma <em>fonte única</em></h2>
+      <p class="lead" style="color:var(--text)">O desenho que o diagnóstico detalha: hoje cada operação guarda seu pedaço do associado; ao final, um único ID reúne tudo num datalake tratado — e o CRM passa a beber de lá.</p>
+    </div>
+    <div class="arch rv">
+      <div class="arch-col now">
+        <span class="arch-tag">Hoje · dados fragmentados</span>
+        <div class="sys-chip">iVertex <small>ID próprio</small></div>
+        <div class="sys-chip">Gold Pegasus <small>ID próprio</small></div>
+        <div class="sys-chip">Sistema das clínicas <small>ID próprio</small></div>
+        <div class="sys-chip">Zenvia <small>ID próprio</small></div>
+        <div class="sys-chip">Plumes + RD <small>ID próprio</small></div>
+        <div class="sys-chip">Angeplus / Clube <small>ID próprio</small></div>
+      </div>
+      <div class="arch-mid">
+        <div class="arch-engine">
+          <b>Integração + ETL</b>
+          <span>transforma e padroniza</span>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-engine">
+          <b>Chave única</b>
+          <span>1 associado = 1 ID</span>
+        </div>
+        <div class="arch-arrow">→</div>
+      </div>
+      <div class="arch-col future">
+        <span class="arch-tag">Depois · fonte única</span>
+        <div class="future-node"><b>Datalake</b><span>carga diária, dados tratados e padronizados</span></div>
+        <div class="future-node hero-node"><b>Visão 360° do associado</b><span>todos os toques de cada pessoa num só lugar</span></div>
+        <div class="future-node"><b>CRM &amp; ativação</b><span>monetização e retenção sobre dado confiável — fases seguintes</span></div>
+      </div>
+    </div>
+    <p class="arch-caption rv">Nenhum sistema que funciona é trocado. O que a Fase 1 desenha é a camada que faz todos eles conversarem.</p>
+  </div>
+</section>
+
+<!-- ── DIAGNÓSTICO TÉCNICO ── -->
+<section class="s-ice" id="diagnostico">
+  <div class="inner">
+    <div class="rv">
+      <span class="kicker">Ponto de partida</span>
+      <h2 style="font-size:clamp(2rem,5.5vw,3.2rem);margin-top:12px;">O que já mapeamos<br>do <em>ambiente</em></h2>
+      <p class="diag-note">Uma leitura preliminar do ecossistema, a partir das nossas conversas — o dever de casa que o diagnóstico da Fase 1 vai aprofundar, sistema a sistema, até virar o mapa completo.</p>
+    </div>
+    <div class="diag rv">
+      <div class="diag-row diag-head">
+        <div>Sistema</div><div>Papel na operação</div><div>Leitura preliminar</div>
+      </div>
+      <div class="diag-row">
+        <div><span class="sys-name">iVertex</span><span class="sys-region">Vale do Ribeira</span></div>
+        <div class="diag-cell">ERP do plano — contratos, adimplência, boletos e histórico dos associados da região.</div>
+        <div class="diag-cell">Acesso ao banco disponível (D+2); API a negociar com o fornecedor. <span class="badge b-mid">A aprofundar</span></div>
+      </div>
+      <div class="diag-row">
+        <div><span class="sys-name">Gold System Pegasus</span><span class="sys-region">Porto Velho</span></div>
+        <div class="diag-cell">Mesmo papel do iVertex na operação de Porto Velho.</div>
+        <div class="diag-cell">Banco em tempo real já confirmado; novo ERP com API previsto. <span class="badge b-good">Favorável</span></div>
+      </div>
+      <div class="diag-row">
+        <div><span class="sys-name">Sistema das clínicas</span><span class="sys-region">Saúde · SP</span></div>
+        <div class="diag-cell">Maior ponto de contato presencial com o associado — hoje isolado do backoffice do plano.</div>
+        <div class="diag-cell">Fornecedor e integração a mapear; grande fonte de enriquecimento. <span class="badge b-map">Prioridade de mapeamento</span></div>
+      </div>
+      <div class="diag-row">
+        <div><span class="sys-name">Zenvia</span><span class="sys-region">Comunicação</span></div>
+        <div class="diag-cell">Plataforma de conversas usada pela cobrança e pelo atendimento.</div>
+        <div class="diag-cell">API aberta e documentada; confirmar plano para acesso ao histórico. <span class="badge b-good">Favorável</span></div>
+      </div>
+      <div class="diag-row">
+        <div><span class="sys-name">Plumes + RD Station</span><span class="sys-region">Vendas · RO</span></div>
+        <div class="diag-cell">CRM de aquisição e automação de marketing para Porto Velho.</div>
+        <div class="diag-cell">APIs abertas nos dois; integração padrão de mercado. <span class="badge b-good">Favorável</span></div>
+      </div>
+      <div class="diag-row">
+        <div><span class="sys-name">Angeplus + Clube Angelus</span><span class="sys-region">Associado</span></div>
+        <div class="diag-cell">App e clube de vantagens — carteirinha digital, guia médico e rede de parceiros.</div>
+        <div class="diag-cell">Cadastro próprio do associado; ponto-chave para a chave única. <span class="badge b-map">Prioridade de mapeamento</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ROADMAP ── -->
+<section class="s-dark" id="roadmap">
+  <div class="inner">
+    <div class="s-head rv">
+      <span class="kicker">A jornada completa</span>
+      <h2>Três ondas, um <em>gate</em> de decisão</h2>
+      <p class="lead" style="color:var(--text)">Esta proposta trata só da Fase 1. As fases seguintes ganham prazo e valor exatos no plano de ação — e só avançam com o seu aval.</p>
+    </div>
+    <div class="road">
+      <div class="road-card active rv">
+        <span class="road-badge">Esta proposta</span>
+        <span class="road-phase">Fase 1 · Agora</span>
+        <h3>Diagnóstico &amp; plano de ação</h3>
+        <p>Mapear o ecossistema, diagnosticar a fragmentação, desenhar a arquitetura de dados e entregar o plano com prazos e valores.</p>
+        <div class="road-meta">Escopo fechado · 4 a 6 semanas · sem mensalidade</div>
+      </div>
+      <div class="road-card rv">
+        <span class="road-phase">Fase 2 · Depois do aval</span>
+        <h3>Integração &amp; base única</h3>
+        <p>Implementar a integração dos sistemas, a chave única do associado, a esteira de ETL e a carga diária para o datalake.</p>
+        <div class="road-meta">Escopo, prazo e valor definidos na Fase 1</div>
+      </div>
+      <div class="road-card rv">
+        <span class="road-phase">Fase 3 · Sobre a base pronta</span>
+        <h3>Programa de CRM</h3>
+        <p>Com o dado unificado e confiável, ativar relacionamento, cross-sell, clube e retenção dirigidos por comportamento real.</p>
+        <div class="road-meta">Habilitada pelas fases anteriores</div>
+      </div>
+    </div>
+    <p class="gate rv">Ao fim da Fase 1, o Grupo decide: <b>aprova o avanço para a Fase 2 — ou não.</b> Sem compromisso antecipado com o que vem depois.</p>
+  </div>
+</section>
+
+<!-- ── O QUE A BASE DESTRAVA (ondas futuras) ── -->
+<section class="s-ice2" id="destrava">
+  <div class="inner">
+    <div class="s-head rv">
+      <span class="kicker">Depois da base pronta</span>
+      <h2>O que a base unificada <em>destrava</em></h2>
+      <p class="lead">A Fase 1 é a fundação. Estas são as ondas que ela torna possíveis — cada uma já mapeada nas nossas conversas com o Grupo. Nenhuma custa nada nesta fase; escopo, prazo e valor de cada uma saem no plano de ação.</p>
+    </div>
+    <div class="waves3">
+      <div class="deliv rv">
+        <div class="deliv-num">10,4 mil</div>
+        <h3>Atendimento &amp; cobrança 24×7</h3>
+        <p>Boa parte das 10.400 ligações perdidas por mês é 2ª via, status e adimplência — que um agente resolve 24h, sem fila. Sobre a base unificada, o volume que hoje pesaria no Zenvia (custo por conversa) passa a ser atendido por uma fração do custo, com transbordo humano só no que precisa de gente.</p>
+      </div>
+      <div class="deliv rv">
+        <div class="deliv-num">140 mil</div>
+        <h3>Ativação da carteira &amp; Clube</h3>
+        <p>São 140 mil associados e apenas 27 mil com cadastro completo hoje. Com o dado unificado, cross-sell, clube de benefícios e carteirinha digital (validação por CPF em segundos) passam a ser dirigidos por comportamento real — e cada ponto de atendimento vira ponto de venda e retenção.</p>
+      </div>
+      <div class="deliv rv">
+        <div class="deliv-num">800</div>
+        <h3>Conversão de leads · Porto Velho</h3>
+        <p>800 leads em 4 dias de blitz mostram um canal que funciona. Um agente que responde 24h, qualifica e devolve o lead aquecido ao vendedor — integrado a RD Station e Plumes — fecha a lacuna de resposta fora do horário.</p>
+      </div>
+    </div>
+    <p class="rv" style="text-align:center;color:#67797b;font-size:.86rem;line-height:1.7;max-width:720px;margin:26px auto 0;">Cada onda parte do que a Fase 1 deixa pronto — não recomeça do zero. A priorização (por exemplo, integrar primeiro as clínicas, hoje a maior fonte de dado ausente) entra no plano de ação.</p>
+  </div>
+</section>
+
+<!-- ── INVESTIMENTO ── -->
+<section class="s-ice" id="investimento">
+  <div class="inner">
+    <div class="s-head rv">
+      <span class="kicker">Investimento</span>
+      <h2>A Fase 1, de forma <em>fechada</em></h2>
+      <p class="lead">Um valor único para toda a frente de diagnóstico e plano de ação. Sem mensalidade nesta fase — a recorrência só entra quando houver algo em operação, nas fases seguintes.</p>
+    </div>
+    <div class="inv-wrap">
+      <div class="inv-scope rv">
+        <h3>O que está incluído</h3>
+        <div class="sub">Fase 1 · Diagnóstico &amp; plano de ação · 4 a 6 semanas · SP + RO</div>
+        <ul>
+          <li>Mapa completo do ecossistema de sistemas e dados</li>
+          <li>Diagnóstico de fragmentação, qualidade e duplicidade</li>
+          <li>Arquitetura-alvo: chave única, ETL e carga para datalake</li>
+          <li>Recomendação de solução de datalake com estimativa de custo</li>
+          <li>Workstream de governança, base legal e LGPD (dado anonimizado/pseudonimizado desde o início)</li>
+          <li>Plano de ação faseado com prazos e investimento das próximas ondas</li>
+        </ul>
+      </div>
+      <div class="inv-price rv">
+        <span class="tag">Investimento da Fase 1</span>
+        <div class="big">R$ 53.000,00</div>
+        <p class="draftline">Valor fechado para toda a Fase 1 — diagnóstico, arquitetura e plano de ação. Sem surpresas ao longo do caminho.</p>
+        <div class="terms">
+          <b>Prazo:</b> 4 a 6 semanas, a partir da liberação dos acessos<br>
+          <b>Pagamento:</b> 50% na assinatura · 50% na entrega do plano de ação<br>
+          <b>Sem mensalidade</b> nesta fase
+        </div>
+      </div>
+    </div>
+    <div class="inv-note rv">
+      <p><b>Custos de terceiros, à parte e com transparência.</b> A solução de datalake e a nuvem que a hospeda têm custo de infraestrutura recorrente, pago direto ao fornecedor. O diagnóstico da Fase 1 traz a estimativa para o Grupo entrar na Fase 2 sem surpresas.</p>
+      <p>Eventuais licenças ou upgrades de plano dos sistemas atuais (ex.: acesso a histórico) também são repassados a preço de fornecedor, quando necessários.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── GARANTIA ── -->
+<section class="s-ice2">
+  <div class="inner">
+    <div class="guar rv">
+      <div>
+        <span class="kicker">Garantia</span>
+        <h2>Entregamos clareza —<br>ou ficamos até <em>ter</em></h2>
+        <p>Nada de entregar um relatório e sumir. Se ao fim da Fase 1 algum entregável combinado não estiver claro o suficiente para o Grupo decidir o próximo passo com segurança, a NewScale continua trabalhando — sem cobrança adicional — até estar redondo.</p>
+      </div>
+      <div class="guar-right">
+        <div class="guar-item">Escopo e entregáveis definidos em conjunto</div>
+        <div class="guar-item">Um plano de ação que serve para decidir, não para engavetar</div>
+        <div class="guar-item">Ganhou aprovação ou não, o mapa fica com o Grupo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── POR QUE NEWSCALE ── -->
+<section class="s-ice" id="porque">
+  <div class="inner">
+    <div class="rv">
+      <span class="kicker">Por que a NewScale</span>
+      <p class="why-headline">Método antes de ferramenta.<br>Resultado antes de <em>hype</em>.</p>
+    </div>
+    <div class="quote rv">
+      <p>"Cada projeto começa pela conversa — não pelo contrato. A gente entende como a operação funciona hoje, quais as regras de negócio, o que a equipe precisa. Só depois constrói. E depois que entrega, a gente fica — otimizando, ajustando e evoluindo junto com o seu negócio."</p>
+      <div class="who">Bruna Santanna · Co-fundadora, NewScale Consulting</div>
+    </div>
+    <span class="kicker rv" style="margin-bottom:20px;">Como trabalhamos</span>
+    <div class="met">
+      <div class="met-card on rv"><div class="met-n">01</div><div class="met-name">Consultoria sistêmica</div><div class="met-desc">Mergulho na operação de marketing, vendas e dados antes de qualquer construção.</div><span class="met-flag">É aqui que começa a Fase 1</span></div>
+      <div class="met-card on rv"><div class="met-n">02</div><div class="met-name">Roadmap faseado</div><div class="met-desc">Plano priorizando o que traz mais resultado, com gates de decisão.</div><span class="met-flag">Entregável da Fase 1</span></div>
+      <div class="met-card rv"><div class="met-n">03</div><div class="met-name">Implementação integrada</div><div class="met-desc">Integração de sistemas e criação da esteira de dados.</div></div>
+      <div class="met-card rv"><div class="met-n">04</div><div class="met-name">Treinamento das equipes</div><div class="met-desc">O time do Grupo assume o volante do novo processo.</div></div>
+      <div class="met-card rv"><div class="met-n">05</div><div class="met-name">KPIs acompanhados</div><div class="met-desc">Métricas definidas em conjunto para validar o ganho.</div></div>
+      <div class="met-card rv"><div class="met-n">06</div><div class="met-name">Sustentação contínua</div><div class="met-desc">Monitoramento e evolução depois do go-live.</div></div>
+    </div>
+    <span class="kicker rv" style="margin-bottom:20px;">Quem conduz</span>
+    <div class="founders">
+      <div class="founder rv">
+        <div class="founder-photo"><span>BS</span><img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG" alt="Bruna Santanna" loading="lazy" style="object-position:center 28%" onerror="this.remove()"></div>
+        <div class="founder-body">
+          <div class="name">Bruna Santanna</div>
+          <div class="role">Co-fundadora</div>
+          <div class="bio">ESPM + MBA USP. Empresária há 10+ anos e mentora de IA no programa Potenc.IA (OLX, Magalu, B3, CI&amp;T). Passagens por SulAmérica, Whirlpool e Blackbox AI. Implementa IA no próprio negócio todos os dias — só vende o que usa.</div>
+          <div class="tags"><span class="ftag">SulAmérica</span><span class="ftag">Whirlpool</span><span class="ftag">Blackbox AI</span><span class="ftag">Potenc.IA</span></div>
+        </div>
+      </div>
+      <div class="founder rv">
+        <div class="founder-photo"><span>BV</span><img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/BRUNO-VARELLA-PQ.jpeg" alt="Bruno Varella" loading="lazy" style="object-position:center 28%" onerror="this.remove()"></div>
+        <div class="founder-body">
+          <div class="name">Bruno Varella</div>
+          <div class="role">Co-fundador</div>
+          <div class="bio">ESPM. 17+ anos em Marketing, Produto e Novos Negócios, com passagens por Warner Bros. Discovery e Natura &amp; Co. Já implantou Agentes de IA em redes de franquias com 700+ unidades.</div>
+          <div class="tags"><span class="ftag">Warner Bros.</span><span class="ftag">Natura &amp; Co.</span><span class="ftag">700+ franquias</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="s-ice" id="faq">
+  <div class="inner">
+    <div class="s-head rv" style="text-align:center;margin-inline:auto;">
+      <span class="kicker">Perguntas diretas</span>
+      <h2>O que a diretoria vai <em>querer saber</em></h2>
+    </div>
+    <div class="faq rv">
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q"><span>Por que diagnosticar antes de já implementar o CRM?</span><span class="faq-ic">+</span></div>
+        <div class="faq-a">Porque um CRM só entrega resultado sobre dado unificado e confiável. Partir para o relacionamento com bases fragmentadas e cadastros incompletos gera retrabalho e decisões sobre números errados. A Fase 1 constrói a fundação — e evita gastar na frente o que teria de ser refeito depois.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q"><span>Vocês vão trocar os sistemas que já funcionam?</span><span class="faq-ic">+</span></div>
+        <div class="faq-a">Não — trocar sistemas não é o objetivo deste projeto. A proposta é integrar o que já funciona, não substituir: iVertex, Pegasus, Zenvia e os demais seguem operando, e o que desenhamos é a camada que faz todos conversarem e alimentarem uma fonte única, sem interromper nenhuma operação. A única ressalva fica a cargo do diagnóstico: se identificarmos que algum sistema está tão defasado a ponto de inviabilizar a evolução da base unificada, essa constatação — com a recomendação do melhor caminho — entra no plano de ação como parte desta fase consultiva. Nada se troca por padrão; uma eventual substituição só seria sugerida, com justificativa técnica, se for a única forma de destravar o projeto — e a decisão final é sempre do Grupo.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q"><span>Onde ficam os dados e como fica a LGPD?</span><span class="faq-ic">+</span></div>
+        <div class="faq-a">Dados de plano funerário e de saúde são pessoais sensíveis, e por isso a governança e a LGPD entram como um workstream do diagnóstico — não um apêndice. Na Fase 1 tratamos privacidade e segurança já no desenho da arquitetura: base legal para cada uso do dado, minimização (só centralizar o que tem finalidade), segurança do datalake (controle de acesso, criptografia e segregação do dado sensível) e regras de finalidade e retenção — e o dado já é tratado de forma anonimizada ou pseudonimizada desde a primeira etapa do diagnóstico. Um ponto ganha destaque: para ativar a base — cross-sell, clube, campanhas — é preciso base legal válida, e o diagnóstico já deixa isso endereçado. Importante: esta fase entrega privacidade por design e recomendações técnicas; a adequação jurídica formal (nomeação de DPO, política de privacidade, contratos com fornecedores) segue com o Grupo, e apontamos onde acioná-la.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q"><span>Quanto vai custar a infraestrutura do datalake?</span><span class="faq-ic">+</span></div>
+        <div class="faq-a">A infraestrutura de nuvem que hospeda o datalake tem custo recorrente, pago direto ao fornecedor. O diagnóstico traz a estimativa desse custo junto com a recomendação da solução, para que a decisão de avançar para a Fase 2 seja tomada com o número na mão.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q"><span>E se, ao fim da Fase 1, decidirmos não avançar?</span><span class="faq-ic">+</span></div>
+        <div class="faq-a">Tudo bem. O gate de decisão é explícito: o Grupo aprova a Fase 2 ou não. O mapa do ecossistema, o diagnóstico e o plano de ação ficam com vocês de qualquer forma — são ativos úteis mesmo que a implementação seja conduzida em outro momento ou de outra forma.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRÓXIMOS PASSOS ── -->
+<section class="s-dark" id="proximos">
+  <div class="inner">
+    <div class="s-head rv">
+      <span class="kicker">Próximos passos</span>
+      <h2>Do aceite ao <em>plano na mão</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step rv"><div class="step-n">1</div><div><div class="step-p">Semana 1</div><h3>Mapa do ecossistema e preparação da auditoria</h3><p>Alinhamos escopo, acessos e interlocutores; mapeamos sistema a sistema — fornecedor, forma de acesso e onde o dado do associado vive em cada ponto — e definimos a regra de anonimização.</p></div></div>
+      <div class="step rv"><div class="step-n">2</div><div><div class="step-p">Semana 2</div><h3>Diagnóstico e desenho da chave única</h3><p>Profiling de qualidade e duplicidade, decisão entre chave determinística e probabilística e quantificação do gap dos 27k / 140k.</p></div></div>
+      <div class="step rv"><div class="step-n">3</div><div><div class="step-p">Semana 3</div><h3>Arquitetura-alvo e plataforma</h3><p>Desenho da esteira de ETL e da carga para o datalake, e recomendação de plataforma com estimativa de custo (TCO).</p></div></div>
+      <div class="step rv"><div class="step-n">4</div><div><div class="step-p">Semana 4</div><h3>Governança, LGPD e plano de ação</h3><p>Blueprint de governança e LGPD e o plano faseado com prazos, investimento e priorização das ondas. É a hora do gate de decisão.</p></div></div>
+    </div>
+    <p class="steps-close rv">Você não está sozinho no diagnóstico — e também não estará na hora de decidir o que vem depois.</p>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="s-ice2" id="cta">
+  <div class="inner">
+    <div class="cta-inner rv">
+      <span class="cta-valid"><span class="cta-dot"></span>Proposta válida até 12/ago/2026</span>
+      <h2>Jeffinho, vamos<br>construir a <em>base</em>.</h2>
+      <p>A base de 140 mil associados do Grupo Angelus é rara. Esta é a fase que a transforma de um arquivo espalhado em um ativo único — pronto para monetizar e reter.</p>
+      <div class="cta-btns">
+        <a class="btn btn-terra" href="https://wa.me/5511981982254?text=Jeffinho%20aqui%20do%20Grupo%20Angelus%20-%20quero%20avan%C3%A7ar%20com%20a%20Fase%201%20do%20diagn%C3%B3stico%20de%20dados." target="_blank" rel="noopener">Quero avançar com a Fase 1</a>
+        <a class="btn btn-ghost" href="https://wa.me/5511981982254?text=Jeffinho%20aqui%20do%20Grupo%20Angelus%20-%20tenho%20d%C3%BAvidas%20sobre%20a%20proposta%20do%20diagn%C3%B3stico." target="_blank" rel="noopener">Tenho uma dúvida</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">NewScale<span> Consulting</span></div>
+  <div class="footer-date">Proposta Executiva · Grupo Angelus<br>Emitida em 28/jul/2026 · válida até 12/ago/2026</div>
+</footer>
+
+<script>
+  // Navbar já é sticky; nada a alternar. Reveal on scroll:
+  (function () {
+    var els = document.querySelectorAll('.rv');
+    if (!('IntersectionObserver' in window)) { els.forEach(function(e){e.classList.add('in');}); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en, i) {
+        if (en.isIntersecting) { setTimeout(function(){ en.target.classList.add('in'); }, (i % 6) * 70); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(function (e) { io.observe(e); });
+    setTimeout(function () { els.forEach(function (e) { e.classList.add('in'); }); }, 2500);
+    var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (mq.matches) els.forEach(function (e) { e.classList.add('in'); });
+  })();
+</script>
+
+</body>
+</html>
