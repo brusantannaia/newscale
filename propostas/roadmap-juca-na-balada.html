@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roadmap — Juca na Balada &amp; NewScale</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="bingbot" content="noindex, nofollow">
+<meta property="og:title" content="Roadmap de Transformação: Juca na Balada & NewScale Consulting">
+<meta property="og:description" content="Primeiro esboço das frentes de IA da Juca na Balada. Resumos e ideias do dia 01.">
+<meta property="og:image" content="https://raw.githubusercontent.com/brusantannaia/newscale/main/newscale-og-cover.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Roadmap de Transformação: Juca na Balada & NewScale Consulting">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/brusantannaia/newscale/main/newscale-og-cover.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Base — preto da Juca + petróleo da NewScale nas superfícies */
+  --bg:#0A0A0A; --bg-2:#101616; --ink:#14373C; --ink-2:#1A4449;
+  /* Acentos — laranja da Juca (ação) + terracota da NewScale (premium) */
+  --orange:#FF671B; --orange-d:#D4530F; --orange-l:#FF8A4D; --orange-dk:#B0450C;
+  --terra:#B06E4A; --tl:#C4835E; --terra-d:#985A3B;
+  /* Claros */
+  --cream:#F4F3EF; --ice:#F4F3EF; --ice-2:#FAFAF8;
+  --text:rgba(255,255,255,.8); --muted:rgba(255,255,255,.55); --line:rgba(255,255,255,.11);
+  --ok:#7fd1a0; --ok-d:#2F7A52; --dk-text:#26312F; --dk-muted:#4E5C5A;
+  --glow:0 0 0 1px rgba(255,103,27,.3), 0 14px 44px rgba(255,103,27,.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-weight:400;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;-webkit-tap-highlight-color:rgba(255,103,27,.25)}
+h1,h2,h3,.anton{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;line-height:.92;letter-spacing:-.01em}
+em{font-style:normal;color:var(--orange)}
+b,strong{font-weight:600;color:#fff}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--orange);color:#0A0A0A}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px;position:relative;z-index:2}
+section{position:relative;z-index:2}
+.kicker{font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;color:var(--orange);margin-bottom:14px;display:block}
+.kicker.dk{color:var(--orange-dk)}
+.lead{max-width:48ch;font-size:1.02rem;font-weight:300}
+.lead.dk{color:var(--dk-text)}
+h2{font-size:clamp(2rem,5.4vw,3.2rem);color:#fff;margin-bottom:16px}
+.ice h2,.ice-2 h2{color:#14373C}
+.ice{background:var(--ice);color:var(--dk-text)}
+.ice-2{background:var(--ice-2);color:var(--dk-text)}
+.pad{padding:84px 0}
+.pill{display:inline-block;font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--tl);background:rgba(176,110,74,.14);border:1px solid rgba(176,110,74,.28);border-radius:100px;padding:4px 12px}
+.pill.dk{color:var(--orange-dk);background:rgba(255,103,27,.1);border-color:rgba(255,103,27,.3)}
+.pill.solid{background:var(--orange);border-color:var(--orange);color:#0A0A0A}
+.pill.solid-ok{background:var(--ok-d);border-color:var(--ok-d);color:#fff}
+.seal{display:inline-flex;align-items:center;gap:9px;border:1.5px dashed rgba(255,103,27,.5);border-radius:100px;padding:9px 20px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--orange-dk);background:rgba(255,103,27,.07);margin-bottom:18px}
+.seal .dot{background:var(--orange)}
+.seal.lt{color:var(--orange-l);border-color:rgba(255,103,27,.45);background:rgba(255,103,27,.1)}
+.head-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.head-row .kicker,.head-row .seal{margin-bottom:0}
+.seal.sm{padding:6px 15px;font-size:.63rem}
+.btn{display:inline-block;border-radius:100px;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;padding:14px 26px;transition:.25s;font-family:'Inter'}
+.btn-terra{background:var(--orange);color:#0A0A0A}
+.btn-terra:hover{background:var(--orange-l);transform:translateY(-2px);box-shadow:0 12px 32px rgba(255,103,27,.42)}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--orange);background:rgba(255,103,27,.08)}
+
+header{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;padding:15px 0;gap:18px}
+.hd img{height:25px}
+.hd-meta{font-size:.7rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.hd-meta b{color:var(--orange);font-weight:700}
+@media(max-width:820px){.hd-meta{display:none}}
+
+/* HERO */
+.hero{padding:76px 0 64px;background:linear-gradient(155deg,#000 0%,#0A0A0A 38%,#0f2427 100%);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;top:-190px;right:-150px;width:660px;height:660px;background:radial-gradient(circle,rgba(255,103,27,.2),transparent 62%);pointer-events:none}
+.hero h1{font-size:clamp(2.8rem,7.4vw,5rem);color:#fff;margin:8px 0 20px;max-width:15ch}
+.terra{color:var(--orange)}
+
+/* STATS */
+.stats-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat{background:var(--bg-2);padding:30px 20px;text-align:center}
+.stat-n{font-family:'Anton';font-size:clamp(1.9rem,5.6vw,2.7rem);color:var(--orange);line-height:1}
+.stat-l{font-size:.71rem;color:var(--muted);margin-top:8px;line-height:1.4}
+@media(max-width:780px){.stats-g{grid-template-columns:repeat(2,1fr)}}
+
+/* GANHOS RÁPIDOS — faixa paralela, fora da sequência */
+.quick{margin-top:44px;background:#fff;border:1.5px dashed rgba(255,103,27,.5);border-radius:16px;padding:28px 30px}
+.quick-h{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.quick-w{font-size:.83rem;color:var(--dk-muted);font-weight:500}
+.quick-g{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.qi{padding-left:16px;border-left:2px solid rgba(255,103,27,.35)}
+.qi.ok{border-left-color:var(--ok-d)}
+.qi h4{font-size:.94rem;color:#14373C;font-weight:700;margin-bottom:4px;line-height:1.25}
+.qi p{font-size:.79rem;color:var(--dk-muted)}
+.qi.ok p{color:var(--ok-d);font-weight:600}
+@media(max-width:900px){.quick-g{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.quick-g{grid-template-columns:1fr}}
+
+/* MAPA */
+.track{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;position:relative;margin-top:48px}
+.track::before{content:"";position:absolute;top:15px;left:6%;right:6%;height:2px;background:linear-gradient(90deg,var(--ok-d),var(--orange) 35%,rgba(255,103,27,.3));z-index:0}
+.wave{position:relative;z-index:1}
+.node{width:32px;height:32px;border-radius:50%;background:var(--ice);border:2px solid var(--orange);display:flex;align-items:center;justify-content:center;font-family:'Anton';font-size:.82rem;color:var(--orange-dk);margin-bottom:20px}
+.node.ok{border-color:var(--ok-d);color:var(--ok-d)}
+.wave-h{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:6px}
+.wave h3{font-size:1.15rem;color:#14373C}
+.wave-w{font-size:.75rem;color:var(--dk-muted);margin-bottom:16px;display:block;font-weight:500}
+.wave ul{list-style:none;display:grid;gap:11px}
+.wave li{font-size:.88rem;color:var(--dk-text);line-height:1.45;padding-left:19px;position:relative;font-weight:400}
+.wave li::before{content:"";position:absolute;left:0;top:6px;width:8px;height:8px;border-radius:50%;border:1.5px solid rgba(255,103,27,.6)}
+.wave li.ok::before{background:var(--ok-d);border-color:var(--ok-d)}
+.wave li small{display:block;font-size:.79rem;color:var(--dk-muted);margin-top:3px;line-height:1.4;font-weight:400}
+@media(max-width:900px){
+  .track{grid-template-columns:1fr;gap:34px;margin-left:16px}
+  .track::before{left:-1px;top:0;bottom:0;right:auto;width:2px;height:auto;background:linear-gradient(180deg,var(--ok-d),var(--orange) 35%,rgba(255,103,27,.3))}
+  .node{margin-left:-17px;margin-bottom:14px}
+}
+
+/* QUEM FAZ O QUÊ */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px}
+.sp{border-radius:16px;padding:32px;border:1px solid rgba(20,55,60,.12);background:#fff;transition:.25s}
+.sp:hover{transform:translateY(-3px);box-shadow:6px 6px 0 rgba(20,55,60,.12)}
+.sp.build{background:linear-gradient(155deg,var(--ink),#0d1f22);border-color:rgba(255,103,27,.25);color:var(--text);box-shadow:var(--glow)}
+.sp-h{display:flex;align-items:center;gap:11px;margin-bottom:8px}
+.sp-h svg{width:24px;height:24px;color:var(--orange-dk);flex-shrink:0}
+.sp.build .sp-h svg{color:var(--orange)}
+.sp h3{font-size:1.3rem;color:#14373C}
+.sp.build h3{color:#fff}
+.sp-w{font-size:.79rem;color:var(--dk-muted);display:block;margin-bottom:22px;font-weight:500}
+.sp.build .sp-w{color:var(--muted)}
+.sp ul{list-style:none;display:grid;gap:12px}
+.sp li{font-size:.88rem;color:var(--dk-text);line-height:1.45;padding-left:20px;position:relative}
+.sp.build li{color:rgba(255,255,255,.86)}
+.sp li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:1.5px;background:var(--orange-dk)}
+.sp.build li::before{background:var(--orange)}
+.rule{margin-top:26px;padding:22px 28px;border-radius:14px;background:rgba(255,103,27,.09);border:1px solid rgba(255,103,27,.26);font-size:.95rem;color:var(--dk-text)}
+@media(max-width:900px){.split{grid-template-columns:1fr}}
+
+/* BLOCO ESCURO */
+.dark{background:linear-gradient(170deg,#000,#0A0A0A 40%,#0f2427);position:relative;overflow:hidden}
+.dark::after{content:"";position:absolute;bottom:-220px;right:-140px;width:600px;height:600px;background:radial-gradient(circle,rgba(255,103,27,.15),transparent 62%);pointer-events:none}
+
+/* CHAIN */
+.chain{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:44px}
+.ch{background:var(--ink);border:1px solid var(--line);border-radius:14px;padding:22px 18px;position:relative;transition:.25s;color:var(--text)}
+.ch:hover{background:var(--ink-2);transform:translateY(-3px);box-shadow:var(--glow)}
+.ch svg{width:26px;height:26px;color:var(--orange);margin-bottom:14px}
+.ch h4{font-family:'Anton';font-size:.95rem;color:#fff;text-transform:uppercase;margin-bottom:6px;letter-spacing:.01em}
+.ch p{font-size:.79rem;color:var(--muted);line-height:1.5;font-weight:400}
+.ch::after{content:"";position:absolute;top:50%;right:-9px;width:6px;height:6px;border-top:1.5px solid rgba(255,103,27,.65);border-right:1.5px solid rgba(255,103,27,.65);transform:rotate(45deg)}
+.ch:last-child::after{display:none}
+@media(max-width:900px){.chain{grid-template-columns:1fr 1fr}.ch::after{display:none}}
+@media(max-width:520px){.chain{grid-template-columns:1fr}}
+
+/* NÚMEROS DA REUNIÃO */
+.numviz{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;margin-top:52px;padding-top:44px;border-top:1px solid var(--line)}
+.numviz h3{font-size:clamp(1.4rem,3.4vw,2rem);color:#fff;margin:12px 0 12px}
+.numviz p{font-size:.95rem;color:var(--text);font-weight:300;max-width:44ch}
+.nvl{display:grid;gap:10px}
+.nv{background:rgba(255,255,255,.045);border:1px solid var(--line);border-left:2px solid var(--orange);border-radius:10px;padding:15px 18px;font-size:.87rem;color:rgba(255,255,255,.86);transition:.22s}
+.nv:hover{background:rgba(255,103,27,.1);border-color:rgba(255,103,27,.32);border-left-color:var(--orange)}
+.nv b{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.11em;color:var(--orange);font-weight:800;margin-bottom:4px}
+@media(max-width:900px){.numviz{grid-template-columns:1fr;gap:26px}}
+
+/* ANTES x DEPOIS */
+.ba{display:grid;grid-template-columns:1fr auto 1fr;gap:26px;align-items:center;margin-top:44px}
+.ba-card{background:#101616;border:1px solid var(--line);border-radius:16px;padding:26px;color:#fff}
+.ba-card.now{background:linear-gradient(155deg,#1d4a4f,#14373C 60%);border-color:rgba(255,103,27,.32);box-shadow:var(--glow)}
+.ba-tag{font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.6);margin-bottom:15px;display:block}
+.ba-card.now .ba-tag{color:var(--orange)}
+.ba-line{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line);font-size:.85rem;color:rgba(255,255,255,.88);font-weight:400}
+.ba-line:last-child{border-bottom:none}
+.ba-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.32);margin-top:7px;flex-shrink:0}
+.ba-card.now .ba-dot{background:var(--orange)}
+.ba-arrow{font-family:'Anton';font-size:1.8rem;color:var(--orange)}
+@media(max-width:900px){.ba{grid-template-columns:1fr;gap:14px}.ba-arrow{transform:rotate(90deg);text-align:center}}
+
+/* DASHBOARD */
+.dash{background:linear-gradient(150deg,var(--ink),#0d1f22);border-radius:16px;padding:24px;box-shadow:0 40px 90px -34px rgba(0,0,0,.85);border:1px solid rgba(255,103,27,.2);margin-top:40px}
+.dash-h{display:flex;align-items:center;gap:9px;padding-bottom:15px;border-bottom:1px solid var(--line);margin-bottom:16px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--orange);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.dash-h span{font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:var(--orange)}
+.dash-row{display:grid;grid-template-columns:1.7fr .6fr .6fr 1.1fr;gap:14px;padding:13px 15px;border-radius:9px;font-size:.82rem;align-items:center;margin-bottom:6px}
+.dash-row.head{color:var(--muted);font-size:.64rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;padding-bottom:4px;margin-bottom:2px}
+.dash-row.on{background:rgba(255,103,27,.14);border:1px solid rgba(255,103,27,.32)}
+.dash-row.off{background:rgba(255,255,255,.04)}
+.dash-row b{color:#fff;font-weight:600}
+.dash-row .sub{color:var(--muted);font-weight:400}
+.bw{height:7px;background:rgba(255,255,255,.09);border-radius:100px;overflow:hidden;display:block}
+.bar{display:block;height:100%;border-radius:100px;background:linear-gradient(90deg,var(--orange-d),var(--orange-l))}
+.bar.ok{background:linear-gradient(90deg,var(--ok-d),var(--ok))}
+.dash-f{display:flex;align-items:center;gap:8px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:.74rem;color:var(--muted)}
+.dash-f .dot{background:#4ade80}
+@media(max-width:780px){.dash-row{grid-template-columns:1.5fr .6fr 1fr;gap:10px;font-size:.76rem}.dash-row>*:nth-child(3){display:none}}
+
+/* PASSOS */
+.steps{display:grid;gap:12px;margin-top:40px}
+.st{background:#fff;border:1px solid rgba(20,55,60,.1);border-radius:14px;padding:22px 26px;display:grid;grid-template-columns:46px 1fr auto;gap:20px;align-items:center;transition:.25s}
+.st:hover{transform:translateX(4px);box-shadow:6px 6px 0 rgba(20,55,60,.1)}
+.st-n{font-family:'Anton';font-size:1.5rem;color:var(--orange-d)}
+.st h4{font-size:1.02rem;color:#14373C;font-weight:700;margin-bottom:3px}
+.st p{font-size:.83rem;color:var(--dk-muted)}
+@media(max-width:780px){.st{grid-template-columns:34px 1fr;gap:14px;padding:20px}.st>.pill{grid-column:2}}
+
+/* CTA */
+.cta{background:linear-gradient(165deg,#000,#0A0A0A 45%,#12333a);position:relative;overflow:hidden;text-align:center;padding:88px 0}
+.cta::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:720px;height:720px;background:radial-gradient(circle,rgba(255,103,27,.22),transparent 62%);pointer-events:none}
+.cta h2{font-size:clamp(2.2rem,6.4vw,3.8rem);margin-bottom:18px}
+.cta .lead{margin:0 auto 30px}
+.cta-b{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+footer{background:#000;border-top:1px solid var(--line);padding:38px 0;text-align:center}
+footer img{height:22px;margin-bottom:14px;opacity:.85}
+footer p{font-size:.75rem;color:var(--muted)}
+.cobrand{font-size:.68rem;text-transform:uppercase;letter-spacing:.18em;color:var(--orange);font-weight:700;margin-bottom:16px}
+
+.rv{opacity:0;transform:translateY(20px);transition:.65s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<header>
+  <div class="wrap hd">
+    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale">
+    <div class="hd-meta">Juca na Balada <b>&times;</b> NewScale &middot; 31/jul/2026</div>
+    <a href="#passos" class="btn btn-terra">Próximos passos</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap rv">
+    <span class="seal lt"><span class="dot"></span>Pré-trabalho &middot; resumo e ideias</span>
+    <h1>O primeiro esboço do <span class="terra">mapa</span></h1>
+    <p class="lead">Fábio, o dia 01 cobriu Produto e Marketing. Isto é um apanhado do que ouvimos e das ideias que surgiram — para você olhar, cortar e acrescentar. O plano fechado vem depois, com o restante das áreas mapeadas.</p>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-g">
+  <div class="stat rv"><div class="stat-n">02</div><div class="stat-l">áreas ouvidas, de 5</div></div>
+  <div class="stat rv"><div class="stat-n">16</div><div class="stat-l">ideias levantadas</div></div>
+  <div class="stat rv"><div class="stat-n">02</div><div class="stat-l">skills já rodando</div></div>
+  <div class="stat rv"><div class="stat-n">03</div><div class="stat-l">ondas no esboço</div></div>
+</div>
+
+<!-- O MAPA -->
+<section class="ice pad">
+  <div class="wrap">
+    <div class="rv">
+      <div class="head-row">
+        <span class="kicker dk">O mapa</span>
+        <span class="seal sm"><span class="dot"></span>Em construção</span>
+      </div>
+      <h2>Da <em>escuta</em> ao painel único</h2>
+    </div>
+
+    <div class="track">
+      <div class="wave rv">
+        <div class="node ok">00</div>
+        <div class="wave-h"><h3>Mapeamento</h3><span class="pill solid-ok">Em curso</span></div>
+        <span class="wave-w">Entender antes de construir</span>
+        <ul>
+          <li class="ok">Dia 01 · Produto e Marketing<small>Concluído em 27/jul</small></li>
+          <li>Dia 02 · Vendas e Financeiro</li>
+          <li>Rotinas dos donos e liderança</li>
+          <li>Reunião técnica com a Abil Funnels</li>
+          <li>Inventário de canais de marketing</li>
+        </ul>
+      </div>
+
+      <div class="wave rv">
+        <div class="node">01</div>
+        <div class="wave-h"><h3>O motor</h3><span class="pill solid">Núcleo</span></div>
+        <span class="wave-w">Onde o ganho de escala aparece</span>
+        <ul>
+          <li>Descritivo vira landing page<small>Publicada e indexada no Google</small></li>
+          <li>Tráfego orgânico por busca<small>Cada produto passa a captar sozinho, sem verba</small></li>
+          <li>Ads apontando direto para a página<small>Sem intermediário, com medição até a venda</small></li>
+          <li>Planejamento de produto assistido<small>Custos, hotéis, cotação, disparo</small></li>
+          <li>Pacote de ativação de marketing<small>Posts, e-mail, vídeo, prova social, LP</small></li>
+          <li>Produto e marketing encadeados</li>
+        </ul>
+      </div>
+
+      <div class="wave rv">
+        <div class="node">02</div>
+        <div class="wave-h"><h3>Inteligência</h3><span class="pill solid">Virada de chave</span></div>
+        <span class="wave-w">Decisão com número, não com feeling</span>
+        <ul>
+          <li>Atribuição: da campanha até a venda</li>
+          <li>Real contra estimado por produto</li>
+          <li>Pareto e curva ABC do portfólio</li>
+          <li>Painel produto a produto, online</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="quick rv">
+      <div class="quick-h">
+        <span class="pill solid">Ganhos rápidos</span>
+        <span class="quick-w">Não são uma fase — são oportunidades que mapeamos e que podem sair em paralelo, sem esperar a onda anterior fechar.</span>
+      </div>
+      <div class="quick-g">
+        <div class="qi ok"><h4>Skills de marca e descritivo</h4><p>Entregues e rodando</p></div>
+        <div class="qi"><h4>Ata automática das reuniões</h4><p>Gravou, vira ata e pendência</p></div>
+        <div class="qi"><h4>Status semanal montado sozinho</h4><p>Números prontos antes da reunião</p></div>
+        <div class="qi"><h4>Cronograma com alerta</h4><p>Avisa antes de o prazo estourar</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUEM FAZ O QUÊ -->
+<section class="ice-2 pad">
+  <div class="wrap">
+    <div class="rv">
+      <span class="kicker dk">Divisão de responsabilidade</span>
+      <h2>Quem <em>constrói</em> o quê</h2>
+      <span class="seal"><span class="dot"></span>Mapeamento em andamento</span>
+      <p class="lead dk">Esta divisão ainda não está fechada — depende do mapeamento das áreas que faltam. O princípio é este: boa parte o próprio time da Juca passa a tocar depois de capacitado, e é esse o objetivo. O que exige integração entre sistemas fica com a gente.</p>
+    </div>
+
+    <div class="split">
+      <div class="sp rv">
+        <div class="sp-h">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <h3>O time da Juca opera</h3>
+        </div>
+        <span class="sp-w">Autonomia depois da capacitação</span>
+        <ul>
+          <li>Cria e ajusta as skills da própria área</li>
+          <li>Alimenta as pastas de contexto — marca, fotos, histórico, playbook</li>
+          <li>Gera descritivos e peças pelo motor de ativação</li>
+          <li>Roda a gravação da reunião e distribui as pendências</li>
+          <li>Pede análise e cruzamento no dia a dia, sem depender de fila</li>
+          <li>Revisa e aprova o que a IA produz — o humano vira revisor</li>
+        </ul>
+      </div>
+
+      <div class="sp build rv">
+        <div class="sp-h">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3v12M18 9v12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+          <h3>A NewScale constrói</h3>
+        </div>
+        <span class="sp-w">Sistemas robustos de integração</span>
+        <ul>
+          <li>Extração automática do sistema de vendas, sem digitação</li>
+          <li>Atribuição de mídia: pixel, UTM e leitura até o checkout</li>
+          <li>Landing pages de produto publicadas e hospedadas</li>
+          <li>Integração com Meta Ads e Google Ads</li>
+          <li>Encadeamento entre áreas com disparo automático</li>
+          <li>Painel único produto a produto, alimentado sozinho</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rule rv">A régua é simples: <b style="color:#14373C">o que cabe numa conversa com o Claude fica com o time. O que exige dois sistemas conversando fica com a gente.</b> A cada onda essa linha se move — quanto mais a equipe domina, mais coisa migra para o lado de vocês.</div>
+  </div>
+</section>
+
+<!-- GESTÃO / ATA -->
+<section class="dark pad">
+  <div class="wrap">
+    <div class="rv">
+      <span class="kicker">Camada de gestão &middot; ganho rápido</span>
+      <h2>A reunião de segunda vira <em>ata e cobrança</em> sozinha</h2>
+      <p class="lead">Basta gravar. A partir do áudio, sai a ata, saem as pendências com responsável e prazo — e na semana seguinte a cobrança já vem pronta. Nada de alguém anotar durante a reunião.</p>
+    </div>
+
+    <div class="chain">
+      <div class="ch rv">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3"/></svg>
+        <h4>Gravar</h4><p>A reunião semanal, sem ninguém tomando nota.</p>
+      </div>
+      <div class="ch rv">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+        <h4>Transcrever</h4><p>Fala vira texto com marcação de tempo.</p>
+      </div>
+      <div class="ch rv">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 15h6"/></svg>
+        <h4>Ata</h4><p>Decisões, números citados e pontos em aberto.</p>
+      </div>
+      <div class="ch rv">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+        <h4>Pendências</h4><p>Cada tarefa com dono e prazo, distribuída.</p>
+      </div>
+      <div class="ch rv">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <h4>Cobrança</h4><p>Na semana seguinte, o que ficou para trás volta.</p>
+      </div>
+    </div>
+
+    <div class="numviz">
+      <div class="rv">
+        <span class="pill solid">Da mesma reunião</span>
+        <h3>Os números saem da <em>planilha crua</em></h3>
+        <p>A leitura semanal hoje acontece em cima de uma planilha. A mesma informação pode chegar em painel apresentável — com cruzamento de dados e apontamento do que fugiu do padrão, já pronto para discutir.</p>
+      </div>
+      <div class="nvl rv">
+        <div class="nv"><b>Leitura</b>Delta da semana em destaque, não caçado célula por célula</div>
+        <div class="nv"><b>Cruzamento</b>Verba, venda e estoque na mesma leitura, produto a produto</div>
+        <div class="nv"><b>Prioridade</b>Curva ABC e Pareto mostrando onde está o resultado</div>
+        <div class="nv"><b>Apontamento</b>O que saiu da curva vem marcado, com o porquê</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESCRITIVO -->
+<section class="ice-2 pad">
+  <div class="wrap">
+    <div class="rv">
+      <span class="kicker dk">Onda 01 &middot; o item mais pesado</span>
+      <h2>O descritivo deixa de ser <em>arquivo</em></h2>
+    </div>
+    <div class="ba">
+      <div class="ba-card rv">
+        <span class="ba-tag">Hoje</span>
+        <div class="ba-line"><span class="ba-dot"></span><span>Montagem manual no Canva, tabela por tabela</span></div>
+        <div class="ba-line"><span class="ba-dot"></span><span>Parcelamento reajustado todo dia 1º do mês</span></div>
+        <div class="ba-line"><span class="ba-dot"></span><span>Versão nova do arquivo a cada virada de lote</span></div>
+        <div class="ba-line"><span class="ba-dot"></span><span>Distribuição por Drive e aviso no grupo</span></div>
+        <div class="ba-line"><span class="ba-dot"></span><span>Teto de 15 MB para envio no WhatsApp</span></div>
+      </div>
+      <div class="ba-arrow rv">&rarr;</div>
+      <div class="ba-card now rv">
+        <span class="ba-tag">Com a landing page</span>
+        <div class="ba-line"><span class="ba-dot"></span><span>Página gerada a partir do e-mail do gerente</span></div>
+        <div class="ba-line"><span class="ba-dot"></span><span>Parcelamento calculado pelo próprio sistema</span></div>
+        <div class="ba-line"><span class="ba-dot"></span><span>Link único e permanente, preço sempre atual</span></div>
+        <div class="ba-line"><span class="ba-dot"></span><span>Indexa no Google e capta busca orgânica sozinha</span></div>
+        <div class="ba-line"><span class="ba-dot"></span><span>O Ads aponta direto para ela, sem intermediário</span></div>
+        <div class="ba-line"><span class="ba-dot"></span><span>Rastreável: o tráfego pago mede até a venda</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAINEL -->
+<section class="dark pad">
+  <div class="wrap">
+    <div class="rv">
+      <span class="kicker">Onda 02 &middot; destino</span>
+      <h2>Um <em>painel</em>, produto a produto</h2>
+      <p class="lead">Produto, marketing, financeiro e liderança olhando o mesmo número — atualizado sem ninguém digitar.</p>
+    </div>
+    <div class="dash rv">
+      <div class="dash-h"><span class="dot"></span><span>Painel de produtos &middot; exemplo de formato</span></div>
+      <div class="dash-row head"><span>Produto</span><span>Vendido</span><span>Meta</span><span>Avanço</span></div>
+      <div class="dash-row on"><span><b>Produto A</b> <span class="sub">&middot; hospedagem</span></span><span><b>—</b></span><span class="sub">—</span><span class="bw"><span class="bar ok" style="width:88%"></span></span></div>
+      <div class="dash-row off"><span><b>Produto B</b> <span class="sub">&middot; bate-volta</span></span><span><b>—</b></span><span class="sub">—</span><span class="bw"><span class="bar" style="width:64%"></span></span></div>
+      <div class="dash-row off"><span><b>Produto C</b> <span class="sub">&middot; pacote com hotel</span></span><span><b>—</b></span><span class="sub">—</span><span class="bw"><span class="bar" style="width:41%"></span></span></div>
+      <div class="dash-row off"><span><b>Produto D</b> <span class="sub">&middot; internacional</span></span><span><b>—</b></span><span class="sub">—</span><span class="bw"><span class="bar" style="width:23%"></span></span></div>
+      <div class="dash-f"><span class="dot"></span><span>Alimentado pelo sistema de vendas, cruzado com Meta e Google &mdash; sem digitação manual</span></div>
+    </div>
+    <p class="rv" style="text-align:center;font-size:.74rem;color:var(--muted);margin-top:14px">Painel simples só para ilustrar o formato. O desenho real sai depois, com os indicadores que vocês escolherem.</p>
+  </div>
+</section>
+
+<!-- PASSOS -->
+<section class="ice pad" id="passos">
+  <div class="wrap">
+    <div class="rv">
+      <span class="kicker dk">Próximos passos</span>
+      <h2>O que <em>destrava</em> o resto do mapa</h2>
+    </div>
+    <div class="steps">
+      <div class="st rv">
+        <div class="st-n">01</div>
+        <div><h4>Imersão com Vendas</h4><p>Rotina do time comercial, jornada do lead e o repertório de objeções que hoje vive na cabeça das vendedoras.</p></div>
+        <span class="pill dk">A agendar</span>
+      </div>
+      <div class="st rv">
+        <div class="st-n">02</div>
+        <div><h4>Imersão com Financeiro</h4><p>Fechamento, conciliação e a ponte com a estrutura de custos das planilhas de produto.</p></div>
+        <span class="pill dk">A agendar</span>
+      </div>
+      <div class="st rv">
+        <div class="st-n">03</div>
+        <div><h4>Rotinas dos donos</h4><p>Sessão com você e a liderança: guia do dia, acompanhamento de pendências e leitura gerencial.</p></div>
+        <span class="pill dk">A agendar</span>
+      </div>
+      <div class="st rv">
+        <div class="st-n">04</div>
+        <div><h4>Contato da Abil Funnels</h4><p>Precisamos dele para agendar. A conversa define se a plataforma segue, segue parcial ou sai do fluxo.</p></div>
+        <span class="pill dk">Com o Fábio</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap rv">
+    <span class="seal lt"><span class="dot"></span>Pré-trabalho</span>
+    <h2>Isso ainda é <span class="terra">rascunho</span>.</h2>
+    <p class="lead" style="text-align:center">São resumos e ideias do dia 01, não o plano fechado. Falta ouvir vendas, financeiro e a liderança. O que você cortar, corrigir ou acrescentar agora entra na versão final.</p>
+    <div class="cta-b">
+      <a href="https://wa.me/5511971901020?text=Bruna%2C%20li%20o%20esbo%C3%A7o%20do%20roadmap.%20Tenho%20uns%20ajustes." class="btn btn-terra">Mandar ajustes</a>
+      <a href="https://wa.me/5511971901020?text=Bruna%2C%20faltou%20uma%20frente%20no%20esbo%C3%A7o%20do%20roadmap." class="btn btn-ghost">Faltou alguma frente</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cobrand">Juca na Balada &times; NewScale</div>
+    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale">
+    <p>Esboço de roadmap &middot; 31/jul/2026</p>
+    <p style="margin-top:6px;opacity:.6">Pré-trabalho: resumos e ideias da imersão de 27/jul/2026. O plano final vem depois.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els=[].slice.call(document.querySelectorAll('.rv'));
+  if(!('IntersectionObserver'in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(function(e){e.classList.add('in')});return;
+  }
+  var io=new IntersectionObserver(function(en){
+    en.forEach(function(e,i){
+      if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in')},i*60);io.unobserve(e.target)}
+    })
+  },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+  setTimeout(function(){els.forEach(function(e){e.classList.add('in')})},2500);
+})();
+</script>
+</body>
+</html>
