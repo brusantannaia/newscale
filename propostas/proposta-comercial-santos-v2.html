@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Comercial: Comercial Santos & NewScale Consulting</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="bingbot" content="noindex, nofollow">
+
+<meta property="og:title" content="Proposta Comercial: Comercial Santos & NewScale Consulting">
+<meta property="og:description" content="Inteligência de vendas da Comercial Santos puxada do SIAGRI pela IA e entregue pronta no WhatsApp — todo dia, sem extrair planilha.">
+<meta property="og:image" content="https://raw.githubusercontent.com/brusantannaia/newscale/main/newscale-og-cover.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Proposta Comercial: Comercial Santos & NewScale Consulting">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/brusantannaia/newscale/main/newscale-og-cover.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0C2427; --bg-2:#0E2A2E; --ink:#14373C; --ink-2:#1A4449; --green:#435D51;
+  --terra:#B06E4A; --tl:#C4835E; --terra-d:#985A3B; --sand:#A38362;
+  --cream:#F4F3EF; --ice:#F4F3EF; --ice-2:#FAFAF8; --light:#F3EEE3;
+  --text:rgba(244,243,239,.82); --muted:rgba(244,243,239,.56); --line:rgba(244,243,239,.10);
+  --ink-text:#233133; --ice-line:rgba(20,55,60,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Hanken Grotesk',sans-serif;background:var(--bg);color:var(--text);
+  line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+h1,h2,h3,.anton{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;
+  letter-spacing:-.01em;line-height:.92}
+em{font-style:normal;color:var(--tl)}
+.terra{color:var(--terra)} .tl{color:var(--tl)}
+::selection{background:var(--terra);color:#fff}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
+section{position:relative;z-index:2}
+.kick{font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;color:var(--tl)}
+.lead{max-width:46ch;color:var(--text);font-size:1.05rem}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:9px;border-radius:100px;font-weight:700;
+  font-size:.85rem;text-transform:uppercase;letter-spacing:.03em;padding:15px 28px;cursor:pointer;
+  transition:.2s;border:none}
+.btn-terra{background:var(--terra);color:#fff}
+.btn-terra:hover{background:var(--terra-d);transform:translateY(-2px);box-shadow:0 12px 30px rgba(176,110,74,.4)}
+.btn-ghost{background:transparent;color:var(--cream);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--tl);background:rgba(255,255,255,.04)}
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(12,36,39,.85);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.nav img{height:46px;width:auto;display:block}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{font-size:.82rem;color:var(--muted);transition:.2s}
+.nav-links a:hover{color:var(--cream)}
+.nav .btn{padding:11px 20px}
+@media(max-width:900px){.nav-links a:not(.btn){display:none}.nav img{height:38px}}
+@media(max-width:620px){.nav .wrap{flex-wrap:wrap;justify-content:center;gap:12px;padding-top:12px;padding-bottom:12px}.nav img{height:40px}.nav .btn{padding:12px 22px;font-size:.78rem;white-space:nowrap}}
+/* hero */
+.hero{background:linear-gradient(160deg,#0a2023 0%,#0C2427 40%,#102f33 100%);position:relative;overflow:hidden;
+  padding:74px 0 84px}
+.hero::after{content:"";position:absolute;top:-160px;right:-140px;width:640px;height:640px;
+  background:radial-gradient(circle,rgba(176,110,74,.18),transparent 62%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:9px;background:rgba(176,110,74,.12);
+  border:1px solid rgba(176,110,74,.28);color:var(--tl);padding:8px 16px;border-radius:100px;
+  font-size:.74rem;font-weight:600;margin-bottom:26px}
+.hero h1{font-size:clamp(3rem,7.4vw,5.4rem);color:var(--cream);margin-bottom:22px}
+.hero .lead{margin-bottom:32px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}}
+/* phone mockup */
+.phone{width:300px;max-width:100%;margin:0 auto;border-radius:36px;padding:12px;background:#0a1d20;
+  border:1px solid var(--line);box-shadow:0 40px 90px -30px rgba(0,0,0,.8)}
+.phone-notch{width:90px;height:22px;border-radius:100px;background:#000;margin:0 auto 8px}
+.wa-header{display:flex;gap:10px;align-items:center;padding:10px 12px;background:var(--ink);border-radius:14px 14px 0 0}
+.wa-avatar{width:34px;height:34px;border-radius:50%;background:var(--terra);display:grid;place-items:center;
+  font-weight:700;font-size:.7rem;color:#fff}
+.wa-header b{font-size:.8rem;color:var(--cream);display:block;line-height:1.2}
+.wa-header span{font-size:.62rem;color:#4ade80}
+.wa-chat{background:#0E2A2E;padding:14px 10px;border-radius:0 0 14px 14px;display:flex;flex-direction:column;gap:8px}
+.wa-msg{max-width:90%;padding:9px 12px;border-radius:12px;font-size:.76rem;line-height:1.45;color:var(--text)}
+.wa-msg.in{background:rgba(255,255,255,.06);align-self:flex-start}
+.wa-msg.out{background:rgba(176,110,74,.18);border:1px solid rgba(176,110,74,.25);align-self:flex-end}
+.wa-msg b{color:var(--cream)}
+.wa-list{margin:4px 0 0;padding-left:2px;list-style:none;font-size:.74rem;line-height:1.7}
+.wa-list li::before{content:"• ";color:var(--tl)}
+.wa-divider{align-self:center;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:3px 0}
+/* generic section spacing */
+.sec{padding:82px 0}
+.sec-head{max-width:60ch;margin-bottom:44px}
+.sec-head h2{font-size:clamp(2.1rem,5.2vw,3.4rem);color:var(--cream);margin:14px 0 16px}
+/* ICE light blocks */
+.ice{background:var(--ice);color:var(--ink-text)}
+.ice .sec-head h2{color:var(--ink)}
+.ice .kick{color:var(--terra-d)}
+.ice .lead{color:#3a4a4c}
+.ice h3{color:var(--ink)}
+/* trava de segurança: nada de texto claro em seção clara */
+.ice>.wrap>.proof-note,.ice>.wrap>p.proof-note{color:#4a5a5c}
+.ice .proof-note{color:#4a5a5c}
+.ice .mod-panel .proof-note,.ice .mod-panel .mod-note{color:var(--muted)}
+/* stat cards */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);
+  border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.stat{background:var(--ink);padding:30px 24px}
+.stat .v{font-family:'Anton';font-size:clamp(2.2rem,6vw,3rem);color:var(--tl);line-height:1}
+.stat .l{font-size:.8rem;color:var(--muted);margin-top:8px;max-width:26ch}
+.ice .stats{background:var(--ice-line);border-color:var(--ice-line)}
+.ice .stat{background:var(--ice-2)}
+.ice .stat .v{color:var(--terra-d)}
+.ice .stat .l{color:#546366}
+/* cost of inaction */
+.cost-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;margin-top:8px}
+@media(max-width:900px){.cost-grid{grid-template-columns:1fr}}
+.cost-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.cost-table td{padding:13px 4px;border-bottom:1px solid var(--ice-line);color:var(--ink-text)}
+.cost-table td:last-child{text-align:right;font-weight:700;white-space:nowrap;color:var(--terra-d)}
+.cost-table td.hrs{text-align:right;white-space:nowrap;font-weight:600;color:#6a7678;font-size:.86rem;width:1%;padding-right:18px}
+.cost-table td.who{font-weight:700;color:var(--ink)}
+.cost-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:18px;
+  padding-top:16px;border-top:2px solid var(--ice-line)}
+.cost-total .anton{font-size:2.2rem;color:var(--terra-d)}
+@media(max-width:560px){.cost-total{flex-direction:column;align-items:flex-start;gap:4px}.cost-total .anton{font-size:2rem}.cost-table td.hrs{padding-right:10px}}
+/* ROI simulator */
+.roi{background:var(--ink);border:1px solid var(--line);border-radius:18px;padding:28px;color:var(--text)}
+.roi label{font-size:.8rem;color:var(--muted);display:block;margin:14px 0 6px}
+.roi label b{color:var(--cream)}
+.roi input[type=range]{width:100%;accent-color:var(--terra)}
+.roi-big{margin-top:20px}
+.roi-big span{font-family:'Anton';font-size:clamp(2.2rem,6vw,3rem);color:var(--tl);display:block;line-height:1}
+.roi-big small{display:block;font-size:.74rem;color:var(--muted);margin-top:4px}
+.roi-pay{margin-top:14px;font-size:.92rem;color:var(--cream)}
+.roi-pay b{color:var(--tl)}
+/* opportunity cards */
+.opps{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:760px){.opps{grid-template-columns:1fr}}
+.opp{background:var(--ink);border:1px solid var(--line);border-radius:16px;padding:26px;position:relative;transition:.2s}
+.opp::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--terra);opacity:0;transition:opacity .2s;border-radius:16px 16px 0 0}
+.opp:hover{transform:translateY(-3px);border-color:rgba(176,110,74,.4)}
+.opp:hover::before{opacity:1}
+.opp .pill{display:inline-block;font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--tl);background:rgba(176,110,74,.1);border:1px solid rgba(176,110,74,.22);border-radius:100px;padding:4px 11px;margin-bottom:14px}
+.opp h3{font-size:1.15rem;color:var(--cream);margin-bottom:8px;text-transform:none;font-family:'Hanken Grotesk';font-weight:700;letter-spacing:0}
+.opp p{font-size:.9rem;color:var(--text)}
+/* module block */
+.mod{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+@media(max-width:900px){.mod{grid-template-columns:1fr;gap:32px}}
+.mod h3{font-size:clamp(1.8rem,4vw,2.6rem);color:var(--cream);margin:12px 0 14px}
+.mod-list{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:12px}
+.mod-list li{display:flex;gap:12px;font-size:.94rem;color:var(--text)}
+.mod-list svg{flex-shrink:0;margin-top:3px}
+/* painel escuro flutuando sobre o gelo */
+.mod-panel{background:linear-gradient(150deg,#0a2023 0%,var(--ink) 55%,#1a3d42 120%);
+  border:1px solid var(--line);border-radius:22px;padding:38px;position:relative;overflow:hidden;
+  box-shadow:0 40px 90px -40px rgba(0,0,0,.55)}
+.mod-panel::after{content:"";position:absolute;top:-140px;right:-120px;width:460px;height:460px;
+  background:radial-gradient(circle,rgba(176,110,74,.16),transparent 62%);pointer-events:none}
+.mod-panel>*{position:relative;z-index:2}
+@media(max-width:700px){.mod-panel{padding:24px}}
+.ice .mod-panel .kick{color:var(--tl)}
+.ice .mod-panel h3{color:var(--cream)}
+.mod-note{font-size:.82rem;color:var(--muted);margin-top:22px;line-height:1.6;
+  border-left:2px solid rgba(176,110,74,.4);padding-left:14px}
+.mod-note b{color:var(--tl)}
+/* dashboard mockup */
+.dash{background:linear-gradient(160deg,#0a1d20 0%,#12333a 55%,#16404a 120%);
+  border:1px solid rgba(244,243,239,.14);border-radius:18px;padding:20px;
+  box-shadow:0 30px 80px -26px rgba(0,0,0,.75), inset 0 1px 0 rgba(255,255,255,.06)}
+.dash-head{font-weight:700;font-size:.62rem;letter-spacing:.16em;color:var(--tl);display:flex;
+  align-items:center;gap:8px;padding-bottom:12px;border-bottom:1px solid rgba(244,243,239,.09)}
+.dash-date{margin-left:auto;color:var(--muted);letter-spacing:.06em;font-weight:400}
+.live{width:7px;height:7px;border-radius:50%;background:#4ade80;animation:bl 2s infinite;flex-shrink:0;
+  box-shadow:0 0 0 3px rgba(74,222,128,.15)}
+@keyframes bl{50%{opacity:.35}}
+.dash-hero{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;padding:16px 0 14px}
+.dash-hero-l{font-size:.64rem;text-transform:uppercase;letter-spacing:.13em;color:var(--muted)}
+.dash-hero-v{font-family:'Anton';font-size:2.5rem;color:var(--cream);line-height:1;margin:5px 0 6px}
+.dash-trend{font-size:.68rem;color:#4ade80;display:flex;align-items:center;gap:5px}
+.spark{width:118px;height:46px;flex-shrink:0;opacity:.95}
+.dash-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kpi{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);border-radius:11px;padding:11px 12px}
+.kpi .v{font-family:'Anton';font-size:1.28rem;color:var(--tl);line-height:1}
+.kpi .v.alert{color:#e08a6d}
+.kpi .l{font-size:.6rem;color:var(--muted);margin-top:4px}
+.kpi .bar{height:3px;border-radius:100px;background:rgba(255,255,255,.12);margin-top:6px;overflow:hidden}
+.kpi .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--terra),var(--tl));border-radius:100px}
+.dash-rank{margin-top:12px;background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.06);
+  border-radius:12px;padding:12px 13px}
+.dash-rank-h{font-size:.6rem;text-transform:uppercase;letter-spacing:.13em;color:var(--muted);margin-bottom:9px}
+.rk{display:flex;align-items:center;gap:8px;font-size:.7rem;color:var(--text);padding:4px 0}
+.rk-p{font-family:'Anton';font-size:.78rem;color:var(--tl);width:11px;flex-shrink:0}
+.rk-n{width:52px;flex-shrink:0;color:var(--cream)}
+.rk-b{flex:1;height:5px;border-radius:100px;background:rgba(255,255,255,.09);overflow:hidden;min-width:26px}
+.rk-b i{display:block;height:100%;border-radius:100px;background:linear-gradient(90deg,var(--terra),var(--tl))}
+.rk-b i.low{background:linear-gradient(90deg,#6b7f7a,#8fa39c)}
+.rk-v{width:52px;text-align:right;flex-shrink:0;color:var(--cream)}
+.rk-m{width:30px;text-align:right;flex-shrink:0;color:#4ade80;font-size:.66rem}
+.rk-m.low{color:var(--muted)}
+.dash-alert{margin-top:11px;padding:10px 13px;border-radius:10px;font-size:.72rem;color:var(--cream);
+  background:rgba(176,110,74,.16);border:1px solid rgba(176,110,74,.32);display:flex;gap:8px;align-items:flex-start;line-height:1.4}
+.dash-foot{margin-top:10px;font-size:.6rem;color:var(--muted);display:flex;align-items:center;gap:7px;
+  padding-top:10px;border-top:1px solid rgba(244,243,239,.07)}
+/* before after */
+.ad{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:700px){.ad{grid-template-columns:1fr}}
+.ad-col{border-radius:16px;padding:26px}
+.ad-col.bad{background:var(--bg-2);border:1px dashed rgba(244,243,239,.2)}
+.ad-col.good{background:var(--ink);border:1px solid rgba(176,110,74,.35)}
+.ad-tag{font-weight:700;font-size:.64rem;letter-spacing:.14em;color:var(--tl)}
+.ad-time{font-family:'Anton';font-size:1.7rem;color:var(--cream);margin:10px 0 2px}
+.ad-col.good .ad-time{color:var(--tl)}
+.ad-dur{font-size:.74rem;color:var(--muted);margin-bottom:12px}
+.ad-col p{font-size:.9rem;color:var(--text)}
+/* proof */
+.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);
+  border:1px solid var(--line);border-radius:18px;overflow:hidden}
+@media(max-width:760px){.proof{grid-template-columns:1fr}}
+.proof-c{background:var(--ink);padding:34px 24px;text-align:center}
+.proof-c .v{font-family:'Anton';font-size:clamp(2rem,5vw,2.8rem);color:var(--tl)}
+.proof-c .l{font-size:.78rem;color:var(--muted);margin-top:8px;max-width:28ch;margin-inline:auto}
+.proof-note{text-align:center;font-size:.82rem;color:var(--muted);margin-top:18px}
+/* investment */
+.inv{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
+.inv.inv-2{grid-template-columns:repeat(2,1fr);max-width:760px}
+@media(max-width:900px){.inv,.inv.inv-2{grid-template-columns:1fr}}
+.inv-card{background:var(--ink);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column}
+.inv-card.rec{border-color:rgba(176,110,74,.55);position:relative}
+.inv-card.rec::before{content:"RECOMENDADO";position:absolute;top:-11px;left:24px;font-weight:700;font-size:.6rem;
+  letter-spacing:.14em;color:#fff;background:var(--terra);padding:4px 12px;border-radius:100px}
+.inv-name{font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--tl);margin-bottom:10px}
+.inv-price{font-family:'Anton';font-size:2.6rem;color:var(--cream);line-height:1}
+.inv-sub{font-size:.78rem;color:var(--muted);margin-top:6px}
+.inv-card ul{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:10px;font-size:.86rem;color:var(--text);flex:1}
+.inv-card li::before{content:"→ ";color:var(--terra);font-weight:700}
+.fase0{background:linear-gradient(140deg,var(--ink),#1d4a4f);border:1px solid rgba(176,110,74,.45);
+  border-radius:18px;padding:28px;display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+@media(max-width:760px){.fase0{flex-direction:column;align-items:flex-start}.fase0>div:last-child{text-align:left!important}}
+.inv-foot{margin-top:44px;display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:start}
+@media(max-width:900px){.inv-foot{grid-template-columns:1fr;gap:20px}}
+.mens{background:var(--ink);border:1px solid var(--line);border-radius:16px;padding:24px}
+.mens h4{font-family:'Hanken Grotesk';font-weight:700;font-size:1rem;color:var(--cream);text-transform:none;letter-spacing:0;margin-bottom:12px}
+.mens ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:.82rem;color:var(--text)}
+.mens li::before{content:"✓ ";color:#4ade80}
+.payback{background:rgba(176,110,74,.1);border:1px solid rgba(176,110,74,.28);border-radius:16px;padding:24px}
+.payback .anton{font-size:1.9rem;color:var(--tl);display:block;margin-bottom:6px}
+.payback p{font-size:.84rem;color:var(--text)}
+.fineprint{font-size:.78rem;color:var(--muted);margin-top:24px;line-height:1.7}
+.validity{display:inline-flex;align-items:center;gap:9px;margin-top:22px;background:var(--ink);
+  border:1px solid var(--line);border-radius:100px;padding:10px 18px;font-size:.82rem;color:var(--cream)}
+/* diagnostic table */
+.diag{width:100%;border-collapse:collapse;font-size:.86rem}
+.diag th{font-weight:700;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tl);
+  text-align:left;padding:12px;border-bottom:1px solid var(--line)}
+.diag td{padding:14px 12px;border-bottom:1px solid var(--line);color:var(--text)}
+@media(max-width:680px){.diag,.diag tbody,.diag tr,.diag th,.diag td{display:block;width:100%}.diag tr:first-child{display:none}.diag tr{border-bottom:1px solid var(--ice-line);padding:14px 0}.diag tr:last-child{border-bottom:none}.diag td{border:none;padding:3px 0}.diag td:first-child{font-size:1rem}.diag td:last-child{padding-top:8px}}
+.ok,.warn,.soon{font-weight:700;font-size:.62rem;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.ok{color:#4ade80;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25)}
+.warn{color:var(--tl);background:rgba(176,110,74,.1);border:1px solid rgba(176,110,74,.25)}
+.soon{color:var(--muted);background:rgba(244,243,239,.06);border:1px solid var(--line)}
+/* future wave */
+.wave{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:900px){.wave{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.wave{grid-template-columns:1fr}}
+.wave-card{background:var(--ice-2);border:1px solid var(--ice-line);border-radius:16px;padding:24px;transition:.2s}
+.wave-card:hover{transform:translateY(-3px);box-shadow:6px 6px 0 rgba(20,55,60,.12)}
+.wave-num{font-family:'Anton';font-size:1.3rem;color:var(--terra-d)}
+.wave-card h3{font-family:'Hanken Grotesk';font-weight:700;font-size:1rem;color:var(--ink);text-transform:none;
+  letter-spacing:0;margin:8px 0 8px}
+.wave-card p{font-size:.84rem;color:#4a5a5c}
+/* guarantee */
+.guard{background:linear-gradient(150deg,var(--ink),#1a3d42);border:1px solid rgba(176,110,74,.3);
+  border-radius:20px;padding:40px;text-align:center;max-width:820px;margin:0 auto}
+.guard h3{font-size:clamp(1.6rem,4vw,2.2rem);color:var(--cream);margin-bottom:14px}
+.guard p{font-size:1rem;color:var(--text);max-width:60ch;margin:0 auto}
+/* why + method */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+@media(max-width:900px){.why-grid{grid-template-columns:1fr;gap:28px}}
+.method{list-style:none;display:flex;flex-direction:column;gap:2px;background:var(--ice-line);border-radius:14px;overflow:hidden}
+.method li{background:var(--ice-2);padding:14px 18px;font-size:.9rem;color:var(--ink-text);display:flex;gap:12px;align-items:center}
+.method li b{color:var(--terra-d);font-family:'Anton';font-weight:400;font-size:1rem}
+.founders{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+@media(max-width:560px){.founders{grid-template-columns:1fr}}
+.founder{background:var(--ink);border:1px solid var(--line);border-radius:14px;padding:20px}
+.founder b{color:var(--cream);font-size:.98rem}
+.founder .role{font-size:.72rem;color:var(--tl);text-transform:uppercase;letter-spacing:.1em;margin:3px 0 10px}
+.founder p{font-size:.82rem;color:var(--muted)}
+.quote{max-width:760px;margin:44px auto 0;text-align:center;font-size:clamp(1.1rem,2.6vw,1.5rem);
+  color:var(--cream);line-height:1.5;font-weight:300}
+.quote .who{display:block;font-size:.8rem;color:var(--tl);text-transform:uppercase;letter-spacing:.14em;margin-top:18px;font-weight:700}
+/* faq */
+.faq{display:flex;flex-direction:column;gap:12px;max-width:820px;margin:0 auto}
+.faq details{background:var(--ink);border:1px solid var(--line);border-radius:14px;padding:0 22px}
+.faq summary{cursor:pointer;padding:20px 0;font-weight:600;font-size:1rem;color:var(--cream);list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:'Anton';color:var(--tl);font-size:1.5rem;transition:.2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 20px;font-size:.92rem;color:var(--text);max-width:64ch}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:820px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.steps{grid-template-columns:1fr}}
+.step{background:var(--ice-2);border:1px solid var(--ice-line);border-radius:16px;padding:24px}
+.step .n{font-family:'Anton';font-size:1.6rem;color:var(--terra-d)}
+.step h3{font-family:'Hanken Grotesk';font-weight:700;font-size:1rem;color:var(--ink);text-transform:none;letter-spacing:0;margin:8px 0 6px}
+.step p{font-size:.82rem;color:#4a5a5c}
+.step .when{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--terra-d);font-weight:700;margin-top:10px;display:block}
+/* CTA final */
+.cta{background:linear-gradient(165deg,#0a2023,#14373C 55%,#1d4840 100%);position:relative;overflow:hidden;
+  padding:96px 0;text-align:center}
+.cta::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;
+  background:radial-gradient(circle,rgba(176,110,74,.2),transparent 60%);pointer-events:none}
+.cta h2{font-size:clamp(2.4rem,7vw,4.2rem);color:var(--cream);margin-bottom:20px}
+.cta p{max-width:52ch;margin:0 auto 32px;color:var(--text)}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta .validity{margin-top:28px}
+/* footer */
+footer{background:var(--bg);border-top:1px solid var(--line);padding:44px 0;text-align:center}
+footer img{width:min(366px,80%);height:auto;margin-bottom:18px}
+footer p{font-size:.8rem;color:var(--muted);line-height:1.8}
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <img src="data:image/png;base64,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" alt="NewScale" onerror="this.style.display='none'">
+    <div class="nav-links">
+      <a href="#oportunidades">Oportunidades</a>
+      <a href="#solucao">A solução</a>
+      <a href="#investimento">Investimento</a>
+      <a href="#passos">Próximos passos</a>
+      <a class="btn btn-terra" href="https://wa.me/5511981982254?text=Ol%C3%A1%20Bruno%2C%20quero%20falar%20sobre%20a%20proposta%20da%20Comercial%20Santos" target="_blank" rel="noopener">Falar com o Bruno</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge">Ítalo, esta é a proposta após nossa conversa de 17 de julho</span>
+      <h1>TODO VENDEDOR,<br>TODO DIA,<br>NA SUA <span class="terra">MÃO</span></h1>
+      <p class="lead">Ranking, rentabilidade e inadimplência de cada vendedor da Comercial Santos — puxados do <b style="color:var(--cream)">SIAGRI</b> pela IA e entregues prontos no <b style="color:var(--cream)">WhatsApp</b>. Sem extrair uma planilha, todo dia de manhã.</p>
+      <div class="hero-cta">
+        <a class="btn btn-terra" href="#investimento">Ver investimento</a>
+        <a class="btn btn-ghost" href="#solucao">Como funciona</a>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="wa-header">
+          <div class="wa-avatar">NS</div>
+          <div><b>Agente Comercial Santos</b><span>online</span></div>
+        </div>
+        <div class="wa-chat">
+          <div class="wa-msg out"><b>Bom dia, Ítalo!</b> Resumo comercial de ontem (27/jul):</div>
+          <div class="wa-msg out">
+            <ul class="wa-list">
+              <li>Faturamento: <b>R$ 48.200</b> (▲12% vs média)</li>
+              <li>Top vendedor: <b>Carlos</b> — R$ 14.100 / margem 21%</li>
+              <li>Atenção: <b>João</b> 18% abaixo da meta do mês</li>
+              <li>Inadimplência da carteira: <b>R$ 9.400</b> (3 clientes)</li>
+              <li>5 clientes parados há 30+ dias na região Oeste</li>
+            </ul>
+          </div>
+          <div class="wa-divider">agora</div>
+          <div class="wa-msg out">Quer que eu envie a lista de cobrança e o roteiro de reativação pra você aprovar?</div>
+          <div class="wa-msg in">Manda, pode ser</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- CONTEXTO + CUSTO DA INAÇÃO -->
+<section class="sec ice" id="contexto">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">O ponto de partida</span>
+      <h2>Uma operação sólida — e pronta pra <span class="terra">enxergar tudo</span></h2>
+      <p class="lead">A Comercial Santos cresceu de uma pessoa para 11, virou referência de números na região e já roda no melhor ERP do agro. O SIAGRI guarda cada venda, cada carteira e cada centavo. Falta só uma coisa: esse dado chegar até você <b>pronto para decidir</b> — sem ninguém extraindo planilha.</p>
+    </div>
+
+    <div class="stats rv">
+      <div class="stat"><div class="v">11</div><div class="l">parceiros no time — balcão, faturamento, financeiro, expedição e campo</div></div>
+      <div class="stat"><div class="v">4+</div><div class="l">vendedores de campo para ranquear e acompanhar por dia</div></div>
+      <div class="stat"><div class="v">1</div><div class="l">fonte de verdade (SIAGRI) esperando para virar decisão automática</div></div>
+    </div>
+
+    <div class="cost-grid" style="margin-top:44px">
+      <div class="rv">
+        <span class="kick">O custo escondido de hoje</span>
+        <h2 style="font-size:clamp(1.6rem,3.5vw,2.2rem);color:var(--ink);margin:12px 0 20px">O tempo que a planilha come toda semana</h2>
+        <table class="cost-table">
+          <tr><td class="who">Retaguarda<div style="font-weight:400;color:#4a5a5c;font-size:.84rem">Extrair o SIAGRI, consolidar por vendedor e montar o relatório</div></td><td class="hrs">6,5h/sem</td><td>R$ 1.155</td></tr>
+          <tr><td class="who">Gestão<div style="font-weight:400;color:#4a5a5c;font-size:.84rem">Conferir, cruzar e cobrar em cima do número</div></td><td class="hrs">4,5h/sem</td><td>R$ 3.997</td></tr>
+          <tr><td class="who">Campo · 4 vendedores<div style="font-weight:400;color:#4a5a5c;font-size:.84rem">Montando o próprio controle e pedindo número — ~45min por vendedor</div></td><td class="hrs">3h/sem<div style="font-weight:400;font-size:.72rem;color:#8a9698">somadas</div></td><td>R$ 741</td></tr>
+        </table>
+        <div class="cost-total">
+          <span style="font-size:.9rem;color:#4a5a5c">~61h/mês nas três cadeiras, a custo cheio</span>
+          <span class="anton">~R$ 5.893<span style="font-size:1rem">/mês</span></span>
+        </div>
+        <p style="font-size:.78rem;color:#6a7678;margin-top:10px">Cada cadeira tem a sua base. <b>Retaguarda R$ 41/h:</b> salário de mercado com <b>todos os encargos e benefícios da CLT</b> (fator 1,66) sobre horas produtivas reais, já descontadas férias, feriados e ausências. <b>Campo R$ 57/h:</b> a sua própria régua de R$ 10 mil por vendedor. <b>Gestão R$ 205/h:</b> pró-labore mais INSS patronal. Memória de cálculo aberta — a gente refaz com os seus números na semana de mapeamento.</p>
+        <p style="font-size:.8rem;color:#546366;margin-top:12px">E esse é só o <b>piso</b> — o custo do tempo. O que pesa de verdade está embaixo.</p>
+
+        <div style="margin-top:22px;background:var(--ice-2);border:1px solid var(--ice-line);border-radius:14px;padding:20px">
+          <span class="kick" style="color:var(--terra-d)">O que o número não mostra</span>
+          <table class="cost-table" style="margin-top:8px">
+            <tr><td>Inadimplência que cresce enquanto ninguém enxerga a carteira</td><td>a dimensionar</td></tr>
+            <tr><td>Cliente parado que ninguém percebeu que parou</td><td>a dimensionar</td></tr>
+            <tr><td>Vendedor abaixo da meta sem plano de ação até o fim do mês</td><td>a dimensionar</td></tr>
+          </table>
+          <p style="font-size:.84rem;color:#4a5a5c;margin-top:12px">Ítalo, essas três linhas valem mais que as de cima — e só você tem os números para preenchê-las. <b>É a primeira coisa que levantamos na semana de mapeamento.</b> Pela sua própria régua (um vendedor a R$ 10 mil devolvendo R$ 200 mil), um ganho de poucos pontos percentuais aqui supera o projeto inteiro.</p>
+          <p style="font-size:.78rem;color:#6a7678;margin-top:8px">Para dimensionar: enxergar 15 dias antes R$ 150 mil de carteira vencida vale <b>~R$ 1.378/mês</b> ao custo médio de crédito PJ (24,4% a.a.). Um único cliente parado que volte a comprar <b>R$ 8 mil por mês</b>, a 18% de margem, vale outros <b>~R$ 1.440</b>.</p>
+        </div>
+      </div>
+
+      <div class="roi rv">
+        <span class="kick" style="color:var(--tl)">Simule o seu número</span>
+        <label>Horas por semana que a sua operação gasta hoje com isso: <b id="rh">14h</b></label>
+        <input type="range" id="rr" min="10" max="30" value="14">
+        <label>Valor-hora médio ponderado das três cadeiras: <b>~R$ 97</b></label>
+        <div class="roi-big"><span id="rm">R$ 5.893</span><small>/mês parados em consolidação manual, a custo cheio</small></div>
+        <div class="roi-pay">Depois de pagar a sustentação de R$ 2.600/mês, sobram <b id="rs">R$ 3.293</b>/mês.<br>Payback do setup contando <b>só o tempo</b>, já com a mensalidade descontada: <b id="rp">~8 meses</b> <span style="color:var(--muted);font-size:.82rem">— e o tempo é a menor das três alavancas ao lado.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPORTUNIDADES -->
+<section class="sec" id="oportunidades">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">Onde a IA entra primeiro</span>
+      <h2>Quatro ganhos que o <span class="terra">comercial</span> passa a ter</h2>
+      <p class="lead">Atacamos primeiro a sua prioridade nº 1 — a inteligência de vendas — para gerar valor rápido antes de expandir para as outras áreas.</p>
+    </div>
+    <div class="opps">
+      <div class="opp rv"><span class="pill">Memória do vendedor</span><h3>Cada vendedor, um raio-X vivo</h3><p>O que vendeu, item e bandeira campeões, culturas que atende, cidades que cobre, clientes na carteira — consolidado sozinho, sem depender de planilha.</p></div>
+      <div class="opp rv"><span class="pill">Rentabilidade real</span><h3>Quanto cada centro de custo devolve</h3><p>Investimento × retorno por vendedor, do jeito que você pensa: "invisto R$ 10 mil, ele me dá R$ 200 mil". A razão calculada e atualizada automaticamente.</p></div>
+      <div class="opp rv"><span class="pill">Ranking automático</span><h3>Placar de faturamento, margem e novos clientes</h3><p>Vendedores ranqueados por faturamento, lucro deixado, clientes novos, reativação e inadimplência — a pontuação que motiva o time e mostra onde atacar.</p></div>
+      <div class="opp rv"><span class="pill">No WhatsApp, todo dia</span><h3>Direcionamento que chega até o campo</h3><p>O time recebe o resumo e o plano de ação direto no WhatsApp — e ainda tira dúvidas por lá. Nada de dashboard bonito que ninguém abre.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUÇÃO / MÓDULO -->
+<section class="sec ice" id="solucao">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">A solução — Fase 1</span>
+      <h2>Um agente comercial <span class="terra">lendo o SIAGRI</span> por você</h2>
+      <p class="lead">A IA se conecta ao SIAGRI, interpreta os números como um analista faria e entrega dois formatos: mensagem pronta no WhatsApp para o campo, painel sempre atualizado para a gestão.</p>
+    </div>
+
+    <div class="mod-panel rv">
+    <div class="mod">
+      <div>
+        <span class="kick">O que roda no dia a dia</span>
+        <h3>Do dado bruto à decisão, sozinho</h3>
+        <ul class="mod-list">
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="#C4835E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Conexão ao SIAGRI via <b style="color:var(--cream)">API</b> para ler venda, carteira e financeiro em tempo quase real.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="#C4835E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Memória e ranking por vendedor — <b style="color:var(--cream)">campo e interno</b>: itens, bandeiras, culturas, cidades, rentabilidade por centro de custo. Visão diária e mensal.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="#C4835E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Monitor de inadimplência e clientes parados, com sugestão de cobrança e reativação.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="#C4835E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Resumo diário no <b style="color:var(--cream)">WhatsApp</b> por vendedor e para a gestão + Q&A para tirar dúvidas por lá.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="#C4835E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tudo dentro da <b style="color:var(--cream)">identidade visual da Comercial Santos</b> — o sistema tem a cara da sua empresa.</span></li>
+        </ul>
+        <p class="mod-note"><b>Honestidade técnica:</b> o escopo exato dos dados depende do que o SIAGRI libera — e o módulo <b>SIAGRI API</b> é comercializado à parte pela Aliare. Confirmamos isso na semana de mapeamento, <b>antes</b> de qualquer desenvolvimento, e já temos caminho alternativo de leitura mapeado caso o módulo não esteja no seu contrato. Você não paga desenvolvimento em cima de acesso não confirmado.</p>
+      </div>
+      <div>
+        <div class="dash">
+          <div class="dash-head"><span class="live"></span>PAINEL COMERCIAL SANTOS<span class="dash-date">28/jul · 07:00</span></div>
+
+          <div class="dash-hero">
+            <div>
+              <div class="dash-hero-l">Faturamento de ontem</div>
+              <div class="dash-hero-v">R$ 48.200</div>
+              <div class="dash-trend"><svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M4 18 12 8l4 4 5-6" stroke="#4ade80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg> 12% acima da média de julho</div>
+            </div>
+            <svg class="spark" viewBox="0 0 120 46" preserveAspectRatio="none">
+              <defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#C4835E" stop-opacity=".45"/><stop offset="100%" stop-color="#C4835E" stop-opacity="0"/>
+              </linearGradient></defs>
+              <path d="M0,34 L15,30 L30,33 L45,22 L60,26 L75,16 L90,19 L105,10 L120,6 L120,46 L0,46 Z" fill="url(#sg)"/>
+              <polyline points="0,34 15,30 30,33 45,22 60,26 75,16 90,19 105,10 120,6" fill="none" stroke="#C4835E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="120" cy="6" r="3" fill="#C4835E"/>
+            </svg>
+          </div>
+
+          <div class="dash-kpis">
+            <div class="kpi"><div class="v">R$ 892k</div><div class="l">no mês</div></div>
+            <div class="kpi"><div class="v">74%</div><div class="l">da meta<div class="bar"><i style="width:74%"></i></div></div></div>
+            <div class="kpi"><div class="v alert">R$ 9,4k</div><div class="l">inadimplência</div></div>
+          </div>
+
+          <div class="dash-rank">
+            <div class="dash-rank-h">Ranking de vendedores · ontem</div>
+            <div class="rk"><span class="rk-p">1</span><span class="rk-n">Carlos</span><span class="rk-b"><i style="width:100%"></i></span><span class="rk-v">R$ 14,1k</span><span class="rk-m">21%</span></div>
+            <div class="rk"><span class="rk-p">2</span><span class="rk-n">Marcos</span><span class="rk-b"><i style="width:78%"></i></span><span class="rk-v">R$ 11,3k</span><span class="rk-m">18%</span></div>
+            <div class="rk"><span class="rk-p">3</span><span class="rk-n">João</span><span class="rk-b"><i style="width:54%" class="low"></i></span><span class="rk-v">R$ 8,2k</span><span class="rk-m low">14%</span></div>
+          </div>
+
+          <div class="dash-alert"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="vertical-align:-2px;flex-shrink:0"><path d="M12 3 2 21h20L12 3zm0 6v6m0 3v.5" stroke="#C4835E" stroke-width="2" stroke-linecap="round"/></svg><span>5 clientes parados há 30+ dias — roteiro de reativação pronto para aprovação</span></div>
+          <div class="dash-foot"><span class="live"></span> Sincronizado com o SIAGRI · próxima atualização às 13:00</div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA / ANTES DEPOIS -->
+<section class="sec" id="dia-a-dia">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">Como funciona no dia a dia</span>
+      <h2>A segunda-feira da gestão, <span class="terra">refeita</span></h2>
+    </div>
+    <div class="ad rv">
+      <div class="ad-col bad">
+        <div class="ad-tag">HOJE</div>
+        <div class="ad-time">Toda 2ª de manhã</div>
+        <div class="ad-dur">~14h por semana na operação · número já desatualizado</div>
+        <p>Alguém extrai a planilha do SIAGRI, consolida por vendedor, monta o relatório — e o dado que chega já é de dias atrás.</p>
+      </div>
+      <div class="ad-col good">
+        <div class="ad-tag">COM O SISTEMA</div>
+        <div class="ad-time">Todo dia, 7h</div>
+        <div class="ad-dur">0 min de trabalho · número de ontem</div>
+        <p>O resumo chega pronto no seu WhatsApp e no painel. Você só lê, decide e aprova as ações sugeridas.</p>
+      </div>
+    </div>
+    <p class="proof-note">Exemplo ilustrativo do fluxo — os números e horários são calibrados no mapeamento com a sua operação real.</p>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="sec ice">
+  <div class="wrap">
+    <div class="sec-head rv" style="text-align:center;margin-inline:auto">
+      <span class="kick">Já rodando por aí</span>
+      <h2>O mesmo motor, <span class="terra">outros setores</span></h2>
+    </div>
+    <div class="proof rv">
+      <div class="proof-c"><div class="v">+54%</div><div class="l">conversão de CRM — varejo com integração completa ao ERP (Linx)</div></div>
+      <div class="proof-c"><div class="v">+42%</div><div class="l">conversão — consultoria com o mesmo gargalo de WhatsApp e API de sistema</div></div>
+      <div class="proof-c"><div class="v">R$ 0,09</div><div class="l">por relatório automático — homecare que trocou relatórios manuais por IA (+26% capacidade)</div></div>
+    </div>
+    <p class="proof-note">E, no agro, já implementamos IA em fazendas (Morro Agudo/SP, Tocantins) e na Stoller — inclusive rodando dentro do próprio SIAGRI. Uma concessionária multi-loja recebe hoje, todo dia no WhatsApp, exatamente o tipo de análise de vendedores que você descreveu.</p>
+  </div>
+</section>
+
+<!-- INVESTIMENTO -->
+<section class="sec" id="investimento">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">Investimento — Fase 1 (Comercial)</span>
+      <h2>Escolha por onde <span class="terra">começar</span></h2>
+      <p class="lead">Duas frentes independentes, com entregas diferentes. A <b style="color:var(--cream)">Frente 1</b> é o sistema que a NewScale constrói, conecta ao SIAGRI e opera <b style="color:var(--cream)">para você</b>. A <b style="color:var(--cream)">Frente 2</b> é a formação que ensina <b style="color:var(--cream)">o seu time</b> a automatizar a própria rotina. Uma não inclui nem substitui a outra — e você pode começar por qualquer uma das duas.</p>
+    </div>
+
+    <p class="kick" style="margin:0 0 4px">Frente 1 · O sistema — a NewScale constrói e opera para você</p>
+    <p style="font-size:.86rem;color:var(--muted);margin:0 0 14px">Entrega: <b style="color:var(--text)">software rodando</b>. Ninguém do seu time precisa construir ou manter nada.</p>
+    <div class="inv inv-2 rv">
+      <div class="inv-card">
+        <div class="inv-name">Essencial</div>
+        <div class="inv-price">R$ 18.900</div>
+        <div class="inv-sub">setup único · análise + dashboard</div>
+        <ul>
+          <li>Semana de mapeamento inclusa (processos, dados e acesso ao SIAGRI)</li>
+          <li>Conexão ao SIAGRI (leitura)</li>
+          <li>Memória e ranking por vendedor (campo e interno)</li>
+          <li>Dashboard de gestão — visão diária e mensal</li>
+          <li>Homologação com você (2 ciclos de ajuste)</li>
+        </ul>
+      </div>
+      <div class="inv-card rec">
+        <div class="inv-name">Comercial completo</div>
+        <div class="inv-price">R$ 27.000</div>
+        <div class="inv-sub">setup único · o que você descreveu na conversa</div>
+        <ul>
+          <li>Tudo do Essencial, mais:</li>
+          <li>Rentabilidade por centro de custo</li>
+          <li>Monitor de inadimplência + clientes parados</li>
+          <li>Resumo diário no WhatsApp (gestão + vendedores)</li>
+          <li>Q&A pelo WhatsApp para o time</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="kick" style="margin:34px 0 4px">Frente 2 · O time — seus parceiros aprendem a fazer sozinhos</p>
+    <p style="font-size:.86rem;color:var(--muted);margin:0 0 14px">Entrega: <b style="color:var(--text)">gente capacitada</b>. Não é o sistema da Frente 1, não depende dele e não o substitui.</p>
+    <div class="fase0 rv">
+      <div>
+        <div class="inv-name">Trilha de IA para a equipe · dois dias de imersão presencial com o time</div>
+        <p style="font-size:.9rem;color:var(--text);margin-top:8px;max-width:64ch">Presencial, na Comercial Santos, área por área — balcão, faturamento, financeiro, expedição, campo e gestão. Levantamos as <b style="color:var(--cream)">atividades de cada funcionário</b> para identificar o que dá para automatizar, e cada parceiro sai <b style="color:var(--cream)">automatizando a própria rotina</b> com uma IA como o Claude, a partir de um caso real da cadeira dele. Inclui suporte após a formação.</p>
+        <p style="font-size:.82rem;color:var(--muted);margin-top:10px;max-width:64ch">Aqui a NewScale não entrega software: entrega o seu time sabendo usar IA no dia a dia. É por isso que a Frente 2 é cobrada à parte — e por isso ela faz sentido mesmo para quem já contratou a Frente 1.</p>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="inv-price" style="font-size:2.2rem">R$ 18.500</div>
+        <div class="inv-sub" style="color:var(--tl)">2 dias presenciais · não depende do sistema</div>
+        <div class="inv-sub" style="margin-top:6px">passagens e hospedagem não inclusas</div>
+      </div>
+    </div>
+
+    <div class="inv-foot">
+      <div class="mens rv">
+        <h4>Mensalidade de sustentação — R$ 2.600/mês</h4>
+        <ul>
+          <li>Sistema sempre no ar</li>
+          <li>Atualização de modelos e APIs</li>
+          <li>Ajustes e novas análises</li>
+          <li>Monitoramento e suporte</li>
+        </ul>
+        <p style="font-size:.78rem;color:var(--muted);margin-top:14px">Começa <b style="color:var(--text)">30 dias depois do go-live</b>, ao fim do período de garantia · <b style="color:var(--text)">sem fidelidade</b> · cancelamento a qualquer momento, com 30 dias de aviso prévio.</p>
+      </div>
+      <div class="payback rv">
+        <span class="anton">A conta que importa</span>
+        <p>O tempo que retaguarda, gestão e campo gastam hoje montando esses números custa <b style="color:var(--cream)">~R$ 5.893/mês</b> com encargos. A sustentação custa R$ 2.600. <b style="color:var(--cream)">Só o tempo já paga a mensalidade duas vezes e devolve o setup em ~8 meses</b> — e o tempo é a menor das três alavancas. E isso antes de contar carteira reativada, inadimplência vista a tempo e vendedor corrigido no dia 10 em vez do dia 30 — as três que o senhor mesmo vai dimensionar.</p>
+      </div>
+    </div>
+
+    <p class="fineprint">Forma de pagamento: <b style="color:var(--cream)">50% no aceite + 50% no go-live</b> (ou 3× — aceite / 30 / 60 dias). A trilha de IA para a equipe segue a mesma condição e pode ser contratada isoladamente. Repasses à parte, pagos direto ao fornecedor: tokens de IA, WhatsApp API oficial e eventual licença do módulo SIAGRI API. Escopo blindado por módulo com aceite formal; mudança de escopo entra como nova fase.</p>
+
+    <div class="validity"><span class="live"></span> Proposta válida até <b>12/ago/2026</b> — a agenda de implementação de agosto tem vagas limitadas.</div>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO TÉCNICO -->
+<section class="sec ice">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">Diagnóstico técnico</span>
+      <h2>O que já <span class="terra">mapeamos</span> do seu ambiente</h2>
+    </div>
+    <div class="rv" style="background:var(--ice-2);border:1px solid var(--ice-line);border-radius:18px;padding:8px 20px">
+      <table class="diag" style="color:var(--ink-text)">
+        <tr><th style="color:var(--terra-d)">Sistema</th><th style="color:var(--terra-d)">Papel no projeto</th><th style="color:var(--terra-d)">Situação</th></tr>
+        <tr><td style="color:var(--ink-text)"><b>SIAGRI AgriBusiness</b> <span style="font-weight:400;color:#6a7678">(Aliare)</span></td><td style="color:#4a5a5c">Fonte dos dados de venda, carteira e financeiro</td><td><span class="warn">Confirmar módulo SIAGRI API no contrato</span></td></tr>
+        <tr><td style="color:var(--ink-text)"><b>Leitura direta (plano B)</b></td><td style="color:#4a5a5c">Caminho alternativo caso o módulo API não esteja ativo</td><td><span class="ok">Mapeado — viável</span></td></tr>
+        <tr><td style="color:var(--ink-text)"><b>WhatsApp</b></td><td style="color:#4a5a5c">Entrega dos resumos + Q&A do time</td><td><span class="ok">API oficial pronta</span></td></tr>
+        <tr><td style="color:var(--ink-text)"><b>Dashboard NewScale</b></td><td style="color:#4a5a5c">Visão de gestão, atualizada por ciclo</td><td><span class="ok">Sob medida</span></td></tr>
+        <tr><td style="color:var(--ink-text)"><b>Shopify (e-commerce)</b></td><td style="color:#4a5a5c">Vendas online — fase futura</td><td><span class="soon">Conecta direto · fase futura</span></td></tr>
+        <tr><td style="color:var(--ink-text)"><b>Instagram / V4</b></td><td style="color:#4a5a5c">Tendências e conteúdo — fase futura</td><td><span class="soon">Integrável · fase futura</span></td></tr>
+      </table>
+    </div>
+    <p class="proof-note" style="color:#4a5a5c">Já estudamos seu ambiente: o <b>SIAGRI API</b> é um módulo comercializado à parte pela Aliare — o primeiro passo do projeto é confirmar se ele já está no seu contrato. Se não estiver, temos caminho alternativo de leitura já mapeado. <b>Nada de desenvolvimento é cobrado antes dessa confirmação.</b></p>
+  </div>
+</section>
+
+<!-- ONDA FUTURA -->
+<section class="sec ice" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">Depois do comercial</span>
+      <h2>O roadmap que <span class="terra">continua</span></h2>
+      <p class="lead">Escopo e valores definidos ao fim de cada fase — atacamos uma dor por vez, entregando valor rápido antes de expandir.</p>
+    </div>
+    <div class="wave">
+      <div class="wave-card rv"><div class="wave-num">02</div><h3>Financeiro</h3><p>Contas em atraso, cobrança automática com boleto, conciliação de cartão e conta, gestão de pagamentos da loja, cálculo e pagamento de comissão, dashboard financeiro.</p></div>
+      <div class="wave-card rv"><div class="wave-num">03</div><h3>Faturamento & Balcão</h3><p>Perfil de compra do cliente (boleto/cartão/duplicata) e correção do fluxo de pedidos pendentes e cotações.</p></div>
+      <div class="wave-card rv"><div class="wave-num">04</div><h3>Expedição</h3><p>Ligação entre faturamento e expedição — o elo que o SIAGRI não tem, resolvido com camada de IA e WhatsApp.</p></div>
+      <div class="wave-card rv"><div class="wave-num">05</div><h3>Marketing & E-commerce</h3><p>Tendências do Instagram viram estratégia; Shopify com descrição, SEO e análise de vendas na IA.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="sec">
+  <div class="wrap">
+    <div class="guard rv">
+      <span class="kick" style="color:var(--tl)">Garantia</span>
+      <h3 style="margin-top:12px">A gente não desliga até estar redondo</h3>
+      <p>Nada de "entregamos o que estava no contrato e tchau". Se o sistema está rodando mas em algum ponto não atende ao escopo combinado, a NewScale continua trabalhando — sem cobrança adicional — até estar redondo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE NEWSCALE -->
+<section class="sec ice">
+  <div class="wrap">
+    <div class="why-grid">
+      <div class="rv">
+        <span class="kick">Por que a NewScale</span>
+        <h2 style="font-size:clamp(1.9rem,4.5vw,2.8rem);color:var(--ink);margin:12px 0 22px">Método antes de ferramenta.<br>Resultado antes de hype.</h2>
+        <ul class="method">
+          <li><b>1</b> Consultoria sistêmica — entender a operação antes de construir</li>
+          <li><b>2</b> Roadmap faseado — valor rápido, uma dor por vez</li>
+          <li><b>3</b> Implementação integrada — sistemas conversando</li>
+          <li><b>4</b> Treinamento das equipes — o humano monitora a IA</li>
+          <li><b>5</b> KPIs acompanhados — ganho medido, não prometido</li>
+          <li><b>6</b> Sustentação contínua — a gente fica e evolui junto</li>
+        </ul>
+      </div>
+      <div class="rv">
+        <div class="founders" style="margin-top:0">
+          <div class="founder"><b>Bruna Santanna</b><div class="role">Co-fundadora</div><p>ESPM + MBA USP · empresária há 10+ anos · mentora Potenc.IA · implementa IA no próprio negócio todo dia. (SulAmérica · Whirlpool · Blackbox AI)</p></div>
+          <div class="founder"><b>Bruno Varella</b><div class="role">Co-fundador</div><p>ESPM · 17+ anos em Marketing/Produto · ex-Warner Bros. · ex-Natura & Co. · agentes de IA em redes com 700+ franquias.</p></div>
+        </div>
+        <blockquote class="quote" style="margin-top:34px;text-align:left;font-size:clamp(1rem,2.2vw,1.25rem);color:var(--ink-text)">
+          "Cada projeto começa pela conversa — não pelo contrato. A gente entende como a operação funciona hoje, quais as regras de negócio, o que a equipe precisa. Só depois constrói. E depois que entrega, a gente fica — otimizando, ajustando e evoluindo junto com o seu negócio."
+          <span class="who" style="color:var(--terra-d)">— Bruna Santanna</span>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head rv" style="text-align:center;margin-inline:auto">
+      <span class="kick">Dúvidas que a gestão faz</span>
+      <h2>Antes de <span class="terra">decidir</span></h2>
+    </div>
+    <div class="faq rv">
+      <details><summary>E se o SIAGRI não liberar os dados que a gente precisa?</summary><p>Já mapeamos isso antes de te apresentar a proposta. O <b>SIAGRI API</b> é um módulo vendido à parte pela Aliare — pode ser que já esteja no seu contrato, pode ser que não. Confirmar isso é o primeiro item da semana de mapeamento, antes de qualquer desenvolvimento: você não paga construção em cima de um acesso que ainda não está confirmado. Se o módulo não estiver ativo, temos um caminho alternativo de leitura dos dados já mapeado.</p></details>
+      <details><summary>Preciso de equipe técnica interna pra usar?</summary><p>Não. Tudo chega mastigado: o resumo no WhatsApp e o painel prontos. Ninguém do seu time precisa criar ou manter o sistema — a NewScale cuida disso na sustentação. E se quiser ir além do sistema, a Frente 2 (Trilha de IA) capacita seus parceiros a automatizarem as próprias rotinas — é uma contratação separada, não um pacote do sistema.</p></details>
+      <details><summary>Quanto custa manter isso rodando por mês?</summary><p>R$ 2.600/mês de sustentação (sistema no ar, atualização de modelos/APIs, ajustes e suporte). Ela só começa <b>30 dias depois do go-live</b> — o primeiro mês é de garantia, por nossa conta — e <b>não tem fidelidade</b>: se um dia quiser encerrar, basta avisar com 30 dias. Repasses de terceiros — tokens de IA, WhatsApp API oficial e eventual licença do módulo SIAGRI API — são pagos direto ao fornecedor, com transparência.</p></details>
+      <details><summary>Estou olhando outras opções. Por que a NewScale?</summary><p>Método antes de ferramenta: mergulhamos na operação antes de construir. Os fundadores usam IA no próprio negócio todos os dias, e já rodamos IA no agro — inclusive dentro do SIAGRI — e em varejo com integração de ERP. Você não compra um pacote genérico; compra uma solução desenhada pra Comercial Santos.</p></details>
+      <details><summary>Os dados da empresa ficam seguros?</summary><p>Sim. Trabalhamos com acesso controlado e dados no seu ambiente, sem expor informação sensível. O escopo do que a IA lê e escreve é definido e aprovado por você na semana de mapeamento.</p></details>
+      <details><summary>Se um dia eu quiser parar, perco tudo?</summary><p>Não. A base de dados e os dashboards são seus. Encerrando a sustentação, você mantém o que foi construído — a gente explica exatamente o que continua funcionando e o que depende de manutenção ativa.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- PRÓXIMOS PASSOS -->
+<section class="sec ice" id="passos">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">Próximos passos</span>
+      <h2>Do aceite ao <span class="terra">go-live</span></h2>
+    </div>
+    <div class="steps rv">
+      <div class="step"><div class="n">01</div><h3>Mapeamento &amp; diagnóstico</h3><p>Processos, dados, histórico e identidade visual mapeados + confirmação do acesso ao SIAGRI. Incluso no projeto.</p><span class="when">Semana 1</span></div>
+      <div class="step"><div class="n">02</div><h3>Construção</h3><p>Agente comercial, resumos no WhatsApp e dashboard de gestão sob medida.</p><span class="when">Semanas 2–3</span></div>
+      <div class="step"><div class="n">03</div><h3>Homologação</h3><p>Você testa com dados reais, a gente calibra os números e o horário de envio.</p><span class="when">Semana 4</span></div>
+      <div class="step"><div class="n">04</div><h3>Go-live & sustentação</h3><p>No ar e monitorado. A partir daqui, planejamos a Fase 2.</p><span class="when">A partir da Semana 4</span></div>
+    </div>
+    <p class="lead rv" style="margin-top:32px;color:#3a4a4c">Você não está sozinho no go-live — e também não estará no dia seguinte.</p>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta">
+  <div class="wrap">
+    <h2 class="rv">ÍTALO, VAMOS<br>COMEÇAR PELO <span class="terra">COMERCIAL?</span></h2>
+    <p class="rv">A filosofia bate. O SIAGRI libera. O time da NewScale já está fazendo isso rodar em outras operações. Falta o seu "sim" para transformar a Comercial Santos numa empresa AI-first.</p>
+    <div class="cta-btns rv">
+      <a class="btn btn-terra" href="https://wa.me/5511981982254?text=Bruno%2C%20aceito%20avan%C3%A7ar%20com%20a%20Fase%201%20(Comercial)%20da%20proposta%20da%20Comercial%20Santos" target="_blank" rel="noopener">Aceito avançar com a Fase 1</a>
+      <a class="btn btn-ghost" href="https://wa.me/5511981982254?text=Bruno%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20a%20proposta%20da%20Comercial%20Santos" target="_blank" rel="noopener">Tenho uma dúvida</a>
+    </div>
+    <div class="validity rv"><span class="live"></span> Válida até <b>12/ago/2026</b></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="data:image/png;base64,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" alt="NewScale" onerror="this.style.display='none'">
+    <p>NewScale Consulting · IA hiper-personalizada · newscale.tech · (11) 97190-1020<br>Proposta preparada para Comercial Santos Cas · 28/jul/2026</p>
+  </div>
+</footer>
+
+<script>
+  // ROI simulator
+  var SEMANAS = 52/12, SETUP = 27000, MENS = 2600;
+  var HORA = 5893/(14*SEMANAS);
+  var rr = document.getElementById('rr'), rh = document.getElementById('rh'),
+      rm = document.getElementById('rm'), rp = document.getElementById('rp'),
+      rs = document.getElementById('rs');
+  function brl(v){ return 'R$ '+Math.round(v).toLocaleString('pt-BR'); }
+  if (rr) {
+    rr.oninput = function(){
+      var h = +rr.value, mes = h*SEMANAS*HORA, sobra = mes - MENS;
+      rh.textContent = h+'h';
+      rm.textContent = brl(mes);
+      if (sobra > 0) {
+        rs.textContent = brl(sobra);
+        rp.textContent = '~'+Math.max(1,Math.round(SETUP/sobra))+' meses';
+      } else {
+        rs.textContent = 'R$ 0';
+        rp.textContent = 'as outras alavancas assumem';
+      }
+    };
+    rr.oninput();
+  }
+  // Reveal on scroll
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e,i){ if(e.isIntersecting){ setTimeout(function(){e.target.classList.add('in')}, (i%6)*70); io.unobserve(e.target);} });
+  }, {threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+  setTimeout(function(){ document.querySelectorAll('.rv:not(.in)').forEach(function(el){ el.classList.add('in'); }); }, 2500);
+</script>
+
+</body>
+</html>
