@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Encontro 03 · Página do aluno · Jornada Claude · Ousaria × A Virada IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3EEE3; --bg-2:#ECE5D6; --card:#FBF9F3; --cream:#F4F3EF;
+  --ink:#14373C; --ink-2:#2C4F54; --green:#435D51;
+  --terra:#B06E4A; --terra-l:#C4835E; --terra-d:#985A3B;
+  --text:#233133; --muted:#6E7A75; --line:rgba(20,55,60,.16);
+  --deep:#0E282C; --wash:#E0BBA4;
+  --r:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+::selection{background:var(--terra);color:#fff;}
+html{scroll-behavior:smooth;}
+body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+
+/* ---------- barra de progresso ---------- */
+#prog{position:fixed;top:0;left:0;height:4px;width:0;background:var(--terra);z-index:200;transition:width .1s linear;}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:100;background:rgba(243,238,227,.92);backdrop-filter:blur(8px);border-bottom:2px solid var(--ink);}
+.hwrap{max-width:1120px;margin:0 auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+.hlogo{display:flex;align-items:center;gap:11px;}
+.hlogo .n{font-family:'Anton',sans-serif;font-size:1.05rem;text-transform:uppercase;color:var(--ink);letter-spacing:.01em;}
+.pill{border:1.5px solid var(--terra);border-radius:100px;font-weight:700;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-d);padding:5px 11px;white-space:nowrap;}
+.hnav{display:flex;gap:20px;}
+.hnav a{font-weight:700;font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px;transition:border-color .15s,color .15s;}
+.hnav a:hover{color:var(--terra-d);border-color:var(--terra);}
+@media(max-width:860px){.hnav{display:none;}}
+
+/* ---------- layout ---------- */
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px;}
+.narrow{max-width:760px;}
+section{padding:82px 0;}
+.kicker{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-d);margin-bottom:16px;}
+.kicker::before{content:"";width:26px;height:2px;background:var(--terra);flex:0 0 auto;}
+h2{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(2.2rem,6vw,3.4rem);line-height:.9;text-transform:uppercase;color:var(--ink);}
+h3{font-family:'Anton',sans-serif;font-weight:400;font-size:1.5rem;line-height:1;text-transform:uppercase;color:var(--ink);}
+.terra{color:var(--terra);}
+.lead{font-size:1.15rem;font-weight:300;color:var(--ink-2);line-height:1.6;}
+p b,li b{font-weight:600;color:var(--ink);}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:76px 0 64px;overflow:hidden;}
+.hero::before{content:"";position:absolute;top:-160px;right:-140px;width:620px;height:620px;background:radial-gradient(circle,rgba(176,110,74,.13),transparent 62%);pointer-events:none;}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--terra-d);background:var(--card);border:1.5px solid var(--line);border-radius:100px;padding:8px 16px;margin-bottom:24px;}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--terra);box-shadow:0 0 0 4px rgba(176,110,74,.18);flex:0 0 auto;}
+.hero h1{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(3.2rem,10.5vw,6.4rem);line-height:.86;text-transform:uppercase;color:var(--ink);position:relative;}
+.hero .lead{margin-top:24px;max-width:48ch;}
+.meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:30px;}
+.mtag{font-weight:700;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);background:var(--bg-2);border:1.5px solid var(--line);border-radius:100px;padding:7px 14px;}
+
+/* ---------- cards de ação ---------- */
+.acts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:52px;}
+@media(max-width:840px){.acts{grid-template-columns:1fr;}}
+.act{display:flex;flex-direction:column;gap:11px;background:var(--card);border:2px solid var(--ink);border-radius:var(--r);padding:26px 24px 24px;text-decoration:none;box-shadow:7px 7px 0 var(--green);transition:transform .16s,box-shadow .16s;}
+.act:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 var(--terra);}
+.act .ic{width:42px;height:42px;border-radius:11px;background:var(--ink);display:grid;place-items:center;flex:0 0 auto;}
+.act .ic svg{width:21px;height:21px;stroke:var(--wash);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;}
+.act .t{font-family:'Anton',sans-serif;font-size:1.32rem;text-transform:uppercase;color:var(--ink);line-height:1;}
+.act .d{font-size:.9rem;font-weight:300;color:var(--muted);line-height:1.45;}
+.act .go{margin-top:5px;font-weight:800;font-size:.74rem;letter-spacing:.09em;text-transform:uppercase;color:var(--terra-d);display:inline-flex;align-items:center;gap:7px;}
+
+/* ---------- manifesto ---------- */
+.manif{background:var(--bg-2);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:64px 0;}
+.manif p{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(1.8rem,4.8vw,3.2rem);line-height:1.02;text-transform:uppercase;color:var(--ink);max-width:22ch;}
+.manif .sub{font-family:'Hanken Grotesk',sans-serif;font-size:1.02rem;font-weight:300;text-transform:none;color:var(--ink-2);max-width:54ch;margin-top:22px;line-height:1.6;}
+
+/* ---------- blocos numerados ---------- */
+.blk{display:grid;grid-template-columns:auto 1fr;gap:26px;padding:44px 0;border-bottom:1.5px solid var(--line);}
+.blk:last-child{border-bottom:none;}
+@media(max-width:720px){.blk{grid-template-columns:1fr;gap:12px;}}
+.bn{font-family:'Anton',sans-serif;font-size:clamp(2.6rem,7vw,4rem);line-height:.8;color:var(--terra);opacity:.9;}
+.bc h3{margin-bottom:13px;font-size:clamp(1.4rem,3.4vw,1.85rem);}
+.bc p{margin-bottom:13px;}
+.bc p:last-child{margin-bottom:0;}
+.bc ul{margin:13px 0 13px 0;padding-left:0;list-style:none;}
+.bc ul li{position:relative;padding-left:20px;margin-bottom:9px;}
+.bc ul li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;background:var(--terra);border-radius:2px;}
+
+/* citação */
+.quote{border-left:4px solid var(--terra);background:var(--card);border-radius:0 12px 12px 0;padding:17px 20px;margin:18px 0;font-size:1.02rem;font-weight:300;font-style:italic;color:var(--ink-2);line-height:1.55;}
+.quote b{font-style:normal;}
+.quote .who{display:block;font-style:normal;font-weight:800;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-d);margin-bottom:8px;}
+
+/* ---------- split antes/depois ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0;}
+@media(max-width:680px){.split{grid-template-columns:1fr;}}
+.bad,.good{border-radius:14px;padding:20px;}
+.bad{background:var(--bg-2);border:1.5px dashed var(--muted);}
+.good{background:var(--ink);color:var(--cream);box-shadow:7px 7px 0 var(--green);}
+.bad .lb,.good .lb{font-weight:800;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;margin-bottom:9px;display:block;}
+.bad .lb{color:var(--muted);}
+.good .lb{color:var(--terra-l);}
+.bad p,.good p{font-size:.93rem;line-height:1.5;margin:0;}
+.good p{color:rgba(244,243,239,.9);}
+.good b{color:#fff;}
+
+/* ---------- árvore de pastas ---------- */
+.tree{background:var(--ink);border-radius:16px;padding:24px 22px;box-shadow:7px 7px 0 var(--terra);margin:20px 0;font-family:'JetBrains Mono',monospace;font-size:.84rem;color:var(--cream);line-height:1.85;overflow-x:auto;}
+.tree .root{color:#fff;font-weight:500;}
+.tree .fold{color:var(--terra-l);font-weight:500;}
+.tree .cm{color:rgba(244,243,239,.45);}
+.tree .mem{color:#fff;background:rgba(196,131,94,.24);border-radius:5px;padding:1px 6px;}
+
+/* ---------- tabela de modos ---------- */
+.modes{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--line);border:2px solid var(--ink);border-radius:14px;overflow:hidden;margin:22px 0;}
+@media(max-width:680px){.modes{grid-template-columns:1fr;}}
+.mode{background:var(--card);padding:22px 20px;}
+.mode .mt{font-family:'Anton',sans-serif;font-size:1.2rem;text-transform:uppercase;color:var(--ink);margin-bottom:7px;}
+.mode .mw{font-weight:800;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-d);margin-bottom:9px;}
+.mode p{font-size:.9rem;font-weight:300;color:var(--muted);line-height:1.5;margin:0;}
+
+/* ---------- fluxo ---------- */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:26px 0;}
+@media(max-width:820px){.flow{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.flow{grid-template-columns:1fr;}}
+.fs{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:20px 18px;position:relative;transition:transform .16s,box-shadow .16s,border-color .16s;}
+.fs:hover{transform:translateY(-3px);border-color:var(--ink);box-shadow:6px 6px 0 var(--line);}
+.fs .fn{font-family:'Anton',sans-serif;font-size:.95rem;color:#fff;background:var(--terra);width:27px;height:27px;border-radius:50%;display:grid;place-items:center;margin-bottom:12px;}
+.fs .ft{font-family:'Anton',sans-serif;font-size:1.1rem;text-transform:uppercase;color:var(--ink);margin-bottom:7px;line-height:1.05;}
+.fs .fd{font-size:.85rem;font-weight:300;color:var(--muted);line-height:1.45;}
+
+/* ---------- prompts ---------- */
+.pr{background:var(--card);border:1.5px solid var(--line);border-left:7px solid var(--terra);border-radius:0 14px 14px 0;margin-bottom:18px;overflow:hidden;}
+.pr-h{background:rgba(176,110,74,.1);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:14px;border-bottom:1.5px solid var(--line);}
+.pr-t{font-weight:800;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--terra-d);}
+.copy{font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--terra);border:none;border-radius:100px;padding:7px 15px;cursor:pointer;transition:background .18s;flex:0 0 auto;}
+.copy:hover{background:var(--terra-d);}
+.copy.done{background:var(--green);}
+.pr pre{padding:17px 18px;font-family:'Hanken Grotesk',sans-serif;font-size:.94rem;font-weight:300;line-height:1.6;color:var(--text);white-space:pre-wrap;word-wrap:break-word;}
+.pr-w{padding:0 18px 15px;font-size:.83rem;font-weight:300;color:var(--muted);line-height:1.45;font-style:italic;}
+
+/* ---------- dicas ---------- */
+.tips{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px;}
+@media(max-width:900px){.tips{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.tips{grid-template-columns:1fr;}}
+.tip{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:20px 18px;transition:transform .16s,box-shadow .16s,border-color .16s;}
+.tip:hover{transform:translateY(-3px);border-color:var(--ink);box-shadow:6px 6px 0 var(--line);}
+.tip .tn{font-family:'Anton',sans-serif;font-size:1.5rem;color:var(--terra);line-height:1;margin-bottom:9px;}
+.tip .tt{font-family:'Anton',sans-serif;font-size:1rem;text-transform:uppercase;color:var(--ink);margin-bottom:7px;line-height:1.1;}
+.tip .td{font-size:.87rem;font-weight:300;color:var(--muted);line-height:1.5;}
+
+/* ---------- combinados ---------- */
+.task{background:var(--ink);border-radius:20px;padding:44px 38px;box-shadow:9px 9px 0 var(--green);}
+@media(max-width:600px){.task{padding:32px 24px;}}
+.task .kicker{color:var(--terra-l);}
+.task .kicker::before{background:var(--terra-l);}
+.task h2{color:var(--cream);}
+.task p{color:rgba(244,243,239,.85);font-weight:300;margin-top:16px;max-width:58ch;}
+.task b{color:#fff;font-weight:600;}
+.tsteps{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(244,243,239,.14);border-radius:12px;overflow:hidden;margin-top:28px;}
+@media(max-width:680px){.tsteps{grid-template-columns:1fr;}}
+.ts{background:var(--deep);padding:20px 18px;}
+.ts .tsn{font-weight:800;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-l);margin-bottom:8px;}
+.ts .tst{font-family:'Anton',sans-serif;font-size:1rem;text-transform:uppercase;color:var(--cream);margin-bottom:6px;line-height:1.1;}
+.ts p{font-size:.85rem;color:rgba(244,243,239,.7);margin:0;}
+.checks{margin-top:26px;display:grid;gap:10px;}
+.chk{display:flex;align-items:flex-start;gap:12px;background:rgba(244,243,239,.05);border:1px solid rgba(244,243,239,.12);border-radius:12px;padding:14px 16px;}
+.chk .cb{width:22px;height:22px;border-radius:6px;border:2px solid var(--terra-l);flex:0 0 auto;margin-top:1px;display:grid;place-items:center;}
+.chk .cb svg{width:13px;height:13px;stroke:var(--terra-l);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;}
+.chk .ct{font-size:.94rem;color:rgba(244,243,239,.9);font-weight:300;}
+.chk .ct b{color:#fff;font-weight:600;}
+.btnrow{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;padding:15px 28px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;transition:transform .16s,box-shadow .16s,background .18s;}
+.btn-terra{background:var(--terra);color:#fff;}
+.btn-terra:hover{background:var(--terra-d);transform:translateY(-2px);box-shadow:0 10px 26px rgba(176,110,74,.35);}
+.btn-ghost{background:transparent;color:var(--cream);border:2px solid rgba(244,243,239,.35);}
+.btn-ghost:hover{border-color:var(--terra-l);color:#fff;transform:translateY(-2px);}
+
+/* ---------- formulário ---------- */
+.form-sec{background:var(--bg-2);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);}
+.fcard{background:var(--card);border:2px solid var(--ink);border-radius:20px;padding:40px 36px;box-shadow:7px 7px 0 var(--terra);}
+@media(max-width:600px){.fcard{padding:28px 22px;}}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+@media(max-width:640px){.fgrid{grid-template-columns:1fr;}}
+.f{margin-bottom:20px;}
+.f label{display:block;font-weight:700;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);margin-bottom:8px;}
+.f .hint{font-weight:300;font-size:.82rem;color:var(--muted);text-transform:none;letter-spacing:0;margin-top:-4px;margin-bottom:9px;line-height:1.45;}
+.f .opt{font-weight:700;font-size:.6rem;color:var(--muted);letter-spacing:.1em;}
+input[type=text],textarea,select{width:100%;font-family:'Hanken Grotesk',sans-serif;font-size:.97rem;font-weight:300;color:var(--text);background:var(--bg);border:1.5px solid var(--line);border-radius:11px;padding:13px 15px;transition:border-color .15s,box-shadow .15s;}
+input[type=text]:focus,textarea:focus,select:focus{outline:none;border-color:var(--terra);box-shadow:0 0 0 3px rgba(176,110,74,.14);}
+textarea{resize:vertical;min-height:120px;line-height:1.55;}
+select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236E7A75' stroke-width='2' stroke-linecap='round'><path d='M6 9l6 6 6-6'/></svg>");background-repeat:no-repeat;background-position:right 14px center;background-size:17px;padding-right:40px;}
+.fnote{font-size:.83rem;font-weight:300;color:var(--muted);margin-top:6px;line-height:1.5;}
+.ok{display:none;text-align:center;padding:36px 20px;}
+.ok .oi{width:60px;height:60px;border-radius:50%;background:var(--terra);display:grid;place-items:center;margin:0 auto 20px;}
+.ok .oi svg{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;}
+.ok h3{font-size:1.7rem;margin-bottom:10px;}
+.ok p{color:var(--muted);font-weight:300;max-width:40ch;margin:0 auto;}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);padding:48px 0;}
+.fwrap{max-width:1120px;margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.fb .t{font-family:'Anton',sans-serif;font-size:1.1rem;text-transform:uppercase;color:var(--cream);}
+.fb .s{font-size:.8rem;font-weight:300;color:rgba(244,243,239,.55);margin-top:5px;}
+.fl{font-size:.78rem;color:rgba(244,243,239,.45);}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+.rv.in{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none;}}
+</style>
+</head>
+<body>
+
+<div id="prog"></div>
+
+<header>
+  <div class="hwrap">
+    <div class="hlogo">
+      <span class="n">Jornada Claude</span>
+      <span class="pill">Ousaria × A Virada IA</span>
+    </div>
+    <nav class="hnav">
+      <a href="#resumo">Resumo</a>
+      <a href="#aula">A aula</a>
+      <a href="#prompts">Prompts</a>
+      <a href="#dicas">Dicas</a>
+      <a href="#combinado">O combinado</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow rv"><span class="dot"></span> Encontro 03 · 06 de agosto de 2026 · o último da jornada</div>
+    <h1 class="rv">Cada uma tem<br>o seu Claude.<br><span class="terra">A memória</span><br>é do time.</h1>
+    <p class="lead rv">A aula que resolveu a trava que atravessava todo mundo — o projeto do Cowork não se compartilha — e que virou a chave das Skills: quando criar, o que colocar dentro, por que a sua sai diferente toda vez. Está tudo aqui: a gravação, o guia do cérebro compartilhado, os prompts e o que ficou combinado pra frente.</p>
+    <div class="meta rv">
+      <span class="mtag">2h25 de gravação</span>
+      <span class="mtag">Cérebro compartilhado</span>
+      <span class="mtag">Skills a fundo</span>
+      <span class="mtag">Dashboard que atualiza sozinho</span>
+      <span class="mtag">Proposta comercial</span>
+      <span class="mtag">Turma nova: Marina e Suzana</span>
+    </div>
+
+    <div class="acts">
+      <a class="act rv" href="https://us06web.zoom.us/rec/share/jvGPLQpuHN9MGDg9hoPY_mE6R633z7VoWhS9t86aoWfRamdgxMZJ235gbyZKVE4.4oy_ybnCZnbnis8k" target="_blank" rel="noopener">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+        <div class="t">Gravação<br>da aula</div>
+        <div class="d">2h25 no Zoom, com as telas: a estrutura de pastas, o dashboard rodando e a Skill de proposta ao vivo.</div>
+        <div class="go">Assistir →</div>
+      </a>
+      <a class="act rv" href="https://newscale.tech/projetos/cerebro-ousaria-06082026" target="_blank" rel="noopener">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="t">O guia do<br>cérebro da Ousaria</div>
+        <div class="d">O passo a passo que eu montei pra vocês: a pasta no Drive, o desenho das frentes e o memoria.md.</div>
+        <div class="go">Abrir o guia →</div>
+      </a>
+      <a class="act rv" href="#combinado">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+        <div class="t">O que ficou<br>combinado</div>
+        <div class="d">O Café com Claudinho de retorno, quem puxa o quê, e a missão pós-jornada de cada frente.</div>
+        <div class="go">Ver o combinado →</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= RESUMO ================= -->
+<section id="resumo">
+  <div class="wrap narrow">
+    <div class="kicker rv">O resumo em 30 segundos</div>
+    <h2 class="rv">O que <span class="terra">aconteceu</span> aqui</h2>
+    <p class="lead rv" style="margin:20px 0 8px;">Se você faltou, chegou agora ou só quer relembrar, é isto:</p>
+    <div class="bc" style="margin-top:8px;">
+      <p class="rv">O Encontro 01 foi entender o caminho. O 02 foi construir junto. O <b>03 foi destravar</b> — a aula inteira saiu das perguntas de vocês, e a primeira delas era a que travava o time todo.</p>
+      <ul class="rv" style="list-style:none;padding-left:0;">
+        <li><b>A trava:</b> vocês testaram na semana e descobriram que projeto do Cowork <b>não se compartilha</b>. A Maiara trouxe logo de cara: "meio que quebra as pernas da gente". A resposta: o que se compartilha não é o projeto — é a <b>pasta no Google Drive</b>, com um arquivo <b>memoria.md</b> dentro que o Claude de cada uma lê e atualiza.</li>
+        <li><b>As Skills a fundo:</b> por que o dashboard da Camila "estava morto", por que a visualização da Elisa mudou sozinha, por que a Skill da Maiara não pegou a atualização da pasta. Três perguntas diferentes, uma resposta só: <b>faltava Skill, e a Skill precisa da regra certa dentro dela</b>.</li>
+        <li><b>A proposta comercial:</b> o processo real da Ousaria, ponta a ponta, e o desenho de como ele vira Skill. O Júnior fechou o caminho: três Skills — comunidades, programas e projetos especiais — começando pela mais padronizada.</li>
+      </ul>
+      <div class="quote rv">A frase que resume a aula: <b>o que não dá pra compartilhar é o projeto — o que dá, e é o que importa, é o cérebro.</b> Cada uma tem o seu Claude, e todos bebem da mesma memória.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MANIFESTO ================= -->
+<div class="manif">
+  <div class="wrap">
+    <p class="rv">Faz bom<br>primeiro.<br><span class="terra">Depois</span> vira Skill.</p>
+    <p class="sub rv">A ordem foi repetida a aula inteira, porque invertida ela congela o que estava ruim. Você conversa até o resultado ficar do jeito que você quer — aí, e só aí, pede pra virar Skill. O primeiro prompt de uma Skill boa leva uma hora e meia, duas horas. Depois disso, é apertar um botão.</p>
+  </div>
+</div>
+
+<!-- ================= A AULA ================= -->
+<section id="aula">
+  <div class="wrap narrow">
+    <div class="kicker rv">O que rolou</div>
+    <h2 class="rv">A aula em<br><span class="terra">treze</span> ideias</h2>
+
+    <!-- 01 -->
+    <div class="blk rv">
+      <div class="bn">01</div>
+      <div class="bc">
+        <h3>O projeto não se compartilha. A pasta, sim.</h3>
+        <p>A dúvida que abriu a aula, trazida pela Maiara: vocês trabalham colocando o time inteiro dentro dos projetos, e no modo desktop isso não existe. É verdade — e não vai existir tão cedo. Projeto compartilhado não tem no Claude, nem no ChatGPT, nem em lugar nenhum ainda.</p>
+        <p>Mas o projeto <b>não é</b> o que precisa ser compartilhado. O projeto é a sua conversa, o seu jeito de trabalhar. O que o time precisa dividir é a <b>fonte</b>: uma pasta no Google Drive, baixada na máquina, que os Claudes de todo mundo enxergam.</p>
+        <div class="quote"><span class="who">Maiara, montando o raciocínio</span>Cada um tem o seu projeto. Eu e a Elisa cuidamos da parte financeira: eu uso uma pasta pra alimentar o meu projeto, ela cria outro projeto e bebe da mesma pasta. E a partir daí é como se a gente estivesse conversando junto — ela vê tudo que eu criei e tudo que eu alterei.</div>
+        <p><b>Exatamente isso.</b> Cada uma tem o seu Claude; todos bebem da mesma pasta.</p>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="blk rv">
+      <div class="bn">02</div>
+      <div class="bc">
+        <h3>O memoria.md: o log que vem da programação</h3>
+        <p>A pasta compartilhada resolve metade. A outra metade é saber <b>o que a outra pessoa fez lá dentro</b>. Para isso serve um arquivo de texto simples dentro da pasta — o <b>memoria.md</b>.</p>
+        <p>A ideia é emprestada de quem programa: quando muita gente mexe no mesmo sistema, todo mundo registra o que alterou. Antes da IA, o programador ia lá e escrevia na mão. Agora quem escreve é o Claude.</p>
+        <ul>
+          <li><b>O que vai dentro:</b> as regras da frente, o que já foi feito, o que ficou pendente e as decisões que foram tomadas.</li>
+          <li><b>Quem mantém:</b> ele. Você só coloca a regra nas instruções permanentes do projeto — o <a href="#prompts" style="color:var(--terra-d);font-weight:600;">prompt 01</a> está pronto pra colar.</li>
+          <li><b>Custo:</b> praticamente zero. Arquivo .md é o formato que ele lê e escreve mais rápido — não precisa ter medo de token por causa disso.</li>
+        </ul>
+        <div class="quote">Ele é bem caxias com isso. Você coloca dentro das instruções permanentes que tudo que você fizer vai parar no arquivo .md — e ele faz. <b>É meio bobo, mas faz toda a diferença.</b></div>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="blk rv">
+      <div class="bn">03</div>
+      <div class="bc">
+        <h3>São duas memórias diferentes — não misture</h3>
+        <p>A Sergiana fez a pergunta que muita gente estava fazendo por dentro: "então eu consigo acessar a memória da Camila?". Não — e aqui os assuntos se misturaram. São duas coisas com o mesmo nome:</p>
+        <div class="split">
+          <div class="bad">
+            <span class="lb">A sua memória</span>
+            <p>O seu segundo cérebro. Fica <b>no seu computador</b>, no seu Claude. Tudo que você faz vai parando ali pra você nunca começar do zero. É pessoal — e é ótimo que seja.</p>
+          </div>
+          <div class="good">
+            <span class="lb">A memória do time</span>
+            <p>O <b>memoria.md dentro da pasta do Drive</b>, de uma frente de trabalho específica. Todo mundo daquela frente lê e escreve nela. É o que faz o financeiro da Maiara e o da Elisa serem o mesmo financeiro.</p>
+          </div>
+        </div>
+        <p>A confusão é natural porque o arquivo é do mesmo tipo. O que muda é <b>onde ele mora</b>: no seu computador, é seu; na pasta compartilhada do Drive, é do time.</p>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="blk rv">
+      <div class="bn">04</div>
+      <div class="bc">
+        <h3>O risco honesto: dois mexendo no mesmo arquivo</h3>
+        <p>Não vendi mágica na aula e não vou vender aqui. A pasta compartilhada tem um risco real: <b>se duas pessoas editarem o mesmo arquivo ao mesmo tempo, ele pode corromper</b>. Não é Google Sheets, que mostra o cursor da outra pessoa ao vivo.</p>
+        <p>A Elisa levantou o caso mais quente: "um monte de gente mexe na planilha financeira ao mesmo tempo". Três saídas, e nenhuma delas é desistir do Cowork:</p>
+        <ul>
+          <li><b>A planilha pode continuar no Sheets.</b> O Claude consulta ela de lá, sem problema nenhum. Você não precisa trazer tudo pra dentro da pasta.</li>
+          <li><b>Um dono por arquivo.</b> Regra de casa simples: quem edita é uma pessoa; os outros leem.</li>
+          <li><b>Leve o problema pra ele.</b> "Como eu faço pra todo mundo acessar essa pasta sem corromper?" Ele pode trabalhar numa cópia e atualizar depois, criar regra de atualização, o que fizer sentido pra vocês.</li>
+        </ul>
+        <div class="quote">Não invalidem o uso inteiro do Cowork por causa de uma planilha que vocês precisam mexer ao mesmo tempo. <b>Ainda não é assim — pode ser que daqui duas semanas seja.</b></div>
+      </div>
+    </div>
+
+    <!-- 05 -->
+    <div class="blk rv">
+      <div class="bn">05</div>
+      <div class="bc">
+        <h3>A pasta é uma sala</h3>
+        <p>A imagem que fez a ficha cair na aula. Pense em cada pasta como uma sala física da empresa: a <b>sala do financeiro</b> tem todos os papéis do financeiro, o extrato, a conta. A <b>sala do marketing</b> tem todo o material do marketing. E quando as duas precisam conversar, você abre uma portinha entre elas.</p>
+        <p>É exatamente assim que ele lê: hierarquia de pasta e subpasta. Você aponta a pasta de cima e ele alcança tudo que está embaixo.</p>
+        <div class="tree">
+<span class="root">Ousaria/</span>
+  <span class="fold">comercial/</span>      <span class="cm">propostas que venderam, cases, fotos</span>  <span class="mem">memoria.md</span>
+  <span class="fold">financeiro/</span>     <span class="cm">contratos, notas, planilha, DRE</span>       <span class="mem">memoria.md</span>
+  <span class="fold">impacto/</span>        <span class="cm">pesquisas T0/T1, indicadores, playbook</span> <span class="mem">memoria.md</span>
+  <span class="fold">programas/</span>      <span class="cm">metodologia, encontros, materiais</span>     <span class="mem">memoria.md</span>
+  <span class="fold">conteudo/</span>       <span class="cm">pilares, posts, manual de marca</span>       <span class="mem">memoria.md</span>
+        </div>
+        <p><b>E isso gasta menos token do que parece.</b> Ele não abre arquivo por arquivo: passa pelos nomes e só abre o que faz sentido pro que você pediu.</p>
+      </div>
+    </div>
+
+    <!-- 06 -->
+    <div class="blk rv">
+      <div class="bn">06</div>
+      <div class="bc">
+        <h3>Perdendo o medo do Claude Code</h3>
+        <p>O nome assusta e não devia. O Code <b>é o mesmo Claude</b> das outras duas aulas — mesma conversa, mesma lógica, mesmo jeito de pedir. A única diferença real: ele não tem a estrutura de projeto. Ele trabalha direto dentro da pasta.</p>
+        <div class="modes">
+          <div class="mode">
+            <div class="mw">O que muda</div>
+            <div class="mt">A instrução</div>
+            <p>No Cowork, a instrução fica no projeto. No Code, ela vira um arquivo .md dentro da pasta — ou, melhor ainda, uma Skill. Se você já tem a Skill criada, ela funciona nos três: chat, Cowork e Code.</p>
+          </div>
+          <div class="mode">
+            <div class="mw">Quando você precisa dele</div>
+            <div class="mt">Sair pra internet</div>
+            <p>Publicar um site, mexer com servidor, com GitHub, subir uma proposta online. Tudo que sai do ambiente do Claude e vai pra web precisa ser no Code. O resto dá nos dois.</p>
+          </div>
+        </div>
+        <div class="quote">Quando eu dei o desafio de editar o meu vídeo, sabe o que ele fez? <b>Baixou um arquivo da internet pra conseguir aprender a editar.</b> Eu não escrevi código nenhum — quem decidiu ir buscar a solução foi ele.</div>
+        <p>A pergunta da Maiara foi ótima: "então o Code é tipo o NotebookLM?". Ele lê como o NotebookLM, mas vai muito além — <b>ele cria arquivo, edita planilha, monta dashboard, executa</b>. Dar acesso a uma pasta é como dar acesso a um funcionário: ele lê, edita e trabalha ali dentro.</p>
+      </div>
+    </div>
+
+    <!-- 07 -->
+    <div class="blk rv">
+      <div class="bn">07</div>
+      <div class="bc">
+        <h3>O artefato vivo que estava morto</h3>
+        <p>A Camila trouxe: "eu tentei criar um artefato vivo, mas percebi que ele estava morto — eu olhava a planilha e o número era outro". E a Elisa tinha o problema irmão: pediu pra atualizar o dashboard e ele voltou com <b>uma visualização diferente</b>, teve que refazer tudo.</p>
+        <p>São o mesmo diagnóstico, e ele tem nome: <b>faltava Skill e faltava agendamento</b>.</p>
+        <ul>
+          <li><b>Nada fica online de verdade</b> dentro do Claude. Nem o meu fica. O que existe é rotina: ele roda de tempos em tempos e reescreve o arquivo.</li>
+          <li><b>Sem Skill, cada rodada sai diferente.</b> Cada prompt é um prompt. A Skill é o que salva a receita no detalhe — mesmo layout, mesma visualização, sempre.</li>
+          <li><b>Troque o artefato por um HTML solto</b> salvo na pasta do Drive. Todo mundo enxerga, e quando a rotina atualiza, é só dar F5.</li>
+        </ul>
+        <div class="quote"><span class="who">O meu guia do dia, mostrado ao vivo</span>Roda às 7h e de novo às 18h. Ele lê os meus e-mails, as reuniões da agenda, as demandas de financeiro, entra nas pastas dos clientes e vê o que não está pronto. <b>Criei uma secretária chata que fica me cobrando.</b> Ele até me avisou que a pasta de uma cliente nova não existia e perguntou se eu queria que ele criasse.</div>
+        <p>Peça também o carimbo de "última atualização" no canto do dashboard — assim ninguém olha número velho achando que é de hoje.</p>
+      </div>
+    </div>
+
+    <!-- 08 -->
+    <div class="blk rv">
+      <div class="bn">08</div>
+      <div class="bc">
+        <h3>Primeiro faz bom. Só depois vira Skill.</h3>
+        <p>A regra mais repetida da aula, e a que mais economiza retrabalho. <b>Não peça a Skill primeiro.</b> Faça o trabalho na conversa, peça alteração, brigue com ele, até o resultado ficar do jeito que você quer. Aí você diz: "pega tudo que a gente fez aqui e transforma numa Skill".</p>
+        <p>Se você inverte, ele bota a carroça na frente dos bois — e a Skill congela um resultado que você nem aprovou.</p>
+        <div class="quote">Não é rápido e ninguém prometeu que seria. <b>O primeiro prompt de uma Skill leva uma hora e meia, duas horas pra escrever.</b> A minha de edição de vídeo levou quase três semanas — errando, e eu fazendo ela acertar. Depois disso, você dá um "faça" e ele faz.</div>
+        <p>É assim que a Anthropic recomenda no próprio curso de Skills, e é assim que funcionou na mentoria de ontem: a cliente tem 48 franqueados. Em vez de sair fazendo os 48, <b>pega três</b>, roda as análises até ficarem boas, transforma em Skill — e aí solta nos 48.</p>
+      </div>
+    </div>
+
+    <!-- 09 -->
+    <div class="blk rv">
+      <div class="bn">09</div>
+      <div class="bc">
+        <h3>A Skill é o risoto</h3>
+        <p>A metáfora do dia. A base do risoto e o modo de preparo são sempre iguais: a cebola, o arroz, o caldo. O que muda é o recheio — gorgonzola, parmesão, filé.</p>
+        <p>A Skill é a base. <b>O projeto é o recheio.</b> Por isso ela funciona em qualquer pasta, em qualquer cliente: você entra na pasta do cliente novo e diz "cria o contrato", e ela cria — cláusula por cláusula, sempre igual.</p>
+        <ul>
+          <li><b>Uma Skill por tipo de trabalho</b>, não por cliente. Contrato de fornecedor, contrato de time, proposta de comunidade.</li>
+          <li><b>Se os documentos são muito diferentes entre si</b> (cláusulas distintas, usos distintos), vale uma Skill pra cada — foi a resposta pra Elisa. Se são parecidos, cabe tudo numa só, com modelo A, B, C dentro.</li>
+          <li><b>A Skill pode perguntar.</b> O que não dá pra padronizar vira pergunta dentro dela — foi o que a Elisa e a Maiara fizeram na de precificação, e é o jeito certo de lidar com o que só existe na cabeça de quem faz.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="blk rv">
+      <div class="bn">10</div>
+      <div class="bc">
+        <h3>Referência embutida × pasta vinculada</h3>
+        <p>A pergunta da Maiara: a Skill de contratos não pegou a atualização que ela tinha feito na pasta. Por quê? Porque a Skill <b>não é um arquivo vivo</b> — ela é um manual de instrução, e só olha o que você mandou olhar.</p>
+        <p>Duas soluções, e a escolha depende de uma pergunta: <b>essa referência muda com frequência?</b></p>
+        <div class="split">
+          <div class="bad">
+            <span class="lb">Se a fonte é viva</span>
+            <p>Coloque a regra na instrução: <b>"antes de executar, verifique se existem novos arquivos na pasta"</b>. É o que a minha Skill do guia do dia faz — ela checa se entrou reunião nova, tarefa nova, e-mail novo.</p>
+          </div>
+          <div class="good">
+            <span class="lb">Se a fonte é fixa · eu prefiro</span>
+            <p>Mande ele <b>estudar as referências e embutir dentro da Skill</b>. Ela vira um .zip com os arquivos dentro. Se os contratos vão ser sempre iguais, isso é mais seguro: ele não reinterpreta a referência de um jeito diferente a cada vez.</p>
+          </div>
+        </div>
+        <p><b>E uma armadilha importante:</b> Skill não se compartilha sozinha. Se ela aponta pra uma pasta do <i>seu</i> computador, na máquina da outra pessoa aquela pasta não existe e ela quebra. Se aponta pra uma planilha do Drive, <b>quem for usar precisa ter acesso à planilha</b> — foi a pergunta da Elisa, e a resposta é sim.</p>
+      </div>
+    </div>
+
+    <!-- 11 -->
+    <div class="blk rv">
+      <div class="bn">11</div>
+      <div class="bc">
+        <h3>A Skill de proposta não é layout — é a lógica do negócio</h3>
+        <p>Esse foi o pulo do gato da segunda metade da aula. A tentação é achar que a Skill de proposta serve pra deixar bonito. <b>Não serve.</b> Ela carrega quem é a Ousaria, o que vocês vendem, quem é o cliente ideal, quais soluções cabem em cada dor — e a precificação.</p>
+        <p>O meu fluxo real, o que eu mostrei rodando na tela:</p>
+        <ul>
+          <li>Saio da reunião com a gravação. Peço a <b>transcrição</b> — porque é ali que o cliente fala tudo que ele quer, e é ali que eu falo tudo que eu ofereço.</li>
+          <li>Rodo a Skill: ela lê o contexto, a transcrição, a pesquisa sobre a empresa, a identidade visual, <b>confirma valores e condições comigo</b> e gera a proposta em HTML.</li>
+          <li>Peço ajuste, ajuste, ajuste — sempre peço. Aí levo pro Code, que <b>sobe a proposta online</b> pra eu mandar o link.</li>
+          <li>Fechou: ele já agenda as reuniões no calendário com o convite pra cliente, e já gera o contrato a partir da proposta — inclusive com o desconto que eu dei na conversa.</li>
+        </ul>
+        <div class="quote">Eu nem sei mais fazer proposta comercial sem Skill. <b>Saiam do Claude Design e vão pra Skill</b> — porque a Skill engloba toda a lógica, não só o desenho.</div>
+      </div>
+    </div>
+
+    <!-- 12 -->
+    <div class="blk rv">
+      <div class="bn">12</div>
+      <div class="bc">
+        <h3>O case Juca na Balada: 4 dias viraram um clique</h3>
+        <p>O exemplo que eu trouxe porque é a cara do problema de vocês. Uma empresa de 25 anos que organiza viagens para festivais, com cerca de 50 produtos por ano. Toda vez que nascia um produto novo, o rapaz do marketing passava <b>no mínimo quatro dias</b> montando um PDF no Canva. E aí as vendedoras mandavam por WhatsApp — e ninguém abria.</p>
+        <p>Viramos aquilo numa página com simulador: o cliente escolhe hotel, cidade de saída, quantos dias, se quer ingresso, seguro, parcelamento — e cai direto no WhatsApp da vendedora com o pacote montado. Bônus: agora indexa no Google, coisa que um PDF nunca fez.</p>
+        <div class="quote">O prompt levou <b>duas horas</b> pra ser escrito, e ele escreveu sozinho. E antes disso teve o mapeamento: a gente sentou das 11h às 19h com o time de produto e o de marketing, refazendo o processo. <b>Parece óbvio no final — mas veio de um mapeamento muito longo.</b></div>
+        <p>É o mesmo movimento das aulas 1 e 2. Não tem atalho pro mapeamento — e é exatamente por isso que vocês gastaram dois encontros mapeando.</p>
+      </div>
+    </div>
+
+    <!-- 13 -->
+    <div class="blk rv">
+      <div class="bn">13</div>
+      <div class="bc">
+        <h3>O trade-off do design — e por que o Vini fica maior nessa história</h3>
+        <p>O Júnior colocou uma dor honesta na mesa: as propostas da Ousaria têm cara de Ousaria porque são feitas no Canva, com grafismo, detalhe, revisão. Padronizar pode custar um pouco disso — "o material começa a ter cara de inteligência artificial".</p>
+        <p>E o Vini deu o caminho de volta, que eu assino embaixo: <b>simplificar a identidade pro Claude</b>. Ele não consegue ler 100% de uma identidade construída pra humano — mas lê muito bem uma versão enxuta, com as regras claras.</p>
+        <div class="quote">Tem muita gente fazendo design com IA e a gente não sabe que é IA. <b>É referência, é testar.</b> O papel do Vini aqui é importantíssimo — é ele que faz o material de vocês não parecer o material de todo mundo.</div>
+        <p>E o Júnior fechou o raciocínio do jeito certo: <b>é melhor começar pelo simples</b> e ir automatizando uma coisa por vez do que esperar o sistema completo pra só então rodar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FLUXO ================= -->
+<section style="background:var(--bg-2);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);">
+  <div class="wrap narrow">
+    <div class="kicker rv">O caminho de toda Skill</div>
+    <h2 class="rv">Quatro passos.<br>Sempre <span class="terra">nessa</span> ordem</h2>
+    <p class="lead rv" style="margin-top:18px;">Contrato, proposta, dashboard, precificação: tanto faz o quê. O caminho é o mesmo — e inverter a ordem é o erro mais caro.</p>
+
+    <div class="flow">
+      <div class="fs rv">
+        <div class="fn">1</div>
+        <div class="ft">Faça na conversa</div>
+        <div class="fd">Um caso real, do começo ao fim, com ele. Peça alteração até estar do jeito que você quer. Ainda não fale em Skill.</div>
+      </div>
+      <div class="fs rv">
+        <div class="fn">2</div>
+        <div class="ft">Transforme em Skill</div>
+        <div class="fd">"Pega tudo que a gente fez e vira uma Skill." O que não dá pra padronizar, ela pergunta pra quem for usar.</div>
+      </div>
+      <div class="fs rv">
+        <div class="fn">3</div>
+        <div class="ft">Aponte a fonte</div>
+        <div class="fd">Diga de onde ela puxa: a pasta, a planilha do Drive, as referências. Fonte viva ganha a regra de verificar novidades.</div>
+      </div>
+      <div class="fs rv">
+        <div class="fn">4</div>
+        <div class="ft">Agende e memorize</div>
+        <div class="fd">Um horário fixo pra rodar sozinha e o memoria.md sendo atualizado no fim. Aí sim vira sistema.</div>
+      </div>
+    </div>
+
+    <div class="quote rv" style="margin-top:30px;">Automatizar dá trabalho e não é rápido — a gente não muda uma empresa num estalo. Mas quando começa a rodar, compensa demais. <b>É o que todo mundo vai ter que fazer eventualmente. Vocês estão na frente da galera.</b></div>
+  </div>
+</section>
+
+<!-- ================= PROMPTS ================= -->
+<section id="prompts">
+  <div class="wrap narrow">
+    <div class="kicker rv">Copia e cola</div>
+    <h2 class="rv">Os prompts<br>da <span class="terra">aula</span></h2>
+    <p class="lead rv" style="margin:18px 0 34px;">O primeiro é o mais importante de todos — é a regra que faz o cérebro do time existir. Ajuste os colchetes pro seu caso.</p>
+
+    <div class="pr rv">
+      <div class="pr-h"><span class="pr-t">01 · A regra da memória · cole nas instruções do projeto</span><button class="copy">Copiar</button></div>
+      <pre>Toda vez que a gente terminar alguma coisa neste projeto, atualize o memoria.md antes de encerrar: o que foi feito, a data, as decisões que eu tomei e o que ficou pendente.
+
+Não apague o histórico — acrescente.
+
+E sempre comece lendo o memoria.md antes de responder qualquer coisa.</pre>
+      <div class="pr-w">Este vai nas instruções permanentes do projeto, não no chat. É o texto exato que eu ditei na aula. Se a pasta for compartilhada, o Claude de todo mundo passa a fazer isso — e é assim que vocês param de trabalhar às cegas.</div>
+    </div>
+
+    <div class="pr rv">
+      <div class="pr-h"><span class="pr-t">02 · Montar o cérebro da sua frente de trabalho</span><button class="copy">Copiar</button></div>
+      <pre>Claude, quero montar o cérebro compartilhado de uma frente de trabalho da minha empresa.
+
+Contexto:
+- Eu sou a [nome] e cuido de [financeiro / comercial / impacto / programas] junto com a [nome da colega].
+- Esta é a nossa pasta do Google Drive, que já está baixada aqui na máquina: [aponte a pasta].
+- Os nossos arquivos são: [contratos, planilhas, playbook, transcrições, o que existir].
+
+O que eu quero:
+1. Leia tudo que está nesta pasta e me diga, em linguagem de leigo, o que você entendeu que a gente faz aqui.
+2. Crie um arquivo memoria.md nesta pasta com: as regras da nossa frente, o que já existe, o que está pendente e as decisões que a gente já tomou.
+3. Mantenha esse arquivo atualizado toda vez que a gente terminar alguma coisa — sem apagar o histórico.
+4. Me diga qual regra eu devo colar nas instruções do projeto pra você nunca esquecer disso.
+
+Antes de criar qualquer coisa, me pergunte o que ficou ambíguo.</pre>
+      <div class="pr-w">Rode uma vez por frente. Cada pessoa roda no SEU projeto, apontando a MESMA pasta do Drive — é isso que faz virar time. O passo a passo com telas está no guia do cérebro da Ousaria.</div>
+    </div>
+
+    <div class="pr rv">
+      <div class="pr-h"><span class="pr-t">03 · O dashboard que atualiza sozinho · parte 1, construir</span><button class="copy">Copiar</button></div>
+      <pre>Claude, quero um dashboard de [financeiro / impacto / comercial].
+
+De onde vêm os dados: [esta planilha do Drive / esta pasta / estes arquivos]. Ela está sempre atualizada ali.
+
+O que eu preciso ver: [os números que importam, na ordem que importam].
+
+Faça em HTML solto, salvo aqui nesta pasta — não em artefato — pra que a equipe inteira consiga abrir o mesmo arquivo. Use a nossa identidade visual. Coloque no canto a data e a hora da última atualização.
+
+Quero um dashboard impressionante. Capriche.
+
+Me mostre primeiro e vamos ajustando até ficar do jeito que eu quero.</pre>
+      <div class="pr-w">Peça pra impressionar — funciona mesmo. E não peça Skill ainda: primeiro deixe bonito e certo. Só aí vai pro prompt 04.</div>
+    </div>
+
+    <div class="pr rv">
+      <div class="pr-h"><span class="pr-t">04 · O dashboard que atualiza sozinho · parte 2, congelar e agendar</span><button class="copy">Copiar</button></div>
+      <pre>Ficou do jeito que eu queria.
+
+Agora transforme isto numa Skill, pra sair exatamente igual todas as vezes: mesma visualização, mesmo layout, mesma ordem.
+
+Dentro da Skill, deixe a regra: antes de gerar, verifique se a planilha [ou a pasta] tem dados novos.
+
+Depois crie um agendamento pra essa Skill rodar sozinha todo dia às 7h e às 18h, atualizar o arquivo HTML na pasta do Drive e escrever no memoria.md o que mudou.</pre>
+      <div class="pr-w">Este é o prompt que resolve o "artefato vivo que estava morto". Sem Skill ele reinventa o layout a cada rodada; sem agendamento ele só roda quando você pede. Lembrando: o computador precisa estar ligado no horário.</div>
+    </div>
+
+    <div class="pr rv">
+      <div class="pr-h"><span class="pr-t">05 · A Skill que já verifica novidades</span><button class="copy">Copiar</button></div>
+      <pre>Claude, você usou a Skill mas não pegou as atualizações que eu coloquei na pasta.
+
+Pegue essas atualizações agora e altere a Skill: antes de executar, ela precisa sempre verificar se existem arquivos novos ou alterados em [nome exato da pasta] e usar a versão mais recente.</pre>
+      <div class="pr-w">Foi a resposta pra Maiara. Use quando a fonte é viva (documentos entrando toda hora). Se a fonte é fixa, prefira o prompt 06.</div>
+    </div>
+
+    <div class="pr rv">
+      <div class="pr-h"><span class="pr-t">06 · De trabalho bom para Skill · o caso do contrato</span><button class="copy">Copiar</button></div>
+      <pre>Etapa 1 — faça o trabalho bom (na conversa, sem falar em Skill):
+"Fechei com o fornecedor [nome]. Esta é a proposta que ele mandou. Monte o contrato de prestação de serviço no nosso modelo."
+E aí você ajusta: "o logo da Ousaria ficou pequeno", "a cláusula 2 está errada", até estar perfeito.
+
+Etapa 2 — só depois, congele:
+"Ficou exatamente como eu quero. Pega tudo que a gente fez aqui e transforma numa Skill de contrato de fornecedor.
+
+Coloque as referências dentro da própria Skill — não deixe ela buscando arquivos em pasta externa, porque na máquina de outra pessoa essa pasta não existe.
+
+Os campos variáveis são: [nome, CNPJ, valor, prazo, forma de pagamento]. Quando faltar o dado do cliente, deixe o campo marcado em aberto em vez de inventar.
+
+Quando eu te mandar a proposta, você puxa as informações de lá e gera o contrato."</pre>
+      <div class="pr-w">Vale pra qualquer Skill, não só contrato. A ordem é o que importa: trabalho bom primeiro, congelamento depois. Se são cinco tipos de contrato muito diferentes, faça uma Skill para cada.</div>
+    </div>
+
+    <div class="pr rv">
+      <div class="pr-h"><span class="pr-t">07 · A Skill de proposta comercial da Ousaria</span><button class="copy">Copiar</button></div>
+      <pre>ANTES DE PEDIR A SKILL — junte o contexto numa pasta:
+as 3 ou 4 propostas que mais venderam, os cases (com fotos dos eventos e das aulas), o manual de marca simplificado, quem é o cliente ideal, o que a Ousaria oferece em cada frente, e a planilha/lógica de precificação.
+
+O prompt:
+"Claude, você é o meu estrategista comercial da Ousaria. Está tudo nesta pasta.
+
+Primeiro: leia as propostas que fecharam e me diga, em linguagem de leigo, qual é o padrão que se repete — estrutura, ordem dos blocos, jeito de falar de preço, jeito de contar caso.
+
+Depois: monte a proposta de [comunidades] para [cliente], em HTML, na identidade da Ousaria, a partir da transcrição da reunião que está aqui. Puxe as fotos e os cases da pasta. Confirme comigo os valores e as condições antes de fechar.
+
+Eu reviso, a gente ajusta, e só quando estiver do jeito que eu quero você transforma isso numa Skill que eu uso em qualquer proposta futura — carregando a lógica da Ousaria, não só o layout.
+
+Não invente número que não esteja nos arquivos."</pre>
+      <div class="pr-w">O caminho que o time fechou na aula: comece por comunidades, que já é padronizada. Depois programas (que precisa de uma Skill antes, pra desenhar o programa) e por último projetos especiais. A Skill de precificação da Maiara e da Elisa entra sendo chamada por dentro desta.</div>
+    </div>
+
+    <div class="pr rv">
+      <div class="pr-h"><span class="pr-t">08 · A secretária chata · o guia do dia</span><button class="copy">Copiar</button></div>
+      <pre>Claude, quero um guia do dia que roda sozinho de manhã e no fim da tarde.
+
+Toda manhã às 7h, olhe:
+- os meus e-mails, e me diga o que ficou sem resposta há muito tempo;
+- a minha agenda, e me diga o que eu tenho hoje e o que precisa estar pronto antes;
+- as pastas dos meus projetos, e me diga o que está prometido e ainda não existe;
+- as propostas enviadas sem retorno, e me lembre de cobrar.
+
+Gere isso como um HTML na minha pasta, com o que é pra hoje, o que é pra semana e o que está travado.
+
+Às 18h, rode de novo e atualize: tire o que eu já fiz e acrescente o que entrou.</pre>
+      <div class="pr-w">É o meu, o que eu mostrei na tela. Adapte pra sua rotina. O computador precisa estar ligado nos horários — é a única exigência.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DICAS ================= -->
+<section id="dicas" style="background:var(--bg-2);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);">
+  <div class="wrap">
+    <div class="kicker rv">Anotações da aula</div>
+    <h2 class="rv">As dicas que<br>ficaram <span class="terra">soltas</span></h2>
+    <p class="lead rv" style="margin-top:18px;max-width:56ch;">Coisas ditas no meio da conversa que valem mais que muita teoria.</p>
+
+    <div class="tips">
+      <div class="tip rv"><div class="tn">01</div><div class="tt">Projeto é seu. Pasta é do time</div><div class="td">Pare de tentar compartilhar a conversa. Cada uma cria o seu projeto; o que se compartilha é a pasta do Drive que os dois projetos leem.</div></div>
+      <div class="tip rv"><div class="tn">02</div><div class="tt">Baixe o Drive na máquina</div><div class="td">Com o Google Drive instalado no computador, o Claude lê a pasta como pasta normal. É o passo que destrava tudo — foi o que o Júnior ensinou.</div></div>
+      <div class="tip rv"><div class="tn">03</div><div class="tt">.md quase não gasta token</div><div class="td">É o formato que ele lê e escreve mais rápido. Não tenha medo de pedir atualização de memória a cada tarefa.</div></div>
+      <div class="tip rv"><div class="tn">04</div><div class="tt">Um dono por arquivo</div><div class="td">Dois editando o mesmo arquivo ao mesmo tempo pode corromper. Não é Sheets ao vivo. Combine quem edita o quê.</div></div>
+      <div class="tip rv"><div class="tn">05</div><div class="tt">A planilha pode ficar no Sheets</div><div class="td">Não precisa trazer tudo pra pasta. O Claude consulta a planilha lá mesmo, sem risco de conflito de edição.</div></div>
+      <div class="tip rv"><div class="tn">06</div><div class="tt">Leve o problema pra ele</div><div class="td">"Como faço todo mundo acessar essa pasta sem corromper?" Ele desenha a solução — muitas vezes melhor do que a que eu daria.</div></div>
+      <div class="tip rv"><div class="tn">07</div><div class="tt">Cada pasta é uma sala</div><div class="td">Financeiro, marketing, impacto. Tudo daquele assunto mora ali. Quando duas precisam conversar, você abre uma portinha.</div></div>
+      <div class="tip rv"><div class="tn">08</div><div class="tt">O Code é o mesmo Claude</div><div class="td">Sem estrutura de projeto, trabalhando dentro da pasta. Se você já tem a Skill, ela roda igual no chat, no Cowork e no Code.</div></div>
+      <div class="tip rv"><div class="tn">09</div><div class="tt">Só o Code sai pra internet</div><div class="td">Publicar site, mexer em servidor ou GitHub, subir proposta online: isso é Code. O resto dá nos dois.</div></div>
+      <div class="tip rv"><div class="tn">10</div><div class="tt">HTML solto, não artefato</div><div class="td">Salvo na pasta do Drive, todo mundo abre o mesmo arquivo e enxerga a mesma coisa. Atualizou, é só dar F5.</div></div>
+      <div class="tip rv"><div class="tn">11</div><div class="tt">Saiu diferente? Faltou Skill</div><div class="td">Cada prompt é um prompt. A Skill é o que salva a receita no micrograma — mesmo resultado, todas as vezes.</div></div>
+      <div class="tip rv"><div class="tn">12</div><div class="tt">Nada fica online de verdade</div><div class="td">Nem o meu. O que existe é rotina: roda às 7h, roda às 18h, reescreve o arquivo. Pra ficar online mesmo, precisa ir pra um servidor.</div></div>
+      <div class="tip rv"><div class="tn">13</div><div class="tt">Skill compartilhada exige acesso</div><div class="td">Se ela lê uma planilha do Drive, quem usar precisa ter permissão nela. Se aponta pra pasta do seu computador, quebra na máquina do outro.</div></div>
+      <div class="tip rv"><div class="tn">14</div><div class="tt">Pegue três antes dos quarenta e oito</div><div class="td">Faça o trabalho ficar bom num punhado de casos, vire Skill, e só então solte no volume todo.</div></div>
+      <div class="tip rv"><div class="tn">15</div><div class="tt">Uma Skill chama outra</div><div class="td">A de proposta pode acionar a de precificação. Primeiro as peças separadas, depois o maestro — nessa ordem.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= O COMBINADO ================= -->
+<section id="combinado">
+  <div class="wrap narrow">
+    <div class="task rv">
+      <div class="kicker">Depois da jornada</div>
+      <h2>O que ficou<br><span class="terra">combinado</span></h2>
+      <p>A jornada acabou, o trabalho não. A Camila já marcou o <b>Café com Claudinho de retorno pra semana que vem</b> — o momento de juntar as peças que cada um criou e refinar. Não precisa de rito novo: use o que já existe.</p>
+      <p>E a missão pós-jornada, uma frase por pessoa: <b>pegue uma linha do mapa que ainda não virou sistema e leve até o agendamento.</b> Sozinha, com o método daqui.</p>
+
+      <div class="tsteps">
+        <div class="ts">
+          <div class="tsn">Passo 1</div>
+          <div class="tst">Monte o cérebro</div>
+          <p>Pasta da sua frente no Drive, baixada na máquina, com o memoria.md dentro e a regra colada nas instruções do projeto.</p>
+        </div>
+        <div class="ts">
+          <div class="tsn">Passo 2</div>
+          <div class="tst">Escolha uma coisa</div>
+          <p>Uma só. A que mais dói ou a que mais se repete. Faça na conversa até ficar bom — sem pressa de virar Skill.</p>
+        </div>
+        <div class="ts">
+          <div class="tsn">Passo 3</div>
+          <div class="tst">Congele e agende</div>
+          <p>Transforme em Skill, aponte a fonte, ligue o agendamento. Aí leve pro Café com Claudinho e mostre a tela.</p>
+        </div>
+      </div>
+
+      <div class="checks">
+        <div class="chk"><span class="cb"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><span class="ct"><b>Todo mundo:</b> criar a pasta da sua frente no Drive, com o memoria.md, e colar a regra da memória nas instruções permanentes do projeto.</span></div>
+        <div class="chk"><span class="cb"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><span class="ct"><b>Júnior:</b> puxa a frente das Skills de proposta — começando por <b>comunidades</b>, que já está padronizada, com a Karen e a ideia da landing page junto.</span></div>
+        <div class="chk"><span class="cb"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><span class="ct"><b>Camila:</b> refaz o dashboard como HTML + Skill + agendamento (não como artefato), e conecta o fluxo comercial ao financeiro no Café com Claudinho.</span></div>
+        <div class="chk"><span class="cb"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><span class="ct"><b>Ana Clara:</b> transformar o motor comercial — que hoje é projeto — em <b>Skill</b>, do briefing pré-reunião até a proposta.</span></div>
+        <div class="chk"><span class="cb"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><span class="ct"><b>Elisa:</b> personalizar a Skill de atualização do dashboard financeiro pra puxar direto da planilha do Drive.</span></div>
+        <div class="chk"><span class="cb"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><span class="ct"><b>Maiara:</b> refinar as Skills de contrato e de precificação — referências embutidas — e combinar com o comercial como a ótica de operações entra na proposta.</span></div>
+        <div class="chk"><span class="cb"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><span class="ct"><b>Vinícius:</b> simplificar a identidade visual num formato que o Claude consiga reproduzir — é o que vai fazer o material não ter cara de IA.</span></div>
+        <div class="chk"><span class="cb"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><span class="ct"><b>Marina e Suzana:</b> as gravações dos Encontros 01 e 02 e os cursos gravados estão liberados pros e-mails da Ousaria. Comecem por lá — vocês não perderam o bonde.</span></div>
+        <div class="chk"><span class="cb"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><span class="ct"><b>Comigo:</b> te mando o material compilado de cases pra inspirar, e sigo no grupo do WhatsApp. Se quiserem, eu sento com vocês numa sessão só sobre a proposta comercial.</span></div>
+      </div>
+
+      <div class="btnrow">
+        <a class="btn btn-terra" href="https://newscale.tech/projetos/jornada-claude-ousaria">Ver os três encontros →</a>
+        <a class="btn btn-ghost" href="#sua-duvida">Me contar o que você construiu</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FORMULÁRIO ================= -->
+<section class="form-sec" id="sua-duvida">
+  <div class="wrap narrow">
+    <div class="kicker rv">Fala comigo</div>
+    <h2 class="rv">Isso não<br><span class="terra">acaba</span> aqui</h2>
+    <p class="lead rv" style="margin:18px 0 34px;max-width:52ch;">A jornada fechou, mas o grupo continua e eu também. Me conta o que você construiu ou onde travou — eu respondo. E o que vocês criarem, eu quero saber: quero colocar a Ousaria na minha lista de cases.</p>
+
+    <div class="fcard rv">
+      <form id="form">
+        <div class="fgrid">
+          <div class="f">
+            <label for="nome">Seu nome <span class="opt">(opcional)</span></label>
+            <input type="text" id="nome" name="nome" placeholder="Como te chamo">
+          </div>
+          <div class="f">
+            <label for="area">Sua área</label>
+            <select id="area" name="area">
+              <option value="">Selecione…</option>
+              <option>Diretoria</option>
+              <option>Comercial</option>
+              <option>Projetos / Operações</option>
+              <option>Comunidades</option>
+              <option>Programas</option>
+              <option>Comunicação / Marketing</option>
+              <option>Design</option>
+              <option>Financeiro / Administrativo</option>
+              <option>Outra</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="f">
+          <label for="processo">O que você está construindo?</label>
+          <div class="hint">A Skill de proposta, o dashboard, o cérebro da sua frente, outra coisa? Conta em uma linha.</div>
+          <textarea id="processo" name="processo" placeholder="Ex.: estou montando a Skill de proposta de comunidades…"></textarea>
+        </div>
+
+        <div class="f">
+          <label for="duvida">Onde travou?</label>
+          <div class="hint">O ponto exato onde emperrou, ou a dúvida que ficou. Quanto mais específica, melhor eu respondo.</div>
+          <textarea id="duvida" name="duvida" style="min-height:150px;" placeholder="Ex.: a Skill roda, mas não está puxando os arquivos novos da pasta…"></textarea>
+        </div>
+
+        <div class="f">
+          <label for="prioridade">Como está indo?</label>
+          <select id="prioridade" name="prioridade">
+            <option value="">Selecione…</option>
+            <option>Já está rodando — quero mostrar</option>
+            <option>Construí, mas travei num ponto</option>
+            <option>Estou montando a pasta e a memória</option>
+            <option>Ainda não consegui começar</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-terra" id="send" style="width:100%;justify-content:center;">Enviar pra Bruna →</button>
+        <p class="fnote">Vai direto pra mim. Se preferir, manda no grupo do WhatsApp — tanto faz.</p>
+      </form>
+
+      <div class="ok" id="ok">
+        <div class="oi"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h3>Recebido!</h3>
+        <p>Vou ler e te responder. Obrigada por mandar — contem comigo mesmo depois da jornada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fwrap">
+    <div class="fb">
+      <div class="t">Jornada Claude · Ousaria</div>
+      <div class="s">Encontro 03 · O cérebro compartilhado · 06 de agosto de 2026</div>
+    </div>
+    <div class="fl">Bruna Santanna · A Virada IA</div>
+  </div>
+</footer>
+
+<script>
+/* ============ COLETA ============
+   Mesmo endpoint dos Encontros 01 e 02 (2026-07-16-duvidas-encontro01-apps-script.gs).
+   Se estiver vazio, o formulário roda em MODO VALIDAÇÃO:
+   mostra a tela de sucesso mas não grava nada.               */
+const SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycbxQi_z31M8skhDxnHNC4RoM5DahrZmDhvSIAlV-kImpneKaNgpOpofh_wVXkqRNG98V/exec";
+
+/* barra de progresso */
+const prog = document.getElementById('prog');
+addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const p = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+  prog.style.width = p + '%';
+}, {passive:true});
+
+/* reveal */
+(function(){
+  const els = document.querySelectorAll('.rv');
+  if (!('IntersectionObserver' in window)) { els.forEach(e=>e.classList.add('in')); return; }
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach((en,i)=>{
+      if(en.isIntersecting){
+        setTimeout(()=>en.target.classList.add('in'), (i%6)*70);
+        io.unobserve(en.target);
+      }
+    });
+  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  els.forEach(e=>io.observe(e));
+  setTimeout(()=>els.forEach(e=>e.classList.add('in')), 2500); /* failsafe */
+})();
+
+/* copiar prompt */
+document.querySelectorAll('.copy').forEach(btn=>{
+  btn.addEventListener('click', async ()=>{
+    const txt = btn.closest('.pr').querySelector('pre').innerText;
+    try { await navigator.clipboard.writeText(txt); }
+    catch(e){
+      const ta = document.createElement('textarea');
+      ta.value = txt; document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); ta.remove();
+    }
+    const old = btn.textContent;
+    btn.textContent = 'Copiado!'; btn.classList.add('done');
+    setTimeout(()=>{ btn.textContent = old; btn.classList.remove('done'); }, 1800);
+  });
+});
+
+/* envio */
+const form = document.getElementById('form');
+const send = document.getElementById('send');
+form.addEventListener('submit', async (e)=>{
+  e.preventDefault();
+
+  /* form.elements — nunca getElementById aqui: ids de seção podem colidir */
+  const duvida = form.elements.duvida.value.trim();
+  const processo = form.elements.processo.value.trim();
+  if(!duvida && !processo){
+    alert('Escreva pelo menos onde você travou ou o que está construindo.');
+    return;
+  }
+
+  send.disabled = true;
+  send.textContent = 'Enviando…';
+
+  const data = { timestamp: new Date().toISOString(), encontro: '03' };
+  new FormData(form).forEach((v,k)=>{
+    if(data[k] !== undefined){
+      data[k] = [].concat(data[k], v).join(', ');
+    } else { data[k] = v; }
+  });
+
+  try{
+    if(SHEETS_ENDPOINT){
+      await fetch(SHEETS_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {'Content-Type':'text/plain;charset=utf-8'},
+        body: JSON.stringify(data)
+      });
+    } else {
+      console.log('[MODO VALIDAÇÃO] SHEETS_ENDPOINT vazio. Resposta:', data);
+    }
+    form.style.display = 'none';
+    document.getElementById('ok').style.display = 'block';
+    document.getElementById('ok').scrollIntoView({behavior:'smooth', block:'center'});
+  } catch(err){
+    console.error(err);
+    send.disabled = false;
+    send.textContent = 'Enviar pra Bruna →';
+    alert('Não consegui enviar agora. Tenta de novo ou me manda no grupo do WhatsApp.');
+  }
+});
+</script>
+</body>
+</html>
