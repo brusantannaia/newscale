@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Executiva · Engemos · NewScale Consulting</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14373C;--ink2:#1a4449;--sage:#435D51;--terra:#B06E4A;--tl:#c4835e;--sand:#A38362;--cream:#E8E6E0;--cl:#F4F3EF;--white:#FAFAF8}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(20,55,60,.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
+nav img{height:28px}
+.nav-badge{font-size:.63rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.hero{min-height:100vh;background:linear-gradient(145deg,#0c2427 0%,#14373C 38%,#1d4840 72%,#435D51 100%);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:100px 40px 80px;position:relative;overflow:hidden}
+.hero-topo{position:absolute;inset:0;pointer-events:none;opacity:.09}
+.hero-topo svg{width:100%;height:100%}
+.grain{position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.03}
+.hero-badge{display:inline-block;background:rgba(176,110,74,.15);border:1px solid rgba(176,110,74,.3);color:var(--tl);font-size:.63rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:6px 18px;border-radius:20px;margin-bottom:32px;opacity:0;animation:fadeUp .7s ease forwards;animation-delay:.2s}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,5vw,4.2rem);font-weight:700;color:#fff;line-height:1.13;max-width:840px;margin-bottom:24px;opacity:0;animation:fadeUp .7s ease forwards;animation-delay:.4s}
+.hero h1 em{font-style:italic;color:var(--tl)}
+.hero-sub{font-size:1rem;font-weight:300;color:rgba(255,255,255,.6);max-width:560px;line-height:1.75;margin-bottom:52px;opacity:0;animation:fadeUp .7s ease forwards;animation-delay:.6s}
+.hero-scroll{display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0;animation:fadeUp .7s ease forwards;animation-delay:.9s}
+.hero-scroll a{text-decoration:none;font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.scroll-arrow{width:38px;height:38px;border:1px solid rgba(255,255,255,.14);border-radius:50%;display:flex;align-items:center;justify-content:center;animation:bounce 2.2s ease-in-out infinite}
+.scroll-arrow svg{width:14px;height:14px;opacity:.45}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.r1{transition-delay:.1s}.r2{transition-delay:.2s}.r3{transition-delay:.3s}
+section{padding:100px 0}
+.container{max-width:1080px;margin:0 auto;padding:0 44px}
+.section-label{font-size:.63rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);margin-bottom:14px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.2vw,2.7rem);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:18px}
+.section-title em{font-style:italic;color:var(--terra)}
+.section-title.light{color:#fff}
+.section-sub{font-size:.88rem;font-weight:300;color:#5a7a7e;line-height:1.72;max-width:520px}
+.section-sub.light{color:rgba(255,255,255,.5)}
+
+/* CONTEXTO */
+#contexto{background:var(--white)}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:60px}
+.intro-text p{font-size:.91rem;font-weight:300;color:#4a6a6e;line-height:1.8;margin-bottom:18px}
+.intro-text p strong{font-weight:600;color:var(--ink)}
+.intro-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat-card{padding:26px 22px;border-radius:14px;transition:transform .3s}
+.stat-card:hover{transform:translateY(-4px)}
+.stat-card:nth-child(1){background:var(--ink)}
+.stat-card:nth-child(2){background:var(--terra)}
+.stat-card:nth-child(3){background:var(--sage)}
+.stat-card:nth-child(4){background:var(--ink2)}
+.stat-number{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:700;color:#fff;line-height:1;margin-bottom:6px}
+.stat-label{font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+
+/* DORES */
+#dores{background:var(--cl)}
+.dores-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.dore-card{background:var(--white);border:1px solid rgba(20,55,60,.07);border-radius:14px;padding:32px 26px;position:relative;overflow:hidden;transition:border-color .3s,box-shadow .3s}
+.dore-card.secondary{opacity:.75}
+.dore-card:hover{border-color:rgba(176,110,74,.22);box-shadow:0 8px 28px rgba(20,55,60,.06)}
+.dore-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--terra);opacity:0;transition:opacity .3s}
+.dore-card:hover::before{opacity:1}
+.dore-card.secondary::before{background:var(--sand)}
+.dore-wave-label{display:inline-block;font-size:.57rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:14px}
+.wave1{background:rgba(176,110,74,.1);color:var(--terra)}
+.wave2{background:rgba(163,131,98,.1);color:var(--sand)}
+.dore-num{font-family:'Cormorant Garamond',serif;font-size:3.8rem;font-weight:700;color:rgba(176,110,74,.07);line-height:1;margin-bottom:10px}
+.dore-title{font-size:.66rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--terra);margin-bottom:12px}
+.dore-card.secondary .dore-title{color:var(--sand)}
+.dore-text{font-size:.84rem;font-weight:300;color:#5a7a7e;line-height:1.72}
+
+/* PROPOSTA */
+#proposta{background:linear-gradient(165deg,#0f2c30 0%,#14373C 45%,#1d4840 75%,#2d5244 100%)}
+.modulos-wrapper{margin-top:56px;display:flex;flex-direction:column;gap:14px}
+.fase-block{border-radius:16px;overflow:hidden}
+.fase-header{display:flex;align-items:center;justify-content:space-between;padding:28px 36px;cursor:pointer;transition:filter .2s}
+.fase-header:hover{filter:brightness(1.08)}
+.fase-block:nth-child(1) .fase-header{background:rgba(176,110,74,.2);border:1px solid rgba(176,110,74,.18)}
+.fase-block:nth-child(2) .fase-header{background:rgba(67,93,81,.32);border:1px solid rgba(67,93,81,.28)}
+.fase-block:nth-child(3) .fase-header{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09)}
+.fase-meta{flex:1}
+.fase-tag{font-size:.61rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:6px}
+.fase-name{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:700;color:#fff;line-height:1.2}
+.fase-duration{font-size:.74rem;font-weight:400;color:rgba(255,255,255,.42);margin-top:6px}
+.fase-right{display:flex;align-items:center;gap:16px}
+.fase-num-badge{width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:rgba(255,255,255,.45);flex-shrink:0}
+.fase-arrow svg{width:16px;height:16px;opacity:.35;transition:transform .3s}
+.fase-block.open .fase-arrow svg{transform:rotate(180deg)}
+.fase-body{display:none;padding:0 36px 36px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-top:none;border-radius:0 0 16px 16px}
+.fase-block.open .fase-body{display:block}
+.modulos-grid-inner{display:flex;flex-direction:column;gap:10px;padding-top:26px}
+.modulo-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;overflow:hidden;cursor:pointer;transition:border-color .3s}
+.modulo-card:hover{border-color:rgba(176,110,74,.22)}
+.modulo-header{display:flex;align-items:center;gap:14px;padding:18px 22px}
+.modulo-icon{font-size:1.25rem;line-height:1}
+.modulo-meta{flex:1}
+.modulo-label{font-size:.59rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tl);margin-bottom:3px}
+.modulo-title{font-size:.88rem;font-weight:600;color:#fff;line-height:1.3}
+.modulo-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}
+.chip{font-size:.59rem;font-weight:600;padding:3px 10px;border-radius:20px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.38);letter-spacing:.05em}
+.modulo-arrow svg{width:13px;height:13px;opacity:.3;transition:transform .3s}
+.modulo-card.open .modulo-arrow svg{transform:rotate(180deg)}
+.modulo-card.open .modulo-chips{display:none}
+.modulo-body{display:none;padding:0 22px 22px;border-top:1px solid rgba(255,255,255,.05)}
+.modulo-card.open .modulo-body{display:block}
+.value-box{display:flex;gap:14px;align-items:flex-start;background:rgba(176,110,74,.1);border:1px solid rgba(176,110,74,.2);border-radius:10px;padding:16px 18px;margin:18px 0}
+.vb-icon{font-size:1.2rem;margin-top:2px}
+.vb-label{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tl);margin-bottom:5px}
+.vb-text{font-size:.84rem;font-weight:400;color:rgba(255,255,255,.7);line-height:1.65}
+.modulo-desc{font-size:.82rem;font-weight:300;color:rgba(255,255,255,.48);line-height:1.75;margin-bottom:16px}
+.modulo-items{list-style:none;display:flex;flex-direction:column;gap:9px}
+.modulo-items li{font-size:.81rem;font-weight:300;color:rgba(255,255,255,.53);line-height:1.65;padding-left:16px;position:relative}
+.modulo-items li::before{content:'—';position:absolute;left:0;color:var(--terra);opacity:.55}
+.modulo-items li strong{font-weight:600;color:rgba(255,255,255,.8)}
+.segunda-onda{margin-top:28px;padding:22px 26px;background:rgba(255,255,255,.03);border:1px dashed rgba(255,255,255,.1);border-radius:12px}
+.segunda-onda-label{font-size:.59rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:10px}
+.segunda-onda-title{font-size:.87rem;font-weight:600;color:rgba(255,255,255,.45);margin-bottom:8px}
+.segunda-onda-desc{font-size:.79rem;font-weight:300;color:rgba(255,255,255,.3);line-height:1.7}
+
+/* SISTEMAS */
+#sistemas{background:var(--cl)}
+.sistemas-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:48px}
+.sistema-card{background:var(--white);border:1px solid rgba(20,55,60,.07);border-radius:14px;padding:28px 24px}
+.sistema-name{font-weight:700;font-size:.93rem;color:var(--ink);margin-bottom:3px}
+.sistema-role{font-size:.71rem;color:#7a9a9e;margin-bottom:14px;font-weight:400}
+.sistema-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:20px;font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+.badge-ok{background:rgba(67,93,81,.1);color:#435D51}
+.badge-warn{background:rgba(176,110,74,.1);color:var(--terra)}
+.sistema-note{font-size:.78rem;font-weight:300;color:#6a8a8e;line-height:1.65}
+
+/* INVESTIMENTO */
+#investimento{background:var(--ink)}
+.inv-intro{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.45);line-height:1.72;max-width:560px;margin-top:8px}
+.inv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:52px}
+.inv-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:32px 26px;transition:border-color .3s}
+.inv-card:hover{border-color:rgba(176,110,74,.25)}
+.inv-card-tag{font-size:.59rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--tl);margin-bottom:10px}
+.inv-card-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:#fff;line-height:1.25;margin-bottom:22px}
+.inv-price{margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.06)}
+.inv-price-label{font-size:.6rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:4px}
+.inv-price-value{font-family:'Cormorant Garamond',serif;font-size:2.1rem;font-weight:700;color:#fff;line-height:1}
+.inv-price-value span{font-size:.88rem;font-weight:400;font-family:'DM Sans',sans-serif;color:rgba(255,255,255,.35)}
+.inv-payment{font-size:.72rem;color:rgba(255,255,255,.3);margin-top:5px}
+.inv-monthly{font-size:.78rem;font-weight:300;color:rgba(255,255,255,.4);margin-top:5px}
+.inv-monthly strong{font-weight:600;color:rgba(255,255,255,.65)}
+.inv-includes{list-style:none;display:flex;flex-direction:column;gap:8px}
+.inv-includes li{font-size:.77rem;font-weight:300;color:rgba(255,255,255,.47);display:flex;align-items:flex-start;gap:8px;line-height:1.55}
+.inv-includes li::before{content:'✓';color:var(--terra);font-weight:700;flex-shrink:0;margin-top:1px}
+.pacote-card{background:linear-gradient(135deg,rgba(176,110,74,.18) 0%,rgba(20,55,60,.5) 100%);border:1px solid rgba(176,110,74,.4);border-radius:18px;padding:42px 48px;margin-top:14px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:48px}
+.pacote-label{font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--tl);margin-bottom:8px}
+.pacote-title{font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:700;color:#fff;margin-bottom:10px}
+.pacote-desc{font-size:.83rem;font-weight:300;color:rgba(255,255,255,.48);line-height:1.68;max-width:440px}
+.pacote-pricing{text-align:right;flex-shrink:0}
+.pacote-old{font-size:.82rem;color:rgba(255,255,255,.28);text-decoration:line-through;margin-bottom:4px}
+.pacote-new{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:#fff;line-height:1}
+.pacote-new span{font-size:1rem;font-weight:400;font-family:'DM Sans',sans-serif;color:rgba(255,255,255,.38)}
+.pacote-payment{font-size:.72rem;color:rgba(255,255,255,.28);margin-top:5px}
+.pacote-monthly{font-size:.78rem;color:rgba(255,255,255,.42);margin-top:4px}
+.pacote-monthly strong{color:rgba(255,255,255,.72);font-weight:600}
+.pacote-saving{display:inline-block;background:rgba(176,110,74,.22);color:var(--tl);font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-top:10px}
+.inv-note{margin-top:36px;padding:20px 24px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-left:3px solid rgba(176,110,74,.4);border-radius:0 10px 10px 0;font-size:.78rem;font-weight:300;color:rgba(255,255,255,.4);line-height:1.75}
+.inv-note strong{color:rgba(255,255,255,.6);font-weight:600}
+
+/* POR QUE */
+#porque{background:var(--cl)}
+.porque-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px;margin-bottom:52px}
+.porque-card{background:var(--white);border:1px solid rgba(20,55,60,.07);border-radius:14px;padding:34px 30px}
+.porque-card-icon{font-size:1.6rem;margin-bottom:16px}
+.porque-card-title{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink);margin-bottom:10px}
+.porque-card-text{font-size:.85rem;font-weight:300;color:#5a7a7e;line-height:1.75}
+.porque-card.dark{background:var(--ink);border-color:transparent}
+.porque-card.dark .porque-card-title{color:rgba(255,255,255,.8)}
+.porque-card.dark .porque-card-text{color:rgba(255,255,255,.48)}
+.porque-metodologia{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:52px}
+.passo-card{background:var(--white);border:1px solid rgba(20,55,60,.07);border-radius:12px;padding:26px 22px;transition:box-shadow .3s}
+.passo-card:hover{box-shadow:0 8px 28px rgba(20,55,60,.07)}
+.passo-num{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;color:rgba(176,110,74,.22);line-height:1;margin-bottom:10px}
+.passo-title{font-size:.76rem;font-weight:700;color:var(--ink);margin-bottom:7px;text-transform:uppercase;letter-spacing:.06em}
+.passo-text{font-size:.8rem;font-weight:300;color:#6a8a8e;line-height:1.68}
+.fundadores-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.fundador-card{background:var(--white);border:1px solid rgba(20,55,60,.07);border-radius:14px;display:flex;gap:22px;padding:26px;transition:box-shadow .3s}
+.fundador-card:hover{box-shadow:0 8px 28px rgba(20,55,60,.07)}
+.fundador-img{width:78px;height:78px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(176,110,74,.2)}
+.fundador-name{font-weight:700;font-size:.93rem;color:var(--ink);margin-bottom:4px}
+.fundador-bio{font-size:.77rem;font-weight:300;color:#6a8a8e;line-height:1.62;margin-bottom:12px}
+.fundador-tags{display:flex;flex-wrap:wrap;gap:5px}
+.ftag{font-size:.59rem;font-weight:600;padding:3px 9px;border-radius:20px;background:rgba(176,110,74,.08);color:var(--terra);letter-spacing:.05em}
+
+/* PASSOS */
+#passos{background:linear-gradient(145deg,#0c2427 0%,#14373C 38%,#1d4840 72%,#435D51 100%)}
+.passos-list{margin-top:56px;display:flex;flex-direction:column}
+.passo-item{display:grid;grid-template-columns:50px 1fr;gap:28px;padding-bottom:38px;position:relative}
+.passo-item::after{content:'';position:absolute;left:24px;top:50px;bottom:0;width:1px;background:rgba(176,110,74,.18)}
+.passo-item:last-child::after{display:none}
+.passo-dot{width:50px;height:50px;border-radius:50%;background:rgba(176,110,74,.11);border:1px solid rgba(176,110,74,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--tl);position:relative;z-index:1}
+.passo-content{padding-top:10px}
+.passo-period{font-size:.61rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tl);margin-bottom:6px}
+.passo-step-title{font-size:.93rem;font-weight:700;color:#fff;margin-bottom:8px;text-transform:uppercase;letter-spacing:.04em}
+.passo-desc{font-size:.82rem;font-weight:300;color:rgba(255,255,255,.45);line-height:1.75}
+.passos-cta{margin-top:64px;text-align:center}
+.passos-cta-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:700;color:#fff;line-height:1.15;margin-bottom:12px}
+.passos-cta-title em{font-style:italic;color:var(--tl)}
+.passos-cta-sub{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.42);line-height:1.7;margin-bottom:36px}
+.cta-btn{display:inline-block;background:var(--terra);color:#fff;font-size:.77rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:16px 38px;border-radius:8px;box-shadow:0 4px 22px rgba(176,110,74,.3);transition:background .25s,transform .25s}
+.cta-btn:hover{background:var(--tl);transform:translateY(-2px)}
+footer{background:var(--ink);padding:34px 48px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,.05)}
+.footer-brand{font-size:.95rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff}
+.footer-brand span{font-weight:300;color:rgba(255,255,255,.35)}
+.footer-date{font-size:.71rem;font-weight:300;color:rgba(255,255,255,.28);text-align:right;line-height:1.65}
+@media(max-width:900px){nav{padding:15px 22px}.container{padding:0 22px}section{padding:70px 0}.intro-grid,.dores-grid,.sistemas-grid,.inv-grid,.porque-metodologia,.fundadores-grid,.porque-grid{grid-template-columns:1fr}.pacote-card{grid-template-columns:1fr;gap:24px}.pacote-pricing{text-align:left}.fase-header{padding:20px 22px}.fase-body{padding:0 22px 26px}footer{flex-direction:column;gap:14px;text-align:center}.footer-date{text-align:center}}
+</style>
+</head>
+<body>
+
+<nav>
+  <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale Consulting">
+  <span class="nav-badge">Proposta Exclusiva · Engemos</span>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="hero-topo">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <path d="M0,400 Q200,300 400,380 T800,350 T1200,400" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,350 Q200,250 400,330 T800,300 T1200,350" fill="none" stroke="white" stroke-width="0.5"/>
+      <path d="M0,450 Q200,380 400,430 T800,400 T1200,450" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,300 Q300,220 500,290 T900,260 T1200,300" fill="none" stroke="white" stroke-width="0.4"/>
+      <path d="M0,500 Q300,440 500,490 T900,460 T1200,500" fill="none" stroke="white" stroke-width="0.3"/>
+    </svg>
+  </div>
+  <div class="grain"></div>
+  <span class="hero-badge">Proposta Executiva · Maio de 2026</span>
+  <h1>A <em>inteligência</em> que já existe<br>na Engemos — acessível para<br>toda a operação.</h1>
+  <p class="hero-sub">Uma proposta construída a partir da sua realidade — não um cardápio genérico, mas um plano desenhado para a Engemos transformar o conhecimento acumulado ao longo de quase 10 anos em processos que funcionam com autonomia.</p>
+  <div class="hero-scroll">
+    <a href="#contexto">Ver proposta</a>
+    <div class="scroll-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.5"><path d="M8 3v10M4 9l4 4 4-4"/></svg></div>
+  </div>
+</section>
+
+<section id="contexto">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">O Contexto</div>
+      <h2 class="section-title">Uma operação bem construída —<br>pronta para dar o <em>próximo passo.</em></h2>
+    </div>
+    <div class="intro-grid">
+      <div class="intro-text reveal r1">
+        <p>Quase 9 anos de mercado, posicionamento claro no segmento de obras comerciais, industriais e corporativas de pequeno e médio porte, e uma reputação construída na entrega — a Engemos é uma empresa que sabe o que faz e que tem clientes que voltam. Jean e Marília construíram juntos uma operação que funciona e que cresce.</p>
+        <p>À medida que a empresa avança, uma oportunidade natural se abre: <strong>estruturar em processos o conhecimento que hoje está concentrado nas pessoas-chave da operação.</strong> Quando Jean está em viagem, em reunião, ou quando Marília está gerenciando múltiplas frentes ao mesmo tempo, o time precisa de referências claras para seguir em frente com autonomia e segurança — sem depender de uma ligação para desbloquear cada etapa.</p>
+        <p>É exatamente aí que a inteligência artificial entra — não para substituir quem sabe fazer, mas para <strong>garantir que o padrão de qualidade da Engemos chegue a cada obra, cada técnico e cada orçamento</strong>, independentemente de quem esteja disponível naquele momento.</p>
+      </div>
+      <div class="intro-stats reveal r2">
+        <div class="stat-card"><div class="stat-number">~9</div><div class="stat-label">Anos de mercado</div></div>
+        <div class="stat-card"><div class="stat-number">3–5</div><div class="stat-label">Dias por orçamento técnico</div></div>
+        <div class="stat-card"><div class="stat-number">3–5</div><div class="stat-label">Pessoas por obra</div></div>
+        <div class="stat-card"><div class="stat-number">30</div><div class="stat-label">Anos de know-how técnico</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="dores">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">O que identificamos</div>
+      <h2 class="section-title">Oportunidades mapeadas<br>na <em>operação da Engemos.</em></h2>
+      <p class="section-sub" style="margin-top:10px;">Os três primeiros pontos são o foco desta proposta. Os demais serão endereçados numa segunda onda do projeto.</p>
+    </div>
+    <div class="dores-grid">
+      <div class="dore-card reveal r1">
+        <span class="dore-wave-label wave1">1ª onda</span>
+        <div class="dore-num">01</div>
+        <div class="dore-title">Processo de obra depende de disponibilidade</div>
+        <div class="dore-text">Da assinatura do contrato até os técnicos saírem para o campo, há um caminho de várias etapas sem uma sequência formalmente amarrada. Quando um responsável precisa de orientação e quem sabe está indisponível, o processo trava — ou avança sem as confirmações necessárias.</div>
+      </div>
+      <div class="dore-card reveal r2">
+        <span class="dore-wave-label wave1">1ª onda</span>
+        <div class="dore-num">02</div>
+        <div class="dore-title">Orçamento técnico: gargalo no ciclo de vendas</div>
+        <div class="dore-text">Ler o projeto em PDF ou DWG, interpretar a legenda, contar ponto a ponto e cruzar com a tabela de composição — um processo que pode levar de 3 a 5 dias. Em um ciclo de venda que já pode durar até 90 dias, a proposta que demora é a proposta que esfria.</div>
+      </div>
+      <div class="dore-card reveal r3">
+        <span class="dore-wave-label wave1">1ª onda</span>
+        <div class="dore-num">03</div>
+        <div class="dore-title">Dúvidas em campo chegam todas para o mesmo lugar</div>
+        <div class="dore-text">Perguntas operacionais recorrentes — qual parafuso usar em obra litorânea, como montar determinado quadro, o que fazer em uma situação específica — chegam via WhatsApp ou ligação. Dúvidas com resposta padrão que interrompem o dia de quem mais precisa estar livre para pensar estrategicamente.</div>
+      </div>
+      <div class="dore-card secondary reveal r1">
+        <span class="dore-wave-label wave2">2ª onda</span>
+        <div class="dore-num">04</div>
+        <div class="dore-title">Registro fotográfico ainda sem padrão</div>
+        <div class="dore-text">Fotos sem referência espacial, sem ângulo correto, sem contexto. O relatório que vai para o cliente precisa refletir a qualidade do trabalho entregue — e ainda há espaço para estruturar melhor esse processo.</div>
+      </div>
+      <div class="dore-card secondary reveal r2">
+        <span class="dore-wave-label wave2">2ª onda</span>
+        <div class="dore-num">05</div>
+        <div class="dore-title">Checklist de saída e controle de veículos</div>
+        <div class="dore-text">Abastecimento, alinhamento, conferência de equipamentos no veículo — informações que hoje dependem de memória e comunicação informal, sem registro sistemático antes de cada saída para obra.</div>
+      </div>
+      <div class="dore-card secondary reveal r3">
+        <span class="dore-wave-label wave2">2ª onda</span>
+        <div class="dore-num">06</div>
+        <div class="dore-title">Visibilidade gerencial consolidada</div>
+        <div class="dore-text">Jean e Marília tomam decisões com base em informações que chegam de forma fragmentada — por WhatsApp, ligação ou quando alguém se lembra de reportar. Uma visão em painel único ainda é uma oportunidade a ser explorada.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proposta">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">A Proposta · 1ª Onda</div>
+      <h2 class="section-title light">3 módulos. Cada um com<br><em>resultado próprio e independente.</em></h2>
+      <p class="section-sub light" style="margin-top:10px;">Jean e Marília decidem por onde começar. Os módulos podem ser contratados separadamente ou em conjunto. Clique em cada módulo para ver os detalhes das entregas.</p>
+    </div>
+    <div class="modulos-wrapper">
+
+      <!-- MÓDULO 1 -->
+      <div class="fase-block" onclick="toggleFase(this)">
+        <div class="fase-header">
+          <div class="fase-meta">
+            <div class="fase-tag">Módulo 1 · Operação e Workflow</div>
+            <div class="fase-name">Workflow Automatizado de Obra</div>
+            <div class="fase-duration">Agendor + N8N + ERP · Resultado visível em 4–6 semanas</div>
+          </div>
+          <div class="fase-right">
+            <div class="fase-num-badge">1</div>
+            <div class="fase-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg></div>
+          </div>
+        </div>
+        <div class="fase-body">
+          <div class="modulos-grid-inner">
+            <div class="modulo-card" onclick="toggleModulo(event,this)">
+              <div class="modulo-header">
+                <div class="modulo-icon">⚙️</div>
+                <div class="modulo-meta">
+                  <div class="modulo-label">Fluxo completo</div>
+                  <div class="modulo-title">Do contrato assinado à equipe em campo — cada etapa confirmada antes da próxima começar</div>
+                  <div class="modulo-chips">
+                    <span class="chip">Geração de OS</span><span class="chip">Lista de materiais</span><span class="chip">Ferramentas</span><span class="chip">Checklist veículo</span><span class="chip">Painel de workflow</span>
+                  </div>
+                </div>
+                <div class="modulo-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg></div>
+              </div>
+              <div class="modulo-body">
+                <div class="value-box">
+                  <div class="vb-icon">⚡</div>
+                  <div>
+                    <div class="vb-label">O que isso resolve</div>
+                    <div class="vb-text">Jean e Marília param de ser acionados para cada passo da preparação de obra. O time segue o protocolo com autonomia — e a gestão só entra quando há uma exceção real que exige decisão humana.</div>
+                  </div>
+                </div>
+                <p class="modulo-desc">Um agente que orquestra todas as etapas entre a assinatura do contrato e a saída dos técnicos para o campo. Cada responsável é orientado no canal que já usa e só avança para o próximo passo depois de confirmar o anterior. Tudo fica registrado automaticamente em sistema.</p>
+                <ul class="modulo-items">
+                  <li><strong>Geração automática da OS:</strong> assim que a Engemos marca um negócio como "ganho" no Agendor, o fluxo se inicia. O sistema puxa os dados do cliente, escopo negociado e orçamento aprovado para pré-preencher a OS — que passa por aprovação humana antes de o processo seguir adiante.</li>
+                  <li><strong>Lista de compra com base no orçamento aprovado:</strong> o agente parte do orçamento que foi apresentado e aprovado pelo cliente para gerar a lista de materiais necessários — com fornecedores homologados, estimativa de custo, prazo de entrega e contatos. Quando o responsável confirmar que todas as compras foram realizadas, o agente valida item a item antes de avançar. Se a previsão de entrega do item mais crítico for informada, o agente emite alerta automático na data para confirmar a chegada no estoque.</li>
+                  <li><strong>Recomendação de ferramentas por perfil de obra:</strong> com base na base de conhecimento da própria Engemos (tipo de obra, localidade, escopo), o agente sugere quais ferramentas separar ou alugar. Se houver inventário registrado, sinaliza o que está disponível e o que precisa ser providenciado. Ao finalizar a separação, o responsável confirma item a item — com possibilidade de registro fotográfico comprobatório antes de liberar a próxima etapa.</li>
+                  <li><strong>Checklist de veículo:</strong> antes da saída, o responsável confirma que todos os itens estão carregados. O agente registra as confirmações e solicita entre 3 e 5 fotos de registro. Se algum item estiver faltando, alerta antes de liberar a saída.</li>
+                  <li><strong>Painel de Workflow:</strong> Jean e Marília acompanham em tempo real em que etapa está cada obra e quem é o responsável. É possível configurar SLAs por etapa — quando uma tarefa estiver prestes a entrar em atraso, o painel emite alerta com antecedência.</li>
+                </ul>
+                <div class="segunda-onda">
+                  <div class="segunda-onda-label">Previsto para a 2ª onda do projeto</div>
+                  <div class="segunda-onda-title">Registro fotográfico padronizado e relatório de obra automático</div>
+                  <p class="segunda-onda-desc">Validação automática de fotos tiradas em campo pelo padrão da Engemos, compilação do relatório fotográfico antes/depois e pesquisa de satisfação automática pós-obra. Estas funcionalidades serão incorporadas ao workflow após a consolidação da primeira onda.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MÓDULO 2 -->
+      <div class="fase-block" onclick="toggleFase(this)">
+        <div class="fase-header">
+          <div class="fase-meta">
+            <div class="fase-tag">Módulo 2 · Orçamento e Velocidade Comercial</div>
+            <div class="fase-name">Leitura de Projeto e Pré-Orçamento Automático</div>
+            <div class="fase-duration">PDF / DWG + SINAPI + IA · Resultado visível em 4–6 semanas</div>
+          </div>
+          <div class="fase-right">
+            <div class="fase-num-badge">2</div>
+            <div class="fase-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg></div>
+          </div>
+        </div>
+        <div class="fase-body">
+          <div class="modulos-grid-inner">
+            <div class="modulo-card" onclick="toggleModulo(event,this)">
+              <div class="modulo-header">
+                <div class="modulo-icon">📐</div>
+                <div class="modulo-meta">
+                  <div class="modulo-label">Processo principal</div>
+                  <div class="modulo-title">De 3–5 dias para horas: o agente que lê o projeto e monta o pré-orçamento para validação</div>
+                  <div class="modulo-chips">
+                    <span class="chip">Leitura PDF / DWG</span><span class="chip">Interpretação de legenda</span><span class="chip">Composição SINAPI</span><span class="chip">Planilha para validação</span>
+                  </div>
+                </div>
+                <div class="modulo-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg></div>
+              </div>
+              <div class="modulo-body">
+                <div class="value-box">
+                  <div class="vb-icon">⚡</div>
+                  <div>
+                    <div class="vb-label">O que isso resolve</div>
+                    <div class="vb-text">O projeto chega hoje, a cotação sai amanhã. Lead que não esfria. E o orçamento aprovado aqui alimenta automaticamente a lista de materiais do Módulo 1 — os dois módulos funcionam ainda melhor quando integrados.</div>
+                  </div>
+                </div>
+                <p class="modulo-desc">Um agente que recebe o arquivo do projeto, lê a legenda para identificar o padrão simbólico específico daquele engenheiro ou arquiteto, conta cada elemento elétrico em toda a planta e cruza com a tabela de composição. O resultado é um pré-orçamento para Jean revisar, ajustar e aprovar — em vez de construir tudo do zero.</p>
+                <ul class="modulo-items">
+                  <li><strong>Leitura inteligente da legenda:</strong> o agente identifica o padrão simbólico de cada projeto — mesmo que fuja da norma técnica — e usa isso como referência para toda a leitura, garantindo consistência.</li>
+                  <li><strong>Contagem de pontos elétricos:</strong> tomadas, luminárias, interruptores, perfilados, quadros e demais elementos são mapeados e quantificados em toda a extensão da planta.</li>
+                  <li><strong>Cruzamento com tabela de composição:</strong> cada símbolo é traduzido para sua composição de materiais com base na tabela SINAPI ou na tabela própria da Engemos.</li>
+                  <li><strong>Pré-orçamento para validação humana:</strong> Jean recebe a planilha, confere, ajusta o que for necessário e aprova. O orçamento aprovado fica registrado e, integrado ao Módulo 1, alimenta automaticamente a lista de compras da obra correspondente.</li>
+                  <li><strong>Aprendizado contínuo:</strong> cada ajuste feito enriquece a base do agente, que vai ficando mais preciso com o uso.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MÓDULO 3 -->
+      <div class="fase-block" onclick="toggleFase(this)">
+        <div class="fase-header">
+          <div class="fase-meta">
+            <div class="fase-tag">Módulo 3 · Autonomia do Time Técnico</div>
+            <div class="fase-name">Base de Conhecimento Técnico</div>
+            <div class="fase-duration">WhatsApp + Base de dados · Resultado visível em 4–6 semanas</div>
+          </div>
+          <div class="fase-right">
+            <div class="fase-num-badge">3</div>
+            <div class="fase-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg></div>
+          </div>
+        </div>
+        <div class="fase-body">
+          <div class="modulos-grid-inner">
+            <div class="modulo-card" onclick="toggleModulo(event,this)">
+              <div class="modulo-header">
+                <div class="modulo-icon">🧠</div>
+                <div class="modulo-meta">
+                  <div class="modulo-label">Processo principal</div>
+                  <div class="modulo-title">O know-how da Engemos na palma da mão do time — sem interromper quem precisa estar livre</div>
+                  <div class="modulo-chips">
+                    <span class="chip">Agente de consulta técnica</span><span class="chip">WhatsApp</span><span class="chip">Base viva de conhecimento</span>
+                  </div>
+                </div>
+                <div class="modulo-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg></div>
+              </div>
+              <div class="modulo-body">
+                <div class="value-box">
+                  <div class="vb-icon">💬</div>
+                  <div>
+                    <div class="vb-label">O que isso resolve</div>
+                    <div class="vb-text">O técnico manda a dúvida no WhatsApp e recebe a resposta em segundos com base no padrão da própria Engemos — sem interromper Jean ou Marília para perguntas que já têm uma resposta estabelecida.</div>
+                  </div>
+                </div>
+                <p class="modulo-desc">Um agente de consulta disponível 24h via WhatsApp, alimentado exclusivamente com o conhecimento da Engemos. O técnico manda a dúvida em texto ou áudio e recebe a orientação objetiva com base nos procedimentos, regras de negócio e experiências acumuladas pela empresa — não em fontes genéricas da internet.</p>
+                <ul class="modulo-items">
+                  <li><strong>Extração do know-how da Engemos:</strong> conduzimos sessões estruturadas com Jean e Marília para mapear o repertório técnico e operacional — procedimentos padrão, regras de negócio, decisões recorrentes, exceções por tipo de obra e localidade.</li>
+                  <li><strong>Agente de consulta via WhatsApp:</strong> o técnico manda texto ou áudio, o agente entende e responde com base exclusivamente no conhecimento da Engemos. Sem respostas genéricas.</li>
+                  <li><strong>Regras contextuais:</strong> "em obras litorâneas, usar parafuso inox" — esse tipo de exceção entra na base e é aplicado automaticamente quando o contexto é identificado.</li>
+                  <li><strong>Base viva:</strong> quando surge uma dúvida nova, ela é sinalizada para validação. A resposta aprovada é incorporada à base para as próximas ocorrências — mais completa a cada uso.</li>
+                  <li><strong>Visibilidade para a gestão:</strong> Jean e Marília conseguem ver as perguntas feitas pelo time e identificar padrões que indicam lacunas de treinamento ou situações recorrentes que merecem atenção.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="sistemas">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Integrações</div>
+      <h2 class="section-title">Compatibilidade com os sistemas<br>que a <em>Engemos já usa.</em></h2>
+      <p class="section-sub" style="margin-top:10px;">Verificamos as APIs dos sistemas mencionados. Veja o status de cada integração.</p>
+    </div>
+    <div class="sistemas-grid">
+      <div class="sistema-card reveal r1">
+        <div class="sistema-name">Agendor</div>
+        <div class="sistema-role">CRM de vendas</div>
+        <div class="sistema-badge badge-ok">✓ API aberta confirmada</div>
+        <p class="sistema-note">API REST pública, bem documentada e com suporte a Webhooks. Integração direta via N8N — conseguimos detectar automaticamente quando um negócio é marcado como "ganho" e disparar o workflow de onboarding de obra sem intervenção manual.</p>
+      </div>
+      <div class="sistema-card reveal r2">
+        <div class="sistema-name">ETO ERP</div>
+        <div class="sistema-role">ERP horista para engenharia</div>
+        <div class="sistema-badge badge-warn">⚠ A confirmar com o fornecedor</div>
+        <p class="sistema-note">Não identificamos documentação pública de API para o ETO ERP. Será necessário confirmar com o fornecedor antes do início do projeto. Caso não haja API disponível, trabalhamos com exportação de dados ou desenvolvimento de conector customizado — o que será avaliado na etapa de imersão.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="investimento">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Investimento</div>
+      <h2 class="section-title light">Condições claras,<br>sem <em>surpresas no caminho.</em></h2>
+      <p class="inv-intro">Cada módulo tem seu valor independente. Para quem optar pelos três módulos juntos, oferecemos uma condição diferenciada — com desconto tanto na implementação quanto na manutenção mensal. O pagamento da implementação é feito em duas parcelas: 50% no ato da contratação e 50% contra entrega e aprovação.</p>
+    </div>
+    <div class="inv-grid">
+      <div class="inv-card reveal r1">
+        <div class="inv-card-tag">Módulo 1</div>
+        <div class="inv-card-name">Workflow Automatizado de Obra</div>
+        <div class="inv-price">
+          <div class="inv-price-label">Implementação</div>
+          <div class="inv-price-value">R$ 7.200 <span>no total</span></div>
+          <div class="inv-payment">50% no ato · 50% contra entrega e aprovação</div>
+          <div class="inv-monthly">Manutenção mensal: <strong>R$ 790/mês</strong></div>
+        </div>
+        <ul class="inv-includes">
+          <li>Fluxo completo do contrato à saída para obra</li>
+          <li>Integração com Agendor e ERP *</li>
+          <li>Agente de checklist via WhatsApp</li>
+          <li>Painel de Workflow com alertas de SLA</li>
+          <li>Treinamento da equipe incluso</li>
+          <li>Suporte no primeiro ciclo completo de uso</li>
+        </ul>
+      </div>
+      <div class="inv-card reveal r2">
+        <div class="inv-card-tag">Módulo 2</div>
+        <div class="inv-card-name">Leitura de Projeto e Pré-Orçamento</div>
+        <div class="inv-price">
+          <div class="inv-price-label">Implementação</div>
+          <div class="inv-price-value">R$ 8.200 <span>no total</span></div>
+          <div class="inv-payment">50% no ato · 50% contra entrega e aprovação</div>
+          <div class="inv-monthly">Manutenção mensal: <strong>R$ 890/mês</strong></div>
+        </div>
+        <ul class="inv-includes">
+          <li>Leitura de projetos em PDF e DWG exportado</li>
+          <li>Interpretação de legenda por projeto</li>
+          <li>Cruzamento com tabela SINAPI ou própria</li>
+          <li>Planilha de pré-orçamento para validação</li>
+          <li>Aprendizado contínuo com os ajustes feitos</li>
+          <li>Treinamento da equipe incluso</li>
+        </ul>
+      </div>
+      <div class="inv-card reveal r3">
+        <div class="inv-card-tag">Módulo 3</div>
+        <div class="inv-card-name">Base de Conhecimento Técnico</div>
+        <div class="inv-price">
+          <div class="inv-price-label">Implementação</div>
+          <div class="inv-price-value">R$ 5.600 <span>no total</span></div>
+          <div class="inv-payment">50% no ato · 50% contra entrega e aprovação</div>
+          <div class="inv-monthly">Manutenção mensal: <strong>R$ 690/mês</strong></div>
+        </div>
+        <ul class="inv-includes">
+          <li>Sessões de extração do know-how da Engemos</li>
+          <li>Agente de consulta disponível 24h via WhatsApp</li>
+          <li>Regras por tipo de obra e localidade</li>
+          <li>Base viva retroalimentada pelo uso</li>
+          <li>Painel de perguntas para a gestão</li>
+          <li>Treinamento da equipe incluso</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pacote-card reveal">
+      <div>
+        <div class="pacote-label">Pacote completo · 3 módulos</div>
+        <div class="pacote-title">Os três módulos juntos,<br>com condição diferenciada.</div>
+        <p class="pacote-desc">Ao contratar os três módulos em conjunto, a Engemos garante desconto na implementação e na manutenção mensal — além da vantagem de ter os fluxos integrados desde o início, sem custo adicional de integração futura.</p>
+      </div>
+      <div class="pacote-pricing">
+        <div class="pacote-old">R$ 21.000 se contratados separadamente</div>
+        <div class="pacote-new">R$ 18.000 <span>no total</span></div>
+        <div class="pacote-payment">50% no ato · 50% contra entrega e aprovação</div>
+        <div class="pacote-monthly">Manutenção: <strong>R$ 1.990/mês</strong></div>
+        <div class="pacote-saving">Economia de R$ 3.000 + R$ 380/mês</div>
+      </div>
+    </div>
+    <div class="inv-note reveal">
+      <strong>Sobre custos de plataforma:</strong> os custos de APIs e ferramentas externas não estão inclusos nesta proposta e são pagos diretamente pela Engemos. Isso inclui a API oficial do WhatsApp Business (Meta), os modelos de linguagem que se fizerem necessários para o projeto e a hospedagem da plataforma de automação. <strong>Estimativa de custo operacional mensal: R$ 400–700 dependendo do volume de uso.</strong> Esses valores serão detalhados antes do início de cada módulo, sem surpresas.<br><br>
+      <strong>* Integração com ERP:</strong> a integração com o ETO ERP está condicionada à confirmação de disponibilidade de API por parte do fornecedor. Caso a integração nativa não seja viável, avaliaremos alternativas técnicas (exportação de dados ou conector customizado) na etapa de imersão — sem impacto no escopo ou no valor contratado.
+    </div>
+  </div>
+</section>
+
+<section id="porque">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Por que a NewScale</div>
+      <h2 class="section-title">Nem consultoria que vai embora.<br><em>Nem sistema que te molda.</em></h2>
+      <p class="section-sub" style="margin-top:10px;">Existe uma lacuna entre receber recomendações e ter uma solução funcionando na sua operação. É nessa lacuna que a NewScale atua.</p>
+    </div>
+    <div class="porque-grid">
+      <div class="porque-card reveal r1">
+        <div class="porque-card-icon">📋</div>
+        <div class="porque-card-title">Não somos uma consultoria tradicional</div>
+        <p class="porque-card-text">Consultores entregam diagnósticos e recomendações — e vão embora. A execução fica com você. A NewScale fica até o sistema estar funcionando, a equipe estar treinada e os primeiros resultados estarem visíveis.</p>
+      </div>
+      <div class="porque-card reveal r2">
+        <div class="porque-card-icon">📦</div>
+        <div class="porque-card-title">Não somos um SaaS de prateleira</div>
+        <p class="porque-card-text">Sistemas prontos fazem você adaptar seu negócio ao que foi construído. A NewScale faz o oposto: entende como a Engemos opera, quais são as suas regras de negócio, e constrói a solução tecnológica que serve ao seu processo — não ao contrário.</p>
+      </div>
+      <div class="porque-card dark reveal r3" style="grid-column:span 2">
+        <div class="porque-card-icon">🎯</div>
+        <div class="porque-card-title">O que somos: implementação sob medida com sustentação contínua</div>
+        <p class="porque-card-text">Mergulhamos no negócio do cliente, entendemos os processos com profundidade, projetamos a arquitetura certa para aquele contexto específico — e construímos. Depois do go-live, acompanhamos os resultados, ajustamos o que precisar e evoluímos o sistema junto com a empresa. Cada cliente tem uma solução que é sua, não uma instância de algo genérico.</p>
+      </div>
+    </div>
+    <div style="margin-bottom:52px">
+      <div class="section-label reveal" style="margin-bottom:28px">Como trabalhamos</div>
+      <div class="porque-metodologia">
+        <div class="passo-card reveal r1"><div class="passo-num">01</div><div class="passo-title">Consultoria Sistêmica</div><div class="passo-text">Visão completa do negócio: campo, financeiro e operação. IA como motor de escala, não de cosmética.</div></div>
+        <div class="passo-card reveal r2"><div class="passo-num">02</div><div class="passo-title">Roadmap Faseado</div><div class="passo-text">Priorizamos os processos com maior potencial de retorno antes de qualquer outra coisa. Entrega rápida de valor antes de escalar.</div></div>
+        <div class="passo-card reveal r3"><div class="passo-num">03</div><div class="passo-title">Implementação Integrada</div><div class="passo-text">Conectamos os sistemas que você já usa e construímos fluxos nos canais que o time já conhece.</div></div>
+        <div class="passo-card reveal r1"><div class="passo-num">04</div><div class="passo-title">Treinamento das Equipes</div><div class="passo-text">Cada pessoa aprende seu papel no novo fluxo. O humano monitora e decide — a IA faz o operacional repetitivo.</div></div>
+        <div class="passo-card reveal r2"><div class="passo-num">05</div><div class="passo-title">Acompanhamento de KPIs</div><div class="passo-text">Definimos métricas juntos antes de começar. Você sabe exatamente o que esperar — e como acompanhar o resultado real.</div></div>
+        <div class="passo-card reveal r3"><div class="passo-num">06</div><div class="passo-title">Sustentação Contínua</div><div class="passo-text">Monitoramento, otimizações e manutenção para que o sistema evolua junto com o negócio.</div></div>
+      </div>
+    </div>
+    <div class="fundadores-grid">
+      <div class="fundador-card reveal r1">
+        <img class="fundador-img" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/Bruna.JPG" alt="Bruna Santanna">
+        <div>
+          <div class="fundador-name">Bruna Santanna</div>
+          <p class="fundador-bio">ESPM. Empresária há 10+ anos. Mentora de IA no programa Potenc.IA (OLX, Magalu, B3 e CI&T). Professora de IA para equipes corporativas. Implementa IA no próprio negócio todos os dias — só vende o que usa.</p>
+          <div class="fundador-tags"><span class="ftag">SulAmérica</span><span class="ftag">Whirlpool</span><span class="ftag">Blackbox AI</span><span class="ftag">Potenc.IA</span></div>
+        </div>
+      </div>
+      <div class="fundador-card reveal r2">
+        <img class="fundador-img" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/BRUNO-VARELLA-PQ.jpeg" alt="Bruno Varella">
+        <div>
+          <div class="fundador-name">Bruno Varella</div>
+          <p class="fundador-bio">ESPM. 17+ anos em Marketing, Produto e Novos Negócios. Ex-Warner Bros., Ex-Natura & Co., Ex-Sorridents. Já implantou Agentes de IA em redes de franquias com 700+ unidades.</p>
+          <div class="fundador-tags"><span class="ftag">Warner Bros.</span><span class="ftag">Natura & Co</span><span class="ftag">Sorridents</span><span class="ftag">700+ franquias</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="passos">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Próximos Passos</div>
+      <h2 class="section-title light">Como chegamos ao <em>go-live</em><br>em até 90 dias.</h2>
+      <p class="section-sub light" style="margin-top:10px;">Cada módulo leva entre 4 e 6 semanas — o ritmo depende também do tempo de resposta da Engemos nas etapas de validação. A NewScale conduz o processo inteiro.</p>
+    </div>
+    <div class="passos-list">
+      <div class="passo-item reveal r1">
+        <div class="passo-dot">1</div>
+        <div class="passo-content">
+          <div class="passo-period">Semana 1</div>
+          <div class="passo-step-title">Imersão e Mapeamento</div>
+          <p class="passo-desc">Mergulhamos na operação da Engemos com Jean e Marília. Mapeamos em detalhe os processos do módulo escolhido para começar, levantamos as regras de negócio, capturamos as exceções e validamos as integrações com os sistemas existentes.</p>
+        </div>
+      </div>
+      <div class="passo-item reveal r2">
+        <div class="passo-dot">2</div>
+        <div class="passo-content">
+          <div class="passo-period">Semanas 1–2</div>
+          <div class="passo-step-title">Arquitetura e Validação</div>
+          <p class="passo-desc">Desenhamos o fluxo completo do agente — cada ramificação, cada regra, cada exceção mapeada. A Engemos valida antes de qualquer linha de desenvolvimento. Você aprova o que vai ser construído.</p>
+        </div>
+      </div>
+      <div class="passo-item reveal r3">
+        <div class="passo-dot">3</div>
+        <div class="passo-content">
+          <div class="passo-period">Semanas 2–5</div>
+          <div class="passo-step-title">Construção e Testes</div>
+          <p class="passo-desc">Desenvolvemos o agente, integramos com os sistemas e testamos com cenários reais da Engemos. Demonstrações periódicas ao longo do processo — sem surpresas na entrega final.</p>
+        </div>
+      </div>
+      <div class="passo-item reveal r1">
+        <div class="passo-dot">4</div>
+        <div class="passo-content">
+          <div class="passo-period">Semana 6</div>
+          <div class="passo-step-title">Go-Live e Treinamento</div>
+          <p class="passo-desc">Lançamos com o time da Engemos. Treinamos cada pessoa no seu papel no novo fluxo. Ficamos presentes no primeiro ciclo completo de uso para garantir que nenhuma dúvida fique sem resposta.</p>
+        </div>
+      </div>
+      <div class="passo-item reveal r2">
+        <div class="passo-dot">5</div>
+        <div class="passo-content">
+          <div class="passo-period">A partir da semana 7</div>
+          <div class="passo-step-title">Sustentação e Próximo Módulo</div>
+          <p class="passo-desc">Monitoramos os primeiros resultados, ajustamos o que for necessário e iniciamos o planejamento do próximo módulo. A cada entrega, a Engemos ganha mais autonomia operacional — e Jean e Marília ganham mais espaço para o que só eles podem fazer.</p>
+        </div>
+      </div>
+    </div>
+    <div class="passos-cta reveal">
+      <h2 class="passos-cta-title">Pronto para uma<br><em>nova escala?</em></h2>
+      <p class="passos-cta-sub">A NewScale entra com a estratégia, a tecnologia e a execução.<br>A Engemos entra com o conhecimento e o processo que já funcionam.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">NewScale<span>Consulting</span></div>
+  <div class="footer-date">Proposta exclusiva · Engemos<br>Maio de 2026</div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.06});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+function toggleFase(block){const o=block.classList.contains('open');document.querySelectorAll('.fase-block').forEach(b=>b.classList.remove('open'));if(!o)block.classList.add('open')}
+function toggleModulo(e,card){e.stopPropagation();const o=card.classList.contains('open');card.closest('.modulos-grid-inner').querySelectorAll('.modulo-card').forEach(c=>c.classList.remove('open'));if(!o)card.classList.add('open')}
+</script>
+</body>
+</html>
