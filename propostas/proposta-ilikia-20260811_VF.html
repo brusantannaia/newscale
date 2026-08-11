@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="bingbot" content="noindex, nofollow">
+<title>ILIKIA: Transformação AI First · NewScale Consulting</title>
+<meta property="og:title" content="Proposta Comercial: ILIKIA & NewScale Consulting">
+<meta property="og:description" content="Transformação AI First na ILIKIA: uma área por mês, com as soluções saindo do papel e o time sustentando sozinho.">
+<meta property="og:image" content="https://raw.githubusercontent.com/brusantannaia/newscale/main/newscale-og-cover.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Proposta Comercial: ILIKIA & NewScale Consulting">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/brusantannaia/newscale/main/newscale-og-cover.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0C2427; --bg-2:#0E2A2E; --ink:#14373C; --ink-2:#1A4449; --green:#435D51; --sage:#435D51;
+  --terra:#B06E4A; --tl:#C4835E; --terra-d:#985A3B; --sand:#A38362;
+  --cream:#F4F3EF; --light:#F3EEE3; --light-2:#ECE5D6; --ice:#F4F3EF; --ice-2:#FAFAF8; --card:#FBF9F3;
+  --text:rgba(244,243,239,.82); --muted:rgba(244,243,239,.56); --line:rgba(244,243,239,.10);
+  --taupe:#6E7A75;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Hanken Grotesk',sans-serif;background:var(--bg);color:var(--text);line-height:1.55;overflow-x:hidden}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;position:relative;z-index:3}
+h1,h2,h3,.disp{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;line-height:.92;letter-spacing:-.01em}
+em{font-style:normal;color:var(--tl)}
+.terra{color:var(--terra)}
+.tl{color:var(--tl)}
+::selection{background:var(--terra);color:#fff}
+a{color:inherit;text-decoration:none}
+.kicker{font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;color:var(--tl);display:block;margin-bottom:16px}
+.lead{font-size:1.06rem;color:var(--text);max-width:56ch}
+section{position:relative;z-index:2;padding:84px 0;overflow:hidden}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:100px;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.03em;padding:15px 28px;cursor:pointer;transition:.2s;border:none}
+.btn-terra{background:var(--terra);color:#fff}
+.btn-terra:hover{background:var(--terra-d);transform:translateY(-2px);box-shadow:0 12px 30px rgba(176,110,74,.4)}
+.btn-ghost{background:transparent;color:var(--cream);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--tl);background:rgba(255,255,255,.04)}
+header{position:sticky;top:0;z-index:50;background:rgba(12,36,39,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:80px;gap:16px}
+.nav img{height:50px;width:auto}
+.lockup{display:flex;align-items:center;gap:18px;min-width:0}
+.lockup .sep{width:1px;height:34px;background:var(--line);flex:0 0 auto}
+.lockup .cli{height:26px;opacity:.95}
+@media(max-width:900px){.nav{height:72px}.nav img{height:44px}.lockup{gap:14px}.lockup .cli{height:23px}.lockup .sep{height:30px}}
+@media(max-width:560px){.nav{height:70px}.nav img{height:46px}.lockup .sep,.lockup .cli{display:none}}
+@media(max-width:370px){.nav img{height:40px}}
+.foot-lock{display:flex;align-items:center;justify-content:center;gap:22px;margin-bottom:16px}
+.foot-lock img{height:46px;margin:0}
+.foot-lock .cli{height:24px}
+.foot-lock .sep{width:1px;height:32px;background:var(--line)}
+.nav-cta{font-size:.78rem;padding:11px 22px}
+.nav-links{display:flex;gap:26px;font-size:.8rem;color:var(--muted)}
+.nav-links a:hover{color:var(--cream)}
+@media(max-width:900px){.nav-links{display:none}}
+@media(max-width:370px){.nav-cta{font-size:.72rem;padding:10px 16px}}
+
+/* ── atmosfera: linhas topográficas animadas (mesmo sistema da aula) ── */
+.topo{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.topo path{fill:none;stroke-width:2;stroke-linecap:round;stroke-dasharray:10 16;animation:topoflow 26s linear infinite}
+.topo .slow{animation-duration:40s}
+@keyframes topoflow{to{stroke-dashoffset:-520}}
+@keyframes dashflow{to{stroke-dashoffset:-220}}
+.flowline{stroke-dasharray:6 9;animation:dashflow 2.6s linear infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.floaty{animation:floaty 5.5s ease-in-out infinite;transform-origin:center}
+@keyframes bl{50%{opacity:.3}}
+.live{width:7px;height:7px;border-radius:50%;background:#4ade80;animation:bl 2s infinite;flex:0 0 auto}
+
+.hero{background:linear-gradient(160deg,#0a2023 0%,#0C2427 40%,#102f33 100%);padding:92px 0 80px}
+.hero::after{content:"";position:absolute;top:-120px;right:-120px;width:640px;height:640px;background:radial-gradient(circle,rgba(176,110,74,.18),transparent 62%);pointer-events:none;z-index:1}
+.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:52px;align-items:center}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:38px}}
+.hero h1{font-size:clamp(2.5rem,6.6vw,4.6rem);color:var(--cream);margin:18px 0}
+.hero .badge{display:inline-block;font-size:.78rem;color:var(--text);background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:100px;padding:8px 16px}
+.hero-sub{font-size:1.1rem;color:var(--text);max-width:44ch;margin-bottom:28px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.panel{background:linear-gradient(160deg,var(--ink) 0%,#1a3d42 60%,var(--green) 130%);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 40px 90px -30px rgba(0,0,0,.7)}
+.panel-head{font-weight:700;font-size:.66rem;letter-spacing:.16em;color:var(--tl);display:flex;align-items:center;gap:8px;margin-bottom:18px}
+.panel-kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kpi{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:15px}
+.kpi .v{font-family:'Anton';font-size:1.9rem;color:var(--tl);line-height:1}
+.kpi .l{font-size:.66rem;color:var(--muted);margin-top:6px}
+.panel-row{margin-top:10px;padding:11px 14px;border-radius:10px;font-size:.74rem;color:var(--cream);background:rgba(176,110,74,.14);border:1px solid rgba(176,110,74,.3);display:flex;gap:9px;align-items:center}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:40px}
+.stat{background:var(--ink);padding:28px 22px}
+.stat .v{font-family:'Anton';font-size:clamp(2.2rem,6vw,3rem);color:var(--tl);line-height:1}
+.stat .l{font-size:.74rem;color:var(--muted);margin-top:9px;max-width:26ch}
+@media(max-width:760px){.stats{grid-template-columns:1fr}}
+
+.ice{background:var(--ice);color:#233133}
+.ice-2{background:var(--ice-2);color:#233133}
+.ice .kicker,.ice-2 .kicker{color:var(--terra-d)}
+.ice h2,.ice h3,.ice-2 h2,.ice-2 h3{color:var(--ink)}
+.ice .lead,.ice-2 .lead{color:#3a4a4c}
+.h2{font-size:clamp(2rem,5.4vw,3.3rem);max-width:22ch}
+.h2.on-dark{color:var(--cream)}
+
+/* ── diagrama de convergência (sob medida) ── */
+.conv{display:grid;grid-template-columns:1fr;gap:0;margin-top:34px;background:#fff;border:1px solid rgba(20,55,60,.14);border-radius:20px;padding:30px 26px}
+.conv svg{width:100%;height:auto;max-width:820px;margin:0 auto;display:block}
+
+/* ── trilho de fases ── */
+.flow{display:grid;grid-template-columns:1fr 54px 1fr 54px 1fr;align-items:center;margin-top:34px;gap:0}
+@media(max-width:820px){.flow{grid-template-columns:1fr;gap:12px}.flow .conn{display:none}}
+.fnode{background:#14373C;border-radius:16px;padding:22px 20px;text-align:center}
+.fnode .ft{font-family:'Anton';font-size:1.15rem;color:var(--cream);letter-spacing:0;text-transform:uppercase}
+.fnode .fs{font-size:.74rem;color:rgba(244,243,239,.6);margin-top:6px;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+.fnode.mid{background:var(--terra)}
+.fnode.mid .fs{color:rgba(255,255,255,.75)}
+.conn{display:flex;align-items:center;justify-content:center}
+
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+@media(max-width:860px){.steps-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.steps-grid{grid-template-columns:1fr}}
+.scard{background:#fff;border:1px solid rgba(20,55,60,.14);border-radius:16px;padding:24px 22px;transition:.2s;display:flex;flex-direction:column}
+.scard:hover{transform:translateY(-3px);box-shadow:6px 6px 0 rgba(20,55,60,.12)}
+.scard .sn{font-family:'Anton';font-size:2.1rem;color:var(--terra);line-height:.9}
+.scard h3{font-size:1.05rem;color:var(--ink);letter-spacing:0;margin:10px 0 8px}
+.scard p{font-size:.86rem;color:#4a5a5c;flex:1}
+.scard .out{display:inline-block;margin-top:14px;font-size:.76rem;color:#233133;background:rgba(176,110,74,.12);border:1px solid rgba(176,110,74,.3);border-radius:10px;padding:8px 12px}
+.scard .out b{color:var(--terra-d)}
+.scard.wide{grid-column:span 3}
+@media(max-width:860px){.scard.wide{grid-column:span 2}}
+@media(max-width:560px){.scard.wide{grid-column:span 1}}
+.grp{font-weight:800;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--terra-d);margin:34px 0 4px;display:flex;align-items:center;gap:12px}
+.grp::after{content:"";flex:1;height:1px;background:rgba(20,55,60,.16)}
+
+/* ── semanas com conectores ── */
+.weeks{display:grid;grid-template-columns:1fr 34px 1fr 34px 1fr 34px 1fr;align-items:stretch;margin-top:34px}
+@media(max-width:900px){.weeks{grid-template-columns:1fr 1fr;gap:12px}.weeks .conn{display:none}}
+@media(max-width:520px){.weeks{grid-template-columns:1fr}}
+.week{background:var(--ink);border:1px solid var(--line);border-radius:16px;padding:22px 18px}
+.week.first{background:linear-gradient(160deg,#1a4449,#14373C);border-color:rgba(176,110,74,.4)}
+.week .wn{font-weight:700;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tl)}
+.week .wt{font-family:'Anton';font-size:1.05rem;color:var(--cream);letter-spacing:0;margin:9px 0 7px;text-transform:uppercase}
+.week p{font-size:.8rem;color:var(--muted)}
+
+.ad{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+@media(max-width:640px){.ad{grid-template-columns:1fr}}
+.ad-col{border-radius:16px;padding:24px}
+.ad-col.bad{background:var(--bg-2);border:1px dashed rgba(244,243,239,.2)}
+.ad-col.good{background:var(--ink);border:1px solid rgba(176,110,74,.35)}
+.ad-tag{font-weight:700;font-size:.64rem;letter-spacing:.14em;color:var(--tl)}
+.ad-time{font-family:'Anton';font-size:1.9rem;color:var(--cream);margin:10px 0 2px}
+.ad-col.good .ad-time{color:var(--tl)}
+.ad-dur{font-size:.74rem;color:var(--muted);margin-bottom:10px}
+.ad-col p{font-size:.83rem;color:var(--text)}
+
+/* ── ESCALA ── */
+.escala{display:grid;grid-template-columns:repeat(6,1fr);gap:2px;background:rgba(20,55,60,.14);border:1px solid rgba(20,55,60,.14);border-radius:18px;overflow:hidden;margin-top:32px}
+@media(max-width:900px){.escala{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.escala{grid-template-columns:repeat(2,1fr)}}
+.esc{background:#fff;padding:22px 16px}
+.esc.hi{background:#14373C}
+.esc .l{font-family:'Anton';font-size:2.3rem;color:var(--terra);line-height:1}
+.esc.hi .l{color:var(--tl)}
+.esc .t{font-weight:700;font-size:.86rem;color:var(--ink);margin:6px 0 5px}
+.esc.hi .t{color:var(--cream)}
+.esc p{font-size:.76rem;color:#4a5a5c}
+.esc.hi p{color:rgba(244,243,239,.7)}
+
+/* ── matriz 2×2 (mesma da aula) ── */
+.matrix{display:grid;grid-template-columns:56px 1fr;grid-template-rows:1fr 44px;gap:12px;margin-top:32px}
+.m-y{grid-column:1;grid-row:1;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:4px 0}
+.m-x{grid-column:2;grid-row:2;display:flex;align-items:center;justify-content:space-between;padding:0 6px}
+.m-mid{display:flex;flex-direction:column;align-items:center;gap:6px}
+.m-mid-h{display:flex;align-items:center;gap:8px}
+.m-cap{font-weight:800;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)}
+.m-word{font-family:'Anton';font-size:1.05rem;text-transform:uppercase;color:var(--ink);letter-spacing:.06em}
+.m-y .m-word{writing-mode:vertical-rl;transform:rotate(180deg)}
+.m-arrow{font-size:1rem;line-height:1;color:var(--terra)}
+.m-grid{grid-column:2;grid-row:1;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.matrix{grid-template-columns:1fr;grid-template-rows:auto auto}.m-y{grid-column:1;grid-row:auto;flex-direction:row;justify-content:flex-start;gap:10px}.m-y .m-word{writing-mode:horizontal-tb;transform:none}.m-grid{grid-column:1;grid-row:auto;grid-template-columns:1fr}.m-x{grid-column:1}}
+.quad{border-radius:16px;padding:20px 22px;display:flex;flex-direction:column;gap:5px;min-height:150px}
+.quad .qh{font-weight:700;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;opacity:.72}
+.quad .qv{font-family:'Anton';font-size:1.3rem;line-height:1;text-transform:uppercase;letter-spacing:0}
+.quad .qe{margin-top:auto;font-size:.82rem;line-height:1.35;opacity:.92}
+.quad-hum{background:#fff;border:2.5px solid var(--ink);color:var(--ink)}
+.quad-ass{background:var(--ink);color:#fff}.quad-ass .qv{color:var(--tl)}
+.quad-rev{background:#fff;border:1px solid rgba(139,115,85,.22);color:var(--ink)}
+.quad-faz{background:var(--sage);color:#fff}.quad-faz .qv{color:#fff}
+
+.marquee{background:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:20px 0;white-space:nowrap}
+.mq-track{display:inline-block;animation:slide 34s linear infinite}
+.mq-track span{font-family:'Anton';font-size:1.35rem;color:rgba(244,243,239,.45);text-transform:uppercase;margin:0 24px}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+@media(max-width:860px){.case-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.case-grid{grid-template-columns:1fr}}
+.case{background:var(--ink);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.2s}
+.case:hover{transform:translateY(-3px);border-color:rgba(176,110,74,.4)}
+.ph{position:relative;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#1d4a4f,#14373C 55%,#0a2023)}
+.ph>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:sepia(.12) saturate(.9)}
+.case-body{padding:16px 18px 20px}
+.case-body h3{font-size:1rem;color:var(--cream);letter-spacing:0;margin-bottom:5px}
+.case-body p{font-size:.8rem;color:var(--muted)}
+.video-block{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;margin-top:40px;background:linear-gradient(150deg,var(--ink),#1a3d42);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 30px 80px -30px rgba(0,0,0,.7)}
+@media(max-width:820px){.video-block{grid-template-columns:1fr;gap:20px}}
+.video-block video{width:100%;border-radius:14px;border:1px solid var(--line);display:block;background:#000}
+.video-block h3{font-size:1.4rem;color:var(--cream);letter-spacing:0;margin-bottom:10px}
+.video-block p{font-size:.9rem;color:var(--text);max-width:44ch}
+.video-block .who{margin-top:14px;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tl);font-weight:700}
+
+.inv{display:grid;grid-template-columns:.85fr 1.15fr;gap:16px;align-items:stretch;margin-top:40px}
+@media(max-width:820px){.inv{grid-template-columns:1fr}}
+.inv-card{background:var(--ink);border:1px solid var(--line);border-radius:18px;padding:30px 28px;display:flex;flex-direction:column}
+.inv-card.rec{border-color:rgba(176,110,74,.5);position:relative}
+.inv-card.rec::before{content:"O PROGRAMA";position:absolute;top:-11px;left:26px;font-weight:700;font-size:.6rem;letter-spacing:.14em;color:#fff;background:var(--terra);padding:4px 12px;border-radius:100px}
+.inv-name{font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tl)}
+.inv-price{font-family:'Anton';font-size:2.8rem;color:var(--cream);margin:12px 0 2px;line-height:1}
+.inv-per{font-size:.78rem;color:var(--muted);margin-bottom:16px}
+.inv-card ul{list-style:none;font-size:.85rem;color:var(--text);flex:1}
+.inv-card li{padding:7px 0;border-bottom:1px solid var(--line)}
+.inv-card li::before{content:"→ ";color:var(--terra);font-weight:700}
+.inv-card li:last-child{border-bottom:none}
+.note{margin-top:20px;background:var(--ink);border:1px solid var(--line);border-radius:14px;padding:22px 24px;font-size:.85rem;color:var(--text)}
+.note b{color:var(--cream)}
+.pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
+@media(max-width:640px){.pay-grid{grid-template-columns:1fr}}
+.pay{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:12px;padding:15px 17px;font-size:.83rem}
+.pay .t{font-weight:700;color:var(--tl);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px}
+
+.future{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px}
+@media(max-width:760px){.future{grid-template-columns:1fr}}
+.fut{background:var(--ink);border:1px solid var(--line);border-radius:18px;padding:28px 26px;transition:.2s}
+.fut:hover{transform:translateY(-3px);border-color:rgba(176,110,74,.4)}
+.fut h3{font-size:1.25rem;color:var(--cream);letter-spacing:0;margin:12px 0 9px}
+.fut p{font-size:.86rem;color:var(--text)}
+.tagp{display:inline-block;font-weight:700;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tl);background:rgba(176,110,74,.1);border:1px solid rgba(176,110,74,.22);border-radius:100px;padding:5px 12px}
+
+.guard{background:linear-gradient(150deg,var(--ink),#1a3d42);border:1px solid rgba(176,110,74,.3);border-radius:18px;padding:32px 30px;margin-bottom:16px}
+.guard h3{font-size:1.35rem;color:var(--cream);margin-bottom:9px;letter-spacing:0}
+.guard p{font-size:.9rem;color:var(--text);max-width:66ch}
+.faq details{border-bottom:1px solid var(--line);padding:15px 0}
+.faq summary{cursor:pointer;font-weight:600;color:var(--cream);font-size:.96rem;list-style:none;display:flex;justify-content:space-between;gap:14px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--tl);font-size:1.3rem;line-height:1}
+.faq details[open] summary::after{content:"-"}
+.faq p{font-size:.86rem;color:var(--muted);margin-top:11px;max-width:72ch}
+.founders{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+@media(max-width:640px){.founders{grid-template-columns:1fr}}
+.fnd{background:var(--ink);border:1px solid var(--line);border-radius:14px;padding:22px}
+.fnd .nm{font-family:'Anton';font-size:1.15rem;color:var(--cream);letter-spacing:0}
+.fnd .rl{font-size:.66rem;color:var(--tl);letter-spacing:.1em;text-transform:uppercase;margin:4px 0 9px}
+.fnd p{font-size:.8rem;color:var(--muted)}
+
+.nsteps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(20,55,60,.14);border:1px solid rgba(20,55,60,.14);border-radius:18px;overflow:hidden;margin-top:34px}
+@media(max-width:760px){.nsteps{grid-template-columns:1fr 1fr}}
+.nstep{background:#fff;color:#233133;padding:24px 20px}
+.nstep .n{font-family:'Anton';font-size:1.5rem;color:var(--terra)}
+.nstep .t{font-weight:700;font-size:.9rem;color:var(--ink);margin:7px 0 5px}
+.nstep p{font-size:.79rem;color:#4a5a5c}
+
+.cta-final{background:linear-gradient(165deg,#0a2023,#14373C 55%,#1d4840 100%);text-align:center}
+.cta-final::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:720px;height:720px;background:radial-gradient(circle,rgba(176,110,74,.16),transparent 62%);pointer-events:none;z-index:1}
+.cta-final h2{font-size:clamp(2.2rem,6.4vw,3.9rem);color:var(--cream);margin-bottom:16px}
+.cta-final p{max-width:52ch;margin:0 auto 28px;color:var(--text)}
+.cta-final .hero-cta{justify-content:center}
+.valid{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;color:var(--muted);margin-top:24px}
+footer{background:var(--bg);border-top:1px solid var(--line);padding:42px 0;text-align:center}
+footer img{height:36px;margin-bottom:14px}
+footer p{font-size:.78rem;color:var(--muted)}
+footer a{color:var(--tl)}
+.rv{opacity:0;transform:translateY(20px);transition:.6s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}*,*::before,*::after{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<header>
+  <div class="wrap nav">
+    <div class="lockup">
+      <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/logo-newscale-branco.png" alt="NewScale" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png'">
+      <span class="sep"></span>
+      <img class="cli" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/logo-ilikia-branco.png" alt="ILIKIA" onerror="this.style.display='none'">
+    </div>
+    <nav class="nav-links">
+      <a href="#programa">O Programa</a>
+      <a href="#metodo">Método</a>
+      <a href="#cases">Cases</a>
+      <a href="#investimento">Investimento</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+    <a class="btn btn-terra nav-cta" href="https://wa.me/5511971901020?text=Oi%2C%20Bruna!%20Li%20a%20proposta%20da%20ILIKIA%20e%20quero%20seguir." target="_blank">Falar com a Bruna</a>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="topo" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g stroke="#C4835E" opacity="0.16">
+      <path d="M-60,150 C320,70 640,230 960,160 1280,90 1600,240 1980,160"/>
+      <path d="M-60,270 C340,200 660,350 980,285 1300,220 1620,360 1980,285"/>
+      <path class="slow" d="M-60,400 C360,330 680,470 1000,410 1320,350 1640,480 1980,405"/>
+      <path d="M-60,690 C360,620 680,760 1000,700 1320,640 1640,770 1980,695"/>
+      <path class="slow" d="M-60,820 C340,750 660,895 980,830 1300,765 1620,905 1980,825"/>
+      <path d="M-60,945 C320,875 640,1020 960,955 1280,890 1600,1030 1980,950"/>
+    </g>
+  </svg>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge">Caio, esta é a proposta depois das nossas conversas de julho e agosto.</span>
+      <h1>ilik<span class="terra">IA</span>:<br>transformação<br><span class="terra">AI first</span></h1>
+      <p class="hero-sub">Dos sócios à rotina de cada área. Um programa presencial que nivela os 130 colaboradores e depois entra área por área, até as soluções estarem rodando.</p>
+      <div class="hero-cta">
+        <a class="btn btn-terra" href="#investimento">Ver investimento</a>
+        <a class="btn btn-ghost" href="#programa">Como funciona</a>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="panel">
+        <div class="panel-head"><span class="live"></span>PROGRAMA DE IA · ILIKIA</div>
+        <div class="panel-kpis">
+          <div class="kpi"><div class="v">3–6</div><div class="l">meses, cerca de um mês por área</div></div>
+          <div class="kpi"><div class="v">1x</div><div class="l">por semana, meio período, presencial</div></div>
+          <div class="kpi"><div class="v">130</div><div class="l">colaboradores nivelados na abertura</div></div>
+          <div class="kpi"><div class="v">SP</div><div class="l">dentro da operação, não por chamada</div></div>
+        </div>
+        <div class="panel-row"><span class="live"></span>Cada ciclo fecha com a área apresentando o que construiu para a empresa toda.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contexto">
+  <div class="wrap">
+    <span class="kicker">O ponto de partida</span>
+    <h2 class="h2 on-dark">Vocês já saíram <span class="terra">na frente</span></h2>
+    <p class="lead" style="margin-top:20px">A ILIKIA já comprou formação para o time e já colocou uma consultoria para mapear os processos. O terreno está preparado, Caio. O que falta é presença dentro da operação, semana a semana, transformando o mapa em solução com nome e prazo.</p>
+    <div class="stats">
+      <div class="stat rv"><div class="v">130</div><div class="l">colaboradores nivelados logo na abertura</div></div>
+      <div class="stat rv"><div class="v">4</div><div class="l">encontros por mês em cada área: 1 diagnostica, 3 executam</div></div>
+      <div class="stat rv"><div class="v">1</div><div class="l">apresentação para a companhia ao fim de cada ciclo</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="ice">
+  <div class="wrap">
+    <span class="kicker">Sob medida</span>
+    <h2 class="h2">Nada aqui é <span class="terra">pacote</span></h2>
+    <p class="lead" style="margin-top:18px">O formato está desenhado. O conteúdo é de vocês. A ordem das áreas, os temas do nivelamento e as soluções de cada ciclo saem do que os sócios, os diretores e as próprias equipes disserem — e são recalibrados a cada mês.</p>
+    <div class="conv rv">
+      <svg viewBox="0 0 820 250" aria-hidden="true">
+        <g font-family="Hanken Grotesk, sans-serif" font-size="15" font-weight="700" fill="#233133">
+          <rect x="8" y="18" width="196" height="52" rx="14" fill="#FBF9F3" stroke="#14373C" stroke-width="2"/>
+          <text x="106" y="49" text-anchor="middle">Sócios</text>
+          <rect x="8" y="99" width="196" height="52" rx="14" fill="#FBF9F3" stroke="#14373C" stroke-width="2"/>
+          <text x="106" y="130" text-anchor="middle">Diretores</text>
+          <rect x="8" y="180" width="196" height="52" rx="14" fill="#FBF9F3" stroke="#14373C" stroke-width="2"/>
+          <text x="106" y="211" text-anchor="middle">Cada área</text>
+        </g>
+        <g class="flowline" stroke="#B06E4A" stroke-width="3" fill="none" stroke-linecap="round">
+          <path d="M210 44 C 300 44, 300 125, 396 125"/>
+          <path d="M210 125 H 396"/>
+          <path d="M210 206 C 300 206, 300 125, 396 125"/>
+        </g>
+        <g class="floaty">
+          <rect x="404" y="86" width="256" height="78" rx="18" fill="#14373C"/>
+          <text x="532" y="118" text-anchor="middle" font-family="Anton, sans-serif" font-size="24" fill="#F4F3EF">O PROGRAMA DA</text>
+          <image href="https://raw.githubusercontent.com/brusantannaia/newscale/main/logo-ilikia-branco.png" x="484" y="128" width="96" height="25" preserveAspectRatio="xMidYMid meet"/>
+        </g>
+        <g class="flowline" stroke="#B06E4A" stroke-width="3" fill="none" stroke-linecap="round"><path d="M668 125 H 754"/></g>
+        <path d="M790 125 l-26 -14 l0 28 z" fill="#B06E4A"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="programa" class="ice-2" style="padding-top:20px">
+  <div class="wrap">
+    <span class="kicker">O programa</span>
+    <h2 class="h2">Dos sócios à rotina de cada área</h2>
+
+    <div class="flow">
+      <div class="fnode rv"><div class="ft">Entrada</div><div class="fs">Uma vez</div></div>
+      <div class="conn"><svg viewBox="0 0 54 40" width="54" aria-hidden="true"><path class="flowline" d="M4 20 H 34" stroke="#B06E4A" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M50 20 l-16 -9 l0 18 z" fill="#B06E4A"/></svg></div>
+      <div class="fnode mid rv"><div class="ft">Ciclos por área</div><div class="fs">3 a 6 meses</div></div>
+      <div class="conn"><svg viewBox="0 0 54 40" width="54" aria-hidden="true"><path class="flowline" d="M4 20 H 34" stroke="#B06E4A" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M50 20 l-16 -9 l0 18 z" fill="#B06E4A"/></svg></div>
+      <div class="fnode rv"><div class="ft">Encerramento</div><div class="fs">Premiação</div></div>
+    </div>
+
+    <div class="grp">Entrada</div>
+    <div class="steps-grid">
+      <div class="scard rv"><div class="sn">01</div><h3>Alinhamento societário</h3><p>1h30 a 2h com os sócios atuantes: o que a alta liderança enxerga como prioridade para a companhia. Presencial, ou online se couber melhor na agenda de vocês.</p><span class="out">Sai daqui: <b>o critério de priorização do programa</b></span></div>
+      <div class="scard rv"><div class="sn">02</div><h3>Nivelamento de todos</h3><p>Uma manhã presencial com os 130, da diretoria ao estagiário. Todo mundo sai do mesmo ponto de partida sobre o que a IA faz, o que não faz e onde entra no trabalho de cada um.</p><span class="out">Vocês saem sabendo: <b>usar IA na própria rotina</b></span></div>
+      <div class="scard rv"><div class="sn">03</div><h3>Calibragem com a diretoria</h3><p>Com todos os diretores e, se possível, os sócios: rotina, objetivos, projetos e desafios de cada departamento. É a conversa que define a ordem das áreas.</p><span class="out">Vocês recebem: <b>o Documento do Projeto de Transformação de IA</b></span></div>
+    </div>
+
+    <div class="grp">Ciclos por área · cerca de um mês cada</div>
+    <div class="steps-grid">
+      <div class="scard rv"><div class="sn">04</div><h3>Uma visita por semana</h3><p>Meio período, presencial, dentro da área. A primeira semana explora e diagnostica; as outras três acompanham a execução — a parte que faz sair do papel.</p><span class="out">A área sai com: <b>soluções em uso</b></span></div>
+      <div class="scard rv"><div class="sn">05</div><h3>Líderes de projeto eleitos</h3><p>Na primeira reunião do departamento conhecemos os perfis e sugerimos quem segura o projeto entre uma visita e outra. São os cabeças de área.</p><span class="out">A ILIKIA ganha: <b>um responsável com nome em cada frente</b></span></div>
+      <div class="scard rv"><div class="sn">06</div><h3>Apresentação para a companhia</h3><p>Todo ciclo fecha com a área mostrando o que construiu. Reconhece quem fez e espalha a solução para quem tinha a mesma dor sem saber.</p><span class="out">Efeito desejado: <b>cultura, sem campanha interna</b></span></div>
+    </div>
+
+    <div class="grp">Encerramento</div>
+    <div class="steps-grid">
+      <div class="scard wide rv"><div class="sn">07</div><h3>Votação, premiação e o mapa do que vem depois</h3><p>A companhia vota e premia os projetos destaque. E a NewScale entrega um documento adicional com as automações mais complexas que fazem sentido para a ILIKIA: quais pedem construção nossa e quais as equipes já tocam sozinhas.</p><span class="out">Vocês ficam com: <b>o mapa do próximo ano, escrito por quem passou meses dentro da operação</b></span></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg-2)">
+  <div class="wrap">
+    <span class="kicker">O ritmo</span>
+    <h2 class="h2 on-dark">Um mês dentro de uma área</h2>
+    <p class="lead" style="margin-top:16px">Quatro encontros de meio período. Um descobre, três cobram. É essa proporção que separa projeto entregue de relatório guardado.</p>
+    <div class="weeks">
+      <div class="week first rv"><div class="wn">Semana 1</div><div class="wt">Diagnóstico</div><p>Conversas com as pessoas, rotina destrinchada, oportunidades priorizadas e líderes sugeridos.</p></div>
+      <div class="conn"><svg viewBox="0 0 34 40" width="34" aria-hidden="true"><path class="flowline" d="M3 20 H 18" stroke="#C4835E" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M31 20 l-13 -8 l0 16 z" fill="#C4835E"/></svg></div>
+      <div class="week rv"><div class="wn">Semana 2</div><div class="wt">Construção</div><p>Mão na massa com quem faz a tarefa. A solução nasce sendo usada, não apresentada.</p></div>
+      <div class="conn"><svg viewBox="0 0 34 40" width="34" aria-hidden="true"><path class="flowline" d="M3 20 H 18" stroke="#C4835E" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M31 20 l-13 -8 l0 16 z" fill="#C4835E"/></svg></div>
+      <div class="week rv"><div class="wn">Semana 3</div><div class="wt">Ajuste</div><p>O que travou destrava, o que funcionou vira padrão. Aqui aparecem as conexões entre áreas.</p></div>
+      <div class="conn"><svg viewBox="0 0 34 40" width="34" aria-hidden="true"><path class="flowline" d="M3 20 H 18" stroke="#C4835E" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M31 20 l-13 -8 l0 16 z" fill="#C4835E"/></svg></div>
+      <div class="week rv"><div class="wn">Semana 4</div><div class="wt">Fechamento</div><p>Ganho medido e apresentação da área para a empresa toda.</p></div>
+    </div>
+
+    <h3 style="font-family:'Anton';font-size:1.4rem;color:var(--cream);margin-top:52px;letter-spacing:0;text-transform:uppercase">O tipo de virada que aparece</h3>
+    <div class="ad">
+      <div class="ad-col bad rv"><div class="ad-tag">HOJE</div><div class="ad-time">1 a 2 dias</div><div class="ad-dur">montar uma proposta comercial personalizada</div><p>Abrir a última parecida, trocar os dados na mão, conferir preço, ajustar a marca. Cada um faz de um jeito.</p></div>
+      <div class="ad-col good rv"><div class="ad-tag">DEPOIS DO CICLO</div><div class="ad-time">10 minutos</div><div class="ad-dur">de revisão, não de construção</div><p>A informação fica organizada num lugar só. A proposta sai no padrão da marca e o time gasta o tempo no argumento da venda.</p></div>
+    </div>
+    <p style="margin-top:16px;font-size:.8rem;color:var(--muted)">Exemplo ilustrativo. O que cada área vai construir é definido no diagnóstico do próprio ciclo.</p>
+  </div>
+</section>
+
+<section id="metodo" class="ice">
+  <div class="wrap">
+    <span class="kicker">Metodologia NewScale</span>
+    <h2 class="h2">O Método ESCALA, rodado em cada área</h2>
+    <p class="lead" style="margin-top:16px">É a sequência que a NewScale roda em cliente desde o primeiro dia. A etapa que quase ninguém faz é o <b>C</b>: automatizar processo torto só faz o erro acontecer mais rápido.</p>
+    <div class="escala">
+      <div class="esc rv"><div class="l">E</div><div class="t">Entender</div><p>Diagnóstico da área: rotina, metas, onde a informação mora.</p></div>
+      <div class="esc hi rv"><div class="l">S</div><div class="t">Selecionar</div><p>Priorizar com a Matriz Risco × Repetição.</p></div>
+      <div class="esc rv"><div class="l">C</div><div class="t">Corrigir</div><p>Arrumar o processo antes de pôr IA em cima dele.</p></div>
+      <div class="esc rv"><div class="l">A</div><div class="t">Automatizar</div><p>Construir junto com quem executa a tarefa hoje.</p></div>
+      <div class="esc rv"><div class="l">L</div><div class="t">Liberar</div><p>O time revisa a IA em vez de competir com ela.</p></div>
+      <div class="esc rv"><div class="l">A</div><div class="t">Acompanhar</div><p>Ganho medido, solução apresentada, ciclo fechado.</p></div>
+    </div>
+
+    <div style="margin-top:56px">
+      <span class="kicker">Etapa S · a ferramenta</span>
+      <h2 class="h2" style="font-size:clamp(1.8rem,4.4vw,2.7rem)">Matriz Risco × Repetição</h2>
+      <p class="lead" style="margin-top:14px">Toda tarefa passa por duas perguntas: qual o risco e quanto ela se repete. O quadrante responde onde a IA entra inteira, onde ela só assiste e onde não deve entrar. Em setor regulado, essa última casa vale tanto quanto as outras.</p>
+      <div class="matrix">
+        <div class="m-y">
+          <span class="m-cap">Alto</span>
+          <div class="m-mid"><span class="m-arrow">↑</span><span class="m-word">Risco</span></div>
+          <span class="m-cap">Baixo</span>
+        </div>
+        <div class="m-grid">
+          <div class="quad quad-hum rv"><div class="qh">Alto risco · pouco repetido</div><div class="qv">100% humano</div><div class="qe">A IA ajuda a pensar, a decisão é da pessoa. Ex.: negociar um contrato de distribuição.</div></div>
+          <div class="quad quad-ass rv"><div class="qh">Alto risco · muito repetido</div><div class="qv">IA assiste, você decide</div><div class="qe">A IA prepara e aponta divergências. O martelo é do time. Ex.: conferir dois sistemas que não conversam.</div></div>
+          <div class="quad quad-rev rv"><div class="qh">Baixo risco · pouco repetido</div><div class="qv">IA faz, você revisa</div><div class="qe">Entrega pronta, alguém bate o olho antes de sair. Ex.: relatório pontual para uma reunião.</div></div>
+          <div class="quad quad-faz rv"><div class="qh">Baixo risco · muito repetido</div><div class="qv">IA assume, você valida</div><div class="qe">É aqui que mora o ganho de tempo. Ex.: o material que se repete toda semana com dados diferentes.</div></div>
+        </div>
+        <div class="m-x">
+          <span class="m-cap">Baixa</span>
+          <div class="m-mid-h"><span class="m-word">Repetição</span><span class="m-arrow">→</span></div>
+          <span class="m-cap">Alta</span>
+        </div>
+      </div>
+      <p style="margin-top:22px;font-size:.9rem;color:#3a4a4c;max-width:72ch;border-left:2px solid var(--terra);padding-left:18px">A matriz roda ao vivo, com as tarefas reais de cada área, na semana 1 do ciclo — e em cima do que a consultoria de processos de vocês já mapeou. A pergunta que a NewScale acrescenta é: <b>este processo, se fosse desenhado hoje já contando com IA, seria desenhado assim?</b></p>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="mq-track">
+    <span>Corteva</span><span>·</span><span>Stoller</span><span>·</span><span>Ismart</span><span>·</span><span>Proativa</span><span>·</span><span>Sorridents</span><span>·</span><span>Grupo Stringhetta</span><span>·</span><span>OneGlobal</span><span>·</span>
+    <span>Corteva</span><span>·</span><span>Stoller</span><span>·</span><span>Ismart</span><span>·</span><span>Proativa</span><span>·</span><span>Sorridents</span><span>·</span><span>Grupo Stringhetta</span><span>·</span><span>OneGlobal</span><span>·</span>
+  </div>
+</div>
+
+<section id="cases" style="background:var(--bg-2)">
+  <div class="wrap">
+    <span class="kicker">Cases e clientes</span>
+    <h2 class="h2 on-dark">Quem já abriu a operação <span class="terra">pra gente</span></h2>
+    <p class="lead" style="margin-top:16px;max-width:70ch">A <b>OneGlobal</b> é a mais parecida com o momento da ILIKIA: corretora multinacional que tinha acabado de mapear todos os processos por causa de um M&amp;A. O responsável pelo mapeamento abriu tudo, e foi olhando aquele desenho que apareceram os pontos pensados sem IA. Na <b>Ismart</b>, 70 pessoas e ciclos por área revelaram que dezenas delas tinham exatamente a mesma dor — e a diretoria não tinha essa visibilidade.</p>
+    <div class="case-grid">
+      <article class="case rv"><div class="ph"><img src="https://brunasantanna.com/fotos/one-global-nova.jpeg" alt="OneGlobal Broking" onerror="this.remove()"></div><div class="case-body"><h3>OneGlobal Broking</h3><p>Processos já mapeados por terceiros. A NewScale entrou por cima e achou o que faltava.</p></div></article>
+      <article class="case rv"><div class="ph"><img src="https://brunasantanna.com/fotos/nov-ismart.jpg" alt="Imersão Claude Ismart" onerror="this.remove()"></div><div class="case-body"><h3>Ismart</h3><p>70 colaboradores, aulas semanais, hackathon entre áreas e mentoria até a entrega.</p></div></article>
+      <article class="case rv"><div class="ph"><img src="https://brunasantanna.com/fotos/nov-stringhetta.jpg" alt="Grupo Stringhetta" onerror="this.remove()"></div><div class="case-body"><h3>Grupo Stringhetta</h3><p>O fluxo de caixa que levava 2 dias passou a sair em minutos.</p></div></article>
+      <article class="case rv"><div class="ph"><img src="https://brunasantanna.com/fotos/nov-stoller-convencao.jpg" alt="Convenção Stoller" onerror="this.remove()"></div><div class="case-body"><h3>Convenção Stoller</h3><p>Mais de 280 pessoas: a IA que multiplica o que o time já sabe fazer.</p></div></article>
+      <article class="case rv"><div class="ph"><img src="https://brunasantanna.com/fotos/nov-sorridents.jpg" alt="Convenção Sorridents" onerror="this.remove()"></div><div class="case-body"><h3>Convenção Sorridents</h3><p>A Virada IA para uma das maiores redes de odontologia do país.</p></div></article>
+      <article class="case rv"><div class="ph"><img src="https://brunasantanna.com/fotos/nov-dracarla.jpg" alt="Ella Club Dra Carla Sarni" onerror="this.remove()"></div><div class="case-body"><h3>Ella Club · Dra. Carla Sarni</h3><p>Palestra sobre IA para as mentoradas do Ella Club.</p></div></article>
+    </div>
+    <div class="video-block rv">
+      <video controls preload="none" poster="https://brunasantanna.com/fotos/video-rafael-poster.jpg">
+        <source src="https://brunasantanna.com/fotos/video-rafael-magaldi.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+      <div>
+        <h3>Quem viveu a Virada IA conta</h3>
+        <p>Um depoimento de quem passou pela formação e viu o dia a dia mudar. Dá o play.</p>
+        <div class="who">Rafael Magaldi · proprietário do Grupo Stringhetta</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="investimento" class="ice">
+  <div class="wrap">
+    <span class="kicker">Investimento</span>
+    <h2 class="h2">A entrada e o programa</h2>
+    <p class="lead" style="margin-top:16px">Duas linhas, Caio. A primeira acontece uma vez e coloca a companhia inteira no mesmo ponto de partida. A segunda é onde as soluções saem do papel.</p>
+    <div class="inv">
+      <div class="inv-card rv">
+        <div class="inv-name">Entrada · pagamento único</div>
+        <div class="inv-price">R$ 16.000</div>
+        <div class="inv-per">alinhamento + nivelamento + calibragem</div>
+        <ul>
+          <li>Reunião com o quadro societário (1h30 a 2h)</li>
+          <li>Treinamento de nivelamento presencial para os 130, meio período</li>
+          <li>Reunião de calibragem com todos os diretores</li>
+          <li>Documento do Projeto de Transformação de IA</li>
+        </ul>
+      </div>
+      <div class="inv-card rec rv">
+        <div class="inv-name">Programa mensal · 3 a 6 meses</div>
+        <div class="inv-price">R$ 27.000</div>
+        <div class="inv-per">por mês · cerca de uma área por mês · presencial em São Paulo</div>
+        <ul>
+          <li>1 visita por semana, meio período, dentro da operação</li>
+          <li>Semana 1 de diagnóstico; semanas 2 a 4 de execução acompanhada</li>
+          <li>Eleição e formação dos líderes de projeto de cada área</li>
+          <li>Trabalho conjunto com a consultoria de processos já contratada</li>
+          <li>Apresentação das soluções da área para a companhia a cada ciclo</li>
+          <li>Votação e premiação dos projetos destaque no encerramento</li>
+          <li>Documento final com os próximos passos e automações mais complexas</li>
+          <li>Suporte por WhatsApp entre as visitas</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note">
+      <b>Forma de pagamento e condições</b>
+      <div class="pay-grid">
+        <div class="pay"><div class="t">Pagamento</div>Entrada de R$ 16.000 na assinatura. Programa em parcelas mensais de R$ 27.000, a primeira no início do primeiro ciclo de área.</div>
+        <div class="pay"><div class="t">Duração</div>Ciclo mínimo de 3 meses, extensível a 6 conforme a quantidade e a complexidade das áreas. A ordem sai do Documento do Projeto.</div>
+        <div class="pay"><div class="t">Local</div>Presencial na operação em São Paulo, agenda combinada mês a mês. Deslocamento fora da Grande São Paulo é acordado à parte.</div>
+        <div class="pay"><div class="t">Referência</div>R$ 27.000 é o custo de uma área inteira diagnosticada, priorizada e com soluções em uso — cerca de R$ 208 por colaborador no mês.</div>
+      </div>
+      <p style="margin-top:14px;color:var(--muted);font-size:.82rem">As assinaturas do <b>Claude</b> e de qualquer outra ferramenta são contratadas direto pela ILIKIA, à parte. O programa orienta qual plano faz sentido para o tamanho do time e para a segurança de dados de um setor regulado.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">Depois do programa</span>
+    <h2 class="h2 on-dark">A onda seguinte, quando fizer sentido</h2>
+    <p class="lead" style="margin-top:16px">Nenhuma das duas está incluída acima e nenhuma precisa ser decidida agora. Estão aqui porque, pelo que já vimos do time da ILIKIA, as duas têm cara de acontecer.</p>
+    <div class="future">
+      <div class="fut rv">
+        <span class="tagp">Projeto à parte</span>
+        <h3>Hackathon ILIKIA</h3>
+        <p>Squads multidisciplinares, problemas reais da companhia, diretoria como jurado e premiação. Foi assim na Ismart, e o que apareceu lá não foi só solução: foi a descoberta de que dezenas de pessoas de áreas diferentes sofriam da mesma dor. Escopo e investimento definidos à parte, quando a ILIKIA quiser puxar.</p>
+      </div>
+      <div class="fut rv">
+        <span class="tagp">Evolução natural</span>
+        <h3>Comitê de IA</h3>
+        <p>Ao longo dos ciclos fica evidente quem são os mais engajados. Esse grupo vira um comitê interno que ataca gradualmente os próximos projetos da empresa, com direção e suporte, sem depender de a NewScale estar na sala.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="guard rv">
+      <h3>O compromisso é com a ILIKIA sustentando sozinha</h3>
+      <p>Nada de entregar documento e sumir. Ao fim do programa, os líderes de projeto de cada área precisam conseguir identificar oportunidades e construir soluções sem a NewScale. Se ao fim de um ciclo uma frente combinada não estiver de pé, a gente continua nela até estar.</p>
+    </div>
+    <div class="faq" style="margin-top:28px">
+      <details><summary>Já compramos o Viver de IA e a mentoria do G4. Por que precisamos da NewScale também?</summary><p>Porque são coisas diferentes e uma depende da outra. O G4 entrega formação e método — conteúdo excelente e genérico por natureza: ensina IA, não ensina a operação da ILIKIA. A NewScale entra na operação de vocês, senta com cada pessoa e traduz aquele conteúdo para o processo real dela. Sem isso, o risco conhecido é o time terminar o curso usando dez por cento do que a ferramenta permite.</p></details>
+      <details><summary>Já temos uma consultoria mapeando processos. Não vai sobrepor?</summary><p>Não, e essa é justamente a oportunidade. Eles mapeiam processo melhor do que a gente, e a NewScale entra com outra pergunta: este processo que está sendo desenhado agora, se fosse pensado já com IA, seria desenhado assim? Na OneGlobal foi nesse encontro que apareceu o valor. Sem essa camada, existe o risco real de padronizar agora processos que vão precisar ser refeitos daqui a um ano.</p></details>
+      <details><summary>Por que não contratar só o diagnóstico e decidir depois?</summary><p>Dá para fazer, mas vale saber o que costuma acontecer: quando a entrega é só o documento, boa parte das empresas não executa — ninguém dentro tem tempo nem mandato para tocar. Por isso o programa tem três encontros de execução para cada um de diagnóstico. O valor não está em descobrir a oportunidade, está em ela sair do papel.</p></details>
+      <details><summary>O programa é o mesmo para todas as áreas?</summary><p>Não. O formato é o mesmo, o conteúdo não. Cada ciclo começa com um diagnóstico próprio da área e a matriz roda com as tarefas reais daquele time. Comercial, regulatório e financeiro vão terminar o mês com soluções diferentes, e a ordem das áreas é recalibrada conforme o programa avança.</p></details>
+      <details><summary>Somos um setor regulado. Dá para usar IA com segurança?</summary><p>Dá, com regra clara. Parte do programa é definir o que pode e o que não pode entrar na ferramenta, com qual plano, e onde a revisão humana é obrigatória — a casa "100% humano" da matriz existe para isso. Vale dizer o contrário também: quando a empresa não oferece ferramenta oficial, as pessoas usam versão gratuita no computador de casa, que é o cenário menos seguro de todos.</p></details>
+      <details><summary>Vocês vão ocupar o lugar da pessoa que precisamos ter internamente?</summary><p>Não, e isso é proposital. O programa elege e forma líderes de projeto dentro de cada área, que podem ser pessoas que já estão no time, e a NewScale apoia na definição do perfil e na escolha. A autonomia precisa ficar dentro da empresa, senão vai embora junto com o contrato.</p></details>
+      <details><summary>Precisa de alguém técnico no time?</summary><p>Não. A Bruna é empresária que implementa IA no próprio negócio todos os dias e fala a língua da operação, não a do TI. Quando alguma frente exigir desenvolvimento, isso é dito com todas as letras e orçado à parte — inclusive no documento final.</p></details>
+    </div>
+    <div class="founders">
+      <div class="fnd rv"><div class="nm">Bruna Santanna</div><div class="rl">Co-fundadora · conduz o programa</div><p>ESPM + MBA USP. Empresária há 10+ anos, teve loja e e-commerce por 8 anos. Mentora de IA no Potenc.IA (Magalu, OLX). Implementa IA no próprio negócio todos os dias.</p></div>
+      <div class="fnd rv"><div class="nm">Bruno Varella</div><div class="rl">Co-fundador</div><p>ESPM. 17+ anos em Marketing e Produto. Ex-Warner Bros., ex-Natura &amp; Co. Já implantou agentes de IA em redes com 700+ franquias.</p></div>
+    </div>
+    <p style="margin-top:24px;font-size:.9rem;color:var(--text);max-width:70ch;border-left:2px solid var(--terra);padding-left:18px">"Cada projeto começa pela conversa, não pelo contrato. A gente entende como a operação funciona hoje, o que a equipe precisa, e só depois constrói. E depois que entrega, a gente fica, evoluindo junto com o seu negócio."</p>
+    <p style="margin-top:20px;font-family:'Anton';text-transform:uppercase;font-size:1.35rem;color:var(--cream);letter-spacing:-.01em">Método antes de ferramenta. Resultado antes de hype.</p>
+  </div>
+</section>
+
+<section class="ice" style="padding-bottom:56px">
+  <div class="wrap">
+    <span class="kicker">Próximos passos</span>
+    <h2 class="h2">Do aceite ao primeiro ciclo</h2>
+    <div class="nsteps">
+      <div class="nstep rv"><div class="n">1</div><div class="t">Aceite</div><p>Confirmação do formato e assinatura. A agenda presencial dos primeiros meses é reservada na sequência.</p></div>
+      <div class="nstep rv"><div class="n">2</div><div class="t">Sócios</div><p>Encontro de alinhamento para definir a prioridade da companhia.</p></div>
+      <div class="nstep rv"><div class="n">3</div><div class="t">Nivelamento</div><p>A manhã com os 130 colaboradores e a calibragem com os diretores.</p></div>
+      <div class="nstep rv"><div class="n">4</div><div class="t">Primeira área</div><p>Começa o ciclo: uma visita por semana, líderes eleitos, soluções em construção.</p></div>
+    </div>
+    <p class="lead" style="margin-top:28px">Você não está sozinho na abertura do programa, Caio, e também não estará em nenhuma das semanas seguintes.</p>
+  </div>
+</section>
+
+<section class="cta-final">
+  <svg class="topo" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g stroke="#C4835E" opacity="0.14">
+      <path d="M-60,220 C340,150 660,300 980,235 1300,170 1620,310 1980,235"/>
+      <path class="slow" d="M-60,420 C360,350 680,490 1000,430 1320,370 1640,500 1980,425"/>
+      <path d="M-60,700 C360,630 680,770 1000,710 1320,650 1640,780 1980,705"/>
+      <path class="slow" d="M-60,880 C340,810 660,955 980,890 1300,825 1620,965 1980,885"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <h2>A ILIKIA já tem o mapa.<br>Falta caminhar por ele.</h2>
+    <p>Confirme o formato e a Bruna já reserva a agenda presencial dos primeiros ciclos.</p>
+    <div class="hero-cta">
+      <a class="btn btn-terra" href="https://wa.me/5511971901020?text=Oi%2C%20Bruna!%20Li%20a%20proposta%20da%20ILIKIA%20e%20quero%20seguir." target="_blank">Quero fechar o programa</a>
+      <a class="btn btn-ghost" href="https://wa.me/5511971901020?text=Oi%2C%20Bruna!%20Li%20a%20proposta%20da%20ILIKIA%20e%20tenho%20uma%20d%C3%BAvida." target="_blank">Tenho uma dúvida</a>
+    </div>
+    <div class="valid"><span class="live"></span>Proposta válida até 26/ago/2026. A agenda presencial do segundo semestre está fechando.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-lock">
+      <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/logo-newscale-branco.png" alt="NewScale" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png'">
+      <span class="sep"></span>
+      <img class="cli" src="https://raw.githubusercontent.com/brusantannaia/newscale/main/logo-ilikia-branco.png" alt="ILIKIA" onerror="this.style.display='none'">
+    </div>
+    <p>NewScale Consulting · IA hiper-personalizada · <a href="https://newscale.tech" target="_blank">newscale.tech</a> · <a href="https://wa.me/5511971901020" target="_blank">(11) 97190-1020</a></p>
+    <p style="margin-top:8px">Proposta preparada para ILIKIA · 11/ago/2026</p>
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver((es)=>{es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*70);obs.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+setTimeout(()=>document.querySelectorAll('.rv').forEach(el=>el.classList.add('in')),2500);
+</script>
+</body>
+</html>
