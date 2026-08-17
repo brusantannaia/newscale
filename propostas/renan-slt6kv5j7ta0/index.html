@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="bingbot" content="noindex, nofollow">
+<title>Imersão Claude · Segurança do Trabalho · Morro Agudo · NewScale Consulting</title>
+<meta property="og:title" content="Imersão Claude · Segurança do Trabalho · Morro Agudo · NewScale Consulting">
+<meta property="og:description" content="Dois dias presenciais. Cinco pessoas. Cada uma sai com o Claude rodando na própria rotina.">
+<meta property="og:image" content="https://raw.githubusercontent.com/brusantannaia/newscale/main/newscale-og-cover.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Imersão Claude · Segurança do Trabalho · Morro Agudo · NewScale Consulting">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/brusantannaia/newscale/main/newscale-og-cover.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0C2427; --bg-2:#0E2A2E; --ink:#14373C; --ink-2:#1A4449; --green:#435D51;
+  --terra:#B06E4A; --tl:#C4835E; --terra-d:#985A3B; --sand:#A38362;
+  --cream:#F4F3EF; --ice:#F4F3EF; --ice-2:#FAFAF8;
+  --text:rgba(244,243,239,.82); --muted:rgba(244,243,239,.56); --line:rgba(244,243,239,.10);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Hanken Grotesk',sans-serif;background:var(--bg);color:var(--text);line-height:1.55;overflow-x:hidden}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;line-height:.94;letter-spacing:-.01em}
+.terra{color:var(--terra)}
+::selection{background:var(--terra);color:#fff}
+a{color:inherit;text-decoration:none}
+section{position:relative;z-index:2;padding:84px 0;overflow:hidden}
+.kicker{font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;color:var(--tl);display:block;margin-bottom:16px}
+.lead{font-size:1.06rem;color:var(--text);max-width:56ch}
+.h2{font-size:clamp(2rem,5.4vw,3.3rem);max-width:22ch}
+.h2.on-dark{color:var(--cream)}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:100px;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.03em;padding:15px 28px;cursor:pointer;transition:.2s;border:none}
+.btn-terra{background:var(--terra);color:#fff}
+.btn-terra:hover{background:var(--terra-d);transform:translateY(-2px);box-shadow:0 12px 30px rgba(176,110,74,.4)}
+.btn-ghost{background:transparent;color:var(--cream);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--tl);background:rgba(255,255,255,.04)}
+@keyframes dashflow{to{stroke-dashoffset:-220}}
+.flowline{stroke-dasharray:6 9;animation:dashflow 2.6s linear infinite}
+
+header{position:sticky;top:0;z-index:50;background:rgba(12,36,39,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.nav img{height:40px}
+.nav-cta{font-size:.78rem;padding:11px 22px}
+.nav-links{display:flex;gap:26px;font-size:.8rem;color:var(--muted)}
+.nav-links a:hover{color:var(--cream)}
+@media(max-width:860px){.nav-links{display:none}}
+
+.hero{background:linear-gradient(160deg,#0a2023 0%,#0C2427 40%,#102f33 100%);padding:92px 0 80px}
+.hero::after{content:"";position:absolute;top:-120px;right:-120px;width:640px;height:640px;background:radial-gradient(circle,rgba(176,110,74,.18),transparent 62%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:center;position:relative;z-index:3}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:36px}}
+.hero h1{font-size:clamp(2.3rem,5.6vw,3.9rem);color:var(--cream);margin:18px 0}
+.hero .badge{display:inline-block;font-size:.78rem;color:var(--text);background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:100px;padding:8px 16px}
+.hero-sub{font-size:1.06rem;color:var(--text);max-width:44ch;margin-bottom:28px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.panel{background:linear-gradient(160deg,var(--ink) 0%,#1a3d42 60%,var(--green) 130%);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 40px 90px -30px rgba(0,0,0,.7)}
+.panel-head{font-weight:700;font-size:.66rem;letter-spacing:.16em;color:var(--tl);display:flex;align-items:center;gap:8px;margin-bottom:18px}
+.live{width:7px;height:7px;border-radius:50%;background:#4ade80;animation:bl 2s infinite}
+@keyframes bl{50%{opacity:.3}}
+.panel-kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kpi{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:15px}
+.kpi .v{font-family:'Anton';font-size:1.9rem;color:var(--tl);line-height:1}
+.kpi .l{font-size:.66rem;color:var(--muted);margin-top:6px}
+.panel-row{margin-top:10px;padding:11px 14px;border-radius:10px;font-size:.74rem;color:var(--cream);background:rgba(176,110,74,.14);border:1px solid rgba(176,110,74,.3);display:flex;gap:9px;align-items:center}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:38px}
+.stat{background:var(--ink);padding:28px 22px}
+.stat .v{font-family:'Anton';font-size:clamp(2rem,5.5vw,2.8rem);color:var(--tl);line-height:1}
+.stat .l{font-size:.74rem;color:var(--muted);margin-top:8px;max-width:26ch}
+@media(max-width:760px){.stats{grid-template-columns:1fr}}
+
+.ice{background:var(--ice);color:#233133}
+.ice-2{background:var(--ice-2);color:#233133}
+.ice .kicker,.ice-2 .kicker{color:var(--terra-d)}
+.ice h2,.ice h3,.ice-2 h2,.ice-2 h3{color:var(--ink)}
+.ice .lead,.ice-2 .lead{color:#3a4a4c}
+
+/* trilho de fases */
+.flow{display:grid;grid-template-columns:1fr 48px 1fr 48px 1fr 48px 1fr;align-items:stretch;margin-top:34px}
+@media(max-width:900px){.flow{grid-template-columns:1fr 1fr;gap:12px}.flow .conn{display:none}}
+@media(max-width:520px){.flow{grid-template-columns:1fr}}
+.fnode{background:#14373C;border-radius:16px;padding:20px 18px;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.fnode .ft{font-family:'Anton';font-size:1.05rem;color:var(--cream);letter-spacing:0;text-transform:uppercase}
+.fnode .fs{font-size:.7rem;color:rgba(244,243,239,.6);margin-top:6px;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+.fnode.mid{background:var(--terra)}
+.fnode.mid .fs{color:rgba(255,255,255,.78)}
+.conn{display:flex;align-items:center;justify-content:center}
+
+/* barra de proporção + blocos da imersão */
+.prop{display:grid;grid-template-columns:1fr 3.4fr;gap:6px;margin-top:34px}
+@media(max-width:640px){.prop{grid-template-columns:1fr}}
+.prop-seg{border-radius:12px;padding:15px 18px}
+.prop-seg .pl{font-weight:800;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+.prop-seg .pv{font-family:'Anton';font-size:1.05rem;text-transform:uppercase;letter-spacing:0;margin-top:5px}
+.prop-a{background:var(--terra);color:#fff}
+.prop-b{background:var(--ink);color:var(--cream)}
+.prop-b .pl{color:var(--tl);opacity:1}
+
+.blocks{display:grid;grid-template-columns:1fr 1.35fr;gap:16px;margin-top:16px;align-items:stretch}
+@media(max-width:860px){.blocks{grid-template-columns:1fr}}
+.blk{background:#fff;border:1px solid rgba(20,55,60,.14);border-radius:18px;padding:28px 26px;display:flex;flex-direction:column}
+.blk.hi{background:var(--ink);border-color:rgba(176,110,74,.4)}
+.blk-tag{font-weight:800;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-d)}
+.blk.hi .blk-tag{color:var(--tl)}
+.blk h3{font-family:'Anton';font-size:clamp(1.5rem,3.4vw,2.1rem);color:var(--ink);letter-spacing:0;margin:10px 0 12px;text-transform:uppercase}
+.blk.hi h3{color:var(--cream)}
+.blk>p{font-size:.9rem;color:#4a5a5c;margin-bottom:18px}
+.blk.hi>p{color:var(--text)}
+.blk ul{list-style:none;font-size:.88rem;color:#3a4a4c;flex:1}
+.blk.hi ul{color:var(--text)}
+.blk li{padding:9px 0;border-bottom:1px solid rgba(20,55,60,.1);display:flex;gap:10px}
+.blk.hi li{border-bottom-color:var(--line)}
+.blk li:last-child{border-bottom:none}
+.blk li::before{content:"→";color:var(--terra);font-weight:700;flex-shrink:0}
+.blk.hi li::before{color:var(--tl)}
+.blk .out{display:inline-block;margin-top:18px;font-size:.8rem;color:#233133;background:rgba(176,110,74,.12);border:1px solid rgba(176,110,74,.3);border-radius:10px;padding:10px 14px}
+.blk .out b{color:var(--terra-d)}
+.blk.hi .out{color:var(--cream);background:rgba(176,110,74,.16)}
+.blk.hi .out b{color:var(--tl)}
+
+.thesis{margin-top:22px;background:linear-gradient(150deg,var(--ink),#1a3d42);border:1px solid rgba(176,110,74,.3);border-radius:18px;padding:30px 28px}
+.thesis h3{font-family:'Anton';font-size:clamp(1.4rem,3.2vw,1.9rem);color:var(--cream);letter-spacing:0;text-transform:uppercase;margin-bottom:10px}
+.thesis h3 span{color:var(--tl)}
+.thesis p{font-size:.92rem;color:var(--text);max-width:70ch}
+
+/* cards numerados */
+.grp{font-weight:800;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--terra-d);margin:36px 0 14px;display:flex;align-items:center;gap:12px}
+.grp::after{content:"";flex:1;height:1px;background:rgba(20,55,60,.16)}
+.grp.on-dark{color:var(--tl)}
+.grp.on-dark::after{background:var(--line)}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:860px){.steps-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.steps-grid{grid-template-columns:1fr}}
+.scard{background:#fff;border:1px solid rgba(20,55,60,.14);border-radius:16px;padding:24px 22px;transition:.2s;display:flex;flex-direction:column}
+.scard:hover{transform:translateY(-3px);box-shadow:6px 6px 0 rgba(20,55,60,.12)}
+.scard .sn{font-family:'Anton';font-size:2rem;color:var(--terra);line-height:.9}
+.scard h3{font-size:1.02rem;color:var(--ink);letter-spacing:0;margin:10px 0 8px}
+.scard p{font-size:.85rem;color:#4a5a5c;flex:1}
+.scard .out{display:inline-block;margin-top:14px;font-size:.76rem;color:#233133;background:rgba(176,110,74,.12);border:1px solid rgba(176,110,74,.3);border-radius:10px;padding:8px 12px}
+.scard .out b{color:var(--terra-d)}
+.scard.dark{background:var(--ink);border-color:var(--line)}
+.scard.dark h3{color:var(--cream)}
+.scard.dark p{color:var(--muted)}
+.scard.dark:hover{box-shadow:none;border-color:rgba(176,110,74,.4)}
+.scard.dark .out{background:rgba(176,110,74,.14);border-color:rgba(176,110,74,.3);color:var(--cream)}
+.scard.dark .out b{color:var(--tl)}
+
+/* entregáveis */
+.deliv{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:14px}
+.deliv.three{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.deliv,.deliv.three{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.deliv,.deliv.three{grid-template-columns:1fr}}
+.dv.warm{background:linear-gradient(160deg,#1a4449,#14373C)}
+.dv{background:var(--ink);padding:24px 18px}
+.dv .n{font-family:'Anton';font-size:1.4rem;color:var(--terra);line-height:1}
+.dv .t{font-weight:700;font-size:.9rem;color:var(--cream);margin:8px 0 6px}
+.dv p{font-size:.78rem;color:var(--muted)}
+
+.ad{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+@media(max-width:640px){.ad{grid-template-columns:1fr}}
+.ad-col{border-radius:16px;padding:24px}
+.ad-col.bad{background:var(--bg-2);border:1px dashed rgba(244,243,239,.2)}
+.ad-col.good{background:var(--ink);border:1px solid rgba(176,110,74,.35)}
+.ad-tag{font-weight:700;font-size:.64rem;letter-spacing:.14em;color:var(--tl)}
+.ad-time{font-family:'Anton';font-size:1.9rem;color:var(--cream);margin:10px 0 2px}
+.ad-col.good .ad-time{color:var(--tl)}
+.ad-dur{font-size:.74rem;color:var(--muted);margin-bottom:10px}
+.ad-col p{font-size:.83rem;color:var(--text)}
+
+.marquee{background:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:20px 0;white-space:nowrap}
+.mq-track{display:inline-block;animation:slide 34s linear infinite}
+.mq-track span{font-family:'Anton';font-size:1.35rem;color:rgba(244,243,239,.45);text-transform:uppercase;margin:0 24px}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+@media(max-width:860px){.case-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.case-grid{grid-template-columns:1fr}}
+.case{background:var(--ink);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.2s}
+.case:hover{transform:translateY(-3px);border-color:rgba(176,110,74,.4)}
+.ph{position:relative;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#1d4a4f,#14373C 55%,#0a2023)}
+.ph>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:sepia(.12) saturate(.9)}
+.case-body{padding:16px 18px 20px}
+.case-body h3{font-size:1rem;color:var(--cream);letter-spacing:0;margin-bottom:5px}
+.case-body p{font-size:.8rem;color:var(--muted)}
+.video-block{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;margin-top:40px;background:linear-gradient(150deg,var(--ink),#1a3d42);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 30px 80px -30px rgba(0,0,0,.7)}
+@media(max-width:820px){.video-block{grid-template-columns:1fr;gap:20px}}
+.video-block video{width:100%;border-radius:14px;border:1px solid var(--line);display:block;background:#000}
+.video-block h3{font-size:1.4rem;color:var(--cream);letter-spacing:0;margin-bottom:10px}
+.video-block p{font-size:.9rem;color:var(--text);max-width:44ch}
+.video-block .who{margin-top:14px;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tl);font-weight:700}
+
+.inv{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;align-items:stretch;margin-top:38px}
+@media(max-width:820px){.inv{grid-template-columns:1fr}}
+.inv-card{background:var(--ink);border:1px solid var(--line);border-radius:18px;padding:30px 28px;display:flex;flex-direction:column}
+.inv-card.rec{border-color:rgba(176,110,74,.5);position:relative}
+.inv-card.rec::before{content:"A IMERSÃO";position:absolute;top:-11px;left:26px;font-weight:700;font-size:.6rem;letter-spacing:.14em;color:#fff;background:var(--terra);padding:4px 12px;border-radius:100px}
+.inv-name{font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tl)}
+.inv-price{font-family:'Anton';font-size:2.8rem;color:var(--cream);margin:12px 0 2px;line-height:1}
+.inv-per{font-size:.78rem;color:var(--muted);margin-bottom:16px}
+.inv-card ul{list-style:none;font-size:.85rem;color:var(--text);flex:1}
+.inv-card li{padding:7px 0;border-bottom:1px solid var(--line)}
+.inv-card li::before{content:"→ ";color:var(--terra);font-weight:700}
+.inv-card li:last-child{border-bottom:none}
+.note{margin-top:20px;background:var(--ink);border:1px solid var(--line);border-radius:14px;padding:22px 24px;font-size:.85rem;color:var(--text)}
+.note b{color:var(--cream)}
+.pay-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:12px}
+@media(max-width:760px){.pay-grid{grid-template-columns:1fr}}
+.pay{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:12px;padding:15px 17px;font-size:.83rem}
+.pay .t{font-weight:700;color:var(--tl);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px}
+
+.guard{background:linear-gradient(150deg,var(--ink),#1a3d42);border:1px solid rgba(176,110,74,.3);border-radius:18px;padding:32px 30px;margin-bottom:16px}
+.guard h3{font-size:1.35rem;color:var(--cream);margin-bottom:9px;letter-spacing:0}
+.guard p{font-size:.9rem;color:var(--text);max-width:66ch}
+.faq details{border-bottom:1px solid var(--line);padding:15px 0}
+.faq summary{cursor:pointer;font-weight:600;color:var(--cream);font-size:.96rem;list-style:none;display:flex;justify-content:space-between;gap:14px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--tl);font-size:1.3rem;line-height:1}
+.faq details[open] summary::after{content:"-"}
+.faq p{font-size:.86rem;color:var(--muted);margin-top:11px;max-width:72ch}
+.founders{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+@media(max-width:640px){.founders{grid-template-columns:1fr}}
+.fnd{background:var(--ink);border:1px solid var(--line);border-radius:14px;padding:22px}
+.fnd .nm{font-family:'Anton';font-size:1.15rem;color:var(--cream);letter-spacing:0}
+.fnd .rl{font-size:.66rem;color:var(--tl);letter-spacing:.1em;text-transform:uppercase;margin:4px 0 9px}
+.fnd p{font-size:.8rem;color:var(--muted)}
+
+.nsteps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(20,55,60,.14);border:1px solid rgba(20,55,60,.14);border-radius:18px;overflow:hidden;margin-top:32px}
+@media(max-width:760px){.nsteps{grid-template-columns:1fr 1fr}}
+.nstep{background:#fff;color:#233133;padding:24px 20px}
+.nstep .n{font-family:'Anton';font-size:1.5rem;color:var(--terra)}
+.nstep .t{font-weight:700;font-size:.9rem;color:var(--ink);margin:7px 0 5px}
+.nstep p{font-size:.79rem;color:#4a5a5c}
+
+.cta-final{background:linear-gradient(165deg,#0a2023,#14373C 55%,#1d4840 100%);text-align:center}
+.cta-final::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:720px;height:720px;background:radial-gradient(circle,rgba(176,110,74,.16),transparent 62%);pointer-events:none;z-index:1}
+.cta-final h2{font-size:clamp(2.1rem,6vw,3.6rem);color:var(--cream);margin-bottom:16px;position:relative;z-index:2}
+.cta-final p{max-width:52ch;margin:0 auto 28px;color:var(--text);position:relative;z-index:2}
+.cta-final .hero-cta{justify-content:center;position:relative;z-index:2}
+.valid{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;color:var(--muted);margin-top:24px;position:relative;z-index:2}
+footer{background:var(--bg);border-top:1px solid var(--line);padding:42px 0;text-align:center}
+footer img{height:36px;margin-bottom:14px}
+footer p{font-size:.78rem;color:var(--muted)}
+footer a{color:var(--tl)}
+.rv{opacity:0;transform:translateY(20px);transition:.6s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}*,*::before,*::after{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<header>
+  <div class="wrap nav">
+    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale" onerror="this.style.display='none'">
+    <nav class="nav-links">
+      <a href="#imersao">Os dois dias</a>
+      <a href="#entrega">O que fica</a>
+      <a href="#cases">Cases</a>
+      <a href="#investimento">Investimento</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+    <a class="btn btn-terra nav-cta" href="https://wa.me/5511971901020?text=Bruna%2C%20quero%20fechar%20a%20imers%C3%A3o%20em%20Morro%20Agudo" target="_blank">Falar com a Bruna</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge">Renan, esta é a proposta após nossa conversa de 11 de agosto.</span>
+      <h1>Dois dias. Cinco pessoas.<br>Cada uma sai com o<br><span class="terra">Claude rodando.</span></h1>
+      <p class="hero-sub">Imersão presencial no escritório de vocês, em Morro Agudo. Uma abertura curta para todos entenderem como a IA pensa, e o resto dos dois dias mão na massa, frente por frente.</p>
+      <div class="hero-cta">
+        <a class="btn btn-terra" href="#imersao">Ver os dois dias</a>
+        <a class="btn btn-ghost" href="#investimento">Investimento</a>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="panel">
+        <div class="panel-head"><span class="live"></span>IMERSÃO CLAUDE · MORRO AGUDO</div>
+        <div class="panel-kpis">
+          <div class="kpi"><div class="v">2</div><div class="l">dias presenciais, no escritório de vocês</div></div>
+          <div class="kpi"><div class="v">5</div><div class="l">pessoas: o time inteiro, ninguém de fora</div></div>
+          <div class="kpi"><div class="v">3</div><div class="l">frentes: técnica, documentos e financeiro</div></div>
+          <div class="kpi"><div class="v">6h+</div><div class="l">de curso gravado, acesso incluso</div></div>
+        </div>
+        <div class="panel-row"><span class="live"></span>Depois: grupo no WhatsApp permanente, sem prazo de validade.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTEXTO -->
+<section id="contexto">
+  <div class="wrap">
+    <span class="kicker">O ponto de partida</span>
+    <h2 class="h2 on-dark">Vocês já compraram a ferramenta. Falta a <span class="terra">aplicação.</span></h2>
+    <p class="lead" style="margin-top:18px">O Claude Pro já está assinado e a operação já roda com 300 clientes em três estados. O que falta é cada pessoa saber onde ele entra no <b>seu</b> trabalho: o da sua mãe no financeiro não é o das meninas na montagem, que não é o seu e do seu pai na parte técnica.</p>
+    <div class="stats">
+      <div class="stat rv"><div class="v">~300</div><div class="l">clientes atendidos, entre SP, Goiás e Minas</div></div>
+      <div class="stat rv"><div class="v">~40</div><div class="l">documentos secundários montados a partir dos principais</div></div>
+      <div class="stat rv"><div class="v">5 anos</div><div class="l">de acervo consultado para montar um único documento</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRILHO DE FASES -->
+<section class="ice">
+  <div class="wrap">
+    <span class="kicker">O caminho</span>
+    <h2 class="h2">Antes, durante e depois <span class="terra">dos dois dias</span></h2>
+    <div class="flow">
+      <div class="fnode rv"><div class="ft">Pesquisa</div><div class="fs">Antes · online</div></div>
+      <div class="conn"><svg viewBox="0 0 48 40" width="48" aria-hidden="true"><path class="flowline" d="M2 20 H 30" stroke="#B06E4A" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M46 20 l-15 -8 l0 16 z" fill="#B06E4A"/></svg></div>
+      <div class="fnode mid rv"><div class="ft">A lógica</div><div class="fs">1h a 2h · os 5 juntos</div></div>
+      <div class="conn"><svg viewBox="0 0 48 40" width="48" aria-hidden="true"><path class="flowline" d="M2 20 H 30" stroke="#B06E4A" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M46 20 l-15 -8 l0 16 z" fill="#B06E4A"/></svg></div>
+      <div class="fnode mid rv"><div class="ft">Mão na massa</div><div class="fs">O resto dos 2 dias</div></div>
+      <div class="conn"><svg viewBox="0 0 48 40" width="48" aria-hidden="true"><path class="flowline" d="M2 20 H 30" stroke="#B06E4A" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M46 20 l-15 -8 l0 16 z" fill="#B06E4A"/></svg></div>
+      <div class="fnode rv"><div class="ft">Depois</div><div class="fs">Curso + grupo + suporte</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- OS DOIS DIAS -->
+<section id="imersao" class="ice-2" style="padding-top:24px">
+  <div class="wrap">
+    <span class="kicker">Os dois dias</span>
+    <h2 class="h2">Uma vez a lógica. Depois, <span class="terra">mão na massa.</span></h2>
+    <p class="lead" style="margin-top:16px">A parte expositiva é curta de propósito. O grosso dos dois dias é construindo, com os documentos de vocês abertos.</p>
+
+    <div class="prop">
+      <div class="prop-seg prop-a rv"><div class="pl">1h a 2h</div><div class="pv">Aula</div></div>
+      <div class="prop-seg prop-b rv"><div class="pl">Todo o resto dos dois dias</div><div class="pv">Mão na massa</div></div>
+    </div>
+
+    <div class="blocks">
+      <div class="blk rv">
+        <span class="blk-tag">Abertura · 1h a 2h · os 5 juntos</span>
+        <h3>Como a IA pensa</h3>
+        <p>A única parte expositiva. Não é aula de ferramenta: é entender o raciocínio da IA, porque quem entende isso automatiza qualquer processo depois.</p>
+        <ul>
+          <li>O fluxo de pensamento do Claude e por que o jeito de pedir muda o resultado</li>
+          <li>O que são skills e para que serve ensinar uma vez</li>
+          <li>Agendamentos: o que passa a acontecer sem ninguém acionar</li>
+          <li>Projetos e organização de arquivos, para o Claude achar o que precisa</li>
+          <li>Abrir a cabeça: o que o Claude é capaz de fazer e o que sempre conferir</li>
+        </ul>
+        <span class="out">Todos saem com: <b>a mesma base para a parte prática</b></span>
+      </div>
+      <div class="blk hi rv">
+        <span class="blk-tag">O resto dos dois dias · frente por frente</span>
+        <h3>Mão na massa</h3>
+        <p>Sento com cada frente — você e seu pai na técnica, as duas secretárias juntas nos documentos, sua mãe no financeiro — e a gente trabalha em cima da rotina real.</p>
+        <ul>
+          <li>Mapear o processo como ele acontece hoje, passo a passo</li>
+          <li>Achar onde a IA entra e onde ela não deve entrar</li>
+          <li>Construir a skill junto, com documento de verdade na tela</li>
+          <li>Rodar, quebrar e ajustar até sair certo</li>
+          <li>Deixar agendado o que puder acontecer sozinho</li>
+          <li>Cada frente mostra para as outras o que construiu</li>
+        </ul>
+        <span class="out">Cada frente sai com: <b>solução rodando e sabendo repetir</b></span>
+      </div>
+    </div>
+
+    <div class="thesis rv">
+      <h3>O que vocês levam não é a solução. É <span>o método de achar a próxima.</span></h3>
+      <p>Se eu só entregasse as automações prontas, vocês voltariam a me chamar no processo seguinte. Entendendo o fluxo de pensamento da IA, o time olha para qualquer tarefa da empresa — inclusive as que ainda nem existem — e sabe mapear, decidir se cabe IA e construir sozinho.</p>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE FICA COM VOCÊS -->
+<section id="entrega">
+  <div class="wrap">
+    <span class="kicker">A entrega</span>
+    <h2 class="h2 on-dark">O que fica com vocês <span class="terra">quando eu for embora</span></h2>
+    <p class="lead" style="margin-top:16px">Nada aqui é slide de aula. É o que existe no computador de vocês no fim do dia 2 — e o que continua existindo depois.</p>
+
+    <div class="grp on-dark">No fim do dia 2</div>
+    <div class="deliv">
+      <div class="dv rv"><div class="n">01</div><div class="t">Skills rodando</div><p>As automações construídas por cada frente, salvas no Claude e testadas com documento real.</p></div>
+      <div class="dv rv"><div class="n">02</div><div class="t">Caderno de receitas</div><p>Um por pessoa: os prompts e o passo a passo do que ela construiu, para repetir sem me chamar.</p></div>
+      <div class="dv rv"><div class="n">03</div><div class="t">Projeto organizado</div><p>O Claude estruturado com os arquivos e o acervo de vocês, do jeito que ele encontra as coisas.</p></div>
+      <div class="dv rv"><div class="n">04</div><div class="t">Mapa de processos</div><p>As três frentes destrinchadas no papel, com o que foi automatizado e o que ficou para depois.</p></div>
+    </div>
+
+    <div class="grp on-dark">E continua depois</div>
+    <div class="deliv three">
+      <div class="dv warm rv"><div class="n">05</div><div class="t">Curso Claude com Profundidade</div><p>Acesso incluso para o time: mais de 6 horas de conteúdo gravado e detalhado, para rever no ritmo de cada um e destravar o que não coube nos dois dias.</p></div>
+      <div class="dv warm rv"><div class="n">06</div><div class="t">Grupo no WhatsApp, permanente</div><p>Sem prazo de validade. É onde a dúvida do mês que vem — e a do ano que vem — continua tendo onde cair.</p></div>
+      <div class="dv warm rv"><div class="n">07</div><div class="t">30 dias de canal direto</div><p>No primeiro mês, além do grupo, vocês falam direto comigo. É quando a dúvida aparece com mais força, na hora de repetir sozinho.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE CADA FRENTE SAI FAZENDO -->
+<section class="ice">
+  <div class="wrap">
+    <span class="kicker">Exemplos que saíram da nossa conversa</span>
+    <h2 class="h2">O que cada frente pode sair fazendo</h2>
+    <p class="lead" style="margin-top:16px">Faíscas, não escopo fechado. O que cada frente vai construir se decide na sessão dela, com o documento aberto.</p>
+    <div class="grp">As três frentes</div>
+    <div class="steps-grid">
+      <div class="scard rv"><div class="sn">01</div><h3>Técnica · Renan e o pai</h3><p>O documento secundário que se monta a partir dos principais, com o Claude puxando o que interessa do acervo de cinco anos em vez de você abrir arquivo por arquivo.</p><span class="out">Sai fazendo: <b>documento montado, revisão só no fim</b></span></div>
+      <div class="scard rv"><div class="sn">02</div><h3>Documentos · as duas secretárias</h3><p>O e-mail que chega passa pelo Claude antes: ele lê, aponta o que falta e devolve o checklist preenchido. A montagem começa pela montagem, não pela conferência.</p><span class="out">Sai fazendo: <b>triagem de entrada sem leitura linha a linha</b></span></div>
+      <div class="scard rv"><div class="sn">03</div><h3>Financeiro · a mãe</h3><p>Orçamento, nota e cobrança têm muito transporte de informação entre planilha e documento. É o tipo de tarefa que o Claude encurta, construída no computador dela.</p><span class="out">Sai fazendo: <b>menos digitação entre planilha e documento</b></span></div>
+    </div>
+    <p class="lead" style="margin-top:22px;color:#5c6a66">Nenhuma dessas ideias é obrigatória. O valor está em cada um aprender a enxergar as próprias.</p>
+  </div>
+</section>
+
+<!-- ANTES × DEPOIS -->
+<section style="background:var(--bg-2)">
+  <div class="wrap">
+    <span class="kicker">Um exemplo concreto</span>
+    <h2 class="h2 on-dark">A tarefa que você me descreveu</h2>
+    <p class="lead" style="margin-top:14px">Montar um documento secundário puxando informação de documentos de até cinco anos atrás.</p>
+    <div class="ad">
+      <div class="ad-col bad rv"><div class="ad-tag">HOJE</div><div class="ad-time">Horas</div><div class="ad-dur">por documento</div><p>Abrir o acervo, achar os antigos daquele cliente, ler para localizar a informação, transportar para a planilha, montar e passar o pente fino. Em documento longo, se estende por mais de um dia.</p></div>
+      <div class="ad-col good rv"><div class="ad-tag">DEPOIS DA IMERSÃO</div><div class="ad-time">Minutos</div><div class="ad-dur">de revisão, não de construção</div><p>Você aponta o cliente e o documento. O Claude localiza no acervo, extrai e devolve montado. A conferência técnica continua de vocês, mas deixa de começar do zero.</p></div>
+    </div>
+    <p style="margin-top:16px;font-size:.8rem;color:var(--muted)">Exemplo ilustrativo, do que você contou na conversa. Os tempos reais a gente mede na imersão, com o seu documento na tela.</p>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="mq-track">
+    <span>JB Agro</span><span>·</span><span>Amo Vacinas</span><span>·</span><span>Corteva</span><span>·</span><span>Stoller</span><span>·</span><span>Ismart</span><span>·</span><span>Proativa</span><span>·</span><span>Sorridents</span><span>·</span><span>Grupo Stringhetta</span><span>·</span><span>OneGlobal</span><span>·</span>
+    <span>JB Agro</span><span>·</span><span>Amo Vacinas</span><span>·</span><span>Corteva</span><span>·</span><span>Stoller</span><span>·</span><span>Ismart</span><span>·</span><span>Proativa</span><span>·</span><span>Sorridents</span><span>·</span><span>Grupo Stringhetta</span><span>·</span><span>OneGlobal</span><span>·</span>
+  </div>
+</div>
+
+<!-- CASES -->
+<section id="cases">
+  <div class="wrap">
+    <span class="kicker">Cases e clientes</span>
+    <h2 class="h2 on-dark">Quem já abriu a operação <span class="terra">pra gente</span></h2>
+    <p class="lead" style="margin-top:16px">A primeira foto você conhece: é a JB Agro, do Caio e da Sofia. Foi lá, sentando com cada área, que montamos as automações que puxam informação dos documentos — o mesmo formato desta proposta, na mesma cidade.</p>
+    <div class="case-grid">
+      <article class="case rv"><div class="ph"><img src="fotos/jb-agro.jpg" alt="Imersão na JB Agro, Morro Agudo" onerror="this.remove()"></div><div class="case-body"><h3>JB Agro · Morro Agudo</h3><p>Sentando com cada área da fazenda, área por área. Foi de lá que veio a indicação de vocês.</p></div></article>
+      <article class="case rv"><div class="ph"><img src="fotos/amo-vacinas.jpg" alt="Palestra de IA na Amo Vacinas" onerror="this.remove()"></div><div class="case-body"><h3>Amo Vacinas</h3><p>A Virada IA para o time inteiro, da diretoria a quem opera o balcão.</p></div></article>
+      <article class="case rv"><div class="ph"><img src="fotos/nov-stringhetta.jpg" alt="Grupo Stringhetta" onerror="this.remove()"></div><div class="case-body"><h3>Grupo Stringhetta</h3><p>Empresa familiar: o fluxo de caixa que levava 2 dias passou a sair em minutos.</p></div></article>
+      <article class="case rv"><div class="ph"><img src="fotos/nov-ismart.jpg" alt="Imersão Claude Ismart" onerror="this.remove()"></div><div class="case-body"><h3>Imersão Claude · Ismart</h3><p>Imersão de IA com Claude para os 70 colaboradores do Ismart.</p></div></article>
+      <article class="case rv"><div class="ph"><img src="fotos/one-global-nova.jpeg" alt="OneGlobal Broking" onerror="this.remove()"></div><div class="case-body"><h3>OneGlobal Broking</h3><p>Formação Claude com profundidade para 40 líderes, em 3 encontros.</p></div></article>
+      <article class="case rv"><div class="ph"><img src="fotos/nov-stoller-convencao.jpg" alt="Convenção Stoller" onerror="this.remove()"></div><div class="case-body"><h3>Convenção Stoller</h3><p>Mais de 280 pessoas: a IA que multiplica o que o time já sabe fazer.</p></div></article>
+    </div>
+    <div class="video-block rv">
+      <video controls preload="none" poster="fotos/video-rafael-poster.jpg">
+        <source src="fotos/video-rafael-magaldi.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+      <div>
+        <h3>Quem viveu a Virada IA conta</h3>
+        <p>Um depoimento de quem passou pela formação e viu o dia a dia mudar. Dá o play.</p>
+        <div class="who">Rafael Magaldi · proprietário do Grupo Stringhetta</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTIMENTO -->
+<section id="investimento" class="ice">
+  <div class="wrap">
+    <span class="kicker">Investimento</span>
+    <h2 class="h2">A imersão, e o acompanhamento se você quiser</h2>
+    <p class="lead" style="margin-top:16px">Valor fechado pelos dois dias, com as cinco pessoas incluídas. Não existe mensalidade.</p>
+    <div class="inv">
+      <div class="inv-card rec rv">
+        <div class="inv-name">Imersão presencial · 2 dias · Morro Agudo</div>
+        <div class="inv-price">R$ 15.500</div>
+        <div class="inv-per">turma fechada · as 5 pessoas do time · data a combinar</div>
+        <ul>
+          <li>Pesquisa de nivelamento com cada pessoa, antes</li>
+          <li>Abertura "Como a IA pensa" com o time inteiro</li>
+          <li>Mão na massa por frente: técnica, documentos e financeiro</li>
+          <li>Skills construídas e testadas com documento real</li>
+          <li>Caderno de receitas por pessoa</li>
+          <li>Mapa das três frentes, no papel</li>
+          <li>Curso Claude com Profundidade: 6h+ gravadas, acesso para o time</li>
+          <li>Grupo no WhatsApp permanente, sem prazo</li>
+          <li>30 dias de canal direto comigo</li>
+        </ul>
+      </div>
+      <div class="inv-card rv">
+        <div class="inv-name">Encontro de acompanhamento</div>
+        <div class="inv-price">R$ 600</div>
+        <div class="inv-per">por encontro de 1h30 · quando necessário</div>
+        <ul>
+          <li>Encontro de 1h30 com a Bruna</li>
+          <li>Contratado só quando fizer sentido</li>
+          <li>Ajuste do que vocês criaram</li>
+          <li>Destrava processos novos</li>
+          <li>Sem compromisso de recorrência</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note">
+      <b>Condições</b>
+      <div class="pay-grid">
+        <div class="pay"><div class="t">Pagamento</div>50% na confirmação, que reserva as datas, e 50% após a imersão.</div>
+        <div class="pay"><div class="t">Local</div>Presencial, no escritório de vocês em Morro Agudo (SP).</div>
+        <div class="pay"><div class="t">Fora do valor</div>Deslocamento e hospedagem, tratados à parte.</div>
+      </div>
+      <p style="margin-top:14px;color:var(--muted);font-size:.82rem">As assinaturas do <b>Claude</b> vocês contratam direto, também à parte. Na imersão eu oriento qual plano faz sentido para o tamanho do time e para o sigilo dos dados de vocês.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIANÇA -->
+<section id="faq">
+  <div class="wrap">
+    <div class="guard rv">
+      <h3>O compromisso é com vocês saindo no controle</h3>
+      <p>Não é dar a aula e ir embora. Os dois dias são mão na massa para que cada pessoa repita sozinha — e o curso, o grupo permanente e o canal direto existem porque a dúvida real aparece depois, quando eu já não estou na sala.</p>
+    </div>
+    <div class="faq" style="margin-top:28px">
+      <details><summary>Meus pais vão conseguir acompanhar?</summary><p>Essa foi a sua preocupação principal, e é por ela que a proposta é presencial. Semana passada fiz exatamente isso num e-commerce de calçados com 40 anos de casa: os dois donos são senhores, a dona cuida do financeiro, e ela pegou muito bem — construímos junto, no computador dela. Na sala eu ajusto o ritmo a cada pessoa, e sua mãe e seu pai têm sessões próprias, no tempo deles.</p></details>
+      <details><summary>Vamos ter que trocar o sistema que compramos?</summary><p>Não. Os documentos principais continuam no sistema de vocês, que funciona. O Claude entra por cima: nos cerca de 40 secundários, na consulta ao acervo e na conferência.</p></details>
+      <details><summary>Dois dias dão conta das cinco pessoas?</summary><p>Dão, pelo agrupamento: as duas secretárias fazem a mesma frente, você e seu pai compartilham a técnica, sua mãe tem a dela. Tirando a hora ou duas de abertura, os dois dias inteiros são prática. O objetivo é cada pessoa sair com solução rodando, não esgotar todos os usos do Claude.</p></details>
+      <details><summary>E os dados dos nossos clientes?</summary><p>Vocês lidam com informação sensível de saúde ocupacional, então isso entra logo na abertura, não como rodapé. Vemos o que pode e o que não deve ir para a ferramenta, qual plano do Claude protege os dados de quem contrata, e como montar o processo para o sigilo dos ~300 clientes não depender da memória de ninguém.</p></details>
+      <details><summary>Precisa de alguém técnico no grupo?</summary><p>Não. A Bruna é empresária que implementa IA no próprio negócio todos os dias, fala a língua da operação de vocês, não a do TI.</p></details>
+    </div>
+    <div class="founders">
+      <div class="fnd rv"><div class="nm">Bruna Santanna</div><div class="rl">Co-fundadora · conduz a imersão</div><p>ESPM + MBA USP. Empresária há 10+ anos, teve loja e e-commerce por 8 anos. Mentora de IA no Potenc.IA (Magalu, OLX). Implementa IA no próprio negócio todos os dias.</p></div>
+      <div class="fnd rv"><div class="nm">Bruno Varella</div><div class="rl">Co-fundador</div><p>ESPM. 17+ anos em Marketing e Produto. Ex-Warner Bros., ex-Natura &amp; Co. Já implantou agentes de IA em redes com 700+ franquias.</p></div>
+    </div>
+    <p style="margin-top:24px;font-size:.9rem;color:var(--text);max-width:70ch;border-left:2px solid var(--terra);padding-left:18px">"Cada projeto começa pela conversa, não pelo contrato. A gente entende como a operação funciona hoje, o que a equipe precisa, e só depois constrói. E depois que entrega, a gente fica, evoluindo junto com o seu negócio."</p>
+  </div>
+</section>
+
+<!-- PRÓXIMOS PASSOS -->
+<section class="ice" style="padding-bottom:56px">
+  <div class="wrap">
+    <span class="kicker">Próximos passos</span>
+    <h2 class="h2">Do aceite aos dois dias</h2>
+    <div class="nsteps">
+      <div class="nstep rv"><div class="n">1</div><div class="t">Aceite</div><p>Você confirma e travamos as datas. 50% reserva a agenda.</p></div>
+      <div class="nstep rv"><div class="n">2</div><div class="t">Pesquisa</div><p>As cinco respondem o nivelamento e separam os arquivos reais.</p></div>
+      <div class="nstep rv"><div class="n">3</div><div class="t">Imersão</div><p>Abertura curta e o resto mão na massa. Cada frente sai com solução rodando.</p></div>
+      <div class="nstep rv"><div class="n">4</div><div class="t">Depois</div><p>Curso liberado, grupo permanente e 30 dias de canal direto comigo.</p></div>
+    </div>
+    <p class="lead" style="margin-top:28px">Ninguém do time fica sozinho na imersão, Renan — nem depois dela.</p>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="wrap">
+    <h2>Renan, bora colocar o Claude<br>pra trabalhar de verdade?</h2>
+    <p>Vocês já têm a ferramenta e já têm o volume. Faltam os dois dias que fazem cada pessoa usar isso na própria rotina.</p>
+    <div class="hero-cta">
+      <a class="btn btn-terra" href="https://wa.me/5511971901020?text=Bruna%2C%20quero%20fechar%20a%20imers%C3%A3o%20em%20Morro%20Agudo" target="_blank">Quero fechar a imersão</a>
+      <a class="btn btn-ghost" href="https://wa.me/5511971901020?text=Bruna%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20a%20proposta%20da%20imers%C3%A3o" target="_blank">Tenho uma dúvida</a>
+    </div>
+    <div class="valid"><span class="live"></span>Proposta válida até 01/set/2026. A agenda de setembro está fechando e os dois dias precisam entrar em bloco.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale" onerror="this.style.display='none'">
+    <p>NewScale Consulting · IA hiper-personalizada · <a href="https://newscale.tech" target="_blank">newscale.tech</a> · <a href="https://wa.me/5511971901020" target="_blank">(11) 97190-1020</a></p>
+    <p style="margin-top:8px">Proposta preparada para a assessoria em segurança do trabalho de Morro Agudo · 17/ago/2026</p>
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver((es)=>{es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*70);obs.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+setTimeout(()=>document.querySelectorAll('.rv').forEach(el=>el.classList.add('in')),2500);
+</script>
+</body>
+</html>
