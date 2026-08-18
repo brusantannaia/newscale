@@ -286,6 +286,9 @@ footer a{color:var(--tl)}
 .data-card{background:rgba(255,255,255,.03);border:1px solid rgba(176,110,74,.3);border-radius:14px;padding:20px 22px}
 .data-card .dd{font-family:'Anton';font-size:1.5rem;color:var(--cream);letter-spacing:0}
 .data-card .dl{font-size:.78rem;color:var(--muted);margin-top:6px}
+.case-grid{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+@media(max-width:860px){.case-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.case-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -499,8 +502,8 @@ footer a{color:var(--tl)}
 <!-- MARQUEE -->
 <div class="marquee">
   <div class="mq-track">
-    <span>Corteva</span><span>·</span><span>Stoller</span><span>·</span><span>Ismart</span><span>·</span><span>Proativa</span><span>·</span><span>Sorridents</span><span>·</span><span>Grupo Stringhetta</span><span>·</span><span>OneGlobal</span><span>·</span><span>COLO Saúde</span><span>·</span><span>JB Agro</span><span>·</span><span>Juca na Balada</span><span>·</span>
-    <span>Corteva</span><span>·</span><span>Stoller</span><span>·</span><span>Ismart</span><span>·</span><span>Proativa</span><span>·</span><span>Sorridents</span><span>·</span><span>Grupo Stringhetta</span><span>·</span><span>OneGlobal</span><span>·</span><span>COLO Saúde</span><span>·</span><span>JB Agro</span><span>·</span><span>Juca na Balada</span><span>·</span>
+    <span>Stoller</span><span>·</span><span>Ismart</span><span>·</span><span>Proativa</span><span>·</span><span>Sorridents</span><span>·</span><span>Grupo Stringhetta</span><span>·</span><span>OneGlobal</span><span>·</span><span>JB Agro</span><span>·</span><span>Juca na Balada</span><span>·</span>
+    <span>Stoller</span><span>·</span><span>Ismart</span><span>·</span><span>Proativa</span><span>·</span><span>Sorridents</span><span>·</span><span>Grupo Stringhetta</span><span>·</span><span>OneGlobal</span><span>·</span><span>JB Agro</span><span>·</span><span>Juca na Balada</span><span>·</span>
   </div>
 </div>
 
@@ -512,14 +515,12 @@ footer a{color:var(--tl)}
     <p class="lead" style="margin-top:16px">Empresas de saúde, agro, turismo, indústria e educação, de operações familiares com o dono na linha de frente a times de dezenas de pessoas. O que se repete em todas é o mesmo ponto de partida: alguém esperando um número para decidir.</p>
     <div class="case-grid">
       <article class="case rv"><div class="ph"><img src="fotos/nov-stringhetta.jpg" alt="Grupo Stringhetta" onerror="this.remove()"></div><div class="case-body"><h3>Grupo Stringhetta</h3><p>Empresa familiar, dono na operação: o fechamento de caixa que levava dias passou a sair em minutos, com painel.</p></div></article>
-      <article class="case rv"><div class="ph"></div><div class="case-body"><h3>COLO Saúde</h3><p>Saúde e dado sensível: o relatório passou a custar R$ 0,09, com 26% mais capacidade de atendimento por dia.</p></div></article>
       <article class="case rv"><div class="ph"><img src="fotos/nov-sorridents.jpg" alt="Sorridents" onerror="this.remove()"></div><div class="case-body"><h3>Sorridents</h3><p>Rede de franquias de odontologia. Time formado em IA aplicada ao dia a dia da operação.</p></div></article>
       <article class="case rv"><div class="ph logo"><img src="fotos/juca-na-balada.png" alt="Juca na Balada" onerror="this.remove()"></div><div class="case-body"><h3>Juca na Balada</h3><p>Turismo: imersão com várias áreas e acompanhamento semanal, com os projetos conduzidos pela própria equipe.</p></div></article>
       <article class="case rv"><div class="ph"><img src="fotos/jb-agro.jpg" alt="Imersão na JB Agro" onerror="this.remove()"></div><div class="case-body"><h3>JB Agro</h3><p>Imersão presencial sentando com cada área, uma a uma, até cada uma sair com a própria automação.</p></div></article>
-      <article class="case rv"><div class="ph"><img src="fotos/nov-oneglobal.jpg" alt="Proativa e OneGlobal" onerror="this.remove()"></div><div class="case-body"><h3>Proativa e OneGlobal</h3><p>A formação do time virou projeto de automação, hoje com status semanal de acompanhamento.</p></div></article>
+      <article class="case rv"><div class="ph"><img src="fotos/one-global-nova.jpeg" alt="Turma da Proativa e OneGlobal no encontro online" onerror="this.remove()"></div><div class="case-body"><h3>Proativa e OneGlobal</h3><p>A formação do time virou projeto de automação, hoje com status semanal de acompanhamento.</p></div></article>
       <article class="case rv"><div class="ph"><img src="fotos/nov-ismart.jpg" alt="Imersão Claude Ismart" onerror="this.remove()"></div><div class="case-body"><h3>Ismart</h3><p>Imersão de IA com Claude para os 70 colaboradores do Ismart.</p></div></article>
       <article class="case rv"><div class="ph"><img src="fotos/nov-stoller-convencao.jpg" alt="Convenção Stoller" onerror="this.remove()"></div><div class="case-body"><h3>Stoller</h3><p>Convenção com mais de 280 pessoas: a IA que multiplica o que o time já sabe fazer.</p></div></article>
-      <article class="case rv"><div class="ph"></div><div class="case-body"><h3>Corteva</h3><p>Agro. Time formado em IA aplicada ao dia a dia da operação.</p></div></article>
     </div>
     <div class="video-block rv">
       <video controls preload="none" poster="fotos/video-rafael-poster.jpg">
