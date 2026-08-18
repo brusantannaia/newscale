@@ -48,7 +48,13 @@ section{position:relative;z-index:2;padding:84px 0;overflow:hidden}
 
 header{position:sticky;top:0;z-index:50;background:rgba(12,36,39,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
-.nav img{height:52px}
+.nav img{height:50px;width:auto}
+.lockup{display:flex;align-items:center;gap:18px;min-width:0}
+.lockup .sep{width:1px;height:34px;background:var(--line);flex:0 0 auto}
+.lockup .cli{height:26px;opacity:.95}
+@media(max-width:900px){.nav{height:72px}.nav img{height:44px}.lockup{gap:14px}.lockup .cli{height:23px}.lockup .sep{height:30px}}
+@media(max-width:560px){.nav{height:70px}.nav img{height:46px}.lockup .sep,.lockup .cli{display:none}}
+@media(max-width:370px){.nav img{height:40px}}
 .nav-cta{font-size:.78rem;padding:11px 22px}
 .nav-links{display:flex;gap:26px;font-size:.8rem;color:var(--muted)}
 .nav-links a:hover{color:var(--cream)}
@@ -253,11 +259,10 @@ footer a{color:var(--tl)}
 .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}*,*::before,*::after{animation:none!important}}
 .ph.logo>img{object-fit:contain;padding:26px;background:#fff;filter:none}
-.cobrand{display:flex;align-items:center;gap:14px;margin-bottom:22px}
-.cobrand img{height:78px;width:auto;display:block}
-.cobrand .cbl{font-weight:700;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--tl);border-left:1px solid var(--line);padding-left:14px;line-height:1.5}
-@media(max-width:520px){.cobrand img{height:63px}}
-footer .cli{height:51px;width:auto;margin:24px auto 12px;display:block;opacity:.9}
+.foot-lock{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:14px}
+.foot-lock img{height:36px;width:auto;margin:0}
+.foot-lock .cli{height:24px;opacity:.95}
+.foot-lock .sep{width:1px;height:32px;background:var(--line);flex:0 0 auto}
 </style>
 </head>
 <body>
@@ -265,7 +270,11 @@ footer .cli{height:51px;width:auto;margin:24px auto 12px;display:block;opacity:.
 
 <header>
   <div class="wrap nav">
-    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale" onerror="this.style.display='none'">
+    <div class="lockup">
+      <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/logo-newscale-branco.png" alt="NewScale" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png'">
+      <span class="sep"></span>
+      <img class="cli" src="fotos/clube-turismo-logo.png" alt="Clube Turismo" onerror="this.style.display='none'">
+    </div>
     <nav class="nav-links">
       <a href="#dia">O dia</a>
       <a href="#entrega">O que fica</a>
@@ -281,10 +290,6 @@ footer .cli{height:51px;width:auto;margin:24px auto 12px;display:block;opacity:.
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="cobrand">
-        <img src="fotos/clube-turismo-logo.png" alt="Clube Turismo" onerror="this.style.display='none'">
-        <span class="cbl">Proposta<br>comercial</span>
-      </div>
       <span class="badge">Adriana e Carlos, esta é a proposta após nossa conversa de 17 de agosto.</span>
       <h1>Menos horas procurando.<br><span class="terra">Mais horas vendendo.</span></h1>
       <p class="hero-sub">Um dia inteiro de imersão presencial no Clube Turismo, para que a busca diária por ofertas e a qualificação de leads deixem de ser manuais e passem a rodar com inteligência artificial. A pesquisa e o mapeamento acontecem antes. O dia é de construção, não de aula.</p>
@@ -465,7 +470,7 @@ footer .cli{height:51px;width:auto;margin:24px auto 12px;display:block;opacity:.
       <article class="case rv"><div class="ph"><img src="fotos/nov-ismart.jpg" alt="Imersão Claude Ismart" onerror="this.remove()"></div><div class="case-body"><h3>Imersão Claude · Ismart</h3><p>Imersão de IA com Claude para os 70 colaboradores do Ismart.</p></div></article>
       <article class="case rv"><div class="ph"><img src="fotos/nov-stoller-convencao.jpg" alt="Convenção Stoller" onerror="this.remove()"></div><div class="case-body"><h3>Convenção Stoller</h3><p>Mais de 280 pessoas: a IA que multiplica o que o time já sabe fazer.</p></div></article>
       <article class="case rv"><div class="ph"><img src="fotos/one-global-nova.jpeg" alt="Formação Claude na OneGlobal" onerror="this.remove()"></div><div class="case-body"><h3>OneGlobal Broking</h3><p>Formação Claude com profundidade para 40 líderes, em três encontros.</p></div></article>
-      <article class="case rv"><div class="ph"><img src="fotos/nov-sorridents.jpg" alt="Palestra de IA na Sorridents" onerror="this.remove()"></div><div class="case-body"><h3>Sorridents</h3><p>IA aplicada à rotina comercial e de marketing de uma rede de franquias.</p></div></article>
+      <article class="case rv"><div class="ph"><img src="fotos/nov-sorridents.jpg" alt="Palestra de IA na Sorridents" onerror="this.remove()"></div><div class="case-body"><h3>Convenção Sorridents</h3><p>A Virada IA para uma das maiores redes de odontologia do país.</p></div></article>
     </div>
     <p class="lead" style="margin-top:26px;font-size:.92rem">Também passamos por <b>COLO Saúde</b>, <b>Corteva</b>, <b>Casa Tacto</b>, <b>Belcenter</b>, <b>Proativa</b> e <b>Casa Kahla</b>, entre outras operações que abriram os próprios processos para a gente.</p>
     <div class="video-block rv">
@@ -571,10 +576,13 @@ footer .cli{height:51px;width:auto;margin:24px auto 12px;display:block;opacity:.
 
 <footer>
   <div class="wrap">
-    <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png" alt="NewScale" onerror="this.style.display='none'">
+    <div class="foot-lock">
+      <img src="https://raw.githubusercontent.com/brusantannaia/newscale/main/logo-newscale-branco.png" alt="NewScale" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/brusantannaia/newscale/main/LOGO%2003%403x.png'">
+      <span class="sep"></span>
+      <img class="cli" src="fotos/clube-turismo-logo.png" alt="Clube Turismo" onerror="this.style.display='none'">
+    </div>
     <p>NewScale Consulting · IA hiper-personalizada · <a href="https://newscale.tech" target="_blank">newscale.tech</a> · <a href="https://wa.me/5511971901020" target="_blank">(11) 97190-1020</a></p>
-    <img class="cli" src="fotos/clube-turismo-logo.png" alt="Clube Turismo" onerror="this.style.display='none'">
-    <p>Proposta preparada para o Clube Turismo · Adriana e Carlos · 18/ago/2026</p>
+    <p style="margin-top:8px">Proposta preparada para o Clube Turismo · Adriana e Carlos · 18/ago/2026</p>
   </div>
 </footer>
 
